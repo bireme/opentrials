@@ -76,4 +76,11 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
 )
+
+try:
+    execfile('settings_local.py')
+except IOError:
+    pass # ignore absent local settings file
