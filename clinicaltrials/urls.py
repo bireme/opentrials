@@ -14,4 +14,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
+    (r'^clinicaltrials/$', 'clinicaltrials.registry.views.index'),    
+    (r'^clinicaltrials/add/$', 'clinicaltrials.registry.views.add'),
+    
 )
