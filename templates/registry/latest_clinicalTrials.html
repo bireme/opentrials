@@ -1,0 +1,10 @@
+{% if latest_clinicalTrials %}
+    <h1>New Clinical Trials</h1>
+    <ul>
+    {% for ct in latest_clinicalTrials %}
+        <li>{{ ct.public_title }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No clinical trials are available.</p>
+{% endif %}
