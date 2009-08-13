@@ -1,5 +1,13 @@
 {% extends "base.html" %}
  
+{% block login %}
+   {% if username %}
+      &lt;{{username}}&gt;
+   {% else %}
+      <a href="/login">log in</a>
+   {% endif %}   
+{% endblock %}
+
 {% block headline %}Rebrac: registro brasileiro de ensaios clínicos{% endblock %}
 
 {% block body %}
