@@ -8,12 +8,11 @@ urlpatterns = patterns('',
     # Example:
     # (r'^clinicaltrials/', include('clinicaltrials.foo.urls')),
 
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
+    # Django admin application and documentation
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
+    
+    # Registry application
     (r'^clinicaltrials/$', 'clinicaltrials.registry.views.index'),    
     (r'^clinicaltrials/add/$', 'clinicaltrials.registry.views.add'),
     
