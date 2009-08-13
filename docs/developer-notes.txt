@@ -1,0 +1,32 @@
+==================================
+Getting started with development
+==================================
+
+Notes to help developers get started collaborating with the Reclac project.
+
+
+
+Setting up the develpment database
+-------------------------------------
+
+In order to manually test the product, and to run the automated tests, a database user must be created with certain privileges. For MySQL, this is a sample setting that works::
+
+    luciano@ersatz:~$ sudo mysql -p
+    Enter password: 
+    Welcome to the MySQL monitor.  Commands end with ; or \g.
+    Your MySQL connection id is 34
+    Server version: 5.0.75-0ubuntu10.2 (Ubuntu)
+
+    Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+
+    mysql> create database clinicaltrials;
+    Query OK, 1 row affected (0.00 sec)
+
+    mysql> create user 'tester'@'localhost' identified by 'puffpuff';
+    Query OK, 0 rows affected (0.00 sec)
+
+    mysql> grant all privileges on clinicaltrials.* to 'tester'@'localhost';
+    Query OK, 0 rows affected (0.00 sec)
+
+
+
