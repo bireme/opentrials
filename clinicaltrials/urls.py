@@ -6,7 +6,10 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Registry application
-    (r'^ct/', include('clinicaltrials.registry.urls')),
+    (r'^rg/', include('clinicaltrials.registry.urls')),
+
+    # Rebrac public site application
+    (r'^', include('clinicaltrials.rebrac.urls')),
 
     # Django admin application and documentation
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
