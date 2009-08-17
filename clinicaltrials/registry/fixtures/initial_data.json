@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "registry.recruitmentstatus", "fields": {"status": "pending", "lang": "en", "label": "pending"}}, {"pk": 2, "model": "registry.recruitmentstatus", "fields": {"status": "recruiting", "lang": "en", "label": "recruiting"}}, {"pk": 3, "model": "registry.recruitmentstatus", "fields": {"status": "suspended", "lang": "en", "label": "suspended"}}]
