@@ -1,1 +1,12 @@
-<h1>Adding a new Clinical Trials</h1>
+{% extends "base.html" %}
+
+{% block body_title %}Adding a new Clinical Trials{% endblock %}
+
+{% block body %}
+    <form action="./" method="POST">
+        <table>
+        {{form.as_table}}
+        </table>
+        <input type="submit">
+    </form>
+{% endblock %}

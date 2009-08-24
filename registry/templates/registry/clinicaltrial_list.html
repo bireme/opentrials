@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body_title %}Last Clinical Trials{% endblock %}
+
+{% block body %}
+    {% if object_list %}
+            <ul>
+            {% for ct in object_list %}
+                <li>{{ ct.public_title }}</li>
+            {% endfor %}
+            </ul>
+    {% else %}
+            <p>No clinical trials are available.</p>
+    {% endif %}
+{% endblock %}
