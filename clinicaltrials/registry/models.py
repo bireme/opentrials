@@ -12,6 +12,9 @@ class RecruitmentStatus(models.Model):
     def __unicode__(self):
         return u'%s' % (self.label)
     
+    class Meta:
+        verbose_name_plural = u'Recruitment status'
+    
 class RecruitmentCountry(models.Model):
     trial = models.ForeignKey('ClinicalTrial')
     country_code = models.CharField(max_length=8, choices=COUNTRIES)
