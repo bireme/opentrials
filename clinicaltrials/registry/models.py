@@ -19,6 +19,6 @@ class RecruitmentCountry(models.Model):
 class ClinicalTrial(models.Model):
     public_title         = models.CharField(max_length=255, db_index=True)
     scientific_title     = models.CharField(max_length=255, db_index=True)
-    dateFirst_enrollment = models.DateField()
+    dt_first_enrollment = models.DateField()
     target_sample_size   = models.IntegerField()
     recruitment_status   = models.ForeignKey('RecruitmentStatus')
