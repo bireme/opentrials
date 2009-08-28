@@ -1,0 +1,3 @@
+This directory exists to hold localized messages.
+
+This file exists so that the empty directory can be saved in a version control repository.
