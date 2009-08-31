@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+{% load i18n %}
 <head>
-    <title>{% block page_title %}Reclac Platform{% endblock %}</title>
+    <title>{% block page_title %}{% trans "Reclac Platform" %}{% endblock %}</title>
     
     <!-- stylesheets to support admin widgets in public forms -->
     <link rel="stylesheet" type="text/css" href="/media/css/base.css" />
@@ -22,7 +23,7 @@
     {% block login %}{% endblock %}
     </div>
     <div class="heading">
-        <h1>{% block headline %}Reclac, part of the WHO/ICTRP network{% endblock %}</h1>
+        <h1>{% block headline %}{% trans "Rebrac, part of the WHO/ICTRP network" %}{% endblock %}</h1>
     </div>
     <div class="body">
         <h1>{% block body_title %}Content Title{% endblock %}</h1>        

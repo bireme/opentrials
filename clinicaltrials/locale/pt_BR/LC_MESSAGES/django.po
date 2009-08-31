@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-31 15:06+0000\n"
+"POT-Creation-Date: 2009-08-31 17:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: registry/models.py:16
+#: registry/models.py:16 registry/models.py:30
 msgid "Recruitment Status"
 msgstr "Situação de recrutamento"
 
@@ -37,3 +37,14 @@ msgstr "Data do primeiro recrutemento"
 msgid "Target Sample Size"
 msgstr "Tamanho da amostra alvo"
 
+#: registry/templates/registry/add_clinicalTrials.html:3
+msgid "Add a new Clinical Trial Record"
+msgstr "Incluir novo Registro de Ensaio Clínico"
+
+#: templates/base.html:5
+msgid "Reclac Platform"
+msgstr "Plataforma Reclac"
+
+#: templates/base.html:25
+msgid "Rebrac, part of the WHO/ICTRP network"
+msgstr "Rebrac, parte da rede OMS/ICTRP"
