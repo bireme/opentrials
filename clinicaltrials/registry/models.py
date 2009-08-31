@@ -13,7 +13,7 @@ class RecruitmentStatus(models.Model):
         return u'%s' % (self.label)
     
     class Meta:
-        verbose_name_plural = _('Recruitment status')
+        verbose_name_plural = _('Recruitment Status')
     
 class RecruitmentCountry(models.Model):
     trial = models.ForeignKey('ClinicalTrial')
