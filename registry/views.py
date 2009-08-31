@@ -21,7 +21,9 @@ def index(request):
 #    return render_to_response('registry/add_clinicalTrials.html')
     
 class ClinicalTrialForm(forms.ModelForm):
-    dt_first_enrollment = forms.DateTimeField(widget=AdminDateWidget())
+    dt_first_enrollment = forms.DateTimeField(
+        widget=AdminDateWidget(),
+        label=ClinicalTrial._meta.get_field('dt_first_enrollment').verbose_name)
 
     class Meta:
         model = ClinicalTrial

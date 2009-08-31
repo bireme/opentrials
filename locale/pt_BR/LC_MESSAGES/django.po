@@ -1,0 +1,39 @@
+# Rebrac Clinical Trials Project
+# Brazilian Portuguese localization file
+# Copyright (C) 2009 BIREME/PAHO/WHO
+# This file is distributed under the same license as the PACKAGE package.
+# Luciano Ramalho <luciano.ramalho@bireme.org>, 2009.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-31 15:06+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: registry/models.py:16
+msgid "Recruitment Status"
+msgstr "Situação de recrutamento"
+
+#: registry/models.py:23
+msgid "Public Title"
+msgstr "Título público"
+
+#: registry/models.py:25
+msgid "Scientific Title"
+msgstr "Título científico"
+
+#: registry/models.py:27
+msgid "Date of First Enrollment"
+msgstr "Data do primeiro recrutemento"
+
+#: registry/models.py:28
+msgid "Target Sample Size"
+msgstr "Tamanho da amostra alvo"
+
