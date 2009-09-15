@@ -1,0 +1,215 @@
+Atividades										Milestones		36	40	30	31	
+		set	out	nov	dez	jan					1/out	6/nov	16/dez	15/jan	15/fev	futuro
+		v0.6	v0.7	v0.8	v0.9	v1.0	v2.0				v0.6	v0.7	v0.8	v0.9	v1.0	v2.0
+		7	14	14	8	13	9			56	13%	38%	63%	77%	100%	
+1	Cadastramento dos dados de um registro de ensaio clínico															
+1.1	Formulário de cadastro (TRDS)															
+1.1.1	Campos simples	1								1	100%	100%	100%	100%	100%	
+1.1.2	Campos compostos	1	1	1						3	33%	67%	100%	100%	100%	
+1.1.3	Vocabulários controlados externos			1	1	1		vc		3	0%	0%	33%	67%	100%	
+1.2	Carga de documentos associados															
+1.2.1	Configuração de ambiente para arquivos estáticos					1				1	0%	0%	0%	0%	100%	
+1.3	Acompanhamento dos ensaios registrados															
+1.3.1	Listagem de registros por estágio no workflow		1					wf	adm	1	0%	100%	100%	100%	100%	
+1.3.2	Visão detalhada de um registro	1	1	1						3	33%	67%	100%	100%	100%	
+1.3.3	Comentários do revisor campo a campo			1				rev		1	0%	0%	100%	100%	100%	
+1.3.4	Comentário geral do revisor		1					rev		1	0%	100%	100%	100%	100%	
+1.3.5	Visualização das alterações		1					log		1	0%	100%	100%	100%	100%	
+1.3.6	Workflow básico		1	1				wf		2	0%	50%	100%	100%	100%	
+1.4	Edição de dados de um registro															
+1.4.1	Registro das alterações		1	1				log		2	0%	50%	100%	100%	100%	
+1.4.2	Sumário do estado da edição			1						1	0%	0%	100%	100%	100%	
+1.4.3	Validação levando em conta comentários do revisor			1				rev		1	0%	0%	100%	100%	100%	
+1.5	Tradução do registro															
+1.5.1	Formulário de tradução				1	1		tr		2	0%	0%	0%	50%	100%	
+1.5.2	Validação da tradução				1	1		tr		2	0%	0%	0%	50%	100%	
+1.6	Cadastramento de usuário															
+1.6.1	Formulário de cadastramento			1				us		1	0%	0%	100%	100%	100%	
+1.6.2	Confirmação do e-mail do usuário					1		us		1	0%	0%	0%	0%	100%	
+1.7	Identificação de usuário															
+1.7.1	Autenticação (login)	1						us		1	100%	100%	100%	100%	100%	
+1.7.2	Credenciamento (off-band)						1	us								
+1.8	Log de mudanças															
+1.8.1	Definição do formato		1					log		1	0%	100%	100%	100%	100%	
+1.8.2	Persistência		1					log		1	0%					
+1.9	Segurança															
+1.9.1	Configuração SSL			1						1	0%	0%	100%	100%	100%	
+1.9.2	Obtenção de certificado definitivo					1				1	0%	0%	0%	0%	100%	
+1.A	Design															
+1.A.1	Projeto gráfico		1							1	0%	100%	100%	100%	100%	
+1.A.2	CSS e templates internos			1						1	0%	0%	100%	100%	100%	
+1.A.3	CSS e templates públicos				1					1	0%	0%	0%	100%	100%	
+2	Customização e operação independente															
+2.1	Gestão de usuários															
+2.1.1	Definição de papéis e permissões		1					us		1	0%	100%	100%	100%	100%	
+2.1.2	CRUD de usuários	1	1					us	adm	2	50%	100%	100%	100%	100%	
+2.2	Fluxo de trabalho															
+2.2.1	Modelagem do workflow parametrizado						1									
+2.2.2	Implem. da interface de customização						1									
+2.3	Configuração de campos customizados															
+2.3.1	Modelagem da customização de campos						1									
+2.3.2	Implem. da interface de customização						1									
+2.4	Configuração de vocabulários controlados															
+2.4.1	Modelagem de vocabulários controlados	1	1					vc	adm	2	50%	100%	100%	100%	100%	
+2.4.2	Implem. da interface de edição de vocabulários internos	1	1					vc		2	50%	100%	100%	100%	100%	
+2.4.3	Implem. da interface de configuração de vocabulários externos				1	1		vc		2	0%	0%	0%	50%	100%	
+2.5	Interface de validação dos registros															
+2.5.1	Relatórios por datas de atualização e vencimento de prazos			1					adm	1	0%	0%	100%	100%	100%	
+2.5.2	Relatórios por campos de vocabulário controlado					1		vc		1	0%	0%	0%	0%	100%	
+2.5.3	Marcação de status de desatualizado			1				wf		1	0%	0%	100%	100%	100%	
+2.5.4	Notificação do registrador por e-mail			1				wf		1	0%	0%	100%	100%	100%	
+3	Coerência e integração entre plat. de registro de ensaios clínicos															
+3.1	Integração com a Plataforma Brasil						1									
+3.2	Integração com ICTRP (WHO)				1	1				2	0%	0%	0%	50%	100%	
+3.3	WS para integração com repositório regional						1									
+3.4	Mecanismo de importação de registros						1									
+3.5	Mecanismo de exportação de registros					1				1	0%	0%	0%	0%	100%	
+4	Portal público															
+4.1	Mecanismo de busca integrada e unificada				1					1	0%	0%	0%	100%	100%	
+4.2	Acesso área restrita para cadastro de registro				1					1	0%	0%	0%	100%	100%	
+4.3	Interface de recuperação					1				1	0%	0%	0%	0%	100%	
+4.4	Publicação SOPs					1				1	0%	0%	0%	0%	100%	
+4.5	Notícias						1									
+4.6	FAQs					1				1	0%	0%	0%	0%	100%	
+5	Implantação															
+5.1	Servidor de testes	1								1	100%	100%	100%	100%	100%	
+5.2	Servidor de homologação			1						1	0%	0%	100%	100%	100%	
+5.3	Servidores de produção					1				1	0%	0%	0%	0%	100%	
+																
+																
+																
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
