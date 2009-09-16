@@ -35,7 +35,7 @@ for off_mil, milestone in enumerate(MILES):
                 if num.startswith(cab_num) and num != cab_num:
                     print '     %-5s %-40s ' % (cab_num, cab_descr,)
             total = sum(miles)
-            feito = sum(miles[:off_mil+1])/float(total)
-            print '%3.f%% %-5s %-40s ' % (feito*100, num, descr,)
+            feito = sum(miles[:off_mil+1])/float(total)*100
+            print '%3.f%% %-5s %-40s ' % locals()
 
     arq.close()
