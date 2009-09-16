@@ -3,6 +3,12 @@
 
 MILES = 'v0.6 v0.7 v0.8 v0.9 v1.0'.split()
 
+#FMT_CAB = '     %(cab_num)-5s %(cab_descr)-40s'
+FMT_CAB = """||'''%(cab_num)s'''||'''%(cab_descr)s'''|| ||"""
+#FMT_ATIV = '%(feito)3.f%% %(num)-5s %(descr)-40s'
+FMT_ATIV = '||%(num)s||%(descr)s||%(feito).f%%||'
+
+
 def valor(s):
     try:
         return int(s)
@@ -33,9 +39,9 @@ for off_mil, milestone in enumerate(MILES):
             while cabecalhos:
                 cab_num, cab_descr = cabecalhos.pop(0)
                 if num.startswith(cab_num) and num != cab_num:
-                    print '     %-5s %-40s ' % (cab_num, cab_descr,)
+                    print FMT_CAB % locals()
             total = sum(miles)
             feito = sum(miles[:off_mil+1])/float(total)*100
-            print '%3.f%% %-5s %-40s ' % locals()
+            print FMT_ATIV % locals()
 
     arq.close()
