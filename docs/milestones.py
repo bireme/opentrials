@@ -9,11 +9,12 @@ def valor(s):
     except ValueError:
         return 0
 
-for off_mil, milestone in enumerate(MILES[:1]):
+for off_mil, milestone in enumerate(MILES):
     print '== %s ==' % milestone
 
     miolo = False
     arq = open('milestones.txt')
+    cabecalhos = []
     for lin in arq:
         lin = lin.rstrip()
         if not lin: continue
@@ -27,8 +28,12 @@ for off_mil, milestone in enumerate(MILES[:1]):
         num, descr = partes[:2]
         miles[:] = (valor(s) for s in partes[2:2+len(MILES)])
         if len(num) < 5: 
-            print '     %-5s %-40s ' % (num, descr,)
+            cabecalhos.append( (num, descr,) )
         if len(miles) > off_mil and miles[off_mil]:
+            while cabecalhos:
+                cab_num, cab_descr = cabecalhos.pop(0)
+                if num.startswith(cab_num) and num != cab_num:
+                    print '     %-5s %-40s ' % (cab_num, cab_descr,)
             total = sum(miles)
             feito = sum(miles[:off_mil+1])/float(total)
             print '%3.f%% %-5s %-40s ' % (feito*100, num, descr,)
