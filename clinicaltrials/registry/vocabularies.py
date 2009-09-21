@@ -1,5 +1,25 @@
 # coding: utf-8
 
+INSTITUTIONAL_RELATION = [
+    ('SupportSource', 'Source of monetary or material support'),
+    ('SecondarySponsor', 'Secondary sponsor'),
+]
+
+CONTACT_RELATION = [
+    ('PublicContact', 'Contact for Public Queries'),
+    ('ScientificContact', 'Contact for Scientific Queries'),
+]
+
+INCLUSION_GENDER = [('-', 'both'), ('M', 'male'), ('F', 'female'),]
+
+INCLUSION_AGE_UNIT = [
+    ('-', 'no limit'), 
+    ('Y', 'years'), 
+    ('M', 'months'),
+    ('D', 'days'), 
+    ('H', 'hours'),
+]
+    
 COUNTRIES = [
     ('BR', 'Brazil'), 
     ('AF', 'Afghanistan'), 
