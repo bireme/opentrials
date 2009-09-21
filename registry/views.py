@@ -9,7 +9,7 @@ from django.contrib.admin.widgets import AdminDateWidget
 
 
 def index(request):
-    latest_clinicalTrials = ClinicalTrial.objects.all().order_by('dt_first_enrollment')[:5]
+    latest_clinicalTrials = ClinicalTrial.objects.all()[:5]
     t = loader.get_template('registry/latest_clinicalTrials.html')
     c  = Context({
         'latest_clinicalTrials': latest_clinicalTrials,
@@ -21,9 +21,9 @@ def index(request):
 #    return render_to_response('registry/add_clinicalTrials.html')
     
 class ClinicalTrialForm(forms.ModelForm):
-    dt_first_enrollment = forms.DateTimeField(
+    date_enrollment_anticipated = forms.DateTimeField(
         widget=AdminDateWidget(),
-        label=ClinicalTrial._meta.get_field('dt_first_enrollment').verbose_name)
+        label=ClinicalTrial._meta.get_field('date_enrollment_anticipated').verbose_name)
 
     class Meta:
         model = ClinicalTrial

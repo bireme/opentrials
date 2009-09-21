@@ -8,10 +8,10 @@ class RecruitmentCountryInline(admin.TabularInline):
     
 class ClinicalTrialAdmin(admin.ModelAdmin):
     inlines = [RecruitmentCountryInline]
-    list_display = ('public_title', 'recruitment_status')
+    list_display = ('identifier', 'short_title', 'recruitment_status')
    
 class RecruitmentStatusAdmin(admin.ModelAdmin):
-    list_display = ('status', 'label', 'lang')
+    list_display = ('label', 'description')
 
 admin.site.register( ClinicalTrial, ClinicalTrialAdmin )
 admin.site.register( RecruitmentStatus, RecruitmentStatusAdmin )

@@ -1,20 +1,27 @@
 [{"pk": 1,
+    "model": "registry.studytype",
+    "fields": {
+        "description": "interventional",
+        "label": "interventional"}},
+{"pk": 1,
+    "model": "registry.studytype",
+    "fields": {
+        "description": "observational",
+        "label": "observational"}},
+{"pk": 1,
     "model": "registry.recruitmentstatus",
     "fields": {
-        "status": "pending",
-        "lang": "en",
+        "description": "pending",
         "label": "pending"}},
 {"pk": 2,
     "model": "registry.recruitmentstatus",
     "fields": {
-        "status": "recruiting",
-        "lang": "en",
+        "description": "recruiting",
         "label": "recruiting"}},
 {"pk": 3,
     "model": "registry.recruitmentstatus",
     "fields": {
-        "status": "suspended",
-        "lang": "en",
+        "description": "suspended",
         "label": "suspended"}},
 {"pk": 1,
     "model": "registry.clinicaltrial",
@@ -23,7 +30,8 @@
         "scientific_title": "Sensitive and rapid titrimetric and spectrophotometric methods for the determination of stavudine in pharmaceuticals using bromate-bromide and three dyes",
         "recruitment_status": 1,
         "target_sample_size": 4,
-        "dt_first_enrollment": "2009-08-25"}},
+        "study_type": 1,
+        "date_enrollment_anticipated": "2009-08-25"}},
 {"pk": 2,
     "model": "registry.clinicaltrial",
     "fields": {
@@ -31,7 +39,8 @@
         "scientific_title": "The Brazilian time and frequency atomic standards program",
         "recruitment_status": 2,
         "target_sample_size": 2,
-        "dt_first_enrollment": "2009-08-31"}},
+        "study_type": 1,
+        "date_enrollment_anticipated": "2009-08-31"}},
 {"pk": 3,
     "model": "registry.clinicaltrial",
     "fields": {
@@ -39,35 +48,36 @@
         "scientific_title": "Thermal properties of metal-metal bonded Pd(I) complexes supported onto porous Vycor glass",
         "recruitment_status": 1,
         "target_sample_size": 10,
-        "dt_first_enrollment": "2009-08-30"}},
+        "study_type": 1,
+        "date_enrollment_anticipated": "2009-08-30"}},
 {"pk": 1,
     "model": "registry.recruitmentcountry",
     "fields": {
         "trial": 1,
-        "country_code": "AX"}},
+        "country": "AX"}},
 {"pk": 2,
     "model": "registry.recruitmentcountry",
     "fields": {
         "trial": 1,
-        "country_code": "AO"}},
+        "country": "AO"}},
 {"pk": 3,
     "model": "registry.recruitmentcountry",
     "fields": {
         "trial": 2,
-        "country_code": "BR"}},
+        "country": "BR"}},
 {"pk": 4,
     "model": "registry.recruitmentcountry",
     "fields": {
         "trial": 2,
-        "country_code": "BR"}},
+        "country": "BR"}},
 {"pk": 5,
     "model": "registry.recruitmentcountry",
     "fields": {
         "trial": 3,
-        "country_code": "AF"}},
+        "country": "AF"}},
 {"pk": 6,
     "model": "registry.recruitmentcountry",
     "fields": {
         "trial": 3,
-        "country_code": "DZ"}}
+        "country": "DZ"}}
 ]
