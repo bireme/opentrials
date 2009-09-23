@@ -103,7 +103,7 @@ class TrialNumber(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
     issuing_authority = models.CharField(_('Issuing Authority'),
                                          max_length=255, db_index=True)
-    trial_number = models.CharField(_('Secondary Id Number'),
+    id_number = models.CharField(_('Secondary Id Number'),
                                 max_length=255, db_index=True)
 
     def __unicode__(self):
@@ -135,13 +135,14 @@ class Contact(models.Model):
     firstname = models.CharField(_('First Name'), max_length=50)
     middlename = models.CharField(_('Middle Name'), max_length=50, blank=True)
     lastname = models.CharField(_('Last Name'), max_length=50)
-    address = models.CharField(_('Address'), max_length=255)
-    city = models.CharField(_('City'), max_length=50)
-    country = models.CharField(_('Country'), max_length=50)
-    zip = models.CharField(_('Postal Code'), max_length=50)
-    telephone = models.CharField(_('Telephone'), max_length=255)
     email = models.EmailField(_('Address'), max_length=255)
-    affiliation = models.ForeignKey(Institution, verbose_name=_('Affiliation'))
+    affiliation = models.ForeignKey(Institution, verbose_name=_('Affiliation'),
+                                    null=True)
+    address = models.CharField(_('Address'), max_length=255, blank=True)
+    city = models.CharField(_('City'), max_length=50, blank=True)
+    country = models.CharField(_('Country'), max_length=50, blank=True)
+    zip = models.CharField(_('Postal Code'), max_length=50, blank=True)
+    telephone = models.CharField(_('Telephone'), max_length=255, blank=True)
     
     def name(self):
         names = self.firstname + u' ' + self.middlename + u' ' + self.lastname
@@ -159,13 +160,18 @@ class TrialContact(models.Model):
     def __unicode__(self):
         return u'%s, %s: %s' % (self.relation, self.trial.short_title(), self.contact.name())
     
+# TRDS 11 - Countries of Recruitment
+
 class RecruitmentCountry(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
     country = models.CharField(_('Country'), max_length=2, 
-                               choices=vocabularies.COUNTRIES)
+                               choices=vocabularies.COUNTRY)
     
     def __unicode__(self):
         return self.get_country_display()
+
+# TRDS 19 - Primary Outcome(s)
+# TRDS 20 - Keu Secondary Outcome(s)
     
 class Outcome(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
@@ -176,7 +182,22 @@ class Outcome(models.Model):
     
 
 ################################################### Controlled Vocabularies ###
-    
+
+class Descriptor(models.Model):
+    trial = models.ForeignKey(ClinicalTrial)
+    aspect = models.CharField(_('Trial Aspect'), max_length=255, 
+                        choices=vocabularies.TRIAL_ASPECT)
+    vocabulary = models.CharField(_('Vocabulary'), max_length=255, 
+                        choices=vocabularies.DESCRIPTOR_VOCABULARY)
+    level = models.CharField(_('Level'), max_length=255, 
+                        choices=vocabularies.DESCRIPTOR_LEVEL)
+    code = models.CharField(_('Code'), max_length=255)
+    text = models.CharField(_('Text'), max_length=255, 
+                                       blank=True)
+
+    def __unicode__(self):
+        return self.label
+
 class StudyType(models.Model):
     label = models.CharField(_('Label'), max_length=255, unique=True)
     description = models.CharField(_('Description'), max_length=2000, 
