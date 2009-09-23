@@ -10,6 +10,21 @@ CONTACT_RELATION = [
     ('ScientificContact', 'Contact for Scientific Queries'),
 ]
 
+TRIAL_ASPECT = [
+    ('HealthCondition', 'Health Condition or Problem Studied'), #TRDS 12
+    ('Intervention', 'Intervention'), #TRDS 13
+]
+
+DESCRIPTOR_LEVEL = [
+    ('general', 'General'),
+    ('specific', 'Specific'),
+]
+
+DESCRIPTOR_VOCABULARY = [
+    ('DeCS', 'Health Sciences Descriptors'),
+    ('ICD-10', 'International Classification of Diseases (10th. rev.)'),
+]
+
 INCLUSION_GENDER = [('-', 'both'), ('M', 'male'), ('F', 'female'),]
 
 INCLUSION_AGE_UNIT = [
@@ -20,7 +35,7 @@ INCLUSION_AGE_UNIT = [
     ('H', 'hours'),
 ]
     
-COUNTRIES = [
+COUNTRY = [
     ('BR', 'Brazil'), 
     ('AF', 'Afghanistan'), 
     ('AX', 'Aland Islands'), 
