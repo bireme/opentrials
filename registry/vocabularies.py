@@ -1,13 +1,13 @@
 # coding: utf-8
 
 INSTITUTIONAL_RELATION = [
-    ('SupportSource', 'Source of monetary or material support'),
-    ('SecondarySponsor', 'Secondary sponsor'),
+    ('SupportSource', 'Source of monetary or material support'), #TRDS 4
+    ('SecondarySponsor', 'Secondary sponsor'), #TRDS 6
 ]
 
 CONTACT_RELATION = [
-    ('PublicContact', 'Contact for Public Queries'),
-    ('ScientificContact', 'Contact for Scientific Queries'),
+    ('PublicContact', 'Contact for Public Queries'), #TRDS 7
+    ('ScientificContact', 'Contact for Scientific Queries'), #TRDS 8
 ]
 
 TRIAL_ASPECT = [
