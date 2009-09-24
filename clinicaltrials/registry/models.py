@@ -94,7 +94,30 @@ class ClinicalTrial(models.Model):
     def __unicode__(self):
         return u'%s %s' % (self.identifier(), self.short_title())
 
+    
+    def related_institutions(self, relation):
+        ''' return set of Institutions related to this trial with a 
+            given relationship '''
+        return (r.institution for r in 
+                self.trial_institution_set.filter(relation=relation).select_related())
+    
+    # TRDS 4 - Source(s) of Monetary Support
+    
+    def support_sources(self):
+        ''' return set of Institutions related to this trial with 
+            relation='SupportSource'
+        '''
+        return self.related_institutions('SupportSource')
+    
+    # TRDS 6 - Secondary Sponsor(s)
+    
+    def secondary_sponsors(self):
+        ''' return set of Institutions related to this trial with 
+            relation='SecondarySponsor'
+        '''
+        return self.related_institutions('SecondarySponsor')
 
+    
 ################################### Entities linked to a Clinical Trial ###    
     
 # TRDS 3 - Secondary Identifying Numbers
@@ -110,24 +133,25 @@ class TrialNumber(models.Model):
         return u'%s: %s' % (self.issuing_authority, self.trial_id)
 
 # TRDS 4 - Source(s) of Monetary Support
-# TRDS 5 - Primary Sponsor
 # TRDS 6 - Secondary Sponsor(s)
 
-class Institution(models.Model):
-    name = models.CharField(_('Name'), max_length=2000)
-
-    def __unicode__(self):
-        return safe_truncate(self.name, 80)
-    
 class TrialInstitution(models.Model):    
     trial = models.ForeignKey(ClinicalTrial)
-    institution = models.ForeignKey(Institution)
+    institution = models.ForeignKey('Institution')
     relation = models.CharField(_('Relationship'), max_length=255,
                             choices = vocabularies.INSTITUTIONAL_RELATION)
 
     def __unicode__(self):
         return u'%s, %s: %s' % (self.relation, self.trial, self.institution)
     
+# TRDS 5 - Primary Sponsor
+
+class Institution(models.Model):
+    name = models.CharField(_('Name'), max_length=2000)
+
+    def __unicode__(self):
+        return safe_truncate(self.name, 80)
+        
 # TRDS 7 - Contact for Public Queries
 # TRDS 8 - Contact for Scientific Queries
     
