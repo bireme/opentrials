@@ -34,6 +34,40 @@
     }
   }, 
   {
+    "pk": 2, 
+    "model": "registry.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Minimal trial record (only required fields)", 
+      "public_title": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "record_note": "", 
+      "date_enrollment_actual": "", 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "agemin_unit": "-", 
+      "record_status": "draft", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "target_sample_size": 0, 
+      "record_updated": "2009-09-25 22:16:33", 
+      "record_created": "2009-09-25 22:16:33", 
+      "hc_freetext": "", 
+      "study_type": 1, 
+      "i_freetext": "", 
+      "date_enrollment_anticipated": "", 
+      "recruitment_status": 1, 
+      "phase": 1, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "study_design": "", 
+      "gender": "-", 
+      "record_creator": "", 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 1
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "registry.trialnumber", 
     "fields": {
@@ -123,126 +157,6 @@
       "order": 4, 
       "interest": "secondary", 
       "description": "Adverse events. All serious adverse events (see section 5.4) will be collected. The analysis of this secondary outcome will focus specifically on bleeding events."
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "registry.studytype", 
-    "fields": {
-      "description": "", 
-      "label": "interventional"
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "registry.studytype", 
-    "fields": {
-      "description": "", 
-      "label": "observational"
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "registry.studyphase", 
-    "fields": {
-      "description": "not applicable", 
-      "label": "N/A"
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "registry.studyphase", 
-    "fields": {
-      "description": "exploratory trial", 
-      "label": "0"
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "registry.studyphase", 
-    "fields": {
-      "description": "phase 1", 
-      "label": "1"
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "registry.studyphase", 
-    "fields": {
-      "description": "phases 1-2", 
-      "label": "1-2"
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "registry.studyphase", 
-    "fields": {
-      "description": "phase 2", 
-      "label": "2"
-    }
-  }, 
-  {
-    "pk": 6, 
-    "model": "registry.studyphase", 
-    "fields": {
-      "description": "phases 2-3", 
-      "label": "2-3"
-    }
-  }, 
-  {
-    "pk": 7, 
-    "model": "registry.studyphase", 
-    "fields": {
-      "description": "phase 3", 
-      "label": "3"
-    }
-  }, 
-  {
-    "pk": 8, 
-    "model": "registry.studyphase", 
-    "fields": {
-      "description": "phase 4", 
-      "label": "4"
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "registry.recruitmentstatus", 
-    "fields": {
-      "description": "Recruitment of participants has not yet commenced at any site.", 
-      "label": "pending"
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "registry.recruitmentstatus", 
-    "fields": {
-      "description": "Open to recruitment\r\n", 
-      "label": "recruiting"
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "registry.recruitmentstatus", 
-    "fields": {
-      "description": "Recruitment has been temporarily stopped", 
-      "label": "suspended"
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "registry.recruitmentstatus", 
-    "fields": {
-      "description": "Participants are no longer being recruited. The trial is closed. Participants may, however, still be in follow-up.", 
-      "label": "complete"
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "registry.recruitmentstatus", 
-    "fields": {
-      "description": "Other recruitment status", 
-      "label": "other"
     }
   }
 ]

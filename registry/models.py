@@ -1,11 +1,13 @@
 from django.db import models
-from django.forms import ModelForm
 from django.utils.translation import ugettext as _
 
 import datetime
 
 from utilities import safe_truncate
-import vocabularies
+
+from vocabulary.models import StudyPhase, StudyType, RecruitmentStatus
+
+import choices
    
 class ClinicalTrial(models.Model):
     # TRDS 1
@@ -40,28 +42,31 @@ class ClinicalTrial(models.Model):
                                           max_length=8000)
     # TRDS 14b
     gender = models.CharField(_('Gender (inclusion sex)'), max_length=1,
-                              choices = vocabularies.INCLUSION_GENDER)
+                              choices=choices.INCLUSION_GENDER,
+                              default=choices.INCLUSION_GENDER[0][0])
     # TRDS 14c
     agemin_value = models.PositiveIntegerField(_('Inclusion Minimum Age'),
                                                default=0)
     agemin_unit = models.CharField(_('Minimum Age Unit'), max_length=1,
-                                   choices = vocabularies.INCLUSION_AGE_UNIT)
+                                   choices=choices.INCLUSION_AGE_UNIT,
+                                   default=choices.INCLUSION_AGE_UNIT[0][0])
     # TRDS 14d
     agemax_value = models.PositiveIntegerField(_('Inclusion Maximum Age'), 
                                                default=0)
     agemax_unit = models.CharField(_('Maximum Age Unit'), max_length=1,
-                                   choices = vocabularies.INCLUSION_AGE_UNIT)
+                                   choices=choices.INCLUSION_AGE_UNIT,
+                                   default=choices.INCLUSION_AGE_UNIT[0][0])
     # TRDS 14e
     exclusion_criteria = models.TextField(_('Exclusion Criteria'), blank=True, 
                                           max_length=8000)
     # TRDS 15a
-    study_type = models.ForeignKey('StudyType', verbose_name=_('Study Type'))
+    study_type = models.ForeignKey(StudyType, verbose_name=_('Study Type'))
 
     # TRDS 15b
     study_design = models.TextField(_('Study Design'), blank=True, 
                                           max_length=1000)
     # TRDS 15c
-    phase = models.ForeignKey('StudyPhase', verbose_name=_('Study Phase'), 
+    phase = models.ForeignKey(StudyPhase, verbose_name=_('Study Phase'), 
                               null=True)
     
     # TRDS 16a,b (type_enrollment="anticipated")
@@ -76,7 +81,7 @@ class ClinicalTrial(models.Model):
     target_sample_size = models.PositiveIntegerField(_('Target Sample Size'), 
                                                        default=0)
     # TRDS 18
-    recruitment_status = models.ForeignKey('RecruitmentStatus', 
+    recruitment_status = models.ForeignKey(RecruitmentStatus, 
                                            verbose_name=_('Recruitment Status'))
     
     ################################### internal use, administrative fields ###
@@ -89,8 +94,8 @@ class ClinicalTrial(models.Model):
 
     # editable fields for registry staff use
     record_status = models.CharField(_('Record Status'), max_length='64',
-                                     choices=vocabularies.TRIAL_RECORD_STATE,
-                                     default=vocabularies.TRIAL_RECORD_STATE[0][0])
+                                     choices=choices.TRIAL_RECORD_STATE,
+                                     default=choices.TRIAL_RECORD_STATE[0][0])
     record_note = models.CharField(_('Note (internal use only)'), max_length='255',
                                    blank=True)
     
@@ -100,7 +105,7 @@ class ClinicalTrial(models.Model):
     def save(self):
         if not self.id:
             self.record_created = datetime.datetime.now()
-        self.updated = datetime.datetime.now()
+        self.record_updated = datetime.datetime.now()
         super(ClinicalTrial, self).save()
 
     def identifier(self):
@@ -162,7 +167,7 @@ class TrialInstitution(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
     institution = models.ForeignKey('Institution')
     relation = models.CharField(_('Relationship'), max_length=255,
-                            choices = vocabularies.INSTITUTIONAL_RELATION)
+                            choices = choices.INSTITUTIONAL_RELATION)
 
     def __unicode__(self):
         return u'%s, %s: %s' % (self.relation, self.trial, self.institution)
@@ -203,7 +208,7 @@ class TrialContact(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
     contact = models.ForeignKey(Contact)
     relation = models.CharField(_('Relationship'), max_length=255,
-                            choices = vocabularies.CONTACT_RELATION)
+                            choices = choices.CONTACT_RELATION)
     
     def __unicode__(self):
         return u'%s, %s: %s' % (self.relation, self.trial.short_title(), self.contact.name())
@@ -213,7 +218,7 @@ class TrialContact(models.Model):
 class RecruitmentCountry(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
     country = models.CharField(_('Country'), max_length=2, 
-                               choices=vocabularies.COUNTRY)
+                               choices=choices.COUNTRY)
     
     class Meta:
         verbose_name_plural = _('Recruitment Countries')
@@ -227,57 +232,26 @@ class RecruitmentCountry(models.Model):
 class Outcome(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
     interest = models.CharField(_('Interest'), max_length=32, 
-                               choices=vocabularies.OUTCOME_INTEREST,
-                               default = vocabularies.OUTCOME_INTEREST[0][0])
+                               choices=choices.OUTCOME_INTEREST,
+                               default = choices.OUTCOME_INTEREST[0][0])
     order = models.PositiveIntegerField(default=0)
     description = models.TextField(_('Outcome Description'), max_length=8000)
 
     def __unicode__(self):
         return safe_truncate(self.description, 80)
-    
-
-################################################### Controlled Vocabularies ###
 
 class Descriptor(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
     aspect = models.CharField(_('Trial Aspect'), max_length=255, 
-                        choices=vocabularies.TRIAL_ASPECT)
+                        choices=choices.TRIAL_ASPECT)
     vocabulary = models.CharField(_('Vocabulary'), max_length=255, 
-                        choices=vocabularies.DESCRIPTOR_VOCABULARY)
+                        choices=choices.DESCRIPTOR_VOCABULARY)
     level = models.CharField(_('Level'), max_length=255, 
-                        choices=vocabularies.DESCRIPTOR_LEVEL)
+                        choices=choices.DESCRIPTOR_LEVEL)
     code = models.CharField(_('Code'), max_length=255)
     text = models.CharField(_('Text'), max_length=255, 
                                        blank=True)
 
     def __unicode__(self):
         return self.label
-
-class StudyType(models.Model):
-    label = models.CharField(_('Label'), max_length=255, unique=True)
-    description = models.TextField(_('Description'), max_length=2000, 
-                                   blank=True)
-
-    def __unicode__(self):
-        return self.label
-    
-class StudyPhase(models.Model):
-    label = models.CharField(_('Label'), max_length=255, unique=True)
-    description = models.TextField(_('Description'), max_length=2000,
-                                   blank=True)
-
-    def __unicode__(self):
-        return self.label
-
-class RecruitmentStatus(models.Model):
-    label = models.CharField(_('Label'), max_length=255, unique=True)
-    description = models.TextField(_('Description'), max_length=2000, 
-                                   blank=True)
-
-    class Meta:
-        verbose_name_plural = _('Recruitment Status')
-    
-    def __unicode__(self):
-        return self.label
-    
     
