@@ -100,7 +100,7 @@ class ClinicalTrial(models.Model):
                                    blank=True)
     
     class Meta:
-        ordering = ['record_updated',]
+        ordering = ['-record_updated',]
         
     def save(self):
         if not self.id:
@@ -144,7 +144,10 @@ class ClinicalTrial(models.Model):
             relation='SecondarySponsor'
         '''
         return self.related_institutions('SecondarySponsor')
-
+    
+    def updated_str(self):
+        return self.record_updated.strftime('%Y-%m-%d %H:%M')
+    updated_str.short_description = _('Updated')
     
 ################################### Entities linked to a Clinical Trial ###    
     
