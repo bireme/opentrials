@@ -14,7 +14,10 @@ class SecondaryNumberInline(admin.TabularInline):
 class ClinicalTrialAdmin(admin.ModelAdmin):
     inlines = [SecondaryNumberInline, RecruitmentCountryInline, 
                OutcomeInline]
-    list_display = ('identifier', 'short_title', 'recruitment_status',)
+    list_display = ('updated_str','identifier','short_title','record_status',)
+    list_display_links = ('identifier','short_title',)
+    list_filter = ('record_status','study_type','phase',
+                   'recruitment_status',)
        
 admin.site.register(ClinicalTrial, ClinicalTrialAdmin)
 admin.site.register(Institution)
