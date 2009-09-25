@@ -117,7 +117,7 @@ class ClinicalTrial(models.Model):
                                 self.scientific_title)
         else:
             tit = self.scientific_title
-        return safe_truncate(tit, 80)
+        return safe_truncate(tit, 120)
         
     def __unicode__(self):
         return u'%s %s' % (self.identifier(), self.short_title())
