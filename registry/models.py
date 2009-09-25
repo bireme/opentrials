@@ -2,8 +2,9 @@ from django.db import models
 from django.forms import ModelForm
 from django.utils.translation import ugettext as _
 
-from utilities import safe_truncate
+import datetime
 
+from utilities import safe_truncate
 import vocabularies
    
 class ClinicalTrial(models.Model):
@@ -15,28 +16,27 @@ class ClinicalTrial(models.Model):
                                          editable=False, db_index=True)
     # TRDS 5
     primary_sponsor = models.ForeignKey('Institution', null=True,
-                                        verbose_name=_('Primary Sponsor'))
-    
+                                        verbose_name=_('Primary Sponsor'))    
     # TRDS 9a
-    public_title = models.CharField(_('Public Title'), blank=True,
+    public_title = models.TextField(_('Public Title'), blank=True,
                                     max_length=2000)
     # TRDS 9b
     acronym = models.CharField(_('Acronym'), blank=True, max_length=255)
     
     # TRDS 10a
-    scientific_title = models.CharField(_('Scientific Title'),
+    scientific_title = models.TextField(_('Scientific Title'),
                                         max_length=2000)
     # TRDS 10b
     scientific_acronym = models.CharField(_('Scientific Acronym'), blank=True,
                                           max_length=255)
     # TRDS 12a
-    hc_freetext = models.CharField(_('Health Condition(s)'), blank=True,
+    hc_freetext = models.TextField(_('Health Condition(s)'), blank=True,
                                    max_length=8000)
     # TRDS 13a
-    i_freetext = models.CharField(_('Intervention(s)'), blank=True,
+    i_freetext = models.TextField(_('Intervention(s)'), blank=True,
                                    max_length=8000)
     # TRDS 14a
-    inclusion_criteria = models.CharField(_('Inclusion Criteria'), blank=True,
+    inclusion_criteria = models.TextField(_('Inclusion Criteria'), blank=True,
                                           max_length=8000)
     # TRDS 14b
     gender = models.CharField(_('Gender (inclusion sex)'), max_length=1,
@@ -52,26 +52,25 @@ class ClinicalTrial(models.Model):
     agemax_unit = models.CharField(_('Maximum Age Unit'), max_length=1,
                                    choices = vocabularies.INCLUSION_AGE_UNIT)
     # TRDS 14e
-    exclusion_criteria = models.CharField(_('Exclusion Criteria'), blank=True, 
+    exclusion_criteria = models.TextField(_('Exclusion Criteria'), blank=True, 
                                           max_length=8000)
     # TRDS 15a
     study_type = models.ForeignKey('StudyType', verbose_name=_('Study Type'))
 
     # TRDS 15b
-    study_design = models.CharField(_('Study Design'), blank=True, 
+    study_design = models.TextField(_('Study Design'), blank=True, 
                                           max_length=1000)
-
     # TRDS 15c
     phase = models.ForeignKey('StudyPhase', verbose_name=_('Study Phase'), 
                               null=True)
     
     # TRDS 16a,b (type_enrollment="anticipated")
     date_enrollment_anticipated = models.CharField( # yyyy-mm or yyyy-mm-dd
-        _('Anticipated Date of First Enrollment'), max_length=10)
+        _('Anticipated Date of First Enrollment'), max_length=10, blank=True)
 
     # TRDS 16a,b (type_enrollment="actual")
     date_enrollment_actual = models.CharField( # yyyy-mm or yyyy-mm-dd
-        _('Actual Date of First Enrollment'), max_length=10)
+        _('Actual Date of First Enrollment'), max_length=10, blank=True)
 
     # TRDS 17
     target_sample_size = models.PositiveIntegerField(_('Target Sample Size'), 
@@ -79,9 +78,33 @@ class ClinicalTrial(models.Model):
     # TRDS 18
     recruitment_status = models.ForeignKey('RecruitmentStatus', 
                                            verbose_name=_('Recruitment Status'))
+    
+    ################################### internal use, administrative fields ###
+    
+    # non-editable, field contents should be generated automatically
+    record_creator = models.CharField(_('Record Creator'), max_length=255, 
+                                      editable=False, blank=True)
+    record_created = models.DateTimeField(_('Record Created'), editable=False)
+    record_updated = models.DateTimeField(_('Record Updated'), editable=False)
+
+    # editable fields for registry staff use
+    record_status = models.CharField(_('Record Status'), max_length='64',
+                                     choices=vocabularies.TRIAL_RECORD_STATE,
+                                     default=vocabularies.TRIAL_RECORD_STATE[0][0])
+    record_note = models.CharField(_('Note (internal use only)'), max_length='255',
+                                   blank=True)
+    
+    class Meta:
+        ordering = ['record_updated',]
+        
+    def save(self):
+        if not self.id:
+            self.record_created = datetime.datetime.now()
+        self.updated = datetime.datetime.now()
+        super(ClinicalTrial, self).save()
 
     def identifier(self):
-        return self.trial_id or '(#%s)' % self.pk
+        return self.trial_id or '(req:%s)' % self.pk
     
     def short_title(self):
         if self.scientific_acronym:
@@ -147,8 +170,9 @@ class TrialInstitution(models.Model):
 # TRDS 5 - Primary Sponsor
 
 class Institution(models.Model):
-    name = models.CharField(_('Name'), max_length=2000)
-
+    name = models.CharField(_('Name'), max_length=255)
+    address = models.TextField(_('Address'), max_length=1500, blank=True)
+    
     def __unicode__(self):
         return safe_truncate(self.name, 80)
         
@@ -191,15 +215,22 @@ class RecruitmentCountry(models.Model):
     country = models.CharField(_('Country'), max_length=2, 
                                choices=vocabularies.COUNTRY)
     
+    class Meta:
+        verbose_name_plural = _('Recruitment Countries')
+
     def __unicode__(self):
         return self.get_country_display()
 
 # TRDS 19 - Primary Outcome(s)
-# TRDS 20 - Keu Secondary Outcome(s)
+# TRDS 20 - Key Secondary Outcome(s)
     
 class Outcome(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
-    description = models.CharField(_('Outcome Description'), max_length=8000)
+    interest = models.CharField(_('Interest'), max_length=32, 
+                               choices=vocabularies.OUTCOME_INTEREST,
+                               default = vocabularies.OUTCOME_INTEREST[0][0])
+    order = models.PositiveIntegerField(default=0)
+    description = models.TextField(_('Outcome Description'), max_length=8000)
 
     def __unicode__(self):
         return safe_truncate(self.description, 80)
@@ -224,7 +255,7 @@ class Descriptor(models.Model):
 
 class StudyType(models.Model):
     label = models.CharField(_('Label'), max_length=255, unique=True)
-    description = models.CharField(_('Description'), max_length=2000, 
+    description = models.TextField(_('Description'), max_length=2000, 
                                    blank=True)
 
     def __unicode__(self):
@@ -232,7 +263,7 @@ class StudyType(models.Model):
     
 class StudyPhase(models.Model):
     label = models.CharField(_('Label'), max_length=255, unique=True)
-    description = models.CharField(_('Description'), max_length=2000,
+    description = models.TextField(_('Description'), max_length=2000,
                                    blank=True)
 
     def __unicode__(self):
@@ -240,9 +271,12 @@ class StudyPhase(models.Model):
 
 class RecruitmentStatus(models.Model):
     label = models.CharField(_('Label'), max_length=255, unique=True)
-    description = models.CharField(_('Description'), max_length=2000, 
+    description = models.TextField(_('Description'), max_length=2000, 
                                    blank=True)
 
+    class Meta:
+        verbose_name_plural = _('Recruitment Status')
+    
     def __unicode__(self):
         return self.label
     

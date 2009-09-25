@@ -34,6 +34,18 @@ INCLUSION_AGE_UNIT = [
     ('D', 'days'), 
     ('H', 'hours'),
 ]
+
+TRIAL_RECORD_STATE = [
+    ('draft', 'draft'),
+    ('pending', 'pending'),
+    ('published', 'published'),
+    ('rejected', 'rejected'),
+]   
+
+OUTCOME_INTEREST = [
+    ('primary', 'Primary'),
+    ('secondary', 'Secondary'),
+]    
     
 COUNTRY = [
     ('BR', 'Brazil'), 
