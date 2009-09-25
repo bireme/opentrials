@@ -18,6 +18,7 @@ class ClinicalTrialAdmin(admin.ModelAdmin):
     list_display_links = ('identifier','short_title',)
     list_filter = ('record_status','study_type','phase',
                    'recruitment_status',)
+    search_fields = ('scientific_title', 'public_title', 'i_freetext',)
        
 admin.site.register(ClinicalTrial, ClinicalTrialAdmin)
 admin.site.register(Institution)
