@@ -1,0 +1,122 @@
+[
+  {
+    "pk": 1, 
+    "model": "vocabulary.studytype", 
+    "fields": {
+      "description": "", 
+      "label": "interventional"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.studytype", 
+    "fields": {
+      "description": "", 
+      "label": "observational"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "vocabulary.studyphase", 
+    "fields": {
+      "description": "not applicable", 
+      "label": "N/A"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.studyphase", 
+    "fields": {
+      "description": "exploratory trial", 
+      "label": "0"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.studyphase", 
+    "fields": {
+      "description": "phase 1", 
+      "label": "1"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "vocabulary.studyphase", 
+    "fields": {
+      "description": "phases 1-2", 
+      "label": "1-2"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "vocabulary.studyphase", 
+    "fields": {
+      "description": "phase 2", 
+      "label": "2"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "vocabulary.studyphase", 
+    "fields": {
+      "description": "phases 2-3", 
+      "label": "2-3"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "vocabulary.studyphase", 
+    "fields": {
+      "description": "phase 3", 
+      "label": "3"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "vocabulary.studyphase", 
+    "fields": {
+      "description": "phase 4", 
+      "label": "4"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "vocabulary.recruitmentstatus", 
+    "fields": {
+      "description": "Recruitment of participants has not yet commenced at any site.", 
+      "label": "pending"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.recruitmentstatus", 
+    "fields": {
+      "description": "Open to recruitment\r\n", 
+      "label": "recruiting"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.recruitmentstatus", 
+    "fields": {
+      "description": "Recruitment has been temporarily stopped", 
+      "label": "suspended"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "vocabulary.recruitmentstatus", 
+    "fields": {
+      "description": "Participants are no longer being recruited. The trial is closed. Participants may, however, still be in follow-up.", 
+      "label": "complete"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "vocabulary.recruitmentstatus", 
+    "fields": {
+      "description": "Other recruitment status", 
+      "label": "other"
+    }
+  }
+]

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from django.contrib import admin
-from clinicaltrials.registry.models import *
+from registry.models import *
 
 class RecruitmentCountryInline(admin.TabularInline):
     model = RecruitmentCountry
@@ -16,11 +16,5 @@ class ClinicalTrialAdmin(admin.ModelAdmin):
                OutcomeInline]
     list_display = ('identifier', 'short_title', 'recruitment_status',)
        
-class SimpleVocabularyAdmin(admin.ModelAdmin):
-    list_display = ('label', 'description',)
-
 admin.site.register(ClinicalTrial, ClinicalTrialAdmin)
 admin.site.register(Institution)
-
-for model in (RecruitmentStatus, StudyType, StudyPhase, ):
-    admin.site.register(model, SimpleVocabularyAdmin)

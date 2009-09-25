@@ -10,21 +10,6 @@ CONTACT_RELATION = [
     ('ScientificContact', 'Contact for Scientific Queries'), #TRDS 8
 ]
 
-TRIAL_ASPECT = [
-    ('HealthCondition', 'Health Condition or Problem Studied'), #TRDS 12
-    ('Intervention', 'Intervention'), #TRDS 13
-]
-
-DESCRIPTOR_LEVEL = [
-    ('general', 'General'),
-    ('specific', 'Specific'),
-]
-
-DESCRIPTOR_VOCABULARY = [
-    ('DeCS', 'Health Sciences Descriptors'),
-    ('ICD-10', 'International Classification of Diseases (10th. rev.)'),
-]
-
 INCLUSION_GENDER = [('-', 'both'), ('M', 'male'), ('F', 'female'),]
 
 INCLUSION_AGE_UNIT = [
@@ -45,7 +30,25 @@ TRIAL_RECORD_STATE = [
 OUTCOME_INTEREST = [
     ('primary', 'Primary'),
     ('secondary', 'Secondary'),
-]    
+]
+
+######################################################## Descriptor choices ###
+
+TRIAL_ASPECT = [
+    ('HealthCondition', 'Health Condition or Problem Studied'), #TRDS 12
+    ('Intervention', 'Intervention'), #TRDS 13
+]
+
+DESCRIPTOR_LEVEL = [
+    ('general', 'General'),
+    ('specific', 'Specific'),
+]
+
+DESCRIPTOR_VOCABULARY = [
+    ('DeCS', 'Health Sciences Descriptors'),
+    ('ICD-10', 'International Classification of Diseases (10th. rev.)'),
+]
+
     
 COUNTRY = [
     ('BR', 'Brazil'), 

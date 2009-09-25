@@ -84,6 +84,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'clinicaltrials.registry',
+    'clinicaltrials.vocabulary',
     'clinicaltrials.rebrac',
 )
 
