@@ -10,3 +10,10 @@ SECRET_KEY = 'rmbg(!8sa@&8o9pnnd@*szm+axos_6r$)r48jc2r$^_8+wz)po'
 MIDDLEWARE_CLASSES += (
     # 'debug_middleware.DebugFooter',
 )
+
+INSTALLED_APPS += (
+    'graphviz',
+)
+
+GRAPHVIZ_DOT_CMD = '/usr/bin/dot'
+
