@@ -191,7 +191,7 @@ class Contact(models.Model):
     firstname = models.CharField(_('First Name'), max_length=50)
     middlename = models.CharField(_('Middle Name'), max_length=50, blank=True)
     lastname = models.CharField(_('Last Name'), max_length=50)
-    email = models.EmailField(_('Address'), max_length=255)
+    email = models.EmailField(_('E-mail'), max_length=255)
     affiliation = models.ForeignKey(Institution, verbose_name=_('Affiliation'),
                                     null=True)
     address = models.CharField(_('Address'), max_length=255, blank=True)
