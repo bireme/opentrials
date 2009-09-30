@@ -5,7 +5,7 @@ import datetime
 
 from utilities import safe_truncate
 
-from vocabulary.models import StudyPhase, StudyType, RecruitmentStatus
+from vocabulary.models import StudyPhase, StudyType, RecruitmentStatus, InterventionCode
 
 import choices
    
@@ -229,6 +229,19 @@ class RecruitmentCountry(models.Model):
     def __unicode__(self):
         return self.get_country_display()
 
+# TRDS 13b - Intervention(s), intervention code
+
+class TrialInterventionCode(models.Model):    
+    trial = models.ForeignKey(ClinicalTrial)
+    i_code = models.ForeignKey(InterventionCode)
+    order = models.PositiveIntegerField(default=0)
+    
+    class Meta:
+        ordering = ['order']
+    
+    def __unicode__(self):
+        return u'%s: %s' % (self.trial.short_title(), self.i_code.label)
+
 # TRDS 19 - Primary Outcome(s)
 # TRDS 20 - Key Secondary Outcome(s)
     
@@ -239,6 +252,9 @@ class Outcome(models.Model):
                                default = choices.OUTCOME_INTEREST[0][0])
     order = models.PositiveIntegerField(default=0)
     description = models.TextField(_('Outcome Description'), max_length=8000)
+
+    class Meta:
+        ordering = ['order']
 
     def __unicode__(self):
         return safe_truncate(self.description, 80)
@@ -254,6 +270,10 @@ class Descriptor(models.Model):
     code = models.CharField(_('Code'), max_length=255)
     text = models.CharField(_('Text'), max_length=255, 
                                        blank=True)
+    order = models.PositiveIntegerField(default=0)
+    
+    class Meta:
+        ordering = ['order']
 
     def __unicode__(self):
         return self.code
