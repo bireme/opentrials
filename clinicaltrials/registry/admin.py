@@ -11,6 +11,9 @@ class RecruitmentCountryInline(admin.TabularInline):
 class OutcomeInline(admin.StackedInline):
     model = Outcome
     
+class TrialInterventionCodeInline(admin.TabularInline):
+    model = TrialInterventionCode
+    
 class SecondaryNumberInline(admin.TabularInline):
     model = TrialNumber
 
@@ -23,7 +26,7 @@ class TrialInstitutionInline(admin.TabularInline):
 class ClinicalTrialAdmin(admin.ModelAdmin):
     inlines = [SecondaryNumberInline, RecruitmentCountryInline, 
                OutcomeInline, TrialContactInline, TrialInstitutionInline,
-               DescriptorInline]
+               DescriptorInline, TrialInterventionCodeInline]
     list_display = ('updated_str','identifier','short_title','record_status',)
     list_display_links = ('identifier','short_title',)
     list_filter = ('record_status','study_type','phase',

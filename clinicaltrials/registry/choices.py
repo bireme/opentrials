@@ -47,6 +47,7 @@ DESCRIPTOR_LEVEL = [
 DESCRIPTOR_VOCABULARY = [
     ('DeCS', 'DeCS: Health Sciences Descriptors'),
     ('ICD-10', 'ICD-10: International Classification of Diseases (10th. rev.)'),
+    ('CAS', 'Chemical Abstracts Service'),
 ]
 
     
