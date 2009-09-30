@@ -36,6 +36,6 @@ class RecruitmentStatus(SimpleVocabulary):
     ''' TRDS 18 '''
 
     class Meta(SimpleVocabulary.Meta):
-        verbose_name_plural = _('Recruitment Status')
+        verbose_name_plural = _('Recruitment status')
     
 
