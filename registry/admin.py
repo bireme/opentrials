@@ -2,31 +2,19 @@
 from django.contrib import admin
 from registry.models import *
 
-class DescriptorInline(admin.TabularInline):
-    model = Descriptor
-
-class RecruitmentCountryInline(admin.TabularInline):
-    model = RecruitmentCountry
+tabular_inline_models = [Descriptor, RecruitmentCountry, TrialInterventionCode,
+                         TrialNumber, TrialContact, TrialInstitution]
+tabular_inlines = []
+for model in tabular_inline_models:
+    cls_name = model.__name__+'line'
+    cls = type(cls_name, (admin.TabularInline,), {'model':model})
+    tabular_inlines.append(cls)
 
 class OutcomeInline(admin.StackedInline):
     model = Outcome
-    
-class TrialInterventionCodeInline(admin.TabularInline):
-    model = TrialInterventionCode
-    
-class SecondaryNumberInline(admin.TabularInline):
-    model = TrialNumber
-
-class TrialContactInline(admin.TabularInline):
-    model = TrialContact
-
-class TrialInstitutionInline(admin.TabularInline):
-    model = TrialInstitution
-    
+       
 class ClinicalTrialAdmin(admin.ModelAdmin):
-    inlines = [SecondaryNumberInline, RecruitmentCountryInline, 
-               OutcomeInline, TrialContactInline, TrialInstitutionInline,
-               DescriptorInline, TrialInterventionCodeInline]
+    inlines = tabular_inlines + [OutcomeInline]
     list_display = ('updated_str','identifier','short_title','record_status',)
     list_display_links = ('identifier','short_title',)
     list_filter = ('record_status','study_type','phase',

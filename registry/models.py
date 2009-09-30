@@ -276,5 +276,5 @@ class Descriptor(models.Model):
         ordering = ['order']
 
     def __unicode__(self):
-        return self.code
+        return u'[%s] %s: %s' % (self.vocabulary, self.code, self.text)
     
