@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--ICTRP Data Dump-->
+<trials>
+    <trial>
+        <main>
+            <reg_name>ISRCTN</reg_name>
+            <last_updated>31 August 2009</last_updated>
+            <trial_id>ISRCTN86750102</trial_id>
+            <date_registration>10/09/2004</date_registration>
+            <Primary_sponsor>London School of Hygiene and Tropical Medicine (UK)</Primary_sponsor>
+            <Public_Title>CRASH2 Trial, a large randomised placebo controlled trial among trauma patients with significant haemorrhage of the effects of an antifibrinolytic treatment on death and transfusion requirement</Public_Title>
+            <Acronym>CRASH2</Acronym>
+            <Scientific_title />
+            <Date_enrolement>Apr  1 2007</Date_enrolement>
+            <Target_size>20,000 (Target number of participants for the sub-group analyses: up to 1,000)</Target_size>
+            <Recruitment_Status>Ongoing/Recruiting</Recruitment_Status>
+            <url>http://isrctn.org/ISRCTN86750102</url>
+            <Study_type>Interventional</Study_type>
+            <Study_design>Randomised placebo controlled trial</Study_design>
+        </main>
+        <Countries>
+            <Country>International</Country>
+        </Countries>
+        <Contacts>
+            <Firstname>Ian</Firstname>
+            <Lastname>Roberts</Lastname>
+            <Address>London School of Hygiene and Tropical Medicine
+1st Floor, Wolfson Building
+Keppel Street</Address>
+            <Telephone>+44 (0)207 958 8128</Telephone>
+            <Email>ian.roberts@lshtm.ac.uk</Email>
+            <Affiliation />
+        </Contacts>
+        <Eligibility_criteria>
+            <Inclusion_criteria>Inclusion criteria: All adult trauma patients who are considered to be at risk of significant haemorrhage and are within 8 hours of the injury, are eligible for trial entry if they appear to be at least 16 years old. There are no other pre-specified exclusion criteria, as the fundamental eligibility criterion is the responsible doctor's 'uncertainty' whether or not to use tranexamic acid (TXA) in a particular adult with traumatic haemorrhage. Patients for whom there is considered by the responsible doctor to be a clear indication for TXA should not be randomised. Likewise, any for whom there is considered to be a clear contraindication to TXA (such as, perhaps, those who have clinical evidence of a thrombotic disseminated intravascular coagulation) should not be randomised. All those for whom the responsible doctor is substantially uncertain as to whether or not to use an anti-fibrinolytic agent are eligible for randomisation, and as many such patients as possible should be considered for the trial.</Inclusion_criteria>
+            <Exclusion_criteria>Exclusion criteria: The fundamental eligibility criterion is the responsible doctor's 'uncertainty' as to whether or not to use an antifibrinolytic agent in a particular adult with traumatic haemorrhage. Patients for whom the responsible doctor considers there is a clear indication for antifibrinolytic therapy should not be randomised. Likewise, patients for whom there is considered to be a clear contraindication to antifibrinolytic therapy (such as, perhaps, those who have clinical evidence of a thrombotic disseminated intravascular coagulation) should not be randomised. Where the responsible doctor is substantially uncertain as to whether or not to use an antifibrinolytic, all these patients are eligible for randomisation and should be considered for the trial. There are no other pre-specified exclusion criteria.</Exclusion_criteria>
+            <Inclusion_agemin />
+            <Inclusion_agemax />
+            <Inclusion_sex />
+        </Eligibility_criteria>
+        <Health_condition>
+            <Condition_FreeText>Trauma</Condition_FreeText>
+        </Health_condition>
+        <Intervention>
+            <Intervention_FreeText>Tranexamic acid 2 g intravenously over 8 hours versus placebo.
+
+The list of all participating countries can be found at:  http://www.crash2.lshtm.ac.uk</Intervention_FreeText>
+        </Intervention>
+        <Primary_outcome>
+            <Outcome_Name>The primary outcome measure is death in hospital within four weeks of injury (causes of death will be classified).
+
+An additional outcome measure for the sub-group analyses (added as of 18/06/2008): 
+1. Increase in volume of intracranial bleeding. A repeat CT scan will be carried out 24 - 48 hours after injury and compared to a clinical baseline CT scan.</Outcome_Name>
+        </Primary_outcome>
+        <Secondary_outcome>
+            <Outcome_Name>Secondary outcome measures will be receipt of a blood transfusion, volume of blood transfused, surgical intervention and the occurrence of vascular events (haemorrhagic stroke, occlusive stroke, myocardial infarction, pulmonary embolism, clinically diagnosed deep vein thrombosis). Data will be recorded on a single sided outcome form which can be completed entirely from the hospital notes. There will be no additional tests.
+
+Additional outcome measures for the sub-group analyses (added as of 18/06/2008): 
+A repeat CT scan will be carried out 24 - 48 hours after injury and compared to a clinical baseline CT scan to assess the following:
+1. Frequency of progressive haematomas
+2. Frequency of delayed haematomas
+3. New focal ischaemic lesions</Outcome_Name>
+        </Secondary_outcome>
+        <Secondary_IDs>
+            <SecondaryID>HTA 06/303/20; SLCTR/2007/008 </SecondaryID>
+            <SecondaryID>NCT00375258</SecondaryID>
+        </Secondary_IDs>
+        <Source_support>
+            <Source_Name>1. NIHR Health Technology Assessment Programme - HTA (UK) 
+2. Bupa foundation (UK)
+3. Moulton Charitable trust (UK)
+4. London School of Hygiene and Tropical Medicine (UK)</Source_Name>
+        </Source_support>
+        <Secondary_Sponsors>
+            <Secondary_Sponsor>N/A</Secondary_Sponsor>
+        </Secondary_Sponsors>
+    </trial>
+</trials>
