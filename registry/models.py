@@ -256,5 +256,5 @@ class Descriptor(models.Model):
                                        blank=True)
 
     def __unicode__(self):
-        return self.label
+        return self.code
     
