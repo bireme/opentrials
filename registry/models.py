@@ -5,7 +5,7 @@ import datetime
 
 from utilities import safe_truncate
 
-from vocabulary.models import StudyPhase, StudyType, RecruitmentStatus, InterventionCode
+from vocabulary.models import CountryCode, StudyPhase, StudyType, RecruitmentStatus, InterventionCode
 
 import choices
    
@@ -196,7 +196,8 @@ class Contact(models.Model):
                                     null=True)
     address = models.CharField(_('Address'), max_length=255, blank=True)
     city = models.CharField(_('City'), max_length=50, blank=True)
-    country = models.CharField(_('Country'), max_length=50, blank=True)
+    country = models.ForeignKey(CountryCode, verbose_name=_('Country'), 
+                                blank=True, null=True)
     zip = models.CharField(_('Postal Code'), max_length=50, blank=True)
     telephone = models.CharField(_('Telephone'), max_length=255, blank=True)
     
@@ -220,14 +221,13 @@ class TrialContact(models.Model):
 
 class RecruitmentCountry(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
-    country = models.CharField(_('Country'), max_length=2, 
-                               choices=choices.COUNTRY)
+    country = models.ForeignKey(CountryCode, verbose_name=_('Country'))
     
     class Meta:
         verbose_name_plural = _('Recruitment Countries')
 
     def __unicode__(self):
-        return self.get_country_display()
+        return self.country.description
 
 # TRDS 13b - Intervention(s), intervention code
 

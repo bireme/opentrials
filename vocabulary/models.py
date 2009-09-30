@@ -17,6 +17,12 @@ class SimpleVocabulary(models.Model):
     def __unicode__(self):
         return self.label
         
+class CountryCode(SimpleVocabulary):
+    ''' TRDS 11, Contact '''
+
+    def __unicode__(self):
+        return self.description
+    
 class InterventionCode(SimpleVocabulary):
     ''' TRDS 18 '''
 
