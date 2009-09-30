@@ -28,81 +28,81 @@
 
 <!ELEMENT trials (trial+)>
 
-<!ELEMENT trial (main,contacts,countries,criteria,health_condition_code,health_condition_keyword,intervention_code,
-          intervention_keyword,primary_outcome,secondary_outcome,secondary_sponsor,secondary_ids,source_support)>
+    <!ELEMENT trial (main,contacts,countries,criteria,health_condition_code,health_condition_keyword,intervention_code,
+              intervention_keyword,primary_outcome,secondary_outcome,secondary_sponsor,secondary_ids,source_support)>
 
-<!ELEMENT main (trial_id,utrn?,reg_name,date_registration,primary_sponsor,public_title,acronym?,scientific_title,scientific_acronym?,
-          date_enrolment,type_enrolment,target_size,recruitment_status,url?,study_type,study_design,phase,hc_freetext?,i_freetext?)>	
-<!ELEMENT trial_id (#PCDATA)>
-<!ELEMENT utrn (#PCDATA)>
-<!ELEMENT reg_name (#PCDATA)>
-<!ELEMENT date_registration (#PCDATA)><!-- dd/mm/yyyy -->
-<!ELEMENT primary_sponsor (#PCDATA)>
-<!ELEMENT public_title (#PCDATA)>
-<!ELEMENT acronym (#PCDATA)>
-<!ELEMENT scientific_title (#PCDATA)>
-<!ELEMENT scientific_acronym (#PCDATA)>
-<!ELEMENT date_enrolment (#PCDATA)><!-- dd/mm/yyyy -->
-<!ELEMENT type_enrolment (#PCDATA)>
-<!ELEMENT target_size (#PCDATA)>
-<!ELEMENT recruitment_status (#PCDATA)><!-- Pending,Recruiting,Suspended,Complete,Other -->
-<!ELEMENT url (#PCDATA)>
-<!ELEMENT study_type (#PCDATA)><!-- interventional,observational -->
-<!ELEMENT study_design (#PCDATA)>
-<!ELEMENT phase (#PCDATA)>
-<!ELEMENT hc_freetext (#PCDATA)>
-<!ELEMENT i_freetext (#PCDATA)>
+        <!ELEMENT main (trial_id,utrn?,reg_name,date_registration,primary_sponsor,public_title,acronym?,scientific_title,scientific_acronym?,
+                  date_enrolment,type_enrolment,target_size,recruitment_status,url?,study_type,study_design,phase,hc_freetext?,i_freetext?)>
+            <!ELEMENT trial_id (#PCDATA)>
+            <!ELEMENT utrn (#PCDATA)>
+            <!ELEMENT reg_name (#PCDATA)>
+            <!ELEMENT date_registration (#PCDATA)><!-- dd/mm/yyyy -->
+            <!ELEMENT primary_sponsor (#PCDATA)>
+            <!ELEMENT public_title (#PCDATA)>
+            <!ELEMENT acronym (#PCDATA)>
+            <!ELEMENT scientific_title (#PCDATA)>
+            <!ELEMENT scientific_acronym (#PCDATA)>
+            <!ELEMENT date_enrolment (#PCDATA)><!-- dd/mm/yyyy -->
+            <!ELEMENT type_enrolment (#PCDATA)>
+            <!ELEMENT target_size (#PCDATA)>
+            <!ELEMENT recruitment_status (#PCDATA)><!-- Pending,Recruiting,Suspended,Complete,Other -->
+            <!ELEMENT url (#PCDATA)>
+            <!ELEMENT study_type (#PCDATA)><!-- interventional,observational -->
+            <!ELEMENT study_design (#PCDATA)>
+            <!ELEMENT phase (#PCDATA)>
+            <!ELEMENT hc_freetext (#PCDATA)>
+            <!ELEMENT i_freetext (#PCDATA)>
 
-<!ELEMENT contacts (contact+)>
-<!ELEMENT contact (type,firstname,middlename,lastname,address,city,country1,zip,telephone,email,affiliation)>
-<!ELEMENT type (#PCDATA)><!-- Public,Scientific -->
-<!ELEMENT firstname (#PCDATA)>
-<!ELEMENT middlename (#PCDATA)>
-<!ELEMENT lastname (#PCDATA)>
-<!ELEMENT address (#PCDATA)>
-<!ELEMENT city (#PCDATA)>
-<!ELEMENT country1 (#PCDATA)>
-<!ELEMENT zip (#PCDATA)>
-<!ELEMENT telephone (#PCDATA)>
-<!ELEMENT email (#PCDATA)>
-<!ELEMENT affiliation (#PCDATA)>
+        <!ELEMENT contacts (contact+)>
+            <!ELEMENT contact (type,firstname,middlename,lastname,address,city,country1,zip,telephone,email,affiliation)>
+                <!ELEMENT type (#PCDATA)><!-- Public,Scientific -->
+                <!ELEMENT firstname (#PCDATA)>
+                <!ELEMENT middlename (#PCDATA)>
+                <!ELEMENT lastname (#PCDATA)>
+                <!ELEMENT address (#PCDATA)>
+                <!ELEMENT city (#PCDATA)>
+                <!ELEMENT country1 (#PCDATA)>
+                <!ELEMENT zip (#PCDATA)>
+                <!ELEMENT telephone (#PCDATA)>
+                <!ELEMENT email (#PCDATA)>
+                <!ELEMENT affiliation (#PCDATA)>
 
-<!ELEMENT countries (country2+)>
-<!ELEMENT country2 (#PCDATA)>
+        <!ELEMENT countries (country2+)>
+            <!ELEMENT country2 (#PCDATA)>
 
-<!ELEMENT criteria (inclusion_criteria,agemin,agemax,gender,exclusion_criteria)>
-<!ELEMENT inclusion_criteria (#PCDATA)>
-<!ELEMENT agemin (#PCDATA)>
-<!ELEMENT agemax (#PCDATA)>
-<!ELEMENT gender (#PCDATA)>
-<!ELEMENT exclusion_criteria (#PCDATA)>
+        <!ELEMENT criteria (inclusion_criteria,agemin,agemax,gender,exclusion_criteria)>
+            <!ELEMENT inclusion_criteria (#PCDATA)>
+            <!ELEMENT agemin (#PCDATA)>
+            <!ELEMENT agemax (#PCDATA)>
+            <!ELEMENT gender (#PCDATA)>
+            <!ELEMENT exclusion_criteria (#PCDATA)>
 
-<!ELEMENT health_condition_code (hc_code+)>
-<!ELEMENT hc_code (#PCDATA)>
+        <!ELEMENT health_condition_code (hc_code+)>
+            <!ELEMENT hc_code (#PCDATA)>
 
-<!ELEMENT health_condition_keyword (hc_keyword+)>
-<!ELEMENT hc_keyword (#PCDATA)>
+        <!ELEMENT health_condition_keyword (hc_keyword+)>
+            <!ELEMENT hc_keyword (#PCDATA)>
 
-<!ELEMENT intervention_code (i_code+)>
-<!ELEMENT i_code (#PCDATA)>
+        <!ELEMENT intervention_code (i_code+)>
+            <!ELEMENT i_code (#PCDATA)>
 
-<!ELEMENT intervention_keyword (i_keyword+)>
-<!ELEMENT i_keyword (#PCDATA)>
+        <!ELEMENT intervention_keyword (i_keyword+)>
+            <!ELEMENT i_keyword (#PCDATA)>
 
-<!ELEMENT primary_outcome (prim_outcome+)>
-<!ELEMENT prim_outcome (#PCDATA)>
+        <!ELEMENT primary_outcome (prim_outcome+)>
+            <!ELEMENT prim_outcome (#PCDATA)>
 
-<!ELEMENT secondary_outcome (sec_outcome+)>
-<!ELEMENT sec_outcome (#PCDATA)>
+        <!ELEMENT secondary_outcome (sec_outcome+)>
+            <!ELEMENT sec_outcome (#PCDATA)>
 
-<!ELEMENT secondary_sponsor (sponsor_name+)>
-<!ELEMENT sponsor_name (#PCDATA)>
+        <!ELEMENT secondary_sponsor (sponsor_name+)>
+            <!ELEMENT sponsor_name (#PCDATA)>
 
-<!ELEMENT secondary_ids (secondary_id+)>
-<!ELEMENT secondary_id (sec_id,issuing_authority)>
-<!ELEMENT sec_id (#PCDATA)>
-<!ELEMENT issuing_authority (#PCDATA)>
+        <!ELEMENT secondary_ids (secondary_id+)>
+            <!ELEMENT secondary_id (sec_id,issuing_authority)>
+                <!ELEMENT sec_id (#PCDATA)>
+                <!ELEMENT issuing_authority (#PCDATA)>
 
-<!ELEMENT source_support (source_name+)>
-<!ELEMENT source_name (#PCDATA)>
+        <!ELEMENT source_support (source_name+)>
+            <!ELEMENT source_name (#PCDATA)>
 
