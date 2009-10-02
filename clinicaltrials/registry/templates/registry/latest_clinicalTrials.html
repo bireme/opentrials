@@ -6,7 +6,7 @@
     {% if latest_clinicalTrials %}
         <ul>
         {% for ct in latest_clinicalTrials %}
-            <li>{{ ct.public_title }}</li>
+            <li>{{ ct }}</li>
         {% endfor %}
         </ul>
     {% else %}

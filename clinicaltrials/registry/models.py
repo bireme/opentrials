@@ -121,13 +121,21 @@ class ClinicalTrial(models.Model):
         
     def __unicode__(self):
         return u'%s %s' % (self.identifier(), self.short_title())
+    
+    def trial_id_display(self):
+        ''' return the trial id or an explicit message it is None '''
+        if self.trial_id:
+            return self.trial_id
+        else:
+            msg = 'not assigned (request #%)' % self.pk
 
     
     def related_institutions(self, relation):
         ''' return set of Institutions related to this trial with a 
-            given relationship '''
+            given relationship 
+        '''
         return (r.institution for r in 
-                self.trial_institution_set.filter(relation=relation).select_related())
+                self.trialinstitution_set.filter(relation=relation).select_related())
     
     # TRDS 4 - Source(s) of Monetary Support
     
@@ -148,6 +156,30 @@ class ClinicalTrial(models.Model):
     def updated_str(self):
         return self.record_updated.strftime('%Y-%m-%d %H:%M')
     updated_str.short_description = _('Updated')
+
+    def related_contacts(self, relation):
+        ''' return set of Contacts related to this trial with a 
+            given relationship 
+        '''
+        return (r.contact for r in 
+                self.trialcontact_set.filter(relation=relation).select_related())
+    
+    # TRDS 7 - Contact for Public Queries
+    
+    def public_contacts(self):
+        ''' return set of Contacts related to this trial with 
+            relation='PublicContact'
+        '''
+        return self.related_contacts('PublicContact')
+    
+    # TRDS 8 - Contact for Scientific Queries
+
+    def scientific_contacts(self):
+        ''' return set of Contacts related to this trial with 
+            relation='ScientificContact'
+        '''
+        return self.related_contacts('ScientificContact')
+    
     
 ################################### Entities linked to a Clinical Trial ###    
     
@@ -161,7 +193,7 @@ class TrialNumber(models.Model):
                                 max_length=255, db_index=True)
 
     def __unicode__(self):
-        return u'%s: %s' % (self.issuing_authority, self.trial_id)
+        return u'%s: %s' % (self.issuing_authority, self.id_number)
 
 # TRDS 4 - Source(s) of Monetary Support
 # TRDS 6 - Secondary Sponsor(s)
@@ -213,9 +245,13 @@ class TrialContact(models.Model):
     contact = models.ForeignKey(Contact)
     relation = models.CharField(_('Relationship'), max_length=255,
                             choices = choices.CONTACT_RELATION)
+    status = models.CharField(_('Status'), max_length=255,
+                            choices = choices.CONTACT_STATUS,
+                            default = choices.CONTACT_STATUS[0][0])
     
-    def __unicode__(self):
-        return u'%s, %s: %s' % (self.relation, self.trial.short_title(), self.contact.name())
+    def __unicode__(self):       
+        return u'%s, %s: %s (%s)' % (self.relation, self.trial.short_title(), 
+                                     self.contact.name(), self.status)
     
 # TRDS 11 - Countries of Recruitment
 
