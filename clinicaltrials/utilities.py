@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from django.http import HttpResponse
+
+def smoke_test(request):
+    from datetime import datetime
+    return HttpResponse(datetime.now().strftime('%H:%M:%S'))
+
+
 ELLIPSIS = u'\u2026'
 
 def safe_truncate(text, max_length, ellipsis=ELLIPSIS, encoding='utf-8', 

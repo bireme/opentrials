@@ -1,8 +1,9 @@
 from django.conf.urls.defaults import *
 
-# Uncomment the next two lines to enable the admin:
-from django.contrib import admin
-admin.autodiscover()
+import utilities
+
+from django.contrib import admin # Django admin UI 
+admin.autodiscover()             # Django admin UI 
 
 urlpatterns = patterns('',
     # Registry application
@@ -11,7 +12,10 @@ urlpatterns = patterns('',
     # Rebrac public site application
     (r'^', include('clinicaltrials.rebrac.urls')),
 
-    # Django admin application and documentation
+    # Django admin UI and documentation
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    (r'^admin/', include(admin.site.urls)),    
+    (r'^admin/', include(admin.site.urls)),
+    
+    # Diagnostic views
+    (r'^smoke/', utilities.smoke_test),
 )
