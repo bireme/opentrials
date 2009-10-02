@@ -1,23 +1,27 @@
-"""
-This file demonstrates two different styles of tests (one doctest and one
-unittest). These will both pass when you run "manage.py test".
-
-Replace these with more appropriate tests for your application.
-"""
-
 from django.test import TestCase
+from registry.models import *
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.failUnlessEqual(1 + 1, 2)
+class SecondaryNumbers(TestCase):
+    fixtures = ['first_3_trials.json']
 
-__test__ = {"doctest": """
-Another way to test that 1 + 1 is equal to 2.
+    def setUp(self):
+        title = u'Comparison of Ascorbic Acid and Grape Seed'
+        self.asc_trial = ClinicalTrial.objects.get(
+            public_title__istartswith=title)
 
->>> 1 + 1 == 2
-True
-"""}
+    def test_short_title(self):
+        start = u'Effect of Ascorbic Acid'
+        self.assert_(self.asc_trial.short_title().startswith(start))
+        
+    def test_secondary_numbers(self):
+        self.assert_(len(self.asc_trial.trialnumber_set.all())==2)
+        
+    def test_public_contacts(self):
+        contacts = list(self.asc_trial.public_contacts())
+        self.assert_(len(contacts)==1)
+        self.assert_(contacts[0].firstname==u'Naser')
 
+    def test_scientific_contacts(self):
+        contacts = list(self.asc_trial.scientific_contacts())
+        self.assert_(len(contacts)==1)
+        self.assert_(contacts[0].firstname==u'Naser')

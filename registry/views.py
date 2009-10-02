@@ -4,9 +4,9 @@ from django.shortcuts import render_to_response
 from clinicaltrials.registry.models import ClinicalTrial
 from django.http import HttpResponse
 from django import forms
+from django.utils.translation import ugettext as _
 
 from django.contrib.admin.widgets import AdminDateWidget
-
 
 def index(request):
     latest_clinicalTrials = ClinicalTrial.objects.all()[:5]
@@ -16,10 +16,12 @@ def index(request):
     })
     return HttpResponse(t.render(c))
 
-#def add(request):
-#    t = loader.get_template('registry/add_clinicalTrials.html')
-#    return render_to_response('registry/add_clinicalTrials.html')
-    
+
+def trial_registration_data_set(request):
+    ''' TRDS view '''
+
+
+
 class ClinicalTrialForm(forms.ModelForm):
     date_enrollment_anticipated = forms.DateTimeField(
         widget=AdminDateWidget(),

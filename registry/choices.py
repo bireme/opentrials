@@ -12,6 +12,11 @@ CONTACT_RELATION = [
     ('ScientificContact', 'Contact for Scientific Queries'), #TRDS 8
 ]
 
+CONTACT_STATUS = [
+    ('Active', 'Active and current contact'), 
+    ('Inactive', 'Inactive or previous contact'), 
+]
+
 OUTCOME_INTEREST = [
     ('primary', 'Primary'), # TRDS 19
     ('secondary', 'Secondary'), # TRDS 20
