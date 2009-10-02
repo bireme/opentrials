@@ -277,4 +277,5 @@ class Descriptor(models.Model):
 
     def __unicode__(self):
         return u'[%s] %s: %s' % (self.vocabulary, self.code, self.text)
+
     

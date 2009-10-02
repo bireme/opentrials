@@ -1,10 +1,13 @@
 {% extends "base.html" %}
- 
+
+<!-- TODO: login and logout urls must use url tag for reverse view lookup -->
+
 {% block login %}
    {% if username %}
-      &lt;{{username}}&gt;
+      {{username}} <a href="/accounts/logout">[log out]</a>
+
    {% else %}
-      <a href="/login">log in</a>
+      <a href="/accounts/login">[log in]</a>
    {% endif %}   
 {% endblock %}
 
@@ -12,8 +15,6 @@
 
 {% block body %}
 
-<form action="/rb/login">
-<input type="submit">
-</form>
+Futuras instalações da home do Rebrac
 
 {% endblock %}
