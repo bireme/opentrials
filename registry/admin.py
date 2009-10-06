@@ -20,8 +20,12 @@ class ClinicalTrialAdmin(admin.ModelAdmin):
     list_filter = ('record_status','study_type','phase',
                    'recruitment_status',)
     search_fields = ('scientific_title', 'public_title', 'i_freetext',)
-              
+
+class DescriptorAdmin(admin.ModelAdmin):
+    list_display = ('trial_identifier','vocabulary','code', 'text')
+    
+    
 admin.site.register(ClinicalTrial, ClinicalTrialAdmin)
-admin.site.register(Descriptor)
+admin.site.register(Descriptor, DescriptorAdmin)
 admin.site.register(Institution)
 admin.site.register(Contact)
