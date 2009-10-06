@@ -6,7 +6,12 @@
 
 <table>
     {% for link in links %} <!-- TODO: use url filter to remove hardcoded path -->
-        <tr><td><a href="/rg/form/{{ trial_pk }}/{{ link.form_name }}/">{{ link.label }}</a></td></tr>
+        <tr>
+            <td><a href="/rg/form/{{ trial_pk }}/{{ link.form_name }}/">{{ link.label }}
+                </a></td>
+            <td><img src="{{link.icon}}" /></td>    
+            <td>{{link.msg}}</td>    
+        </tr>
     {% endfor %}    
 </table>
 

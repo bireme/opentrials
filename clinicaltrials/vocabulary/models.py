@@ -2,7 +2,6 @@ from django.db import models
 from django.utils.translation import ugettext as _
 
 from utilities import safe_truncate
-import choices
 
 ################################################### Controlled Vocabularies ###
 
@@ -16,12 +15,24 @@ class SimpleVocabulary(models.Model):
 
     def __unicode__(self):
         return self.label
+    
+    def choice_label(self):
+        ''' return the label to be used in (value, label) choice pairs '''
+        return self.label
+    
+    @classmethod
+    def choices(cls, limit=300):
+        return ( (i.pk, i.choice_label()) for i in cls.objects.all()[:limit] )
         
 class CountryCode(SimpleVocabulary):
-    ''' TRDS 11, Contact '''
-
+    ''' TRDS 11, Countries of Recruitment 
+        also used for Contacts and Institutions
+    '''
+    
     def __unicode__(self):
         return self.description
+    
+    choice_label = __unicode__
     
 class InterventionCode(SimpleVocabulary):
     ''' TRDS 18 '''

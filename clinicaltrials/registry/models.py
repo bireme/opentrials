@@ -211,7 +211,9 @@ class TrialInstitution(models.Model):
 
 class Institution(models.Model):
     name = models.CharField(_('Name'), max_length=255)
-    address = models.TextField(_('Address'), max_length=1500, blank=True)
+    address = models.TextField(_('Postal Address'), max_length=1500, blank=True)
+    country = models.ForeignKey(CountryCode, verbose_name=_('Country'), 
+                                blank=True, null=True)
     
     def __unicode__(self):
         return safe_truncate(self.name, 80)
@@ -227,7 +229,7 @@ class Contact(models.Model):
     affiliation = models.ForeignKey(Institution, verbose_name=_('Affiliation'),
                                     null=True)
     address = models.CharField(_('Address'), max_length=255, blank=True)
-    city = models.CharField(_('City'), max_length=50, blank=True)
+    city = models.CharField(_('City'), max_length=255, blank=True)
     country = models.ForeignKey(CountryCode, verbose_name=_('Country'), 
                                 blank=True, null=True)
     zip = models.CharField(_('Postal Code'), max_length=50, blank=True)
@@ -313,5 +315,8 @@ class Descriptor(models.Model):
 
     def __unicode__(self):
         return u'[%s] %s: %s' % (self.vocabulary, self.code, self.text)
+    
+    def trial_identifier(self):
+        return self.trial.identifier()
 
     

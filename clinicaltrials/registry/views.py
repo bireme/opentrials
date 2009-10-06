@@ -19,13 +19,20 @@ def index(request):
     return HttpResponse(t.render(c))
 
 
+TRIAL_FORMS = ('TrialIdentificationForm', 'SponsorsForm', 
+               'HealthConditionsForm', 'InterventionsForm',
+               'RecruitmentForm', 'StudyTypeForm'
+               )
+
 def edit_trial_index(request, trial_pk):
     ''' start view '''
-    forms = ('TrialIdentificationForm', 'RecruitmentForm')
     links = []
-    for name in forms:
+    for name in TRIAL_FORMS:
         form = getattr(trds_forms, name)
-        links.append({'label':form.title, 'form_name':name})
+        data = dict(label=form.title, form_name=name)
+        data['icon'] = '/media/img/admin/icon_alert.gif'
+        data['msg'] = 'Blank fields'
+        links.append(data)
     trial_pk = 1 # TODO: remove hardcoded id!!!
     return render_to_response('registry/trial_index.html', 
                               {'trial_pk':trial_pk,'links':links})    
@@ -42,7 +49,6 @@ class ClinicalTrialForm(forms.ModelForm):
 
     class Meta:
         model = ClinicalTrial
-      
         
 def add(request):
     if request.method == 'POST':
