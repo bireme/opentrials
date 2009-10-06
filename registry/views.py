@@ -8,6 +8,8 @@ from django.utils.translation import ugettext as _
 
 from django.contrib.admin.widgets import AdminDateWidget
 
+import trds_forms
+
 def index(request):
     latest_clinicalTrials = ClinicalTrial.objects.all()[:5]
     t = loader.get_template('registry/latest_clinicalTrials.html')
@@ -17,11 +19,22 @@ def index(request):
     return HttpResponse(t.render(c))
 
 
-def trial_registration_data_set(request):
-    ''' TRDS view '''
+def edit_trial_index(request, trial_pk):
+    ''' start view '''
+    forms = ('TrialIdentificationForm', 'RecruitmentForm')
+    links = []
+    for name in forms:
+        form = getattr(trds_forms, name)
+        links.append({'label':form.title, 'form_name':name})
+    trial_pk = 1 # TODO: remove hardcoded id!!!
+    return render_to_response('registry/trial_index.html', 
+                              {'trial_pk':trial_pk,'links':links})    
 
-
-
+def edit_trial_form(request, trial_pk, form_name):
+    ''' form view '''
+    form = getattr(trds_forms, form_name)
+    return render_to_response('registry/trial_form.html', {'form':form()})    
+    
 class ClinicalTrialForm(forms.ModelForm):
     date_enrollment_anticipated = forms.DateTimeField(
         widget=AdminDateWidget(),

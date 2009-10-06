@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block body_title %}{% trans "Trial Summary" %}{% endblock %}
+
+{% block body %}
+
+<table>
+    {% for link in links %} <!-- TODO: use url filter to remove hardcoded path -->
+        <tr><td><a href="/rg/form/{{ trial_pk }}/{{ link.form_name }}/">{{ link.label }}</a></td></tr>
+    {% endfor %}    
+</table>
+
+{% endblock %}
