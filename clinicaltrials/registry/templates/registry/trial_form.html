@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block body_title %}{{ form.title }}{% endblock %}
+
+{% block body %}
+
+    <form action="./" method="POST">
+        <table>
+        {{form.as_table}}
+        </table>
+        <input type="submit">
+    </form>
+
+
+{% endblock %}
