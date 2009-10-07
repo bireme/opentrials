@@ -1,6 +1,1974 @@
 [
   {
     "pk": 1, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Brazil", 
+      "label": "BR"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Afghanistan", 
+      "label": "AF"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Aland Islands", 
+      "label": "AX"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Albania", 
+      "label": "AL"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Algeria", 
+      "label": "DZ"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "American Samoa", 
+      "label": "AS"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Andorra", 
+      "label": "AD"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Angola", 
+      "label": "AO"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Anguilla", 
+      "label": "AI"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Antarctica", 
+      "label": "AQ"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Antigua and Barbuda", 
+      "label": "AG"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Argentina", 
+      "label": "AR"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Armenia", 
+      "label": "AM"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Aruba", 
+      "label": "AW"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Australia", 
+      "label": "AU"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Austria", 
+      "label": "AT"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Azerbaijan", 
+      "label": "AZ"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Bahamas", 
+      "label": "BS"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Bahrain", 
+      "label": "BH"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Bangladesh", 
+      "label": "BD"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Barbados", 
+      "label": "BB"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Belarus", 
+      "label": "BY"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Belgium", 
+      "label": "BE"
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Belize", 
+      "label": "BZ"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Benin", 
+      "label": "BJ"
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Bermuda", 
+      "label": "BM"
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Bhutan", 
+      "label": "BT"
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Bolivia", 
+      "label": "BO"
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Bosnia and Herzegovina", 
+      "label": "BA"
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Botswana", 
+      "label": "BW"
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Bouvet Island", 
+      "label": "BV"
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "British Indian Ocean Territory", 
+      "label": "IO"
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Brunei Darussalam", 
+      "label": "BN"
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Bulgaria", 
+      "label": "BG"
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Burkina Faso", 
+      "label": "BF"
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Burundi", 
+      "label": "BI"
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Cambodia", 
+      "label": "KH"
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Cameroon", 
+      "label": "CM"
+    }
+  }, 
+  {
+    "pk": 39, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Canada", 
+      "label": "CA"
+    }
+  }, 
+  {
+    "pk": 40, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Cape Verde", 
+      "label": "CV"
+    }
+  }, 
+  {
+    "pk": 41, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Cayman Islands", 
+      "label": "KY"
+    }
+  }, 
+  {
+    "pk": 42, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Central African Republic", 
+      "label": "CF"
+    }
+  }, 
+  {
+    "pk": 43, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Chad", 
+      "label": "TD"
+    }
+  }, 
+  {
+    "pk": 44, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Chile", 
+      "label": "CL"
+    }
+  }, 
+  {
+    "pk": 45, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "China", 
+      "label": "CN"
+    }
+  }, 
+  {
+    "pk": 46, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Christmas Island", 
+      "label": "CX"
+    }
+  }, 
+  {
+    "pk": 47, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Cocos (Keeling) Islands", 
+      "label": "CC"
+    }
+  }, 
+  {
+    "pk": 48, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Colombia", 
+      "label": "CO"
+    }
+  }, 
+  {
+    "pk": 49, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Comoros", 
+      "label": "KM"
+    }
+  }, 
+  {
+    "pk": 50, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Congo", 
+      "label": "CG"
+    }
+  }, 
+  {
+    "pk": 51, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Congo, The Democratic Republic of the", 
+      "label": "CD"
+    }
+  }, 
+  {
+    "pk": 52, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Cook Islands", 
+      "label": "CK"
+    }
+  }, 
+  {
+    "pk": 53, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Costa Rica", 
+      "label": "CR"
+    }
+  }, 
+  {
+    "pk": 54, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Cote d'Ivoire", 
+      "label": "CI"
+    }
+  }, 
+  {
+    "pk": 55, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Croatia", 
+      "label": "HR"
+    }
+  }, 
+  {
+    "pk": 56, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Cuba", 
+      "label": "CU"
+    }
+  }, 
+  {
+    "pk": 57, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Cyprus", 
+      "label": "CY"
+    }
+  }, 
+  {
+    "pk": 58, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Czech Republic", 
+      "label": "CZ"
+    }
+  }, 
+  {
+    "pk": 59, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Denmark", 
+      "label": "DK"
+    }
+  }, 
+  {
+    "pk": 60, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Djibouti", 
+      "label": "DJ"
+    }
+  }, 
+  {
+    "pk": 61, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Dominica", 
+      "label": "DM"
+    }
+  }, 
+  {
+    "pk": 62, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Dominican Republic", 
+      "label": "DO"
+    }
+  }, 
+  {
+    "pk": 63, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Ecuador", 
+      "label": "EC"
+    }
+  }, 
+  {
+    "pk": 64, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Egypt", 
+      "label": "EG"
+    }
+  }, 
+  {
+    "pk": 65, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "El Salvador", 
+      "label": "SV"
+    }
+  }, 
+  {
+    "pk": 66, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Equatorial Guinea", 
+      "label": "GQ"
+    }
+  }, 
+  {
+    "pk": 67, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Eritrea", 
+      "label": "ER"
+    }
+  }, 
+  {
+    "pk": 68, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Estonia", 
+      "label": "EE"
+    }
+  }, 
+  {
+    "pk": 69, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Ethiopia", 
+      "label": "ET"
+    }
+  }, 
+  {
+    "pk": 70, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Falkland Islands (Malvinas)", 
+      "label": "FK"
+    }
+  }, 
+  {
+    "pk": 71, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Faroe Islands", 
+      "label": "FO"
+    }
+  }, 
+  {
+    "pk": 72, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Fiji", 
+      "label": "FJ"
+    }
+  }, 
+  {
+    "pk": 73, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Finland", 
+      "label": "FI"
+    }
+  }, 
+  {
+    "pk": 74, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "France", 
+      "label": "FR"
+    }
+  }, 
+  {
+    "pk": 75, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "French Guiana", 
+      "label": "GF"
+    }
+  }, 
+  {
+    "pk": 76, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "French Polynesia", 
+      "label": "PF"
+    }
+  }, 
+  {
+    "pk": 77, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "French Southern Territories", 
+      "label": "TF"
+    }
+  }, 
+  {
+    "pk": 78, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Gabon", 
+      "label": "GA"
+    }
+  }, 
+  {
+    "pk": 79, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Gambia", 
+      "label": "GM"
+    }
+  }, 
+  {
+    "pk": 80, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Georgia", 
+      "label": "GE"
+    }
+  }, 
+  {
+    "pk": 81, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Germany", 
+      "label": "DE"
+    }
+  }, 
+  {
+    "pk": 82, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Ghana", 
+      "label": "GH"
+    }
+  }, 
+  {
+    "pk": 83, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Gibraltar", 
+      "label": "GI"
+    }
+  }, 
+  {
+    "pk": 84, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Greece", 
+      "label": "GR"
+    }
+  }, 
+  {
+    "pk": 85, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Greenland", 
+      "label": "GL"
+    }
+  }, 
+  {
+    "pk": 86, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Grenada", 
+      "label": "GD"
+    }
+  }, 
+  {
+    "pk": 87, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Guadeloupe", 
+      "label": "GP"
+    }
+  }, 
+  {
+    "pk": 88, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Guam", 
+      "label": "GU"
+    }
+  }, 
+  {
+    "pk": 89, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Guatemala", 
+      "label": "GT"
+    }
+  }, 
+  {
+    "pk": 90, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Guernsey", 
+      "label": "GG"
+    }
+  }, 
+  {
+    "pk": 91, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Guinea", 
+      "label": "GN"
+    }
+  }, 
+  {
+    "pk": 92, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Guinea-Bissau", 
+      "label": "GW"
+    }
+  }, 
+  {
+    "pk": 93, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Guyana", 
+      "label": "GY"
+    }
+  }, 
+  {
+    "pk": 94, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Haiti", 
+      "label": "HT"
+    }
+  }, 
+  {
+    "pk": 95, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Heard Island and McDonald Islands", 
+      "label": "HM"
+    }
+  }, 
+  {
+    "pk": 96, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Holy See (Vatican City State)", 
+      "label": "VA"
+    }
+  }, 
+  {
+    "pk": 97, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Honduras", 
+      "label": "HN"
+    }
+  }, 
+  {
+    "pk": 98, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Hong Kong", 
+      "label": "HK"
+    }
+  }, 
+  {
+    "pk": 99, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Hungary", 
+      "label": "HU"
+    }
+  }, 
+  {
+    "pk": 100, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Iceland", 
+      "label": "IS"
+    }
+  }, 
+  {
+    "pk": 101, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "India", 
+      "label": "IN"
+    }
+  }, 
+  {
+    "pk": 102, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Indonesia", 
+      "label": "ID"
+    }
+  }, 
+  {
+    "pk": 103, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Iran, Islamic Republic of", 
+      "label": "IR"
+    }
+  }, 
+  {
+    "pk": 104, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Iraq", 
+      "label": "IQ"
+    }
+  }, 
+  {
+    "pk": 105, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Ireland", 
+      "label": "IE"
+    }
+  }, 
+  {
+    "pk": 106, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Isle of Man", 
+      "label": "IM"
+    }
+  }, 
+  {
+    "pk": 107, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Israel", 
+      "label": "IL"
+    }
+  }, 
+  {
+    "pk": 108, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Italy", 
+      "label": "IT"
+    }
+  }, 
+  {
+    "pk": 109, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Jamaica", 
+      "label": "JM"
+    }
+  }, 
+  {
+    "pk": 110, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Japan", 
+      "label": "JP"
+    }
+  }, 
+  {
+    "pk": 111, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Jersey", 
+      "label": "JE"
+    }
+  }, 
+  {
+    "pk": 112, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Jordan", 
+      "label": "JO"
+    }
+  }, 
+  {
+    "pk": 113, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Kazakhstan", 
+      "label": "KZ"
+    }
+  }, 
+  {
+    "pk": 114, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Kenya", 
+      "label": "KE"
+    }
+  }, 
+  {
+    "pk": 115, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Kiribati", 
+      "label": "KI"
+    }
+  }, 
+  {
+    "pk": 116, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Korea, Democratic People's Republic of", 
+      "label": "KP"
+    }
+  }, 
+  {
+    "pk": 117, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Korea, Republic of", 
+      "label": "KR"
+    }
+  }, 
+  {
+    "pk": 118, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Kuwait", 
+      "label": "KW"
+    }
+  }, 
+  {
+    "pk": 119, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Kyrgyzstan", 
+      "label": "KG"
+    }
+  }, 
+  {
+    "pk": 120, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Lao People's Democratic Republic", 
+      "label": "LA"
+    }
+  }, 
+  {
+    "pk": 121, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Latvia", 
+      "label": "LV"
+    }
+  }, 
+  {
+    "pk": 122, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Lebanon", 
+      "label": "LB"
+    }
+  }, 
+  {
+    "pk": 123, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Lesotho", 
+      "label": "LS"
+    }
+  }, 
+  {
+    "pk": 124, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Liberia", 
+      "label": "LR"
+    }
+  }, 
+  {
+    "pk": 125, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Libyan Arab Jamahiriya", 
+      "label": "LY"
+    }
+  }, 
+  {
+    "pk": 126, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Liechtenstein", 
+      "label": "LI"
+    }
+  }, 
+  {
+    "pk": 127, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Lithuania", 
+      "label": "LT"
+    }
+  }, 
+  {
+    "pk": 128, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Luxembourg", 
+      "label": "LU"
+    }
+  }, 
+  {
+    "pk": 129, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Macao", 
+      "label": "MO"
+    }
+  }, 
+  {
+    "pk": 130, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Macedonia, The Former Yugoslav Republic of", 
+      "label": "MK"
+    }
+  }, 
+  {
+    "pk": 131, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Madagascar", 
+      "label": "MG"
+    }
+  }, 
+  {
+    "pk": 132, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Malawi", 
+      "label": "MW"
+    }
+  }, 
+  {
+    "pk": 133, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Malaysia", 
+      "label": "MY"
+    }
+  }, 
+  {
+    "pk": 134, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Maldives", 
+      "label": "MV"
+    }
+  }, 
+  {
+    "pk": 135, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Mali", 
+      "label": "ML"
+    }
+  }, 
+  {
+    "pk": 136, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Malta", 
+      "label": "MT"
+    }
+  }, 
+  {
+    "pk": 137, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Marshall Islands", 
+      "label": "MH"
+    }
+  }, 
+  {
+    "pk": 138, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Martinique", 
+      "label": "MQ"
+    }
+  }, 
+  {
+    "pk": 139, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Mauritania", 
+      "label": "MR"
+    }
+  }, 
+  {
+    "pk": 140, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Mauritius", 
+      "label": "MU"
+    }
+  }, 
+  {
+    "pk": 141, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Mayotte", 
+      "label": "YT"
+    }
+  }, 
+  {
+    "pk": 142, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Mexico", 
+      "label": "MX"
+    }
+  }, 
+  {
+    "pk": 143, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Micronesia, Federated States of", 
+      "label": "FM"
+    }
+  }, 
+  {
+    "pk": 144, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Moldova", 
+      "label": "MD"
+    }
+  }, 
+  {
+    "pk": 145, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Monaco", 
+      "label": "MC"
+    }
+  }, 
+  {
+    "pk": 146, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Mongolia", 
+      "label": "MN"
+    }
+  }, 
+  {
+    "pk": 147, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Montenegro", 
+      "label": "ME"
+    }
+  }, 
+  {
+    "pk": 148, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Montserrat", 
+      "label": "MS"
+    }
+  }, 
+  {
+    "pk": 149, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Morocco", 
+      "label": "MA"
+    }
+  }, 
+  {
+    "pk": 150, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Mozambique", 
+      "label": "MZ"
+    }
+  }, 
+  {
+    "pk": 151, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Myanmar", 
+      "label": "MM"
+    }
+  }, 
+  {
+    "pk": 152, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Namibia", 
+      "label": "NA"
+    }
+  }, 
+  {
+    "pk": 153, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Nauru", 
+      "label": "NR"
+    }
+  }, 
+  {
+    "pk": 154, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Nepal", 
+      "label": "NP"
+    }
+  }, 
+  {
+    "pk": 155, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Netherlands", 
+      "label": "NL"
+    }
+  }, 
+  {
+    "pk": 156, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Netherlands Antilles", 
+      "label": "AN"
+    }
+  }, 
+  {
+    "pk": 157, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "New Caledonia", 
+      "label": "NC"
+    }
+  }, 
+  {
+    "pk": 158, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "New Zealand", 
+      "label": "NZ"
+    }
+  }, 
+  {
+    "pk": 159, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Nicaragua", 
+      "label": "NI"
+    }
+  }, 
+  {
+    "pk": 160, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Niger", 
+      "label": "NE"
+    }
+  }, 
+  {
+    "pk": 161, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Nigeria", 
+      "label": "NG"
+    }
+  }, 
+  {
+    "pk": 162, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Niue", 
+      "label": "NU"
+    }
+  }, 
+  {
+    "pk": 163, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Norfolk Island", 
+      "label": "NF"
+    }
+  }, 
+  {
+    "pk": 164, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Northern Mariana Islands", 
+      "label": "MP"
+    }
+  }, 
+  {
+    "pk": 165, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Norway", 
+      "label": "NO"
+    }
+  }, 
+  {
+    "pk": 166, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Oman", 
+      "label": "OM"
+    }
+  }, 
+  {
+    "pk": 167, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Pakistan", 
+      "label": "PK"
+    }
+  }, 
+  {
+    "pk": 168, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Palau", 
+      "label": "PW"
+    }
+  }, 
+  {
+    "pk": 169, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Palestinian Territory, Occupied", 
+      "label": "PS"
+    }
+  }, 
+  {
+    "pk": 170, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Panama", 
+      "label": "PA"
+    }
+  }, 
+  {
+    "pk": 171, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Papua New Guinea", 
+      "label": "PG"
+    }
+  }, 
+  {
+    "pk": 172, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Paraguay", 
+      "label": "PY"
+    }
+  }, 
+  {
+    "pk": 173, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Peru", 
+      "label": "PE"
+    }
+  }, 
+  {
+    "pk": 174, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Philippines", 
+      "label": "PH"
+    }
+  }, 
+  {
+    "pk": 175, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Pitcairn", 
+      "label": "PN"
+    }
+  }, 
+  {
+    "pk": 176, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Poland", 
+      "label": "PL"
+    }
+  }, 
+  {
+    "pk": 177, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Portugal", 
+      "label": "PT"
+    }
+  }, 
+  {
+    "pk": 178, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Puerto Rico", 
+      "label": "PR"
+    }
+  }, 
+  {
+    "pk": 179, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Qatar", 
+      "label": "QA"
+    }
+  }, 
+  {
+    "pk": 180, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Reunion", 
+      "label": "RE"
+    }
+  }, 
+  {
+    "pk": 181, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Romania", 
+      "label": "RO"
+    }
+  }, 
+  {
+    "pk": 182, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Russian Federation", 
+      "label": "RU"
+    }
+  }, 
+  {
+    "pk": 183, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Rwanda", 
+      "label": "RW"
+    }
+  }, 
+  {
+    "pk": 184, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Saint Barthelemy", 
+      "label": "BL"
+    }
+  }, 
+  {
+    "pk": 185, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Saint Helena", 
+      "label": "SH"
+    }
+  }, 
+  {
+    "pk": 186, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Saint Kitts and Nevis", 
+      "label": "KN"
+    }
+  }, 
+  {
+    "pk": 187, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Saint Lucia", 
+      "label": "LC"
+    }
+  }, 
+  {
+    "pk": 188, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Saint Martin", 
+      "label": "MF"
+    }
+  }, 
+  {
+    "pk": 189, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Saint Pierre and Miquelon", 
+      "label": "PM"
+    }
+  }, 
+  {
+    "pk": 190, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Saint Vincent and the Grenadines", 
+      "label": "VC"
+    }
+  }, 
+  {
+    "pk": 191, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Samoa", 
+      "label": "WS"
+    }
+  }, 
+  {
+    "pk": 192, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "San Marino", 
+      "label": "SM"
+    }
+  }, 
+  {
+    "pk": 193, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Sao Tome and Principe", 
+      "label": "ST"
+    }
+  }, 
+  {
+    "pk": 194, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Saudi Arabia", 
+      "label": "SA"
+    }
+  }, 
+  {
+    "pk": 195, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Senegal", 
+      "label": "SN"
+    }
+  }, 
+  {
+    "pk": 196, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Serbia", 
+      "label": "RS"
+    }
+  }, 
+  {
+    "pk": 197, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Seychelles", 
+      "label": "SC"
+    }
+  }, 
+  {
+    "pk": 198, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Sierra Leone", 
+      "label": "SL"
+    }
+  }, 
+  {
+    "pk": 199, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Singapore", 
+      "label": "SG"
+    }
+  }, 
+  {
+    "pk": 200, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Slovakia", 
+      "label": "SK"
+    }
+  }, 
+  {
+    "pk": 201, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Slovenia", 
+      "label": "SI"
+    }
+  }, 
+  {
+    "pk": 202, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Solomon Islands", 
+      "label": "SB"
+    }
+  }, 
+  {
+    "pk": 203, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Somalia", 
+      "label": "SO"
+    }
+  }, 
+  {
+    "pk": 204, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "South Africa", 
+      "label": "ZA"
+    }
+  }, 
+  {
+    "pk": 205, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "South Georgia and the South Sandwich Islands", 
+      "label": "GS"
+    }
+  }, 
+  {
+    "pk": 206, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Spain", 
+      "label": "ES"
+    }
+  }, 
+  {
+    "pk": 207, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Sri Lanka", 
+      "label": "LK"
+    }
+  }, 
+  {
+    "pk": 208, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Sudan", 
+      "label": "SD"
+    }
+  }, 
+  {
+    "pk": 209, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Suriname", 
+      "label": "SR"
+    }
+  }, 
+  {
+    "pk": 210, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Svalbard and Jan Mayen", 
+      "label": "SJ"
+    }
+  }, 
+  {
+    "pk": 211, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Swaziland", 
+      "label": "SZ"
+    }
+  }, 
+  {
+    "pk": 212, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Sweden", 
+      "label": "SE"
+    }
+  }, 
+  {
+    "pk": 213, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Switzerland", 
+      "label": "CH"
+    }
+  }, 
+  {
+    "pk": 214, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Syrian Arab Republic", 
+      "label": "SY"
+    }
+  }, 
+  {
+    "pk": 215, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Taiwan, Province of China", 
+      "label": "TW"
+    }
+  }, 
+  {
+    "pk": 216, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Tajikistan", 
+      "label": "TJ"
+    }
+  }, 
+  {
+    "pk": 217, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Tanzania, United Republic of", 
+      "label": "TZ"
+    }
+  }, 
+  {
+    "pk": 218, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Thailand", 
+      "label": "TH"
+    }
+  }, 
+  {
+    "pk": 219, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Timor-Leste", 
+      "label": "TL"
+    }
+  }, 
+  {
+    "pk": 220, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Togo", 
+      "label": "TG"
+    }
+  }, 
+  {
+    "pk": 221, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Tokelau", 
+      "label": "TK"
+    }
+  }, 
+  {
+    "pk": 222, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Tonga", 
+      "label": "TO"
+    }
+  }, 
+  {
+    "pk": 223, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Trinidad and Tobago", 
+      "label": "TT"
+    }
+  }, 
+  {
+    "pk": 224, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Tunisia", 
+      "label": "TN"
+    }
+  }, 
+  {
+    "pk": 225, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Turkey", 
+      "label": "TR"
+    }
+  }, 
+  {
+    "pk": 226, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Turkmenistan", 
+      "label": "TM"
+    }
+  }, 
+  {
+    "pk": 227, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Turks and Caicos Islands", 
+      "label": "TC"
+    }
+  }, 
+  {
+    "pk": 228, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Tuvalu", 
+      "label": "TV"
+    }
+  }, 
+  {
+    "pk": 229, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Uganda", 
+      "label": "UG"
+    }
+  }, 
+  {
+    "pk": 230, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Ukraine", 
+      "label": "UA"
+    }
+  }, 
+  {
+    "pk": 231, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "United Arab Emirates", 
+      "label": "AE"
+    }
+  }, 
+  {
+    "pk": 232, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "United Kingdom", 
+      "label": "GB"
+    }
+  }, 
+  {
+    "pk": 233, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "United States", 
+      "label": "US"
+    }
+  }, 
+  {
+    "pk": 234, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "United States Minor Outlying Islands", 
+      "label": "UM"
+    }
+  }, 
+  {
+    "pk": 235, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Uruguay", 
+      "label": "UY"
+    }
+  }, 
+  {
+    "pk": 236, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Uzbekistan", 
+      "label": "UZ"
+    }
+  }, 
+  {
+    "pk": 237, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Vanuatu", 
+      "label": "VU"
+    }
+  }, 
+  {
+    "pk": 238, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Venezuela", 
+      "label": "VE"
+    }
+  }, 
+  {
+    "pk": 239, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Viet Nam", 
+      "label": "VN"
+    }
+  }, 
+  {
+    "pk": 240, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Virgin Islands, British", 
+      "label": "VG"
+    }
+  }, 
+  {
+    "pk": 241, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Virgin Islands, U.S.", 
+      "label": "VI"
+    }
+  }, 
+  {
+    "pk": 242, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Wallis and Futuna", 
+      "label": "WF"
+    }
+  }, 
+  {
+    "pk": 243, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Western Sahara", 
+      "label": "EH"
+    }
+  }, 
+  {
+    "pk": 244, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Yemen", 
+      "label": "YE"
+    }
+  }, 
+  {
+    "pk": 245, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Zambia", 
+      "label": "ZM"
+    }
+  }, 
+  {
+    "pk": 246, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Zimbabwe", 
+      "label": "ZW"
+    }
+  }, 
+  {
+    "pk": 1, 
     "model": "vocabulary.interventioncode", 
     "fields": {
       "description": "Droga, drug, droga", 
