@@ -21,7 +21,7 @@ def index(request):
 
 TRIAL_FORMS = ('TrialIdentificationForm', 'SponsorsForm', 
                'HealthConditionsForm', 'InterventionsForm',
-               'RecruitmentForm', 'StudyTypeForm'
+               'RecruitmentForm', 'StudyTypeForm', 'ContactForm'
                )
 
 def edit_trial_index(request, trial_pk):
