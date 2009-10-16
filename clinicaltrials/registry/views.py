@@ -2,7 +2,7 @@
 from django.template import Context, loader
 from django.shortcuts import render_to_response
 from clinicaltrials.registry.models import ClinicalTrial
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django import forms
 from django.utils.translation import ugettext as _
 
@@ -39,8 +39,10 @@ def edit_trial_index(request, trial_pk):
 
 def edit_trial_form(request, trial_pk, form_name):
     ''' form view '''
+    if form_name not in TRIAL_FORMS:
+        raise Http404
     form = getattr(trds_forms, form_name)
-    return render_to_response('registry/trial_form.html', {'form':form()})    
+    return render_to_response('registry/trial_form.html', {'form':form()})
     
 class ClinicalTrialForm(forms.ModelForm):
     date_enrollment_anticipated = forms.DateTimeField(
