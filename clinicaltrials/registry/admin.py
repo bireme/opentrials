@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from django.contrib import admin
 from registry.models import *
 
@@ -12,19 +13,17 @@ for model in tabular_inline_models:
 
 class OutcomeInline(admin.StackedInline):
     model = Outcome
-       
+
 class ClinicalTrialAdmin(admin.ModelAdmin):
     inlines = tabular_inlines + [OutcomeInline]
-    list_display = ('updated_str','identifier','short_title','record_status',)
+    list_display = ('updated_str','identifier','short_title','recruitment_status',)
     list_display_links = ('identifier','short_title',)
-    list_filter = ('record_status','study_type','phase',
-                   'recruitment_status',)
     search_fields = ('scientific_title', 'public_title', 'i_freetext',)
+    list_filter = ('updated', 'study_type', 'phase', 'recruitment_status',)
 
 class DescriptorAdmin(admin.ModelAdmin):
     list_display = ('trial_identifier','vocabulary','code', 'text')
-    
-    
+
 admin.site.register(ClinicalTrial, ClinicalTrialAdmin)
 admin.site.register(Descriptor, DescriptorAdmin)
 admin.site.register(Institution)
