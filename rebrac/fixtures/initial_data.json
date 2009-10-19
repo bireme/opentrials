@@ -1,0 +1,41 @@
+[
+  {
+    "pk": 1, 
+    "model": "rebrac.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2009-10-19 21:10:04", 
+      "created": "2009-10-19 21:10:04", 
+      "creator": 1, 
+      "trial": 1, 
+      "updater": 1, 
+      "staff_note": ""
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "rebrac.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2009-10-19 21:10:15", 
+      "created": "2009-10-19 21:10:15", 
+      "creator": 1, 
+      "trial": 2, 
+      "updater": 1, 
+      "staff_note": ""
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "rebrac.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2009-10-19 21:10:21", 
+      "created": "2009-10-19 21:10:21", 
+      "creator": 1, 
+      "trial": 3, 
+      "updater": 1, 
+      "staff_note": ""
+    }
+  }
+]

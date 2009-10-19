@@ -13,8 +13,8 @@ CONTACT_RELATION = [
 ]
 
 CONTACT_STATUS = [
-    ('Active', 'Active and current contact'), 
-    ('Inactive', 'Inactive or previous contact'), 
+    ('Active', 'Active and current contact'),
+    ('Inactive', 'Inactive or previous contact'),
 ]
 
 OUTCOME_INTEREST = [
@@ -27,19 +27,12 @@ OUTCOME_INTEREST = [
 INCLUSION_GENDER = [('-', 'both'), ('M', 'male'), ('F', 'female'),]
 
 INCLUSION_AGE_UNIT = [
-    ('-', 'no limit'), 
-    ('Y', 'years'), 
+    ('-', 'no limit'),
+    ('Y', 'years'),
     ('M', 'months'),
-    ('D', 'days'), 
+    ('D', 'days'),
     ('H', 'hours'),
 ]
-
-TRIAL_RECORD_STATE = [
-    ('draft', 'draft'),
-    ('pending', 'pending'),
-    ('published', 'published'),
-    ('rejected', 'rejected'),
-]   
 
 ######################################################## Descriptor choices ###
 
