@@ -1,8 +1,9 @@
 # Create your views here.
 from django.template import Context, loader
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from clinicaltrials.registry.models import ClinicalTrial
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, HttpResponseRedirect, Http404
+
 from django import forms
 from django.utils.translation import ugettext as _
 
@@ -21,8 +22,7 @@ def index(request):
 
 TRIAL_FORMS = ('TrialIdentificationForm', 'SponsorsForm', 
                'HealthConditionsForm', 'InterventionsForm',
-               'RecruitmentForm', 'StudyTypeForm', 'ContactForm'
-               )
+               'RecruitmentForm', 'StudyTypeForm', 'ContactForm',)
 
 def edit_trial_index(request, trial_pk):
     ''' start view '''
@@ -39,11 +39,23 @@ def edit_trial_index(request, trial_pk):
 
 def edit_trial_form(request, trial_pk, form_name):
     ''' form view '''
+    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    
     if form_name not in TRIAL_FORMS:
         raise Http404
+
     form = getattr(trds_forms, form_name)
-    return render_to_response('registry/trial_form.html', {'form':form()})
+        
+    if request.POST:
+        form = form(request.POST, instance=ct)
+        form.save()
+        return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+    else:
+        form = form(instance=ct)
     
+    return render_to_response('registry/trial_form.html', {'form':form})
+
+
 class ClinicalTrialForm(forms.ModelForm):
     date_enrollment_anticipated = forms.DateTimeField(
         widget=AdminDateWidget(),
