@@ -14,9 +14,9 @@ SUBMISSION_STATUS = [
 ]
 
 class Submission(models.Model):
-    creator = models.ForeignKey(User, editable=False, related_name='creator')
+    creator = models.ForeignKey(User, related_name='creator', editable=False)
     created = models.DateTimeField(default=datetime.now, editable=False)
-    updater = models.ForeignKey(User, null=True, editable=False, related_name='updater')
+    updater = models.ForeignKey(User, null=True, related_name='updater', editable=False)
     updated = models.DateTimeField(null=True, editable=False)
     trial = models.OneToOneField(ClinicalTrial)
     status = models.CharField(_('Status'), max_length='64',
@@ -26,7 +26,8 @@ class Submission(models.Model):
                                     blank=True)
 
     def save(self):
-        self.updated = datetime.now()
+        if self.id:
+            self.updated = datetime.now()
         super(Submission, self).save()
 
     def short_title(self):
