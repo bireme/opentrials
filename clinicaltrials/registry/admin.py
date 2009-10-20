@@ -20,6 +20,8 @@ class ClinicalTrialAdmin(admin.ModelAdmin):
     list_display_links = ('identifier','short_title',)
     search_fields = ('scientific_title', 'public_title', 'i_freetext',)
     list_filter = ('updated', 'study_type', 'phase', 'recruitment_status',)
+    date_hierarchy = 'updated'
+    save_on_top = True
 
 class DescriptorAdmin(admin.ModelAdmin):
     list_display = ('trial_identifier','vocabulary','code', 'text')
