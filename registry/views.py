@@ -44,16 +44,32 @@ def edit_trial_form(request, trial_pk, form_name):
     if form_name not in TRIAL_FORMS:
         raise Http404
 
+    page = TRIAL_FORMS.index(form_name)
     form = getattr(trds_forms, form_name)
-        
+    
+    next_form = False
+    next_form_title = ''
+    if page < len(TRIAL_FORMS):
+        next_form_name = TRIAL_FORMS[page + 1]
+        next_form = getattr(trds_forms, next_form_name)
+        next_form_title = next_form.title
+    
     if request.POST:
         form = form(request.POST, instance=ct)
         form.save()
+        
+        if request.POST['submit'].find('Save and go to') == 0:
+            if next_form:
+                return HttpResponseRedirect("/rg/form/%s/%s" % 
+                                            (trial_pk, next_form_name))
+        # FIXME: use dynamic url
         return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
     else:
         form = form(instance=ct)
     
-    return render_to_response('registry/trial_form.html', {'form':form})
+    return render_to_response('registry/trial_form.html',
+                              {'form':form,
+                               'next_form_title':next_form_title})
 
 
 class ClinicalTrialForm(forms.ModelForm):
