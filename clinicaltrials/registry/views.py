@@ -20,9 +20,9 @@ def index(request):
     return HttpResponse(t.render(c))
 
 
-TRIAL_FORMS = ('TrialIdentificationForm', 'SponsorsForm', 
+TRIAL_FORMS = ['TrialIdentificationForm', 'SponsorsForm', 
                'HealthConditionsForm', 'InterventionsForm',
-               'RecruitmentForm', 'StudyTypeForm', 'ContactForm',)
+               'RecruitmentForm', 'StudyTypeForm',]
 
 def edit_trial_index(request, trial_pk):
     ''' start view '''
