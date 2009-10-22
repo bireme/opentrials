@@ -61,7 +61,11 @@ class SponsorsForm(forms.ModelForm):
     # TODO: TRDS 4: Sources of Support
     # TODO: TRDS 6: Secondary Sponsors
 
-class HealthConditionsForm(forms.Form):
+class HealthConditionsForm(forms.ModelForm):
+    class Meta:
+        model = ClinicalTrial
+        fields = ['hc_freetext',]
+
     title = _('Health Condition(s) or Problem(s) Studied')
 
     # TRDS 12a
@@ -69,14 +73,22 @@ class HealthConditionsForm(forms.Form):
                                          required=False, max_length=8000,
                                          widget=forms.Textarea)
 
-class InterventionsForm(forms.Form):
+class InterventionsForm(forms.ModelForm):
+    class Meta:
+        model = ClinicalTrial
+        fields = ['i_freetext',]
+
     title = _('Intervention(s)')
 
     # TRDS 13a
     i_freetext = forms.CharField(label=_('Intervention(s)'),
                                          required=False, max_length=8000,
                                          widget=forms.Textarea)
-class StudyTypeForm(forms.Form):
+class StudyTypeForm(forms.ModelForm):
+    class Meta:
+        model = ClinicalTrial
+        fields = ['study_type', 'study_design', 'phase']
+
     title = _('Study Type')
 
     # TRDS 15a
@@ -93,10 +105,22 @@ class StudyTypeForm(forms.Form):
 
 
 
-class RecruitmentForm(forms.Form):
+class RecruitmentForm(forms.ModelForm):
+    class Meta:
+        model = ClinicalTrial
+        fields = ['recruitment_status', 'date_enrollment', 'target_sample_size', 
+                  'phase', 'inclusion_criteria', 'gender', 
+                  'agemin_value', 'agemin_unit',
+                  'agemax_value', 'agemax_unit', 'exclusion_criteria',
+                  ]
+
     title = _('Recruitment')
 
     # TODO: Countries of Recruitment
+
+    # TRDS 18
+    recruitment_status = forms.ModelChoiceField(label=_('Recruitment Status'),
+                                                queryset=RecruitmentStatus.objects.all())
 
     # TRDS 16a,b (type_enrollment: anticipated or actual)
     date_enrollment = forms.CharField( # yyyy-mm or yyyy-mm-dd
@@ -105,9 +129,6 @@ class RecruitmentForm(forms.Form):
     # TRDS 17
     target_sample_size = forms.IntegerField(label=_('Target Sample Size'),
                                              initial=0 , required=False)
-    # TRDS 18
-    recruitment_status = forms.ModelChoiceField(label=_('Recruitment Status'),
-                                                queryset=RecruitmentStatus.objects.all())
     # TRDS 14a
     inclusion_criteria = forms.CharField(label=_('Inclusion Criteria'),
                                          required=False, max_length=8000,
