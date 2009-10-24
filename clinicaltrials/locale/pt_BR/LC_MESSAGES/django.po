@@ -31,7 +31,7 @@ msgstr "Título científico"
 
 #: registry/models.py:27
 msgid "Date of First Enrollment"
-msgstr "Data do primeiro recrutemento"
+msgstr "Data do primeiro recrutamento"
 
 #: registry/models.py:28
 msgid "Target Sample Size"

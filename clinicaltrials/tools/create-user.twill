@@ -1,0 +1,14 @@
+go admin
+fv 1 username admin
+fv 1 password 1234
+submit
+follow Users
+follow "Add user"
+fv 1 username juca
+fv 1 password1 1234
+fv 1 password2 1234
+submit
+url "admin/auth/user/\d+/"
+go admin/auth/user/
+find juca
+
