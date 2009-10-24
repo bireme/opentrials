@@ -7,15 +7,16 @@ DATABASE_PORT = ''             # Set to empty string for default. Not used with 
 
 SECRET_KEY = 'rmbg(!8sa@&8o9pnnd@*szm+axos_6r$)r48jc2r$^_8+wz)po'
 
-MIDDLEWARE_CLASSES += (
-    ## external dependency for debug purposes only
-    # 'debug_middleware.DebugFooter',
-)
+if DEBUG:
+    MIDDLEWARE_CLASSES += (
+        ## external dependency for debug purposes only
+        # 'debug_middleware.DebugFooter',
+    )
 
-INSTALLED_APPS += (
-    ## external dependency for generating model ER diagrams
-    # 'graphviz',
-)
+    INSTALLED_APPS += (
+        ## external dependency for generating model ER diagrams
+        # 'graphviz',
+    )
 
-GRAPHVIZ_DOT_CMD = '/usr/bin/dot'
+    GRAPHVIZ_DOT_CMD = '/usr/bin/dot'
 
