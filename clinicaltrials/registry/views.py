@@ -49,16 +49,19 @@ def edit_trial_form(request, trial_pk, form_name):
     
     next_form = False
     next_form_title = ''
-    if page < len(TRIAL_FORMS):
+    
+    if form_name != TRIAL_FORMS[len(TRIAL_FORMS)-1]:
         next_form_name = TRIAL_FORMS[page + 1]
         next_form = getattr(trds_forms, next_form_name)
         next_form_title = next_form.title
     
     if request.POST:
         form = form(request.POST, instance=ct)
-        form.save()
         
-        if request.POST['submit'].find('Save and go to') == 0:
+        if form.is_valid():
+            form.save()
+        
+        if request.POST.has_key('submit_next'):
             if next_form:
                 return HttpResponseRedirect("/rg/form/%s/%s" % 
                                             (trial_pk, next_form_name))
