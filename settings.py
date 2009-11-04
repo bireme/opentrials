@@ -88,6 +88,8 @@ INSTALLED_APPS = (
     'clinicaltrials.rebrac',
 )
 
+CHECKED_LANGUAGES = set((u'EN', u'ES', u'FR', u'PT'))
+
 try:
     execfile('settings_local.py')
 except IOError:

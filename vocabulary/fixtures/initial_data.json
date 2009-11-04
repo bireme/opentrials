@@ -4,6 +4,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Brazil", 
+      "language": "PT", 
       "label": "BR"
     }
   }, 
@@ -12,6 +13,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Afghanistan", 
+      "language": "", 
       "label": "AF"
     }
   }, 
@@ -20,6 +22,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Aland Islands", 
+      "language": "", 
       "label": "AX"
     }
   }, 
@@ -28,6 +31,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Albania", 
+      "language": "", 
       "label": "AL"
     }
   }, 
@@ -36,6 +40,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Algeria", 
+      "language": "", 
       "label": "DZ"
     }
   }, 
@@ -44,6 +49,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "American Samoa", 
+      "language": "", 
       "label": "AS"
     }
   }, 
@@ -52,6 +58,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Andorra", 
+      "language": "", 
       "label": "AD"
     }
   }, 
@@ -60,6 +67,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Angola", 
+      "language": "", 
       "label": "AO"
     }
   }, 
@@ -68,6 +76,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Anguilla", 
+      "language": "", 
       "label": "AI"
     }
   }, 
@@ -76,6 +85,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Antarctica", 
+      "language": "", 
       "label": "AQ"
     }
   }, 
@@ -84,6 +94,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Antigua and Barbuda", 
+      "language": "EN", 
       "label": "AG"
     }
   }, 
@@ -92,6 +103,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Argentina", 
+      "language": "ES", 
       "label": "AR"
     }
   }, 
@@ -100,6 +112,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Armenia", 
+      "language": "", 
       "label": "AM"
     }
   }, 
@@ -108,6 +121,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Aruba", 
+      "language": "", 
       "label": "AW"
     }
   }, 
@@ -116,6 +130,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Australia", 
+      "language": "", 
       "label": "AU"
     }
   }, 
@@ -124,6 +139,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Austria", 
+      "language": "", 
       "label": "AT"
     }
   }, 
@@ -132,6 +148,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Azerbaijan", 
+      "language": "", 
       "label": "AZ"
     }
   }, 
@@ -140,6 +157,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Bahamas", 
+      "language": "EN", 
       "label": "BS"
     }
   }, 
@@ -148,6 +166,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Bahrain", 
+      "language": "", 
       "label": "BH"
     }
   }, 
@@ -156,6 +175,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Bangladesh", 
+      "language": "", 
       "label": "BD"
     }
   }, 
@@ -164,6 +184,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Barbados", 
+      "language": "EN", 
       "label": "BB"
     }
   }, 
@@ -172,6 +193,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Belarus", 
+      "language": "", 
       "label": "BY"
     }
   }, 
@@ -180,6 +202,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Belgium", 
+      "language": "", 
       "label": "BE"
     }
   }, 
@@ -188,6 +211,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Belize", 
+      "language": "EN", 
       "label": "BZ"
     }
   }, 
@@ -196,6 +220,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Benin", 
+      "language": "", 
       "label": "BJ"
     }
   }, 
@@ -204,6 +229,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Bermuda", 
+      "language": "", 
       "label": "BM"
     }
   }, 
@@ -212,6 +238,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Bhutan", 
+      "language": "", 
       "label": "BT"
     }
   }, 
@@ -220,6 +247,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Bolivia", 
+      "language": "ES", 
       "label": "BO"
     }
   }, 
@@ -228,6 +256,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Bosnia and Herzegovina", 
+      "language": "", 
       "label": "BA"
     }
   }, 
@@ -236,6 +265,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Botswana", 
+      "language": "", 
       "label": "BW"
     }
   }, 
@@ -244,6 +274,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Bouvet Island", 
+      "language": "", 
       "label": "BV"
     }
   }, 
@@ -252,6 +283,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "British Indian Ocean Territory", 
+      "language": "", 
       "label": "IO"
     }
   }, 
@@ -260,6 +292,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Brunei Darussalam", 
+      "language": "", 
       "label": "BN"
     }
   }, 
@@ -268,6 +301,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Bulgaria", 
+      "language": "", 
       "label": "BG"
     }
   }, 
@@ -276,6 +310,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Burkina Faso", 
+      "language": "", 
       "label": "BF"
     }
   }, 
@@ -284,6 +319,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Burundi", 
+      "language": "", 
       "label": "BI"
     }
   }, 
@@ -292,6 +328,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Cambodia", 
+      "language": "", 
       "label": "KH"
     }
   }, 
@@ -300,6 +337,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Cameroon", 
+      "language": "", 
       "label": "CM"
     }
   }, 
@@ -308,6 +346,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Canada", 
+      "language": "FR", 
       "label": "CA"
     }
   }, 
@@ -316,6 +355,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Cape Verde", 
+      "language": "", 
       "label": "CV"
     }
   }, 
@@ -324,6 +364,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Cayman Islands", 
+      "language": "", 
       "label": "KY"
     }
   }, 
@@ -332,6 +373,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Central African Republic", 
+      "language": "", 
       "label": "CF"
     }
   }, 
@@ -340,6 +382,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Chad", 
+      "language": "", 
       "label": "TD"
     }
   }, 
@@ -348,6 +391,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Chile", 
+      "language": "ES", 
       "label": "CL"
     }
   }, 
@@ -356,6 +400,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "China", 
+      "language": "", 
       "label": "CN"
     }
   }, 
@@ -364,6 +409,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Christmas Island", 
+      "language": "", 
       "label": "CX"
     }
   }, 
@@ -372,6 +418,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Cocos (Keeling) Islands", 
+      "language": "", 
       "label": "CC"
     }
   }, 
@@ -380,6 +427,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Colombia", 
+      "language": "ES", 
       "label": "CO"
     }
   }, 
@@ -388,6 +436,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Comoros", 
+      "language": "", 
       "label": "KM"
     }
   }, 
@@ -396,6 +445,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Congo", 
+      "language": "", 
       "label": "CG"
     }
   }, 
@@ -404,6 +454,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Congo, The Democratic Republic of the", 
+      "language": "", 
       "label": "CD"
     }
   }, 
@@ -412,6 +463,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Cook Islands", 
+      "language": "", 
       "label": "CK"
     }
   }, 
@@ -420,6 +472,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Costa Rica", 
+      "language": "ES", 
       "label": "CR"
     }
   }, 
@@ -428,6 +481,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Cote d'Ivoire", 
+      "language": "", 
       "label": "CI"
     }
   }, 
@@ -436,6 +490,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Croatia", 
+      "language": "", 
       "label": "HR"
     }
   }, 
@@ -444,6 +499,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Cuba", 
+      "language": "ES", 
       "label": "CU"
     }
   }, 
@@ -452,6 +508,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Cyprus", 
+      "language": "", 
       "label": "CY"
     }
   }, 
@@ -460,6 +517,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Czech Republic", 
+      "language": "", 
       "label": "CZ"
     }
   }, 
@@ -468,6 +526,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Denmark", 
+      "language": "", 
       "label": "DK"
     }
   }, 
@@ -476,6 +535,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Djibouti", 
+      "language": "", 
       "label": "DJ"
     }
   }, 
@@ -484,6 +544,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Dominica", 
+      "language": "EN", 
       "label": "DM"
     }
   }, 
@@ -492,6 +553,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Dominican Republic", 
+      "language": "ES", 
       "label": "DO"
     }
   }, 
@@ -500,6 +562,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Ecuador", 
+      "language": "ES", 
       "label": "EC"
     }
   }, 
@@ -508,6 +571,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Egypt", 
+      "language": "", 
       "label": "EG"
     }
   }, 
@@ -516,6 +580,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "El Salvador", 
+      "language": "ES", 
       "label": "SV"
     }
   }, 
@@ -524,6 +589,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Equatorial Guinea", 
+      "language": "", 
       "label": "GQ"
     }
   }, 
@@ -532,6 +598,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Eritrea", 
+      "language": "", 
       "label": "ER"
     }
   }, 
@@ -540,6 +607,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Estonia", 
+      "language": "", 
       "label": "EE"
     }
   }, 
@@ -548,6 +616,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Ethiopia", 
+      "language": "", 
       "label": "ET"
     }
   }, 
@@ -556,6 +625,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Falkland Islands (Malvinas)", 
+      "language": "", 
       "label": "FK"
     }
   }, 
@@ -564,6 +634,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Faroe Islands", 
+      "language": "", 
       "label": "FO"
     }
   }, 
@@ -572,6 +643,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Fiji", 
+      "language": "", 
       "label": "FJ"
     }
   }, 
@@ -580,6 +652,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Finland", 
+      "language": "", 
       "label": "FI"
     }
   }, 
@@ -588,6 +661,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "France", 
+      "language": "", 
       "label": "FR"
     }
   }, 
@@ -596,6 +670,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "French Guiana", 
+      "language": "", 
       "label": "GF"
     }
   }, 
@@ -604,6 +679,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "French Polynesia", 
+      "language": "", 
       "label": "PF"
     }
   }, 
@@ -612,6 +688,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "French Southern Territories", 
+      "language": "", 
       "label": "TF"
     }
   }, 
@@ -620,6 +697,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Gabon", 
+      "language": "", 
       "label": "GA"
     }
   }, 
@@ -628,6 +706,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Gambia", 
+      "language": "", 
       "label": "GM"
     }
   }, 
@@ -636,6 +715,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Georgia", 
+      "language": "", 
       "label": "GE"
     }
   }, 
@@ -644,6 +724,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Germany", 
+      "language": "", 
       "label": "DE"
     }
   }, 
@@ -652,6 +733,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Ghana", 
+      "language": "", 
       "label": "GH"
     }
   }, 
@@ -660,6 +742,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Gibraltar", 
+      "language": "", 
       "label": "GI"
     }
   }, 
@@ -668,6 +751,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Greece", 
+      "language": "", 
       "label": "GR"
     }
   }, 
@@ -676,6 +760,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Greenland", 
+      "language": "", 
       "label": "GL"
     }
   }, 
@@ -684,6 +769,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Grenada", 
+      "language": "EN", 
       "label": "GD"
     }
   }, 
@@ -692,6 +778,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Guadeloupe", 
+      "language": "", 
       "label": "GP"
     }
   }, 
@@ -700,6 +787,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Guam", 
+      "language": "", 
       "label": "GU"
     }
   }, 
@@ -708,6 +796,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Guatemala", 
+      "language": "ES", 
       "label": "GT"
     }
   }, 
@@ -716,6 +805,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Guernsey", 
+      "language": "", 
       "label": "GG"
     }
   }, 
@@ -724,6 +814,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Guinea", 
+      "language": "", 
       "label": "GN"
     }
   }, 
@@ -732,6 +823,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Guinea-Bissau", 
+      "language": "", 
       "label": "GW"
     }
   }, 
@@ -740,6 +832,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Guyana", 
+      "language": "EN", 
       "label": "GY"
     }
   }, 
@@ -748,6 +841,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Haiti", 
+      "language": "FR", 
       "label": "HT"
     }
   }, 
@@ -756,6 +850,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Heard Island and McDonald Islands", 
+      "language": "", 
       "label": "HM"
     }
   }, 
@@ -764,6 +859,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Holy See (Vatican City State)", 
+      "language": "", 
       "label": "VA"
     }
   }, 
@@ -772,6 +868,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Honduras", 
+      "language": "ES", 
       "label": "HN"
     }
   }, 
@@ -780,6 +877,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Hong Kong", 
+      "language": "", 
       "label": "HK"
     }
   }, 
@@ -788,6 +886,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Hungary", 
+      "language": "", 
       "label": "HU"
     }
   }, 
@@ -796,6 +895,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Iceland", 
+      "language": "", 
       "label": "IS"
     }
   }, 
@@ -804,6 +904,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "India", 
+      "language": "", 
       "label": "IN"
     }
   }, 
@@ -812,6 +913,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Indonesia", 
+      "language": "", 
       "label": "ID"
     }
   }, 
@@ -820,6 +922,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Iran, Islamic Republic of", 
+      "language": "", 
       "label": "IR"
     }
   }, 
@@ -828,6 +931,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Iraq", 
+      "language": "", 
       "label": "IQ"
     }
   }, 
@@ -836,6 +940,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Ireland", 
+      "language": "", 
       "label": "IE"
     }
   }, 
@@ -844,6 +949,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Isle of Man", 
+      "language": "", 
       "label": "IM"
     }
   }, 
@@ -852,6 +958,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Israel", 
+      "language": "", 
       "label": "IL"
     }
   }, 
@@ -860,6 +967,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Italy", 
+      "language": "", 
       "label": "IT"
     }
   }, 
@@ -868,6 +976,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Jamaica", 
+      "language": "EN", 
       "label": "JM"
     }
   }, 
@@ -876,6 +985,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Japan", 
+      "language": "", 
       "label": "JP"
     }
   }, 
@@ -884,6 +994,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Jersey", 
+      "language": "", 
       "label": "JE"
     }
   }, 
@@ -892,6 +1003,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Jordan", 
+      "language": "", 
       "label": "JO"
     }
   }, 
@@ -900,6 +1012,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Kazakhstan", 
+      "language": "", 
       "label": "KZ"
     }
   }, 
@@ -908,6 +1021,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Kenya", 
+      "language": "", 
       "label": "KE"
     }
   }, 
@@ -916,6 +1030,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Kiribati", 
+      "language": "", 
       "label": "KI"
     }
   }, 
@@ -924,6 +1039,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Korea, Democratic People's Republic of", 
+      "language": "", 
       "label": "KP"
     }
   }, 
@@ -932,6 +1048,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Korea, Republic of", 
+      "language": "", 
       "label": "KR"
     }
   }, 
@@ -940,6 +1057,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Kuwait", 
+      "language": "", 
       "label": "KW"
     }
   }, 
@@ -948,6 +1066,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Kyrgyzstan", 
+      "language": "", 
       "label": "KG"
     }
   }, 
@@ -956,6 +1075,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Lao People's Democratic Republic", 
+      "language": "", 
       "label": "LA"
     }
   }, 
@@ -964,6 +1084,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Latvia", 
+      "language": "", 
       "label": "LV"
     }
   }, 
@@ -972,6 +1093,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Lebanon", 
+      "language": "", 
       "label": "LB"
     }
   }, 
@@ -980,6 +1102,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Lesotho", 
+      "language": "", 
       "label": "LS"
     }
   }, 
@@ -988,6 +1111,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Liberia", 
+      "language": "", 
       "label": "LR"
     }
   }, 
@@ -996,6 +1120,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Libyan Arab Jamahiriya", 
+      "language": "", 
       "label": "LY"
     }
   }, 
@@ -1004,6 +1129,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Liechtenstein", 
+      "language": "", 
       "label": "LI"
     }
   }, 
@@ -1012,6 +1138,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Lithuania", 
+      "language": "", 
       "label": "LT"
     }
   }, 
@@ -1020,6 +1147,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Luxembourg", 
+      "language": "", 
       "label": "LU"
     }
   }, 
@@ -1028,6 +1156,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Macao", 
+      "language": "", 
       "label": "MO"
     }
   }, 
@@ -1036,6 +1165,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Macedonia, The Former Yugoslav Republic of", 
+      "language": "", 
       "label": "MK"
     }
   }, 
@@ -1044,6 +1174,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Madagascar", 
+      "language": "", 
       "label": "MG"
     }
   }, 
@@ -1052,6 +1183,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Malawi", 
+      "language": "", 
       "label": "MW"
     }
   }, 
@@ -1060,6 +1192,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Malaysia", 
+      "language": "", 
       "label": "MY"
     }
   }, 
@@ -1068,6 +1201,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Maldives", 
+      "language": "", 
       "label": "MV"
     }
   }, 
@@ -1076,6 +1210,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Mali", 
+      "language": "", 
       "label": "ML"
     }
   }, 
@@ -1084,6 +1219,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Malta", 
+      "language": "", 
       "label": "MT"
     }
   }, 
@@ -1092,6 +1228,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Marshall Islands", 
+      "language": "", 
       "label": "MH"
     }
   }, 
@@ -1100,6 +1237,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Martinique", 
+      "language": "", 
       "label": "MQ"
     }
   }, 
@@ -1108,6 +1246,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Mauritania", 
+      "language": "", 
       "label": "MR"
     }
   }, 
@@ -1116,6 +1255,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Mauritius", 
+      "language": "", 
       "label": "MU"
     }
   }, 
@@ -1124,6 +1264,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Mayotte", 
+      "language": "", 
       "label": "YT"
     }
   }, 
@@ -1132,6 +1273,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Mexico", 
+      "language": "ES", 
       "label": "MX"
     }
   }, 
@@ -1140,6 +1282,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Micronesia, Federated States of", 
+      "language": "", 
       "label": "FM"
     }
   }, 
@@ -1148,6 +1291,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Moldova", 
+      "language": "", 
       "label": "MD"
     }
   }, 
@@ -1156,6 +1300,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Monaco", 
+      "language": "", 
       "label": "MC"
     }
   }, 
@@ -1164,6 +1309,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Mongolia", 
+      "language": "", 
       "label": "MN"
     }
   }, 
@@ -1172,6 +1318,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Montenegro", 
+      "language": "", 
       "label": "ME"
     }
   }, 
@@ -1180,6 +1327,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Montserrat", 
+      "language": "", 
       "label": "MS"
     }
   }, 
@@ -1188,6 +1336,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Morocco", 
+      "language": "", 
       "label": "MA"
     }
   }, 
@@ -1196,6 +1345,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Mozambique", 
+      "language": "", 
       "label": "MZ"
     }
   }, 
@@ -1204,6 +1354,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Myanmar", 
+      "language": "", 
       "label": "MM"
     }
   }, 
@@ -1212,6 +1363,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Namibia", 
+      "language": "", 
       "label": "NA"
     }
   }, 
@@ -1220,6 +1372,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Nauru", 
+      "language": "", 
       "label": "NR"
     }
   }, 
@@ -1228,6 +1381,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Nepal", 
+      "language": "", 
       "label": "NP"
     }
   }, 
@@ -1236,6 +1390,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Netherlands", 
+      "language": "", 
       "label": "NL"
     }
   }, 
@@ -1244,6 +1399,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Netherlands Antilles", 
+      "language": "", 
       "label": "AN"
     }
   }, 
@@ -1252,6 +1408,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "New Caledonia", 
+      "language": "", 
       "label": "NC"
     }
   }, 
@@ -1260,6 +1417,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "New Zealand", 
+      "language": "", 
       "label": "NZ"
     }
   }, 
@@ -1268,6 +1426,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Nicaragua", 
+      "language": "ES", 
       "label": "NI"
     }
   }, 
@@ -1276,6 +1435,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Niger", 
+      "language": "", 
       "label": "NE"
     }
   }, 
@@ -1284,6 +1444,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Nigeria", 
+      "language": "", 
       "label": "NG"
     }
   }, 
@@ -1292,6 +1453,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Niue", 
+      "language": "", 
       "label": "NU"
     }
   }, 
@@ -1300,6 +1462,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Norfolk Island", 
+      "language": "", 
       "label": "NF"
     }
   }, 
@@ -1308,6 +1471,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Northern Mariana Islands", 
+      "language": "", 
       "label": "MP"
     }
   }, 
@@ -1316,6 +1480,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Norway", 
+      "language": "", 
       "label": "NO"
     }
   }, 
@@ -1324,6 +1489,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Oman", 
+      "language": "", 
       "label": "OM"
     }
   }, 
@@ -1332,6 +1498,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Pakistan", 
+      "language": "", 
       "label": "PK"
     }
   }, 
@@ -1340,6 +1507,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Palau", 
+      "language": "", 
       "label": "PW"
     }
   }, 
@@ -1348,6 +1516,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Palestinian Territory, Occupied", 
+      "language": "", 
       "label": "PS"
     }
   }, 
@@ -1356,6 +1525,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Panama", 
+      "language": "ES", 
       "label": "PA"
     }
   }, 
@@ -1364,6 +1534,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Papua New Guinea", 
+      "language": "", 
       "label": "PG"
     }
   }, 
@@ -1372,6 +1543,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Paraguay", 
+      "language": "ES", 
       "label": "PY"
     }
   }, 
@@ -1380,6 +1552,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Peru", 
+      "language": "ES", 
       "label": "PE"
     }
   }, 
@@ -1388,6 +1561,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Philippines", 
+      "language": "", 
       "label": "PH"
     }
   }, 
@@ -1396,6 +1570,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Pitcairn", 
+      "language": "", 
       "label": "PN"
     }
   }, 
@@ -1404,6 +1579,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Poland", 
+      "language": "", 
       "label": "PL"
     }
   }, 
@@ -1412,6 +1588,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Portugal", 
+      "language": "", 
       "label": "PT"
     }
   }, 
@@ -1420,6 +1597,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Puerto Rico", 
+      "language": "", 
       "label": "PR"
     }
   }, 
@@ -1428,6 +1606,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Qatar", 
+      "language": "", 
       "label": "QA"
     }
   }, 
@@ -1436,6 +1615,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Reunion", 
+      "language": "", 
       "label": "RE"
     }
   }, 
@@ -1444,6 +1624,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Romania", 
+      "language": "", 
       "label": "RO"
     }
   }, 
@@ -1452,6 +1633,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Russian Federation", 
+      "language": "", 
       "label": "RU"
     }
   }, 
@@ -1460,6 +1642,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Rwanda", 
+      "language": "", 
       "label": "RW"
     }
   }, 
@@ -1468,6 +1651,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Saint Barthelemy", 
+      "language": "", 
       "label": "BL"
     }
   }, 
@@ -1476,6 +1660,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Saint Helena", 
+      "language": "", 
       "label": "SH"
     }
   }, 
@@ -1484,6 +1669,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Saint Kitts and Nevis", 
+      "language": "", 
       "label": "KN"
     }
   }, 
@@ -1492,6 +1678,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Saint Lucia", 
+      "language": "EN", 
       "label": "LC"
     }
   }, 
@@ -1500,6 +1687,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Saint Martin", 
+      "language": "", 
       "label": "MF"
     }
   }, 
@@ -1508,6 +1696,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Saint Pierre and Miquelon", 
+      "language": "", 
       "label": "PM"
     }
   }, 
@@ -1516,6 +1705,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Saint Vincent and the Grenadines", 
+      "language": "", 
       "label": "VC"
     }
   }, 
@@ -1524,6 +1714,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Samoa", 
+      "language": "", 
       "label": "WS"
     }
   }, 
@@ -1532,6 +1723,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "San Marino", 
+      "language": "", 
       "label": "SM"
     }
   }, 
@@ -1540,6 +1732,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Sao Tome and Principe", 
+      "language": "", 
       "label": "ST"
     }
   }, 
@@ -1548,6 +1741,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Saudi Arabia", 
+      "language": "", 
       "label": "SA"
     }
   }, 
@@ -1556,6 +1750,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Senegal", 
+      "language": "", 
       "label": "SN"
     }
   }, 
@@ -1564,6 +1759,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Serbia", 
+      "language": "", 
       "label": "RS"
     }
   }, 
@@ -1572,6 +1768,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Seychelles", 
+      "language": "", 
       "label": "SC"
     }
   }, 
@@ -1580,6 +1777,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Sierra Leone", 
+      "language": "", 
       "label": "SL"
     }
   }, 
@@ -1588,6 +1786,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Singapore", 
+      "language": "", 
       "label": "SG"
     }
   }, 
@@ -1596,6 +1795,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Slovakia", 
+      "language": "", 
       "label": "SK"
     }
   }, 
@@ -1604,6 +1804,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Slovenia", 
+      "language": "", 
       "label": "SI"
     }
   }, 
@@ -1612,6 +1813,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Solomon Islands", 
+      "language": "", 
       "label": "SB"
     }
   }, 
@@ -1620,6 +1822,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Somalia", 
+      "language": "", 
       "label": "SO"
     }
   }, 
@@ -1628,6 +1831,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "South Africa", 
+      "language": "", 
       "label": "ZA"
     }
   }, 
@@ -1636,6 +1840,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "South Georgia and the South Sandwich Islands", 
+      "language": "", 
       "label": "GS"
     }
   }, 
@@ -1644,6 +1849,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Spain", 
+      "language": "", 
       "label": "ES"
     }
   }, 
@@ -1652,6 +1858,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Sri Lanka", 
+      "language": "", 
       "label": "LK"
     }
   }, 
@@ -1660,6 +1867,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Sudan", 
+      "language": "", 
       "label": "SD"
     }
   }, 
@@ -1668,6 +1876,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Suriname", 
+      "language": "NL", 
       "label": "SR"
     }
   }, 
@@ -1676,6 +1885,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Svalbard and Jan Mayen", 
+      "language": "", 
       "label": "SJ"
     }
   }, 
@@ -1684,6 +1894,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Swaziland", 
+      "language": "", 
       "label": "SZ"
     }
   }, 
@@ -1692,6 +1903,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Sweden", 
+      "language": "", 
       "label": "SE"
     }
   }, 
@@ -1700,6 +1912,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Switzerland", 
+      "language": "", 
       "label": "CH"
     }
   }, 
@@ -1708,6 +1921,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Syrian Arab Republic", 
+      "language": "", 
       "label": "SY"
     }
   }, 
@@ -1716,6 +1930,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Taiwan, Province of China", 
+      "language": "", 
       "label": "TW"
     }
   }, 
@@ -1724,6 +1939,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Tajikistan", 
+      "language": "", 
       "label": "TJ"
     }
   }, 
@@ -1732,6 +1948,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Tanzania, United Republic of", 
+      "language": "", 
       "label": "TZ"
     }
   }, 
@@ -1740,6 +1957,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Thailand", 
+      "language": "", 
       "label": "TH"
     }
   }, 
@@ -1748,6 +1966,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Timor-Leste", 
+      "language": "", 
       "label": "TL"
     }
   }, 
@@ -1756,6 +1975,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Togo", 
+      "language": "", 
       "label": "TG"
     }
   }, 
@@ -1764,6 +1984,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Tokelau", 
+      "language": "", 
       "label": "TK"
     }
   }, 
@@ -1772,6 +1993,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Tonga", 
+      "language": "", 
       "label": "TO"
     }
   }, 
@@ -1780,6 +2002,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Trinidad and Tobago", 
+      "language": "EN", 
       "label": "TT"
     }
   }, 
@@ -1788,6 +2011,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Tunisia", 
+      "language": "", 
       "label": "TN"
     }
   }, 
@@ -1796,6 +2020,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Turkey", 
+      "language": "", 
       "label": "TR"
     }
   }, 
@@ -1804,6 +2029,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Turkmenistan", 
+      "language": "", 
       "label": "TM"
     }
   }, 
@@ -1812,6 +2038,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Turks and Caicos Islands", 
+      "language": "", 
       "label": "TC"
     }
   }, 
@@ -1820,6 +2047,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Tuvalu", 
+      "language": "", 
       "label": "TV"
     }
   }, 
@@ -1828,6 +2056,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Uganda", 
+      "language": "", 
       "label": "UG"
     }
   }, 
@@ -1836,6 +2065,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Ukraine", 
+      "language": "", 
       "label": "UA"
     }
   }, 
@@ -1844,6 +2074,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "United Arab Emirates", 
+      "language": "", 
       "label": "AE"
     }
   }, 
@@ -1852,6 +2083,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "United Kingdom", 
+      "language": "", 
       "label": "GB"
     }
   }, 
@@ -1860,6 +2092,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "United States", 
+      "language": "", 
       "label": "US"
     }
   }, 
@@ -1868,6 +2101,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "United States Minor Outlying Islands", 
+      "language": "", 
       "label": "UM"
     }
   }, 
@@ -1876,6 +2110,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Uruguay", 
+      "language": "ES", 
       "label": "UY"
     }
   }, 
@@ -1884,6 +2119,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Uzbekistan", 
+      "language": "", 
       "label": "UZ"
     }
   }, 
@@ -1892,6 +2128,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Vanuatu", 
+      "language": "", 
       "label": "VU"
     }
   }, 
@@ -1900,6 +2137,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Venezuela", 
+      "language": "ES", 
       "label": "VE"
     }
   }, 
@@ -1908,6 +2146,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Viet Nam", 
+      "language": "", 
       "label": "VN"
     }
   }, 
@@ -1916,6 +2155,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Virgin Islands, British", 
+      "language": "", 
       "label": "VG"
     }
   }, 
@@ -1924,6 +2164,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Virgin Islands, U.S.", 
+      "language": "", 
       "label": "VI"
     }
   }, 
@@ -1932,6 +2173,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Wallis and Futuna", 
+      "language": "", 
       "label": "WF"
     }
   }, 
@@ -1940,6 +2182,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Western Sahara", 
+      "language": "", 
       "label": "EH"
     }
   }, 
@@ -1948,6 +2191,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Yemen", 
+      "language": "", 
       "label": "YE"
     }
   }, 
@@ -1956,6 +2200,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Zambia", 
+      "language": "", 
       "label": "ZM"
     }
   }, 
@@ -1964,6 +2209,7 @@
     "model": "vocabulary.countrycode", 
     "fields": {
       "description": "Zimbabwe", 
+      "language": "", 
       "label": "ZW"
     }
   }, 

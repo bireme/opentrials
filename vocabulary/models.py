@@ -20,6 +20,7 @@ class CountryCode(SimpleVocabulary):
     ''' TRDS 11, Countries of Recruitment 
         also used for Contacts and Institutions
     '''
+    language = models.CharField(_('Required Language'), max_length=2, blank=True)
     
     def __unicode__(self):
         return self.description

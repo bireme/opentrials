@@ -1,8 +1,40 @@
 """
-This file demonstrates two different styles of tests (one doctest and one
-unittest). These will both pass when you run "manage.py test".
+---------------------------------------
+Testing mandatory languages
+---------------------------------------
 
-Replace these with more appropriate tests for your application.
+Mandatory languages are English, the language
+of the primary sponsor and the languages of the
+recruitment countries limited to EN, PT, ES, FR::
+
+    >>> from rebrac.models import Submission
+    >>> from registry.models import ClinicalTrial, Institution, RecruitmentCountry
+    >>> from vocabulary.models import CountryCode
+    >>> i = Institution()
+    >>> i.country = CountryCode.objects.get(label='BR')
+    >>>
+    >>> ct = ClinicalTrial()
+    >>> ct.primary_sponsor = i
+    >>> ct.save()
+    >>> 
+    >>> s = Submission()
+    >>> s.trial = ct
+    >>> sorted(s.get_mandatory_languages())
+    [u'EN', u'PT']
+    
+    >>> rc = RecruitmentCountry()
+    >>> rc.trial = ct
+    >>> rc.country = CountryCode.objects.get(label='AR')
+    >>> rc.save()
+    >>> sorted(s.get_mandatory_languages())
+    [u'EN', u'ES', u'PT']
+    
+    >>> rc = RecruitmentCountry()
+    >>> rc.trial = ct
+    >>> rc.country = CountryCode.objects.get(label='SR')
+    >>> rc.save()
+    >>> sorted(s.get_mandatory_languages())
+    [u'EN', u'ES', u'PT']
 """
 
 from django.test import TestCase
@@ -14,10 +46,4 @@ class SimpleTest(TestCase):
         """
         self.failUnlessEqual(1 + 1, 2)
 
-__test__ = {"doctest": """
-Another way to test that 1 + 1 is equal to 2.
-
->>> 1 + 1 == 2
-True
-"""}
 

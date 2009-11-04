@@ -5,5 +5,11 @@ from vocabulary.models import *
 class SimpleVocabularyAdmin(admin.ModelAdmin):
     list_display = ('label', 'description',)
 
-for model in (CountryCode, RecruitmentStatus, StudyType, StudyPhase, InterventionCode):
+class CountryCodeAdmin(admin.ModelAdmin):
+    list_display = ('label', 'description', 'language')
+    search_fields = ('label', 'description')
+
+for model in (RecruitmentStatus, StudyType, StudyPhase, InterventionCode):
     admin.site.register(model, SimpleVocabularyAdmin)
+    
+admin.site.register(CountryCode, CountryCodeAdmin)

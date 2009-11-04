@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
+from django.conf import settings
 
 from datetime import datetime
 
@@ -38,3 +39,12 @@ class Submission(models.Model):
 
     def __unicode__(self):
         return u'<%s> %s' % (self.creator_username(), self.short_title())
+
+    def get_mandatory_languages(self):
+        langs = set([u'EN'])
+        langs.add(self.trial.primary_sponsor.country.language)
+        
+        for rc in self.trial.recruitmentcountry_set.all():
+            langs.add(rc.country.language)
+            
+        return langs.intersection(settings.CHECKED_LANGUAGES)
