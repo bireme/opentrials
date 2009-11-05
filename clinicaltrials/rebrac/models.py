@@ -48,3 +48,8 @@ class Submission(models.Model):
             langs.add(rc.country.language)
             
         return langs.intersection(settings.CHECKED_LANGUAGES)
+        
+    def get_absolute_url(self):
+        #return '/accounts/submission/%s/' % self.id
+        return '/accounts/submission/%s/' % self.id
+

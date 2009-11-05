@@ -57,7 +57,7 @@ def edit_trial_form(request, trial_pk, form_name):
     
     if request.POST:
         form = form(request.POST, instance=ct)
-        
+        assert False
         if form.is_valid():
             form.save()
         
