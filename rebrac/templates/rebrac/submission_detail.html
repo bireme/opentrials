@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block headline %}User Submissions{% endblock %}
+
+{% block body %}
+
+<h2>Submissions Detail</h2>
+<table>
+    <tr>
+        <th>Owner</th>
+        <td>{{ object.creator_username }}</td>
+    </tr>
+    <tr>
+        <th>Submission Title</th>        
+        <td>{{ object.short_title }}</td>
+    </tr>
+    <tr>
+        <th>Status</th>        
+        <td>{{ object.status }}</td>
+    </tr>
+    <tr>
+        <th>Creation Date</th>        
+        <td>{{ object.created }}</td>
+    </tr>
+    <tr>
+        <th>Updated by</th>        
+        <td>{{ object.updater }}</td>
+    </tr>
+    <tr>
+        <th>Update Date</th>        
+        <td>{{ object.updated }}</td>
+    </tr>
+    <tr>
+        <th>Staff Notes</th>        
+        <td>{{ object.staff_note }}</td>
+    </tr>    
+</table>
+<div class="tools">
+    <div class="item"><a href="#">back</a></div>
+</div>
+{% endblock %}
