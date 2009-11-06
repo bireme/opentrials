@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     url(r'^accounts/submissionlist/$', list_detail.object_list,
         submissions, name='rebrac.submissionlist'), #same of accounts/profile
     url(r'^accounts/submission/(?P<object_id>\d+)/$', list_detail.object_detail,
-        submissions, name='rebrac.submission'), #same of accounts/profile    
+        submissions, name='rebrac.submission'),
     url(r'^accounts/userdump/$', user_dump),
     url(r'^accounts/login/$', login, 
         dict(template_name='rebrac/login.html'),
