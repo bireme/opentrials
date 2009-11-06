@@ -2404,5 +2404,365 @@
       "description": "Other recruitment status", 
       "label": "other"
     }
+  }, 
+  {
+    "pk": 1, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Bacterial Infections and Mycoses", 
+      "label": "C01"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Virus Diseases", 
+      "label": "C02"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Parasitic Diseases", 
+      "label": "C03"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Neoplasms", 
+      "label": "C04"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Musculoskeletal Diseases", 
+      "label": "C05"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Digestive System Diseases", 
+      "label": "C06"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Stomatognathic Diseases", 
+      "label": "C07"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Respiratory Tract Diseases", 
+      "label": "C08"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Otorhinolaryngologic Diseases", 
+      "label": "C09"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Nervous System Diseases", 
+      "label": "C10"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Eye Diseases", 
+      "label": "C11"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Male Urogenital Diseases", 
+      "label": "C12"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Female Urogenital Diseases and Pregnancy Complications", 
+      "label": "C13"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Cardiovascular Diseases", 
+      "label": "C14"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Hemic and Lymphatic Diseases", 
+      "label": "C15"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Congenital, Hereditary, and Neonatal Diseases and Abnormalities", 
+      "label": "C16"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Skin and Connective Tissue Diseases", 
+      "label": "C17"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Nutritional and Metabolic Diseases", 
+      "label": "C18"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Endocrine System Diseases", 
+      "label": "C19"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Immune System Diseases", 
+      "label": "C20"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Disorders of Environmental Origin", 
+      "label": "C21"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Animal Diseases", 
+      "label": "C22"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "vocabulary.decsdisease", 
+    "fields": {
+      "description": "Pathological Conditions, Signs and Symptoms", 
+      "label": "C23"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Certain infectious and parasitic diseases", 
+      "label": "I"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Neoplasms", 
+      "label": "II"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism", 
+      "label": "III"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Endocrine, nutritional and metabolic diseases", 
+      "label": "IV"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Mental and behavioural disorders", 
+      "label": "V"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Diseases of the nervous system", 
+      "label": "VI"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Diseases of the eye and adnexa", 
+      "label": "VII"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Diseases of the ear and mastoid process", 
+      "label": "VIII"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Diseases of the circulatory system", 
+      "label": "IX"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Diseases of the respiratory system", 
+      "label": "X"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Diseases of the digestive system", 
+      "label": "XI"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Diseases of the skin and subcutaneous tissue", 
+      "label": "XII"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Diseases of the musculoskeletal system and connective tissue", 
+      "label": "XIII"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Diseases of the genitourinary system", 
+      "label": "XIV"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Pregnancy, childbirth and the puerperium", 
+      "label": "XV"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Certain conditions originating in the perinatal period", 
+      "label": "XVI"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Congenital malformations, deformations and chromosomal abnormalities", 
+      "label": "XVII"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified", 
+      "label": "XVIII"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Injury, poisoning and certain other consequences of external causes", 
+      "label": "XIX"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "External causes of morbidity and mortality", 
+      "label": "XX"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Factors influencing health status and contact with health services", 
+      "label": "XXI"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "vocabulary.icdchapter", 
+    "fields": {
+      "description": "Codes for special purposes", 
+      "label": "XXII"
+    }
   }
 ]
