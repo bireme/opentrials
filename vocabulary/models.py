@@ -3,7 +3,7 @@ from django.utils.translation import ugettext as _
 
 from utilities import safe_truncate
 
-################################################### Controlled Vocabularies ###
+############################################ Controlled Vocabularies ###
 
 class SimpleVocabulary(models.Model):
     label = models.CharField(_('Label'), max_length=255, unique=True)
@@ -40,4 +40,14 @@ class RecruitmentStatus(SimpleVocabulary):
     class Meta(SimpleVocabulary.Meta):
         verbose_name_plural = _('Recruitment status')
     
+class DecsDisease(SimpleVocabulary):
+    ''' TRDS 12 '''
+    
+    def __unicode__(self):
+        return self.description
 
+class IcdChapter(SimpleVocabulary):
+    ''' TRDS 12 '''
+    
+    def __unicode__(self):
+        return self.description
