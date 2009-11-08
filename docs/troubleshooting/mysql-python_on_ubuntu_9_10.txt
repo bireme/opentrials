@@ -1,0 +1,174 @@
+= How to Install a Reclac Instance =
+
+[[PageOutline]]
+
+== Install pre-requisites ==
+
+Before installing the Reclac application, install the software listed below.
+
+=== Server software ===
+
+ ||'''software'''||'''product URL'''||'''installation method'''||
+ || Python 2.5 || http://www.python.org/download/ || OS package manager ||
+ || Apache HTTP server 2.2 || http://httpd.apache.org/download.cgi || OS package manager ||
+ || MySQL 5.1 database server || http://dev.mysql.com/downloads/mysql/5.1.html#downloads || OS package manager ||
+ || mod_wsgi 2.5 - Python adapter || http://code.google.com/p/modwsgi/downloads/list || OS package manager ||
+ || memcached 1.4 - object cache || http://www.danga.com/memcached/download.bml || build from source ||
+
+1. Install each package below using the recommended installation method above.
+
+Note: Python comes pre-installed in most Linux distributions. If Python 2.5 or 2.6 is already installed, there is no need to install a newer version.
+
+=== System-wide Python libraries ===
+
+ ||'''software'''||'''product URL'''||'''installation method'''||
+ || distribute 0.6.8 || http://pypi.python.org/pypi/distribute || sudo python distribute_setup.py ||
+ || virtualenv || http://pypi.python.org/pypi/virtualenv || sudo easy_install virtualenv ||
+
+2. Download the distribute_setup.py script and use the installed Python interperter to run it as root (this provides the easy_install utility)
+
+{{{
+# wget http://python-distribute.org/distribute_setup.py
+# python distribute_setup.py
+}}}
+
+3. Use easy_install to download and install virtuaenv
+
+{{{
+# easy_install virtualenv
+}}}
+
+== Configure the database ==
+
+4. Create a database user and a `clinicaltrials` database. The user name and password will be used in step 10 below. 
+
+ * The database user '''must''' have all privileges on the `clinicaltrials` database
+ * The database user ''should'' have `CREATE DATABASE` privileges, to run the automated tests (step 12)
+
+Lazy developers can copy and paste this code in a MySQL shell:
+{{{
+#!sql
+CREATE DATABASE clinicaltrials; 
+CREATE USER 'tester'@'localhost' IDENTIFIED BY 'puffpuff';
+GRANT ALL PRIVILEGES ON clinicaltrials.* TO 'tester'@'localhost';
+}}}
+
+== Install the application environment ==
+
+'''Note: all of the remainig steps can be performed by a regular user without root access.'''
+
+5. Use virtualenv to create an application environment and activate it:
+
+{{{
+$ virtualenv --distribute --no-site-packages django-env
+$ source django-env/bin/activate
+(django-env)$   # note that the shell prompt displays the active virtual environment
+}}}
+
+
+6. With the `django-env` environment active, use `easy_install` to download and install the remaining packages:
+
+{{{
+(django-env)$ easy_install django
+(django-env)$ easy_install mysql-python
+(django-env)$   # etc...
+}}}
+
+
+ || Django 1.1 || http://www.djangoproject.com/download/ || easy_install django ||
+ || MySQLdb 1.2.2 || http://sourceforge.net/projects/mysql-python/files/ || easy_install mysql-python (see [#troubleshooting Troubleshooting])||
+ || docutils 0.6 || http://pypi.python.org/pypi/docutils/ || easy_install docutils ||
+ || PyYAML 3.0 || http://pyyaml.org/wiki/PyYAML || easy_install pyyaml ||
+ || Markdown 2.0 || http://pypi.python.org/pypi/Markdown/ || easy_install markdown  ||
+ || Textile 2.1.3 || http://pypi.python.org/pypi/textile || easy_install textile ||
+ || python-memcached 1.44 || http://pypi.python.org/pypi/python-memcached/ || easy_install python-memcached ||
+
+Note: Django and MySQLdb are the only mandatory requirements. The other libraries listed are needed to run the full suite of Django framework tests.
+
+== Install the Reclac application ==
+
+7. Go to a suitable installation directory and download the application source
+
+{{{
+(django-env)$ cd /home/apps/rebrac/src/
+(django-env)$ svn co http://svn.reddes.bvsalud.org/clinical-trials/trunk/clinicaltrials
+}}}
+
+8. Make the `manage.py` script executable
+
+{{{
+(django-env)$ cd clinicaltrials
+(django-env)$ chmod +x manage.py
+}}}
+
+9. Compile the translation files
+
+{{{
+(django-env)$ ./manage.py compilemessages
+}}}
+
+10. Create the `settings_local.py` and edit the configurations as needed
+
+{{{
+(django-env)$ cp settings_local-SAMPLE.py settings_local.py 
+(django-env)$ vi settings_local.py   # edit the database settings etc.
+}}}
+
+11. Create database tables and load initial data
+
+{{{
+(django-env)$ ./manage.py syncdb
+}}}
+
+12. Run automated tests
+
+{{{
+(django-env)$ ./manage.py test
+}}}
+
+13. Run the test server to manually test the application instance
+
+{{{
+(django-env)$ ./manage.py runserver 172.17.1.54:8000
+}}}
+
+== Troubleshooting ==
+
+=== mysql-python ===
+
+The mysql-python package used to install OK with easy_install on several Linux distributions prior to Oct. 2009, but in Ubuntu 9.10 it can't compile itself because of a "EnvironmentError: mysql_config not found". 
+
+The file mysql_config is part of the libmysqlclient-dev package, but even if that package is installed and the file is present, the mysql-python installation script can't find it.
+
+==== Work around ====
+
+To fix:
+
+1) Check that you have the MySql required libraries:
+
+  {{{
+  (django-env)$ sudo apt-get install mysql-client
+  (django-env)$ sudo apt-get install libmysqlclient-dev
+  }}}
+
+2) Download and unpack the mysql-python source package, currently it is:
+
+  {{{
+  (django-env)$ wget http://pypi.python.org/packages/source/M/MySQL-python/MySQL-python-1.2.3c1.tar.gz
+  }}}
+
+3) Edit the file {{{MySQL-python-1.2.3c1/site.cfg}}}
+
+  Search for: {{{mysql_config = /}}}
+
+  Uncomment and edit the line defining "mysql_config = " to the actual location of the mysql_config file. In Ubuntu 9.10 (64 bits) it is:
+
+  {{{mysql_config = /usr/bin/mysql_config}}}
+
+4) Build it using setup.py:
+
+  {{{
+  (django-env)$ python setup.py install
+  }}}
+
+
