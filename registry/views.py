@@ -3,6 +3,7 @@ from django.template import Context, loader
 from django.shortcuts import render_to_response, get_object_or_404
 from clinicaltrials.registry.models import ClinicalTrial
 from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.forms.models import inlineformset_factory
 
 from django import forms
 from django.utils.translation import ugettext as _
@@ -22,7 +23,7 @@ def index(request):
 
 TRIAL_FORMS = ['TrialIdentificationForm', 'SponsorsForm', 
                'HealthConditionsForm', 'InterventionsForm',
-               'RecruitmentForm', 'StudyTypeForm',]
+               'RecruitmentForm', 'StudyTypeForm','OutcomesForm',]
 
 def edit_trial_index(request, trial_pk):
     ''' start view '''
@@ -45,32 +46,37 @@ def edit_trial_form(request, trial_pk, form_name):
         raise Http404
 
     page = TRIAL_FORMS.index(form_name)
-    form = getattr(trds_forms, form_name)
+    FormClass = getattr(trds_forms, form_name)
     
-    next_form = False
+    if hasattr(FormClass, 'inline_model'):
+        FormClass = inlineformset_factory(ClinicalTrial, 
+                                           FormClass.inline_model,
+                                           extra=3)        
+    
+    NextForm = None
     next_form_title = ''
     
-    if form_name != TRIAL_FORMS[len(TRIAL_FORMS)-1]:
+    if form_name != TRIAL_FORMS[-1]:
         next_form_name = TRIAL_FORMS[page + 1]
-        next_form = getattr(trds_forms, next_form_name)
-        next_form_title = next_form.title
+        NextForm = getattr(trds_forms, next_form_name)
+        next_form_title = NextForm.title
     
     if request.POST:
-        form = form(request.POST, instance=ct)
-        if form.is_valid():
-            form.save()
+        form_main = FormClass(request.POST, instance=ct)
+        if form_main.is_valid():
+            form_main.save()
         
         if request.POST.has_key('submit_next'):
-            if next_form:
+            if NextForm is not None:
                 return HttpResponseRedirect("/rg/form/%s/%s" % 
                                             (trial_pk, next_form_name))
         # FIXME: use dynamic url
         return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
     else:
-        form = form(instance=ct)
-    
+        form_main = FormClass(instance=ct)
+    forms = dict(form_main=form_main)
     return render_to_response('registry/trial_form.html',
-                              {'form':form,
+                              {'forms':forms,
                                'next_form_title':next_form_title})
 
 

@@ -5,13 +5,11 @@ from django.utils.translation import ugettext as _
 
 #from django.contrib.admin.widgets import AdminDateWidget
 
-from models import Institution
-
 import choices
 from vocabulary.models import CountryCode, RecruitmentStatus
 from vocabulary.models import StudyType, StudyPhase
 
-from clinicaltrials.registry.models import ClinicalTrial, Institution
+from clinicaltrials.registry.models import ClinicalTrial, Institution, Outcome
     
 
 class TrialIdentificationForm(forms.ModelForm):
@@ -49,10 +47,10 @@ class SponsorsForm(forms.ModelForm):
     title = _('Sponsors and Sources of Support')
 
     # TRDS 5
-    primary_sponsor_name = forms.CharField(required=False, 
+    primary_sponsor_name = forms.CharField(required=False,
                                            label=_('Primary Sponsor'),
                                            max_length=255)
-    primary_sponsor_address = forms.CharField(required=False, 
+    primary_sponsor_address = forms.CharField(required=False,
                                               label=_('Postal Address'),
                                               widget=forms.Textarea)
     primary_sponsor_country = forms.ModelChoiceField(label=_('Country'),
@@ -169,3 +167,10 @@ class ContactForm(forms.Form):
 
     zip = forms.CharField(label=_('Postal Code'), max_length=50)
     telephone = forms.CharField(label=_('Telephone'), max_length=255)
+
+class OutcomesForm(forms.ModelForm):
+    class Meta:
+        model = ClinicalTrial
+    
+    title = _('Outcomes')
+    inline_model = Outcome
