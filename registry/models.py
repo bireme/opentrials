@@ -295,11 +295,11 @@ class Descriptor(models.Model):
                         choices=choices.TRIAL_ASPECT)
     vocabulary = models.CharField(_('Vocabulary'), max_length=255,
                         choices=choices.DESCRIPTOR_VOCABULARY)
-    level = models.CharField(_('Level'), max_length=255,
+    version = models.CharField(_('Version'), max_length=64, blank=True)
+    level = models.CharField(_('Level'), max_length=64,
                         choices=choices.DESCRIPTOR_LEVEL)
     code = models.CharField(_('Code'), max_length=255)
-    text = models.CharField(_('Text'), max_length=255,
-                                       blank=True)
+    text = models.CharField(_('Text'), max_length=255, blank=True)
     order = models.PositiveIntegerField(default=0)
 
     class Meta:

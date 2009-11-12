@@ -7,6 +7,7 @@ from registry.views import edit_trial_index, edit_trial_form, index
 info_dict = {
     'queryset': ClinicalTrial.objects.all(),
 }
+
 info_dict_xml = {
     'queryset': ClinicalTrial.objects.all(),    
     'template_name': 'registry/clinicaltrial_detail.xml',
