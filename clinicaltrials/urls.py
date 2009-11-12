@@ -7,15 +7,15 @@ admin.autodiscover()             # Django admin UI
 
 urlpatterns = patterns('',
     # Registry application
-    (r'^rg/', include('clinicaltrials.registry.urls')),
+    url(r'^rg/', include('clinicaltrials.registry.urls')),
 
     # Rebrac public site application
-    (r'^', include('clinicaltrials.rebrac.urls')),
+    url(r'^', include('clinicaltrials.rebrac.urls')),
 
     # Django admin UI and documentation
-    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    (r'^admin/', include(admin.site.urls)),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/', include(admin.site.urls)),
     
     # Diagnostic views
-    (r'^smoke/', utilities.smoke_test),
+    url(r'^smoke/', utilities.smoke_test),
 )
