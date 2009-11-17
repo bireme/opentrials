@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block body %}
+
+
+<form method="post" action="/accounts/newsubmission/">
+<table>
+{{form.as_table}}
+</table>
+
+<input name="submit" type="submit" value="{% trans "Submit" %}">
+
+</form>
+
+{% endblock %}
