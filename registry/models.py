@@ -264,10 +264,9 @@ class RecruitmentCountry(models.Model):
 class TrialInterventionCode(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
     i_code = models.ForeignKey(InterventionCode)
-    order = models.PositiveIntegerField(default=0)
 
     class Meta:
-        ordering = ['order']
+        order_with_respect_to = 'trial'
 
     def __unicode__(self):
         return u'%s: %s' % (self.trial.short_title(), self.i_code.label)
@@ -280,11 +279,10 @@ class Outcome(models.Model):
     interest = models.CharField(_('Interest'), max_length=32,
                                choices=choices.OUTCOME_INTEREST,
                                default = choices.OUTCOME_INTEREST[0][0])
-    order = models.PositiveIntegerField(default=0)
     description = models.TextField(_('Outcome Description'), max_length=8000)
 
     class Meta:
-        ordering = ['order']
+        order_with_respect_to = 'trial'
 
     def __unicode__(self):
         return safe_truncate(self.description, 80)
@@ -300,10 +298,9 @@ class Descriptor(models.Model):
                         choices=choices.DESCRIPTOR_LEVEL)
     code = models.CharField(_('Code'), max_length=255)
     text = models.CharField(_('Text'), max_length=255, blank=True)
-    order = models.PositiveIntegerField(default=0)
 
     class Meta:
-        ordering = ['order']
+        order_with_respect_to = 'trial'
 
     def __unicode__(self):
         return u'[%s] %s: %s' % (self.vocabulary, self.code, self.text)

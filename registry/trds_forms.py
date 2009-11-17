@@ -1,5 +1,6 @@
 # coding: utf-8
 
+from clinicaltrials.registry.models import TrialInstitution
 from django import forms
 from django.utils.translation import ugettext as _
 
@@ -9,7 +10,7 @@ import choices
 from vocabulary.models import CountryCode, RecruitmentStatus
 from vocabulary.models import StudyType, StudyPhase
 
-from clinicaltrials.registry.models import ClinicalTrial, Institution, Outcome
+from clinicaltrials.registry.models import ClinicalTrial, Institution, Outcome, Descriptor
     
 
 class TrialIdentificationForm(forms.ModelForm):
@@ -40,24 +41,22 @@ class TrialIdentificationForm(forms.ModelForm):
 
 class SponsorsForm(forms.ModelForm):
     class Meta:
-        model = Institution
+        model = ClinicalTrial
         fields = ['primary_sponsor_name','primary_sponsor_address',
                  'primary_sponsor_country'] 
 
     title = _('Sponsors and Sources of Support')
-
-    # TRDS 5
-    primary_sponsor_name = forms.CharField(required=False,
-                                           label=_('Primary Sponsor'),
-                                           max_length=255)
-    primary_sponsor_address = forms.CharField(required=False,
-                                              label=_('Postal Address'),
-                                              widget=forms.Textarea)
-    primary_sponsor_country = forms.ModelChoiceField(label=_('Country'),
-                                    queryset=CountryCode.objects.all())
+    inline_model = TrialInstitution
 
     # TODO: TRDS 4: Sources of Support
     # TODO: TRDS 6: Secondary Sponsors
+
+class DescriptorForm(forms.ModelForm):
+    class Meta:
+        model = ClinicalTrial
+
+    title = _('Descriptor')
+    inline_model = Descriptor
 
 class HealthConditionsForm(forms.ModelForm):
     class Meta:
@@ -82,6 +81,7 @@ class InterventionsForm(forms.ModelForm):
     i_freetext = forms.CharField(label=_('Intervention(s)'),
                                          required=False, max_length=8000,
                                          widget=forms.Textarea)
+                                         
 class StudyTypeForm(forms.ModelForm):
     class Meta:
         model = ClinicalTrial

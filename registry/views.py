@@ -23,7 +23,8 @@ def index(request):
 
 TRIAL_FORMS = ['TrialIdentificationForm', 'SponsorsForm', 
                'HealthConditionsForm', 'InterventionsForm',
-               'RecruitmentForm', 'StudyTypeForm','OutcomesForm',]
+               'RecruitmentForm', 'StudyTypeForm','OutcomesForm',
+               'DescriptorForm',]
 
 def edit_trial_index(request, trial_pk):
     ''' start view '''
@@ -49,7 +50,7 @@ def edit_trial_form(request, trial_pk, form_name):
     FormClass = getattr(trds_forms, form_name)
     
     if hasattr(FormClass, 'inline_model'):
-        FormClass = inlineformset_factory(ClinicalTrial, 
+        FormClass = inlineformset_factory(ClinicalTrial,
                                            FormClass.inline_model,
                                            extra=3)        
     

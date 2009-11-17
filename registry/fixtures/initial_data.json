@@ -147,7 +147,7 @@
     }
   }, 
   {
-    "pk": 2, 
+    "pk": 2,
     "model": "registry.institution", 
     "fields": {
       "country": 103, 
@@ -220,8 +220,7 @@
     "model": "registry.trialinterventioncode", 
     "fields": {
       "trial": 3, 
-      "i_code": 1, 
-      "order": 0
+      "i_code": 1
     }
   }, 
   {
@@ -229,8 +228,7 @@
     "model": "registry.trialinterventioncode", 
     "fields": {
       "trial": 1, 
-      "i_code": 1, 
-      "order": 0
+      "i_code": 1
     }
   }, 
   {
@@ -238,8 +236,7 @@
     "model": "registry.trialinterventioncode", 
     "fields": {
       "trial": 1, 
-      "i_code": 8, 
-      "order": 0
+      "i_code": 8
     }
   }, 
   {
@@ -247,7 +244,6 @@
     "model": "registry.outcome", 
     "fields": {
       "trial": 1, 
-      "order": 0, 
       "interest": "primary", 
       "description": "The primary outcome measure is (unassisted) patency of the AVF at ninety (90)days after surgery. This is defined as the presence of an audible bruit over the site of the arterio-venous anastomosis, without the need for surgical or radiological intervention from the time of creation until the time of assessment.\r\nThe assessment of patency will be made at this time even if the AVF is not yet used for haemodialysis (11). Measurement of bruit will also be taken at 1 month to better define the natural history of thrombotic events."
     }
@@ -257,7 +253,6 @@
     "model": "registry.outcome", 
     "fields": {
       "trial": 3, 
-      "order": 0, 
       "interest": "primary", 
       "description": "Left Ventricular Ejection Fraction (LVEF). Timepoint: Before and after CABG. Method of measurement: Trans Thoracic Echocardiography (TTE)"
     }
@@ -267,7 +262,6 @@
     "model": "registry.outcome", 
     "fields": {
       "trial": 3, 
-      "order": 0, 
       "interest": "secondary", 
       "description": "Total Antioxidant Capacity (TAC) . Timepoint: Before, middle and after CABG. Method of measurement: Biochemistry (blood sample)"
     }
@@ -277,7 +271,6 @@
     "model": "registry.outcome", 
     "fields": {
       "trial": 1, 
-      "order": 1, 
       "interest": "secondary", 
       "description": "Functional patency at 6 months. This is defined as the ability to use the AVF for a minimum of 3 consecutive dialysis treatments to the satisfaction of the clinician(s), without the need to use alternative dialysis access, or to delay commencement of dialysis. In patients who have not needed to start dialysis,\r\nassessment of functional patency will be delayed until commencement of dialysis. "
     }
@@ -287,7 +280,6 @@
     "model": "registry.outcome", 
     "fields": {
       "trial": 1, 
-      "order": 2, 
       "interest": "secondary", 
       "description": "Time to failure of primary patency. Time from AVF creation to need for first intervention. An event is defined as revision surgery, need for alternative access, or abandonment of AVF which ever comes first. Censored observations are defined as regaining renal function such that dialysis is not needed or still having a patent AVF at time of study analysis. There will be a minimum of 12 months follow up time for each patient. "
     }
@@ -297,7 +289,6 @@
     "model": "registry.outcome", 
     "fields": {
       "trial": 1, 
-      "order": 3, 
       "interest": "secondary", 
       "description": "Time to failure of assisted patency. This is defined as time from AVF creation to abandonment of access. That is, radiological and surgical interventions to preserve or restore patency do not constitute failure. An event is defined as abandonment of the AVF as dialysis access. Censored observations will be as for time to failure of primary patency above. "
     }
@@ -307,7 +298,6 @@
     "model": "registry.outcome", 
     "fields": {
       "trial": 1, 
-      "order": 4, 
       "interest": "secondary", 
       "description": "Adverse events. All serious adverse events (see section 5.4) will be collected. The analysis of this secondary outcome will focus specifically on bleeding events."
     }
@@ -321,8 +311,7 @@
       "level": "general", 
       "text": "Cardiovascular Diseases", 
       "trial": 3, 
-      "aspect": "HealthCondition", 
-      "order": 0
+      "aspect": "HealthCondition"
     }
   }, 
   {
@@ -334,8 +323,7 @@
       "level": "specific", 
       "text": "L-Ascorbic acid", 
       "trial": 3, 
-      "aspect": "Intervention", 
-      "order": 0
+      "aspect": "Intervention"
     }
   }, 
   {
@@ -347,8 +335,7 @@
       "level": "specific", 
       "text": "Arteriovenous Fistula", 
       "trial": 1, 
-      "aspect": "HealthCondition", 
-      "order": 0
+      "aspect": "HealthCondition"
     }
   }, 
   {
@@ -360,8 +347,7 @@
       "level": "specific", 
       "text": "Benzoic acid, 2-(acetyloxy)-", 
       "trial": 1, 
-      "aspect": "Intervention", 
-      "order": 0
+      "aspect": "Intervention"
     }
   }, 
   {
@@ -373,8 +359,7 @@
       "level": "specific", 
       "text": "Myocardial Ischemia", 
       "trial": 3, 
-      "aspect": "HealthCondition", 
-      "order": 1
+      "aspect": "HealthCondition"
     }
   }, 
   {
@@ -386,8 +371,7 @@
       "level": "specific", 
       "text": "Coronary Artery Disease ", 
       "trial": 3, 
-      "aspect": "HealthCondition", 
-      "order": 2
+      "aspect": "HealthCondition"
     }
   }, 
   {
@@ -399,8 +383,7 @@
       "level": "specific", 
       "text": "Cardiomyopathies", 
       "trial": 3, 
-      "aspect": "HealthCondition", 
-      "order": 3
+      "aspect": "HealthCondition"
     }
   }
 ]
