@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+
 {% block headline %}User Submissions{% endblock %}
 
 {% block body %}
@@ -14,13 +15,13 @@
     {% for submission in object_list %}
     <tr>
         <td>{{ submission.creator_username }}</td>
-        <td><a href="{{submission.get_absolute_url}}">{{ submission.short_title }}</a></td>
+        <td><a href="{% url edittrial submission.trial.pk  %}">{{ submission.short_title }}</a></td>
         <td>{{ submission.status }}</td>
     </tr>
 {% endfor %}
 </table>
 
 <p>
-    <a href="{% url rebrac.new_submission %}">{% trans "Submit a new Clinical Trial" %}
+    <a href="{% url rebrac.new_submission %}">{% trans "Submit a new Clinical Trial" %}</a>
 </p>
 {% endblock %}

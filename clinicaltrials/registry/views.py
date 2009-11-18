@@ -35,7 +35,6 @@ def edit_trial_index(request, trial_pk):
         data['icon'] = '/media/img/admin/icon_alert.gif'
         data['msg'] = 'Blank fields'
         links.append(data)
-    trial_pk = 1 # TODO: remove hardcoded id!!!
     return render_to_response('registry/trial_index.html', 
                               {'trial_pk':trial_pk,'links':links})    
 
