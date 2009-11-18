@@ -15,7 +15,7 @@ info_dict_xml = {
 }
 
 urlpatterns = patterns('',
-    url(r'^edit/(\d+)/$', edit_trial_index),
+    url(r'^edit/(\d+)/$', edit_trial_index, name="edittrial"),
     url(r'^xml/(?P<object_id>\d+)/$', object_detail, info_dict_xml,
         name='registry.xml'),
     url(r'^form/(\d+)/(\w+)/$', edit_trial_form),

@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 
 from rebrac.forms import SubmissionForm
 from rebrac.models import Submission
-from registry.models import ClinicalTrial
+from registry.models import ClinicalTrial, Institution
 
 def index(request):
     username = request.user.username if request.user.is_authenticated() else None
@@ -24,16 +24,17 @@ def new_submission(request):
         form = SubmissionForm(request.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
             pass
-            ct = ClinicalTrial()
+            trial = ClinicalTrial()            
 
-            for name,value in request.POST.items():
-                if hasattr(ct, name):
-                    setattr(ct, name, value)
-            ct.save()
+            trial.scientific_title = request.POST.get('scientific_title')
+            trial.primary_sponsor = Institution.objects.get(
+                                         pk=request.POST.get('primary_sponsor'))
+
+            trial.save()
 
             sub = Submission()
             sub.creator = request.user
-            sub.trial = ct
+            sub.trial = trial
 
             sub.save()           
 
