@@ -51,3 +51,7 @@ class IcdChapter(SimpleVocabulary):
     
     def __unicode__(self):
         return self.description
+        
+class AttachmentType(SimpleVocabulary):
+    ''' Types of documents attached to Clinical Trial records '''
+        
