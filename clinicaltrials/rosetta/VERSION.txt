@@ -1,0 +1,2 @@
+http://django-rosetta.googlecode.com/files/django-rosetta-0.5.1.tar.gz
+downloaded 2009-12-04
