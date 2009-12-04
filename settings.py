@@ -86,6 +86,7 @@ INSTALLED_APPS = (
     'clinicaltrials.registry',
     'clinicaltrials.vocabulary',
     'clinicaltrials.rebrac',
+    'rosetta',
 )
 
 CHECKED_LANGUAGES = set((u'EN', u'ES', u'FR', u'PT'))

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-31 17:19+0000\n"
+"POT-Creation-Date: 2009-12-04 18:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,34 +17,497 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: registry/models.py:16 registry/models.py:30
-msgid "Recruitment Status"
-msgstr "Situação de recrutamento"
+#: rebrac/forms.py:11
+msgid "Submission"
+msgstr ""
 
-#: registry/models.py:23
-msgid "Public Title"
-msgstr "Título público"
-
-#: registry/models.py:25
+#: rebrac/forms.py:13 registry/models.py:20 registry/trds.py:15
+#: registry/trds_forms.py:24
 msgid "Scientific Title"
 msgstr "Título científico"
 
-#: registry/models.py:27
+#: rebrac/forms.py:17 registry/models.py:27 registry/trds.py:10
+msgid "Primary Sponsor"
+msgstr ""
+
+#: rebrac/models.py:23 registry/models.py:242
+msgid "Status"
+msgstr ""
+
+#: rebrac/models.py:26
+msgid "Submission Note (staff use only)"
+msgstr ""
+
+#: rebrac/templates/rebrac/new_submission.html:11
+msgid "Submit"
+msgstr ""
+
+#: rebrac/templates/rebrac/submission_list.html:25
+#, fuzzy
+msgid "Submit a new Clinical Trial"
+msgstr "Incluir novo Registro de Ensaio Clínico"
+
+#: registry/models.py:14
+msgid "Primary Id Number"
+msgstr ""
+
+#: registry/models.py:17
+#, fuzzy
+msgid "Date of Registration"
+msgstr "Data do primeiro recrutamento"
+
+#: registry/models.py:23 registry/trds_forms.py:29
+#, fuzzy
+msgid "Scientific Acronym"
+msgstr "Título científico"
+
+#: registry/models.py:29 registry/trds.py:14 registry/trds_forms.py:33
+msgid "Public Title"
+msgstr "Título público"
+
+#: registry/models.py:32 registry/trds_forms.py:37
+msgid "Acronym"
+msgstr ""
+
+#: registry/models.py:35
+msgid "Health Condition(s)"
+msgstr ""
+
+#: registry/models.py:38 registry/trds_forms.py:78 registry/trds_forms.py:81
+msgid "Intervention(s)"
+msgstr ""
+
+#: registry/models.py:41 registry/trds_forms.py:131
+msgid "Inclusion Criteria"
+msgstr ""
+
+#: registry/models.py:44 registry/trds_forms.py:135
+msgid "Gender (inclusion sex)"
+msgstr ""
+
+#: registry/models.py:48 registry/trds_forms.py:138
+msgid "Inclusion Minimum Age"
+msgstr ""
+
+#: registry/models.py:50 registry/trds_forms.py:140
+msgid "Minimum Age Unit"
+msgstr ""
+
+#: registry/models.py:54 registry/trds_forms.py:143
+msgid "Inclusion Maximum Age"
+msgstr ""
+
+#: registry/models.py:56 registry/trds_forms.py:145
+msgid "Maximum Age Unit"
+msgstr ""
+
+#: registry/models.py:60 registry/trds_forms.py:148
+msgid "Exclusion Criteria"
+msgstr ""
+
+#: registry/models.py:64 registry/trds_forms.py:90 registry/trds_forms.py:93
+msgid "Study Type"
+msgstr ""
+
+#: registry/models.py:67 registry/trds_forms.py:97
+msgid "Study Design"
+msgstr ""
+
+#: registry/models.py:71 registry/trds_forms.py:101
+msgid "Study Phase"
+msgstr ""
+
+#: registry/models.py:75
+#, fuzzy
+msgid "Anticipated Date of First Enrollment"
+msgstr "Data do primeiro recrutamento"
+
+#: registry/models.py:79
+#, fuzzy
+msgid "Actual Date of First Enrollment"
+msgstr "Data do primeiro recrutamento"
+
+#: registry/models.py:82 registry/trds_forms.py:128
+msgid "Target Sample Size"
+msgstr "Tamanho da amostra alvo"
+
+#: registry/models.py:86 registry/trds_forms.py:120
+msgid "Recruitment Status"
+msgstr "Situação de recrutamento"
+
+#: registry/models.py:90
+msgid "Last Update"
+msgstr ""
+
+#: registry/models.py:91
+msgid "Record Note (staff use only)"
+msgstr ""
+
+#: registry/models.py:151
+msgid "Updated"
+msgstr ""
+
+#: registry/models.py:183
+msgid "Issuing Authority"
+msgstr ""
+
+#: registry/models.py:185
+msgid "Secondary Id Number"
+msgstr ""
+
+#: registry/models.py:197 registry/models.py:240
+msgid "Relationship"
+msgstr ""
+
+#: registry/models.py:206
+msgid "Name"
+msgstr ""
+
+#: registry/models.py:207
+msgid "Postal Address"
+msgstr ""
+
+#: registry/models.py:208 registry/models.py:226 registry/models.py:254
+#: registry/trds_forms.py:166
+msgid "Country"
+msgstr ""
+
+#: registry/models.py:217 registry/trds_forms.py:154
+msgid "First Name"
+msgstr ""
+
+#: registry/models.py:218 registry/trds_forms.py:155
+msgid "Middle Name"
+msgstr ""
+
+#: registry/models.py:219 registry/trds_forms.py:156
+msgid "Last Name"
+msgstr ""
+
+#: registry/models.py:220 registry/trds_forms.py:158
+msgid "E-mail"
+msgstr ""
+
+#: registry/models.py:222 registry/trds_forms.py:161
+msgid "Affiliation"
+msgstr ""
+
+#: registry/models.py:223 registry/trds_forms.py:163
+msgid "Address"
+msgstr ""
+
+#: registry/models.py:224 registry/trds_forms.py:164
+msgid "City"
+msgstr ""
+
+#: registry/models.py:227 registry/trds_forms.py:168
+msgid "Postal Code"
+msgstr ""
+
+#: registry/models.py:228 registry/trds_forms.py:169
+msgid "Telephone"
+msgstr ""
+
+#: registry/models.py:257
+#, fuzzy
+msgid "Recruitment Countries"
+msgstr "Situação de recrutamento"
+
+#: registry/models.py:279
+msgid "Interest"
+msgstr ""
+
+#: registry/models.py:282
+msgid "Outcome Description"
+msgstr ""
+
+#: registry/models.py:292
+msgid "Trial Aspect"
+msgstr ""
+
+#: registry/models.py:294
+msgid "Vocabulary"
+msgstr ""
+
+#: registry/models.py:296
+msgid "Version"
+msgstr ""
+
+#: registry/models.py:297
+msgid "Level"
+msgstr ""
+
+#: registry/models.py:299
+msgid "Code"
+msgstr ""
+
+#: registry/models.py:300
+msgid "Text"
+msgstr ""
+
+#: registry/trds.py:6
+msgid "Primary Registry and Trial Identifying Number"
+msgstr ""
+
+#: registry/trds.py:7
+msgid "Date of Registration in Primary Registry"
+msgstr ""
+
+#: registry/trds.py:8
+msgid "Secondary Identifying Numbers"
+msgstr ""
+
+#: registry/trds.py:9
+msgid "Source(s) of Monetary or Material Support"
+msgstr ""
+
+#: registry/trds.py:11
+msgid "Secondary Sponsors"
+msgstr ""
+
+#: registry/trds.py:12
+msgid "Contacts for Public Queries"
+msgstr ""
+
+#: registry/trds.py:13
+msgid "Contacts for Scientific Queries"
+msgstr ""
+
+#: registry/trds.py:16
+msgid "Countries of Recruitment"
+msgstr ""
+
+#: registry/trds_forms.py:22
+msgid "Trial Identification"
+msgstr ""
+
+#: registry/trds_forms.py:48
+msgid "Sponsors and Sources of Support"
+msgstr ""
+
+#: registry/trds_forms.py:58
+msgid "Descriptor"
+msgstr ""
+
+#: registry/trds_forms.py:66
+msgid "Health Condition(s) or Problem(s) Studied"
+msgstr ""
+
+#: registry/trds_forms.py:69
+msgid "Health Condition(s) or Problem(s)"
+msgstr ""
+
+#: registry/trds_forms.py:115
+#, fuzzy
+msgid "Recruitment"
+msgstr "Situação de recrutamento"
+
+#: registry/trds_forms.py:125
 msgid "Date of First Enrollment"
 msgstr "Data do primeiro recrutamento"
 
-#: registry/models.py:28
-msgid "Target Sample Size"
-msgstr "Tamanho da amostra alvo"
+#: registry/trds_forms.py:152
+msgid "Contacts"
+msgstr ""
+
+#: registry/trds_forms.py:175
+msgid "Outcomes"
+msgstr ""
 
 #: registry/templates/registry/add_clinicalTrials.html:3
 msgid "Add a new Clinical Trial Record"
 msgstr "Incluir novo Registro de Ensaio Clínico"
 
-#: templates/base.html:5
+#: registry/templates/registry/trial_form.html:12
+#: registry/templates/registry/trial_outcomes_form.html:15
+msgid "Save and continue later"
+msgstr ""
+
+#: registry/templates/registry/trial_form.html:16
+#: registry/templates/registry/trial_outcomes_form.html:19
+msgid "Save and go to"
+msgstr ""
+
+#: registry/templates/registry/trial_index.html:3
+msgid "Trial Summary"
+msgstr ""
+
+#: registry/templates/registry/trial_outcomes_form.html:8
+msgid "Primary Outcomes"
+msgstr ""
+
+#: registry/templates/registry/trial_outcomes_form.html:11
+msgid "Secondary Outcomes"
+msgstr ""
+
+#: rosetta/templates/rosetta/languages.html:3
+#: rosetta/templates/rosetta/pofile.html:14
+msgid "Home"
+msgstr ""
+
+#: rosetta/templates/rosetta/languages.html:3
+#: rosetta/templates/rosetta/languages.html:4
+msgid "Language selection"
+msgstr ""
+
+#: rosetta/templates/rosetta/languages.html:14
+msgid "Application"
+msgstr ""
+
+#: rosetta/templates/rosetta/languages.html:15
+msgid "Progress"
+msgstr ""
+
+#: rosetta/templates/rosetta/languages.html:16
+msgid "Messages"
+msgstr ""
+
+#: rosetta/templates/rosetta/languages.html:17
+msgid "Translated"
+msgstr ""
+
+#: rosetta/templates/rosetta/languages.html:18
+#: rosetta/templates/rosetta/pofile.html:51
+msgid "Fuzzy"
+msgstr ""
+
+#: rosetta/templates/rosetta/languages.html:19
+msgid "Obsolete"
+msgstr ""
+
+#: rosetta/templates/rosetta/languages.html:20
+msgid "File"
+msgstr ""
+
+#: rosetta/templates/rosetta/languages.html:41
+msgid "Nothing to translate!"
+msgstr ""
+
+#: rosetta/templates/rosetta/languages.html:42
+msgid ""
+"You haven't specified any languages in your settings file, or haven't yet "
+"generated a batch of translation catalogs."
+msgstr ""
+
+#: rosetta/templates/rosetta/languages.html:43
+#, python-format
+msgid ""
+"Please refer to <a href=\"%(i18n_doc_link)s\">Django's I18N documentation</"
+"a> for a guide on how to set up internationalization for your project."
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:8
+msgid "Pick another file"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:9
+msgid "Download this catalog"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:17
+msgid "Progress: %(percent_translated)s%"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:18
+msgid "File is read-only: download the file when done editing!"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:20
+msgid "English"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:22
+#, python-format
+msgid "Translate into %(rosetta_i18n_lang_name)s"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:25
+msgid "Display:"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:26
+msgid "Untranslated only"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:27
+msgid "Translated only"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:28
+msgid "Fuzzy only"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:29
+msgid "All"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:36
+msgid "Search"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:38
+msgid "Go"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:48
+msgid "Original"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:52
+msgid "Occurrences(s)"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:76
+msgid "suggest"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:87
+#, python-format
+msgid "%(more_count)s more"
+msgid_plural "%(more_count)s more"
+msgstr[0] ""
+msgstr[1] ""
+
+#: rosetta/templates/rosetta/pofile.html:99
+msgid "Save and translate next block"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:103
+msgid "Skip to page:"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:116
+msgid "Displaying:"
+msgstr ""
+
+#: rosetta/templates/rosetta/pofile.html:118
+#, python-format
+msgid "%(hits)s/%(message_number)s message"
+msgid_plural "%(hits)s/%(message_number)s messages"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/base.html:6
 msgid "Reclac Platform"
 msgstr "Plataforma Reclac"
 
-#: templates/base.html:25
+#: templates/base.html:26
 msgid "Rebrac, part of the WHO/ICTRP network"
 msgstr "Rebrac, parte da rede OMS/ICTRP"
+
+#: vocabulary/models.py:9
+msgid "Label"
+msgstr ""
+
+#: vocabulary/models.py:10
+msgid "Description"
+msgstr ""
+
+#: vocabulary/models.py:23
+msgid "Required Language"
+msgstr ""
+
+#: vocabulary/models.py:41
+#, fuzzy
+msgid "Recruitment status"
+msgstr "Situação de recrutamento"
