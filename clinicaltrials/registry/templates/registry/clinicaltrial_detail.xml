@@ -24,76 +24,96 @@
             <i_freetext>{{ object.i_freetext }}</i_freetext>            
         </main>
         <contacts>
+        {% for contact in object.public_contacts %}
             <contact>
                 <type>public</type>
-                <firstname>Naser safaei, MD, Surgeon</firstname>
-                <middlename/>
-                <lastname/>
-                <address>Tabriz Univ Med Sci</address>
-                <city>Tabriz</city>
-                <country1>Iran, Islamic Republic Of</country1>
-                <zip>51656-65811</zip>
-                <telephone>+98-411-3357767</telephone>
-                <email>drsafaei@yahoo.com</email>
-                <affiliation>Tabriz Univ Med Sci</affiliation>
+                <firstname>{{ contact.firstname }}</firstname>
+                <middlename>{{ contact.middlename }}</middlename>
+                <lastname>{{ contact.lastname }}</lastname>
+                <address>{{ contact.address }}</address>
+                <city>{{ contact.city }}</city>
+                <country1>{{ contact.country }}</country1>
+                <zip>{{ contact.zip }}</zip>
+                <telephone>{{ contact.telephone }}</telephone>
+                <email>{{ contact.email }}</email>
+                <affiliation>{{ contact.affiliation }}</affiliation>
             </contact>
+        {% endfor %}
+        {% for contact in object.scientific_contacts %}
             <contact>
                 <type>scientific</type>
-                <firstname>Dr Naser Safaei</firstname>
-                <middlename/>
-                <lastname/>
-                <address>Daneshgah St,Tabriz Univ Med Sci</address>
-                <city>Tabriz</city>
-                <country1>Iran, Islamic Republic Of</country1>
-                <zip>51656-65811</zip>
-                <telephone>+98-411-3357767</telephone>
-                <email>drsafaei@yahoo.com</email>
-                <affiliation>Tabriz Univ Med Sci</affiliation>
+                <firstname>{{ contact.firstname }}</firstname>
+                <middlename>{{ contact.middlename }}</middlename>
+                <lastname>{{ contact.lastname }}</lastname>
+                <address>{{ contact.address }}</address>
+                <city>{{ contact.city }}</city>
+                <country1>{{ contact.country }}</country1>
+                <zip>{{ contact.zip }}</zip>
+                <telephone>{{ contact.telephone }}</telephone>
+                <email>{{ contact.email }}</email>
+                <affiliation>{{ contact.affiliation }}</affiliation>
             </contact>
+        {% endfor %}
         </contacts>
         <countries>
-            <country2>Iran, Islamic Republic Of</country2>
+        {% for country in object.recruitmentcountry_set.all %}
+            <country2>{{ country }}</country2>
+        {% endfor %}
         </countries>
         <criteria>
-            <inclusion_criteria>Inclusion Criteria: Candidates for elective CABG surgery with pump for first time, 3 Vessel Disease (3VD). &#xD;3	Exclusion Criteria: High risk patients, Those who need another heart surgery beside CABG, Urgent patients Diabetics, Ischemic time more than 120 min.&#xD;4</inclusion_criteria>
-            <agemin>0</agemin>
-            <agemax>150</agemax>
-            <gender>Both male and female</gender>
-            <exclusion_criteria/>
+            <inclusion_criteria>{{ object.inclusion_criteria }}</inclusion_criteria>
+            <agemin>{{ object.agemin }}</agemin>
+            <agemax>{{ object.agemax }}</agemax>
+            <gender>{{ object.gender }}</gender>
+            <exclusion_criteria>{{ object.exclusion_criteria }}</exclusion_criteria>
         </criteria>
         <health_condition_code>
-            <hc_code/>
+            {% for hc in object.hc_code %}
+            <hc_code>{{ hc.code }}: {{ hc.text }}</hc_code>
+            {% endfor %}
         </health_condition_code>
         <health_condition_keyword>
-            <hc_keyword>Ischaemic heart diseases</hc_keyword>
-            <hc_keyword>Atherosclerotic heart disease  </hc_keyword>
-            <hc_keyword>Ischaemic cardiomyopathy</hc_keyword>
+            {% for hc in object.hc_keyword %}
+            <hc_keyword>{{ hc.code }}: {{ hc.text }}</hc_keyword>
+            {% endfor %}
         </health_condition_keyword>
         <intervention_code>
-            <i_code>Not applicable</i_code>
-            <i_code>Treatment: drugs</i_code>
-            <i_code>Treatment: drugs</i_code>
-            <i_code/>
+            {% for iv in object.intervention_code %}
+            <i_code>{{ iv.label }}: {{ iv.description }}</i_code>
+            {% endfor %}
         </intervention_code>
         <intervention_keyword>
-            <i_keyword/>
+            {% for iv in object.intervention_keyword %}
+            <i_keyword>{{ iv.code }}: {{ iv.text }}</i_keyword>
+            {% endfor %}
         </intervention_keyword>
         <primary_outcome>
-            <prim_outcome>Left Ventricular Ejection Fraction (LVEF). Timepoint: Before and after CABG. Method of measurement: Trans Thoracic Echocardiography  (TTE)</prim_outcome>
+            {% for outcomes in object.primary_outcomes %}
+            <prim_outcome>{{ outcomes.description }}</prim_outcome>
+            {% endfor %}
         </primary_outcome>
         <secondary_outcome>
-            <sec_outcome>Total Antioxidant Capacity (TAC) . Timepoint: Before, middle and after CABG. Method of measurement: Biochemistry (blood sample)</sec_outcome>
+            {% for outcomes in object.secondary_outcomes %}
+            <sec_outcome>{{ outcomes.description }}</sec_outcome>
+            {% endfor %}
         </secondary_outcome>
         <secondary_sponsor>
-            <sponsor_name/>
+            {%  for sponsors in object.secondary_sponsors %}
+            <sponsor_name>{{ sponsors.institution }}</sponsor_name>
+            {% endfor %}
         </secondary_sponsor>
         <secondary_ids>
+            {% for secid in object.trial_number %}
             <secondary_id>
-                <sec_id>NCT00839085</sec_id>
-                <issuing_authority> ClinicalTrials.gov</issuing_authority>
-            </secondary_id></secondary_ids>
+                <sec_id>{{ secid.id_number }}</sec_id>
+                <issuing_authority>{{ secid.issuing_authority }}</issuing_authority>    
+            </secondary_id>
+            {% endfor %}
+        </secondary_ids>
         <source_support>
-            <source_name>Tabriz University of Medical Sciences</source_name>
+            {%  for source_support in object.secondary_sponsors %}
+            <source_name>{{  }}</source_name>
+            {% endfor %}
         </source_support>        
     </trial>
 </trials>
