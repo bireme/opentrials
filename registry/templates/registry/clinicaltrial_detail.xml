@@ -111,8 +111,8 @@
             {% endfor %}
         </secondary_ids>
         <source_support>
-            {%  for source_support in object.secondary_sponsors %}
-            <source_name>{{  }}</source_name>
+            {%  for source_support in object.support_sources %}
+            <source_name>{{ source_support.institution }}</source_name>
             {% endfor %}
         </source_support>        
     </trial>
