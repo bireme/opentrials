@@ -15,15 +15,23 @@ class SimpleVocabulary(models.Model):
 
     def __unicode__(self):
         return self.label
-            
+          
 class CountryCode(SimpleVocabulary):
     ''' TRDS 11, Countries of Recruitment 
         also used for Contacts and Institutions
     '''
+
+    class Meta:
+        ordering = ['description']
+
     language = models.CharField(_('Required Language'), max_length=2, blank=True)
     
     def __unicode__(self):
         return self.description
+    
+    @classmethod
+    def choices(cls):
+        return ( (cc.id, cc.description) for cc in cls.objects.all() )
         
 class InterventionCode(SimpleVocabulary):
     ''' TRDS 18 '''
