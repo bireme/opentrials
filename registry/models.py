@@ -123,6 +123,10 @@ class ClinicalTrial(models.Model):
     def record_status(self):
         return self.submission.status
 
+    #TRDS 3 - Secondarty ID Numbers
+    def trial_number(self):
+        return self.trialnumber_set.all().select_related();
+
     def related_institutions(self, relation):
         ''' return set of Institutions related to this trial with a
             given relationship
@@ -157,6 +161,13 @@ class ClinicalTrial(models.Model):
         return (r.contact for r in
                 self.trialcontact_set.filter(relation=relation).select_related())
 
+    def related_health_conditions(self, aspect, level):
+        ''' return set of hc-code or keywords related to this trial with a
+            given relationship
+        '''
+        return self.descriptor_set.filter(aspect=aspect, level=level).select_related()
+
+
     # TRDS 7 - Contact for Public Queries
 
     def public_contacts(self):
@@ -172,6 +183,48 @@ class ClinicalTrial(models.Model):
             relation='ScientificContact'
         '''
         return self.related_contacts('ScientificContact')
+
+    #TRDS 12b - HC-CODE
+    def hc_code(self):
+        ''' return set of HC-Code related to this trial with
+            aspect = 'HealthCondition'
+            level  = 'general'
+        '''
+        return self.related_health_conditions('HealthCondition','general')
+
+    #TRDS 12c - HC-Keyword
+    def hc_keyword(self):
+        ''' return set of HC-Code related to this trial with
+            aspect = 'HealthCondition'
+            level  = 'specific'
+        '''
+        return self.related_health_conditions('HealthCondition','specific')
+    
+    #TRDS 13b - Invetion Code
+    def intervention_code(self):
+        ''' return set of Intervention Code related to this trial with
+        '''
+        return (r.i_code for r in
+                self.trialinterventioncode_set.all().select_related())
+
+    #TRDS 13c - Invention Keyword
+    def intervention_keyword(self):
+        ''' return set of Intervention Keyword related to this trial with
+        '''
+        return self.descriptor_set.filter(aspect='intervention').select_related()
+
+    #TRDS 19 - Primary Outcomes
+    def primary_outcomes(self):
+        ''' return set of Primary Outcomes related to this trial with
+        '''
+        return self.outcome_set.filter(interest='primary').select_related()
+
+    #TRDS 20 - Secondary Outcomes
+    def secondary_outcomes(self):
+        ''' return set of Secondary Outcomes related to this trial with
+        '''
+        return self.outcome_set.filter(interest='secondary').select_related()
+
 
 
 ################################### Entities linked to a Clinical Trial ###
