@@ -258,7 +258,7 @@ class TrialInstitution(models.Model):
 class Institution(models.Model):
     name = models.CharField(_('Name'), max_length=255)
     address = models.TextField(_('Postal Address'), max_length=1500, blank=True)
-    country = models.ForeignKey(CountryCode, null=True, blank=True, verbose_name=_('Country'))
+    country = models.ForeignKey(CountryCode, verbose_name=_('Country'))
 
     def __unicode__(self):
         return safe_truncate(self.name, 80)
