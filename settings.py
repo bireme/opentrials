@@ -86,6 +86,7 @@ INSTALLED_APPS = (
     'clinicaltrials.registry',
     'clinicaltrials.vocabulary',
     'clinicaltrials.rebrac',
+    'clinicaltrials.tickets',
     'rosetta',
 )
 
