@@ -23,7 +23,7 @@ class ClinicalTrial(models.Model):
     scientific_acronym = models.CharField(_('Scientific Acronym'), blank=True,
                                           max_length=255)
     # TRDS 5
-    primary_sponsor = models.ForeignKey('Institution', null=True, blank=True,
+    primary_sponsor = models.OneToOneField('Institution', null=True, blank=True,
                                         verbose_name=_('Primary Sponsor'))
     # TRDS 9a
     public_title = models.TextField(_('Public Title'), blank=True,

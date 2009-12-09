@@ -8,7 +8,7 @@
             <utrn>{{ object.utrn }}</utrn>
             <reg_name>{{ object.reg_name }}</reg_name>
             <date_registration>{{ object.date_registration }}</date_registration>
-            <primary_sponsor>{{ object.type_primary_sponsor }}</primary_sponsor>
+            <primary_sponsor>{{ object.primary_sponsor }}</primary_sponsor>
             <public_title>{{ public_title }}</public_title>
             <acronym>{{ object.scientific_acronym }}</acronym>
             <scientific_title>{{ object.scientific_title }}</scientific_title>
