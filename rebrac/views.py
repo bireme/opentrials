@@ -33,11 +33,25 @@ class PrimarySponsorForm(forms.ModelForm):
         exclude = ['address']
     title = _('Primary Sponsor')
 
+'''
+class RecruitmentCountry(models.Model):
+    trial = models.ForeignKey(ClinicalTrial)
+    country = models.ForeignKey(CountryCode, verbose_name=_('Country'))
+
+'''
+
 def new_submission(request):
     if request.method == 'POST': # If the forms were submitted...
         initial_form = InitialTrialForm(request.POST)
         sponsor_form = PrimarySponsorForm(request.POST)
         if initial_form.is_valid() and sponsor_form.is_valid(): # All validation rules pass
+            trial = ClinicalTrial(scientific_title=initial_form.cleaned_data['scientific_title'])
+            trial.primary_sponsor = Institution.objects.create(**sponsor_form.cleaned_data)
+            trial.save()
+            for country_id in initial_form.cleaned_data['recruitment_countries']:
+                trial.recruitmentcountry_set.create(country_id=country_id)
+            submission = Submission(creator=request.user, trial=trial)
+            submission.save()
             return HttpResponseRedirect(reverse('rebrac.userhome')) # Redirect after POST
     else:
         initial_form = InitialTrialForm()
