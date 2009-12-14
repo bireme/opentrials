@@ -4,7 +4,7 @@
 {% load i18n %}
 <head>
     <title>{% block page_title %}{% trans "Reclac Platform" %}{% endblock %}</title>
-    
+    <link rel="shortcut icon" href="/static/favicon.ico"/>
     <!-- stylesheets to support admin widgets in public forms -->
     <link rel="stylesheet" type="text/css" href="/media/css/base.css" />
     <link rel="stylesheet" type="text/css" href="/media/css/forms.css" />
@@ -29,5 +29,8 @@
         <h1>{% block body_title %}Content Title{% endblock %}</h1>        
     {% block body %}{% endblock %}
     </div>
+<hr>
+<p>&nbsp;</p>
+<img src="/static/logoOpas.gif" title="Logomarca OPAS/OMS" />
 </body>
 </html>

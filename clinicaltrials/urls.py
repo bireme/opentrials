@@ -27,7 +27,15 @@ urlpatterns = patterns('',
 )
 
 from django.conf import settings
+if settings.DEBUG:
+    from django.views import static
+    urlpatterns += patterns('',
+        url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
+            {'document_root': settings.MEDIA_ROOT}),
+    )
+
 if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += patterns('',
         url(r'^rosetta/', include('rosetta.urls')),
     )
+    
