@@ -3,13 +3,25 @@
 {% block body_title %}FAQ{% endblock %}
 
 {% block body %}
-    {% if object_list %}
-            <ul>
-            {% for ct in object_list %}
-                <li>{{ ct }}</li>
+
+{% if object_list %}
+
+   {% regroup object_list by category as category_list %}
+
+    <ul>
+    {% for category in category_list %}
+        <li>{{ category.grouper }}
+        <dl>
+            {% for item in category.list %}
+            <dt>{{ item.title}} </dt>
+            <dd>{{ item.answer }}</dd>
             {% endfor %}
-            </ul>
-    {% else %}
-        <p>No FAQ available.</p>
+        </dl>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% else %}
+    <p>No FAQ available.</p>
 {% endif %}
 {% endblock %}

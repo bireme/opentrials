@@ -1,9 +1,9 @@
 from django.conf.urls.defaults import *
 from django.views.generic.list_detail import object_list
-from assistance.models import Question
+from assistance.models import Question, Category
 
 info_dict = {
-    'queryset': Question.objects.all(),
+    'queryset': Question.objects.all().order_by('category', 'order'),
 }
 
 urlpatterns = patterns('',
