@@ -12,6 +12,9 @@ urlpatterns = patterns('',
     # Tickets application
     url(r'^ticket/', include('clinicaltrials.tickets.urls')),
 
+    # Tickets application
+    url(r'^assistance/', include('clinicaltrials.assistance.urls')),
+
     # Rebrac public site application
     url(r'^', include('clinicaltrials.rebrac.urls')),
 
