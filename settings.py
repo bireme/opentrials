@@ -2,7 +2,7 @@
 
 import os
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
@@ -93,7 +93,7 @@ INSTALLED_APPS = (
 
 CHECKED_LANGUAGES = set((u'EN', u'ES', u'FR', u'PT'))
 
-try:
-    execfile('settings_local.py')
-except IOError:
-    pass # ignore absent local settings file
+#try:
+execfile(os.path.join(PROJECT_PATH,'settings_local.py'))
+#except IOError:
+#    pass # ignore absent local settings file
