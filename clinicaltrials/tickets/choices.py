@@ -24,5 +24,6 @@ TICKET_STATUS = [
     ('new', 'New',),
     ('assigned', 'Assigned',),
     ('resolved', 'Resolved',),
+    ('reopened', 'Reopen',),
     ('closed', 'Closed',),
 ]
