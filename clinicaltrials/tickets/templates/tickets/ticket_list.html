@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body_title %}User Tickets{% endblock %}
+
+{% block body %}
+    {% if object_list %}
+            <ul>
+            {% for ct in object_list %}
+                <li>{{ ct }}</li>
+            {% endfor %}
+            </ul>
+    {% else %}
+            <p>No  open tickets.</p>
+    {% endif %}
+{% endblock %}

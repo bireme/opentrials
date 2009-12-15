@@ -1,0 +1,74 @@
+[
+  {
+    "pk": 1, 
+    "model": "tickets.ticket", 
+    "fields": {
+      "created": "2009-12-14 15:55:03", 
+      "type": "review", 
+      "context": "ct_registry_field_1", 
+      "creator": 1
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "tickets.ticket", 
+    "fields": {
+      "created": "2009-12-14 15:56:38", 
+      "type": "help", 
+      "context": "ct_registry_field_15a", 
+      "creator": 1
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "tickets.followup", 
+    "fields": {
+      "status": "new", 
+      "iteration_date": "2009-12-14 16:40:10", 
+      "description": "Description 1", 
+      "reported_by": 1, 
+      "to_user": "fabio.santos@bireme.org", 
+      "ticket": 1, 
+      "subject": "Subject 1"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "tickets.followup", 
+    "fields": {
+      "status": "adsigned", 
+      "iteration_date": "2009-12-14 16:41:01", 
+      "description": "Description 2", 
+      "reported_by": 1, 
+      "to_user": "fabio.santos@bireme.org", 
+      "ticket": 1, 
+      "subject": "Sbuject 2"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "tickets.followup", 
+    "fields": {
+      "status": "resolved", 
+      "iteration_date": "2009-12-14 16:42:04", 
+      "description": "Description 3", 
+      "reported_by": 1, 
+      "to_user": "fabio.santos@bireme.org", 
+      "ticket": 1, 
+      "subject": "Subject 3"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "tickets.followup", 
+    "fields": {
+      "status": "new", 
+      "iteration_date": "2009-12-14 16:42:16", 
+      "description": "Description b 1", 
+      "reported_by": 1, 
+      "to_user": "fabio.santos@bireme.org", 
+      "ticket": 2, 
+      "subject": "Subject b 1"
+    }
+  }
+]
