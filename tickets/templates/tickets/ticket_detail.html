@@ -3,13 +3,54 @@
 {% block body_title %}Ticket History{% endblock %}
 
 {% block body %}
+<h2>Actual Situation</h2>
     {% if object %}
-            <ul>
-            {% for ct in object %}
-                <li>{{ ct }}</li>
-            {% endfor %}
-            </ul>
+        <table>
+            <tr>
+                <th>creation date</th>
+                <th>context</th>
+                <th>type</th>
+                <th>subject</th>
+                <th>status</th>
+                <th>last update</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>{{ object.created }}</td>
+                <td>{{ object.context }}</td>
+                <td>{{ object.type }}</td>
+                <td>{{ object.followup_set.latest.subject }}</td>
+                <td>{{ object.followup_set.latest.status }}</td>
+                <td>{{ object.followup_set.latest.iteration_date }}</td>
+                <td>{% ifequal object.followup_set.latest.status 'closed' %}<a href="#">reopen</a>{% endifequal %}</td>
+            </tr>
+        </table>
     {% else %}
-            <p>No history available.</p>
+        <p>No history available.</p>
     {% endif %}
+
+<h2>History</h2>
+    {% if object.followup_set.all %}
+            <table>
+                <tr>
+                    <th>update date</th>
+                    <th>subject</th>
+                    <th>status</th>
+                    <th>description</th>
+                    <th>assigned to</th>
+                    <th></th>
+                </tr>
+            {% for fw in object.followup_set.all %}
+            <tr>
+                <td>{{ fw.iteration_date }}</td>
+                <td>{{ fw.subject }}</td>
+                <td>{{ fw.status }}</td>
+                <td>{{ fw.description }}</td>
+                <td>{{ fw.to_user }}</td>
+                <td><a href="#">remove</a></td>
+            </tr>
+            {% endfor %}
+            </table>
+    {% endif %}
+    {% ifnotequal object.followup_set.latest.status 'closed' %}<a href="#">add iteration</a>{% else %} To show the "add iterarion link" the ticket must be diferente from "closed".{%endifnotequal %}
 {% endblock %}

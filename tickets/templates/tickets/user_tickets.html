@@ -23,7 +23,7 @@
                 <td>{{ ct.followup_set.latest.subject }}</td>
                 <td>{{ ct.followup_set.latest.status }}</td>
                 <td>{{ ct.followup_set.latest.iteration_date }}</td>
-                <td><a href="#">view history</a> | <a href="#">update</a></td>
+                <td><a href="/ticket/history/{{ ct.pk }}/">view history</a> | <a href="#">update</a></td>
             </tr>
             {% endfor %}
             </table>

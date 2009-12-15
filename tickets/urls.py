@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     url(r'^$', index),
     url(r'^list/$', object_list, info_dict),
     url(r'^history/(?P<object_id>\d+)/$', object_detail, info_dict ),
+    url(r'^newiteration/(?P<object_id>\d+)/$', object_detail, info_dict ),
 )
