@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body_title %}Ticket History{% endblock %}
+
+{% block body %}
+    {% if object %}
+            <ul>
+            {% for ct in object %}
+                <li>{{ ct }}</li>
+            {% endfor %}
+            </ul>
+    {% else %}
+            <p>No history available.</p>
+    {% endif %}
+{% endblock %}

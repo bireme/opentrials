@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block body_title %}User Tickets{% endblock %}
+
+{% block body %}
+
+    {% if user_tickets %}
+            <table>
+                <tr>
+                    <th>creation date</th>
+                    <th>context</th>
+                    <th>type</th>
+                    <th>subject</th>
+                    <th>status</th>
+                    <th>last update</th>
+                    <th></th>
+                </tr>
+            {% for ct in user_tickets %}
+            <tr>
+                <td>{{ ct.created }}</td>
+                <td>{{ ct.context }}</td>
+                <td>{{ ct.type }}</td>
+                <td>{{ ct.followup_set.latest.subject }}</td>
+                <td>{{ ct.followup_set.latest.status }}</td>
+                <td>{{ ct.followup_set.latest.iteration_date }}</td>
+                <td><a href="#">view history</a> | <a href="#">update</a></td>
+            </tr>
+            {% endfor %}
+            </table>
+    {% else %}
+            <p>No open tickets.</p>
+    {% endif %}
+
+{% endblock %}
