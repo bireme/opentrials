@@ -21,6 +21,11 @@ class Ticket(models.Model):
     class Meta:
         get_latest_by = ['created',]
 
+    @models.permalink
+    def get_absolute_url(self):
+        return ('ticket.history', [str(self.id)])
+
+
     def __unicode__(self):
         return u'%s' % (self.context)
 
@@ -34,6 +39,19 @@ class Ticket(models.Model):
         '''
         return (r.followup for r in
                 self.followup_set.filter(status="new").select_related())
+
+    def is_closed(self):
+        ''' return a boolean if the ticket is already close
+        '''
+        fw = self.followup_set.latest()
+        return fw.status == "closed"
+
+    def reopen(self):
+        ''' return a boolean if the ticket is already close
+        '''
+        fw = self.followup_set.latest()
+        fw.status = "reopened"
+        return fw.status == "closed"
 
     def closed_tickets(self):
         ''' return set of Followups related to this ticket with a
@@ -62,6 +80,7 @@ class Followup(models.Model):
     def save(self):
         self.iteration_date = datetime.now()
         super(Followup, self).save()
+
 
 class Media(models.Model):
     followup = models.ForeignKey(Followup, related_name="ticket_media", null=True,

@@ -20,6 +20,16 @@
     }
   }, 
   {
+    "pk": 3, 
+    "model": "tickets.ticket", 
+    "fields": {
+      "created": "2009-12-16 18:17:28", 
+      "type": "review", 
+      "context": "ct_registry_field_11", 
+      "creator": 1
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "tickets.followup", 
     "fields": {
@@ -69,6 +79,45 @@
       "to_user": "fabio.santos@bireme.org", 
       "ticket": 2, 
       "subject": "Subject b 1"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "tickets.followup", 
+    "fields": {
+      "status": "new", 
+      "iteration_date": "2009-12-16 18:17:58", 
+      "description": "Lorem ipsum dolor sit amet, duis erat. Euismod molestie nibh, molestiae in mus, fusce sapien ut. Dictum urna et. Elit viverra, imperdiet duis in. Sem ligula, a curae conubia. Sit a taciti. Quis quam, cras scelerisque, quam nec. A morbi. Enim donec, nulla aliquet nulla, saepe fringilla vel. Dui a tincidunt, pellentesque malesuada. Ante dolor quam, proin hac in.", 
+      "reported_by": null, 
+      "to_user": null, 
+      "ticket": 3, 
+      "subject": "Lorem ipsum dolor sit amet, ut nulla, tortor quisque, vestibulum congue. "
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "tickets.followup", 
+    "fields": {
+      "status": "assigned", 
+      "iteration_date": "2009-12-16 18:18:21", 
+      "description": "Lorem ipsum dolor sit amet, duis erat. Euismod molestie nibh, molestiae in mus, fusce sapien ut. Dictum urna et. Elit viverra, imperdiet duis in.", 
+      "reported_by": null, 
+      "to_user": null, 
+      "ticket": 3, 
+      "subject": "Lorem ipsum dolor sit amet, ut nulla, tortor quisque, vestibulum congue. "
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "tickets.followup", 
+    "fields": {
+      "status": "closed", 
+      "iteration_date": "2009-12-16 18:19:29", 
+      "description": "Dolor pellentesque. Duis quisque augue, accumsan sollicitudin, dui consequat fusce. Nulla suscipit, nunc cum, arcu fusce. Sed in morbi. Nec ullamcorper ultrices, eros nam tellus.", 
+      "reported_by": null, 
+      "to_user": null, 
+      "ticket": 3, 
+      "subject": "Pellentesque elementum, at quam metus, vivamus magna auctor."
     }
   }
 ]

@@ -8,7 +8,7 @@
         <table>
             <tr>
                 <th>{% trans "creation date" %}</th>
-                <th>{% trans "ccontext" %}</th>
+                <th>{% trans "context" %}</th>
                 <th>{% trans "type" %}</th>
                 <th>{% trans "subject" %}</th>
                 <th>{% trans "status" %}</th>
@@ -22,7 +22,7 @@
                 <td>{{ object.followup_set.latest.subject }}</td>
                 <td>{{ object.followup_set.latest.status }}</td>
                 <td>{{ object.followup_set.latest.iteration_date }}</td>
-                <td>{% ifequal object.followup_set.latest.status 'closed' %}<a href="#">reopen</a>{% endifequal %}</td>
+                <td>{% if object.is_closed %}<a href="/ticket/reopen/{{ object.pk }}/">reopen</a>{% endif %}</td>
             </tr>
         </table>
     {% else %}
@@ -50,5 +50,5 @@
             {% endfor %}
             </table>
     {% endif %}
-    {% ifnotequal object.followup_set.latest.status 'closed' %}<a href="#">add iteration</a>{% else %} To show the "add iterarion link" the ticket must be diferente from "closed".{%endifnotequal %}
+    {% if not object.is_closed %}<a href="/ticket/newiteration/{{ object.pk }}/">add iteration</a>{% else %} {% trans 'To show the "add iterarion link" the ticket must be diferente from "closed".' %}{% endif %}
 {% endblock %}

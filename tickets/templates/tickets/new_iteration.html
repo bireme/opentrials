@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block body %}
+
+<form method="post" action="/ticket/newiteration/{{ ticket_id }}/">
+<table>
+    <tr><th colspan="2">{% trans "Adding Iteration" %}</th></tr>
+{{iteration_form.as_table}}
+</table>
+
+<input name="submit" type="submit" value="{% trans "Submit" %}">
+
+</form>
+
+{% endblock %}
