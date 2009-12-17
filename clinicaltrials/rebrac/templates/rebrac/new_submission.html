@@ -2,6 +2,16 @@
 {% load i18n %}
 {% block body %}
 
+<script>
+    $(document).ready(function() {
+            $("select[multiple]").asmSelect({
+                    addItemTarget: 'bottom',
+                    animate: true,
+                    highlight: true,
+                    sortable: true
+            });
+    });
+</script>
 
 <form method="post" action="/accounts/newsubmission/">
 <table>
