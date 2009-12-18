@@ -1,8 +1,7 @@
 from django.conf.urls.defaults import *
 from django.views.generic.list_detail import object_detail, object_list
 from tickets.models import Ticket
-from tickets.views import index, new_iteration, reopen_ticket, resolve_ticket,
-close_ticket, open_ticket
+from tickets.views import index, new_iteration, reopen_ticket, resolve_ticket, close_ticket, open_ticket
 
 
 info_dict = {
