@@ -25,6 +25,16 @@ def index(request):
     })
     return HttpResponse(t.render(c))
 
+def waiting_acceptance(request):
+    fw_waiting = Followup.objects.filter(status = 'new', ticket__type='review')
+    t = loader.get_template('tickets/waiting_acceptance_tickets.html')
+    c = Context({
+        'fw_waiting': fw_waiting,
+        'choices': choices,
+    })
+    return HttpResponse(t.render(c))
+
+
 def reopen_ticket(request, object_id):
     ticket = get_object_or_404(Ticket, id=int(object_id))
     followup_latest = ticket.followup_set.latest()
@@ -68,14 +78,14 @@ def resolve_ticket(request, object_id):
             'mode': 'resolve',
         })
 
-def close_ticket(request, object_id):
+def resolve_ticket(request, object_id):
     if request.method == 'POST': # If the forms were submitted...
         form = FollowupParcForm(request.POST)
         if form.is_valid():
             desc = form.cleaned_data['description']
             ticket = get_object_or_404(Ticket, id=int(object_id))
             fw_lt = ticket.followup_set.latest()
-            fw_nw = Followup(ticket=ticket, status='closed',
+            fw_nw = Followup(ticket=ticket, status='resolved',
                 description=desc, subject=fw_lt.subject ,
                 reported_by=fw_lt.reported_by, to_user=fw_lt.to_user, )
             fw_nw.save()
@@ -87,7 +97,30 @@ def close_ticket(request, object_id):
         return render_to_response('tickets/new_iteration.html', {
             'iteration_form': followup_form,
             'ticket_id': object_id,
-            'mode': 'close',
+            'mode': 'resolve',
+        })
+
+def accept_ticket(request, object_id):
+    if request.method == 'POST': # If the forms were submitted...
+        form = FollowupParcForm(request.POST)
+        if form.is_valid():
+            user =  request.user
+            desc = form.cleaned_data['description']
+            ticket = get_object_or_404(Ticket, id=int(object_id))
+            fw_lt = ticket.followup_set.latest()
+            fw_nw = Followup(ticket=ticket, status='accepted',
+                description=desc, subject=fw_lt.subject ,
+                reported_by=fw_lt.reported_by, to_user=user, )
+            fw_nw.save()
+
+        return HttpResponseRedirect(ticket.get_absolute_url())
+    else:
+        # recovering Ticket Data to input form fields
+        followup_form = FollowupParcForm() # An unbound form
+        return render_to_response('tickets/new_iteration.html', {
+            'iteration_form': followup_form,
+            'ticket_id': object_id,
+            'mode': 'accept',
         })
 
 def new_iteration(request, object_id):
