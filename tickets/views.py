@@ -2,6 +2,7 @@
 from django.template import Context, loader
 from django.shortcuts import render_to_response, get_object_or_404
 from clinicaltrials.tickets.models import Ticket, Followup
+from django.contrib.auth.models import User
 from django.forms.models import inlineformset_factory
 from django.http import HttpResponseRedirect, HttpResponse
 
@@ -112,11 +113,33 @@ def new_iteration(request, object_id):
         'mode': 'newiteration',
     })
 
-class FollowupForm(forms.ModelForm):
+class FollowupParcBForm(forms.Form):
+    subject = forms.CharField(label=_('Subject'),required=True,max_length=256)
+    description = forms.CharField(label=_('Description'),required=True ,widget=forms.Textarea)
 
-    class Meta:
-        model = Followup
-        exclude = ['ticket',]
+def open_ticket(request,context,type):
+    if request.method == 'POST': # If the forms were submitted...
+        form = FollowupParcBForm(request.POST)
+        if form.is_valid():
+            user =  request.user
+            ticket = Ticket(context=context,type=type, creator=user, )
+            ticket.save()
+            subject = form.cleaned_data['subject']
+            description = form.cleaned_data['description']
+            fw_nw = Followup(ticket=ticket , status='new',
+                description=description, subject=subject ,
+                reported_by=request.user, )
+            fw_nw.save()
 
-def new_ticket(request):
-    return true
+        return HttpResponseRedirect(ticket.get_absolute_url())
+    else:
+        # recovering Ticket Data to input form fields
+        open_ticket_form = FollowupParcBForm() # An unbound form
+
+    return render_to_response('tickets/open_ticket.html', {
+        'open_ticket_form': open_ticket_form,
+        'context': context,
+        'type': type,
+        'mode': 'open_ticket',
+        'user_name': request.user.pk
+    })

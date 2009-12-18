@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 {% block body_title %}User Tickets{% endblock %}
 
 {% block body %}
@@ -12,4 +12,5 @@
     {% else %}
             <p>No  open tickets.</p>
     {% endif %}
+    <a href="/ticket/open/">{% trans "open ticket" %}</a>
 {% endblock %}
