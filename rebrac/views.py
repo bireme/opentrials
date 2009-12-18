@@ -52,7 +52,8 @@ def new_submission(request):
                 trial.recruitmentcountry_set.create(country_id=country_id)
             submission = Submission(creator=request.user, trial=trial)
             submission.save()
-            return HttpResponseRedirect(reverse('rebrac.userhome')) # Redirect after POST
+            return HttpResponseRedirect(reverse('edittrial',args=[trial.id]))
+
     else:
         initial_form = InitialTrialForm()
         sponsor_form = PrimarySponsorForm()

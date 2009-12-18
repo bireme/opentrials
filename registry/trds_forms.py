@@ -7,7 +7,7 @@ from django.utils.translation import ugettext as _
 #from django.contrib.admin.widgets import AdminDateWidget
 
 import choices
-from vocabulary.models import CountryCode, RecruitmentStatus
+from vocabulary.models import CountryCode, RecruitmentStatus, InterventionCode
 from vocabulary.models import StudyType, StudyPhase
 
 from clinicaltrials.registry.models import ClinicalTrial, Institution, Outcome, Descriptor
@@ -81,6 +81,9 @@ class InterventionsForm(forms.ModelForm):
     i_freetext = forms.CharField(label=_('Intervention(s)'),
                                          required=False, max_length=8000,
                                          widget=forms.Textarea)
+    # TRDS 13b
+    i_code = forms.MultipleChoiceField(label=_('Intervention Code(s)'),
+                                                      choices=InterventionCode.choices())
                                          
 class StudyTypeForm(forms.ModelForm):
     class Meta:
