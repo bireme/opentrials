@@ -16,6 +16,10 @@ class SimpleVocabulary(models.Model):
     def __unicode__(self):
         return self.label
           
+    @classmethod
+    def choices(cls):
+        return ( (term.id, term.label) for term in cls.objects.all() )
+
 class CountryCode(SimpleVocabulary):
     ''' TRDS 11, Countries of Recruitment 
         also used for Contacts and Institutions
