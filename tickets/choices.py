@@ -12,12 +12,14 @@ TICKET_CONTEXT = [
     ('ct_registry_field_15a', 'Registry Form - Study Type',),
     ('ct_registry_field_15b', 'Registry Form - Study Design',),
     ('translation_tools', 'Administrative translation Tools',),
+    ('personal', 'Personal Tickect',),
     ('other', 'Other Context',),
 ]
 
 TICKET_TYPE = [
     ('review', 'Ask for Reviews',),
     ('help', 'Ask for Help',),
+    ('personal', 'Personal Ticket',),
 ]
 
 TICKET_STATUS = [

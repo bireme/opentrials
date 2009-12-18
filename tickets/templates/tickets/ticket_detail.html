@@ -44,7 +44,6 @@
             <table>
                 <tr>
                     <th>{% trans "update date" %}</th>
-                    <th>{% trans "subject" %}</th>
                     <th>{% trans "status" %}</th>
                     <th>{% trans "description" %}</th>
                     <th>{% trans "assigned to" %}</th>
@@ -52,7 +51,6 @@
             {% for fw in object.followup_set.all %}
             <tr>
                 <td>{{ fw.iteration_date }}</td>
-                <td>{{ fw.subject }}</td>
                 <td>{{ fw.status }}</td>
                 <td>{{ fw.description }}</td>
                 <td>{{ fw.to_user }}</td>

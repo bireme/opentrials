@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block body %}
+
+<form method="post" action="/ticket/open/{{ context }}/{{ type }}/">
+<table>
+    <tr><th colspan="2">{% trans "Opening Ticket" %} {{ user_name }}</th><td>&nbsp;</td></tr>
+    <tr><th><label>Context:</label><th><td>{{ context }}</td></tr>
+    <tr><th><label>Type:</label><th><td>{{ type }}</td></tr>
+{{open_ticket_form.as_table}}
+</table>
+
+<input name="submit" type="submit" value="{% trans "Submit" %}">
+
+</form>
+
+{% endblock %}
