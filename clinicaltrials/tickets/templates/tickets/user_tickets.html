@@ -21,12 +21,12 @@
                 <td>{{ ct.followup_set.latest.subject }}</td>
                 <td>{{ ct.followup_set.latest.status }}</td>
                 <td>{{ ct.followup_set.latest.iteration_date }}</td>
-                <td><a href="/ticket/history/{{ ct.pk }}/">{% trans "view history" %}</a> {% if not ct.is_closed %} | <a href="/ticket/newiteration/{{ ct.pk }}/">{% trans "add iteration" %} {% endif %}</a></td>
+                <td><a href="/ticket/history/{{ ct.pk }}/">{% trans "view history" %}</a> {% if ct.is_closed or ct.is_resolved %} {% else %} <a href="/ticket/newiteration/{{ ct.pk }}/">{% trans "add iteration" %} {% endif %}</a></td>
             </tr>
             {% endfor %}
             </table>
     {% else %}
             <p>{% trans "Have no open tickets" %}</p>
     {% endif %}
-
+    <a href="/ticket/open/ct_registry_field_11/help/">{% trans "open ticket" %}</a>
 {% endblock %}
