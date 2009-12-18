@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block body %}
 
-<form method="post" action="/ticket/newiteration/{{ ticket_id }}/">
+<form method="post" action="/ticket/{{ mode }}/{{ ticket_id }}/">
 <table>
     <tr><th colspan="2">{% trans "Adding Iteration" %}</th></tr>
 {{iteration_form.as_table}}
