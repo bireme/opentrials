@@ -13,7 +13,7 @@
                 <th>{% trans "subject" %}</th>
                 <th>{% trans "status" %}</th>
                 <th>{% trans "last update" %}</th>
-                <th></th>
+                <th>{% trans "mark as" %}</th>
             </tr>
             <tr>
                 <td>{{ object.created }}</td>
@@ -22,7 +22,17 @@
                 <td>{{ object.followup_set.latest.subject }}</td>
                 <td>{{ object.followup_set.latest.status }}</td>
                 <td>{{ object.followup_set.latest.iteration_date }}</td>
-                <td>{% if object.is_closed %}<a href="/ticket/reopen/{{ object.pk }}/">reopen</a>{% endif %}</td>
+                <td>
+                    {% if object.is_closed or object.is_resolved %}
+                    <a href="/ticket/reopen/{{ object.pk }}/">reopen</a>
+                    {% endif %} 
+                    {% if not object.is_closed %} {% if not object.is_resolved %}
+                    <a href="/ticket/resolve/{{ object.pk }}/">resolved</a>
+                    {% endif %} {% endif %}
+                    {% if not object.is_closed %} {% if not object.is_resolved %}
+                    <a href="/ticket/close/{{ object.pk }}/">closed</a>
+                    {% endif %} {% endif %}
+                </td>
             </tr>
         </table>
     {% else %}
@@ -50,5 +60,5 @@
             {% endfor %}
             </table>
     {% endif %}
-    {% if not object.is_closed %}<a href="/ticket/newiteration/{{ object.pk }}/">add iteration</a>{% else %} {% trans 'To show the "add iterarion link" the ticket must be diferente from "closed".' %}{% endif %}
+    {% if object.is_closed or object.is_resolved %} {% trans 'To show the "add iterarion link" the ticket must be diferente from "closed".' %} {% else %} <a href="/ticket/newiteration/{{ object.pk }}/">add iteration</a> {% endif %}
 {% endblock %}

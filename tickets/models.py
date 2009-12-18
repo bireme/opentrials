@@ -46,8 +46,14 @@ class Ticket(models.Model):
         fw = self.followup_set.latest()
         return fw.status == "closed"
 
+    def is_resolved(self):
+        ''' return a boolean if the ticket is already resolved
+        '''
+        fw = self.followup_set.latest()
+        return fw.status == "resolved"
+
     def reopen(self):
-        ''' return a boolean if the ticket is already close
+        ''' reopen tickect
         '''
         fw = self.followup_set.latest()
         fw.status = "reopened"
