@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     url(r'^assistance/', include('clinicaltrials.assistance.urls')),
 
     # Rebrac public site application
-    url(r'^', include('clinicaltrials.rebrac.urls')),
+    url(r'^', include('clinicaltrials.reviewapp.urls')),
 
     # Django admin UI and documentation
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
