@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from rebrac.models import Submission
+from reviewapp.models import Submission
 
 class SubmissionAdmin(admin.ModelAdmin):
     list_display = ('creator_username', 'short_title', 'status')

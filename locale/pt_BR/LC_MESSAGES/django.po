@@ -17,32 +17,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: rebrac/forms.py:11
+#: reviewapp/forms.py:11
 msgid "Submission"
 msgstr ""
 
-#: rebrac/forms.py:13 registry/models.py:20 registry/trds.py:15
+#: reviewapp/forms.py:13 registry/models.py:20 registry/trds.py:15
 #: registry/trds_forms.py:24
 msgid "Scientific Title"
 msgstr "Título científico"
 
-#: rebrac/forms.py:17 registry/models.py:27 registry/trds.py:10
+#: reviewapp/forms.py:17 registry/models.py:27 registry/trds.py:10
 msgid "Primary Sponsor"
 msgstr ""
 
-#: rebrac/models.py:23 registry/models.py:242
+#: reviewapp/models.py:23 registry/models.py:242
 msgid "Status"
 msgstr ""
 
-#: rebrac/models.py:26
+#: reviewapp/models.py:26
 msgid "Submission Note (staff use only)"
 msgstr ""
 
-#: rebrac/templates/rebrac/new_submission.html:11
+#: reviewapp/templates/reviewapp/new_submission.html:11
 msgid "Submit"
 msgstr ""
 
-#: rebrac/templates/rebrac/submission_list.html:25
+#: reviewapp/templates/reviewapp/submission_list.html:25
 #, fuzzy
 msgid "Submit a new Clinical Trial"
 msgstr "Incluir novo Registro de Ensaio Clínico"

@@ -7,7 +7,7 @@ Mandatory languages are English, the language
 of the primary sponsor and the languages of the
 recruitment countries limited to EN, PT, ES, FR::
 
-    >>> from rebrac.models import Submission
+    >>> from reviewapp.models import Submission
     >>> from registry.models import ClinicalTrial, Institution, RecruitmentCountry
     >>> from vocabulary.models import CountryCode
     >>> i = Institution()

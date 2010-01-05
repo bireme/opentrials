@@ -5,17 +5,17 @@ from django.http import HttpResponseRedirect
 from django import forms
 from django.utils.translation import ugettext as _
 
-from rebrac.models import Submission
+from reviewapp.models import Submission
 from registry.models import ClinicalTrial, Institution
 from vocabulary.models import CountryCode
 
 def index(request):
     username = request.user.username if request.user.is_authenticated() else None
-    return render_to_response('rebrac/index.html', locals())
+    return render_to_response('reviewapp/index.html', locals())
 
 def user_dump(request):
     uvars = [{'k':k, 'v':v} for k, v in request.user.__dict__.items()]
-    return render_to_response('rebrac/user_dump.html', locals())
+    return render_to_response('reviewapp/user_dump.html', locals())
 
 ####################################################### New Submission form ###
 
@@ -58,7 +58,7 @@ def new_submission(request):
         initial_form = InitialTrialForm()
         sponsor_form = PrimarySponsorForm()
 
-    return render_to_response('rebrac/new_submission.html', {
+    return render_to_response('reviewapp/new_submission.html', {
         'initial_form': initial_form,
         'sponsor_form': sponsor_form,
     })

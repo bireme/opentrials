@@ -85,7 +85,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'clinicaltrials.registry',
     'clinicaltrials.vocabulary',
-    'clinicaltrials.rebrac',
+    'clinicaltrials.reviewapp',
     'clinicaltrials.tickets',
     'clinicaltrials.assistance',
     'rosetta',
