@@ -28,6 +28,10 @@ class TrialIdentificationForm(forms.ModelForm):
     scientific_acronym = forms.CharField(required=False,
                                          label=_('Scientific Acronym'),
                                          max_length=255)
+    # TRDS 10c
+    scientific_acronym_expansion = forms.CharField(required=False,
+                                         label=_('Scientific Acronym Expansion'),
+                                         max_length=255)
     # TRDS 9a
     public_title = forms.CharField(required=False, 
                                    label=_('Public Title'),
