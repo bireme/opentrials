@@ -12,10 +12,10 @@ urlpatterns = patterns('',
     # Tickets application
     url(r'^ticket/', include('clinicaltrials.tickets.urls')),
 
-    # Tickets application
+    # Assistance application
     url(r'^assistance/', include('clinicaltrials.assistance.urls')),
 
-    # Rebrac public site application
+    # Review application
     url(r'^', include('clinicaltrials.reviewapp.urls')),
 
     # Django admin UI and documentation
@@ -28,6 +28,7 @@ urlpatterns = patterns('',
 
 from django.conf import settings
 if settings.DEBUG:
+    # serve static files from develpment server
     from django.views import static
     urlpatterns += patterns('',
         url(r'^static/(?P<path>.*)$', 'django.views.static.serve',

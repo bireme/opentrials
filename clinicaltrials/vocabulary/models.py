@@ -45,6 +45,9 @@ class StudyType(SimpleVocabulary):
     
 class StudyPhase(SimpleVocabulary):
     ''' TRDS 15 '''
+    
+class Sabores(SimpleVocabulary):
+    ''' tipos de sorvetes '''
 
 class RecruitmentStatus(SimpleVocabulary):
     ''' TRDS 18 '''

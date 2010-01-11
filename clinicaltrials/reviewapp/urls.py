@@ -16,7 +16,7 @@ urlpatterns = patterns('',
         name='reviewapp.userhome'),
 
     url(r'^accounts/submissionlist/$', object_list, submissions, 
-        name='reviewapp.submissionlist'), #same of accounts/profile
+        name='reviewapp.submissionlist'), #same as accounts/profile
 
     url(r'^accounts/submission/(?P<object_id>\d+)/$', object_detail, submissions, 
         name='reviewapp.submission'),

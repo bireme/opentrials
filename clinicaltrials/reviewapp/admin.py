@@ -1,6 +1,9 @@
 from django.contrib import admin
 
-from reviewapp.models import Submission
+from reviewapp.models import Submission, RecruitmentCountry
+
+class RecruitmentCountryInline(admin.TabularInline):
+    model = RecruitmentCountry
 
 class SubmissionAdmin(admin.ModelAdmin):
     list_display = ('creator_username', 'short_title', 'status')
@@ -9,6 +12,7 @@ class SubmissionAdmin(admin.ModelAdmin):
     date_hierarchy = 'updated'
     save_on_top = True
     change_form_template = 'admin/submission_change_form.html'
+    inlines = [RecruitmentCountryInline]
     def save_model(self, request, instance, form, change):
         if change:
             instance.updater = request.user

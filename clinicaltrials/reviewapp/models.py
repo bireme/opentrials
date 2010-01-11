@@ -5,7 +5,11 @@ from django.conf import settings
 
 from datetime import datetime
 
-from registry.models import ClinicalTrial
+from registry.models import ClinicalTrial, Institution
+
+from vocabulary.models import CountryCode
+
+from utilities import safe_truncate
 
 SUBMISSION_STATUS = [
     ('draft', 'draft'),
@@ -19,8 +23,12 @@ class Submission(models.Model):
     created = models.DateTimeField(default=datetime.now, editable=False)
     updater = models.ForeignKey(User, null=True, related_name='submission_updater', editable=False)
     updated = models.DateTimeField(null=True, editable=False)
-    trial = models.OneToOneField(ClinicalTrial)
-    status = models.CharField(_('Status'), max_length='64',
+    title = models.CharField(u'Scientific title', max_length=2000)
+    primary_sponsor = models.OneToOneField(Institution, null=True, blank=True,
+                                    verbose_name=_('Primary Sponsor'))
+
+    trial = models.OneToOneField(ClinicalTrial, null=True)
+    status = models.CharField(_('Status'), max_length=64,
                               choices=SUBMISSION_STATUS,
                               default=SUBMISSION_STATUS[0][0])
     staff_note = models.TextField(_('Submission Note (staff use only)'), max_length=255,
@@ -32,7 +40,7 @@ class Submission(models.Model):
         super(Submission, self).save()
 
     def short_title(self):
-        return self.trial.short_title()
+        return safe_truncate(self.title, 120)
 
     def creator_username(self):
         return self.creator.username
@@ -51,4 +59,12 @@ class Submission(models.Model):
         
     def get_absolute_url(self):
         return '/accounts/submission/%s/' % self.id
+    
+class RecruitmentCountry(models.Model):
+    class Meta:
+        verbose_name_plural = _('Recruitment Countries')    
+    
+    submission = models.ForeignKey(Submission)
+    country = models.ForeignKey(CountryCode, verbose_name=_('Country'), related_name='submissionrecruitmentcountry_set')
 
+    

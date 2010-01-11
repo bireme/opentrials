@@ -4,12 +4,14 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2009-10-19 21:10:04", 
+      "updated": "2010-01-07 18:48:20", 
+      "title": "A randomised, double-blind, placebo-controlled, factorial-design trial to assess the effect of aspirin and fish oil in the prevention of early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis", 
       "created": "2009-10-19 21:10:04", 
-      "creator": 1, 
       "trial": 1, 
       "updater": 1, 
-      "staff_note": ""
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": 1
     }
   }, 
   {
@@ -17,12 +19,14 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2009-10-19 21:10:15", 
+      "updated": "2010-01-07 18:48:20", 
+      "title": "Minimal trial record (only required fields)", 
       "created": "2009-10-19 21:10:15", 
-      "creator": 1, 
       "trial": 2, 
       "updater": 1, 
-      "staff_note": ""
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": null
     }
   }, 
   {
@@ -30,12 +34,38 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2009-10-19 21:10:21", 
+      "updated": "2010-01-07 18:48:20", 
+      "title": "Effect of Ascorbic Acid and Grape Seed Extract \"Vitis Vinifera L.\" on Oxidative Stress Induced by on Pump Coronary Artery by Pass Grafting Surgery", 
       "created": "2009-10-19 21:10:21", 
-      "creator": 1, 
       "trial": 3, 
       "updater": 1, 
-      "staff_note": ""
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": 2
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "reviewapp.recruitmentcountry", 
+    "fields": {
+      "country": 14, 
+      "submission": 1
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "reviewapp.recruitmentcountry", 
+    "fields": {
+      "country": 158, 
+      "submission": 1
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "reviewapp.recruitmentcountry", 
+    "fields": {
+      "country": 103, 
+      "submission": 3
     }
   }
 ]
