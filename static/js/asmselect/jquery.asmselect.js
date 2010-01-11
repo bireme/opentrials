@@ -16,8 +16,8 @@
 		var options = {
 
 			listType: 'ol',						// Ordered list 'ol', or unordered list 'ul'
-			sortable: false, 					// Should the list be sortable?
-			highlight: false,					// Use the highlight feature? 
+			sortable: true, 					// Should the list be sortable?
+			highlightFeature: false,					// Use the highlight feature? 
 			animate: false,						// Animate the the adding/removing of items in the list?
 			addItemTarget: 'bottom',				// Where to place new selected items in list: top or bottom
 			hideWhenAdded: false,					// Hide the option when added to the list? works only in FF
@@ -365,8 +365,8 @@
 				// set the contents of the highlight area that appears
 				// directly after the <select> single
 				// fade it in quickly, then fade it out
-
-				if(!options.highlight) return; 
+				
+				if(!options.highlightFeature) return; 
 
 				$select.next("#" + options.highlightClass + index).remove();
 
