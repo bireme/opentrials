@@ -1,13 +1,30 @@
-from django.db import models
+from django.db import models, IntegrityError
+
 from django.utils.translation import ugettext as _
 
-import datetime
+from datetime import datetime
+import string
+from random import choice
+from time import sleep
 
 from utilities import safe_truncate
 
 from vocabulary.models import CountryCode, StudyPhase, StudyType, RecruitmentStatus, InterventionCode
 
-import choices
+from registry import choices
+
+# remove digits that look like letters and vice-versa
+# remove vowels to avoid forming words
+BASE28 = ''.join(d for d in string.digits+string.ascii_lowercase 
+                   if d not in '1l0aeiou')
+TRIAL_ID_PREFIX = 'RBR'
+TRIAL_ID_DIGITS = 6
+TRIAL_ID_TRIES = 3
+
+def generate_trial_id(prefix, num_digits):
+    s = choice(string.digits) # start with a numeric digit
+    s += ''.join(choice(BASE28) for i in range(1, num_digits))
+    return '-'.join([prefix, s[:num_digits/2], s[num_digits/2:]])
 
 class ClinicalTrial(models.Model):
     # TRDS 1
@@ -86,8 +103,12 @@ class ClinicalTrial(models.Model):
                                            verbose_name=_('Recruitment Status'))
 
     ################################### internal use, administrative fields ###
-
+    created = models.DateTimeField(default=datetime.now, editable=False)
     updated = models.DateTimeField(_('Last Update'), null=True, editable=False)
+    exported = models.DateTimeField(null=True, editable=False)
+    status = models.CharField(_('Status'), max_length=64,
+                              choices=choices.TRIAL_RECORD_STATUS,
+                              default=choices.TRIAL_RECORD_STATUS[0][0])
     staff_note = models.CharField(_('Record Note (staff use only)'),
                                   max_length='255',
                                   blank=True)
@@ -96,8 +117,22 @@ class ClinicalTrial(models.Model):
         ordering = ['-updated',]
 
     def save(self):
-        self.updated = datetime.datetime.now()
-        super(ClinicalTrial, self).save()
+        if self.id:
+            self.updated = datetime.now()
+        if self.status == choices.PUBLISHED_STATUS and not self.trial_id:
+            for i in range(TRIAL_ID_TRIES):
+                self.trial_id = generate_trial_id(TRIAL_ID_PREFIX, TRIAL_ID_DIGITS)
+                try:
+                    super(ClinicalTrial, self).save()
+                except IntegrityError:
+                    if i < TRIAL_ID_TRIES:
+                        sleep(2**i) # wait to try again
+                    else:
+                        raise # all tries exhausted: give up
+                else:    
+                    break # no need to try again
+        else:    
+            super(ClinicalTrial, self).save()
 
     def identifier(self):
         return self.trial_id or '(req:%s)' % self.pk
