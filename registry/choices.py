@@ -24,6 +24,13 @@ OUTCOME_INTEREST = [
 
 #################################################### Limited choices fields ###
 
+PUBLISHED_STATUS = 'published'
+TRIAL_RECORD_STATUS = [
+    ('pending', 'pending'),
+    ('rejected', 'rejected'),
+    ('published', 'published'),
+]
+
 INCLUSION_GENDER = [('-', 'both'), ('M', 'male'), ('F', 'female'),]
 
 INCLUSION_AGE_UNIT = [
