@@ -7,6 +7,23 @@ def smoke_test(request):
     from datetime import datetime
     return HttpResponse(datetime.now().strftime('%H:%M:%S'))
 
+def req_dump(request):
+    template = '''
+    <form action="./" method="POST">
+    <input type="text" name="word" value="mitochondrial">
+    <input type="submit" name="btn1" value="one">
+    <input type="submit" name="btn2" value="two">
+    </form>
+    <table border="1">
+       <tr><th>key</th><th>POST[key]</th></tr>
+    %s
+    </table>
+    '''
+    rows = []
+    for k in request.POST.keys():
+        rows.append('<tr><th>%s</th><td>%s</td></tr>' % (k, request.POST[k]))
+    return HttpResponse(template % ('\n'.join(rows)))
+    
 
 ELLIPSIS = u'\u2026'
 

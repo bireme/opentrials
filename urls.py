@@ -24,6 +24,7 @@ urlpatterns = patterns('',
     
     # Diagnostic views
     url(r'^smoke/', utilities.smoke_test),
+    url(r'^req_dump/', utilities.req_dump),
 )
 
 from django.conf import settings
