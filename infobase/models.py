@@ -9,6 +9,10 @@ class Item(models.Model):
     created = models.DateTimeField(default=datetime.now, index=True)
     updated = models.DateTimeField(null=True, blank=True, index=True)
     
+    @classmethod
+    def get(cls, key):
+        cls.objects.filter(key=key).order_by('-revision')[0]
+    
     def __init__(self, **kwargs):
         super(Item, self).__init__(**kwargs)
         m = hashlib.md5()
