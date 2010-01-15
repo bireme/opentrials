@@ -2,6 +2,12 @@
      >>> from models import Item, Attribute
      >>> i = Item()
      >>> i.title = 'The Title'
+     >>> i.save()
+     >>> k = i.key
+     >>> del i
+     >>> i = Item.get(k)
+     >>> i.title
+     'The Title'
 
 """
 
