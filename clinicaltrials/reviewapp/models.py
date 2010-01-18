@@ -67,4 +67,12 @@ class RecruitmentCountry(models.Model):
     submission = models.ForeignKey(Submission)
     country = models.ForeignKey(CountryCode, verbose_name=_('Country'), related_name='submissionrecruitmentcountry_set')
 
+class FrozenForm(models.Model):
+    submission = models.ForeignKey(Submission)
+    form_name = models.CharField(max_length=255)
+    data = models.TextField(max_length=2**16)
+    
+    class Meta:
+        unique_together = ['submission', 'form_name']
+
     

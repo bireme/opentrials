@@ -88,7 +88,6 @@ INSTALLED_APPS = (
     'reviewapp',
     'tickets',
     'assistance',
-    'genericbase',
     'rosetta',
 )
 
