@@ -10,7 +10,7 @@ class CountryCodeAdmin(admin.ModelAdmin):
     search_fields = ('label', 'description')
 
 for model in (RecruitmentStatus, StudyType, StudyPhase, InterventionCode,
-    AttachmentType):
+    AttachmentType, TrialNumberIssuingAuthority):
     admin.site.register(model, SimpleVocabularyAdmin)
     
 admin.site.register(CountryCode, CountryCodeAdmin)

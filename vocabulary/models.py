@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 from utilities import safe_truncate
 
@@ -36,7 +36,16 @@ class CountryCode(SimpleVocabulary):
     @classmethod
     def choices(cls):
         return ( (cc.id, cc.description) for cc in cls.objects.all() )
+    
+class TrialNumberIssuingAuthority(SimpleVocabulary):
+    ''' TRDS 3a '''
+    class Meta:
+        verbose_name_plural = _('Trial number issuing authorities')
         
+    @classmethod
+    def choices(cls):
+        return ( (term.label, term.label) for term in cls.objects.all() )
+
 class InterventionCode(SimpleVocabulary):
     ''' TRDS 18 '''
 
@@ -46,13 +55,10 @@ class StudyType(SimpleVocabulary):
 class StudyPhase(SimpleVocabulary):
     ''' TRDS 15 '''
     
-class Sabores(SimpleVocabulary):
-    ''' tipos de sorvetes '''
-
 class RecruitmentStatus(SimpleVocabulary):
     ''' TRDS 18 '''
 
-    class Meta(SimpleVocabulary.Meta):
+    class Meta:
         verbose_name_plural = _('Recruitment status')
     
 class DecsDisease(SimpleVocabulary):
