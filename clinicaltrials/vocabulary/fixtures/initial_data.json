@@ -1,14 +1,5 @@
 [
   {
-    "pk": 1, 
-    "model": "vocabulary.countrycode", 
-    "fields": {
-      "description": "Brazil", 
-      "language": "PT", 
-      "label": "BR"
-    }
-  }, 
-  {
     "pk": 2, 
     "model": "vocabulary.countrycode", 
     "fields": {
@@ -276,6 +267,15 @@
       "description": "Bouvet Island", 
       "language": "", 
       "label": "BV"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "vocabulary.countrycode", 
+    "fields": {
+      "description": "Brazil", 
+      "language": "PT", 
+      "label": "BR"
     }
   }, 
   {
@@ -2211,6 +2211,54 @@
       "description": "Zimbabwe", 
       "language": "", 
       "label": "ZW"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "vocabulary.trialnumberissuingauthority", 
+    "fields": {
+      "description": "World Health Organization, International Clinical Trials Registry Platform", 
+      "label": "WHO ICTRP"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.trialnumberissuingauthority", 
+    "fields": {
+      "description": "Comiss\u00e3o Nacional de \u00c9tica em Pesquisa, Conselho Nacional de Pesquisa, Minist\u00e9rio da Sa\u00fade, Brasil", 
+      "label": "Plataforma Brasil (CONEP)"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.trialnumberissuingauthority", 
+    "fields": {
+      "description": "National Library of Medicine (NLM), U.S. National Institutes of Health (NIH)", 
+      "label": "ClinicalTrials.gov"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "vocabulary.trialnumberissuingauthority", 
+    "fields": {
+      "description": "Australian New Zealand Clinical Trials Registry", 
+      "label": "ANZCTR"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "vocabulary.trialnumberissuingauthority", 
+    "fields": {
+      "description": "Iranian Registry of Clinical Trials", 
+      "label": "IRCT"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "vocabulary.trialnumberissuingauthority", 
+    "fields": {
+      "description": "Cochrane Renal Group", 
+      "label": "CRG"
     }
   }, 
   {

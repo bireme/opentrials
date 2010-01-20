@@ -7,7 +7,7 @@
 <table>
     {% for link in links %} <!-- TODO: use url filter to remove hardcoded path -->
         <tr>
-            <td><a href="/rg/form/{{ trial_pk }}/{{ link.form_name }}/">{{ link.label }}
+            <td><a href="/rg/{{ link.step }}/{{ trial_pk }}/">{{ link.label }}
                 </a></td>
             <td><img src="{{link.icon}}" /></td>    
             <td>{{link.msg}}</td>    
