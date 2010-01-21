@@ -1,5 +1,39 @@
 [
   {
+    "pk": 3, 
+    "model": "registry.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Effect of Ascorbic Acid and Grape Seed Extract \"Vitis Vinifera L.\" on Oxidative Stress Induced by on Pump Coronary Artery by Pass Grafting Surgery", 
+      "public_title": "Comparison of Ascorbic Acid and Grape Seed Extract in Oxidative Stress Induced by on Pump Heart Surgery", 
+      "trial_id": null, 
+      "inclusion_criteria": "Candidates for elective CABG surgery with pump for first time, 3 Vessel Disease (3VD).", 
+      "date_enrollment_actual": "", 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "target_sample_size": 75, 
+      "staff_note": "", 
+      "status": "pending", 
+      "updated": "2010-01-21 18:21:16", 
+      "hc_freetext": "Condition 1: Coronary Atrery Bypass Graft (CABG).\r\nCondition 2: Atherosclerotic heart disease.\r\nCondition 3: Ischaemic cardiomyopathy.", 
+      "study_type": 1, 
+      "i_freetext": "Intervention 1: Control Group: without intervention.\r\nIntervention 2: Grape Seed Extract 100 mg/6h .\r\nIntervention 3: Vit C 25 mg/kg.", 
+      "date_enrollment_anticipated": "2008-11-01", 
+      "recruitment_status": 4, 
+      "phase": 6, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "study_design": "Randomization: randomized. Blinding: Double blind. Placebo: not used. Assignment: Parallel. Purpose: Supportive care. Other design features: .", 
+      "created": "2010-01-20 17:47:08", 
+      "gender": "-", 
+      "exclusion_criteria": "High risk patients, Those who need another heart surgery beside CABG, Urgent patients Diabetics, Ischemic time more than 120 min.", 
+      "primary_sponsor": 2, 
+      "exported": null
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "registry.clinicaltrial", 
     "fields": {
@@ -30,40 +64,6 @@
       "gender": "-", 
       "exclusion_criteria": "1. Revision of existing AVF rather than de novo AVF\r\n2. Medical indication for anti-platelet agent(s)\r\n3. Known intolerance of agents including hypersensitivity to aspirin\r\n4. Current use of aspirin within two weeks of commencing trial, and of fish oil within 4 weeks of commencing trial.\r\n5. Pregnancy, lactation or intention to fall pregnant during the time course of the study\r\n6. Known bleeding disorder or established diagnosis of active or suspected bleeding\r\n7. Known active peptic ulcer disease\r\n8. Already receiving anti-coagulation therapy such as warfarin\r\n9. Receiving regular anti-inflammatory agents for another indication such as\r\narthritis\r\n10.Potential non-compliance with treatment regimen in the view of the\r\ntreating clinicians\r\n11.Involved in another clinical trial where the intervention being trialled is likely to confound the outcome of this trial\r\n12.Previously randomised to this trial. ", 
       "primary_sponsor": 1, 
-      "exported": null
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "registry.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Effect of Ascorbic Acid and Grape Seed Extract \"Vitis Vinifera L.\" on Oxidative Stress Induced by on Pump Coronary Artery by Pass Grafting Surgery", 
-      "public_title": "Comparison of Ascorbic Acid and Grape Seed Extract in Oxidative Stress Induced by on Pump Heart Surgery", 
-      "trial_id": null, 
-      "inclusion_criteria": "Candidates for elective CABG surgery with pump for first time, 3 Vessel Disease (3VD).", 
-      "date_enrollment_actual": "", 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "target_sample_size": 75, 
-      "staff_note": "", 
-      "status": "pending", 
-      "updated": "2010-01-20 18:50:31", 
-      "hc_freetext": "Condition 1: Coronary Atrery Bypass Graft (CABG).\r\nCondition 2: Atherosclerotic heart disease.\r\nCondition 3: Ischaemic cardiomyopathy.", 
-      "study_type": 1, 
-      "i_freetext": "Intervention 1: Control Group: without intervention.\r\nIntervention 2: Grape Seed Extract 100 mg/6h .\r\nIntervention 3: Vit C 25 mg/kg.", 
-      "date_enrollment_anticipated": "2008-11-01", 
-      "recruitment_status": 4, 
-      "phase": 6, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "study_design": "Randomization: randomized. Blinding: Double blind. Placebo: not used. Assignment: Parallel. Purpose: Supportive care. Other design features: .", 
-      "created": "2010-01-20 17:47:08", 
-      "gender": "-", 
-      "exclusion_criteria": "High risk patients, Those who need another heart surgery beside CABG, Urgent patients Diabetics, Ischemic time more than 120 min.", 
-      "primary_sponsor": 2, 
       "exported": null
     }
   }, 
@@ -139,11 +139,10 @@
   }, 
   {
     "pk": 1, 
-    "model": "registry.trialinstitution", 
+    "model": "registry.trialsupportsource", 
     "fields": {
       "trial": 3, 
-      "relation": "SupportSource", 
-      "institution": 2
+      "institution": 1
     }
   }, 
   {

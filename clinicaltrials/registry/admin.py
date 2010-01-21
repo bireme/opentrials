@@ -4,7 +4,8 @@ from django.contrib import admin
 from registry.models import *
 
 tabular_inline_models = [Descriptor, RecruitmentCountry, TrialInterventionCode,
-                         TrialNumber, TrialContact, TrialInstitution]
+                         TrialNumber, TrialContact, TrialSecondarySponsor,
+                         TrialSupportSource]
 tabular_inlines = []
 for model in tabular_inline_models:
     cls_name = model.__name__+'line'
