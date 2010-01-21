@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block body_title %}{{ forms.form_main.title }}{% endblock %}
+
+{% block body %}
+
+    <form action="./" method="POST">
+        {{ forms.secondary.management_form }}
+
+        <table>
+        {{forms.main.as_table}}
+        </table>
+
+        <table>
+            <caption>{% trans "Secondary Sponsors" %}</caption>
+            {{ forms.secondary }}
+        </table>
+        
+        <table>
+            <caption>{% trans "Sources of material or monetary support" %}</caption>
+            {{ forms.sources }}
+        </table>
+
+        <input name="submit_go" type="submit" 
+                     value="{% trans "Save and continue later" %}"><br/>
+        
+        {% if next_form_title %}
+        <input name="submit_next" type="submit"
+             value="{% trans "Save and go to" %} '{{next_form_title}}'">
+        {% endif %}
+    </form>    
+
+{% endblock %}

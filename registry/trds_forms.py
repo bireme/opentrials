@@ -1,6 +1,5 @@
 # coding: utf-8
 
-from clinicaltrials.registry.models import TrialInstitution
 from django import forms
 from django.utils.translation import ugettext as _
 
@@ -11,6 +10,7 @@ from vocabulary.models import CountryCode, RecruitmentStatus, InterventionCode
 from vocabulary.models import StudyType, StudyPhase
 
 from clinicaltrials.registry.models import ClinicalTrial, Institution, Outcome, Descriptor
+from clinicaltrials.registry.models import TrialInterventionCode
     
 
 class TrialIdentificationForm(forms.ModelForm):
@@ -43,14 +43,13 @@ class TrialIdentificationForm(forms.ModelForm):
 
     # TODO: Secondary Numbers
 
-class SponsorsForm(forms.ModelForm):
+
+class PrimarySponsorForm(forms.ModelForm):
     class Meta:
         model = ClinicalTrial
-        fields = ['primary_sponsor_name','primary_sponsor_address',
-                 'primary_sponsor_country'] 
+        fields = ['primary_sponsor',]
 
-    title = _('Sponsors and Sources of Support')
-    inline_model = TrialInstitution
+    title = _('Primary Sponsor')
 
     # TODO: TRDS 4: Sources of Support
     # TODO: TRDS 6: Secondary Sponsors
@@ -87,8 +86,8 @@ class InterventionsForm(forms.ModelForm):
                                          widget=forms.Textarea)
     # TRDS 13b
     i_code = forms.MultipleChoiceField(label=_('Intervention Code(s)'),
-                                                      choices=InterventionCode.choices())
-                                         
+                                            choices=InterventionCode.choices())
+
 class StudyTypeForm(forms.ModelForm):
     class Meta:
         model = ClinicalTrial

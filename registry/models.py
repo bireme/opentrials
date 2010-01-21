@@ -163,28 +163,13 @@ class ClinicalTrial(models.Model):
     def trial_number(self):
         return self.trialnumber_set.all().select_related();
 
-    def related_institutions(self, relation):
-        ''' return set of Institutions related to this trial with a
-            given relationship
-        '''
-        return (r.institution for r in
-                self.trialinstitution_set.filter(relation=relation).select_related())
-
     # TRDS 4 - Source(s) of Monetary Support
-
     def support_sources(self):
-        ''' return set of Institutions related to this trial with
-            relation='SupportSource'
-        '''
-        return self.related_institutions('SupportSource')
+        return self.trialsupportsource_set.all()
 
     # TRDS 6 - Secondary Sponsor(s)
-
     def secondary_sponsors(self):
-        ''' return set of Institutions related to this trial with
-            relation='SecondarySponsor'
-        '''
-        return self.related_institutions('SecondarySponsor')
+        return self.trialsecondarysponsor_set.all()
 
     def updated_str(self):
         return self.updated.strftime('%Y-%m-%d %H:%M')
@@ -278,17 +263,21 @@ class TrialNumber(models.Model):
     def __unicode__(self):
         return u'%s: %s' % (self.issuing_authority, self.id_number)
 
-# TRDS 4 - Source(s) of Monetary Support
 # TRDS 6 - Secondary Sponsor(s)
-
-class TrialInstitution(models.Model):
+class TrialSecondarySponsor(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
     institution = models.ForeignKey('Institution')
-    relation = models.CharField(_('Relationship'), max_length=255,
-                            choices = choices.INSTITUTIONAL_RELATION)
 
     def __unicode__(self):
-        return u'%s, %s: %s' % (self.relation, self.trial, self.institution)
+        return u'%s: %s' % (self.trial, self.institution)
+
+# TRDS 4 - Source(s) of Monetary Support
+class TrialSupportSource(models.Model):
+    trial = models.ForeignKey(ClinicalTrial)
+    institution = models.ForeignKey('Institution')
+
+    def __unicode__(self):
+        return u'%s: %s' % (self.trial, self.institution)
 
 # TRDS 5 - Primary Sponsor
 
