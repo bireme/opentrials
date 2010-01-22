@@ -318,7 +318,6 @@
       "vocabulary": "DeCS", 
       "level": "general", 
       "text": "Cardiovascular Diseases", 
-      "trial": 3, 
       "version": "", 
       "aspect": "HealthCondition"
     }
@@ -331,7 +330,6 @@
       "vocabulary": "DeCS", 
       "level": "specific", 
       "text": "Arteriovenous Fistula", 
-      "trial": 1, 
       "version": "", 
       "aspect": "HealthCondition"
     }
@@ -344,7 +342,6 @@
       "vocabulary": "CAS", 
       "level": "specific", 
       "text": "L-Ascorbic acid", 
-      "trial": 3, 
       "version": "", 
       "aspect": "Intervention"
     }
@@ -357,7 +354,6 @@
       "vocabulary": "CAS", 
       "level": "specific", 
       "text": "Benzoic acid, 2-(acetyloxy)-", 
-      "trial": 1, 
       "version": "", 
       "aspect": "Intervention"
     }
@@ -370,7 +366,6 @@
       "vocabulary": "DeCS", 
       "level": "specific", 
       "text": "Myocardial Ischemia", 
-      "trial": 3, 
       "version": "", 
       "aspect": "HealthCondition"
     }
@@ -383,7 +378,6 @@
       "vocabulary": "DeCS", 
       "level": "specific", 
       "text": "Coronary Artery Disease ", 
-      "trial": 3, 
       "version": "", 
       "aspect": "HealthCondition"
     }
@@ -396,7 +390,6 @@
       "vocabulary": "DeCS", 
       "level": "specific", 
       "text": "Cardiomyopathies", 
-      "trial": 3, 
       "version": "", 
       "aspect": "HealthCondition"
     }

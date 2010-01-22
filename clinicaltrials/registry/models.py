@@ -367,7 +367,6 @@ class Outcome(models.Model):
         return safe_truncate(self.description, 80)
 
 class Descriptor(models.Model):
-    trial = models.ForeignKey(ClinicalTrial)
     aspect = models.CharField(_('Trial Aspect'), max_length=255,
                         choices=choices.TRIAL_ASPECT)
     vocabulary = models.CharField(_('Vocabulary'), max_length=255,
@@ -378,12 +377,25 @@ class Descriptor(models.Model):
     code = models.CharField(_('Code'), max_length=255)
     text = models.CharField(_('Text'), max_length=255, blank=True)
 
-    class Meta:
-        order_with_respect_to = 'trial'
-
     def __unicode__(self):
         return u'[%s] %s: %s' % (self.vocabulary, self.code, self.text)
+
+class GeneralDescriptor(models.Model):
+    trial = models.ForeignKey(ClinicalTrial)
+    descriptor = models.ForeignKey(Descriptor)
+
+    class Meta:
+        order_with_respect_to = 'descriptor'
 
     def trial_identifier(self):
         return self.trial.identifier()
 
+class SpecificDescriptor(models.Model):
+    trial = models.ForeignKey(ClinicalTrial)
+    descriptor = models.ForeignKey(Descriptor)
+
+    class Meta:
+        order_with_respect_to = 'descriptor'
+
+    def trial_identifier(self):
+        return self.trial.identifier()

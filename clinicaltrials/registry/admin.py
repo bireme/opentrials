@@ -24,10 +24,14 @@ class ClinicalTrialAdmin(admin.ModelAdmin):
     date_hierarchy = 'updated'
     save_on_top = True
 
-class DescriptorAdmin(admin.ModelAdmin):
-    list_display = ('trial_identifier','vocabulary','code', 'text')
+class GeneralDescriptorAdmin(admin.ModelAdmin):
+    list_display = ('trial_identifier','descriptor')
+
+class SpecificDescriptorAdmin(admin.ModelAdmin):
+    list_display = ('trial_identifier','descriptor')
 
 admin.site.register(ClinicalTrial, ClinicalTrialAdmin)
-admin.site.register(Descriptor, DescriptorAdmin)
+admin.site.register(GeneralDescriptor, GeneralDescriptorAdmin)
+admin.site.register(SpecificDescriptor, SpecificDescriptorAdmin)
 admin.site.register(Institution)
 admin.site.register(Contact)
