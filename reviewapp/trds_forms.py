@@ -3,9 +3,6 @@
 from django import forms
 from django.utils.translation import ugettext as _
 
-from django.forms.formsets import formset_factory
-
-
 class TrialIdentificationForm(forms.Form):
     title = _('Trial Identification')
     # TRDS 10a

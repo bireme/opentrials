@@ -9,6 +9,14 @@
             <caption>{{forms.main.title}}</caption>
         {{forms.main.as_table}}
         </table>
+        <table>
+            <caption>{% trans "General Descriptors" %}</caption>
+        {{forms.general.as_table}}
+        </table>
+        <table>
+            <caption>{% trans "Specific Descriptors" %}</caption>
+        {{forms.specific.as_table}}
+        </table>
 
         <input name="submit_go" type="submit" 
                      value="{% trans "Save and continue later" %}"><br/>
