@@ -11,7 +11,8 @@ from django.utils.encoding import force_unicode
 from django.utils.safestring import mark_safe
 from django.forms.forms import BoundField, conditional_escape
 
-from clinicaltrials.registry.models import ClinicalTrial, TrialNumber
+from registry.models import ClinicalTrial, TrialNumber
+from assistance.models import FieldHelp
 
 TRIAL_FORMS = ['TrialIdentificationForm', 'SponsorsForm', 
                'HealthConditionsForm', 'InterventionsForm',
@@ -62,7 +63,12 @@ class ReviewModelForm(forms.ModelForm):
                     help_text = help_text_html % force_unicode(field.help_text)
                 else:
                     help_text = u''
-                field_path = '%s.%s.%s' % (self.__module__, self.__class__.__name__, name)    
+                form_name = self.__class__.__name__
+                #import pdb; pdb.set_trace()
+                help_record, new = FieldHelp.objects.get_or_create(form=form_name, field=name)
+                help_text = help_text + u' ' + force_unicode(help_record)
+                help_text = help_text_html % help_text    
+                field_path = '%s.%s' % (form_name, name)    
                 issue_text = '%s #%s' % (field_path, self.instance.pk)
                 output.append(normal_row % {'errors': force_unicode(bf_errors),
                                             'label': force_unicode(label),
@@ -116,13 +122,13 @@ class TrialIdentificationForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['scientific_title','scientific_acronym',
+                  'scientific_acronym_expansion',
                   'public_title','acronym']
     title = _('Trial Identification')
     # TRDS 10a
     scientific_title = forms.CharField(label=_('Scientific Title'),
                                        max_length=2000, 
-                                       widget=forms.Textarea,
-                                       help_text=_('The scientific title'))
+                                       widget=forms.Textarea)
     # TRDS 10b
     scientific_acronym = forms.CharField(required=False,
                                          label=_('Scientific Acronym'),
@@ -145,7 +151,7 @@ class SecondaryIdForm(ReviewModelForm):
 
 def step_1(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
-    
+    #import pdb; pdb.set_trace()
     if request.POST:
         form = TrialIdentificationForm(request.POST, instance=ct)
         SecondaryIdSet = inlineformset_factory(ClinicalTrial, TrialNumber,

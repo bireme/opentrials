@@ -74,5 +74,77 @@
       "order": 1, 
       "title": "Pellentesque ullamcorper augue at ante rhoncus ultrices?"
     }
+  }, 
+  {
+    "pk": 1, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "scientific_title", 
+      "form": "TrialIdentificationForm", 
+      "text": "Scientific title of the study as it appears in the protocol submitted for funding and ethical review."
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "scientific_acronym", 
+      "form": "TrialIdentificationForm", 
+      "text": "Include trial acronym if available."
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "scientific_acronym_expansion", 
+      "form": "TrialIdentificationForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "public_title", 
+      "form": "TrialIdentificationForm", 
+      "text": "Title intended for the lay public in easily understood language."
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "acronym", 
+      "form": "TrialIdentificationForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "issuing_authority", 
+      "form": "TrialNumberForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "id_number", 
+      "form": "TrialNumberForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "form": "TrialNumberForm", 
+      "text": ""
+    }
   }
 ]
