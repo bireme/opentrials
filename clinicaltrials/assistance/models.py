@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from datetime import datetime
 
 class Category(models.Model):
@@ -29,3 +29,17 @@ class Question(models.Model):
 
     def __unicode__(self):
         return self.title
+    
+class FieldHelp(models.Model):
+    class Meta:
+        verbose_name_plural = _('Field Help')
+        unique_together = ('form', 'field')
+        ordering = ('id',)
+        
+    form = models.CharField(max_length=255, db_index=True)
+    field = models.CharField(max_length=255, db_index=True)
+    text = models.TextField(max_length=2000, blank=True)
+    
+    def __unicode__(self):
+        return self.text
+        
