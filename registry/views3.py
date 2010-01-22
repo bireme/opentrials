@@ -6,6 +6,11 @@ from django.http import HttpResponseRedirect
 from django.forms.models import inlineformset_factory
 from django.utils.translation import ugettext_lazy as _
 
+# imports used by ReviewModelForm._html_output
+from django.utils.encoding import force_unicode
+from django.utils.safestring import mark_safe
+from django.forms.forms import BoundField, conditional_escape
+
 from clinicaltrials.registry.models import ClinicalTrial, TrialNumber
 
 TRIAL_FORMS = ['TrialIdentificationForm', 'SponsorsForm', 
@@ -30,6 +35,7 @@ def edit_trial_index(request, trial_pk):
 class ReviewModelForm(forms.ModelForm):
     def _html_output(self, normal_row, error_row, row_ender, help_text_html, errors_on_separate_row):
         "Helper function for outputting HTML. Used by as_table(), as_ul(), as_p()."
+
         top_errors = self.non_field_errors() # Errors that should be displayed above all fields.
         output, hidden_fields = [], []
         for name, field in self.fields.items():
@@ -56,7 +62,13 @@ class ReviewModelForm(forms.ModelForm):
                     help_text = help_text_html % force_unicode(field.help_text)
                 else:
                     help_text = u''
-                output.append(normal_row % {'errors': force_unicode(bf_errors), 'label': force_unicode(label), 'field': unicode(bf), 'help_text': help_text})
+                field_path = '%s.%s.%s' % (self.__module__, self.__class__.__name__, name)    
+                issue_text = '%s #%s' % (field_path, self.instance.pk)
+                output.append(normal_row % {'errors': force_unicode(bf_errors),
+                                            'label': force_unicode(label),
+                                            'field': unicode(bf),
+                                            'help_text': help_text,
+                                            'issue': issue_text,})
         if top_errors:
             output.insert(0, error_row % force_unicode(top_errors))
         if hidden_fields: # Insert any hidden fields in the last row.
@@ -70,7 +82,11 @@ class ReviewModelForm(forms.ModelForm):
                     # that users write): if there are only top errors, we may
                     # not be able to conscript the last row for our purposes,
                     # so insert a new, empty row.
-                    last_row = normal_row % {'errors': '', 'label': '', 'field': '', 'help_text': ''}
+                    last_row = normal_row % {'errors': '',
+                                             'label': '',
+                                             'field': '',
+                                             'help_text': '',
+                                             'issue': '',}
                     output.append(last_row)
                 output[-1] = last_row[:-len(row_ender)] + str_hidden + row_ender
             else:
@@ -78,9 +94,25 @@ class ReviewModelForm(forms.ModelForm):
                 # hidden fields.
                 output.append(str_hidden)
         return mark_safe(u'\n'.join(output))
+        
+    def as_table(self):
+        "Returns this form rendered as HTML <tr>s -- excluding the <table></table>."
+        normal_row = u'''
+            <tr><th>%(label)s</th>
+                <td>%(errors)s%(field)s</td>
+                <td>%(help_text)s
+                    <div class="issue">%(issue)s</div>
+                    </td></tr>
+        '''
+        return self._html_output(normal_row=normal_row,
+                                 error_row=u'<tr><td colspan="3">%s</td></tr>',
+                                 row_ender='</td></tr>',
+                                 help_text_html=u'<br />%s',
+                                 errors_on_separate_row=False)
 
 
-class TrialIdentificationForm(forms.ModelForm):
+
+class TrialIdentificationForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['scientific_title','scientific_acronym',
@@ -89,7 +121,8 @@ class TrialIdentificationForm(forms.ModelForm):
     # TRDS 10a
     scientific_title = forms.CharField(label=_('Scientific Title'),
                                        max_length=2000, 
-                                       widget=forms.Textarea)
+                                       widget=forms.Textarea,
+                                       help_text=_('The scientific title'))
     # TRDS 10b
     scientific_acronym = forms.CharField(required=False,
                                          label=_('Scientific Acronym'),
@@ -107,27 +140,31 @@ class TrialIdentificationForm(forms.ModelForm):
     acronym = forms.CharField(required=False, label=_('Acronym'),
                               max_length=255)
 
+class SecondaryIdForm(ReviewModelForm):
+    ''' this is just to inherit the custom _html_output and as_table methods '''
 
 def step_1(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     
     if request.POST:
         form = TrialIdentificationForm(request.POST, instance=ct)
-        SecondaryIdSet = inlineformset_factory(ClinicalTrial, TrialNumber, 
-                                                  extra=EXTRA_SECONDARY_IDS)
+        SecondaryIdSet = inlineformset_factory(ClinicalTrial, TrialNumber,
+                                               form=SecondaryIdForm,
+                                               extra=EXTRA_SECONDARY_IDS)
         secondary_forms = SecondaryIdSet(request.POST, instance=ct)
 
         if form.is_valid() and secondary_forms.is_valid():
             form.save()
             secondary_forms.save()
 
-        if request.POST.has_key('submit_next'):
-            return HttpResponseRedirect("/rg/step_2/%s/" % trial_pk)
-        # FIXME: use dynamic url
-        return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+            if request.POST.has_key('submit_next'):
+                return HttpResponseRedirect("/rg/step_2/%s/" % trial_pk)
+            # FIXME: use dynamic url
+            return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
     else:
         form = TrialIdentificationForm(instance=ct)
         SecondaryIdSet = inlineformset_factory(ClinicalTrial, TrialNumber, 
+                                               form=SecondaryIdForm,
                                                extra=EXTRA_SECONDARY_IDS, can_delete=True)
         secondary_forms = SecondaryIdSet(instance=ct)
 
