@@ -10,7 +10,7 @@ from time import sleep
 from utilities import safe_truncate
 
 from vocabulary.models import CountryCode, StudyPhase, StudyType, RecruitmentStatus
-from vocabulary.models import InterventionCode, TrialNumberIssuingAuthority
+from vocabulary.models import InterventionCode
 
 from registry import choices
 
@@ -260,8 +260,7 @@ class ClinicalTrial(models.Model):
 class TrialNumber(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
     issuing_authority = models.CharField(_('Issuing Authority'),
-                                         max_length=255, db_index=True,
-                                         choices=TrialNumberIssuingAuthority.choices())
+                                         max_length=255, db_index=True,)
     id_number = models.CharField(_('Secondary Id Number'),
                                 max_length=255, db_index=True)
 
