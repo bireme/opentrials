@@ -55,6 +55,11 @@ class ClinicalTrial(models.Model):
     # TRDS 13a
     i_freetext = models.TextField(_('Intervention(s)'), blank=True,
                                    max_length=8000)
+
+    # TRDS 13b
+    i_code = models.ManyToManyField(InterventionCode,
+                                                through='TrialInterventionCode')
+
     # TRDS 14a
     inclusion_criteria = models.TextField(_('Inclusion Criteria'), blank=True,
                                           max_length=8000)

@@ -73,21 +73,6 @@ class HealthConditionsForm(forms.ModelForm):
                                          required=False, max_length=8000,
                                          widget=forms.Textarea)
 
-class InterventionsForm(forms.ModelForm):
-    class Meta:
-        model = ClinicalTrial
-        fields = ['i_freetext',]
-
-    title = _('Intervention(s)')
-
-    # TRDS 13a
-    i_freetext = forms.CharField(label=_('Intervention(s)'),
-                                         required=False, max_length=8000,
-                                         widget=forms.Textarea)
-    # TRDS 13b
-    i_code = forms.MultipleChoiceField(label=_('Intervention Code(s)'),
-                                            choices=InterventionCode.choices())
-
 class StudyTypeForm(forms.ModelForm):
     class Meta:
         model = ClinicalTrial

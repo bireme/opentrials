@@ -1,9 +1,15 @@
 #coding: utf-8
 
+
+from clinicaltrials.registry.models import ClinicalTrial
+from clinicaltrials.registry.models import TrialInterventionCode
 from clinicaltrials.registry.models import SpecificDescriptor
 from clinicaltrials.registry.models import GeneralDescriptor
 from clinicaltrials.registry.models import TrialSupportSource
 from clinicaltrials.registry.models import TrialSecondarySponsor
+
+from clinicaltrials.vocabulary.models import InterventionCode
+
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.forms.models import inlineformset_factory
@@ -11,10 +17,6 @@ from django.utils.translation import ugettext_lazy as _
 from django import forms
 
 from clinicaltrials.registry.trds_forms import PrimarySponsorForm, HealthConditionsForm
-from clinicaltrials.registry.trds_forms import InterventionsForm
-
-from clinicaltrials.registry.models import ClinicalTrial
-
 from choices import INSTITUTIONAL_RELATION, DESCRIPTOR_LEVEL
 
 EXTRA_SECONDARY_IDS = 2
@@ -54,7 +56,22 @@ class SpecificDescriptorForm(forms.ModelForm):
         model = SpecificDescriptor
         fields = ['descriptor']
     level = forms.CharField(widget=forms.HiddenInput, initial=DESCRIPTOR_LEVEL[1][0])
-# #
+
+class InterventionForm(forms.ModelForm):
+    class Meta:
+        model = ClinicalTrial
+        fields = ['i_freetext','i_code']
+    title = _('Intervention(s)')
+    
+    i_freetext = forms.CharField(label=_('Intervention(s)'),
+                                         required=False, max_length=8000,
+                                         widget=forms.Textarea)
+
+    i_code = forms.ModelMultipleChoiceField(label=_("Intervention Code(s)"),
+                                            queryset=InterventionCode.objects.all(),
+                                            widget=forms.CheckboxSelectMultiple())
+
+##
 
 def step_2(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
@@ -134,18 +151,23 @@ def step_4(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
     if request.POST:
-        form = InterventionsForm(request.POST, instance=ct)
+        form = InterventionForm(request.POST, instance=ct)
 
         if form.is_valid():
-            form.save()
-            secondary_form.save()
+            form.save(commit=False)
+            ct.i_code.clear()
+            ct.save()
+
+            for code in request.POST.getlist('i_code'):
+                icode = InterventionCode(int(code))
+                TrialInterventionCode.objects.create(trial=ct,i_code=icode)                
 
             if request.POST.has_key('submit_next'):
                 return HttpResponseRedirect("/rg/step_5/%s/" % trial_pk)
             # FIXME: use dynamic url
             return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
     else:
-        form = InterventionsForm(instance=ct)
+        form = InterventionForm(instance=ct)
 
     forms = {'main':form}
     return render_to_response('registry/trial_form_step_4.html',
