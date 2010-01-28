@@ -1,14 +1,22 @@
 #coding: utf-8
 
+from clinicaltrials.registry.trds_forms import DescriptorForm
+from clinicaltrials.registry.trds_forms import OutcomesForm
+from clinicaltrials.registry.trds_forms import RecruitmentForm
+from clinicaltrials.registry.trds_forms import StudyTypeForm
 
 from clinicaltrials.registry.models import ClinicalTrial
-from clinicaltrials.registry.models import TrialInterventionCode
-from clinicaltrials.registry.models import SpecificDescriptor
+from clinicaltrials.registry.models import Descriptor
 from clinicaltrials.registry.models import GeneralDescriptor
-from clinicaltrials.registry.models import TrialSupportSource
+from clinicaltrials.registry.models import Outcome
+from clinicaltrials.registry.models import SpecificDescriptor
+from clinicaltrials.registry.models import TrialInterventionCode
 from clinicaltrials.registry.models import TrialSecondarySponsor
+from clinicaltrials.registry.models import TrialSupportSource
 
 from clinicaltrials.vocabulary.models import InterventionCode
+
+import choices
 
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseRedirect
@@ -16,8 +24,8 @@ from django.forms.models import inlineformset_factory
 from django.utils.translation import ugettext_lazy as _
 from django import forms
 
+
 from clinicaltrials.registry.trds_forms import PrimarySponsorForm, HealthConditionsForm
-from choices import INSTITUTIONAL_RELATION, DESCRIPTOR_LEVEL
 
 EXTRA_SECONDARY_IDS = 2
 
@@ -37,25 +45,25 @@ class SecondarySponsorForm(forms.ModelForm):
         model = TrialSecondarySponsor
         fields = ['institution','relation']
 
-    relation = forms.CharField(widget=forms.HiddenInput, initial=INSTITUTIONAL_RELATION[1][0])
+    relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[1][0])
 
 class SupportSourceForm(forms.ModelForm):
     class Meta:
         model = TrialSupportSource
         fields = ['institution','relation']
-    relation = forms.CharField(widget=forms.HiddenInput, initial=INSTITUTIONAL_RELATION[0][0])
+    relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[0][0])
 
 class GeneralDescriptorForm(forms.ModelForm):
     class Meta:
         model = GeneralDescriptor
         fields = ['descriptor']
-    level = forms.CharField(widget=forms.HiddenInput, initial=DESCRIPTOR_LEVEL[0][0])
+    level = forms.CharField(widget=forms.HiddenInput, initial=choices.DESCRIPTOR_LEVEL[0][0])
 
 class SpecificDescriptorForm(forms.ModelForm):
     class Meta:
         model = SpecificDescriptor
         fields = ['descriptor']
-    level = forms.CharField(widget=forms.HiddenInput, initial=DESCRIPTOR_LEVEL[1][0])
+    level = forms.CharField(widget=forms.HiddenInput, initial=choices.DESCRIPTOR_LEVEL[1][0])
 
 class InterventionForm(forms.ModelForm):
     class Meta:
@@ -73,6 +81,7 @@ class InterventionForm(forms.ModelForm):
 
 ##
 
+#v-sponsors
 def step_2(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
@@ -110,6 +119,7 @@ def step_2(request, trial_pk):
                               {'forms':forms,
                                'next_form_title':_('Health Conditions Form')})
 
+#v-healthcondition
 def step_3(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
@@ -147,6 +157,7 @@ def step_3(request, trial_pk):
                               {'forms':forms,
                                'next_form_title':_('Interventions Form')})
 
+#v-interventions
 def step_4(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
@@ -159,7 +170,7 @@ def step_4(request, trial_pk):
             ct.save()
 
             for code in request.POST.getlist('i_code'):
-                icode = InterventionCode(int(code))
+                icode = InterventionCode(pk=int(code))
                 TrialInterventionCode.objects.create(trial=ct,i_code=icode)                
 
             if request.POST.has_key('submit_next'):
@@ -172,4 +183,99 @@ def step_4(request, trial_pk):
     forms = {'main':form}
     return render_to_response('registry/trial_form_step_4.html',
                               {'forms':forms,
-                               'next_form_title':_('Health Conditions Form')})
+                               'next_form_title':_('Recruitment Form')})
+
+#v-recruitment
+def step_5(request, trial_pk):
+    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+
+    if request.POST:
+        form = RecruitmentForm(request.POST, instance=ct)
+
+        if form.is_valid():
+            form.save()
+
+            if request.POST.has_key('submit_next'):
+                return HttpResponseRedirect("/rg/step_6/%s/" % trial_pk)
+            # FIXME: use dynamic url
+            return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+    else:
+        form = RecruitmentForm(instance=ct)
+
+    forms = {'main':form}
+    return render_to_response('registry/trial_form_step_4.html',
+                              {'forms':forms,
+                               'next_form_title':_('Study Type Form')})
+
+#v-studytype
+def step_6(request, trial_pk):
+    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+
+    if request.POST:
+        form = StudyTypeForm(request.POST, instance=ct)
+
+        if form.is_valid():
+            form.save()
+
+            if request.POST.has_key('submit_next'):
+                return HttpResponseRedirect("/rg/step_7/%s/" % trial_pk)
+            # FIXME: use dynamic url
+            return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+    else:
+        form = StudyTypeForm(instance=ct)
+
+    forms = {'main':form}
+    return render_to_response('registry/trial_form_step_4.html',
+                              {'forms':forms,
+                               'next_form_title':_('Outcomes Form')})
+
+#v-outcomes
+def step_7(request, trial_pk):
+    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+
+    OutcomesSet = inlineformset_factory(ClinicalTrial, Outcome,
+                                form=OutcomesForm,extra=EXTRA_SECONDARY_IDS)
+
+    if request.POST:
+        formset = OutcomesSet(request.POST, instance=ct)
+
+        if formset.is_valid():
+            formset.save()
+
+            if request.POST.has_key('submit_next'):
+                return HttpResponseRedirect("/rg/step_7/%s/" % trial_pk)
+            # FIXME: use dynamic url
+            return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+    else:
+        formset = OutcomesSet(instance=ct)
+
+    forms = {'main':formset}
+    return render_to_response('registry/trial_form_step_4.html',
+                              {'forms':forms,
+                               'next_form_title':_('Descriptor Form')})
+
+#v-descriptor
+def step_8(request, trial_pk):
+    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    
+    DescriptorSet = inlineformset_factory(ClinicalTrial, Descriptor,
+                                form=DescriptorForm,extra=EXTRA_SECONDARY_IDS)
+
+    if request.POST:
+        formset = DescriptorSet(request.POST, instance=ct)
+
+        if formset.is_valid():
+            formset.save()
+
+            if request.POST.has_key('submit_next'):
+                return HttpResponseRedirect("/rg/step_7/%s/" % trial_pk)
+            # FIXME: use dynamic url
+            return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+    else:
+        formset = DescriptorSet(instance=ct)
+
+    forms = {'main':formset}
+    return render_to_response('registry/trial_form_step_4.html',
+                              {'forms':forms})
+
+
