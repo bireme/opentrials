@@ -6,12 +6,10 @@ from django.utils.translation import ugettext as _
 #from django.contrib.admin.widgets import AdminDateWidget
 
 import choices
-from vocabulary.models import CountryCode, RecruitmentStatus, InterventionCode
+from vocabulary.models import CountryCode, RecruitmentStatus
 from vocabulary.models import StudyType, StudyPhase
 
 from clinicaltrials.registry.models import ClinicalTrial, Institution, Outcome, Descriptor
-from clinicaltrials.registry.models import TrialInterventionCode
-    
 
 class TrialIdentificationForm(forms.ModelForm):
     class Meta:
@@ -56,10 +54,9 @@ class PrimarySponsorForm(forms.ModelForm):
 
 class DescriptorForm(forms.ModelForm):
     class Meta:
-        model = ClinicalTrial
+        model = Descriptor
 
     title = _('Descriptor')
-    inline_model = Descriptor
 
 class HealthConditionsForm(forms.ModelForm):
     class Meta:
@@ -161,7 +158,7 @@ class ContactForm(forms.Form):
 
 class OutcomesForm(forms.ModelForm):
     class Meta:
-        model = ClinicalTrial
+        model = Outcome
+        fields = ['interest','description']
     
     title = _('Outcomes')
-    inline_model = Outcome
