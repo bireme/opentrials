@@ -1,15 +1,15 @@
 #coding: utf-8
 
-from clinicaltrials.registry.trds_forms import DescriptorForm
-from clinicaltrials.registry.trds_forms import OutcomesForm
-from clinicaltrials.registry.trds_forms import RecruitmentForm
-from clinicaltrials.registry.trds_forms import StudyTypeForm
-
+from clinicaltrials.vocabulary.models import CountryCode
+from clinicaltrials.registry.models import RecruitmentCountry
 from clinicaltrials.registry.models import ClinicalTrial
 from clinicaltrials.registry.models import Descriptor
 from clinicaltrials.registry.models import GeneralDescriptor
 from clinicaltrials.registry.models import Outcome
+from clinicaltrials.registry.models import RecruitmentStatus
 from clinicaltrials.registry.models import SpecificDescriptor
+from clinicaltrials.registry.models import StudyType
+from clinicaltrials.registry.models import StudyPhase
 from clinicaltrials.registry.models import TrialInterventionCode
 from clinicaltrials.registry.models import TrialSecondarySponsor
 from clinicaltrials.registry.models import TrialSupportSource
@@ -18,14 +18,11 @@ from clinicaltrials.vocabulary.models import InterventionCode
 
 import choices
 
-from django.shortcuts import render_to_response, get_object_or_404
+from django import forms
 from django.http import HttpResponseRedirect
 from django.forms.models import inlineformset_factory
 from django.utils.translation import ugettext_lazy as _
-from django import forms
-
-
-from clinicaltrials.registry.trds_forms import PrimarySponsorForm, HealthConditionsForm
+from django.shortcuts import render_to_response, get_object_or_404
 
 EXTRA_SECONDARY_IDS = 2
 
@@ -33,6 +30,7 @@ EXTRA_SECONDARY_IDS = 2
 # Forms 
 #
 
+#step2
 class PrimarySponsorForm(forms.ModelForm):
     class Meta:
         model = ClinicalTrial
@@ -40,6 +38,7 @@ class PrimarySponsorForm(forms.ModelForm):
 
     title = _('Primary Sponsor')
 
+#step2
 class SecondarySponsorForm(forms.ModelForm):
     class Meta:
         model = TrialSecondarySponsor
@@ -47,24 +46,41 @@ class SecondarySponsorForm(forms.ModelForm):
 
     relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[1][0])
 
+#step2
 class SupportSourceForm(forms.ModelForm):
     class Meta:
         model = TrialSupportSource
         fields = ['institution','relation']
     relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[0][0])
 
+#step3
+class HealthConditionsForm(forms.ModelForm):
+    class Meta:
+        model = ClinicalTrial
+        fields = ['hc_freetext',]
+
+    title = _('Health Condition(s) or Problem(s) Studied')
+
+    # TRDS 12a
+    hc_freetext = forms.CharField(label=_('Health Condition(s) or Problem(s)'),
+                                         required=False, max_length=8000,
+                                         widget=forms.Textarea)
+
+#step3
 class GeneralDescriptorForm(forms.ModelForm):
     class Meta:
         model = GeneralDescriptor
         fields = ['descriptor']
     level = forms.CharField(widget=forms.HiddenInput, initial=choices.DESCRIPTOR_LEVEL[0][0])
 
+#step3
 class SpecificDescriptorForm(forms.ModelForm):
     class Meta:
         model = SpecificDescriptor
         fields = ['descriptor']
     level = forms.CharField(widget=forms.HiddenInput, initial=choices.DESCRIPTOR_LEVEL[1][0])
 
+#step4
 class InterventionForm(forms.ModelForm):
     class Meta:
         model = ClinicalTrial
@@ -78,8 +94,87 @@ class InterventionForm(forms.ModelForm):
     i_code = forms.ModelMultipleChoiceField(label=_("Intervention Code(s)"),
                                             queryset=InterventionCode.objects.all(),
                                             widget=forms.CheckboxSelectMultiple())
+#step5
+class RecruitmentForm(forms.ModelForm):
+    class Meta:
+        model = ClinicalTrial
+        fields = ['recruitment_status', 'recruitment_country','date_enrollment',
+                  'target_sample_size', 'phase', 'inclusion_criteria', 'gender',
+                  'agemin_value', 'agemin_unit',
+                  'agemax_value', 'agemax_unit', 'exclusion_criteria',
+                  ]
 
-##
+    title = _('Recruitment')
+
+    # TODO: Countries of Recruitment
+
+    # TRDS 18
+    recruitment_status = forms.ModelChoiceField(label=_('Recruitment Status'),
+                                                queryset=RecruitmentStatus.objects.all())
+
+    # TRDS 16a,b (type_enrollment: anticipated or actual)
+    date_enrollment = forms.CharField( # yyyy-mm or yyyy-mm-dd
+        label=_('Date of First Enrollment'), max_length=10, required=False)
+
+    # TRDS 17
+    target_sample_size = forms.IntegerField(label=_('Target Sample Size'),
+                                             initial=0 , required=False)
+    # TRDS 14a
+    inclusion_criteria = forms.CharField(label=_('Inclusion Criteria'),
+                                         required=False, max_length=8000,
+                                         widget=forms.Textarea)
+    # TRDS 14b
+    gender = forms.ChoiceField(label=_('Gender (inclusion sex)'),
+                               choices=choices.INCLUSION_GENDER)
+    # TRDS 14c
+    agemin_value = forms.IntegerField(required=False, label=_('Inclusion Minimum Age'))
+
+    agemin_unit = forms.ChoiceField(label=_('Minimum Age Unit'),
+                                   choices=choices.INCLUSION_AGE_UNIT)
+    # TRDS 14d
+    agemax_value = forms.IntegerField(required=False, label=_('Inclusion Maximum Age'))
+
+    agemax_unit = forms.ChoiceField(label=_('Maximum Age Unit'),
+                                   choices=choices.INCLUSION_AGE_UNIT)
+    # TRDS 14e
+    exclusion_criteria = forms.CharField(label=_('Exclusion Criteria'),required=False,
+                                        max_length=8000, widget=forms.Textarea,)
+
+#step6
+class StudyTypeForm(forms.ModelForm):
+    class Meta:
+        model = ClinicalTrial
+        fields = ['study_type', 'study_design', 'phase']
+
+    title = _('Study Type')
+
+    # TRDS 15a
+    study_type = forms.ModelChoiceField(label=_('Study Type'),
+                                        queryset=StudyType.objects.all())
+
+    # TRDS 15b
+    study_design = forms.CharField(label=_('Study Design'),
+                                         required=False, max_length=1000,
+                                         widget=forms.Textarea)
+    # TRDS 15c
+    phase = forms.ModelChoiceField(label=_('Study Phase'),
+                                   queryset=StudyPhase.objects.all())
+
+#step7
+class OutcomesForm(forms.ModelForm):
+    class Meta:
+        model = Outcome
+        fields = ['interest','description']
+
+    title = _('Outcomes')
+
+#step8
+class DescriptorForm(forms.ModelForm):
+    class Meta:
+        model = Descriptor
+
+    title = _('Descriptor')
+##ENDFORMS
 
 #v-sponsors
 def step_2(request, trial_pk):
@@ -139,7 +234,7 @@ def step_3(request, trial_pk):
             specific_forms.save()
 
             if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect("/rg/step_3/%s/" % trial_pk)
+                return HttpResponseRedirect("/rg/step_4/%s/" % trial_pk)
             # FIXME: use dynamic url
             return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
     else:
@@ -193,7 +288,13 @@ def step_5(request, trial_pk):
         form = RecruitmentForm(request.POST, instance=ct)
 
         if form.is_valid():
-            form.save()
+            form.save(commit=False)
+            ct.recruitment_country.clear()
+            ct.save()
+
+            for code in request.POST.getlist('recruitment_country'):
+                ccode = CountryCode(pk=int(code))
+                RecruitmentCountry.objects.create(trial=ct,country=ccode)
 
             if request.POST.has_key('submit_next'):
                 return HttpResponseRedirect("/rg/step_6/%s/" % trial_pk)
@@ -258,11 +359,11 @@ def step_7(request, trial_pk):
 def step_8(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     
-    DescriptorSet = inlineformset_factory(ClinicalTrial, Descriptor,
-                                form=DescriptorForm,extra=EXTRA_SECONDARY_IDS)
+#    DescriptorSet = inlineformset_factory(ClinicalTrial, Descriptor,
+#                                form=DescriptorForm,extra=EXTRA_SECONDARY_IDS)
 
     if request.POST:
-        formset = DescriptorSet(request.POST, instance=ct)
+        formset = DescriptorForm(request.POST, instance=ct)
 
         if formset.is_valid():
             formset.save()
@@ -272,7 +373,7 @@ def step_8(request, trial_pk):
             # FIXME: use dynamic url
             return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
     else:
-        formset = DescriptorSet(instance=ct)
+        formset = DescriptorForm(instance=ct)
 
     forms = {'main':formset}
     return render_to_response('registry/trial_form_step_4.html',
