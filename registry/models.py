@@ -44,6 +44,9 @@ class ClinicalTrial(models.Model):
     # TRDS 5
     primary_sponsor = models.OneToOneField('Institution', null=True, blank=True,
                                         verbose_name=_('Primary Sponsor'))
+
+    contact = models.ManyToManyField('Contact', through='TrialContact')
+
     # TRDS 9a
     public_title = models.TextField(_('Public Title'), blank=True,
                                     max_length=2000)
@@ -58,8 +61,7 @@ class ClinicalTrial(models.Model):
                                    max_length=8000)
 
     # TRDS 13b
-    i_code = models.ManyToManyField(InterventionCode,
-                                                through='TrialInterventionCode')
+    i_code = models.ManyToManyField(InterventionCode)
 
     # TRDS 14a
     inclusion_criteria = models.TextField(_('Inclusion Criteria'), blank=True,
@@ -108,9 +110,9 @@ class ClinicalTrial(models.Model):
     # TRDS 18
     recruitment_status = models.ForeignKey(RecruitmentStatus, null=True, blank=True,
                                            verbose_name=_('Recruitment Status'))
-    # TRDS 18
-    recruitment_country = models.ManyToManyField(CountryCode,
-                                                through='RecruitmentCountry')
+
+    # TRDS 11 - Countries of Recruitment
+    recruitment_country = models.ManyToManyField(CountryCode)
 
     ################################### internal use, administrative fields ###
     created = models.DateTimeField(default=datetime.now, editable=False)
@@ -334,30 +336,6 @@ class TrialContact(models.Model):
         return u'%s, %s: %s (%s)' % (self.relation, self.trial.short_title(),
                                      self.contact.name(), self.status)
 
-# TRDS 11 - Countries of Recruitment
-
-class RecruitmentCountry(models.Model):
-    trial = models.ForeignKey(ClinicalTrial)
-    country = models.ForeignKey(CountryCode, verbose_name=_('Country'))
-
-    class Meta:
-        verbose_name_plural = _('Recruitment Countries')
-
-    def __unicode__(self):
-        return self.country.description
-
-# TRDS 13b - Intervention(s), intervention code
-
-class TrialInterventionCode(models.Model):
-    trial = models.ForeignKey(ClinicalTrial)
-    i_code = models.ForeignKey(InterventionCode)
-
-    class Meta:
-        order_with_respect_to = 'trial'
-
-    def __unicode__(self):
-        return u'%s: %s' % (self.trial.short_title(), self.i_code.label)
-
 # TRDS 19 - Primary Outcome(s)
 # TRDS 20 - Key Secondary Outcome(s)
 
@@ -375,6 +353,10 @@ class Outcome(models.Model):
         return safe_truncate(self.description, 80)
 
 class Descriptor(models.Model):
+    class Meta:
+        order_with_respect_to = 'trial'
+
+    trial = models.ForeignKey(ClinicalTrial)
     aspect = models.CharField(_('Trial Aspect'), max_length=255,
                         choices=choices.TRIAL_ASPECT)
     vocabulary = models.CharField(_('Vocabulary'), max_length=255,
@@ -387,23 +369,6 @@ class Descriptor(models.Model):
 
     def __unicode__(self):
         return u'[%s] %s: %s' % (self.vocabulary, self.code, self.text)
-
-class GeneralDescriptor(models.Model):
-    trial = models.ForeignKey(ClinicalTrial)
-    descriptor = models.ForeignKey(Descriptor)
-
-    class Meta:
-        order_with_respect_to = 'descriptor'
-
-    def trial_identifier(self):
-        return self.trial.identifier()
-
-class SpecificDescriptor(models.Model):
-    trial = models.ForeignKey(ClinicalTrial)
-    descriptor = models.ForeignKey(Descriptor)
-
-    class Meta:
-        order_with_respect_to = 'descriptor'
 
     def trial_identifier(self):
         return self.trial.identifier()

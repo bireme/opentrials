@@ -1,5 +1,47 @@
 [
   {
+    "pk": 1, 
+    "model": "registry.clinicaltrial", 
+    "fields": {
+      "scientific_title": "A randomised, double-blind, placebo-controlled, factorial-design trial to assess the effect of aspirin and fish oil in the prevention of early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis", 
+      "public_title": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "1. Stage 4 or 5 chronic kidney disease\r\n2. Currently on haemodialysis or haemodialysis is planned to start within 6\r\nmonths (including patients currently on peritoneal dialysis).\r\n3. Planned AVF will be the primary haemodialysis access mechanism.\r\n4. Surgery to create an arterio-venous fistula in the upper or lower arm is planned.\r\n5. Aged over 18 years\r\n6. Life expectancy predicted to be 12 months minimum\r\n7. Treating team agreeable to patient\\'s involvement in the trial\r\n8. Informed consent ", 
+      "recruitment_country": [
+        14, 
+        158
+      ], 
+      "i_code": [
+        1, 
+        8
+      ], 
+      "date_enrollment_actual": "", 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "agemin_unit": "Y", 
+      "scientific_acronym": "FAVOURED (Fish oil and Aspirin in Vascular acccess OUtcomes in REnal Disease)", 
+      "acronym": "", 
+      "target_sample_size": 1200, 
+      "staff_note": "", 
+      "status": "pending", 
+      "updated": "2010-01-29 20:50:47", 
+      "hc_freetext": "Early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis.", 
+      "study_type": 1, 
+      "i_freetext": "Aspirin 100 mg per day or matching placebo, commencing on the day prior to scheduled surgery and continuing for 3 months.", 
+      "date_enrollment_anticipated": "", 
+      "recruitment_status": 1, 
+      "phase": 3, 
+      "date_registration": null, 
+      "agemin_value": 18, 
+      "study_design": "", 
+      "created": "2010-01-20 17:47:08", 
+      "gender": "-", 
+      "exclusion_criteria": "1. Revision of existing AVF rather than de novo AVF\r\n2. Medical indication for anti-platelet agent(s)\r\n3. Known intolerance of agents including hypersensitivity to aspirin\r\n4. Current use of aspirin within two weeks of commencing trial, and of fish oil within 4 weeks of commencing trial.\r\n5. Pregnancy, lactation or intention to fall pregnant during the time course of the study\r\n6. Known bleeding disorder or established diagnosis of active or suspected bleeding\r\n7. Known active peptic ulcer disease\r\n8. Already receiving anti-coagulation therapy such as warfarin\r\n9. Receiving regular anti-inflammatory agents for another indication such as\r\narthritis\r\n10.Potential non-compliance with treatment regimen in the view of the\r\ntreating clinicians\r\n11.Involved in another clinical trial where the intervention being trialled is likely to confound the outcome of this trial\r\n12.Previously randomised to this trial. ", 
+      "primary_sponsor": 1, 
+      "exported": null
+    }
+  }, 
+  {
     "pk": 3, 
     "model": "registry.clinicaltrial", 
     "fields": {
@@ -7,6 +49,12 @@
       "public_title": "Comparison of Ascorbic Acid and Grape Seed Extract in Oxidative Stress Induced by on Pump Heart Surgery", 
       "trial_id": null, 
       "inclusion_criteria": "Candidates for elective CABG surgery with pump for first time, 3 Vessel Disease (3VD).", 
+      "recruitment_country": [
+        103
+      ], 
+      "i_code": [
+        1
+      ], 
       "date_enrollment_actual": "", 
       "agemax_value": 0, 
       "agemax_unit": "-", 
@@ -34,40 +82,6 @@
     }
   }, 
   {
-    "pk": 1, 
-    "model": "registry.clinicaltrial", 
-    "fields": {
-      "scientific_title": "A randomised, double-blind, placebo-controlled, factorial-design trial to assess the effect of aspirin and fish oil in the prevention of early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis", 
-      "public_title": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "1. Stage 4 or 5 chronic kidney disease\r\n2. Currently on haemodialysis or haemodialysis is planned to start within 6\r\nmonths (including patients currently on peritoneal dialysis).\r\n3. Planned AVF will be the primary haemodialysis access mechanism.\r\n4. Surgery to create an arterio-venous fistula in the upper or lower arm is planned.\r\n5. Aged over 18 years\r\n6. Life expectancy predicted to be 12 months minimum\r\n7. Treating team agreeable to patient\\'s involvement in the trial\r\n8. Informed consent ", 
-      "date_enrollment_actual": "", 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "agemin_unit": "Y", 
-      "scientific_acronym": "FAVOURED (Fish oil and Aspirin in Vascular acccess OUtcomes in REnal Disease)", 
-      "acronym": "", 
-      "target_sample_size": 1200, 
-      "staff_note": "", 
-      "status": "pending", 
-      "updated": "2010-01-20 18:54:25", 
-      "hc_freetext": "Early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis.", 
-      "study_type": 1, 
-      "i_freetext": "Aspirin 100 mg per day or matching placebo, commencing on the day prior to scheduled surgery and continuing for 3 months.", 
-      "date_enrollment_anticipated": "", 
-      "recruitment_status": 1, 
-      "phase": 3, 
-      "date_registration": null, 
-      "agemin_value": 18, 
-      "study_design": "", 
-      "created": "2010-01-20 17:47:08", 
-      "gender": "-", 
-      "exclusion_criteria": "1. Revision of existing AVF rather than de novo AVF\r\n2. Medical indication for anti-platelet agent(s)\r\n3. Known intolerance of agents including hypersensitivity to aspirin\r\n4. Current use of aspirin within two weeks of commencing trial, and of fish oil within 4 weeks of commencing trial.\r\n5. Pregnancy, lactation or intention to fall pregnant during the time course of the study\r\n6. Known bleeding disorder or established diagnosis of active or suspected bleeding\r\n7. Known active peptic ulcer disease\r\n8. Already receiving anti-coagulation therapy such as warfarin\r\n9. Receiving regular anti-inflammatory agents for another indication such as\r\narthritis\r\n10.Potential non-compliance with treatment regimen in the view of the\r\ntreating clinicians\r\n11.Involved in another clinical trial where the intervention being trialled is likely to confound the outcome of this trial\r\n12.Previously randomised to this trial. ", 
-      "primary_sponsor": 1, 
-      "exported": null
-    }
-  }, 
-  {
     "pk": 2, 
     "model": "registry.clinicaltrial", 
     "fields": {
@@ -75,6 +89,8 @@
       "public_title": "", 
       "trial_id": null, 
       "inclusion_criteria": "", 
+      "recruitment_country": [], 
+      "i_code": [], 
       "date_enrollment_actual": "", 
       "agemax_value": 0, 
       "agemax_unit": "-", 
@@ -139,6 +155,14 @@
   }, 
   {
     "pk": 1, 
+    "model": "registry.trialsecondarysponsor", 
+    "fields": {
+      "trial": 1, 
+      "institution": 1
+    }
+  }, 
+  {
+    "pk": 1, 
     "model": "registry.trialsupportsource", 
     "fields": {
       "trial": 3, 
@@ -197,54 +221,6 @@
       "trial": 3, 
       "contact": 1, 
       "relation": "ScientificContact"
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "registry.recruitmentcountry", 
-    "fields": {
-      "trial": 1, 
-      "country": 14
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "registry.recruitmentcountry", 
-    "fields": {
-      "trial": 1, 
-      "country": 158
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "registry.recruitmentcountry", 
-    "fields": {
-      "trial": 3, 
-      "country": 103
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "registry.trialinterventioncode", 
-    "fields": {
-      "trial": 3, 
-      "i_code": 1
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "registry.trialinterventioncode", 
-    "fields": {
-      "trial": 1, 
-      "i_code": 1
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "registry.trialinterventioncode", 
-    "fields": {
-      "trial": 1, 
-      "i_code": 8
     }
   }, 
   {
@@ -318,6 +294,7 @@
       "vocabulary": "DeCS", 
       "level": "general", 
       "text": "Cardiovascular Diseases", 
+      "trial": 3, 
       "version": "", 
       "aspect": "HealthCondition"
     }
@@ -330,6 +307,7 @@
       "vocabulary": "DeCS", 
       "level": "specific", 
       "text": "Arteriovenous Fistula", 
+      "trial": 1, 
       "version": "", 
       "aspect": "HealthCondition"
     }
@@ -342,6 +320,7 @@
       "vocabulary": "CAS", 
       "level": "specific", 
       "text": "L-Ascorbic acid", 
+      "trial": 3, 
       "version": "", 
       "aspect": "Intervention"
     }
@@ -354,6 +333,7 @@
       "vocabulary": "CAS", 
       "level": "specific", 
       "text": "Benzoic acid, 2-(acetyloxy)-", 
+      "trial": 1, 
       "version": "", 
       "aspect": "Intervention"
     }
@@ -366,6 +346,7 @@
       "vocabulary": "DeCS", 
       "level": "specific", 
       "text": "Myocardial Ischemia", 
+      "trial": 3, 
       "version": "", 
       "aspect": "HealthCondition"
     }
@@ -378,6 +359,7 @@
       "vocabulary": "DeCS", 
       "level": "specific", 
       "text": "Coronary Artery Disease ", 
+      "trial": 3, 
       "version": "", 
       "aspect": "HealthCondition"
     }
@@ -390,6 +372,7 @@
       "vocabulary": "DeCS", 
       "level": "specific", 
       "text": "Cardiomyopathies", 
+      "trial": 3, 
       "version": "", 
       "aspect": "HealthCondition"
     }

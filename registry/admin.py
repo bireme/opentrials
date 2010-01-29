@@ -3,10 +3,8 @@
 from django.contrib import admin
 from registry.models import *
 
-tabular_inline_models = [GeneralDescriptor, SpecificDescriptor,
-                         RecruitmentCountry, TrialInterventionCode,
-                         TrialNumber, TrialContact, TrialSecondarySponsor,
-                         TrialSupportSource]
+tabular_inline_models = [Descriptor, TrialNumber, TrialContact, 
+                         TrialSecondarySponsor, TrialSupportSource]
 tabular_inlines = []
 for model in tabular_inline_models:
     cls_name = model.__name__+'line'
@@ -25,14 +23,10 @@ class ClinicalTrialAdmin(admin.ModelAdmin):
     date_hierarchy = 'updated'
     save_on_top = True
 
-class GeneralDescriptorAdmin(admin.ModelAdmin):
-    list_display = ('trial_identifier','descriptor')
-
-class SpecificDescriptorAdmin(admin.ModelAdmin):
-    list_display = ('trial_identifier','descriptor')
+class DescriptorAdmin(admin.ModelAdmin):
+    list_display = ('trial_identifier','vocabulary','code', 'text')
 
 admin.site.register(ClinicalTrial, ClinicalTrialAdmin)
-admin.site.register(GeneralDescriptor, GeneralDescriptorAdmin)
-admin.site.register(SpecificDescriptor, SpecificDescriptorAdmin)
+admin.site.register(Descriptor, DescriptorAdmin)
 admin.site.register(Institution)
 admin.site.register(Contact)
