@@ -1,3 +1,4 @@
+from clinicaltrials.vocabulary.models import CountryCode
 from django.db import models, IntegrityError
 
 from django.utils.translation import ugettext_lazy as _
@@ -107,6 +108,9 @@ class ClinicalTrial(models.Model):
     # TRDS 18
     recruitment_status = models.ForeignKey(RecruitmentStatus, null=True, blank=True,
                                            verbose_name=_('Recruitment Status'))
+    # TRDS 18
+    recruitment_country = models.ManyToManyField(CountryCode,
+                                                through='RecruitmentCountry')
 
     ################################### internal use, administrative fields ###
     created = models.DateTimeField(default=datetime.now, editable=False)
