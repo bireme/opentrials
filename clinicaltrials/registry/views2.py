@@ -1,6 +1,7 @@
 #coding: utf-8
 
-from clinicaltrials.registry.models import TrialContact
+from clinicaltrials.registry.models import ScientificContact
+from clinicaltrials.registry.models import PublicContact
 from clinicaltrials.vocabulary.models import CountryCode
 
 from clinicaltrials.registry.models import ClinicalTrial
@@ -23,14 +24,14 @@ import choices
 
 from django import forms
 from django.http import HttpResponseRedirect
-from django.forms.models import inlineformset_factory
+from django.forms.models import inlineformset_factory, modelformset_factory
 from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import render_to_response, get_object_or_404
 
-EXTRA_SECONDARY_IDS = 2
+EXTRA_FORMS = 2
 
 #
-# Forms 
+# Forms
 #
 
 #step2
@@ -80,7 +81,7 @@ class InterventionForm(forms.ModelForm):
         model = ClinicalTrial
         fields = ['i_freetext','i_code']
     title = _('Intervention(s)')
-    
+
     i_freetext = forms.CharField(label=_('Intervention(s)'),
                                          required=False, max_length=8000,
                                          widget=forms.Textarea)
@@ -163,20 +164,31 @@ class OutcomesForm(forms.ModelForm):
     title = _('Outcomes')
 
 #step8
-class TrialContactForm(forms.ModelForm):
+class PublicContactForm(forms.ModelForm):
     class Meta:
-        model = TrialContact
-        fields = ['contact', 'relation','status']
+        model = ClinicalTrial
+        fields = ['contact']
+
+    relation = forms.CharField(initial=choices.CONTACT_RELATION[0][0],
+                               widget=forms.HiddenInput)
+
+#step8
+class ScientificContactForm(forms.ModelForm):
+    class Meta:
+        model = ClinicalTrial
+        fields = ['contact']
+
+    relation = forms.CharField(initial=choices.CONTACT_RELATION[1][0],
+                               widget=forms.HiddenInput)
 
 #step8-partof
-class ContactForm(forms.ModelForm):
-    class Meta:
-        model = Contact
+class ContactForm(forms.Form):
 
-    title = _('Contacts')
+    relation = forms.ChoiceField(widget=forms.RadioSelect,
+                               choices=choices.CONTACT_RELATION)
 
     firstname = forms.CharField(label=_('First Name'), max_length=50)
-    middlename = forms.CharField(label=_('Middle Name'), max_length=50)
+    middlename = forms.CharField(label=_('Middle Name'), max_length=50,required=False)
     lastname = forms.CharField(label=_('Last Name'), max_length=50)
 
     email = forms.EmailField(label=_('E-mail'), max_length=255)
@@ -184,13 +196,14 @@ class ContactForm(forms.ModelForm):
     affiliation = forms.ModelChoiceField(Institution.objects.all(),
                                          _('Affiliation'))
 
-    address = forms.CharField(label=_('Address'), max_length=255)
+    address = forms.CharField(label=_('Address'), max_length=255,required=False)
     city = forms.CharField(label=_('City'), max_length=255)
 
     country = forms.ModelChoiceField(CountryCode.objects.all(), _('Country'))
 
     zip = forms.CharField(label=_('Postal Code'), max_length=50)
     telephone = forms.CharField(label=_('Telephone'), max_length=255)
+
 
 
 
@@ -203,9 +216,9 @@ def step_2(request, trial_pk):
     if request.POST:
         form = PrimarySponsorForm(request.POST, instance=ct)
         SecondarySponsorSet = inlineformset_factory(ClinicalTrial, TrialSecondarySponsor,
-                           form=SecondarySponsorForm,extra=EXTRA_SECONDARY_IDS)
+                           form=SecondarySponsorForm,extra=EXTRA_FORMS)
         SupportSourceSet = inlineformset_factory(ClinicalTrial, TrialSupportSource,
-                           form=SupportSourceForm,extra=EXTRA_SECONDARY_IDS)
+                           form=SupportSourceForm,extra=EXTRA_FORMS)
 
         secondary_forms = SecondarySponsorSet(request.POST, instance=ct)
         sources_form = SupportSourceSet(request.POST, instance=ct)
@@ -222,10 +235,10 @@ def step_2(request, trial_pk):
     else:
         form = PrimarySponsorForm(instance=ct)
         SecondarySponsorSet = inlineformset_factory(ClinicalTrial, TrialSecondarySponsor,
-            form=SecondarySponsorForm,extra=EXTRA_SECONDARY_IDS, can_delete=True)
+            form=SecondarySponsorForm,extra=EXTRA_FORMS, can_delete=True)
         SupportSourceSet = inlineformset_factory(ClinicalTrial, TrialSupportSource,
-               form=SupportSourceForm,extra=EXTRA_SECONDARY_IDS,can_delete=True)
-        
+               form=SupportSourceForm,extra=EXTRA_FORMS,can_delete=True)
+
         secondary_forms = SecondarySponsorSet(instance=ct)
         sources_form = SupportSourceSet(instance=ct)
 
@@ -239,7 +252,7 @@ def step_3(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
     DescriptorSet = inlineformset_factory(ClinicalTrial, Descriptor,
-                       form=DescriptorForm,extra=EXTRA_SECONDARY_IDS)
+                       form=DescriptorForm,extra=EXTRA_FORMS)
 
     if request.POST:
         form = HealthConditionsForm(request.POST, instance=ct)
@@ -333,7 +346,7 @@ def step_7(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
     OutcomesSet = inlineformset_factory(ClinicalTrial, Outcome,
-                                form=OutcomesForm,extra=EXTRA_SECONDARY_IDS)
+                                form=OutcomesForm,extra=EXTRA_FORMS)
 
     if request.POST:
         formset = OutcomesSet(request.POST, instance=ct)
@@ -342,7 +355,7 @@ def step_7(request, trial_pk):
             formset.save()
 
             if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect("/rg/step_7/%s/" % trial_pk)
+                return HttpResponseRedirect("/rg/step_8/%s/" % trial_pk)
             # FIXME: use dynamic url
             return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
     else:
@@ -353,28 +366,48 @@ def step_7(request, trial_pk):
                               {'forms':forms,
                                'next_form_title':_('Descriptor Form')})
 
-#v-descriptor
+#v-contact
 def step_8(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
-    
-    ContactSet = inlineformset_factory(ClinicalTrial, TrialContact,
-                                form=TrialContactForm,extra=EXTRA_SECONDARY_IDS)
+
+    PublicContactFormSet = inlineformset_factory(ClinicalTrial, PublicContact,
+                                                form=PublicContactForm,
+                                                can_delete=False,
+                                                extra=EXTRA_FORMS)
+    ScientificContactFormSet = inlineformset_factory(ClinicalTrial, ScientificContact,
+                                                form=ScientificContactForm,
+                                                can_delete=False,
+                                                extra=EXTRA_FORMS)
+
+    ContactFormSet = modelformset_factory(Contact,extra=1)
+
 
     if request.POST:
-        form = ContactSet(request.POST, instance=ct)
+        public_form_set = PublicContactFormSet(request.POST,
+                                               instance=ct)
+        scientific_form_set = ScientificContactFormSet(request.POST,
+                                                       instance=ct)
 
-        if form.is_valid():
-            formset.save()
+        new_contact_form = ContactForm(request.POST)
+
+        if public_form_set.is_valid() \
+                and scientific_form_set.is_valid() \
+                and new_contact_form.is_valid():
+
+            public_form_set.save()
+            scientific_form_set.save()
 
             if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect("/rg/step_7/%s/" % trial_pk)
+                return HttpResponseRedirect("/rg/step_9/%s/" % trial_pk)
             # FIXME: use dynamic url
             return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
     else:
-        form = ContactSet(instance=ct)
+        public_form_set = PublicContactFormSet(instance=ct)
+        scientific_form_set = ScientificContactFormSet(instance=ct)
+        new_contact_form = ContactForm()
 
-    forms = {'main':form}
-    return render_to_response('registry/trial_form_step_4.html',
+    forms = {'public':public_form_set,
+             'scientific':scientific_form_set,
+             'new': new_contact_form }
+    return render_to_response('registry/trial_form_step_8.html',
                               {'forms':forms})
-
-

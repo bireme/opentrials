@@ -45,7 +45,11 @@ class ClinicalTrial(models.Model):
     primary_sponsor = models.OneToOneField('Institution', null=True, blank=True,
                                         verbose_name=_('Primary Sponsor'))
 
-    contact = models.ManyToManyField('Contact', through='TrialContact')
+    public_contact = models.ManyToManyField('Contact', through='PublicContact',
+                                            related_name='public_contact_of_set')
+
+    scientific_contact = models.ManyToManyField('Contact', through='ScientificContact',
+                                            related_name='scientific_contact_of_set')
 
     # TRDS 9a
     public_title = models.TextField(_('Public Title'), blank=True,
@@ -186,35 +190,11 @@ class ClinicalTrial(models.Model):
         return self.updated.strftime('%Y-%m-%d %H:%M')
     updated_str.short_description = _('Updated')
 
-    def related_contacts(self, relation):
-        ''' return set of Contacts related to this trial with a
-            given relationship
-        '''
-        return (r.contact for r in
-                self.trialcontact_set.filter(relation=relation).select_related())
-
     def related_health_conditions(self, aspect, level):
         ''' return set of hc-code or keywords related to this trial with a
             given relationship
         '''
         return self.descriptor_set.filter(aspect=aspect, level=level).select_related()
-
-
-    # TRDS 7 - Contact for Public Queries
-
-    def public_contacts(self):
-        ''' return set of Contacts related to this trial with
-            relation='PublicContact'
-        '''
-        return self.related_contacts('PublicContact')
-
-    # TRDS 8 - Contact for Scientific Queries
-
-    def scientific_contacts(self):
-        ''' return set of Contacts related to this trial with
-            relation='ScientificContact'
-        '''
-        return self.related_contacts('ScientificContact')
 
     #TRDS 12b - HC-CODE
     def hc_code(self):
@@ -323,11 +303,20 @@ class Contact(models.Model):
     def __unicode__(self):
         return self.name()
 
-class TrialContact(models.Model):
+class PublicContact(models.Model):
     trial = models.ForeignKey(ClinicalTrial)
     contact = models.ForeignKey(Contact)
-    relation = models.CharField(_('Relationship'), max_length=255,
-                            choices = choices.CONTACT_RELATION)
+    status = models.CharField(_('Status'), max_length=255,
+                            choices = choices.CONTACT_STATUS,
+                            default = choices.CONTACT_STATUS[0][0])
+
+    def __unicode__(self):
+        return u'%s, %s: %s (%s)' % (self.relation, self.trial.short_title(),
+                                     self.contact.name(), self.status)
+
+class ScientificContact(models.Model):
+    trial = models.ForeignKey(ClinicalTrial)
+    contact = models.ForeignKey(Contact)
     status = models.CharField(_('Status'), max_length=255,
                             choices = choices.CONTACT_STATUS,
                             default = choices.CONTACT_STATUS[0][0])
