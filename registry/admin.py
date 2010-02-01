@@ -3,7 +3,7 @@
 from django.contrib import admin
 from registry.models import *
 
-tabular_inline_models = [Descriptor, TrialNumber, TrialContact, 
+tabular_inline_models = [Descriptor, TrialNumber, PublicContact, ScientificContact,
                          TrialSecondarySponsor, TrialSupportSource]
 tabular_inlines = []
 for model in tabular_inline_models:

@@ -205,24 +205,22 @@
   }, 
   {
     "pk": 1, 
-    "model": "registry.trialcontact", 
+    "model": "registry.publiccontact",
     "fields": {
       "status": "Active", 
       "trial": 3, 
-      "contact": 1, 
-      "relation": "PublicContact"
+      "contact": 1
     }
   }, 
   {
-    "pk": 2, 
-    "model": "registry.trialcontact", 
+    "pk": 1,
+    "model": "registry.scientificcontact",
     "fields": {
       "status": "Active", 
       "trial": 3, 
-      "contact": 1, 
-      "relation": "ScientificContact"
+      "contact": 1
     }
-  }, 
+  },
   {
     "pk": 1, 
     "model": "registry.outcome", 
