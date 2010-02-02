@@ -9,6 +9,10 @@
             <caption>{{forms.main.title}}</caption>
         {{forms.main.as_table}}
         </table>
+        <table>
+            <caption>{% trans 'Intervention Descriptors' %}</caption>
+        {{forms.descriptor.as_table}}
+        </table>
 
 
         <input name="submit_go" type="submit" 
