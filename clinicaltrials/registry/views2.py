@@ -24,7 +24,7 @@ import choices
 
 from django import forms
 from django.http import HttpResponseRedirect
-from django.forms.models import inlineformset_factory, modelformset_factory
+from django.forms.models import inlineformset_factory, formset_factory
 from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import render_to_response, get_object_or_404
 
@@ -370,16 +370,21 @@ def step_7(request, trial_pk):
 def step_8(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
-    PublicContactFormSet = inlineformset_factory(ClinicalTrial, PublicContact,
+    contact_type = {'PublicContact':PublicContact,
+                    'ScientificContact':ScientificContact}
+
+    PublicContactFormSet = inlineformset_factory(ClinicalTrial,
+                                                contact_type['PublicContact'],
                                                 form=PublicContactForm,
                                                 can_delete=False,
                                                 extra=EXTRA_FORMS)
-    ScientificContactFormSet = inlineformset_factory(ClinicalTrial, ScientificContact,
+    ScientificContactFormSet = inlineformset_factory(ClinicalTrial,
+                                                contact_type['ScientificContact'],
                                                 form=ScientificContactForm,
                                                 can_delete=False,
                                                 extra=EXTRA_FORMS)
 
-    ContactFormSet = modelformset_factory(Contact,extra=1)
+    ContactFormSet = formset_factory(ContactForm,extra=1)
 
 
     if request.POST:
@@ -388,11 +393,16 @@ def step_8(request, trial_pk):
         scientific_form_set = ScientificContactFormSet(request.POST,
                                                        instance=ct)
 
-        new_contact_form = ContactForm(request.POST)
+        new_contact_formset = ContactFormSet(request.POST)
 
         if public_form_set.is_valid() \
                 and scientific_form_set.is_valid() \
-                and new_contact_form.is_valid():
+                and new_contact_formset.is_valid():
+
+            for contact_data in new_contact_formset.cleaned_data:
+                Relation = contact_type[contact_data.pop('relation')]
+                new_contact = Contact.objects.create(**contact_data)
+                Relation.objects.create(trial=ct,contact=new_contact)
 
             public_form_set.save()
             scientific_form_set.save()
@@ -404,10 +414,10 @@ def step_8(request, trial_pk):
     else:
         public_form_set = PublicContactFormSet(instance=ct)
         scientific_form_set = ScientificContactFormSet(instance=ct)
-        new_contact_form = ContactForm()
+        new_contact_formset = ContactFormSet()
 
     forms = {'public':public_form_set,
              'scientific':scientific_form_set,
-             'new': new_contact_form }
+             'new': new_contact_formset }
     return render_to_response('registry/trial_form_step_8.html',
                               {'forms':forms})
