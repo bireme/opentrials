@@ -24,7 +24,7 @@ import choices
 
 from django import forms
 from django.http import HttpResponseRedirect
-from django.forms.models import inlineformset_factory, formset_factory
+from django.forms.models import inlineformset_factory, modelformset_factory, formset_factory
 from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import render_to_response, get_object_or_404
 
@@ -74,6 +74,30 @@ class HealthConditionsForm(forms.ModelForm):
 class DescriptorForm(forms.ModelForm):
     class Meta:
         model = Descriptor
+    trial = forms.CharField(widget=forms.HiddenInput,required=False)
+
+    def clean(self):
+        
+        return super(forms.ModelForm,self).clean()
+
+class GeneralHealthDescriptorForm(DescriptorForm):
+    aspect = forms.CharField(widget=forms.HiddenInput,
+                              initial=choices.TRIAL_ASPECT[0][0])
+    level = forms.CharField(widget=forms.HiddenInput,
+                              initial=choices.DESCRIPTOR_LEVEL[0][0])
+
+class SpecificHealthDescriptorForm(DescriptorForm):
+    aspect = forms.CharField(widget=forms.HiddenInput,
+                              initial=choices.TRIAL_ASPECT[0][0])
+    level = forms.CharField(widget=forms.HiddenInput,
+                             initial=choices.DESCRIPTOR_LEVEL[1][0])
+
+#step4
+class InterventionDescriptorForm(DescriptorForm):
+    aspect = forms.CharField(widget=forms.HiddenInput,
+                              initial=choices.TRIAL_ASPECT[1][0])
+    level = forms.CharField(widget=forms.HiddenInput,
+                             initial=choices.DESCRIPTOR_LEVEL[0][0])
 
 #step4
 class InterventionForm(forms.ModelForm):
@@ -251,16 +275,36 @@ def step_2(request, trial_pk):
 def step_3(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
-    DescriptorSet = inlineformset_factory(ClinicalTrial, Descriptor,
-                       form=DescriptorForm,extra=EXTRA_FORMS)
+    GeneralDescriptorSet = modelformset_factory(Descriptor,
+                                                form=GeneralHealthDescriptorForm,
+                                                extra=EXTRA_FORMS)
+
+    SpecificDescriptorSet = modelformset_factory(Descriptor,
+                                                form=SpecificHealthDescriptorForm,
+                                                extra=EXTRA_FORMS)
+
+    general_qs = Descriptor.objects.filter(trial=trial_pk,
+                                           aspect=choices.TRIAL_ASPECT[0][0],
+                                           level=choices.DESCRIPTOR_LEVEL[0][0])
+                                           
+    specific_qs = Descriptor.objects.filter(trial=trial_pk,
+                                           aspect=choices.TRIAL_ASPECT[0][0],
+                                           level=choices.DESCRIPTOR_LEVEL[1][0])
+
 
     if request.POST:
         form = HealthConditionsForm(request.POST, instance=ct)
-        descform = DescriptorSet(request.POST, instance=ct)
+        gdesc = GeneralDescriptorSet(request.POST,queryset=general_qs,prefix='g')
+        sdesc = SpecificDescriptorSet(request.POST,queryset=specific_qs,prefix='s')
 
-        if form.is_valid() and descform.is_valid():
+        if form.is_valid() and gdesc.is_valid() and sdesc.is_valid():
+
+            for cdata in gdesc.cleaned_data+sdesc.cleaned_data:
+                cdata['trial'] = ct
+
             form.save()
-            descform.save()
+            gdesc.save()
+            sdesc.save()            
 
             if request.POST.has_key('submit_next'):
                 return HttpResponseRedirect("/rg/step_4/%s/" % trial_pk)
@@ -268,9 +312,11 @@ def step_3(request, trial_pk):
             return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
     else:
         form = HealthConditionsForm(instance=ct)
-        descform = DescriptorSet(instance=ct)
+        gdesc = GeneralDescriptorSet(queryset=general_qs,prefix='g')
+        sdesc = SpecificDescriptorSet(queryset=specific_qs,prefix='s')
+        
 
-    forms = {'main':form, 'general':descform}
+    forms = {'main':form, 'general':gdesc, 'specific': sdesc}
     return render_to_response('registry/trial_form_step_3.html',
                               {'forms':forms,
                                'next_form_title':_('Interventions Form')})
@@ -279,10 +325,23 @@ def step_3(request, trial_pk):
 def step_4(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
+    DescriptorFormSet = modelformset_factory(Descriptor,
+                                          form=InterventionDescriptorForm,
+                                          extra=EXTRA_FORMS)
+                                          
+    queryset = Descriptor.objects.filter(trial=trial_pk,
+                                           aspect=choices.TRIAL_ASPECT[1][0],
+                                           level=choices.DESCRIPTOR_LEVEL[0][0])
     if request.POST:
         form = InterventionForm(request.POST, instance=ct)
+        idesc = DescriptorFormSet(request.POST, queryset=queryset)
 
-        if form.is_valid():
+        if form.is_valid() and idesc.is_valid():
+
+            for cdata in idesc.cleaned_data:
+                cdata['trial'] = ct
+
+            idesc.save()
             form.save()
 
             if request.POST.has_key('submit_next'):
@@ -291,8 +350,9 @@ def step_4(request, trial_pk):
             return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
     else:
         form = InterventionForm(instance=ct)
+        idesc = DescriptorFormSet(queryset=queryset)
 
-    forms = {'main':form}
+    forms = {'main':form,'descriptor':idesc}
     return render_to_response('registry/trial_form_step_4.html',
                               {'forms':forms,
                                'next_form_title':_('Recruitment Form')})
