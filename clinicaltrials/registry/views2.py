@@ -516,9 +516,6 @@ def step_8(request, trial_pk):
 
     ContactFormSet = formset_factory(ContactForm,extra=1)
 
-    import pdb
-    pdb.set_trace()
-
     if request.POST:
         public_form_set = PublicContactFormSet(request.POST,
                                                instance=ct)
