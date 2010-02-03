@@ -1,41 +1,118 @@
 #coding: utf-8
 
-from clinicaltrials.registry.models import ScientificContact
-from clinicaltrials.registry.models import PublicContact
-from clinicaltrials.vocabulary.models import CountryCode
+from assistance.models import FieldHelp
 
-from clinicaltrials.registry.models import ClinicalTrial
-from clinicaltrials.registry.models import Contact
-from clinicaltrials.registry.models import Descriptor
-from clinicaltrials.registry.models import Institution
+from vocabulary.models import CountryCode
 
-from clinicaltrials.registry.models import Outcome
-from clinicaltrials.registry.models import RecruitmentStatus
-
-from clinicaltrials.registry.models import StudyType
-from clinicaltrials.registry.models import StudyPhase
-
-from clinicaltrials.registry.models import TrialSecondarySponsor
-from clinicaltrials.registry.models import TrialSupportSource
-
-from clinicaltrials.vocabulary.models import InterventionCode
+from registry.models import ClinicalTrial, Contact, Descriptor, Institution
+from registry.models import Outcome, PublicContact, RecruitmentStatus, StudyPhase
+from registry.models import ScientificContact, TrialSecondarySponsor
+from registry.models import TrialSupportSource, InterventionCode
 
 import choices
 
 from django import forms
-from django.http import HttpResponseRedirect
+from django.forms.forms import BoundField, conditional_escape
 from django.forms.models import inlineformset_factory, modelformset_factory, formset_factory
-from django.utils.translation import ugettext_lazy as _
+from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
+from django.utils.encoding import force_unicode
+from django.utils.safestring import mark_safe
+from django.utils.translation import ugettext_lazy as _
 
 EXTRA_FORMS = 2
 
 #
 # Forms
 #
+class ReviewFormMixin(object):
+    def _html_output(self, normal_row, error_row, row_ender, help_text_html, errors_on_separate_row):
+        "Helper function for outputting HTML. Used by as_table(), as_ul(), as_p()."
+
+        top_errors = self.non_field_errors() # Errors that should be displayed above all fields.
+        output, hidden_fields = [], []
+        for name, field in self.fields.items():
+            bf = BoundField(self, field, name)
+            bf_errors = self.error_class([conditional_escape(error) for error in bf.errors]) # Escape and cache in local variable.
+            if bf.is_hidden:
+                if bf_errors:
+                    top_errors.extend([u'(Hidden field %s) %s' % (name, force_unicode(e)) for e in bf_errors])
+                hidden_fields.append(unicode(bf))
+            else:
+                if errors_on_separate_row and bf_errors:
+                    output.append(error_row % force_unicode(bf_errors))
+                if bf.label:
+                    label = conditional_escape(force_unicode(bf.label))
+                    # Only add the suffix if the label does not end in
+                    # punctuation.
+                    if self.label_suffix:
+                        if label[-1] not in ':?.!':
+                            label += self.label_suffix
+                    label = bf.label_tag(label) or ''
+                else:
+                    label = ''
+                if field.help_text:
+                    help_text = help_text_html % force_unicode(field.help_text)
+                else:
+                    help_text = u''
+                form_name = self.__class__.__name__
+                #import pdb; pdb.set_trace()
+                help_record, new = FieldHelp.objects.get_or_create(form=form_name, field=name)
+                help_text = help_text + u' ' + force_unicode(help_record)
+                help_text = help_text_html % help_text
+                field_path = '%s.%s' % (form_name, name)
+                issue_text = '%s #%s' % (field_path, self.instance.pk)
+                output.append(normal_row % {'errors': force_unicode(bf_errors),
+                                            'label': force_unicode(label),
+                                            'field': unicode(bf),
+                                            'help_text': help_text,
+                                            'issue': issue_text,})
+        if top_errors:
+            output.insert(0, error_row % force_unicode(top_errors))
+        if hidden_fields: # Insert any hidden fields in the last row.
+            str_hidden = u''.join(hidden_fields)
+            if output:
+                last_row = output[-1]
+                # Chop off the trailing row_ender (e.g. '</td></tr>') and
+                # insert the hidden fields.
+                if not last_row.endswith(row_ender):
+                    # This can happen in the as_p() case (and possibly others
+                    # that users write): if there are only top errors, we may
+                    # not be able to conscript the last row for our purposes,
+                    # so insert a new, empty row.
+                    last_row = normal_row % {'errors': '',
+                                             'label': '',
+                                             'field': '',
+                                             'help_text': '',
+                                             'issue': '',}
+                    output.append(last_row)
+                output[-1] = last_row[:-len(row_ender)] + str_hidden + row_ender
+            else:
+                # If there aren't any rows in the output, just append the
+                # hidden fields.
+                output.append(str_hidden)
+        return mark_safe(u'\n'.join(output))
+
+    def as_table(self):
+        "Returns this form rendered as HTML <tr>s -- excluding the <table></table>."
+        normal_row = u'''
+            <tr><th>%(label)s</th>
+                <td>%(errors)s%(field)s</td>
+                <td>%(help_text)s
+                    <div class="issue">%(issue)s</div>
+                    </td></tr>
+        '''
+        return self._html_output(normal_row=normal_row,
+                                 error_row=u'<tr><td colspan="3">%s</td></tr>',
+                                 row_ender='</td></tr>',
+                                 help_text_html=u'<br />%s',
+                                 errors_on_separate_row=False)
+
+class ReviewModelForm(ReviewFormMixin,forms.ModelForm):
+    pass
 
 #step2
-class PrimarySponsorForm(forms.ModelForm):
+class PrimarySponsorForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['primary_sponsor',]
@@ -43,7 +120,7 @@ class PrimarySponsorForm(forms.ModelForm):
     title = _('Primary Sponsor')
 
 #step2
-class SecondarySponsorForm(forms.ModelForm):
+class SecondarySponsorForm(ReviewModelForm):
     class Meta:
         model = TrialSecondarySponsor
         fields = ['institution','relation']
@@ -51,14 +128,14 @@ class SecondarySponsorForm(forms.ModelForm):
     relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[1][0])
 
 #step2
-class SupportSourceForm(forms.ModelForm):
+class SupportSourceForm(ReviewModelForm):
     class Meta:
         model = TrialSupportSource
         fields = ['institution','relation']
     relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[0][0])
 
 #step3
-class HealthConditionsForm(forms.ModelForm):
+class HealthConditionsForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['hc_freetext',]
@@ -71,14 +148,14 @@ class HealthConditionsForm(forms.ModelForm):
                                          widget=forms.Textarea)
 
 #step3
-class DescriptorForm(forms.ModelForm):
+class DescriptorForm(ReviewModelForm):
     class Meta:
         model = Descriptor
     trial = forms.CharField(widget=forms.HiddenInput,required=False)
 
     def clean(self):
         
-        return super(forms.ModelForm,self).clean()
+        return super(ReviewModelForm,self).clean()
 
 class GeneralHealthDescriptorForm(DescriptorForm):
     aspect = forms.CharField(widget=forms.HiddenInput,
@@ -100,7 +177,7 @@ class InterventionDescriptorForm(DescriptorForm):
                              initial=choices.DESCRIPTOR_LEVEL[0][0])
 
 #step4
-class InterventionForm(forms.ModelForm):
+class InterventionForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['i_freetext','i_code']
@@ -114,7 +191,7 @@ class InterventionForm(forms.ModelForm):
                                             queryset=InterventionCode.objects.all(),
                                             widget=forms.CheckboxSelectMultiple())
 #step5
-class RecruitmentForm(forms.ModelForm):
+class RecruitmentForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['recruitment_status', 'recruitment_country','date_enrollment',
@@ -160,7 +237,7 @@ class RecruitmentForm(forms.ModelForm):
                                         max_length=8000, widget=forms.Textarea,)
 
 #step6
-class StudyTypeForm(forms.ModelForm):
+class StudyTypeForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['study_design', 'phase']
@@ -176,7 +253,7 @@ class StudyTypeForm(forms.ModelForm):
                                    queryset=StudyPhase.objects.all())
 
 #step7
-class OutcomesForm(forms.ModelForm):
+class OutcomesForm(ReviewModelForm):
     class Meta:
         model = Outcome
         fields = ['interest','description']
@@ -184,7 +261,7 @@ class OutcomesForm(forms.ModelForm):
     title = _('Outcomes')
 
 #step8
-class PublicContactForm(forms.ModelForm):
+class PublicContactForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['contact']
@@ -193,7 +270,7 @@ class PublicContactForm(forms.ModelForm):
                                widget=forms.HiddenInput)
 
 #step8
-class ScientificContactForm(forms.ModelForm):
+class ScientificContactForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['contact']
@@ -203,7 +280,7 @@ class ScientificContactForm(forms.ModelForm):
 
 #step8-partof
 class ContactForm(forms.Form):
-
+    
     relation = forms.ChoiceField(widget=forms.RadioSelect,
                                choices=choices.CONTACT_RELATION)
 
@@ -223,9 +300,6 @@ class ContactForm(forms.Form):
 
     zip = forms.CharField(label=_('Postal Code'), max_length=50)
     telephone = forms.CharField(label=_('Telephone'), max_length=255)
-
-
-
 
 ##ENDFORMS
 
@@ -442,6 +516,8 @@ def step_8(request, trial_pk):
 
     ContactFormSet = formset_factory(ContactForm,extra=1)
 
+    import pdb
+    pdb.set_trace()
 
     if request.POST:
         public_form_set = PublicContactFormSet(request.POST,

@@ -4,11 +4,10 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django import forms
 from django.utils.translation import ugettext as _
-from django.contrib.auth.models import AnonymousUser
+from django.contrib.auth.decorators import login_required
 
 from reviewapp.models import Submission
 from registry.models import ClinicalTrial, Institution
-from vocabulary.models import CountryCode
 
 def index(request):
     username = request.user.username if request.user.is_authenticated() else None
@@ -33,11 +32,9 @@ class PrimarySponsorForm(forms.ModelForm):
         exclude = ['address']
     title = _('Primary Sponsor')
 
+@login_required
 def new_submission(request):
-    if request.user.__class__ is AnonymousUser:
-        return HttpResponseRedirect(reverse('reviewapp.login'))
-
-    if request.method == 'POST': # If the forms were submitted...
+    if request.method == 'POST':
         initial_form = InitialTrialForm(request.POST)
         sponsor_form = PrimarySponsorForm(request.POST)
 
