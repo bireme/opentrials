@@ -4,6 +4,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django import forms
 from django.utils.translation import ugettext as _
+from django.contrib.auth.models import AnonymousUser
 
 from reviewapp.models import Submission
 from registry.models import ClinicalTrial, Institution
@@ -19,13 +20,12 @@ def user_dump(request):
 
 ####################################################### New Submission form ###
 
-class InitialTrialForm(forms.Form):
+class InitialTrialForm(forms.ModelForm):
+    class Meta:
+        model = ClinicalTrial
+        fields = ['scientific_title','recruitment_country']
+
     title = _('Initial Data fields')
-    scientific_title = forms.CharField(label=_('Scientific Title'),
-                                       max_length=2000,
-                                       widget=forms.Textarea)
-    recruitment_countries = forms.MultipleChoiceField(label=_('Countries of Recruitment'),
-                                                      choices=CountryCode.choices())
 
 class PrimarySponsorForm(forms.ModelForm):
     class Meta:
@@ -33,27 +33,20 @@ class PrimarySponsorForm(forms.ModelForm):
         exclude = ['address']
     title = _('Primary Sponsor')
 
-'''
-class RecruitmentCountry(models.Model):
-    trial = models.ForeignKey(ClinicalTrial)
-    country = models.ForeignKey(CountryCode, verbose_name=_('Country'))
-
-'''
-
 def new_submission(request):
+    if request.user.__class__ is AnonymousUser:
+        return HttpResponseRedirect(reverse('reviewapp.login'))
+
     if request.method == 'POST': # If the forms were submitted...
         initial_form = InitialTrialForm(request.POST)
         sponsor_form = PrimarySponsorForm(request.POST)
-        if initial_form.is_valid() and sponsor_form.is_valid(): # All validation rules pass
-            trial = ClinicalTrial(scientific_title=initial_form.cleaned_data['scientific_title'])
-            trial.primary_sponsor = Institution.objects.create(**sponsor_form.cleaned_data)
-            trial.save()
-            for country_id in initial_form.cleaned_data['recruitment_countries']:
-                trial.recruitmentcountry_set.create(country_id=country_id)
+
+        if initial_form.is_valid() and sponsor_form.is_valid():
+            initial_form.instance.primary_sponsor = sponsor_form.save()
+            trial = initial_form.save()
             submission = Submission(creator=request.user, trial=trial)
             submission.save()
             return HttpResponseRedirect(reverse('edittrial',args=[trial.id]))
-
     else:
         initial_form = InitialTrialForm()
         sponsor_form = PrimarySponsorForm()
