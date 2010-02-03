@@ -163,13 +163,9 @@ class RecruitmentForm(forms.ModelForm):
 class StudyTypeForm(forms.ModelForm):
     class Meta:
         model = ClinicalTrial
-        fields = ['study_type', 'study_design', 'phase']
+        fields = ['study_design', 'phase']
 
     title = _('Study Type')
-
-    # TRDS 15a
-    study_type = forms.ModelChoiceField(label=_('Study Type'),
-                                        queryset=StudyType.objects.all())
 
     # TRDS 15b
     study_design = forms.CharField(label=_('Study Design'),
@@ -375,7 +371,7 @@ def step_5(request, trial_pk):
         form = RecruitmentForm(instance=ct)
 
     forms = {'main':form}
-    return render_to_response('registry/trial_form_step_4.html',
+    return render_to_response('registry/trial_form_step_5.html',
                               {'forms':forms,
                                'next_form_title':_('Study Type Form')})
 
@@ -397,7 +393,7 @@ def step_6(request, trial_pk):
         form = StudyTypeForm(instance=ct)
 
     forms = {'main':form}
-    return render_to_response('registry/trial_form_step_4.html',
+    return render_to_response('registry/trial_form_step_6.html',
                               {'forms':forms,
                                'next_form_title':_('Outcomes Form')})
 
@@ -460,9 +456,10 @@ def step_8(request, trial_pk):
                 and new_contact_formset.is_valid():
 
             for contact_data in new_contact_formset.cleaned_data:
-                Relation = contact_type[contact_data.pop('relation')]
-                new_contact = Contact.objects.create(**contact_data)
-                Relation.objects.create(trial=ct,contact=new_contact)
+                if contact_data:
+                    Relation = contact_type[contact_data.pop('relation')]
+                    new_contact = Contact.objects.create(**contact_data)
+                    Relation.objects.create(trial=ct,contact=new_contact)
 
             public_form_set.save()
             scientific_form_set.save()
