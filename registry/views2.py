@@ -22,10 +22,8 @@ from django.utils.translation import ugettext_lazy as _
 
 EXTRA_FORMS = 2
 
-#
-# Forms
-#
-class ReviewFormMixin(object):
+
+class ReviewModelForm(forms.ModelForm):
     def _html_output(self, normal_row, error_row, row_ender, help_text_html, errors_on_separate_row):
         "Helper function for outputting HTML. Used by as_table(), as_ul(), as_p()."
 
@@ -107,11 +105,9 @@ class ReviewFormMixin(object):
                                  row_ender='</td></tr>',
                                  help_text_html=u'<br />%s',
                                  errors_on_separate_row=False)
-
-class ReviewModelForm(ReviewFormMixin,forms.ModelForm):
-    pass
-
-#step2
+#
+# Forms
+#
 class PrimarySponsorForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
@@ -279,7 +275,9 @@ class ScientificContactForm(ReviewModelForm):
                                widget=forms.HiddenInput)
 
 #step8-partof
-class ContactForm(forms.Form):
+class ContactForm(ReviewModelForm):
+    class Meta:
+        model = Contact
     
     relation = forms.ChoiceField(widget=forms.RadioSelect,
                                choices=choices.CONTACT_RELATION)
@@ -514,7 +512,9 @@ def step_8(request, trial_pk):
                                                 can_delete=False,
                                                 extra=EXTRA_FORMS)
 
-    ContactFormSet = formset_factory(ContactForm,extra=1)
+    ContactFormSet = modelformset_factory(Contact, form=ContactForm, extra=1)
+
+    contact_qs = Contact.objects.none()
 
     if request.POST:
         public_form_set = PublicContactFormSet(request.POST,
@@ -522,16 +522,16 @@ def step_8(request, trial_pk):
         scientific_form_set = ScientificContactFormSet(request.POST,
                                                        instance=ct)
 
-        new_contact_formset = ContactFormSet(request.POST)
+        new_contact_formset = ContactFormSet(request.POST,queryset=contact_qs)
 
         if public_form_set.is_valid() \
                 and scientific_form_set.is_valid() \
                 and new_contact_formset.is_valid():
 
-            for contact_data in new_contact_formset.cleaned_data:
-                if contact_data:
-                    Relation = contact_type[contact_data.pop('relation')]
-                    new_contact = Contact.objects.create(**contact_data)
+            for contactform in new_contact_formset.forms:
+                if contactform.cleaned_data:
+                    Relation = contact_type[contactform.cleaned_data.pop('relation')]
+                    new_contact = contactform.save()
                     Relation.objects.create(trial=ct,contact=new_contact)
 
             public_form_set.save()
@@ -544,7 +544,7 @@ def step_8(request, trial_pk):
     else:
         public_form_set = PublicContactFormSet(instance=ct)
         scientific_form_set = ScientificContactFormSet(instance=ct)
-        new_contact_formset = ContactFormSet()
+        new_contact_formset = ContactFormSet(queryset=contact_qs)
 
     forms = {'public':public_form_set,
              'scientific':scientific_form_set,
