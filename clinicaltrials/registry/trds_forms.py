@@ -230,6 +230,10 @@ class RecruitmentForm(ReviewModelForm):
     recruitment_status = forms.ModelChoiceField(label=_('Recruitment Status'),
                                                 queryset=RecruitmentStatus.objects.all())
 
+    recruitment_country = forms.ModelMultipleChoiceField(
+                                            label=_('Recruitment Country'),
+                                            queryset=CountryCode.objects.all())
+
     # TRDS 16a,b (type_enrollment: anticipated or actual)
     date_enrollment = forms.CharField( # yyyy-mm or yyyy-mm-dd
         label=_('Date of First Enrollment'), max_length=10, required=False)
