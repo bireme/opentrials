@@ -77,6 +77,7 @@ def step_1(request, trial_pk):
     forms = {'main':form, 'secondary':secondary_forms}
     return render_to_response('registry/trial_form_step_1.html',
                               {'forms':forms,
+                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Sponsors and Sources of Support')})
 
 #v-sponsors
@@ -115,6 +116,7 @@ def step_2(request, trial_pk):
     forms = {'main':form, 'secondary':secondary_forms, 'sources':sources_form}
     return render_to_response('registry/trial_form_step_2.html',
                               {'forms':forms,
+                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Health Conditions Form')})
 
 #v-healthcondition
@@ -164,6 +166,7 @@ def step_3(request, trial_pk):
     forms = {'main':form, 'general':gdesc, 'specific': sdesc}
     return render_to_response('registry/trial_form_step_3.html',
                               {'forms':forms,
+                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Interventions Form')})
 
 #v-interventions
@@ -200,6 +203,7 @@ def step_4(request, trial_pk):
     forms = {'main':form,'descriptor':idesc}
     return render_to_response('registry/trial_form_step_4.html',
                               {'forms':forms,
+                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Recruitment Form')})
 
 #v-recruitment
@@ -222,6 +226,7 @@ def step_5(request, trial_pk):
     forms = {'main':form}
     return render_to_response('registry/trial_form_step_5.html',
                               {'forms':forms,
+                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Study Type Form')})
 
 #v-studytype
@@ -244,6 +249,7 @@ def step_6(request, trial_pk):
     forms = {'main':form}
     return render_to_response('registry/trial_form_step_6.html',
                               {'forms':forms,
+                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Outcomes Form')})
 
 #v-outcomes
@@ -269,6 +275,7 @@ def step_7(request, trial_pk):
     forms = {'main':formset}
     return render_to_response('registry/trial_form_step_4.html',
                               {'forms':forms,
+                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Descriptor Form')})
 
 #v-contact
@@ -327,4 +334,5 @@ def step_8(request, trial_pk):
              'scientific':scientific_form_set,
              'new': new_contact_formset }
     return render_to_response('registry/trial_form_step_8.html',
-                              {'forms':forms})
+                              {'forms':forms,
+                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)]})
