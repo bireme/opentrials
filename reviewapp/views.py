@@ -7,7 +7,7 @@ from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import login_required
 
 from reviewapp.models import Submission
-from registry.models import ClinicalTrial, Institution
+from registry.models import ClinicalTrial, CountryCode, Institution
 
 def index(request):
     username = request.user.username if request.user.is_authenticated() else None
@@ -25,6 +25,9 @@ class InitialTrialForm(forms.ModelForm):
         fields = ['scientific_title','recruitment_country']
 
     title = _('Initial Data fields')
+    recruitment_country = forms.ModelMultipleChoiceField(
+                                            label=_('Recruitment Country'),
+                                            queryset=CountryCode.objects.all())
 
 class PrimarySponsorForm(forms.ModelForm):
     class Meta:
@@ -41,7 +44,8 @@ def new_submission(request):
         if initial_form.is_valid() and sponsor_form.is_valid():
             initial_form.instance.primary_sponsor = sponsor_form.save()
             trial = initial_form.save()
-            submission = Submission(creator=request.user, trial=trial)
+            submission = Submission(creator=request.user, trial=trial,
+                                                   title=trial.scientific_title)
             submission.save()
             return HttpResponseRedirect(reverse('edittrial',args=[trial.id]))
     else:
