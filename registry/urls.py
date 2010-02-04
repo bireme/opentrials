@@ -2,9 +2,9 @@ from django.conf.urls.defaults import *
 from django.views.generic.list_detail import object_detail, object_list
 
 from registry.models import ClinicalTrial
-from registry.views import index
-from registry.views3 import edit_trial_index, step_1
-from registry.views2 import step_2, step_3, step_4, step_5, step_6, step_7, step_8
+
+from registry.views import edit_trial_index,index,step_1, step_2, step_3
+from registry.views import step_4, step_5, step_6, step_7, step_8
 
 info_dict = {
     'queryset': ClinicalTrial.objects.all(),
