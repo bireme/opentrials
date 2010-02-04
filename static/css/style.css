@@ -1,0 +1,123 @@
+body {
+    margin-top : 0px;
+    padding : 0;
+    text-align : left;
+    font : 76% "Trebuchet MS", verdana, arial, sans-serif;
+}
+#container {
+    width : 900px;
+    margin-left : auto;
+    margin-right : auto;
+    padding : 0;
+    border : 1px solid #666;
+    line-height : 1.7em;
+}
+
+/*TOP BANNER*/
+#top {
+    padding : 0;
+    margin : 0;
+    background : transparent url(/static/logoOpas.gif) no-repeat right center;
+    border-bottom : 0.2em solid #666;
+}
+#top h1 {
+    margin: 0em;
+    padding : 1.3em 1em;
+}
+
+#rebracmenu {
+    float: left;
+    width: 20%;
+    font-size : 1.3em;
+}
+
+/*NAVIGATION*/
+#stepmenu {
+    width : 79%;
+    border-bottom : 0.2em solid #666;
+    border-left: 1px solid #666;
+    font-size : 1.3em;
+    float: left;
+    clear: right;
+}
+#stepmenu ul {
+    margin : 0;
+    padding : 0 5px 0 0;
+    list-style : none;
+}
+#stepmenu li {
+    display : inline;
+    margin : 0;
+    padding : 0;
+}
+#stepmenu a {
+    float : left;
+    margin : 0;
+    padding : 0;
+    text-decoration : none;
+}
+#stepmenu a {
+    float : left;
+    padding : 5px 15px 4px 6px;
+}
+#stepmenu a {
+    float : none;
+}
+
+/*MAIN CONTENT*/
+#content {
+    padding : 10px;
+    color : #666;
+    width: 77%;
+    float: left;
+    clear: right;
+    border-left: 1px solid #666;
+}
+#content a:link, #content a:visited {
+    text-decoration : none;
+    background : inherit;
+    color : #bc1f26;
+}
+#content a:hover {
+    text-decoration : underline;
+    background : inherit;
+    color : #996681;
+}
+
+/*FOOTER*/
+#footer {
+    clear : both;
+    height : 45px;
+    padding : 5px;
+    margin-top : 5px;
+    border-top : 3px solid #666;
+    color : #eee;
+}
+#footer a:link, #footer a:visited {
+    text-decoration : none;
+    background : inherit;
+    color : #333;
+}
+#footer a:hover {
+    border-bottom : 1px dashed #f7cdbf;
+    background : inherit;
+    color : #f7cdbf;
+}
+
+/*TYPOGRAPHY*/
+p {
+    margin : 20px;
+}
+h2 {
+    margin-left : 15px;
+    text-transform : uppercase;
+    font-size : 120%;
+    letter-spacing: 3px;
+    background : inherit;
+    color : #000;
+}
+blockquote {
+    font-weight : bold;
+    font-style : italic;
+    color : #b29b35;
+}

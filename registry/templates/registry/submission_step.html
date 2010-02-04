@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block body_title %}{{ forms.form_main.title }}{% endblock %}
+{% block stepmenu %}
+<div id="stepmenu">
+    <ul>
+        {% for link in links %}
+        <li><a href="{{link}}">step {{forloop.counter}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
