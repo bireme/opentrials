@@ -74,8 +74,8 @@ def step_1(request, trial_pk):
                                                extra=EXTRA_FORMS, can_delete=True)
         secondary_forms = SecondaryIdSet(instance=ct)
 
-    forms = {'main':form, 'secondary':secondary_forms}
-    return render_to_response('registry/trial_form_step_1.html',
+    forms = [form, secondary_forms]
+    return render_to_response('registry/trial_form.html',
                               {'forms':forms,
                                'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Sponsors and Sources of Support')})
@@ -113,8 +113,8 @@ def step_2(request, trial_pk):
         secondary_forms = SecondarySponsorSet(instance=ct)
         sources_form = SupportSourceSet(instance=ct)
 
-    forms = {'main':form, 'secondary':secondary_forms, 'sources':sources_form}
-    return render_to_response('registry/trial_form_step_2.html',
+    forms = [form, secondary_forms,sources_form]
+    return render_to_response('registry/trial_form.html',
                               {'forms':forms,
                                'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Health Conditions Form')})
@@ -163,8 +163,8 @@ def step_3(request, trial_pk):
         sdesc = SpecificDescriptorSet(queryset=specific_qs,prefix='s')
 
 
-    forms = {'main':form, 'general':gdesc, 'specific': sdesc}
-    return render_to_response('registry/trial_form_step_3.html',
+    forms = [form, gdesc, sdesc]
+    return render_to_response('registry/trial_form.html',
                               {'forms':forms,
                                'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Interventions Form')})
@@ -200,8 +200,8 @@ def step_4(request, trial_pk):
         form = InterventionForm(instance=ct)
         idesc = DescriptorFormSet(queryset=queryset)
 
-    forms = {'main':form,'descriptor':idesc}
-    return render_to_response('registry/trial_form_step_4.html',
+    forms = [form,idesc]
+    return render_to_response('registry/trial_form.html',
                               {'forms':forms,
                                'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Recruitment Form')})
@@ -223,8 +223,8 @@ def step_5(request, trial_pk):
     else:
         form = RecruitmentForm(instance=ct)
 
-    forms = {'main':form}
-    return render_to_response('registry/trial_form_step_5.html',
+    forms = [form]
+    return render_to_response('registry/trial_form.html',
                               {'forms':forms,
                                'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Study Type Form')})
@@ -246,8 +246,8 @@ def step_6(request, trial_pk):
     else:
         form = StudyTypeForm(instance=ct)
 
-    forms = {'main':form}
-    return render_to_response('registry/trial_form_step_6.html',
+    forms = [form]
+    return render_to_response('registry/trial_form.html',
                               {'forms':forms,
                                'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Outcomes Form')})
@@ -272,8 +272,8 @@ def step_7(request, trial_pk):
     else:
         formset = OutcomesSet(instance=ct)
 
-    forms = {'main':formset}
-    return render_to_response('registry/trial_form_step_4.html',
+    forms = [formset]
+    return render_to_response('registry/trial_form.html',
                               {'forms':forms,
                                'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
                                'next_form_title':_('Descriptor Form')})
@@ -330,9 +330,7 @@ def step_8(request, trial_pk):
         scientific_form_set = ScientificContactFormSet(instance=ct)
         new_contact_formset = ContactFormSet(queryset=contact_qs)
 
-    forms = {'public':public_form_set,
-             'scientific':scientific_form_set,
-             'new': new_contact_formset }
-    return render_to_response('registry/trial_form_step_8.html',
+    forms = [public_form_set,scientific_form_set,new_contact_formset]
+    return render_to_response('registry/trial_form.html',
                               {'forms':forms,
                                'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)]})
