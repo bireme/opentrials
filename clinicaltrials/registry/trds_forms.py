@@ -101,12 +101,15 @@ class ReviewModelForm(forms.ModelForm):
 #
 # Forms
 #
+
+#step1
 class TrialIdentificationForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['scientific_title','scientific_acronym',
                   'scientific_acronym_expansion',
                   'public_title','acronym']
+
     title = _('Trial Identification')
     # TRDS 10a
     scientific_title = forms.CharField(label=_('Scientific Title'),
@@ -130,6 +133,7 @@ class TrialIdentificationForm(ReviewModelForm):
                               max_length=255)
 
 class SecondaryIdForm(ReviewModelForm):
+    title = _('Secondary Identifying Numbers')
     ''' this is just to inherit the custom _html_output and as_table methods '''
 
 
@@ -147,6 +151,7 @@ class SecondarySponsorForm(ReviewModelForm):
         model = TrialSecondarySponsor
         fields = ['institution','relation']
 
+    title = _('Secondary Sponsor(s)')
     relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[1][0])
 
 #step2
@@ -154,6 +159,8 @@ class SupportSourceForm(ReviewModelForm):
     class Meta:
         model = TrialSupportSource
         fields = ['institution','relation']
+
+    title = _('Source(s) of Monetary or Material Support')
     relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[0][0])
 
 #step3
@@ -173,19 +180,18 @@ class HealthConditionsForm(ReviewModelForm):
 class DescriptorForm(ReviewModelForm):
     class Meta:
         model = Descriptor
+
     trial = forms.CharField(widget=forms.HiddenInput,required=False)
 
-    def clean(self):
-
-        return super(ReviewModelForm,self).clean()
-
 class GeneralHealthDescriptorForm(DescriptorForm):
+    title = _('General Descriptors for Health Condition(s)')
     aspect = forms.CharField(widget=forms.HiddenInput,
                               initial=choices.TRIAL_ASPECT[0][0])
     level = forms.CharField(widget=forms.HiddenInput,
                               initial=choices.DESCRIPTOR_LEVEL[0][0])
 
 class SpecificHealthDescriptorForm(DescriptorForm):
+    title = _('Specific Descriptors for Health Condition(s)')
     aspect = forms.CharField(widget=forms.HiddenInput,
                               initial=choices.TRIAL_ASPECT[0][0])
     level = forms.CharField(widget=forms.HiddenInput,
@@ -193,6 +199,7 @@ class SpecificHealthDescriptorForm(DescriptorForm):
 
 #step4
 class InterventionDescriptorForm(DescriptorForm):
+    title = _('Descriptor for Intervention(s)')
     aspect = forms.CharField(widget=forms.HiddenInput,
                               initial=choices.TRIAL_ASPECT[1][0])
     level = forms.CharField(widget=forms.HiddenInput,
@@ -200,6 +207,7 @@ class InterventionDescriptorForm(DescriptorForm):
 
 #step4
 class InterventionForm(ReviewModelForm):
+    title = _('Intervention(s)')
     class Meta:
         model = ClinicalTrial
         fields = ['i_freetext','i_code']
@@ -223,8 +231,6 @@ class RecruitmentForm(ReviewModelForm):
                   ]
 
     title = _('Recruitment')
-
-    # TODO: Countries of Recruitment
 
     # TRDS 18
     recruitment_status = forms.ModelChoiceField(label=_('Recruitment Status'),
@@ -292,6 +298,7 @@ class PublicContactForm(ReviewModelForm):
         model = ClinicalTrial
         fields = ['contact']
 
+    title = _('Contact(s) for Public Queries')
     relation = forms.CharField(initial=choices.CONTACT_RELATION[0][0],
                                widget=forms.HiddenInput)
 
@@ -301,6 +308,7 @@ class ScientificContactForm(ReviewModelForm):
         model = ClinicalTrial
         fields = ['contact']
 
+    title = _('Contact(s) for Scientific Queries')
     relation = forms.CharField(initial=choices.CONTACT_RELATION[1][0],
                                widget=forms.HiddenInput)
 
@@ -309,6 +317,7 @@ class ContactForm(ReviewModelForm):
     class Meta:
         model = Contact
 
+    title = _('New Contact(s)')
     relation = forms.ChoiceField(widget=forms.RadioSelect,
                                choices=choices.CONTACT_RELATION)
 
