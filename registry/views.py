@@ -36,8 +36,8 @@ def edit_trial_index(request, trial_pk):
     ''' start view '''
     links = []
     for i, name in enumerate(TRIAL_FORMS):
-        data = dict(label=name, form_name=name)
-        data['url'] = reverse('registry.step_' + str(i + 1), args=[trial_pk])
+        data = dict(label=_(name))
+        data['url'] = reverse('step_' + str(i + 1), args=[trial_pk])
         data['icon'] = '/media/img/admin/icon_alert.gif'
         data['msg'] = 'Blank fields'
         links.append(data)
@@ -69,9 +69,9 @@ def step_1(request, trial_pk):
             secondary_forms.save()
 
             if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect("/rg/step_2/%s/" % trial_pk)
-            # FIXME: use dynamic url
-            return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+                return HttpResponseRedirect(reverse("step_2",args=[trial_pk]))
+            
+            return HttpResponseRedirect(reverse("edittrial", args=[trial_pk]))
     else:
         form = TrialIdentificationForm(instance=ct)
         SecondaryIdSet = inlineformset_factory(ClinicalTrial, TrialNumber,
@@ -82,7 +82,7 @@ def step_1(request, trial_pk):
     forms = [form, secondary_forms]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
-                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Sponsors and Sources of Support')})
 
 #v-sponsors
@@ -105,9 +105,9 @@ def step_2(request, trial_pk):
             sources_form.save()
 
             if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect("/rg/step_3/%s/" % trial_pk)
-            # FIXME: use dynamic url
-            return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+                return HttpResponseRedirect(reverse("step_3",args=[trial_pk]))
+            
+            return HttpResponseRedirect(reverse("edittrial", args=[trial_pk]))
     else:
         form = PrimarySponsorForm(instance=ct)
         SecondarySponsorSet = inlineformset_factory(ClinicalTrial, TrialSecondarySponsor,
@@ -121,7 +121,7 @@ def step_2(request, trial_pk):
     forms = [form, secondary_forms,sources_form]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
-                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Health Conditions Form')})
 
 #v-healthcondition
@@ -159,9 +159,9 @@ def step_3(request, trial_pk):
             sdesc.save()
 
             if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect("/rg/step_4/%s/" % trial_pk)
-            # FIXME: use dynamic url
-            return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+                return HttpResponseRedirect(reverse("step_4",args=[trial_pk]))
+            
+            return HttpResponseRedirect(reverse("edittrial", args=[trial_pk]))
     else:
         form = HealthConditionsForm(instance=ct)
         gdesc = GeneralDescriptorSet(queryset=general_qs,prefix='g')
@@ -171,7 +171,7 @@ def step_3(request, trial_pk):
     forms = [form, gdesc, sdesc]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
-                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Interventions Form')})
 
 #v-interventions
@@ -198,9 +198,9 @@ def step_4(request, trial_pk):
             form.save()
 
             if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect("/rg/step_5/%s/" % trial_pk)
-            # FIXME: use dynamic url
-            return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+                return HttpResponseRedirect(reverse("step_5",args=[trial_pk]))
+            
+            return HttpResponseRedirect(reverse("edittrial", args=[trial_pk]))
     else:
         form = InterventionForm(instance=ct)
         idesc = DescriptorFormSet(queryset=queryset)
@@ -208,7 +208,7 @@ def step_4(request, trial_pk):
     forms = [form,idesc]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
-                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Recruitment Form')})
 
 #v-recruitment
@@ -222,16 +222,16 @@ def step_5(request, trial_pk):
             form.save()
 
             if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect("/rg/step_6/%s/" % trial_pk)
-            # FIXME: use dynamic url
-            return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+                return HttpResponseRedirect(reverse("step_6",args=[trial_pk]))
+            
+            return HttpResponseRedirect(reverse("edittrial", args=[trial_pk]))
     else:
         form = RecruitmentForm(instance=ct)
 
     forms = [form]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
-                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Study Type Form')})
 
 #v-studytype
@@ -245,16 +245,16 @@ def step_6(request, trial_pk):
             form.save()
 
             if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect("/rg/step_7/%s/" % trial_pk)
-            # FIXME: use dynamic url
-            return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+                return HttpResponseRedirect(reverse("step_7",args=[trial_pk]))
+            
+            return HttpResponseRedirect(reverse("edittrial", args=[trial_pk]))
     else:
         form = StudyTypeForm(instance=ct)
 
     forms = [form]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
-                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Outcomes Form')})
 
 #v-outcomes
@@ -271,16 +271,16 @@ def step_7(request, trial_pk):
             formset.save()
 
             if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect("/rg/step_8/%s/" % trial_pk)
-            # FIXME: use dynamic url
-            return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+                return HttpResponseRedirect(reverse("step_8",args=[trial_pk]))
+            
+            return HttpResponseRedirect(reverse("edittrial", args=[trial_pk]))
     else:
         formset = OutcomesSet(instance=ct)
 
     forms = [formset]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
-                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Descriptor Form')})
 
 #v-contact
@@ -325,11 +325,9 @@ def step_8(request, trial_pk):
 
             public_form_set.save()
             scientific_form_set.save()
-
-            if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect("/rg/step_9/%s/" % trial_pk)
-            # FIXME: use dynamic url
-            return HttpResponseRedirect("/rg/edit/%s/" % trial_pk)
+            
+            
+            return HttpResponseRedirect(reverse("edittrial", args=[trial_pk]))
     else:
         public_form_set = PublicContactFormSet(instance=ct)
         scientific_form_set = ScientificContactFormSet(instance=ct)
@@ -338,4 +336,4 @@ def step_8(request, trial_pk):
     forms = [public_form_set,scientific_form_set,new_contact_formset]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
-                               'links': ['/rg/step_%d/%s'%(i,trial_pk) for i in range(1,9)]})
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)]})
