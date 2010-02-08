@@ -8,7 +8,7 @@
 <table>
     {% for link in links %} <!-- TODO: use url filter to remove hardcoded path -->
         <tr>
-            <td><a href="/rg/{{ link.step }}/{{ trial_pk }}/">
+            <td><a href="{{link.url}}">
                     {{ forloop.counter}} - {{ link.label }}
                 </a></td>
             <td><img src="{{link.icon}}" /></td>    
