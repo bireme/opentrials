@@ -19,20 +19,25 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
 from django.utils.translation import ugettext_lazy as _
 from django.forms.models import inlineformset_factory, modelformset_factory
+from django.core.urlresolvers import reverse
 
 EXTRA_FORMS = 2
-TRIAL_FORMS = ['TrialIdentificationForm', 'SponsorsForm',
-               'HealthConditionsForm', 'InterventionsForm',
-               'RecruitmentForm', 'StudyTypeForm','OutcomesForm',
-               'DescriptorForm']
+TRIAL_FORMS = ['Trial Identification Form',
+               'Sponsors Form',
+               'Health Conditions Form',
+               'Interventions Form',
+               'Recruitment Form',
+               'Study Type Form',
+               'Outcomes Form',
+               'Descriptor Form']
 
 #v-edit
 def edit_trial_index(request, trial_pk):
     ''' start view '''
     links = []
     for i, name in enumerate(TRIAL_FORMS):
-        data = dict(label='form.title', form_name=name)
-        data['step'] = 'step_' + str(i + 1)
+        data = dict(label=name, form_name=name)
+        data['url'] = reverse('registry.step_' + str(i + 1), args=[trial_pk])
         data['icon'] = '/media/img/admin/icon_alert.gif'
         data['msg'] = 'Blank fields'
         links.append(data)
