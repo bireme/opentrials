@@ -55,4 +55,5 @@ def new_submission(request):
     return render_to_response('reviewapp/new_submission.html', {
         'initial_form': initial_form,
         'sponsor_form': sponsor_form,
+        'username':request.user.username,
     })

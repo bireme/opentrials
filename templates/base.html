@@ -29,11 +29,15 @@
             </div>
             <div id="rebracmenu">
                 <ul id="usermenu">
-                    <li>{% block login %}{% endblock %}</li>
-                    <li>Profile</li>
+                    {% if username %}
+                    <li>{{username}}<a href="/accounts/logout">[log out]</a></li>
+                    <li><a href="{% url reviewapp.userhome %}">Profile</a></li>
                     <li>Dashboard</li>
                     <li>Submissions</li>
                     <li>Issues</li>
+                    {% else %}
+                    <li><a href="/accounts/login">[log in]</a></li>
+                    {% endif %}
                 </ul>
                 <ul>
                     <li>News</li>

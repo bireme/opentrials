@@ -1,5 +1,4 @@
 from django.conf.urls.defaults import *
-from django.core.urlresolvers import reverse
 from django.contrib.auth.views import login, logout
 from django.views.generic.list_detail import object_list, object_detail
 
