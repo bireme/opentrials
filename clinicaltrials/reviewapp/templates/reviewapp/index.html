@@ -2,14 +2,6 @@
 
 <!-- TODO: login and logout urls must use url tag for reverse view lookup -->
 
-{% block login %}
-   {% if username %}
-      {{username}} <a href="/accounts/logout">[log out]</a>
-
-   {% else %}
-      <a href="/accounts/login">[log in]</a>
-   {% endif %}   
-{% endblock %}
 
 {% block headline %}Rebrac: registro brasileiro de ensaios clínicos{% endblock %}
 

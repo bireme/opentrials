@@ -48,6 +48,12 @@ def edit_trial_index(request, trial_pk):
                                'trial_pk':trial_pk,
                                'links':links})
 
+def full_view(request, trial_pk):
+    ''' full view '''
+    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    return render_to_response('registry/trds.html',
+                              {'fieldtable':ct.html_dump()})
+
 #v-index
 @login_required
 def index(request):
