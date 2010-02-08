@@ -1,1 +1,10 @@
-<h1>Trial Registration Data Set</h1>
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Trial Registration Data Set" %}{% endblock %}
+{% block body_title %}{% trans "Trial Registration Data Set" %}{% endblock %}
+
+{% block body %}
+<table border="1">
+{{ fieldtable|safe }}
+</table>
+{% endblock %}

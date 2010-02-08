@@ -3,7 +3,7 @@ from django.views.generic.list_detail import object_detail, object_list
 
 from registry.models import ClinicalTrial
 
-from registry.views import edit_trial_index,index,step_1, step_2, step_3
+from registry.views import edit_trial_index, full_view, index,step_1, step_2, step_3
 from registry.views import step_4, step_5, step_6, step_7, step_8
 
 info_dict = {
@@ -17,7 +17,8 @@ info_dict_xml = {
 }
 
 urlpatterns = patterns('',
-    url(r'^edit/(\d+)/$', edit_trial_index, name='edittrial'),
+    url(r'^edit/(\d+)/$', edit_trial_index, name='registry.edittrial'),
+    url(r'^view/(\d+)/$', full_view, name='registry.trialview'),
     url(r'^xml/(?P<object_id>\d+)/$', object_detail, info_dict_xml,
         name='registry.xml'),
     url(r'^step_1/(\d+)/$', step_1, name='step_1'),

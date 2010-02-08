@@ -28,7 +28,48 @@ def generate_trial_id(prefix, num_digits):
     s += ''.join(choice(BASE28) for i in range(1, num_digits))
     return '-'.join([prefix, s[:num_digits/2], s[num_digits/2:]])
 
-class ClinicalTrial(models.Model):
+class TrialRegistrationDataSetModel(models.Model):
+
+    def html_dump(self, seen=None):
+        html = [] # the enclosing <table> and </table> must be provided py the template
+        if seen is None:
+            seen = set(self.__class__.__name__)
+        else:
+            seen.add(self.__class__.__name__)
+        for field in self._meta.fields:
+            value = getattr(self, field.name)
+            if field.rel and hasattr(value, 'html_dump'):
+                content = '<table>%s</table>' % value.html_dump(seen)
+            else:    
+                content = unicode(value)
+            html.append('<tr><th>%s</th><td>%s</td></tr>' % (field.name, content))
+        for field_name in dir(self):
+            try:
+                value = getattr(self, field_name)
+            except AttributeError:
+                continue # ignore Manager (objects attribute)
+            else:
+                if hasattr(value, '__class__') and value.__class__.__name__=='RelatedManager':
+                    inner_html = []
+                    for rel_value in value.all():
+                        id = '#%s' % rel_value.pk
+                        #if (hasattr(rel_value, 'html_dump') and
+                        #    rel_value.__class__.__name__ not in seen):
+                        #    content = '<table>%s</table>' % rel_value.html_dump(seen)
+                        #else:    
+                        content = unicode(rel_value)
+                        inner_html.append('<tr><th>%s</th><td>%s</td></tr>' % (id, content))
+                    content = '<table>%s</table>' % '\n\t'.join(inner_html)
+                    html.append('<tr><th>%s</th><td>%s</td></tr>' % (field_name, content))
+
+
+        return '\n'.join(html)
+    
+    
+    class Meta:
+        abstract = True
+
+class ClinicalTrial(TrialRegistrationDataSetModel):
     # TRDS 1
     trial_id = models.CharField(_('Primary Id Number'), null=True, unique=True,
                                 max_length=255, editable=False)
@@ -116,7 +157,8 @@ class ClinicalTrial(models.Model):
                                            verbose_name=_('Recruitment Status'))
 
     # TRDS 11 - Countries of Recruitment
-    recruitment_country = models.ManyToManyField(CountryCode)
+    recruitment_country = models.ManyToManyField(CountryCode, 
+        help_text=u'Several countries may be selected, one at a time')
 
     ################################### internal use, administrative fields ###
     created = models.DateTimeField(default=datetime.now, editable=False)
@@ -243,7 +285,7 @@ class ClinicalTrial(models.Model):
 
 # TRDS 3 - Secondary Identifying Numbers
 
-class TrialNumber(models.Model):
+class TrialNumber(TrialRegistrationDataSetModel):
     trial = models.ForeignKey(ClinicalTrial)
     issuing_authority = models.CharField(_('Issuing Authority'),
                                          max_length=255, db_index=True,)
@@ -254,7 +296,7 @@ class TrialNumber(models.Model):
         return u'%s: %s' % (self.issuing_authority, self.id_number)
 
 # TRDS 6 - Secondary Sponsor(s)
-class TrialSecondarySponsor(models.Model):
+class TrialSecondarySponsor(TrialRegistrationDataSetModel):
     trial = models.ForeignKey(ClinicalTrial)
     institution = models.ForeignKey('Institution')
 
@@ -262,7 +304,7 @@ class TrialSecondarySponsor(models.Model):
         return u'%s: %s' % (self.trial, self.institution)
 
 # TRDS 4 - Source(s) of Monetary Support
-class TrialSupportSource(models.Model):
+class TrialSupportSource(TrialRegistrationDataSetModel):
     trial = models.ForeignKey(ClinicalTrial)
     institution = models.ForeignKey('Institution')
 
@@ -271,7 +313,7 @@ class TrialSupportSource(models.Model):
 
 # TRDS 5 - Primary Sponsor
 
-class Institution(models.Model):
+class Institution(TrialRegistrationDataSetModel):
     name = models.CharField(_('Name'), max_length=255)
     address = models.TextField(_('Postal Address'), max_length=1500, blank=True)
     country = models.ForeignKey(CountryCode, verbose_name=_('Country'))
@@ -282,7 +324,7 @@ class Institution(models.Model):
 # TRDS 7 - Contact for Public Queries
 # TRDS 8 - Contact for Scientific Queries
 
-class Contact(models.Model):
+class Contact(TrialRegistrationDataSetModel):
     firstname = models.CharField(_('First Name'), max_length=50)
     middlename = models.CharField(_('Middle Name'), max_length=50, blank=True)
     lastname = models.CharField(_('Last Name'), max_length=50)
@@ -303,7 +345,7 @@ class Contact(models.Model):
     def __unicode__(self):
         return self.name()
 
-class PublicContact(models.Model):
+class PublicContact(TrialRegistrationDataSetModel):
     trial = models.ForeignKey(ClinicalTrial)
     contact = models.ForeignKey(Contact)
     status = models.CharField(_('Status'), max_length=255,
@@ -311,10 +353,10 @@ class PublicContact(models.Model):
                             default = choices.CONTACT_STATUS[0][0])
 
     def __unicode__(self):
-        return u'%s, %s: %s (%s)' % (self.relation, self.trial.short_title(),
+        return u'Public Contact for %s: %s (%s)' % (self.trial.short_title(),
                                      self.contact.name(), self.status)
 
-class ScientificContact(models.Model):
+class ScientificContact(TrialRegistrationDataSetModel):
     trial = models.ForeignKey(ClinicalTrial)
     contact = models.ForeignKey(Contact)
     status = models.CharField(_('Status'), max_length=255,
@@ -322,13 +364,13 @@ class ScientificContact(models.Model):
                             default = choices.CONTACT_STATUS[0][0])
 
     def __unicode__(self):
-        return u'%s, %s: %s (%s)' % (self.relation, self.trial.short_title(),
+        return u'Scientific Contact for %s: %s (%s)' % (self.trial.short_title(),
                                      self.contact.name(), self.status)
 
 # TRDS 19 - Primary Outcome(s)
 # TRDS 20 - Key Secondary Outcome(s)
 
-class Outcome(models.Model):
+class Outcome(TrialRegistrationDataSetModel):
     trial = models.ForeignKey(ClinicalTrial)
     interest = models.CharField(_('Interest'), max_length=32,
                                choices=choices.OUTCOME_INTEREST,
@@ -341,7 +383,7 @@ class Outcome(models.Model):
     def __unicode__(self):
         return safe_truncate(self.description, 80)
 
-class Descriptor(models.Model):
+class Descriptor(TrialRegistrationDataSetModel):
     class Meta:
         order_with_respect_to = 'trial'
 
