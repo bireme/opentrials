@@ -20,6 +20,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.utils.translation import ugettext_lazy as _
 from django.forms.models import inlineformset_factory, modelformset_factory
 from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
 
 EXTRA_FORMS = 2
 TRIAL_FORMS = ['Trial Identification Form',
@@ -32,6 +33,7 @@ TRIAL_FORMS = ['Trial Identification Form',
                'Descriptor Form']
 
 #v-edit
+@login_required
 def edit_trial_index(request, trial_pk):
     ''' start view '''
     links = []
@@ -42,9 +44,12 @@ def edit_trial_index(request, trial_pk):
         data['msg'] = 'Blank fields'
         links.append(data)
     return render_to_response('registry/trial_index.html',
-                              {'trial_pk':trial_pk,'links':links})
+                              {'username':request.user.username,
+                               'trial_pk':trial_pk,
+                               'links':links})
 
 #v-index
+@login_required
 def index(request):
     latest_clinicalTrials = ClinicalTrial.objects.all()[:5]
     t = loader.get_template('registry/latest_clinicalTrials.html')
@@ -54,6 +59,7 @@ def index(request):
     return HttpResponse(t.render(c))
 
 #v-trial
+@login_required
 def step_1(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     
@@ -82,10 +88,12 @@ def step_1(request, trial_pk):
     forms = [form, secondary_forms]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
+                               'username':request.user.username,
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Sponsors and Sources of Support')})
 
 #v-sponsors
+@login_required
 def step_2(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
@@ -121,10 +129,12 @@ def step_2(request, trial_pk):
     forms = [form, secondary_forms,sources_form]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
+                               'username':request.user.username,
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Health Conditions Form')})
 
 #v-healthcondition
+@login_required
 def step_3(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
@@ -171,10 +181,12 @@ def step_3(request, trial_pk):
     forms = [form, gdesc, sdesc]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
+                               'username':request.user.username,
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Interventions Form')})
 
 #v-interventions
+@login_required
 def step_4(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
@@ -208,10 +220,12 @@ def step_4(request, trial_pk):
     forms = [form,idesc]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
+                               'username':request.user.username,
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Recruitment Form')})
 
 #v-recruitment
+@login_required
 def step_5(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
@@ -231,10 +245,12 @@ def step_5(request, trial_pk):
     forms = [form]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
+                               'username':request.user.username,
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Study Type Form')})
 
 #v-studytype
+@login_required
 def step_6(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
@@ -254,10 +270,12 @@ def step_6(request, trial_pk):
     forms = [form]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
+                               'username':request.user.username,
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Outcomes Form')})
 
 #v-outcomes
+@login_required
 def step_7(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
@@ -280,10 +298,12 @@ def step_7(request, trial_pk):
     forms = [formset]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
+                               'username':request.user.username,
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Descriptor Form')})
 
 #v-contact
+@login_required
 def step_8(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
@@ -336,4 +356,5 @@ def step_8(request, trial_pk):
     forms = [public_form_set,scientific_form_set,new_contact_formset]
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
+                               'username':request.user.username,
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)]})
