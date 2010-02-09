@@ -2,6 +2,7 @@ from clinicaltrials.vocabulary.models import CountryCode
 from django.db import models, IntegrityError
 
 from django.utils.translation import ugettext_lazy as _
+from django.utils.html import linebreaks
 
 from datetime import datetime
 import string
@@ -40,8 +41,10 @@ class TrialRegistrationDataSetModel(models.Model):
             value = getattr(self, field.name)
             if field.rel and hasattr(value, 'html_dump'):
                 content = '<table>%s</table>' % value.html_dump(seen)
-            else:    
+            else:
                 content = unicode(value)
+                if u'\n' in content:
+                    content = linebreaks(content)
             html.append('<tr><th>%s</th><td>%s</td></tr>' % (field.name, content))
         for field_name in dir(self):
             try:
@@ -58,6 +61,8 @@ class TrialRegistrationDataSetModel(models.Model):
                         #    content = '<table>%s</table>' % rel_value.html_dump(seen)
                         #else:    
                         content = unicode(rel_value)
+                        if u'\n' in content:
+                            content = linebreaks(content)
                         inner_html.append('<tr><th>%s</th><td>%s</td></tr>' % (id, content))
                     content = '<table>%s</table>' % '\n\t'.join(inner_html)
                     html.append('<tr><th>%s</th><td>%s</td></tr>' % (field_name, content))

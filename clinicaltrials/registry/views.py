@@ -23,14 +23,14 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
 EXTRA_FORMS = 2
-TRIAL_FORMS = ['Trial Identification Form',
-               'Sponsors Form',
-               'Health Conditions Form',
-               'Interventions Form',
-               'Recruitment Form',
-               'Study Type Form',
-               'Outcomes Form',
-               'Descriptor Form']
+TRIAL_FORMS = ['Trial Identification',
+               'Sponsors',
+               'Health Conditions',
+               'Interventions',
+               'Recruitment',
+               'Study Type',
+               'Outcomes',
+               'Contacts']
 
 
 @login_required
@@ -63,7 +63,6 @@ def index(request):
         'latest_clinicalTrials': latest_clinicalTrials,
     })
     return HttpResponse(t.render(c))
-
 
 @login_required
 def step_1(request, trial_pk):
