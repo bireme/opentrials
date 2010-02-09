@@ -1,6 +1,6 @@
 # coding: utf-8
 from django.core.urlresolvers import reverse
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseRedirect
 from django import forms
 from django.utils.translation import ugettext as _
@@ -16,6 +16,16 @@ def index(request):
 def user_dump(request):
     uvars = [{'k':k, 'v':v} for k, v in request.user.__dict__.items()]
     return render_to_response('reviewapp/user_dump.html', locals())
+
+def submissions_list(request):
+    object_list = Submission.objects.all()
+    username = request.user.username if request.user.is_authenticated() else None
+    return render_to_response('reviewapp/submission_list.html', locals())
+
+def submission_detail(request,pk):
+    object = get_object_or_404(Submission, id=int(pk))
+    username = request.user.username if request.user.is_authenticated() else None
+    return render_to_response('reviewapp/submission_detail.html', locals())
 
 ####################################################### New Submission form ###
 

@@ -2,7 +2,7 @@ from django.conf.urls.defaults import *
 from django.contrib.auth.views import login, logout
 from django.views.generic.list_detail import object_list, object_detail
 
-from reviewapp.views import index, user_dump, new_submission
+from reviewapp.views import index, user_dump, new_submission, submissions_list, submission_detail
 from reviewapp.models import Submission
 
 
@@ -11,13 +11,11 @@ submissions = {
 }
 
 urlpatterns = patterns('',
-    url(r'^accounts/profile/$', object_list, submissions,
-        name='reviewapp.userhome'),
+    url(r'^accounts/profile/$', submissions_list, name='reviewapp.userhome'),
 
-    url(r'^accounts/submissionlist/$', object_list, submissions, 
-        name='reviewapp.submissionlist'), #same as accounts/profile
+    url(r'^accounts/submissionlist/$', submissions_list, name='reviewapp.submissionlist'), #same as accounts/profile
 
-    url(r'^accounts/submission/(?P<object_id>\d+)/$', object_detail, submissions, 
+    url(r'^accounts/submission/(\d+)/$', submission_detail, 
         name='reviewapp.submission'),
 
     url(r'^accounts/newsubmission/$', new_submission,
