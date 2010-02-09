@@ -1,4 +1,4 @@
-#coding: utf-8
+
 
 from registry.models import ClinicalTrial, Descriptor, TrialNumber
 from registry.models import TrialSecondarySponsor, TrialSupportSource, Outcome
@@ -32,7 +32,7 @@ TRIAL_FORMS = ['Trial Identification Form',
                'Outcomes Form',
                'Descriptor Form']
 
-#v-edit
+
 @login_required
 def edit_trial_index(request, trial_pk):
     ''' start view '''
@@ -54,7 +54,7 @@ def full_view(request, trial_pk):
     return render_to_response('registry/trds.html',
                               {'fieldtable':ct.html_dump()})
 
-#v-index
+
 @login_required
 def index(request):
     latest_clinicalTrials = ClinicalTrial.objects.all()[:5]
@@ -64,7 +64,7 @@ def index(request):
     })
     return HttpResponse(t.render(c))
 
-#v-trial
+
 @login_required
 def step_1(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
@@ -98,7 +98,7 @@ def step_1(request, trial_pk):
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Sponsors and Sources of Support')})
 
-#v-sponsors
+
 @login_required
 def step_2(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
@@ -139,7 +139,7 @@ def step_2(request, trial_pk):
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Health Conditions Form')})
 
-#v-healthcondition
+
 @login_required
 def step_3(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
@@ -191,7 +191,7 @@ def step_3(request, trial_pk):
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Interventions Form')})
 
-#v-interventions
+
 @login_required
 def step_4(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
@@ -230,7 +230,7 @@ def step_4(request, trial_pk):
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Recruitment Form')})
 
-#v-recruitment
+
 @login_required
 def step_5(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
@@ -255,7 +255,7 @@ def step_5(request, trial_pk):
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Study Type Form')})
 
-#v-studytype
+
 @login_required
 def step_6(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
@@ -280,7 +280,7 @@ def step_6(request, trial_pk):
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Outcomes Form')})
 
-#v-outcomes
+
 @login_required
 def step_7(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
@@ -308,7 +308,7 @@ def step_7(request, trial_pk):
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
                                'next_form_title':_('Descriptor Form')})
 
-#v-contact
+
 @login_required
 def step_8(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
