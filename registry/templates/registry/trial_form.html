@@ -1,6 +1,18 @@
 {% extends "registry/submission_step.html" %}
 {% load i18n %}
 {% block body %}
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+                $("select[multiple]").asmSelect({
+                        addItemTarget: 'bottom',
+                        animate: true,
+                        highlight: true,
+                        sortable: true
+                });
+        });
+    </script>
+
     <form action="./" method="POST">
         {% for form in forms %}
         <h2>{% firstof form.title form.form.title %}</h2>
