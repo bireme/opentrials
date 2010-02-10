@@ -31,42 +31,42 @@ def generate_trial_id(prefix, num_digits):
 
 class TrialRegistrationDataSetModel(models.Model):
 
-    def html_dump(self, seen=None):
+    def html_dump(self, seen=None, follow_sets=True):
         html = [] # the enclosing <table> and </table> must be provided py the template
         if seen is None:
             seen = set(self.__class__.__name__)
-        else:
-            seen.add(self.__class__.__name__)
         for field in self._meta.fields:
             value = getattr(self, field.name)
             if field.rel and hasattr(value, 'html_dump'):
-                content = '<table>%s</table>' % value.html_dump(seen)
+                seen.add(value.__class__.__name__)
+                content = '<table>%s</table>' % value.html_dump(seen, follow_sets=False)
             else:
                 content = unicode(value)
                 if u'\n' in content:
                     content = linebreaks(content)
             html.append('<tr><th>%s</th><td>%s</td></tr>' % (field.name, content))
-        for field_name in dir(self):
-            try:
-                value = getattr(self, field_name)
-            except AttributeError:
-                continue # ignore Manager (objects attribute)
-            else:
-                if hasattr(value, '__class__') and value.__class__.__name__=='RelatedManager':
-                    inner_html = []
-                    for rel_value in value.all():
-                        id = '#%s' % rel_value.pk
-                        #if (hasattr(rel_value, 'html_dump') and
-                        #    rel_value.__class__.__name__ not in seen):
-                        #    content = '<table>%s</table>' % rel_value.html_dump(seen)
-                        #else:    
-                        content = unicode(rel_value)
-                        if u'\n' in content:
-                            content = linebreaks(content)
-                        inner_html.append('<tr><th>%s</th><td>%s</td></tr>' % (id, content))
-                    content = '<table>%s</table>' % '\n\t'.join(inner_html)
-                    html.append('<tr><th>%s</th><td>%s</td></tr>' % (field_name, content))
-
+        if follow_sets:    
+            for field_name in dir(self):
+                try:
+                    value = getattr(self, field_name)
+                except AttributeError:
+                    continue # ignore Manager (objects attribute)
+                else:
+                    if hasattr(value, '__class__') and value.__class__.__name__=='RelatedManager':
+                        inner_html = []
+                        for rel_value in value.all():
+                            id = '#%s' % rel_value.pk
+                            if (hasattr(rel_value, 'html_dump') and 
+                                    (rel_value.__class__.__name__ not in seen)):
+                                seen.add(rel_value.__class__.__name__)
+                                content = '<table>%s</table>' % rel_value.html_dump(seen, follow_sets=False)
+                            else:    
+                                content = unicode(rel_value)
+                            if u'\n' in content:
+                                content = linebreaks(content)
+                            inner_html.append('<tr><th>%s</th><td>%s</td></tr>' % (id, content))
+                        content = '<table>%s</table>' % '\n\t'.join(inner_html)
+                        html.append('<tr><th>%s</th><td>%s</td></tr>' % (field_name, content))
 
         return '\n'.join(html)
     
@@ -306,7 +306,7 @@ class TrialSecondarySponsor(TrialRegistrationDataSetModel):
     institution = models.ForeignKey('Institution')
 
     def __unicode__(self):
-        return u'%s: %s' % (self.trial, self.institution)
+        return u'%s' % self.institution
 
 # TRDS 4 - Source(s) of Monetary Support
 class TrialSupportSource(TrialRegistrationDataSetModel):
@@ -314,7 +314,7 @@ class TrialSupportSource(TrialRegistrationDataSetModel):
     institution = models.ForeignKey('Institution')
 
     def __unicode__(self):
-        return u'%s: %s' % (self.trial, self.institution)
+        return u'%s' % self.institution
 
 # TRDS 5 - Primary Sponsor
 
@@ -324,7 +324,7 @@ class Institution(TrialRegistrationDataSetModel):
     country = models.ForeignKey(CountryCode, verbose_name=_('Country'))
 
     def __unicode__(self):
-        return safe_truncate(self.name, 80)
+        return safe_truncate(self.name, 120)
 
 # TRDS 7 - Contact for Public Queries
 # TRDS 8 - Contact for Scientific Queries
