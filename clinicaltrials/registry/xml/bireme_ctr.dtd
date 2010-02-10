@@ -2,9 +2,15 @@
 		BIREME Clinical Trial Record XML DTD
 		DTD Version 1.0: 2010-02-10
 		
+		See: http://reddes.bvsalud.org/projects/clinical-trials/wiki/RegistrationDataModel
+		
 		This is a superset of
 		WHO ICTRP XML DTD, http://www.who.int/ictrp
 		DTD Version 1.0: 2008-04-23 (with changes up to and including 2008-09-15)
+		
+		Comments:
+		  - "TRDS n": field number in the ICTRP Trial Registration Data Set
+		  - "BCTR": field defined in this DTD but not present in the ICTRP DTD
 
 -->
 
@@ -15,29 +21,29 @@
 
         <!ELEMENT main (trial_id,utrn?,reg_name,date_registration,primary_sponsor,public_title,acronym?,scientific_title,scientific_acronym?,
                   date_enrolment,type_enrolment,target_size,recruitment_status,url?,study_type,study_design,phase,hc_freetext?,i_freetext?)>
-            <!ELEMENT trial_id (#PCDATA)>
-            <!ELEMENT utrn (#PCDATA)>
-            <!ELEMENT reg_name (#PCDATA)>
-            <!ELEMENT date_registration (#PCDATA)><!-- dd/mm/yyyy -->
-            <!ELEMENT primary_sponsor (#PCDATA)>
-            <!ELEMENT public_title (#PCDATA)>
-            <!ELEMENT acronym (#PCDATA)>
-            <!ELEMENT scientific_title (#PCDATA)>
-            <!ELEMENT scientific_acronym (#PCDATA)>
-            <!ELEMENT date_enrolment (#PCDATA)><!-- dd/mm/yyyy -->
-            <!ELEMENT type_enrolment (#PCDATA)>
-            <!ELEMENT target_size (#PCDATA)>
-            <!ELEMENT recruitment_status (#PCDATA)><!-- Pending,Recruiting,Suspended,Complete,Other -->
-            <!ELEMENT url (#PCDATA)>
-            <!ELEMENT study_type (#PCDATA)><!-- interventional,observational -->
-            <!ELEMENT study_design (#PCDATA)>
-            <!ELEMENT phase (#PCDATA)>
-            <!ELEMENT hc_freetext (#PCDATA)>
-            <!ELEMENT i_freetext (#PCDATA)>
+            <!ELEMENT trial_id (#PCDATA)>                               <!--TRDS 1a-->
+            <!ELEMENT utrn (#PCDATA)>                                   <!--TRDS 3a/3b-->
+            <!ELEMENT reg_name (#PCDATA)>                               <!--TRDS 1b-->
+            <!ELEMENT date_registration (#PCDATA)><!-- dd/mm/yyyy -->   <!--TRDS 2-->
+            <!ELEMENT primary_sponsor (#PCDATA)>                        <!--TRDS 5-->
+            <!ELEMENT public_title (#PCDATA)>                           <!--TRDS 9a-->
+            <!ELEMENT acronym (#PCDATA)>                                <!--TRDS 9b-->
+            <!ELEMENT scientific_title (#PCDATA)>                       <!--TRDS 10a-->
+            <!ELEMENT scientific_acronym (#PCDATA)>                     <!--TRDS 10b-->
+            <!ELEMENT date_enrolment (#PCDATA)><!-- dd/mm/yyyy -->      <!--TRDS 16b-->
+            <!ELEMENT type_enrolment (#PCDATA)>                         <!--TRDS 16a-->
+            <!ELEMENT target_size (#PCDATA)>                            <!--TRDS 17-->
+            <!ELEMENT recruitment_status (#PCDATA)><!-- Pending,Recruiting,Suspended,Complete,Other --><!--TRDS 17-->
+            <!ELEMENT url (#PCDATA)>                                    <!--TRDS A1-->
+            <!ELEMENT study_type (#PCDATA)><!--always interventional--> <!--TRDS 15a-->
+            <!ELEMENT study_design (#PCDATA)>                           <!--TRDS 15b-->
+            <!ELEMENT phase (#PCDATA)>                                  <!--TRDS 15c-->
+            <!ELEMENT hc_freetext (#PCDATA)>                            <!--TRDS 12a-->
+            <!ELEMENT i_freetext (#PCDATA)>                             <!--TRDS 13a-->
 
-        <!ELEMENT contacts (contact+)>
+        <!ELEMENT contacts (contact+)>                                  <!--TRDS 7, 8-->
             <!ELEMENT contact (type,firstname,middlename,lastname,address,city,country1,zip,telephone,email,affiliation)>
-                <!ELEMENT type (#PCDATA)><!-- Public,Scientific -->
+                <!ELEMENT type (#PCDATA)><!-- Public,Scientific -->     
                 <!ELEMENT firstname (#PCDATA)>
                 <!ELEMENT middlename (#PCDATA)>
                 <!ELEMENT lastname (#PCDATA)>
@@ -49,42 +55,49 @@
                 <!ELEMENT email (#PCDATA)>
                 <!ELEMENT affiliation (#PCDATA)>
 
-        <!ELEMENT countries (country2+)>
+        <!ELEMENT countries (country2+)>                                <!--TRDS 11-->
             <!ELEMENT country2 (#PCDATA)>
 
         <!ELEMENT criteria (inclusion_criteria,agemin,agemax,gender,exclusion_criteria)>
-            <!ELEMENT inclusion_criteria (#PCDATA)>
-            <!ELEMENT agemin (#PCDATA)>
-            <!ELEMENT agemax (#PCDATA)>
-            <!ELEMENT gender (#PCDATA)>
-            <!ELEMENT exclusion_criteria (#PCDATA)>
+            <!ELEMENT inclusion_criteria (#PCDATA)>                     <!--TRDS 14a-->
+            <!ELEMENT agemin (#PCDATA)>                                 <!--TRDS 14c-->
+            <!ELEMENT agemin_unit (#PCDATA)>                            <!--BCTR-->
+            <!ELEMENT agemax (#PCDATA)>                                 <!--TRDS 14d-->
+            <!ELEMENT agemax_unit (#PCDATA)>                            <!--BCTR-->
+            <!ELEMENT gender (#PCDATA)>                                 <!--TRDS 14b-->
+            <!ELEMENT exclusion_criteria (#PCDATA)>                     <!--TRDS 14e-->
 
-        <!ELEMENT health_condition_code (hc_code+)>
+        <!ELEMENT health_condition_code (hc_code+)>                     <!--TRDS 12b-->
             <!ELEMENT hc_code (#PCDATA)>
+                                                                        <!--BCTR: add descriptor metadata-->
 
-        <!ELEMENT health_condition_keyword (hc_keyword+)>
+        <!ELEMENT health_condition_keyword (hc_keyword+)>               <!--TRDS 12c-->
             <!ELEMENT hc_keyword (#PCDATA)>
+                                                                        <!--BCTR: add descriptor metadata-->
 
-        <!ELEMENT intervention_code (i_code+)>
+        <!ELEMENT intervention_code (i_code+)>                          <!--TRDS 13b-->
             <!ELEMENT i_code (#PCDATA)>
 
-        <!ELEMENT intervention_keyword (i_keyword+)>
+        <!ELEMENT intervention_keyword (i_keyword+)>                    <!--TRDS 13c-->
             <!ELEMENT i_keyword (#PCDATA)>
+                                                                        <!--BCTR: add descriptor metadata-->
 
-        <!ELEMENT primary_outcome (prim_outcome+)>
+        <!ELEMENT primary_outcome (prim_outcome+)>                      <!--TRDS 19-->
             <!ELEMENT prim_outcome (#PCDATA)>
 
-        <!ELEMENT secondary_outcome (sec_outcome+)>
+        <!ELEMENT secondary_outcome (sec_outcome+)>                     <!--TRDS 20-->
             <!ELEMENT sec_outcome (#PCDATA)>
 
-        <!ELEMENT secondary_sponsor (sponsor_name+)>
+        <!ELEMENT secondary_sponsor (sponsor_name+)>                    <!--TRDS 6-->
             <!ELEMENT sponsor_name (#PCDATA)>
+                                                                        <!--BCTR: institution fields-->
 
-        <!ELEMENT secondary_ids (secondary_id+)>
+        <!ELEMENT secondary_ids (secondary_id+)>                        
             <!ELEMENT secondary_id (sec_id,issuing_authority)>
-                <!ELEMENT sec_id (#PCDATA)>
-                <!ELEMENT issuing_authority (#PCDATA)>
+                <!ELEMENT sec_id (#PCDATA)>                             <!--TRDS 3a-->
+                <!ELEMENT issuing_authority (#PCDATA)>                  <!--TRDS 3b--> 
 
-        <!ELEMENT source_support (source_name+)>
+        <!ELEMENT source_support (source_name+)>                        <!--TRDS 4-->
             <!ELEMENT source_name (#PCDATA)>
+                                                                        <!--BCTR: institution fields-->
 
