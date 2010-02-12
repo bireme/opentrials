@@ -10,7 +10,7 @@
             var name = $(this).attr('name').replace('-' + (total-1) + '-','-' + total + '-');
             var id = 'id_' + name;
             $(this).attr({'name': name, 'id': id});
-            if(!$(this).attr('type')=='hidden')$(this).val('').removeAttr('checked');
+            if($(this).attr('type')!='hidden')$(this).val('').removeAttr('checked');
         });
         newElement.find('label').each(function() {
             var newFor = $(this).attr('for').replace('-' + (total-1) + '-','-' + total + '-');
@@ -44,22 +44,25 @@
         {% for formset in formsets %}
             {{ formset.management_form }}
             <h2>{{ formset.form.title }}</h2>
+
+            <div class="{{formset.management_form.prefix}}">
             {% for form in formset.forms %}
-                <table class="formset{{forloop.parentloop.counter}}">
+                <table>
                     {{ form.as_table }}
                 </table>
             {% endfor %}
+            </div>
             <div style="text-align: center">
-              <input onclick="cloneMore('table.formset{{forloop.counter}}:last','{{formset.management_form.prefix}}')" type="button" value="add more"/>
+              <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="add more"/>
             </div>
         {% endfor %}
 
         <br/>
 
-        <input name="submit_go" type="submit" value="{% trans "Save and continue later" %}">
+        <input name="submit_go" type="submit" value="{% trans "Save and continue later" %}"/>
 
         {% if next_form_title %}
-        <input name="submit_next" type="submit" value="{% trans "Save and go to" %} '{{next_form_title}}'">
+        <input name="submit_next" type="submit" value="{% trans "Save and go to" %} '{{next_form_title}}'"/>
         {% endif %}
     </form>
 
