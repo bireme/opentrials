@@ -18,6 +18,11 @@ SUBMISSION_STATUS = [
     ('rejected', 'rejected'),
 ]
 
+ACCESS = [
+    ('public', 'Public'),
+    ('private', 'Private'),
+]
+
 class Submission(models.Model):
     creator = models.ForeignKey(User, related_name='submission_creator', editable=False)
     created = models.DateTimeField(default=datetime.now, editable=False)
@@ -75,4 +80,11 @@ class FrozenForm(models.Model):
     class Meta:
         unique_together = ['submission', 'form_name']
 
+
+class Attachment(models.Model):
+    class Meta:
+        verbose_name_plural = _('Attachments')
     
+    file = models.FileField(upload_to='attachment')
+    submission = models.ForeignKey(Submission)
+    access = models.CharField(_('Access'),max_length=16,choices=ACCESS)
