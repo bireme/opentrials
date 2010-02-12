@@ -6,7 +6,8 @@ from django import forms
 from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import login_required
 
-from reviewapp.models import Submission
+from django.forms.models import modelformset_factory
+from reviewapp.models import Submission, Attachment
 from registry.models import ClinicalTrial, CountryCode, Institution
 
 def index(request):
@@ -34,7 +35,7 @@ class InitialTrialForm(forms.ModelForm):
         model = ClinicalTrial
         fields = ['scientific_title','recruitment_country']
 
-    title = _('Initial Data fields')
+    title = _('Initial Trial Data')
     recruitment_country = forms.ModelMultipleChoiceField(
                                             label=_('Recruitment Country'),
                                             queryset=CountryCode.objects.all())
@@ -47,23 +48,42 @@ class PrimarySponsorForm(forms.ModelForm):
 
 @login_required
 def new_submission(request):
+
+    AttachmentForm = modelformset_factory(Attachment, extra=1, can_delete=False,
+                                          exclude='submission')
+    AttachmentForm.title = _('Attachments')
+
     if request.method == 'POST':
         initial_form = InitialTrialForm(request.POST)
         sponsor_form = PrimarySponsorForm(request.POST)
+        attachment_formset = AttachmentForm(request.POST,request.FILES,
+                                            queryset=Attachment.objects.none())
 
-        if initial_form.is_valid() and sponsor_form.is_valid():
+        if initial_form.is_valid() and sponsor_form.is_valid() and attachment_formset.is_valid():
             initial_form.instance.primary_sponsor = sponsor_form.save()
             trial = initial_form.save()
-            submission = Submission(creator=request.user, trial=trial,
-                                                   title=trial.scientific_title)
+
+
+            submission = Submission(creator=request.user,
+                                    trial=trial,
+                                    primary_sponsor=trial.primary_sponsor,
+                                    title=trial.scientific_title)
             submission.save()
-            return HttpResponseRedirect(reverse('edittrial',args=[trial.id]))
+
+            for af in attachment_formset.forms:
+                af.instance.submission = submission;
+            
+            attachment_formset.save();
+            return HttpResponseRedirect(reverse('registry.edittrial',args=[trial.id]))
     else:
         initial_form = InitialTrialForm()
         sponsor_form = PrimarySponsorForm()
+        attachment_formset = AttachmentForm(queryset=Attachment.objects.none())
 
+
+    forms = [initial_form, sponsor_form]
     return render_to_response('reviewapp/new_submission.html', {
-        'initial_form': initial_form,
-        'sponsor_form': sponsor_form,
+        'forms': forms,
+        'formset': attachment_formset,
         'username':request.user.username,
     })

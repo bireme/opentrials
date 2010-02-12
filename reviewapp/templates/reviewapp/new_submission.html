@@ -3,7 +3,30 @@
 {% block body %}
 
 <script type="text/javascript">
+    //{# From http://stackoverflow.com/questions/501719/dynamically-adding-a-form-to-a-django-formset-with-ajax#669982 */ #}
+    function cloneMore(selector, type) {
+        var newElement = $(selector).clone(true);
+        var total = $('#id_' + type + '-TOTAL_FORMS').val();
+        newElement.find(':input').each(function() {
+            var name = $(this).attr('name').replace('-' + (total-1) + '-','-' + total + '-');
+            var id = 'id_' + name;
+            $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
+        });
+        newElement.find('label').each(function() {
+            var newFor = $(this).attr('for').replace('-' + (total-1) + '-','-' + total + '-');
+            $(this).attr('for', newFor);
+        });
+        total++;
+        $('#id_' + type + '-TOTAL_FORMS').val(total);
+        newElement.css("display","none");
+        $(selector).after(newElement);
+        newElement.show("fast");
+    }
+
     $(document).ready(function() {
+            $("input#addmore").click(function(){
+                cloneMore('table:last','form');
+            });
             $("select[multiple]").asmSelect({
                     addItemTarget: 'bottom',
                     animate: true,
@@ -13,16 +36,30 @@
     });
 </script>
 
-<form method="post" action="/accounts/newsubmission/">
-<table>
-    <tr><th colspan="2">{% trans "Initial Trial Data" %}</th></tr>
-{{initial_form.as_table}}
-    <tr><th colspan="2">{% trans "Primary Sponsor" %}</th></tr>
-{{sponsor_form.as_table}}
-</table>
+<form method="post" action="/accounts/newsubmission/" enctype="multipart/form-data">
+{% for form in forms %}
+    <h2>{{ form.title }}</h2>
+    <table id="table_{{ forloop.counter }}">
+        {{ form.as_table }}
+    </table>
+{% endfor %}
 
-<input name="submit" type="submit" value="{% trans "Submit" %}">
+{{ formset.management_form }}
+<h2>{{ formset.title }}</h2>
+{% for form in formset.forms %}
+    {% if forloop.last %}
+    <table id="last_table">
+    {% else %}
+    <table>
+    {% endif %}
+        {{ form.as_table }}
+    </table>
+{% endfor %}
+<div style="text-align: center">
+      <input id="addmore" type="button" value="attach another file"/>
+</div>
 
+<input name="submit" type="submit" value="{% trans "Submit" %}"/>
 </form>
 
 {% endblock %}
