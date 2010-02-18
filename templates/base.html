@@ -31,9 +31,9 @@
                 <ul id="usermenu">
                     {% if username %}
                     <li>{{username}}<a href="/accounts/logout">[log out]</a></li>
-                    <li><a href="{% url reviewapp.userhome %}">Profile</a></li>
+                    <li>Profile</li>
                     <li>Dashboard</li>
-                    <li>Submissions</li>
+                    <li><a href="{% url reviewapp.userhome %}">Submissions</a></li>
                     <li>Issues</li>
                     {% else %}
                     <li><a href="/accounts/login">[log in]</a></li>

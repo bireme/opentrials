@@ -1,37 +1,30 @@
 # coding: utf-8
 
+from clinicaltrials.reviewapp.models import Attachment
 from django import forms
 from django.utils.translation import ugettext as _
 
-class TrialIdentificationForm(forms.Form):
-    title = _('Trial Identification')
-    # TRDS 10a
-    scientific_title = forms.CharField(label=_('Scientific Title'),
-                                       max_length=2000, 
-                                       widget=forms.Textarea)
-    # TRDS 10b
-    scientific_acronym = forms.CharField(required=False,
-                                         label=_('Scientific Acronym'),
-                                         max_length=255)
-    scientific_acronym_expansion = forms.CharField(required=False,
-                                         label=_('Scientific Acronym Expansion'),
-                                         max_length=255)
-    # TRDS 9a
-    public_title = forms.CharField(required=False, 
-                                   label=_('Public Title'),
-                                   max_length=2000, 
-                                   widget=forms.Textarea)
-    # TRDS 9b
-    acronym = forms.CharField(required=False, label=_('Acronym'),
-                              max_length=255)
-    acronym_expansion = forms.CharField(required=False,
-                                         label=_('Acronym Expansion'),
-                                         max_length=255)
+ACCESS = [
+    ('public', 'Public'),
+    ('private', 'Private'),
+]
 
-class TrialNumberForm(forms.Form):
-    issuing_authority = forms.CharField(_('Issuing Authority'),
-                                         max_length=255, db_index=True)
-    id_number = forms.CharField(_('Secondary Id Number'))
-                                 
 
-                                 
+class ExistingAttachmentForm(forms.ModelForm):
+    class Meta:
+        model = Attachment
+        exclude = ['submission']
+
+    title = _('Existing Attachment')
+    file = forms.CharField(required=False,label=_('File'),max_length=255)
+    access = forms.ChoiceField(widget=forms.RadioSelect,choices=ACCESS)
+
+class NewAttachmentForm(forms.ModelForm):
+    class Meta:
+        model = Attachment
+        fields = ['file','submission','access']
+
+    title = _('New Attachment')
+    submission = forms.CharField(widget=forms.HiddenInput,required=False)
+    access = forms.ChoiceField(widget=forms.RadioSelect,choices=ACCESS)
+

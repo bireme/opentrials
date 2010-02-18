@@ -56,10 +56,8 @@ def new_submission(request):
     if request.method == 'POST':
         initial_form = InitialTrialForm(request.POST)
         sponsor_form = PrimarySponsorForm(request.POST)
-        attachment_formset = AttachmentForm(request.POST,request.FILES,
-                                            queryset=Attachment.objects.none())
 
-        if initial_form.is_valid() and sponsor_form.is_valid() and attachment_formset.is_valid():
+        if initial_form.is_valid() and sponsor_form.is_valid():
             initial_form.instance.primary_sponsor = sponsor_form.save()
             trial = initial_form.save()
 
@@ -70,20 +68,14 @@ def new_submission(request):
                                     title=trial.scientific_title)
             submission.save()
 
-            for af in attachment_formset.forms:
-                af.instance.submission = submission;
-            
-            attachment_formset.save();
             return HttpResponseRedirect(reverse('registry.edittrial',args=[trial.id]))
     else:
         initial_form = InitialTrialForm()
         sponsor_form = PrimarySponsorForm()
-        attachment_formset = AttachmentForm(queryset=Attachment.objects.none())
 
 
     forms = [initial_form, sponsor_form]
     return render_to_response('reviewapp/new_submission.html', {
         'forms': forms,
-        'formset': attachment_formset,
         'username':request.user.username,
     })

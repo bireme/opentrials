@@ -36,28 +36,13 @@
     });
 </script>
 
-<form method="post" action="/accounts/newsubmission/" enctype="multipart/form-data">
+<form method="post" action="/accounts/newsubmission/">
 {% for form in forms %}
     <h2>{{ form.title }}</h2>
     <table id="table_{{ forloop.counter }}">
         {{ form.as_table }}
     </table>
 {% endfor %}
-
-{{ formset.management_form }}
-<h2>{{ formset.title }}</h2>
-{% for form in formset.forms %}
-    {% if forloop.last %}
-    <table id="last_table">
-    {% else %}
-    <table>
-    {% endif %}
-        {{ form.as_table }}
-    </table>
-{% endfor %}
-<div style="text-align: center">
-      <input id="addmore" type="button" value="attach another file"/>
-</div>
 
 <input name="submit" type="submit" value="{% trans "Submit" %}"/>
 </form>

@@ -35,15 +35,19 @@
 
     <form action="./" method="POST">
         {% for form in forms %}
-            <h2>{% firstof form.title form.form.title %}</h2>
+        <fieldset>
+            <legend>{% firstof form.title form.form.title %}</legend>
             <table>
                 {{ form.as_table }}
             </table>
+        </fieldset>
         {% endfor %}
 
         {% for formset in formsets %}
             {{ formset.management_form }}
-            <h2>{{ formset.form.title }}</h2>
+            <fieldset>
+            <legend>{{ formset.form.title }}</legend>
+
 
             <div class="{{formset.management_form.prefix}}">
             {% for form in formset.forms %}
@@ -55,6 +59,7 @@
             <div style="text-align: center">
               <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="add more"/>
             </div>
+            </fieldset>
         {% endfor %}
 
         <br/>
