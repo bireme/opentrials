@@ -4,7 +4,7 @@ from django.views.generic.list_detail import object_detail, object_list
 from registry.models import ClinicalTrial
 
 from registry.views import edit_trial_index, full_view, index,step_1, step_2, step_3
-from registry.views import step_4, step_5, step_6, step_7, step_8
+from registry.views import step_4, step_5, step_6, step_7, step_8, step_9
 
 info_dict = {
     'queryset': ClinicalTrial.objects.all(),
@@ -29,6 +29,7 @@ urlpatterns = patterns('',
     url(r'^step_6/(\d+)/$', step_6, name='step_6'),
     url(r'^step_7/(\d+)/$', step_7, name='step_7'),
     url(r'^step_8/(\d+)/$', step_8, name='step_8'),
+    url(r'^step_9/(\d+)/$', step_9, name='step_9'),
     url(r'^$', index),
     url(r'^list/$', object_list, info_dict),
 )

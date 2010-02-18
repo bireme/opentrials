@@ -1,4 +1,7 @@
+#coding: utf-8
 
+from reviewapp.models import Attachment, Submission
+from reviewapp.trds_forms import ExistingAttachmentForm,NewAttachmentForm
 
 from registry.models import ClinicalTrial, Descriptor, TrialNumber
 from registry.models import TrialSecondarySponsor, TrialSupportSource, Outcome
@@ -30,7 +33,8 @@ TRIAL_FORMS = ['Trial Identification',
                'Recruitment',
                'Study Type',
                'Outcomes',
-               'Contacts']
+               'Contacts',
+               'Attachments']
 
 
 @login_required
@@ -95,7 +99,7 @@ def step_1(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Sponsors and Sources of Support')})
 
 
@@ -140,7 +144,7 @@ def step_2(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Health Conditions Form')})
 
 
@@ -193,7 +197,7 @@ def step_3(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Interventions Form')})
 
 
@@ -233,7 +237,7 @@ def step_4(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Recruitment Form')})
 
 
@@ -258,7 +262,7 @@ def step_5(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
                                'username':request.user.username,
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Study Type Form')})
 
 
@@ -283,7 +287,7 @@ def step_6(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
                                'username':request.user.username,
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Outcomes Form')})
 
 
@@ -311,7 +315,7 @@ def step_7(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'formsets':formsets,
                                'username':request.user.username,
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)],
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Descriptor Form')})
 
 
@@ -325,12 +329,12 @@ def step_8(request, trial_pk):
     PublicContactFormSet = inlineformset_factory(ClinicalTrial,
                                                 contact_type['PublicContact'],
                                                 form=PublicContactForm,
-                                                can_delete=False,
+                                                can_delete=True,
                                                 extra=EXTRA_FORMS)
     ScientificContactFormSet = inlineformset_factory(ClinicalTrial,
                                                 contact_type['ScientificContact'],
                                                 form=ScientificContactForm,
-                                                can_delete=False,
+                                                can_delete=True,
                                                 extra=EXTRA_FORMS)
 
     ContactFormSet = modelformset_factory(Contact, form=ContactForm, extra=1)
@@ -369,4 +373,52 @@ def step_8(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'formsets':formsets,
                                'username':request.user.username,
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,9)]})
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)]})
+
+@login_required
+def step_9(request, trial_pk):
+    # TODO: this function should be on another place
+    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    su = Submission.objects.get(trial=ct)
+    
+    ExistingAttachmentFormSet = inlineformset_factory(Submission,
+                                             Attachment,
+                                             extra=0,
+                                             can_delete=True,
+                                             form=ExistingAttachmentForm)
+    NewAttachmentFormSet = modelformset_factory(Attachment,
+                                             extra=1,
+                                             can_delete=False,
+                                             form=NewAttachmentForm)
+
+
+    if request.method == 'POST':
+
+        existing_attachment_formset = ExistingAttachmentFormSet(request.POST,
+                                                                request.FILES,
+                                                                instance=su,
+                                                                prefix='existing')
+        new_attachment_formset = NewAttachmentFormSet(request.POST,
+                                                      request.FILES,
+                                                      prefix='new')
+
+        if existing_attachment_formset.is_valid() and new_attachment_formset.is_valid():
+            existing_attachment_formset.save()
+
+            for cdata in new_attachment_formset.cleaned_data:
+                cdata['submission'] = su
+
+            new_attachment_formset.save()
+            
+            return HttpResponseRedirect(reverse("registry.edittrial", args=[trial_pk]))
+    else:
+        existing_attachment_formset = ExistingAttachmentFormSet(instance=su,
+                                                                prefix='existing')
+        new_attachment_formset = NewAttachmentFormSet(queryset=Attachment.objects.none(),
+                                                      prefix='new')
+
+    formsets = [existing_attachment_formset,new_attachment_formset]
+    return render_to_response('registry/attachments.html',
+                              {'formsets':formsets,
+                               'username':request.user.username,
+                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)]})
