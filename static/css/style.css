@@ -1,121 +1,174 @@
 body {
-    margin-top : 0px;
-    padding : 0;
-    text-align : left;
-    font : 76% "Trebuchet MS", verdana, arial, sans-serif;
+    height: 100%;
+    margin-top: 0px;
+    padding: 0;
+    text-align: left;
+    font: 76% "Trebuchet MS", verdana, arial, sans-serif;
 }
+
+/* STYLE for BORDERED MAIN BLOCKS */
+#container, #top, #footer, #columns,
+.stepmenu-top, .stepmenu-bottom {
+    border-color: #D4D4FF;
+    border-style: solid;
+}
+
 #container {
-    width : 900px;
-    margin-left : auto;
-    margin-right : auto;
-    padding : 0;
-    border : 1px solid #666;
-    line-height : 1.7em;
+    width: 87%;
+    margin: 3px auto 0;
+    padding: 0;
+    border-width: 1px;
+    line-height: 1.7em;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: transparent url(/static/bg_header.png) repeat-x scroll 0 0;
 }
 
 /*TOP BANNER*/
 #top {
-    padding : 0;
-    margin : 0;
-    background : transparent url(/static/logoOpas.gif) no-repeat right center;
-    border-bottom : 0.2em solid #666;
+    padding: 0;
+    margin: 0;
+    border-width: 0 0 1px;
+    float: left;
+    clear: both;
+    width: 100%;
 }
+
+#top img {
+    display: block;
+    float: left;
+    margin: 2em
+}
+
 #top h1 {
-    margin: 0em;
-    padding : 1.3em 1em;
+    margin: 1.7em 0 0;
+    float: left;
+}
+
+#middle {
+    background-color: #FFF;
+    position: relative;
+    float: left;
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+}
+
+#columns {
+    position: relative;
+    width: 100%;
+    float: left;
+    right: 81%;
+    border-width: 0 1px 0 0;
+}
+
+#rebracmenu, #workarea {
+    position: relative;
+}
+
+/* GROUP STEPS NAVIGATION AND CONTENT */
+#workarea {
+    float: left;
+    left: 100%;
+    width: 81%;
 }
 
 #rebracmenu {
     float: left;
-    width: 20%;
-    font-size : 1.3em;
+    width: 16%;
+    left: 1%;
 }
 
-/*NAVIGATION*/
-#stepmenu {
-    width : 79%;
-    border-bottom : 0.2em solid #666;
-    border-left: 1px solid #666;
-    font-size : 1.3em;
-    float: left;
-    clear: right;
+#rebracmenu #usermenu div {
+    padding: 3em;
+    border-bottom: 1px dotted #D4D4FF;
+    line-height: 100%;
+    text-align: center;
 }
-#stepmenu ul {
-    margin : 0;
-    padding : 0 5px 0 0;
-    list-style : none;
+
+#rebracmenu #usermenu div * {
+    text-transform: capitalize;
+    font-weight: bold;
 }
-#stepmenu li {
-    display : inline;
-    margin : 0;
-    padding : 0;
+
+#rebracmenu ul {
+    list-style-type: none;
+    padding-left: 1em;
 }
-#stepmenu a {
-    float : left;
-    margin : 0;
-    padding : 0;
-    text-decoration : none;
+
+#rebracmenu li {
+    text-transform: capitalize;
+    margin-bottom: 0.5em;
+    border-bottom: 1px dotted #D4D4FF;
 }
-#stepmenu a {
-    float : left;
-    padding : 5px 15px 4px 6px;
+
+/* STEPS NAVIGATION*/
+.stepmenu {
+    background: transparent url(/static/bg_stepmenu.png) repeat-x;
 }
-#stepmenu a {
-    float : none;
+.stepmenu ul {
+    margin: 0;
+    padding: 0 0 0 2em;
+    list-style: none;
+}
+
+.stepmenu li {
+    display: inline-block;
+    width: 10%;
+}
+
+.stepmenu a {
+    text-decoration: none;
+}
+
+.stepmenu-top {
+    border-width: 0 0 1px;
+}
+
+.stepmenu-bottom {
+    border-width: 1px 0 0;
 }
 
 /*MAIN CONTENT*/
 #content {
-    padding : 10px;
-    color : #666;
-    width: 77%;
-    float: left;
-    clear: right;
-    border-left: 1px solid #666;
+    padding: 10px;
 }
+
 #content a:link, #content a:visited {
-    text-decoration : none;
-    background : inherit;
-    color : #bc1f26;
+    text-decoration: none;
+    background: inherit;
+
 }
+
 #content a:hover {
-    text-decoration : underline;
-    background : inherit;
-    color : #996681;
+    text-decoration: underline;
+
 }
 
 /*FOOTER*/
 #footer {
-    clear : both;
-    height : 45px;
-    padding : 5px;
-    margin-top : 5px;
-    border-top : 3px solid #666;
-    color : #eee;
+    clear: both;
+    padding: 5px;
+    margin-top: 5px;
+    border-width: 1px 0 0;
 }
+
 #footer a:link, #footer a:visited {
-    text-decoration : none;
-    background : inherit;
-    color : #333;
-}
-#footer a:hover {
-    border-bottom : 1px dashed #f7cdbf;
-    background : inherit;
-    color : #f7cdbf;
+    text-decoration: none;
+    background: inherit;
+
 }
 
 /*TYPOGRAPHY*/
 p {
-    margin : 20px;
+    margin: 20px;
 }
+
 h2 {
-    margin-left : 15px;
-    font-size : 120%;
-    background : inherit;
-    color : #000;
+    margin-left: 15px;
 }
+
 blockquote {
-    font-weight : bold;
-    font-style : italic;
-    color : #b29b35;
+    font-weight: bold;
+    font-style: italic;
 }
