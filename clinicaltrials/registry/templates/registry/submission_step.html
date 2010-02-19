@@ -1,8 +1,21 @@
 {% extends "base.html" %}
 
 {% block body_title %}{{ forms.form_main.title }}{% endblock %}
-{% block stepmenu %}
-<div id="stepmenu">
+
+{# Last <p > in http://docs.djangoproject.com/en/dev/topics/templates/#id1 #}
+
+{% block stepmenu_top %}
+<div class="stepmenu stepmenu-top">
+    <ul>
+        {% for link in links %}
+        <li><a href="{{link}}">step {{forloop.counter}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+{% block stepmenu_bottom %}
+<div class="stepmenu stepmenu-bottom">
     <ul>
         {% for link in links %}
         <li><a href="{{link}}">step {{forloop.counter}}</a></li>

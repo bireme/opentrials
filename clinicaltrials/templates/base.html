@@ -25,32 +25,47 @@
     <body>
         <div id="container">
             <div id="top">
+                <img src="/static/logoOpas.gif" alt="Pan-American Health Organization Logo"/>
                 <h1>{% block headline %}{% trans "Rebrac, part of the WHO/ICTRP network" %}{% endblock %}</h1>
             </div>
-            <div id="rebracmenu">
-                <ul id="usermenu">
-                    {% if username %}
-                    <li>{{username}}<a href="/accounts/logout">[log out]</a></li>
-                    <li>Profile</li>
-                    <li>Dashboard</li>
-                    <li><a href="{% url reviewapp.userhome %}">Submissions</a></li>
-                    <li>Issues</li>
-                    {% else %}
-                    <li><a href="/accounts/login">[log in]</a></li>
-                    {% endif %}
-                </ul>
-                <ul>
-                    <li>News</li>
-                    <li>About</li>
-                    <li>Help</li>
-                </ul>
-            </div>
-            {% block stepmenu %}{% endblock %}
-            <div id="content">
-                {% block body %}{% endblock %}
+            <div id="middle">
+                <div id="columns">
+                    <div id="workarea">
+                        {% block stepmenu_top %}{% endblock %}
+
+                        <div id="content">
+                            {% block body %}{% endblock %}
+                        </div>
+
+                        {% block stepmenu_bottom %}{% endblock %}
+                    </div>
+                    <div id="rebracmenu">
+                        <div id="usermenu">
+                            {% if username %}
+                            <div>
+                                <span>{{username}}</span><br/>
+                                <a href="/accounts/logout">log out</a>
+                            </div>
+                            <ul>
+                                <li>Profile</li>
+                                <li>Dashboard</li>
+                                <li><a href="{% url reviewapp.userhome %}">Submissions</a></li>
+                                <li>Issues</li>
+                            </ul>
+                            {% else %}
+                            <div><a href="/accounts/login">[log in]</a></div>
+                            {% endif %}
+                        </div>
+                        <ul>
+                            <li>News</li>
+                            <li>About</li>
+                            <li>Help</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div id="footer">
-                
+                <p>&nbsp;</p>
             </div>
         </div>
     </body>
