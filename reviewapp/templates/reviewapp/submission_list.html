@@ -4,20 +4,25 @@
 {% block body %}
 
 <h2>{% trans "Your Submissions" %}</h2>
-<table>
-    <tr>
-        <th>Owner</th>
-        <th>Submission Title</th>
-        <th>Situation</th>
-    </tr>
-    {% for submission in object_list %}
-    <tr>
-        <td>{{ submission.creator_username }}</td>
-        <td><a href="{% url registry.edittrial submission.trial.pk %}">
-        [{{submission.trial.pk}}] {{ submission.short_title }}</a></td>
-        <td>{{ submission.status }}</td>
-    </tr>
-    {% endfor %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>{% trans "Created" %}</th>
+            <th>{% trans "Submission Title" %}</th>
+            <th>{% trans "Situation" %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for submission in object_list %}
+        <tr>
+            <td>{{ submission.created|date:'d M Y' }}</td>
+            <td>
+                <a href="{% url registry.edittrial submission.trial.pk %}">{{ submission.short_title }}</a>
+            </td>
+            <td>{{ submission.status }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
 
 <p>
