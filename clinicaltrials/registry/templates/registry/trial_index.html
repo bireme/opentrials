@@ -5,14 +5,19 @@
 {% block body %}
 
 <h2>{% trans "Trial Summary" %}</h2>
-<table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>{% trans "Step" %}</th>
+            <th>{% trans "Form name" %}</th>
+            <th>{% trans "Status" %}</th>
+        </tr>
+    </thead>
     {% for link in links %} <!-- TODO: use url filter to remove hardcoded path -->
         <tr>
-            <td><a href="{{link.url}}">
-                    {{ forloop.counter}} - {{ link.label }}
-                </a></td>
-            <td><img src="{{link.icon}}" /></td>    
-            <td>{{link.msg}}</td>    
+            <td>{{forloop.counter}}</td>
+            <td><a href="{{link.url}}">{{ link.label }}</a></td>
+            <td><img src="{{link.icon}}" alt="{{link.msg}}" title="{{link.msg}}"/>&nbsp;&nbsp;{{link.msg}}</td>
         </tr>
     {% endfor %}    
 </table>

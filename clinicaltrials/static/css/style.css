@@ -3,7 +3,11 @@ body {
     margin-top: 0px;
     padding: 0;
     text-align: left;
-    font: 76% "Trebuchet MS", verdana, arial, sans-serif;
+    font: 78% "Verdana", "Arial", "sans-serif";
+}
+
+h1, h2, label, legend, #content a {
+    color: #005;
 }
 
 /* STYLE for BORDERED MAIN BLOCKS */
@@ -37,11 +41,11 @@ body {
 #top img {
     display: block;
     float: left;
-    margin: 2em
+    margin: 4em
 }
 
 #top h1 {
-    margin: 1.7em 0 0;
+    margin: 2.7em 0 0;
     float: left;
 }
 
@@ -150,7 +154,12 @@ body {
 
 #content a:hover {
     text-decoration: underline;
+    
+}
 
+#content h2 {
+    padding: 0.2em 0;
+    letter-spacing: 0.1em;
 }
 
 /*FOOTER*/
@@ -172,11 +181,27 @@ p {
     margin: 20px;
 }
 
-h2 {
-    margin-left: 15px;
-}
-
 blockquote {
     font-weight: bold;
     font-style: italic;
+}
+
+table.table {
+    border-collapse: collapse;
+    border-width: 0 0 1px 1px;
+}
+
+table.table,
+table.table td, table.table th {
+    border-color: #375A80;
+    border-style: solid;
+    border-width: 1px 0px;
+}
+
+table.table td, table.table th {
+    padding: 10px;
+}
+
+table.table th {
+    background-color: #F1F4F7;
 }

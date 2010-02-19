@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 {% block body_title %}{{ forms.form_main.title }}{% endblock %}
 
 {# Last <p > in http://docs.djangoproject.com/en/dev/topics/templates/#id1 #}
@@ -7,7 +7,7 @@
 {% block stepmenu_top %}
 <div class="stepmenu stepmenu-top">
     <ul>
-        <li><a href="{% url registry.edittrial trial_pk %}">index</a></li>
+        <li><a href="{% url registry.edittrial trial_pk %}">{% trans "Summary" %}</a></li>
         {% for link in links %}
         <li><a href="{{link}}">step {{forloop.counter}}</a></li>
         {% endfor %}
@@ -18,6 +18,7 @@
 {% block stepmenu_bottom %}
 <div class="stepmenu stepmenu-bottom">
     <ul>
+        <li><a href="{% url registry.edittrial trial_pk %}">{% trans "Summary" %}</a></li>
         {% for link in links %}
         <li><a href="{{link}}">step {{forloop.counter}}</a></li>
         {% endfor %}
