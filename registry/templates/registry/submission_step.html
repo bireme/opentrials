@@ -7,6 +7,7 @@
 {% block stepmenu_top %}
 <div class="stepmenu stepmenu-top">
     <ul>
+        <li><a href="{% url registry.edittrial trial_pk %}">index</a></li>
         {% for link in links %}
         <li><a href="{{link}}">step {{forloop.counter}}</a></li>
         {% endfor %}
