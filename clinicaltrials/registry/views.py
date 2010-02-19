@@ -99,6 +99,7 @@ def step_1(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
+                               'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[0],
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Sponsors and Sources of Support')})
@@ -145,6 +146,7 @@ def step_2(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
+                               'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[1],
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Health Conditions Form')})
@@ -199,6 +201,7 @@ def step_3(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
+                               'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[2],
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Interventions Form')})
@@ -240,6 +243,7 @@ def step_4(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
+                               'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[3],
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Recruitment Form')})
@@ -266,6 +270,7 @@ def step_5(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
                                'username':request.user.username,
+                               'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[4],
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Study Type Form')})
@@ -292,6 +297,7 @@ def step_6(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'forms':forms,
                                'username':request.user.username,
+                               'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[5],
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Outcomes Form')})
@@ -321,6 +327,7 @@ def step_7(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'formsets':formsets,
                                'username':request.user.username,
+                               'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[6],
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
                                'next_form_title':_('Descriptor Form')})
@@ -380,6 +387,7 @@ def step_8(request, trial_pk):
     return render_to_response('registry/trial_form.html',
                               {'formsets':formsets,
                                'username':request.user.username,
+                               'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[7],
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)]})
 
@@ -429,5 +437,6 @@ def step_9(request, trial_pk):
     return render_to_response('registry/attachments.html',
                               {'formsets':formsets,
                                'username':request.user.username,
+                               'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[8],
                                'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)]})

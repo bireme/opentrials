@@ -37,11 +37,14 @@
 </script>
 
 <form method="post" action="/accounts/newsubmission/">
+    <h2>{% trans "New Submission" %}</h2>
 {% for form in forms %}
-    <h2>{{ form.title }}</h2>
+<fieldset>
+    <legend>{{ form.title }}</legend>
     <table id="table_{{ forloop.counter }}">
         {{ form.as_table }}
     </table>
+</fieldset>
 {% endfor %}
 
 <input name="submit" type="submit" value="{% trans "Submit" %}"/>

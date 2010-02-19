@@ -114,11 +114,19 @@ body {
 
 .stepmenu li {
     display: inline-block;
-    width: 10%;
+    width: 9%;
+    border: 2px solid transparent;
 }
 
 .stepmenu a {
     text-decoration: none;
+    text-transform: capitalize;
+    color: black;
+    font-weight: bold;
+}
+
+.stepmenu li:hover {
+    text-decoration: underline;
 }
 
 .stepmenu-top {
