@@ -10,7 +10,7 @@
 		
 		Comments:
 		  - "TRDS n": field number in the ICTRP Trial Registration Data Set
-		  - "BCTR": field defined in this DTD but not present in the ICTRP DTD
+		  - "RECLAC": field defined in this DTD but not present in the ICTRP DTD
 
 -->
 
@@ -61,26 +61,26 @@
         <!ELEMENT criteria (inclusion_criteria,agemin,agemax,gender,exclusion_criteria)>
             <!ELEMENT inclusion_criteria (#PCDATA)>                     <!--TRDS 14a-->
             <!ELEMENT agemin (#PCDATA)>                                 <!--TRDS 14c-->
-            <!ELEMENT agemin_unit (#PCDATA)>                            <!--BCTR-->
+            <!ELEMENT agemin_unit (#PCDATA)>                            <!--RECLAC-->
             <!ELEMENT agemax (#PCDATA)>                                 <!--TRDS 14d-->
-            <!ELEMENT agemax_unit (#PCDATA)>                            <!--BCTR-->
+            <!ELEMENT agemax_unit (#PCDATA)>                            <!--RECLAC-->
             <!ELEMENT gender (#PCDATA)>                                 <!--TRDS 14b-->
             <!ELEMENT exclusion_criteria (#PCDATA)>                     <!--TRDS 14e-->
 
         <!ELEMENT health_condition_code (hc_code+)>                     <!--TRDS 12b-->
             <!ELEMENT hc_code (#PCDATA)>
-                                                                        <!--BCTR: add descriptor metadata-->
+                                                                        <!--RECLAC: add descriptor metadata-->
 
         <!ELEMENT health_condition_keyword (hc_keyword+)>               <!--TRDS 12c-->
             <!ELEMENT hc_keyword (#PCDATA)>
-                                                                        <!--BCTR: add descriptor metadata-->
+                                                                        <!--RECLAC: add descriptor metadata-->
 
         <!ELEMENT intervention_code (i_code+)>                          <!--TRDS 13b-->
             <!ELEMENT i_code (#PCDATA)>
 
         <!ELEMENT intervention_keyword (i_keyword+)>                    <!--TRDS 13c-->
             <!ELEMENT i_keyword (#PCDATA)>
-                                                                        <!--BCTR: add descriptor metadata-->
+                                                                        <!--RECLAC: add descriptor metadata-->
 
         <!ELEMENT primary_outcome (prim_outcome+)>                      <!--TRDS 19-->
             <!ELEMENT prim_outcome (#PCDATA)>
@@ -90,7 +90,7 @@
 
         <!ELEMENT secondary_sponsor (sponsor_name+)>                    <!--TRDS 6-->
             <!ELEMENT sponsor_name (#PCDATA)>
-                                                                        <!--BCTR: institution fields-->
+                                                                        <!--RECLAC: institution fields-->
 
         <!ELEMENT secondary_ids (secondary_id+)>                        
             <!ELEMENT secondary_id (sec_id,issuing_authority)>
@@ -99,5 +99,5 @@
 
         <!ELEMENT source_support (source_name+)>                        <!--TRDS 4-->
             <!ELEMENT source_name (#PCDATA)>
-                                                                        <!--BCTR: institution fields-->
+                                                                        <!--RECLAC: institution fields-->
 

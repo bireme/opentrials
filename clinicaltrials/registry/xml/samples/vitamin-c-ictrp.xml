@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<trials>
+    <trial>
+        <main>
+            <trial_id>IRCT138708271460N1</trial_id>
+            <utrn/>
+            <reg_name>IRCT</reg_name>
+            <date_registration>2009-02-16</date_registration>
+            <primary_sponsor>Tabriz Univ Med Sci</primary_sponsor>
+            <public_title>
+                Comparison of Ascorbic Acid and Grape Seed Extract in 
+                Oxidative Stress Induced by on Pump Heart Surgery
+            </public_title>
+            <acronym></acronym>
+            <scientific_title>
+                Effect of Ascorbic Acid and Grape Seed Extract 
+                "Vitis Vinifera L." on Oxidative Stress Induced by on Pump 
+                Coronary Artery by Pass Grafting Surgery
+            </scientific_title>
+            <date_enrolment>2008-11-01</date_enrolment>
+            <type_enrolment>anticipated</type_enrolment>
+            <target_size>75</target_size>
+            <recruitment_status>Complete</recruitment_status>
+            <url>http://www.irct.ir/searchresult.php?id=1460&amp;number=1</url>
+            <study_type>interventional</study_type>
+            <study_design>
+                Randomization: randomized.
+                Blinding:  Double blind.
+                Placebo: not used.
+                Assignment: Parallel.
+                Purpose: Supportive care.
+                Other design features:
+            </study_design>
+            <phase>2-3</phase>
+            <hc_freetext>
+                Condition 1: Coronary Atrery Bypass Graft (CABG).
+                Condition 2: Atherosclerotic heart disease.
+                Condition 3: Ischaemic cardiomyopathy.
+            </hc_freetext>
+            <i_freetext>
+                Intervention 1: Control Group: without intervention.
+                Intervention 2: Grape Seed Extract 100 mg/6h.
+                Intervention 3: Vit C 25 mg/kg.
+            </i_freetext>
+        </main>
+        <contacts>
+            <contact>
+                <type>public</type>
+                <firstname>Naser safaei, MD, Surgeon</firstname>
+                <middlename/>
+                <lastname/>
+                <address>Tabriz Univ Med Sci</address>
+                <city>Tabriz</city>
+                <country1>Iran, Islamic Republic Of</country1>
+                <zip>51656-65811</zip>
+                <telephone>+98-411-3357767</telephone>
+                <email>drsafaei@yahoo.com</email>
+                <affiliation>Tabriz Univ Med Sci</affiliation>
+            </contact>
+            <contact>
+                <type>scientific</type>
+                <firstname>Dr Naser Safaei</firstname>
+                <middlename/>
+                <lastname/>
+                <address>Daneshgah St,Tabriz Univ Med Sci</address>
+                <city>Tabriz</city>
+                <country1>Iran, Islamic Republic Of</country1>
+                <zip>51656-65811</zip>
+                <telephone>+98-411-3357767</telephone>
+                <email>drsafaei@yahoo.com</email>
+                <affiliation>Tabriz Univ Med Sci</affiliation>
+            </contact>
+        </contacts>
+        <countries>
+            <country2>Iran, Islamic Republic Of</country2>
+        </countries>
+        <criteria>
+            <inclusion_criteria>
+                Inclusion Criteria: Candidates for elective CABG surgery 
+                with pump for first time, 3 Vessel Disease (3VD). &#xD;
+                Exclusion Criteria: High risk patients, Those who need another 
+                heart surgery beside CABG, Urgent patients Diabetics, Ischemic 
+                time more than 120 min.&#xD;
+            </inclusion_criteria>
+            <agemin>0</agemin>
+            <agemax>150</agemax>
+            <gender>Both male and female</gender>
+            <exclusion_criteria/>
+        </criteria>
+        <health_condition_code>
+            <hc_code/>
+        </health_condition_code>
+        <health_condition_keyword>
+            <hc_keyword>Ischaemic heart diseases</hc_keyword>
+            <hc_keyword>Atherosclerotic heart disease</hc_keyword>
+            <hc_keyword>Ischaemic cardiomyopathy</hc_keyword>
+        </health_condition_keyword>
+        <intervention_code>
+            <i_code>Not applicable</i_code>
+            <i_code>Treatment: drugs</i_code>
+            <i_code>Treatment: drugs</i_code>
+            <i_code></i_code>
+        </intervention_code>
+        <intervention_keyword>
+            <i_keyword></i_keyword>
+        </intervention_keyword>
+        <primary_outcome>
+            <prim_outcome>
+                Left Ventricular Ejection Fraction (LVEF).
+                Timepoint: Before and after CABG. 
+                Method of measurement: Trans Thoracic Echocardiography (TTE)
+            </prim_outcome>
+        </primary_outcome>
+        <secondary_outcome>
+            <sec_outcome>
+                Total Antioxidant Capacity (TAC).
+                Timepoint: Before, middle and after CABG.
+                Method of measurement: Biochemistry (blood sample)
+            </sec_outcome>
+        </secondary_outcome>
+        <secondary_sponsor>
+            <sponsor_name></sponsor_name>
+        </secondary_sponsor>
+        <secondary_ids>
+            <secondary_id>
+                <sec_id>NCT00839085</sec_id>
+                <issuing_authority>ClinicalTrials.gov</issuing_authority>
+            </secondary_id>
+        </secondary_ids>
+        <source_support>
+            <source_name>Tabriz University of Medical Sciences</source_name>
+        </source_support>
+    </trial>
+</trials>
