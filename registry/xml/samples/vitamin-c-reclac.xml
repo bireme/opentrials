@@ -30,6 +30,8 @@
                 Assignment: Parallel.
                 Purpose: Supportive care.
                 Other design features:
+                <reclac:study_design>
+                </reclac:study_design>
             </study_design>
             <phase>2-3</phase>
             <hc_freetext reclac:lang="en">
@@ -86,10 +88,9 @@
                 heart surgery beside CABG, Urgent patients Diabetics, Ischemic 
                 time more than 120 min.
             </exclusion_criteria>
-            <agemin>0</agemin>
-            <reclac:agemin_unit>no limit</reclac:agemin_unit>
-            <agemax>150</agemax>
-            <reclac:agemin_unit>no limit</reclac:agemin_unit>
+            <agemin reclac:unit="no-limit">0</agemin>
+            <>no limit</reclac:agemin_unit>
+            <agemax reclac:unit="years">150</agemax>
             <gender>both</gender>
         </criteria>
         <health_condition_code>
