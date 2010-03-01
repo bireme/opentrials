@@ -1,0 +1,79 @@
+		
+		
+<!-- main,contacts,countries,criteria,health_condition_code,health_condition_keyword,intervention_code,
+	  intervention_keyword,primary_outcome,secondary_outcome,secondary_sponsor,,source_support) -->
+
+    <!ELEMENT trial_identification (trial_id,utrn?,reg_name,date_registration,primary_sponsor,public_title,acronym?,,,
+	      date_enrolment,type_enrolment,target_size,recruitment_status,url?,study_type,study_design,phase,hc_freetext?,i_freetext?)>
+	<!ELEMENT trial_id (#PCDATA)>                               <!--TRDS 1a-->
+	<!ELEMENT utrn (#PCDATA)>                                   <!--TRDS 3a/3b-->
+	<!ELEMENT reg_name (#PCDATA)>                               <!--TRDS 1b-->
+	<!ELEMENT date_registration (#PCDATA)><!-- dd/mm/yyyy -->   <!--TRDS 2-->
+	<!ELEMENT primary_sponsor (#PCDATA)>                        <!--TRDS 5-->
+	<!ELEMENT date_enrolment (#PCDATA)><!-- dd/mm/yyyy -->      <!--TRDS 16b-->
+	<!ELEMENT type_enrolment (#PCDATA)>                         <!--TRDS 16a-->
+	<!ELEMENT target_size (#PCDATA)>                            <!--TRDS 17-->
+	<!ELEMENT recruitment_status (#PCDATA)><!-- Pending,Recruiting,Suspended,Complete,Other --><!--TRDS 17-->
+	<!ELEMENT url (#PCDATA)>                                    <!--TRDS A1-->
+	<!ELEMENT study_type (#PCDATA)><!--always interventional--> <!--TRDS 15a-->
+	<!ELEMENT study_design (#PCDATA)>                           <!--TRDS 15b-->
+	<!ELEMENT phase (#PCDATA)>                                  <!--TRDS 15c-->
+	<!ELEMENT hc_freetext (#PCDATA)>                            <!--TRDS 12a-->
+	<!ELEMENT i_freetext (#PCDATA)>                             <!--TRDS 13a-->
+
+    <!ELEMENT contacts (contact+)>                                  <!--TRDS 7, 8-->
+	<!ELEMENT contact (type,firstname,middlename,lastname,address,city,country1,zip,telephone,email,affiliation)>
+	    <!ELEMENT type (#PCDATA)><!-- Public,Scientific -->     
+	    <!ELEMENT firstname (#PCDATA)>
+	    <!ELEMENT middlename (#PCDATA)>
+	    <!ELEMENT lastname (#PCDATA)>
+	    <!ELEMENT address (#PCDATA)>
+	    <!ELEMENT city (#PCDATA)>
+	    <!ELEMENT country1 (#PCDATA)>
+	    <!ELEMENT zip (#PCDATA)>
+	    <!ELEMENT telephone (#PCDATA)>
+	    <!ELEMENT email (#PCDATA)>
+	    <!ELEMENT affiliation (#PCDATA)>
+
+    <!ELEMENT countries (country2+)>                                <!--TRDS 11-->
+	<!ELEMENT country2 (#PCDATA)>
+
+    <!ELEMENT criteria (inclusion_criteria,agemin,agemax,gender,exclusion_criteria)>
+	<!ELEMENT inclusion_criteria (#PCDATA)>                     <!--TRDS 14a-->
+	<!ELEMENT agemin (#PCDATA)>                                 <!--TRDS 14c-->
+	<!ELEMENT agemin_unit (#PCDATA)>                            <!--RECLAC-->
+	<!ELEMENT agemax (#PCDATA)>                                 <!--TRDS 14d-->
+	<!ELEMENT agemax_unit (#PCDATA)>                            <!--RECLAC-->
+	<!ELEMENT gender (#PCDATA)>                                 <!--TRDS 14b-->
+	<!ELEMENT exclusion_criteria (#PCDATA)>                     <!--TRDS 14e-->
+
+    <!ELEMENT health_condition_code (hc_code+)>                     <!--TRDS 12b-->
+	<!ELEMENT hc_code (#PCDATA)>
+								    <!--RECLAC: add descriptor metadata-->
+
+    <!ELEMENT health_condition_keyword (hc_keyword+)>               <!--TRDS 12c-->
+	<!ELEMENT hc_keyword (#PCDATA)>
+								    <!--RECLAC: add descriptor metadata-->
+
+    <!ELEMENT intervention_code (i_code+)>                          <!--TRDS 13b-->
+	<!ELEMENT i_code (#PCDATA)>
+
+    <!ELEMENT intervention_keyword (i_keyword+)>                    <!--TRDS 13c-->
+	<!ELEMENT i_keyword (#PCDATA)>
+								    <!--RECLAC: add descriptor metadata-->
+
+    <!ELEMENT primary_outcome (prim_outcome+)>                      <!--TRDS 19-->
+	<!ELEMENT prim_outcome (#PCDATA)>
+
+    <!ELEMENT secondary_outcome (sec_outcome+)>                     <!--TRDS 20-->
+	<!ELEMENT sec_outcome (#PCDATA)>
+
+    <!ELEMENT secondary_sponsor (sponsor_name+)>                    <!--TRDS 6-->
+	<!ELEMENT sponsor_name (#PCDATA)>
+								    <!--RECLAC: institution fields-->
+
+
+    <!ELEMENT source_support (source_name+)>                        <!--TRDS 4-->
+	<!ELEMENT source_name (#PCDATA)>
+								    <!--RECLAC: institution fields-->
+

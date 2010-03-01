@@ -6,7 +6,7 @@ from django.utils.html import linebreaks
 
 from datetime import datetime
 import string
-from random import choice
+from random import randrange, choice
 from time import sleep
 
 from utilities import safe_truncate
@@ -25,7 +25,7 @@ TRIAL_ID_DIGITS = 6
 TRIAL_ID_TRIES = 3
 
 def generate_trial_id(prefix, num_digits):
-    s = choice(string.digits) # start with a numeric digit
+    s = str(randrange(2,10)) # start with a numeric digit 2...9
     s += ''.join(choice(BASE28) for i in range(1, num_digits))
     return '-'.join([prefix, s[:num_digits/2], s[num_digits/2:]])
 

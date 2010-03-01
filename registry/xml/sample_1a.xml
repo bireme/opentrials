@@ -1,0 +1,22 @@
+<!DOCTYPE trial SYSTEM "reclac.dtd">
+<!--the simplest possible valid RECLAC trial XML-->
+<!--based on data from the ANZCTR; trial: ACTRN12610000133033-->
+<trial type="interventional">
+    <trial_identification>
+      	<!--TRDS 10a (1)-->
+        <scientific_title>Tactile and kinesthetic stimulation program during hospitalization and behavioral analysis in preterm neonates</scientific_title>
+    </trial_identification>
+    <sponsors_and_support>
+	<!--TRDS 5 (1)-->
+	<primary_sponsor country="BR">
+	    <name>Conselho Nacional de Desenvolvimento Cientifico e Tecnologico</name>
+	</primary_sponsor>
+    </sponsors_and_support>
+    <health_conditions>
+	<freetext>preterm neonates</freetext>
+    </health_conditions>
+    <interventions>
+    	<i_code value="behavioural" />
+    </interventions>
+</trial>
+

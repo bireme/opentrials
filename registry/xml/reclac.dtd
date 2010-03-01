@@ -1,103 +1,80 @@
-<!-- 
-		BIREME Clinical Trial Record XML DTD
-		DTD Version 1.0: 2010-02-10
-		
-		See: http://reddes.bvsalud.org/projects/clinical-trials/wiki/RegistrationDataModel
-		
-		This is a superset of
-		WHO ICTRP XML DTD, http://www.who.int/ictrp
-		DTD Version 1.0: 2008-04-23 (with changes up to and including 2008-09-15)
-		
-		Comments:
-		  - "TRDS n": field number in the ICTRP Trial Registration Data Set
-		  - "RECLAC": field defined in this DTD but not present in the ICTRP DTD
+<!-- file reclac.dtd
 
--->
+RECLAC: Latin-American and Caribbean Clinical Trial Record XML DTD
+DTD Version 1.0: 2010-03-01
 
-<!ELEMENT trials (trial+)>
+This DTD depends on the reclac-vocabularies.mod definitions file.
 
-    <!ELEMENT trial (main,contacts,countries,criteria,health_condition_code,health_condition_keyword,intervention_code,
-              intervention_keyword,primary_outcome,secondary_outcome,secondary_sponsor,secondary_ids,source_support)>
+See:
+http://reddes.bvsalud.org/projects/clinical-trials/wiki/RegistrationDataModel
 
-        <!ELEMENT main (trial_id,utrn?,reg_name,date_registration,primary_sponsor,public_title,acronym?,scientific_title,scientific_acronym?,
-                  date_enrolment,type_enrolment,target_size,recruitment_status,url?,study_type,study_design,phase,hc_freetext?,i_freetext?)>
-            <!ELEMENT trial_id (#PCDATA)>                               <!--TRDS 1a-->
-            <!ELEMENT utrn (#PCDATA)>                                   <!--TRDS 3a/3b-->
-            <!ELEMENT reg_name (#PCDATA)>                               <!--TRDS 1b-->
-            <!ELEMENT date_registration (#PCDATA)><!-- dd/mm/yyyy -->   <!--TRDS 2-->
-            <!ELEMENT primary_sponsor (#PCDATA)>                        <!--TRDS 5-->
-            <!ELEMENT public_title (#PCDATA)>                           <!--TRDS 9a-->
-            <!ELEMENT acronym (#PCDATA)>                                <!--TRDS 9b-->
-            <!ELEMENT scientific_title (#PCDATA)>                       <!--TRDS 10a-->
-            <!ELEMENT scientific_acronym (#PCDATA)>                     <!--TRDS 10b-->
-            <!ELEMENT date_enrolment (#PCDATA)><!-- dd/mm/yyyy -->      <!--TRDS 16b-->
-            <!ELEMENT type_enrolment (#PCDATA)>                         <!--TRDS 16a-->
-            <!ELEMENT target_size (#PCDATA)>                            <!--TRDS 17-->
-            <!ELEMENT recruitment_status (#PCDATA)><!-- Pending,Recruiting,Suspended,Complete,Other --><!--TRDS 17-->
-            <!ELEMENT url (#PCDATA)>                                    <!--TRDS A1-->
-            <!ELEMENT study_type (#PCDATA)><!--always interventional--> <!--TRDS 15a-->
-            <!ELEMENT study_design (#PCDATA)>                           <!--TRDS 15b-->
-            <!ELEMENT phase (#PCDATA)>                                  <!--TRDS 15c-->
-            <!ELEMENT hc_freetext (#PCDATA)>                            <!--TRDS 12a-->
-            <!ELEMENT i_freetext (#PCDATA)>                             <!--TRDS 13a-->
+Loosely based on the WHO ICTRP XML DTD, http://www.who.int/ictrp
+DTD Version 1.0: 2008-04-23 (with changes up to and including 2008-09-15)
 
-        <!ELEMENT contacts (contact+)>                                  <!--TRDS 7, 8-->
-            <!ELEMENT contact (type,firstname,middlename,lastname,address,city,country1,zip,telephone,email,affiliation)>
-                <!ELEMENT type (#PCDATA)><!-- Public,Scientific -->     
-                <!ELEMENT firstname (#PCDATA)>
-                <!ELEMENT middlename (#PCDATA)>
-                <!ELEMENT lastname (#PCDATA)>
-                <!ELEMENT address (#PCDATA)>
-                <!ELEMENT city (#PCDATA)>
-                <!ELEMENT country1 (#PCDATA)>
-                <!ELEMENT zip (#PCDATA)>
-                <!ELEMENT telephone (#PCDATA)>
-                <!ELEMENT email (#PCDATA)>
-                <!ELEMENT affiliation (#PCDATA)>
+Most element names are the same. Structure is different.
+This is intended to represent a single trial record.
 
-        <!ELEMENT countries (country2+)>                                <!--TRDS 11-->
-            <!ELEMENT country2 (#PCDATA)>
+Comments:
+  - "TRDS n (x..y)": field number in the ICTRP Trial Registration Data Set
+                     (x..y) indicate element multiplicity in UML notation
+  - "RECLAC": field defined in this DTD but not present in the ICTRP DTD
+=========================================================================== -->
 
-        <!ELEMENT criteria (inclusion_criteria,agemin,agemax,gender,exclusion_criteria)>
-            <!ELEMENT inclusion_criteria (#PCDATA)>                     <!--TRDS 14a-->
-            <!ELEMENT agemin (#PCDATA)>                                 <!--TRDS 14c-->
-            <!ELEMENT agemin_unit (#PCDATA)>                            <!--RECLAC-->
-            <!ELEMENT agemax (#PCDATA)>                                 <!--TRDS 14d-->
-            <!ELEMENT agemax_unit (#PCDATA)>                            <!--RECLAC-->
-            <!ELEMENT gender (#PCDATA)>                                 <!--TRDS 14b-->
-            <!ELEMENT exclusion_criteria (#PCDATA)>                     <!--TRDS 14e-->
+<!ENTITY % vocabularies SYSTEM "reclac-vocabularies.mod">
+%vocabularies;
 
-        <!ELEMENT health_condition_code (hc_code+)>                     <!--TRDS 12b-->
-            <!ELEMENT hc_code (#PCDATA)>
-                                                                        <!--RECLAC: add descriptor metadata-->
+<!ELEMENT trial (trial_identification, sponsors_and_support, health_conditions,
+		 interventions)> <!--, recruitment, study_type, outcomes, contacts, references+) -->
+    <!ATTLIST trial type (interventional) #REQUIRED>
+    <!-- trial record must have explicit attribute type="interventional"
+         in preparation for eventual support for observational trials -->
 
-        <!ELEMENT health_condition_keyword (hc_keyword+)>               <!--TRDS 12c-->
-            <!ELEMENT hc_keyword (#PCDATA)>
-                                                                        <!--RECLAC: add descriptor metadata-->
+    <!ELEMENT trial_identification (scientific_title, scientific_acronym?,
+				    public_title?, acronym?, utn?, reclac_id?,
+				    secondary_ids*)>
 
-        <!ELEMENT intervention_code (i_code+)>                          <!--TRDS 13b-->
-            <!ELEMENT i_code (#PCDATA)>
+	<!ELEMENT scientific_title (#PCDATA)>                       <!--TRDS 10a (1)-->
+	<!ELEMENT scientific_acronym (#PCDATA)>                     <!--TRDS 10b (0..1)-->
+	<!ELEMENT public_title (#PCDATA)>                           <!--TRDS 9a (0..1)-->
+	<!ELEMENT acronym (#PCDATA)>                                <!--TRDS 9b (0..1)-->
+	<!ELEMENT utn (#PCDATA)>                                    <!--TRDS 3 (0..1)-->
+	<!ELEMENT reclac_id (#PCDATA)>                              <!--TRDS 1 (0..1)-->
+	<!ELEMENT secondary_ids (secondary_id+)>
+	    <!ELEMENT secondary_id (sec_id,issuing_authority)>
+		<!ELEMENT sec_id (#PCDATA)>                         <!--TRDS 3a (0..*)-->
+		<!ELEMENT issuing_authority (#PCDATA)>              <!--TRDS 3b (0..*)-->
 
-        <!ELEMENT intervention_keyword (i_keyword+)>                    <!--TRDS 13c-->
-            <!ELEMENT i_keyword (#PCDATA)>
-                                                                        <!--RECLAC: add descriptor metadata-->
+	<!ATTLIST scientific_title lang NMTOKEN "en">
+	<!ATTLIST scientific_acronym lang NMTOKEN "en">
+	<!ATTLIST public_title lang NMTOKEN "en">
+	<!ATTLIST acronym lang NMTOKEN "en">
 
-        <!ELEMENT primary_outcome (prim_outcome+)>                      <!--TRDS 19-->
-            <!ELEMENT prim_outcome (#PCDATA)>
+    <!ELEMENT sponsors_and_support (primary_sponsor, secondary_sponsor*, source_support*)>
+	<!ELEMENT primary_sponsor (name, address?)>                 <!--TRDS 5 (1)-->
+	    <!ATTLIST primary_sponsor
+		country (%countrycode.options;) #REQUIRED>
+	<!ELEMENT secondary_sponsor (name, address?)>               <!--TRDS 6 (0..*)-->
+	    <!ATTLIST secondary_sponsor
+		country (%countrycode.options;) #REQUIRED>
+	<!ELEMENT source_support (name, address?)>                  <!--TRDS 4 (0..*)-->
+	    <!ATTLIST source_support
+		country (%countrycode.options;) #REQUIRED>
+    	    <!ELEMENT name (#PCDATA)>
+	    <!ELEMENT address (#PCDATA)>
 
-        <!ELEMENT secondary_outcome (sec_outcome+)>                     <!--TRDS 20-->
-            <!ELEMENT sec_outcome (#PCDATA)>
+    <!ELEMENT health_conditions (freetext?, hc_code*, keyword*)>
+        <!ELEMENT freetext (#PCDATA)>                               <!--TRDS 12a, 13a (0..1)-->
+        <!ELEMENT hc_code (#PCDATA)>                                <!--TRDS 12b (0..*)-->
+	    <!ATTLIST hc_code
+		vocabulary (%vocabulary.options;) #REQUIRED
+		version CDATA #IMPLIED>
+        <!ELEMENT keyword (#PCDATA)>                                <!--TRDS 12c, 13c (0..*)-->
+	    <!ATTLIST keyword
+		vocabulary (%vocabulary.options;) #REQUIRED
+		version CDATA #IMPLIED>
 
-        <!ELEMENT secondary_sponsor (sponsor_name+)>                    <!--TRDS 6-->
-            <!ELEMENT sponsor_name (#PCDATA)>
-                                                                        <!--RECLAC: institution fields-->
-
-        <!ELEMENT secondary_ids (secondary_id+)>                        
-            <!ELEMENT secondary_id (sec_id,issuing_authority)>
-                <!ELEMENT sec_id (#PCDATA)>                             <!--TRDS 3a-->
-                <!ELEMENT issuing_authority (#PCDATA)>                  <!--TRDS 3b--> 
-
-        <!ELEMENT source_support (source_name+)>                        <!--TRDS 4-->
-            <!ELEMENT source_name (#PCDATA)>
-                                                                        <!--RECLAC: institution fields-->
+    <!ELEMENT interventions (freetext?, i_code*, keyword*)>           <!--TRDS 12a (0..1)-->
+        <!ELEMENT i_code (#PCDATA)>                                   <!--TRDS 12b (0..*)-->
+	    <!ATTLIST i_code
+		value (%interventioncode.options;) #IMPLIED>
 
