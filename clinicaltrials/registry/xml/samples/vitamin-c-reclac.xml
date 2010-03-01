@@ -7,14 +7,14 @@
             <reg_name>IRCT</reg_name>               <!--becomes secondary id-->
             <date_registration>2009-02-16</date_registration> <!--N/U-->
             <primary_sponsor>Tabriz Univ Med Sci</primary_sponsor>
-            <public_title reclac:lang="en">
-                Comparison of Ascorbic Acid and Grape Seed Extract in 
+            <public_title xml:lang="en">
+                Comparison of Ascorbic Acid and Grape Seed Extract in
                 Oxidative Stress Induced by on Pump Heart Surgery
             </public_title>
             <acronym></acronym>
-            <scientific_title reclac:lang="en">
-                Effect of Ascorbic Acid and Grape Seed Extract 
-                "Vitis Vinifera L." on Oxidative Stress Induced by on Pump 
+            <scientific_title xml:lang="en">
+                Effect of Ascorbic Acid and Grape Seed Extract
+                "Vitis Vinifera L." on Oxidative Stress Induced by on Pump
                 Coronary Artery by Pass Grafting Surgery
             </scientific_title>
             <date_enrolment>2008-11-01</date_enrolment>
@@ -23,7 +23,7 @@
             <recruitment_status>Complete</recruitment_status> <!--inconsistent with date and type of enrolment-->
             <url>http://www.irct.ir/searchresult.php?id=1460&amp;number=1</url> <!--N/U-->
             <study_type>interventional</study_type>
-            <study_design reclac:lang="en">
+            <study_design xml:lang="en">
                 Randomization: randomized.
                 Blinding:  Double blind.
                 Placebo: not used.
@@ -34,12 +34,12 @@
                 </reclac:study_design>
             </study_design>
             <phase>2-3</phase>
-            <hc_freetext reclac:lang="en">
+            <hc_freetext xml:lang="en">
                 Condition 1: Coronary Atrery Bypass Graft (CABG).
                 Condition 2: Atherosclerotic heart disease.
                 Condition 3: Ischaemic cardiomyopathy.
             </hc_freetext>
-            <i_freetext reclac:lang="en">
+            <i_freetext xml:lang="en">
                 Intervention 1: Control Group: without intervention.
                 Intervention 2: Grape Seed Extract 100 mg/6h.
                 Intervention 3: Vit C 25 mg/kg.
@@ -79,13 +79,13 @@
             <country2>Iran, Islamic Republic Of</country2>
         </countries>
         <criteria>
-            <inclusion_criteria reclac:lang="en">
-                Candidates for elective CABG surgery 
+            <inclusion_criteria xml:lang="en">
+                Candidates for elective CABG surgery
                 with pump for first time, 3 Vessel Disease (3VD).
             </inclusion_criteria>
-            <exclusion_criteria reclac:lang="en">
-                High risk patients, Those who need another 
-                heart surgery beside CABG, Urgent patients Diabetics, Ischemic 
+            <exclusion_criteria xml:lang="en">
+                High risk patients, Those who need another
+                heart surgery beside CABG, Urgent patients Diabetics, Ischemic
                 time more than 120 min.
             </exclusion_criteria>
             <agemin reclac:unit="no-limit">0</agemin>
@@ -115,7 +115,7 @@
         <primary_outcome>
             <prim_outcome>
                 Left Ventricular Ejection Fraction (LVEF).
-                Timepoint: Before and after CABG. 
+                Timepoint: Before and after CABG.
                 Method of measurement: Trans Thoracic Echocardiography (TTE)
             </prim_outcome>
         </primary_outcome>
