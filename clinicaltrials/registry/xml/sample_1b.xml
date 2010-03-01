@@ -1,0 +1,76 @@
+<!DOCTYPE trial SYSTEM "reclac.dtd">
+<!--a realistic and valid RECLAC trial XML-->
+<!--based on data from the ANZCTR; trial: ACTRN12610000133033-->
+<trial type="interventional">
+    <trial_identification>
+  	<!--TRDS 10a (1)-->
+        <scientific_title>Behavioral analysis of preterm neonates included in a tactile and kinesthetic stimulation program during hospitalization in preterm neonates</scientific_title>
+	<!--TRDS 10b (0-1)-->
+        <scientific_acronym>BATIK</scientific_acronym>
+	<!--TRDS 9a (0-1)-->
+	<public_title>Tactile and kinesthetic stimulation program during hospitalization and behavioral analysis in preterm neonates</public_title>
+	<!--TRDS 9b (0-1)-->
+        <acronym>TAKS</acronym>
+	<!--TRDS 3a/3b (0-1)-->
+	<utn>U9999-9999-0102</utn>
+	<!--TRDS 1 (0-1)-->
+	<reclac_id>RBR-9zz-2bc</reclac_id>
+	<secondary_ids>
+	    <secondary_id>
+		<!--TRDS 3a (0-N)-->
+		<sec_id>ACTRN12610000133033</sec_id>
+		<!--TRDS 3b (0-N)-->
+		<issuing_authority>ANZCTR</issuing_authority>
+	    </secondary_id>
+	</secondary_ids>
+    </trial_identification>
+    <sponsors_and_support>
+	<!--TRDS 5 (1)-->
+	<primary_sponsor country="BR">
+	    <name>Universidade de São Paulo</name>
+	    <address>
+		Rua Prof. Mello Moraes, 1721
+		Cidade Universitaria
+		Sao Paulo, SP, CEP 055508-900
+	    </address>
+	</primary_sponsor>
+	<!--TRDS 6 (0..*)-->
+	<secondary_sponsor country="BR">
+	    <name>Andreia Menandro Ferreira</name>
+	    <address>
+		Rua Cônego Valadão, 1539, apt 53
+		Gopouva,
+		Guarulhos, SP, CEP 07040-000
+	    </address>
+	</secondary_sponsor>
+	<!--TRDS 4 (0..*)-->
+	<source_support country="BR">
+	    <name>Conselho Nacional de Desenvolvimento Cientifico e Tecnologico</name>
+	    <address>
+		SEPN 507 Ed. CNPq - Terreo - Sala 7
+		Brasília, DF, CEP 70740-901
+	    </address>
+	</source_support>
+    </sponsors_and_support>
+    <health_conditions>
+        <!--TRDS 12a (0..1)-->
+	<freetext>preterm neonates</freetext>
+        <!--TRDS 12b (0..*)-->
+	<hc_code vocabulary="decs" version="2009">M01.060.703.520</hc_code>
+        <!--TRDS 12c (0..*)-->
+	<keyword vocabulary="decs">C13.703.420.491.500</keyword>
+    </health_conditions>
+    <interventions>
+        <!--TRDS 13a (0..1)-->
+	<freetext>
+	Stable preterm neonates received tactile and kinesthetic stimulation
+	during hospitalization; by trained author and mothers. With ligth
+	touch and arms and legs mobilization; during 5 to 15 minutes daily,
+	since preterm was clinically stable until hospital discharge.
+	</freetext>
+        <!--TRDS 13b (0..*)-->
+	<i_code value="behavioural" />
+        <!--TRDS 13c (0..*)-->
+	<keyword vocabulary="decs" version="2009">F02.830.816.850</keyword>
+    </interventions>
+</trial>

@@ -1,0 +1,15 @@
+=======================
+Aditional validation
+=======================
+
+Reclac trial XML documents validated through the reclac.dtd should be subject
+to additional checks which cannot be expressed via DTD alone:
+
+- the health_conditions element must contain at least one of its sub-elements: (freetext?, code*, keyword*)
+
+
+======================================
+Updating reclac-vocabularies.mod
+======================================
+
+- options must adhere to XML syntax for tokens (XXX: ellaborate)
