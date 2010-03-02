@@ -1,4 +1,5 @@
-<!-- file reclac-vocabularies.mod
+<!-- ===========================================================================
+File: reclac-vocabularies.mod
 
 RECLAC: Latin-American and Caribbean Clinical Trial Record XML DTD
 DTD Version 1.0: 2010-03-01
@@ -8,6 +9,9 @@ This file should be generated automatically from controlled vocabulary data
 such as those from Vocabulary application.
 =========================================================================== -->
 
+<!ENTITY % language.options
+    "en|es|fr|pt|other">
+
 <!-- TRDS 12, 13: health condition and intervention descriptor attributes -->
 <!ENTITY % vocabulary.options
     "decs|icd10|other">
@@ -16,7 +20,20 @@ such as those from Vocabulary application.
     "drug|device|biological-vaccine|procedure-surgery|radiation|behavioural|
      genetics|dietary-supplement|other">
 
+<!ENTITY % studystatus.options
+    "not-yet-recruiting|withdrawn|recruiting|suspended|terminated|completed|
+     recruitement-completed-and-follow-up-continuing|
+     recruitement-completed-and-follow-up-completed|
+     recruitement-completed-and-data-analysis-completed">
+
+<!ENTITY % ageunit.options
+    "null|years|months|weeks|days|hours">
+
+<!ENTITY % gender.options
+    "female|male|both">
+
 <!-- TRDS 15b: study_design attributes -->
+
 <!ENTITY % purpose.options
     "diagnostic|etiological|prognostic|prevention|treatment|other">
 <!ENTITY % assignment.options
@@ -31,7 +48,14 @@ such as those from Vocabulary application.
     "safety|efficacy|bioequivalence|biodisponibility|
      pharmacokinetics|pharmacodynamics|pharmacogenetics">
 
-<!ENTITY % countrycode.options
+<!-- TRDS 15c -->
+<!ENTITY % phase.options
+    "null|0|1|1-2|2|2-3|3|4">
+
+<!ENTITY % contacttype.options
+    "public|scientific|site">
+
+<!ENTITY % country.options
     "AF|AX|AL|DZ|AS|AD|AO|AI|AQ|AG|AR|AM|AW|AU|AT|AZ|BS|BH|BD|BB|BY|BE|BZ|BJ|
      BM|BT|BO|BA|BW|BV|BR|IO|BN|BG|BF|BI|KH|CM|CA|CV|KY|CF|TD|CL|CN|CX|CC|CO|
      KM|CG|CD|CK|CR|CI|HR|CU|CY|CZ|DK|DJ|DM|DO|EC|EG|SV|GQ|ER|EE|ET|FK|FO|FJ|

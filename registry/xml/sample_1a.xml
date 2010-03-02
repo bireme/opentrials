@@ -8,7 +8,7 @@
     </trial_identification>
     <sponsors_and_support>
 	<!--TRDS 5 (1)-->
-	<primary_sponsor country="BR">
+	<primary_sponsor country_code="BR">
 	    <name>Conselho Nacional de Desenvolvimento Cientifico e Tecnologico</name>
 	</primary_sponsor>
     </sponsors_and_support>
@@ -18,5 +18,50 @@
     <interventions>
     	<i_code value="behavioural" />
     </interventions>
+    <recruitment study_status="completed">
+        <recruitment_country value="BR" />
+	<inclusion_criteria>
+	Stable preterm infants weighing &lt; 2500 grams, with no significant perinatal asphyxia.
+	</inclusion_criteria>
+    </recruitment>
+    <study_type>
+        <study_design>
+	    Thirty-two clinically stable preterm infants weighing &lt; 2500
+	    grams, with no significant perinatal asphyxia, were allocated to
+	    two groups: a control group (CG) in which no intervention was made
+	    (n=16) and a study group (SG) in which the newborn infants received
+	    tactile and kinesthetic stimulation (n=16). Data on the infants’
+	    clinical progress were collected from medical charts and behavioral
+	    evaluations were carried out using a series of weekly, 8-minute
+	    films recorded from study admission until hospital discharge.
+	</study_design>
+    </study_type>
+    <outcomes>
+	<primary_outcome>
+	    Predominance of self-regulated behavior in Behavioral Scale
+	    (adapted from Neonatal Behavioral Assessment Scale NBAS).
+	    Timepoint: every week, at least one week after beggining of
+	    stimulation until hospital discharge.
+	</primary_outcome>
+    </outcomes>
+    <contacts>
+	<public_contact persons="p1"/>
+	<scientific_contact persons="p1"/>
+	<person pid="p1" country_code="BR">
+	    <firstname>Andreia</firstname>
+	    <middlename>Menandro</middlename>
+	    <lastname>Ferreira</lastname>
+	    <address>
+		Rua Cônego Valadão, 1539, apt 53
+		Gopouva
+	    </address>
+	    <city>Guarulhos, SP</city>
+	    <zip>07040-000</zip>
+	    <telephone>+55 (11) 2422-7034</telephone>
+	    <email>andreiamdeia@yahoo.com</email>
+	    <affiliation>Universidade de São Paulo</affiliation>
+	</person>
+    </contacts>
+
 </trial>
 

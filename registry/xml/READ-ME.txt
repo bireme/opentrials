@@ -7,6 +7,8 @@ to additional checks which cannot be expressed via DTD alone:
 
 - the health_conditions element must contain at least one of its sub-elements: (freetext?, code*, keyword*)
 
+- target_size must be a positive integer
+
 
 ======================================
 Updating reclac-vocabularies.mod
