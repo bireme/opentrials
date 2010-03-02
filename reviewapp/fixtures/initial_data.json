@@ -45,6 +45,21 @@
     }
   }, 
   {
+    "pk": 4, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": null, 
+      "title": "ABSORB EXTEND Clinical Investigation: A Continuation in the Clinical Evaluation of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the Treatment of Subjects With de Novo Native Coronary Artery Lesions  ", 
+      "created": "2010-03-02 13:34:30", 
+      "trial": 4, 
+      "updater": null, 
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": 3
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "reviewapp.recruitmentcountry", 
     "fields": {
