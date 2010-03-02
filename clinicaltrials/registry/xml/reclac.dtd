@@ -16,9 +16,9 @@ in the form of attribute enumerations. Also, this is intended to represent a
 single trial record.
 
 Comments:
+  - "formset n/9" refer to each of the 9 trial submission forms
   - "TRDS n (x..y)": field number in the ICTRP Trial Registration Data Set
                      (x..y) indicate element multiplicity in UML notation
-  - "RECLAC": field defined in this DTD but not present in the ICTRP DTD
 =========================================================================== -->
 
 <!ENTITY % vocabularies SYSTEM "reclac-vocabularies.mod">
@@ -96,7 +96,7 @@ Comments:
 			   date_enrolment_actual?)>
         <!ATTLIST recruitment
 		study_status (%studystatus.options;) #REQUIRED>
-	<!ELEMENT recruitment_country EMPTY>                         <!--TRDS 11 (1..*)-->
+	<!ELEMENT recruitment_country EMPTY>                          <!--TRDS 11 (1..*)-->
 	    <!ATTLIST recruitment_country
 		value (%country.options;) #REQUIRED>
         <!ELEMENT target_size (#PCDATA)>
