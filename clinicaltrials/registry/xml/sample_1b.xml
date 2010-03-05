@@ -75,21 +75,19 @@
 	<keyword vocabulary="decs" version="2009">F02.830.816.850</keyword>
     </interventions>
     <recruitment study_status="completed">
-        <!--TRDS 11 (1..*)-->
+        <!--TRDS 11 (1+)-->
         <recruitment_country value="BR" />
-        <!--TRDS 17 (1)-->
-	<target_size>32</target_size>
-        <!--TRDS 14b (1)-->
-	<gender value="both" />
-        <!--TRDS 14c (1)-->
-	<agemin unit="weeks">31</agemin>
-        <!--TRDS 14d (1)-->
-	<agemax unit="weeks">36</agemax>
         <!--TRDS 14a (1)-->
 	<inclusion_criteria>
     	    Stable preterm infants weighing &lt; 2500 grams, with no significant perinatal asphyxia.
 	</inclusion_criteria>
-        <!--TRDS 14e (1)-->
+        <!--TRDS 14b (0..1)-->
+	<gender value="both" />
+        <!--TRDS 14c (0..1)-->
+	<agemin unit="weeks">31</agemin>
+        <!--TRDS 14d (0..1)-->
+	<agemax unit="weeks">36</agemax>
+        <!--TRDS 14e (0..1)-->
 	<exclusion_criteria>
 	    Vision and/or hear disfuction; neurological problems; instable preterms; without family autorization.
 	</exclusion_criteria>
@@ -97,6 +95,8 @@
 	<date_enrolment_anticipated>2004-10-01</date_enrolment_anticipated>
         <!--TRDS 16 (1)-->
 	<date_enrolment_actual>2004-10-01</date_enrolment_actual>
+        <!--TRDS 17 (1)-->
+	<target_size>32</target_size>
     </recruitment>
     <study_type>
         <!--TRDS 15b (1)-->

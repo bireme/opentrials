@@ -25,154 +25,155 @@ Comments:
 %vocabularies;
 
 <!ELEMENT trial (trial_identification, sponsors_and_support, health_conditions,
-		 interventions, recruitment, study_type, outcomes, contacts, references?)>
-    <!ATTLIST trial type (interventional) #REQUIRED>
+          interventions, recruitment, study_type, outcomes, contacts, references?)>
     <!-- trial record must have explicit attribute type="interventional"
-         in preparation for eventual support for observational trials -->
+         in preparation for eventual support for observational studies -->
+    <!ATTLIST trial type (interventional) #REQUIRED>
 
     <!-- formset 1/9 -->
     <!ELEMENT trial_identification (scientific_title, scientific_acronym?,
-				    public_title?, acronym?, utn?, reclac_id?,
-				    secondary_ids*)>
+                    public_title?, acronym?, utn?, reclac_id?,
+                    secondary_ids*)>
 
-	<!ELEMENT scientific_title (#PCDATA)>                       <!--TRDS 10a (1)-->
-	    <!ATTLIST scientific_title
-		lang (%language.options;) #IMPLIED>
-	<!ELEMENT scientific_acronym (#PCDATA)>                     <!--TRDS 10b (0..1)-->
-	    <!ATTLIST scientific_acronym
-		lang (%language.options;) #IMPLIED>
-	<!ELEMENT public_title (#PCDATA)>                           <!--TRDS 9a (0..1)-->
-	    <!ATTLIST public_title
-		lang (%language.options;) #IMPLIED>
-	<!ELEMENT acronym (#PCDATA)>                                <!--TRDS 9b (0..1)-->
-	    <!ATTLIST acronym
-		lang (%language.options;) #IMPLIED>
-	<!ELEMENT utn (#PCDATA)>                                    <!--TRDS 3 (0..1)-->
-	<!ELEMENT reclac_id (#PCDATA)>                              <!--TRDS 1 (0..1)-->
-	<!ELEMENT secondary_ids (secondary_id+)>
-	    <!ELEMENT secondary_id (sec_id,issuing_authority)>
-		<!ELEMENT sec_id (#PCDATA)>                         <!--TRDS 3a (0..*)-->
-		<!ELEMENT issuing_authority (#PCDATA)>              <!--TRDS 3b (0..*)-->
+    <!ELEMENT scientific_title (#PCDATA)>                       <!--TRDS 10a (1)-->
+        <!ATTLIST scientific_title
+            lang (%language.options;) #IMPLIED>
+    <!ELEMENT scientific_acronym (#PCDATA)>                     <!--TRDS 10b (0..1)-->
+        <!ATTLIST scientific_acronym
+            lang (%language.options;) #IMPLIED>
+    <!ELEMENT public_title (#PCDATA)>                           <!--TRDS 9a (0..1)-->
+        <!ATTLIST public_title
+            lang (%language.options;) #IMPLIED>
+    <!ELEMENT acronym (#PCDATA)>                                <!--TRDS 9b (0..1)-->
+        <!ATTLIST acronym
+            lang (%language.options;) #IMPLIED>
+    <!ELEMENT utn (#PCDATA)>                                    <!--TRDS 3 (0..1)-->
+    <!ELEMENT reclac_id (#PCDATA)>                              <!--TRDS 1 (0..1)-->
+    <!ELEMENT secondary_ids (secondary_id+)>
+        <!ELEMENT secondary_id (sec_id,issuing_authority)>
+        <!ELEMENT sec_id (#PCDATA)>                         <!--TRDS 3a (0..*)-->
+        <!ELEMENT issuing_authority (#PCDATA)>              <!--TRDS 3b (0..*)-->
 
     <!-- formset 2/9 -->
     <!ELEMENT sponsors_and_support (primary_sponsor, secondary_sponsor*, source_support*)>
-	<!ELEMENT primary_sponsor (name, address?)>                 <!--TRDS 5 (1)-->
-	    <!ATTLIST primary_sponsor
-		country_code (%country.options;) #REQUIRED>
-	<!ELEMENT secondary_sponsor (name, address?)>               <!--TRDS 6 (0..*)-->
-	    <!ATTLIST secondary_sponsor
-		country_code (%country.options;) #REQUIRED>
-	<!ELEMENT source_support (name, address?)>                  <!--TRDS 4 (0..*)-->
-	    <!ATTLIST source_support
-		country_code (%country.options;) #REQUIRED>
-    	    <!ELEMENT name (#PCDATA)>
-	    <!ELEMENT address (#PCDATA)>
+    <!ELEMENT primary_sponsor (name, address?)>                 <!--TRDS 5 (1)-->
+        <!ATTLIST primary_sponsor
+            country_code (%country.options;) #REQUIRED>
+    <!ELEMENT secondary_sponsor (name, address?)>               <!--TRDS 6 (0..*)-->
+        <!ATTLIST secondary_sponsor
+            country_code (%country.options;) #REQUIRED>
+    <!ELEMENT source_support (name, address?)>                  <!--TRDS 4 (0..*)-->
+        <!ATTLIST source_support
+            country_code (%country.options;) #REQUIRED>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT address (#PCDATA)>
 
     <!-- formset 3/9 -->
     <!ELEMENT health_conditions (freetext?, hc_code*, keyword*)>
         <!ELEMENT freetext (#PCDATA)>                               <!--TRDS 12a, 13a (0..1)-->
-	    <!ATTLIST freetext
-		lang (%language.options;) #IMPLIED>
+            <!ATTLIST freetext
+                lang (%language.options;) #IMPLIED>
         <!ELEMENT hc_code (#PCDATA)>                                <!--TRDS 12b (0..*)-->
-	    <!ATTLIST hc_code
-		vocabulary (%vocabulary.options;) #REQUIRED
-		version CDATA #IMPLIED>
+            <!ATTLIST hc_code
+                vocabulary (%vocabulary.options;) #IMPLIED
+                version CDATA #IMPLIED>
         <!ELEMENT keyword (#PCDATA)>                                <!--TRDS 12c, 13c (0..*)-->
-	    <!ATTLIST keyword
-		vocabulary (%vocabulary.options;) #REQUIRED
-		version CDATA #IMPLIED>
+            <!ATTLIST keyword
+                vocabulary (%vocabulary.options;) #IMPLIED
+                version CDATA #IMPLIED>
 
     <!-- formset 4/9 -->
     <!ELEMENT interventions (freetext?, i_code*, keyword*)>           <!--TRDS 12a (0..1)-->
         <!ELEMENT i_code (#PCDATA)>                                   <!--TRDS 12b (0..*)-->
-	    <!ATTLIST i_code
-		value (%interventioncode.options;) #IMPLIED>
+        <!ATTLIST i_code
+        value (%interventioncode.options;) #IMPLIED>
 
     <!-- formset 5/9 -->
-    <!ELEMENT recruitment (recruitment_country+, target_size?,
-                           gender?, agemin?, agemax?,
-                           inclusion_criteria, exclusion_criteria?,
-			   date_enrolment_anticipated?,
-			   date_enrolment_actual?)>
+    <!ELEMENT recruitment (recruitment_country+,
+                           inclusion_criteria, gender?, agemin?, agemax?,
+                           exclusion_criteria?,
+                           date_enrolment_anticipated?,
+                           date_enrolment_actual?,
+                           target_size?)>
         <!ATTLIST recruitment
-		study_status (%studystatus.options;) #REQUIRED>
-	<!ELEMENT recruitment_country EMPTY>                          <!--TRDS 11 (1..*)-->
-	    <!ATTLIST recruitment_country
-		value (%country.options;) #REQUIRED>
-        <!ELEMENT target_size (#PCDATA)>
-	<!ELEMENT gender EMPTY>
-	    <!ATTLIST gender
-		value (%gender.options;) #REQUIRED>
-	<!ELEMENT agemin (#PCDATA)>
-	    <!ATTLIST agemin
-		unit (%ageunit.options;) #REQUIRED>
-	<!ELEMENT agemax (#PCDATA)>
-	    <!ATTLIST agemax
-		unit (%ageunit.options;) #REQUIRED>
-	<!ELEMENT inclusion_criteria (#PCDATA)>
-	    <!ATTLIST inclusion_criteria
-		lang (%language.options;) #IMPLIED>
-	<!ELEMENT exclusion_criteria (#PCDATA)>
-	    <!ATTLIST exclusion_criteria
-		lang (%language.options;) #IMPLIED>
-	<!ELEMENT date_enrolment_anticipated (#PCDATA)> <!--ISO-8601 date format: YYYY-MM-DD-->
-	<!ELEMENT date_enrolment_actual (#PCDATA)>      <!--ISO-8601 date format: YYYY-MM-DD-->
+            study_status (%studystatus.options;) #REQUIRED>
+    <!ELEMENT recruitment_country EMPTY>                          <!--TRDS 11 (1..*)-->
+        <!ATTLIST recruitment_country
+            value (%country.options;) #REQUIRED>
+    <!ELEMENT inclusion_criteria (#PCDATA)>                       <!--TRDS 14a (1)-->
+        <!ATTLIST inclusion_criteria
+            lang (%language.options;) #IMPLIED>
+    <!ELEMENT gender EMPTY>                                       <!--TRDS 14b (0..1)-->
+        <!ATTLIST gender
+            value (%gender.options;) #REQUIRED>
+    <!ELEMENT agemin (#PCDATA)>                                   <!--TRDS 14c (0..1)-->
+        <!ATTLIST agemin
+            unit (%ageunit.options;) #REQUIRED>
+    <!ELEMENT agemax (#PCDATA)>                                   <!--TRDS 14d (0..1)-->
+        <!ATTLIST agemax
+            unit (%ageunit.options;) #REQUIRED>
+    <!ELEMENT exclusion_criteria (#PCDATA)>                       <!--TRDS 14e (0..1)-->
+        <!ATTLIST exclusion_criteria
+            lang (%language.options;) #IMPLIED>
+    <!ELEMENT date_enrolment_anticipated (#PCDATA)> <!--ISO-8601 date format: YYYY-MM-DD-->
+    <!ELEMENT date_enrolment_actual (#PCDATA)>      <!--ISO-8601 date format: YYYY-MM-DD-->
+    <!ELEMENT target_size (#PCDATA)>
 
     <!-- formset 6/9 -->
     <!ELEMENT study_type (study_design, study_endpoint*, phase?)>
-    	<!ELEMENT phase EMPTY>
-	    <!ATTLIST phase
-		value (%phase.options;) #REQUIRED>
-	<!ELEMENT study_design (#PCDATA)>
-	    <!ATTLIST study_design
-		lang (%language.options;) #IMPLIED
-		expanded_access_program (yes|no) #IMPLIED
-		purpose (%purpose.options;) #IMPLIED
-		intervention_assignment (%assignment.options;) #IMPLIED
-		number_of_arms NMTOKEN #IMPLIED
-		masking (%masking.options;) #IMPLIED
-		allocation (%allocation.options;) #IMPLIED
-	    >
-	<!ELEMENT study_endpoint EMPTY>
-	    <!ATTLIST study_endpoint
-		value (%endpoint.options;) #REQUIRED>
+        <!ELEMENT study_design (#PCDATA)>
+            <!ATTLIST study_design
+                lang (%language.options;) #IMPLIED
+                expanded_access_program (yes|no) #IMPLIED
+                purpose (%purpose.options;) #IMPLIED
+                intervention_assignment (%assignment.options;) #IMPLIED
+                number_of_arms NMTOKEN #IMPLIED
+                masking (%masking.options;) #IMPLIED
+                allocation (%allocation.options;) #IMPLIED
+            >
+        <!ELEMENT study_endpoint EMPTY>                           <!--TRDS 15b (0..1)-->
+            <!ATTLIST study_endpoint
+                value (%endpoint.options;) #REQUIRED>
+        <!ELEMENT phase EMPTY>                                    <!--TRDS 15c (0..1)-->
+        <!ATTLIST phase
+            value (%phase.options;) #REQUIRED>
 
     <!-- formset 7/9 -->
     <!ELEMENT outcomes (primary_outcome+, secondary_outcome*)>
-	<!ELEMENT primary_outcome (#PCDATA)>
-	    <!ATTLIST primary_outcome
-		lang (%language.options;) #IMPLIED>
-	<!ELEMENT secondary_outcome (#PCDATA)>
-	    <!ATTLIST secondary_outcome
-		lang (%language.options;) #IMPLIED>
+    <!ELEMENT primary_outcome (#PCDATA)>
+        <!ATTLIST primary_outcome
+            lang (%language.options;) #IMPLIED>
+    <!ELEMENT secondary_outcome (#PCDATA)>
+        <!ATTLIST secondary_outcome
+            lang (%language.options;) #IMPLIED>
 
     <!-- formset 8/9 -->
     <!ELEMENT contacts (public_contact, scientific_contact, site_contact?, person+)>
-	<!ELEMENT public_contact EMPTY>
-	    <!ATTLIST public_contact
-		persons IDREFS #REQUIRED>
-	<!ELEMENT scientific_contact EMPTY>
-	    <!ATTLIST scientific_contact
-		persons IDREFS #REQUIRED>
-	<!ELEMENT site_contact EMPTY>
-	    <!ATTLIST site_contact
-		persons IDREFS #REQUIRED>
+    <!ELEMENT public_contact EMPTY>
+        <!ATTLIST public_contact
+            persons IDREFS #REQUIRED>
+    <!ELEMENT scientific_contact EMPTY>
+        <!ATTLIST scientific_contact
+            persons IDREFS #REQUIRED>
+    <!ELEMENT site_contact EMPTY>
+        <!ATTLIST site_contact
+            persons IDREFS #REQUIRED>
 
-	<!ELEMENT person (firstname,middlename?,lastname,address,city,zip,telephone+,email,affiliation)>
-	    <!ATTLIST person
-		pid ID #REQUIRED
-		country_code (%country.options;) #REQUIRED>
-	    <!ELEMENT firstname (#PCDATA)>
-	    <!ELEMENT middlename (#PCDATA)>
-	    <!ELEMENT lastname (#PCDATA)>
-	    <!ELEMENT address (#PCDATA)>
-	    <!ELEMENT city (#PCDATA)>
-	    <!ELEMENT zip (#PCDATA)>
-	    <!ELEMENT telephone (#PCDATA)>
-	    <!ELEMENT email (#PCDATA)>
-	    <!ELEMENT affiliation (#PCDATA)>
+    <!ELEMENT person (firstname,middlename?,lastname,address,city,zip,telephone+,email,affiliation)>
+        <!ATTLIST person
+            pid ID #REQUIRED
+            country_code (%country.options;) #REQUIRED>
+        <!ELEMENT firstname (#PCDATA)>
+        <!ELEMENT middlename (#PCDATA)>
+        <!ELEMENT lastname (#PCDATA)>
+        <!ELEMENT address (#PCDATA)>
+        <!ELEMENT city (#PCDATA)>
+        <!ELEMENT zip (#PCDATA)>
+        <!ELEMENT telephone (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+        <!ELEMENT affiliation (#PCDATA)>
 
     <!-- formset 9/9 -->
     <!ELEMENT references (link*)>
         <!ELEMENT link (#PCDATA)>
-	    <!ATTLIST link url CDATA #REQUIRED>
+        <!ATTLIST link url CDATA #REQUIRED>
