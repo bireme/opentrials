@@ -90,6 +90,7 @@ INSTALLED_APPS = (
     'tickets',
     'assistance',
     'rosetta',
+    'decsclient',
 )
 
 CHECKED_LANGUAGES = set((u'EN', u'ES', u'FR', u'PT'))
