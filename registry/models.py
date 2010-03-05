@@ -18,7 +18,7 @@ from registry import choices
 
 # remove digits that look like letters and vice-versa
 # remove vowels to avoid forming words
-BASE28 = ''.join(d for d in string.digits+string.ascii_lowercase 
+BASE28 = ''.join(d for d in string.digits+string.ascii_lowercase
                    if d not in '1l0aeiou')
 TRIAL_ID_PREFIX = 'RBR'
 TRIAL_ID_DIGITS = 6
@@ -45,7 +45,7 @@ class TrialRegistrationDataSetModel(models.Model):
                 if u'\n' in content:
                     content = linebreaks(content)
             html.append('<tr><th>%s</th><td>%s</td></tr>' % (field.name, content))
-        if follow_sets:    
+        if follow_sets:
             for field_name in dir(self):
                 try:
                     value = getattr(self, field_name)
@@ -56,11 +56,11 @@ class TrialRegistrationDataSetModel(models.Model):
                         inner_html = []
                         for rel_value in value.all():
                             id = '#%s' % rel_value.pk
-                            if (hasattr(rel_value, 'html_dump') and 
+                            if (hasattr(rel_value, 'html_dump') and
                                     (rel_value.__class__.__name__ not in seen)):
                                 seen.add(rel_value.__class__.__name__)
                                 content = '<table>%s</table>' % rel_value.html_dump(seen, follow_sets=False)
-                            else:    
+                            else:
                                 content = unicode(rel_value)
                             if u'\n' in content:
                                 content = linebreaks(content)
@@ -69,8 +69,8 @@ class TrialRegistrationDataSetModel(models.Model):
                         html.append('<tr><th>%s</th><td>%s</td></tr>' % (field_name, content))
 
         return '\n'.join(html)
-    
-    
+
+
     class Meta:
         abstract = True
 
@@ -90,10 +90,10 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     # TRDS 5
     primary_sponsor = models.OneToOneField('Institution', null=True, blank=True,
                                         verbose_name=_('Primary Sponsor'))
-
+    # TRDS 7
     public_contact = models.ManyToManyField('Contact', through='PublicContact',
                                             related_name='public_contact_of_set')
-
+    # TRDS 8
     scientific_contact = models.ManyToManyField('Contact', through='ScientificContact',
                                             related_name='scientific_contact_of_set')
 
@@ -142,6 +142,21 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     # TRDS 15b
     study_design = models.TextField(_('Study Design'), blank=True,
                                           max_length=1000)
+
+    #expanded_access_program (yes|no) #IMPLIED
+    #purpose (%purpose.options;) #IMPLIED
+    #intervention_assignment (%assignment.options;) #IMPLIED
+    #number_of_arms NMTOKEN #IMPLIED
+    #masking (%masking.options;) #IMPLIED
+    #allocation (%allocation.options;) #IMPLIED
+
+    purpose = models.ForeignKey(StudyPurpose, null=True, blank=True,
+                                           verbose_name=_('Study Purpose'))
+
+
+
+
+
     # TRDS 15c
     phase = models.ForeignKey(StudyPhase, null=True, blank=True,
                               verbose_name=_('Study Phase'))
@@ -162,7 +177,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
                                            verbose_name=_('Recruitment Status'))
 
     # TRDS 11 - Countries of Recruitment
-    recruitment_country = models.ManyToManyField(CountryCode, 
+    recruitment_country = models.ManyToManyField(CountryCode,
         help_text=u'Several countries may be selected, one at a time')
 
     ################################### internal use, administrative fields ###
@@ -192,9 +207,9 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
                         sleep(2**i) # wait to try again
                     else:
                         raise # all tries exhausted: give up
-                else:    
+                else:
                     break # no need to try again
-        else:    
+        else:
             super(ClinicalTrial, self).save()
 
     def identifier(self):
@@ -258,7 +273,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
             level  = 'specific'
         '''
         return self.related_health_conditions('HealthCondition','specific')
-    
+
     #TRDS 13b - Invetion Code
     def intervention_code(self):
         ''' return set of Intervention Code related to this trial with

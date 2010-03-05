@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 # Django settings for clinicaltrials project.
 
 import os
@@ -94,7 +95,8 @@ INSTALLED_APPS = (
 )
 
 CHECKED_LANGUAGES = set((u'EN', u'ES', u'FR', u'PT'))
+SITE_TITLE = u'Registro Brasileiro de Ensaios Clínicos'
 
-# There *must* be an unversioned settings_local.py file in the 
+# There *must* be an unversioned settings_local.py file in the
 # current directory. See sample file at settings_local-SAMPLE.py
 execfile(os.path.join(PROJECT_PATH,'settings_local.py'))
