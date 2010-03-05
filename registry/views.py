@@ -198,7 +198,7 @@ def step_3(request, trial_pk):
 
     forms = [form]
     formsets = [gdesc, sdesc]
-    return render_to_response('registry/trial_form.html',
+    return render_to_response('registry/step_3.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
                                'trial_pk':trial_pk,

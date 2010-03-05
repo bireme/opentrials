@@ -25,6 +25,8 @@ urlpatterns = patterns('',
     # Diagnostic views
     url(r'^smoke/', utilities.smoke_test),
     url(r'^req_dump/', utilities.req_dump),
+
+    url(r'^decs/', include('clinicaltrials.decsclient.urls')),
 )
 
 from django.conf import settings
