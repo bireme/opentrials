@@ -2351,6 +2351,150 @@
   }, 
   {
     "pk": 1, 
+    "model": "vocabulary.studypurpose", 
+    "fields": {
+      "description": "", 
+      "label": "diagnostic"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.studypurpose", 
+    "fields": {
+      "description": "", 
+      "label": "etiological"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.studypurpose", 
+    "fields": {
+      "description": "", 
+      "label": "prognostic"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "vocabulary.studypurpose", 
+    "fields": {
+      "description": "", 
+      "label": "prevention"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "vocabulary.studypurpose", 
+    "fields": {
+      "description": "", 
+      "label": "treatment"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "vocabulary.studypurpose", 
+    "fields": {
+      "description": "", 
+      "label": "other"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "vocabulary.interventionassigment", 
+    "fields": {
+      "description": "", 
+      "label": "single-group"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.interventionassigment", 
+    "fields": {
+      "description": "", 
+      "label": "parallel"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.interventionassigment", 
+    "fields": {
+      "description": "", 
+      "label": "cross-over"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "vocabulary.interventionassigment", 
+    "fields": {
+      "description": "", 
+      "label": "factorial"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "vocabulary.interventionassigment", 
+    "fields": {
+      "description": "", 
+      "label": "other"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "vocabulary.studymasking", 
+    "fields": {
+      "description": "", 
+      "label": "open"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.studymasking", 
+    "fields": {
+      "description": "", 
+      "label": "single-blind"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.studymasking", 
+    "fields": {
+      "description": "", 
+      "label": "double-blind"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "vocabulary.studymasking", 
+    "fields": {
+      "description": "", 
+      "label": "triple-blind"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "vocabulary.studyallocation", 
+    "fields": {
+      "description": "", 
+      "label": "non-randomized-controlled"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.studyallocation", 
+    "fields": {
+      "description": "", 
+      "label": "randomized-controlled"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.studyallocation", 
+    "fields": {
+      "description": "", 
+      "label": "single-arm-study"
+    }
+  }, 
+  {
+    "pk": 1, 
     "model": "vocabulary.studyphase", 
     "fields": {
       "description": "not applicable", 

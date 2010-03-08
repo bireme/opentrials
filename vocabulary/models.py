@@ -7,7 +7,7 @@ from utilities import safe_truncate
 
 class SimpleVocabulary(models.Model):
     label = models.CharField(_('Label'), max_length=255, unique=True)
-    description = models.TextField(_('Description'), max_length=2000, 
+    description = models.TextField(_('Description'), max_length=2000,
                                    blank=True)
     class Meta:
         abstract = True
@@ -15,13 +15,13 @@ class SimpleVocabulary(models.Model):
 
     def __unicode__(self):
         return self.label
-          
+
     @classmethod
     def choices(cls):
         return ( (term.id, term.label) for term in cls.objects.all() )
 
 class CountryCode(SimpleVocabulary):
-    ''' TRDS 11, Countries of Recruitment 
+    ''' TRDS 11, Countries of Recruitment
         also used for Contacts and Institutions
     '''
 
@@ -29,19 +29,19 @@ class CountryCode(SimpleVocabulary):
         ordering = ['description']
 
     language = models.CharField(_('Required Language'), max_length=2, blank=True)
-    
+
     def __unicode__(self):
         return self.description
-    
+
     @classmethod
     def choices(cls):
         return ( (cc.id, cc.description) for cc in cls.objects.all() )
-    
+
 class TrialNumberIssuingAuthority(SimpleVocabulary):
     ''' TRDS 3a '''
     class Meta:
         verbose_name_plural = _('Trial number issuing authorities')
-        
+
     @classmethod
     def choices(cls):
         return ( (term.label, term.label) for term in cls.objects.all() )
@@ -50,29 +50,41 @@ class InterventionCode(SimpleVocabulary):
     ''' TRDS 18 '''
 
 class StudyType(SimpleVocabulary):
-    ''' TRDS 15 '''
-    
+    ''' TRDS 15a '''
+
+class StudyPurpose(SimpleVocabulary):
+    ''' TRDS 15b '''
+
+class InterventionAssigment(SimpleVocabulary):
+    ''' TRDS 15b '''
+
+class StudyMasking(SimpleVocabulary):
+    ''' TRDS 15b '''
+
+class StudyAllocation(SimpleVocabulary):
+    ''' TRDS 15b '''
+
 class StudyPhase(SimpleVocabulary):
-    ''' TRDS 15 '''
-    
+    ''' TRDS 15c '''
+
 class RecruitmentStatus(SimpleVocabulary):
     ''' TRDS 18 '''
 
     class Meta:
         verbose_name_plural = _('Recruitment status')
-    
+
 class DecsDisease(SimpleVocabulary):
     ''' TRDS 12 '''
-    
+
     def __unicode__(self):
         return self.description
 
 class IcdChapter(SimpleVocabulary):
     ''' TRDS 12 '''
-    
+
     def __unicode__(self):
         return self.description
-        
+
 class AttachmentType(SimpleVocabulary):
     ''' Types of documents attached to Clinical Trial records '''
-        
+
