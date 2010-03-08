@@ -2,6 +2,7 @@
 # Django settings for clinicaltrials project.
 
 import os
+from django.utils.translation import ugettext_lazy as _
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -92,9 +93,17 @@ INSTALLED_APPS = (
     'assistance',
     'rosetta',
     'decsclient',
+    'polyglot',
 )
 
-CHECKED_LANGUAGES = set((u'EN', u'ES', u'FR', u'PT'))
+MANAGED_LANGUAGES = (
+    ('en',_('English')),
+    ('es',_('Spanish')),
+    ('fr',_('French')),
+    ('pt',_('Portuguese')),
+)
+TARGET_LANGUAGES = MANAGED_LANGUAGES[1:]
+CHECKED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES]
 SITE_TITLE = u'Registro Brasileiro de Ensaios Clínicos'
 DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
 

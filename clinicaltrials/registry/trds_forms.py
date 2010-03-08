@@ -129,7 +129,7 @@ class TrialIdentificationForm(ReviewModelForm):
 
 class SecondaryIdForm(ReviewModelForm):
     title = _('Secondary Identifying Numbers')
-    ''' this is just to inherit the custom _html_output and as_table methods '''
+    # this is just to inherit the custom _html_output and as_table methods
 
 
 #step2
