@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <title>DeCS Client Search-test Interface</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <script type="text/javascript" src="/static/js/jquery-1.3.1.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("input#submit").click(function(){
+                    $.get("/decs/search/"
+                            +$("select#lang").attr("value")   +'/'
+                            +$("select#prefix").attr("value") +'/'
+                            +$("input#search").attr("value"),
+                        '',
+                        function(data){
+                            $("span#total").html("Total: "+data.length);
+                            $("tbody#result").html("");
+                            for(var i in data){
+                                $("<tr>").appendTo("tbody#result")
+                                    .append("<td>"+data[i].fields.description+"</td>")
+                                    .append("<td>"+data[i].fields.label+"</td>");
+                            }
+                            $("div#jsonstring").html(data.toSource());
+                            if(window.console !== undefined){
+                                window.decsclient_response = data;
+                                window.console.warn(window.decsclient_response);
+                            }
+                        },
+                        'json'
+                    );
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>DeCS Client Search-test Interface</h1>
+
+        <h2>Search form</h2>
+        <form method="get" action="">
+            <fieldset>
+                <legend>Complete the form</legend>
+
+                <br/>
+                <label>Search term</label><br/>
+                <input type="text" id="search"/><br/>
+
+                <br/>
+                <label>Lang</label><br/>
+                <select id="lang">
+                    <option value="en" selected="selected">en</option>
+                    <option value="es">es</option>
+                    <option value="pt">pt</option>
+                </select><br/>
+
+                <br/>
+                <label>Prefix</label><br/>
+                <select id="prefix">
+                    <optgroup label="whole field">
+                        <option value="101">101 whole field, authorized term</option>
+                        <option value="102">102 whole field, synonyms</option>
+                        <option value="104">103 whole field, historical terms</option>
+                        <option value="103">104 whole field, authorized term and synonyms</option>
+                        <option value="105">105 whole field, authorized term and historical terms</option>
+                        <option value="106">106 whole field, synonyms and historical terms</option>
+                        <option value="107">107 whole field, authorized term, synonyms and historical terms</option>
+                    </optgroup>
+                    <optgroup label="word by word">
+                        <option value="401">401 word by word, authorized term</option>
+                        <option value="402">402 word by word, synonyms</option>
+                        <option value="403">403 word by word, authorized term and synonyms</option>
+                        <option value="404">404 word by word, historical terms</option>
+                        <option value="405">405 word by word, authorized term and historical terms</option>
+                        <option value="406">406 word by word, synonyms and historical terms</option>
+                        <option value="407">407 word by word, authorized termsynonyms and historical terms </option>
+                    </optgroup>
+                </select><br/>
+                <br/>
+
+                <input id="submit" type="button" value="Search"/>
+            </fieldset>
+        </form>
+
+        <h2>Result list</h2>
+        <span id="total">Total: </span>
+        <table id="result" width="100%" border="1" align="left">
+            <thead>
+                <tr>
+                    <th>Term</th>
+                    <th>Code</th>
+                </tr>
+            </thead>
+            <tbody id="result">
+
+            </tbody>
+        </table>
+
+        <h2>Json String</h2>
+        <div id="jsonstring">
+            
+        </div>
+    </body>
+</html>

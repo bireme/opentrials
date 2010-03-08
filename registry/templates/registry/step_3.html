@@ -14,26 +14,27 @@
 
             $("div.g select").change(function() {
                 this.parentNode.className = "";
-                if(this.value == 'DeCS'){
+                if(this.value === 'DeCS'){
                     this.parentNode.className = "showdecs";
-                    var curset = this.id.match(/_.+\d+/)[0];
-                    if($("select#combodecs"+curset).length == 0){
-                        $('<div class="decstools" id="decstools'+curset+'">').appendTo(this.parentNode);
-                        $.get("/decs/getterm/en/",'',
+                    var curset = this.id.match(/_.+\d+/)[0]; // get django formset prefix
+                    if($("select#combodecs"+curset).length === 0){
+                        $('<div class="decstools" id="decstools'+curset+'">')
+                            .appendTo(this.parentNode)
+                            .append('<select id="combodecs'+curset+'">');
+
+                        $.get("/decs/getterm/en/",'', // TODO: Replace absolute path
                             function(data){
-                                var select= $('<select id="combodecs'+curset+'">');
                                 for(var i=0; i<data.length;i++){
                                     $("<option>").attr("value",data[i].fields.label)
                                         .html(data[i].fields.description)
-                                        .appendTo(select);
+                                        .appendTo('#combodecs'+curset);
                                 }
-                                $(select).change(function(){
+                                $('#combodecs'+curset).change(function(){
                                     $("input#id"+curset+"-code")
                                         .attr("value",this.value);
                                     $("input#id"+curset+"-text")
                                         .attr("value",$(this).find("option[selected]").html());
                                 });
-                                $("#decstools"+curset).append(select);
                             },
                             "json"
                         );
@@ -43,29 +44,30 @@
 
             $("div.s select").change(function() {
                 this.parentNode.className = "";
-                if(this.value == 'DeCS'){
+                if(this.value === 'DeCS'){
                     this.parentNode.className = "showdecs";
                     var curset = this.id.match(/_.+\d+/)[0];
-                    if($("input#searchdecs"+curset).length == 0){
+                    if($("input#searchdecs"+curset).length === 0){
                         $('<div class="decstools" id="decstools'+curset+'">')
                            .appendTo(this.parentNode)
                            .append('<input class="text" type="text" id="searchdecs'+curset+'">');
-                        $('<input type="button" value="Ok">').appendTo("div#decstools"+curset)
+                        $('<input type="button" value="{% trans "Search terms" %}">').appendTo("div#decstools"+curset)
                             .click(function(){
-                                var select = $("select#resultdecs"+curset);
-                                if($("select#resultdecs"+curset).length == 0){
-                                    select= $('<select id="resultdecs'+curset+'">')
+                                var select = $("select#combodecs"+curset);
+                                if($("select#combodecs"+curset).length === 0){
+                                    select= $('<select id="combodecs'+curset+'">')
                                         .insertAfter(this);
                                 }
                                 $(select).html("");
+                                
                                 $.get("/decs/search/en/"+$("input#searchdecs"+curset).attr("value"),'',
                                     function(data){
                                         for(var i=0; i<data.length;i++){
-                                        $("<option>").attr("value",data[i].fields.label)
-                                            .html(data[i].fields.description)
-                                            .appendTo(select);
+                                            $("<option>").attr("value",data[i].fields.label)
+                                                .html(data[i].fields.description)
+                                                .appendTo('#combodecs'+curset);
                                         }
-                                        $(select).change(function(){
+                                        $('#combodecs'+curset).change(function(){
                                             $("input#id"+curset+"-code")
                                                 .attr("value",this.value);
                                             $("input#id"+curset+"-text")
@@ -76,8 +78,7 @@
                                 );
                             });
                     }
-                } else {
-                }
+                } 
             });
         });
         // management_form.prefix
