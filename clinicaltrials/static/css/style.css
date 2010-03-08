@@ -205,3 +205,21 @@ table.table td, table.table th {
 table.table th {
     background-color: #F1F4F7;
 }
+
+/* AJAX DeCS Tools */
+td div.decstools {
+    display: none;
+}
+
+td div.decstools select {
+    display: block;
+}
+
+td select,
+td div.decstools input.text {
+    width: 80%;
+}
+
+td.showdecs div.decstools {
+    display: block;
+}
