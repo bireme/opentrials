@@ -13,6 +13,8 @@ from utilities import safe_truncate
 
 from vocabulary.models import CountryCode, StudyPhase, StudyType, RecruitmentStatus
 from vocabulary.models import InterventionCode
+from vocabulary.models import StudyPurpose, InterventionAssigment, StudyMasking, StudyAllocation
+
 
 from registry import choices
 
@@ -142,20 +144,20 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     # TRDS 15b
     study_design = models.TextField(_('Study Design'), blank=True,
                                           max_length=1000)
+    ######## begin TRDS 15b - study design details
 
-    #expanded_access_program (yes|no) #IMPLIED
-    #purpose (%purpose.options;) #IMPLIED
-    #intervention_assignment (%assignment.options;) #IMPLIED
-    #number_of_arms NMTOKEN #IMPLIED
-    #masking (%masking.options;) #IMPLIED
-    #allocation (%allocation.options;) #IMPLIED
-
+    expanded_access_program = models.NullBooleanField(_('Expanded access program'),
+                                                      null=True, blank=True)
     purpose = models.ForeignKey(StudyPurpose, null=True, blank=True,
                                            verbose_name=_('Study Purpose'))
-
-
-
-
+    intervention_assignment = models.ForeignKey(InterventionAssigment, null=True, blank=True,
+                                           verbose_name=_('Intervention Assignment'))
+    number_of_arms = models.PositiveIntegerField(_('Number of arms'), null=True, blank=True)
+    masking = models.ForeignKey(StudyMasking, null=True, blank=True,
+                                           verbose_name=_('Masking type'))
+    allocation = models.ForeignKey(StudyAllocation, null=True, blank=True,
+                                           verbose_name=_('Allocation type'))
+    ######## end TRDS 15b - study design details
 
     # TRDS 15c
     phase = models.ForeignKey(StudyPhase, null=True, blank=True,
