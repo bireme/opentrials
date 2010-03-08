@@ -54,21 +54,22 @@ class Submission(models.Model):
         return u'<%s> %s' % (self.creator_username(), self.short_title())
 
     def get_mandatory_languages(self):
-        langs = set([u'EN'])
+        langs = set(['en'])
         langs.add(self.trial.primary_sponsor.country.language)
-        
+
         for rc in self.trial.recruitmentcountry_set.all():
             langs.add(rc.country.language)
-            
-        return langs.intersection(settings.CHECKED_LANGUAGES)
-        
+
+        return langs.intersection(set(settings.CHECKED_LANGUAGES))
+
     def get_absolute_url(self):
+        # TODO: use reverse to replace absolute path
         return '/accounts/submission/%s/' % self.id
-    
+
 class RecruitmentCountry(models.Model):
     class Meta:
-        verbose_name_plural = _('Recruitment Countries')    
-    
+        verbose_name_plural = _('Recruitment Countries')
+
     submission = models.ForeignKey(Submission)
     country = models.ForeignKey(CountryCode, verbose_name=_('Country'), related_name='submissionrecruitmentcountry_set')
 
@@ -76,7 +77,7 @@ class FrozenForm(models.Model):
     submission = models.ForeignKey(Submission)
     form_name = models.CharField(max_length=255)
     data = models.TextField(max_length=2**16)
-    
+
     class Meta:
         unique_together = ['submission', 'form_name']
 
@@ -84,7 +85,7 @@ class FrozenForm(models.Model):
 class Attachment(models.Model):
     class Meta:
         verbose_name_plural = _('Attachments')
-    
+
     file = models.FileField(upload_to='attachments')
     submission = models.ForeignKey(Submission)
     access = models.CharField(_('Access'),max_length=16,choices=ACCESS)
