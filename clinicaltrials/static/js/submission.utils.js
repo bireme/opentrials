@@ -21,3 +21,4 @@ function cloneMore(selector, type) {
     $(selector).after(newElement);
     newElement.show("fast");
 }
+

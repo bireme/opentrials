@@ -1,9 +1,9 @@
+from django.conf import settings
 from django.http import HttpResponse
-
+from django.shortcuts import render_to_response
 from xml.etree.ElementTree import ElementTree
 import urllib
 
-DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
 JSON_TERM = '{"fields":{"description":"%s","label":"%s"}}'
 
 def getterm(request, lang, code):
@@ -11,7 +11,7 @@ def getterm(request, lang, code):
         'tree_id': code or '',
         'lang': lang,
         })
-    resource = urllib.urlopen(DECS_SERVICE, params)
+    resource = urllib.urlopen(settings.DECS_SERVICE, params)
 
     tree = ElementTree()
     tree.parse(resource)
@@ -28,17 +28,22 @@ def getterm(request, lang, code):
            
     return HttpResponse(json, mimetype='application/json');
 
-def search(request, lang, term):
+def search(request, lang, term, prefix='401'):
+    # about the prefix: http://wiki.reddes.bvsalud.org/index.php/DeCS_services
+    
     params = urllib.urlencode({
-        'words': term,
+        'bool': '%s %s' % (prefix, term),
         'lang': lang,
         })
-    resource = urllib.urlopen(DECS_SERVICE, params)
+    resource = urllib.urlopen(settings.DECS_SERVICE, params)
 
     tree = ElementTree()
     tree.parse(resource)
 
     result = tree.findall('decsws_response/tree/self/term_list/term')
 
-    json = '[%s]' % ','.join((JSON_TERM % (t.text,t.attrib['tree_id']) for t in result))
+    json = '[%s]' % ','.join( sorted(JSON_TERM % (t.text,t.attrib['tree_id']) for t in result) )
     return HttpResponse(json, mimetype='application/json');
+
+def test_search(request):
+    return render_to_response("test_search.html", request)

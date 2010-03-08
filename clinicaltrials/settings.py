@@ -96,6 +96,7 @@ INSTALLED_APPS = (
 
 CHECKED_LANGUAGES = set((u'EN', u'ES', u'FR', u'PT'))
 SITE_TITLE = u'Registro Brasileiro de Ensaios Clínicos'
+DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
 
 # There *must* be an unversioned settings_local.py file in the
 # current directory. See sample file at settings_local-SAMPLE.py
