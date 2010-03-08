@@ -13,10 +13,12 @@
             });
 
             $("div.g select").change(function() {
+                this.parentNode.className = "";
                 if(this.value == 'DeCS'){
-                    var curset = this.id.match(/\d+/)[0];
+                    this.parentNode.className = "showdecs";
+                    var curset = this.id.match(/_.+\d+/)[0];
                     if($("select#combodecs"+curset).length == 0){
-                        this.parentNode.id = "tempId";
+                        $('<div class="decstools" id="decstools'+curset+'">').appendTo(this.parentNode);
                         $.get("/decs/getterm/en/",'',
                             function(data){
                                 var select= $('<select id="combodecs'+curset+'">');
@@ -26,12 +28,12 @@
                                         .appendTo(select);
                                 }
                                 $(select).change(function(){
-                                    $("input#id_g-"+curset+"-code")
+                                    $("input#id"+curset+"-code")
                                         .attr("value",this.value);
-                                    $("input#id_g-"+curset+"-text")
+                                    $("input#id"+curset+"-text")
                                         .attr("value",$(this).find("option[selected]").html());
                                 });
-                                $("#tempId").attr('id','').append(select);
+                                $("#decstools"+curset).append(select);
                             },
                             "json"
                         );
@@ -40,11 +42,15 @@
             });
 
             $("div.s select").change(function() {
+                this.parentNode.className = "";
                 if(this.value == 'DeCS'){
-                    var curset = this.id.match(/\d+/)[0];
+                    this.parentNode.className = "showdecs";
+                    var curset = this.id.match(/_.+\d+/)[0];
                     if($("input#searchdecs"+curset).length == 0){
-                        var i = $('<input type="text" id="searchdecs'+curset+'">').insertAfter(this);
-                        $('<input type="button" value="Ok">').insertAfter(i)
+                        $('<div class="decstools" id="decstools'+curset+'">')
+                           .appendTo(this.parentNode)
+                           .append('<input class="text" type="text" id="searchdecs'+curset+'">');
+                        $('<input type="button" value="Ok">').appendTo("div#decstools"+curset)
                             .click(function(){
                                 var select = $("select#resultdecs"+curset);
                                 if($("select#resultdecs"+curset).length == 0){
@@ -60,9 +66,9 @@
                                             .appendTo(select);
                                         }
                                         $(select).change(function(){
-                                            $("input#id_s-"+curset+"-code")
+                                            $("input#id"+curset+"-code")
                                                 .attr("value",this.value);
-                                            $("input#id_s-"+curset+"-text")
+                                            $("input#id"+curset+"-text")
                                                 .attr("value",$(this).find("option[selected]").html());
                                         });
                                     },
@@ -70,6 +76,7 @@
                                 );
                             });
                     }
+                } else {
                 }
             });
         });

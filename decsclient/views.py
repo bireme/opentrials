@@ -22,7 +22,7 @@ def getterm(request, lang, code):
         term_list = [l for l in lists if l.attrib['lang'] == lang].pop()
         result = term_list.getiterator('term')
 
-        json = '[%s]' % ','.join((JSON_TERM % (r.text,r.attrib['tree_id']) for r in result))
+        json = '[%s]' % ','.join((JSON_TERM % (r.text.capitalize(),r.attrib['tree_id']) for r in result))
     else:
         json = '[%s]' % (JSON_TERM % (result.text,result.attrib['tree_id']))
            
