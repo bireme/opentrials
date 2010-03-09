@@ -1,11 +1,11 @@
+############################################ Controlled Vocabularies ###
+
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes import generic
 
 from polyglot.models import Translation
 from utilities import safe_truncate
-
-############################################ Controlled Vocabularies ###
 
 class SimpleVocabulary(models.Model):
     label = models.CharField(_('Label'), max_length=255, unique=True)
@@ -19,6 +19,9 @@ class SimpleVocabulary(models.Model):
 
     def __unicode__(self):
         return self.label
+
+    def missing_translations(self):
+        return ' '.join(sorted(Translation.missing(self)))
 
     @classmethod
     def choices(cls):

@@ -1,0 +1,196 @@
+# http://www.fomento.es/NR/rdonlyres/412C3B64-D0DB-412E-AD16-61616D13E37A/28712/nombrespaisesycapitales.pdf
+# CC, país
+
+AF Afganistán (el)
+AL Albania
+DE Alemania
+AD Andorra
+AO Angola
+AG Antigua y Barbuda
+SA Arabia Saudita (la)
+DZ Argelia
+AR Argentina (la)
+AM Armenia
+AU Australia
+AT Austria
+AZ Azerbaiyán
+BS Bahamas (las)
+BH Bahrein
+BD Bangladesh
+BB Barbados
+BY Belarús
+BE Bélgica
+BZ Belice
+BJ Benin
+BT Bhután
+BO Bolivia
+BA Bosnia y Herzegovina
+BW Botswana
+BR Brasil (el)
+BN Brunei Darussalam
+BG Bulgaria
+BF Burkina Faso
+BI Burundi
+CV Cabo Verde
+KH Camboya
+CM Camerún (el)
+CA Canadá (el)
+TD Chad (el)
+CL Chile
+CN China
+CY Chipre
+CO Colombia
+KM Comoras (las)
+CG Congo (el)
+CI Costa de Marfil
+CR Costa Rica
+HR Croacia
+CU Cuba
+DK Dinamarca
+DJ Djibouti
+DM Dominica
+EC Ecuador (el)
+EG Egipto
+SV El Salvador
+AE Emiratos Árabes Unidos (los)
+ER Eritrea
+SK Eslovaquia
+SI Eslovenia
+ES España
+US Estados Unidos de América (los)
+EE Estonia
+ET Etiopía
+FJ Fiji
+PH Filipinas
+FI Finlandia
+FR Francia
+GA Gabón (el)
+GM Gambia
+GE Georgia
+GH Ghana
+GD Granada
+GR Grecia
+GT Guatemala
+GN Guinea
+GQ Guinea Ecuatorial
+GW Guinea-Bissau
+GY Guyana
+HT Haití
+HN Honduras
+HU Hungría
+IN India (la)
+ID Indonesia
+IR Irán
+IQ Iraq (el)
+IE Irlanda
+IS Islandia
+MH Islas Marshall (las)
+SB Islas Salomón (las)
+IL Israel
+IT Italia
+JM Jamaica
+JP Japón (el)
+JO Jordania
+KZ Kazajstán
+KE Kenia
+KG Kirguistán
+KI Kiribati
+KW Kuwait
+LA Laos
+LS Lesotho
+LV Letonia
+LB Líbano (el)
+LR Liberia
+LY Libia
+LI Liechtenstein
+LT Lituania
+LU Luxemburgo
+MK Macedonia, la ex República Yugoslava de
+MG Madagascar
+MY Malasia
+MW Malawi
+MV Maldivas
+ML Mali
+MT Malta
+MA Marruecos
+MU Mauricio
+MR Mauritania
+MX México
+FM Micronesia
+MD Moldavia
+MC Mónaco
+MN Mongolia
+ME Montenegro
+MZ Mozambique
+MM Myanmar
+NA Namibia
+NR Nauru
+NP Nepal
+NI Nicaragua
+NE Níger (el)
+NG Nigeria
+NO Noruega
+NZ Nueva Zelanda
+OM Omán
+NL Países Bajos (los)
+PK Pakistán (el)
+PW Palaos
+PA Panamá
+PG Papúa Nueva Guinea
+PY Paraguay (el)
+PE Perú (el)
+PL Polonia
+PT Portugal
+QA Qatar
+GB Reino Unido de Gran Bretaña e Irlanda del Norte
+CF República Centroafricana (la)
+CZ República Checa (la)
+KR República de Corea (la)
+CD República Democrática del Congo (la)
+DO República Dominicana (la)
+KP República Popular Democrática de Corea (la)
+RO Rumanía
+RU Rusia
+RW Rwanda
+WS Samoa
+KN San Cristóbal y Nieves
+SM San Marino
+VC San Vicente y las Granadinas
+LC Santa Lucía
+VA Santa Sede (la)
+ST Santo Tomé y Príncipe
+SN Senegal (el)
+RS Serbia
+SC Seychelles
+SL Sierra Leona
+SG Singapur
+SY Siria
+SO Somalia
+LK Sri Lanka
+ZA Sudáfrica
+SD Sudán (el)
+SE Suecia
+CH Suiza
+SR Surinam
+SZ Swazilandia
+TH Tailandia
+TZ Tanzania
+TJ Tayikistán
+TL Timor Oriental
+TG Togo (el)
+TO Tonga
+TT Trinidad y Tobago
+TN Túnez
+TM Turkmenistán
+TR Turquía
+TV Tuvalu
+UA Ucrania
+UG Uganda
+UY Uruguay (el)
+UZ Uzbekistán
+VU Vanuatu
+VE Venezuela
+VN Vietnam
+YE Yemen (el)
+ZM Zambia
+ZW Zimbabwe
