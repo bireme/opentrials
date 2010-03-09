@@ -30,10 +30,14 @@ def getterm(request, lang, code):
 
 def search(request, lang, term, prefix='401'):
     # about the prefix: http://wiki.reddes.bvsalud.org/index.php/DeCS_services
-    
+    count = 30
+    if 'count' in request.GET and request.GET['count'].isdigit():
+        count = request.GET['count']
+        
     params = urllib.urlencode({
         'bool': '%s %s' % (prefix, term),
         'lang': lang,
+        'count': count,
         })
     resource = urllib.urlopen(settings.DECS_SERVICE, params)
 

@@ -12,7 +12,7 @@
                             +$("select#lang").attr("value")   +'/'
                             +$("select#prefix").attr("value") +'/'
                             +$("input#search").attr("value"),
-                        '',
+                        'count='+$("input[name=count]:checked").val(),
                         function(data){
                             $("span#total").html("Total: "+data.length);
                             $("tbody#result").html("");
@@ -54,6 +54,19 @@
                 </select><br/>
 
                 <br/>
+                <label>Count</label>
+                <br/>
+                <label>10</label>
+                <input type="radio" name="count" value="10"/>
+                &nbsp;&nbsp;&nbsp;
+                <label>100</label>
+                <input type="radio" name="count" value="100" checked="checked"/>
+                &nbsp;&nbsp;&nbsp;
+                <label>1000</label>
+                <input type="radio" name="count" value="1000"/>
+                <br/>
+
+                <br/>
                 <label>Prefix</label><br/>
                 <select id="prefix">
                     <optgroup label="whole field">
@@ -66,7 +79,7 @@
                         <option value="107">107 whole field, authorized term, synonyms and historical terms</option>
                     </optgroup>
                     <optgroup label="word by word">
-                        <option value="401">401 word by word, authorized term</option>
+                        <option value="401" selected="selected">401 word by word, authorized term</option>
                         <option value="402">402 word by word, synonyms</option>
                         <option value="403">403 word by word, authorized term and synonyms</option>
                         <option value="404">404 word by word, historical terms</option>
