@@ -23,13 +23,13 @@ def req_dump(request):
     for k in request.POST.keys():
         rows.append('<tr><th>%s</th><td>%s</td></tr>' % (k, request.POST[k]))
     return HttpResponse(template % ('\n'.join(rows)))
-    
+
 
 ELLIPSIS = u'\u2026'
 
-def safe_truncate(text, max_length, ellipsis=ELLIPSIS, encoding='utf-8', 
+def safe_truncate(text, max_length=60, ellipsis=ELLIPSIS, encoding='utf-8',
                   raise_exc=False):
-    u'''truncate a string without breaking words 
+    u'''truncate a string without breaking words
 
         >>> safe_truncate(u'the time has come', 9, u'>')
         u'the time>'
@@ -74,7 +74,7 @@ def safe_truncate(text, max_length, ellipsis=ELLIPSIS, encoding='utf-8',
 
     return text[:pos] + ellipsis
 
-    
+
 if __name__=='__main__':
     import doctest
     doctest.testmod()
