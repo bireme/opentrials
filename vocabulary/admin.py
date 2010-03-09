@@ -23,7 +23,7 @@ class SimpleVocabularyAdmin(admin.ModelAdmin):
     translation_completed.boolean = True
 
 class CountryCodeAdmin(SimpleVocabularyAdmin):
-    list_display = ('label', 'description', 'language', 'translation_completed', 'missing_translations')
+    list_display = ('label', 'description', 'submission_language', 'translation_completed', 'missing_translations')
     search_fields = ('label', 'description')
     inlines = [VocabularyTranslationInline]
 
