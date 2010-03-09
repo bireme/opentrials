@@ -5,7 +5,6 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes import generic
 
 from polyglot.models import Translation
-from utilities import safe_truncate
 
 class SimpleVocabulary(models.Model):
     label = models.CharField(_('Label'), max_length=255, unique=True)

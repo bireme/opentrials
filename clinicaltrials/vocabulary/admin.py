@@ -6,9 +6,6 @@ from django.conf import settings
 
 from vocabulary.models import *
 
-TARGET_LANG_CHECKS = tuple('translation_'+value for value, label
-                           in settings.TARGET_LANGUAGES)
-
 class VocabularyTranslationInline(generic.GenericStackedInline):
     model = VocabularyTranslation
     max_num = len(settings.TARGET_LANGUAGES)
