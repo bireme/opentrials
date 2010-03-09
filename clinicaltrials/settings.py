@@ -108,10 +108,10 @@ DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
 # 2) the first managed language is considered the default
 #    and the source language for content translation purposes
 MANAGED_LANGUAGES = (
-    ('en',_('English')),
-    ('es',_('Spanish')),
-    #('fr',_('French')),
-    ('pt',_('Portuguese')),
+    ('en',u'English'),
+    ('es',u'Español'),
+    #('fr',_('Français')),
+    ('pt',u'Português'),
 )
 TARGET_LANGUAGES = MANAGED_LANGUAGES[1:] # exlude source language
 CHECKED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES]

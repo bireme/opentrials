@@ -119,7 +119,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     inclusion_criteria = models.TextField(_('Inclusion Criteria'), blank=True,
                                           max_length=8000)
     # TRDS 14b
-    gender = models.CharField(_('Gender (inclusion sex)'), max_length=1,
+    gender = models.CharField(_('Inclusion Gender'), max_length=1,
                               choices=choices.INCLUSION_GENDER,
                               default=choices.INCLUSION_GENDER[0][0])
     # TRDS 14c
