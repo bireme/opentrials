@@ -55,10 +55,10 @@ class Submission(models.Model):
 
     def get_mandatory_languages(self):
         langs = set(['en'])
-        langs.add(self.trial.primary_sponsor.country.language)
+        langs.add(self.trial.primary_sponsor.country.submission_language)
 
         for rc in self.trial.recruitmentcountry_set.all():
-            langs.add(rc.country.language)
+            langs.add(rc.country.submission_language)
 
         return langs.intersection(set(settings.CHECKED_LANGUAGES))
 

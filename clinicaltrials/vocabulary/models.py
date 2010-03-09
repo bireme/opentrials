@@ -37,22 +37,10 @@ class CountryCode(SimpleVocabulary):
     ''' TRDS 11, Countries of Recruitment
         also used for Contacts and Institutions
     '''
-
-    language = models.CharField(_('Required Language'), max_length=2, blank=True)
+    submission_language = models.CharField(_('Submission Language'), max_length=2, blank=True)
 
     class Meta:
         ordering = ['description']
-
-    def __getattr__(self, attr):
-        #import pdb; pdb.set_trace()
-        if attr.startswith('translation'):
-            code = attr[len('translation')+1:]
-            def xlat(self, lang=code):
-                return self.translations(language=lang).count()
-            xlat.boolean = True
-            return xlat
-        else:
-            super(CountryCode, self).__getattr__(name)
 
     def __unicode__(self):
         return self.description
