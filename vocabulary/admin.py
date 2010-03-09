@@ -9,15 +9,21 @@ from vocabulary.models import *
 TARGET_LANG_CHECKS = tuple('translation_'+value for value, label
                            in settings.TARGET_LANGUAGES)
 
-class VocabularyTranslationInline(generic.GenericTabularInline):
+class VocabularyTranslationInline(generic.GenericStackedInline):
     model = VocabularyTranslation
+    max_num = len(settings.TARGET_LANGUAGES)
+    radio_fields = {'language': admin.HORIZONTAL}
 
 class SimpleVocabularyAdmin(admin.ModelAdmin):
-    list_display = ('label', 'description',) # + TARGET_LANG_CHECKS
+    list_display = ('label', 'description', 'translation_completed', 'missing_translations')
     inlines = [VocabularyTranslationInline]
 
-class CountryCodeAdmin(admin.ModelAdmin):
-    list_display = ('label', 'description', 'language')
+    def translation_completed(self, obj):
+        return len(Translation.missing(obj)) == 0
+    translation_completed.boolean = True
+
+class CountryCodeAdmin(SimpleVocabularyAdmin):
+    list_display = ('label', 'description', 'language', 'translation_completed', 'missing_translations')
     search_fields = ('label', 'description')
     inlines = [VocabularyTranslationInline]
 

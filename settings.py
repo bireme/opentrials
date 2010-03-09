@@ -96,17 +96,29 @@ INSTALLED_APPS = (
     'polyglot',
 )
 
-MANAGED_LANGUAGES = (
-    ('en',_('English')),
-    ('es',_('Spanish')),
-    ('fr',_('French')),
-    ('pt',_('Portuguese')),
-)
-TARGET_LANGUAGES = MANAGED_LANGUAGES[1:]
-CHECKED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES]
+#################################################################
+### BEGIN Clinical Trials Repository customization settings
+
 SITE_TITLE = u'Registro Brasileiro de Ensaios Clínicos'
 DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
 
-# There *must* be an unversioned settings_local.py file in the
-# current directory. See sample file at settings_local-SAMPLE.py
+# Notes:
+# 1) language codes should follow the IANA standard for language subtags
+#    source: http://www.iana.org/assignments/language-subtag-registry
+# 2) the first managed language is considered the default
+#    and the source language for content translation purposes
+MANAGED_LANGUAGES = (
+    ('en',_('English')),
+    ('es',_('Spanish')),
+    #('fr',_('French')),
+    ('pt',_('Portuguese')),
+)
+TARGET_LANGUAGES = MANAGED_LANGUAGES[1:] # exlude source language
+CHECKED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES]
+
+### END Clinical Trials Repository customization settings
+#################################################################
+
+# Deployment settings: there *must* be an unversioned settings_local.py
+# file in the current directory. See sample file at settings_local-SAMPLE.py
 execfile(os.path.join(PROJECT_PATH,'settings_local.py'))
