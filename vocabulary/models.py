@@ -19,9 +19,6 @@ class SimpleVocabulary(models.Model):
     def __unicode__(self):
         return self.label
 
-    def missing_translations(self):
-        return ' '.join(sorted(Translation.missing(self)))
-
     @classmethod
     def choices(cls):
         return ( (term.id, term.label) for term in cls.objects.all() )
