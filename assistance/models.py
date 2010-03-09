@@ -24,8 +24,8 @@ class Question(models.Model):
     title = models.TextField(_('Title'), max_length=255)
     answer = models.TextField(_('Answer'), max_length=2048)
     order = models.PositiveIntegerField(default=0)
-    created = models.DateTimeField(_('Date of Registration'), default=datetime.now,
-        editable=False)
+    created = models.DateTimeField(default=datetime.now,
+                                   editable=False)
     translations = generic.GenericRelation('QuestionTranslation')
 
     def save(self):
