@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-09 21:18+0000\n"
-"PO-Revision-Date: 2010-03-09 22:02\n"
+"PO-Revision-Date: 2010-03-10 03:26\n"
 "Last-Translator: <a@d.mi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgstr "Resposta"
 #: assistance/models.py:27 registry/models.py:84 tickets/models.py:14
 #, fuzzy
 msgid "Date of Registration"
-msgstr "Data do registro"
+msgstr "Data de publicação do registro"
 
 #: assistance/models.py:46
 msgid "Field Help"
@@ -124,7 +124,7 @@ msgstr "Critérios de exclusão"
 
 #: registry/models.py:142 registry/trds_forms.py:279
 msgid "Study Type"
-msgstr "Tipo do estudo"
+msgstr "Tipo do ensaio"
 
 #: registry/models.py:145 registry/trds_forms.py:282
 msgid "Study Design"
@@ -349,12 +349,12 @@ msgstr "Categorias das intervenções"
 #: registry/trds_forms.py:228
 #, fuzzy
 msgid "Recruitment"
-msgstr "Situação de recrutamento"
+msgstr "Recrutamento"
 
 #: registry/trds_forms.py:235 reviewapp/views.py:40
 #, fuzzy
 msgid "Recruitment Country"
-msgstr "Países de recrutamento"
+msgstr "País de recrutamento"
 
 #: registry/trds_forms.py:240
 msgid "Date of First Enrollment"
@@ -423,7 +423,7 @@ msgstr "Formulário de descritores"
 
 #: registry/templates/registry/add_clinicalTrials.html:3
 msgid "Add a new Clinical Trial Record"
-msgstr "Incluir novo Registro de Ensaio Clínico"
+msgstr "Incluir novo registro de ensaio clínico"
 
 #: registry/templates/registry/attachments.html:72
 #: registry/templates/registry/step_3.html:120
@@ -528,7 +528,7 @@ msgstr "Data de criação"
 #: reviewapp/templates/reviewapp/submission_list.html:11
 #, fuzzy
 msgid "Submission Title"
-msgstr "Título público"
+msgstr "Título científico"
 
 #: reviewapp/templates/reviewapp/submission_list.html:12
 msgid "Situation"
@@ -537,7 +537,7 @@ msgstr "Situação"
 #: reviewapp/templates/reviewapp/submission_list.html:29
 #, fuzzy
 msgid "Submit a new Clinical Trial"
-msgstr "Incluir novo Registro de Ensaio Clínico"
+msgstr "Incluir novo registro de ensaio clínico"
 
 #: rosetta/templates/rosetta/languages.html:3
 #: rosetta/templates/rosetta/pofile.html:14
@@ -811,7 +811,7 @@ msgstr "Ver histórico"
 #: tickets/templates/tickets/user_tickets.html:24
 #, fuzzy
 msgid "add iteration"
-msgstr "Data do primeiro recrutamento"
+msgstr "incluir iteração"
 
 #: tickets/templates/tickets/user_tickets.html:29
 msgid "Have no open tickets"

@@ -37,6 +37,7 @@ INCLUSION_AGE_UNIT = [
     ('-', 'no limit'),
     ('Y', 'years'),
     ('M', 'months'),
+    ('W', 'weeks'),
     ('D', 'days'),
     ('H', 'hours'),
 ]
