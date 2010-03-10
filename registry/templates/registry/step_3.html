@@ -13,108 +13,22 @@
                     sortable: true
             });
 
-            function make_decs_for(node){
-                var set = node.id.match(/[a-z]-\d+/)[0]; // get django formset prefix
-                return {'select':set+"-combodecs",
-                        'div':set+'-decstools',
-                        'input':set+'-searchfield',
-                        'button':set+'-searchbutton',
-                        'id':function(e){
-                            return 'id_'+ this[e];
-                        },
-                        'create':function(e){
-                            return $('<'+e+'>').attr('id',this.id(e)).attr('name',this[e]);
-                        },
-                        'set':set
-                    };
-            }
-
-            function make_decstool_callback(decs){
-                return function(data){
-                    for(var i=0; i<data.length;i++){
-                        $("<option>").attr("value",data[i].fields.label)
-                            .html(data[i].fields.description)
-                            .appendTo('#'+decs.id('select'));
-                    }
-                    $('#'+decs.id('select')).change(function(evt){
-                        decs = make_decs_for(evt.target);
-                        $("input#id_"+decs.set+"-code")
-                            .attr("value",this.value);
-                        $("input#id_"+decs.set+"-text")
-                            .attr("value",$(this).find("option[selected]").html());
-                    });
-                    document.body.style.cursor="auto";
-                }
-            }
-
-            var getterm_event = function(decsclient_url) {
-                return function(){
-                    this.parentNode.className = "";
-                    if(this.value === 'DeCS'){
-                        this.parentNode.className = "showdecs";
-                        var decs = make_decs_for(this);
-
-                        if($('#'+decs.id('select')).length === 0){
-                            document.body.style.cursor="progress";
-                            decs.create('div')
-                                .appendTo(this.parentNode)
-                                .append(decs.create('select'));
-
-                            // TODO: Replace absolute path
-                            $.get(decsclient_url,'',
-                                make_decstool_callback(decs),"json");
-                        }
-                    }
-                }
-            };
-
-            var search_event = function(decsclient_url) {
-                return function(){
-                    this.parentNode.className = "";
-                    if(this.value === 'DeCS'){
-                        this.parentNode.className = "showdecs";
-                        var decs = make_decs_for(this);
-
-                        if($('#'+decs.id('input')).length === 0){
-
-                            decs.create('div')
-                               .appendTo(this.parentNode)
-                               .append(decs.create('input'))
-                               .append(decs.create('button').html('{% trans "Search terms" %}'));
-
-                            $('#'+decs.id('button'))
-                                .click(function(evt){
-                                    document.body.style.cursor="progress";
-                                    var decs = make_decs_for(evt.target);
-                                    if($('#'+decs.id('select')).length === 0){
-                                        decs.create('select')
-                                            .insertAfter(this);
-                                    }
-                                    $('#'+decs.id('select')).html('');
-
-                                    $.get(decsclient_url+$('#'+decs.id('input')).val(),'',
-                                        make_decstool_callback(decs),
-                                        'json');
-                                    return false;
-                                });
-                        }
-                    }
-                }
-            };
-
+            // TODO: Replace absolute path
             $("div.g select")
-                .each(getterm_event("/decs/getterm/en/"))
-                .change(getterm_event("/decs/getterm/en/"));
+                .change(getterm_event('{% url decs.getterm lang="en",code="" %}'))
+                .each(function(){$(this).change();});
 
             $("div.s select")
-                .each(search_event("/decs/search/en/"))
-                .change(search_event("/decs/search/en/"));
+                .change(search_event(
+                        '{% url decs.search lang="en",term="" %}',
+                        '{% trans "Search terms" %}'))
+                .each(function(){$(this).change();});
         });
         // management_form.prefix
     </script>
 
     <h2>{{ title }}</h2>
-
+    <h1>{% url decs.getterm lang="en",code="" %}</h1>
     <form action="./" method="POST">
         {% for form in forms %}
         <fieldset>

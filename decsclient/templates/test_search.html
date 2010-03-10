@@ -8,6 +8,7 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 $("input#submit").click(function(){
+                    document.body.style.cursor = "progress";
                     $.get("/decs/search/"
                             +$("select#lang").attr("value")   +'/'
                             +$("select#prefix").attr("value") +'/'
@@ -26,6 +27,7 @@
                                 window.decsclient_response = data;
                                 window.console.warn(window.decsclient_response);
                             }
+                            document.body.style.cursor = "";
                         },
                         'json'
                     );
