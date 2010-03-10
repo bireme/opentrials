@@ -5,6 +5,7 @@
     <script type="text/javascript" src="/static/js/submission.utils.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            
             $("select[multiple]").asmSelect({
                     addItemTarget: 'bottom',
                     animate: true,
@@ -12,74 +13,102 @@
                     sortable: true
             });
 
-            $("div.g select").change(function() {
-                this.parentNode.className = "";
-                if(this.value === 'DeCS'){
-                    this.parentNode.className = "showdecs";
-                    var curset = this.id.match(/_.+\d+/)[0]; // get django formset prefix
-                    if($("select#combodecs"+curset).length === 0){
-                        $('<div class="decstools" id="decstools'+curset+'">')
-                            .appendTo(this.parentNode)
-                            .append('<select id="combodecs'+curset+'">');
+            function make_decs_for(node){
+                var set = node.id.match(/[a-z]-\d+/)[0]; // get django formset prefix
+                return {'select':set+"-combodecs",
+                        'div':set+'-decstools',
+                        'input':set+'-searchfield',
+                        'button':set+'-searchbutton',
+                        'id':function(e){
+                            return 'id_'+ this[e];
+                        },
+                        'create':function(e){
+                            return $('<'+e+'>').attr('id',this.id(e)).attr('name',this[e]);
+                        },
+                        'set':set
+                    };
+            }
 
-                        $.get("/decs/getterm/en/",'', // TODO: Replace absolute path
-                            function(data){
-                                for(var i=0; i<data.length;i++){
-                                    $("<option>").attr("value",data[i].fields.label)
-                                        .html(data[i].fields.description)
-                                        .appendTo('#combodecs'+curset);
-                                }
-                                $('#combodecs'+curset).change(function(){
-                                    $("input#id"+curset+"-code")
-                                        .attr("value",this.value);
-                                    $("input#id"+curset+"-text")
-                                        .attr("value",$(this).find("option[selected]").html());
-                                });
-                            },
-                            "json"
-                        );
+            function make_decstool_callback(decs){
+                return function(data){
+                    for(var i=0; i<data.length;i++){
+                        $("<option>").attr("value",data[i].fields.label)
+                            .html(data[i].fields.description)
+                            .appendTo('#'+decs.id('select'));
+                    }
+                    $('#'+decs.id('select')).change(function(evt){
+                        decs = make_decs_for(evt.target);
+                        $("input#id_"+decs.set+"-code")
+                            .attr("value",this.value);
+                        $("input#id_"+decs.set+"-text")
+                            .attr("value",$(this).find("option[selected]").html());
+                    });
+                    document.body.style.cursor="auto";
+                }
+            }
+
+            var getterm_event = function(decsclient_url) {
+                return function(){
+                    this.parentNode.className = "";
+                    if(this.value === 'DeCS'){
+                        this.parentNode.className = "showdecs";
+                        var decs = make_decs_for(this);
+
+                        if($('#'+decs.id('select')).length === 0){
+                            document.body.style.cursor="progress";
+                            decs.create('div')
+                                .appendTo(this.parentNode)
+                                .append(decs.create('select'));
+
+                            // TODO: Replace absolute path
+                            $.get(decsclient_url,'',
+                                make_decstool_callback(decs),"json");
+                        }
                     }
                 }
-            });
+            };
 
-            $("div.s select").change(function() {
-                this.parentNode.className = "";
-                if(this.value === 'DeCS'){
-                    this.parentNode.className = "showdecs";
-                    var curset = this.id.match(/_.+\d+/)[0];
-                    if($("input#searchdecs"+curset).length === 0){
-                        $('<div class="decstools" id="decstools'+curset+'">')
-                           .appendTo(this.parentNode)
-                           .append('<input class="text" type="text" id="searchdecs'+curset+'">');
-                        $('<input type="button" value="{% trans "Search terms" %}">').appendTo("div#decstools"+curset)
-                            .click(function(){
-                                var select = $("select#combodecs"+curset);
-                                if($("select#combodecs"+curset).length === 0){
-                                    select= $('<select id="combodecs'+curset+'">')
-                                        .insertAfter(this);
-                                }
-                                $(select).html("");
-                                
-                                $.get("/decs/search/en/"+$("input#searchdecs"+curset).attr("value"),'',
-                                    function(data){
-                                        for(var i=0; i<data.length;i++){
-                                            $("<option>").attr("value",data[i].fields.label)
-                                                .html(data[i].fields.description)
-                                                .appendTo('#combodecs'+curset);
-                                        }
-                                        $('#combodecs'+curset).change(function(){
-                                            $("input#id"+curset+"-code")
-                                                .attr("value",this.value);
-                                            $("input#id"+curset+"-text")
-                                                .attr("value",$(this).find("option[selected]").html());
-                                        });
-                                    },
-                                    'json'
-                                );
-                            });
+            var search_event = function(decsclient_url) {
+                return function(){
+                    this.parentNode.className = "";
+                    if(this.value === 'DeCS'){
+                        this.parentNode.className = "showdecs";
+                        var decs = make_decs_for(this);
+
+                        if($('#'+decs.id('input')).length === 0){
+
+                            decs.create('div')
+                               .appendTo(this.parentNode)
+                               .append(decs.create('input'))
+                               .append(decs.create('button').html('{% trans "Search terms" %}'));
+
+                            $('#'+decs.id('button'))
+                                .click(function(evt){
+                                    document.body.style.cursor="progress";
+                                    var decs = make_decs_for(evt.target);
+                                    if($('#'+decs.id('select')).length === 0){
+                                        decs.create('select')
+                                            .insertAfter(this);
+                                    }
+                                    $('#'+decs.id('select')).html('');
+
+                                    $.get(decsclient_url+$('#'+decs.id('input')).val(),'',
+                                        make_decstool_callback(decs),
+                                        'json');
+                                    return false;
+                                });
+                        }
                     }
-                } 
-            });
+                }
+            };
+
+            $("div.g select")
+                .each(getterm_event("/decs/getterm/en/"))
+                .change(getterm_event("/decs/getterm/en/"));
+
+            $("div.s select")
+                .each(search_event("/decs/search/en/"))
+                .change(search_event("/decs/search/en/"));
         });
         // management_form.prefix
     </script>
@@ -108,10 +137,10 @@
                     {{ form.as_table }}
                 </table>
             {% endfor %}
-            </div>
+    </div>
             <div style="text-align: center">
               <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="add more"/>
-            </div>
+</div>
             </fieldset>
         {% endfor %}
 
