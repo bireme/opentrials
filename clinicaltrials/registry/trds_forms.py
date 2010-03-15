@@ -158,6 +158,12 @@ class SupportSourceForm(ReviewModelForm):
     title = _('Source(s) of Monetary or Material Support')
     relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[0][0])
 
+class NewInstitution(ReviewModelForm):
+    class Meta:
+        model = Institution
+
+    title = _('New Institution')
+
 #step3
 class HealthConditionsForm(ReviewModelForm):
     class Meta:

@@ -24,6 +24,10 @@
                         '{% trans "Search terms" %}'))
                 .each(function(){$(this).change();});
         });
+
+        function new_institution(){
+            return window.open('{% url new_institution %}','n_i','status=0,location=0,height=375');
+        }
         // management_form.prefix
     </script>
 
@@ -41,19 +45,20 @@
         {% for formset in formsets %}
             {{ formset.management_form }}
             <fieldset>
-            <legend>{{ formset.form.title }}</legend>
+                <legend>{{ formset.form.title }}</legend>
 
 
-            <div class="{{formset.management_form.prefix}}">
-            {% for form in formset.forms %}
-                <table>
-                    {{ form.as_table }}
-                </table>
-            {% endfor %}
-    </div>
-            <div style="text-align: center">
-              <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="add more"/>
-</div>
+                <div class="{{formset.management_form.prefix}}">
+                {% for form in formset.forms %}
+                    <table>
+                        {{ form.as_table }}
+                    </table>
+                {% endfor %}
+                </div>
+                <div style="text-align: center">
+                  <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="add more"/>
+                  <input onclick="new_institution()" type="button" value="{% trans 'New Institution' %}"/>
+                </div>
             </fieldset>
         {% endfor %}
 

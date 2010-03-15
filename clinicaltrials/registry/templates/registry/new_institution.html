@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>{{ form.title }}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <script type="text/javascript" src="/static/js/jquery-1.3.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            function new_institution(){
+                var data = '', op = '';
+                $('form *[name]').each(function(){data+=op+this.name+'='+this.value;op='&'});
+                $.post(
+                    $('form').attr('action'),
+                    data,
+                    function(data){
+                        opener.$('select').append(
+                            $('<option>').attr('val',data[0].pk).html(data[0].fields.name)
+                        );
+                        window.close();
+                    },
+                    'json'
+                );
+            }
+        </script>
+{% load i18n %}
+    </head>
+    <body>
+        <form action="{% url new_institution %}" method="post" onsubmit="return false;">
+            <fieldset>
+                <legend>{{ form.title }}</legend>
+                <table>
+                    {{ form }}
+                </table>
+                <input type="button" value="{% trans 'Save' %}" onclick="new_institution();"/>
+            </fieldset>
+        </form>
+    </body>
+</html>

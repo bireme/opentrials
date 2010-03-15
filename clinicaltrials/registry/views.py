@@ -14,11 +14,11 @@ from registry.trds_forms import SpecificHealthDescriptorForm, HealthConditionsFo
 from registry.trds_forms import InterventionDescriptorForm, InterventionForm
 from registry.trds_forms import RecruitmentForm, StudyTypeForm, OutcomesForm
 from registry.trds_forms import PublicContactForm, ScientificContactForm
-from registry.trds_forms import ContactForm
+from registry.trds_forms import ContactForm, NewInstitution
 
 import choices
-
-from django.http import HttpResponseRedirect
+from django.core import serializers
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.utils.translation import ugettext_lazy as _
 from django.forms.models import inlineformset_factory, modelformset_factory
@@ -67,6 +67,21 @@ def index(request):
         'latest_clinicalTrials': latest_clinicalTrials,
     })
     return HttpResponse(t.render(c))
+
+@login_required
+def new_institution(request):
+
+    if request.POST:
+        new_institution = NewInstitution(request.POST)
+        if new_institution.is_valid():
+            institution = new_institution.save()
+            json = serializers.serialize('json',[institution])
+            return HttpResponse(json, mimetype='application/json');
+    else:
+        new_institution = NewInstitution()
+    
+    return render_to_response('registry/new_institution.html',
+                             {'form':new_institution})
 
 @login_required
 def step_1(request, trial_pk):
@@ -143,7 +158,7 @@ def step_2(request, trial_pk):
 
     forms = [form]
     formsets = [secondary_forms,sources_form]
-    return render_to_response('registry/trial_form.html',
+    return render_to_response('registry/step_2.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
                                'trial_pk':trial_pk,
