@@ -87,5 +87,7 @@ class Attachment(models.Model):
         verbose_name_plural = _('Attachments')
 
     file = models.FileField(upload_to='attachments')
+    description = models.TextField(_('Description'), blank=True,
+                                                              max_length=8000)
     submission = models.ForeignKey(Submission)
-    access = models.CharField(_('Access'),max_length=16,choices=ACCESS)
+    public = models.BooleanField(_('Public'))
