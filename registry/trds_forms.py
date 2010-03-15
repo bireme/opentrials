@@ -226,7 +226,7 @@ class RecruitmentForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['recruitment_status', 'recruitment_country','date_enrollment',
-                  'target_sample_size', 'phase', 'inclusion_criteria', 'gender',
+                  'target_sample_size', 'inclusion_criteria', 'gender',
                   'agemin_value', 'agemin_unit',
                   'agemax_value', 'agemax_unit', 'exclusion_criteria',
                   ]

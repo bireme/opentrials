@@ -68,6 +68,7 @@ function getterm_event(decsclient_url) {
 
             if($('#'+decs.id('select')).length === 0){
                 decs.create('div')
+                    .attr('class','decstool')
                     .appendTo(this.parentNode)
                     .append(decs.create('select'));
 
@@ -91,6 +92,7 @@ function search_event(decsclient_url,label) {
             if($('#'+decs.id('input')).length === 0){
 
                 decs.create('div')
+                   .attr('class','decstool')
                    .appendTo(this.parentNode)
                    .append(decs.create('input'))
                    .append(decs.create('button').html(label));
