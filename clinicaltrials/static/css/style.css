@@ -207,7 +207,7 @@ table.table th {
 }
 
 /* AJAX DeCS Tools */
-td div {
+td div.decstool {
     display: none;
 }
 
@@ -216,10 +216,10 @@ td div select {
 }
 
 td select,
-td div input {
+td div.decstool input {
     width: 80%;
 }
 
-td.showdecs div {
+td.showdecs div.decstool {
     display: block;
 }
