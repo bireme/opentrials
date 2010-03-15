@@ -17,14 +17,12 @@ class ExistingAttachmentForm(forms.ModelForm):
 
     title = _('Existing Attachment')
     file = forms.CharField(required=False,label=_('File'),max_length=255)
-    access = forms.ChoiceField(widget=forms.RadioSelect,choices=ACCESS)
 
 class NewAttachmentForm(forms.ModelForm):
     class Meta:
         model = Attachment
-        fields = ['file','submission','access']
+        fields = ['file','description','submission','public']
 
     title = _('New Attachment')
     submission = forms.CharField(widget=forms.HiddenInput,required=False)
-    access = forms.ChoiceField(widget=forms.RadioSelect,choices=ACCESS)
 
