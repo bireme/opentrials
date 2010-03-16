@@ -2,8 +2,8 @@ from django.conf.urls.defaults import *
 
 import utilities
 
-from django.contrib import admin # Django admin UI 
-admin.autodiscover()             # Django admin UI 
+from django.contrib import admin # Django admin UI
+admin.autodiscover()             # Django admin UI
 
 urlpatterns = patterns('',
     # Registry application
@@ -21,12 +21,16 @@ urlpatterns = patterns('',
     # Django admin UI and documentation
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    
+
     # Diagnostic views
     url(r'^smoke/', utilities.smoke_test),
     url(r'^req_dump/', utilities.req_dump),
 
     url(r'^decs/', include('clinicaltrials.decsclient.urls')),
+
+    # django-registration views
+    # url(r'^accounts/', include('registration.backends.default.urls')),
+
 )
 
 from django.conf import settings
@@ -42,4 +46,3 @@ if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += patterns('',
         url(r'^rosetta/', include('rosetta.urls')),
     )
-    
