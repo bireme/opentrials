@@ -389,6 +389,17 @@ class ScientificContact(TrialRegistrationDataSetModel):
         return u'Scientific Contact for %s: %s (%s)' % (self.trial.short_title(),
                                      self.contact.name(), self.status)
 
+class SiteContact(TrialRegistrationDataSetModel):
+    trial = models.ForeignKey(ClinicalTrial)
+    contact = models.ForeignKey(Contact)
+    status = models.CharField(_('Status'), max_length=255,
+                            choices = choices.CONTACT_STATUS,
+                            default = choices.CONTACT_STATUS[0][0])
+
+    def __unicode__(self):
+        return u'Site Contact for %s: %s (%s)' % (self.trial.short_title(),
+                                     self.contact.name(), self.status)
+
 # TRDS 19 - Primary Outcome(s)
 # TRDS 20 - Key Secondary Outcome(s)
 

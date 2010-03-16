@@ -326,6 +326,16 @@ class ScientificContactForm(ReviewModelForm):
     relation = forms.CharField(initial=choices.CONTACT_RELATION[1][0],
                                widget=forms.HiddenInput)
 
+#step8
+class SiteContactForm(ReviewModelForm):
+    class Meta:
+        model = ClinicalTrial
+        fields = ['contact']
+
+    title = _('Contact(s) for Site Queries')
+    relation = forms.CharField(initial=choices.CONTACT_RELATION[2][0],
+                               widget=forms.HiddenInput)
+
 #step8-partof
 class ContactForm(ReviewModelForm):
     class Meta:
