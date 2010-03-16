@@ -91,9 +91,10 @@ INSTALLED_APPS = (
     'reviewapp',
     'tickets',
     'assistance',
-    'rosetta',
     'decsclient',
     'polyglot',
+    'rosetta',
+    # 'registration',  # django-registration package
 )
 
 #################################################################
@@ -115,6 +116,9 @@ MANAGED_LANGUAGES = (
 )
 TARGET_LANGUAGES = MANAGED_LANGUAGES[1:] # exlude source language
 CHECKED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES]
+
+# django-registration activation window
+ACCOUNT_ACTIVATION_DAYS = 7
 
 ### END Clinical Trials Repository customization settings
 #################################################################
