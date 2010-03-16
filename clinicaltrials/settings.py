@@ -120,6 +120,8 @@ CHECKED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES]
 # django-registration activation window
 ACCOUNT_ACTIVATION_DAYS = 7
 
+ATTACHMENTS_PATH = os.path.join(MEDIA_ROOT, 'attachments')
+
 ### END Clinical Trials Repository customization settings
 #################################################################
 
