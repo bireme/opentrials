@@ -5,7 +5,7 @@ from reviewapp.trds_forms import ExistingAttachmentForm,NewAttachmentForm
 
 from registry.models import ClinicalTrial, Descriptor, TrialNumber
 from registry.models import TrialSecondarySponsor, TrialSupportSource, Outcome
-from registry.models import PublicContact, ScientificContact, Contact
+from registry.models import PublicContact, ScientificContact, SiteContact, Contact
 
 from registry.trds_forms import GeneralHealthDescriptorForm, PrimarySponsorForm
 from registry.trds_forms import SecondaryIdForm, SecondarySponsorForm
@@ -14,7 +14,7 @@ from registry.trds_forms import SpecificHealthDescriptorForm, HealthConditionsFo
 from registry.trds_forms import InterventionDescriptorForm, InterventionForm
 from registry.trds_forms import RecruitmentForm, StudyTypeForm, OutcomesForm
 from registry.trds_forms import PublicContactForm, ScientificContactForm
-from registry.trds_forms import ContactForm, NewInstitution
+from registry.trds_forms import ContactForm, NewInstitution, SiteContactForm
 
 import choices
 from django.core import serializers
@@ -353,7 +353,8 @@ def step_8(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
     contact_type = {'PublicContact':PublicContact,
-                    'ScientificContact':ScientificContact}
+                    'ScientificContact':ScientificContact,
+                    'SiteContact':SiteContact}
 
     PublicContactFormSet = inlineformset_factory(ClinicalTrial,
                                                 contact_type['PublicContact'],
@@ -363,6 +364,11 @@ def step_8(request, trial_pk):
     ScientificContactFormSet = inlineformset_factory(ClinicalTrial,
                                                 contact_type['ScientificContact'],
                                                 form=ScientificContactForm,
+                                                can_delete=True,
+                                                extra=EXTRA_FORMS)
+    SiteContactFormSet = inlineformset_factory(ClinicalTrial,
+                                                contact_type['SiteContact'],
+                                                form=SiteContactForm,
                                                 can_delete=True,
                                                 extra=EXTRA_FORMS)
 
@@ -375,11 +381,14 @@ def step_8(request, trial_pk):
                                                instance=ct)
         scientific_form_set = ScientificContactFormSet(request.POST,
                                                        instance=ct)
+        site_form_set = SiteContactFormSet(request.POST,
+                                                    instance=ct)
 
         new_contact_formset = ContactFormSet(request.POST,queryset=contact_qs)
 
         if public_form_set.is_valid() \
                 and scientific_form_set.is_valid() \
+                and site_form_set.is_valid() \
                 and new_contact_formset.is_valid():
 
             for contactform in new_contact_formset.forms:
@@ -390,15 +399,16 @@ def step_8(request, trial_pk):
 
             public_form_set.save()
             scientific_form_set.save()
-            
+            site_form_set.save()
             
             return HttpResponseRedirect(reverse("registry.edittrial", args=[trial_pk]))
     else:
         public_form_set = PublicContactFormSet(instance=ct)
         scientific_form_set = ScientificContactFormSet(instance=ct)
+        site_form_set = SiteContactFormSet(instance=ct)
         new_contact_formset = ContactFormSet(queryset=contact_qs)
 
-    formsets = [public_form_set,scientific_form_set,new_contact_formset]
+    formsets = [public_form_set,scientific_form_set,site_form_set,new_contact_formset]
     return render_to_response('registry/trial_form.html',
                               {'formsets':formsets,
                                'username':request.user.username,

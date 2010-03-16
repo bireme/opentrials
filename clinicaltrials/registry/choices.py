@@ -10,6 +10,7 @@ INSTITUTIONAL_RELATION = [
 CONTACT_RELATION = [
     ('PublicContact', 'Contact for Public Queries'), #TRDS 7
     ('ScientificContact', 'Contact for Scientific Queries'), #TRDS 8
+    ('SiteContact', 'Contact for Site Queries'), #TRDS 8
 ]
 
 CONTACT_STATUS = [
