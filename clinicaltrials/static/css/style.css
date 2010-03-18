@@ -4,27 +4,24 @@ body {
     padding: 0;
     text-align: left;
     font: 78% "Verdana", "Arial", "sans-serif";
+    background:#cbcbcd;
 }
 
 h1, h2, label, legend, #content a {
-    color: #005;
+    color: #296784;
 }
 
 /* STYLE for BORDERED MAIN BLOCKS */
 #container, #top, #footer, #columns,
 .stepmenu-top, .stepmenu-bottom {
     border-color: #D4D4FF;
-    border-style: solid;
 }
 
 #container {
     width: 87%;
-    margin: 3px auto 0;
+    margin: 0px auto;
     padding: 0;
-    border-width: 1px;
     line-height: 1.7em;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
     background: transparent url(/static/bg_header.png) repeat-x scroll 0 0;
 }
 
@@ -36,6 +33,7 @@ h1, h2, label, legend, #content a {
     float: left;
     clear: both;
     width: 100%;
+    height: 148px;
 }
 
 #top img {
@@ -64,6 +62,7 @@ h1, h2, label, legend, #content a {
     float: left;
     right: 81%;
     border-width: 0 1px 0 0;
+    background:#ebecf0;
 }
 
 #rebracmenu, #workarea {
@@ -125,7 +124,7 @@ h1, h2, label, legend, #content a {
 .stepmenu a {
     text-decoration: none;
     text-transform: capitalize;
-    color: black;
+    color: #0a5172;
     font-weight: bold;
 }
 
@@ -154,12 +153,11 @@ h1, h2, label, legend, #content a {
 
 #content a:hover {
     text-decoration: underline;
-    
+
 }
 
 #content h2 {
     padding: 0.2em 0;
-    letter-spacing: 0.1em;
 }
 
 /*FOOTER*/
@@ -168,6 +166,7 @@ h1, h2, label, legend, #content a {
     padding: 5px;
     margin-top: 5px;
     border-width: 1px 0 0;
+    background:#f3f4f6;
 }
 
 #footer a:link, #footer a:visited {
@@ -193,9 +192,7 @@ table.table {
 
 table.table,
 table.table td, table.table th {
-    border-color: #375A80;
-    border-style: solid;
-    border-width: 1px 0px;
+    color:#4a4c4e;
 }
 
 table.table td, table.table th {
@@ -204,6 +201,7 @@ table.table td, table.table th {
 
 table.table th {
     background-color: #F1F4F7;
+    color:#333;
 }
 
 /* AJAX DeCS Tools */
@@ -222,4 +220,22 @@ td div.decstool input {
 
 td.showdecs div.decstool {
     display: block;
+}
+
+.issue{
+    font-size:10px;
+    color:#5d5d5d;
+}
+
+fieldset{
+    border: 1px solid #CCC;
+    margin-bottom:30px;
+}
+
+label{
+    font-weight:normal;
+}
+
+legend{
+    font-weight:bold;
 }
