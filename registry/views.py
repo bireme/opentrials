@@ -83,6 +83,14 @@ def new_institution(request):
     return render_to_response('registry/new_institution.html',
                              {'form':new_institution})
 
+def step_list(trial_pk):
+    import sys
+    current_step = int( sys._getframe(1).f_code.co_name.replace('step_','') )
+    steps = []
+    for i in range(1,10):
+        steps.append((reverse('step_%d'%i,args=[trial_pk]), i == current_step))
+    return steps
+
 @login_required
 def step_1(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
@@ -116,7 +124,7 @@ def step_1(request, trial_pk):
                                'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[0],
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
+                               'steps': step_list(trial_pk),
                                'next_form_title':_('Sponsors and Sources of Support')})
 
 
@@ -163,7 +171,7 @@ def step_2(request, trial_pk):
                                'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[1],
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
+                               'steps': step_list(trial_pk),
                                'next_form_title':_('Health Conditions Form')})
 
 
@@ -218,7 +226,7 @@ def step_3(request, trial_pk):
                                'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[2],
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
+                               'steps': step_list(trial_pk),
                                'next_form_title':_('Interventions Form')})
 
 
@@ -260,7 +268,7 @@ def step_4(request, trial_pk):
                                'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[3],
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
+                               'steps': step_list(trial_pk),
                                'next_form_title':_('Recruitment Form')})
 
 
@@ -287,7 +295,7 @@ def step_5(request, trial_pk):
                                'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[4],
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
+                               'steps': step_list(trial_pk),
                                'next_form_title':_('Study Type Form')})
 
 
@@ -314,7 +322,7 @@ def step_6(request, trial_pk):
                                'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[5],
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
+                               'steps': step_list(trial_pk),
                                'next_form_title':_('Outcomes Form')})
 
 
@@ -344,7 +352,7 @@ def step_7(request, trial_pk):
                                'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[6],
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)],
+                               'steps': step_list(trial_pk),
                                'next_form_title':_('Descriptor Form')})
 
 
@@ -355,66 +363,50 @@ def step_8(request, trial_pk):
     contact_type = {'PublicContact':PublicContact,
                     'ScientificContact':ScientificContact,
                     'SiteContact':SiteContact}
+    
+    contact_type = {
+        'PublicContact': (PublicContact,PublicContactForm),
+        'ScientificContact': (ScientificContact,ScientificContactForm),
+        'SiteContact': (SiteContact,SiteContactForm)
+    }
 
-    PublicContactFormSet = inlineformset_factory(ClinicalTrial,
-                                                contact_type['PublicContact'],
-                                                form=PublicContactForm,
-                                                can_delete=True,
-                                                extra=EXTRA_FORMS)
-    ScientificContactFormSet = inlineformset_factory(ClinicalTrial,
-                                                contact_type['ScientificContact'],
-                                                form=ScientificContactForm,
-                                                can_delete=True,
-                                                extra=EXTRA_FORMS)
-    SiteContactFormSet = inlineformset_factory(ClinicalTrial,
-                                                contact_type['SiteContact'],
-                                                form=SiteContactForm,
-                                                can_delete=True,
-                                                extra=EXTRA_FORMS)
+    InlineFormSetClasses = []
+    for model,form in contact_type.values():
+        InlineFormSetClasses.append(
+            inlineformset_factory(ClinicalTrial,model,form=form,can_delete=True,extra=EXTRA_FORMS)
+        )
 
     ContactFormSet = modelformset_factory(Contact, form=ContactForm, extra=1)
 
     contact_qs = Contact.objects.none()
 
     if request.POST:
-        public_form_set = PublicContactFormSet(request.POST,
-                                               instance=ct)
-        scientific_form_set = ScientificContactFormSet(request.POST,
-                                                       instance=ct)
-        site_form_set = SiteContactFormSet(request.POST,
-                                                    instance=ct)
-
+        inlineformsets = [fs(request.POST,instance=ct) for fs in InlineFormSetClasses]
         new_contact_formset = ContactFormSet(request.POST,queryset=contact_qs)
 
-        if public_form_set.is_valid() \
-                and scientific_form_set.is_valid() \
-                and site_form_set.is_valid() \
+        if not False in [fs.is_valid for fs in inlineformsets] \
                 and new_contact_formset.is_valid():
 
             for contactform in new_contact_formset.forms:
                 if contactform.cleaned_data:
-                    Relation = contact_type[contactform.cleaned_data.pop('relation')]
+                    Relation = contact_type[contactform.cleaned_data.pop('relation')][0]
                     new_contact = contactform.save()
                     Relation.objects.create(trial=ct,contact=new_contact)
 
-            public_form_set.save()
-            scientific_form_set.save()
-            site_form_set.save()
-            
+            for fs in inlineformsets:
+                fs.save()
             return HttpResponseRedirect(reverse("registry.edittrial", args=[trial_pk]))
     else:
-        public_form_set = PublicContactFormSet(instance=ct)
-        scientific_form_set = ScientificContactFormSet(instance=ct)
-        site_form_set = SiteContactFormSet(instance=ct)
+        inlineformsets = [fs(instance=ct) for fs in InlineFormSetClasses]
         new_contact_formset = ContactFormSet(queryset=contact_qs)
 
-    formsets = [public_form_set,scientific_form_set,site_form_set,new_contact_formset]
+    formsets = inlineformsets + [new_contact_formset]
     return render_to_response('registry/trial_form.html',
                               {'formsets':formsets,
                                'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[7],
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)]})
+                               'steps': step_list(trial_pk)})
 
 @login_required
 def step_9(request, trial_pk):
@@ -464,4 +456,4 @@ def step_9(request, trial_pk):
                                'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[8],
-                               'links': [reverse('step_%d'%i,args=[trial_pk]) for i in range(1,10)]})
+                               'steps': step_list(trial_pk)})

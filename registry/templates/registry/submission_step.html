@@ -8,8 +8,10 @@
 <div class="stepmenu stepmenu-top">
     <ul>
         <li><a href="{% url registry.edittrial trial_pk %}">{% trans "Summary" %}</a></li>
-        {% for link in links %}
-        <li><a href="{{link}}">step {{forloop.counter}}</a></li>
+        {% for step,iscurrent in steps %}
+        <li{% if iscurrent %} class="current"{% endif %}>
+           <a href="{{step}}">step {{forloop.counter}}</a>
+        </li>
         {% endfor %}
     </ul>
 </div>
@@ -19,8 +21,10 @@
 <div class="stepmenu stepmenu-bottom">
     <ul>
         <li><a href="{% url registry.edittrial trial_pk %}">{% trans "Summary" %}</a></li>
-        {% for link in links %}
-        <li><a href="{{link}}">step {{forloop.counter}}</a></li>
+        {% for step,iscurrent in steps %}
+        <li{% if iscurrent %} class="current"{% endif %}>
+            <a href="{{step}}">step {{forloop.counter}}</a>
+        </li>
         {% endfor %}
     </ul>
 </div>
