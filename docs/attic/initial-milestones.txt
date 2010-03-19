@@ -1,0 +1,129 @@
+===================
+Initial milestones
+===================
+
+NOTE: these were superseded by a later Work Breakdown Analysis which
+was validated with the Executive Committee in January/2010
+
+v0.6
+10/01/09
+||'''1'''||'''Cadastramento dos dados de um registro de ensaio clínico'''||'''baseline'''||'''progress'''||
+||'''1.1'''||'''Formulário de cadastro (TRDS)'''|| || ||
+||1.1.1||Campos simples||100%|| ||
+||1.1.2||Campos compostos||33%|| ||
+||'''1.3'''||'''Acompanhamento dos ensaios registrados'''|| || ||
+||1.3.2||Visão detalhada de um registro||33%|| ||
+||'''1.7'''||'''Identificação de usuário'''|| || ||
+||1.7.1||Autenticação (login)||100%|| ||
+||'''2'''||'''Customização e operação independente'''|| || ||
+||'''2.1'''||'''Gestão de usuários'''|| || ||
+||2.1.2||CRUD de usuários||50%|| ||
+||'''2.4'''||'''Configuração de vocabulários controlados'''|| || ||
+||2.4.1||Modelagem de vocabulários controlados||50%|| ||
+||2.4.2||Implem. da interface de edição de vocabulários internos||50%|| ||
+||'''5'''||'''Implantação'''|| || ||
+||5.1||Servidor de testes||100%|| ||
+
+v0.7
+11/06/09
+||'''1'''||'''Cadastramento dos dados de um registro de ensaio clínico'''||'''baseline'''||'''progress'''||
+||'''1.1'''||'''Formulário de cadastro (TRDS)'''|| ||
+||1.1.2||Campos compostos||67%|| ||
+||'''1.3'''||'''Acompanhamento dos ensaios registrados'''|| || ||
+||1.3.1||Listagem de registros por estágio no workflow||100%|| ||
+||1.3.2||Visão detalhada de um registro||67%|| ||
+||1.3.4||Comentário geral do revisor||100%|| ||
+||1.3.5||Visualização das alterações||100%|| ||
+||1.3.6||Workflow básico||50%|| ||
+||'''1.4'''||'''Edição de dados de um registro'''|| || ||
+||1.4.1||Registro das alterações||50%|| ||
+||'''1.8'''||'''Log de mudanças'''|| || ||
+||1.8.1||Definição do formato||100%|| ||
+||1.8.2||Persistência||100%|| ||
+||'''1.A'''||'''Design'''|| || ||
+||1.A.1||Projeto gráfico||100%|| ||
+||'''2'''||'''Customização e operação independente'''|| || ||
+||'''2.1'''||'''Gestão de usuários'''|| || ||
+||2.1.1||Definição de papéis e permissões||100%|| ||
+||2.1.2||CRUD de usuários||100%|| ||
+||'''2.4'''||'''Configuração de vocabulários controlados'''|| || ||
+||2.4.1||Modelagem de vocabulários controlados||100%|| ||
+||2.4.2||Implem. da interface de edição de vocabulários internos||100%|| ||
+
+v0.8
+12/16/09
+||'''1'''||'''Cadastramento dos dados de um registro de ensaio clínico'''||'''baseline'''||'''progress'''||
+||'''1.1'''||'''Formulário de cadastro (TRDS)'''|| || ||
+||1.1.2||Campos compostos||100%|| ||
+||1.1.3||Vocabulários controlados externos||33%|| ||
+||'''1.3'''||'''Acompanhamento dos ensaios registrados'''|| || ||
+||1.3.2||Visão detalhada de um registro||100%|| ||
+||1.3.3||Comentários do revisor campo a campo||100%|| ||
+||1.3.6||Workflow básico||100%|| ||
+||'''1.4'''||'''Edição de dados de um registro'''|| || ||
+||1.4.1||Registro das alterações||100%|| ||
+||1.4.2||Sumário do estado da edição||100%|| ||
+||1.4.3||Validação levando em conta comentários do revisor||100%|| ||
+||'''1.6'''||'''Cadastramento de usuário'''|| || ||
+||1.6.1||Formulário de cadastramento||100%|| ||
+||'''1.9'''||'''Segurança'''|| || ||
+||1.9.1||Configuração SSL||100%|| ||
+||'''1.A'''||'''Design'''|| || ||
+||1.A.2||CSS e templates internos||100%|| ||
+||'''2'''||'''Customização e operação independente'''|| || ||
+||'''2.5'''||'''Interface de validação dos registros'''|| || ||
+||2.5.1||Relatórios por datas de atualização e vencimento de prazos||100%|| ||
+||2.5.3||Marcação de status de desatualizado||100%|| ||
+||2.5.4||Notificação do registrador por e-mail||100%|| ||
+||'''5'''||'''Implantação'''|| || ||
+||5.2||Servidor de homologação||100%|| ||
+
+v0.9
+01/15/10
+||'''1'''||'''Cadastramento dos dados de um registro de ensaio clínico'''||'''baseline'''||'''progress'''||
+||'''1.1'''||'''Formulário de cadastro (TRDS)'''|| || ||
+||1.1.3||Vocabulários controlados externos||67%|| ||
+||'''1.5'''||'''Tradução do registro'''|| || ||
+||1.5.1||Formulário de tradução||50%|| ||
+||1.5.2||Validação da tradução||50%|| ||
+||'''1.A'''||'''Design'''|| || ||
+||1.A.3||CSS e templates públicos||100%|| ||
+||'''2'''||'''Customização e operação independente'''|| || ||
+||'''2.4'''||'''Configuração de vocabulários controlados'''|| || ||
+||2.4.3||Implem. da interface de configuração de vocabulários externos||50%|| ||
+||'''3'''||'''Coerência e integração entre plat. de registro de ensaios clínicos'''|| || ||
+||3.2||Integração com ICTRP (WHO)||50%|| ||
+||'''4'''||'''Portal público'''|| || ||
+||4.1||Mecanismo de busca integrada e unificada||100%|| ||
+||4.2||Acesso área restrita para cadastro de registro||100%|| ||
+
+v1.0
+02/26/10
+||'''1'''||'''Cadastramento dos dados de um registro de ensaio clínico'''||'''baseline'''||'''progress'''||
+||'''1.1'''||'''Formulário de cadastro (TRDS)'''|| || ||
+||1.1.3||Vocabulários controlados externos||100%|| ||
+||'''1.2'''||'''Carga de documentos associados'''|| || ||
+||1.2.1||Configuração de ambiente para arquivos estáticos||100%|| ||
+||'''1.5'''||'''Tradução do registro'''|| || ||
+||1.5.1||Formulário de tradução||100%|| ||
+||1.5.2||Validação da tradução||100%|| ||
+||'''1.6'''||'''Cadastramento de usuário'''|| || ||
+||1.6.2||Confirmação do e-mail do usuário||100%|| ||
+||'''1.9'''||'''Segurança'''|| || ||
+||1.9.2||Obtenção de certificado definitivo||100%|| ||
+||'''2'''||'''Customização e operação independente'''|| || ||
+||'''2.4'''||'''Configuração de vocabulários controlados'''|| || ||
+||2.4.3||Implem. da interface de configuração de vocabulários externos||100%|| ||
+||'''2.5'''||'''Interface de validação dos registros'''|| || ||
+||2.5.2||Relatórios por campos de vocabulário controlado||100%|| ||
+||'''3'''||'''Coerência e integração entre plat. de registro de ensaios clínicos'''|| || ||
+||3.2||Integração com ICTRP (WHO)||100%|| ||
+||3.5||Mecanismo de exportação de registros||100%|| ||
+||'''4'''||'''Portal público'''|| || ||
+||4.3||Interface de recuperação||100%|| ||
+||4.4||Publicação SOPs||100%|| ||
+||4.6||FAQs||100%|| ||
+||'''5'''||'''Implantação'''|| || ||
+||5.3||Servidores de produção||100%|| ||
+
+
