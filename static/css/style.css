@@ -204,6 +204,10 @@ table.table th {
     color:#333;
 }
 
+table.trialsummary {
+    width: 100%;
+}
+
 /* AJAX DeCS Tools */
 td div.decstool {
     display: none;
