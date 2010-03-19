@@ -89,14 +89,15 @@ class ReviewModelForm(forms.ModelForm):
         normal_row = u'''
             <tr><th>%(label)s</th>
                 <td>%(errors)s%(field)s</td>
-                <td>%(help_text)s
+                <td class="help">
+                    <div class="text">%(help_text)s</div>
                     <div class="issue">%(issue)s</div>
                     </td></tr>
         '''
         return self._html_output(normal_row=normal_row,
                                  error_row=u'<tr><td colspan="3">%s</td></tr>',
                                  row_ender='</td></tr>',
-                                 help_text_html=u'<br />%s',
+                                 help_text_html=u'%s',
                                  errors_on_separate_row=False)
 #
 # Forms
