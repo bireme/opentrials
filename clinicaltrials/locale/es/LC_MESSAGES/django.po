@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: rebrac/models.py:23 registry/models.py:295
+#: rebrac/models.py:23 repository/models.py:295
 msgid "Status"
 msgstr ""
 
@@ -28,17 +28,17 @@ msgstr ""
 msgid "Initial Data fields"
 msgstr ""
 
-#: rebrac/views.py:24 registry/models.py:20 registry/trds.py:15
-#: registry/trds_forms.py:24
+#: rebrac/views.py:24 repository/models.py:20 repository/trds.py:15
+#: repository/trds_forms.py:24
 msgid "Scientific Title"
 msgstr ""
 
-#: rebrac/views.py:27 registry/trds.py:16
+#: rebrac/views.py:27 repository/trds.py:16
 msgid "Countries of Recruitment"
 msgstr ""
 
 #: rebrac/views.py:34 rebrac/templates/rebrac/new_submission.html:10
-#: registry/models.py:27 registry/trds.py:10
+#: repository/models.py:27 repository/trds.py:10
 msgid "Primary Sponsor"
 msgstr ""
 
@@ -54,286 +54,286 @@ msgstr ""
 msgid "Submit a new Clinical Trial"
 msgstr ""
 
-#: registry/models.py:14
+#: repository/models.py:14
 msgid "Primary Id Number"
 msgstr ""
 
-#: registry/models.py:17 tickets/models.py:11
+#: repository/models.py:17 tickets/models.py:11
 msgid "Date of Registration"
 msgstr ""
 
-#: registry/models.py:23 registry/trds_forms.py:29
+#: repository/models.py:23 repository/trds_forms.py:29
 msgid "Scientific Acronym"
 msgstr ""
 
-#: registry/models.py:29 registry/trds.py:14 registry/trds_forms.py:33
+#: repository/models.py:29 repository/trds.py:14 repository/trds_forms.py:33
 msgid "Public Title"
 msgstr ""
 
-#: registry/models.py:32 registry/trds_forms.py:37
+#: repository/models.py:32 repository/trds_forms.py:37
 msgid "Acronym"
 msgstr ""
 
-#: registry/models.py:35
+#: repository/models.py:35
 msgid "Health Condition(s)"
 msgstr ""
 
-#: registry/models.py:38 registry/trds_forms.py:78 registry/trds_forms.py:81
+#: repository/models.py:38 repository/trds_forms.py:78 repository/trds_forms.py:81
 msgid "Intervention(s)"
 msgstr ""
 
-#: registry/models.py:41 registry/trds_forms.py:131
+#: repository/models.py:41 repository/trds_forms.py:131
 msgid "Inclusion Criteria"
 msgstr ""
 
-#: registry/models.py:44 registry/trds_forms.py:135
+#: repository/models.py:44 repository/trds_forms.py:135
 msgid "Gender (inclusion sex)"
 msgstr ""
 
-#: registry/models.py:48 registry/trds_forms.py:138
+#: repository/models.py:48 repository/trds_forms.py:138
 msgid "Inclusion Minimum Age"
 msgstr ""
 
-#: registry/models.py:50 registry/trds_forms.py:140
+#: repository/models.py:50 repository/trds_forms.py:140
 msgid "Minimum Age Unit"
 msgstr ""
 
-#: registry/models.py:54 registry/trds_forms.py:143
+#: repository/models.py:54 repository/trds_forms.py:143
 msgid "Inclusion Maximum Age"
 msgstr ""
 
-#: registry/models.py:56 registry/trds_forms.py:145
+#: repository/models.py:56 repository/trds_forms.py:145
 msgid "Maximum Age Unit"
 msgstr ""
 
-#: registry/models.py:60 registry/trds_forms.py:148
+#: repository/models.py:60 repository/trds_forms.py:148
 msgid "Exclusion Criteria"
 msgstr ""
 
-#: registry/models.py:64 registry/trds_forms.py:90 registry/trds_forms.py:93
+#: repository/models.py:64 repository/trds_forms.py:90 repository/trds_forms.py:93
 msgid "Study Type"
 msgstr ""
 
-#: registry/models.py:67 registry/trds_forms.py:97
+#: repository/models.py:67 repository/trds_forms.py:97
 msgid "Study Design"
 msgstr ""
 
-#: registry/models.py:71 registry/trds_forms.py:101
+#: repository/models.py:71 repository/trds_forms.py:101
 msgid "Study Phase"
 msgstr ""
 
-#: registry/models.py:75
+#: repository/models.py:75
 msgid "Anticipated Date of First Enrollment"
 msgstr ""
 
-#: registry/models.py:79
+#: repository/models.py:79
 msgid "Actual Date of First Enrollment"
 msgstr ""
 
-#: registry/models.py:82 registry/trds_forms.py:128
+#: repository/models.py:82 repository/trds_forms.py:128
 msgid "Target Sample Size"
 msgstr ""
 
-#: registry/models.py:86 registry/trds_forms.py:120
+#: repository/models.py:86 repository/trds_forms.py:120
 msgid "Recruitment Status"
 msgstr ""
 
-#: registry/models.py:90
+#: repository/models.py:90
 msgid "Last Update"
 msgstr ""
 
-#: registry/models.py:91
+#: repository/models.py:91
 msgid "Record Note (staff use only)"
 msgstr ""
 
-#: registry/models.py:155
+#: repository/models.py:155
 msgid "Updated"
 msgstr ""
 
-#: registry/models.py:236
+#: repository/models.py:236
 msgid "Issuing Authority"
 msgstr ""
 
-#: registry/models.py:238
+#: repository/models.py:238
 msgid "Secondary Id Number"
 msgstr ""
 
-#: registry/models.py:250 registry/models.py:293
+#: repository/models.py:250 repository/models.py:293
 msgid "Relationship"
 msgstr ""
 
-#: registry/models.py:259
+#: repository/models.py:259
 msgid "Name"
 msgstr ""
 
-#: registry/models.py:260
+#: repository/models.py:260
 msgid "Postal Address"
 msgstr ""
 
-#: registry/models.py:261 registry/models.py:279 registry/models.py:307
-#: registry/trds_forms.py:166
+#: repository/models.py:261 repository/models.py:279 repository/models.py:307
+#: repository/trds_forms.py:166
 msgid "Country"
 msgstr ""
 
-#: registry/models.py:270 registry/trds_forms.py:154
+#: repository/models.py:270 repository/trds_forms.py:154
 msgid "First Name"
 msgstr ""
 
-#: registry/models.py:271 registry/trds_forms.py:155
+#: repository/models.py:271 repository/trds_forms.py:155
 msgid "Middle Name"
 msgstr ""
 
-#: registry/models.py:272 registry/trds_forms.py:156
+#: repository/models.py:272 repository/trds_forms.py:156
 msgid "Last Name"
 msgstr ""
 
-#: registry/models.py:273 registry/trds_forms.py:158
+#: repository/models.py:273 repository/trds_forms.py:158
 msgid "E-mail"
 msgstr ""
 
-#: registry/models.py:275 registry/trds_forms.py:161
+#: repository/models.py:275 repository/trds_forms.py:161
 msgid "Affiliation"
 msgstr ""
 
-#: registry/models.py:276 registry/trds_forms.py:163
+#: repository/models.py:276 repository/trds_forms.py:163
 msgid "Address"
 msgstr ""
 
-#: registry/models.py:277 registry/trds_forms.py:164
+#: repository/models.py:277 repository/trds_forms.py:164
 msgid "City"
 msgstr ""
 
-#: registry/models.py:280 registry/trds_forms.py:168
+#: repository/models.py:280 repository/trds_forms.py:168
 msgid "Postal Code"
 msgstr ""
 
-#: registry/models.py:281 registry/trds_forms.py:169
+#: repository/models.py:281 repository/trds_forms.py:169
 msgid "Telephone"
 msgstr ""
 
-#: registry/models.py:310
+#: repository/models.py:310
 msgid "Recruitment Countries"
 msgstr ""
 
-#: registry/models.py:332
+#: repository/models.py:332
 msgid "Interest"
 msgstr ""
 
-#: registry/models.py:335
+#: repository/models.py:335
 msgid "Outcome Description"
 msgstr ""
 
-#: registry/models.py:345
+#: repository/models.py:345
 msgid "Trial Aspect"
 msgstr ""
 
-#: registry/models.py:347
+#: repository/models.py:347
 msgid "Vocabulary"
 msgstr ""
 
-#: registry/models.py:349
+#: repository/models.py:349
 msgid "Version"
 msgstr ""
 
-#: registry/models.py:350
+#: repository/models.py:350
 msgid "Level"
 msgstr ""
 
-#: registry/models.py:352
+#: repository/models.py:352
 msgid "Code"
 msgstr ""
 
-#: registry/models.py:353
+#: repository/models.py:353
 msgid "Text"
 msgstr ""
 
-#: registry/trds.py:6
+#: repository/trds.py:6
 msgid "Primary Registry and Trial Identifying Number"
 msgstr ""
 
-#: registry/trds.py:7
+#: repository/trds.py:7
 msgid "Date of Registration in Primary Registry"
 msgstr ""
 
-#: registry/trds.py:8
+#: repository/trds.py:8
 msgid "Secondary Identifying Numbers"
 msgstr ""
 
-#: registry/trds.py:9
+#: repository/trds.py:9
 msgid "Source(s) of Monetary or Material Support"
 msgstr ""
 
-#: registry/trds.py:11
+#: repository/trds.py:11
 msgid "Secondary Sponsors"
 msgstr ""
 
-#: registry/trds.py:12
+#: repository/trds.py:12
 msgid "Contacts for Public Queries"
 msgstr ""
 
-#: registry/trds.py:13
+#: repository/trds.py:13
 msgid "Contacts for Scientific Queries"
 msgstr ""
 
-#: registry/trds_forms.py:22
+#: repository/trds_forms.py:22
 msgid "Trial Identification"
 msgstr ""
 
-#: registry/trds_forms.py:48
+#: repository/trds_forms.py:48
 msgid "Sponsors and Sources of Support"
 msgstr ""
 
-#: registry/trds_forms.py:58
+#: repository/trds_forms.py:58
 msgid "Descriptor"
 msgstr ""
 
-#: registry/trds_forms.py:66
+#: repository/trds_forms.py:66
 msgid "Health Condition(s) or Problem(s) Studied"
 msgstr ""
 
-#: registry/trds_forms.py:69
+#: repository/trds_forms.py:69
 msgid "Health Condition(s) or Problem(s)"
 msgstr ""
 
-#: registry/trds_forms.py:115
+#: repository/trds_forms.py:115
 msgid "Recruitment"
 msgstr ""
 
-#: registry/trds_forms.py:125
+#: repository/trds_forms.py:125
 msgid "Date of First Enrollment"
 msgstr ""
 
-#: registry/trds_forms.py:152
+#: repository/trds_forms.py:152
 msgid "Contacts"
 msgstr ""
 
-#: registry/trds_forms.py:175
+#: repository/trds_forms.py:175
 msgid "Outcomes"
 msgstr ""
 
-#: registry/templates/registry/add_clinicalTrials.html:3
+#: repository/templates/repository/add_clinicalTrials.html:3
 msgid "Add a new Clinical Trial Record"
 msgstr ""
 
-#: registry/templates/registry/trial_form.html:12
-#: registry/templates/registry/trial_outcomes_form.html:15
+#: repository/templates/repository/trial_form.html:12
+#: repository/templates/repository/trial_outcomes_form.html:15
 msgid "Save and continue later"
 msgstr ""
 
-#: registry/templates/registry/trial_form.html:16
-#: registry/templates/registry/trial_outcomes_form.html:19
+#: repository/templates/repository/trial_form.html:16
+#: repository/templates/repository/trial_outcomes_form.html:19
 msgid "Save and go to"
 msgstr ""
 
-#: registry/templates/registry/trial_index.html:3
+#: repository/templates/repository/trial_index.html:3
 msgid "Trial Summary"
 msgstr ""
 
-#: registry/templates/registry/trial_outcomes_form.html:8
+#: repository/templates/repository/trial_outcomes_form.html:8
 msgid "Primary Outcomes"
 msgstr ""
 
-#: registry/templates/registry/trial_outcomes_form.html:11
+#: repository/templates/repository/trial_outcomes_form.html:11
 msgid "Secondary Outcomes"
 msgstr ""
 

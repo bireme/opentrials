@@ -5,7 +5,7 @@ from django.conf import settings
 
 from datetime import datetime
 
-from registry.models import ClinicalTrial, Institution
+from repository.models import ClinicalTrial, Institution
 
 from vocabulary.models import CountryCode
 

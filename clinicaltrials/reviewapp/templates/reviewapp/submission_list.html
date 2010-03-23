@@ -17,7 +17,7 @@
         <tr>
             <td>{{ submission.created|date:'d M Y' }}</td>
             <td>
-                <a href="{% url registry.edittrial submission.trial.pk %}">{{ submission.short_title }}</a>
+                <a href="{% url repository.edittrial submission.trial.pk %}">{{ submission.short_title }}</a>
             </td>
             <td>{{ submission.status }}</td>
         </tr>

@@ -6,9 +6,9 @@ import settings
 setup_environ(settings)
 
 from vocabulary.models import CountryCode
-from registry.models import ClinicalTrial, Institution, TrialSecondarySponsor
-from registry.models import TrialSupportSource, Contact, SiteContact, PublicContact
-from registry.models import ScientificContact, InterventionCode
+from repository.models import ClinicalTrial, Institution, TrialSecondarySponsor
+from repository.models import TrialSupportSource, Contact, SiteContact, PublicContact
+from repository.models import ScientificContact, InterventionCode
 
 clinical_trial_xpath = {
     'trial_id':'',
@@ -46,7 +46,7 @@ contact_types = {
 }
 
 
-xml = open('registry/xml/sample_1b.xml')
+xml = open('repository/xml/sample_1b.xml')
 tree = ElementTree()
 root = tree.parse(xml)
 

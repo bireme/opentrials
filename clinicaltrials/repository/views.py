@@ -3,18 +3,18 @@
 from reviewapp.models import Attachment, Submission
 from reviewapp.trds_forms import ExistingAttachmentForm,NewAttachmentForm
 
-from registry.models import ClinicalTrial, Descriptor, TrialNumber
-from registry.models import TrialSecondarySponsor, TrialSupportSource, Outcome
-from registry.models import PublicContact, ScientificContact, SiteContact, Contact
+from repository.models import ClinicalTrial, Descriptor, TrialNumber
+from repository.models import TrialSecondarySponsor, TrialSupportSource, Outcome
+from repository.models import PublicContact, ScientificContact, SiteContact, Contact
 
-from registry.trds_forms import GeneralHealthDescriptorForm, PrimarySponsorForm
-from registry.trds_forms import SecondaryIdForm, SecondarySponsorForm
-from registry.trds_forms import SupportSourceForm, TrialIdentificationForm
-from registry.trds_forms import SpecificHealthDescriptorForm, HealthConditionsForm
-from registry.trds_forms import InterventionDescriptorForm, InterventionForm
-from registry.trds_forms import RecruitmentForm, StudyTypeForm, OutcomesForm
-from registry.trds_forms import PublicContactForm, ScientificContactForm
-from registry.trds_forms import ContactForm, NewInstitution, SiteContactForm
+from repository.trds_forms import GeneralHealthDescriptorForm, PrimarySponsorForm
+from repository.trds_forms import SecondaryIdForm, SecondarySponsorForm
+from repository.trds_forms import SupportSourceForm, TrialIdentificationForm
+from repository.trds_forms import SpecificHealthDescriptorForm, HealthConditionsForm
+from repository.trds_forms import InterventionDescriptorForm, InterventionForm
+from repository.trds_forms import RecruitmentForm, StudyTypeForm, OutcomesForm
+from repository.trds_forms import PublicContactForm, ScientificContactForm
+from repository.trds_forms import ContactForm, NewInstitution, SiteContactForm
 
 import choices
 from django.core import serializers
@@ -47,7 +47,7 @@ def edit_trial_index(request, trial_pk):
         data['icon'] = '/media/img/admin/icon_alert.gif'
         data['msg'] = 'Blank fields'
         links.append(data)
-    return render_to_response('registry/trial_index.html',
+    return render_to_response('repository/trial_index.html',
                               {'username':request.user.username,
                                'trial_pk':trial_pk,
                                'links':links})
@@ -55,14 +55,14 @@ def edit_trial_index(request, trial_pk):
 def full_view(request, trial_pk):
     ''' full view '''
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
-    return render_to_response('registry/trds.html',
+    return render_to_response('repository/trds.html',
                               {'fieldtable':ct.html_dump()})
 
 
 @login_required
 def index(request):
     latest_clinicalTrials = ClinicalTrial.objects.all()[:5]
-    t = loader.get_template('registry/latest_clinicalTrials.html')
+    t = loader.get_template('repository/latest_clinicalTrials.html')
     c  = Context({
         'latest_clinicalTrials': latest_clinicalTrials,
     })
@@ -79,8 +79,8 @@ def new_institution(request):
             return HttpResponse(json, mimetype='application/json');
     else:
         new_institution = NewInstitution()
-    
-    return render_to_response('registry/new_institution.html',
+
+    return render_to_response('repository/new_institution.html',
                              {'form':new_institution})
 
 def step_list(trial_pk):
@@ -94,7 +94,7 @@ def step_list(trial_pk):
 @login_required
 def step_1(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
-    
+
     if request.POST:
         form = TrialIdentificationForm(request.POST, instance=ct)
         SecondaryIdSet = inlineformset_factory(ClinicalTrial, TrialNumber,
@@ -108,8 +108,8 @@ def step_1(request, trial_pk):
 
             if request.POST.has_key('submit_next'):
                 return HttpResponseRedirect(reverse("step_2",args=[trial_pk]))
-            
-            return HttpResponseRedirect(reverse("registry.edittrial", args=[trial_pk]))
+
+            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = TrialIdentificationForm(instance=ct)
         SecondaryIdSet = inlineformset_factory(ClinicalTrial, TrialNumber,
@@ -119,7 +119,7 @@ def step_1(request, trial_pk):
 
     forms = [form]
     formsets = [secondary_forms]
-    return render_to_response('registry/trial_form.html',
+    return render_to_response('repository/trial_form.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
                                'trial_pk':trial_pk,
@@ -149,8 +149,8 @@ def step_2(request, trial_pk):
 
             if request.POST.has_key('submit_next'):
                 return HttpResponseRedirect(reverse("step_3",args=[trial_pk]))
-            
-            return HttpResponseRedirect(reverse("registry.edittrial", args=[trial_pk]))
+
+            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = PrimarySponsorForm(instance=ct)
         SecondarySponsorSet = inlineformset_factory(ClinicalTrial, TrialSecondarySponsor,
@@ -166,7 +166,7 @@ def step_2(request, trial_pk):
 
     forms = [form]
     formsets = [secondary_forms,sources_form]
-    return render_to_response('registry/step_2.html',
+    return render_to_response('repository/step_2.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
                                'trial_pk':trial_pk,
@@ -211,8 +211,8 @@ def step_3(request, trial_pk):
 
             if request.POST.has_key('submit_next'):
                 return HttpResponseRedirect(reverse("step_4",args=[trial_pk]))
-            
-            return HttpResponseRedirect(reverse("registry.edittrial", args=[trial_pk]))
+
+            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = HealthConditionsForm(instance=ct)
         gdesc = GeneralDescriptorSet(queryset=general_qs,prefix='g')
@@ -221,7 +221,7 @@ def step_3(request, trial_pk):
 
     forms = [form]
     formsets = [gdesc, sdesc]
-    return render_to_response('registry/step_3.html',
+    return render_to_response('repository/step_3.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
                                'trial_pk':trial_pk,
@@ -255,15 +255,15 @@ def step_4(request, trial_pk):
 
             if request.POST.has_key('submit_next'):
                 return HttpResponseRedirect(reverse("step_5",args=[trial_pk]))
-            
-            return HttpResponseRedirect(reverse("registry.edittrial", args=[trial_pk]))
+
+            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = InterventionForm(instance=ct)
         idesc = DescriptorFormSet(queryset=queryset)
 
     forms = [form]
     formsets = [idesc]
-    return render_to_response('registry/trial_form.html',
+    return render_to_response('repository/trial_form.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
                                'trial_pk':trial_pk,
@@ -284,13 +284,13 @@ def step_5(request, trial_pk):
 
             if request.POST.has_key('submit_next'):
                 return HttpResponseRedirect(reverse("step_6",args=[trial_pk]))
-            
-            return HttpResponseRedirect(reverse("registry.edittrial", args=[trial_pk]))
+
+            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = RecruitmentForm(instance=ct)
 
     forms = [form]
-    return render_to_response('registry/trial_form.html',
+    return render_to_response('repository/trial_form.html',
                               {'forms':forms,
                                'username':request.user.username,
                                'trial_pk':trial_pk,
@@ -311,13 +311,13 @@ def step_6(request, trial_pk):
 
             if request.POST.has_key('submit_next'):
                 return HttpResponseRedirect(reverse("step_7",args=[trial_pk]))
-            
-            return HttpResponseRedirect(reverse("registry.edittrial", args=[trial_pk]))
+
+            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = StudyTypeForm(instance=ct)
 
     forms = [form]
-    return render_to_response('registry/trial_form.html',
+    return render_to_response('repository/trial_form.html',
                               {'forms':forms,
                                'username':request.user.username,
                                'trial_pk':trial_pk,
@@ -341,13 +341,13 @@ def step_7(request, trial_pk):
 
             if request.POST.has_key('submit_next'):
                 return HttpResponseRedirect(reverse("step_8",args=[trial_pk]))
-            
-            return HttpResponseRedirect(reverse("registry.edittrial", args=[trial_pk]))
+
+            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         outcomes_formset = OutcomesSet(instance=ct)
 
     formsets = [outcomes_formset]
-    return render_to_response('registry/trial_form.html',
+    return render_to_response('repository/trial_form.html',
                               {'formsets':formsets,
                                'username':request.user.username,
                                'trial_pk':trial_pk,
@@ -391,13 +391,13 @@ def step_8(request, trial_pk):
 
             for fs in inlineformsets:
                 fs.save()
-            return HttpResponseRedirect(reverse("registry.edittrial", args=[trial_pk]))
+            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         inlineformsets = [fs(instance=ct) for fs in InlineFormSetClasses]
         new_contact_formset = ContactFormSet(queryset=contact_qs)
 
     formsets = inlineformsets + [new_contact_formset]
-    return render_to_response('registry/trial_form.html',
+    return render_to_response('repository/trial_form.html',
                               {'formsets':formsets,
                                'username':request.user.username,
                                'trial_pk':trial_pk,
@@ -409,7 +409,7 @@ def step_9(request, trial_pk):
     # TODO: this function should be on another place
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     su = Submission.objects.get(trial=ct)
-    
+
     ExistingAttachmentFormSet = inlineformset_factory(Submission,
                                              Attachment,
                                              extra=0,
@@ -438,8 +438,8 @@ def step_9(request, trial_pk):
                 cdata['submission'] = su
 
             new_attachment_formset.save()
-            
-            return HttpResponseRedirect(reverse("registry.edittrial", args=[trial_pk]))
+
+            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         existing_attachment_formset = ExistingAttachmentFormSet(instance=su,
                                                                 prefix='existing')
@@ -447,7 +447,7 @@ def step_9(request, trial_pk):
                                                       prefix='new')
 
     formsets = [existing_attachment_formset,new_attachment_formset]
-    return render_to_response('registry/attachments.html',
+    return render_to_response('repository/attachments.html',
                               {'formsets':formsets,
                                'username':request.user.username,
                                'trial_pk':trial_pk,

@@ -2,10 +2,10 @@
 
 from assistance.models import FieldHelp
 from vocabulary.models import CountryCode
-from registry.models import ClinicalTrial, Contact, Descriptor, Institution
-from registry.models import InterventionCode, Outcome, RecruitmentStatus
-from registry.models import StudyPhase, TrialSecondarySponsor
-from registry.models import TrialSupportSource
+from repository.models import ClinicalTrial, Contact, Descriptor, Institution
+from repository.models import InterventionCode, Outcome, RecruitmentStatus
+from repository.models import StudyPhase, TrialSecondarySponsor
+from repository.models import TrialSupportSource
 
 import choices
 

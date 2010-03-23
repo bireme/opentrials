@@ -73,7 +73,7 @@
                 <affiliation>Tabriz Univ Med Sci</affiliation>
             </contact>
             <!-- also: type=site for site contacts, one per site in the country
-                 hosting the registry-->
+                 hosting the repository-->
         </contacts>
         <countries>
             <country2>Iran, Islamic Republic Of</country2>

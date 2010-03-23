@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 from django.forms.models import modelformset_factory
 from reviewapp.models import Submission, Attachment
-from registry.models import ClinicalTrial, CountryCode, Institution
+from repository.models import ClinicalTrial, CountryCode, Institution
 
 def index(request):
     username = request.user.username if request.user.is_authenticated() else None
@@ -68,7 +68,7 @@ def new_submission(request):
                                     title=trial.scientific_title)
             submission.save()
 
-            return HttpResponseRedirect(reverse('registry.edittrial',args=[trial.id]))
+            return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))
     else:
         initial_form = InitialTrialForm()
         sponsor_form = PrimarySponsorForm()
