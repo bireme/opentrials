@@ -360,10 +360,6 @@ def step_7(request, trial_pk):
 def step_8(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
-    contact_type = {'PublicContact':PublicContact,
-                    'ScientificContact':ScientificContact,
-                    'SiteContact':SiteContact}
-    
     contact_type = {
         'PublicContact': (PublicContact,PublicContactForm),
         'ScientificContact': (ScientificContact,ScientificContactForm),
