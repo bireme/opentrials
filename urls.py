@@ -6,8 +6,8 @@ from django.contrib import admin # Django admin UI
 admin.autodiscover()             # Django admin UI
 
 urlpatterns = patterns('',
-    # Registry application
-    url(r'^rg/', include('clinicaltrials.registry.urls')),
+    # Repository application
+    url(r'^rg/', include('clinicaltrials.repository.urls')),
 
     # Tickets application
     url(r'^ticket/', include('clinicaltrials.tickets.urls')),

@@ -3,14 +3,14 @@
 ## Qualifiers for the relationship of secondary entities with a Tickets #
 
 TICKET_CONTEXT = [
-    ('ct_registry_field_1', 'Registry Form - Primary ID',),
-    ('ct_registry_field_4', 'Registry Form - Support Sources',),
-    ('ct_registry_field_5', 'Registry Form - Primary Sponsor',),
-    ('ct_registry_field_6', 'Registry Form - Secondary Sponsor',),
-    ('ct_registry_field_11', 'Registry Form - Recruitment Countries',),
-    ('ct_registry_field_14e', 'Registry Form - Exclusion Criteria',),
-    ('ct_registry_field_15a', 'Registry Form - Study Type',),
-    ('ct_registry_field_15b', 'Registry Form - Study Design',),
+    ('ct_repository_field_1', 'Registry Form - Primary ID',),
+    ('ct_repository_field_4', 'Registry Form - Support Sources',),
+    ('ct_repository_field_5', 'Registry Form - Primary Sponsor',),
+    ('ct_repository_field_6', 'Registry Form - Secondary Sponsor',),
+    ('ct_repository_field_11', 'Registry Form - Recruitment Countries',),
+    ('ct_repository_field_14e', 'Registry Form - Exclusion Criteria',),
+    ('ct_repository_field_15a', 'Registry Form - Study Type',),
+    ('ct_repository_field_15b', 'Registry Form - Study Design',),
     ('translation_tools', 'Administrative translation Tools',),
     ('personal', 'Personal Tickect',),
     ('other', 'Other Context',),

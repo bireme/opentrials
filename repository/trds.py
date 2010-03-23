@@ -1,6 +1,6 @@
 from django.utils.translation import ugettext as _
 
-from registry.models import *
+from repository.models import *
 
 TRDS_LABELS = (
     (1,_('Primary Registry and Trial Identifying Number'), 'trial_id'),
@@ -17,13 +17,13 @@ TRDS_LABELS = (
 )
 
 class TRDSField(object):
-    
+
     def __init__(self, trial, number, title, subfields):
         self.trial = trial
         self.number = number
         self.title = title
         self.subfields = subfields.split()
-            
+
     def dump(self):
         res = []
         for attr_name in self.subfields:
@@ -35,8 +35,8 @@ class TRDSField(object):
                 d['value'] = attr
             res.append(d)
         return res
-            
-    
+
+
 
 '''
     # Scientific fields

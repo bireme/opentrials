@@ -1,5 +1,5 @@
 from django.test import TestCase
-from registry.models import *
+from repository.models import *
 
 class SecondaryNumbers(TestCase):
     fixtures = ['first_3_trials.json']
@@ -12,10 +12,10 @@ class SecondaryNumbers(TestCase):
     def test_short_title(self):
         start = u'Effect of Ascorbic Acid'
         self.assert_(self.asc_trial.short_title().startswith(start))
-        
+
     def test_secondary_numbers(self):
         self.assert_(len(self.asc_trial.trialnumber_set.all())==2)
-        
+
     def test_public_contacts(self):
         contacts = list(self.asc_trial.public_contacts())
         self.assert_(len(contacts)==1)

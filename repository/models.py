@@ -16,7 +16,7 @@ from vocabulary.models import InterventionCode
 from vocabulary.models import StudyPurpose, InterventionAssigment, StudyMasking, StudyAllocation
 
 
-from registry import choices
+from repository import choices
 
 # remove digits that look like letters and vice-versa
 # remove vowels to avoid forming words

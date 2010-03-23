@@ -8,7 +8,7 @@ of the primary sponsor and the languages of the
 recruitment countries limited to EN, PT, ES, FR::
 
     >>> from reviewapp.models import Submission
-    >>> from registry.models import ClinicalTrial, Institution, RecruitmentCountry
+    >>> from repository.models import ClinicalTrial, Institution, RecruitmentCountry
     >>> from vocabulary.models import CountryCode
     >>> i = Institution()
     >>> i.country = CountryCode.objects.get(label='BR')
@@ -16,19 +16,19 @@ recruitment countries limited to EN, PT, ES, FR::
     >>> ct = ClinicalTrial()
     >>> ct.primary_sponsor = i
     >>> ct.save()
-    >>> 
+    >>>
     >>> s = Submission()
     >>> s.trial = ct
     >>> sorted(s.get_mandatory_languages())
     [u'EN', u'PT']
-    
+
     >>> rc = RecruitmentCountry()
     >>> rc.trial = ct
     >>> rc.country = CountryCode.objects.get(label='AR')
     >>> rc.save()
     >>> sorted(s.get_mandatory_languages())
     [u'EN', u'ES', u'PT']
-    
+
     >>> rc = RecruitmentCountry()
     >>> rc.trial = ct
     >>> rc.country = CountryCode.objects.get(label='SR')

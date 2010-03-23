@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-from registry.models import *
+from repository.models import *
 
 tabular_inline_models = [Descriptor, TrialNumber, PublicContact, ScientificContact,
                          TrialSecondarySponsor, TrialSupportSource]
