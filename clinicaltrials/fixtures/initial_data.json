@@ -1,0 +1,10 @@
+[
+  {
+    "pk": 2, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "ec.homolog.bvsalud.org", 
+      "name": "EnsaiosClinicos.gov.br"
+    }
+  }
+]

@@ -1,0 +1,8 @@
+Please use the activation key below to activate your account.
+
+activation_key = {{activation_key}}
+
+This key will expire in {{expiration_days}} days.
+
+site.name = [{{site.name}}]
+site.domain = [{{site.domain}}]

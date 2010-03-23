@@ -22,3 +22,9 @@ if DEBUG:
 
     GRAPHVIZ_DOT_CMD = '/usr/bin/dot'
 
+    EMAIL_HOST = ''
+    EMAIL_PORT = 25 # http://www.iana.org/assignments/port-numbers
+    ### if set, used to authenticate with SMTP
+    # EMAIL_HOST_USER = ''
+    # EMAIL_HOST_PASSWORD = ''
+    # EMAIL_USE_TLS = False

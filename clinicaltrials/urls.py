@@ -29,7 +29,7 @@ urlpatterns = patterns('',
     url(r'^decs/', include('clinicaltrials.decsclient.urls')),
 
     # django-registration views
-    # url(r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^accounts/', include('registration.backends.default.urls')),
 
 )
 
