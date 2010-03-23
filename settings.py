@@ -33,7 +33,7 @@ TIME_ZONE = 'America/Brasilia'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'pt-BR'
 
-SITE_ID = 1
+SITE_ID = 2
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -101,13 +101,21 @@ INSTALLED_APPS = (
 ### BEGIN Clinical Trials Repository customization settings
 
 SITE_TITLE = u'Registro Brasileiro de Ensaios Clínicos'
+
+EMAIL_HOST = ''
+EMAIL_PORT = 25 # http://www.iana.org/assignments/port-numbers
+### if set, used to authenticate with SMTP
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ''
+# EMAIL_USE_TLS = False
+
 DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
 
 # Notes:
 # 1) language codes should follow the IANA standard for language subtags
 #    source: http://www.iana.org/assignments/language-subtag-registry
-# 2) the first managed language is considered the default
-#    and the source language for content translation purposes
+# 2) the first managed language is considered the default and is
+#    also the source language for content translation purposes
 MANAGED_LANGUAGES = (
     ('en',u'English'),
     ('es',u'Español'),
@@ -124,6 +132,8 @@ ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_OPEN = True
 
 ATTACHMENTS_PATH = os.path.join(MEDIA_ROOT, 'attachments')
+
+FIXTURE_DIRS = ('fixtures',)
 
 ### END Clinical Trials Repository customization settings
 #################################################################
