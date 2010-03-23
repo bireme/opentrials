@@ -1,0 +1,12 @@
+This is a copy of django-registration changeset d36a38202ee3 [1]
+
+[1] http://bitbucket.org/ubernostrum/django-registration/changeset/d36a38202ee3/
+
+It was obtained doing wget on URL [2] on 2010-03-23
+
+[2] http://bitbucket.org/ubernostrum/django-registration/get/tip.zip
+
+From the zip above the registration/ subdir was extracted and this readme added.
+
+Previously I tried to do a regular install but successive import errors trying to use the default backend convinced me that the documented installation procedure does not work at this time. (LR)
+
