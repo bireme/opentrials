@@ -94,7 +94,7 @@ INSTALLED_APPS = (
     'decsclient',
     'polyglot',
     'rosetta',
-    # 'registration',  # django-registration package
+    'registration',  # django-registration package
 )
 
 #################################################################
@@ -117,8 +117,11 @@ MANAGED_LANGUAGES = (
 TARGET_LANGUAGES = MANAGED_LANGUAGES[1:] # exlude source language
 CHECKED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES]
 
-# django-registration activation window
+# django-registration: for how long the activation link is valid
 ACCOUNT_ACTIVATION_DAYS = 7
+
+# django-registration: set to False to suspend new user registrations
+REGISTRATION_OPEN = True
 
 ATTACHMENTS_PATH = os.path.join(MEDIA_ROOT, 'attachments')
 

@@ -1,5 +1,0 @@
-This activation/ directory was created as a copy of the directory:
-
-django-registration/registration/backends/default
-
-Changes, if any, are recorded in the Subversion log

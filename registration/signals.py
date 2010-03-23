@@ -1,6 +1,5 @@
-# this file was copied from django-registration/registration/signals.py
-
 from django.dispatch import Signal
+
 
 # A new user has registered.
 user_registered = Signal(providing_args=["user", "request"])
