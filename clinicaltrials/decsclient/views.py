@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
-from xml.etree.ElementTree import ElementTree
+from lxml.etree import ElementTree
 import urllib
 
 JSON_TERM = '{"fields":{"description":"%s","label":"%s"}}'
@@ -18,9 +18,7 @@ def getterm(request, lang, code):
 
     result = tree.find("decsws_response/tree/self/term_list/term")
     if result is None:
-        lists = tree.findall('decsws_response/tree/term_list')
-        term_list = [l for l in lists if l.attrib['lang'] == lang].pop()
-        result = term_list.getiterator('term')
+        result = tree.findall('decsws_response/tree/term_list[@lang="%s"]/term' % lang)
 
         json = '[%s]' % ','.join((JSON_TERM % (r.text.capitalize(),r.attrib['tree_id']) for r in result))
     else:

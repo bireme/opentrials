@@ -118,7 +118,12 @@ h1, h2, label, legend, #content a {
 .stepmenu li {
     display: inline-block;
     width: 9%;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.stepmenu li.current {
+    border: 1px inset white;
 }
 
 .stepmenu a {
