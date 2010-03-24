@@ -55,7 +55,10 @@
                                 <li>Issues</li>
                             </ul>
                             {% else %}
-                            <div><a href="/accounts/login">[{% trans 'log in' %}]</a></div>
+                            <div><a href="/accounts/login" title="{% trans 'access with an existing account' %}">[{% trans 'login' %}]</a>
+                                 <br />&nbsp;<br />
+                                 <a href="/accounts/register" title="{% trans 'create an account to submit trial records' %}">[{% trans 'register' %}]</a>
+                            </div>
                             {% endif %}
                         </div>
                         <ul>
