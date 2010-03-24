@@ -26,6 +26,33 @@
 </head>
     <body>
         <div id="container">
+            <div class="barra_MSaude">
+                <div class="barra1000">
+                    <div class="minSaude">
+                            <a href="http://www.saude.gov.br" title="Ministério da Saúde" target="_blank">
+                                    <span>{% trans 'Ministério da Saúde'%}</span>
+                            </a>
+                    </div>
+                    <div class="form">
+                        <form method="post" action="/" id="govform" name="govform">
+                            <select name="opcoes" onchange="if(options[selectedIndex].value) window.location.href=(options[selectedIndex].value)" class="pr">
+                                <option>{% trans 'Destaques do governo' %}</option>
+                                <option value="javascript:nova_jan('http://www.brasil.gov.br')">{% trans 'Portal do Governo Federal' %}</option>
+                                <option value="javascript:nova_jan('http://www.e.gov.br')">{% trans 'Portal de Serviços do Governo' %}</option>
+                                <option value="javascript:nova_jan('http://www.radiobras.gov.br')">{% trans 'Portal da Agência de Notícias' %}</option>
+                                <option value="javascript:nova_jan('http://www.previdenciasocial.gov.br')">{% trans 'Reforma da Previdência' %}</option>
+                                <option value="javascript:nova_jan('http://www.fomezero.gov.br')">{% trans 'Programa Fome Zero' %}</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="brasilGov">
+                        <a href="http://www.brasil.gov.br" title="Governo Federal" target="_blank">
+                            <span>{% trans 'Governo Federal' %}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <div id="top">
                 <img src="/static/logoOpas.gif" alt="Pan-American Health Organization Logo"/>
                 <h1>{% block headline %}{% trans "RBEC" %}{% endblock %}</h1>
