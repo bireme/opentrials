@@ -5,7 +5,10 @@ from django.core.management import setup_environ
 import settings
 setup_environ(settings)
 
-from vocabulary.models import CountryCode
+from vocabulary.models import CountryCode, StudyType, StudyPurpose, StudyMasking
+from vocabulary.models import InterventionAssigment, StudyAllocation, StudyPhase
+from vocabulary.models import RecruitmentStatus
+
 from repository.models import ClinicalTrial, Institution, TrialSecondarySponsor
 from repository.models import TrialSupportSource, Contact, SiteContact, PublicContact
 from repository.models import ScientificContact, InterventionCode
@@ -39,12 +42,18 @@ clinical_trial_xpath = {
     'staff_note':''
 }
 
-contact_types = {
+contact_types_map = {
     'public_contact':PublicContact,
     'scientific_contact':ScientificContact,
     'site_contact':SiteContact
 }
 
+study_design_map = {
+    'allocation': StudyAllocation,
+    'intervention_assignment':InterventionAssigment,
+    'masking': StudyMasking,
+    'purpose':  StudyPurpose
+}
 
 xml = open('repository/xml/sample_1b.xml')
 tree = ElementTree()
@@ -59,10 +68,9 @@ for field,xpath in clinical_trial_xpath.items():
         resultEl = root.xpath(xpath)
         if len(resultEl) > 0:
             if hasattr(resultEl[0],'text'):
-                ct.__setattr__(field,resultEl[0].text)
+                setattr(ct, field, resultEl[0].text)
             else:
-                ct.__setattr__(field,resultEl[0])
-
+                setattr(ct, field, resultEl[0])
 
 # Add Sponsors
 for sponsorNode in root.xpath('sponsors_and_support/*'):
@@ -86,20 +94,46 @@ for personNode in root.xpath('contacts/person'):
     for attr in ['firstname','middlename','lastname','email','address','city','zip','telephone']:
         value = personNode.find(attr)
         if value is not None:
-            contact.__setattr__(attr,value.text)
+            setattr(contact, attr, value.text)
     contact.country = CountryCode.objects.get(label=sponsorNode.attrib['country_code'])
     contact.save()
     contactList[ personNode.attrib['pid'] ] = contact
 
 # Assign PublicContact, ScientificContact and SiteContact to the trial
-for cType,model in contact_types.items():
+for cType,model in contact_types_map.items():
     for typeNode in root.xpath('contacts/'+cType):
         pattern = re.compile('p[0-9]+')
         for person in pattern.findall(typeNode.attrib['persons']):
             model.objects.create(trial=ct,contact=contactList[person])
 
-#Interventions
+# Interventions
 for icodeNode in root.xpath('interventions/i_code'):
     i_code = InterventionCode.objects.get(label=icodeNode.attrib['value'])
     if isinstance(i_code,InterventionCode):
         ct.i_code.add(i_code)
+
+# Recruitment Country
+for rcountryNode in root.xpath('recruitment/recruitment_country'):
+    ccode = CountryCode.objects.get(label=rcountryNode.attrib['value'])
+    if isinstance(ccode,CountryCode):
+        ct.recruitment_country.add(ccode)
+
+# StudyType
+study_type_node = StudyType.objects.get(label=root.attrib['type'])
+if study_type_node is not None:
+    ct.study_type = study_type_node
+
+study_design_node = root.find('study_type/study_design')
+if study_design_node is not None:
+    for attr,model in study_design_map.items():
+        setattr(ct, attr, model.objects.get(label=study_design_node.attrib[attr]))
+
+study_phase_node = root.find('study_type/phase')
+if study_phase_node is not None:
+    ct.phase = StudyPhase.objects.get(label=study_phase_node.attrib['value'])
+
+recruitment_status = RecruitmentStatus.objects.get(label = root.find('recruitment').attrib['study_status'])
+if recruitment_status is not None:
+    ct.status = recruitment_status
+
+# TODO: Integrate this script with django!
