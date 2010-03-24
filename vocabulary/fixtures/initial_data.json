@@ -12200,7 +12200,7 @@
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
       "description": "Participants are no longer being recruited. The trial is closed. Participants may, however, still be in follow-up.", 
-      "label": "complete"
+      "label": "completed"
     }
   }, 
   {
