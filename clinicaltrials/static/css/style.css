@@ -110,7 +110,11 @@ h1, h2, label, legend, #content a {
 /* STEPS NAVIGATION*/
 .stepmenu {
     background: transparent url(/static/bg_stepmenu.png) repeat-x;
+    float: left;
+    width: 100%;
+    clear: both;
 }
+
 .stepmenu ul {
     margin: 0;
     padding: 0 0 0 2em;
@@ -118,12 +122,11 @@ h1, h2, label, legend, #content a {
 }
 
 .stepmenu ul li {
-    display: inline;
+    display: block;
+    float: left;
     width: 9%;
     border: 1px solid transparent;
     text-align: center;
-	margin: 0px 8px;
-
 }
 
 .stepmenu li.current {
