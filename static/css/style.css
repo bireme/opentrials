@@ -1,6 +1,6 @@
 body {
     height: 100%;
-    margin-top: 0px;
+    margin: 0;
     padding: 0;
     text-align: left;
     font: 78% "Verdana", "Arial", "sans-serif";
@@ -18,8 +18,7 @@ h1, h2, label, legend, #content a {
 }
 
 #container {
-    width: 87%;
-    margin: 0px auto;
+    margin: 0px;
     padding: 0;
     line-height: 1.7em;
     background: transparent url(/static/bg_header.png) repeat-x scroll 0 0;
@@ -36,17 +35,42 @@ h1, h2, label, legend, #content a {
     height: 118px;
 }
 
-#top img {
-    display: block;
+
+#banner div.logo a {
+    text-decoration: none;
+    color: #296784;
+}
+#banner div.logo, #top div.institutions {
     float: left;
-    margin: 3em;
-	margin-top: 10px;
+    width: 40%;
+    margin: 1em 0 0 10%;
 }
 
-#top h1 {
-    margin: 20px;
-    float: left;
+#banner div.institutions {
+    margin-top: 4em;
+}
 
+#top div.institutions ul li {
+    float: left;
+    width: 40%;
+    text-align: right;
+}
+
+#top div.institutions ul span {
+    display: none;
+}
+
+#top div.institutions ul li a {
+    display: block;
+    height: 2em;
+}
+
+#top div.institutions ul li.BIREME a {
+    background: transparent url(/static/bireme.gif) no-repeat center right;
+}
+
+#top div.institutions ul li.FIOCRUZ a {
+    background: transparent url(/static/fiocruz.gif) no-repeat center right;
 }
 
 #middle {
@@ -71,6 +95,9 @@ h1, h2, label, legend, #content a {
     position: relative;
 }
 
+#rebracmenu h2 {
+    display: none;
+}
 /* GROUP STEPS NAVIGATION AND CONTENT */
 #workarea {
     float: left;
@@ -177,7 +204,7 @@ h1, h2, label, legend, #content a {
 #footer {
     clear: both;
     padding: 5px;
-   x margin-top: 5px;
+    margin-top: 5px;
     border-width: 1px 0 0;
     background:#f3f4f6;
 }
@@ -209,6 +236,7 @@ blockquote {
 table.table {
     border-collapse: collapse;
     border-width: 0 0 1px 1px;
+    width: 100%;
 }
 
 table.table,
@@ -268,48 +296,54 @@ ul li{
 legend{
     font-weight:bold;
 }
-/**********BARRA GOVERNO FEDERAL ******/
 
+#content a.buttonadd {
+    background: transparent url(/static/add.png) no-repeat right center;
+    padding: 0em 2em 0em 1em;
+    border: 1px solid #EBECF0;
+}
+
+/* BARRA GOVERNO FEDERAL */
 .barra_MSaude {
-	width: 100%;
-	height: 30px;
-	background:#ffcc00;
+    width: 100%;
+    height: 30px;
+    background:#ffcc00;
 }
 
 .barra_MSaude .barra1000 {
-	width:100%;
-	margin: 0 auto;
+    width:100%;
+    margin: 0 auto;
 }
 .barra_MSaude .barra1000 .minSaude a {
-	width: 152px;
-	height: 21px;
-	float: left;
-	margin: 1px;
-	background: url(ms.gif) top left no-repeat;
+    width: 152px;
+    height: 21px;
+    float: left;
+    margin: 1px;
+    background: url(ms.gif) top left no-repeat;
 }
 .barra_MSaude .barra1000 .brasilGov a {
-	margin: 1px;
-	width: 96px;
-	height: 21px;
-	float: right;
-	background: url(brasil.gif) top left no-repeat;
+    margin: 1px;
+    width: 96px;
+    height: 21px;
+    float: right;
+    background: url(brasil.gif) top left no-repeat;
 }
 .barra_MSaude .barra1000 .minSaude, .barra_MSaude .barra1000 .form  {
-	float: left;
+    float: left;
 }
 
 .barra_MSaude .barra1000 .form {
-	margin: 2px 0px 0px 50px;
+    margin: 2px 0px 0px 50px;
 
 }
 .barra_MSaude .barra1000 .form .pr{
-	background: #ffcc00 !important;
-	font-size: 10px;
-	}
+    background: #ffcc00 !important;
+    font-size: 10px;
+}
 
 .barra_MSaude .barra1000 .brasilGov  {
-	float: right;
+    float: right;
 }
 .barra_MSaude .barra1000 DIV a span  {
-	display: none;
+    display: none;
 }

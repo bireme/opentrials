@@ -26,15 +26,16 @@
                     </div>
                     <div class="form">
                         <form method="post" action="/" id="govform" name="govform">
-                            <select name="opcoes" onchange="if(options[selectedIndex].value) window.location.href=(options[selectedIndex].value)" class="pr">
+                            <select name="opcoes" class="pr">
                                 <option>{% trans 'Destaques do governo' %}</option>
-                                <option value="javascript:nova_jan('http://www.brasil.gov.br')">{% trans 'Portal do Governo Federal' %}</option>
-                                <option value="javascript:nova_jan('http://www.e.gov.br')">{% trans 'Portal de Serviços do Governo' %}</option>
-                                <option value="javascript:nova_jan('http://www.radiobras.gov.br')">{% trans 'Portal da Agência de Notícias' %}</option>
-                                <option value="javascript:nova_jan('http://www.previdenciasocial.gov.br')">{% trans 'Reforma da Previdência' %}</option>
-                                <option value="javascript:nova_jan('http://www.fomezero.gov.br')">{% trans 'Programa Fome Zero' %}</option>
+                                <option value="http://www.brasil.gov.br">{% trans 'Portal do Governo Federal' %}</option>
+                                <option value="http://www.e.gov.br">{% trans 'Portal de Serviços do Governo' %}</option>
+                                <option value="http://www.radiobras.gov.br">{% trans 'Portal da Agência de Notícias' %}</option>
+                                <option value="http://www.previdenciasocial.gov.br">{% trans 'Reforma da Previdência' %}</option>
+                                <option value="http://www.fomezero.gov.br">{% trans 'Programa Fome Zero' %}</option>
                             </select>
                         </form>
+                        <script type="text/javascript">$('form#govform select option[value]').click(function(){window.open(this.value);});</script>
                     </div>
                     <div class="brasilGov">
                         <a href="http://www.brasil.gov.br" title="Governo Federal" target="_blank">
@@ -44,8 +45,19 @@
                 </div>
             </div>
             <div id="top">
-                <img src="/static/logoOpas.gif" alt="Pan-American Health Organization Logo"/>
-                <h1>{% block headline %}{% trans "RBEC" %}{% endblock %}</h1>
+                <div id="banner">
+                    <div class="logo">
+                        <h1>
+                            <a href="{% url reviewapp.home %}"><span>{% block headline %}{% trans "RBEC" %}{% endblock %}</span></a>
+                        </h1>
+                    </div>
+                    <div class="institutions">
+                        <ul>
+                            <li class="BIREME"><a href="http://regional.bvsalud.org/php/index.php?lang=pt" title="Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde" target="_blank"><span>BIREME</span></a></li>
+                            <li class="FIOCRUZ"><a href="http://www.fiocruz.br/cgi/cgilua.exe/sys/start.htm?tpl=home" title="Fundação Oswaldo Cruz" target="_blank"><span>FioCruz</span></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div id="middle">
                 <div id="columns">
@@ -57,6 +69,7 @@
                         {% block stepmenu_bottom %}{% endblock %}
                     </div>
                     <div id="rebracmenu">
+                        <h2>{% trans "Options menu" %}</h2>
                         <div id="usermenu">
                             {% if username %}
                             <div>

@@ -4,6 +4,7 @@
 {% block body %}
 
 <h2>{% trans "Your Submissions" %}</h2>
+<a href="{% url reviewapp.new_submission %}" class="buttonadd">{% trans "Submit a new Clinical Trial" %}</a>
 <table class="table">
     <thead>
         <tr>
@@ -25,7 +26,5 @@
     </tbody>
 </table>
 
-<p>
-    <a href="{% url reviewapp.new_submission %}">{% trans "Submit a new Clinical Trial" %}</a>
-</p>
+<a href="{% url reviewapp.new_submission %}" class="buttonadd">{% trans "Submit a new Clinical Trial" %}</a>
 {% endblock %}
