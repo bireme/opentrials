@@ -42,7 +42,10 @@
 
             <div class="{{formsets.0.management_form.prefix}}">
             {% for form in formsets.0.forms %}
-                <table>
+                <table class="table">
+                    <col width="20%"/>
+                    <col width="75%"/>
+                    <col width="5%"/>
                     {{ form.as_table }}
                 </table>
             {% endfor %}
@@ -56,7 +59,10 @@
 
             <div class="{{formsets.1.management_form.prefix}}">
             {% for form in formsets.1.forms %}
-                <table>
+                <table class="table">
+                    <col width="20%"/>
+                    <col width="75%"/>
+                    <col width="5%"/>
                     {{ form.as_table }}
                 </table>
             {% endfor %}

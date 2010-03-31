@@ -35,7 +35,10 @@
         {% for form in forms %}
         <fieldset>
             <legend>{% firstof form.title form.form.title %}</legend>
-            <table>
+            <table class="table">
+                <col width="20%"/>
+                <col width="75%"/>
+                <col width="5%"/>
                 {{ form.as_table }}
             </table>
         </fieldset>
@@ -49,7 +52,10 @@
 
                 <div class="{{formset.management_form.prefix}}">
                 {% for form in formset.forms %}
-                    <table>
+                    <table class="table">
+                        <col width="20%"/>
+                        <col width="75%"/>
+                        <col width="5%"/>
                         {{ form.as_table }}
                     </table>
                 {% endfor %}

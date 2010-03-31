@@ -253,6 +253,14 @@ table.table th {
     color:#333;
 }
 
+table.table textarea {
+    width: 100%;
+}
+
+table.table td.help div.issue {
+    display: none;
+}
+
 table.trialsummary {
     width: 100%;
 }
