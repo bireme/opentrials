@@ -10,7 +10,7 @@
         <li><a href="{% url repository.edittrial trial_pk %}">{% trans "Summary" %}</a></li>
         {% for step,iscurrent in steps %}
         <li{% if iscurrent %} class="current"{% endif %}>
-           <a href="{{step}}">step {{forloop.counter}}</a>
+           <a href="{{step}}">{% trans "Part" %} {{forloop.counter}}</a>
         </li>
         {% endfor %}
     </ul>
@@ -23,7 +23,7 @@
         <li><a href="{% url repository.edittrial trial_pk %}">{% trans "Summary" %}</a></li>
         {% for step,iscurrent in steps %}
         <li{% if iscurrent %} class="current"{% endif %}>
-            <a href="{{step}}">step {{forloop.counter}}</a>
+            <a href="{{step}}">{% trans "Part" %} {{forloop.counter}}</a>
         </li>
         {% endfor %}
     </ul>
