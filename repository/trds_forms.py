@@ -90,7 +90,7 @@ class ReviewModelForm(forms.ModelForm):
             <tr><th>%(label)s</th>
                 <td>%(errors)s%(field)s</td>
                 <td class="help">
-                    <div class="text">%(help_text)s</div>
+                    <img src="/static/help.png" alt="%(help_text)s"/>
                     <div class="issue">%(issue)s</div>
                     </td></tr>
         '''
