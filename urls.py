@@ -23,8 +23,9 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     # Diagnostic views
-    url(r'^smoke/', utilities.smoke_test),
-    url(r'^req_dump/', utilities.req_dump),
+    url(r'^dbg/smoke/', utilities.smoke_test),
+    url(r'^dbg/reqdump/', utilities.req_dump),
+    url(r'^dbg/sysinfo/', utilities.sys_info),
 
     url(r'^decs/', include('clinicaltrials.decsclient.urls')),
 
