@@ -1,1 +1,1 @@
-Ativação de conta para login em {{site.domain}}
+Ativação de login para acesso a {{site.domain}}
