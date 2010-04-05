@@ -68,6 +68,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'middleware.scriptprefix.ScriptPrefixMiddleware',
+
 )
 
 ROOT_URLCONF = 'clinicaltrials.urls'

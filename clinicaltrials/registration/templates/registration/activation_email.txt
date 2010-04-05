@@ -1,6 +1,16 @@
-Please use the activation key below to activate your account.
+Please click on the link below to activate your account.
 
-activation_key = {{activation_key}}
+{% url registration_activate activation_key %}
+
+OR
+
+You may visit the page at 
+
+XXX 
+
+and copy and paste the activation key below
+
+{{activation_key}}
 
 This key will expire in {{expiration_days}} days.
 
