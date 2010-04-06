@@ -102,15 +102,10 @@ INSTALLED_APPS = (
 #################################################################
 ### BEGIN Clinical Trials Repository customization settings
 
+# see also settings_local-SAMPLE.py for private customization settings.
+
 SITE_TITLE = u'Registro Brasileiro de Ensaios Clínicos'
-
-EMAIL_HOST = ''
-EMAIL_PORT = 25 # http://www.iana.org/assignments/port-numbers
-### if set, used to authenticate with SMTP
-# EMAIL_HOST_USER = ''
-# EMAIL_HOST_PASSWORD = ''
-# EMAIL_USE_TLS = False
-
+SEND_BROKEN_LINK_EMAILS = True
 DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
 
 # Notes:
