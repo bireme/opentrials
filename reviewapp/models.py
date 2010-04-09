@@ -28,7 +28,7 @@ class Submission(models.Model):
     created = models.DateTimeField(default=datetime.now, editable=False)
     updater = models.ForeignKey(User, null=True, related_name='submission_updater', editable=False)
     updated = models.DateTimeField(null=True, editable=False)
-    title = models.CharField(u'Scientific title', max_length=2000)
+    title = models.TextField(u'Scientific title', max_length=2000)
     primary_sponsor = models.OneToOneField(Institution, null=True, blank=True,
                                     verbose_name=_('Primary Sponsor'))
 
@@ -38,6 +38,8 @@ class Submission(models.Model):
                               default=SUBMISSION_STATUS[0][0])
     staff_note = models.TextField(_('Submission Note (staff use only)'), max_length=255,
                                     blank=True)
+
+    submission_xml = models.FileField(upload_to=settings.SUBMISSIONS_XML_PATH, null=True)
 
     def save(self):
         if self.id:

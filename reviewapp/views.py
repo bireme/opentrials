@@ -30,43 +30,42 @@ def submission_detail(request,pk):
 
 ####################################################### New Submission form ###
 
-class InitialTrialForm(forms.ModelForm):
-    class Meta:
-        model = ClinicalTrial
-        fields = ['scientific_title','recruitment_country']
-
-    title = _('Initial Trial Data')
-    recruitment_country = forms.ModelMultipleChoiceField(
-                                            label=_('Recruitment Country'),
-                                            queryset=CountryCode.objects.all())
+class InitialTrialForm(forms.Form):
+    form_title = _('Initial Trial Data')
+    scientific_title = forms.CharField(widget=forms.Textarea, label=_('Scientific Title'), max_length=2000)
+    recruitment_country = forms.MultipleChoiceField(choices=((cc.pk,cc.description) for cc in CountryCode.objects.iterator()) )
+    submission_xml = forms.FileField(required=False)
 
 class PrimarySponsorForm(forms.ModelForm):
     class Meta:
         model = Institution
         exclude = ['address']
-    title = _('Primary Sponsor')
+    form_title = _('Primary Sponsor')
 
 @login_required
 def new_submission(request):
-
-    AttachmentForm = modelformset_factory(Attachment, extra=1, can_delete=False,
-                                          exclude='submission')
-    AttachmentForm.title = _('Attachments')
-
     if request.method == 'POST':
-        initial_form = InitialTrialForm(request.POST)
+        initial_form = InitialTrialForm(request.POST,request.FILES)
         sponsor_form = PrimarySponsorForm(request.POST)
 
         if initial_form.is_valid() and sponsor_form.is_valid():
-            initial_form.instance.primary_sponsor = sponsor_form.save()
-            trial = initial_form.save()
+            trial = ClinicalTrial()
+            su = Submission(creator=request.user)
 
+            trial.scientific_title = su.title = initial_form.cleaned_data['scientific_title']
 
-            submission = Submission(creator=request.user,
-                                    trial=trial,
-                                    primary_sponsor=trial.primary_sponsor,
-                                    title=trial.scientific_title)
-            submission.save()
+            trial.save()
+            su.save()
+
+            trial.primary_sponsor = su.primary_sponsor = sponsor_form.save()
+            trial.recruitment_country = [CountryCode.objects.get(pk=id) for id in initial_form.cleaned_data['recruitment_country']]
+            su.trial = trial
+
+            if initial_form.cleaned_data['submission_xml'] is not None:
+                su.submission_xml = initial_form.cleaned_data['submission_xml']
+
+            trial.save()
+            su.save()
 
             return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))
     else:
