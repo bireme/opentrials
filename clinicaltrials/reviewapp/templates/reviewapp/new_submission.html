@@ -36,11 +36,11 @@
     });
 </script>
 
-<form method="post" action="/accounts/newsubmission/">
+<form method="post" action="/accounts/newsubmission/" enctype="multipart/form-data">
     <h2>{% trans "New Submission" %}</h2>
 {% for form in forms %}
 <fieldset>
-    <legend>{{ form.title }}</legend>
+    <legend>{{ form.form_title }}</legend>
     <table id="table_{{ forloop.counter }}">
         {{ form.as_table }}
     </table>
