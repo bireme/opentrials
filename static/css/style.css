@@ -47,7 +47,7 @@ h1, h2, label, legend, #content a {
 }
 
 #banner div.institutions {
-    margin-top: 4em;
+    margin-top: 0em;
 }
 
 #top div.institutions ul li {
@@ -62,7 +62,7 @@ h1, h2, label, legend, #content a {
 
 #top div.institutions ul li a {
     display: block;
-    height: 2em;
+    height: 89px;
 }
 
 #top div.institutions ul li.BIREME a {
@@ -198,6 +198,8 @@ h1, h2, label, legend, #content a {
 
 #content h2 {
     padding: 0.2em 0;
+	font-weight:normal;
+	margin-top:30px;
 }
 
 /*FOOTER*/
@@ -306,9 +308,10 @@ legend{
 }
 
 #content a.buttonadd {
-    background: transparent url(/static/add.png) no-repeat right center;
-    padding: 0em 2em 0em 1em;
-    border: 1px solid #EBECF0;
+background:#527FA3 url(/static/add.png) no-repeat scroll right center;
+border:1px solid #EBECF0;
+color:#FFFFFF;
+padding:5px 2em 5px 1em;
 }
 
 /* BARRA GOVERNO FEDERAL */
