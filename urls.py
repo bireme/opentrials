@@ -22,15 +22,14 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
-    # Diagnostic views
-    url(r'^dbg/smoke/', utilities.smoke_test),
-    url(r'^dbg/reqdump/', utilities.req_dump),
-    url(r'^dbg/sysinfo/', utilities.sys_info),
-
     url(r'^decs/', include('clinicaltrials.decsclient.urls')),
 
     # django-registration views
     url(r'^accounts/', include('registration.backends.default.urls')),
+
+    # system diagnostic views (may be disabled in production)
+    url(r'^diag/', include('clinicaltrials.diagnostic.urls')),
+
 
 )
 
