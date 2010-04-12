@@ -1,4 +1,4 @@
-DEBUG = True
+DEBUG = False
 
 ADMINS = (
     ('Webmaster Ensaios Clinicos', 'appec@bireme.org'),
