@@ -1,5 +1,9 @@
 DEBUG = True
 
+ADMINS = (
+    ('Webmaster Ensaios Clinicos', 'appec@bireme.org'),
+)
+
 DATABASE_ENGINE = 'mysql'      # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 DATABASE_NAME = 'clinicaltrials' # Or path to database file if using sqlite3.
 DATABASE_USER = 'tester'       # Not used with sqlite3.

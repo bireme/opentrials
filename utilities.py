@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from django.http import HttpResponse
+from django.core import serializers
+
 ELLIPSIS = u'\u2026'
 
 def safe_truncate(text, max_length=60, ellipsis=ELLIPSIS, encoding='utf-8',
@@ -50,6 +53,11 @@ def safe_truncate(text, max_length=60, ellipsis=ELLIPSIS, encoding='utf-8',
 
     return text[:pos] + ellipsis
 
+def export_json(modeladmin, request, queryset):
+    response = HttpResponse(mimetype="application/json")
+    serializers.serialize("json", queryset, stream=response, indent=2)
+    return response
+export_json.short_description = 'Export selected records in JSON format'
 
 if __name__=='__main__':
     import doctest
