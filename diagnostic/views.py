@@ -29,7 +29,13 @@ def req_dump(request):
 
 @user_passes_test(lambda u: u.is_staff)
 def sys_info(request):
-    template = '''
+    template = u'''
+    <h1>Site.objects.get_current()</h1>
+    <table border="1">
+       <tr><th>id</th><td>%(site.pk)r</td></tr>
+       <tr><th>domain</th><td>%(site.domain)r</td></tr>
+       <tr><th>name</th><td>%(site.name)r</td></tr>
+    </table>
     <h1>settings path</h1>
     <pre>%(settingspath)s</pre>
     <h1>svn info</h1>
@@ -39,11 +45,16 @@ def sys_info(request):
     '''
     import sys
     import settings
+    from django.contrib.sites.models import Site
     from subprocess import Popen, PIPE
+    site = Site.objects.get_current()
     svnout, svnerr = Popen(['svn', 'info', settings.PROJECT_PATH], stdout=PIPE).communicate()
-    return HttpResponse(template % {'settingspath': settings.PROJECT_PATH,
+    return HttpResponse(template % {'site.pk':site.pk,
+                                    'site.domain':site.domain,
+                                    'site.name':site.name,
+                                    'settingspath': settings.PROJECT_PATH,
                                     'syspath':'\n'.join(sys.path),
-                                    'svninfo':svnout or svnerr})
+                                    'svninfo':svnout.decode('utf-8') or svnerr.decode('utf-8')})
 
 @user_passes_test(lambda u: u.is_staff)
 def raise_error(request):
