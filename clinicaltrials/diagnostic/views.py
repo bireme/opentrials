@@ -31,10 +31,10 @@ def req_dump(request):
 def sys_info(request):
     template = u'''
     <h1>Site.objects.get_current()</h1>
-    <table border="1">
-       <tr><th>id</th><td>%(site.pk)r</td></tr>
-       <tr><th>domain</th><td>%(site.domain)r</td></tr>
-       <tr><th>name</th><td>%(site.name)r</td></tr>
+    <table>
+       <tr><th>id</th><td>%(site.pk)s</td></tr>
+       <tr><th>domain</th><td>%(site.domain)s</td></tr>
+       <tr><th>name</th><td>%(site.name)s</td></tr>
     </table>
     <h1>settings path</h1>
     <pre>%(settingspath)s</pre>
@@ -48,13 +48,15 @@ def sys_info(request):
     from django.contrib.sites.models import Site
     from subprocess import Popen, PIPE
     site = Site.objects.get_current()
-    svnout, svnerr = Popen(['svn', 'info', settings.PROJECT_PATH], stdout=PIPE).communicate()
+    svnout, svnerr = Popen(['svn', 'info', '-r', 'HEAD', settings.PROJECT_PATH], stdout=PIPE).communicate()
+    svnout = svnout.decode('utf-8') if svnout else u''
+    svnerr = svnerr.decode('utf-8') if svnerr else u''
     return HttpResponse(template % {'site.pk':site.pk,
                                     'site.domain':site.domain,
                                     'site.name':site.name,
                                     'settingspath': settings.PROJECT_PATH,
                                     'syspath':'\n'.join(sys.path),
-                                    'svninfo':svnout.decode('utf-8') or svnerr.decode('utf-8')})
+                                    'svninfo':svnout + svnerr})
 
 @user_passes_test(lambda u: u.is_staff)
 def raise_error(request):
