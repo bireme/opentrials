@@ -5,12 +5,15 @@ from django.conf import settings
 from vocabulary.models import *
 from polyglot.admin import TranslationInline, TranslationAdmin
 
+from utilities import export_json
+
 class VocabularyTranslationInline(TranslationInline):
     model = VocabularyTranslation
 
 class SimpleVocabularyAdmin(TranslationAdmin):
     list_display = ('label', 'description', 'translation_completed', 'missing_translations')
     inlines = [VocabularyTranslationInline]
+    actions = [export_json]
 
 class CountryCodeAdmin(TranslationAdmin):
     list_display = ('label', 'description', 'submission_language', 'translation_completed', 'missing_translations')

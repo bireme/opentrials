@@ -1,6 +1,6 @@
 from django.contrib import admin
 from assistance.models import *
-from utilities import safe_truncate
+from utilities import safe_truncate, export_json
 
 from polyglot.admin import TranslationInline, TranslationAdmin
 
@@ -14,6 +14,7 @@ class FieldHelpAdmin(TranslationAdmin):
     search_fields = ('form','field')
     list_filter = ('form',)
     inlines = [FieldHelpTranslationInline]
+    actions = [export_json]
 
     def short_text(self, obj):
         return safe_truncate(obj.text)
@@ -25,6 +26,7 @@ class CategoryAdmin(TranslationAdmin):
     inlines = [CategoryTranslationInline]
     list_display = ('label',
                     'translation_completed', 'missing_translations')
+    actions = [export_json]
 
 class QuestionTranslationInline(TranslationInline):
     model = QuestionTranslation
@@ -33,6 +35,8 @@ class QuestionAdmin(TranslationAdmin):
     inlines = [QuestionTranslationInline]
     list_display = ('title','short_text',
                     'translation_completed', 'missing_translations')
+    actions = [export_json]
+
     def short_text(self, obj):
         return safe_truncate(obj.answer)
 
