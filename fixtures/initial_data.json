@@ -3,8 +3,24 @@
     "pk": 2, 
     "model": "sites.site", 
     "fields": {
+      "domain": "ec.teste.bvsalud.org", 
+      "name": "EnsaiosClinicos.gov.br (TESTE)"
+    }
+  },
+  {
+    "pk": 3, 
+    "model": "sites.site", 
+    "fields": {
       "domain": "ec.homolog.bvsalud.org", 
-      "name": "EnsaiosClinicos.gov.br"
+      "name": "EnsaiosClinicos.gov.br (HOMOLOG)"
+    }
+  },
+  {
+    "pk": 4, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "ec.beta.bvsalud.org", 
+      "name": "EnsaiosClinicos.gov.br (BETA)"
     }
   }
 ]
