@@ -33,8 +33,6 @@ TIME_ZONE = 'America/Brasilia'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'pt-BR'
 
-SITE_ID = 2
-
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
@@ -101,8 +99,13 @@ INSTALLED_APPS = (
 
 #################################################################
 ### BEGIN Clinical Trials Repository customization settings
+###
+### see also settings_local-SAMPLE.py for private customization settings.
 
-# see also settings_local-SAMPLE.py for private customization settings.
+# this id must match the record with the correct domain name in the
+# django_site table; the initial values for that table are defined
+# in clinicaltrials/fixture/initial_data.json
+SITE_ID = 2 # change if necessary to match a record in django_site
 
 SITE_TITLE = u'Registro Brasileiro de Ensaios Clínicos'
 SEND_BROKEN_LINK_EMAILS = True
