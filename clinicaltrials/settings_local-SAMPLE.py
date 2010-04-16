@@ -23,6 +23,7 @@ EMAIL_USE_TLS = False
 SERVER_EMAIL = EMAIL_HOST_USER
 
 if DEBUG:
+    DEBUG_PROPAGATE_EXCEPTIONS = True
     MIDDLEWARE_CLASSES += (
         ## external dependency for debug purposes only
         # 'debug_middleware.DebugFooter',
