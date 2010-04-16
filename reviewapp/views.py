@@ -6,23 +6,26 @@ from django import forms
 from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import login_required
 
-from django.forms.models import modelformset_factory
-from reviewapp.models import Submission, Attachment
+from reviewapp.models import Submission
 from repository.models import ClinicalTrial, CountryCode, Institution
 
+@login_required
 def index(request):
     username = request.user.username if request.user.is_authenticated() else None
     return render_to_response('reviewapp/index.html', locals())
 
+@login_required
 def user_dump(request):
     uvars = [{'k':k, 'v':v} for k, v in request.user.__dict__.items()]
     return render_to_response('reviewapp/user_dump.html', locals())
 
+@login_required
 def submissions_list(request):
-    object_list = Submission.objects.all()
+    object_list = Submission.objects.filter(creator=request.user)
     username = request.user.username if request.user.is_authenticated() else None
     return render_to_response('reviewapp/submission_list.html', locals())
 
+@login_required
 def submission_detail(request,pk):
     object = get_object_or_404(Submission, id=int(pk))
     username = request.user.username if request.user.is_authenticated() else None
