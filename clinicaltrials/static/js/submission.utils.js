@@ -26,7 +26,7 @@ function cloneMore(selector, type) {
  * A utility to name and create form elements
  */
 function make_decs_for(node){
-    var set = node.id.match(/[a-z]-\d+/)[0]; // get django formset prefix
+    var set = node.id.match(/[a-z]+-\d+/)[0]; // get django formset prefix
     return {'select':set+"-combodecs",
             'div':set+'-decstools',
             'input':set+'-searchfield',
