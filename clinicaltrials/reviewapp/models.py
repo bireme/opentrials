@@ -39,8 +39,6 @@ class Submission(models.Model):
     staff_note = models.TextField(_('Submission Note (staff use only)'), max_length=255,
                                     blank=True)
 
-    submission_xml = models.FileField(upload_to=settings.SUBMISSIONS_XML_PATH, null=True)
-
     def save(self):
         if self.id:
             self.updated = datetime.now()
