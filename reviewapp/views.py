@@ -37,7 +37,6 @@ class InitialTrialForm(forms.Form):
     form_title = _('Initial Trial Data')
     scientific_title = forms.CharField(widget=forms.Textarea, label=_('Scientific Title'), max_length=2000)
     recruitment_country = forms.MultipleChoiceField(choices=((cc.pk,cc.description) for cc in CountryCode.objects.iterator()) )
-    submission_xml = forms.FileField(required=False)
 
 class PrimarySponsorForm(forms.ModelForm):
     class Meta:
@@ -63,9 +62,6 @@ def new_submission(request):
             trial.primary_sponsor = su.primary_sponsor = sponsor_form.save()
             trial.recruitment_country = [CountryCode.objects.get(pk=id) for id in initial_form.cleaned_data['recruitment_country']]
             su.trial = trial
-
-            if initial_form.cleaned_data['submission_xml'] is not None:
-                su.submission_xml = initial_form.cleaned_data['submission_xml']
 
             trial.save()
             su.save()
