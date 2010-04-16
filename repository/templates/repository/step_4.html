@@ -5,12 +5,7 @@
     <script type="text/javascript" src="/static/js/submission.utils.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            // TODO: Replace absolute path
-            $("div.g select")
-                .change(getterm_event('{% url decs.getterm lang="en",code="" %}'))
-                .each(function(){$(this).change();});
-
-            $("div.s select")
+            $("div.form select")
                 .change(search_event(
                         '{% url decs.search lang="en",term="" %}',
                         '{% trans "Search terms" %}'))

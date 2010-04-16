@@ -263,7 +263,7 @@ def step_4(request, trial_pk):
 
     forms = [form]
     formsets = [idesc]
-    return render_to_response('repository/trial_form.html',
+    return render_to_response('repository/step_4.html',
                               {'forms':forms,'formsets':formsets,
                                'username':request.user.username,
                                'trial_pk':trial_pk,
