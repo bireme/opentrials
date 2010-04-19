@@ -10,6 +10,7 @@
                         '{% url decs.search lang="en",term="" %}',
                         '{% trans "Search terms" %}'))
                 .each(function(){$(this).change();});
+            $('td.help img').cluetip({local:true, cursor: 'pointer',showTitle: false});
         });
         // management_form.prefix
     </script>
@@ -43,20 +44,16 @@
                     {{ form.as_table }}
                 </table>
             {% endfor %}
-    </div>
+            </div>
+
             <div style="text-align: center">
               <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="add more"/>
-</div>
+            </div>
+            
             </fieldset>
         {% endfor %}
-
-        <br/>
-
-        <input name="submit_go" type="submit" value="{% trans "Save and continue later" %}"/>
-
-        {% if next_form_title %}
-        <input name="submit_next" type="submit" value="{% trans "Save and go to" %} '{{next_form_title}}'"/>
-        {% endif %}
+        
+        <input type="submit" value="{% trans "Save" %}"/>
     </form>
 
 {% endblock %}
