@@ -165,7 +165,7 @@ h1, h2, label, legend, #content a {
     text-transform: capitalize;
     color: #0a5172;
     font-weight: bold;
-	font-size:11px;
+    font-size:11px;
 }
 
 .stepmenu li:hover {
@@ -198,8 +198,8 @@ h1, h2, label, legend, #content a {
 
 #content h2 {
     padding: 0.2em 0;
-	font-weight:normal;
-	margin-top:30px;
+    font-weight:normal;
+    margin-top:30px;
 }
 
 /*FOOTER*/
@@ -217,13 +217,13 @@ h1, h2, label, legend, #content a {
 
 }
 #footer, #footer a {
-color:#666;
+    color:#666;
 }
 #footer a{
-	text-decoration:underline;
-	}
+    text-decoration:underline;
+}
 #footer {
-font-size:69%;
+    font-size:69%;
 }
 /*TYPOGRAPHY*/
 p {
@@ -239,6 +239,7 @@ table.table {
     border-collapse: collapse;
     border-width: 0 0 1px 1px;
     width: 100%;
+    display: block;
 }
 
 table.table,
@@ -308,10 +309,10 @@ legend{
 }
 
 #content a.buttonadd {
-background:#527FA3 url(/static/add.png) no-repeat scroll right center;
-border:1px solid #EBECF0;
-color:#FFFFFF;
-padding:5px 2em 5px 1em;
+    background:#527FA3 url(/static/add.png) no-repeat scroll right center;
+    border:1px solid #EBECF0;
+    color:#FFFFFF;
+    padding:5px 2em 5px 1em;
 }
 
 /* BARRA GOVERNO FEDERAL */

@@ -10,6 +10,7 @@
                     highlight: true,
                     sortable: false
             });
+            $('td.help img').cluetip({local:true, cursor: 'pointer',showTitle: false});
         });
     </script>
 
@@ -50,14 +51,7 @@
             </div>
             </fieldset>
         {% endfor %}
-
-        <br/>
-
-        <input name="submit_go" type="submit" value="{% trans "Save and continue later" %}"/>
-
-        {% if next_form_title %}
-        <input name="submit_next" type="submit" value="{% trans "Save and go to" %} '{{next_form_title}}'"/>
-        {% endif %}
+        <input type="submit" value="{% trans "Save" %}"/>
     </form>
 
 {% endblock %}

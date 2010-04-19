@@ -76,6 +76,7 @@ class ReviewModelForm(forms.ModelForm):
                                              'label': '',
                                              'field': '',
                                              'help_text': '',
+                                             'help_id': 'help%s' % help_record.pk,
                                              'issue': '',}
                     output.append(last_row)
                 output[-1] = last_row[:-len(row_ender)] + str_hidden + row_ender
@@ -91,9 +92,7 @@ class ReviewModelForm(forms.ModelForm):
             <tr><th>%(label)s</th>
                 <td>%(errors)s%(field)s</td>
                 <td class="help">
-                    <img src="/static/help.png" 
-                      rel="%(help_id)s"
-                      />
+                    <img src="/static/help.png" rel="#%(help_id)s"/>
                     <div id="%(help_id)s" class="help">%(help_text)s</div>
                     <div class="issue">%(issue)s</div>
                     </td></tr>
