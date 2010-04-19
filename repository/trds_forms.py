@@ -57,6 +57,7 @@ class ReviewModelForm(forms.ModelForm):
                                             'label': force_unicode(label),
                                             'field': unicode(bf),
                                             'help_text': help_text,
+                                            'help_id': 'help%s' % help_record.pk,
                                             'issue': issue_text,})
         if top_errors:
             output.insert(0, error_row % force_unicode(top_errors))
@@ -90,7 +91,10 @@ class ReviewModelForm(forms.ModelForm):
             <tr><th>%(label)s</th>
                 <td>%(errors)s%(field)s</td>
                 <td class="help">
-                    <img src="/static/help.png" alt="%(help_text)s"/>
+                    <img src="/static/help.png" 
+                      rel="%(help_id)s"
+                      />
+                    <div id="%(help_id)s" class="help">%(help_text)s</div>
                     <div class="issue">%(issue)s</div>
                     </td></tr>
         '''
