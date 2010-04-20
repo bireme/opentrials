@@ -15,6 +15,14 @@ function cloneMore(selector, type) {
         var newFor = $(this).attr('for').replace('-' + (total-1) + '-','-' + total + '-');
         $(this).attr('for', newFor);
     });
+    newElement.find('img[rel]').each(function() {
+        var newFor = $(this).attr('rel').replace('-' + (total-1) + '-','-' + total + '-');
+        $(this).attr('rel', newFor);
+    });
+    newElement.find('div[id]').each(function() {
+        var newFor = $(this).attr('id').replace('-' + (total-1) + '-','-' + total + '-');
+        $(this).attr('id', newFor);
+    });
     total++;
     $('#id_' + type + '-TOTAL_FORMS').val(total);
     newElement.css("display","none");
