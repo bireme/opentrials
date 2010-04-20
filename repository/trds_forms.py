@@ -57,7 +57,7 @@ class ReviewModelForm(forms.ModelForm):
                                             'label': force_unicode(label),
                                             'field': unicode(bf),
                                             'help_text': help_text,
-                                            'help_id': 'help%s' % help_record.pk,
+                                            'help_id': 'id_%s-help%s' % ((self.prefix or name),help_record.pk),
                                             'issue': issue_text,})
         if top_errors:
             output.insert(0, error_row % force_unicode(top_errors))
@@ -76,7 +76,7 @@ class ReviewModelForm(forms.ModelForm):
                                              'label': '',
                                              'field': '',
                                              'help_text': '',
-                                             'help_id': 'help%s' % help_record.pk,
+                                             'help_id': 'id_%s-help%s' % (self.prefix,help_record.pk),
                                              'issue': '',}
                     output.append(last_row)
                 output[-1] = last_row[:-len(row_ender)] + str_hidden + row_ender
