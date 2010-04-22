@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir bkp
 ../manage.py dumpdata --indent=2 assistance > bkp/assistance.json
 ../manage.py dumpdata --indent=2 registration > bkp/registration.json
 ../manage.py dumpdata --indent=2 repository > bkp/repository.json
@@ -9,7 +10,7 @@
 cd ../static/
 tar czvf attachments.tgz attachments/
 cd ../tools/
-mv ../static/attachments.tgz bkp/ 
+mv ../static/attachments.tgz bkp/
 tar czvf bkp.tgz bkp/
 
 
