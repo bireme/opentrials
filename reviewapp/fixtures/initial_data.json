@@ -60,6 +60,66 @@
     }
   }, 
   {
+    "pk": 5, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": null, 
+      "title": "Teste da reuni\u00e3o Elluminate", 
+      "created": "2010-03-30 18:51:44", 
+      "trial": 5, 
+      "updater": null, 
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": 4
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": null, 
+      "title": "teste de Margot", 
+      "created": "2010-04-05 16:56:59", 
+      "trial": 6, 
+      "updater": null, 
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": 5
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-04-22 13:18:47", 
+      "title": "Avalia\u00e7\u00e3o da dosagem do praziquantel para o tratamento da esquistossomose no Brasil", 
+      "created": "2010-04-22 13:18:47", 
+      "trial": 7, 
+      "updater": null, 
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": 6
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-04-22 19:17:28", 
+      "title": "Prevention of Heterotopic Ossification With Arcoxia After Total Hip Replacement", 
+      "created": "2010-04-22 19:17:28", 
+      "trial": 8, 
+      "updater": null, 
+      "staff_note": "", 
+      "creator": 8, 
+      "primary_sponsor": 7
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "reviewapp.recruitmentcountry", 
     "fields": {
