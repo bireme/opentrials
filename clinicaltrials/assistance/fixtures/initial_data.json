@@ -80,6 +80,7 @@
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "scientific_title", 
+      "example": "", 
       "form": "TrialIdentificationForm", 
       "text": "Scientific title of the study as it appears in the protocol submitted for funding and ethical review."
     }
@@ -89,8 +90,9 @@
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "scientific_acronym", 
+      "example": "", 
       "form": "TrialIdentificationForm", 
-      "text": "Include trial acronym if available."
+      "text": "Include trial scientific acronym if available."
     }
   }, 
   {
@@ -98,6 +100,7 @@
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "scientific_acronym_expansion", 
+      "example": "", 
       "form": "TrialIdentificationForm", 
       "text": ""
     }
@@ -107,6 +110,7 @@
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "public_title", 
+      "example": "", 
       "form": "TrialIdentificationForm", 
       "text": "Title intended for the lay public in easily understood language."
     }
@@ -116,8 +120,9 @@
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "acronym", 
+      "example": "", 
       "form": "TrialIdentificationForm", 
-      "text": ""
+      "text": "Include trial public acronym if available."
     }
   }, 
   {
@@ -125,6 +130,7 @@
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "issuing_authority", 
+      "example": "", 
       "form": "TrialNumberForm", 
       "text": ""
     }
@@ -134,6 +140,7 @@
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "id_number", 
+      "example": "", 
       "form": "TrialNumberForm", 
       "text": ""
     }
@@ -143,8 +150,717 @@
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "DELETE", 
+      "example": "", 
       "form": "TrialNumberForm", 
       "text": ""
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "recruitment_status", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Recruitment status of this trial:\r\n\r\n    * Pending: participants are not yet being recruited or enrolled at any site\r\n    * Recruiting: participants are currently being recruited and enrolled\r\n    * Suspended: there is a temporary halt in recruitment and enrollment\r\n    * Complete: participants are no longer being recruited or enrolled\r\n    * Other "
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "recruitment_country", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "The countries from which participants will be, are intended to be, or have been recruited."
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "date_enrollment", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Anticipated or actual date of enrollment of the first participant."
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "target_sample_size", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Number of participants that this trial plans to enroll."
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "inclusion_criteria", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Inclusion criteria for participant selection, including age and sex."
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "gender", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Gender in inclusion criteria (female, male or both)."
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "agemin_value", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "minimal age in inclusion criteria."
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "agemin_unit", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Temporal unit of minimal age in inclusion criteria."
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "agemax_value", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "maximal age in inclusion criteria."
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "agemax_unit", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Temporal unit of maximal age in inclusion criteria."
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "exclusion_criteria", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Exclusion criteria for participant selection, including age and sex."
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "primary_sponsor", 
+      "example": "", 
+      "form": "PrimarySponsorForm", 
+      "text": "The individual, organization, group or other legal entity which takes responsibility for initiating, managing and/or financing a study. The Primary Sponsor is responsible for ensuring that the trial is properly registered. The Primary Sponsor may or may not be the main funder."
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "institution", 
+      "example": "", 
+      "form": "TrialSecondarySponsorForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "TrialSecondarySponsorForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "institution", 
+      "example": "", 
+      "form": "TrialSupportSourceForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "TrialSupportSourceForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "hc_freetext", 
+      "example": "", 
+      "form": "HealthConditionsForm", 
+      "text": "Health condition free text"
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "vocabulary", 
+      "example": "", 
+      "form": "DescriptorForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "version", 
+      "example": "", 
+      "form": "DescriptorForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "code", 
+      "example": "", 
+      "form": "DescriptorForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "text", 
+      "example": "", 
+      "form": "DescriptorForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "i_freetext", 
+      "example": "", 
+      "form": "InterventionForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "i_code", 
+      "example": "", 
+      "form": "InterventionForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "study_design", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "expanded_access_program", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "purpose", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "intervention_assignment", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "number_of_arms", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "masking", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "allocation", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 39, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "phase", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 40, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "interest", 
+      "example": "", 
+      "form": "OutcomeForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 41, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "description", 
+      "example": "", 
+      "form": "OutcomeForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 42, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "OutcomeForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 43, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "contact", 
+      "example": "", 
+      "form": "PublicContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 44, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "PublicContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 45, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "contact", 
+      "example": "", 
+      "form": "ScientificContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 46, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "ScientificContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 47, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "contact", 
+      "example": "", 
+      "form": "SiteContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 48, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "SiteContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 49, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "firstname", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 50, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "middlename", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 51, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "lastname", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 52, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "email", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 53, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "affiliation", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 54, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "address", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 55, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "city", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 56, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "country", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 57, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "zip", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 58, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "telephone", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 59, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "relation", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "T\u00edtulo cient\u00edfico do estudo, tal como consta no protocolo submetido para financiamento e avalia\u00e7\u00e3o do comit\u00ea de \u00e9tica.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "T\u00edtulo cient\u00edfico do estudo", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "es", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Incluir acr\u00f4nimo cient\u00edfico do ensaio, se disponivel.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "T\u00edtulo do estudo destinado ao p\u00fablico leigo e que seja de f\u00e1cil compreens\u00e3o.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Campo texto para condi\u00e7\u00e3o de sa\u00fade", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 25
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Incluir o acr\u00f4nimo publico do ensaio, se dispon\u00edvel.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 5
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Situa\u00e7\u00e3o do Recrutamento do estudo:\r\n\r\n    * Pendente: participantes ainda n\u00e3o est\u00e3o sendo recrutados ou inscritos em qualquer local\r\n    * Recrutando: participantes est\u00e3o sendo recrutados e inscritos\r\n    * Suspenso: h\u00e1 uma parada tempor\u00e1ria no recrutamento e inscri\u00e7\u00e3o\r\n    * Completo: participantes n\u00e3o est\u00e3o sendo mais recrutados ou inscritos\r\n    * Outros ", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 9
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Os pa\u00edses onde os participantes ser\u00e3o, podem ser ou foram recrutados.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 10
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Data prevista ou real da inscri\u00e7\u00e3o do primeiro participante.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 11
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "N\u00famero de participantes que este estudo pretende inscrever.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 12
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Crit\u00e9rios de exclus\u00e3o para sele\u00e7\u00e3o dos participantes, incluindo idade m\u00e1xima e m\u00ednima e sexo.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 19
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Crit\u00e9rios de inclus\u00e3o para sele\u00e7\u00e3o dos participantes, incluindo idade m\u00e1xima e m\u00ednima e sexo.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 13
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "O indiv\u00edduo, organiza\u00e7\u00e3o, grupo ou outra entidade legal que assume a responsabilidade de iniciar, gerenciar e/ou financiar um estudo. O patrocinador prim\u00e1rio \u00e9 respons\u00e1vel por garantir que o ensaio est\u00e1 devidamente registrado. O patrocinador prim\u00e1rio pode ou n\u00e3o ser o principal financiador.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 20
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "G\u00eanero no crit\u00e9rio de inclus\u00e3o (feminino, masculino ou ambos).", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 14
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Idade m\u00e1xima no crit\u00e9rio de inclus\u00e3o.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 17
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Idade m\u00ednima no crit\u00e9rio de inclus\u00e3o.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 15
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Unidade de tempo da idade maxima no inclusion criteria.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 18
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Unidade de tempo da idade m\u00ednima no inclusion criteria.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 16
     }
   }
 ]
