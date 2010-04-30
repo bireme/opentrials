@@ -4,6 +4,9 @@
  */
 function cloneMore(selector, type) {
     var newElement = $(selector).clone(true);
+    newElement.find('td.help').remove();
+    newElement.find('td').attr('colspan','2');
+
     var total = $('#id_' + type + '-TOTAL_FORMS').val();
     newElement.find(':input').each(function() {
         var name = $(this).attr('name').replace('-' + (total-1) + '-','-' + total + '-');
@@ -15,17 +18,10 @@ function cloneMore(selector, type) {
         var newFor = $(this).attr('for').replace('-' + (total-1) + '-','-' + total + '-');
         $(this).attr('for', newFor);
     });
-    newElement.find('img[rel]').each(function() {
-        var newFor = $(this).attr('rel').replace('-' + (total-1) + '-','-' + total + '-');
-        $(this).attr('rel', newFor);
-    });
-    newElement.find('div[id]').each(function() {
-        var newFor = $(this).attr('id').replace('-' + (total-1) + '-','-' + total + '-');
-        $(this).attr('id', newFor);
-    });
+
     total++;
     $('#id_' + type + '-TOTAL_FORMS').val(total);
-    newElement.css("display","none");
+    newElement.css("display","table").hide();
     $(selector).after(newElement);
     newElement.show("fast");
 }

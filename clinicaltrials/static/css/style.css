@@ -239,7 +239,6 @@ table.table {
     border-collapse: collapse;
     border-width: 0 0 1px 1px;
     width: 100%;
-    display: block;
 }
 
 table.table,
