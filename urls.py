@@ -1,7 +1,5 @@
 from django.conf.urls.defaults import *
 
-import utilities
-
 from django.contrib import admin # Django admin UI
 admin.autodiscover()             # Django admin UI
 
@@ -34,13 +32,12 @@ urlpatterns = patterns('',
 )
 
 from django.conf import settings
-if settings.DEBUG:
-    # serve static files from develpment server
-    from django.views import static
-    urlpatterns += patterns('',
-        url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
-            {'document_root': settings.MEDIA_ROOT}),
-    )
+
+# serve static files from develpment server
+urlpatterns += patterns('',
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
+        {'document_root': settings.MEDIA_ROOT}),
+)
 
 if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += patterns('',
