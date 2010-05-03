@@ -6,13 +6,20 @@ from django import forms
 from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import login_required
 
+from tickets.models import Ticket
 from reviewapp.models import Submission
 from repository.models import ClinicalTrial, CountryCode, Institution
 
-@login_required
 def index(request):
     username = request.user.username if request.user.is_authenticated() else None
     return render_to_response('reviewapp/index.html', locals())
+
+@login_required
+def dashboard(request):
+    username = request.user.username
+    user_tickets = Ticket.objects.filter(creator=request.user)[:5]
+    user_submissions = Submission.objects.filter(creator=request.user)[:5]
+    return render_to_response('reviewapp/dashboard.html', locals())
 
 @login_required
 def user_dump(request):
