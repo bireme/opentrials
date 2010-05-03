@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block body %}
+
+<h2>{% trans "Dashboard" %}</h2>
+
+<h3>{% trans "Your Submissions" %}</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>{% trans "Created" %}</th>
+            <th>{% trans "Submission Title" %}</th>
+            <th>{% trans "Situation" %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for submission in user_submissions %}
+        <tr>
+            <td>{{ submission.created|date:'d M Y' }}</td>
+            <td>
+                <a href="{% url repository.edittrial submission.trial.pk %}">{{ submission.short_title }}</a>
+            </td>
+            <td>{{ submission.status }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3>{% trans "Tickets" %}</h3>
+{% if user_tickets %}
+<table class="table">
+    <col width="5%"/>
+    <col width="10%"/>
+    <col width="5%"/>
+    <col width="50%"/>
+    <col width="5%"/>
+    <col width="5%"/>
+    <col width="20%"/>
+    <tr>
+        <th>{% trans "Creation date" %}</th>
+        <th>{% trans "Context" %}</th>
+        <th>{% trans "Type" %}</th>
+        <th>{% trans "Subject" %}</th>
+        <th>{% trans "Status" %}</th>
+        <th>{% trans "Last update" %}</th>
+        <th></th>
+    </tr>
+    {% for ct in user_tickets %}
+    <tr>
+        <td>{{ ct.created }}</td>
+        <td>{{ ct.context }}</td>
+        <td>{{ ct.type }}</td>
+        <td>{{ ct.followup_set.latest.subject }}</td>
+        <td>{{ ct.followup_set.latest.status }}</td>
+        <td>{{ ct.followup_set.latest.iteration_date }}</td>
+        <td>
+            <ul>
+                <li><a href="/ticket/history/{{ ct.pk }}/">{% trans "view history" %}</a></li>
+                {% if ct.is_closed or ct.is_resolved %}
+                {% else %}
+                <li><a href="/ticket/newiteration/{{ ct.pk }}/">{% trans "add iteration" %}</a></li>
+                {% endif %}
+            </ul>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>{% trans "Have no open tickets" %}</p>
+{% endif %}
+
+{% endblock %}

@@ -250,6 +250,10 @@ table.table td, table.table th {
     padding: 10px;
 }
 
+table.table td ul {
+    padding: 0.5em;
+}
+
 table.table th {
     background-color: #F1F4F7;
     color:#333;
@@ -260,7 +264,6 @@ table.table textarea {
 }
 
 table.table td.help div.issue {
-    display: none;
 }
 
 table.trialsummary {
