@@ -24,6 +24,9 @@ ACCESS = [
 ]
 
 class Submission(models.Model):
+    class Meta:
+        ordering = ['-created']
+
     creator = models.ForeignKey(User, related_name='submission_creator', editable=False)
     created = models.DateTimeField(default=datetime.now, editable=False)
     updater = models.ForeignKey(User, null=True, related_name='submission_updater', editable=False)
