@@ -9,8 +9,8 @@ info_dict = {
 }
 
 urlpatterns = patterns('',
-    url(r'^$', index),
-    url(r'^list/$', object_list, info_dict),
+    url(r'^$', index, name="ticket.index"),
+    url(r'^list/$', object_list, info_dict, name="ticket.list"),
     url(r'^list_waiting/$', waiting_acceptance, name="ticket.waiting_acceptance"),
     url(r'^history/(?P<object_id>\d+)/$', object_detail, info_dict, name='ticket.history' ),
     url(r'^open/(?P<context>\w+)/(?P<type>\w+)/$', open_ticket, name='ticket.open' ),
