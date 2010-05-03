@@ -56,7 +56,6 @@
                 <div id="banner">
                     <div class="logo">
                         <h1>
-                            <!--a href="{% url reviewapp.home %}"><span>{% block headline %}{% trans "RBEC" %}{% endblock %}</span></a-->
                             <a href="{% url reviewapp.home %}"><img alt="Registro Brasileiro de Ensaios Clínicos" src="/static/title.gif" border="none"/></a>
                         </h1>
                     </div>
@@ -89,7 +88,7 @@
                                 <li>Profile</li>
                                 <li><a href="{% url reviewapp.dashboard %}">{% trans 'Dashboard' %}</a></li>
                                 <li><a href="{% url reviewapp.userhome %}">{% trans 'Submissions' %}</a></li>
-                                <li>Issues</li>
+                                <li><a href="{% url ticket.index %}">{% trans 'Tickets' %}</a></li>
                             </ul>
                             {% else %}
                             <div><a href="/accounts/login" title="{% trans 'access with an existing account' %}">[{% trans 'login' %}]</a>
@@ -108,12 +107,9 @@
             </div>
             <div id="footer">
                 <p>
-                    <strong> BIREME - OPAS - OMS
-                    </strong><br/>
-                    Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde
-                    <br/>
-                    Rua Botucatu, 862 - 04023-901 - São Paulo/SP - Brasil - Tel: (55 11) 5576-9800 - Fax: (55 11) 5575-8868
-                    <br/>
+                    <strong>BIREME - OPAS - OMS</strong><br/>
+                    Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde<br/>
+                    Rua Botucatu, 862 - 04023-901 - São Paulo/SP - Brasil - Tel: (55 11) 5576-9800 - Fax: (55 11) 5575-8868<br/>
                 </p>
             </div>
         </div>
