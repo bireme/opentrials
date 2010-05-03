@@ -17,8 +17,8 @@ def index(request):
 @login_required
 def dashboard(request):
     username = request.user.username
-    user_tickets = Ticket.objects.filter(creator=request.user)[:5]
-    user_submissions = Submission.objects.filter(creator=request.user)[:5]
+    user_tickets = Ticket.objects.order_by('-created').filter(creator=request.user)[:5]
+    user_submissions = Submission.objects.order_by('-created').filter(creator=request.user)[:5]
     return render_to_response('reviewapp/dashboard.html', locals())
 
 @login_required
