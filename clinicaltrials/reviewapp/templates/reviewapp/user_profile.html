@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block body %}
+<h2>{% trans "User profile" %}</h2>
+<form action="./" method="post">
+    <table class="table">
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="{% trans 'Save' %}"/>
+</form>
+{% endblock %}

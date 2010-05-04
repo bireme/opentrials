@@ -3,6 +3,7 @@
 from clinicaltrials.reviewapp.models import Attachment
 from django import forms
 from django.utils.translation import ugettext as _
+from django.contrib.auth.models import User
 
 ACCESS = [
     ('public', 'Public'),
@@ -26,3 +27,9 @@ class NewAttachmentForm(forms.ModelForm):
     title = _('New Attachment')
     submission = forms.CharField(widget=forms.HiddenInput,required=False)
 
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username','first_name','last_name','email']
+
+    title = _('User Profile')

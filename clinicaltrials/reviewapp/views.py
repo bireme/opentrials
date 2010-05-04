@@ -1,4 +1,5 @@
 # coding: utf-8
+from clinicaltrials.reviewapp.trds_forms import UserForm
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseRedirect
@@ -13,6 +14,7 @@ from repository.models import ClinicalTrial, CountryCode, Institution
 def index(request):
     username = request.user.username if request.user.is_authenticated() else None
     return render_to_response('reviewapp/index.html', locals())
+
 
 @login_required
 def dashboard(request):
@@ -50,6 +52,21 @@ class PrimarySponsorForm(forms.ModelForm):
         model = Institution
         exclude = ['address']
     form_title = _('Primary Sponsor')
+
+@login_required
+def user_profile(request):
+    if request.method == 'POST':
+        user_form = UserForm(request.POST,instance=request.user)
+        if user_form.is_valid():
+            user_form.save()
+            return HttpResponseRedirect(reverse('reviewapp.dashboard'))
+    else:
+        user_form = UserForm(instance=request.user)
+
+    return render_to_response('reviewapp/user_profile.html', {
+        'form': user_form,
+        'username':request.user.username,
+    })
 
 @login_required
 def new_submission(request):
