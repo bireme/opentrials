@@ -60,7 +60,6 @@ def close_ticket(request, object_id):
 
     return HttpResponseRedirect(ticket.get_absolute_url())
 
-@login_required
 class FollowupParcForm(forms.Form):
     description = forms.CharField(label=_('Description'),widget=forms.Textarea)
 
