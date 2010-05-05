@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect
 from django import forms
 from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
 
 from tickets.models import Ticket
 from reviewapp.models import Submission
@@ -57,14 +58,19 @@ class PrimarySponsorForm(forms.ModelForm):
 def user_profile(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST,instance=request.user)
-        if user_form.is_valid():
+        password_form = PasswordChangeForm(request.user,request.POST)
+
+        if user_form.is_valid() and password_form.is_valid():
             user_form.save()
+            password_form.save()
             return HttpResponseRedirect(reverse('reviewapp.dashboard'))
     else:
         user_form = UserForm(instance=request.user)
+        password_form = PasswordChangeForm(request.user)
 
+    forms = [user_form, password_form]
     return render_to_response('reviewapp/user_profile.html', {
-        'form': user_form,
+        'forms': forms,
         'username':request.user.username,
     })
 
