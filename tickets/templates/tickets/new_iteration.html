@@ -2,13 +2,39 @@
 {% load i18n %}
 {% block body %}
 
-<form method="post" action="/ticket/{{ mode }}/{{ ticket_id }}/">
-<table>
-    <tr><th colspan="2">{% trans "Adding Iteration" %}</th></tr>
-{{iteration_form.as_table}}
-</table>
+<h2>{% trans "Add iteration in ticket" %}</h2>
 
-<input name="submit" type="submit" value="{% trans "Submit" %}">
+<form method="post" action="/ticket/{{ mode }}/{{ ticket_id }}/">
+    <fieldset>
+        <legend>Ticket info</legend>
+        <table class="table">
+            <col width="20%">
+            <col width="80%">
+            <tr>
+                <th>{% trans "Author" %}</th>
+                <td>{{ ticket.creator.username }}</td>
+            </tr>
+            <tr>
+                <th>{% trans "Date of Registration" %}</th>
+                <td>{{ ticket.created }}</td>
+            </tr>
+            <tr>
+                <th>{% trans "Context" %}</th>
+                <td>{{ ticket.context }}</td>
+            </tr>
+            <tr>
+                <th>{% trans "Ticket Type" %}</th>
+                <td>{{ ticket.type }}</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>Iteration text</legend>
+        {{form.description}}
+    </fieldset>
+
+    <input name="submit" type="submit" value="{% trans "Submit" %}">
 
 </form>
 
