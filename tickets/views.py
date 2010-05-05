@@ -65,11 +65,11 @@ class FollowupParcForm(forms.Form):
 
 @login_required
 def resolve_ticket(request, object_id):
+    ticket = get_object_or_404(Ticket, id=int(object_id))
     if request.method == 'POST': # If the forms were submitted...
         form = FollowupParcForm(request.POST)
         if form.is_valid():
             desc = form.cleaned_data['description']
-            ticket = get_object_or_404(Ticket, id=int(object_id))
             fw_lt = ticket.followup_set.latest()
             fw_nw = Followup(ticket=ticket, status='resolved',
                 description=desc, subject=fw_lt.subject ,
@@ -81,8 +81,8 @@ def resolve_ticket(request, object_id):
         # recovering Ticket Data to input form fields
         followup_form = FollowupParcForm() # An unbound form
         return render_to_response('tickets/new_iteration.html', {
-            'iteration_form': followup_form,
-            'ticket_id': object_id,
+            'form': followup_form,
+            'ticket': ticket,
             'mode': 'resolve',
             'username': request.user.username,
         })
