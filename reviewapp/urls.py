@@ -4,6 +4,7 @@ from django.views.generic.list_detail import object_list, object_detail
 
 from reviewapp.views import index, user_dump, new_submission, submissions_list
 from reviewapp.views import dashboard, submission_detail, user_profile
+from reviewapp.views import upload_trial
 
 from reviewapp.models import Submission
 
@@ -16,6 +17,8 @@ urlpatterns = patterns('',
     url(r'^accounts/dashboard/$', dashboard, name='reviewapp.dashboard'),
 
     url(r'^accounts/profile/$', user_profile, name='reviewapp.userhome'),
+
+    url(r'^accounts/uploadtrial/$', upload_trial, name='reviewapp.uploadtrial'), #same as accounts/profile
 
     url(r'^accounts/submissionlist/$', submissions_list, name='reviewapp.submissionlist'), #same as accounts/profile
 

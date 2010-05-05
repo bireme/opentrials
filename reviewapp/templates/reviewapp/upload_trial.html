@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block body %}
+<h2>{% trans "Upload trial" %}</h2>
+
+<p>
+    Here you can upload an XML on ICTRP standard to submit your clinical trial.
+</p>
+
+<form>
+    <fieldset>
+        <legend>{% trans "Select your XML file" %}</legend>
+    {{ form.submission_xml }}
+    </fieldset>
+</form>
+
+{% endblock %}

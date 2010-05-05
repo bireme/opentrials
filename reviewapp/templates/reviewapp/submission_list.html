@@ -2,9 +2,14 @@
 {% load i18n %}
 
 {% block body %}
+<h2>{% trans "Submit a new Clinical Trial" %}</h2>
+<p>{% trans "Choose one of the ways below to submit a new clinical trial" %}</p>
+<ul>
+    <li><a href="{% url reviewapp.new_submission %}">{% trans "Completing the submission form." %}</a></li>
+    <li><a href="{% url reviewapp.uploadtrial %}">{% trans "Uploading an XML file." %}</a></li>
+</ul>
 
-<h2>{% trans "Your Submissions" %}</h2>
-<a href="{% url reviewapp.new_submission %}" class="buttonadd">{% trans "Submit a new Clinical Trial" %}</a>
+<h2>{% trans "Your Submissions list" %}</h2>
 <table class="table">
     <thead>
         <tr>
@@ -26,5 +31,4 @@
     </tbody>
 </table>
 
-<a href="{% url reviewapp.new_submission %}" class="buttonadd">{% trans "Submit a new Clinical Trial" %}</a>
 {% endblock %}
