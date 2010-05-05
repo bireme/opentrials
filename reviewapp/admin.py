@@ -1,6 +1,6 @@
 from django.contrib import admin
-
-from reviewapp.models import Submission, RecruitmentCountry
+from utilities import safe_truncate
+from reviewapp.models import Submission, RecruitmentCountry, Remark
 
 class RecruitmentCountryInline(admin.TabularInline):
     model = RecruitmentCountry
@@ -19,5 +19,23 @@ class SubmissionAdmin(admin.ModelAdmin):
         else: # new submission
             instance.creator = request.user
         super(SubmissionAdmin, self).save_model(request, instance, form, change)
+        
+class RemarkAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'context', 'short_text', 'verified', 'status')
+    list_display_links = ('__unicode__', 'context', 'status')
+
+    def save_model(self, request, instance, form, change):
+        if not change:
+            instance.creator = request.user
+        super(RemarkAdmin, self).save_model(request, instance, form, change)
+    
+    
+    def verified(self, obj):
+        return obj.status == 'verified'
+    verified.boolean = True
+    
+    def short_text(self, obj):
+        return safe_truncate(obj.text)
 
 admin.site.register(Submission, SubmissionAdmin)
+admin.site.register(Remark, RemarkAdmin)
