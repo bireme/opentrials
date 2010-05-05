@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 
 from datetime import datetime
@@ -26,6 +26,9 @@ ACCESS = [
 class Submission(models.Model):
     class Meta:
         ordering = ['-created']
+        permissions = (
+            ("review", "Can review"),
+        )
 
     creator = models.ForeignKey(User, related_name='submission_creator', editable=False)
     created = models.DateTimeField(default=datetime.now, editable=False)
@@ -54,7 +57,7 @@ class Submission(models.Model):
         return self.creator.username
 
     def __unicode__(self):
-        return u'<%s> %s' % (self.creator_username(), self.short_title())
+        return self.short_title()
 
     def get_mandatory_languages(self):
         langs = set(['en'])
@@ -76,15 +79,6 @@ class RecruitmentCountry(models.Model):
     submission = models.ForeignKey(Submission)
     country = models.ForeignKey(CountryCode, verbose_name=_('Country'), related_name='submissionrecruitmentcountry_set')
 
-class FrozenForm(models.Model):
-    submission = models.ForeignKey(Submission)
-    form_name = models.CharField(max_length=255)
-    data = models.TextField(max_length=2**16)
-
-    class Meta:
-        unique_together = ['submission', 'form_name']
-
-
 class Attachment(models.Model):
     class Meta:
         verbose_name_plural = _('Attachments')
@@ -94,3 +88,29 @@ class Attachment(models.Model):
                                                               max_length=8000)
     submission = models.ForeignKey(Submission)
     public = models.BooleanField(_('Public'))
+    
+
+REMARK_STATUS = [
+        # initial state, as created by reviewer
+        ('pending', _('Pending')),
+        # marked as noted by user
+        ('acknowledged', _('Acknowledged')),
+        # final state, after reviewer verifies changes by the user
+        ('verified', _('Verified')),
+    ]
+    
+class Remark(models.Model):
+    ''' A reviewer comment regarding a submission field.
+    
+    The remark is directed at the field identified by the context attribute.
+    '''
+    creator = models.ForeignKey(User, editable=False)
+    created = models.DateTimeField(default=datetime.now, editable=False)
+    submission = models.ForeignKey(Submission)
+    context = models.CharField(_('Context'), max_length=256, blank=True)
+    text = models.TextField(_('Text'), max_length=2048)
+    status = models.CharField(_('Status'), max_length=16, choices=REMARK_STATUS,
+                              default=REMARK_STATUS[0][0])
+    
+    def __unicode__(self):
+        return '%s:%s' % (self.pk, self.submission_id)
