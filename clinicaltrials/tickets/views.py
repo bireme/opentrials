@@ -131,9 +131,6 @@ def new_iteration(request, object_id):
         # recovering Ticket Data to input form fields
         iteration_form = FollowupParcForm() # An unbound form
 
-    import pdb
-    pdb.set_trace()
-
     return render_to_response('tickets/new_iteration.html', {
         'form': iteration_form,
         'ticket': ticket,
