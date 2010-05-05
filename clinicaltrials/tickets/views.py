@@ -170,5 +170,6 @@ def open_ticket(request,context,type):
         'context': context,
         'type': type,
         'mode': 'open_ticket',
-        'user_name': request.user.pk
+        'user_name': request.user.pk,
+        'username': request.user.username,
     })
