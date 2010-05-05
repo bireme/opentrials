@@ -60,17 +60,23 @@ def user_profile(request):
         user_form = UserForm(request.POST,instance=request.user)
         password_form = PasswordChangeForm(request.user,request.POST)
 
-        if user_form.is_valid() and password_form.is_valid():
+        if user_form.is_valid():
             user_form.save()
-            password_form.save()
-            return HttpResponseRedirect(reverse('reviewapp.dashboard'))
+
+            if password_form.changed_data:
+                if password_form.is_valid():
+                    password_form.save()
+                    return HttpResponseRedirect(reverse('reviewapp.dashboard'))
+            else:
+                return HttpResponseRedirect(reverse('reviewapp.dashboard'))
+
     else:
         user_form = UserForm(instance=request.user)
         password_form = PasswordChangeForm(request.user)
 
-    forms = [user_form, password_form]
     return render_to_response('reviewapp/user_profile.html', {
-        'forms': forms,
+        'user_form': user_form,
+        'password_form': password_form,
         'username':request.user.username,
     })
 
