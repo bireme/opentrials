@@ -1,5 +1,6 @@
 # coding: utf-8
 
+from clinicaltrials.reviewapp.models import UserProfile
 from clinicaltrials.reviewapp.models import Attachment
 from django import forms
 from django.utils.translation import ugettext as _
@@ -46,6 +47,13 @@ class UserForm(forms.ModelForm):
         fields = ['first_name','last_name','email']
 
     title = _('User Profile')
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['preferred_language']
+
+    title = _('Aditional info for profile')
 
 class UploadTrial(forms.Form):
     submission_xml = forms.CharField(widget=forms.FileInput,required=True)

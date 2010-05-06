@@ -23,6 +23,13 @@ ACCESS = [
     ('private', 'Private'),
 ]
 
+class UserProfile(models.Model):
+    user = models.ForeignKey(User, unique=True)
+    preferred_language = models.CharField(_('Preferred language'),max_length=5,
+                                choices=settings.MANAGED_LANGUAGES,
+                                default=settings.MANAGED_LANGUAGES[-1][0])
+
+
 class Submission(models.Model):
     class Meta:
         ordering = ['-created']
@@ -82,10 +89,8 @@ class RecruitmentCountry(models.Model):
 class Attachment(models.Model):
     class Meta:
         verbose_name_plural = _('Attachments')
-
     file = models.FileField(upload_to=settings.ATTACHMENTS_PATH)
-    description = models.TextField(_('Description'), blank=True,
-                                                              max_length=8000)
+    description = models.TextField(_('Description'),blank=True,max_length=8000)
     submission = models.ForeignKey(Submission)
     public = models.BooleanField(_('Public'))
     
