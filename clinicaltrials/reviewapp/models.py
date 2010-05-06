@@ -91,13 +91,19 @@ class Attachment(models.Model):
     
 
 REMARK_STATUS = [
-        # initial state, as created by reviewer
-        ('pending', _('Pending')),
-        # marked as noted by user
-        ('acknowledged', _('Acknowledged')),
-        # final state, after reviewer verifies changes by the user
-        ('verified', _('Verified')),
-    ]
+    # initial state, as created by reviewer
+    ('pending', _('Pending')),
+    # marked as noted by user
+    ('acknowledged', _('Acknowledged')),
+    # final state, after reviewer verifies changes by the user
+    ('verified', _('Verified')),
+]
+
+REMARK_TRANSITIONS = {
+    'pending':['acknowledged', 'verified'],
+    'acknowledged':['verified', 'pending'],
+    'verified':['pending'],
+}    
     
 class Remark(models.Model):
     ''' A reviewer comment regarding a submission field.
