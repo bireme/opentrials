@@ -1,5 +1,6 @@
 #coding: utf-8
 
+from django.template.context import RequestContext
 from reviewapp.models import Attachment, Submission
 from reviewapp.trds_forms import ExistingAttachmentForm,NewAttachmentForm
 
@@ -48,22 +49,23 @@ def edit_trial_index(request, trial_pk):
         data['msg'] = 'Blank fields'
         links.append(data)
     return render_to_response('repository/trial_index.html',
-                              {'username':request.user.username,
-                               'trial_pk':trial_pk,
-                               'links':links})
+                              {'trial_pk':trial_pk,
+                               'links':links},
+                               context_instance=RequestContext(request))
 
 def full_view(request, trial_pk):
     ''' full view '''
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     return render_to_response('repository/trds.html',
-                              {'fieldtable':ct.html_dump()})
+                              {'fieldtable':ct.html_dump()},
+                               context_instance=RequestContext(request))
 
 
 @login_required
 def index(request):
     latest_clinicalTrials = ClinicalTrial.objects.all()[:5]
     t = loader.get_template('repository/latest_clinicalTrials.html')
-    c  = Context({
+    c  = RequestContext(request,{
         'latest_clinicalTrials': latest_clinicalTrials,
     })
     return HttpResponse(t.render(c))
@@ -81,7 +83,8 @@ def new_institution(request):
         new_institution = NewInstitution()
 
     return render_to_response('repository/new_institution.html',
-                             {'form':new_institution})
+                             {'form':new_institution},
+                               context_instance=RequestContext(request))
 
 def step_list(trial_pk):
     import sys
@@ -121,11 +124,11 @@ def step_1(request, trial_pk):
     formsets = [secondary_forms]
     return render_to_response('repository/trial_form.html',
                               {'forms':forms,'formsets':formsets,
-                               'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[0],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Sponsors and Sources of Support')})
+                               'next_form_title':_('Sponsors and Sources of Support')},
+                               context_instance=RequestContext(request))
 
 
 @login_required
@@ -168,11 +171,11 @@ def step_2(request, trial_pk):
     formsets = [secondary_forms,sources_form]
     return render_to_response('repository/step_2.html',
                               {'forms':forms,'formsets':formsets,
-                               'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[1],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Health Conditions Form')})
+                               'next_form_title':_('Health Conditions Form')},
+                               context_instance=RequestContext(request))
 
 
 @login_required
@@ -223,11 +226,11 @@ def step_3(request, trial_pk):
     formsets = [gdesc, sdesc]
     return render_to_response('repository/step_3.html',
                               {'forms':forms,'formsets':formsets,
-                               'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[2],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Interventions Form')})
+                               'next_form_title':_('Interventions Form')},
+                               context_instance=RequestContext(request))
 
 
 @login_required
@@ -265,11 +268,11 @@ def step_4(request, trial_pk):
     formsets = [idesc]
     return render_to_response('repository/step_4.html',
                               {'forms':forms,'formsets':formsets,
-                               'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[3],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Recruitment Form')})
+                               'next_form_title':_('Recruitment Form')},
+                               context_instance=RequestContext(request))
 
 
 @login_required
@@ -292,11 +295,11 @@ def step_5(request, trial_pk):
     forms = [form]
     return render_to_response('repository/trial_form.html',
                               {'forms':forms,
-                               'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[4],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Study Type Form')})
+                               'next_form_title':_('Study Type Form')},
+                               context_instance=RequestContext(request))
 
 
 @login_required
@@ -319,11 +322,11 @@ def step_6(request, trial_pk):
     forms = [form]
     return render_to_response('repository/trial_form.html',
                               {'forms':forms,
-                               'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[5],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Outcomes Form')})
+                               'next_form_title':_('Outcomes Form')},
+                               context_instance=RequestContext(request))
 
 
 @login_required
@@ -349,11 +352,11 @@ def step_7(request, trial_pk):
     formsets = [outcomes_formset]
     return render_to_response('repository/trial_form.html',
                               {'formsets':formsets,
-                               'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[6],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Descriptor Form')})
+                               'next_form_title':_('Descriptor Form')},
+                               context_instance=RequestContext(request))
 
 
 @login_required
@@ -399,10 +402,10 @@ def step_8(request, trial_pk):
     formsets = inlineformsets + [new_contact_formset]
     return render_to_response('repository/trial_form.html',
                               {'formsets':formsets,
-                               'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[7],
-                               'steps': step_list(trial_pk)})
+                               'steps': step_list(trial_pk)},
+                               context_instance=RequestContext(request))
 
 @login_required
 def step_9(request, trial_pk):
@@ -449,7 +452,7 @@ def step_9(request, trial_pk):
     formsets = [existing_attachment_formset,new_attachment_formset]
     return render_to_response('repository/attachments.html',
                               {'formsets':formsets,
-                               'username':request.user.username,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[8],
-                               'steps': step_list(trial_pk)})
+                               'steps': step_list(trial_pk)},
+                               context_instance=RequestContext(request))

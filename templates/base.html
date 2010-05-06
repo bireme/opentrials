@@ -79,9 +79,9 @@
                     <div id="rebracmenu">
                         <h2>{% trans "Options menu" %}</h2>
                         <div id="usermenu">
-                            {% if username %}
+                            {% if user.is_authenticated %}
                             <div>
-                                <span>{{username}}</span><br/>
+                                <span>{{ user.username }}</span><br/>
                                 <a href="/accounts/logout">log out</a>
                             </div>
                             <ul>

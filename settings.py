@@ -96,6 +96,12 @@ INSTALLED_APPS = (
     'registration',  # django-registration package
 )
 
+TEMPLATE_CONTEXT_PROCESSORS =(
+    'django.core.context_processors.auth',
+)
+
+#AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
+
 #################################################################
 ### BEGIN Clinical Trials Repository customization settings
 ###

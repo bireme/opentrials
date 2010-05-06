@@ -1,5 +1,6 @@
 # Create your views here.
 from django.template import Context, loader
+from django.template.context import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
 from clinicaltrials.tickets.models import Ticket, Followup
 from django.contrib.auth.models import User
@@ -15,16 +16,15 @@ import choices
 
 @login_required
 def index(request):
-    user_tickets = Ticket.objects.all()[:5]
+    user_tickets = Ticket.objects.filter(creator=request.user)[:5]
     user_open_tickets  = (i.opened_tickets() for i in Ticket.objects.all())
     user_close_tickets = (i.closed_tickets() for i in Ticket.objects.all())
     t = loader.get_template('tickets/user_tickets.html')
-    c = Context({
+    c = RequestContext(request, {
         'user_tickets': user_tickets,
         'user_open_tickets': user_open_tickets,
         'choices': choices,
-        'user_close_tickets': user_close_tickets,
-        'username': request.user.username,
+        'user_close_tickets': user_close_tickets
     })
     return HttpResponse(t.render(c))
 
@@ -32,7 +32,7 @@ def index(request):
 def waiting_acceptance(request):
     fw_waiting = Followup.objects.filter(status = 'new', ticket__type='review')
     t = loader.get_template('tickets/waiting_acceptance_tickets.html')
-    c = Context({
+    c = RequestContext(request, {
         'fw_waiting': fw_waiting,
         'choices': choices,
         'username': request.user.username,
@@ -85,7 +85,7 @@ def resolve_ticket(request, object_id):
             'ticket': ticket,
             'mode': 'resolve',
             'username': request.user.username,
-        })
+        },context_instance=RequestContext(request))
 
 @login_required
 def accept_ticket(request, object_id):
@@ -108,9 +108,8 @@ def accept_ticket(request, object_id):
         return render_to_response('tickets/new_iteration.html', {
             'iteration_form': followup_form,
             'ticket_id': object_id,
-            'mode': 'accept',
-            'username': request.user.username,
-        })
+            'mode': 'accept'},
+            context_instance=RequestContext(request))
 
 @login_required
 def new_iteration(request, object_id):
@@ -134,9 +133,8 @@ def new_iteration(request, object_id):
     return render_to_response('tickets/new_iteration.html', {
         'form': iteration_form,
         'ticket': ticket,
-        'mode': 'newiteration',
-        'username': request.user.username,
-    })
+        'mode': 'newiteration'},
+       context_instance=RequestContext(request))
 
 class FollowupParcBForm(forms.Form):
     subject = forms.CharField(label=_('Subject'),required=True,max_length=256)
@@ -167,6 +165,5 @@ def open_ticket(request,context,type):
         'context': context,
         'type': type,
         'mode': 'open_ticket',
-        'user_name': request.user.pk,
-        'username': request.user.username,
-    })
+        'user_name': request.user.pk},
+        context_instance=RequestContext(request))
