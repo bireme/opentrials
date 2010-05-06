@@ -1,0 +1,258 @@
+[
+  {
+    "pk": 1, 
+    "model": "assistance.category", 
+    "fields": {
+      "label": "System"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "assistance.category", 
+    "fields": {
+      "label": "Interface"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "assistance.category", 
+    "fields": {
+      "label": "WorkFlow"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 1, 
+      "answer": "Donec euismod lectus et justo convallis fermentum. Donec iaculis tempor sapien, nec varius orci consequat at. Etiam scelerisque sollicitudin fringilla. Duis ipsum metus, convallis ut fermentum ac, molestie id odio. Mauris ultricies nisi non purus tempor porttitor. Suspendisse potenti. Vestibulum eleifend vestibulum ipsum, ut tempor diam aliquam rhoncus. Sed suscipit facilisis vestibulum. Proin mattis, est a eleifend euismod, arcu est accumsan dolor, nec dictum leo felis et mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ligula et metus tempor lacinia vel eget erat. Ut ut magna nibh, eu semper dolor. Nunc ornare pellentesque odio ut condimentum. Praesent id tellus id orci luctus commodo eget a lorem. Nulla et tellus ac nibh fringilla bibendum. Phasellus vel dolor purus. ", 
+      "created": "2009-12-14 17:59:31", 
+      "order": 2, 
+      "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 3, 
+      "answer": "dui ante porta eros, at sodales est tortor nec odio. Donec auctor, urna at blandit interdum, est massa aliquam dolor, at volutpat lorem augue a mi. Nulla venenatis diam quis nunc euismod sollicitudin. Nam eget lacus metus, vitae interdum dui. Nullam odio justo, pretium vitae pretium id, fermentum ut orci. Vestibulum odio massa, porta vel volutpat eget, gravida hendrerit velit. Pellentesque adipiscing elementum purus vel rutrum. Cras non felis sit amet enim ultricies tempus venenatis id sem. Vestibulum a libero ut erat aliquam consequat vitae vitae turpis. Nunc sit amet quam neque, a sagittis erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent arcu felis, rhoncus vitae varius venenatis, gravida et orci. ", 
+      "created": "2009-12-14 18:00:28", 
+      "order": 5, 
+      "title": "Mauris aliquam, mi non hendrerit luctus?"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 2, 
+      "answer": "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer at dolor ut arcu posuere auctor ut quis nisi. Etiam sed mauris elit, eget molestie sem. Integer luctus odio vitae dolor euismod laoreet. Donec rutrum ultrices erat, sed ultrices risus lobortis at. Maecenas in dolor vel turpis posuere tempor. Etiam eu condimentum nulla. Nullam fringilla tortor sed risus porttitor et pharetra urna ullamcorper. Nulla in ipsum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. ", 
+      "created": "2009-12-14 18:03:22", 
+      "order": 1, 
+      "title": "Vestibulum aliquet nisi vel risus pharetra auctor?"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 2, 
+      "answer": "Quisque viverra, diam id commodo adipiscing, velit dui pharetra orci, id iaculis libero metus vestibulum mi. Nullam nec elit lacus. Aliquam a lectus metus. Nam gravida dui sit amet nibh aliquam nec fermentum lorem tempus. Donec magna magna, porttitor sit amet viverra sit amet, porttitor eget nisi. Nullam ac orci in quam varius vulputate. Pellentesque viverra est in nibh suscipit scelerisque. Mauris nec tortor fringilla libero ultrices vulputate. Nullam vitae metus tortor. Phasellus vel odio quam, quis varius magna. Curabitur rhoncus porttitor eleifend. Proin rutrum euismod tempus. Mauris eu augue arcu, ut lobortis sem. Nulla tincidunt, orci non pharetra dapibus, risus mauris vestibulum libero, non egestas magna arcu quis ipsum. Fusce accumsan magna at enim imperdiet quis iaculis odio porttitor. Aliquam vitae felis ipsum. ", 
+      "created": "2009-12-14 18:04:04", 
+      "order": 1, 
+      "title": "Donec hendrerit ligula eget arcu congue gravida?"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 3, 
+      "answer": "Nulla nisl felis, accumsan sed gravida in, pellentesque ac neque. Aliquam at lorem dolor. Nam vel elit et diam adipiscing posuere. Aliquam erat volutpat. Nulla justo mauris, elementum id interdum sed, euismod et eros. Nunc porta dictum risus, vel malesuada dolor aliquet ac. Suspendisse in ullamcorper mi. Suspendisse potenti. Vestibulum vitae libero dolor. Maecenas vitae fermentum mi. Donec eleifend fermentum lacus. Maecenas ante ipsum, facilisis vel gravida non, accumsan a tellus. ", 
+      "created": "2009-12-14 18:05:38", 
+      "order": 1, 
+      "title": "Pellentesque ullamcorper augue at ante rhoncus ultrices?"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "scientific_title", 
+      "example": "", 
+      "form": "TrialIdentificationForm", 
+      "text": "Scientific title of the study as it appears in the protocol submitted for funding and ethical review."
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "scientific_acronym", 
+      "example": "", 
+      "form": "TrialIdentificationForm", 
+      "text": "Include trial acronym if available."
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "scientific_acronym_expansion", 
+      "example": "", 
+      "form": "TrialIdentificationForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "public_title", 
+      "example": "", 
+      "form": "TrialIdentificationForm", 
+      "text": "Title intended for the lay public in easily understood language."
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "acronym", 
+      "example": "", 
+      "form": "TrialIdentificationForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "issuing_authority", 
+      "example": "", 
+      "form": "TrialNumberForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "id_number", 
+      "example": "", 
+      "form": "TrialNumberForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "TrialNumberForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "primary_sponsor", 
+      "example": "", 
+      "form": "PrimarySponsorForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "institution", 
+      "example": "", 
+      "form": "TrialSecondarySponsorForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "TrialSecondarySponsorForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "institution", 
+      "example": "", 
+      "form": "TrialSupportSourceForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "TrialSupportSourceForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "hc_freetext", 
+      "example": "", 
+      "form": "HealthConditionsForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "vocabulary", 
+      "example": "", 
+      "form": "DescriptorForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "version", 
+      "example": "", 
+      "form": "DescriptorForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "code", 
+      "example": "", 
+      "form": "DescriptorForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "text", 
+      "example": "", 
+      "form": "DescriptorForm", 
+      "text": ""
+    }
+  }
+]
