@@ -6,7 +6,7 @@ from django.template.context import RequestContext
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
-
+from django.conf import settings
 from tickets.models import Ticket
 
 from reviewapp.models import Submission
@@ -57,12 +57,17 @@ def user_profile(request):
             user_form.save()
             profile_form.save()
 
+            response = HttpResponseRedirect(reverse('reviewapp.dashboard'))
+            if hasattr(request, 'session'):
+                request.session['django_language'] = profile.preferred_language
+            response.set_cookie(settings.LANGUAGE_COOKIE_NAME, profile.preferred_language)
+
             if password_form.changed_data:
                 if password_form.is_valid():
                     password_form.save()
-                    return HttpResponseRedirect(reverse('reviewapp.dashboard'))
+                    return response
             else:
-                return HttpResponseRedirect(reverse('reviewapp.dashboard'))
+                return response
     else:
         user_form = UserForm(instance=request.user)
         profile_form = UserProfileForm(instance=profile)

@@ -19,11 +19,25 @@ def getterm(request, lang, code):
     result = tree.find("decsws_response/tree/self/term_list/term")
     if result is None:
         result = tree.findall('decsws_response/tree/term_list[@lang="%s"]/term' % lang)
-
         json = '[%s]' % ','.join((JSON_TERM % (r.text.capitalize(),r.attrib['tree_id']) for r in result))
     else:
         json = '[%s]' % (JSON_TERM % (result.text,result.attrib['tree_id']))
            
+    return HttpResponse(json, mimetype='application/json');
+
+def getdescendants(request, lang, code):
+    params = urllib.urlencode({
+        'tree_id': code or '',
+        'lang': lang,
+        })
+    resource = urllib.urlopen(settings.DECS_SERVICE, params)
+
+    tree = ElementTree()
+    tree.parse(resource)
+
+    result = tree.findall('decsws_response/tree/descendants/term_list[@lang="%s"]/term' % lang)
+    json = '[%s]' % ','.join((JSON_TERM % (r.text.capitalize(),r.attrib['tree_id']) for r in result))
+
     return HttpResponse(json, mimetype='application/json');
 
 def search(request, lang, term, prefix='401'):
