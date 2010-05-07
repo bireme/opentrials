@@ -7,7 +7,7 @@
         $(document).ready(function() {
             $("div.form select")
                 .change(search_event(
-                        '{% url decs.search lang="en",term="" %}',
+                        '{% url decs.search lang=LANGUAGE_CODE,term="" %}',
                         '{% trans "Search terms" %}'))
                 .each(function(){$(this).change();});
             $('td.help img').cluetip({local:true, cursor: 'pointer',showTitle: false});
