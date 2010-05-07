@@ -7,12 +7,12 @@
         $(document).ready(function() {
             // TODO: Replace absolute path
             $("div.g select")
-                .change(getterm_event('{% url decs.getterm lang="en",code="" %}'))
+                .change(getterm_event('{% url decs.getterm lang=LANGUAGE_CODE,code="" %}'))
                 .each(function(){$(this).change();});
 
             $("div.s select")
                 .change(search_event(
-                        '{% url decs.search lang="en",term="" %}',
+                        '{% url decs.search lang=LANGUAGE_CODE,term="" %}',
                         '{% trans "Search terms" %}'))
                 .each(function(){$(this).change();});
 

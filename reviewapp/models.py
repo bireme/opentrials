@@ -2,14 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
-
 from datetime import datetime
-
 from repository.models import ClinicalTrial, Institution
-
 from vocabulary.models import CountryCode
-
 from utilities import safe_truncate
+
+from reviewapp.signals import create_user_profile
+from django.db.models.signals import post_save
 
 SUBMISSION_STATUS = [
     ('draft', 'draft'),
@@ -125,3 +124,5 @@ class Remark(models.Model):
     
     def __unicode__(self):
         return '%s:%s' % (self.pk, self.submission_id)
+
+post_save.connect(create_user_profile, sender=User)

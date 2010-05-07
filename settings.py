@@ -70,6 +70,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'clinicaltrials.urls'
+LOGIN_REDIRECT_URL = '/accounts/dashboard/'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -98,9 +99,10 @@ INSTALLED_APPS = (
 
 TEMPLATE_CONTEXT_PROCESSORS =(
     'django.core.context_processors.auth',
+    'django.core.context_processors.i18n',
 )
 
-#AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
+AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
 
 #################################################################
 ### BEGIN Clinical Trials Repository customization settings
