@@ -229,7 +229,7 @@ class InterventionForm(ReviewModelForm):
 class RecruitmentForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
-        fields = ['recruitment_status', 'recruitment_country','date_enrollment',
+        fields = ['recruitment_status', 'recruitment_country','date_enrollment_anticipated',
                   'target_sample_size', 'inclusion_criteria', 'gender',
                   'agemin_value', 'agemin_unit',
                   'agemax_value', 'agemax_unit', 'exclusion_criteria',
@@ -246,8 +246,8 @@ class RecruitmentForm(ReviewModelForm):
                                             queryset=CountryCode.objects.all())
 
     # TRDS 16a,b (type_enrollment: anticipated or actual)
-    date_enrollment = forms.CharField( # yyyy-mm or yyyy-mm-dd
-        label=_('Date of First Enrollment'), max_length=10, required=False)
+    date_enrollment_anticipated = forms.CharField( # yyyy-mm or yyyy-mm-dd
+        label=_('Anticipated Date of First Enrollment'), max_length=10, required=False)
 
     # TRDS 17
     target_sample_size = forms.IntegerField(label=_('Target Sample Size'),
