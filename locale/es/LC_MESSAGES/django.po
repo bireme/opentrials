@@ -16,518 +16,596 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: rebrac/models.py:23 repository/models.py:295
-msgid "Status"
-msgstr ""
+msgid "A confirmation e-mail is on the way"
+msgstr "Un correo electrónico de confirmación está en camino"
 
-#: rebrac/models.py:26
-msgid "Submission Note (staff use only)"
-msgstr ""
+msgid "About"
+msgstr "Sobre"
 
-#: rebrac/views.py:23
-msgid "Initial Data fields"
-msgstr ""
+msgid "About ticket"
+msgstr "Acerca de billetes"
 
-#: rebrac/views.py:24 repository/models.py:20 repository/trds.py:15
-#: repository/trds_forms.py:24
-msgid "Scientific Title"
-msgstr ""
+msgid "Acknowledged"
+msgstr "Reconocido"
 
-#: rebrac/views.py:27 repository/trds.py:16
-msgid "Countries of Recruitment"
-msgstr ""
-
-#: rebrac/views.py:34 rebrac/templates/rebrac/new_submission.html:10
-#: repository/models.py:27 repository/trds.py:10
-msgid "Primary Sponsor"
-msgstr ""
-
-#: rebrac/templates/rebrac/new_submission.html:8
-msgid "Initial Trial Data"
-msgstr ""
-
-#: rebrac/templates/rebrac/new_submission.html:14
-msgid "Submit"
-msgstr ""
-
-#: rebrac/templates/rebrac/submission_list.html:25
-msgid "Submit a new Clinical Trial"
-msgstr ""
-
-#: repository/models.py:14
-msgid "Primary Id Number"
-msgstr ""
-
-#: repository/models.py:17 tickets/models.py:11
-msgid "Date of Registration"
-msgstr ""
-
-#: repository/models.py:23 repository/trds_forms.py:29
-msgid "Scientific Acronym"
-msgstr ""
-
-#: repository/models.py:29 repository/trds.py:14 repository/trds_forms.py:33
-msgid "Public Title"
-msgstr ""
-
-#: repository/models.py:32 repository/trds_forms.py:37
 msgid "Acronym"
-msgstr ""
+msgstr "Acrónimo"
 
-#: repository/models.py:35
-msgid "Health Condition(s)"
-msgstr ""
-
-#: repository/models.py:38 repository/trds_forms.py:78 repository/trds_forms.py:81
-msgid "Intervention(s)"
-msgstr ""
-
-#: repository/models.py:41 repository/trds_forms.py:131
-msgid "Inclusion Criteria"
-msgstr ""
-
-#: repository/models.py:44 repository/trds_forms.py:135
-msgid "Gender (inclusion sex)"
-msgstr ""
-
-#: repository/models.py:48 repository/trds_forms.py:138
-msgid "Inclusion Minimum Age"
-msgstr ""
-
-#: repository/models.py:50 repository/trds_forms.py:140
-msgid "Minimum Age Unit"
-msgstr ""
-
-#: repository/models.py:54 repository/trds_forms.py:143
-msgid "Inclusion Maximum Age"
-msgstr ""
-
-#: repository/models.py:56 repository/trds_forms.py:145
-msgid "Maximum Age Unit"
-msgstr ""
-
-#: repository/models.py:60 repository/trds_forms.py:148
-msgid "Exclusion Criteria"
-msgstr ""
-
-#: repository/models.py:64 repository/trds_forms.py:90 repository/trds_forms.py:93
-msgid "Study Type"
-msgstr ""
-
-#: repository/models.py:67 repository/trds_forms.py:97
-msgid "Study Design"
-msgstr ""
-
-#: repository/models.py:71 repository/trds_forms.py:101
-msgid "Study Phase"
-msgstr ""
-
-#: repository/models.py:75
-msgid "Anticipated Date of First Enrollment"
-msgstr ""
-
-#: repository/models.py:79
 msgid "Actual Date of First Enrollment"
-msgstr ""
+msgstr "Fecha efectiva de la primera inscripción"
 
-#: repository/models.py:82 repository/trds_forms.py:128
-msgid "Target Sample Size"
-msgstr ""
-
-#: repository/models.py:86 repository/trds_forms.py:120
-msgid "Recruitment Status"
-msgstr ""
-
-#: repository/models.py:90
-msgid "Last Update"
-msgstr ""
-
-#: repository/models.py:91
-msgid "Record Note (staff use only)"
-msgstr ""
-
-#: repository/models.py:155
-msgid "Updated"
-msgstr ""
-
-#: repository/models.py:236
-msgid "Issuing Authority"
-msgstr ""
-
-#: repository/models.py:238
-msgid "Secondary Id Number"
-msgstr ""
-
-#: repository/models.py:250 repository/models.py:293
-msgid "Relationship"
-msgstr ""
-
-#: repository/models.py:259
-msgid "Name"
-msgstr ""
-
-#: repository/models.py:260
-msgid "Postal Address"
-msgstr ""
-
-#: repository/models.py:261 repository/models.py:279 repository/models.py:307
-#: repository/trds_forms.py:166
-msgid "Country"
-msgstr ""
-
-#: repository/models.py:270 repository/trds_forms.py:154
-msgid "First Name"
-msgstr ""
-
-#: repository/models.py:271 repository/trds_forms.py:155
-msgid "Middle Name"
-msgstr ""
-
-#: repository/models.py:272 repository/trds_forms.py:156
-msgid "Last Name"
-msgstr ""
-
-#: repository/models.py:273 repository/trds_forms.py:158
-msgid "E-mail"
-msgstr ""
-
-#: repository/models.py:275 repository/trds_forms.py:161
-msgid "Affiliation"
-msgstr ""
-
-#: repository/models.py:276 repository/trds_forms.py:163
-msgid "Address"
-msgstr ""
-
-#: repository/models.py:277 repository/trds_forms.py:164
-msgid "City"
-msgstr ""
-
-#: repository/models.py:280 repository/trds_forms.py:168
-msgid "Postal Code"
-msgstr ""
-
-#: repository/models.py:281 repository/trds_forms.py:169
-msgid "Telephone"
-msgstr ""
-
-#: repository/models.py:310
-msgid "Recruitment Countries"
-msgstr ""
-
-#: repository/models.py:332
-msgid "Interest"
-msgstr ""
-
-#: repository/models.py:335
-msgid "Outcome Description"
-msgstr ""
-
-#: repository/models.py:345
-msgid "Trial Aspect"
-msgstr ""
-
-#: repository/models.py:347
-msgid "Vocabulary"
-msgstr ""
-
-#: repository/models.py:349
-msgid "Version"
-msgstr ""
-
-#: repository/models.py:350
-msgid "Level"
-msgstr ""
-
-#: repository/models.py:352
-msgid "Code"
-msgstr ""
-
-#: repository/models.py:353
-msgid "Text"
-msgstr ""
-
-#: repository/trds.py:6
-msgid "Primary Registry and Trial Identifying Number"
-msgstr ""
-
-#: repository/trds.py:7
-msgid "Date of Registration in Primary Registry"
-msgstr ""
-
-#: repository/trds.py:8
-msgid "Secondary Identifying Numbers"
-msgstr ""
-
-#: repository/trds.py:9
-msgid "Source(s) of Monetary or Material Support"
-msgstr ""
-
-#: repository/trds.py:11
-msgid "Secondary Sponsors"
-msgstr ""
-
-#: repository/trds.py:12
-msgid "Contacts for Public Queries"
-msgstr ""
-
-#: repository/trds.py:13
-msgid "Contacts for Scientific Queries"
-msgstr ""
-
-#: repository/trds_forms.py:22
-msgid "Trial Identification"
-msgstr ""
-
-#: repository/trds_forms.py:48
-msgid "Sponsors and Sources of Support"
-msgstr ""
-
-#: repository/trds_forms.py:58
-msgid "Descriptor"
-msgstr ""
-
-#: repository/trds_forms.py:66
-msgid "Health Condition(s) or Problem(s) Studied"
-msgstr ""
-
-#: repository/trds_forms.py:69
-msgid "Health Condition(s) or Problem(s)"
-msgstr ""
-
-#: repository/trds_forms.py:115
-msgid "Recruitment"
-msgstr ""
-
-#: repository/trds_forms.py:125
-msgid "Date of First Enrollment"
-msgstr ""
-
-#: repository/trds_forms.py:152
-msgid "Contacts"
-msgstr ""
-
-#: repository/trds_forms.py:175
-msgid "Outcomes"
-msgstr ""
-
-#: repository/templates/repository/add_clinicalTrials.html:3
 msgid "Add a new Clinical Trial Record"
-msgstr ""
+msgstr "Añadir un nuevo registro de ensayos clínicos"
 
-#: repository/templates/repository/trial_form.html:12
-#: repository/templates/repository/trial_outcomes_form.html:15
-msgid "Save and continue later"
-msgstr ""
+msgid "Add iteration in ticket"
+msgstr "Agregar iteración de billetes"
 
-#: repository/templates/repository/trial_form.html:16
-#: repository/templates/repository/trial_outcomes_form.html:19
-msgid "Save and go to"
-msgstr ""
+msgid "Address"
+msgstr "Dirección"
 
-#: repository/templates/repository/trial_index.html:3
-msgid "Trial Summary"
-msgstr ""
+msgid "Affiliation"
+msgstr "Afiliación"
 
-#: repository/templates/repository/trial_outcomes_form.html:8
-msgid "Primary Outcomes"
-msgstr ""
-
-#: repository/templates/repository/trial_outcomes_form.html:11
-msgid "Secondary Outcomes"
-msgstr ""
-
-#: rosetta/templates/rosetta/languages.html:3
-#: rosetta/templates/rosetta/pofile.html:14
-msgid "Home"
-msgstr ""
-
-#: rosetta/templates/rosetta/languages.html:3
-#: rosetta/templates/rosetta/languages.html:4
-msgid "Language selection"
-msgstr ""
-
-#: rosetta/templates/rosetta/languages.html:14
-msgid "Application"
-msgstr ""
-
-#: rosetta/templates/rosetta/languages.html:15
-msgid "Progress"
-msgstr ""
-
-#: rosetta/templates/rosetta/languages.html:16
-msgid "Messages"
-msgstr ""
-
-#: rosetta/templates/rosetta/languages.html:17
-msgid "Translated"
-msgstr ""
-
-#: rosetta/templates/rosetta/languages.html:18
-#: rosetta/templates/rosetta/pofile.html:51
-msgid "Fuzzy"
-msgstr ""
-
-#: rosetta/templates/rosetta/languages.html:19
-msgid "Obsolete"
-msgstr ""
-
-#: rosetta/templates/rosetta/languages.html:20
-msgid "File"
-msgstr ""
-
-#: rosetta/templates/rosetta/languages.html:41
-msgid "Nothing to translate!"
-msgstr ""
-
-#: rosetta/templates/rosetta/languages.html:42
-msgid ""
-"You haven't specified any languages in your settings file, or haven't yet "
-"generated a batch of translation catalogs."
-msgstr ""
-
-#: rosetta/templates/rosetta/languages.html:43
-#, python-format
-msgid ""
-"Please refer to <a href=\"%(i18n_doc_link)s\">Django's I18N documentation</"
-"a> for a guide on how to set up internationalization for your project."
-msgstr ""
-
-#: rosetta/templates/rosetta/pofile.html:8
-msgid "Pick another file"
-msgstr ""
-
-#: rosetta/templates/rosetta/pofile.html:9
-msgid "Download this catalog"
-msgstr ""
-
-#: rosetta/templates/rosetta/pofile.html:17
-msgid "Progress: %(percent_translated)s%"
-msgstr ""
-
-#: rosetta/templates/rosetta/pofile.html:18
-msgid "File is read-only: download the file when done editing!"
-msgstr ""
-
-#: rosetta/templates/rosetta/pofile.html:20
-msgid "English"
-msgstr ""
-
-#: rosetta/templates/rosetta/pofile.html:22
-#, python-format
-msgid "Translate into %(rosetta_i18n_lang_name)s"
-msgstr ""
-
-#: rosetta/templates/rosetta/pofile.html:25
-msgid "Display:"
-msgstr ""
-
-#: rosetta/templates/rosetta/pofile.html:26
-msgid "Untranslated only"
-msgstr ""
-
-#: rosetta/templates/rosetta/pofile.html:27
-msgid "Translated only"
-msgstr ""
-
-#: rosetta/templates/rosetta/pofile.html:28
-msgid "Fuzzy only"
-msgstr ""
-
-#: rosetta/templates/rosetta/pofile.html:29
 msgid "All"
-msgstr ""
+msgstr "Todos"
 
-#: rosetta/templates/rosetta/pofile.html:36
-msgid "Search"
-msgstr ""
+msgid "Allocation type"
+msgstr "Asignación de tipo"
 
-#: rosetta/templates/rosetta/pofile.html:38
-msgid "Go"
-msgstr ""
+msgid "Answer"
+msgstr "Respuesta"
 
-#: rosetta/templates/rosetta/pofile.html:48
-msgid "Original"
-msgstr ""
+msgid "Anticipated Date of First Enrollment"
+msgstr "Fecha prevista de la primera inscripción"
 
-#: rosetta/templates/rosetta/pofile.html:52
-msgid "Occurrences(s)"
-msgstr ""
+msgid "Application"
+msgstr "Aplicación"
 
-#: rosetta/templates/rosetta/pofile.html:76
-msgid "suggest"
-msgstr ""
+msgid "Assigned to"
+msgstr "Asignado a"
 
-#: rosetta/templates/rosetta/pofile.html:87
-#, python-format
-msgid "%(more_count)s more"
-msgid_plural "%(more_count)s more"
-msgstr[0] ""
-msgstr[1] ""
+msgid "Attachments"
+msgstr "Adjuntos"
 
-#: rosetta/templates/rosetta/pofile.html:99
-msgid "Save and translate next block"
-msgstr ""
+msgid "Author"
+msgstr "Autor"
 
-#: rosetta/templates/rosetta/pofile.html:103
-msgid "Skip to page:"
-msgstr ""
+msgid "Categories"
+msgstr "Categorías"
 
-#: rosetta/templates/rosetta/pofile.html:116
-msgid "Displaying:"
-msgstr ""
+msgid "Change your password"
+msgstr "Cambie su contraseña"
 
-#: rosetta/templates/rosetta/pofile.html:118
-#, python-format
-msgid "%(hits)s/%(message_number)s message"
-msgid_plural "%(hits)s/%(message_number)s messages"
-msgstr[0] ""
-msgstr[1] ""
+msgid "Change your profile"
+msgstr "Cambiar el perfil"
 
-#: templates/base.html:6
-msgid "Reclac Platform"
-msgstr ""
+msgid "Choose one of the ways below to submit a new clinical trial"
+msgstr "Elija una de las maneras a continuación para enviar un nuevo ensayo clínico"
 
-#: templates/base.html:26
-msgid "Rebrac, part of the WHO/ICTRP network"
-msgstr ""
+msgid "City"
+msgstr "Ciudad"
 
-#: tickets/models.py:13
+msgid "Clinical Trials Platform"
+msgstr "Plataforma de Ensayos Clínicos"
+
+msgid "Code"
+msgstr "Código"
+
+msgid "Completing the submission form."
+msgstr "Completar el formulario de presentación."
+
+msgid "Contacts for Public Queries"
+msgstr "Contactos para preguntas del público"
+
+msgid "Contacts for Scientific Queries"
+msgstr "Contactos para consultas científicas"
+
 msgid "Context"
-msgstr ""
+msgstr "Contexto"
 
-#: tickets/models.py:25
+msgid "Countries of Recruitment"
+msgstr "Los países de Contratación"
+
+msgid "Country"
+msgstr "País"
+
+msgid "Created"
+msgstr "Creado"
+
+msgid "Creation date"
+msgstr "Fecha"
+
+msgid "Current Situation"
+msgstr "Situación actual"
+
+msgid "Dashboard"
+msgstr "Tablero de instrumentos"
+
+msgid "Date of First Enrollment"
+msgstr "Fecha de Inscripción Primera"
+
 msgid "Date of Iteration"
-msgstr ""
+msgstr "Fecha de la iteración"
 
-#: tickets/models.py:27
-msgid "Subject"
-msgstr ""
+msgid "Date of Registration"
+msgstr "Fecha del registro"
 
-#: tickets/models.py:28 vocabulary/models.py:10
+msgid "Date of Registration in Primary Registry"
+msgstr "Fecha de Inscripción en el Registro Primario"
+
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
-#: tickets/models.py:29
-msgid "From user"
-msgstr ""
+msgid "Descriptor Form"
+msgstr "Descriptor Formulario"
 
-#: tickets/models.py:30
-msgid "To User"
-msgstr ""
+msgid "Download this catalog"
+msgstr "Descargar este catálogo"
 
-#: tickets/models.py:31
-msgid "Ticket Status"
-msgstr ""
+msgid "E-mail"
+msgstr "E-mail"
 
-#: vocabulary/models.py:9
+msgid "English"
+msgstr "Inglés"
+
+msgid "Exclusion Criteria"
+msgstr "Criterios de exclusión"
+
+msgid "Expanded access program"
+msgstr "Programa ampliado de acceso"
+
+msgid "Field Help"
+msgstr "Ayuda de campo"
+
+msgid "File"
+msgstr "Expediente"
+
+msgid "First Name"
+msgstr "Nombre"
+
+msgid "Form name"
+msgstr "Formulario de nombre"
+
+msgid "Fuzzy"
+msgstr "Borroso"
+
+msgid "Fuzzy only"
+msgstr "Fuzzy sólo"
+
+msgid "Go"
+msgstr "Ir"
+
+msgid "Have no  tickets waiting acceptance"
+msgstr "No tienen entradas esperando la aceptación"
+
+msgid "Have no open tickets"
+msgstr "No tienen billetes abiertos"
+
+msgid "Health Condition(s)"
+msgstr "Condición de la Salud (s)"
+
+msgid "Health Condition(s) or Problem(s) Studied"
+msgstr "Condición de la Salud (s) o problema (s) Realizó estudios de"
+
+msgid "Health Conditions Form"
+msgstr "Las condiciones de salud Formulario"
+
+msgid "Help"
+msgstr "Ayuda"
+
+msgid "History"
+msgstr "Historia"
+
+msgid "Home"
+msgstr "Casa"
+
+msgid "Inclusion Criteria"
+msgstr "Criterios de inclusión"
+
+msgid "Inclusion Gender"
+msgstr "Inclusión de Género"
+
+msgid "Inclusion Maximum Age"
+msgstr "La inclusión de edad máxima"
+
+msgid "Inclusion Minimum Age"
+msgstr "La inclusión sobre la edad mínima"
+
+msgid "Interest"
+msgstr "Interés"
+
+msgid "Internal Server Error (500)"
+msgstr "Error interno del servidor (500)"
+
+msgid "Intervention Assignment"
+msgstr "Intervención de misiones"
+
+msgid "Intervention(s)"
+msgstr "Intervención (s)"
+
+msgid "Interventions Form"
+msgstr "Intervenciones Formulario"
+
+msgid "Issuing Authority"
+msgstr "Autoridad expedidora"
+
+msgid "Key Inclusion and Exclusion Criteria"
+msgstr "Los criterios de inclusión y exclusión clave"
+
+msgid "Key Secondary Outcomes"
+msgstr "Principales resultados Secundaria"
+
 msgid "Label"
-msgstr ""
+msgstr "Etiqueta"
 
-#: vocabulary/models.py:27
-msgid "Required Language"
-msgstr ""
+msgid "Language"
+msgstr "Idioma"
 
-#: vocabulary/models.py:49
+msgid "Language selection"
+msgstr "Selección del idioma"
+
+msgid "Last Name"
+msgstr "Apellido"
+
+msgid "Last Update"
+msgstr "Ultima actualización de la"
+
+msgid "Last update"
+msgstr "Última actualización"
+
+msgid "Level"
+msgstr "Nivel"
+
+msgid "Mark as"
+msgstr "Marcar como"
+
+msgid "Masking type"
+msgstr "Enmascarado de tipo"
+
+msgid "Maximum Age Unit"
+msgstr "Edad máxima de la Unidad"
+
+msgid "Messages"
+msgstr "Mensajes"
+
+msgid "Middle Name"
+msgstr "Segundo Nombre"
+
+msgid "Minimum Age Unit"
+msgstr "Edad mínima unidad"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "New Submission"
+msgstr "Nueva Presentación"
+
+msgid "News"
+msgstr "Noticias"
+
+msgid "Nothing to translate!"
+msgstr "No hay nada que traducir!"
+
+msgid "Number of arms"
+msgstr "Número de armas"
+
+msgid "Occurrences(s)"
+msgstr "Ocurrencias (s)"
+
+msgid "Opening Ticket"
+msgstr "Apertura de entradas"
+
+msgid "Options menu"
+msgstr "Opciones de menú"
+
+msgid "Original"
+msgstr "Original"
+
+msgid "Outcome Description"
+msgstr "Resultado Descripción"
+
+msgid "Outcomes Form"
+msgstr "Resultados Formulario"
+
+msgid "Page not found (404)"
+msgstr "Página no encontrada (404)"
+
+msgid "Part"
+msgstr "Parte"
+
+msgid "Pending"
+msgstr "Pendiente"
+
+msgid "Pick another file"
+msgstr "Elige otro archivo"
+
+msgid "Please correct the errors below."
+msgstr "Por favor, corrija los errores siguientes."
+
+msgid "Postal Address"
+msgstr "Dirección Postal"
+
+msgid "Postal Code"
+msgstr "Código Postal"
+
+msgid "Preferred language"
+msgstr "Lengua de preferencia"
+
+msgid "Primary Id Number"
+msgstr "Número de identificación primaria"
+
+msgid "Primary Outcome(s)"
+msgstr "Resultado primario (s)"
+
+msgid "Primary Outcomes"
+msgstr "Los resultados primarios"
+
+msgid "Primary Registry and Trial Identifying Number"
+msgstr "Registro de Identificación de Primaria y de Primera Instancia Número"
+
+msgid "Primary Sponsor"
+msgstr "Patrocinador principal"
+
+msgid "Public"
+msgstr "Público"
+
+msgid "Public Title"
+msgstr "Título Pública"
+
+msgid "Record Note (staff use only)"
+msgstr "Record Nota (uso exclusivo del personal)"
+
+msgid "Recruitment Countries"
+msgstr "Contratación países"
+
+msgid "Recruitment Form"
+msgstr "Forma de contratación"
+
+msgid "Recruitment Status"
+msgstr "La contratación de estado"
+
 msgid "Recruitment status"
-msgstr ""
+msgstr "La contratación de estado"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Save and continue later"
+msgstr "Guardar y continuar en otro momento"
+
+msgid "Save and go to"
+msgstr "Guardar e ir al"
+
+msgid "Save and translate next block"
+msgstr "Guardar y traducir siguiente bloque"
+
+msgid "Scientific Acronym"
+msgstr "Científico Acrónimo"
+
+msgid "Scientific Title"
+msgstr "Científico Título"
+
+msgid "Search"
+msgstr "Búsqueda"
+
+msgid "Search terms"
+msgstr "Términos de la búsqueda"
+
+msgid "Secondary Id Number"
+msgstr "Número de identificación secundario"
+
+msgid "Secondary Identifying Numbers"
+msgstr "Secundaria números de identificación"
+
+msgid "Secondary Outcomes"
+msgstr "Los resultados secundarios"
+
+msgid "Secondary Sponsors"
+msgstr "Patrocinadores Secundaria"
+
+msgid "Select your XML file"
+msgstr "Seleccione el archivo XML"
+
+msgid "Situation"
+msgstr "Situación"
+
+msgid "Source(s) of Monetary or Material Support"
+msgstr "Fuente (s) de una ayuda monetaria o material"
+
+msgid "Sponsors and Sources of Support"
+msgstr "Patrocinadores y Fuentes de apoyo"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Study Design"
+msgstr "Diseño del estudio"
+
+msgid "Study Phase"
+msgstr "Estudio de Fase"
+
+msgid "Study Purpose"
+msgstr "Objeto de estudio"
+
+msgid "Study Type"
+msgstr "Tipo de Estudio"
+
+msgid "Study Type Form"
+msgstr "Estudio Tipo Forma"
+
+msgid "Subject"
+msgstr "Tema"
+
+msgid "Submission Language"
+msgstr "Presentación Idioma"
+
+msgid "Submission Note"
+msgstr "Presentación Nota"
+
+msgid "Submission Note (staff use only)"
+msgstr "Nota de presentación (uso exclusivo del personal)"
+
+msgid "Submission Title"
+msgstr "Presentación del título"
+
+msgid "Submit"
+msgstr "Presentar"
+
+msgid "Submit a new Clinical Trial"
+msgstr "Presentar un nuevo ensayo clínico"
+
+msgid "Summary"
+msgstr "Resumen"
+
+msgid "Target Sample Size"
+msgstr "Objetivo Tamaño de la muestra"
+
+msgid "Telephone"
+msgstr "Teléfono"
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "Ticket Status"
+msgstr "Venta de entradas de estado"
+
+msgid "Ticket Type"
+msgstr "Tipo de pasaje"
+
+msgid "Ticket not found"
+msgstr "Venta de entradas no se encuentra"
+
+msgid "Tickets"
+msgstr "Entradas"
+
+msgid "Title"
+msgstr "Título"
+
+msgid "To User (e-mail)"
+msgstr "Para el usuario (correo electrónico)"
+
+msgid "Translated"
+msgstr "Traducido"
+
+msgid "Translated only"
+msgstr "Traducido sólo"
+
+msgid "Trial Aspect"
+msgstr "Aspecto de Primera Instancia"
+
+msgid "Trial Registration Data Set"
+msgstr "Los datos del ensayo de registro establecidos"
+
+msgid "Trial Summary"
+msgstr "Juicio sumario"
+
+msgid "Trial number issuing authorities"
+msgstr "De Primera Instancia número las autoridades de emisión"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Untranslated only"
+msgstr "No traducidas sólo"
+
+msgid "Update date"
+msgstr "Actualización de la fecha"
+
+msgid "Updated"
+msgstr "Actualizado"
+
+msgid "Upload File"
+msgstr "Subir Archivo"
+
+msgid "Upload trial"
+msgstr "Cargar el juicio"
+
+msgid "Uploading an XML file."
+msgstr "Subida de un archivo XML."
+
+msgid "User Tickets"
+msgstr "Entradas del usuario"
+
+msgid "User profile"
+msgstr "Perfil de usuario"
+
+msgid "Verified"
+msgstr "Verificado"
+
+msgid "Version"
+msgstr "Versión"
+
+msgid "Vocabulary"
+msgstr "Vocabulario"
+
+msgid "You may now login using your username and password."
+msgstr "Ahora puede ingresar usando su nombre de usuario y contraseña."
+
+msgid "Your Submissions"
+msgstr "Su Peticiones"
+
+msgid "Your Submissions list"
+msgstr "Su lista de envíos"
+
+msgid "Your account is now activated."
+msgstr "Tu cuenta ya está activada."
+
+msgid "accepted"
+msgstr "aceptado"
+
+msgid "activation key"
+msgstr "clave de activación"
+
+msgid "add iteration"
+msgstr "añadir iteración"
+
+msgid "closed"
+msgstr "cerrado"
+
+msgid "context"
+msgstr "contexto"
+
+msgid "creation date"
+msgstr "fecha de creación"
+
+msgid "description"
+msgstr "descripción"
+
+msgid "download the file when done editing!"
+msgstr "descargar el archivo cuando termine de editar!"
+
+msgid "open ticket"
+msgstr "billete abierto"
+
+msgid "owner"
+msgstr "propietario"
+
+msgid "register"
+msgstr "registro"
+
+msgid "registration profile"
+msgstr "registro de perfil"
+
+msgid "registration profiles"
+msgstr "perfiles de registro"
+
+msgid "reopen"
+msgstr "reabrir"
+
+msgid "resolved"
+msgstr "resuelto"
+
+msgid "subject"
+msgstr "tema"
+
+msgid "suggest"
+msgstr "sugerir"
+
+msgid "type"
+msgstr "tipo"
+
+msgid "user"
+msgstr "usuario"
+
+msgid "view history"
+msgstr "ver el histórico"
