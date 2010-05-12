@@ -1,9 +1,9 @@
-This is the Clinical Trials Registration System developed by BIREME with the
-support of the Brazilian Ministry of Health (Ministério da Saúde/DECIT),  
-Fiocruz (Fundação Oswaldo Cruz/ICICT) and the Pan American Health 
-Organization (PAHO/WHO).
+This is the Clinical Trials Registration System developed by BIREME/PAHO/WHO
+with the Brazilian Ministry of Health (Ministério da Saúde/DECIT), Fiocruz 
+(Fundação Oswaldo Cruz/ICICT) and the Pan American Health Organization
+(PAHO/WHO).
 
-The project Web site is:
+The project Web site, documentation wiki and issue tracker are at:
 
 http://reddes.bvsalud.org/projects/clinical-trials
 
@@ -14,4 +14,3 @@ http://svn.reddes.bvsalud.org/clinical-trials
 There is also a git-svn mirror at:
 
 http://github.com/bireme/clinicaltrials
-
