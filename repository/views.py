@@ -41,6 +41,7 @@ TRIAL_FORMS = ['Trial Identification',
 @login_required
 def edit_trial_index(request, trial_pk):
     ''' start view '''
+    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     links = []
     for i, name in enumerate(TRIAL_FORMS):
         data = dict(label=_(name))
@@ -50,6 +51,7 @@ def edit_trial_index(request, trial_pk):
         links.append(data)
     return render_to_response('repository/trial_index.html',
                               {'trial_pk':trial_pk,
+                               'submission':ct.submission,
                                'links':links},
                                context_instance=RequestContext(request))
 

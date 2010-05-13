@@ -48,9 +48,11 @@ class Submission(models.Model):
     status = models.CharField(_('Status'), max_length=64,
                               choices=SUBMISSION_STATUS,
                               default=SUBMISSION_STATUS[0][0])
-    staff_note = models.TextField(_('Submission Note (staff use only)'), max_length=255,
+    language = models.CharField(_('Submission language'), max_length=2,
+                                choices=settings.MANAGED_LANGUAGES)
+    staff_note = models.TextField(_('Submission note (staff use only)'), max_length=255,
                                     blank=True)
-
+    
     def save(self):
         if self.id:
             self.updated = datetime.now()
@@ -66,13 +68,18 @@ class Submission(models.Model):
         return self.short_title()
 
     def get_mandatory_languages(self):
-        langs = set(['en'])
+        langs = set([u'en'])
         langs.add(self.trial.primary_sponsor.country.submission_language)
 
-        for rc in self.trial.recruitmentcountry_set.all():
-            langs.add(rc.country.submission_language)
+        for rc in self.trial.recruitment_country.all():
+            langs.add(rc.submission_language)
 
         return langs.intersection(set(settings.CHECKED_LANGUAGES))
+    
+    def get_trans_languages(self):
+        return self.get_mandatory_languages() - set([self.language])
+    
+    
 
     def get_absolute_url(self):
         # TODO: use reverse to replace absolute path
