@@ -85,7 +85,7 @@ def new_submission(request):
         if initial_form.is_valid() and sponsor_form.is_valid():
             trial = ClinicalTrial()
             su = Submission(creator=request.user)
-
+            su.language = initial_form.cleaned_data['language']
             trial.scientific_title = su.title = initial_form.cleaned_data['scientific_title']
 
             trial.save()

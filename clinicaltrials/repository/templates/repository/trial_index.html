@@ -10,7 +10,10 @@
         <tr>
             <th>{% trans "Part" %}</th>
             <th>{% trans "Form name" %}</th>
-            <th>{% trans "Status" %}</th>
+            <th>{% trans "Status" %} ({{ submission.language }})</th>
+            {% for lang in submission.get_trans_languages %}
+                <th>{% trans lang %}</th>
+            {% endfor %}    
         </tr>
     </thead>
     {% for link in links %} <!-- TODO: use url filter to remove hardcoded path -->
@@ -18,6 +21,9 @@
             <td>{{forloop.counter}}</td>
             <td><a href="{{link.url}}">{{ link.label }}</a></td>
             <td><img src="{{link.icon}}" alt="{{link.msg}}" title="{{link.msg}}"/>&nbsp;&nbsp;{{link.msg}}</td>
+            {% for lang in submission.get_trans_languages %}
+                <td><img src="{{link.icon}}" alt="{{link.msg}}" title="{{link.msg}}"/>&nbsp;&nbsp;{{link.msg}}</td>
+            {% endfor %}    
         </tr>
     {% endfor %}    
 </table>

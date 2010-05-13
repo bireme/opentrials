@@ -5,6 +5,7 @@ from clinicaltrials.reviewapp.models import Attachment
 from django import forms
 from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
+from django.conf import settings
 
 from repository.models import Institution, CountryCode
 
@@ -18,7 +19,8 @@ class InitialTrialForm(forms.Form):
     form_title = _('Initial Trial Data')
     scientific_title = forms.CharField(widget=forms.Textarea, label=_('Scientific Title'), max_length=2000)
     recruitment_country = forms.MultipleChoiceField(choices=((cc.pk,cc.description) for cc in CountryCode.objects.iterator()) )
-
+    language = forms.ChoiceField(label=_('Submission language'), choices=settings.MANAGED_LANGUAGES)
+    
 class PrimarySponsorForm(forms.ModelForm):
     class Meta:
         model = Institution

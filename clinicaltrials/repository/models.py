@@ -34,7 +34,7 @@ def generate_trial_id(prefix, num_digits):
 class TrialRegistrationDataSetModel(models.Model):
 
     def html_dump(self, seen=None, follow_sets=True):
-        html = [] # the enclosing <table> and </table> must be provided py the template
+        html = [] # the enclosing <table> and </table> must be provided by the template
         if seen is None:
             seen = set(self.__class__.__name__)
         for field in self._meta.fields:
