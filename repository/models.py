@@ -164,11 +164,13 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
                               verbose_name=_('Study Phase'))
 
     # TRDS 16a,b (type_enrollment="anticipated")
-    date_enrollment_anticipated = models.CharField( # yyyy-mm or yyyy-mm-dd
-        _('Anticipated Date of First Enrollment'), max_length=10, blank=True)
-
-    # TRDS 16a,b (type_enrollment="actual")
-    date_enrollment_actual = models.CharField( # yyyy-mm or yyyy-mm-dd
+    enrollment_start_planned = models.CharField( # yyyy-mm or yyyy-mm-dd
+        _('Planned Date of First Enrollment'), max_length=10, blank=True)
+    enrollment_start_actual = models.CharField( # yyyy-mm or yyyy-mm-dd
+        _('Actual Date of First Enrollment'), max_length=10, blank=True)
+    enrollment_end_planned = models.CharField( # yyyy-mm or yyyy-mm-dd
+        _('Planned Date of First Enrollment'), max_length=10, blank=True)
+    enrollment_end_actual = models.CharField( # yyyy-mm or yyyy-mm-dd
         _('Actual Date of First Enrollment'), max_length=10, blank=True)
 
     # TRDS 17
