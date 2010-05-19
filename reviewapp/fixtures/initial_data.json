@@ -128,6 +128,22 @@
     }
   }, 
   {
+    "pk": 9, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-04-22 20:01:45", 
+      "title": "The efficacy of penicillin G potassium in reducing aphthous ulcer pain and lesion size in a Chinese cohort: a randomized, double-blinded, placebo and blank controlled, multicenter clinical trial.",
+      "language": "en",
+      "created": "2010-04-22 20:01:45", 
+      "trial": 9, 
+      "updater": null, 
+      "staff_note": "", 
+      "creator": 9, 
+      "primary_sponsor": 8
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "reviewapp.recruitmentcountry", 
     "fields": {

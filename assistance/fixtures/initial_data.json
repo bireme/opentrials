@@ -152,7 +152,7 @@
       "field": "DELETE", 
       "example": "", 
       "form": "TrialNumberForm", 
-      "text": ""
+      "text": "Please select this field to delete the corresponding trial number."
     }
   }, 
   {
@@ -292,7 +292,7 @@
       "field": "DELETE", 
       "example": "", 
       "form": "TrialSecondarySponsorForm", 
-      "text": ""
+      "text": "Please select this field to delete the corresponding secondary sponsor."
     }
   }, 
   {
@@ -312,7 +312,7 @@
       "field": "DELETE", 
       "example": "", 
       "form": "TrialSupportSourceForm", 
-      "text": ""
+      "text": "Please select this field to delete the corresponding support source."
     }
   }, 
   {
@@ -322,7 +322,7 @@
       "field": "hc_freetext", 
       "example": "", 
       "form": "HealthConditionsForm", 
-      "text": "Health condition free text"
+      "text": "Please enter here which is the health condition description."
     }
   }, 
   {
@@ -392,7 +392,7 @@
       "field": "study_design", 
       "example": "", 
       "form": "StudyTypeForm", 
-      "text": ""
+      "text": "Please enter here whether the trial is a  single arm study, a controlled non-randomized trial or a randomized controlled trial. \r\n\r\nA single arm study is one in which all participants are given the same intervention. Trials in which participants are assigned to receive one of two or more interventions are NOT single arm studies. Crossover trials are NOT single arm studies.\r\n\r\nA trial is \"randomized\" if participants are randomly assigned to intervention groups using a method based on chance (e.g., random number table, random computer-generated sequence, minimization, adaptive randomization). "
     }
   }, 
   {
@@ -402,7 +402,7 @@
       "field": "expanded_access_program", 
       "example": "", 
       "form": "StudyTypeForm", 
-      "text": ""
+      "text": "Please enter here if there is an expanded access program or not or if it is unknown."
     }
   }, 
   {
@@ -412,7 +412,7 @@
       "field": "purpose", 
       "example": "", 
       "form": "StudyTypeForm", 
-      "text": ""
+      "text": "Please enter here which is the purpose of the study.\r\n\r\n   * Diagnostic: conducted to find better tests or procedures for diagnosing a particular disease or condition.\r\n   * Etiological: ??????????????????????????????????????????????\r\n   * Prognostic: ????????????????????????????????????????????????\r\n    * Prevention: look for better ways to prevent disease in people who have never had the disease or to prevent a disease from returning. These approaches may include medicines, vitamins, vaccines, minerals, or lifestyle changes.\r\n    * Treatment: test experimental treatments, new combinations of drugs, or new approaches to surgery or radiation therapy."
     }
   }, 
   {
@@ -422,7 +422,7 @@
       "field": "intervention_assignment", 
       "example": "", 
       "form": "StudyTypeForm", 
-      "text": ""
+      "text": "Please enter here which is the intervention assignment of the trial.\r\n\r\n* Single Group: single arm study\r\n* Parallel: participants are assigned to one of two or more groups in parallel for the duration of the study\r\n* Cross-over: participants receive one of two alternative interventions during the initial phase of the study and receive the other intervention during the second phase of the study\r\n* Factorial: two or more interventions, each alone and in combination, are evaluated in parallel against a control group "
     }
   }, 
   {
@@ -432,7 +432,7 @@
       "field": "number_of_arms", 
       "example": "", 
       "form": "StudyTypeForm", 
-      "text": ""
+      "text": "Please enter here the number of intervention groups (enter 1 for single-arm study). "
     }
   }, 
   {
@@ -442,7 +442,7 @@
       "field": "masking", 
       "example": "", 
       "form": "StudyTypeForm", 
-      "text": ""
+      "text": "Please enter here which is knowledge of intervention assignments of the trial:\r\n\r\n    * Open: no masking is used. All involved know the identity of the intervention assignment.\r\n    * Single Blind: one party, either the investigator or participant, is unaware of the intervention assignment; also called single-masked study.\r\n    * Double Blind: two or more parties are unaware of the interventi\r\n    * Triple Blind: ?????????????????????????????????????????????????????"
     }
   }, 
   {
@@ -452,7 +452,7 @@
       "field": "allocation", 
       "example": "", 
       "form": "StudyTypeForm", 
-      "text": ""
+      "text": "Please enter here which is the participant assignment to an intervention group:\r\n\r\n    * N/A: single arm study\r\n    * Randomized Controlled Trial: participants are assigned to intervention groups by chance\r\n    * Nonrandomized Trial: participants are expressly assigned to intervention groups through a non-random method, such as physician choice"
     }
   }, 
   {
@@ -462,7 +462,7 @@
       "field": "phase", 
       "example": "", 
       "form": "StudyTypeForm", 
-      "text": ""
+      "text": "Please enter here which is the phase of the study."
     }
   }, 
   {
@@ -472,7 +472,7 @@
       "field": "interest", 
       "example": "", 
       "form": "OutcomeForm", 
-      "text": ""
+      "text": "Please enter here which is the type of outcome measure: primary or secondary. Primary outcome is the outcome of greatest importance. Data on secondary outcomes are used to evaluate additional effects of the intervention."
     }
   }, 
   {
@@ -482,7 +482,7 @@
       "field": "description", 
       "example": "", 
       "form": "OutcomeForm", 
-      "text": ""
+      "text": "Please enter here the description of outcome measure."
     }
   }, 
   {
@@ -492,7 +492,7 @@
       "field": "DELETE", 
       "example": "", 
       "form": "OutcomeForm", 
-      "text": ""
+      "text": "Please select this field to delete the corresponding outcome."
     }
   }, 
   {
@@ -502,7 +502,7 @@
       "field": "contact", 
       "example": "", 
       "form": "PublicContactForm", 
-      "text": ""
+      "text": "Please select here, from one of the contacts included previously, who is the contact(s) for public queries (see form bellow for a new contact)."
     }
   }, 
   {
@@ -512,7 +512,7 @@
       "field": "DELETE", 
       "example": "", 
       "form": "PublicContactForm", 
-      "text": ""
+      "text": "Please select this field to delete the corresponding public contact."
     }
   }, 
   {
@@ -522,7 +522,7 @@
       "field": "contact", 
       "example": "", 
       "form": "ScientificContactForm", 
-      "text": ""
+      "text": "Please select here, from one of the contacts included previously, who is the contact(s) for scientific queries (see form bellow for a new contact)."
     }
   }, 
   {
@@ -530,9 +530,9 @@
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "DELETE", 
-      "example": "", 
+      "example": "Contatos para a comunidade cient\u00edfica", 
       "form": "ScientificContactForm", 
-      "text": ""
+      "text": "Please select this field to delete the corresponding scientific contact."
     }
   }, 
   {
@@ -542,7 +542,7 @@
       "field": "contact", 
       "example": "", 
       "form": "SiteContactForm", 
-      "text": ""
+      "text": "Please select here, from one of the contacts included previously, who is the contact(s) for site queries (see form bellow for a new contact)."
     }
   }, 
   {
@@ -552,7 +552,7 @@
       "field": "DELETE", 
       "example": "", 
       "form": "SiteContactForm", 
-      "text": ""
+      "text": "Please select this field to delete the corresponding site queries contact."
     }
   }, 
   {
@@ -562,7 +562,7 @@
       "field": "firstname", 
       "example": "", 
       "form": "ContactForm", 
-      "text": ""
+      "text": "Please enter here the first name of the contact."
     }
   }, 
   {
@@ -572,7 +572,7 @@
       "field": "middlename", 
       "example": "", 
       "form": "ContactForm", 
-      "text": ""
+      "text": "Please enter here the middle name of the contact."
     }
   }, 
   {
@@ -582,7 +582,7 @@
       "field": "lastname", 
       "example": "", 
       "form": "ContactForm", 
-      "text": ""
+      "text": "Please enter here the last name of the contact."
     }
   }, 
   {
@@ -592,7 +592,7 @@
       "field": "email", 
       "example": "", 
       "form": "ContactForm", 
-      "text": ""
+      "text": "Please enter here the email of the contact."
     }
   }, 
   {
@@ -602,7 +602,7 @@
       "field": "affiliation", 
       "example": "", 
       "form": "ContactForm", 
-      "text": ""
+      "text": "Please enter here the affiliation of the contact."
     }
   }, 
   {
@@ -612,7 +612,7 @@
       "field": "address", 
       "example": "", 
       "form": "ContactForm", 
-      "text": ""
+      "text": "Please enter here the address of the contact."
     }
   }, 
   {
@@ -622,7 +622,7 @@
       "field": "city", 
       "example": "", 
       "form": "ContactForm", 
-      "text": ""
+      "text": "Please enter here the city of the contact."
     }
   }, 
   {
@@ -632,7 +632,7 @@
       "field": "country", 
       "example": "", 
       "form": "ContactForm", 
-      "text": ""
+      "text": "Please enter here the country of the contact."
     }
   }, 
   {
@@ -642,7 +642,7 @@
       "field": "zip", 
       "example": "", 
       "form": "ContactForm", 
-      "text": ""
+      "text": "Please enter here the zip code of the contact."
     }
   }, 
   {
@@ -652,7 +652,7 @@
       "field": "telephone", 
       "example": "", 
       "form": "ContactForm", 
-      "text": ""
+      "text": "Please enter here the telephone number of the contact."
     }
   }, 
   {
@@ -662,7 +662,7 @@
       "field": "relation", 
       "example": "", 
       "form": "ContactForm", 
-      "text": ""
+      "text": "Please enter here wich is the relation of the contact: a contact for Public Queries, for Scientific Queries or for Site Queries."
     }
   }, 
   {
@@ -680,7 +680,7 @@
     "pk": 2, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "T\u00edtulo cient\u00edfico do estudo", 
+      "text": "Por favor, indique aqui qual \u00e9 o t\u00edtulo cient\u00edfico do estudo.", 
       "example": "", 
       "content_type": 45, 
       "language": "es", 
@@ -691,7 +691,7 @@
     "pk": 3, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Incluir acr\u00f4nimo cient\u00edfico do ensaio, se disponivel.", 
+      "text": "Por favor, indique aqui qual \u00e9 o acr\u00f4nimo cient\u00edfico do ensaio, se disponivel.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -702,7 +702,7 @@
     "pk": 4, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "T\u00edtulo do estudo destinado ao p\u00fablico leigo e que seja de f\u00e1cil compreens\u00e3o.", 
+      "text": "Por favor, indique aqui qual \u00e9 o t\u00edtulo do estudo, destinado ao p\u00fablico leigo, que seja de f\u00e1cil compreens\u00e3o.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -713,7 +713,7 @@
     "pk": 5, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Campo texto para condi\u00e7\u00e3o de sa\u00fade", 
+      "text": "Por favor, indique aqui a condi\u00e7\u00e3o de sa\u00fade ou problema estudado.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -724,7 +724,7 @@
     "pk": 6, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Incluir o acr\u00f4nimo publico do ensaio, se dispon\u00edvel.", 
+      "text": "Por favor, indique aqui qual \u00e9 o acr\u00f4nimo publico do ensaio, se dispon\u00edvel.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -735,7 +735,7 @@
     "pk": 7, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Situa\u00e7\u00e3o do Recrutamento do estudo:\r\n\r\n    * Pendente: participantes ainda n\u00e3o est\u00e3o sendo recrutados ou inscritos em qualquer local\r\n    * Recrutando: participantes est\u00e3o sendo recrutados e inscritos\r\n    * Suspenso: h\u00e1 uma parada tempor\u00e1ria no recrutamento e inscri\u00e7\u00e3o\r\n    * Completo: participantes n\u00e3o est\u00e3o sendo mais recrutados ou inscritos\r\n    * Outros ", 
+      "text": "Por favor, indique aqui qual \u00e9 a situa\u00e7\u00e3o do recrutamento do estudo:\r\n\r\n    * Pendente: participantes ainda n\u00e3o est\u00e3o sendo recrutados ou inscritos em qualquer local\r\n    * Recrutando: participantes est\u00e3o sendo recrutados e inscritos\r\n    * Suspenso: h\u00e1 uma parada tempor\u00e1ria no recrutamento e inscri\u00e7\u00e3o\r\n    * Completo: participantes n\u00e3o est\u00e3o sendo mais recrutados ou inscritos\r\n    * Outros ", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -746,7 +746,7 @@
     "pk": 8, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Os pa\u00edses onde os participantes ser\u00e3o, podem ser ou foram recrutados.", 
+      "text": "Por favor, indique aqui quais os pa\u00edses onde os participantes ser\u00e3o, podem ser ou foram recrutados.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -757,7 +757,7 @@
     "pk": 9, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Data prevista ou real da inscri\u00e7\u00e3o do primeiro participante.", 
+      "text": "Por favor, indique aqui qual \u00e9 a data prevista ou real da inscri\u00e7\u00e3o do primeiro participante.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -768,7 +768,7 @@
     "pk": 10, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "N\u00famero de participantes que este estudo pretende inscrever.", 
+      "text": "Por favor, indique aqui qual \u00e9 o n\u00famero de participantes que este estudo pretende inscrever.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -779,7 +779,7 @@
     "pk": 11, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Crit\u00e9rios de exclus\u00e3o para sele\u00e7\u00e3o dos participantes, incluindo idade m\u00e1xima e m\u00ednima e sexo.", 
+      "text": "Por favor, indique aqui quais os crit\u00e9rios de exclus\u00e3o para sele\u00e7\u00e3o dos participantes, incluindo idade m\u00e1xima e m\u00ednima e sexo.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -790,7 +790,7 @@
     "pk": 12, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Crit\u00e9rios de inclus\u00e3o para sele\u00e7\u00e3o dos participantes, incluindo idade m\u00e1xima e m\u00ednima e sexo.", 
+      "text": "Por favor, indique aqui qual s\u00e3o os crit\u00e9rios de inclus\u00e3o para sele\u00e7\u00e3o dos participantes, incluindo idade m\u00e1xima e m\u00ednima e sexo.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -801,7 +801,7 @@
     "pk": 13, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "O indiv\u00edduo, organiza\u00e7\u00e3o, grupo ou outra entidade legal que assume a responsabilidade de iniciar, gerenciar e/ou financiar um estudo. O patrocinador prim\u00e1rio \u00e9 respons\u00e1vel por garantir que o ensaio est\u00e1 devidamente registrado. O patrocinador prim\u00e1rio pode ou n\u00e3o ser o principal financiador.", 
+      "text": "Por favor, indique aqui qual \u00e9 o patrocinador prim\u00e1rio. \r\nUm patrocinador \u00e9 o indiv\u00edduo, organiza\u00e7\u00e3o, grupo ou outra entidade legal que assume a responsabilidade de iniciar, gerenciar e/ou financiar um estudo. O patrocinador prim\u00e1rio \u00e9 respons\u00e1vel por garantir que o ensaio est\u00e1 devidamente registrado. O patrocinador prim\u00e1rio pode ou n\u00e3o ser o principal financiador.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -812,7 +812,7 @@
     "pk": 14, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "G\u00eanero no crit\u00e9rio de inclus\u00e3o (feminino, masculino ou ambos).", 
+      "text": "Por favor, indique aqui qual \u00e9 o g\u00eanero no crit\u00e9rio de inclus\u00e3o (feminino, masculino ou ambos).", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -823,7 +823,7 @@
     "pk": 15, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Idade m\u00e1xima no crit\u00e9rio de inclus\u00e3o.", 
+      "text": "Por favor, indique aqui qual \u00e9 a idade m\u00e1xima no crit\u00e9rio de inclus\u00e3o.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -834,7 +834,7 @@
     "pk": 16, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Idade m\u00ednima no crit\u00e9rio de inclus\u00e3o.", 
+      "text": "Por favor, indique aqui qual \u00e9 a idade m\u00ednima no crit\u00e9rio de inclus\u00e3o.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -845,7 +845,7 @@
     "pk": 17, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Unidade de tempo da idade maxima no inclusion criteria.", 
+      "text": "Por favor, indique aqui qual \u00e9 a unidade de tempo da idade maxima do criterio de inclus\u00e3o.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
@@ -856,11 +856,352 @@
     "pk": 18, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Unidade de tempo da idade m\u00ednima no inclusion criteria.", 
+      "text": "Por favor, indique aqui qual \u00e9 a unidade de tempo da idade m\u00ednima no criterio de inclus\u00e3o.", 
       "example": "", 
       "content_type": 45, 
       "language": "pt", 
       "object_id": 16
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui se o ensaio \u00e9 um estudo de bra\u00e7o \u00fanico, um ensaio cl\u00ednico controlado n\u00e3o aleat\u00f3rio ou um ensaio cl\u00ednico controlado aleat\u00f3rio.\r\n\r\nUm estudo de bra\u00e7o \u00fanico \u00e9 aquele no qual todos os participantes tenham a mesma interven\u00e7\u00e3o. Ensaios em que os participantes s\u00e3o designados para receber uma de duas ou mais interven\u00e7\u00f5es N\u00c3O s\u00e3o estudos de bra\u00e7o \u00fanico. Ensaios do tipo seq\u00fcencial (Crossover) N\u00c3O s\u00e3o estudos de bra\u00e7o \u00fanico.\r\n\r\nUm estudo \u00e9 aleat\u00f3rio se os participantes s\u00e3o atribu\u00eddos a grupos de interven\u00e7\u00e3o utilizando um m\u00e9todo baseado na possibilidade (p. ex., tabela de n\u00fameros aleat\u00f3rios, seq\u00fc\u00eancia aleat\u00f3rio gerada por computador, minimiza\u00e7\u00e3o, randomiza\u00e7\u00e3o adaptativa).", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 32
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui qual \u00e9 a fase do estudo.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 39
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui qual \u00e9 o enfoque do estudo.\r\n\r\n   * Diagn\u00f3stico: realizado para encontrar melhores testes ou procedimentos para o diagn\u00f3stico de uma determinada doen\u00e7a ou condi\u00e7\u00e3o.\r\n   * Etiol\u00f3gicos: ??????????????????????????????????????????????\r\n   * Progn\u00f3stico: ??????????????????????????????????????????????? ?\r\n   * Preven\u00e7\u00e3o: procura melhores formas de prevenir a doen\u00e7a em pessoas que nunca tiveram a doen\u00e7a ou prevenir uma doen\u00e7a de regressar. Estas abordagens podem incluir medicamentos, vitaminas, vacinas, sais minerais, ou mudan\u00e7as de estilo de vida.\r\n    * Tratamento: testa tratamentos experimentais, novas combina\u00e7\u00f5es de drogas, ou novas abordagens para a cirurgia ou radioterapia.\r\n", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 34
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui qual \u00e9 o desenho da interven\u00e7\u00e3o do ensaio.\r\n\r\n* Grupo \u00danico: estudo de bra\u00e7o \u00fanico\r\n* Paralelo: os participantes s\u00e3o atribu\u00eddos a um dos dois ou mais grupos em paralelo para a dura\u00e7\u00e3o do estudo\r\n* Cross-over: os participantes recebem uma das duas interven\u00e7\u00f5es alternativas durante a fase inicial do estudo e recebe a outra interven\u00e7\u00e3o durante a segunda fase do estudo\r\n* Fatorial: dois ou mais interven\u00e7\u00f5es, cada uma isoladamente e em combina\u00e7\u00e3o, s\u00e3o avaliadas em paralelo contra um grupo de controle.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 35
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor insira aqui o n\u00famero de grupos de interven\u00e7\u00e3o (digite 1 para um estudo de bra\u00e7o \u00fanico).", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 36
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui qual \u00e9 o tipo de mascaramento:\r\n\r\n    * Aberto: nenhum mascaramento \u00e9 usado. Todos os envolvidos sabem a identidade do trabalho de interven\u00e7\u00e3o.\r\n    * Simples: uma parte, tanto o pesquisador ou o participante, ignora a atribui\u00e7\u00e3o de interven\u00e7\u00e3o, tamb\u00e9m chamado de estudo de mascaramento simples.\r\n    * Duplo: duas ou mais partes n\u00e3o est\u00e3o cientes do trabalho de interven\u00e7\u00e3o\r\n    * Triplo: ??????????????????????????????????????????????????????????????????", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 37
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui qual \u00e9 a atribui\u00e7\u00e3o de um participante em um grupo de interven\u00e7\u00e3o:\r\n\r\n    * N/A: estudo de um \u00fanico bra\u00e7o\r\n    * Aleat\u00f3rio controlado: os participantes s\u00e3o atribu\u00eddos a grupos de interven\u00e7\u00e3o por chance.\r\n    * N\u00e3o Aleat\u00f3rio: os participantes s\u00e3o expressamente atribu\u00eddas a grupos de interven\u00e7\u00e3o atrav\u00e9s de um m\u00e9todo n\u00e3o-aleat\u00f3rio, como a escolha do m\u00e9dico.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 38
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui se houver um programa de acesso expandido ou n\u00e3o ou se \u00e9 desconhecido.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 33
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui qual \u00e9 o tipo de desfecho: prim\u00e1rio ou secund\u00e1rio. Desfecho prim\u00e1rio \u00e9 o resultado de maior import\u00e2ncia. Dados sobre desfechos secund\u00e1rios s\u00e3o usados para avaliar efeitos adicionais da interven\u00e7\u00e3o.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 40
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui a descri\u00e7\u00e3o do desfecho.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 41
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir o desfecho correspondente.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 42
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir o identificador correspondente.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 8
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir o patrocinador secund\u00e1rio correspondente.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 22
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir a fonte de apoio financeiro ou material correspondente.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 24
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir o contato para a comunidade cient\u00edfica correspondente.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 46
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir o contato de rela\u00e7\u00f5es p\u00fablicas correspondente.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 44
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir o correspondente contato para quest\u00f5es relativas ao site.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 48
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui qual \u00e9 o tipo de relacionamento do contato: um contato para perguntas p\u00fablicas, para perguntas cient\u00edficas ou para perguntas sobre o site.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 59
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui o numero do telefone do contato.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 58
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui o c\u00f3digo postal (CEP) do contato.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 57
+    }
+  }, 
+  {
+    "pk": 39, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui o pa\u00eds do contato.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 56
+    }
+  }, 
+  {
+    "pk": 40, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui a cidade do contato.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 55
+    }
+  }, 
+  {
+    "pk": 41, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui o endere\u00e7o do contato.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 54
+    }
+  }, 
+  {
+    "pk": 42, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui a afilia\u00e7\u00e3o do contato.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 53
+    }
+  }, 
+  {
+    "pk": 43, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui o email do contato.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 52
+    }
+  }, 
+  {
+    "pk": 44, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui o sobrenome do contato.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 51
+    }
+  }, 
+  {
+    "pk": 45, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui o nome do meio do contato.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 50
+    }
+  }, 
+  {
+    "pk": 46, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui o primeiro nome do contato.", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 49
+    }
+  }, 
+  {
+    "pk": 47, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione aqui, de um dos contatos inclu\u00eddos anteriormente, quem \u00e9 o contato(s) para perguntas sobre o site (ver formul\u00e1rio abaixo para um novo contato).", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 47
+    }
+  }, 
+  {
+    "pk": 48, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione aqui, de um dos contatos inclu\u00eddos anteriormente, quem \u00e9 o contato(s) de rela\u00e7\u00f5es p\u00fablicas (ver formul\u00e1rio abaixo para um novo contato).", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 43
+    }
+  }, 
+  {
+    "pk": 49, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione aqui, de um dos contatos inclu\u00eddos anteriormente, quem \u00e9 o contato(s) para a comunidade cient\u00edfica (ver formul\u00e1rio abaixo para um novo contato).", 
+      "example": "", 
+      "content_type": 45, 
+      "language": "pt", 
+      "object_id": 45
     }
   }
 ]

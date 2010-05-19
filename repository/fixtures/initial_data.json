@@ -1,11 +1,53 @@
 [
   {
+    "pk": 9, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "The efficacy of penicillin G potassium in reducing aphthous ulcer pain and lesion size in a Chinese cohort: a randomized, double-blinded, placebo and blank controlled, multicenter clinical trial.", 
+      "public_title": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        45
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "pending", 
+      "updated": "2010-04-22 20:01:45", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "allocation": null, 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-04-22 20:01:45", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 8, 
+      "recruitment_status": null
+    }
+  }, 
+  {
     "pk": 8, 
     "model": "repository.clinicaltrial", 
     "fields": {
       "scientific_title": "Prevention of Heterotopic Ossification With Arcoxia After Total Hip Replacement", 
       "public_title": "", 
-      "enrollment_end_actual": "", 
+      "enrollment_end_actual": "",
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
@@ -27,14 +69,14 @@
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
+      "enrollment_start_actual": "",
+      "enrollment_end_planned": "",
       "allocation": null, 
       "purpose": null, 
       "phase": null, 
       "date_registration": null, 
       "agemin_value": 0, 
-      "enrollment_start_planned": "", 
+      "enrollment_start_planned": "",
       "staff_note": "", 
       "study_design": "", 
       "created": "2010-04-22 19:17:28", 
@@ -51,7 +93,7 @@
     "fields": {
       "scientific_title": "Avalia\u00e7\u00e3o da dosagem do praziquantel para o tratamento da esquistossomose no Brasil", 
       "public_title": "", 
-      "enrollment_end_actual": "", 
+      "enrollment_end_actual": "",
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
@@ -73,14 +115,14 @@
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
+      "enrollment_start_actual": "",
+      "enrollment_end_planned": "",
       "allocation": null, 
       "purpose": null, 
       "phase": null, 
       "date_registration": null, 
       "agemin_value": 0, 
-      "enrollment_start_planned": "", 
+      "enrollment_start_planned": "",
       "staff_note": "", 
       "study_design": "", 
       "created": "2010-04-22 13:18:47", 
@@ -97,7 +139,7 @@
     "fields": {
       "scientific_title": "Teste da reuni\u00e3o Elluminate", 
       "public_title": "", 
-      "enrollment_end_actual": "", 
+      "enrollment_end_actual": "",
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
@@ -121,14 +163,14 @@
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
+      "enrollment_start_actual": "",
+      "enrollment_end_planned": "",
       "allocation": null, 
       "purpose": null, 
       "phase": null, 
       "date_registration": null, 
       "agemin_value": 0, 
-      "enrollment_start_planned": "", 
+      "enrollment_start_planned": "",
       "staff_note": "", 
       "study_design": "", 
       "created": "2010-03-30 18:51:44", 
@@ -145,7 +187,7 @@
     "fields": {
       "scientific_title": "Clinical Investigation: A Continuation in the Clinical Evaluation of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the Treatment of Subjects With de Novo Native Coronary Artery Lesions  ", 
       "public_title": "Clinical Investigation: An assessment of the safety and performance of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the treatment of patients with de novo native coronary artery lesions.", 
-      "enrollment_end_actual": "", 
+      "enrollment_end_actual": "",
       "trial_id": null, 
       "inclusion_criteria": "Up to two de novo lesions can be treated, each located in a separate native epicardial vessel.\r\n\r\nTarget lesion(s) must measure <= 28 mm in length by Qualitative Coronary Angiography (QCA), or by visual estimation if on line QCA is not available.\r\n\r\nTarget lesion(s) must be in a major artery or branch with a visually estimated stenosis of >= 50% and < 100% with a Thrombolysis in Myocardial Infarction (TIMI) flow of >= 1.\r\n\r\nIf two treatable lesions meet the inclusion criteria they must be in separate major epicardial vessels.\r\n\r\nPercutaneous interventions for lesions in a non-target vessel are allowed if done >= 30 days prior to or if planned to be done > 6 months after the index procedure.\r\n\r\nPercutaneous intervention for lesions in the target vessel are allowed if done > 6 months prior to or if planned to be done 6 months after the index procedure.", 
       "recruitment_country": [
@@ -177,14 +219,14 @@
       "target_sample_size": 1000, 
       "study_type": null, 
       "i_freetext": "Bioabsorbable Vascular Solutions Everolimus Eluting Coronary Stent System (BVS EECSS). Percutaneous Coronary Intervention (PCI) is commonly known as coronary angioplasty. Typically, PCI is performed by threading a slender balloon-tipped tube, a catheter, from an artery in the groin to a trouble spot in an artery of the heart. The balloon is then inflated, compressing the plaque and dilating (widening) the narrowed coronary artery so that blood can flow more easily. During PCI for this study, the BVS EECSS is then placed in the coronary artery to support the previously narrowed area. The BVS EECSS will remain in place until the bioabsorbtion process is complete, your physician will discuss this process with you. The duration of the PCI procedure will depend on many factors, and is typically less than 2 hours. Your physician will discuss those factors and the length of your procedure with you.\r\n\r\nOptical Coherence Tomography (OCT) subgroup definition:\r\n- A subgroup of up to 50 subjects who:\r\n\r\n- Have their procedures performed at selected investigational sites with OCT capability; and\r\n\r\n- Receive planned overlapping stent treatment of the target lesion.\r\n\r\n- The need for planned overlapping of BVS stents will be determined by the investigator up to the time of the index procedure.\r\n\r\n- Angiography, Intravascular Ultrasound (IVUS) and OCT are required for all subjects in the OCT subgroup post-procedure and at 2-year follow-up\r\n\r\n\r\n\r\nMulti-Slice Computed Tomography subgroup definition:\r\n\r\n- A subgroup of up to 100 subjects who:\r\n\r\n- Have their procedures performed at selected investigational sites having both OCT and MSCT capability; and\r\n\r\n- Receive at least one BVS EECSS in the target lesion.\r\n\r\nMSCT imaging and clinical follow-up at 18 months is required for all subjects in the MSCT subgroup.", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
+      "enrollment_start_actual": "",
+      "enrollment_end_planned": "",
       "allocation": null, 
       "purpose": null, 
       "phase": null, 
       "date_registration": null, 
       "agemin_value": 18, 
-      "enrollment_start_planned": "", 
+      "enrollment_start_planned": "",
       "staff_note": "", 
       "study_design": "", 
       "created": "2010-03-02 13:34:30", 
@@ -201,7 +243,7 @@
     "fields": {
       "scientific_title": "A randomised, double-blind, placebo-controlled, factorial-design trial to assess the effect of aspirin and fish oil in the prevention of early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis", 
       "public_title": "", 
-      "enrollment_end_actual": "", 
+      "enrollment_end_actual": "",
       "trial_id": null, 
       "inclusion_criteria": "1. Stage 4 or 5 chronic kidney disease\r\n2. Currently on haemodialysis or haemodialysis is planned to start within 6\r\nmonths (including patients currently on peritoneal dialysis).\r\n3. Planned AVF will be the primary haemodialysis access mechanism.\r\n4. Surgery to create an arterio-venous fistula in the upper or lower arm is planned.\r\n5. Aged over 18 years\r\n6. Life expectancy predicted to be 12 months minimum\r\n7. Treating team agreeable to patient\\'s involvement in the trial\r\n8. Informed consent ", 
       "recruitment_country": [
@@ -227,14 +269,14 @@
       "target_sample_size": 1200, 
       "study_type": 1, 
       "i_freetext": "Aspirin 100 mg per day or matching placebo, commencing on the day prior to scheduled surgery and continuing for 3 months.", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
+      "enrollment_start_actual": "",
+      "enrollment_end_planned": "",
       "allocation": null, 
       "purpose": null, 
       "phase": 3, 
       "date_registration": null, 
       "agemin_value": 18, 
-      "enrollment_start_planned": "", 
+      "enrollment_start_planned": "",
       "staff_note": "", 
       "study_design": "", 
       "created": "2010-01-20 17:47:08", 
@@ -251,7 +293,7 @@
     "fields": {
       "scientific_title": "Effect of Ascorbic Acid and Grape Seed Extract \"Vitis Vinifera L.\" on Oxidative Stress Induced by on Pump Coronary Artery by Pass Grafting Surgery", 
       "public_title": "Comparison of Ascorbic Acid and Grape Seed Extract in Oxidative Stress Induced by on Pump Heart Surgery", 
-      "enrollment_end_actual": "", 
+      "enrollment_end_actual": "",
       "trial_id": null, 
       "inclusion_criteria": "Candidates for elective CABG surgery with pump for first time, 3 Vessel Disease (3VD).", 
       "recruitment_country": [
@@ -275,14 +317,14 @@
       "target_sample_size": 75, 
       "study_type": 1, 
       "i_freetext": "Intervention 1: Control Group: without intervention.\r\nIntervention 2: Grape Seed Extract 100 mg/6h .\r\nIntervention 3: Vit C 25 mg/kg.", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
+      "enrollment_start_actual": "",
+      "enrollment_end_planned": "",
       "allocation": null, 
       "purpose": null, 
       "phase": 6, 
       "date_registration": null, 
       "agemin_value": 0, 
-      "enrollment_start_planned": "2008-11-01", 
+      "enrollment_start_planned": "2008-11-01",
       "staff_note": "", 
       "study_design": "Randomization: randomized. Blinding: Double blind. Placebo: not used. Assignment: Parallel. Purpose: Supportive care. Other design features: .", 
       "created": "2010-01-20 17:47:08", 
@@ -299,7 +341,7 @@
     "fields": {
       "scientific_title": "Minimal trial record (only required fields)", 
       "public_title": "", 
-      "enrollment_end_actual": "", 
+      "enrollment_end_actual": "",
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [], 
@@ -319,14 +361,14 @@
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
+      "enrollment_start_actual": "",
+      "enrollment_end_planned": "",
       "allocation": null, 
       "purpose": null, 
       "phase": null, 
       "date_registration": null, 
       "agemin_value": 0, 
-      "enrollment_start_planned": "", 
+      "enrollment_start_planned": "",
       "staff_note": "", 
       "study_design": "", 
       "created": "2010-01-20 17:47:08", 
@@ -343,7 +385,7 @@
     "fields": {
       "scientific_title": "teste de Margot", 
       "public_title": "", 
-      "enrollment_end_actual": "", 
+      "enrollment_end_actual": "",
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
@@ -365,14 +407,14 @@
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
+      "enrollment_start_actual": "",
+      "enrollment_end_planned": "",
       "allocation": null, 
       "purpose": null, 
       "phase": null, 
       "date_registration": null, 
       "agemin_value": 0, 
-      "enrollment_start_planned": "", 
+      "enrollment_start_planned": "",
       "staff_note": "", 
       "study_design": "", 
       "created": "2010-04-05 16:56:59", 
@@ -534,6 +576,15 @@
     }
   }, 
   {
+    "pk": 8, 
+    "model": "repository.institution", 
+    "fields": {
+      "country": 45, 
+      "name": " \tWest China Hospital, Sichuan University", 
+      "address": ""
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "repository.contact", 
     "fields": {
@@ -622,6 +673,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 1, 
+      "_order": 0, 
       "description": "The primary outcome measure is (unassisted) patency of the AVF at ninety (90)days after surgery. This is defined as the presence of an audible bruit over the site of the arterio-venous anastomosis, without the need for surgical or radiological intervention from the time of creation until the time of assessment.\r\nThe assessment of patency will be made at this time even if the AVF is not yet used for haemodialysis (11). Measurement of bruit will also be taken at 1 month to better define the natural history of thrombotic events.", 
       "interest": "primary"
     }
@@ -631,6 +683,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 3, 
+      "_order": 0, 
       "description": "Left Ventricular Ejection Fraction (LVEF). Timepoint: Before and after CABG. Method of measurement: Trans Thoracic Echocardiography (TTE)", 
       "interest": "primary"
     }
@@ -640,6 +693,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 0, 
       "description": "(This trial has no primary outcome, all outcomes are of equal weight) Acute success (clinical device and clinical procedure). Acute Success is classified according to the following definitions: Clinical Device Success Successful delivery and deployment of the Clinical Investigation stent at the target lesion and successful withdrawal of the stent delivery system with attainment of final residual stenosis < 50% by Qualitative Coronary Angiography (QCA) (by visual estimation if QCA is unavailable). Standard pre-dilation catheters and post-dilatation catheters (if applicable) may be used. Bailout subjects will be included as device success only if the above criteria for clinical device success are met. Clinical Procedure Success Successful delivery and deployment of the Clinical Investigation stent at the target lesion and successful withdrawal of the stent delivery system with attainment of final residual stenosis of < 50% by QCA (by visual estimation if QCA unavailable) and/or using any adjunctive device without the occurrence of ischemia driven major adverse cardiac event (MACE) during the hospital stay with a maximum of first seven days post index procedure. In a dual lesion setting both lesions must meet clinical procedure success. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -649,6 +703,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 3, 
+      "_order": 1, 
       "description": "Total Antioxidant Capacity (TAC) . Timepoint: Before, middle and after CABG. Method of measurement: Biochemistry (blood sample)", 
       "interest": "secondary"
     }
@@ -658,6 +713,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 1, 
+      "_order": 1, 
       "description": "Functional patency at 6 months. This is defined as the ability to use the AVF for a minimum of 3 consecutive dialysis treatments to the satisfaction of the clinician(s), without the need to use alternative dialysis access, or to delay commencement of dialysis. In patients who have not needed to start dialysis,\r\nassessment of functional patency will be delayed until commencement of dialysis. ", 
       "interest": "secondary"
     }
@@ -667,6 +723,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 1, 
       "description": "Cardiac Death (CD): Any death due to proximate cardiac cause (e.g., myocardial infarction, low-output failure, fatal arrhythmia), unwitnessed death, death of unknown cause, and all procedure-related deaths, including those related to concomitant treatment. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -676,6 +733,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 1, 
+      "_order": 2, 
       "description": "Time to failure of primary patency. Time from AVF creation to need for first intervention. An event is defined as revision surgery, need for alternative access, or abandonment of AVF which ever comes first. Censored observations are defined as regaining renal function such that dialysis is not needed or still having a patent AVF at time of study analysis. There will be a minimum of 12 months follow up time for each patient. ", 
       "interest": "secondary"
     }
@@ -685,6 +743,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 2, 
       "description": "Myocardial Infarction (MI): Q wave MI Development of new, pathological Q wave on the Electrocardiogram (ECG) Non-Q wave MI Elevation of Creatine Kinase (CK) levels to greater than or equal to two times the upper limit of normal (ULN) with elevated Creatine Kinase-Myocardial Band (CK-MB) in the absence of new pathological Q waves. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -694,6 +753,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 1, 
+      "_order": 3, 
       "description": "Time to failure of assisted patency. This is defined as time from AVF creation to abandonment of access. That is, radiological and surgical interventions to preserve or restore patency do not constitute failure. An event is defined as abandonment of the AVF as dialysis access. Censored observations will be as for time to failure of primary patency above. ", 
       "interest": "secondary"
     }
@@ -703,6 +763,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 3, 
       "description": "Target Vessel Myocardial Infarction (TV-MI): Please see \"MI\" in outcome #2. An MI which originates in the target vessel (vessel to be treated) based on information entered by site personnel. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -712,6 +773,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 1, 
+      "_order": 4, 
       "description": "Adverse events. All serious adverse events (see section 5.4) will be collected. The analysis of this secondary outcome will focus specifically on bleeding events.", 
       "interest": "secondary"
     }
@@ -721,6 +783,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 4, 
       "description": "Ischemia Driven Major Adverse Cardiac Events (ID MACE): The composite endpoint composed of cardiac death, myocardial infarction (MI) ischemia-driven target lesion revascularization (TLR) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -730,6 +793,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 5, 
       "description": "Ischemia driven Target Vessel Failure (ID TVF): Any repeat percutaneous intervention or surgical bypass of any segment of the target vessel. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -739,6 +803,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 6, 
       "description": "Ischemia Driven Target Lesion Revascularization (ID TLR): Any repeat percutaneous intervention of the target lesion or bypass surgery of the target vessel performed for restenosis or other complication of the target lesion. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -748,6 +813,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 7, 
       "description": "Ischemia Driven Target Vessel Revascularization (ID TVR): Any repeat percutaneous intervention or surgical bypass of any segment of the target vessel. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -757,6 +823,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 8, 
       "description": "Stent thrombosis: Clinical presentation of acute coronary syndrome with angiographic evidence of stent thrombosis. In the absence of angiography, any unexplained death, or acute MI in the distribution of the target lesion within 30 days This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -766,6 +833,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 9, 
       "description": "Descriptive analysis of strut, lesion and vessel morphology post-procedure by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in Percutaneous Coronary Intervention (PCI). This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -775,6 +843,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 10, 
       "description": "Stent area post-procedure assessed by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in PCI. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -784,6 +853,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 11, 
       "description": "Lumen area assessed by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in PCI. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -793,6 +863,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 12, 
       "description": "Minimum luminal area (MLA) assessed by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in PCI. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -802,6 +873,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 13, 
       "description": "Incomplete apposition (baseline), persisting incomplete apposition, late incomplete apposition assessed by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in PCI. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -811,6 +883,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 14, 
       "description": "In-stent Late Loss (LL) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -820,6 +893,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 15, 
       "description": "In-segment LL assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -829,6 +903,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 16, 
       "description": "Proximal LL (proximal defined as within 5 mm of tissue proximal to stent placement) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -838,6 +913,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 17, 
       "description": "Distal LL (distal defined as within 5 mm of tissue distal to stent placement) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -847,6 +923,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 18, 
       "description": "In-stent and in-segment Minimum Luminal Diameter (MLD) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -856,6 +933,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 19, 
       "description": "In-stent and in-segment % Diameter Stenosis (DS) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -865,6 +943,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 20, 
       "description": "In-stent and in-segment Angiographic Binary Restenosis (ABR) rate assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -874,6 +953,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 21, 
       "description": "Aneurysm, thrombus, persisting dissection assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -883,6 +963,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 22, 
       "description": "Vessel area assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -892,6 +973,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 23, 
       "description": "Stent area post-procedure and (if analyzable) assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -901,6 +983,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 24, 
       "description": "Minimum luminal area (MLA) assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -910,6 +993,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 25, 
       "description": "In-stent %Volume Obstruction (VO) assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -919,6 +1003,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 26, 
       "description": "Incomplete apposition (baseline), persisting incomplete apposition, late incomplete apposition assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -928,6 +1013,7 @@
     "model": "repository.outcome", 
     "fields": {
       "trial": 4, 
+      "_order": 27, 
       "description": "Descriptive analysis of vascular and stent morphology using Multi-Slice Computed Tomography (MSCT) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
       "interest": "primary"
     }
@@ -936,6 +1022,7 @@
     "pk": 1, 
     "model": "repository.descriptor", 
     "fields": {
+      "_order": 0, 
       "code": "C14", 
       "vocabulary": "DeCS", 
       "level": "general", 
@@ -949,6 +1036,7 @@
     "pk": 9, 
     "model": "repository.descriptor", 
     "fields": {
+      "_order": 0, 
       "code": "C23.300.575.950.250", 
       "vocabulary": "DeCS", 
       "level": "specific", 
@@ -962,6 +1050,7 @@
     "pk": 11, 
     "model": "repository.descriptor", 
     "fields": {
+      "_order": 0, 
       "code": "C14", 
       "vocabulary": "DeCS", 
       "level": "general", 
@@ -975,6 +1064,7 @@
     "pk": 8, 
     "model": "repository.descriptor", 
     "fields": {
+      "_order": 1, 
       "code": "50-81-7", 
       "vocabulary": "CAS", 
       "level": "specific", 
@@ -988,6 +1078,7 @@
     "pk": 10, 
     "model": "repository.descriptor", 
     "fields": {
+      "_order": 1, 
       "code": "50-78-2", 
       "vocabulary": "CAS", 
       "level": "specific", 
@@ -1001,6 +1092,7 @@
     "pk": 12, 
     "model": "repository.descriptor", 
     "fields": {
+      "_order": 1, 
       "code": "C14.280.647", 
       "vocabulary": "DeCS", 
       "level": "specific", 
@@ -1014,6 +1106,7 @@
     "pk": 2, 
     "model": "repository.descriptor", 
     "fields": {
+      "_order": 2, 
       "code": "C14.280.647", 
       "vocabulary": "DeCS", 
       "level": "specific", 
@@ -1027,6 +1120,7 @@
     "pk": 13, 
     "model": "repository.descriptor", 
     "fields": {
+      "_order": 2, 
       "code": "C14.280.647.250.285", 
       "vocabulary": "DeCS", 
       "level": "specific", 
@@ -1040,6 +1134,7 @@
     "pk": 3, 
     "model": "repository.descriptor", 
     "fields": {
+      "_order": 3, 
       "code": "C14.280.647.250.260", 
       "vocabulary": "DeCS", 
       "level": "specific", 
@@ -1053,6 +1148,7 @@
     "pk": 14, 
     "model": "repository.descriptor", 
     "fields": {
+      "_order": 3, 
       "code": "C14.280.647.250.285.200", 
       "vocabulary": "DeCS", 
       "level": "specific", 
@@ -1066,6 +1162,7 @@
     "pk": 7, 
     "model": "repository.descriptor", 
     "fields": {
+      "_order": 4, 
       "code": "C14.280.238", 
       "vocabulary": "DeCS", 
       "level": "specific", 
