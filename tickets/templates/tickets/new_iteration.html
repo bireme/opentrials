@@ -4,7 +4,7 @@
 
 <h2>{% trans "Add iteration in ticket" %}</h2>
 
-<form method="post" action="/ticket/{{ mode }}/{{ ticket_id }}/">
+<form method="post" action="/ticket/{{ mode }}/{{ ticket_id }}/">{% csrf_token %}
     <fieldset>
         <legend>Ticket info</legend>
         <table class="table">

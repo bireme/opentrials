@@ -33,7 +33,7 @@
         // management_form.prefix
     </script>
 
-    <form action="./" method="POST" enctype="multipart/form-data">
+    <form action="./" method="POST" enctype="multipart/form-data">{% csrf_token %}
 
             {{ formsets.0.management_form }}
             <fieldset>

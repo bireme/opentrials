@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <form action="./" method="POST">
+    <form action="./" method="POST">{% csrf_token %}
         <table><caption>{% trans "Primary Outcomes" %}</caption>
         {{forms.form_main.as_table}}
         </table>

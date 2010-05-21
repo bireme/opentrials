@@ -16,7 +16,7 @@
 
     <h2>{{ title }}</h2>
 
-    <form action="./" method="POST">
+    <form action="./" method="POST">{% csrf_token %}
         {% for form in forms %}
         <fieldset>
             <legend>{% firstof form.title form.form.title %}</legend>

@@ -63,6 +63,7 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'middleware.scriptprefix.ScriptPrefixMiddleware',
@@ -100,6 +101,7 @@ INSTALLED_APPS = (
 TEMPLATE_CONTEXT_PROCESSORS =(
     'django.core.context_processors.auth',
     'django.core.context_processors.i18n',
+    'django.core.context_processors.csrf',
 )
 
 AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
