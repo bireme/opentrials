@@ -36,7 +36,7 @@
     });
 </script>
 
-<form method="post" action="/accounts/newsubmission/" enctype="multipart/form-data">
+<form method="post" action="/accounts/newsubmission/" enctype="multipart/form-data">{% csrf_token %}
     <h2>{% trans "New Submission" %}</h2>
 {% for form in forms %}
 <fieldset>

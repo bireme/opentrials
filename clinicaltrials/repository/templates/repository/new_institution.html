@@ -25,7 +25,7 @@
 {% load i18n %}
     </head>
     <body>
-        <form action="{% url new_institution %}" method="post" onsubmit="return false;">
+        <form action="{% url new_institution %}" method="post" onsubmit="return false;">{% csrf_token %}
             <fieldset>
                 <legend>{{ form.title }}</legend>
                 <table>

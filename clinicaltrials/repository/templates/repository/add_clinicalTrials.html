@@ -3,7 +3,7 @@
 {% block body_title %}{% trans "Add a new Clinical Trial Record" %}{% endblock %}
 
 {% block body %}
-    <form action="./" method="POST">
+    <form action="./" method="POST">{% csrf_token %}
         <table>
         {{form.as_table}}
         </table>

@@ -3,7 +3,7 @@
 
 {% block body %}
 <h2>{% trans "User profile" %}</h2>
-<form action="./" method="post">
+<form action="./" method="post">{% csrf_token %}
     <fieldset>
         <legend>{% trans "Change your profile" %}</legend>
         <table class="table">
