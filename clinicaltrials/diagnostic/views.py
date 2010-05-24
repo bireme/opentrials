@@ -1,5 +1,27 @@
+import os
+from datetime import date
+from django.conf import settings
 from django.http import HttpResponse
 from django.contrib.auth.decorators import user_passes_test
+from django.contrib.admin.views.decorators import staff_member_required
+
+@staff_member_required
+def export_database(request):
+    #output backup
+    stdin,stdout = os.popen2(r'which mysqldump')
+    stdin.close()
+
+    mysqldump_bin = stdout.readline().replace('\n','')
+    stdout.close()
+    
+    cmd = mysqldump_bin+' --opt --compact --skip-add-locks -u %s -p%s %s | bzip2 -c' % (settings.DATABASE_USER, settings.DATABASE_PASSWORD, settings.DATABASE_NAME)
+    print cmd
+    stdin, stdout = os.popen2(cmd)
+    stdin.close()
+    
+    response = HttpResponse(stdout, mimetype="application/octet-stream")
+    response['Content-Disposition'] = 'attachment; filename=%s' % date.today().__str__()+'_db.sql.bz2'
+    return response
 
 def smoke_test(request):
     from datetime import datetime
