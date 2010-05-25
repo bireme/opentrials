@@ -7,5 +7,5 @@ info_dict = {
 }
 
 urlpatterns = patterns('',
-    url(r'^list/$', object_list, info_dict),
+    url(r'^faq/$', object_list, info_dict, name="assistance.faq"),
 )
