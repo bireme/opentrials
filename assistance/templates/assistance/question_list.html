@@ -4,13 +4,20 @@
 
 {% block body %}
 
+<h2>FAQ</h2>
+
 {% if object_list %}
 
    {% regroup object_list by category as category_list %}
 
     <ul>
     {% for category in category_list %}
-        <li>{{ category.grouper }}
+        <li><a href="#{{ category.grouper }}">{{ category.grouper }}</a>
+    {% endfor %}
+    </ul>
+    <ul>
+    {% for category in category_list %}
+        <li id="{{ category.grouper }}" name="{{ category.grouper }}">{{ category.grouper }}
         <dl>
             {% for item in category.list %}
             <dt>{{ item.title}} </dt>
