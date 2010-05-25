@@ -60,6 +60,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'middleware.scriptprefix.ScriptPrefixMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 
 )
 
@@ -80,6 +81,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'django.contrib.flatpages',
     'repository',
     'vocabulary',
     'reviewapp',

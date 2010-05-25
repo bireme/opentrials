@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ flatpage.title }} - {{ block.super }}{% endblock %}
+
+{% block body %}
+
+{{ flatpage.content|linebreaks }}
+
+{% endblock %}
