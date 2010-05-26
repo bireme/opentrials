@@ -13,9 +13,10 @@ from repository.trds_forms import SecondaryIdForm, SecondarySponsorForm
 from repository.trds_forms import SupportSourceForm, TrialIdentificationForm
 from repository.trds_forms import SpecificHealthDescriptorForm, HealthConditionsForm
 from repository.trds_forms import InterventionDescriptorForm, InterventionForm
-from repository.trds_forms import RecruitmentForm, StudyTypeForm, OutcomesForm
-from repository.trds_forms import PublicContactForm, ScientificContactForm
-from repository.trds_forms import ContactForm, NewInstitution, SiteContactForm
+from repository.trds_forms import RecruitmentForm, StudyTypeForm, PrimaryOutcomesForm
+from repository.trds_forms import SecondaryOutcomesForm, PublicContactForm
+from repository.trds_forms import ScientificContactForm, ContactForm, NewInstitution
+from repository.trds_forms import SiteContactForm
 
 import choices
 from django.core import serializers
@@ -110,11 +111,6 @@ def step_1(request, trial_pk):
         if form.is_valid() and secondary_forms.is_valid():
             form.save()
             secondary_forms.save()
-
-            if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect(reverse("step_2",args=[trial_pk]))
-
-            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = TrialIdentificationForm(instance=ct)
         SecondaryIdSet = inlineformset_factory(ClinicalTrial, TrialNumber,
@@ -151,11 +147,6 @@ def step_2(request, trial_pk):
             form.save()
             secondary_forms.save()
             sources_form.save()
-
-            if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect(reverse("step_3",args=[trial_pk]))
-
-            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = PrimarySponsorForm(instance=ct)
         SecondarySponsorSet = inlineformset_factory(ClinicalTrial, TrialSecondarySponsor,
@@ -216,11 +207,6 @@ def step_3(request, trial_pk):
             form.save()
             general_desc_formset.save()
             specific_desc_formset.save()
-
-            if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect(reverse("step_4",args=[trial_pk]))
-
-            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = HealthConditionsForm(instance=ct)
         general_desc_formset = GeneralDescriptorSet(queryset=general_qs,prefix='g')
@@ -262,11 +248,6 @@ def step_4(request, trial_pk):
 
             specific_desc_formset.save()
             form.save()
-
-            if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect(reverse("step_5",args=[trial_pk]))
-
-            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = InterventionForm(instance=ct)
         specific_desc_formset = DescriptorFormSet(queryset=queryset)
@@ -291,11 +272,6 @@ def step_5(request, trial_pk):
 
         if form.is_valid():
             form.save()
-
-            if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect(reverse("step_6",args=[trial_pk]))
-
-            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = RecruitmentForm(instance=ct)
 
@@ -318,11 +294,6 @@ def step_6(request, trial_pk):
 
         if form.is_valid():
             form.save()
-
-            if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect(reverse("step_7",args=[trial_pk]))
-
-            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = StudyTypeForm(instance=ct)
 
@@ -340,23 +311,32 @@ def step_6(request, trial_pk):
 def step_7(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
-    OutcomesSet = inlineformset_factory(ClinicalTrial, Outcome,
-                                form=OutcomesForm,extra=EXTRA_FORMS)
+    PrimaryOutcomesSet = modelformset_factory( Outcome,
+                                form=PrimaryOutcomesForm,extra=EXTRA_FORMS)
+    SecondaryOutcomesSet = modelformset_factory(Outcome,
+                                form=SecondaryOutcomesForm,extra=EXTRA_FORMS)
+
+    primary_qs = Outcome.objects.filter(trial=ct, interest=choices.OUTCOME_INTEREST[0][0])
+    secondary_qs = Outcome.objects.filter(trial=ct, interest=choices.OUTCOME_INTEREST[1][0])
 
     if request.POST:
-        outcomes_formset = OutcomesSet(request.POST, instance=ct)
+        primary_outcomes_formset = PrimaryOutcomesSet(request.POST, queryset=primary_qs, prefix='primary')
+        secondary_outcomes_formset = SecondaryOutcomesSet(request.POST, queryset=secondary_qs, prefix='secondary')
 
-        if outcomes_formset.is_valid():
-            outcomes_formset.save()
+        if primary_outcomes_formset.is_valid() and secondary_outcomes_formset.is_valid():
+            outcomes = primary_outcomes_formset.save(commit=False)
+            outcomes += secondary_outcomes_formset.save(commit=False)
 
-            if request.POST.has_key('submit_next'):
-                return HttpResponseRedirect(reverse("step_8",args=[trial_pk]))
+            for outcome in outcomes:
+                outcome.trial = ct
 
-            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
+            primary_outcomes_formset.save()
+            secondary_outcomes_formset.save()
     else:
-        outcomes_formset = OutcomesSet(instance=ct)
+        primary_outcomes_formset = PrimaryOutcomesSet(queryset=primary_qs, prefix='primary')
+        secondary_outcomes_formset = SecondaryOutcomesSet(queryset=secondary_qs, prefix='secondary')
 
-    formsets = [outcomes_formset]
+    formsets = [primary_outcomes_formset,secondary_outcomes_formset]
     return render_to_response('repository/trial_form.html',
                               {'formsets':formsets,
                                'trial_pk':trial_pk,
@@ -401,7 +381,6 @@ def step_8(request, trial_pk):
 
             for fs in inlineformsets:
                 fs.save()
-            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         inlineformsets = [fs(instance=ct) for fs in InlineFormSetClasses]
         new_contact_formset = ContactFormSet(queryset=contact_qs)
@@ -448,8 +427,6 @@ def step_9(request, trial_pk):
                 cdata['submission'] = su
 
             new_attachment_formset.save()
-
-            return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         existing_attachment_formset = ExistingAttachmentFormSet(instance=su,
                                                                 prefix='existing')
