@@ -202,17 +202,19 @@ def step_3(request, trial_pk):
 
     if request.POST:
         form = HealthConditionsForm(request.POST, instance=ct)
-        gdesc = GeneralDescriptorSet(request.POST,queryset=general_qs,prefix='g')
-        sdesc = SpecificDescriptorSet(request.POST,queryset=specific_qs,prefix='s')
+        general_desc_formset = GeneralDescriptorSet(request.POST,queryset=general_qs,prefix='g')
+        specific_desc_formset = SpecificDescriptorSet(request.POST,queryset=specific_qs,prefix='s')
 
-        if form.is_valid() and gdesc.is_valid() and sdesc.is_valid():
+        if form.is_valid() and general_desc_formset.is_valid() and specific_desc_formset.is_valid():
+            descriptors = general_desc_formset.save(commit=False)
+            descriptors += specific_desc_formset.save(commit=False)
 
-            for cdata in gdesc.cleaned_data+sdesc.cleaned_data:
-                cdata['trial'] = ct
+            for descriptor in descriptors:
+                descriptor.trial = ct
 
             form.save()
-            gdesc.save()
-            sdesc.save()
+            general_desc_formset.save()
+            specific_desc_formset.save()
 
             if request.POST.has_key('submit_next'):
                 return HttpResponseRedirect(reverse("step_4",args=[trial_pk]))
@@ -220,12 +222,12 @@ def step_3(request, trial_pk):
             return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = HealthConditionsForm(instance=ct)
-        gdesc = GeneralDescriptorSet(queryset=general_qs,prefix='g')
-        sdesc = SpecificDescriptorSet(queryset=specific_qs,prefix='s')
+        general_desc_formset = GeneralDescriptorSet(queryset=general_qs,prefix='g')
+        specific_desc_formset = SpecificDescriptorSet(queryset=specific_qs,prefix='s')
 
 
     forms = [form]
-    formsets = [gdesc, sdesc]
+    formsets = [general_desc_formset, specific_desc_formset]
     return render_to_response('repository/step_3.html',
                               {'forms':forms,'formsets':formsets,
                                'trial_pk':trial_pk,
@@ -248,14 +250,15 @@ def step_4(request, trial_pk):
                                            level=choices.DESCRIPTOR_LEVEL[0][0])
     if request.POST:
         form = InterventionForm(request.POST, instance=ct)
-        idesc = DescriptorFormSet(request.POST, queryset=queryset)
+        specific_desc_formset = DescriptorFormSet(request.POST, queryset=queryset)
 
-        if form.is_valid() and idesc.is_valid():
+        if form.is_valid() and specific_desc_formset.is_valid():
+            descriptors = specific_desc_formset.save(commit=False)
 
-            for cdata in idesc.cleaned_data:
-                cdata['trial'] = ct
+            for descriptor in descriptors:
+                descriptor.trial = ct
 
-            idesc.save()
+            specific_desc_formset.save()
             form.save()
 
             if request.POST.has_key('submit_next'):
@@ -264,10 +267,10 @@ def step_4(request, trial_pk):
             return HttpResponseRedirect(reverse("repository.edittrial", args=[trial_pk]))
     else:
         form = InterventionForm(instance=ct)
-        idesc = DescriptorFormSet(queryset=queryset)
+        specific_desc_formset = DescriptorFormSet(queryset=queryset)
 
     forms = [form]
-    formsets = [idesc]
+    formsets = [specific_desc_formset]
     return render_to_response('repository/step_4.html',
                               {'forms':forms,'formsets':formsets,
                                'trial_pk':trial_pk,
