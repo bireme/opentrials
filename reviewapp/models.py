@@ -132,4 +132,32 @@ class Remark(models.Model):
     def __unicode__(self):
         return '%s:%s' % (self.pk, self.submission_id)
 
+NEWS_STATUS = [
+    ('pending', _('Pending')),
+    ('published', _('Published')),
+]
+
+class News(models.Model):
+
+    class Meta:
+        verbose_name_plural = _('News')
+
+    title = models.CharField(_('Title'), max_length=256)
+    text = models.TextField(_('Text'), max_length=2048)
+    created = models.DateTimeField(default=datetime.now, editable=False)
+    creator = models.ForeignKey(User, related_name='news_creator', editable=False)
+    status = models.CharField(_('Status'), max_length=16, choices=NEWS_STATUS,
+                              default=NEWS_STATUS[0][0])
+
+    def short_title(self):
+        return safe_truncate(self.title, 120)
+        
+    def short_text(self):
+        return safe_truncate(self.text, 240)
+    
+    def __unicode__(self):
+        return '%s' % (self.short_title())
+        
+        
+
 post_save.connect(create_user_profile, sender=User)

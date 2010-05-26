@@ -6,14 +6,23 @@ from reviewapp.views import index, user_dump, new_submission, submissions_list
 from reviewapp.views import dashboard, submission_detail, user_profile
 from reviewapp.views import upload_trial
 
-from reviewapp.models import Submission
+from reviewapp.models import Submission, News
 
 
 submissions = {
    'queryset':Submission.objects.all()
 }
 
+news = {
+    'queryset': News.objects.filter(status__exact='published').order_by('-created',),
+}
+
 urlpatterns = patterns('',
+
+    url(r'^news/$', object_list, news, name='reviewapp.newslist'),
+    
+    url(r'^news/(?P<object_id>\d+)/$', object_detail, news, name='reviewapp.news'),
+
     url(r'^accounts/dashboard/$', dashboard, name='reviewapp.dashboard'),
 
     url(r'^accounts/profile/$', user_profile, name='reviewapp.userhome'),

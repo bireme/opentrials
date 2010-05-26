@@ -1,6 +1,6 @@
 from django.contrib import admin
 from utilities import safe_truncate
-from reviewapp.models import Submission, RecruitmentCountry, Remark
+from reviewapp.models import Submission, RecruitmentCountry, Remark, News
 
 class RecruitmentCountryInline(admin.TabularInline):
     model = RecruitmentCountry
@@ -36,6 +36,19 @@ class RemarkAdmin(admin.ModelAdmin):
     
     def short_text(self, obj):
         return safe_truncate(obj.text)
+        
+class NewsAdmin(admin.ModelAdmin):
+
+    list_display = ('__unicode__', 'short_text', 'created', 'creator', 'status')
+    list_display_links = ('__unicode__', 'status')
+    list_filter = ('created', 'status',)
+    
+    def save_model(self, request, instance, form, change):
+        if not change:
+            instance.creator = request.user
+        super(NewsAdmin, self).save_model(request, instance, form, change)
+        
 
 admin.site.register(Submission, SubmissionAdmin)
 admin.site.register(Remark, RemarkAdmin)
+admin.site.register(News, NewsAdmin)
