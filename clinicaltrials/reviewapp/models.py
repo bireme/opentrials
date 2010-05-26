@@ -10,6 +10,8 @@ from utilities import safe_truncate
 from reviewapp.signals import create_user_profile
 from django.db.models.signals import post_save
 
+import settings
+
 SUBMISSION_STATUS = [
     ('draft', 'draft'),
     ('pending', 'pending'),
@@ -99,7 +101,9 @@ class Attachment(models.Model):
     description = models.TextField(_('Description'),blank=True,max_length=8000)
     submission = models.ForeignKey(Submission)
     public = models.BooleanField(_('Public'))
-    
+
+    def get_relative_url(self):
+        return self.file.url.replace(settings.PROJECT_PATH, u'')
 
 REMARK_STATUS = [
     # initial state, as created by reviewer

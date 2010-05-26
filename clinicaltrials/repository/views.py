@@ -398,45 +398,36 @@ def step_9(request, trial_pk):
     # TODO: this function should be on another place
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     su = Submission.objects.get(trial=ct)
-
-    ExistingAttachmentFormSet = inlineformset_factory(Submission,
-                                             Attachment,
-                                             extra=0,
-                                             can_delete=True,
-                                             form=ExistingAttachmentForm)
+                                             
     NewAttachmentFormSet = modelformset_factory(Attachment,
                                              extra=1,
                                              can_delete=False,
                                              form=NewAttachmentForm)
 
+    existing_attachments = Attachment.objects.filter(submission=su)
 
     if request.method == 'POST':
-
-        existing_attachment_formset = ExistingAttachmentFormSet(request.POST,
-                                                                request.FILES,
-                                                                instance=su,
-                                                                prefix='existing')
         new_attachment_formset = NewAttachmentFormSet(request.POST,
                                                       request.FILES,
                                                       prefix='new')
 
-        if existing_attachment_formset.is_valid() and new_attachment_formset.is_valid():
-            existing_attachment_formset.save()
+        if new_attachment_formset.is_valid():
+            new_attachments = new_attachment_formset.save(commit=False)
 
-            for cdata in new_attachment_formset.cleaned_data:
-                cdata['submission'] = su
+            for attachment in new_attachments:
+                attachment.submission = su
 
             new_attachment_formset.save()
     else:
-        existing_attachment_formset = ExistingAttachmentFormSet(instance=su,
-                                                                prefix='existing')
         new_attachment_formset = NewAttachmentFormSet(queryset=Attachment.objects.none(),
                                                       prefix='new')
 
-    formsets = [existing_attachment_formset,new_attachment_formset]
+    formsets = [new_attachment_formset]
     return render_to_response('repository/attachments.html',
                               {'formsets':formsets,
+                               'existing_attachments':existing_attachments,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[8],
+                               'host': request.get_host(),
                                'steps': step_list(trial_pk)},
                                context_instance=RequestContext(request))
