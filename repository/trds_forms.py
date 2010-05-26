@@ -303,12 +303,23 @@ class StudyTypeForm(ReviewModelForm):
                                    queryset=StudyPhase.objects.all())
 
 #step7
-class OutcomesForm(ReviewModelForm):
+class PrimaryOutcomesForm(ReviewModelForm):
     class Meta:
         model = Outcome
         fields = ['interest','description']
 
-    title = _('Outcomes')
+    title = _('Primary Outcomes')
+    interest = forms.CharField(initial=choices.OUTCOME_INTEREST[0][0],
+                               widget=forms.HiddenInput)
+
+class SecondaryOutcomesForm(ReviewModelForm):
+    class Meta:
+        model = Outcome
+        fields = ['interest','description']
+
+    title = _('Secondary Outcomes')
+    interest = forms.CharField(initial=choices.OUTCOME_INTEREST[1][0],
+                               widget=forms.HiddenInput)
 
 #step8
 class PublicContactForm(ReviewModelForm):
