@@ -208,6 +208,7 @@ def step_3(request, trial_pk):
         if form.is_valid() and general_desc_formset.is_valid() and specific_desc_formset.is_valid():
             descriptors = general_desc_formset.save(commit=False)
             descriptors += specific_desc_formset.save(commit=False)
+            
 
             for descriptor in descriptors:
                 descriptor.trial = ct
@@ -254,6 +255,7 @@ def step_4(request, trial_pk):
 
         if form.is_valid() and specific_desc_formset.is_valid():
             descriptors = specific_desc_formset.save(commit=False)
+
 
             for descriptor in descriptors:
                 descriptor.trial = ct
