@@ -7,13 +7,13 @@ class Command(NoArgsCommand):
     def handle_noargs(self, **options):
         import MySQLdb
         # print "Connecting..."
-        db=MySQLdb.connect(host=settings.DATABASE_HOST or "localhost",
-                           user=settings.DATABASE_USER,
-                           passwd=settings.DATABASE_PASSWORD, 
-                           port=int(settings.DATABASE_PORT or 3306))
+        db=MySQLdb.connect(host=settings.DATABASES['default']['HOST'] or "localhost",
+                           user=settings.DATABASES['default']['USER'],
+                           passwd=settings.DATABASES['default']['PASSWORD'],
+                           port=int(settings.DATABASES['default']['PORT'] or 3306))
         cursor = db.cursor()
-        print "Dropping database %s..." % settings.DATABASE_NAME,
+        print "Dropping database %s..." % settings.DATABASES['default']['NAME'],
         cursor.execute("drop database %s; create database %s;" % 
-                       (settings.DATABASE_NAME, settings.DATABASE_NAME))
+                       (settings.DATABASES['default']['NAME'], settings.DATABASES['default']['NAME']))
         print "dropped and re-created."
 
