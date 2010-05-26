@@ -185,10 +185,8 @@ class HealthConditionsForm(ReviewModelForm):
 class DescriptorForm(ReviewModelForm):
     class Meta:
         model = Descriptor
-        exclude = ['version']
+        exclude = ['trial','version']
         
-    trial = forms.CharField(widget=forms.HiddenInput,required=False)
-
 class GeneralHealthDescriptorForm(DescriptorForm):
     title = _('General Descriptors for Health Condition(s)')
     aspect = forms.CharField(widget=forms.HiddenInput,
