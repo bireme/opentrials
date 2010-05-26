@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body_title %}Notícia{% endblock %}
+
+{% block body %}
+
+{% if object %}
+
+<h2>{{ object.created|date:'d/m/y' }} {{ object.title }}</h2>
+
+    <p>{{ object.text }}</p>
+    <br />
+
+{% else %}
+    <p>Notícia não disponível.</p>
+{% endif %}
+{% endblock %}
