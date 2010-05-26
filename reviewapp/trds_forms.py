@@ -38,11 +38,10 @@ class ExistingAttachmentForm(forms.ModelForm):
 class NewAttachmentForm(forms.ModelForm):
     class Meta:
         model = Attachment
-        fields = ['file','description','submission','public']
+        fields = ['file','description','public']
 
     title = _('New Attachment')
-    submission = forms.CharField(widget=forms.HiddenInput,required=False)
-
+    
 class UserForm(forms.ModelForm):
     class Meta:
         model = User
