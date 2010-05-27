@@ -246,8 +246,8 @@ class RecruitmentForm(ReviewModelForm):
                                             queryset=CountryCode.objects.all())
 
     # TRDS 16a,b (type_enrollment: anticipated or actual)
-    enrollment_start_planned = forms.CharField( # yyyy-mm or yyyy-mm-dd
-        label=_('Planned Date of First Enrollment'), max_length=10, required=False)
+    enrollment_start_planned = forms.DateField( # yyyy-mm or yyyy-mm-dd
+        label=_('Planned Date of First Enrollment'), required=False)
 
     # TRDS 17
     target_sample_size = forms.IntegerField(label=_('Target Sample Size'),
