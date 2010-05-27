@@ -4,18 +4,20 @@
 
     <h2>{{ title }}</h2>
 
-    <h3>{% trans 'Existing attachments' %}</h3>
-    
-    {% for attachment in existing_attachments %}
-        <ul>
-            <li>{% trans 'File' %}:
-                <a href="http://{{host}}{{attachment.get_relative_url}}">
-                    http://{{host}}{{attachment.get_relative_url}}
-                </a>
-            </li>
-            <li>{% trans 'Description' %}: {{attachment.description}}</li>
-        </ul>
-    {% endfor %}
+    {% if existing_attachments %}
+        <h3>{% trans 'Existing attachments' %}</h3>
+
+        {% for attachment in existing_attachments %}
+            <ul>
+                <li>{% trans 'File' %}:
+                    <a href="http://{{host}}{{attachment.get_relative_url}}">
+                        http://{{host}}{{attachment.get_relative_url}}
+                    </a>
+                </li>
+                <li>{% trans 'Description' %}: {{attachment.description}}</li>
+            </ul>
+        {% endfor %}
+    {% endif %}
     
 
     <h3>{% trans 'New attachment form' %}</h3>
