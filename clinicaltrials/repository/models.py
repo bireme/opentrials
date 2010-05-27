@@ -36,12 +36,12 @@ class TrialRegistrationDataSetModel(models.Model):
     def html_dump(self, seen=None, follow_sets=True):
         html = [] # the enclosing <table> and </table> must be provided by the template
         if seen is None:
-            seen = set(self.__class__.__name__)
+            seen = set([self.__class__.__name__])
         for field in self._meta.fields:
             value = getattr(self, field.name)
             if field.rel and hasattr(value, 'html_dump'):
                 seen.add(value.__class__.__name__)
-                content = '<table>%s</table>' % value.html_dump(seen, follow_sets=False)
+                content = '<table bgcolor="yellow">%s</table>' % value.html_dump(seen, follow_sets=False)
             else:
                 content = unicode(value)
                 if u'\n' in content:
@@ -89,6 +89,9 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     # TRDS 10b
     scientific_acronym = models.CharField(_('Scientific Acronym'), blank=True,
                                           max_length=255)
+    # TRDS 10b
+    scientific_acronym_expansion = models.CharField(_('Scientific Acronym Expansion'), 
+                                                    blank=True, max_length=255)
     # TRDS 5
     primary_sponsor = models.OneToOneField('Institution', null=True, blank=True,
                                         verbose_name=_('Primary Sponsor'))
@@ -104,6 +107,9 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
                                     max_length=2000)
     # TRDS 9b
     acronym = models.CharField(_('Acronym'), blank=True, max_length=255)
+
+    # TRDS 9b
+    acronym_expansion = models.CharField(_('Acronym Expansion'), blank=True, max_length=255)
 
     # TRDS 12a
     hc_freetext = models.TextField(_('Health Condition(s)'), blank=True,
@@ -236,6 +242,18 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
             return self.trial_id
         else:
             msg = 'not assigned (request #%)' % self.pk
+            
+    def acronym_display(self):
+        if self.acronym_expansion:
+            return u'%s: %s' % (self.acronym, self.acronym_expansion)
+        else:
+            return self.acronym
+
+    def scientific_acronym_display(self):
+        if self.scientific_acronym_expansion:
+            return u'%s: %s' % (self.scientific_acronym, self.scientific_acronym_expansion)
+        else:
+            return self.scientific_acronym
 
     def record_status(self):
         return self.submission.status
@@ -262,7 +280,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         '''
         return self.descriptor_set.filter(aspect=aspect, level=level).select_related()
 
-    #TRDS 12b - HC-CODE
+    #TRDS 12b - Health Condition Codes are generic, high level descriptors
     def hc_code(self):
         ''' return set of HC-Code related to this trial with
             aspect = 'HealthCondition'
@@ -270,7 +288,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         '''
         return self.related_health_conditions('HealthCondition','general')
 
-    #TRDS 12c - HC-Keyword
+    #TRDS 12c - Health Condition Keywords are specific descriptors
     def hc_keyword(self):
         ''' return set of HC-Code related to this trial with
             aspect = 'HealthCondition'
@@ -278,14 +296,14 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         '''
         return self.related_health_conditions('HealthCondition','specific')
 
-    #TRDS 13b - Invetion Code
+    #TRDS 13b - Intervetion Code
     def intervention_code(self):
         ''' return set of Intervention Code related to this trial with
         '''
         return (r.i_code for r in
                 self.trialinterventioncode_set.all().select_related())
 
-    #TRDS 13c - Invention Keyword
+    #TRDS 13c - Intervention Keyword
     def intervention_keyword(self):
         ''' return set of Intervention Keyword related to this trial with
         '''

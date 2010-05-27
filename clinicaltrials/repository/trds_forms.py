@@ -111,7 +111,8 @@ class TrialIdentificationForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['scientific_title','scientific_acronym',
-                  'public_title','acronym']
+                  'scientific_acronym_expansion',
+                  'public_title','acronym','acronym_expansion']
 
     title = _('Trial Identification')
     # TRDS 10a

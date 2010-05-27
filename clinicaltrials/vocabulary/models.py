@@ -6,7 +6,13 @@ from django.contrib.contenttypes import generic
 
 from polyglot.models import Translation
 
+class SimpleVocabularyManager(models.Manager):
+    def get_by_natural_key(self, label):
+        return self.get(label=label)
+
 class SimpleVocabulary(models.Model):
+    objects = SimpleVocabularyManager()
+    
     label = models.CharField(_('Label'), max_length=255, unique=True)
     description = models.TextField(_('Description'), max_length=2000,
                                    blank=True)
@@ -18,6 +24,9 @@ class SimpleVocabulary(models.Model):
 
     def __unicode__(self):
         return self.label
+    
+    def natural_key(self):
+        return (self.label,)
 
     @classmethod
     def choices(cls):
