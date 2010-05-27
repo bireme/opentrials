@@ -98,7 +98,12 @@ function search_event(decsclient_url,label) {
                 decs.create('div')
                    .attr('class','decstool')
                    .appendTo(this.parentNode)
-                   .append(decs.create('input'))
+                   .append(decs.create('input').bind("keypress", function(e) {
+                            if(e.keyCode === 13){
+                                $('#'+decs.id('button')).click();
+                                return false;
+                            }
+                        }))
                    .append(decs.create('button').html(label));
 
                 $('#'+decs.id('button'))

@@ -264,6 +264,7 @@ table.table textarea {
 }
 
 table.table td.help div.issue {
+    display:none;
 }
 
 table.trialsummary {
