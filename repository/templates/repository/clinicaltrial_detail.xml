@@ -10,8 +10,9 @@
             <date_registration>{{ object.date_registration }}</date_registration>
             <primary_sponsor>{{ object.primary_sponsor }}</primary_sponsor>
             <public_title>{{ public_title }}</public_title>
-            <acronym>{{ object.scientific_acronym }}</acronym>
+            <acronym>{{ object.acronym_display }}</acronym>
             <scientific_title>{{ object.scientific_title }}</scientific_title>
+            <scientific_acronym>{{ object.scientific_acronym_display }}</scientific_acronym>
             <date_enrolment>{{ object.date_enrollment_actual }}</date_enrolment>
             <type_enrolment>{{ object.type_enrolment }}</type_enrolment>
             <target_size>{{ object.target_sample_size }}</target_size>
