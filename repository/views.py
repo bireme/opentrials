@@ -111,6 +111,7 @@ def step_1(request, trial_pk):
         if form.is_valid() and secondary_forms.is_valid():
             form.save()
             secondary_forms.save()
+            return HttpResponseRedirect(reverse('step_1',args=[trial_pk]))
     else:
         form = TrialIdentificationForm(instance=ct)
         SecondaryIdSet = inlineformset_factory(ClinicalTrial, TrialNumber,
@@ -147,6 +148,7 @@ def step_2(request, trial_pk):
             form.save()
             secondary_forms.save()
             sources_form.save()
+        return HttpResponseRedirect(reverse('step_2',args=[trial_pk]))
     else:
         form = PrimarySponsorForm(instance=ct)
         SecondarySponsorSet = inlineformset_factory(ClinicalTrial, TrialSecondarySponsor,
@@ -177,10 +179,12 @@ def step_3(request, trial_pk):
 
     GeneralDescriptorSet = modelformset_factory(Descriptor,
                                                 form=GeneralHealthDescriptorForm,
+                                                can_delete=True,
                                                 extra=EXTRA_FORMS)
 
     SpecificDescriptorSet = modelformset_factory(Descriptor,
                                                 form=SpecificHealthDescriptorForm,
+                                                can_delete=True,
                                                 extra=EXTRA_FORMS)
 
     general_qs = Descriptor.objects.filter(trial=trial_pk,
@@ -207,6 +211,8 @@ def step_3(request, trial_pk):
             form.save()
             general_desc_formset.save()
             specific_desc_formset.save()
+            
+            return HttpResponseRedirect(reverse('step_3',args=[trial_pk]))
     else:
         form = HealthConditionsForm(instance=ct)
         general_desc_formset = GeneralDescriptorSet(queryset=general_qs,prefix='g')
@@ -248,6 +254,7 @@ def step_4(request, trial_pk):
 
             specific_desc_formset.save()
             form.save()
+            return HttpResponseRedirect(reverse('step_4',args=[trial_pk]))
     else:
         form = InterventionForm(instance=ct)
         specific_desc_formset = DescriptorFormSet(queryset=queryset)
@@ -332,6 +339,7 @@ def step_7(request, trial_pk):
 
             primary_outcomes_formset.save()
             secondary_outcomes_formset.save()
+            return HttpResponseRedirect(reverse('step_7',args=[trial_pk]))
     else:
         primary_outcomes_formset = PrimaryOutcomesSet(queryset=primary_qs, prefix='primary')
         secondary_outcomes_formset = SecondaryOutcomesSet(queryset=secondary_qs, prefix='secondary')
@@ -419,6 +427,7 @@ def step_9(request, trial_pk):
                 attachment.submission = su
 
             new_attachment_formset.save()
+            return HttpResponseRedirect(reverse('step_9',args=[trial_pk]))
     else:
         new_attachment_formset = NewAttachmentFormSet(queryset=Attachment.objects.none(),
                                                       prefix='new')
