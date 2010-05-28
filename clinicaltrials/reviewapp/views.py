@@ -16,7 +16,8 @@ from reviewapp.trds_forms import UserForm, PrimarySponsorForm, UserProfileForm
 from repository.models import ClinicalTrial, CountryCode
 
 def index(request):
-    return render_to_response('reviewapp/index.html', locals())
+    return render_to_response('reviewapp/index.html', locals(),
+                                context_instance=RequestContext(request))
 
 @login_required
 def dashboard(request):
