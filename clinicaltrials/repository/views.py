@@ -26,6 +26,8 @@ from django.utils.translation import ugettext_lazy as _
 from django.forms.models import inlineformset_factory, modelformset_factory
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+from django.template import loader
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
 EXTRA_FORMS = 1
 TRIAL_FORMS = ['Trial Identification',
@@ -64,7 +66,6 @@ def full_view(request, trial_pk):
                                context_instance=RequestContext(request))
 
 
-@login_required
 def index(request):
     latest_clinicalTrials = ClinicalTrial.objects.all()[:5]
     t = loader.get_template('repository/latest_clinicalTrials.html')
@@ -72,6 +73,35 @@ def index(request):
         'latest_clinicalTrials': latest_clinicalTrials,
     })
     return HttpResponse(t.render(c))
+
+def details(request, trial_pk):
+    ''' clinical trial details '''
+    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    return render_to_response('repository/clinicaltrial_detail.html',
+                                {'ct': ct,
+                                'titles': TRIAL_FORMS,
+                                'host': request.get_host()},
+                                context_instance=RequestContext(request))
+
+def list_all(request):
+    clinicalTrialsList = ClinicalTrial.objects.all()
+    paginator = Paginator(clinicalTrialsList, 10)
+    
+    # Make sure page request is an int. If not, deliver first page.
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    # If page request (9999) is out of range, deliver last page of results.
+    try:
+        clinicalTrials = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        clinicalTrials = paginator.page(paginator.num_pages)
+
+    return render_to_response('repository/clinicaltrial_list.html', 
+                                {'clinicalTrials': clinicalTrials},
+                                context_instance=RequestContext(request))
 
 @login_required
 def new_institution(request):

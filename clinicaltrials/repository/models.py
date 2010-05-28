@@ -232,6 +232,12 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         else:
             tit = self.scientific_title
         return safe_truncate(tit, 120)
+        
+    def main_title(self):
+        if self.public_title:
+            return self.public_title
+        else:
+            return self.scientific_title
 
     def __unicode__(self):
         return u'%s %s' % (self.identifier(), self.short_title())
@@ -280,6 +286,12 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         '''
         return self.descriptor_set.filter(aspect=aspect, level=level).select_related()
 
+    # TRDS 11 - Countries of Recruitment
+    def trial_recruitment_country(self):
+        ''' return set of countries of recruitment related to this trial with
+        '''
+        return self.recruitment_country.all().select_related()
+
     #TRDS 12b - Health Condition Codes are generic, high level descriptors
     def hc_code(self):
         ''' return set of HC-Code related to this trial with
@@ -300,8 +312,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     def intervention_code(self):
         ''' return set of Intervention Code related to this trial with
         '''
-        return (r.i_code for r in
-                self.trialinterventioncode_set.all().select_related())
+        return self.i_code.all().select_related()
 
     #TRDS 13c - Intervention Keyword
     def intervention_keyword(self):
@@ -321,7 +332,18 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         '''
         return self.outcome_set.filter(interest='secondary').select_related()
 
+    def public_contacts(self):
+        return self.public_contact.all().select_related()
 
+    def scientific_contacts(self):
+        return self.scientific_contact.all().select_related()
+
+    def site_contacts(self):
+        return [ st.contact for st in self.sitecontact_set.all().select_related() ]
+
+    def trial_attach(self):
+        return self.submission.attachment_set.all().select_related()
+        
 
 ################################### Entities linked to a Clinical Trial ###
 
