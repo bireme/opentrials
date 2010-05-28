@@ -393,6 +393,8 @@ class PublicContact(TrialRegistrationDataSetModel):
     status = models.CharField(_('Status'), max_length=255,
                             choices = choices.CONTACT_STATUS,
                             default = choices.CONTACT_STATUS[0][0])
+    class Meta:
+        unique_together = ('trial', 'contact')
 
     def __unicode__(self):
         return u'Public Contact for %s: %s (%s)' % (self.trial.short_title(),
@@ -404,6 +406,8 @@ class ScientificContact(TrialRegistrationDataSetModel):
     status = models.CharField(_('Status'), max_length=255,
                             choices = choices.CONTACT_STATUS,
                             default = choices.CONTACT_STATUS[0][0])
+    class Meta:
+        unique_together = ('trial', 'contact')
 
     def __unicode__(self):
         return u'Scientific Contact for %s: %s (%s)' % (self.trial.short_title(),
@@ -415,6 +419,8 @@ class SiteContact(TrialRegistrationDataSetModel):
     status = models.CharField(_('Status'), max_length=255,
                             choices = choices.CONTACT_STATUS,
                             default = choices.CONTACT_STATUS[0][0])
+    class Meta:
+        unique_together = ('trial', 'contact')
 
     def __unicode__(self):
         return u'Site Contact for %s: %s (%s)' % (self.trial.short_title(),
