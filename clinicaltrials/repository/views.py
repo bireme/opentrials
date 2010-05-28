@@ -370,7 +370,7 @@ def step_8(request, trial_pk):
         inlineformsets = [fs(request.POST,instance=ct) for fs in InlineFormSetClasses]
         new_contact_formset = ContactFormSet(request.POST,queryset=contact_qs)
 
-        if not False in [fs.is_valid for fs in inlineformsets] \
+        if not False in [fs.is_valid() for fs in inlineformsets] \
                 and new_contact_formset.is_valid():
 
             for contactform in new_contact_formset.forms:
@@ -381,6 +381,7 @@ def step_8(request, trial_pk):
 
             for fs in inlineformsets:
                 fs.save()
+            return HttpResponseRedirect(reverse('step_8',args=[trial_pk]))
     else:
         inlineformsets = [fs(instance=ct) for fs in InlineFormSetClasses]
         new_contact_formset = ContactFormSet(queryset=contact_qs)
