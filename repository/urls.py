@@ -5,10 +5,7 @@ from repository.models import ClinicalTrial
 
 from repository.views import edit_trial_index, full_view, index,step_1, step_2, step_3
 from repository.views import step_4, step_5, step_6, step_7, step_8, step_9, new_institution
-
-info_dict = {
-    'queryset': ClinicalTrial.objects.all(),
-}
+from repository.views import list_all, details
 
 info_dict_xml = {
     'queryset': ClinicalTrial.objects.all(),
@@ -18,7 +15,8 @@ info_dict_xml = {
 
 urlpatterns = patterns('',
     url(r'^edit/(\d+)/$', edit_trial_index, name='repository.edittrial'),
-    url(r'^view/(\d+)/$', full_view, name='repository.trialview'),
+    #url(r'^view/(\d+)/$', full_view, name='repository.trialview'),
+    url(r'^view/(\d+)/$', details, name='repository.trialview'),
     url(r'^xml/(?P<object_id>\d+)/$', object_detail, info_dict_xml,
         name='repository.xml'),
     url(r'^new_institution/$', new_institution, name='new_institution'),
@@ -32,5 +30,5 @@ urlpatterns = patterns('',
     url(r'^step_8/(\d+)/$', step_8, name='step_8'),
     url(r'^step_9/(\d+)/$', step_9, name='step_9'),
     url(r'^$', index),
-    url(r'^list/$', object_list, info_dict),
+    url(r'^list/$', list_all, name='repository.list_all'),
 )

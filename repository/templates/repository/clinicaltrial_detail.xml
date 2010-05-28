@@ -57,8 +57,8 @@
         {% endfor %}
         </contacts>
         <countries>
-        {% for country in object.recruitmentcountry_set.all %}
-            <country2>{{ country }}</country2>
+        {% for country in object.trial_recruitment_country %}
+            <country2>{{ country.description }}</country2>
         {% endfor %}
         </countries>
         <criteria>

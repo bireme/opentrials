@@ -1,14 +1,30 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block body_title %}Last Clinical Trials{% endblock %}
 
 {% block body %}
+
     {% if latest_clinicalTrials %}
-        <ul>
         {% for ct in latest_clinicalTrials %}
-            <li>{{ ct }}</li>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        <a href="#">{{ ct.main_title }}</a>
+                    </th>  
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{% trans 'Primary Id Number' %}: <a href="#">{{ ct.trial_id }}</a></td>
+                    <td>{% trans 'Recruitment Status' %}: {{ ct.recruitment_status }}</td>
+                    <td>{% trans 'Date of Registration' %}: {{ ct.date_registration }}</td>
+                </tr>
+            </tbody>
+        </table>
         {% endfor %}
-        </ul>
     {% else %}
         <p>No clinical trials are available.</p>
     {% endif %}

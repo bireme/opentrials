@@ -1,5 +1,496 @@
 {% extends "base.html" %}
 
-{% block body %}
+{% load i18n %}
 
+{% block body_title %}{% trans 'Clinical Trial' %}{% endblock %}
+
+{% block body %}
+    <h2>{{ ct }}</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans titles.0 %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span style="font-weight: bold;">{% trans 'Scientific Title' %}:</span> 
+                {{ ct.scientific_title }}</td>
+            </tr>
+            <tr>
+                <td><span style="font-weight: bold;">{% trans 'Scientific Acronym' %}:</span> 
+                {{ ct.scientific_acronym_display }}</td>
+            </tr>
+            <tr>
+                <td><span style="font-weight: bold;">{% trans 'Public Title' %}:</span> 
+                {{ ct.public_title }}</td>
+            </tr>
+            <tr>
+                <td><span style="font-weight: bold;">{% trans 'Public Acronym' %}:</span> 
+                {{ ct.acronym_display }}</td>
+            </tr>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'Secondary Identifying Numbers' %}</legend>
+                <table border="0">
+                {% for secid in ct.trial_number %}
+                    <tr><td>
+                    <span style="font-weight: bold;">{% trans 'Secondary Identifying Numbers' %}:</span> 
+                    {{ secid.id_number }} 
+                    </td><td>
+                    <span style="font-weight: bold;">{% trans 'Issuing Authority' %}:</span> 
+                    {{ secid.issuing_authority }}
+                    </td></tr>
+                {% endfor %}
+                </table>
+                </fieldset>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans titles.1 %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span style="font-weight: bold;">{% trans 'Primary Sponsor' %}:</span> 
+                {{ ct.primary_sponsor }}</td>
+            </tr>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'Secondary Sponsors' %}</legend>
+                <table border="0">
+                {%  for sponsors in ct.secondary_sponsors %}
+                    <tr><td>
+                    <span style="font-weight: bold;">{% trans 'Institution' %}:</span> 
+                    {{ sponsors.institution }} 
+                    </td></tr>
+                {% endfor %}
+                </table>
+                </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'Source(s) of Monetary or Material Support' %}</legend>
+                <table border="0">
+                {%  for source_support in ct.support_sources %}
+                    <tr><td>
+                    <span style="font-weight: bold;">{% trans 'Institution' %}:</span> 
+                    {{ source_support.institution }} 
+                    </td></tr>
+                {% endfor %}
+                </table>
+                </fieldset>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans titles.2 %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span style="font-weight: bold;">
+                {% trans 'Health Condition(s) or Problem(s)' %}:</span> 
+                {{ ct.hc_freetext|linebreaks }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'General Descriptors for Health Condition(s)' %}</legend>
+                <table border="0">
+                {% for hc in ct.hc_code %}
+                    <tr><td>
+                    <span style="font-weight: bold;">{{ hc.code }}:</span> {{ hc.text }}
+                    </td></tr>
+                {% endfor %}
+                </table>
+                </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'Specific Descriptors for Health Condition(s)' %}</legend>
+                <table border="0">
+                {% for hc in ct.hc_keyword %}
+                    <tr><td>
+                    <span style="font-weight: bold;">{{ hc.code }}:</span> {{ hc.text }}
+                    </td></tr>
+                {% endfor %}
+                </table>
+                </fieldset>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans titles.3 %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span style="font-weight: bold;">{% trans 'Interventions' %}:</span> 
+                {{ ct.i_freetext|linebreaks }}</td>
+            </tr>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'Intervention Code(s)' %}</legend>
+                <table border="0">
+                {% for iv in ct.intervention_code %}
+                    <tr><td>
+                    <span style="font-weight: bold;">{{ iv.label }}:</span> {{ iv.description }}
+                    </td></tr>
+                {% endfor %}
+                </table>
+                </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'Descriptor for Intervention(s)' %}</legend>
+                <table border="0">
+                {% for iv in ct.intervention_keyword %}
+                    <tr><td>
+                    <span style="font-weight: bold;">{{ iv.code }}:</span> {{ iv.text }}
+                    </td></tr>
+                {% endfor %}
+                </table>
+                </fieldset>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans titles.4 %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span style="font-weight: bold;">{% trans 'Recruitment Status' %}:</span> 
+                {{ ct.recruitment_status }}</td>
+            </tr>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'Recruitment Country' %}</legend>
+                <table border="0"><tr><td>
+                {% for recruitment in ct.trial_recruitment_country %}
+                    {{ recruitment.description }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+                </td></tr></table>
+                </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <span style="font-weight: bold;">
+                    {% trans 'Planned Date of First Enrollment' %}:
+                </span> {{ ct.enrollment_start_planned }}</td>
+            </tr>
+            <tr>
+                <td>
+                    <table border="0">
+                    <tr>
+                        <th>
+                        <span style="font-weight: bold;">{% trans 'Target Sample Size' %}
+                        </th>
+                        <th>
+                        <span style="font-weight: bold;">{% trans 'Gender (inclusion sex)' %}</span> 
+                        </th>
+                        <th>
+                        <span style="font-weight: bold;">{% trans 'Inclusion Minimum Age' %}</span> 
+                        </th>
+                        <th>
+                        <span style="font-weight: bold;">{% trans 'Inclusion Maximum Age' %}</span> 
+                        </th>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>
+                        {{ ct.target_sample_size }}
+                        </td>
+                        <td>
+                        {{ ct.gender }}
+                        </td>
+                        <td>
+                        {{ ct.agemin_value }} {{ ct.agemin_unit }}
+                        </td>
+                        <td>
+                        {{ ct.agemax_value }} {{ ct.agemax_unit }}
+                        </td>
+                    <tr/>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td><span style="font-weight: bold;">{% trans 'Inclusion Criteria' %}:</span> 
+                {{ ct.inclusion_criteria|linebreaks }}</td>
+            </tr>
+            <tr>
+                <td><span style="font-weight: bold;">{% trans 'Exclusion Criteria' %}:</span> 
+                {{ ct.exclusion_criteria|linebreaks }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans titles.5 %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span style="font-weight: bold;">{% trans 'Study Design' %}:</span> 
+                {{ ct.study_design|linebreaks }}</td>
+            </tr>
+            <tr>
+                <td>
+                    <table border="0">
+                    <tr>
+                        <th>
+                        <span style="font-weight: bold;">{% trans 'Expanded access program' %}
+                        </th>
+                        <th>
+                        <span style="font-weight: bold;">{% trans 'Study Purpose' %}
+                        </th>
+                        <th>
+                        <span style="font-weight: bold;">{% trans 'Intervention Assignment' %}</span> 
+                        </th>
+                        <th>
+                        <span style="font-weight: bold;">{% trans 'Number of arms' %}</span> 
+                        </th>
+                        <th>
+                        <span style="font-weight: bold;">{% trans 'Masking type' %}</span> 
+                        </th>
+                        <th>
+                        <span style="font-weight: bold;">{% trans 'Allocation type' %}</span> 
+                        </th>
+                        <th>
+                        <span style="font-weight: bold;">{% trans 'Study Phase' %}</span> 
+                        </th>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>
+                        {{ ct.expanded_access_program }}
+                        </td>
+                        <td>
+                        {{ ct.purpose }}
+                        </td>
+                        <td>
+                        {{ ct.intervention_assignment }}
+                        </td>
+                        <td>
+                        {{ ct.number_of_arms }}
+                        </td>
+                        <td>
+                        {{ ct.masking }}
+                        </td>
+                        <td>
+                        {{ ct.allocation }}
+                        </td>
+                        <td>
+                        {{ ct.phase }}
+                        </td>
+                    <tr/>
+                    </table>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans titles.6 %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'Primary Outcomes' %}</legend>
+                <table border="0" width="100%">
+                {% for outcomes in ct.primary_outcomes %}
+                    <tr><td>
+                    <div style="background-color: #ddffdd; padding: 10px;">
+                    {{ forloop.counter }} - {{ outcomes.description }}
+                    </div>
+                    </td></tr>
+                {% endfor %}
+                </table>
+                </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'Secondary Outcomes' %}</legend>
+                <table border="0" width="100%">
+                {% for outcomes in ct.secondary_outcomes %}
+                    <tr><td>
+                    <div style="background-color: #ddffdd; padding: 10px;">
+                    {{ forloop.counter }} - {{ outcomes.description }}
+                    </div>
+                    </td></tr>
+                {% endfor %}
+                </table>
+                </fieldset>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans titles.7 %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'Contacts for Public Queries' %}</legend>
+                <table border="0" width="100%"><tr>
+                {% for contact in ct.public_contacts %}
+                    <td>
+                    <span style="font-weight: bold;">{% trans 'Full Name' %}: </span>
+                    {{ contact.firstname }} {{ contact.middlename }} {{ contact.lastname }} <br />
+                    <span style="font-weight: bold;">{% trans 'Address' %}: </span>
+                    {{ contact.address }} <br />
+                    <span style="font-weight: bold;">{% trans 'City' %}: </span>
+                    {{ contact.city }} {{ contact.country }} <br />
+                    <span style="font-weight: bold;">{% trans 'Zip Code' %}: </span>
+                    {{ contact.zip }} <br />
+                    <span style="font-weight: bold;">{% trans 'Telephone' %}: </span>
+                    {{ contact.telephone }} <br />
+                    <span style="font-weight: bold;">E-mail: </span>
+                    {{ contact.email }} <br />
+                    <span style="font-weight: bold;">{% trans 'Affiliation' %}: </span>
+                    {{ contact.affiliation }} <br />
+                    </td>
+                    {% if forloop.counter|divisibleby:"3" and not forloop.last %}
+                        </tr><tr>
+                    {% endif %}
+                {% endfor %}
+                </tr>
+                </table>
+                </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'Contacts for Scientific Queries' %}</legend>
+                <table border="0" width="100%"><tr>
+                {% for contact in ct.scientific_contacts %}
+                    <td>
+                    <span style="font-weight: bold;">{% trans 'Full Name' %}: </span>
+                    {{ contact.firstname }} {{ contact.middlename }} {{ contact.lastname }} <br />
+                    <span style="font-weight: bold;">{% trans 'Address' %}: </span>
+                    {{ contact.address }} <br />
+                    <span style="font-weight: bold;">{% trans 'City' %}: </span>
+                    {{ contact.city }} {{ contact.country }} <br />
+                    <span style="font-weight: bold;">{% trans 'Zip Code' %}: </span>
+                    {{ contact.zip }} <br />
+                    <span style="font-weight: bold;">{% trans 'Telephone' %}: </span>
+                    {{ contact.telephone }} <br />
+                    <span style="font-weight: bold;">E-mail: </span>
+                    {{ contact.email }} <br />
+                    <span style="font-weight: bold;">{% trans 'Affiliation' %}: </span>
+                    {{ contact.affiliation }} <br />
+                    </td>
+                    {% if forloop.counter|divisibleby:"3" and not forloop.last %}
+                        </tr><tr>
+                    {% endif %}
+                {% endfor %}
+                </tr>
+                </table>
+                </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'Contact(s) for Site Queries' %}</legend>
+                <table border="0" width="100%"><tr>
+                {% for contact in ct.site_contacts %}
+                    <td>
+                    <span style="font-weight: bold;">{% trans 'Full Name' %}: </span>
+                    {{ contact.firstname }} {{ contact.middlename }} {{ contact.lastname }} <br />
+                    <span style="font-weight: bold;">{% trans 'Address' %}: </span>
+                    {{ contact.address }} <br />
+                    <span style="font-weight: bold;">{% trans 'City' %}: </span>
+                    {{ contact.city }} {{ contact.country }} <br />
+                    <span style="font-weight: bold;">{% trans 'Zip Code' %}: </span>
+                    {{ contact.zip }} <br />
+                    <span style="font-weight: bold;">{% trans 'Telephone' %}: </span>
+                    {{ contact.telephone }} <br />
+                    <span style="font-weight: bold;">E-mail: </span>
+                    {{ contact.email }} <br />
+                    <span style="font-weight: bold;">{% trans 'Affiliation' %}: </span>
+                    {{ contact.affiliation }} <br />
+                    </td>
+                    {% if forloop.counter|divisibleby:"3" and not forloop.last %}
+                        </tr><tr>
+                    {% endif %}
+                {% endfor %}
+                </tr>
+                </table>
+                </fieldset>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans titles.8 %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                <fieldset>
+                <legend>{% trans 'Files' %}</legend>
+                <table border="0">
+                {%  for attach in ct.trial_attach %}
+                    {% if attach.public %}
+                        <tr><td>
+                        <a href="http://{{host}}{{attach.get_relative_url}}">
+                        http://{{host}}{{attach.get_relative_url}}</a> 
+                        ({{ attach.description }})
+                        </td></tr>
+                    {% endif %}
+                {% endfor %}
+                </table>
+                </fieldset>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 {% endblock %}

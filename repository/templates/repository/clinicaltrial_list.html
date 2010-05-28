@@ -1,15 +1,57 @@
 {% extends "base.html" %}
 
-{% block body_title %}Last Clinical Trials{% endblock %}
+{% load i18n %}
+
+{% block body_title %}Clinical Trials{% endblock %}
 
 {% block body %}
-    {% if object_list %}
-            <ul>
-            {% for ct in object_list %}
-                <li>{{ ct }}</li>
+
+    {% if clinicalTrials.object_list %}
+        {% for ct in clinicalTrials.object_list %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                      <a href="{% url repository.trialview ct.id %}">{{ ct.main_title }}</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{% trans 'Primary Id Number' %}: 
+                    <a href="{% url repository.trialview ct.id %}">{{ ct.trial_id }}</a></td>
+                    <td>{% trans 'Recruitment Status' %}: {{ ct.recruitment_status }}</td>
+                    <td>{% trans 'Date of Registration' %}: {{ ct.date_registration }}</td>
+                </tr>
+            </tbody>
+        </table>
+        {% endfor %}
+        
+        {% if clinicalTrials.paginator.num_pages > 1 %}
+        <span class="step-links">
+            {% if clinicalTrials.has_previous %}
+                <a href="?page=1"><<</a>
+                <a href="?page={{ clinicalTrials.previous_page_number }}"><</a>
+            {% endif %}
+            
+            {% for page in clinicalTrials.paginator.page_range %}
+                {% if page == clinicalTrials.number %}
+                  <span class="current">
+                      {{ page }} 
+                  </span>
+                {% else %}
+                    <a href="?page={{ page }}">{{ page }}</a> 
+                {% endif %}
             {% endfor %}
-            </ul>
+            
+            {% if clinicalTrials.has_next %}
+                  <a href="?page={{ clinicalTrials.next_page_number }}">></a>
+                  <a href="?page={{ clinicalTrials.paginator.num_pages }}">>></a>
+            {% endif %}
+        </span>
+        {% endif %}
+
     {% else %}
-            <p>No clinical trials are available.</p>
+        <p>No clinical trials are available.</p>
     {% endif %}
 {% endblock %}
