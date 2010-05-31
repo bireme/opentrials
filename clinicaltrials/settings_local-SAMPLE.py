@@ -1,4 +1,4 @@
-DEBUG = False
+DEBUG = True
 
 ADMINS = (
     ('Webmaster Ensaios Clinicos', 'appec@bireme.org'),
@@ -23,6 +23,8 @@ EMAIL_HOST_PASSWORD = '?????'
 EMAIL_USE_TLS = False
 
 SERVER_EMAIL = EMAIL_HOST_USER
+
+PAGINATOR_CT_PER_PAGE = 10
 
 if DEBUG:
     DEBUG_PROPAGATE_EXCEPTIONS = True
