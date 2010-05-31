@@ -141,6 +141,8 @@ SUBMISSIONS_XML_PATH = os.path.join(MEDIA_ROOT, 'submissions_xml')
 
 FIXTURE_DIRS = ('fixtures',)
 
+PAGINATOR_CT_PER_PAGE = 2
+
 ### END Clinical Trials Repository customization settings
 #################################################################
 

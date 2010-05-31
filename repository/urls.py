@@ -5,7 +5,7 @@ from repository.models import ClinicalTrial
 
 from repository.views import edit_trial_index, full_view, index,step_1, step_2, step_3
 from repository.views import step_4, step_5, step_6, step_7, step_8, step_9, new_institution
-from repository.views import search
+from repository.views import list_all
 
 from django.conf import settings
 
@@ -42,8 +42,7 @@ urlpatterns = patterns('',
     url(r'^step_8/(\d+)/$', step_8, name='step_8'),
     url(r'^step_9/(\d+)/$', step_9, name='step_9'),
     url(r'^$', index),
-    url(r'^list/$', object_list, info_dict, name='repository.list_all'),
+    url(r'^list/$', list_all, name='repository.list_all'),
     url(r'^list/page(?P<page>[0-9]+)$', object_list, info_dict),
-    url(r'^search/(\w+)/$', search, name='repository.search'),
-    #url(r'^search/$', list_all, name='repository.list_all'),
+    
 )

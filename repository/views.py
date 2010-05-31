@@ -28,6 +28,8 @@ from django.forms.models import inlineformset_factory, modelformset_factory
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.template import loader
+from django.db.models import Q
+from django.views.generic.list_detail import object_list
 
 EXTRA_FORMS = 1
 TRIAL_FORMS = ['Trial Identification',
@@ -451,11 +453,14 @@ def step_9(request, trial_pk):
                                'steps': step_list(trial_pk)},
                                context_instance=RequestContext(request))
 
-def search(request, term):
+def list_all(request):
 
-    clinicalTrials = ClinicalTrial.objects.all()
-    
-    return render_to_response('repository/search.html',
-                                {'clinicalTrials': clinicalTrials,
-                                 'term': term},
-                                context_instance=RequestContext(request))
+    q = request.GET.get('q', '')
+
+    if q:
+        queryset = ClinicalTrial.objects.filter(Q(scientific_title__contains=q)
+                                               |Q(public_title__contains=q))
+    else:
+        queryset = ClinicalTrial.objects.all()
+
+    return object_list(request, queryset=queryset)
