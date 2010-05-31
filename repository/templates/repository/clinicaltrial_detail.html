@@ -5,7 +5,7 @@
 {% block body_title %}{% trans 'Clinical Trial' %}{% endblock %}
 
 {% block body %}
-    <h2>{{ ct }}</h2>
+    <h2>{{ object }}</h2>
     <table class="table">
         <thead>
             <tr>
@@ -15,26 +15,26 @@
         <tbody>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Scientific Title' %}:</span> 
-                {{ ct.scientific_title }}</td>
+                {{ objeobject.scientific_title }}</td>
             </tr>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Scientific Acronym' %}:</span> 
-                {{ ct.scientific_acronym_display }}</td>
+                {{ object.scientific_acronym_display }}</td>
             </tr>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Public Title' %}:</span> 
-                {{ ct.public_title }}</td>
+                {{ object.public_title }}</td>
             </tr>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Public Acronym' %}:</span> 
-                {{ ct.acronym_display }}</td>
+                {{ object.acronym_display }}</td>
             </tr>
             <tr>
                 <td>
                 <fieldset>
                 <legend>{% trans 'Secondary Identifying Numbers' %}</legend>
                 <table border="0">
-                {% for secid in ct.trial_number %}
+                {% for secid in object.trial_number %}
                     <tr><td>
                     <span style="font-weight: bold;">{% trans 'Secondary Identifying Numbers' %}:</span> 
                     {{ secid.id_number }} 
@@ -59,14 +59,14 @@
         <tbody>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Primary Sponsor' %}:</span> 
-                {{ ct.primary_sponsor }}</td>
+                {{ object.primary_sponsor }}</td>
             </tr>
             <tr>
                 <td>
                 <fieldset>
                 <legend>{% trans 'Secondary Sponsors' %}</legend>
                 <table border="0">
-                {%  for sponsors in ct.secondary_sponsors %}
+                {%  for sponsors in object.secondary_sponsors %}
                     <tr><td>
                     <span style="font-weight: bold;">{% trans 'Institution' %}:</span> 
                     {{ sponsors.institution }} 
@@ -81,7 +81,7 @@
                 <fieldset>
                 <legend>{% trans 'Source(s) of Monetary or Material Support' %}</legend>
                 <table border="0">
-                {%  for source_support in ct.support_sources %}
+                {%  for source_support in object.support_sources %}
                     <tr><td>
                     <span style="font-weight: bold;">{% trans 'Institution' %}:</span> 
                     {{ source_support.institution }} 
@@ -104,7 +104,7 @@
             <tr>
                 <td><span style="font-weight: bold;">
                 {% trans 'Health Condition(s) or Problem(s)' %}:</span> 
-                {{ ct.hc_freetext|linebreaks }}
+                {{ object.hc_freetext|linebreaks }}
                 </td>
             </tr>
             <tr>
@@ -112,7 +112,7 @@
                 <fieldset>
                 <legend>{% trans 'General Descriptors for Health Condition(s)' %}</legend>
                 <table border="0">
-                {% for hc in ct.hc_code %}
+                {% for hc in object.hc_code %}
                     <tr><td>
                     <span style="font-weight: bold;">{{ hc.code }}:</span> {{ hc.text }}
                     </td></tr>
@@ -126,7 +126,7 @@
                 <fieldset>
                 <legend>{% trans 'Specific Descriptors for Health Condition(s)' %}</legend>
                 <table border="0">
-                {% for hc in ct.hc_keyword %}
+                {% for hc in object.hc_keyword %}
                     <tr><td>
                     <span style="font-weight: bold;">{{ hc.code }}:</span> {{ hc.text }}
                     </td></tr>
@@ -147,14 +147,14 @@
         <tbody>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Interventions' %}:</span> 
-                {{ ct.i_freetext|linebreaks }}</td>
+                {{ object.i_freetext|linebreaks }}</td>
             </tr>
             <tr>
                 <td>
                 <fieldset>
                 <legend>{% trans 'Intervention Code(s)' %}</legend>
                 <table border="0">
-                {% for iv in ct.intervention_code %}
+                {% for iv in object.intervention_code %}
                     <tr><td>
                     <span style="font-weight: bold;">{{ iv.label }}:</span> {{ iv.description }}
                     </td></tr>
@@ -168,7 +168,7 @@
                 <fieldset>
                 <legend>{% trans 'Descriptor for Intervention(s)' %}</legend>
                 <table border="0">
-                {% for iv in ct.intervention_keyword %}
+                {% for iv in object.intervention_keyword %}
                     <tr><td>
                     <span style="font-weight: bold;">{{ iv.code }}:</span> {{ iv.text }}
                     </td></tr>
@@ -189,14 +189,14 @@
         <tbody>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Recruitment Status' %}:</span> 
-                {{ ct.recruitment_status }}</td>
+                {{ object.recruitment_status }}</td>
             </tr>
             <tr>
                 <td>
                 <fieldset>
                 <legend>{% trans 'Recruitment Country' %}</legend>
                 <table border="0"><tr><td>
-                {% for recruitment in ct.trial_recruitment_country %}
+                {% for recruitment in object.trial_recruitment_country %}
                     {{ recruitment.description }}{% if not forloop.last %}, {% endif %}
                 {% endfor %}
                 </td></tr></table>
@@ -207,7 +207,7 @@
                 <td>
                 <span style="font-weight: bold;">
                     {% trans 'Planned Date of First Enrollment' %}:
-                </span> {{ ct.enrollment_start_planned }}</td>
+                </span> {{ object.enrollment_start_planned }}</td>
             </tr>
             <tr>
                 <td>
@@ -228,16 +228,16 @@
                     </tr>
                     <tr style="text-align: center;">
                         <td>
-                        {{ ct.target_sample_size }}
+                        {{ object.target_sample_size }}
                         </td>
                         <td>
-                        {{ ct.gender }}
+                        {{ object.gender }}
                         </td>
                         <td>
-                        {{ ct.agemin_value }} {{ ct.agemin_unit }}
+                        {{ object.agemin_value }} {{ object.agemin_unit }}
                         </td>
                         <td>
-                        {{ ct.agemax_value }} {{ ct.agemax_unit }}
+                        {{ object.agemax_value }} {{ object.agemax_unit }}
                         </td>
                     <tr/>
                     </table>
@@ -245,11 +245,11 @@
             </tr>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Inclusion Criteria' %}:</span> 
-                {{ ct.inclusion_criteria|linebreaks }}</td>
+                {{ object.inclusion_criteria|linebreaks }}</td>
             </tr>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Exclusion Criteria' %}:</span> 
-                {{ ct.exclusion_criteria|linebreaks }}</td>
+                {{ object.exclusion_criteria|linebreaks }}</td>
             </tr>
         </tbody>
     </table>
@@ -263,7 +263,7 @@
         <tbody>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Study Design' %}:</span> 
-                {{ ct.study_design|linebreaks }}</td>
+                {{ object.study_design|linebreaks }}</td>
             </tr>
             <tr>
                 <td>
@@ -293,25 +293,25 @@
                     </tr>
                     <tr style="text-align: center;">
                         <td>
-                        {{ ct.expanded_access_program }}
+                        {{ object.expanded_access_program }}
                         </td>
                         <td>
-                        {{ ct.purpose }}
+                        {{ object.purpose }}
                         </td>
                         <td>
-                        {{ ct.intervention_assignment }}
+                        {{ object.intervention_assignment }}
                         </td>
                         <td>
-                        {{ ct.number_of_arms }}
+                        {{ object.number_of_arms }}
                         </td>
                         <td>
-                        {{ ct.masking }}
+                        {{ object.masking }}
                         </td>
                         <td>
-                        {{ ct.allocation }}
+                        {{ object.allocation }}
                         </td>
                         <td>
-                        {{ ct.phase }}
+                        {{ object.phase }}
                         </td>
                     <tr/>
                     </table>
@@ -333,7 +333,7 @@
                 <fieldset>
                 <legend>{% trans 'Primary Outcomes' %}</legend>
                 <table border="0" width="100%">
-                {% for outcomes in ct.primary_outcomes %}
+                {% for outcomes in object.primary_outcomes %}
                     <tr><td>
                     <div style="background-color: #ddffdd; padding: 10px;">
                     {{ forloop.counter }} - {{ outcomes.description }}
@@ -349,7 +349,7 @@
                 <fieldset>
                 <legend>{% trans 'Secondary Outcomes' %}</legend>
                 <table border="0" width="100%">
-                {% for outcomes in ct.secondary_outcomes %}
+                {% for outcomes in object.secondary_outcomes %}
                     <tr><td>
                     <div style="background-color: #ddffdd; padding: 10px;">
                     {{ forloop.counter }} - {{ outcomes.description }}
@@ -375,22 +375,22 @@
                 <fieldset>
                 <legend>{% trans 'Contacts for Public Queries' %}</legend>
                 <table border="0" width="100%"><tr>
-                {% for contact in ct.public_contacts %}
+                {% for contact in object.public_contacts %}
                     <td>
                     <span style="font-weight: bold;">{% trans 'Full Name' %}: </span>
-                    {{ contact.firstname }} {{ contact.middlename }} {{ contact.lastname }} <br />
+                    {{ contaobject.firstname }} {{ contaobject.middlename }} {{ contaobject.lastname }} <br />
                     <span style="font-weight: bold;">{% trans 'Address' %}: </span>
-                    {{ contact.address }} <br />
+                    {{ contaobject.address }} <br />
                     <span style="font-weight: bold;">{% trans 'City' %}: </span>
-                    {{ contact.city }} {{ contact.country }} <br />
+                    {{ contaobject.city }} {{ contaobject.country }} <br />
                     <span style="font-weight: bold;">{% trans 'Zip Code' %}: </span>
-                    {{ contact.zip }} <br />
+                    {{ contaobject.zip }} <br />
                     <span style="font-weight: bold;">{% trans 'Telephone' %}: </span>
-                    {{ contact.telephone }} <br />
+                    {{ contaobject.telephone }} <br />
                     <span style="font-weight: bold;">E-mail: </span>
-                    {{ contact.email }} <br />
+                    {{ contaobject.email }} <br />
                     <span style="font-weight: bold;">{% trans 'Affiliation' %}: </span>
-                    {{ contact.affiliation }} <br />
+                    {{ contaobject.affiliation }} <br />
                     </td>
                     {% if forloop.counter|divisibleby:"3" and not forloop.last %}
                         </tr><tr>
@@ -406,22 +406,22 @@
                 <fieldset>
                 <legend>{% trans 'Contacts for Scientific Queries' %}</legend>
                 <table border="0" width="100%"><tr>
-                {% for contact in ct.scientific_contacts %}
+                {% for contact in object.scientific_contacts %}
                     <td>
                     <span style="font-weight: bold;">{% trans 'Full Name' %}: </span>
-                    {{ contact.firstname }} {{ contact.middlename }} {{ contact.lastname }} <br />
+                    {{ contaobject.firstname }} {{ contaobject.middlename }} {{ contaobject.lastname }} <br />
                     <span style="font-weight: bold;">{% trans 'Address' %}: </span>
-                    {{ contact.address }} <br />
+                    {{ contaobject.address }} <br />
                     <span style="font-weight: bold;">{% trans 'City' %}: </span>
-                    {{ contact.city }} {{ contact.country }} <br />
+                    {{ contaobject.city }} {{ contaobject.country }} <br />
                     <span style="font-weight: bold;">{% trans 'Zip Code' %}: </span>
-                    {{ contact.zip }} <br />
+                    {{ contaobject.zip }} <br />
                     <span style="font-weight: bold;">{% trans 'Telephone' %}: </span>
-                    {{ contact.telephone }} <br />
+                    {{ contaobject.telephone }} <br />
                     <span style="font-weight: bold;">E-mail: </span>
-                    {{ contact.email }} <br />
+                    {{ contaobject.email }} <br />
                     <span style="font-weight: bold;">{% trans 'Affiliation' %}: </span>
-                    {{ contact.affiliation }} <br />
+                    {{ contaobject.affiliation }} <br />
                     </td>
                     {% if forloop.counter|divisibleby:"3" and not forloop.last %}
                         </tr><tr>
@@ -437,22 +437,22 @@
                 <fieldset>
                 <legend>{% trans 'Contact(s) for Site Queries' %}</legend>
                 <table border="0" width="100%"><tr>
-                {% for contact in ct.site_contacts %}
+                {% for contact in object.site_contacts %}
                     <td>
                     <span style="font-weight: bold;">{% trans 'Full Name' %}: </span>
-                    {{ contact.firstname }} {{ contact.middlename }} {{ contact.lastname }} <br />
+                    {{ contaobject.firstname }} {{ contaobject.middlename }} {{ contaobject.lastname }} <br />
                     <span style="font-weight: bold;">{% trans 'Address' %}: </span>
-                    {{ contact.address }} <br />
+                    {{ contaobject.address }} <br />
                     <span style="font-weight: bold;">{% trans 'City' %}: </span>
-                    {{ contact.city }} {{ contact.country }} <br />
+                    {{ contaobject.city }} {{ contaobject.country }} <br />
                     <span style="font-weight: bold;">{% trans 'Zip Code' %}: </span>
-                    {{ contact.zip }} <br />
+                    {{ contaobject.zip }} <br />
                     <span style="font-weight: bold;">{% trans 'Telephone' %}: </span>
-                    {{ contact.telephone }} <br />
+                    {{ contaobject.telephone }} <br />
                     <span style="font-weight: bold;">E-mail: </span>
-                    {{ contact.email }} <br />
+                    {{ contaobject.email }} <br />
                     <span style="font-weight: bold;">{% trans 'Affiliation' %}: </span>
-                    {{ contact.affiliation }} <br />
+                    {{ contaobject.affiliation }} <br />
                     </td>
                     {% if forloop.counter|divisibleby:"3" and not forloop.last %}
                         </tr><tr>
@@ -478,7 +478,7 @@
                 <fieldset>
                 <legend>{% trans 'Files' %}</legend>
                 <table border="0">
-                {%  for attach in ct.trial_attach %}
+                {%  for attach in object.trial_attach %}
                     {% if attach.public %}
                         <tr><td>
                         <a href="http://{{host}}{{attach.get_relative_url}}">
