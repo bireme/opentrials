@@ -1,0 +1,53 @@
+------------------
+Project Concept
+------------------
+
+ - ICTRP/WHO Team
+ - Abel Packer (BIREME/PAHO/WHO)
+ - Renato Murasaki (BIREME/PAHO/WHO)
+ - Rodrigo Senra (GPr Sistemas)
+
+------------------
+Requirements
+------------------
+
+ - ICTRP/WHO Team
+ - Josué Laguardia (ICICT/Fiocruz)
+ - Margot Prevot (ICICT/Fiocruz)
+ - Ricardo Gamarski (DECIT/Ministério da Saúde do Brasil)
+ - Claudio Nishzawa (ANVISA)
+ - Luciano Ramalho (BIREME/PAHO/WHO)
+ - Renato Murasaki (BIREME/PAHO/WHO)
+    
+------------------
+Data modeling
+------------------
+
+ - ICTRP/WHO Team
+ - Luciano Ramalho (BIREME/PAHO/WHO)
+
+------------------
+Python programming
+------------------
+
+ - Fabio Batalha (BIREME/PAHO/WHO)
+ - Fabio Montefuscolo (BIREME/PAHO/WHO)
+ - Gustavo Fonseca (BIREME/PAHO/WHO)
+ - Jamil Atta (BIREME/PAHO/WHO)
+ - Luciano Ramalho (BIREME/PAHO/WHO)
+ - Rafael Soares (BIREME/PAHO/WHO)
+    
+------------------
+Design
+------------------
+
+ - Julio Takayama (BIREME/PAHO/WHO)
+ - Marina de Sene Pierri (BIREME/PAHO/WHO)
+    
+------------------
+Django consulting
+------------------
+
+ - Adriano Petrich
+ - Marinho Brandão
+   

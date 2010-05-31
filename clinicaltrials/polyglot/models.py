@@ -5,12 +5,6 @@ from django.contrib.contenttypes.models import ContentType
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 
-class SimpleVocabularyManager(models.Manager):
-    def get_by_natural_key(self, content_type_key, content_object_key, language):
-        return self.get(content_type__natural_key=content_type, 
-                        content_object__natural_key=content_object,
-                        language=language)
-
 class Translation(models.Model):
     language = models.CharField(_('Language'), max_length=8,
                                 blank=False, null=False, db_index=True,

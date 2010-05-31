@@ -41,7 +41,12 @@ class QuestionTranslation(Translation):
     title = models.TextField(_('Title'), max_length=255)
     answer = models.TextField(_('Answer'), max_length=2048)
 
+class FieldHelpManager(models.Manager):
+    def get_by_natural_key(self, form, field):
+        return self.get(form=form, field=field)
+
 class FieldHelp(models.Model):
+    objects = FieldHelpManager()
     class Meta:
         verbose_name_plural = _('Field Help')
         unique_together = ('form', 'field')
@@ -56,6 +61,9 @@ class FieldHelp(models.Model):
 
     def __unicode__(self):
         return self.text
+    
+    def natural_key(self):
+        return (self.form, self.field)
 
 class FieldHelpTranslation(Translation):
     text = models.TextField(max_length=2048, blank=True)
