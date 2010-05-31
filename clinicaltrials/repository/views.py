@@ -19,6 +19,7 @@ from repository.trds_forms import ScientificContactForm, ContactForm, NewInstitu
 from repository.trds_forms import SiteContactForm
 
 import choices
+import settings
 from django.core import serializers
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
@@ -48,8 +49,8 @@ def edit_trial_index(request, trial_pk):
     for i, name in enumerate(TRIAL_FORMS):
         data = dict(label=_(name))
         data['url'] = reverse('step_' + str(i + 1), args=[trial_pk])
-        data['icon'] = '/media/img/admin/icon_alert.gif'
-        data['msg'] = 'Blank fields'
+        data['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_alert.gif'
+        data['msg'] = _('Blank fields')
         links.append(data)
     return render_to_response('repository/trial_index.html',
                               {'trial_pk':trial_pk,
@@ -168,9 +169,6 @@ def step_2(request, trial_pk):
         secondary_forms = SecondarySponsorSet(instance=ct)
         sources_form = SupportSourceSet(instance=ct)
 
-#    import pdb
-#    pdb.set_trace()
-
     forms = [form]
     formsets = [secondary_forms,sources_form]
     return render_to_response('repository/step_2.html',
@@ -288,6 +286,7 @@ def step_5(request, trial_pk):
 
         if form.is_valid():
             form.save()
+        return HttpResponseRedirect(reverse('step_5',args=[trial_pk]))
     else:
         form = RecruitmentForm(instance=ct)
 
@@ -310,6 +309,7 @@ def step_6(request, trial_pk):
 
         if form.is_valid():
             form.save()
+        return HttpResponseRedirect(reverse('step_6',args=[trial_pk]))
     else:
         form = StudyTypeForm(instance=ct)
 

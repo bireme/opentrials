@@ -5,6 +5,15 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.admin.views.decorators import staff_member_required
 
+from django.core import serializers
+from django.core.exceptions import ImproperlyConfigured
+from django.core.management.commands.dumpdata import sort_dependencies
+from django.db import router, DEFAULT_DB_ALIAS
+from django.db.models import get_apps, get_app
+
+from django.shortcuts import render_to_response
+from django.utils.datastructures import SortedDict
+
 @staff_member_required
 def export_database(request):
     #output backup
@@ -22,6 +31,31 @@ def export_database(request):
     response = HttpResponse(stdout, mimetype="application/octet-stream")
     response['Content-Disposition'] = 'attachment; filename=%s' % date.today().__str__()+'_db.sql.bz2'
     return response
+
+@staff_member_required
+def dump_data(request,appname):
+    app_list = SortedDict()
+    
+    try:
+        app = get_app(appname)
+        app_list[app] = None
+    except ImproperlyConfigured:
+        if appname == 'all':
+            for app in get_apps():
+                app_list[app] = None
+
+    if(len(app_list) > 0):
+        objects = []
+        for model in sort_dependencies(app_list.items()):
+            if not model._meta.proxy and router.allow_syncdb(DEFAULT_DB_ALIAS, model):
+                objects.extend(model._default_manager.using(DEFAULT_DB_ALIAS).all())
+        serializers.get_serializer('json')
+        json = serializers.serialize('json', objects, indent=2,use_natural_keys=True)
+        response = HttpResponse(json, mimetype='application/json');
+        response['Content-Disposition'] = 'attachment; filename=%s_%s_fixture.json' % (date.today().__str__(),appname)
+        return response
+
+    return render_to_response('diagnostic/dumpdata.html')
 
 def smoke_test(request):
     from datetime import datetime
