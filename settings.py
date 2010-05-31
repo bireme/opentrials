@@ -88,6 +88,7 @@ INSTALLED_APPS = (
     'tickets',
     'assistance',
     'decsclient',
+    'diagnostic',
     'polyglot',
     'rosetta',
     'registration',  # django-registration package

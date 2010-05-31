@@ -8,5 +8,6 @@ urlpatterns = patterns('',
     url(r'^reqdump/$', req_dump),
     url(r'^sysinfo/$', sys_info),
     url(r'^error/$', raise_error),
-    url(r'^dumpdb/$',export_database),
+    url(r'^dumpdb/$', export_database),
+    url(r'^dumpdata/(?P<appname>[a-z]+)?/?$', dump_data, name='dumpdata'),
 )

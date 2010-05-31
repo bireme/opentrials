@@ -54,7 +54,7 @@ class Submission(models.Model):
                                 choices=settings.MANAGED_LANGUAGES)
     staff_note = models.TextField(_('Submission note (staff use only)'), max_length=255,
                                     blank=True)
-    
+
     def save(self):
         if self.id:
             self.updated = datetime.now()
@@ -77,11 +77,11 @@ class Submission(models.Model):
             langs.add(rc.submission_language)
 
         return langs.intersection(set(settings.CHECKED_LANGUAGES))
-    
+
     def get_trans_languages(self):
         return self.get_mandatory_languages() - set([self.language])
-    
-    
+
+
 
     def get_absolute_url(self):
         # TODO: use reverse to replace absolute path
@@ -119,10 +119,10 @@ REMARK_TRANSITIONS = {
     'acknowledged':['verified', 'pending'],
     'verified':['pending'],
 }    
-    
+
 class Remark(models.Model):
     ''' A reviewer comment regarding a submission field.
-    
+
     The remark is directed at the field identified by the context attribute.
     '''
     creator = models.ForeignKey(User, editable=False)
@@ -132,7 +132,7 @@ class Remark(models.Model):
     text = models.TextField(_('Text'), max_length=2048)
     status = models.CharField(_('Status'), max_length=16, choices=REMARK_STATUS,
                               default=REMARK_STATUS[0][0])
-    
+
     def __unicode__(self):
         return '%s:%s' % (self.pk, self.submission_id)
 
