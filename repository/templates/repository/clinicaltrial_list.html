@@ -30,8 +30,8 @@
         {% if paginator.num_pages > 1 %}
         <span class="step-links">
             {% if has_previous %}
-                <a href="?page=1"><<</a>
-                <a href="?page={{ page_obj.previous_page_number }}"><</a>
+                <a href="?q={{ q }}&page=1"><<</a>
+                <a href="?q={{ q }}&page={{ page_obj.previous_page_number }}"><</a>
             {% endif %}
             
             {% for p in paginator.page_range %}
@@ -40,13 +40,13 @@
                       {{ p }}
                   </span>
                 {% else %}
-                    <a href="?page={{ p }}">{{ p }}</a>
+                    <a href="?q={{ q }}&page={{ p }}">{{ p }}</a>
                 {% endif %}
             {% endfor %}
             
             {% if has_next %}
-                  <a href="?page={{ page_obj.next_page_number }}">></a>
-                  <a href="?page={{ paginator.num_pages }}">>></a>
+                  <a href="?q={{ q }}&page={{ page_obj.next_page_number }}">></a>
+                  <a href="?q={{ q }}&page={{ paginator.num_pages }}">>></a>
             {% endif %}
         </span>
         {% endif %}

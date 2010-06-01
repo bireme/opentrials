@@ -7,18 +7,12 @@ from repository.views import edit_trial_index, full_view, index,step_1, step_2, 
 from repository.views import step_4, step_5, step_6, step_7, step_8, step_9, new_institution
 from repository.views import list_all
 
-from django.conf import settings
+
 
 info_dict_xml = {
     'queryset': ClinicalTrial.objects.all(),
     'template_name': 'repository/clinicaltrial_detail.xml',
     'mimetype': 'text/xml',
-}
-
-info_dict = {
-    'queryset': ClinicalTrial.objects.all(),
-    'template_name': 'repository/clinicaltrial_list.html',
-    'paginate_by': getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10),
 }
 
 info_dict_detail = {
@@ -43,6 +37,6 @@ urlpatterns = patterns('',
     url(r'^step_9/(\d+)/$', step_9, name='step_9'),
     url(r'^$', index),
     url(r'^list/$', list_all, name='repository.list_all'),
-    url(r'^list/page(?P<page>[0-9]+)$', object_list, info_dict),
+    #url(r'^list/page(?P<page>[0-9]+)$', object_list, info_dict),
     
 )

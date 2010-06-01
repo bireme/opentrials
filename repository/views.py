@@ -30,6 +30,7 @@ from django.contrib.auth.decorators import login_required
 from django.template import loader
 from django.db.models import Q
 from django.views.generic.list_detail import object_list
+from django.conf import settings
 
 EXTRA_FORMS = 1
 TRIAL_FORMS = ['Trial Identification',
@@ -453,7 +454,7 @@ def step_9(request, trial_pk):
                                'steps': step_list(trial_pk)},
                                context_instance=RequestContext(request))
 
-def list_all(request):
+def list_all(request, page=0, **kwargs):
 
     q = request.GET.get('q', '')
 
@@ -463,4 +464,11 @@ def list_all(request):
     else:
         queryset = ClinicalTrial.objects.all()
 
-    return object_list(request, queryset=queryset)
+    return object_list(
+                  request,
+                  queryset = queryset,
+                  paginate_by = getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10),
+                  page = page,
+                  extra_context = {'q': q,},
+                  **kwargs)
+
