@@ -2,7 +2,7 @@
 
 from django.template.context import RequestContext
 from reviewapp.models import Attachment, Submission
-from reviewapp.trds_forms import ExistingAttachmentForm,NewAttachmentForm
+from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
 
 from repository.models import ClinicalTrial, Descriptor, TrialNumber
 from repository.models import TrialSecondarySponsor, TrialSupportSource, Outcome

@@ -13,7 +13,7 @@ Requirements
 
  - ICTRP/WHO Team
  - Josué Laguardia (ICICT/Fiocruz)
- - Margot Prevot (ICICT/Fiocruz)
+ - Margareth Prevot (ICICT/Fiocruz)
  - Ricardo Gamarski (DECIT/Ministério da Saúde do Brasil)
  - Claudio Nishzawa (ANVISA)
  - Luciano Ramalho (BIREME/PAHO/WHO)
