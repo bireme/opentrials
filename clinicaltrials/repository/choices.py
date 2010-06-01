@@ -27,9 +27,9 @@ OUTCOME_INTEREST = [
 
 PUBLISHED_STATUS = 'published'
 TRIAL_RECORD_STATUS = [
-    ('pending', 'pending'),
-    ('rejected', 'rejected'),
+    ('processing', 'processing'),
     ('published', 'published'),
+    ('archived', 'archived'),
 ]
 
 INCLUSION_GENDER = [('-', 'both'), ('M', 'male'), ('F', 'female'),]
