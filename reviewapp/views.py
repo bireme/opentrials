@@ -63,9 +63,6 @@ def user_profile(request):
             profile_form.save()
 
             response = HttpResponseRedirect(reverse('reviewapp.dashboard'))
-            if hasattr(request, 'session'):
-                request.session['django_language'] = profile.preferred_language.lower()
-            response.set_cookie(settings.LANGUAGE_COOKIE_NAME, profile.preferred_language.lower())
 
             if password_form.changed_data:
                 if password_form.is_valid():
