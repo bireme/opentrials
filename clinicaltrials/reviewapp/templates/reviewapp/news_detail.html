@@ -8,11 +8,13 @@
 
 {% if object %}
 
-<h2>{{ object.created|date:'d/m/y' }} {{ object.title }}</h2>
+<h2>{{ object.title }}</h2>
 
-    <p>{{ object.text }}</p>
+    <p>{{ object.text|linebreaks }}</p>
     <br />
 
+<div class="date">{% trans 'Created:' %} {{ object.created|date:'d/m/Y' }}</div>
+    
 {% else %}
     <p>{% trans 'News unavailable.' %}</p>
 {% endif %}

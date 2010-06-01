@@ -10,17 +10,21 @@ from django.conf import settings
 from tickets.models import Ticket
 
 from reviewapp.models import Submission, News
-from reviewapp.trds_forms import UploadTrial, InitialTrialForm
-from reviewapp.trds_forms import UserForm, PrimarySponsorForm, UserProfileForm
+from reviewapp.forms import UploadTrial, InitialTrialForm
+from reviewapp.forms import UserForm, PrimarySponsorForm, UserProfileForm
 
 from repository.models import ClinicalTrial, CountryCode
 
 def index(request):
     clinical_trials = ClinicalTrial.objects.all()[:3]
-    news_list = News.objects.filter(status__exact='published').order_by('-created',)[:1]
+    latest = News.objects.filter(status__exact='published').order_by('-created',)[:1]
+    if len(latest) < 1:
+        latest = None
+    else:
+        latest = latest[0]
     return render_to_response('reviewapp/index.html', {
                               'clinical_trials': clinical_trials,
-                              'news': news_list[0],},
+                              'news': latest,},
                               context_instance=RequestContext(request))
 
 @login_required
