@@ -117,15 +117,14 @@ SEND_BROKEN_LINK_EMAILS = True
 DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
 
 # Notes:
-# 1) language codes should follow the IANA standard for language subtags
-#    source: http://www.iana.org/assignments/language-subtag-repository
+# 1) source: http://www.i18nguy.com/unicode/language-identifiers.html
 # 2) the first managed language is considered the default and is
 #    also the source language for content translation purposes
 MANAGED_LANGUAGES = (
-    (u'en',u'English'),
-    (u'es',u'Español'),
-    #(u'fr',u'Français'),
-    (u'pt',u'Português'),
+    (u'en-US',u'English'),
+    (u'es-ES',u'Español'),
+    #(u'fr-FR',u'Français'),
+    (u'pt-BR',u'Português'),
 )
 TARGET_LANGUAGES = MANAGED_LANGUAGES[1:] # exlude source language
 CHECKED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES]
