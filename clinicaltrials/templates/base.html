@@ -76,7 +76,13 @@
                         </div>
                         {% block stepmenu_bottom %}{% endblock %}
                     </div>
-                    <div id="rebracmenu">
+                    <div id="rebracmenu"><br />
+                        <div id="search" style="text-align: center;">
+                            <form action="{% url repository.list_all %}" method="get">
+                                <input type="text" id="id_q" name="q" value="" />
+                                <input type="submit" value="{% trans 'Search' %}"/>
+                            </form>
+                        </div>
                         <h2>{% trans "Options menu" %}</h2>
                         <div id="usermenu">
                             {% if user.is_authenticated %}
@@ -98,7 +104,6 @@
                             {% endif %}
                         </div>
                         <ul>
-                            <li><a href="{% url repository.list_all %}">{% trans 'Clinical Trials' %}</a></li>
                             <li><a href="{% url reviewapp.newslist %}">{% trans "News" %}</a></li>
                             <li><a href="/about/">{% trans "About" %}</a></li>
                             <li><a href="{% url assistance.faq %}">{% trans "Help" %}</a></li>
