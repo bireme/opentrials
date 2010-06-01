@@ -1,7 +1,39 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block body %}
 
-<h2>Futura página inicial do Registro Brasileiro de Ensaios Clínicos</h2>
+    {% if news %}
+        <h2>{{ news.created|date:'d/m/y' }} 
+        <a href="{% url reviewapp.news news.id %}">{{ news.title }}</a></h2>
+        <p>{{ news.short_text }} <a href="{% url reviewapp.news news.id %}">mais</a></p>
+    {% endif %}
+
+    <h2>{% trans 'Latest published trials' %}</h2>
+
+    {% if clinical_trials %}
+        {% for ct in clinical_trials %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        <a href="{% url repository.trialview ct.id %}">{{ ct.main_title }}</a>
+                    </th>  
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{% trans 'Primary Id Number' %}: 
+                    <a href="{% url repository.trialview ct.id %}">{{ ct.trial_id }}</a></td>
+                    <td>{% trans 'Recruitment Status' %}: {{ ct.recruitment_status }}</td>
+                    <td>{% trans 'Date of Registration' %}: {{ ct.date_registration }}</td>
+                </tr>
+            </tbody>
+        </table>
+        {% endfor %}
+    {% else %}
+        <p>{% trans 'No clinical trials have been published.' %}</p>
+    {% endif %}
 
 {% endblock %}
