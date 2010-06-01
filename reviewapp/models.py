@@ -13,10 +13,10 @@ from django.db.models.signals import post_save
 import settings
 
 SUBMISSION_STATUS = [
-    ('draft', 'draft'),
-    ('pending', 'pending'),
-    ('published', 'published'),
-    ('rejected', 'rejected'),
+    ('draft', 'draft'), # clinical trial is 'processing'
+    ('pending', 'pending'), # clinical trial remains 'processing'
+    ('approved', 'approved'), # clinical trial is 'published'
+    ('rejected', 'rejected'), # clinical trial remains or becomes 'processing'
 ]
 
 ACCESS = [
