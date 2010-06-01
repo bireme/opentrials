@@ -42,7 +42,7 @@ class CountryCode(SimpleVocabulary):
     ''' TRDS 11, Countries of Recruitment
         also used for Contacts and Institutions
     '''
-    submission_language = models.CharField(_('Submission Language'), max_length=2, blank=True)
+    submission_language = models.CharField(_('Submission Language'), max_length=10, blank=True)
 
     class Meta:
         ordering = ['description']
