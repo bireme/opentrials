@@ -3,76 +3,73 @@
 
 {% block body %}
 
-<h2>{% trans "Dashboard" %}</h2>
-
-<h3>{% trans "Your Submissions" %}</h3>
-<table class="table">
-    <thead>
-        <tr>
-            <th>{% trans "Created" %}</th>
-            <th>{% trans "Submission Title" %}</th>
-            <th>{% trans "Situation" %}</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for submission in user_submissions %}
-        <tr>
-            <td>{{ submission.created|date:'d M Y' }}</td>
-            <td>
-                <a href="{% url repository.edittrial submission.trial.pk %}">{{ submission.short_title }}</a>
-            </td>
-            <td>{{ submission.status }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-<a href="{% url reviewapp.submissionlist %}" class="button">{% trans "Show all"%}</a>
-
-
-<h3>{% trans "Tickets" %}</h3>
-{% if user_tickets %}
-<table class="table">
-    <col width="5%"/>
-    <col width="10%"/>
-    <col width="5%"/>
-    <col width="50%"/>
-    <col width="5%"/>
-    <col width="5%"/>
-    <col width="20%"/>
-    <tr>
-        <th>{% trans "Creation date" %}</th>
-        <th>{% trans "Context" %}</th>
-        <th>{% trans "Type" %}</th>
-        <th>{% trans "Subject" %}</th>
-        <th>{% trans "Status" %}</th>
-        <th>{% trans "Last update" %}</th>
-        <th></th>
-    </tr>
+<div class="leftCol">
+    <div class="submissions">
+        <h2>Submissions</h2>
+        <div class="actions"><a href="{% url reviewapp.new_submission %}" class="button addNew">{% trans 'New Submission' %}</a></div>
+        <table class="dataTable" cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>{% trans 'Date' %}</th>
+                    <th>{% trans 'Title' %}</th>
+                    <th>{% trans 'Status' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for submission in user_submissions %}
+                <tr class="{% cycle 'even' 'odd' %}">
+                    <td class="date">{{ submission.created|date:'Y/m/d H:i' }}</td>
+                    <td class="title">
+                        <a href="{% url repository.edittrial submission.trial.pk %}">{{ submission.short_title }}</a>
+                    </td>
+                    <td>{{ submission.status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url reviewapp.submissionlist %}" class="button showAll">{% trans 'Show all' %}</a>
+    </div>
+</div>
+<div class="rightCol">
+    <div class="tickets">
+        <h2>Tickets</h2>
+        <div class="actions"><a href="{% url ticket.open 'general' 'task'%}" class="addNew">{% trans 'New Ticket' %}</a></div>
+        <table class="dataTable" cellpadding="0" cellspacing="0" border="0">
+            <col width="5%"/><col width="10%"/><col width="5%"/><col width="50%"/><col width="5%"/><col width="5%"/><col width="20%"/>
+            <tr>
+                <th>{% trans "Date" %}</th>
+                <th>{% trans "Context" %}</th>
+                <th>{% trans "Type" %}</th>
+                <th>{% trans "Subject" %}</th>
+                <th>{% trans "Status" %}</th>
+                <th>{% trans "Updated" %}</th>
+                <th></th>
+            </tr>
     {% for ct in user_tickets %}
-    <tr>
-        <td>{{ ct.created }}</td>
+    <tr class="{% cycle 'even' 'odd' %}">
+        <td class="date">{{ ct.created|date:'Y/m/d H:i' }}</td>
         <td>{{ ct.context }}</td>
         <td>{{ ct.type }}</td>
-        <td>{{ ct.followup_set.latest.subject }}</td>
+        <td class="subject">{{ ct.followup_set.latest.subject }}</td>
         <td>{{ ct.followup_set.latest.status }}</td>
-        <td>{{ ct.followup_set.latest.iteration_date }}</td>
+        <td class="update">{{ ct.followup_set.latest.iteration_date|date:'Y/m/d H:i' }}</td>
         <td>
             <ul>
-                <li><a href="/ticket/history/{{ ct.pk }}/">{% trans "view history" %}</a></li>
+                <li><a class="history" href="/ticket/history/{{ ct.pk }}/" title="{% trans 'view history' %}"><span>{% trans "view history" %}</span></a></li>
                 {% if ct.is_closed or ct.is_resolved %}
                 {% else %}
-                <li><a href="/ticket/newiteration/{{ ct.pk }}/">{% trans "add iteration" %}</a></li>
+                <li><a class="iteraction" href="/ticket/newiteration/{{ ct.pk }}/" title="{% trans 'add iteration' %}"><span>{% trans "add iteration" %}</span></a></li>
                 {% endif %}
             </ul>
         </td>
     </tr>
     {% endfor %}
-</table>
-
-<a href="{% url ticket.index %}" class="button">{% trans "Show all"%}</a>
-
-{% else %}
-<p>{% trans "Have no open tickets" %}</p>
-{% endif %}
+        </table>
+        <a href="{% url ticket.index %}" class="button showAll">{% trans 'Show all' %}</a>
+    </div>
+</div>
+<div class="spacer">
+    &#160;
+</div>
 
 {% endblock %}
