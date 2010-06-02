@@ -315,6 +315,11 @@ blockquote {
 .middle .news SMALL, .middle .news A {
     display: block;
 }
+
+.middle .news A.pnumber {
+    display: inline;
+}
+
 .middle .news A.NewsTitle {
     font-size: 150%;
     color: #0c4762;
