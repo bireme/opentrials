@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block container_class %}container{% endblock %}
+
+{% block sidebar %}
+<div class="sideBar">
+    <div class="highlights">
+        <ul>
+            <li><a href="{% url reviewapp.new_submission %}" title="{% trans 'New Submission' %}"><img src="/static/images/button_newSubmission.jpg" alt="{% trans 'New Submission' %}"/></a></li>
+        </ul>
+    </div>
+    <div class="links">
+        <h2>Links</h2>
+        <ul>
+            <li><a href="#">Volutpat donec nam, condimentum dignissim maecenas</a></li>
+            <li><a href="#">Sed wisi consequat tellus in etiam</a></li>
+            <li><a href="#">Taciti ipsum sapien erat varius </a></li>
+            <li><a href="#">Felis pellentesque elementum  mus suspendisse</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
