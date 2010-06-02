@@ -19,6 +19,7 @@ H2, .topMenu LI A, .NewsTitle {
 H2 {
     color: #b00303;
     text-transform: uppercase;
+    margin: 0px;
 }
 IMG {
     border: none;
@@ -27,7 +28,10 @@ IMG {
 FORM {
     margin: 0px;
 }
-
+blockquote {
+    font-weight: bold;
+    font-style: italic;
+}
 .spacer {
     clear: both;
     display: block;
@@ -108,6 +112,8 @@ FORM {
     margin-right: 10px;
     background: url(../images/login_bg.jpg) no-repeat;
 }
+
+/* LOGIN */
 .loginForm {
     float: left;
     margin: 0px 8px 0px 12px;
@@ -120,7 +126,7 @@ FORM {
 }
 .loginForm .formSegment {
     float: left;
-    margin: 0px 8px 0px 0px;
+    margin: 1px 8px 0px 0px;
 }
 .loginForm .submit {
     background: url(../images/submit_login.gif) no-repeat;
@@ -133,23 +139,81 @@ FORM {
     width: 52px;
     height: 20px;
 }
+.loginForm .submit:hover {
+    background: url(../images/submit_loginHover.gif) no-repeat;
+}
 .loginOption {
     padding-top: 18px;
 }
 .loginOption UL {
     margin: 0px;
 }
-.loginOption LI {
+.loginOption LI, .userData_block LI {
     line-height: 90%;
 }
-.loginOption UL A {
+.loginOption UL A, .userData_block LI A {
     font-size: 80%;
     color: #333;
     text-decoration: none;
 }
+
+/* USER DATA */
+.userData {
+    margin-left: 10px;
+}
+.userData .userData_block {
+    float: left;
+    margin: 0px 8px 0px 12px;
+}
+.userData .userData_block, .userData .userData_block A {
+    color:#0c4762;
+}
+.userData .userData_block A:hover {
+    text-decoration: underline;
+}
+.userData .userData_block SPAN {
+    font-size: 80%;
+    text-transform: uppercase;
+}
+.userData .userData_block BIG {
+    display: block;
+}
+.userData .userData_block UL {
+    margin: 0px 0px 0px 12px;
+    padding: 18px 0px 0px 0px;
+}
+.userData .logout {
+    width: 80px;
+    height: 29px;
+    margin-top: 12px;
+}
+
+.userData .logout A {
+    margin-top: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.userData .logout A img.hover {
+    display: none;
+}
+
+.userData .logout A:hover img.hover {
+    display: inline;
+}
+
+.userData .logout A:hover img.nohover {
+    display: none;
+}
+
+.userData .logout A img {
+    vertical-align: middle;
+}
+
+/* TOP MENU */
 .topMenu {
     float: left;
-    margin: 20px 70px 0px 8px;
+    margin: 19px 70px 0px 8px;
 }
 .topMenu UL {
     margin: 0px;
@@ -185,13 +249,46 @@ FORM {
     width: 61px;
     height: 20px;
 }
+.search .submit:hover {
+    background: url(../images/submit_searchHover.gif) no-repeat;
+}
 
-
-
+/* BREADCRUMB */
+.breadcrumb {
+    background: #e6ecef;
+    padding: 12px 40px;
+    text-transform: uppercase;
+}
+.breadcrumb SMALL A {
+    color: #0c4762;
+    font-weight: bold;
+    letter-spacing: -1px;
+    font-size: 130%;
+}
+.breadcrumb BIG {
+    color: #b00303;
+    font-weight: bold;
+    letter-spacing: -1px;
+    font-size: 150%;
+    margin-left: 4px;
+}
 /* MIDDLE */
+.wide .middle {
+    width: 90%;
+}
+.middle .leftCol, .middle .rightCol {
+    float: left;
+    margin: 0 1%;
+    width: 48%;
+}
+.middle .leftCol H2, .middle .rightCol H2{
+    float: left;
+    width: 60%;
+}
 .middle {
     width: 75%;
     margin: 20px auto 0px auto;
+    min-height: 349px;
 }
 .middle .mainContent {
     float: left;
@@ -199,6 +296,12 @@ FORM {
     margin-right: 2em;
 
 }
+
+.wide .middle .mainContent {
+    width: 100%;
+    margin-right: 0em;
+}
+
 .middle .news {
     border-right: 1px solid #d7d7d7;
     padding-right: 17px;
@@ -212,10 +315,6 @@ FORM {
 .middle .news SMALL, .middle .news A {
     display: block;
 }
-.middle .news A.pnumber {
-    display: inline;
-}
-
 .middle .news A.NewsTitle {
     font-size: 150%;
     color: #0c4762;
@@ -234,6 +333,7 @@ FORM {
 .middle .news A.NewsExcerpt:hover {
     text-decoration: underline;
 }
+
 .highlights {
     padding-top: 30px;
 }
@@ -247,6 +347,110 @@ FORM {
 }
 .links LI A:hover {
     text-decoration: underline;
+}
+
+
+/* TABLES */
+table.dataTable {
+    margin-bottom: 10px;
+    clear: both;
+}
+
+table.dataTable, table.dataTable td {
+    color:#333;
+}
+table.dataTable td {
+    font-family: arial;
+    font-size: 80%;
+    line-height: 120%;
+    vertical-align: top;
+}
+table.dataTable td.title, table.dataTable td.subject {
+    font-weight: bold;
+}
+table.dataTable td.date {
+
+}
+table.dataTable td A {
+    color: #333;
+    text-decoration: none;
+}
+table.dataTable td A:hover {
+    color: #333;
+    text-decoration: underline;
+}
+table.dataTable TH, table.dataTable TD {
+    border-bottom: 1px solid #c9c9c9;
+    padding: 6px 4px;
+}
+
+table.dataTable TH {
+    color: #0c4762;
+    font-size: 120%;
+    background: #dedede;
+    font-size: 110%;
+}
+table.dataTable .even TD {
+    background: #f5f5f5;
+}
+table.dataTable .odd TD {
+    background: #EFEFEF;
+}
+
+table.dataTable textarea {
+    width: 100%;
+}
+
+table.dataTable td.help div.issue {
+}
+
+table.trialsummary {
+    width: 100%;
+}
+.dataTable UL {
+    margin: 0px;
+    padding: 0px;
+}
+.dataTable TD LI {
+    float: left;
+    margin-right: 4px;
+}
+.dataTable A.history, .dataTable A.iteraction {
+    display: block;
+    width: 16px;
+    height: 16px;
+
+}
+.dataTable A.history {
+    background: url(../images/icon_history.gif) no-repeat;
+}
+.dataTable A.iteraction {
+    background: url(../images/icon_iteraction.gif) no-repeat;
+}
+.dataTable TD LI A SPAN {
+    display: none;
+}
+.actions {
+    padding: 8px 0px;
+    float: right;
+    width: 91px;
+    text-align: right;
+}
+
+.showAll, .addNew {
+    display: block;
+    width: 91px;
+    height: 20px;
+    background: url(../images/button_showAll.gif) no-repeat;
+    color: #7d7d7d;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 80%;
+}
+.showAll:hover, .addNew:hover {
+    background: url(../images/button_showAllHover.gif) no-repeat;
+    color: #b25d02;
 }
 /* GROUP STEPS NAVIGATION AND CONTENT */
 #workarea {
@@ -360,6 +564,7 @@ FORM {
     border-width: 1px 0 0;
     background:#0c4762;
     font-size:80%;
+
 }
 
 #footer a:link, #footer a:visited {
@@ -377,47 +582,7 @@ FORM {
     margin-left: 20px;
     line-height: 150%;
 }
-/*TYPOGRAPHY*/
 
-blockquote {
-    font-weight: bold;
-    font-style: italic;
-}
-
-table.table {
-    border-collapse: collapse;
-    border-width: 0 0 1px 1px;
-    width: 100%;
-}
-
-table.table,
-table.table td, table.table th {
-    color:#4a4c4e;
-}
-
-table.table td, table.table th {
-    padding: 10px;
-}
-
-table.table td ul {
-    padding: 0.5em;
-}
-
-table.table th {
-    background-color: #F1F4F7;
-    color:#333;
-}
-
-table.table textarea {
-    width: 100%;
-}
-
-table.table td.help div.issue {
-}
-
-table.trialsummary {
-    width: 100%;
-}
 
 /* AJAX DeCS Tools */
 td div.decstool {
@@ -489,7 +654,6 @@ legend{
     width: 96px;
     height: 21px;
     float: right;
-
     background: url(../images/brasil.gif) top left no-repeat;
 }
 .barra_MSaude .barra1000 .minSaude, .barra_MSaude .barra1000 .form  {

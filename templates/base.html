@@ -66,6 +66,36 @@
                 </div>
                 {% block login %}
                 <div class="topRight">
+                    {% if user.is_authenticated %}
+                    <div class="userData">
+                        <div class="userData_block">
+                            <span>{% trans 'Username' %}</span>
+                            <big>{{ user.username }}</big>
+                        </div>
+                        <div class="userData_block">
+                            <span><a href="{% url reviewapp.submissionlist %}">{% trans 'Submissions' %}</a></span>
+                            <big>12</big>
+                        </div>
+                        <div class="userData_block">
+                            <span><a href="{% url ticket.index %}">{% trans 'Tickets' %}</a></span>
+                            <big>08</big>
+                        </div>
+                        <div class="userData_block">
+                            <ul>
+                                <li><a href="{% url reviewapp.userhome %}">{% trans 'Profile' %}</a></li>
+                                <li><a href="{% url reviewapp.dashboard %}">{% trans 'Dashboard' %}</a></li>
+                            </ul>
+                        </div>
+                        <div class="userData_block logout">
+                            <a href="/accounts/logout" title="{% trans 'Logout' %}">{% trans 'Logout' %}</a>
+                            <a href="/accounts/logout">
+                                <img class="nohover" src="/static/images/button_logout.gif" alt="{% trans 'Logout' %}"/>
+                                <img class="hover" src="/static/images/button_logout_hover.gif" alt="{% trans 'Logout' %}"/>
+                            </a>
+                        </div>
+                        <div class="spacer">&#160;</div>
+                    </div>
+                    {% else %}
                     <div class="login">
                         <div class="loginForm">
                             <form action="{% url django.contrib.auth.views.login %}" method="post">
@@ -90,6 +120,7 @@
                         </div>
                         <div class="spacer">&#160;</div>
                     </div>
+                    {% endif %}
                     <div class="topMenu">
                         <ul>
                             <li><a href="{% url reviewapp.newslist %}">{% trans "News" %}</a></li>
