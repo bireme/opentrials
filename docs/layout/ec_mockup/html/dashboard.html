@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+    <head>
+        <meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8"/>
+        <title>Clinical Trials Platform</title>
+        <link rel="shortcut icon" href="/static/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="http://ec.teste.bvsalud.org/static/css/asmselect/jquery.asmselect.css"/>
+        <link rel="stylesheet" type="text/css" href="http://ec.teste.bvsalud.org/static/css/jquery.cluetip.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <!-- fetch JS libraries from Google -->
+        <script type="text/javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
+        </script>
+        <script type="text/javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js">
+        </script>
+        <script type="text/javascript" src="http://ec.teste.bvsalud.org/static/js/asmselect/jquery.asmselect.js" type="text/javascript">
+        </script>
+        <script type="text/javascript" src="http://ec.teste.bvsalud.org/static/js/jquery.bgiframe.min.js" type="text/javascript">
+        </script>
+        <script type="text/javascript" src="http://ec.teste.bvsalud.org/static/js/jquery.cluetip.min.js" type="text/javascript">
+        </script>
+        <script type="text/javascript" src="http://ec.teste.bvsalud.org/static/js/jquery.hoverIntent.js" type="text/javascript">
+        </script>
+        <script type="text/javascript" src="http://ec.teste.bvsalud.org/static/js/submission.utils.js">
+        </script>
+    </head>
+    <body>
+        <div class="container wide">
+            <div class="barra_MSaude">
+                <div class="barra1000">
+                    <div class="minSaude">
+                        <a href="http://www.saude.gov.br" title="Ministério da Saúde" target="_blank"><span>Ministério da Saúde</span></a>
+                    </div>
+                    <div class="form">
+                        <form method="post" action="/" id="govform" name="govform">
+                            <select name="opcoes" class="pr">
+                                <option>Destaques do governo</option>
+                                <option value="http://www.brasil.gov.br">Portal do Governo Federal</option>
+                                <option value="http://www.e.gov.br">Portal de Serviços do Governo</option>
+                                <option value="http://www.radiobras.gov.br">Portal da Agência de Notícias</option>
+                                <option value="http://www.previdenciasocial.gov.br">Reforma da Previdência</option>
+                                <option value="http://www.fomezero.gov.br">Programa Fome Zero</option>
+                            </select>
+                        </form>
+                        <script type="text/javascript">
+                            $('form#govform select option[value]').click(function(){
+                                window.open(this.value);
+                            });
+                        </script>
+                    </div>
+                    <div class="brasilGov">
+                        <a href="http://www.brasil.gov.br" title="Governo Federal" target="_blank"><span>Governo Federal</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="top">
+                <div class="banner">
+                    <div class="institutions">
+                        <ul>
+                            <li>
+                                <a href="http://www.fiocruz.br/cgi/cgilua.exe/sys/start.htm?tpl=home" title="Fundação Oswaldo Cruz" target="_blank" class="logo" id="FIOCRUZ"><span>FioCruz</span></a>
+                            </li>
+                            <li>
+                                <a href="http://regional.bvsalud.org/php/index.php?lang=pt" title="Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde" target="_blank" class="logo" id="BIREME"><span>BIREME</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="identification">
+                        <!--div id="logoRebrac">
+                        <img src="../images/logoRebrac.jpg" />
+                        </div--><h1><a href="http://ec.teste.bvsalud.org/">Registro Brasileiro de Ensaios Clínicos</a></h1>
+                    </div>
+                </div>
+                <div class="topRight">
+                    <div class="userData">
+                        <div class="userData_block">
+                            <span>Usuário</span>
+                            <big>Julio Takayama</big>
+                        </div>
+                        <div class="userData_block">
+                            <span>Submissões</span>
+                            <big>12</big>
+                        </div>
+                        <div class="userData_block">
+                            <span>Tickets</span>
+                            <big>08</big>
+                        </div>
+                        <div class="userData_block">
+                            <ul>
+                                <li><a href="#">Perfil</a></li>
+                                <li><a href="#">Dashboard</a></li>
+                            </ul>
+                        </div>
+                        <div class="userData_block logout">
+                            <a href="http://ec.teste.bvsalud.org/accounts/logout" title="Sair">Sair</a>
+                        </div>
+                        <div class="spacer">&#160;</div>
+                    </div>
+                    <div class="topMenu">
+                        <ul>
+                            <li><a href="http://ec.teste.bvsalud.org/news/">Notícias</a></li>
+                            <li><a href="http://ec.teste.bvsalud.org/about/">Sobre</a></li>
+                            <li><a href="http://ec.teste.bvsalud.org/assistance/faq/">Help</a></li>
+                        </ul>
+                    </div>
+                    <div class="search">
+                        <form name="" action="" method="">
+                            <input type="text" name="search" class="textEntry" id="search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" />
+                            <input type="submit" class="submit" value="Pesquisar" />
+                        </form>
+                    </div>
+                </div>
+                <div class="spacer">
+                    &#160;
+                </div>
+            </div>
+            <div class="breadcrumb">
+                <small>
+                    <a href="#">Home</a>
+                </small>
+                <big>
+                    / Dashboard
+                </big>
+            </div>
+            <div class="middle">
+                <div class="leftCol">
+                    <div class="submissions">
+                        <h2>Submissions</h2>
+                        <div class="actions"><a href="#" class="button addNew">Nova submissão</a></div>
+                        <table class="dataTable" cellpadding="0" cellspacing="0" border="0">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Data
+                                    </th>
+                                    <th>
+                                        Título
+                                    </th>
+                                    <th>
+                                        Status
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="even">
+                                    <td class="date">
+                                        22/Apr/2010
+                                    </td>
+                                    <td class="title">
+                                        <a href="http://ec.teste.bvsalud.org/rg/edit/9/">The efficacy of penicillin G potassium in reducing aphthous ulcer pain and lesion size in a Chinese cohort: a…</a>
+                                    </td>
+                                    <td>
+                                        draft
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class="date">
+                                        22/Apr/2010
+                                    </td>
+                                    <td class="title">
+                                        <a href="http://ec.teste.bvsalud.org/rg/edit/8/">Prevention of Heterotopic Ossification With Arcoxia After Total Hip Replacement</a>
+                                    </td>
+                                    <td>
+                                        draft
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class="date">
+                                        22/Apr/2010
+                                    </td>
+                                    <td class="title">
+                                        <a href="http://ec.teste.bvsalud.org/rg/edit/7/">Avaliação da dosagem do praziquantel para o tratamento da esquistossomose no Brasil</a>
+                                    </td>
+                                    <td>
+                                        draft
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class="date">
+                                        05/Apr/2010
+                                    </td>
+                                    <td class="title">
+                                        <a href="http://ec.teste.bvsalud.org/rg/edit/6/">teste de Margot</a>
+                                    </td>
+                                    <td>
+                                        draft
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class="date">
+                                        30/Mar/2010
+                                    </td>
+                                    <td class="title">
+                                        <a href="http://ec.teste.bvsalud.org/rg/edit/5/">Teste da reunião Elluminate</a>
+                                    </td>
+                                    <td>
+                                        draft
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="http://ec.teste.bvsalud.org/accounts/submissionlist/" class="button showAll">Mostrar todas</a>
+                    </div>
+                </div>
+                <div class="rightCol">
+                    <div class="tickets">
+                        <h2>Tickets</h2>
+                        <div class="actions"><a href="#" class="addNew">Novo Ticket</a></div>
+                        <table class="dataTable" cellpadding="0" cellspacing="0" border="0">
+                            <col width="5%"/><col width="10%"/><col width="5%"/><col width="50%"/><col width="5%"/><col width="5%"/><col width="20%"/>
+                            <tr>
+                                <th>
+                                    Data
+                                </th>
+                                <th>
+                                    Contexto
+                                </th>
+                                <th>
+                                    Tipo
+                                </th>
+                                <th>
+                                    Assunto
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Update
+                                </th>
+                                <th>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="date">
+                                    2009/12/16 18:17:28
+                                </td>
+                                <td>
+                                    field_11
+                                </td>
+                                <td>
+                                    review
+                                </td>
+                                <td class="subject">
+                                    Pellentesque elementum, at quam metus, vivamus magna auctor.
+                                </td>
+                                <td>
+                                    closed
+                                </td>
+                                <td class="update">
+                                    2009/12/16 18:19:29
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a class="history" href="/ticket/history/3/" title="view history"><span>view history</span></a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="date">
+                                    2009/12/14 15:56:38
+                                </td>
+                                <td>
+                                    field_15a
+                                </td>
+                                <td>
+                                    help
+                                </td>
+                                <td class="subject">
+                                    Subject b 1
+                                </td>
+                                <td>
+                                    new
+                                </td>
+                                <td class="update">
+                                    2009/12/14 16:42:16
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a class="history" href="/ticket/history/2/" title="view history"><span>view history</span></a>
+                                        </li>
+                                        <li>
+                                            <a class="iteraction" href="/ticket/newiteration/2/" title="add iteration"><span>add iteration</span></a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="date">
+                                    2009/12/14 15:55:03
+                                </td>
+                                <td>
+                                    field_1
+                                </td>
+                                <td>
+                                    review
+                                </td>
+                                <td class="subject">
+                                    Subject 3
+                                </td>
+                                <td>
+                                    resolved
+                                </td>
+                                <td class="update">
+                                    2009/12/14 16:42:04
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a class="history" href="/ticket/history/1/" title="view history"><span>view history</span></a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                        <a href="http://ec.teste.bvsalud.org/ticket/" class="button showAll">Mostrar Todos</a>
+                    </div>
+                </div>
+                <div class="spacer">
+                    &#160;
+                </div>
+            </div>
+            <div id="footer">
+                <p>
+                    <strong>BIREME - OPAS - OMS</strong>
+                    <br/>
+                    Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde
+                    <br/>
+                    Rua Botucatu, 862 - 04023-901 - São Paulo/SP - Brasil - Tel: (55 11) 5576-9800 - Fax: (55 11) 5575-8868
+                    <br/>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
