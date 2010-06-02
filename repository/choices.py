@@ -25,12 +25,16 @@ OUTCOME_INTEREST = [
 
 #################################################### Limited choices fields ###
 
-PUBLISHED_STATUS = 'published'
+
 TRIAL_RECORD_STATUS = [
     ('processing', 'processing'),
     ('published', 'published'),
     ('archived', 'archived'),
 ]
+PROCESSING_STATUS = TRIAL_RECORD_STATUS[0][0]
+PUBLISHED_STATUS  = TRIAL_RECORD_STATUS[1][0]
+ARCHIVED_STATUS   = TRIAL_RECORD_STATUS[2][0]
+
 
 INCLUSION_GENDER = [('-', 'both'), ('M', 'male'), ('F', 'female'),]
 

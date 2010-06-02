@@ -4,6 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from datetime import datetime
 from repository.models import ClinicalTrial, Institution
+from repository.choices import PROCESSING_STATUS, PUBLISHED_STATUS
 from vocabulary.models import CountryCode
 from utilities import safe_truncate
 
@@ -12,12 +13,18 @@ from django.db.models.signals import post_save
 
 import settings
 
+
 SUBMISSION_STATUS = [
     ('draft', 'draft'), # clinical trial is 'processing'
     ('pending', 'pending'), # clinical trial remains 'processing'
     ('approved', 'approved'), # clinical trial is 'published'
     ('rejected', 'rejected'), # clinical trial remains or becomes 'processing'
 ]
+STATUS_DRAFT = SUBMISSION_STATUS[0][0]
+STATUS_PENDING = SUBMISSION_STATUS[1][0]
+STATUS_APPROVED = SUBMISSION_STATUS[2][0]
+STATUS_REJECTED = SUBMISSION_STATUS[3][0]
+
 
 ACCESS = [
     ('public', 'Public'),
@@ -58,6 +65,13 @@ class Submission(models.Model):
     def save(self):
         if self.id:
             self.updated = datetime.now()
+        if self.status == STATUS_APPROVED and self.trial.status == PROCESSING_STATUS:
+            self.trial.status = PUBLISHED_STATUS
+            self.trial.save()
+        if self.status == STATUS_REJECTED and self.trial.status == PUBLISHED_STATUS:
+            self.trial.status = PROCESSING_STATUS
+            self.trial.save()
+
         super(Submission, self).save()
 
     def short_title(self):

@@ -16,7 +16,7 @@
             {% endfor %}    
         </tr>
     </thead>
-    {% for link in links %} <!-- TODO: use url filter to remove hardcoded path -->
+    {% for link in links %} 
         <tr>
             <td>{{forloop.counter}}</td>
             <td><a href="{{link.url}}">{{ link.label }}</a></td>
@@ -27,5 +27,8 @@
         </tr>
     {% endfor %}    
 </table>
-
+<form name="submit_submission" action="#" method="POST">
+  {% csrf_token %}
+  <input type="submit" name="submit_submission" value="{% trans "Submit for Review" %}"/>
+</form>
 {% endblock %}

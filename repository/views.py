@@ -1,7 +1,7 @@
 #coding: utf-8
 
 from django.template.context import RequestContext
-from reviewapp.models import Attachment, Submission
+from reviewapp.models import Attachment, Submission, SUBMISSION_STATUS
 from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
 
 from repository.models import ClinicalTrial, Descriptor, TrialNumber
@@ -46,20 +46,29 @@ TRIAL_FORMS = ['Trial Identification',
 
 @login_required
 def edit_trial_index(request, trial_pk):
-    ''' start view '''
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
-    links = []
-    for i, name in enumerate(TRIAL_FORMS):
-        data = dict(label=_(name))
-        data['url'] = reverse('step_' + str(i + 1), args=[trial_pk])
-        data['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_alert.gif'
-        data['msg'] = _('Blank fields')
-        links.append(data)
-    return render_to_response('repository/trial_index.html',
-                              {'trial_pk':trial_pk,
-                               'submission':ct.submission,
-                               'links':links},
-                               context_instance=RequestContext(request))
+
+    if request.POST:
+        sub = ct.submission
+        sub.status = SUBMISSION_STATUS[1][0]
+
+        sub.save()
+        return HttpResponseRedirect(reverse('reviewapp.dashboard'))
+    else:
+        ''' start view '''
+
+        links = []
+        for i, name in enumerate(TRIAL_FORMS):
+            data = dict(label=_(name))
+            data['url'] = reverse('step_' + str(i + 1), args=[trial_pk])
+            data['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_alert.gif'
+            data['msg'] = _('Blank fields')
+            links.append(data)
+        return render_to_response('repository/trial_index.html',
+                                  {'trial_pk':trial_pk,
+                                   'submission':ct.submission,
+                                   'links':links},
+                                   context_instance=RequestContext(request))
 
 def full_view(request, trial_pk):
     ''' full view '''
