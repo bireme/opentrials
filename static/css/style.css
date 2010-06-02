@@ -1,102 +1,252 @@
 body {
-    height: 100%;
     margin: 0;
     padding: 0;
     text-align: left;
-    font: 78% "Verdana", "Arial", "sans-serif";
-    background:#cbcbcd;
+    font-size: 78%;
+    font-family: Trebuchet MS, Arial, sans-serif;
+    background: #FFF;
 }
 
-h1, h2, label, legend, #content a {
-    color: #296784;
+P {
+    font-family: arial;
+}
+
+H2, .topMenu LI A, .NewsTitle {
+    letter-spacing: -1px;
+}
+
+
+H2 {
+    color: #b00303;
+    text-transform: uppercase;
+}
+IMG {
+    border: none;
+}
+
+FORM {
+    margin: 0px;
+}
+
+.spacer {
+    clear: both;
+    display: block;
+    font-size: 1px;
+    margin: 0px;
+    padding: 0px;
+    height: 1px;
+}
+.textEntry {
+    width: 110px;
+    border: 1px solid #848484;
+    background: url(../images/input_bg.gif) no-repeat;
+}
+.textEntryFocus {
+    border: 1px solid #0c4762;
 }
 
 /* STYLE for BORDERED MAIN BLOCKS */
-#container, #top, #footer, #columns,
-.stepmenu-top, .stepmenu-bottom {
-    border-color: #D4D4FF;
-}
 
-#container {
+.container {
+    min-width: 1004px;
     margin: 0px;
     padding: 0;
     line-height: 1.7em;
-    background: transparent url(/static/bg_header.png) repeat-x scroll 0 0;
 }
 
 /*TOP BANNER*/
-#top {
-    padding: 0;
-    margin: 0;
-    border-width: 0 0 1px;
-    float: left;
-    clear: both;
-    width: 100%;
-    height: 118px;
+.top {
+    background: url(../images/top_bg.jpg) repeat-x;
+    border-bottom: 2px solid #acc0c9;
+    height: 90px;
 }
 
+.top .banner {
+    width: 50%;
+    float: left;
+    padding-top: 15px;
+}
 
-#banner div.logo a {
+.identification H1 {
+    margin: 0px 0px 0px 40px;
+    clear: both;
+    padding-top: 12px;
+    font-size: 200%;
+    font-weight: normal;
+}
+
+.identification H1 A {
+    color: #0c4762;
     text-decoration: none;
-    color: #296784;
 }
-#banner div.logo, #top div.institutions {
+.institutions UL {
+    margin: 0px;
+}
+.institutions UL LI {
     float: left;
-    width: 40%;
-    margin: 1em 0 0 10%;
+    margin-right: 12px;
 }
-
-#banner div.institutions {
-    margin-top: 0em;
-}
-
-#top div.institutions ul li {
-    float: left;
-    width: 40%;
-    text-align: right;
-}
-
-#top div.institutions ul span {
-    display: none;
-}
-
-#top div.institutions ul li a {
+.institutions A#FIOCRUZ {
     display: block;
-    height: 89px;
+    width: 104px;
+    height: 30px;
+    background: url(../images/fiocruz.png) no-repeat;
 }
-
-#top div.institutions ul li.BIREME a {
-    background: transparent url(/static/bireme.gif) no-repeat center right;
+.institutions A#BIREME {
+    display: block;
+    width: 55px;
+    height: 30px;
+    background: url(../images/bireme.png) no-repeat;
 }
-
-#top div.institutions ul li.FIOCRUZ a {
-    background: transparent url(/static/fiocruz.gif) no-repeat center right;
-}
-
-#middle {
-    background-color: #FFF;
-    position: relative;
-    float: left;
-    width: 100%;
-    clear: both;
-    overflow: hidden;
-}
-
-#columns {
-    position: relative;
-    width: 100%;
-    float: left;
-    right: 81%;
-    border-width: 0 1px 0 0;
-    background:#ebecf0;
-}
-
-#rebracmenu, #workarea {
-    position: relative;
-}
-
-#rebracmenu h2 {
+.institutions A SPAN {
     display: none;
+}
+.topRight {
+    float: right;
+    width: 440px;
+    padding: 0px;
+    margin-right: 10px;
+    background: url(../images/login_bg.jpg) no-repeat;
+}
+.loginForm {
+    float: left;
+    margin: 0px 8px 0px 12px;
+}
+.loginForm LABEL {
+    display: block;
+    color: #0c4762;
+    text-transform: uppercase;
+    font-size: 90%;
+}
+.loginForm .formSegment {
+    float: left;
+    margin: 0px 8px 0px 0px;
+}
+.loginForm .submit {
+    background: url(../images/submit_login.gif) no-repeat;
+    color: #1c4507;
+    text-transform: uppercase;
+    font-size: 80%;
+    border: 0px;
+    padding: 4px 8px;
+    margin: 21px 0px 0px 0px;
+    width: 52px;
+    height: 20px;
+}
+.loginOption {
+    padding-top: 18px;
+}
+.loginOption UL {
+    margin: 0px;
+}
+.loginOption LI {
+    line-height: 90%;
+}
+.loginOption UL A {
+    font-size: 80%;
+    color: #333;
+    text-decoration: none;
+}
+.topMenu {
+    float: left;
+    margin: 20px 70px 0px 8px;
+}
+.topMenu UL {
+    margin: 0px;
+    padding: 0px;
+}
+.topMenu LI {
+    display: inline;
+    border-right: 1px solid #b00303;
+    padding: 0px 8px 0px 4px;
+}
+.topMenu LI:last-child {
+    border-right: none;
+}
+.topMenu LI A {
+    color: #b00303;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.topMenu LI A:hover {
+    color: #ff0000;
+}
+.search {
+    margin-top: 18px;
+}
+.search .submit {
+    background: url(../images/submit_search.gif) no-repeat;
+    color: #1c4507;
+    text-transform: uppercase;
+    font-size: 80%;
+    border: 0px;
+    padding: 4px;
+    width: 61px;
+    height: 20px;
+}
+
+
+
+/* MIDDLE */
+.middle {
+    width: 75%;
+    margin: 20px auto 0px auto;
+}
+.middle .mainContent {
+    float: left;
+    width: 70%;
+    margin-right: 2em;
+
+}
+.middle .news {
+    border-right: 1px solid #d7d7d7;
+    padding-right: 17px;
+}
+.middle .news LI {
+    margin-bottom: 26px;
+}
+.middle .news SMALL {
+    color: #547e91;
+}
+.middle .news SMALL, .middle .news A {
+    display: block;
+}
+.middle .news A.pnumber {
+    display: inline;
+}
+
+.middle .news A.NewsTitle {
+    font-size: 150%;
+    color: #0c4762;
+    text-decoration: none;
+    font-weight: bold;
+}
+.middle .news A.NewsTitle:hover {
+    color: #1073a0;
+    text-decoration: none;
+}
+.middle .news A.NewsExcerpt {
+    color: #333;
+    text-decoration: none;
+    font-family: arial;
+}
+.middle .news A.NewsExcerpt:hover {
+    text-decoration: underline;
+}
+.highlights {
+    padding-top: 30px;
+}
+.links LI {
+    margin-bottom: 12px;
+}
+.links LI A {
+    font-family: arial;
+    color: #333;
+    text-decoration: none;
+}
+.links LI A:hover {
+    text-decoration: underline;
 }
 /* GROUP STEPS NAVIGATION AND CONTENT */
 #workarea {
@@ -205,10 +355,11 @@ h1, h2, label, legend, #content a {
 /*FOOTER*/
 #footer {
     clear: both;
+    margin-top: 20px;
     padding: 5px;
-    margin-top: 5px;
     border-width: 1px 0 0;
-    background:#f3f4f6;
+    background:#0c4762;
+    font-size:80%;
 }
 
 #footer a:link, #footer a:visited {
@@ -217,18 +368,16 @@ h1, h2, label, legend, #content a {
 
 }
 #footer, #footer a {
-    color:#666;
+    color:#FFF;
 }
 #footer a{
     text-decoration:underline;
 }
-#footer {
-    font-size:69%;
+#footer P {
+    margin-left: 20px;
+    line-height: 150%;
 }
 /*TYPOGRAPHY*/
-p {
-    margin: 20px;
-}
 
 blockquote {
     font-weight: bold;
@@ -264,7 +413,6 @@ table.table textarea {
 }
 
 table.table td.help div.issue {
-    display:none;
 }
 
 table.trialsummary {
@@ -334,14 +482,14 @@ legend{
     height: 21px;
     float: left;
     margin: 1px;
-    background: url(ms.gif) top left no-repeat;
+    background: url(../images/ms.gif) top left no-repeat;
 }
 .barra_MSaude .barra1000 .brasilGov a {
     margin: 1px;
     width: 96px;
     height: 21px;
     float: right;
-    background: url(brasil.gif) top left no-repeat;
+    background: url(../images/brasil.gif) top left no-repeat;
 }
 .barra_MSaude .barra1000 .minSaude, .barra_MSaude .barra1000 .form  {
     float: left;
