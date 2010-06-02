@@ -23,7 +23,7 @@
         <h2>{% trans 'News' %}</h2>
         <ul>
             <li>
-                <small>{{ news.created|date:'d/m/y' }}</small>
+                <small>{{ news.created|date:'d/m/Y - H:i' }}</small>
                 <a class="NewsTitle" title="{{ news.title }}" href="{% url reviewapp.news news.id %}">{{ news.title }}</a>
                 <a class="NewsExcerpt" href="{% url reviewapp.news news.id %}">{{ news.short_text }}</a>
             </li>

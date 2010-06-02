@@ -6,17 +6,23 @@
 
 {% block body %}
 
-<h2>{% trans 'News' %}</h2>
+<div class="news">
 
-{% if object_list %}
+    <h2>{% trans 'News' %}</h2>
 
-    {% for object in object_list %}
-        <p>{{ object.created|date:'d/m/y' }} <a href="{% url reviewapp.news object.id %}">{{ object.title }}</a></p>
-        <p>{{ object.short_text }} <a href="{% url reviewapp.news object.id %}">mais</a></p>
-        <br />
-    {% endfor %}
+    {% if object_list %}
+        <ul>
+        {% for object in object_list %}
+            <li>
+                <small>{{ object.created|date:'d/m/Y - H:i' }}</small> 
+                <a class="NewsTitle" title="{{ object.title }}" href="{% url reviewapp.news object.id %}">{{ object.title }}</a>
+                <a class="NewsExcerpt" href="{% url reviewapp.news object.id %}">{{ object.short_text }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>{% trans 'No news have been published.' %}</p>
+    {% endif %}
 
-{% else %}
-    <p>{% trans 'No news have been published.' %}</p>
-{% endif %}
+</div>
 {% endblock %}
