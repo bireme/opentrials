@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block page_title %}{{ flatpage.title }} - {{ block.super }}{% endblock %}
 
 {% block body %}
 
-{{ flatpage.content|linebreaks }}
+    <h2>{% trans flatpage.title %}</h2>
+
+    {{ flatpage.content|linebreaks }}
 
 {% endblock %}

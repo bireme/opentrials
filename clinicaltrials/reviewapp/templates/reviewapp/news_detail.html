@@ -13,7 +13,7 @@
     <p>{{ object.text|linebreaks }}</p>
     <br />
 
-<div class="date">{% trans 'Created:' %} {{ object.created|date:'d/m/Y' }}</div>
+<div class="date">{% trans 'Created:' %} {{ object.created|date:'d/m/Y - H:i' }}</div>
     
 {% else %}
     <p>{% trans 'News unavailable.' %}</p>
