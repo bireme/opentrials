@@ -1,34 +1,35 @@
-{% extends "base.html" %}
+{% extends "base_columns.html" %}
+
+{% load i18n %}
 
 {% block body_title %}FAQ{% endblock %}
 
 {% block body %}
 
-<h2>FAQ</h2>
+<div class="links">
 
-{% if object_list %}
+    <h2>FAQ</h2>
 
-   {% regroup object_list by category as category_list %}
+    {% if object_list %}
 
-    <ul>
-    {% for category in category_list %}
-        <li><a href="#{{ category.grouper }}">{{ category.grouper }}</a></li>
-    {% endfor %}
-    </ul>
-    <ul>
-    {% for category in category_list %}
-        <li id="{{ category.grouper }}" name="{{ category.grouper }}">{{ category.grouper }}
-        <dl>
+        {% regroup object_list by category as category_list %}
+
+        <ol>
+        {% for category in category_list %}
+            <li><a title="{{ category.grouper }}" href="#{{ category.grouper }}">{{ category.grouper }}</a></li>
+        {% endfor %}
+        </ol>
+
+        {% for category in category_list %}
+            <h3 id="{{ category.grouper }}" name="{{ category.grouper }}">{{ forloop.counter }}. {{ category.grouper }}</h3>
             {% for item in category.list %}
-            <dt>{{ item.title}} </dt>
-            <dd>{{ item.answer }}</dd>
+            <h4>{{ item.title}}</h4>
+            <p>{{ item.answer }}</p>
             {% endfor %}
-        </dl>
-        </li>
-    {% endfor %}
-    </ul>
-
-{% else %}
-    <p>No FAQ available.</p>
-{% endif %}
+        {% endfor %}
+    
+    {% else %}
+        <p>{% trans 'No FAQ available.' %}</p>
+    {% endif %}
+</div>
 {% endblock %}
