@@ -1,8 +1,8 @@
-from clinicaltrials.vocabulary.models import CountryCode
 from django.db import models, IntegrityError
 
 from django.utils.translation import ugettext_lazy as _
 from django.utils.html import linebreaks
+from django.contrib.contenttypes import generic
 
 from datetime import datetime
 import string
@@ -15,6 +15,7 @@ from vocabulary.models import CountryCode, StudyPhase, StudyType, RecruitmentSta
 from vocabulary.models import InterventionCode
 from vocabulary.models import StudyPurpose, InterventionAssigment, StudyMasking, StudyAllocation
 
+from polyglot.models import Translation
 
 from repository import choices
 
@@ -90,7 +91,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     scientific_acronym = models.CharField(_('Scientific Acronym'), blank=True,
                                           max_length=255)
     # TRDS 10b
-    scientific_acronym_expansion = models.CharField(_('Scientific Acronym Expansion'), 
+    scientific_acronym_expansion = models.CharField(_('Scientific Acronym Expansion'),
                                                     blank=True, max_length=255)
     # TRDS 5
     primary_sponsor = models.OneToOneField('Institution', null=True, blank=True,
@@ -201,6 +202,8 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
                                   max_length='255',
                                   blank=True)
 
+    translations = generic.GenericRelation('ClinicalTrialTranslation')
+
     class Meta:
         ordering = ['-updated',]
 
@@ -232,7 +235,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         else:
             tit = self.scientific_title
         return safe_truncate(tit, 120)
-        
+
     def main_title(self):
         if self.public_title:
             return self.public_title
@@ -248,7 +251,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
             return self.trial_id
         else:
             msg = 'not assigned (request #%)' % self.pk
-            
+
     def acronym_display(self):
         if self.acronym_expansion:
             return u'%s: %s' % (self.acronym, self.acronym_expansion)
@@ -343,7 +346,32 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
 
     def trial_attach(self):
         return self.submission.attachment_set.all().select_related()
-        
+
+
+class ClinicalTrialTranslation(Translation):
+    # TRDS 10a
+    scientific_title = models.TextField(_('Scientific Title'), max_length=2000)
+    # TRDS 10b
+    scientific_acronym = models.CharField(_('Scientific Acronym'), blank=True, max_length=255)
+    # TRDS 10b
+    scientific_acronym_expansion = models.CharField(_('Scientific Acronym Expansion'), blank=True, max_length=255)
+    # TRDS 9a
+    public_title = models.TextField(_('Public Title'), blank=True, max_length=2000)
+    # TRDS 9b
+    acronym = models.CharField(_('Acronym'), blank=True, max_length=255)
+    # TRDS 9b
+    acronym_expansion = models.CharField(_('Acronym Expansion'), blank=True, max_length=255)
+    # TRDS 12a
+    hc_freetext = models.TextField(_('Health Condition(s)'), blank=True, max_length=8000)
+    # TRDS 13a
+    i_freetext = models.TextField(_('Intervention(s)'), blank=True, max_length=8000)
+    # TRDS 14a
+    inclusion_criteria = models.TextField(_('Inclusion Criteria'), blank=True, max_length=8000)
+    # TRDS 14e
+    exclusion_criteria = models.TextField(_('Exclusion Criteria'), blank=True, max_length=8000)
+    # TRDS 15b
+    study_design = models.TextField(_('Study Design'), blank=True, max_length=1000)
+
 
 ################################### Entities linked to a Clinical Trial ###
 
@@ -458,11 +486,17 @@ class Outcome(TrialRegistrationDataSetModel):
                                default = choices.OUTCOME_INTEREST[0][0])
     description = models.TextField(_('Outcome Description'), max_length=8000)
 
+    translations = generic.GenericRelation('OutcomeTranslation')
+
     class Meta:
         order_with_respect_to = 'trial'
 
     def __unicode__(self):
         return safe_truncate(self.description, 80)
+
+class OutcomeTranslation(Translation):
+    description = models.TextField(_('Outcome Description'), max_length=8000)
+
 
 class Descriptor(TrialRegistrationDataSetModel):
     class Meta:
@@ -479,8 +513,13 @@ class Descriptor(TrialRegistrationDataSetModel):
     code = models.CharField(_('Code'), max_length=255)
     text = models.CharField(_('Text'), max_length=255, blank=True)
 
+    translations = generic.GenericRelation('DescriptorTranslation')
+
     def __unicode__(self):
         return u'[%s] %s: %s' % (self.vocabulary, self.code, self.text)
 
     def trial_identifier(self):
         return self.trial.identifier()
+
+class DescriptorTranslation(Translation):
+    text = models.CharField(_('Text'), max_length=255, blank=True)
