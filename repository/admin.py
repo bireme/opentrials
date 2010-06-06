@@ -3,6 +3,8 @@
 from django.contrib import admin
 from repository.models import *
 
+from polyglot.admin import TranslationInline, TranslationAdmin
+
 tabular_inline_models = [Descriptor, TrialNumber, PublicContact, ScientificContact,
                          TrialSecondarySponsor, TrialSupportSource]
 tabular_inlines = []
@@ -14,8 +16,11 @@ for model in tabular_inline_models:
 class OutcomeInline(admin.StackedInline):
     model = Outcome
 
+class ClinicalTrialTranslationInline(TranslationInline):
+    model = ClinicalTrialTranslation
+
 class ClinicalTrialAdmin(admin.ModelAdmin):
-    inlines = tabular_inlines + [OutcomeInline]
+    inlines = tabular_inlines + [OutcomeInline, ClinicalTrialTranslationInline]
     list_display = ('updated_str','identifier','short_title','recruitment_status',)
     list_display_links = ('identifier','short_title',)
     search_fields = ('scientific_title', 'public_title', 'i_freetext',)

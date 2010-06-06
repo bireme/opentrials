@@ -12,4 +12,4 @@ jquery.js
 jquery-ui.js
 --> http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js
 
-
+Note: remote URLs point to minified libs, while local ones are uncompressed.
