@@ -16,7 +16,92 @@ from django.utils.translation import ugettext_lazy as _
 from django import forms
 from django.forms.forms import BoundField, conditional_escape
 
+from polyglot.multilingual_forms import MultilingualCharField, MultilingualTextField
+from polyglot.models import get_multilingual_fields
+
 class ReviewModelForm(forms.ModelForm):
+    available_languages = ('en',)
+    default_second_language = 'pt-br'
+
+    def __init__(self, *args, **kwargs):
+        # Gets multilingual fields from translation class
+        try:
+            self.multilingual_fields = get_multilingual_fields(self._meta.model)
+        except AttributeError:
+            raise #Exception(self.__class__)
+            self.multilingual_fields = None
+
+            # FIXME, to remove
+            #if self.__class__ == TrialIdentificationForm:
+            #    self.multilingual_fields = ('scientific_title','public_title',)
+
+        if self.multilingual_fields:
+            # Gets default second language from arguments, if informed. Default value is None
+            self.default_second_language = kwargs.pop('default_second_language', self.default_second_language) # Optional
+            self.available_languages = kwargs.pop('available_languages', ('en','pt-br','es')) # Mandatory (FIXME, to remove default tuple)
+
+            # Change field widgets replacing common TextInput and Textarea to Multilingual respective ones
+            for field_name in (self.multilingual_fields or []):
+                if field_name not in self.base_fields:
+                    continue
+
+                if isinstance(self.base_fields[field_name], forms.CharField):
+                    self.base_fields[field_name] = MultilingualCharField(max_length=self.base_fields[field_name].max_length)
+                else:
+                    self.base_fields[field_name] = MultilingualTextField()
+
+        super(ReviewModelForm, self).__init__(*args, **kwargs)
+
+        if self.multilingual_fields:
+            # Sets instance attributes on multilingual fields
+            for field_name in (self.multilingual_fields or []):
+                if field_name not in self.fields:
+                    continue
+
+                # Field
+                self.fields[field_name].instance = self.instance
+                self.fields[field_name].default_second_language = self.default_second_language
+                self.fields[field_name].available_languages = self.available_languages
+
+                # Widget
+                self.fields[field_name].widget.instance = self.instance
+                self.fields[field_name].widget.default_second_language = self.default_second_language
+                self.fields[field_name].widget.available_languages = self.available_languages
+
+                if self.data:
+                    self.fields[field_name].widget.form_data = self.data
+
+    def save(self, commit=True):
+        obj = super(ReviewModelForm, self).save(commit=commit)
+
+        if commit:
+            self.save_translations(obj)
+
+        return obj
+
+    def save_translations(self, obj):
+        """This method is because you can save without commit, so you can call this by yourself."""
+
+        if not hasattr(obj, 'translations'):
+            return
+
+        for lang in self.available_languages:
+            # Get or create translation object
+            try:
+                trans = obj.translations.get(language=lang)
+            except obj.translations.model.DoesNotExist:
+                trans = obj.translations.model(language=lang)
+                trans.content_object = obj
+
+            # Sets fields values
+            for field_name in (self.multilingual_fields or []):
+                if lang == 'en' or field_name not in self.fields:
+                    continue
+                
+                setattr(trans, field_name, self.data['%s|%s'%(field_name,lang)])
+
+            trans.save()
+
     def _html_output(self, normal_row, error_row, row_ender, help_text_html, errors_on_separate_row):
         "Helper function for outputting HTML. Used by as_table(), as_ul(), as_p()."
 

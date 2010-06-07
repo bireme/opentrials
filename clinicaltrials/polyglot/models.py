@@ -33,3 +33,18 @@ class Translation(models.Model):
         done = set(t.language for t in content_object.translations.all())
         return targets-done
 
+def get_multilingual_fields(model):
+    """Returns a list of fields are begin translated for a given model class"""
+
+    # Gets translation model from generic relation
+    try:
+        trans_model = model.translations.field.rel.to
+    except AttributeError:
+        # Unrecognized class or field
+        return
+
+    try:
+        return trans_model.get_multilingual_fields()
+    except AttributeError:
+        return [field.name for field in trans_model._meta.fields if field.name not in ('id','language','content_type','object_id')]
+

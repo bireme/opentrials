@@ -3,6 +3,12 @@
 {% block body %}
 
     <script type="text/javascript">
+        {# A variavel de JS abaixo deve ser declarada sempre que houver um form com translation #}
+        MULTILINGUAL_FIELDS = {
+            available_languages: ['{{ available_languages|join:"','" }}'],
+            default_second_language: "{{ default_second_language }}"
+        };
+
         $(document).ready(function() {
             $("select[multiple]").asmSelect({
                     addItemTarget: 'bottom',

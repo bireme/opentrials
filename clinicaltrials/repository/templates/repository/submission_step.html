@@ -4,6 +4,11 @@
 
 {# Last <p > in http://docs.djangoproject.com/en/dev/topics/templates/#id1 #}
 
+{% block extrahead %}
+    {# Shows forms scripts and css #}
+    {% for form in forms %}{{ form.media }}{% endfor %}
+{% endblock extrahead %}
+
 {% block stepmenu_top %}
 <div class="stepmenu stepmenu-top">
     <ul>
@@ -29,3 +34,4 @@
     </ul>
 </div>
 {% endblock %}
+
