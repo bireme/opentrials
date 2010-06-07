@@ -4,7 +4,7 @@ from django.views.generic.list_detail import object_list, object_detail
 
 from reviewapp.views import index, user_dump, new_submission, submissions_list
 from reviewapp.views import dashboard, submission_detail, user_profile
-from reviewapp.views import upload_trial
+from reviewapp.views import upload_trial, open_remark
 
 from reviewapp.models import Submission, News
 
@@ -45,5 +45,8 @@ urlpatterns = patterns('',
     url(r'^accounts/logout/$', logout, dict(next_page='/'),
         name='reviewapp.logout'),
         
+    url(r'^remark/open/(?P<submission_id>\d+)/(?P<context>[a-zA-Z ]+)/$', open_remark,
+        name='reviewapp.openremark'),
+
     url(r'^$', index, name='reviewapp.home'),  
 )

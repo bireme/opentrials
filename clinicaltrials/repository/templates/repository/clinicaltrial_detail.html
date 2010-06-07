@@ -6,56 +6,65 @@
 
 {% block body %}
     <h2>{{ object.very_short_title }}</h2>
-    <table class="dataTable" width="100%">
-        <thead>
-            <tr>
-                <th>{% trans 'Trial Identification' %}</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><span style="font-weight: bold;">{% trans 'Scientific Title' %}:</span> 
-                {{ object.scientific_title }}</td>
-            </tr>
-            <tr>
-                <td><span style="font-weight: bold;">{% trans 'Scientific Acronym' %}:</span> 
-                {{ object.scientific_acronym_display }}</td>
-            </tr>
-            <tr>
-                <td><span style="font-weight: bold;">{% trans 'Public Title' %}:</span> 
-                {{ object.public_title }}</td>
-            </tr>
-            <tr>
-                <td><span style="font-weight: bold;">{% trans 'Public Acronym' %}:</span> 
-                {{ object.acronym_display }}</td>
-            </tr>
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'Secondary Identifying Numbers' %}</legend>
-                <table border="0">
-                {% for secid in object.trial_number %}
-                    <tr><td>
-                    <span style="font-weight: bold;">{% trans 'Secondary Identifying Numbers' %}:</span> 
-                    {{ secid.id_number }} 
-                    </td><td>
-                    <span style="font-weight: bold;">{% trans 'Issuing Authority' %}:</span> 
-                    {{ secid.issuing_authority }}
-                    </td></tr>
-                {% endfor %}
-                </table>
-                </fieldset>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 
-    <table class="dataTable" width="100%">
-        <thead>
-            <tr>
-                <th>{% trans 'Sponsors' %}</th>
-            </tr>
-        </thead>
+    <h3>{% trans 'Trial Identification' %}</h3>
+
+    <style type="text/css">
+        span.label {
+            font-weight: bold;
+        }
+
+        .mainContent ul li {
+            margin-bottom: 1em;
+        }
+        .mainContent li.subset {
+            border: 1px solid silver;
+        }
+        .mainContent li.subset ul {
+            padding: 0.5em;
+        }
+
+        .mainContent li.subset ul.odd {
+            background-color: #F4F9FD;
+        }
+    </style>
+
+    <ul>
+        <li>
+            <span class="label">{% trans 'Scientific Title' %}</span>:
+            <span class="value">{{ object.scientific_title }}</span>
+        </li>
+        <li>
+            <span class="label">{% trans 'Scientific Acronym' %}</span>:
+            <span class="value">{{ object.scientific_acronym_display }}</span>
+        </li>
+        <li>
+            <span class="label">{% trans 'Public Title' %}</span>:
+            <span class="value">{{ object.public_title }}</span>
+        </li>
+        <li>
+            <span class="label">{% trans 'Public Acronym' %}</span>:
+            <span class="value">{{ object.acronym_display }}</span>
+        </li>
+        <li class="subset">
+            {% for secid in object.trial_number %}
+            <ul class="{% cycle 'even' 'odd' %}">
+                <li>
+                    <span class="label">{% trans 'Secondary Identifying Numbers' %}</span>:
+                    <span class="value">{{ secid.id_number }}</span>
+                </li>
+                <li>
+                    <span class="label">{% trans 'Issuing Authority' %}</span>:
+                    <span class="value">{{ secid.issuing_authority }}</span>
+                </li>
+            </ul>
+            {% endfor %}
+        </li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Trial Identification' %}">{% trans 'Remark' %}</a></li>
+    </ul>
+
+    <h3>{% trans 'Sponsors' %}</h3>
+    <table class="table">
         <tbody>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Primary Sponsor' %}:</span> 
@@ -96,12 +105,8 @@
         </tbody>
     </table>
     
-    <table class="dataTable" width="100%">
-        <thead>
-            <tr>
-                <th>{% trans 'Health Conditions' %}</th>
-            </tr>
-        </thead>
+    <h3>{% trans 'Health Conditions' %}</h3>
+    <table class="table">
         <tbody>
             <tr>
                 <td><span style="font-weight: bold;">
@@ -140,12 +145,8 @@
         </tbody>
     </table>
     
-    <table class="dataTable" width="100%">
-        <thead>
-            <tr>
-                <th>{% trans 'Interventions' %}</th>
-            </tr>
-        </thead>
+    <h3>{% trans 'Interventions' %}</h3>
+    <table class="table">
         <tbody>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Interventions' %}:</span> 
@@ -182,12 +183,8 @@
         </tbody>
     </table>
     
-    <table class="dataTable" width="100%">
-        <thead>
-            <tr>
-                <th>{% trans 'Recruitment' %}</th>
-            </tr>
-        </thead>
+    <h3>{% trans 'Recruitment' %}</h3>
+    <table class="table">
         <tbody>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Recruitment Status' %}:</span> 
@@ -256,12 +253,8 @@
         </tbody>
     </table>
     
-    <table class="dataTable" width="100%">
-        <thead>
-            <tr>
-                <th>{% trans 'Study Type' %}</th>
-            </tr>
-        </thead>
+    <h3>{% trans 'Study Type' %}</h3>
+    <table class="table">
         <tbody>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Study Design' %}:</span> 
@@ -323,12 +316,8 @@
         </tbody>
     </table>
     
-    <table class="dataTable" width="100%">
-        <thead>
-            <tr>
-                <th>{% trans 'Outcomes' %}</th>
-            </tr>
-        </thead>
+    <h3>{% trans 'Outcomes' %}</h3>
+    <table class="table">
         <tbody>
             <tr>
                 <td>
@@ -365,12 +354,8 @@
         </tbody>
     </table>
     
-    <table class="dataTable" width="100%">
-        <thead>
-            <tr>
-                <th>{% trans 'Contacts' %}</th>
-            </tr>
-        </thead>
+    <h3>{% trans 'Contacts' %}</h3>
+    <table class="table">
         <tbody>
             {% if object.public_contacts %}
             <tr>
@@ -474,13 +459,8 @@
         </tbody>
     </table>
     
-    {% if object.trial_attach %}
-    <table class="dataTable" width="100%">
-        <thead>
-            <tr>
-                <th>{% trans 'Attachments' %}</th>
-            </tr>
-        </thead>
+    <h3>{% trans 'Attachments' %}</h3>
+    <table class="table">
         <tbody>
             <tr>
                 <td>
