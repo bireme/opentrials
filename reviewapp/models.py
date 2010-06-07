@@ -129,17 +129,17 @@ class Attachment(models.Model):
 
 REMARK_STATUS = [
     # initial state, as created by reviewer
-    ('pending', _('Pending')),
+    ('opened', _('Opened')),
     # marked as noted by user
     ('acknowledged', _('Acknowledged')),
     # final state, after reviewer verifies changes by the user
-    ('verified', _('Verified')),
+    ('Closed', _('Closed')),
 ]
 
 REMARK_TRANSITIONS = {
-    'pending':['acknowledged', 'verified'],
-    'acknowledged':['verified', 'pending'],
-    'verified':['pending'],
+    'opened':['acknowledged'],
+    'acknowledged':['closed','opened'],
+    'closed':[],
 }    
 
 class Remark(models.Model):

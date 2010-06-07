@@ -1,5 +1,6 @@
 # coding: utf-8
 
+from clinicaltrials.reviewapp.models import Remark
 from clinicaltrials.reviewapp.models import UserProfile
 from clinicaltrials.reviewapp.models import Attachment
 from django import forms
@@ -58,3 +59,10 @@ class UserProfileForm(forms.ModelForm):
 
 class UploadTrial(forms.Form):
     submission_xml = forms.CharField(widget=forms.FileInput,required=True)
+
+class OpenRemarkForm(forms.ModelForm):
+    class Meta:
+        model = Remark
+        exclude = ['submission','context','status']
+
+    title = _('Open Remark')

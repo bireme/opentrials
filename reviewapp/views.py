@@ -10,7 +10,7 @@ from django.conf import settings
 from tickets.models import Ticket
 
 from reviewapp.models import Submission, News
-from reviewapp.forms import UploadTrial, InitialTrialForm
+from reviewapp.forms import UploadTrial, InitialTrialForm, OpenRemarkForm
 from reviewapp.forms import UserForm, PrimarySponsorForm, UserProfileForm
 
 from repository.models import ClinicalTrial, CountryCode
@@ -118,4 +118,25 @@ def new_submission(request):
 def upload_trial(request):
     return render_to_response('reviewapp/upload_trial.html', {
         'form': UploadTrial()},
+        context_instance=RequestContext(request))
+
+@login_required
+def open_remark(request, submission_id, context):
+    submission = get_object_or_404(Submission, id=int(submission_id))
+
+    if request.POST:
+        form = OpenRemarkForm(request.POST)
+
+        if form.is_valid():
+            remark = form.save(commit=False)
+            remark.creator = request.user
+            remark.submission = submission
+            remark.context = context
+            remark.status = 'opened'
+            form.save()
+
+            return HttpResponseRedirect(reverse('repository.trialview',args=[submission.trial.id]))
+
+    form = OpenRemarkForm()
+    return render_to_response('reviewapp/open_remark.html', locals(),
         context_instance=RequestContext(request))
