@@ -74,11 +74,11 @@
                         </div>
                         <div class="userData_block">
                             <span><a href="{% url reviewapp.submissionlist %}">{% trans 'Submissions' %}</a></span>
-                            <big>12</big>
+                            <big>{{ user.get_profile.amount_submissions }}</big>
                         </div>
                         <div class="userData_block">
                             <span><a href="{% url ticket.index %}">{% trans 'Tickets' %}</a></span>
-                            <big>08</big>
+                            <big>{{ user.get_profile.amount_tickets }}</big>
                         </div>
                         <div class="userData_block">
                             <ul>

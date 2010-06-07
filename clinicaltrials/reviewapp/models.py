@@ -8,6 +8,8 @@ from repository.choices import PROCESSING_STATUS, PUBLISHED_STATUS
 from vocabulary.models import CountryCode
 from utilities import safe_truncate
 
+from tickets.models import Ticket
+
 from reviewapp.signals import create_user_profile
 from django.db.models.signals import post_save
 
@@ -36,7 +38,13 @@ class UserProfile(models.Model):
     preferred_language = models.CharField(_('Preferred language'),max_length=10,
                                 choices=settings.MANAGED_LANGUAGES,
                                 default=settings.MANAGED_LANGUAGES[-1][0])
+                                
+    def amount_submissions(self):
+        return u"%03d" % (Submission.objects.filter(creator=self.user).count())
 
+    def amount_tickets(self):
+        return u"%03d" % (Ticket.objects.filter(creator=self.user).count())
+       
 
 class Submission(models.Model):
     class Meta:
