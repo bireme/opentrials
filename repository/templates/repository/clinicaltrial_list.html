@@ -8,7 +8,7 @@
 
     {% if object_list %}
         {% for ct in object_list %}
-        <table class="table">
+        <table class="dataTable" width="100%">
             <thead>
                 <tr>
                     <th colspan="3">
@@ -18,10 +18,10 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{% trans 'Primary Id Number' %}: 
+                    <td width="33%">{% trans 'Primary Id Number' %}: 
                     <a href="{% url repository.trialview ct.id %}">{{ ct.trial_id }}</a></td>
-                    <td>{% trans 'Recruitment Status' %}: {{ ct.recruitment_status }}</td>
-                    <td>{% trans 'Date of Registration' %}: {{ ct.date_registration }}</td>
+                    <td width="33%">{% trans 'Recruitment Status' %}: {{ ct.recruitment_status }}</td>
+                    <td width="33%">{% trans 'Date of Registration' %}: {{ ct.date_registration }}</td>
                 </tr>
             </tbody>
         </table>
