@@ -235,6 +235,11 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         else:
             tit = self.scientific_title
         return safe_truncate(tit, 120)
+        
+    def very_short_title(self):
+        tit = u'%s - %s' % (self.identifier(),
+                            self.short_title())
+        return safe_truncate(tit, 60)
 
     def main_title(self):
         if self.public_title:

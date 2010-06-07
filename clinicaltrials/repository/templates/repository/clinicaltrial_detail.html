@@ -5,8 +5,8 @@
 {% block body_title %}{% trans 'Clinical Trial' %}{% endblock %}
 
 {% block body %}
-    <h2>{{ object }}</h2>
-    <table class="table">
+    <h2>{{ object.very_short_title }}</h2>
+    <table class="dataTable" width="100%">
         <thead>
             <tr>
                 <th>{% trans 'Trial Identification' %}</th>
@@ -15,7 +15,7 @@
         <tbody>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Scientific Title' %}:</span> 
-                {{ objeobject.scientific_title }}</td>
+                {{ object.scientific_title }}</td>
             </tr>
             <tr>
                 <td><span style="font-weight: bold;">{% trans 'Scientific Acronym' %}:</span> 
@@ -50,7 +50,7 @@
         </tbody>
     </table>
 
-    <table class="table">
+    <table class="dataTable" width="100%">
         <thead>
             <tr>
                 <th>{% trans 'Sponsors' %}</th>
@@ -61,6 +61,7 @@
                 <td><span style="font-weight: bold;">{% trans 'Primary Sponsor' %}:</span> 
                 {{ object.primary_sponsor }}</td>
             </tr>
+            {% if object.secondary_sponsors %}
             <tr>
                 <td>
                 <fieldset>
@@ -76,6 +77,7 @@
                 </fieldset>
                 </td>
             </tr>
+            {% endif %}
             <tr>
                 <td>
                 <fieldset>
@@ -94,7 +96,7 @@
         </tbody>
     </table>
     
-    <table class="table">
+    <table class="dataTable" width="100%">
         <thead>
             <tr>
                 <th>{% trans 'Health Conditions' %}</th>
@@ -138,7 +140,7 @@
         </tbody>
     </table>
     
-    <table class="table">
+    <table class="dataTable" width="100%">
         <thead>
             <tr>
                 <th>{% trans 'Interventions' %}</th>
@@ -180,7 +182,7 @@
         </tbody>
     </table>
     
-    <table class="table">
+    <table class="dataTable" width="100%">
         <thead>
             <tr>
                 <th>{% trans 'Recruitment' %}</th>
@@ -254,7 +256,7 @@
         </tbody>
     </table>
     
-    <table class="table">
+    <table class="dataTable" width="100%">
         <thead>
             <tr>
                 <th>{% trans 'Study Type' %}</th>
@@ -321,7 +323,7 @@
         </tbody>
     </table>
     
-    <table class="table">
+    <table class="dataTable" width="100%">
         <thead>
             <tr>
                 <th>{% trans 'Outcomes' %}</th>
@@ -363,13 +365,14 @@
         </tbody>
     </table>
     
-    <table class="table">
+    <table class="dataTable" width="100%">
         <thead>
             <tr>
                 <th>{% trans 'Contacts' %}</th>
             </tr>
         </thead>
         <tbody>
+            {% if object.public_contacts %}
             <tr>
                 <td>
                 <fieldset>
@@ -401,6 +404,8 @@
                 </fieldset>
                 </td>
             </tr>
+            {% endif %}
+            {% if object.scientific_contacts %}
             <tr>
                 <td>
                 <fieldset>
@@ -432,6 +437,8 @@
                 </fieldset>
                 </td>
             </tr>
+            {% endif %}
+            {% if object.site_contacts %}
             <tr>
                 <td>
                 <fieldset>
@@ -463,10 +470,12 @@
                 </fieldset>
                 </td>
             </tr>
+            {% endif %}
         </tbody>
     </table>
     
-    <table class="table">
+    {% if object.trial_attach %}
+    <table class="dataTable" width="100%">
         <thead>
             <tr>
                 <th>{% trans 'Attachments' %}</th>
@@ -493,4 +502,5 @@
             </tr>
         </tbody>
     </table>
+    {% endif %}
 {% endblock %}
