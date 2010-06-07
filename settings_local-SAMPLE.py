@@ -34,6 +34,8 @@ if DEBUG:
     INSTALLED_APPS += (
         ## external dependency for generating model ER diagrams
         # 'graphviz',
+        ## external dependency for migrating database schemas
+        # 'south',
     )
 
     GRAPHVIZ_DOT_CMD = '/usr/bin/dot'

@@ -377,6 +377,11 @@ class ClinicalTrialTranslation(Translation):
     # TRDS 15b
     study_design = models.TextField(_('Study Design'), blank=True, max_length=1000)
 
+    # This method is here just to be an example
+    #@classmethod
+    #def get_multilingual_fields(cls):
+    #    return ['public_title']
+
 
 ################################### Entities linked to a Clinical Trial ###
 

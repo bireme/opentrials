@@ -1,0 +1,40 @@
+.multilingual {
+    overflow: hidden;
+}
+
+.multilingual .multilingual-value {
+    display: none;
+    overflow: hidden;
+    float: left;
+}
+
+.multilingual h4 {
+    margin: 0;
+}
+
+.multilingual .en, .multilingual .default-second-language {
+    display: block;
+}
+
+.multilingual .sel {
+    float: right;
+    border: 1px solid silver;
+    padding: 5px;
+    background-color: #f8f8f8;
+}
+
+.multilingual .sel h4 {
+    margin: 0;
+}
+
+.multilingual .sel ul {
+    margin: 0;
+    padding: 0;
+}
+
+.multilingual .sel ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+

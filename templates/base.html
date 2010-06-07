@@ -18,6 +18,8 @@
         <script type="text/javascript" src="/static/js/jquery.cluetip.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="/static/js/jquery.hoverIntent.js" type="text/javascript"></script>
         <script type="text/javascript" src="/static/js/submission.utils.js"></script>
+
+        {% block extrahead %}{% endblock %}
     </head>
     <body>
         <div class="{% block container_class %}container wide{% endblock %}">

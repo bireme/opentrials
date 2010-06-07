@@ -148,7 +148,11 @@ def step_1(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[0],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Sponsors and Sources of Support')},
+                               'next_form_title':_('Sponsors and Sources of Support'),
+                               # As duas variaveis de contexto abaixo devem ir sempre que houver um form com translation
+                               'available_languages': form.available_languages,
+                               'default_second_language': form.default_second_language,
+                               },
                                context_instance=RequestContext(request))
 
 
