@@ -11,6 +11,11 @@ P {
     font-family: arial;
 }
 
+pre {
+    font-family: inherit;
+    font-size: 1em;
+}
+
 H2, .topMenu LI A, .NewsTitle {
     letter-spacing: -1px;
 }

@@ -7,27 +7,34 @@
 {% block body %}
     <h2>{{ object.very_short_title }}</h2>
 
-    <h3>{% trans 'Trial Identification' %}</h3>
 
     <style type="text/css">
-        span.label {
+        span.label, span.legend {
             font-weight: bold;
         }
-
+        span.legend {
+            display: block;
+            margin: 0.5em 0;
+            text-decoration: underline;
+        }
         .mainContent ul li {
             margin-bottom: 1em;
         }
         .mainContent li.subset {
             border: 1px solid silver;
+            padding: 0.5em;
+            clear: both;
         }
         .mainContent li.subset ul {
-            padding: 0.5em;
+            padding: 0em;
         }
-
-        .mainContent li.subset ul.odd {
+        .mainContent li.subset .odd {
             background-color: #F4F9FD;
         }
-        
+        .mainContent li.subset ul.vcard {
+            float: left;
+            width: 33%;
+        }
         div.title {
           margin-left: 1%;
           border: 4px solid #CCC;
@@ -62,11 +69,6 @@
           line-height: 200%;
           margin-right: 14pt;
         }
-        
-        div.clear { 
-          clear: both; 
-        }
-
     </style>
         <p><span class="label">{% trans 'Scientific Title' %}</span>:</p>
         <div class="title">
@@ -79,29 +81,30 @@
                 <p>{{ t.scientific_title }}</p>
             </div>
         {% endfor %}
-        <div class="clear"> </div>
+        <div class="spacer"> </div>
+    <h3>{% trans 'Trial Identification' %}</h3>
     <ul>
         <li>
-            <span class="label">{% trans 'Scientific Acronym' %}</span>:
+            <span class="label">{% trans 'Scientific Acronym' %}:</span>
             <span class="value">{{ object.scientific_acronym_display }}</span>
         </li>
         <li>
-            <span class="label">{% trans 'Public Title' %}</span>:
+            <span class="label">{% trans 'Public Title' %}:</span>
             <span class="value">{{ object.public_title }}</span>
         </li>
         <li>
-            <span class="label">{% trans 'Public Acronym' %}</span>:
+            <span class="label">{% trans 'Public Acronym' %}:</span>
             <span class="value">{{ object.acronym_display }}</span>
         </li>
         <li class="subset">
             {% for secid in object.trial_number %}
             <ul class="{% cycle 'even' 'odd' %}">
                 <li>
-                    <span class="label">{% trans 'Secondary Identifying Numbers' %}</span>:
+                    <span class="label">{% trans 'Secondary Identifying Numbers' %}:</span>
                     <span class="value">{{ secid.id_number }}</span>
                 </li>
                 <li>
-                    <span class="label">{% trans 'Issuing Authority' %}</span>:
+                    <span class="label">{% trans 'Issuing Authority' %}:</span>
                     <span class="value">{{ secid.issuing_authority }}</span>
                 </li>
             </ul>
@@ -111,423 +114,354 @@
     </ul>
 
     <h3>{% trans 'Sponsors' %}</h3>
-    <table class="table">
-        <tbody>
-            <tr>
-                <td><span style="font-weight: bold;">{% trans 'Primary Sponsor' %}:</span> 
-                {{ object.primary_sponsor }}</td>
-            </tr>
-            {% if object.secondary_sponsors %}
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'Secondary Sponsors' %}</legend>
-                <table border="0">
-                {%  for sponsors in object.secondary_sponsors %}
-                    <tr><td>
-                    <span style="font-weight: bold;">{% trans 'Institution' %}:</span> 
-                    {{ sponsors.institution }} 
-                    </td></tr>
-                {% endfor %}
-                </table>
-                </fieldset>
-                </td>
-            </tr>
-            {% endif %}
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'Source(s) of Monetary or Material Support' %}</legend>
-                <table border="0">
-                {%  for source_support in object.support_sources %}
-                    <tr><td>
-                    <span style="font-weight: bold;">{% trans 'Institution' %}:</span> 
-                    {{ source_support.institution }} 
-                    </td></tr>
-                {% endfor %}
-                </table>
-                </fieldset>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <ul>
+        <li>
+            <span class="label">{% trans 'Primary Sponsor' %}:</span>
+            <span class="value">{{ object.primary_sponsor }}</span>
+        </li>
+        {% if object.secondary_sponsors %}
+        <li>
+            <span class="label">{% trans 'Secondary Sponsors' %}</span>
+            <ul>
+            {%  for sponsors in object.secondary_sponsors %}
+                <li class="{% cycle 'even' 'odd' %}">
+                    <span class="label">{% trans 'Institution' %}:</span>
+                    <span class="value">{{ sponsors.institution }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        </li>
+        {% endif %}
+        <li class="subset">
+            <span class="legend">{% trans 'Source(s) of Monetary or Material Support' %}</span>
+            <ul>
+            {%  for source_support in object.support_sources %}
+                <li class="{% cycle 'even' 'odd' %}">
+                    <span class="label">{% trans 'Institution' %}:</span>
+                    <span class="value">{{ source_support.institution }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        </li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Sponsors' %}">{% trans 'Remark' %}</a></li>
+    </ul>
     
     <h3>{% trans 'Health Conditions' %}</h3>
-    <table class="table">
-        <tbody>
-            <tr>
-                <td><span style="font-weight: bold;">
-                {% trans 'Health Condition(s) or Problem(s)' %}:</span> 
-                {{ object.hc_freetext|linebreaks }}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'General Descriptors for Health Condition(s)' %}</legend>
-                <table border="0">
-                {% for hc in object.hc_code %}
-                    <tr><td>
-                    <span style="font-weight: bold;">{{ hc.code }}:</span> {{ hc.text }}
-                    </td></tr>
-                {% endfor %}
-                </table>
-                </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'Specific Descriptors for Health Condition(s)' %}</legend>
-                <table border="0">
-                {% for hc in object.hc_keyword %}
-                    <tr><td>
-                    <span style="font-weight: bold;">{{ hc.code }}:</span> {{ hc.text }}
-                    </td></tr>
-                {% endfor %}
-                </table>
-                </fieldset>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <ul>
+        <li>
+            <span class="label">{% trans 'Health Condition(s) or Problem(s)' %}:</span>
+            <pre class="value">{{ object.hc_freetext }}</pre>
+        </li>
+        <li class="subset">
+            <span class="legend">{% trans 'General Descriptors for Health Condition(s)' %}</span>
+            <ul>
+            {% for hc in object.hc_code %}
+                <li>
+                    <span class="label">{{ hc.code }}:</span>
+                    <span class="value">{{ hc.text }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        </li>
+        <li class="subset">
+            <span class="legend">{% trans 'Specific Descriptors for Health Condition(s)' %}</span>
+            <ul>
+            {% for hc in object.hc_keyword %}
+                <li>
+                    <span class="label">{{ hc.code }}:</span>
+                    <span class="value">{{ hc.text }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        </li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Health Conditions' %}">{% trans 'Remark' %}</a></li>
+    </ul>
     
     <h3>{% trans 'Interventions' %}</h3>
-    <table class="table">
-        <tbody>
-            <tr>
-                <td><span style="font-weight: bold;">{% trans 'Interventions' %}:</span> 
-                {{ object.i_freetext|linebreaks }}</td>
-            </tr>
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'Intervention Code(s)' %}</legend>
-                <table border="0">
-                {% for iv in object.intervention_code %}
-                    <tr><td>
-                    <span style="font-weight: bold;">{{ iv.label }}:</span> {{ iv.description }}
-                    </td></tr>
-                {% endfor %}
-                </table>
-                </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'Descriptor for Intervention(s)' %}</legend>
-                <table border="0">
-                {% for iv in object.intervention_keyword %}
-                    <tr><td>
-                    <span style="font-weight: bold;">{{ iv.code }}:</span> {{ iv.text }}
-                    </td></tr>
-                {% endfor %}
-                </table>
-                </fieldset>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <ul>
+        <li>
+            <span class="label">{% trans 'Interventions' %}:</span>
+            <pre class="value">{{ object.i_freetext }}</pre>
+        </li>
+        <li class="subset">
+            <span class="legend">{% trans 'Intervention Code(s)' %}</span>
+            <ul>
+            {% for iv in object.intervention_code %}
+                <li>
+                    <span class="label">{{ iv.label }}:</span>
+                    <span class="value">{{ iv.description }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        </li>
+        <li class="subset">
+            <span class="legend">{% trans 'Descriptor for Intervention(s)' %}</span>
+            <ul>
+            {% for iv in object.intervention_keyword %}
+                <li>
+                    <span class="label">{{ iv.code }}:</span>
+                    <span class="value">{{ iv.text }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        </li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Interventions' %}">{% trans 'Remark' %}</a></li>
+    </ul>
     
     <h3>{% trans 'Recruitment' %}</h3>
-    <table class="table">
-        <tbody>
-            <tr>
-                <td><span style="font-weight: bold;">{% trans 'Recruitment Status' %}:</span> 
-                {{ object.recruitment_status }}</td>
-            </tr>
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'Recruitment Country' %}</legend>
-                <table border="0"><tr><td>
-                {% for recruitment in object.trial_recruitment_country %}
-                    {{ recruitment.description }}{% if not forloop.last %}, {% endif %}
-                {% endfor %}
-                </td></tr></table>
-                </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <span style="font-weight: bold;">
-                    {% trans 'Planned Date of First Enrollment' %}:
-                </span> {{ object.enrollment_start_planned }}</td>
-            </tr>
-            <tr>
-                <td>
-                    <table border="0">
-                    <tr>
-                        <th>
-                        <span style="font-weight: bold;">{% trans 'Target Sample Size' %}
-                        </th>
-                        <th>
-                        <span style="font-weight: bold;">{% trans 'Gender (inclusion sex)' %}</span> 
-                        </th>
-                        <th>
-                        <span style="font-weight: bold;">{% trans 'Inclusion Minimum Age' %}</span> 
-                        </th>
-                        <th>
-                        <span style="font-weight: bold;">{% trans 'Inclusion Maximum Age' %}</span> 
-                        </th>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td>
-                        {{ object.target_sample_size }}
-                        </td>
-                        <td>
-                        {{ object.gender }}
-                        </td>
-                        <td>
-                        {{ object.agemin_value }} {{ object.agemin_unit }}
-                        </td>
-                        <td>
-                        {{ object.agemax_value }} {{ object.agemax_unit }}
-                        </td>
-                    <tr/>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td><span style="font-weight: bold;">{% trans 'Inclusion Criteria' %}:</span> 
-                {{ object.inclusion_criteria|linebreaks }}</td>
-            </tr>
-            <tr>
-                <td><span style="font-weight: bold;">{% trans 'Exclusion Criteria' %}:</span> 
-                {{ object.exclusion_criteria|linebreaks }}</td>
-            </tr>
-        </tbody>
-    </table>
-    
-    <h3>{% trans 'Study Type' %}</h3>
-    <table class="table">
-        <tbody>
-            <tr>
-                <td><span style="font-weight: bold;">{% trans 'Study Design' %}:</span> 
-                {{ object.study_design|linebreaks }}</td>
-            </tr>
-            <tr>
-                <td>
-                    <table border="0">
-                    <tr>
-                        <th>
-                        <span style="font-weight: bold;">{% trans 'Expanded access program' %}
-                        </th>
-                        <th>
-                        <span style="font-weight: bold;">{% trans 'Study Purpose' %}
-                        </th>
-                        <th>
-                        <span style="font-weight: bold;">{% trans 'Intervention Assignment' %}</span> 
-                        </th>
-                        <th>
-                        <span style="font-weight: bold;">{% trans 'Number of arms' %}</span> 
-                        </th>
-                        <th>
-                        <span style="font-weight: bold;">{% trans 'Masking type' %}</span> 
-                        </th>
-                        <th>
-                        <span style="font-weight: bold;">{% trans 'Allocation type' %}</span> 
-                        </th>
-                        <th>
-                        <span style="font-weight: bold;">{% trans 'Study Phase' %}</span> 
-                        </th>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td>
-                        {{ object.expanded_access_program }}
-                        </td>
-                        <td>
-                        {{ object.purpose }}
-                        </td>
-                        <td>
-                        {{ object.intervention_assignment }}
-                        </td>
-                        <td>
-                        {{ object.number_of_arms }}
-                        </td>
-                        <td>
-                        {{ object.masking }}
-                        </td>
-                        <td>
-                        {{ object.allocation }}
-                        </td>
-                        <td>
-                        {{ object.phase }}
-                        </td>
-                    <tr/>
-                    </table>
-                </td>
-            </tr>
+    <ul>
+        <li>
+            <span class="label">{% trans 'Recruitment Status' %}:</span>
+            <span class="value">{{ object.recruitment_status }}</span>
+        </li>
+        <li class="subset">
+            <span class="legend">{% trans 'Recruitment Country' %}</span>
+            <ul>
+            {% for recruitment in object.trial_recruitment_country %}
+                <li>{{ recruitment.description }}{% if not forloop.last %}, {% endif %}</li>
+            {% endfor %}
+            </ul>
+        </li>
+        <li>
+            <span class="label">{% trans 'Planned Date of First Enrollment' %}:</span>
+            <span class="value">{{ object.enrollment_start_planned }}</span>
+        </li>
+        <li>
+            <table class="dataTable">
+                <tr>
+                    <th>{% trans 'Target Sample Size' %}:</th>
+                    <th>{% trans 'Gender (inclusion sex)' %}:</th>
+                    <th>{% trans 'Inclusion Minimum Age' %}:</th>
+                    <th>{% trans 'Inclusion Maximum Age' %}:</th>
+                </tr>
+                <tr>
+                    <td>{{ object.target_sample_size }}</td>
+                    <td>{{ object.gender }}</td>
+                    <td>{{ object.agemin_value }} {{ object.agemin_unit }}</td>
+                    <td>{{ object.agemax_value }} {{ object.agemax_unit }}</td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            <span class="label">{% trans 'Inclusion Criteria' %}:</span>
+            <pre class="value">{{ object.inclusion_criteria }}</pre>
+        </li>
+        <li>
+            <span class="label">{% trans 'Exclusion Criteria' %}:</span>
+            <pre class="value">{{ object.exclusion_criteria }}</pre>
+        </li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Recruitment' %}">{% trans 'Remark' %}</a></li>
+    </ul>
 
-        </tbody>
-    </table>
+    <h3>{% trans 'Study Type' %}</h3>
+    <ul>
+        <li>
+            <span class="label">{% trans 'Study Design' %}:</span>
+            <pre class="value">{{ object.study_design }}</pre>
+        </li>
+        <li>
+            <table class="dataTable">
+                <tr>
+                    <th><span class="label">{% trans 'Expanded access program' %}</span></th>
+                    <th><span class="label">{% trans 'Study Purpose' %}</span></th>
+                    <th><span class="label">{% trans 'Intervention Assignment' %}</span></th>
+                    <th><span class="label">{% trans 'Number of arms' %}</span></th>
+                    <th><span class="label">{% trans 'Masking type' %}</span></th>
+                    <th><span class="label">{% trans 'Allocation type' %}</span></th>
+                    <th><span class="label">{% trans 'Study Phase' %}</span></th>
+                </tr>
+                <tr>
+                    <td><span class="value">{{ object.expanded_access_program }}</span></td>
+                    <td><span class="value">{{ object.purpose }}</span></td>
+                    <td><span class="value">{{ object.intervention_assignment }}</span></td>
+                    <td><span class="value">{{ object.number_of_arms }}</span></td>
+                    <td><span class="value">{{ object.masking }}</span></td>
+                    <td><span class="value">{{ object.allocation }}</span></td>
+                    <td><span class="value">{{ object.phase }}</span></td>
+                </tr>
+            </table>
+        </li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Study Type' %}">{% trans 'Remark' %}</a></li>
+    </ul>
     
     <h3>{% trans 'Outcomes' %}</h3>
-    <table class="table">
-        <tbody>
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'Primary Outcomes' %}</legend>
-                <table border="0" width="100%">
-                {% for outcomes in object.primary_outcomes %}
-                    <tr><td>
-                    <div style="background-color: #ddffdd; padding: 10px;">
+    <ul>
+        <li class="subset">
+            <span class="legend">{% trans 'Primary Outcomes' %}</span>
+            <ul>
+            {% for outcomes in object.primary_outcomes %}
+                <li style="background-color: #ddffdd; padding: 10px;">
                     {{ forloop.counter }} - {{ outcomes.description }}
-                    </div>
-                    </td></tr>
-                {% endfor %}
-                </table>
-                </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'Secondary Outcomes' %}</legend>
-                <table border="0" width="100%">
-                {% for outcomes in object.secondary_outcomes %}
-                    <tr><td>
-                    <div style="background-color: #ddffdd; padding: 10px;">
+                </li>
+            {% endfor %}
+            </ul>
+        </li>
+        <li class="subset">
+            <span class="legend">{% trans 'Secondary Outcomes' %}</span>
+            <ul>
+            {% for outcomes in object.secondary_outcomes %}
+                <li style="background-color: #ddffdd; padding: 10px;">
                     {{ forloop.counter }} - {{ outcomes.description }}
-                    </div>
-                    </td></tr>
-                {% endfor %}
-                </table>
-                </fieldset>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                </li>
+            {% endfor %}
+            </ul>
+        </li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Outcomes' %}">{% trans 'Remark' %}</a></li>
+    </ul>
     
     <h3>{% trans 'Contacts' %}</h3>
-    <table class="table">
-        <tbody>
-            {% if object.public_contacts %}
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'Contacts for Public Queries' %}</legend>
-                <table border="0" width="100%"><tr>
-                {% for contact in object.public_contacts %}
-                    <td>
-                    <span style="font-weight: bold;">{% trans 'Full Name' %}: </span>
-                    {{ contaobject.firstname }} {{ contaobject.middlename }} {{ contaobject.lastname }} <br />
-                    <span style="font-weight: bold;">{% trans 'Address' %}: </span>
-                    {{ contaobject.address }} <br />
-                    <span style="font-weight: bold;">{% trans 'City' %}: </span>
-                    {{ contaobject.city }} {{ contaobject.country }} <br />
-                    <span style="font-weight: bold;">{% trans 'Zip Code' %}: </span>
-                    {{ contaobject.zip }} <br />
-                    <span style="font-weight: bold;">{% trans 'Telephone' %}: </span>
-                    {{ contaobject.telephone }} <br />
-                    <span style="font-weight: bold;">E-mail: </span>
-                    {{ contaobject.email }} <br />
-                    <span style="font-weight: bold;">{% trans 'Affiliation' %}: </span>
-                    {{ contaobject.affiliation }} <br />
-                    </td>
-                    {% if forloop.counter|divisibleby:"3" and not forloop.last %}
-                        </tr><tr>
-                    {% endif %}
-                {% endfor %}
-                </tr>
-                </table>
-                </fieldset>
-                </td>
-            </tr>
+    <ul>
+        {% if object.public_contacts %}
+        <li class="subset">
+            <span class="legend">{% trans 'Contacts for Public Queries' %}</span>
+            {% for contact in object.public_contacts %}
+            <ul class="vcard">
+                <li>
+                    <b>{% trans 'Full Name' %}:</b>
+                    <span class="fn">{{ contact.firstname }} {{ contact.middlename }} {{ contact.lastname }}</span>
+                </li>
+                <li>
+                    <ul class="adr">
+                        <li>
+                            <b>{% trans 'Address' %}:</b>
+                            <span class="street-address">{{ contact.address }}</span>
+                        </li>
+                        <li>
+                            <b>{% trans 'City' %}: </b>
+                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country }}</span></span>
+                        </li>
+                        <li>
+                            <b>{% trans 'Zip Code' %}:</b>
+                            <span class="postal-code">{{ contact.zip }}</span>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>{% trans 'Telephone' %}:</b>
+                    <span class="tel">{{ contact.telephone }}</span>
+                </li>
+                <li>
+                    <b>E-mail:</b>
+                    <span class="email">{{ contact.email }}</span>
+                </li>
+                <li>
+                    <b>{% trans 'Affiliation' %}:</b>
+                    <span class="org">{{ contact.affiliation }}</span>
+                </li>
+            </ul>
+            {% if forloop.last %}
+                <div class="spacer">&nbsp;</div>
             {% endif %}
-            {% if object.scientific_contacts %}
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'Contacts for Scientific Queries' %}</legend>
-                <table border="0" width="100%"><tr>
-                {% for contact in object.scientific_contacts %}
-                    <td>
-                    <span style="font-weight: bold;">{% trans 'Full Name' %}: </span>
-                    {{ contaobject.firstname }} {{ contaobject.middlename }} {{ contaobject.lastname }} <br />
-                    <span style="font-weight: bold;">{% trans 'Address' %}: </span>
-                    {{ contaobject.address }} <br />
-                    <span style="font-weight: bold;">{% trans 'City' %}: </span>
-                    {{ contaobject.city }} {{ contaobject.country }} <br />
-                    <span style="font-weight: bold;">{% trans 'Zip Code' %}: </span>
-                    {{ contaobject.zip }} <br />
-                    <span style="font-weight: bold;">{% trans 'Telephone' %}: </span>
-                    {{ contaobject.telephone }} <br />
-                    <span style="font-weight: bold;">E-mail: </span>
-                    {{ contaobject.email }} <br />
-                    <span style="font-weight: bold;">{% trans 'Affiliation' %}: </span>
-                    {{ contaobject.affiliation }} <br />
-                    </td>
-                    {% if forloop.counter|divisibleby:"3" and not forloop.last %}
-                        </tr><tr>
-                    {% endif %}
-                {% endfor %}
-                </tr>
-                </table>
-                </fieldset>
-                </td>
-            </tr>
+            {% endfor %}
+        </li>
+        {% endif %}
+        
+        {% if object.scientific_contacts %}
+        <li class="subset">
+            <span class="legend">{% trans 'Contacts for Scientific Queries' %}</span>
+            {% for contact in object.scientific_contacts %}
+            <ul class="vcard">
+                <li>
+                    <b>{% trans 'Full Name' %}:</b>
+                    <span class="fn">{{ contact.firstname }} {{ contact.middlename }} {{ contact.lastname }}</span>
+                </li>
+                <li>
+                    <ul class="adr">
+                        <li>
+                            <b>{% trans 'Address' %}:</b>
+                            <span class="street-address">{{ contact.address }}</span>
+                        </li>
+                        <li>
+                            <b>{% trans 'City' %}: </b>
+                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country }}</span></span>
+                        </li>
+                        <li>
+                            <b>{% trans 'Zip Code' %}:</b>
+                            <span class="postal-code">{{ contact.zip }}</span>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>{% trans 'Telephone' %}:</b>
+                    <span class="tel">{{ contact.telephone }}</span>
+                </li>
+                <li>
+                    <b>E-mail:</b>
+                    <span class="email">{{ contact.email }}</span>
+                </li>
+                <li>
+                    <b>{% trans 'Affiliation' %}:</b>
+                    <span class="org">{{ contact.affiliation }}</span>
+                </li>
+            </ul>
+            {% if forloop.last %}
+                <div class="spacer">&nbsp;</div>
             {% endif %}
-            {% if object.site_contacts %}
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'Contact(s) for Site Queries' %}</legend>
-                <table border="0" width="100%"><tr>
-                {% for contact in object.site_contacts %}
-                    <td>
-                    <span style="font-weight: bold;">{% trans 'Full Name' %}: </span>
-                    {{ contaobject.firstname }} {{ contaobject.middlename }} {{ contaobject.lastname }} <br />
-                    <span style="font-weight: bold;">{% trans 'Address' %}: </span>
-                    {{ contaobject.address }} <br />
-                    <span style="font-weight: bold;">{% trans 'City' %}: </span>
-                    {{ contaobject.city }} {{ contaobject.country }} <br />
-                    <span style="font-weight: bold;">{% trans 'Zip Code' %}: </span>
-                    {{ contaobject.zip }} <br />
-                    <span style="font-weight: bold;">{% trans 'Telephone' %}: </span>
-                    {{ contaobject.telephone }} <br />
-                    <span style="font-weight: bold;">E-mail: </span>
-                    {{ contaobject.email }} <br />
-                    <span style="font-weight: bold;">{% trans 'Affiliation' %}: </span>
-                    {{ contaobject.affiliation }} <br />
-                    </td>
-                    {% if forloop.counter|divisibleby:"3" and not forloop.last %}
-                        </tr><tr>
-                    {% endif %}
-                {% endfor %}
-                </tr>
-                </table>
-                </fieldset>
-                </td>
-            </tr>
+            {% endfor %}
+        </li>
+        {% endif %}
+
+
+        {% if object.site_contacts %}
+        <li class="subset">
+            <span class="legend">{% trans 'Contact(s) for Site Queries' %}</span>
+            {% for contact in object.site_contacts %}
+            <ul class="vcard">
+                <li>
+                    <b>{% trans 'Full Name' %}:</b>
+                    <span class="fn">{{ contact.firstname }} {{ contact.middlename }} {{ contact.lastname }}</span>
+                </li>
+                <li>
+                    <ul class="adr">
+                        <li>
+                            <b>{% trans 'Address' %}:</b>
+                            <span class="street-address">{{ contact.address }}</span>
+                        </li>
+                        <li>
+                            <b>{% trans 'City' %}: </b>
+                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country }}</span></span>
+                        </li>
+                        <li>
+                            <b>{% trans 'Zip Code' %}:</b>
+                            <span class="postal-code">{{ contact.zip }}</span>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>{% trans 'Telephone' %}:</b>
+                    <span class="tel">{{ contact.telephone }}</span>
+                </li>
+                <li>
+                    <b>E-mail:</b>
+                    <span class="email">{{ contact.email }}</span>
+                </li>
+                <li>
+                    <b>{% trans 'Affiliation' %}:</b>
+                    <span class="org">{{ contact.affiliation }}</span>
+                </li>
+            </ul>
+            {% if forloop.last %}
+                <div class="spacer">&nbsp;</div>
             {% endif %}
-        </tbody>
-    </table>
-    
+            {% endfor %}
+        </li>
+        {% endif %}
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Contacts' %}">{% trans 'Remark' %}</a></li>
+    </ul>
+
+    {% if object.trial_attach %}
     <h3>{% trans 'Attachments' %}</h3>
-    <table class="table">
-        <tbody>
-            <tr>
-                <td>
-                <fieldset>
-                <legend>{% trans 'Files' %}</legend>
-                <table border="0">
-                {%  for attach in object.trial_attach %}
-                    {% if attach.public %}
-                        <tr><td>
-                        <a href="http://{{host}}{{attach.get_relative_url}}">
-                        http://{{host}}{{attach.get_relative_url}}</a> 
-                        ({{ attach.description }})
-                        </td></tr>
-                    {% endif %}
-                {% endfor %}
-                </table>
-                </fieldset>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    
+    <ul>
+        {%  for attach in object.trial_attach %}
+            {% if attach.public %}
+                <li>
+                <a href="http://{{host}}{{attach.get_relative_url}}">
+                http://{{host}}{{attach.get_relative_url}}</a>
+                ({{ attach.description }})
+                </li>
+            {% endif %}
+        {% endfor %}
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Attachments' %}">{% trans 'Remark' %}</a></li>
+    </ul>
+    {% endif %}
 {% endblock %}
