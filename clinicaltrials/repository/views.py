@@ -86,14 +86,15 @@ def index(request):
     })
     return HttpResponse(t.render(c))
 
-"""def details(request, trial_pk):
+def details(request, trial_pk):
     ''' clinical trial details '''
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    translations = [t for t in ct.translations.all()]
     return render_to_response('repository/clinicaltrial_detail.html',
-                                {'ct': ct,
-                                'titles': TRIAL_FORMS,
+                                {'object': ct,
+                                'translations': translations,
                                 'host': request.get_host()},
-                                context_instance=RequestContext(request))"""
+                                context_instance=RequestContext(request))
 
 @login_required
 def new_institution(request):
