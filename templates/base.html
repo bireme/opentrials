@@ -89,11 +89,19 @@
                             </ul>
                         </div>
                         <div class="userData_block logout">
-                            <a href="/accounts/logout" title="{% trans 'Logout' %}">{% trans 'Logout' %}</a>
-                            <a href="/accounts/logout">
-                                <img class="nohover" src="/static/images/button_logout.gif" alt="{% trans 'Logout' %}"/>
-                                <img class="hover" src="/static/images/button_logout_hover.gif" alt="{% trans 'Logout' %}"/>
-                            </a>
+                            <table>
+                            <tr>
+                                <td>
+                                    <a href="/accounts/logout" title="{% trans 'Logout' %}">{% trans 'Logout' %}</a>
+                                </td>
+                                <td>
+                                    <a href="/accounts/logout">
+                                        <img class="nohover" src="/static/images/button_logout.gif" alt="{% trans 'Logout' %}"/>
+                                        <img class="hover" src="/static/images/button_logout_hover.gif" alt="{% trans 'Logout' %}"/>
+                                    </a>
+                                </td>
+                            </tr>
+                            </table>
                         </div>
                         <div class="spacer">&#160;</div>
                     </div>
