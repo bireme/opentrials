@@ -6,7 +6,17 @@
     <div class="news">
 
     {% if news %}
-        <h2>{% trans 'News' %}</h2>
+        <table border="0" cellpading="0" cellspacing="0">
+        <tr>
+            <td>
+                <h2>{% trans 'News' %}</h2>
+            </td>
+            <td>&nbsp;</td>
+            <td>
+                <a class="NewsExcerpt" title="{% trans 'List all' %}" href="{% url reviewapp.newslist %}">({% trans 'List all' %})</a>
+            </td>
+        </tr>
+        </table>
         <ul>
             <li>
                 <small>{{ news.created|date:'d/m/Y - H:i' }}</small>
@@ -16,7 +26,18 @@
         </ul>
     {% endif %}
 
-    <h2>{% trans 'Latest published trials' %}</h2>
+    <table border="0" cellpading="0" cellspacing="0">
+    <tr>
+        <td>
+            <h2>{% trans 'Latest published trials' %}</h2>
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            <a class="NewsExcerpt" title="{% trans 'List all' %}" href="{% url repository.list_all %}">({% trans 'List all' %})</a>
+        </td>
+    </tr>
+    </table>
+
     {% if clinical_trials %}
         <ul>
         {% for ct in clinical_trials %}
