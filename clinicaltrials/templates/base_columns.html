@@ -12,12 +12,17 @@
         </ul>
     </div>
     <div class="links">
-        <h2>Links</h2>
+        {% load recruiting_trials %}
+        {% get_latest_recruiting_trials 5 as latest_recruiting_trials %}
+        <h2>{% trans 'Recruiting' %}</h2>
         <ul>
-            <li><a href="#">Volutpat donec nam, condimentum dignissim maecenas</a></li>
-            <li><a href="#">Sed wisi consequat tellus in etiam</a></li>
-            <li><a href="#">Taciti ipsum sapien erat varius </a></li>
-            <li><a href="#">Felis pellentesque elementum  mus suspendisse</a></li>
+        {% if latest_recruiting_trials %}
+            {% for ct in latest_recruiting_trials %}
+                <li><a href="{% url repository.trialview ct.id %}">{{ ct.short_title }}</a></li>
+            {% endfor %}
+        {% else %}
+            <li>{% trans 'No clinical trials recruiting.' %}</li>
+        {% endif %}
         </ul>
     </div>
 </div>
