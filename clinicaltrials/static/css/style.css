@@ -299,16 +299,18 @@ blockquote {
     float: left;
     width: 70%;
     margin-right: 2em;
-
+    padding-right: 2em;
+    border-right: 1px solid #d7d7d7;
 }
 
 .wide .middle .mainContent {
+    border: none;
     width: 100%;
     margin-right: 0em;
+    padding-right: 0em;
 }
 
 .middle .news {
-    border-right: 1px solid #d7d7d7;
     padding-right: 17px;
 }
 .middle .news LI {
@@ -364,6 +366,14 @@ blockquote {
 table.dataTable {
     margin-bottom: 10px;
     clear: both;
+}
+
+form table.dataTable {
+    width: 100%;
+}
+
+form table.dataTable th {
+    width: 15%;
 }
 
 table.dataTable, table.dataTable td {
