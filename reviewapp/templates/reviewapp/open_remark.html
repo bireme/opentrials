@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block login %}{% endblock %}
+
+{% block body %}
+<h2>{% trans 'Open Remark' %}</h2>
+<form method="post" action="./">{% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <br/>
+    <input type="submit" value="{% trans 'Open' %}"
+</form>
+
+
+{% endblock %}
