@@ -10,15 +10,16 @@
 {% endblock extrahead %}
 
 {% block stepmenu_top %}
-<div class="stepmenu stepmenu-top">
-    <ul>
-        <li><a href="{% url repository.edittrial trial_pk %}">{% trans "Summary" %}</a></li>
-        {% for step,iscurrent in steps %}
-        <li{% if iscurrent %} class="current"{% endif %}>
-           <a href="{{step}}">{% trans "Part" %} {{forloop.counter}}</a>
-        </li>
-        {% endfor %}
-    </ul>
+<div class="breadcrumb">
+    <small>
+        <a href="{% url repository.edittrial trial_pk %}">{% trans "Summary" %}</a>
+    </small>
+    {% for step,iscurrent in steps %}
+    <span> / </span>
+    <small{% if iscurrent %} class="current"{% endif %}>
+        <a href="{{step}}">{% trans "Part" %} {{forloop.counter}}</a>
+    </small>
+    {% endfor %}
 </div>
 {% endblock %}
 
