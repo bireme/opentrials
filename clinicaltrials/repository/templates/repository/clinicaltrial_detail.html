@@ -34,6 +34,7 @@
         .mainContent li.subset ul.vcard {
             float: left;
             width: 33%;
+            margin: 1.5em 0 1em;
         }
         div.title {
           margin-left: 1%;
@@ -70,7 +71,7 @@
           margin-right: 14pt;
         }
     </style>
-        <p><span class="label">{% trans 'Scientific Title' %}</span>:</p>
+    <p><span class="label">{% trans 'Scientific Title' %}</span>:</p>
         <div class="title">
             <h2>en</h2>
             <p>{{ object.scientific_title }}</p>
@@ -349,6 +350,9 @@
                     <span class="org">{{ contact.affiliation }}</span>
                 </li>
             </ul>
+            {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                <hr class="spacer" size="1"/>
+            {% endif %}
             {% if forloop.last %}
                 <div class="spacer">&nbsp;</div>
             {% endif %}
@@ -394,6 +398,9 @@
                     <span class="org">{{ contact.affiliation }}</span>
                 </li>
             </ul>
+            {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                <hr class="spacer" size="1"/>
+            {% endif %}
             {% if forloop.last %}
                 <div class="spacer">&nbsp;</div>
             {% endif %}
@@ -440,6 +447,9 @@
                     <span class="org">{{ contact.affiliation }}</span>
                 </li>
             </ul>
+            {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                <hr class="spacer" size="1"/>
+            {% endif %}
             {% if forloop.last %}
                 <div class="spacer">&nbsp;</div>
             {% endif %}
