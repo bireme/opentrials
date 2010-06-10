@@ -45,7 +45,7 @@ urlpatterns = patterns('',
     url(r'^accounts/logout/$', logout, dict(next_page='/'),
         name='reviewapp.logout'),
         
-    url(r'^remark/open/(?P<submission_id>\d+)/(?P<context>[a-zA-Z ]+)/$', open_remark,
+    url(r'^remark/open/(?P<submission_id>\d+)/(?P<context>[a-zA-Z0-9_\- ]+)/$', open_remark,
         name='reviewapp.openremark'),
 
     url(r'^$', index, name='reviewapp.home'),  

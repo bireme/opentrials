@@ -111,7 +111,7 @@
             </ul>
             {% endfor %}
         </li>
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Trial Identification' %}">{% trans 'Remark' %}</a></li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Trial Identification'|slugify %}">{% trans 'Remark' %}</a></li>
     </ul>
 
     <h3>{% trans 'Sponsors' %}</h3>
@@ -144,7 +144,7 @@
             {% endfor %}
             </ul>
         </li>
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Sponsors' %}">{% trans 'Remark' %}</a></li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Sponsors'|slugify %}">{% trans 'Remark' %}</a></li>
     </ul>
     
     <h3>{% trans 'Health Conditions' %}</h3>
@@ -175,7 +175,7 @@
             {% endfor %}
             </ul>
         </li>
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Health Conditions' %}">{% trans 'Remark' %}</a></li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Health Conditions'|slugify %}">{% trans 'Remark' %}</a></li>
     </ul>
     
     <h3>{% trans 'Interventions' %}</h3>
@@ -206,7 +206,7 @@
             {% endfor %}
             </ul>
         </li>
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Interventions' %}">{% trans 'Remark' %}</a></li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Interventions'|slugify %}">{% trans 'Remark' %}</a></li>
     </ul>
     
     <h3>{% trans 'Recruitment' %}</h3>
@@ -251,7 +251,7 @@
             <span class="label">{% trans 'Exclusion Criteria' %}:</span>
             <pre class="value">{{ object.exclusion_criteria }}</pre>
         </li>
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Recruitment' %}">{% trans 'Remark' %}</a></li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Recruitment'|slugify %}">{% trans 'Remark' %}</a></li>
     </ul>
 
     <h3>{% trans 'Study Type' %}</h3>
@@ -282,7 +282,7 @@
                 </tr>
             </table>
         </li>
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Study Type' %}">{% trans 'Remark' %}</a></li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Study Type'|slugify %}">{% trans 'Remark' %}</a></li>
     </ul>
     
     <h3>{% trans 'Outcomes' %}</h3>
@@ -307,7 +307,7 @@
             {% endfor %}
             </ul>
         </li>
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Outcomes' %}">{% trans 'Remark' %}</a></li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Outcomes'|slugify %}">{% trans 'Remark' %}</a></li>
     </ul>
     
     <h3>{% trans 'Contacts' %}</h3>
@@ -456,7 +456,7 @@
             {% endfor %}
         </li>
         {% endif %}
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Contacts' %}">{% trans 'Remark' %}</a></li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Contacts'|slugify %}">{% trans 'Remark' %}</a></li>
     </ul>
 
     {% if object.trial_attach %}
@@ -471,7 +471,7 @@
                 </li>
             {% endif %}
         {% endfor %}
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Attachments' %}">{% trans 'Remark' %}</a></li>
+        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Attachments'|slugify %}">{% trans 'Remark' %}</a></li>
     </ul>
     {% endif %}
 {% endblock %}

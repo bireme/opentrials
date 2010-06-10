@@ -1,12 +1,14 @@
 {% extends "repository/submission_step.html" %}
 {% load i18n %}
+{% load remark %}
+
 {% block body %}
 
+    {# A variavel de JS abaixo deve ser declarada sempre que houver um form com translation #}
     <script type="text/javascript">
-        {# A variavel de JS abaixo deve ser declarada sempre que houver um form com translation #}
         MULTILINGUAL_FIELDS = {
-            available_languages: ['{{ available_languages|join:"','" }}'],
-            default_second_language: "{{ default_second_language }}"
+            available_languages: ['{{ CHECKED_CODES|join:"','" }}'],
+            default_second_language: "{{ forms.0.default_second_language }}"
         };
 
         $(document).ready(function() {
@@ -20,17 +22,16 @@
         });
     </script>
 
+
     <h2>{{ title }}</h2>
+    {% get_remarks title|slugify as remarks_list %}
+    {{ remarks_list }}
 
     <form action="./" method="POST">{% csrf_token %}
         {% for form in forms %}
         <fieldset>
             <legend>{% firstof form.title form.form.title %}</legend>
-            <table class="table">
-                <col width="20%"/>
-                <col width="75%"/>
-                <col width="5%"/>
-
+            <table class="dataTable">
                 {{ form.as_table }}
             </table>
         </fieldset>
@@ -44,10 +45,7 @@
 
             <div class="{{formset.management_form.prefix}}">
             {% for form in formset.forms %}
-                <table class="table">
-                    <col width="20%"/>
-                    <col width="75%"/>
-                    <col width="5%"/>
+                <table class="dataTable">
                     {{ form.as_table }}
                 </table>
             {% endfor %}
@@ -57,7 +55,7 @@
             </div>
             </fieldset>
         {% endfor %}
-        <input type="submit" value="{% trans "Save" %}"/>
+        <input type="submit" value="{% trans 'Save' %}"/>
     </form>
 
 {% endblock %}
