@@ -98,6 +98,7 @@ TEMPLATE_CONTEXT_PROCESSORS =(
     'django.core.context_processors.auth',
     'django.core.context_processors.i18n',
     'django.core.context_processors.csrf',
+    'context_processors.clinicaltrials.polyglot',
 )
 
 AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
@@ -121,9 +122,8 @@ DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
 # 2) the first managed language is considered the default and is
 #    also the source language for content translation purposes
 MANAGED_LANGUAGES = (
-    (u'en-US',u'English'),
-    (u'es-ES',u'Español'),
-    #(u'fr-FR',u'Français'),
+    (u'en',u'English'),
+    (u'es',u'Español'),
     (u'pt-BR',u'Português'),
 )
 TARGET_LANGUAGES = MANAGED_LANGUAGES[1:] # exlude source language

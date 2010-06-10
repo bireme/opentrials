@@ -31,10 +31,7 @@
 
             <div class="{{formset.management_form.prefix}}">
             {% for form in formset.forms %}
-                <table class="table">
-                    <col width="20%"/>
-                    <col width="75%"/>
-                    <col width="5%"/>
+                <table class="dataTable">
                     {{ form.as_table }}
                 </table>
             {% endfor %}

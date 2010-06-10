@@ -19,8 +19,10 @@ from django.forms.forms import BoundField, conditional_escape
 from polyglot.multilingual_forms import MultilingualCharField, MultilingualTextField
 from polyglot.models import get_multilingual_fields
 
+import settings
+
 class ReviewModelForm(forms.ModelForm):
-    available_languages = ('en',)
+    available_languages = settings.CHECKED_LANGUAGES
     default_second_language = 'pt-br'
 
     def __init__(self, *args, **kwargs):
@@ -136,14 +138,12 @@ class ReviewModelForm(forms.ModelForm):
                 help_record, new = FieldHelp.objects.get_or_create(form=form_name, field=name)
                 help_text = help_text + u' ' + force_unicode(help_record)
                 help_text = help_text_html % help_text
-                field_path = '%s.%s' % (form_name, name)
-                issue_text = '%s #%s' % (field_path, self.instance.pk)
                 output.append(normal_row % {'errors': force_unicode(bf_errors),
                                             'label': force_unicode(label),
                                             'field': unicode(bf),
                                             'help_text': help_text,
                                             'help_id': 'id_%s-help%s' % ((self.prefix or name),help_record.pk),
-                                            'issue': issue_text,})
+                                            })
         if top_errors:
             output.insert(0, error_row % force_unicode(top_errors))
         if hidden_fields: # Insert any hidden fields in the last row.
@@ -152,18 +152,6 @@ class ReviewModelForm(forms.ModelForm):
                 last_row = output[-1]
                 # Chop off the trailing row_ender (e.g. '</td></tr>') and
                 # insert the hidden fields.
-                if not last_row.endswith(row_ender):
-                    # This can happen in the as_p() case (and possibly others
-                    # that users write): if there are only top errors, we may
-                    # not be able to conscript the last row for our purposes,
-                    # so insert a new, empty row.
-                    last_row = normal_row % {'errors': '',
-                                             'label': '',
-                                             'field': '',
-                                             'help_text': '',
-                                             'help_id': 'id_%s-help%s' % (self.prefix,help_record.pk),
-                                             'issue': '',}
-                    output.append(last_row)
                 output[-1] = last_row[:-len(row_ender)] + str_hidden + row_ender
             else:
                 # If there aren't any rows in the output, just append the
@@ -179,7 +167,6 @@ class ReviewModelForm(forms.ModelForm):
                 <td class="help">
                     <img src="/static/help.png" rel="#%(help_id)s"/>
                     <div id="%(help_id)s" class="help">%(help_text)s</div>
-                    <div class="issue">%(issue)s</div>
                     </td></tr>
         '''
         return self._html_output(normal_row=normal_row,
