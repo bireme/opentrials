@@ -9,6 +9,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 from registration.backends import get_backend
+from registration.forms import RegistrationFormUniqueEmail
 
 
 def activate(request, backend,
@@ -92,7 +93,7 @@ def activate(request, backend,
                               context_instance=context)
 
 
-def register(request, backend, success_url=None, form_class=None,
+def register(request, backend, success_url=None, form_class=RegistrationFormUniqueEmail,
              disallowed_url='registration_disallowed',
              template_name='registration/registration_form.html',
              extra_context=None):

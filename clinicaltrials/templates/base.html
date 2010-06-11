@@ -124,8 +124,8 @@
                         </div>
                         <div class="loginOption">
                             <ul>
-                                <li><a href="#">Esqueci minha senha</a></li>
-                                <li><a href="/accounts/register" title="{% trans 'create an account to submit trial records' %}">[{% trans 'register' %}]</a></li>
+                                <li><a href="{% url reviewapp.password_reset %}" title="{% trans 'Forgot password?' %}">{% trans 'Forgot password?' %}</a></li>
+                                <li><a href="/accounts/register" title="{% trans 'create an account to submit trial records' %}">{% trans 'Register' %}</a></li>
                             </ul>
                         </div>
                         <div class="spacer">&#160;</div>

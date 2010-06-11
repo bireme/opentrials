@@ -1,0 +1,12 @@
+{% extends "base_columns.html" %}
+
+{% load i18n %}
+
+{% block body %}
+
+{% if user_exist %}
+    <p>{% trans "A new activation email has been sent. Check your e-mail." %}</p>
+{% else %}
+    <p>{% trans "The e-mail" %} {{ email }} {% trans "not belong to any registered user." %}</p>
+{% endif %}
+{% endblock %}

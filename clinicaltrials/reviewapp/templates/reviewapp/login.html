@@ -1,5 +1,7 @@
 {% extends "base_columns.html" %}
 
+{% load i18n %}
+
 {% block login %}{% endblock %}
 
 {% block body %}
@@ -18,10 +20,12 @@
             <td>{{ form.password }}</td>
         </tr>
     </table>
-
     <input type="submit" value="login" />
     <input type="hidden" name="next" value="reviewapp.dashboard" />
 </form>
-
+<a href="/accounts/register" title="{% trans 'create an account to submit trial records' %}">
+    {% trans 'Register' %}</a>
+<a href="{% url reviewapp.password_reset %}" title="{% trans 'Forgot password?' %}">
+    {% trans 'Forgot password?' %}</a>
 
 {% endblock %}
