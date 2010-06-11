@@ -11,7 +11,6 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.conf import settings
 from django.contrib.sites.models import RequestSite
 from django.contrib.sites.models import Site
-from django.contrib.auth.forms import PasswordResetForm
 from tickets.models import Ticket
 
 from reviewapp.models import Submission, News
@@ -95,20 +94,20 @@ def resend_activation_email(request):
     
     if len(users) > 0:
         user = users[0]
-        profile = RegistrationProfile.objects.get(user=user)
     else:
-        user = None
-        profile = None
-    
-    if user:
-        if user.is_active:
-            return HttpResponseRedirect(reverse('reviewapp.password_reset')+'?email='+email)
-            #form = PasswordResetForm()
-
-            #return render_to_response('reviewapp/password_reset_form.html', 
-            #    {'form': form},
-            #    context_instance=RequestContext(request))
-        else:
+        return render_to_response('reviewapp/resend_activation_email.html', 
+                {'user_exist': False, 'email': email},
+                context_instance=RequestContext(request))
+        
+    if user.is_active:
+        return HttpResponseRedirect(reverse('reviewapp.password_reset')+'?email='+email)
+    else:
+   
+        profiles = RegistrationProfile.objects.filter(user=user)
+        
+        if len(profiles) > 0:
+            profile = profiles[0]
+            
             if Site._meta.installed:
                 site = Site.objects.get_current()
             else:
@@ -122,10 +121,10 @@ def resend_activation_email(request):
             return render_to_response('reviewapp/resend_activation_email.html', 
                 {'user_exist': True},
                 context_instance=RequestContext(request))
-    else:
-        return render_to_response('reviewapp/resend_activation_email.html', 
-            {'user_exist': False, 'email': email},
-            context_instance=RequestContext(request))
+        else:
+            return render_to_response('reviewapp/resend_activation_email.html', 
+                {'user_exist': False, 'email': email},
+                context_instance=RequestContext(request))
 
 @login_required
 def new_submission(request):
