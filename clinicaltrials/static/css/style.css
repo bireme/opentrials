@@ -301,6 +301,7 @@ blockquote {
     margin-right: 2em;
     padding-right: 2em;
     border-right: 1px solid #d7d7d7;
+    min-height: 349px;
 }
 
 .wide .middle .mainContent {
