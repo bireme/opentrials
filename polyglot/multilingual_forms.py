@@ -25,7 +25,7 @@ class BaseMultilingualWidget(forms.Widget):
         values = {}
 
         for lang in self.available_languages:
-            # English is the default language
+            # fixme: get from settings # English is the default language
             if lang == 'en':
                 values[lang] = value
 
@@ -53,7 +53,7 @@ class BaseMultilingualWidget(forms.Widget):
         for lang in self.available_languages:
             widget = self.widget_class(**wargs)
             widgets.append(widget)
-
+            # FIXME: get main language from settings
             w_name = lang == 'en' and name or '%s|%s'%(name,lang)
 
             css_class = 'multilingual-value '+lang
@@ -61,7 +61,7 @@ class BaseMultilingualWidget(forms.Widget):
                 css_class = ' '.join([css_class, 'default-second-language'])
 
             rendereds.append('<span class="%s"><h4>%s</h4>%s</span>' % (css_class, lang, widget.render(w_name, values[lang])))
-
+        # FIXME: change multilingual to polyglot
         return '<span class="multilingual">%s</span>'%('\n'.join(rendereds))
 
     def get_widget_args(self):
@@ -88,6 +88,7 @@ class MultilingualField(forms.Field):
     """Used in replacement to CharField and Field w/ Textarea on multilingual fields"""
 
     instance = None
+    #FIXME: get main language from settings
     available_languages = ('en',)
     default_second_language = None
 

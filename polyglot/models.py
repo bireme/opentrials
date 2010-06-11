@@ -20,7 +20,7 @@ class Translation(models.Model):
 
     def __unicode__(self):
         return self.language
-    
+
     def natural_key(self):
         return self.content_type.natural_key()+ \
                self.content_object.natural_key()+ \
@@ -41,9 +41,9 @@ def get_multilingual_fields(model):
         trans_model = model.translations.field.rel.to
     except AttributeError:
         # Unrecognized class or field
-        return
+        return []
 
-    try:
+    try: # customization hook, this try allows the
         return trans_model.get_multilingual_fields()
     except AttributeError:
         return [field.name for field in trans_model._meta.fields if field.name not in ('id','language','content_type','object_id')]
