@@ -27,15 +27,10 @@ class ReviewModelForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         # Gets multilingual fields from translation class
-        try:
-            self.multilingual_fields = get_multilingual_fields(self._meta.model)
-        except AttributeError:
-            raise #Exception(self.__class__)
-            self.multilingual_fields = None
-
-            # FIXME, to remove
-            #if self.__class__ == TrialIdentificationForm:
-            #    self.multilingual_fields = ('scientific_title','public_title',)
+        self.multilingual_fields = get_multilingual_fields(self._meta.model)
+        # FIXME, to remove
+        #if self.__class__ == TrialIdentificationForm:
+        #    self.multilingual_fields = ('scientific_title','public_title',)
 
         if self.multilingual_fields:
             # Gets default second language from arguments, if informed. Default value is None
@@ -43,7 +38,7 @@ class ReviewModelForm(forms.ModelForm):
             self.available_languages = kwargs.pop('available_languages', ('en','pt-br','es')) # Mandatory (FIXME, to remove default tuple)
 
             # Change field widgets replacing common TextInput and Textarea to Multilingual respective ones
-            for field_name in (self.multilingual_fields or []):
+            for field_name in self.multilingual_fields:
                 if field_name not in self.base_fields:
                     continue
 
@@ -82,7 +77,7 @@ class ReviewModelForm(forms.ModelForm):
         return obj
 
     def save_translations(self, obj):
-        """This method is because you can save without commit, so you can call this by yourself."""
+        """This method is because you can save without commit, so you can call this yourself."""
 
         if not hasattr(obj, 'translations'):
             return
@@ -97,9 +92,10 @@ class ReviewModelForm(forms.ModelForm):
 
             # Sets fields values
             for field_name in (self.multilingual_fields or []):
+                # FIXME: get main language from settings
                 if lang == 'en' or field_name not in self.fields:
                     continue
-                
+
                 setattr(trans, field_name, self.data['%s|%s'%(field_name,lang)])
 
             trans.save()
@@ -259,8 +255,8 @@ class DescriptorForm(ReviewModelForm):
     class Meta:
         model = Descriptor
         exclude = ['trial','version']
-        
-        
+
+
 class GeneralHealthDescriptorForm(DescriptorForm):
     title = _('General Descriptors for Health Condition(s)')
     aspect = forms.CharField(widget=forms.HiddenInput,
