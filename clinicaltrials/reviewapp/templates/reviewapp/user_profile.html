@@ -1,7 +1,19 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+{% block extrahead %}
+<style type="text/css">
+#id_email  {
+    width:300px;
+}
+#id_preferred_language  {
+    width:190px;
+}
+</style>
+{% endblock %}
+
 {% block body %}
+
 <h2>{% trans "User profile" %}</h2>
 <form action="./" method="post">{% csrf_token %}
     <fieldset>
