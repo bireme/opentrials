@@ -1,12 +1,17 @@
 # coding: utf-8
 from reviewapp.models import UserProfile
+from registration.models import RegistrationProfile
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template.context import RequestContext
 from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.conf import settings
+from django.contrib.sites.models import RequestSite
+from django.contrib.sites.models import Site
+from django.contrib.auth.forms import PasswordResetForm
 from tickets.models import Ticket
 
 from reviewapp.models import Submission, News
@@ -14,6 +19,7 @@ from reviewapp.forms import UploadTrial, InitialTrialForm, OpenRemarkForm
 from reviewapp.forms import UserForm, PrimarySponsorForm, UserProfileForm
 
 from repository.models import ClinicalTrial, CountryCode
+from datetime import datetime
 
 def index(request):
     clinical_trials = ClinicalTrial.objects.all()[:3]
@@ -81,6 +87,45 @@ def user_profile(request):
 
     return render_to_response('reviewapp/user_profile.html', locals(),
         context_instance=RequestContext(request))
+        
+def resend_activation_email(request):
+    
+    email = request.GET.get('email', '')
+    users = User.objects.filter(email=email)
+    
+    if len(users) > 0:
+        user = users[0]
+        profile = RegistrationProfile.objects.get(user=user)
+    else:
+        user = None
+        profile = None
+    
+    if user:
+        if user.is_active:
+            return HttpResponseRedirect(reverse('reviewapp.password_reset')+'?email='+email)
+            #form = PasswordResetForm()
+
+            #return render_to_response('reviewapp/password_reset_form.html', 
+            #    {'form': form},
+            #    context_instance=RequestContext(request))
+        else:
+            if Site._meta.installed:
+                site = Site.objects.get_current()
+            else:
+                site = RequestSite(request)
+            
+            user.date_joined = datetime.now()
+            user.last_login = datetime.now()
+            user.save()
+            profile.send_activation_email(site)
+
+            return render_to_response('reviewapp/resend_activation_email.html', 
+                {'user_exist': True},
+                context_instance=RequestContext(request))
+    else:
+        return render_to_response('reviewapp/resend_activation_email.html', 
+            {'user_exist': False, 'email': email},
+            context_instance=RequestContext(request))
 
 @login_required
 def new_submission(request):

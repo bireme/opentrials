@@ -44,10 +44,21 @@ class NewAttachmentForm(forms.ModelForm):
     title = _('New Attachment')
     
 class UserForm(forms.ModelForm):
+    def clean_email(self):
+        """
+        Validate that the supplied email address is unique for the
+        site.
+        
+        """
+        if self.cleaned_data['email'] != self.instance.email:
+            if User.objects.filter(email__iexact=self.cleaned_data['email']):
+                raise forms.ValidationError(_("This email address is already in use. Please supply a different email address."))
+        return self.cleaned_data['email']
+        
     class Meta:
         model = User
         fields = ['first_name','last_name','email']
-
+    
     title = _('User Profile')
 
 class UserProfileForm(forms.ModelForm):
