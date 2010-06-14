@@ -41,11 +41,16 @@ class ReviewModelForm(forms.ModelForm):
             for field_name in self.multilingual_fields:
                 if field_name not in self.base_fields:
                     continue
-
+#                import pdb
+#                pdb.set_trace()
                 if isinstance(self.base_fields[field_name], forms.CharField):
-                    self.base_fields[field_name] = MultilingualCharField(max_length=self.base_fields[field_name].max_length)
-                else:
-                    self.base_fields[field_name] = MultilingualTextField()
+                    if isinstance(self.base_fields[field_name].widget,forms.Textarea):
+                        self.base_fields[field_name] = MultilingualTextField(
+                                                            required=self.base_fields[field_name].required)
+                    else:
+                        self.base_fields[field_name] = MultilingualCharField(
+                                                            required=self.base_fields[field_name].required,
+                                                            max_length=self.base_fields[field_name].max_length)
 
         super(ReviewModelForm, self).__init__(*args, **kwargs)
 
