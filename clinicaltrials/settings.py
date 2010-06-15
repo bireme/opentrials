@@ -121,13 +121,13 @@ DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
 # 1) source: http://www.i18nguy.com/unicode/language-identifiers.html
 # 2) the first managed language is considered the default and is
 #    also the source language for content translation purposes
-MANAGED_LANGUAGES = (
+MANAGED_LANGUAGES_CHOICES = (
     (u'en',u'English'),
     (u'es',u'Español'),
     (u'pt-BR',u'Português'),
 )
-TARGET_LANGUAGES = MANAGED_LANGUAGES[1:] # exlude source language
-CHECKED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES]
+TARGET_LANGUAGES = MANAGED_LANGUAGES_CHOICES[1:] # exlude source language
+MANAGED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES_CHOICES]
 
 # django-registration: for how long the activation link is valid
 ACCOUNT_ACTIVATION_DAYS = 7

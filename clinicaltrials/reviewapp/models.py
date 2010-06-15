@@ -36,8 +36,8 @@ ACCESS = [
 class UserProfile(models.Model):
     user = models.ForeignKey(User, unique=True)
     preferred_language = models.CharField(_('Preferred language'),max_length=10,
-                                choices=settings.MANAGED_LANGUAGES,
-                                default=settings.MANAGED_LANGUAGES[-1][0])
+                                choices=settings.MANAGED_LANGUAGES_CHOICES,
+                                default=settings.MANAGED_LANGUAGES_CHOICES[-1][0])
                                 
     def amount_submissions(self):
         return u"%03d" % (Submission.objects.filter(creator=self.user).count())
@@ -66,7 +66,7 @@ class Submission(models.Model):
                               choices=SUBMISSION_STATUS,
                               default=SUBMISSION_STATUS[0][0])
     language = models.CharField(_('Submission language'), max_length=10,
-                                choices=settings.MANAGED_LANGUAGES)
+                                choices=settings.MANAGED_LANGUAGES_CHOICES)
     staff_note = models.TextField(_('Submission note (staff use only)'), max_length=255,
                                     blank=True)
 
@@ -98,7 +98,7 @@ class Submission(models.Model):
         for rc in self.trial.recruitment_country.all():
             langs.add(rc.submission_language)
 
-        return langs.intersection(set(settings.CHECKED_LANGUAGES))
+        return langs.intersection(set(settings.MANAGED_LANGUAGES))
 
     def get_trans_languages(self):
         return self.get_mandatory_languages() - set([self.language])
