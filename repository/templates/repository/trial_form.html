@@ -2,13 +2,18 @@
 {% load i18n %}
 {% load remark %}
 
+{% block extrahead %}
+        <link rel="stylesheet" type="text/css" href="/static/css/multilingual.css"/>
+        <script type="text/javascript" src="/static/js/multilingual.js"></script>
+{% endblock %}
+
 {% block body %}
 
     {# A variavel de JS abaixo deve ser declarada sempre que houver um form com translation #}
     <script type="text/javascript">
         MULTILINGUAL_FIELDS = {
-            available_languages: ['{{ CHECKED_CODES|join:"','" }}'],
-            default_second_language: "{{ forms.0.default_second_language }}"
+            available_languages: ['{{ MANAGED_LANGUAGES_LC|join:"','" }}'],
+            default_second_language: 'pt-br'
         };
 
         $(document).ready(function() {
@@ -24,8 +29,6 @@
 
 
     <h2>{{ title }}</h2>
-    {% get_remarks title|slugify as remarks_list %}
-    {{ remarks_list }}
 
     <form action="./" method="POST">{% csrf_token %}
         {% for form in forms %}
