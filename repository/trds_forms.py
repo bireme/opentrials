@@ -1,5 +1,6 @@
 #coding: utf-8
 
+from django.forms.models import BaseModelFormSet
 from assistance.models import FieldHelp
 from vocabulary.models import CountryCode
 from repository.models import ClinicalTrial, Contact, Descriptor, Institution
@@ -22,7 +23,7 @@ from polyglot.models import get_multilingual_fields
 import settings
 
 class ReviewModelForm(forms.ModelForm):
-    available_languages = settings.CHECKED_LANGUAGES
+    available_languages = settings.MANAGED_LANGUAGES
     default_second_language = 'pt-br'
 
     def __init__(self, *args, **kwargs):
@@ -41,8 +42,7 @@ class ReviewModelForm(forms.ModelForm):
             for field_name in self.multilingual_fields:
                 if field_name not in self.base_fields:
                     continue
-#                import pdb
-#                pdb.set_trace()
+
                 if isinstance(self.base_fields[field_name], forms.CharField):
                     if isinstance(self.base_fields[field_name].widget,forms.Textarea):
                         self.base_fields[field_name] = MultilingualTextField(
@@ -86,7 +86,7 @@ class ReviewModelForm(forms.ModelForm):
 
         if not hasattr(obj, 'translations'):
             return
-
+        
         for lang in self.available_languages:
             # Get or create translation object
             try:
@@ -101,7 +101,12 @@ class ReviewModelForm(forms.ModelForm):
                 if lang == 'en' or field_name not in self.fields:
                     continue
 
-                setattr(trans, field_name, self.data['%s|%s'%(field_name,lang)])
+                field_name_trans = '%s|%s'%(field_name,lang)
+                if self.prefix:
+                    field_name_trans = '%s-%s'%(self.prefix,field_name_trans)
+
+                if field_name_trans in self.data:
+                    setattr(trans, field_name, self.data[field_name_trans])
 
             trans.save()
 
@@ -175,6 +180,38 @@ class ReviewModelForm(forms.ModelForm):
                                  row_ender='</td></tr>',
                                  help_text_html=u'%s',
                                  errors_on_separate_row=False)
+
+class MultilingualBaseFormSet(BaseModelFormSet):
+
+    def __init__(self, data=None, files=None, auto_id='id_%s', prefix=None,
+                 queryset=None, **kwargs):
+        self.queryset = queryset
+        defaults = {'data': data, 'files': files, 'auto_id': auto_id, 'prefix': prefix}
+        defaults.update(kwargs)
+    
+        super(BaseModelFormSet, self).__init__(**defaults)
+
+    def save(self, commit=True):
+        """Saves model instances for every form, adding and changing instances
+        as necessary, and returns the list of instances.
+        """
+        
+        if not commit:
+            self.saved_forms = []
+            def save_m2m():
+                for form in self.saved_forms:
+                    form.save_m2m()
+            self.save_m2m = save_m2m
+
+        saved_instances = self.save_existing_objects(commit) + self.save_new_objects(commit)
+
+        if commit:
+            for form in self.forms:
+                if form.is_valid() and form.instance.pk:
+                    form.save_translations(form.instance)
+
+        return saved_instances
+
 #
 # Forms
 #

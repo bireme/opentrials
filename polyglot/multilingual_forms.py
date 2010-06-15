@@ -2,13 +2,13 @@ from django import forms
 from django.conf import settings
 
 from models import Translation
-
+import re
 # WIDGETS
 
 class BaseMultilingualWidget(forms.Widget):
-    class Media:
-        js = (settings.MEDIA_URL + 'js/multilingual.js',)
-        css = {'screen': (settings.MEDIA_URL + 'css/multilingual.css',)}
+#    class Media:
+#        js = (settings.MEDIA_URL + 'js/multilingual.js',)
+#        css = {'screen': (settings.MEDIA_URL + 'css/multilingual.css',)}
 
     instance = None
     available_languages = ('en',)
@@ -37,9 +37,16 @@ class BaseMultilingualWidget(forms.Widget):
             elif self.instance:
                 values[lang] = value
                 try:
+                    # try to remove the formset prefix
+                    column = name
+                    pattern = re.compile('^[a-z_][a-z0-9_]+-[0-9]+-(.+)$')
+                    match = pattern.match(column)
+                    if match:
+                        column = match.group(1)
+                        
                     # Just get translation translation helper object for given language
                     translation = self.instance.translations.get(language=lang)
-                    values[lang] = getattr(translation, name, '')
+                    values[lang] = getattr(translation, column, '')
                 except self.instance.translations.model.DoesNotExist:
                     values[lang] = ''
 

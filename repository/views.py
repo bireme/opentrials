@@ -1,5 +1,6 @@
 #coding: utf-8
 
+from clinicaltrials.repository.trds_forms import MultilingualBaseFormSet
 from django.template.context import RequestContext
 from reviewapp.models import Attachment, Submission, SUBMISSION_STATUS
 from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
@@ -345,8 +346,10 @@ def step_7(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
     PrimaryOutcomesSet = modelformset_factory( Outcome,
+                                formset=MultilingualBaseFormSet,
                                 form=PrimaryOutcomesForm,extra=EXTRA_FORMS)
     SecondaryOutcomesSet = modelformset_factory(Outcome,
+                                formset=MultilingualBaseFormSet,
                                 form=SecondaryOutcomesForm,extra=EXTRA_FORMS)
 
     primary_qs = Outcome.objects.filter(trial=ct, interest=choices.OUTCOME_INTEREST[0][0])
