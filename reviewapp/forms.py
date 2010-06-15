@@ -20,7 +20,7 @@ class InitialTrialForm(forms.Form):
     form_title = _('Initial Trial Data')
     scientific_title = forms.CharField(widget=forms.Textarea, label=_('Scientific Title'), max_length=2000)
     recruitment_country = forms.MultipleChoiceField(choices=((cc.pk,cc.description) for cc in CountryCode.objects.iterator()) )
-    language = forms.ChoiceField(label=_('Submission language'), choices=settings.MANAGED_LANGUAGES)
+    language = forms.ChoiceField(label=_('Submission language'), choices=settings.MANAGED_LANGUAGES_CHOICES)
     
 class PrimarySponsorForm(forms.ModelForm):
     class Meta:
