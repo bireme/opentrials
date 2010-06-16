@@ -26,7 +26,7 @@ function cloneMore(selector, type) {
 
     total++;
     $('#id_' + type + '-TOTAL_FORMS').val(total);
-    newElement.css("display","table").hide();
+    newElement.hide();
     $(selector).after(newElement);
     newElement.show("fast");
 }
