@@ -41,7 +41,7 @@
 {% for form in forms %}
 <fieldset>
     <legend>{{ form.form_title }}</legend>
-    <table id="table_{{ forloop.counter }}">
+    <table id="table_{{ forloop.counter }}" class="dataTable" cellspacing="0">
         {{ form.as_table }}
     </table>
 </fieldset>
