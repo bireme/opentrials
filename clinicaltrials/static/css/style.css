@@ -74,8 +74,13 @@ blockquote {
     width: 50%;
     float: left;
     padding-top: 15px;
+    position: relative;
 }
-
+.identification {
+    position: absolute;
+    top: 4em;
+    left: 0;
+}
 .identification H1 {
     margin: 0px 0px 0px 40px;
     clear: both;
@@ -90,6 +95,7 @@ blockquote {
 }
 .institutions UL {
     margin: 0px;
+    padding-left: 3.2em;
 }
 .institutions UL LI {
     float: left;
