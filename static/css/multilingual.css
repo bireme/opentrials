@@ -1,15 +1,25 @@
 .multilingual {
     overflow: hidden;
+    width: 100%
 }
 
 .multilingual .multilingual-value {
     display: none;
-    overflow: hidden;
     float: left;
+    width: 50%
 }
 
-.multilingual h4 {
+.multilingual .multilingual-value input {
+    width: 95%;
+}
+
+.multilingual .multilingual-value textarea {
+    width: 98%;
+}
+
+.multilingual .multilingual-value b {
     margin: 0;
+    display: block;
 }
 
 .multilingual .en, .multilingual .default-second-language {
@@ -17,10 +27,9 @@
 }
 
 .multilingual .sel {
-    float: right;
-    border: 1px solid silver;
     padding: 5px;
     background-color: #f8f8f8;
+    text-align: right;
 }
 
 .multilingual .sel h4 {

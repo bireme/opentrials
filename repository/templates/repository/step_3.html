@@ -49,7 +49,7 @@
 
             <div class="{{formset.management_form.prefix}}">
             {% for form in formset.forms %}
-                <table class="dataTable" cellspacing="0">
+                <table class="dataTable {% cycle 'even' 'odd' %}" cellspacing="0">
                     {{ form.as_table }}
                 </table>
             {% endfor %}
