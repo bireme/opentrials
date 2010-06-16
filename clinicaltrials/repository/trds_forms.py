@@ -168,12 +168,11 @@ class ReviewModelForm(forms.ModelForm):
     def as_table(self):
         "Returns this form rendered as HTML <tr>s -- excluding the <table></table>."
         normal_row = u'''
-            <tr><th>%(label)s</th>
-                <td>%(errors)s%(field)s</td>
-                <td class="help">
-                    <img src="/static/help.png" rel="#%(help_id)s"/>
+            <tr><th><img src="/static/help.png" rel="#%(help_id)s"/>
                     <div id="%(help_id)s" class="help">%(help_text)s</div>
-                    </td></tr>
+                    %(label)s</th>
+                <td>%(errors)s%(field)s
+                </td></tr>
         '''
         return self._html_output(normal_row=normal_row,
                                  error_row=u'<tr><td colspan="3">%s</td></tr>',

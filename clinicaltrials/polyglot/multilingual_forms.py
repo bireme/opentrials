@@ -67,9 +67,9 @@ class BaseMultilingualWidget(forms.Widget):
             if lang == self.default_second_language:
                 css_class = ' '.join([css_class, 'default-second-language'])
 
-            rendereds.append('<span class="%s"><h4>%s</h4>%s</span>' % (css_class, lang, widget.render(w_name, values[lang])))
+            rendereds.append('<div class="%s"><b>%s</b>%s</div>' % (css_class, lang, widget.render(w_name, values[lang])))
         # FIXME: change multilingual to polyglot
-        return '<span class="multilingual">%s</span>'%('\n'.join(rendereds))
+        return '<div class="multilingual">%s</div>'%('\n'.join(rendereds))
 
     def get_widget_args(self):
         return {}

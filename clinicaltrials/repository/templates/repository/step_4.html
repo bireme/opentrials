@@ -1,16 +1,26 @@
 {% extends "repository/submission_step.html" %}
 {% load i18n %}
+
+{% block extrahead %}
+        <link rel="stylesheet" type="text/css" href="/static/css/multilingual.css"/>
+        <script type="text/javascript" src="/static/js/multilingual.js"></script>
+        <script type="text/javascript" src="/static/js/submission.utils.js"></script>
+{% endblock %}
+
 {% block body %}
 
-    <script type="text/javascript" src="/static/js/submission.utils.js"></script>
     <script type="text/javascript">
+        MULTILINGUAL_FIELDS = {
+            available_languages: ['{{ MANAGED_LANGUAGES_LC|join:"','" }}'],
+            default_second_language: 'pt-br'
+        };
         $(document).ready(function() {
             $("div.form select")
                 .change(search_event(
                         '{% url decs.search lang=LANGUAGE_CODE,term="" %}',
                         '{% trans "Search terms" %}'))
                 .each(function(){$(this).change();});
-            $('td.help img').cluetip({local:true, cursor: 'pointer',showTitle: false});
+            $('.dataTable th img').cluetip({local:true, cursor: 'pointer',showTitle: false});
         });
         // management_form.prefix
     </script>
@@ -20,7 +30,7 @@
         {% for form in forms %}
         <fieldset>
             <legend>{% firstof form.title form.form.title %}</legend>
-            <table class="dataTable">
+            <table class="dataTable" cellspacing="0">
                 {{ form.as_table }}
             </table>
         </fieldset>
@@ -34,7 +44,7 @@
 
             <div class="{{formset.management_form.prefix}}">
             {% for form in formset.forms %}
-                <table class="dataTable">
+                <table class="dataTable" cellspacing="0">
                     {{ form.as_table }}
                 </table>
             {% endfor %}
