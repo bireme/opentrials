@@ -23,18 +23,19 @@
                     highlight: true,
                     sortable: false
             });
-            $('td.help img').cluetip({local:true, cursor: 'pointer',showTitle: false});
+            $('.dataTable th img').cluetip({local:true, cursor: 'pointer',showTitle: false});
         });
+        function new_institution(){
+            return window.open('{% url new_institution %}','n_i','status=0,location=0,height=375');
+        }
     </script>
 
-
     <h2>{{ title }}</h2>
-
     <form action="./" method="POST">{% csrf_token %}
         {% for form in forms %}
         <fieldset>
             <legend>{% firstof form.title form.form.title %}</legend>
-            <table class="dataTable">
+            <table class="dataTable" cellspacing="0">
                 {{ form.as_table }}
             </table>
         </fieldset>
@@ -48,13 +49,14 @@
 
             <div class="{{formset.management_form.prefix}}">
             {% for form in formset.forms %}
-                <table class="dataTable">
+                <table class="dataTable {% cycle 'even' 'odd' %}" cellspacing="0">
                     {{ form.as_table }}
                 </table>
             {% endfor %}
             </div>
             <div style="text-align: center">
               <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="add more"/>
+              {% block extra_buttons %}{% endblock %}
             </div>
             </fieldset>
         {% endfor %}

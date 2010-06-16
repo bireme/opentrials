@@ -4,8 +4,13 @@
  */
 function cloneMore(selector, type) {
     var newElement = $(selector).clone(true);
-    newElement.find('td.help').remove();
-    newElement.find('td').attr('colspan','2');
+
+    var classname = newElement.attr('class');
+    if( classname.search('even') > -1 ){
+        newElement.attr('class', classname.replace('even','odd'))
+    } else if( classname.search('odd') > -1 ){
+        newElement.attr('class', classname.replace('odd','even'))
+    }
 
     var total = $('#id_' + type + '-TOTAL_FORMS').val();
     newElement.find(':input').each(function() {
