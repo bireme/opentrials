@@ -86,14 +86,16 @@ def req_dump(request):
 @user_passes_test(lambda u: u.is_staff)
 def sys_info(request):
     template = u'''
+    <h1>version.txt</h1>
+    %(version)s
+    <h1>settings path</h1>
+    <pre>%(settingspath)s</pre>
     <h1>Site.objects.get_current()</h1>
     <table>
        <tr><th>id</th><td>%(site.pk)s</td></tr>
        <tr><th>domain</th><td>%(site.domain)s</td></tr>
        <tr><th>name</th><td>%(site.name)s</td></tr>
     </table>
-    <h1>settings path</h1>
-    <pre>%(settingspath)s</pre>
     <h1>svn info</h1>
     <pre>%(svninfo)s</pre>
     <h1>sys.path</h1>
@@ -103,6 +105,7 @@ def sys_info(request):
     import settings
     from django.contrib.sites.models import Site
     from subprocess import Popen, PIPE
+    version = open(os.path.join(settings.PROJECT_PATH, 'version.txt')).read()
     site = Site.objects.get_current()
     svnout, svnerr = Popen(['svn', 'info', '-r', 'HEAD', settings.PROJECT_PATH], stdout=PIPE).communicate()
     svnout = svnout.decode('utf-8') if svnout else u''
@@ -110,6 +113,7 @@ def sys_info(request):
     return HttpResponse(template % {'site.pk':site.pk,
                                     'site.domain':site.domain,
                                     'site.name':site.name,
+                                    'version':version,
                                     'settingspath': settings.PROJECT_PATH,
                                     'syspath':'\n'.join(sys.path),
                                     'svninfo':svnout + svnerr})
