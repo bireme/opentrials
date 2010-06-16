@@ -32,11 +32,19 @@ function cloneMore(selector, type) {
 }
 
 /**
+ * Try to be a temp
+ */
+if( window.decsdata == undefined ){
+    window.decsdata = {};
+}
+
+/**
  * A utility to name and create form elements
  */
-function make_decs_for(node){
+function make_decs_for(node,lang){
     var set = node.id.match(/[a-z]+-\d+/)[0]; // get django formset prefix
-    return {'select':set+"-combodecs",
+    return {'lang':lang,
+            'select':set+"-combodecs",
             'div':set+'-decstools',
             'input':set+'-searchfield',
             'button':set+'-searchbutton',
@@ -50,17 +58,24 @@ function make_decs_for(node){
  */
 function make_decstool_callback(decs){
     return function(data){
+        var lang = decs.lang.substring(0,2);
         for(var i=0; i<data.length;i++){
-            $("<option>").attr("value",data[i].fields.label)
-                .html(data[i].fields.description)
+            var option = $("<option>").attr("value",data[i].fields.label)
+                .html(data[i].fields.description[lang])
                 .appendTo('#'+decs.id('select'));
+            window.decsdata[ data[i].fields.label ]=data[i].fields.description;
         }
+        
         $('#'+decs.id('select')).change(function(evt){
-            decs = make_decs_for(evt.target);
+            decs = make_decs_for(evt.target,decs.lang);
             $("input#id_"+decs.set+"-code")
                 .attr("value",this.value);
-            $("input#id_"+decs.set+"-text")
-                .attr("value",$(this).find("option[selected]").html());
+            $("input[name="+decs.set+"-text]")
+                .attr("value",window.decsdata[this.value].en);
+            $("input[name="+decs.set+"-text|es]")
+                .attr("value",window.decsdata[this.value].es);
+            $("input[name="+decs.set+"-text|pt-br]")
+                .attr("value",window.decsdata[this.value].pt);
         });
     }
 }
@@ -68,12 +83,12 @@ function make_decstool_callback(decs){
 /**
  * Extend the django form and insert decs elements
  */
-function getterm_event(decsclient_url) {
+function getterm_event(decsclient_url,lang) {
     return function(){
         this.parentNode.className = "";
         if(this.value === 'DeCS'){
             this.parentNode.className = "showdecs";
-            var decs = make_decs_for(this);
+            var decs = make_decs_for(this,lang);
 
             if($('#'+decs.id('select')).length === 0){
                 decs.create('div')
@@ -91,12 +106,12 @@ function getterm_event(decsclient_url) {
 /**
  * Extend the django form and insert decs elements
  */
-function search_event(decsclient_url,label) {
+function search_event(decsclient_url,label,lang) {
     return function(){
         this.parentNode.className = "";
         if(this.value === 'DeCS'){
             this.parentNode.className = "showdecs";
-            var decs = make_decs_for(this);
+            var decs = make_decs_for(this,lang);
 
             if($('#'+decs.id('input')).length === 0){
 
@@ -113,7 +128,7 @@ function search_event(decsclient_url,label) {
 
                 $('#'+decs.id('button'))
                     .click(function(evt){
-                        var decs = make_decs_for(evt.target);
+                        var decs = make_decs_for(evt.target,lang);
                         if($('#'+decs.id('select')).length === 0){
                             decs.create('select')
                                 .insertAfter(this);

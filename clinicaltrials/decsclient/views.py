@@ -4,7 +4,9 @@ from django.shortcuts import render_to_response
 from lxml.etree import ElementTree
 import urllib
 
+DECS_LANGS = ['en','es','pt']
 JSON_TERM = '{"fields":{"description":"%s","label":"%s"}}'
+JSON_MULTILINGUAL_TERM = '{"fields":{"description":{%s},"label":"%s"}}'
 
 def getterm(request, lang, code):
     params = urllib.urlencode({
@@ -21,22 +23,35 @@ def getterm(request, lang, code):
         result = tree.findall('decsws_response/tree/term_list[@lang="%s"]/term' % lang)
         json = '[%s]' % ','.join((JSON_TERM % (r.text.capitalize(),r.attrib['tree_id']) for r in result))
     else:
-        json = '[%s]' % (JSON_TERM % (result.text,result.attrib['tree_id']))
+        descriptors = tree.findall('decsws_response/record_list/record/descriptor_list/descriptor')
+        description = ','.join(['"%s":"%s"'%(d.attrib['lang'],d.text) for d in descriptors])
+        json = '[%s]' % (JSON_MULTILINGUAL_TERM % (description,result.attrib['tree_id']))
            
     return HttpResponse(json, mimetype='application/json');
 
-def getdescendants(request, lang, code):
-    params = urllib.urlencode({
-        'tree_id': code or '',
-        'lang': lang,
-        })
-    resource = urllib.urlopen(settings.DECS_SERVICE, params)
+def getdescendants(request, code):
+    params = {}
+    results = {}
 
-    tree = ElementTree()
-    tree.parse(resource)
+    for lang in DECS_LANGS:
+        params[lang] = urllib.urlencode({
+            'tree_id': code or '',
+            'lang': lang,
+            })
 
-    result = tree.findall('decsws_response/tree/descendants/term_list[@lang="%s"]/term' % lang)
-    json = '[%s]' % ','.join((JSON_TERM % (r.text.capitalize(),r.attrib['tree_id']) for r in result))
+        resource = urllib.urlopen(settings.DECS_SERVICE, params[lang])
+
+        tree = ElementTree()
+        tree.parse(resource)
+
+        search_result = tree.findall('decsws_response/tree/descendants/term_list[@lang="%s"]/term' % lang)
+        for r in search_result:
+            if r.attrib['tree_id'] in results:
+                results[ r.attrib['tree_id'] ] += ',"%s":"%s"' % (lang,r.text.capitalize())
+            else:
+                results[ r.attrib['tree_id'] ] = '"%s":"%s"' % (lang,r.text.capitalize())
+
+    json = '[%s]' % ','.join((JSON_MULTILINGUAL_TERM % (id,desc) for desc,id in results.items()))
 
     return HttpResponse(json, mimetype='application/json');
 
