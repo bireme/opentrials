@@ -452,7 +452,7 @@ table.dataTable .odd TD {
 }
 
 table.dataTable textarea {
-    width: 100%;
+    width: 60%;
 }
 
 table.dataTable td.help div.issue {

@@ -1,5 +1,6 @@
 # coding: utf-8
 
+from clinicaltrials.repository.trds_forms import ReviewModelForm
 from clinicaltrials.reviewapp.models import Remark
 from clinicaltrials.reviewapp.models import UserProfile
 from clinicaltrials.reviewapp.models import Attachment
@@ -36,7 +37,7 @@ class ExistingAttachmentForm(forms.ModelForm):
     title = _('Existing Attachment')
     file = forms.CharField(required=False,label=_('File'),max_length=255)
 
-class NewAttachmentForm(forms.ModelForm):
+class NewAttachmentForm(ReviewModelForm):
     class Meta:
         model = Attachment
         fields = ['file','description','public']
