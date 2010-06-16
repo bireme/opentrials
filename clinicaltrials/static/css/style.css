@@ -367,6 +367,7 @@ blockquote {
 table.dataTable {
     margin-bottom: 10px;
     clear: both;
+    width: 100%;
 }
 
 form table.dataTable {

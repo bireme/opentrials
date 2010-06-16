@@ -5,46 +5,36 @@
 
     <h2>{% trans "Tickets" %}</h2>
 
-    {% if user_tickets %}
-            <table class="table">
-                <col width="5%"/>
-                <col width="10%"/>
-                <col width="5%"/>
-                <col width="50%"/>
-                <col width="5%"/>
-                <col width="5%"/>
-                <col width="20%"/>
+    <div class="actions"><a href="{% url ticket.open 'general' 'task'%}" class="addNew">{% trans 'New Ticket' %}</a></div>
+    <table class="dataTable" cellpadding="0" cellspacing="0" border="0">
             <tr>
-                <th>{% trans "Creation date" %}</th>
+                <th>{% trans "Date" %}</th>
                 <th>{% trans "Context" %}</th>
                 <th>{% trans "Type" %}</th>
                 <th>{% trans "Subject" %}</th>
                 <th>{% trans "Status" %}</th>
-                <th>{% trans "Last update" %}</th>
+                <th>{% trans "Updated" %}</th>
                 <th></th>
             </tr>
-            {% for ct in user_tickets %}
-            <tr>
-                <td>{{ ct.created }}</td>
-                <td>{{ ct.context }}</td>
-                <td>{{ ct.type }}</td>
-                <td>{{ ct.followup_set.latest.subject }}</td>
-                <td>{{ ct.followup_set.latest.status }}</td>
-                <td>{{ ct.followup_set.latest.iteration_date }}</td>
-                <td>
-                    <ul>
-                        <li><a href="/ticket/history/{{ ct.pk }}/">{% trans "view history" %}</a></li>
-                    {% if ct.is_closed or ct.is_resolved %}
-                    {% else %}
-                        <li><a href="/ticket/newiteration/{{ ct.pk }}/">{% trans "add iteration" %}</a></li>
-                    {% endif %}
-                    </ul>
-                </td>
-            </tr>
-            {% endfor %}
-            </table>
-    {% else %}
-            <p>{% trans "Have no open tickets" %}</p>
-    {% endif %}
-    <a class="buttonadd" href="/ticket/open/personal/personal/">{% trans "open ticket" %}</a>
+    {% for ct in user_tickets %}
+    <tr class="{% cycle 'even' 'odd' %}">
+        <td class="date">{{ ct.created|date:'Y/m/d H:i' }}</td>
+        <td>{{ ct.context }}</td>
+        <td>{{ ct.type }}</td>
+        <td class="subject">{{ ct.followup_set.latest.subject }}</td>
+        <td>{{ ct.followup_set.latest.status }}</td>
+        <td class="update">{{ ct.followup_set.latest.iteration_date|date:'Y/m/d H:i' }}</td>
+        <td>
+            <ul>
+                <li><a class="history" href="/ticket/history/{{ ct.pk }}/" title="{% trans 'view history' %}"><span>{% trans "view history" %}</span></a></li>
+                {% if ct.is_closed or ct.is_resolved %}
+                {% else %}
+                <li><a class="iteraction" href="/ticket/newiteration/{{ ct.pk }}/" title="{% trans 'add iteration' %}"><span>{% trans "add iteration" %}</span></a></li>
+                {% endif %}
+            </ul>
+        </td>
+    </tr>
+    {% endfor %}
+        </table>
+
 {% endblock %}
