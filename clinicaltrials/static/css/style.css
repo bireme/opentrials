@@ -377,6 +377,32 @@ form table.dataTable th {
     width: 15%;
 }
 
+form table.dataTable img {
+    margin-right: 0.5em;
+    vertical-align: middle;
+    display:block;
+    float: left;
+}
+
+form table.dataTable label {
+    display:block;
+    float: left;
+    width: 85%;
+}
+
+form table.dataTable th,
+form table.dataTable td {
+    border: none;
+}
+
+form table.odd th {
+    background-color: #DEEEDE;
+}
+
+form table.odd td {
+    background-color: #EFFFEF;
+}
+
 table.dataTable, table.dataTable td {
     color:#333;
 }
@@ -436,6 +462,11 @@ table.trialsummary {
     float: left;
     margin-right: 4px;
 }
+
+.dataTable td li.asmListItem {
+    float: none;
+}
+
 .dataTable A.history, .dataTable A.iteraction {
     display: block;
     width: 16px;
@@ -614,9 +645,9 @@ td div select {
     display: block;
 }
 
-td select,
+/*td select,*/
 td div.decstool input {
-    width: 80%;
+    width: 46%;
 }
 
 td.showdecs div.decstool {
