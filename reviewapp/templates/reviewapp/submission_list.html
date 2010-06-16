@@ -6,11 +6,12 @@
 <p>{% trans "Choose one of the ways below to submit a new clinical trial" %}</p>
 <ul>
     <li><a href="{% url reviewapp.new_submission %}">{% trans "Completing the submission form." %}</a></li>
-    <li><a href="{% url reviewapp.uploadtrial %}">{% trans "Uploading an XML file." %}</a></li>
+    <li><a href="{% url reviewapp.uploadtrial %}"><strike>{% trans "Uploading an XML file." %}</strike></a></li>
 </ul>
 
 <h2>{% trans "Your Submissions list" %}</h2>
-<table class="table">
+<div class="actions"><a href="{% url reviewapp.new_submission %}" class="button addNew">{% trans 'New Submission' %}</a></div>
+<table class="dataTable">
     <thead>
         <tr>
             <th>{% trans "Created" %}</th>
