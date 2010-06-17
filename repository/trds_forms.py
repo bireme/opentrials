@@ -23,7 +23,7 @@ from polyglot.models import get_multilingual_fields
 import settings
 
 class ReviewModelForm(forms.ModelForm):
-    available_languages = settings.MANAGED_LANGUAGES
+    available_languages = [code.lower() for code in settings.MANAGED_LANGUAGES]
     default_second_language = 'pt-br'
 
     def __init__(self, *args, **kwargs):
@@ -36,7 +36,7 @@ class ReviewModelForm(forms.ModelForm):
         if self.multilingual_fields:
             # Gets default second language from arguments, if informed. Default value is None
             self.default_second_language = kwargs.pop('default_second_language', self.default_second_language) # Optional
-            self.available_languages = kwargs.pop('available_languages', ('en','pt-br','es')) # Mandatory (FIXME, to remove default tuple)
+            self.available_languages = kwargs.pop('available_languages', [code.lower() for code in settings.MANAGED_LANGUAGES]) # Mandatory (FIXME, to remove default tuple)
 
             # Change field widgets replacing common TextInput and Textarea to Multilingual respective ones
             for field_name in self.multilingual_fields:
@@ -87,7 +87,8 @@ class ReviewModelForm(forms.ModelForm):
         if not hasattr(obj, 'translations'):
             return
         
-        for lang in self.available_languages:
+        for lang,label in settings.TARGET_LANGUAGES:
+            lang = lang.lower()
             # Get or create translation object
             try:
                 trans = obj.translations.get(language=lang)
