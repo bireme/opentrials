@@ -14,9 +14,9 @@ function cloneMore(selector, type) {
 
     var total = $('#id_' + type + '-TOTAL_FORMS').val();
     newElement.find(':input').each(function() {
-        var name = $(this).attr('name').replace('-' + (total-1) + '-','-' + total + '-');
-        var id = 'id_' + name;
-        $(this).attr({'name': name, 'id': id});
+        this.name = this.name.replace(/-[0-9]+-/g,'-' + (total) + '-');
+        this.id = 'id_' + this.name;
+
         if($(this).attr('type')!='hidden')$(this).val('').removeAttr('checked');
     });
     newElement.find('label').each(function() {
@@ -28,7 +28,7 @@ function cloneMore(selector, type) {
     $('#id_' + type + '-TOTAL_FORMS').val(total);
     newElement.hide();
     $(selector).after(newElement);
-    newElement.show("fast");
+    newElement.show("fast",function(){this.style.display='';});
 }
 
 /**
