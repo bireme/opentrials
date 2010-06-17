@@ -77,10 +77,12 @@
             <p>{{ object.scientific_title }}</p>
         </div>
         {% for t in translations %}
+            {% if t.scientific_title %}
             <div class="title">
                 <h2>{{ t.language }}</h2>
                 <p>{{ t.scientific_title }}</p>
             </div>
+            {% endif %}
         {% endfor %}
         <div class="spacer"> </div>
     <h3>{% trans 'Trial Identification' %}</h3>
@@ -111,7 +113,9 @@
             </ul>
             {% endfor %}
         </li>
+        {% if perms.reviewapp.add_remark %}
         <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Trial Identification'|slugify %}">{% trans 'Remark' %}</a></li>
+        {% endif %}
     </ul>
 
     <h3>{% trans 'Sponsors' %}</h3>
@@ -144,7 +148,9 @@
             {% endfor %}
             </ul>
         </li>
+        {% if perms.reviewapp.add_remark %}
         <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Sponsors'|slugify %}">{% trans 'Remark' %}</a></li>
+        {% endif %}
     </ul>
     
     <h3>{% trans 'Health Conditions' %}</h3>
@@ -175,7 +181,9 @@
             {% endfor %}
             </ul>
         </li>
+        {% if perms.reviewapp.add_remark %}
         <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Health Conditions'|slugify %}">{% trans 'Remark' %}</a></li>
+        {% endif %}
     </ul>
     
     <h3>{% trans 'Interventions' %}</h3>
@@ -206,7 +214,9 @@
             {% endfor %}
             </ul>
         </li>
+        {% if perms.reviewapp.add_remark %}
         <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Interventions'|slugify %}">{% trans 'Remark' %}</a></li>
+        {% endif %}
     </ul>
     
     <h3>{% trans 'Recruitment' %}</h3>
@@ -251,7 +261,9 @@
             <span class="label">{% trans 'Exclusion Criteria' %}:</span>
             <pre class="value">{{ object.exclusion_criteria }}</pre>
         </li>
+        {% if perms.reviewapp.add_remark %}  
         <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Recruitment'|slugify %}">{% trans 'Remark' %}</a></li>
+        {% endif %}
     </ul>
 
     <h3>{% trans 'Study Type' %}</h3>
@@ -282,7 +294,9 @@
                 </tr>
             </table>
         </li>
+        {% if perms.reviewapp.add_remark %}   
         <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Study Type'|slugify %}">{% trans 'Remark' %}</a></li>
+        {% endif %}
     </ul>
     
     <h3>{% trans 'Outcomes' %}</h3>
@@ -307,7 +321,9 @@
             {% endfor %}
             </ul>
         </li>
+        {% if perms.reviewapp.add_remark %}
         <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Outcomes'|slugify %}">{% trans 'Remark' %}</a></li>
+        {% endif %}
     </ul>
     
     <h3>{% trans 'Contacts' %}</h3>
@@ -456,7 +472,9 @@
             {% endfor %}
         </li>
         {% endif %}
+        {% if perms.reviewapp.add_remark %}
         <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Contacts'|slugify %}">{% trans 'Remark' %}</a></li>
+        {% endif %}
     </ul>
 
     {% if object.trial_attach %}
@@ -471,7 +489,9 @@
                 </li>
             {% endif %}
         {% endfor %}
+        {% if perms.reviewapp.add_remark %}
         <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Attachments'|slugify %}">{% trans 'Remark' %}</a></li>
+        {% endif %}
     </ul>
     {% endif %}
 {% endblock %}
