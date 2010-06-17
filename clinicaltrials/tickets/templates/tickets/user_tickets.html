@@ -1,22 +1,43 @@
 {% extends "base.html" %}
 {% load i18n %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="/static/css/tablesorter/style.css"/>
+<script type="text/javascript" src="/static/js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // call the tablesorter plugin
+    $("#table_tickets").tablesorter({
+        sortList: [[0,1]],
+        dateFormat: 'uk',
+        textExtraction: 'complex',
+        headers: { 6: { sorter: false}},
+    });
+});
+</script>
+{% endblock %}
+
 {% block body_title %}{% trans "User Tickets" %}{% endblock %}
 {% block body %}
 
-    <h2>{% trans "Tickets" %}</h2>
+<h2>{% trans "Tickets" %}</h2>
 
-    <div class="actions"><a href="{% url ticket.open 'general' 'task'%}" class="addNew">{% trans 'New Ticket' %}</a></div>
-    <table class="dataTable" cellpadding="0" cellspacing="0" border="0">
-            <tr>
-                <th>{% trans "Date" %}</th>
-                <th>{% trans "Context" %}</th>
-                <th>{% trans "Type" %}</th>
-                <th>{% trans "Subject" %}</th>
-                <th>{% trans "Status" %}</th>
-                <th>{% trans "Updated" %}</th>
-                <th></th>
-            </tr>
-    {% for ct in user_tickets %}
+<div class="actions"><a href="{% url ticket.open 'general' 'task'%}" class="addNew">{% trans 'New Ticket' %}</a></div>
+<table class="dataTable" id="table_tickets" cellspacing="0" border="0">
+    <thead>
+    <tr>
+        <th>{% trans "Date" %}</th>
+        <th>{% trans "Context" %}</th>
+        <th>{% trans "Type" %}</th>
+        <th>{% trans "Subject" %}</th>
+        <th>{% trans "Status" %}</th>
+        <th>{% trans "Updated" %}</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+{% for ct in user_tickets %}
     <tr class="{% cycle 'even' 'odd' %}">
         <td class="date">{{ ct.created|date:'Y/m/d H:i' }}</td>
         <td>{{ ct.context }}</td>
@@ -34,7 +55,7 @@
             </ul>
         </td>
     </tr>
-    {% endfor %}
-        </table>
-
+{% endfor %}
+    <tbody>
+</table>
 {% endblock %}

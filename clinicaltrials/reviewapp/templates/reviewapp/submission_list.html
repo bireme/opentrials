@@ -1,6 +1,22 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="/static/css/tablesorter/style.css"/>
+<script type="text/javascript" src="/static/js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // call the tablesorter plugin
+    $("#table_submissions").tablesorter({
+        sortList: [[0,1]],
+        dateFormat: 'uk',
+        textExtraction: 'complex',
+    });
+});
+</script>
+{% endblock %}
+
 {% block body %}
 <h2>{% trans "Submit a new Clinical Trial" %}</h2>
 <p>{% trans "Choose one of the ways below to submit a new clinical trial" %}</p>
@@ -11,7 +27,7 @@
 
 <h2>{% trans "Your Submissions list" %}</h2>
 <div class="actions"><a href="{% url reviewapp.new_submission %}" class="button addNew">{% trans 'New Submission' %}</a></div>
-<table class="dataTable">
+<table class="dataTable" id="table_submissions">
     <thead>
         <tr>
             <th>{% trans "Created" %}</th>
@@ -22,7 +38,7 @@
     <tbody>
         {% for submission in object_list %}
         <tr>
-            <td>{{ submission.created|date:'d M Y' }}</td>
+            <td>{{ submission.created|date:'Y/m/d H:i' }}</td>
             <td>
                 <a href="{% url repository.edittrial submission.trial.pk %}">{{ submission.short_title }}</a>
             </td>
