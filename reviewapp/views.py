@@ -6,7 +6,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template.context import RequestContext
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.conf import settings
 from django.contrib.sites.models import RequestSite
@@ -164,7 +164,7 @@ def upload_trial(request):
         'form': UploadTrial()},
         context_instance=RequestContext(request))
 
-@login_required
+@permission_required('reviewapp.add_remark')
 def open_remark(request, submission_id, context):
     submission = get_object_or_404(Submission, id=int(submission_id))
 
