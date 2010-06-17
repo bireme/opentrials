@@ -44,12 +44,12 @@ def getdescendants(request, code):
         tree = ElementTree()
         tree.parse(resource)
 
-        search_result = tree.findall('decsws_response/tree/descendants/term_list[@lang="%s"]/term' % lang)
-        for r in search_result:
-            if r.attrib['tree_id'] in results:
-                results[ r.attrib['tree_id'] ] += ',"%s":"%s"' % (lang,r.text.capitalize())
+        descendants = tree.findall('decsws_response/tree/descendants/term_list[@lang="%s"]/term' % lang)
+        for d in descendants:
+            if d.attrib['tree_id'] in results:
+                results[ d.attrib['tree_id'] ] += ',"%s":"%s"' % (lang,d.text.capitalize())
             else:
-                results[ r.attrib['tree_id'] ] = '"%s":"%s"' % (lang,r.text.capitalize())
+                results[ d.attrib['tree_id'] ] = '"%s":"%s"' % (lang,d.text.capitalize())
 
     json = '[%s]' % ','.join((JSON_MULTILINGUAL_TERM % (id,desc) for desc,id in results.items()))
 
@@ -67,14 +67,20 @@ def search(request, lang, term, prefix='401'):
         'count': count,
         })
     resource = urllib.urlopen(settings.DECS_SERVICE, params)
-
+    print resource.url+'?'+params
     tree = ElementTree()
     tree.parse(resource)
 
-    result = tree.findall('decsws_response/tree/self/term_list/term')
+    occurences = tree.findall('/decsws_response')
 
-    json = '[%s]' % ','.join( sorted(JSON_TERM % (t.text,t.attrib['tree_id']) for t in result) )
-    return HttpResponse(json, mimetype='application/json');
+    json = []
+    for occ in occurences:
+        descriptors = occ.findall('record_list/record/descriptor_list/descriptor')
+        description = ','.join(('"%s":"%s"'%(d.attrib['lang'],d.text) for d in descriptors ))
+        json.append(JSON_MULTILINGUAL_TERM % (description,occ.attrib['tree_id']))
+
+    json_response = '[%s]' % ','.join(json)
+    return HttpResponse(json_response, mimetype='application/json');
 
 def test_search(request):
     return render_to_response("test_search.html", request)

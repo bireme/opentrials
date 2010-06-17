@@ -39,7 +39,7 @@ class BaseMultilingualWidget(forms.Widget):
                 try:
                     # try to remove the formset prefix
                     column = name
-                    pattern = re.compile('^[a-z_][a-z0-9_]+-[0-9]+-(.+)$')
+                    pattern = re.compile('^[a-z_][a-z0-9_]*-[0-9]+-(.+)$')
                     match = pattern.match(column)
                     if match:
                         column = match.group(1)
