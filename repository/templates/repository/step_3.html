@@ -5,31 +5,30 @@
         <link rel="stylesheet" type="text/css" href="/static/css/multilingual.css"/>
         <script type="text/javascript" src="/static/js/multilingual.js"></script>
         <script type="text/javascript" src="/static/js/submission.utils.js"></script>
+
+        <script type="text/javascript">
+            MULTILINGUAL_FIELDS = {
+                available_languages: ['{{ MANAGED_LANGUAGES_LC|join:"','" }}'],
+                default_second_language: 'pt-br'
+            };
+            $(document).ready(function() {
+                $("div.g select")
+                    .change(getterm_event('{% url decs.getdescendants code="C" %}','{{LANGUAGE_CODE}}'))
+                    .each(function(){$(this).change();});
+
+                $("div.s select")
+                    .change(search_event(
+                            '{% url decs.search lang=LANGUAGE_CODE,term="" %}',
+                            '{% trans "Search terms" %}',
+                            '{{LANGUAGE_CODE}}'))
+                    .each(function(){$(this).change();});
+
+                $('.dataTable th img').cluetip({local:true, cursor: 'pointer',showTitle: false});
+            });
+        </script>
 {% endblock %}
 
 {% block body %}
-
-    <script type="text/javascript">
-        MULTILINGUAL_FIELDS = {
-            available_languages: ['{{ MANAGED_LANGUAGES_LC|join:"','" }}'],
-            default_second_language: 'pt-br'
-        };
-        $(document).ready(function() {
-            $("div.g select")
-                .change(getterm_event('{% url decs.getdescendants code="C" %}','{{LANGUAGE_CODE}}'))
-                .each(function(){$(this).change();});
-
-            $("div.s select")
-                .change(search_event(
-                        '{% url decs.search lang=LANGUAGE_CODE,term="" %}',
-                        '{% trans "Search terms" %}',
-                        '{{LANGUAGE_CODE}}'))
-                .each(function(){$(this).change();});
-
-            $('.dataTable th img').cluetip({local:true, cursor: 'pointer',showTitle: false});
-        });
-    </script>
-
     <h2>{{ title }}</h2>
     <form action="./" method="POST">{% csrf_token %}
         {% for form in forms %}
