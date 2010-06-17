@@ -154,15 +154,29 @@ class ReviewModelForm(forms.ModelForm):
             output.insert(0, error_row % force_unicode(top_errors))
         if hidden_fields: # Insert any hidden fields in the last row.
             str_hidden = u''.join(hidden_fields)
+
             if output:
                 last_row = output[-1]
                 # Chop off the trailing row_ender (e.g. '</td></tr>') and
                 # insert the hidden fields.
+                if not last_row.endswith(row_ender):
+                    # This can happen in the as_p() case (and possibly others
+                    # that users write): if there are only top errors, we may
+                    # not be able to conscript the last row for our purposes,
+                    # so insert a new, empty row.
+                    last_row = normal_row % {'errors': '',
+                                             'label': '',
+                                             'field': '',
+                                             'help_text': '',
+                                             'help_id': 'id_%s-help%s' % (self.prefix,help_record.pk),
+                                             'issue': '',}
+                    output.append(last_row)
                 output[-1] = last_row[:-len(row_ender)] + str_hidden + row_ender
             else:
                 # If there aren't any rows in the output, just append the
                 # hidden fields.
                 output.append(str_hidden)
+
         return mark_safe(u'\n'.join(output))
 
     def as_table(self):
@@ -172,8 +186,7 @@ class ReviewModelForm(forms.ModelForm):
                     <div id="%(help_id)s" class="help">%(help_text)s</div>
                     %(label)s</th>
                 <td>%(errors)s%(field)s
-                </td></tr>
-        '''
+                </td></tr>'''
         return self._html_output(normal_row=normal_row,
                                  error_row=u'<tr><td colspan="3">%s</td></tr>',
                                  row_ender='</td></tr>',
@@ -416,7 +429,7 @@ class StudyTypeForm(ReviewModelForm):
 class PrimaryOutcomesForm(ReviewModelForm):
     class Meta:
         model = Outcome
-        fields = ['interest','description']
+        fields = ['description','interest']
 
     title = _('Primary Outcomes')
     interest = forms.CharField(initial=choices.OUTCOME_INTEREST[0][0],
@@ -425,7 +438,7 @@ class PrimaryOutcomesForm(ReviewModelForm):
 class SecondaryOutcomesForm(ReviewModelForm):
     class Meta:
         model = Outcome
-        fields = ['interest','description']
+        fields = ['description','interest']
 
     title = _('Secondary Outcomes')
     interest = forms.CharField(initial=choices.OUTCOME_INTEREST[1][0],
