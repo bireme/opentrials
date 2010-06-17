@@ -57,7 +57,8 @@ class BaseMultilingualWidget(forms.Widget):
         # Creates and renders widgets
         wargs = self.get_widget_args()
         widgets, rendereds = [], []
-        for lang in self.available_languages:
+        for lang,label in settings.MANAGED_LANGUAGES_CHOICES:
+            lang = lang.lower()
             widget = self.widget_class(**wargs)
             widgets.append(widget)
             # FIXME: get main language from settings
@@ -67,7 +68,7 @@ class BaseMultilingualWidget(forms.Widget):
             if lang == self.default_second_language:
                 css_class = ' '.join([css_class, 'default-second-language'])
 
-            rendereds.append('<div class="%s"><b>%s</b>%s</div>' % (css_class, lang, widget.render(w_name, values[lang])))
+            rendereds.append('<div class="%s"><b>%s</b>%s</div>' % (css_class, label, widget.render(w_name, values[lang])))
         # FIXME: change multilingual to polyglot
         return '<div class="multilingual">%s</div>'%('\n'.join(rendereds))
 

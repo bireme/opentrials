@@ -23,7 +23,7 @@
                             '{{LANGUAGE_CODE}}'))
                     .each(function(){$(this).change();});
 
-                $('.dataTable th img').cluetip({local:true, cursor: 'pointer',showTitle: false});
+                $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
             });
         </script>
 {% endblock %}

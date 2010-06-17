@@ -23,7 +23,7 @@
                     highlight: true,
                     sortable: false
             });
-            $('.dataTable th img').cluetip({local:true, cursor: 'pointer',showTitle: false});
+            $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
         });
         function new_institution(){
             return window.open('{% url new_institution %}','n_i','status=0,location=0,height=375');
