@@ -317,6 +317,50 @@ blockquote {
     padding-right: 0em;
 }
 
+.mainContent .warning {
+    border: 1px solid #999900;
+    background-color: #FFFFCC;
+    padding: 0.7em 0.5em 0.5em;
+    margin: 0 0 1em;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    position: relative;
+}
+
+.mainContent .warning a.button {
+    position: absolute;
+    cursor: pointer;
+    right: 15px;
+    top: 5px;
+}
+
+.mainContent .warning a.maximize {
+    display: none;
+}
+
+.mainContent .warning-minimized a.minimize {
+    display: none;
+}
+
+.mainContent .warning-minimized a.maximize {
+    display: inline;
+}
+/*
+.mainContent .warning-minimized ul {
+    display: none;
+}*/
+
+.mainContent .warning ul li {
+    list-style-type: decimal;
+}
+.mainContent .warning ul li a span{
+    display: none;
+}
+
+.mainContent .warning ul li a img{
+    margin-left: 1em;
+}
+
 .middle .news {
     padding-right: 17px;
 }
