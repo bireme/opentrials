@@ -347,10 +347,12 @@ def step_7(request, trial_pk):
 
     PrimaryOutcomesSet = modelformset_factory( Outcome,
                                 formset=MultilingualBaseFormSet,
-                                form=PrimaryOutcomesForm,extra=EXTRA_FORMS)
+                                form=PrimaryOutcomesForm,extra=EXTRA_FORMS,
+                                can_delete=True)
     SecondaryOutcomesSet = modelformset_factory(Outcome,
                                 formset=MultilingualBaseFormSet,
-                                form=SecondaryOutcomesForm,extra=EXTRA_FORMS)
+                                form=SecondaryOutcomesForm,extra=EXTRA_FORMS,
+                                can_delete=True)
 
     primary_qs = Outcome.objects.filter(trial=ct, interest=choices.OUTCOME_INTEREST[0][0])
     secondary_qs = Outcome.objects.filter(trial=ct, interest=choices.OUTCOME_INTEREST[1][0])
