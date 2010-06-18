@@ -22,9 +22,12 @@ def export_database(request):
 
     mysqldump_bin = stdout.readline().replace('\n','')
     stdout.close()
+
+    cmd = mysqldump_bin+' --opt --compact --skip-add-locks -u %s -p%s %s | bzip2 -c' % \
+                (settings.DATABASES['default']['USER'],
+                 settings.DATABASES['default']['PASSWORD'],
+                 settings.DATABASES['default']['NAME'])
     
-    cmd = mysqldump_bin+' --opt --compact --skip-add-locks -u %s -p%s %s | bzip2 -c' % (settings.DATABASE_USER, settings.DATABASE_PASSWORD, settings.DATABASE_NAME)
-    print cmd
     stdin, stdout = os.popen2(cmd)
     stdin.close()
     
@@ -86,9 +89,7 @@ def req_dump(request):
 @user_passes_test(lambda u: u.is_staff)
 def sys_info(request):
     template = u'''
-    <h1>version.txt</h1>
-    %(version)s
-    <h1>svnversion</h1>
+    <h1>Revision</h1>
     %(svn_version)s
     <h1>settings path</h1>
     <pre>%(settingspath)s</pre>
@@ -107,18 +108,16 @@ def sys_info(request):
     import settings
     from django.contrib.sites.models import Site
     from subprocess import Popen, PIPE
-    version = open(os.path.join(settings.PROJECT_PATH, 'version.txt')).read()
-    svn_version, svn_version_err = Popen('svnversion', shell=True, stdout=PIPE).communicate()
+    svn_version, svn_version_err = Popen(['svnversion', settings.PROJECT_PATH], stdout=PIPE).communicate()
     svn_version = svn_version.decode('utf-8') if svn_version else u''
     svn_version_err = svn_version_err.decode('utf-8') if svn_version_err else u''
     site = Site.objects.get_current()
-    svnout, svnerr = Popen(['svn', 'info', '-r', 'HEAD', settings.PROJECT_PATH], stdout=PIPE).communicate()
+    svnout, svnerr = Popen(['svn', 'info','--non-interactive','--username=anonymous','--password=4guests@','-r', 'HEAD', settings.PROJECT_PATH], stdout=PIPE).communicate()
     svnout = svnout.decode('utf-8') if svnout else u''
     svnerr = svnerr.decode('utf-8') if svnerr else u''
     return HttpResponse(template % {'site.pk':site.pk,
                                     'site.domain':site.domain,
                                     'site.name':site.name,
-                                    'version':version,
                                     'svn_version': svn_version + svn_version_err,
                                     'settingspath': settings.PROJECT_PATH,
                                     'syspath':'\n'.join(sys.path),
