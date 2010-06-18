@@ -1,4 +1,4 @@
-{% extends "repository/submission_step.html" %}
+{% extends "repository/trial_form.html" %}
 {% load i18n %}
 
 {% block extrahead %}
@@ -21,43 +21,4 @@
                 $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
             });
         </script>
-{% endblock %}
-
-{% block body %}
-
-    <h2>{{ title }}</h2>
-    <form action="./" method="POST">{% csrf_token %}
-        {% for form in forms %}
-        <fieldset>
-            <legend>{% firstof form.title form.form.title %}</legend>
-            <table class="dataTable" cellspacing="0">
-                {{ form.as_table }}
-            </table>
-        </fieldset>
-        {% endfor %}
-
-        {% for formset in formsets %}
-            {{ formset.management_form }}
-            <fieldset>
-            <legend>{{ formset.form.title }}</legend>
-
-
-            <div class="{{formset.management_form.prefix}}">
-            {% for form in formset.forms %}
-                <table class="dataTable {% cycle 'even' 'odd' %}" cellspacing="0">
-                    {{ form.as_table }}
-                </table>
-            {% endfor %}
-            </div>
-
-            <div style="text-align: center">
-              <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="add more"/>
-            </div>
-            
-            </fieldset>
-        {% endfor %}
-        
-        <input type="submit" value="{% trans "Save" %}"/>
-    </form>
-
 {% endblock %}
