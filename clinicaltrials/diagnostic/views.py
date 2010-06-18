@@ -88,6 +88,8 @@ def sys_info(request):
     template = u'''
     <h1>version.txt</h1>
     %(version)s
+    <h1>svnversion</h1>
+    %(svn_version)s
     <h1>settings path</h1>
     <pre>%(settingspath)s</pre>
     <h1>Site.objects.get_current()</h1>
@@ -106,6 +108,9 @@ def sys_info(request):
     from django.contrib.sites.models import Site
     from subprocess import Popen, PIPE
     version = open(os.path.join(settings.PROJECT_PATH, 'version.txt')).read()
+    svn_version, svn_version_err = Popen('svnversion', shell=True, stdout=PIPE).communicate()
+    svn_version = svn_version.decode('utf-8') if svn_version else u''
+    svn_version_err = svn_version_err.decode('utf-8') if svn_version_err else u''
     site = Site.objects.get_current()
     svnout, svnerr = Popen(['svn', 'info', '-r', 'HEAD', settings.PROJECT_PATH], stdout=PIPE).communicate()
     svnout = svnout.decode('utf-8') if svnout else u''
@@ -114,6 +119,7 @@ def sys_info(request):
                                     'site.domain':site.domain,
                                     'site.name':site.name,
                                     'version':version,
+                                    'svn_version': svn_version + svn_version_err,
                                     'settingspath': settings.PROJECT_PATH,
                                     'syspath':'\n'.join(sys.path),
                                     'svninfo':svnout + svnerr})
