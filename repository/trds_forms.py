@@ -21,6 +21,8 @@ from django.forms.forms import BoundField, conditional_escape
 from polyglot.multilingual_forms import MultilingualCharField, MultilingualTextField
 from polyglot.models import get_multilingual_fields
 
+from datetime import date
+
 import settings
 
 class ReviewModelForm(forms.ModelForm):
@@ -394,6 +396,7 @@ class RecruitmentForm(ReviewModelForm):
 
     # TRDS 18
     recruitment_status = forms.ModelChoiceField(label=_('Recruitment Status'),
+                                                initial=RecruitmentStatus.objects.get(pk=1),
                                                 queryset=RecruitmentStatus.objects.all())
 
     recruitment_country = forms.ModelMultipleChoiceField(
@@ -402,7 +405,7 @@ class RecruitmentForm(ReviewModelForm):
 
     # TRDS 16a,b (type_enrollment: anticipated or actual)
     enrollment_start_planned = forms.DateField( # yyyy-mm or yyyy-mm-dd
-        label=_('Planned Date of First Enrollment'), required=False)
+        label=_('Planned Date of First Enrollment'))
 
     # TRDS 17
     target_sample_size = forms.IntegerField(label=_('Target Sample Size'),
