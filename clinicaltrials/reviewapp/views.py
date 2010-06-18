@@ -21,7 +21,7 @@ from repository.models import ClinicalTrial, CountryCode
 from datetime import datetime
 
 def index(request):
-    clinical_trials = ClinicalTrial.objects.all()[:3]
+    clinical_trials = ClinicalTrial.published.all()[:3]
     latest = News.objects.filter(status__exact='published').order_by('-created',)[:1]
     if len(latest) < 1:
         latest = None
