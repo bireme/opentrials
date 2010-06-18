@@ -1,4 +1,23 @@
 {% extends "repository/trial_form.html" %}
 {% load i18n %}
 
+{% block extrahead %}
+        <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/multilingual.css"/>
+        <script type="text/javascript" src="{{MEDIA_URL}}js/multilingual.js"></script>
+
+        <script type="text/javascript">
+            MULTILINGUAL_FIELDS = {
+                available_languages: ['{{ MANAGED_LANGUAGES_LC|join:"','" }}'],
+                default_second_language: 'pt-br'
+            };
+
+            $(document).ready(function() {
+                $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
+            });
+            function new_institution(){
+                return window.open('{% url new_institution %}','n_i','status=0,location=0,height=380');
+            }
+        </script>
+{% endblock %}
+
 {% block extra_buttons %}<input onclick="new_institution()" type="button" value="{% trans 'New Institution' %}"/>{% endblock %}
