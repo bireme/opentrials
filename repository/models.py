@@ -76,6 +76,10 @@ class TrialRegistrationDataSetModel(models.Model):
 
     class Meta:
         abstract = True
+        
+class TrialsPublished(models.Manager):
+    def get_query_set(self):
+        return super(TrialsPublished, self).get_query_set().filter(status__exact='published')
 
 class ClinicalTrial(TrialRegistrationDataSetModel):
     # TRDS 1
@@ -203,6 +207,9 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
                                   blank=True)
 
     translations = generic.GenericRelation('ClinicalTrialTranslation')
+    
+    objects = models.Manager()
+    published = TrialsPublished()
 
     class Meta:
         ordering = ['-updated',]

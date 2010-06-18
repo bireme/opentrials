@@ -482,10 +482,10 @@ def list_all(request, page=0, **kwargs):
     q = request.GET.get('q', '')
 
     if q:
-        queryset = ClinicalTrial.objects.filter(Q(scientific_title__contains=q)
+        queryset = ClinicalTrial.published.filter(Q(scientific_title__contains=q)
                                                |Q(public_title__contains=q))
     else:
-        queryset = ClinicalTrial.objects.all()
+        queryset = ClinicalTrial.published.all()
 
     return object_list(
                   request,
