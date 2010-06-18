@@ -203,11 +203,13 @@ def step_3(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
     GeneralDescriptorSet = modelformset_factory(Descriptor,
+                                                formset=MultilingualBaseFormSet,
                                                 form=GeneralHealthDescriptorForm,
                                                 can_delete=True,
                                                 extra=EXTRA_FORMS)
 
     SpecificDescriptorSet = modelformset_factory(Descriptor,
+                                                formset=MultilingualBaseFormSet,
                                                 form=SpecificHealthDescriptorForm,
                                                 can_delete=True,
                                                 extra=EXTRA_FORMS)
@@ -260,7 +262,9 @@ def step_4(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
     DescriptorFormSet = modelformset_factory(Descriptor,
+                                          formset=MultilingualBaseFormSet,
                                           form=InterventionDescriptorForm,
+                                          can_delete=True,
                                           extra=EXTRA_FORMS)
 
     queryset = Descriptor.objects.filter(trial=trial_pk,
