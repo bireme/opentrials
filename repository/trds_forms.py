@@ -13,6 +13,7 @@ import choices
 from django.utils.encoding import force_unicode
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
+from django.forms.formsets import DELETION_FIELD_NAME
 
 from django import forms
 from django.forms.forms import BoundField, conditional_escape
@@ -204,11 +205,8 @@ class MultilingualBaseFormSet(BaseModelFormSet):
     
         super(BaseModelFormSet, self).__init__(**defaults)
 
+    # Override
     def save(self, commit=True):
-        """Saves model instances for every form, adding and changing instances
-        as necessary, and returns the list of instances.
-        """
-        
         if not commit:
             self.saved_forms = []
             def save_m2m():
@@ -225,6 +223,39 @@ class MultilingualBaseFormSet(BaseModelFormSet):
 
         return saved_instances
 
+    # Override
+    def save_existing_objects(self, commit=True):
+        self.changed_objects = []
+        self.deleted_objects = []
+        if not self.get_queryset():
+            return []
+
+        saved_instances = []
+        for form in self.initial_forms:
+            pk_name = self._pk_field.name
+            raw_pk_value = form._raw_value(pk_name)
+            
+            pk_value = form.fields[pk_name].clean(raw_pk_value)
+            pk_value = getattr(pk_value, 'pk', pk_value)
+
+            obj = self._existing_object(pk_value)
+            if self.can_delete:
+                raw_delete_value = form._raw_value(DELETION_FIELD_NAME)
+                should_delete = form.fields[DELETION_FIELD_NAME].clean(raw_delete_value)
+                if should_delete:
+                    self.deleted_objects.append(obj)
+
+                    # http://code.djangoproject.com/attachment/ticket/10284/modelformset_false_delete.diff
+                    if commit:
+                        obj.delete()
+                        
+                    continue
+            if form.has_changed():
+                self.changed_objects.append((obj, form.changed_data))
+                saved_instances.append(self.save_existing(form, obj, commit=commit))
+                if not commit:
+                    self.saved_forms.append(form)
+        return saved_instances
 #
 # Forms
 #
