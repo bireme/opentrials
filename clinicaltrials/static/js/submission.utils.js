@@ -144,3 +144,18 @@ function search_event(decsclient_url,label,lang) {
         }
     }
 };
+
+function ack_remark(remark_id){
+
+    $.get('/remark/change/'+remark_id+'/acknowledged', function(data, textStatus){
+
+        if (textStatus == "success"){
+            $("#remark_"+remark_id).toggleClass('ack');
+            $("#remark_"+remark_id).hide('slow',function(){
+                if( $("div.warning li.ack").length == $("div.warning li").length) {
+                    $("div.warning").hide('fast');
+                }
+            });
+        }
+    });
+}

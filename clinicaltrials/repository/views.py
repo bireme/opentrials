@@ -151,7 +151,7 @@ def step_1(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[0],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[0])),
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[0])),
                                },
                                context_instance=RequestContext(request))
 
@@ -192,7 +192,7 @@ def step_2(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[1],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[1])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[1])),},
                                context_instance=RequestContext(request))
 
 
@@ -251,7 +251,7 @@ def step_3(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[2],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[2])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[2])),},
                                context_instance=RequestContext(request))
 
 
@@ -293,7 +293,7 @@ def step_4(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[3],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[3])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[3])),},
                                context_instance=RequestContext(request))
 
 
@@ -316,7 +316,7 @@ def step_5(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[4],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[4])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[4])),},
                                context_instance=RequestContext(request))
 
 
@@ -339,7 +339,7 @@ def step_6(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[5],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[5])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[5])),},
                                context_instance=RequestContext(request))
 
 
@@ -383,7 +383,7 @@ def step_7(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[6],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[6])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[6])),},
                                context_instance=RequestContext(request))
 
 
@@ -433,7 +433,7 @@ def step_8(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[7],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[7])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[7])),},
                                context_instance=RequestContext(request))
 
 @login_required
@@ -474,7 +474,7 @@ def step_9(request, trial_pk):
                                'title':TRIAL_FORMS[8],
                                'host': request.get_host(),
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[8])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[8])),},
                                context_instance=RequestContext(request))
 
 def list_all(request, page=0, **kwargs):

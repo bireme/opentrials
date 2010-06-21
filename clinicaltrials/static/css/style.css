@@ -359,6 +359,15 @@ blockquote {
 
 .mainContent .warning ul li a img{
     margin-left: 1em;
+    cursor: pointer;
+}
+
+.mainContent .warning ul li.ack{
+    text-decoration: line-through;
+}
+
+.mainContent .warning ul li.ack a{
+    display: none;
 }
 
 .middle .news {

@@ -133,14 +133,26 @@ REMARK_STATUS = [
     # marked as noted by user
     ('acknowledged', _('Acknowledged')),
     # final state, after reviewer verifies changes by the user
-    ('Closed', _('Closed')),
+    ('closed', _('Closed')),
 ]
 
 REMARK_TRANSITIONS = {
     'opened':['acknowledged'],
     'acknowledged':['closed','opened'],
     'closed':[],
-}    
+}
+
+class RemarksOpened(models.Manager):
+    def get_query_set(self):
+        return super(RemarksOpened, self).get_query_set().filter(status__exact='opened')
+
+class RemarksAcknowledged(models.Manager):
+    def get_query_set(self):
+        return super(RemarksAcknowledged, self).get_query_set().filter(status__exact='acknowledged')
+
+class RemarksClosed(models.Manager):
+    def get_query_set(self):
+        return super(RemarksClosed, self).get_query_set().filter(status__exact='closed')
 
 class Remark(models.Model):
     ''' A reviewer comment regarding a submission field.
@@ -154,6 +166,11 @@ class Remark(models.Model):
     text = models.TextField(_('Text'), max_length=2048)
     status = models.CharField(_('Status'), max_length=16, choices=REMARK_STATUS,
                               default=REMARK_STATUS[0][0])
+
+    objects = models.Manager()
+    opened = RemarksOpened()
+    acknowledged = RemarksAcknowledged()
+    closed = RemarksClosed()
 
     def __unicode__(self):
         return '%s:%s' % (self.pk, self.submission_id)
