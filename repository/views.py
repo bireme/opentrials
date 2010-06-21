@@ -2,7 +2,7 @@
 
 from clinicaltrials.repository.trds_forms import MultilingualBaseFormSet
 from django.template.context import RequestContext
-from reviewapp.models import Attachment, Submission, SUBMISSION_STATUS
+from reviewapp.models import Attachment, Submission, Remark, SUBMISSION_STATUS
 from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
 
 from repository.models import ClinicalTrial, Descriptor, TrialNumber
@@ -32,6 +32,7 @@ from django.template import loader
 from django.db.models import Q
 from django.views.generic.list_detail import object_list
 from django.conf import settings
+from django.template.defaultfilters import slugify
 
 EXTRA_FORMS = 1
 TRIAL_FORMS = ['Trial Identification',
@@ -150,10 +151,7 @@ def step_1(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[0],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Sponsors and Sources of Support'),
-                               # As duas variaveis de contexto abaixo devem ir sempre que houver um form com translation
-                               'available_languages': form.available_languages,
-                               'default_second_language': form.default_second_language,
+                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[0])),
                                },
                                context_instance=RequestContext(request))
 
@@ -194,7 +192,7 @@ def step_2(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[1],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Health Conditions Form')},
+                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[1])),},
                                context_instance=RequestContext(request))
 
 
@@ -253,7 +251,7 @@ def step_3(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[2],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Interventions Form')},
+                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[2])),},
                                context_instance=RequestContext(request))
 
 
@@ -295,7 +293,7 @@ def step_4(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[3],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Recruitment Form')},
+                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[3])),},
                                context_instance=RequestContext(request))
 
 
@@ -318,7 +316,7 @@ def step_5(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[4],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Study Type Form')},
+                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[4])),},
                                context_instance=RequestContext(request))
 
 
@@ -341,7 +339,7 @@ def step_6(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[5],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Outcomes Form')},
+                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[5])),},
                                context_instance=RequestContext(request))
 
 
@@ -385,7 +383,7 @@ def step_7(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[6],
                                'steps': step_list(trial_pk),
-                               'next_form_title':_('Descriptor Form')},
+                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[6])),},
                                context_instance=RequestContext(request))
 
 
@@ -434,7 +432,8 @@ def step_8(request, trial_pk):
                               {'formsets':formsets,
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[7],
-                               'steps': step_list(trial_pk)},
+                               'steps': step_list(trial_pk),
+                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[7])),},
                                context_instance=RequestContext(request))
 
 @login_required
@@ -474,7 +473,8 @@ def step_9(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[8],
                                'host': request.get_host(),
-                               'steps': step_list(trial_pk)},
+                               'steps': step_list(trial_pk),
+                               'remarks':Remark.objects.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[8])),},
                                context_instance=RequestContext(request))
 
 def list_all(request, page=0, **kwargs):
