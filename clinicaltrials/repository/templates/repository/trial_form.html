@@ -25,18 +25,18 @@
 {% endblock %}
 
 {% block body %}
+    {% if remarks %}
     <div class="warning">
-        <a class="minimize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').hide('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-down.gif"/></a>
-        <a class="maximize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').show('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-up.gif"/></a>
+        <a class="minimize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-down.gif"/></a>
+        <a class="maximize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-up.gif"/></a>
         <h2>{{ 'Remarks' }}</h2>
         <ul>
-            <li>Esta lista ainda é falsa, mas ficará funcional nos próximos dias.<a href="#"><span>Mark as reviewed</span><img alt="Mark as reviewed" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
-            <li>Vel blandit constituam eu.<a href="#"><span>Mark as reviewed</span><img alt="Mark as reviewed" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
-            <li>Nullam altera inermis has ea, te nostro euismod accommodare his.<a href="#"><span>Mark as reviewed</span><img alt="Mark as reviewed" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
-            <li>Ridens fabulas dissentiunt an sed.<a href="#"><span>Mark as reviewed</span><img alt="Mark as reviewed" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
-            <li>Vis gloriatur abhorreant ea, iriure persecuti ad est. Eum an apeirian tractatos necessitatibus.<a href="#"><span>Mark as reviewed</span><img alt="Mark as reviewed" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
+            {% for remark in remarks %}
+            <li>{{ remark.text }}<a href="#"><span>Mark as reviewed</span><img alt="Mark as reviewed" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
+            {% endfor %}
         </ul>
     </div>
+    {% endif %}
 
     <h2>{{ title }}</h2>
     <form action="./" method="POST">{% csrf_token %}
