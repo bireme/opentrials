@@ -32,7 +32,7 @@
         <h2>{{ 'Remarks' }}</h2>
         <ul>
             {% for remark in remarks %}
-            <li>{{ remark.text }}<a href="#"><span>Mark as reviewed</span><img alt="Mark as reviewed" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
+            <li id="remark_{{ remark.id }}">{{ remark.text }}<a onclick="ack_remark({{ remark.id }})"><span>Mark as reviewed</span><img alt="Mark as reviewed" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
             {% endfor %}
         </ul>
     </div>

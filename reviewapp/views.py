@@ -1,5 +1,6 @@
 # coding: utf-8
-from reviewapp.models import UserProfile
+from django.http import Http404, HttpResponse
+from reviewapp.models import UserProfile, REMARK_TRANSITIONS, Remark
 from registration.models import RegistrationProfile
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response, get_object_or_404
@@ -184,3 +185,17 @@ def open_remark(request, submission_id, context):
     form = OpenRemarkForm()
     return render_to_response('reviewapp/open_remark.html', locals(),
         context_instance=RequestContext(request))
+
+@login_required
+def change_remark_status(request, remark_id, status):
+
+    if status not in REMARK_TRANSITIONS:
+        raise Http404
+
+    remark = get_object_or_404(Remark, id=int(remark_id))
+    if status not in REMARK_TRANSITIONS[remark.status]:
+        return HttpResponse(status=403)
+
+    remark.status = status
+    remark.save()
+    return HttpResponse(remark.status, mimetype='text/plain')
