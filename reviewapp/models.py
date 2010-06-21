@@ -175,6 +175,9 @@ class Remark(models.Model):
     def __unicode__(self):
         return '%s:%s' % (self.pk, self.submission_id)
 
+    def short_text(self):
+        return safe_truncate(self.text, 60)
+
 NEWS_STATUS = [
     ('pending', _('Pending')),
     ('published', _('Published')),

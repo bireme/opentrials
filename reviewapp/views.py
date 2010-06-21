@@ -35,8 +35,9 @@ def index(request):
 
 @login_required
 def dashboard(request):
-    user_tickets = Ticket.objects.filter(creator=request.user)[:5]
-    user_submissions = Submission.objects.filter(creator=request.user)[:5]
+    user_submissions = Submission.objects.filter(creator=request.user)
+    remarks = Remark.objects.filter(submission__in=user_submissions)
+    
     return render_to_response('reviewapp/dashboard.html', locals(),
                                context_instance=RequestContext(request))
 
@@ -71,8 +72,11 @@ def user_profile(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-
-            response = HttpResponseRedirect(reverse('reviewapp.dashboard'))
+            
+            if request.GET['next']:
+                response = HttpResponseRedirect(request.GET['next'])
+            else:
+                response = HttpResponseRedirect(reverse('reviewapp.submissionlist'))
 
             if password_form.changed_data:
                 if password_form.is_valid():
