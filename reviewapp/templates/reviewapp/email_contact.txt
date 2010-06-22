@@ -1,0 +1,6 @@
+Message sent by the site: http://{{ site.domain }} ({{ site.name }})
+
+Message: {{ message }}
+
+{{ name }}
+
