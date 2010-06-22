@@ -1,0 +1,30 @@
+{% extends "base_columns.html" %}
+
+{% load i18n %}
+
+{% block body_title %}{% trans 'Contact us' %}{% endblock %}
+
+{% block body %}
+
+<h2>{% trans 'Contact us' %}</h2>
+
+    {% if form.errors %}
+    <div class="warning"><strong>{% trans 'Please fill out all fields correctly.' %}</strong></div>
+    {% endif %}
+
+    {% if sent %}
+    <div class="success"><strong>{% trans 'Message sent successfully.' %}</strong></div>
+    {% endif %}
+
+    <form method="post" action="./">{% csrf_token %}
+    <fieldset>
+        <legend>{% trans 'Fill out the fields below to enter contact us' %}</legend>
+
+        <table class="dataTable" cellspacing="0">
+        {{ form.as_table }}
+        </table>
+        <button type="submit" title="{% trans 'Send message' %}">{% trans 'Send' %}</button>
+    </fieldset>
+    </form>
+
+{% endblock %}

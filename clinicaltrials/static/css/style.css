@@ -224,7 +224,7 @@ blockquote {
 /* TOP MENU */
 .topMenu {
     float: left;
-    margin: 19px 70px 0px 8px;
+    margin: 19px 14px 0px 8px;
 }
 .topMenu UL {
     margin: 0px;
@@ -315,6 +315,16 @@ blockquote {
     width: 100%;
     margin-right: 0em;
     padding-right: 0em;
+}
+
+.mainContent .success {
+    border: 1px solid #99AA99;
+    background-color: #CCFFCC;
+    padding: 0.7em 0.5em 0.5em;
+    margin: 0 0 1em;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    position: relative;
 }
 
 .mainContent .warning {

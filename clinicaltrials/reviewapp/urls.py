@@ -8,6 +8,7 @@ from reviewapp.views import index, user_dump, new_submission, submissions_list
 from reviewapp.views import dashboard, submission_detail, user_profile
 from reviewapp.views import upload_trial, open_remark, resend_activation_email
 from reviewapp.views import change_remark_status
+from reviewapp.views import contact
 
 from reviewapp.models import Submission, News
 
@@ -72,6 +73,8 @@ urlpatterns = patterns('',
         
     url(r'^remark/open/(?P<submission_id>\d+)/(?P<context>[a-zA-Z0-9_\- ]+)/$', open_remark,
         name='reviewapp.openremark'),
+        
+    url(r'^contact/$', contact, name='reviewapp.contact'),
 
     url(r'^remark/change/(?P<remark_id>\d+)/(?P<status>[a-z]+)/$', change_remark_status,
         name='reviewapp.changeremarkstatus'),
