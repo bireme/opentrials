@@ -76,8 +76,9 @@ def user_profile(request):
             user_form.save()
             profile_form.save()
             
-            if request.GET['next']:
-                response = HttpResponseRedirect(request.GET['next'])
+            next = request.GET.get('next', '')
+            if next:
+                response = HttpResponseRedirect(next)
             else:
                 response = HttpResponseRedirect(reverse('reviewapp.submissionlist'))
 
