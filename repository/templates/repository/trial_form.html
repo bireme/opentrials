@@ -29,7 +29,7 @@
     <div class="warning">
         <a class="minimize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-down.gif"/></a>
         <a class="maximize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-up.gif"/></a>
-        <h2>{{ 'Remarks' }}</h2>
+        <h2>{% trans 'Remarks' %}</h2>
         <ul>
             {% for remark in remarks %}
             <li id="remark_{{ remark.id }}">{{ remark.text }}<a onclick="ack_remark({{ remark.id }})"><span>Mark as reviewed</span><img alt="Mark as reviewed" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
@@ -38,7 +38,7 @@
     </div>
     {% endif %}
 
-    <h2>{{ title }}</h2>
+    <h2>{% trans title %}</h2>
     <form action="./" method="POST">{% csrf_token %}
         {% for form in forms %}
         <fieldset>

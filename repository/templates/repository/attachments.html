@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block body %}
 
-    <h2>{{ title }}</h2>
+    <h2>{% trans title %}</h2>
 
     {% if existing_attachments %}
         <h3>{% trans 'Existing attachments' %}</h3>
@@ -37,7 +37,7 @@
             {% endfor %}
             </div>
             <div style="text-align: center">
-              <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="add more"/>
+              <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="{% trans "Add more" %}" />
             </div>
             </fieldset>
         {% endfor %}
