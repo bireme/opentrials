@@ -14,7 +14,7 @@
     <div class="links">
         {% load recruiting_trials %}
         {% get_latest_recruiting_trials 5 as latest_recruiting_trials %}
-        <h2>{% trans 'Recruiting' %}</h2>
+        <h2>{% trans 'Recruitment' %}</h2>
         <ul>
         {% if latest_recruiting_trials %}
             {% for ct in latest_recruiting_trials %}

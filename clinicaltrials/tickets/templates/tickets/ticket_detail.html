@@ -62,5 +62,5 @@
     {% endfor %}
 </table>
 {% endif %}
-{% if object.is_closed or object.is_resolved %} <p>{% trans 'To show the "add iterarion button" the ticket must be diferente from "closed".' %}</p> {% else %} <a class="buttonadd" href="/ticket/newiteration/{{ object.pk }}/">Add iteration</a> {% endif %}
+{% if object.is_closed or object.is_resolved %} <p>{% trans 'To show the "add iteration button" the ticket must be diferente from "closed".' %}</p> {% else %} <a class="buttonadd" href="/ticket/newiteration/{{ object.pk }}/">Add iteration</a> {% endif %}
 {% endblock %}
