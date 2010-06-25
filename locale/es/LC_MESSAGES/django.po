@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-24 14:02+0000\n"
-"PO-Revision-Date: 2010-06-24 14:07\n"
+"POT-Creation-Date: 2010-06-25 20:46+0000\n"
+"PO-Revision-Date: 2010-06-25 19:07\n"
 "Last-Translator: <a@b.cd>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -91,11 +91,15 @@ msgid "You must agree to the terms to register"
 msgstr ""
 
 #: registration/forms.py:95 reviewapp/forms.py:56
-msgid "This email address is already in use. Please supply a different email address."
+msgid ""
+"This email address is already in use. Please supply a different email "
+"address."
 msgstr ""
 
 #: registration/forms.py:122
-msgid "Registration using free email addresses is prohibited. Please supply a different email address."
+msgid ""
+"Registration using free email addresses is prohibited. Please supply a "
+"different email address."
 msgstr ""
 
 #: registration/models.py:168
@@ -127,7 +131,9 @@ msgid "A confirmation e-mail is on the way"
 msgstr ""
 
 #: registration/templates/registration/registration_complete.html:8
-msgid "Please click the activation link included in the e-mail to confirm you registration."
+msgid ""
+"Please click the activation link included in the e-mail to confirm you "
+"registration."
 msgstr ""
 
 #: registration/templates/registration/registration_form.html:7
@@ -357,63 +363,76 @@ msgid "Postal Address"
 msgstr ""
 
 #: repository/models.py:428 repository/models.py:446
-#: repository/trds_forms.py:533 reviewapp/models.py:117
+#: repository/trds_forms.py:538 reviewapp/models.py:117
 msgid "Country"
 msgstr ""
 
-#: repository/models.py:437 repository/trds_forms.py:521
+#: repository/models.py:437 repository/trds_forms.py:525
 msgid "First Name"
 msgstr ""
 
-#: repository/models.py:438 repository/trds_forms.py:522
+#: repository/models.py:438 repository/trds_forms.py:526
 msgid "Middle Name"
 msgstr ""
 
-#: repository/models.py:439 repository/trds_forms.py:523
+#: repository/models.py:439 repository/trds_forms.py:527
 msgid "Last Name"
 msgstr ""
 
-#: repository/models.py:440 repository/trds_forms.py:525 reviewapp/forms.py:84
+#: repository/models.py:440 repository/trds_forms.py:529 reviewapp/forms.py:84
 msgid "E-mail"
 msgstr "E-mail"
 
-#: repository/models.py:442 repository/trds_forms.py:528
+#: repository/models.py:442 repository/trds_forms.py:532
 #: repository/templates/repository/clinicaltrial_detail.html:365
 #: repository/templates/repository/clinicaltrial_detail.html:413
 #: repository/templates/repository/clinicaltrial_detail.html:462
 msgid "Affiliation"
 msgstr "Afiliación"
 
-#: repository/models.py:443 repository/trds_forms.py:530
+#: repository/models.py:443 repository/trds_forms.py:534
 #: repository/templates/repository/clinicaltrial_detail.html:343
 #: repository/templates/repository/clinicaltrial_detail.html:391
 #: repository/templates/repository/clinicaltrial_detail.html:440
 msgid "Address"
 msgstr ""
 
-#: repository/models.py:444 repository/trds_forms.py:531
+#: repository/models.py:444 repository/trds_forms.py:535
 #: repository/templates/repository/clinicaltrial_detail.html:347
 #: repository/templates/repository/clinicaltrial_detail.html:395
 #: repository/templates/repository/clinicaltrial_detail.html:444
 msgid "City"
 msgstr "Ciudad"
 
-#: repository/models.py:447 repository/trds_forms.py:535
+#: repository/models.py:447 repository/trds_forms.py:540
 msgid "Postal Code"
 msgstr "Código Postal"
 
-#: repository/models.py:448 repository/trds_forms.py:536
+#: repository/models.py:448 repository/trds_forms.py:541
 #: repository/templates/repository/clinicaltrial_detail.html:357
 #: repository/templates/repository/clinicaltrial_detail.html:405
 #: repository/templates/repository/clinicaltrial_detail.html:454
 msgid "Telephone"
 msgstr "Teléfono"
 
+#: repository/models.py:459 repository/models.py:472 repository/models.py:485
+#: templates/base.html:136
+msgid "Contact"
+msgstr "Contacto"
+
 #: repository/models.py:501
 msgid "Interest"
 msgstr ""
 
-#: repository/models.py:504 repository/models.py:515
+#: repository/models.py:504
+#: repository/templates/repository/attachments.html:17 reviewapp/models.py:123
+#: tickets/models.py:71 tickets/views.py:64 tickets/views.py:141
+#: tickets/templates/tickets/ticket_detail.html:52 vocabulary/models.py:17
+#: vocabulary/models.py:38
+msgid "Description"
+msgstr "Descripción"
+
+#: repository/models.py:515
 msgid "Outcome Description"
 msgstr ""
 
@@ -569,16 +588,22 @@ msgstr ""
 msgid "Contact(s) for Public Queries"
 msgstr ""
 
-#: repository/trds_forms.py:498
+#: repository/trds_forms.py:489 repository/trds_forms.py:500
+#: repository/trds_forms.py:511 repository/trds_forms.py:521
+#, fuzzy
+msgid "Relation"
+msgstr "Afiliación"
+
+#: repository/trds_forms.py:499
 msgid "Contact(s) for Scientific Queries"
 msgstr ""
 
-#: repository/trds_forms.py:508
+#: repository/trds_forms.py:510
 #: repository/templates/repository/clinicaltrial_detail.html:430
 msgid "Contact(s) for Site Queries"
 msgstr ""
 
-#: repository/trds_forms.py:517
+#: repository/trds_forms.py:520
 msgid "New Contact(s)"
 msgstr ""
 
@@ -599,24 +624,18 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: repository/templates/repository/attachments.html:17 reviewapp/models.py:123
-#: tickets/models.py:71 tickets/views.py:64 tickets/views.py:141
-#: tickets/templates/tickets/ticket_detail.html:52 vocabulary/models.py:17
-#: vocabulary/models.py:38
-msgid "Description"
-msgstr "Descripción"
-
 #: repository/templates/repository/attachments.html:23
 msgid "New attachment form"
 msgstr ""
 
 #: repository/templates/repository/attachments.html:40
+#: repository/templates/repository/trial_form.html:68
 msgid "Add more"
 msgstr ""
 
 #: repository/templates/repository/attachments.html:44
 #: repository/templates/repository/new_institution.html:53
-#: repository/templates/repository/trial_form.html:71
+#: repository/templates/repository/trial_form.html:73
 #: reviewapp/templates/reviewapp/user_profile.html:37
 msgid "Save"
 msgstr "Guardar"
@@ -715,6 +734,12 @@ msgstr ""
 #: reviewapp/templates/reviewapp/dashboard.html:35
 msgid "Remarks"
 msgstr ""
+
+#: repository/templates/repository/trial_form.html:36
+#: repository/templates/repository/trial_form.html:37
+#, fuzzy
+msgid "Mark as reviewed"
+msgstr "Marcar como"
 
 #: repository/templates/repository/trial_index.html:3
 #: repository/templates/repository/trial_index.html:7
@@ -929,7 +954,9 @@ msgid "Enter your new password below to reset your password:"
 msgstr ""
 
 #: reviewapp/templates/reviewapp/password_reset_done.html:7
-msgid "We have sent you an email with a link to reset your password. Please check your email and click the link to continue."
+msgid ""
+"We have sent you an email with a link to reset your password. Please check "
+"your email and click the link to continue."
 msgstr ""
 
 #: reviewapp/templates/reviewapp/password_reset_form.html:6
@@ -937,7 +964,9 @@ msgid "Forgot your password?"
 msgstr "¿Olvidaste tu contraseña?"
 
 #: reviewapp/templates/reviewapp/password_reset_form.html:8
-msgid "Enter your email in the form below and we'll send you instructions for creating a new one."
+msgid ""
+"Enter your email in the form below and we'll send you instructions for "
+"creating a new one."
 msgstr ""
 
 #: reviewapp/templates/reviewapp/resend_activation_email.html:8
@@ -1044,12 +1073,16 @@ msgid "Nothing to translate!"
 msgstr ""
 
 #: rosetta/templates/rosetta/languages.html:42
-msgid "You haven't specified any languages in your settings file, or haven't yet generated a batch of translation catalogs."
+msgid ""
+"You haven't specified any languages in your settings file, or haven't yet "
+"generated a batch of translation catalogs."
 msgstr ""
 
 #: rosetta/templates/rosetta/languages.html:43
 #, python-format
-msgid "Please refer to <a href=\"%(i18n_doc_link)s\">Django's I18N documentation</a> for a guide on how to set up internationalization for your project."
+msgid ""
+"Please refer to <a href=\"%(i18n_doc_link)s\">Django's I18N documentation</"
+"a> for a guide on how to set up internationalization for your project."
 msgstr ""
 
 #: rosetta/templates/rosetta/pofile.html:8
@@ -1152,7 +1185,9 @@ msgid "Internal Server Error (500)"
 msgstr ""
 
 #: templates/500.html:8
-msgid "The server encountered an unexpected condition which prevented it from fulfilling the request."
+msgid ""
+"The server encountered an unexpected condition which prevented it from "
+"fulfilling the request."
 msgstr ""
 
 #: templates/base.html:7
@@ -1177,7 +1212,7 @@ msgstr "Perfil"
 
 #: templates/base.html:85
 msgid "Dashboard"
-msgstr "Tablero de instrumentos"
+msgstr "Tablero"
 
 #: templates/base.html:92 templates/base.html.py:96 templates/base.html:97
 msgid "Logout"
@@ -1194,10 +1229,6 @@ msgstr "Sobre"
 #: templates/base.html:135
 msgid "Help"
 msgstr "Ayuda"
-
-#: templates/base.html:136
-msgid "Contact"
-msgstr "Contacto"
 
 #: templates/base_columns.html:24
 msgid "No clinical trials recruiting."
@@ -1289,7 +1320,9 @@ msgid "Assigned to"
 msgstr ""
 
 #: tickets/templates/tickets/ticket_detail.html:65
-msgid "To show the \"add iteration button\" the ticket must be diferente from \"closed\"."
+msgid ""
+"To show the \"add iteration button\" the ticket must be diferente from "
+"\"closed\"."
 msgstr ""
 
 #: tickets/templates/tickets/ticket_list.html:15

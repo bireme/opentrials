@@ -32,7 +32,9 @@
         <h2>{% trans 'Remarks' %}</h2>
         <ul>
             {% for remark in remarks %}
-            <li id="remark_{{ remark.id }}">{{ remark.text }}<a onclick="ack_remark({{ remark.id }})"><span>Mark as reviewed</span><img alt="Mark as reviewed" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
+            <li id="remark_{{ remark.id }}">{{ remark.text }}<a onclick="ack_remark({{ remark.id }})">
+            <span>{% trans "Mark as reviewed" %}</span>
+            <img alt="{% trans "Mark as reviewed" %}" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
             {% endfor %}
         </ul>
     </div>
@@ -63,7 +65,7 @@
             {% endfor %}
             </div>
             <div style="text-align: center">
-              <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="add more"/>
+              <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="{% trans 'Add more' %}" />
               {% block extra_buttons %}{% endblock %}
             </div>
             </fieldset>

@@ -407,7 +407,7 @@ class TrialNumber(TrialRegistrationDataSetModel):
 # TRDS 6 - Secondary Sponsor(s)
 class TrialSecondarySponsor(TrialRegistrationDataSetModel):
     trial = models.ForeignKey(ClinicalTrial)
-    institution = models.ForeignKey('Institution')
+    institution = models.ForeignKey('Institution', verbose_name=_('Institution'))
 
     def __unicode__(self):
         return u'%s' % self.institution
@@ -415,7 +415,7 @@ class TrialSecondarySponsor(TrialRegistrationDataSetModel):
 # TRDS 4 - Source(s) of Monetary Support
 class TrialSupportSource(TrialRegistrationDataSetModel):
     trial = models.ForeignKey(ClinicalTrial)
-    institution = models.ForeignKey('Institution')
+    institution = models.ForeignKey('Institution', verbose_name=_('Institution'))
 
     def __unicode__(self):
         return u'%s' % self.institution
@@ -456,7 +456,7 @@ class Contact(TrialRegistrationDataSetModel):
 
 class PublicContact(TrialRegistrationDataSetModel):
     trial = models.ForeignKey(ClinicalTrial)
-    contact = models.ForeignKey(Contact)
+    contact = models.ForeignKey(Contact, verbose_name=_('Contact'))
     status = models.CharField(_('Status'), max_length=255,
                             choices = choices.CONTACT_STATUS,
                             default = choices.CONTACT_STATUS[0][0])
@@ -469,7 +469,7 @@ class PublicContact(TrialRegistrationDataSetModel):
 
 class ScientificContact(TrialRegistrationDataSetModel):
     trial = models.ForeignKey(ClinicalTrial)
-    contact = models.ForeignKey(Contact)
+    contact = models.ForeignKey(Contact, verbose_name=_('Contact'))
     status = models.CharField(_('Status'), max_length=255,
                             choices = choices.CONTACT_STATUS,
                             default = choices.CONTACT_STATUS[0][0])
@@ -482,7 +482,7 @@ class ScientificContact(TrialRegistrationDataSetModel):
 
 class SiteContact(TrialRegistrationDataSetModel):
     trial = models.ForeignKey(ClinicalTrial)
-    contact = models.ForeignKey(Contact)
+    contact = models.ForeignKey(Contact, verbose_name=_('Contact'))
     status = models.CharField(_('Status'), max_length=255,
                             choices = choices.CONTACT_STATUS,
                             default = choices.CONTACT_STATUS[0][0])
