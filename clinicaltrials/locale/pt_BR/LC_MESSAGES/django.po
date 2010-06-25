@@ -3,13 +3,13 @@
 # Copyright (C) 2009 BIREME/PAHO/WHO
 # This file is distributed under the same license as the PACKAGE package.
 # Luciano Ramalho <luciano.ramalho@bireme.org>, 2009.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-24 14:02+0000\n"
-"PO-Revision-Date: 2010-06-24 14:06\n"
+"POT-Creation-Date: 2010-06-25 20:46+0000\n"
+"PO-Revision-Date: 2010-06-25 19:51\n"
 "Last-Translator: <a@b.cd>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -92,12 +92,20 @@ msgid "You must agree to the terms to register"
 msgstr "Você deve concordar com os termos para registrar-se"
 
 #: registration/forms.py:95 reviewapp/forms.py:56
-msgid "This email address is already in use. Please supply a different email address."
-msgstr "Este endereço de e-mail já está em uso. Por favor, forneça um endereço de e-mail diferente."
+msgid ""
+"This email address is already in use. Please supply a different email "
+"address."
+msgstr ""
+"Este endereço de e-mail já está em uso. Por favor, forneça um endereço de e-"
+"mail diferente."
 
 #: registration/forms.py:122
-msgid "Registration using free email addresses is prohibited. Please supply a different email address."
-msgstr "É proibido registrar-se usando endereços de e-mail gratuitos. Por favor, forneça um endereço de e-mail diferente."
+msgid ""
+"Registration using free email addresses is prohibited. Please supply a "
+"different email address."
+msgstr ""
+"É proibido registrar-se usando endereços de e-mail gratuitos. Por favor, "
+"forneça um endereço de e-mail diferente."
 
 #: registration/models.py:168
 msgid "user"
@@ -128,8 +136,12 @@ msgid "A confirmation e-mail is on the way"
 msgstr "Um e-mail de confirmação está a caminho"
 
 #: registration/templates/registration/registration_complete.html:8
-msgid "Please click the activation link included in the e-mail to confirm you registration."
-msgstr "Por favor, clique no link de ativação incluso no e-mail para confirmar o registo."
+msgid ""
+"Please click the activation link included in the e-mail to confirm you "
+"registration."
+msgstr ""
+"Por favor, clique no link de ativação incluso no e-mail para confirmar o "
+"registo."
 
 #: registration/templates/registration/registration_form.html:7
 msgid "Please correct the errors below."
@@ -358,63 +370,76 @@ msgid "Postal Address"
 msgstr "Endereço postal"
 
 #: repository/models.py:428 repository/models.py:446
-#: repository/trds_forms.py:533 reviewapp/models.py:117
+#: repository/trds_forms.py:538 reviewapp/models.py:117
 msgid "Country"
 msgstr "País"
 
-#: repository/models.py:437 repository/trds_forms.py:521
+#: repository/models.py:437 repository/trds_forms.py:525
 msgid "First Name"
 msgstr "Primeiro nome"
 
-#: repository/models.py:438 repository/trds_forms.py:522
+#: repository/models.py:438 repository/trds_forms.py:526
 msgid "Middle Name"
 msgstr "Nome do meio"
 
-#: repository/models.py:439 repository/trds_forms.py:523
+#: repository/models.py:439 repository/trds_forms.py:527
 msgid "Last Name"
 msgstr "Sobrenome"
 
-#: repository/models.py:440 repository/trds_forms.py:525 reviewapp/forms.py:84
+#: repository/models.py:440 repository/trds_forms.py:529 reviewapp/forms.py:84
 msgid "E-mail"
 msgstr "E-mail"
 
-#: repository/models.py:442 repository/trds_forms.py:528
+#: repository/models.py:442 repository/trds_forms.py:532
 #: repository/templates/repository/clinicaltrial_detail.html:365
 #: repository/templates/repository/clinicaltrial_detail.html:413
 #: repository/templates/repository/clinicaltrial_detail.html:462
 msgid "Affiliation"
 msgstr "Filiação"
 
-#: repository/models.py:443 repository/trds_forms.py:530
+#: repository/models.py:443 repository/trds_forms.py:534
 #: repository/templates/repository/clinicaltrial_detail.html:343
 #: repository/templates/repository/clinicaltrial_detail.html:391
 #: repository/templates/repository/clinicaltrial_detail.html:440
 msgid "Address"
 msgstr "Endereço"
 
-#: repository/models.py:444 repository/trds_forms.py:531
+#: repository/models.py:444 repository/trds_forms.py:535
 #: repository/templates/repository/clinicaltrial_detail.html:347
 #: repository/templates/repository/clinicaltrial_detail.html:395
 #: repository/templates/repository/clinicaltrial_detail.html:444
 msgid "City"
 msgstr "Cidade"
 
-#: repository/models.py:447 repository/trds_forms.py:535
+#: repository/models.py:447 repository/trds_forms.py:540
 msgid "Postal Code"
 msgstr "Código postal"
 
-#: repository/models.py:448 repository/trds_forms.py:536
+#: repository/models.py:448 repository/trds_forms.py:541
 #: repository/templates/repository/clinicaltrial_detail.html:357
 #: repository/templates/repository/clinicaltrial_detail.html:405
 #: repository/templates/repository/clinicaltrial_detail.html:454
 msgid "Telephone"
 msgstr "Fone"
 
+#: repository/models.py:459 repository/models.py:472 repository/models.py:485
+#: templates/base.html:136
+msgid "Contact"
+msgstr "Contato"
+
 #: repository/models.py:501
 msgid "Interest"
 msgstr "Interesse"
 
-#: repository/models.py:504 repository/models.py:515
+#: repository/models.py:504
+#: repository/templates/repository/attachments.html:17 reviewapp/models.py:123
+#: tickets/models.py:71 tickets/views.py:64 tickets/views.py:141
+#: tickets/templates/tickets/ticket_detail.html:52 vocabulary/models.py:17
+#: vocabulary/models.py:38
+msgid "Description"
+msgstr "Descrição"
+
+#: repository/models.py:515
 msgid "Outcome Description"
 msgstr "Descrição do desfecho"
 
@@ -469,12 +494,12 @@ msgstr "Patrocinadores secundários"
 #: repository/trds.py:12
 #: repository/templates/repository/clinicaltrial_detail.html:333
 msgid "Contacts for Public Queries"
-msgstr "Contatos de relações públicas"
+msgstr "Contatos  para questões públicas"
 
 #: repository/trds.py:13
 #: repository/templates/repository/clinicaltrial_detail.html:381
 msgid "Contacts for Scientific Queries"
-msgstr "Contatos para a comunidade científica"
+msgstr "Contatos para questões científicas"
 
 #: repository/trds.py:16
 msgid "Countries of Recruitment"
@@ -568,19 +593,23 @@ msgstr "Desfechos secundários"
 
 #: repository/trds_forms.py:488
 msgid "Contact(s) for Public Queries"
-msgstr "Contatos de relações públicas"
+msgstr "Contatos para questões públicas"
 
-#: repository/trds_forms.py:498
+#: repository/trds_forms.py:489 repository/trds_forms.py:500
+#: repository/trds_forms.py:511 repository/trds_forms.py:521
+msgid "Relation"
+msgstr "Relação"
+
+#: repository/trds_forms.py:499
 msgid "Contact(s) for Scientific Queries"
-msgstr "Contatos para a comunidade científica"
+msgstr "Contatos para questões científicas"
 
-#: repository/trds_forms.py:508
+#: repository/trds_forms.py:510
 #: repository/templates/repository/clinicaltrial_detail.html:430
-#, fuzzy
 msgid "Contact(s) for Site Queries"
-msgstr "Contatos para a comunidade científica"
+msgstr "Contatos para sites"
 
-#: repository/trds_forms.py:517
+#: repository/trds_forms.py:520
 msgid "New Contact(s)"
 msgstr "Cadastrar novos contatos"
 
@@ -601,24 +630,18 @@ msgstr "Anexos existentes"
 msgid "File"
 msgstr "Arquivo"
 
-#: repository/templates/repository/attachments.html:17 reviewapp/models.py:123
-#: tickets/models.py:71 tickets/views.py:64 tickets/views.py:141
-#: tickets/templates/tickets/ticket_detail.html:52 vocabulary/models.py:17
-#: vocabulary/models.py:38
-msgid "Description"
-msgstr "Descrição"
-
 #: repository/templates/repository/attachments.html:23
 msgid "New attachment form"
 msgstr "Formulário para incluir novo anexo"
 
 #: repository/templates/repository/attachments.html:40
+#: repository/templates/repository/trial_form.html:68
 msgid "Add more"
 msgstr "Adicionar mais"
 
 #: repository/templates/repository/attachments.html:44
 #: repository/templates/repository/new_institution.html:53
-#: repository/templates/repository/trial_form.html:71
+#: repository/templates/repository/trial_form.html:73
 #: reviewapp/templates/reviewapp/user_profile.html:37
 msgid "Save"
 msgstr "Salvar"
@@ -718,6 +741,11 @@ msgstr "Conjunto de dados de registro de ensaio"
 msgid "Remarks"
 msgstr "Observações"
 
+#: repository/templates/repository/trial_form.html:36
+#: repository/templates/repository/trial_form.html:37
+msgid "Mark as reviewed"
+msgstr "Marcar como revisado"
+
 #: repository/templates/repository/trial_index.html:3
 #: repository/templates/repository/trial_index.html:7
 msgid "Trial Summary"
@@ -782,9 +810,8 @@ msgid "Preferred language"
 msgstr "Idioma preferido"
 
 #: reviewapp/models.py:70
-#, fuzzy
 msgid "Submission note (staff use only)"
-msgstr "Anotação da submissão (uso interno apenas)"
+msgstr "Anotação da submissão (uso pessoal apenas)"
 
 #: reviewapp/models.py:114
 msgid "Recruitment Countries"
@@ -932,16 +959,24 @@ msgid "Enter your new password below to reset your password:"
 msgstr "Digite a nova senha abaixo para redefinir sua senha:"
 
 #: reviewapp/templates/reviewapp/password_reset_done.html:7
-msgid "We have sent you an email with a link to reset your password. Please check your email and click the link to continue."
-msgstr "Enviamos um e-mail com um link para redefinir sua senha. Por favor, verifique seu e-mail e clique no link para continuar."
+msgid ""
+"We have sent you an email with a link to reset your password. Please check "
+"your email and click the link to continue."
+msgstr ""
+"Enviamos um e-mail com um link para redefinir sua senha. Por favor, "
+"verifique seu e-mail e clique no link para continuar."
 
 #: reviewapp/templates/reviewapp/password_reset_form.html:6
 msgid "Forgot your password?"
 msgstr "Esqueceu sua senha?"
 
 #: reviewapp/templates/reviewapp/password_reset_form.html:8
-msgid "Enter your email in the form below and we'll send you instructions for creating a new one."
-msgstr "Digite o seu e-mail no formulário abaixo e nós enviaremos instruções para criar uma nova senha."
+msgid ""
+"Enter your email in the form below and we'll send you instructions for "
+"creating a new one."
+msgstr ""
+"Digite o seu e-mail no formulário abaixo e nós enviaremos instruções para "
+"criar uma nova senha."
 
 #: reviewapp/templates/reviewapp/resend_activation_email.html:8
 msgid "A new activation email has been sent. Check your e-mail."
@@ -988,9 +1023,8 @@ msgid "Situation"
 msgstr "Situação"
 
 #: reviewapp/templates/reviewapp/upload_trial.html:5
-#, fuzzy
 msgid "Upload trial"
-msgstr "Enviar arquivo"
+msgstr "Enviar arquivo do ensaio"
 
 #: reviewapp/templates/reviewapp/upload_trial.html:13
 msgid "Select your XML file"
@@ -1048,13 +1082,21 @@ msgid "Nothing to translate!"
 msgstr "Nada a traduzir!"
 
 #: rosetta/templates/rosetta/languages.html:42
-msgid "You haven't specified any languages in your settings file, or haven't yet generated a batch of translation catalogs."
-msgstr "Não foram especificados idiomas no arquivo de settings, ou ainda não foram gerados catálogos de tradução."
+msgid ""
+"You haven't specified any languages in your settings file, or haven't yet "
+"generated a batch of translation catalogs."
+msgstr ""
+"Não foram especificados idiomas no arquivo de settings, ou ainda não foram "
+"gerados catálogos de tradução."
 
 #: rosetta/templates/rosetta/languages.html:43
 #, python-format
-msgid "Please refer to <a href=\"%(i18n_doc_link)s\">Django's I18N documentation</a> for a guide on how to set up internationalization for your project."
-msgstr "Consulte a <a href=\"%(i18n_doc_link)s\">documentação do Django</a> para saber como configurar a internacionalização do seu projeto."
+msgid ""
+"Please refer to <a href=\"%(i18n_doc_link)s\">Django's I18N documentation</"
+"a> for a guide on how to set up internationalization for your project."
+msgstr ""
+"Consulte a <a href=\"%(i18n_doc_link)s\">documentação do Django</a> para "
+"saber como configurar a internacionalização do seu projeto."
 
 #: rosetta/templates/rosetta/pofile.html:8
 msgid "Pick another file"
@@ -1070,7 +1112,8 @@ msgstr "Progresso: %(percent_translated)s%"
 
 #: rosetta/templates/rosetta/pofile.html:18
 msgid "File is read-only: download the file when done editing!"
-msgstr "Arquivo somente para leitura: baixe o arquivo quando terminar de editar!"
+msgstr ""
+"Arquivo somente para leitura: baixe o arquivo quando terminar de editar!"
 
 #: rosetta/templates/rosetta/pofile.html:20
 msgid "English"
@@ -1156,13 +1199,16 @@ msgid "Internal Server Error (500)"
 msgstr "Internal Server Error (500)"
 
 #: templates/500.html:8
-msgid "The server encountered an unexpected condition which prevented it from fulfilling the request."
-msgstr "O servidor encontrou uma condição inesperada que impediu de cumprir a solicitação."
+msgid ""
+"The server encountered an unexpected condition which prevented it from "
+"fulfilling the request."
+msgstr ""
+"O servidor encontrou uma condição inesperada que impediu de cumprir a "
+"solicitação."
 
 #: templates/base.html:7
-#, fuzzy
 msgid "Clinical Trials Platform"
-msgstr "Repositório de Ensaios Clínicos"
+msgstr "Plataforma de Ensaios Clínicos"
 
 #: templates/base.html:63
 msgid "Registro Brasileiro de Ensaios Clínicos"
@@ -1182,15 +1228,15 @@ msgstr "Perfil"
 
 #: templates/base.html:85
 msgid "Dashboard"
-msgstr "Painel de instrumentos"
+msgstr "Painel"
 
 #: templates/base.html:92 templates/base.html.py:96 templates/base.html:97
 msgid "Logout"
-msgstr "Logout"
+msgstr "Sair"
 
 #: templates/base.html:118
 msgid "login"
-msgstr "login"
+msgstr "entrar"
 
 #: templates/base.html:134
 msgid "About"
@@ -1199,10 +1245,6 @@ msgstr "Sobre"
 #: templates/base.html:135
 msgid "Help"
 msgstr "Ajuda"
-
-#: templates/base.html:136
-msgid "Contact"
-msgstr "Contato"
 
 #: templates/base_columns.html:24
 msgid "No clinical trials recruiting."
@@ -1213,7 +1255,6 @@ msgid "Ticket Type"
 msgstr "Tipo da pendência"
 
 #: tickets/models.py:68
-#, fuzzy
 msgid "Date of Iteration"
 msgstr "Data da iteração"
 
@@ -1259,9 +1300,8 @@ msgid "Type"
 msgstr "Tipo"
 
 #: tickets/templates/tickets/ticket_detail.html:17
-#, fuzzy
 msgid "Last update"
-msgstr "Atualização mais recente"
+msgstr "Última atualização"
 
 #: tickets/templates/tickets/ticket_detail.html:18
 msgid "Mark as"
@@ -1296,8 +1336,12 @@ msgid "Assigned to"
 msgstr "Designado para"
 
 #: tickets/templates/tickets/ticket_detail.html:65
-msgid "To show the \"add iteration button\" the ticket must be diferente from \"closed\"."
-msgstr "Para exibir o \"botão de adicionar iteração\" a pendência não pode estar \"fechada\"."
+msgid ""
+"To show the \"add iteration button\" the ticket must be diferente from "
+"\"closed\"."
+msgstr ""
+"Para exibir o \"botão de adicionar iteração\" a pendência não pode estar "
+"\"fechada\"."
 
 #: tickets/templates/tickets/ticket_list.html:15
 msgid "open ticket"
@@ -1317,7 +1361,6 @@ msgid "view history"
 msgstr "Ver histórico"
 
 #: tickets/templates/tickets/user_tickets.html:53
-#, fuzzy
 msgid "add iteration"
 msgstr "incluir iteração"
 

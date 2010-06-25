@@ -486,7 +486,8 @@ class PublicContactForm(ReviewModelForm):
         fields = ['contact']
 
     title = _('Contact(s) for Public Queries')
-    relation = forms.CharField(initial=choices.CONTACT_RELATION[0][0],
+    relation = forms.CharField(label=_('Relation'), 
+                               initial=choices.CONTACT_RELATION[0][0],
                                widget=forms.HiddenInput)
 
 #step8
@@ -496,7 +497,8 @@ class ScientificContactForm(ReviewModelForm):
         fields = ['contact']
 
     title = _('Contact(s) for Scientific Queries')
-    relation = forms.CharField(initial=choices.CONTACT_RELATION[1][0],
+    relation = forms.CharField(label=_('Relation'), 
+                               initial=choices.CONTACT_RELATION[1][0],
                                widget=forms.HiddenInput)
 
 #step8
@@ -506,7 +508,8 @@ class SiteContactForm(ReviewModelForm):
         fields = ['contact']
 
     title = _('Contact(s) for Site Queries')
-    relation = forms.CharField(initial=choices.CONTACT_RELATION[2][0],
+    relation = forms.CharField(label=_('Relation'), 
+                               initial=choices.CONTACT_RELATION[2][0],
                                widget=forms.HiddenInput)
 
 #step8-partof
@@ -515,7 +518,8 @@ class ContactForm(ReviewModelForm):
         model = Contact
 
     title = _('New Contact(s)')
-    relation = forms.ChoiceField(widget=forms.RadioSelect,
+    relation = forms.ChoiceField(label=_('Relation'), 
+                               widget=forms.RadioSelect,
                                choices=choices.CONTACT_RELATION)
 
     firstname = forms.CharField(label=_('First Name'), max_length=50)
@@ -525,12 +529,13 @@ class ContactForm(ReviewModelForm):
     email = forms.EmailField(label=_('E-mail'), max_length=255)
 
     affiliation = forms.ModelChoiceField(Institution.objects.all(),
-                                         _('Affiliation'))
+                                         label=_('Affiliation'))
 
     address = forms.CharField(label=_('Address'), max_length=255,required=False)
     city = forms.CharField(label=_('City'), max_length=255)
 
-    country = forms.ModelChoiceField(CountryCode.objects.all(), _('Country'))
+    country = forms.ModelChoiceField(CountryCode.objects.all(),
+                                     label=_('Country'))
 
     zip = forms.CharField(label=_('Postal Code'), max_length=50)
     telephone = forms.CharField(label=_('Telephone'), max_length=255)

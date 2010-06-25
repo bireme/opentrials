@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-19 19:30-0500\n"
-"PO-Revision-Date: 2010-06-24 12:37\n"
+"PO-Revision-Date: 2010-06-24 20:25\n"
 "Last-Translator: <a@b.cd>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "Você deve escrever a mesma senha nos dois campos"
 
 #: forms.py:96
 msgid "I have read and agree to the Terms of Service"
-msgstr "Eu lí e concordo com os Termos de Uso do serviço"
+msgstr "Eu li e concordo com os Termos de Uso do serviço"
 
 #: forms.py:105
 msgid "You must agree to the terms to register"
