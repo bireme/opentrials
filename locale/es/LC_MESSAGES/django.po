@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-25 20:46+0000\n"
+"POT-Creation-Date: 2010-06-28 13:26+0000\n"
 "PO-Revision-Date: 2010-06-25 19:07\n"
 "Last-Translator: <a@b.cd>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -354,6 +354,12 @@ msgstr ""
 msgid "Secondary Id Number"
 msgstr ""
 
+#: repository/models.py:410 repository/models.py:418
+#: repository/templates/repository/clinicaltrial_detail.html:133
+#: repository/templates/repository/clinicaltrial_detail.html:145
+msgid "Institution"
+msgstr "Institución"
+
 #: repository/models.py:426 reviewapp/forms.py:83
 msgid "Name"
 msgstr "Nombre"
@@ -424,15 +430,7 @@ msgstr "Contacto"
 msgid "Interest"
 msgstr ""
 
-#: repository/models.py:504
-#: repository/templates/repository/attachments.html:17 reviewapp/models.py:123
-#: tickets/models.py:71 tickets/views.py:64 tickets/views.py:141
-#: tickets/templates/tickets/ticket_detail.html:52 vocabulary/models.py:17
-#: vocabulary/models.py:38
-msgid "Description"
-msgstr "Descripción"
-
-#: repository/models.py:515
+#: repository/models.py:504 repository/models.py:515
 msgid "Outcome Description"
 msgstr ""
 
@@ -615,6 +613,14 @@ msgstr "Campos en blanco"
 msgid "Add a new Clinical Trial Record"
 msgstr ""
 
+#: repository/templates/repository/add_done.html:3
+msgid "Submission done"
+msgstr ""
+
+#: repository/templates/repository/add_done.html:6
+msgid "added."
+msgstr ""
+
 #: repository/templates/repository/attachments.html:8
 msgid "Existing attachments"
 msgstr ""
@@ -623,6 +629,13 @@ msgstr ""
 #: reviewapp/models.py:122 rosetta/templates/rosetta/languages.html:20
 msgid "File"
 msgstr ""
+
+#: repository/templates/repository/attachments.html:17 reviewapp/models.py:123
+#: tickets/models.py:71 tickets/views.py:64 tickets/views.py:141
+#: tickets/templates/tickets/ticket_detail.html:52 vocabulary/models.py:17
+#: vocabulary/models.py:38
+msgid "Description"
+msgstr "Descripción"
 
 #: repository/templates/repository/attachments.html:23
 msgid "New attachment form"
@@ -664,11 +677,6 @@ msgstr ""
 msgid "Sponsors"
 msgstr ""
 
-#: repository/templates/repository/clinicaltrial_detail.html:133
-#: repository/templates/repository/clinicaltrial_detail.html:145
-msgid "Institution"
-msgstr "Institución"
-
 #: repository/templates/repository/clinicaltrial_detail.html:156
 msgid "Health Conditions"
 msgstr ""
@@ -703,10 +711,18 @@ msgstr "Código postal"
 msgid "Attachments"
 msgstr ""
 
+#: repository/templates/repository/clinicaltrial_list.html:5
+msgid "Clinical Trials"
+msgstr ""
+
 #: repository/templates/repository/clinicaltrial_list.html:55
 #: repository/templates/repository/latest_clinicalTrials.html:29
 #: reviewapp/templates/reviewapp/index.html:55
 msgid "No clinical trials have been published."
+msgstr ""
+
+#: repository/templates/repository/latest_clinicalTrials.html:5
+msgid "Last Clinical Trials"
 msgstr ""
 
 #: repository/templates/repository/step_3.html:22
@@ -764,6 +780,10 @@ msgstr ""
 
 #: reviewapp/forms.py:21
 msgid "Initial Trial Data"
+msgstr ""
+
+#: reviewapp/forms.py:23
+msgid "Recruitment country"
 msgstr ""
 
 #: reviewapp/forms.py:24 reviewapp/models.py:68
@@ -874,6 +894,10 @@ msgstr "Enviar mensaje"
 #: reviewapp/templates/reviewapp/contact.html:26
 msgid "Send"
 msgstr "Enviar"
+
+#: reviewapp/templates/reviewapp/dashboard.html:8 templates/base.html:75
+msgid "Submissions"
+msgstr ""
 
 #: reviewapp/templates/reviewapp/dashboard.html:9
 #: reviewapp/templates/reviewapp/new_submission.html:40
@@ -1196,10 +1220,6 @@ msgstr ""
 
 #: templates/base.html:63
 msgid "Registro Brasileiro de Ensaios Clínicos"
-msgstr ""
-
-#: templates/base.html:75
-msgid "Submissions"
 msgstr ""
 
 #: templates/base.html:79 tickets/templates/tickets/user_tickets.html:24
