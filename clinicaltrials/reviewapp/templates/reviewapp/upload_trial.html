@@ -5,13 +5,13 @@
 <h2>{% trans "Upload trial" %}</h2>
 
 <p>
-    Here you can upload an XML on ICTRP standard to submit your clinical trial.
+    {% trans "Here you can upload an XML on ICTRP standard to submit your clinical trial." %}
 </p>
 
 <form>
     <fieldset>
         <legend>{% trans "Select your XML file" %}</legend>
-    {{ form.submission_xml }}
+        {{ form.submission_xml }}
     </fieldset>
 </form>
 
