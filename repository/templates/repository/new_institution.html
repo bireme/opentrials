@@ -27,13 +27,18 @@
                 $.post(
                     $('form').attr('action'),
                     data,
-                    function(data){
-                        opener.$('select').append(
-                            $('<option>').attr('value',data[0].pk).html(data[0].fields.name)
-                        );
-                        window.close();
+                    function(data, ts, xmlhttp){
+                        if(data.match(/<[a-z]+[^>]+>/)){
+                          $("table.dataTable").html(data);
+                        } else {
+                          data=$.parseJSON(data);
+                          opener.$('select').append(
+                              $('<option>').attr('value',data[0].pk).html(data[0].fields.name)
+                          );
+                          window.close();
+                        }
                     },
-                    'json'
+                    'text'
                 );
             }
 
@@ -48,7 +53,7 @@
             <fieldset>
                 <legend>{{ form.title }}</legend>
                 <table class="dataTable" cellspacing="0">
-                    {{ form }}
+                    {{ form.as_table }}
                 </table>
                 <input type="button" value="{% trans 'Save' %}" onclick="new_institution();"/>
             </fieldset>

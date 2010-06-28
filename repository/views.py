@@ -106,7 +106,10 @@ def new_institution(request):
         if new_institution.is_valid():
             institution = new_institution.save()
             json = serializers.serialize('json',[institution])
-            return HttpResponse(json, mimetype='application/json');
+            return HttpResponse(json, mimetype='application/json')
+        else:
+            return HttpResponse(new_institution.as_table(), mimetype='text/html')
+
     else:
         new_institution = NewInstitution()
 
