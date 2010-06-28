@@ -405,6 +405,7 @@ class RecruitmentForm(ReviewModelForm):
 
     # TRDS 16a,b (type_enrollment: anticipated or actual)
     enrollment_start_planned = forms.DateField( # yyyy-mm or yyyy-mm-dd
+        required=False,
         label=_('Planned Date of First Enrollment'))
 
     # TRDS 17
@@ -451,6 +452,7 @@ class StudyTypeForm(ReviewModelForm):
                                          required=False, max_length=1000,
                                          widget=forms.Textarea)
     expanded_access_program = forms.ChoiceField(label=_('Expandend Access Program'),
+                                              required=False,
                                               choices=[(None,_('Unknown')),
                                                        (True,_('Yes')),
                                                        (False,_('No')),],
@@ -458,6 +460,7 @@ class StudyTypeForm(ReviewModelForm):
 
     # TRDS 15c
     phase = forms.ModelChoiceField(label=_('Study Phase'),
+                                   required=False,
                                    queryset=StudyPhase.objects.all())
 
 #step7
