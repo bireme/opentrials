@@ -176,13 +176,13 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
 
     # TRDS 16a,b (type_enrollment="anticipated")
     enrollment_start_planned = models.CharField( # yyyy-mm or yyyy-mm-dd
-        _('Planned Date of First Enrollment'), max_length=10, blank=True)
+        _('Planned Date of First Enrollment'), max_length=10, null=True, blank=True)
     enrollment_start_actual = models.CharField( # yyyy-mm or yyyy-mm-dd
-        _('Actual Date of First Enrollment'), max_length=10, blank=True)
+        _('Actual Date of First Enrollment'), max_length=10, null=True, blank=True)
     enrollment_end_planned = models.CharField( # yyyy-mm or yyyy-mm-dd
-        _('Planned Date of First Enrollment'), max_length=10, blank=True)
+        _('Planned Date of First Enrollment'), max_length=10, null=True, blank=True)
     enrollment_end_actual = models.CharField( # yyyy-mm or yyyy-mm-dd
-        _('Actual Date of First Enrollment'), max_length=10, blank=True)
+        _('Actual Date of First Enrollment'), max_length=10, null=True, blank=True)
 
     # TRDS 17
     target_sample_size = models.PositiveIntegerField(_('Target Sample Size'),

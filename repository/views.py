@@ -306,7 +306,7 @@ def step_5(request, trial_pk):
 
         if form.is_valid():
             form.save()
-        return HttpResponseRedirect(reverse('step_5',args=[trial_pk]))
+            return HttpResponseRedirect(reverse('step_5',args=[trial_pk]))
     else:
         form = RecruitmentForm(instance=ct)
 
@@ -329,7 +329,7 @@ def step_6(request, trial_pk):
 
         if form.is_valid():
             form.save()
-        return HttpResponseRedirect(reverse('step_6',args=[trial_pk]))
+            return HttpResponseRedirect(reverse('step_6',args=[trial_pk]))
     else:
         form = StudyTypeForm(instance=ct)
 
