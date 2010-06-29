@@ -49,9 +49,11 @@ class ReviewModelForm(forms.ModelForm):
                 if isinstance(self.base_fields[field_name], forms.CharField):
                     if isinstance(self.base_fields[field_name].widget,forms.Textarea):
                         self.base_fields[field_name] = MultilingualTextField(
+                                                            label=_(self.base_fields[field_name].label),
                                                             required=self.base_fields[field_name].required)
                     else:
                         self.base_fields[field_name] = MultilingualCharField(
+                                                            label=_(self.base_fields[field_name].label),
                                                             required=self.base_fields[field_name].required,
                                                             max_length=self.base_fields[field_name].max_length)
 
