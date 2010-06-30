@@ -453,12 +453,6 @@ class StudyTypeForm(ReviewModelForm):
     study_design = forms.CharField(label=_('Study Design'),
                                          required=False, max_length=1000,
                                          widget=forms.Textarea)
-    expanded_access_program = forms.ChoiceField(label=_('Expandend Access Program'),
-                                              required=False,
-                                              choices=[(None,_('Unknown')),
-                                                       (True,_('Yes')),
-                                                       (False,_('No')),],
-                                              widget=forms.RadioSelect)
 
     # TRDS 15c
     phase = forms.ModelChoiceField(label=_('Study Phase'),
