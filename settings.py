@@ -2,6 +2,7 @@
 # Django settings for clinicaltrials project.
 
 import os
+from django.utils.translation import ugettext_lazy as _
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -124,9 +125,9 @@ DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
 # 2) the first managed language is considered the default and is
 #    also the source language for content translation purposes
 MANAGED_LANGUAGES_CHOICES = (
-    (u'en',u'English'),
-    (u'es',u'Español'),
-    (u'pt-BR',u'Português'),
+    (u'en', _(u'English')),
+    (u'es', _(u'Español')),
+    (u'pt-BR', _(u'Portuguese')),
 )
 TARGET_LANGUAGES = MANAGED_LANGUAGES_CHOICES[1:] # exlude source language
 MANAGED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES_CHOICES]

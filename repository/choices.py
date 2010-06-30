@@ -1,66 +1,68 @@
 # coding: utf-8
 
+from django.utils.translation import ugettext_lazy as _
+
 ## Qualifiers for the relationship of secondary entities with a ClinicalTrial #
 
 INSTITUTIONAL_RELATION = [
-    ('SupportSource', 'Source of monetary or material support'), #TRDS 4
-    ('SecondarySponsor', 'Secondary sponsor'), #TRDS 6
+    ('SupportSource', _('Source of monetary or material support')), #TRDS 4
+    ('SecondarySponsor', _('Secondary sponsor')), #TRDS 6
 ]
 
 CONTACT_RELATION = [
-    ('PublicContact', 'Contact for Public Queries'), #TRDS 7
-    ('ScientificContact', 'Contact for Scientific Queries'), #TRDS 8
-    ('SiteContact', 'Contact for Site Queries'), #TRDS 8
+    ('PublicContact', _('Contact for Public Queries')), #TRDS 7
+    ('ScientificContact', _('Contact for Scientific Queries')), #TRDS 8
+    ('SiteContact', _('Contact for Site Queries')), #TRDS 8
 ]
 
 CONTACT_STATUS = [
-    ('Active', 'Active and current contact'),
-    ('Inactive', 'Inactive or previous contact'),
+    ('Active', _('Active and current contact')),
+    ('Inactive', _('Inactive or previous contact')),
 ]
 
 OUTCOME_INTEREST = [
-    ('primary', 'Primary'), # TRDS 19
-    ('secondary', 'Secondary'), # TRDS 20
+    ('primary', _('Primary')), # TRDS 19
+    ('secondary', _('Secondary')), # TRDS 20
 ]
 
 #################################################### Limited choices fields ###
 
 
 TRIAL_RECORD_STATUS = [
-    ('processing', 'processing'),
-    ('published', 'published'),
-    ('archived', 'archived'),
+    ('processing', _('processing')),
+    ('published', _('published')),
+    ('archived', _('archived')),
 ]
 PROCESSING_STATUS = TRIAL_RECORD_STATUS[0][0]
 PUBLISHED_STATUS  = TRIAL_RECORD_STATUS[1][0]
 ARCHIVED_STATUS   = TRIAL_RECORD_STATUS[2][0]
 
 
-INCLUSION_GENDER = [('-', 'both'), ('M', 'male'), ('F', 'female'),]
+INCLUSION_GENDER = [('-', _('both')), ('M', _('male')), ('F', _('female')),]
 
 INCLUSION_AGE_UNIT = [
-    ('-', 'no limit'),
-    ('Y', 'years'),
-    ('M', 'months'),
-    ('W', 'weeks'),
-    ('D', 'days'),
-    ('H', 'hours'),
+    ('-', _('no limit')),
+    ('Y', _('years')),
+    ('M', _('months')),
+    ('W', _('weeks')),
+    ('D', _('days')),
+    ('H', _('hours')),
 ]
 
 ######################################################## Descriptor choices ###
 
 TRIAL_ASPECT = [
-    ('HealthCondition', 'Health Condition or Problem Studied'), #TRDS 12
-    ('Intervention', 'Intervention'), #TRDS 13
+    ('HealthCondition', _('Health Condition or Problem Studied')), #TRDS 12
+    ('Intervention', _('Intervention')), #TRDS 13
 ]
 
 DESCRIPTOR_LEVEL = [
-    ('general', 'General'),
-    ('specific', 'Specific'),
+    ('general', _('General')),
+    ('specific', _('Specific')),
 ]
 
 DESCRIPTOR_VOCABULARY = [
-    ('DeCS', 'DeCS: Health Sciences Descriptors'),
-    ('ICD-10', 'ICD-10: International Classification of Diseases (10th. rev.)'),
-    ('CAS', 'Chemical Abstracts Service'),
+    ('DeCS', _('DeCS: Health Sciences Descriptors')),
+    ('ICD-10', _('ICD-10: International Classification of Diseases (10th. rev.)')),
+    ('CAS', _('Chemical Abstracts Service')),
 ]
