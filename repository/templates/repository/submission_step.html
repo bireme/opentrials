@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block body_title %}{{ forms.form_main.title }}{% endblock %}
-
-{# Last <p > in http://docs.djangoproject.com/en/dev/topics/templates/#id1 #}
+{% block body_title %}{% trans forms.form_main.title %}{% endblock %}
 
 {% block extrahead %}
     {# Shows forms scripts and css #}
@@ -14,10 +12,10 @@
     <small>
         <a href="{% url repository.edittrial trial_pk %}">{% trans "Summary" %}</a>
     </small>
-    {% for step,iscurrent in steps %}
+    {% for step in steps %}
     <span> / </span>
-    <small{% if iscurrent %} class="current"{% endif %}>
-        <a href="{{step}}">{% trans "Part" %} {{forloop.counter}}</a>
+    <small{% if step.is_current %} class="current"{% endif %}>
+        <a href="{{ step.link }}">{% trans step.name %}</a>
     </small>
     {% endfor %}
 </div>
@@ -27,12 +25,11 @@
 <div class="stepmenu stepmenu-bottom">
     <ul>
         <li><a href="{% url repository.edittrial trial_pk %}">{% trans "Summary" %}</a></li>
-        {% for step,iscurrent in steps %}
-        <li{% if iscurrent %} class="current"{% endif %}>
-            <a href="{{step}}">{% trans "Part" %} {{forloop.counter}}</a>
+        {% for step in steps %}
+        <li{% if step.is_current %} class="current"{% endif %}>
+            <a href="{{ step.link }}">{% trans step.name %}</a>
         </li>
         {% endfor %}
     </ul>
 </div>
 {% endblock %}
-
