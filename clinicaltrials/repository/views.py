@@ -122,7 +122,9 @@ def step_list(trial_pk):
     current_step = int( sys._getframe(1).f_code.co_name.replace('step_','') )
     steps = []
     for i in range(1,10):
-        steps.append((reverse('step_%d'%i,args=[trial_pk]), i == current_step))
+        steps.append({'link': reverse('step_%d'%i,args=[trial_pk]), 
+                      'is_current': (i == current_step), 
+                      'name': TRIAL_FORMS[i-1]})
     return steps
 
 @login_required
