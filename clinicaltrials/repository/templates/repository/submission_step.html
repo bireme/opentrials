@@ -13,7 +13,7 @@
         <a href="{% url repository.edittrial trial_pk %}">{% trans "Summary" %}</a>
     </small>
     {% for step in steps %}
-    <span> / </span>
+    <span> | </span>
     <small{% if step.is_current %} class="current"{% endif %}>
         <a href="{{ step.link }}">{% trans step.name %}</a>
     </small>
