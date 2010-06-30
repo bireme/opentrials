@@ -45,6 +45,15 @@ TRIAL_FORMS = ['Trial Identification',
                'Contacts',
                'Attachments']
 
+MENU_SHORT_TITLE = [_('Trial Identif.'),
+                    _('Spons.'),
+                    _('Health Cond.'),
+                    _('Interv.'),
+                    _('Recruit.'),
+                    _('Study Type'),
+                    _('Outcomes'),
+                    _('Contacts'),
+                    _('Attachs')]
 
 @login_required
 def edit_trial_index(request, trial_pk):
@@ -124,7 +133,7 @@ def step_list(trial_pk):
     for i in range(1,10):
         steps.append({'link': reverse('step_%d'%i,args=[trial_pk]), 
                       'is_current': (i == current_step), 
-                      'name': TRIAL_FORMS[i-1]})
+                      'name': MENU_SHORT_TITLE[i-1]})
     return steps
 
 @login_required
