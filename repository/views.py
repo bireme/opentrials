@@ -19,6 +19,8 @@ from repository.trds_forms import SecondaryOutcomesForm, PublicContactForm
 from repository.trds_forms import ScientificContactForm, ContactForm, NewInstitution
 from repository.trds_forms import SiteContactForm
 
+from reviewapp.signals import check_trial_fields
+
 import choices
 import settings
 from django.core import serializers
@@ -386,6 +388,7 @@ def step_7(request, trial_pk):
 
             primary_outcomes_formset.save()
             secondary_outcomes_formset.save()
+            check_trial_fields(sender=ClinicalTrial,instance=ct)
             return HttpResponseRedirect(reverse('step_7',args=[trial_pk]))
     else:
         primary_outcomes_formset = PrimaryOutcomesSet(queryset=primary_qs, prefix='primary')
@@ -436,6 +439,7 @@ def step_8(request, trial_pk):
 
             for fs in inlineformsets:
                 fs.save()
+            check_trial_fields(sender=ClinicalTrial,instance=ct)
             return HttpResponseRedirect(reverse('step_8',args=[trial_pk]))
     else:
         inlineformsets = [fs(instance=ct) for fs in InlineFormSetClasses]

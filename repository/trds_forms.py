@@ -5,8 +5,9 @@ from assistance.models import FieldHelp
 from vocabulary.models import CountryCode
 from repository.models import ClinicalTrial, Contact, Descriptor, Institution
 from repository.models import InterventionCode, Outcome, RecruitmentStatus
-from repository.models import StudyPhase, TrialSecondarySponsor
-from repository.models import TrialSupportSource
+from repository.models import StudyPhase, TrialSecondarySponsor, TrialSupportSource
+from repository.models import SiteContact, PublicContact, ScientificContact
+from repository.models import TrialNumber
 
 import choices
 
@@ -264,7 +265,9 @@ class MultilingualBaseFormSet(BaseModelFormSet):
 # Forms
 #
 
-#step1
+STEP_FORM_MATRIX = {}
+
+### step_1 #####################################################################
 class TrialIdentificationForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
@@ -291,11 +294,14 @@ class TrialIdentificationForm(ReviewModelForm):
                               max_length=255)
 
 class SecondaryIdForm(ReviewModelForm):
+    class Meta:
+        queryset = TrialNumber.objects.all()
     title = _('Secondary Identifying Numbers')
     # this is just to inherit the custom _html_output and as_table methods
 
+STEP_FORM_MATRIX['step_1'] = [TrialIdentificationForm, SecondaryIdForm]
 
-#step2
+### step_2 #####################################################################
 class PrimarySponsorForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
@@ -303,7 +309,6 @@ class PrimarySponsorForm(ReviewModelForm):
 
     title = _('Primary Sponsor')
 
-#step2
 class SecondarySponsorForm(ReviewModelForm):
     class Meta:
         model = TrialSecondarySponsor
@@ -312,7 +317,6 @@ class SecondarySponsorForm(ReviewModelForm):
     title = _('Secondary Sponsor(s)')
     relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[1][0])
 
-#step2
 class SupportSourceForm(ReviewModelForm):
     class Meta:
         model = TrialSupportSource
@@ -321,13 +325,11 @@ class SupportSourceForm(ReviewModelForm):
     title = _('Source(s) of Monetary or Material Support')
     relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[0][0])
 
-class NewInstitution(ReviewModelForm):
-    class Meta:
-        model = Institution
+STEP_FORM_MATRIX['step_2'] = [PrimarySponsorForm, SecondarySponsorForm, SupportSourceForm]
 
-    title = _('New Institution')
 
-#step3
+
+### step_3 #####################################################################
 class HealthConditionsForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
@@ -340,36 +342,42 @@ class HealthConditionsForm(ReviewModelForm):
                                          required=False, max_length=8000,
                                          widget=forms.Textarea)
 
-#step3
-class DescriptorForm(ReviewModelForm):
+class GeneralHealthDescriptorForm(ReviewModelForm):
     class Meta:
         model = Descriptor
+        queryset = Descriptor.objects.filter(aspect=choices.TRIAL_ASPECT[0][0],level=choices.DESCRIPTOR_LEVEL[0][0])
         exclude = ['trial','version']
-
-
-class GeneralHealthDescriptorForm(DescriptorForm):
     title = _('General Descriptors for Health Condition(s)')
     aspect = forms.CharField(widget=forms.HiddenInput,
                               initial=choices.TRIAL_ASPECT[0][0])
     level = forms.CharField(widget=forms.HiddenInput,
                               initial=choices.DESCRIPTOR_LEVEL[0][0])
 
-class SpecificHealthDescriptorForm(DescriptorForm):
+class SpecificHealthDescriptorForm(ReviewModelForm):
+    class Meta:
+        model = Descriptor
+        queryset = Descriptor.objects.filter(aspect=choices.TRIAL_ASPECT[0][0],level=choices.DESCRIPTOR_LEVEL[1][0])
+        exclude = ['trial','version']
     title = _('Specific Descriptors for Health Condition(s)')
     aspect = forms.CharField(widget=forms.HiddenInput,
                               initial=choices.TRIAL_ASPECT[0][0])
     level = forms.CharField(widget=forms.HiddenInput,
                              initial=choices.DESCRIPTOR_LEVEL[1][0])
 
-#step4
-class InterventionDescriptorForm(DescriptorForm):
+STEP_FORM_MATRIX['step_3'] = [HealthConditionsForm, GeneralHealthDescriptorForm, SpecificHealthDescriptorForm]
+
+### step_4 #####################################################################
+class InterventionDescriptorForm(ReviewModelForm):
+    class Meta:
+        model = Descriptor
+        queryset = Descriptor.objects.filter(aspect=choices.TRIAL_ASPECT[1][0])
+        exclude = ['trial','version']
     title = _('Descriptor for Intervention(s)')
     aspect = forms.CharField(widget=forms.HiddenInput,
                               initial=choices.TRIAL_ASPECT[1][0])
     level = forms.CharField(widget=forms.HiddenInput,
-                             initial=choices.DESCRIPTOR_LEVEL[0][0])
+                             initial=choices.DESCRIPTOR_LEVEL[0][0]) # TODO: Change to DESCRIPTOR_LEVEL[1][0]
 
-#step4
 class InterventionForm(ReviewModelForm):
     title = _('Intervention(s)')
     class Meta:
@@ -384,7 +392,9 @@ class InterventionForm(ReviewModelForm):
     i_code = forms.ModelMultipleChoiceField(label=_("Intervention Code(s)"),
                                             queryset=InterventionCode.objects.all(),
                                             widget=forms.CheckboxSelectMultiple())
-#step5
+STEP_FORM_MATRIX['step_4'] = [InterventionForm, InterventionDescriptorForm]
+
+### step_5 #####################################################################
 class RecruitmentForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
@@ -434,7 +444,9 @@ class RecruitmentForm(ReviewModelForm):
     exclusion_criteria = forms.CharField(label=_('Exclusion Criteria'),required=False,
                                         max_length=8000, widget=forms.Textarea,)
 
-#step6
+STEP_FORM_MATRIX['step_5'] = [RecruitmentForm]
+
+### step_6 #####################################################################
 class StudyTypeForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
@@ -458,11 +470,19 @@ class StudyTypeForm(ReviewModelForm):
     phase = forms.ModelChoiceField(label=_('Study Phase'),
                                    required=False,
                                    queryset=StudyPhase.objects.all())
+                                   
+    expanded_access_program = forms.ChoiceField(label=_('Expanded access program'),
+                                              required=False,
+                                              choices=[(None,_('Unknown')),
+                                                       (True,_('Yes')),
+                                                       (False,_('No')),])
+STEP_FORM_MATRIX['step_6'] = [StudyTypeForm]
 
-#step7
+### step_7 #####################################################################
 class PrimaryOutcomesForm(ReviewModelForm):
     class Meta:
         model = Outcome
+        queryset = Outcome.objects.filter(interest=choices.OUTCOME_INTEREST[0][0])
         fields = ['description','interest']
 
     title = _('Primary Outcomes')
@@ -472,16 +492,20 @@ class PrimaryOutcomesForm(ReviewModelForm):
 class SecondaryOutcomesForm(ReviewModelForm):
     class Meta:
         model = Outcome
+        queryset = Outcome.objects.filter(interest=choices.OUTCOME_INTEREST[1][0])
         fields = ['description','interest']
 
     title = _('Secondary Outcomes')
     interest = forms.CharField(initial=choices.OUTCOME_INTEREST[1][0],
                                widget=forms.HiddenInput)
 
-#step8
+STEP_FORM_MATRIX['step_7'] = [PrimaryOutcomesForm,SecondaryOutcomesForm]
+
+### step_8 #####################################################################
 class PublicContactForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
+        queryset = PublicContact.objects.all()
         fields = ['contact']
 
     title = _('Contact(s) for Public Queries')
@@ -489,10 +513,10 @@ class PublicContactForm(ReviewModelForm):
                                initial=choices.CONTACT_RELATION[0][0],
                                widget=forms.HiddenInput)
 
-#step8
 class ScientificContactForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
+        queryset = ScientificContact.objects.all()
         fields = ['contact']
 
     title = _('Contact(s) for Scientific Queries')
@@ -500,16 +524,18 @@ class ScientificContactForm(ReviewModelForm):
                                initial=choices.CONTACT_RELATION[1][0],
                                widget=forms.HiddenInput)
 
-#step8
 class SiteContactForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
+        queryset = SiteContact.objects.all()
         fields = ['contact']
 
     title = _('Contact(s) for Site Queries')
     relation = forms.CharField(label=_('Relation'), 
                                initial=choices.CONTACT_RELATION[2][0],
                                widget=forms.HiddenInput)
+
+STEP_FORM_MATRIX['step_8'] = [PublicContactForm,ScientificContactForm,SiteContactForm]
 
 #step8-partof
 class ContactForm(ReviewModelForm):
@@ -538,3 +564,9 @@ class ContactForm(ReviewModelForm):
 
     zip = forms.CharField(label=_('Postal Code'), max_length=50)
     telephone = forms.CharField(label=_('Telephone'), max_length=255)
+
+class NewInstitution(ReviewModelForm):
+    class Meta:
+        model = Institution
+
+    title = _('New Institution')
