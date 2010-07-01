@@ -1,5 +1,21 @@
 {% extends "repository/submission_step.html" %}
 {% load i18n %}
+
+{% block extrahead %}
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("select[multiple]").asmSelect({
+                        addItemTarget: 'bottom',
+                        animate: true,
+                        highlight: true,
+                        sortable: false
+                });
+                $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
+            });
+        </script>
+{% endblock %}
+
 {% block body %}
 
     <h2>{% trans title %}</h2>
