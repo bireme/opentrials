@@ -19,6 +19,9 @@ from polyglot.models import Translation
 
 from repository import choices
 
+from reviewapp.signals import check_trial_fields
+from django.db.models.signals import post_save
+
 # remove digits that look like letters and vice-versa
 # remove vowels to avoid forming words
 BASE28 = ''.join(d for d in string.digits+string.ascii_lowercase
@@ -135,13 +138,13 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
                               default=choices.INCLUSION_GENDER[0][0])
     # TRDS 14c
     agemin_value = models.PositiveIntegerField(_('Inclusion Minimum Age'),
-                                               default=0)
+                                               default=0,null=True)
     agemin_unit = models.CharField(_('Minimum Age Unit'), max_length=1,
                                    choices=choices.INCLUSION_AGE_UNIT,
                                    default=choices.INCLUSION_AGE_UNIT[0][0])
     # TRDS 14d
     agemax_value = models.PositiveIntegerField(_('Inclusion Maximum Age'),
-                                               default=0)
+                                               default=0,null=True)
     agemax_unit = models.CharField(_('Maximum Age Unit'), max_length=1,
                                    choices=choices.INCLUSION_AGE_UNIT,
                                    default=choices.INCLUSION_AGE_UNIT[0][0])
@@ -540,3 +543,5 @@ class Descriptor(TrialRegistrationDataSetModel):
 
 class DescriptorTranslation(Translation):
     text = models.CharField(_('Text'), max_length=255, blank=True)
+
+post_save.connect(check_trial_fields, sender=ClinicalTrial)
