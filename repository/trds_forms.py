@@ -296,6 +296,8 @@ class TrialIdentificationForm(ReviewModelForm):
 class SecondaryIdForm(ReviewModelForm):
     class Meta:
         queryset = TrialNumber.objects.all()
+        min_required = 0
+        polyglot = False
     title = _('Secondary Identifying Numbers')
     # this is just to inherit the custom _html_output and as_table methods
 
@@ -305,13 +307,16 @@ STEP_FORM_MATRIX['step_1'] = [TrialIdentificationForm, SecondaryIdForm]
 class PrimarySponsorForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
-        fields = ['primary_sponsor',]
+        fields = ['primary_sponsor']
 
     title = _('Primary Sponsor')
 
 class SecondarySponsorForm(ReviewModelForm):
     class Meta:
         model = TrialSecondarySponsor
+        queryset = TrialSecondarySponsor.objects.all()
+        min_required = 0
+        polyglot = False
         fields = ['institution','relation']
 
     title = _('Secondary Sponsor(s)')
@@ -320,6 +325,9 @@ class SecondarySponsorForm(ReviewModelForm):
 class SupportSourceForm(ReviewModelForm):
     class Meta:
         model = TrialSupportSource
+        queryset = TrialSupportSource.objects.all()
+        min_required = 0
+        polyglot = False
         fields = ['institution','relation']
 
     title = _('Source(s) of Monetary or Material Support')
@@ -346,6 +354,8 @@ class GeneralHealthDescriptorForm(ReviewModelForm):
     class Meta:
         model = Descriptor
         queryset = Descriptor.objects.filter(aspect=choices.TRIAL_ASPECT[0][0],level=choices.DESCRIPTOR_LEVEL[0][0])
+        min_required = 1
+        polyglot = False
         exclude = ['trial','version']
     title = _('General Descriptors for Health Condition(s)')
     aspect = forms.CharField(widget=forms.HiddenInput,
@@ -357,6 +367,8 @@ class SpecificHealthDescriptorForm(ReviewModelForm):
     class Meta:
         model = Descriptor
         queryset = Descriptor.objects.filter(aspect=choices.TRIAL_ASPECT[0][0],level=choices.DESCRIPTOR_LEVEL[1][0])
+        min_required = 1
+        polyglot = False
         exclude = ['trial','version']
     title = _('Specific Descriptors for Health Condition(s)')
     aspect = forms.CharField(widget=forms.HiddenInput,
@@ -370,7 +382,10 @@ STEP_FORM_MATRIX['step_3'] = [HealthConditionsForm, GeneralHealthDescriptorForm,
 class InterventionDescriptorForm(ReviewModelForm):
     class Meta:
         model = Descriptor
-        queryset = Descriptor.objects.filter(aspect=choices.TRIAL_ASPECT[1][0])
+        queryset = Descriptor.objects.filter(aspect=choices.TRIAL_ASPECT[1][0],
+                                            level=choices.DESCRIPTOR_LEVEL[0][0])
+        min_required = 1
+        polyglot = False
         exclude = ['trial','version']
     title = _('Descriptor for Intervention(s)')
     aspect = forms.CharField(widget=forms.HiddenInput,
@@ -483,6 +498,9 @@ class PrimaryOutcomesForm(ReviewModelForm):
     class Meta:
         model = Outcome
         queryset = Outcome.objects.filter(interest=choices.OUTCOME_INTEREST[0][0])
+        min_required = 1
+        polyglot = True
+        polyglot_fields = ['description']
         fields = ['description','interest']
 
     title = _('Primary Outcomes')
@@ -493,6 +511,9 @@ class SecondaryOutcomesForm(ReviewModelForm):
     class Meta:
         model = Outcome
         queryset = Outcome.objects.filter(interest=choices.OUTCOME_INTEREST[1][0])
+        min_required = 0
+        polyglot = True
+        polyglot_fields = ['description']
         fields = ['description','interest']
 
     title = _('Secondary Outcomes')
@@ -506,6 +527,8 @@ class PublicContactForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         queryset = PublicContact.objects.all()
+        min_required = 0
+        polyglot = False
         fields = ['contact']
 
     title = _('Contact(s) for Public Queries')
@@ -517,6 +540,8 @@ class ScientificContactForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         queryset = ScientificContact.objects.all()
+        min_required = 1
+        polyglot = False
         fields = ['contact']
 
     title = _('Contact(s) for Scientific Queries')
@@ -528,6 +553,8 @@ class SiteContactForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         queryset = SiteContact.objects.all()
+        min_required = 0
+        polyglot = False
         fields = ['contact']
 
     title = _('Contact(s) for Site Queries')

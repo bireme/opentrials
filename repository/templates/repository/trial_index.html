@@ -20,9 +20,9 @@
         <tr>
             <td>{{forloop.counter}}</td>
             <td><a href="{{link.url}}">{{ link.label }}</a></td>
-            <td><img src="{{link.icon}}" alt="{{link.msg}}" title="{{link.msg}}"/>&nbsp;&nbsp;{{link.msg}}</td>
-            {% for lang in submission.get_trans_languages %}
-                <td><img src="{{link.icon}}" alt="{{link.msg}}" title="{{link.msg}}"/>&nbsp;&nbsp;{{link.msg}}</td>
+            <td><img src="{{link.icon}}" alt="{{link.msg}}" title="{{link.msg}}"/>&nbsp;&nbsp;{{link.msg}} {{link.status}}</td>
+            {% for lang in link.trans %}
+                <td><img src="{{lang.icon}}" alt="{{lang.msg}}" title="{{lang.msg}}"/>&nbsp;&nbsp;{{lang.msg}}</td>
             {% endfor %}    
         </tr>
     {% endfor %}    

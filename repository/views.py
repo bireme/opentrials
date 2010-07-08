@@ -36,6 +36,8 @@ from django.views.generic.list_detail import object_list
 from django.conf import settings
 from django.template.defaultfilters import slugify
 
+import pickle
+
 EXTRA_FORMS = 1
 TRIAL_FORMS = ['Trial Identification',
                'Sponsors',
@@ -69,13 +71,51 @@ def edit_trial_index(request, trial_pk):
         return HttpResponseRedirect(reverse('reviewapp.dashboard'))
     else:
         ''' start view '''
+        
+        if ct.submission.fields_status is None:
+            fields_status = {}
+        else:
+            fields_status = pickle.loads(ct.submission.fields_status.encode('utf-8'))
 
         links = []
         for i, name in enumerate(TRIAL_FORMS):
             data = dict(label=_(name))
             data['url'] = reverse('step_' + str(i + 1), args=[trial_pk])
-            data['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_alert.gif'
-            data['msg'] = _('Blank fields')
+            
+            step_status = fields_status.get(ct.submission.language.lower(), {}).get('step_' + str(i + 1), None)
+            if step_status == "MISSING":
+                data['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_error.gif'
+            elif step_status == "BLANK": 
+                data['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_alert.gif'
+            elif step_status == "OK":
+                data['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_success.gif'
+            else:
+                data['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_error.gif'
+            
+            if step_status is None:
+                data['msg'] = _('Error')
+            else:
+                data['msg'] = _(step_status.title() + ' fields')
+            
+            trans_list = []
+            for lang in ct.submission.get_trans_languages():
+                trans = {}
+                step_status = fields_status.get(lang, {}).get('step_' + str(i + 1), None)
+                if step_status == "MISSING":
+                    trans['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_error.gif'
+                elif step_status == "BLANK": 
+                    trans['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_alert.gif'
+                elif step_status == "OK":
+                    trans['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_success.gif'
+                else:
+                    trans['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_error.gif'
+                
+                if step_status is None:
+                    trans['msg'] = _('Error')
+                else:
+                    trans['msg'] = _(step_status.title() + ' fields')
+                trans_list.append(trans)
+            data['trans'] = trans_list
             links.append(data)
         return render_to_response('repository/trial_index.html',
                                   {'trial_pk':trial_pk,
@@ -150,8 +190,8 @@ def step_1(request, trial_pk):
         secondary_forms = SecondaryIdSet(request.POST, instance=ct)
 
         if form.is_valid() and secondary_forms.is_valid():
-            form.save()
             secondary_forms.save()
+            form.save()
             return HttpResponseRedirect(reverse('step_1',args=[trial_pk]))
     else:
         form = TrialIdentificationForm(instance=ct)
@@ -187,9 +227,9 @@ def step_2(request, trial_pk):
         sources_form = SupportSourceSet(request.POST, instance=ct)
 
         if form.is_valid() and secondary_forms.is_valid() and sources_form.is_valid():
-            form.save()
             secondary_forms.save()
             sources_form.save()
+            form.save()
         return HttpResponseRedirect(reverse('step_2',args=[trial_pk]))
     else:
         form = PrimarySponsorForm(instance=ct)
@@ -249,9 +289,9 @@ def step_3(request, trial_pk):
             for descriptor in descriptors:
                 descriptor.trial = ct
 
-            form.save()
             general_desc_formset.save()
             specific_desc_formset.save()
+            form.save()
             
             return HttpResponseRedirect(reverse('step_3',args=[trial_pk]))
     else:
