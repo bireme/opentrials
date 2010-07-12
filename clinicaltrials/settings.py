@@ -131,6 +131,8 @@ MANAGED_LANGUAGES_CHOICES = (
 )
 TARGET_LANGUAGES = MANAGED_LANGUAGES_CHOICES[1:] # exlude source language
 MANAGED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES_CHOICES]
+# TODO: implement this as default on new submission forms
+DEFAULT_SUBMISSION_LANGUAGE = u'pt-BR'
 
 # django-registration: for how long the activation link is valid
 ACCOUNT_ACTIVATION_DAYS = 7

@@ -239,6 +239,30 @@ def check_trial_fields(sender, instance,**kwargs):
             else:
                 fields_status[language].update({step: status})
 
+    # TODO: the next two lines generate an exception on syncdb,
+    # we need to find a work around for this, perhaps detecting
+    # when the signal is not fired by user action but by a
+    # bulk data load
     instance.submission.fields_status = pickle.dumps(fields_status)
     instance.submission.save()
+    # The exception:
+    #Installing json fixture 'initial_data' from '/home/luciano/prj/ct/svn/trunk/clinicaltrials/repository/fixtures'.
+    #Problem installing fixture '/home/luciano/prj/ct/svn/trunk/clinicaltrials/repository/fixtures/initial_data.json': Traceback (most recent call last):
+      #File "/home/luciano/prj/ct/django1.2-env/lib/python2.6/site-packages/Django-1.2.1-py2.6.egg/django/core/management/commands/loaddata.py", line 169, in handle
+        #obj.save(using=using)
+      #File "/home/luciano/prj/ct/django1.2-env/lib/python2.6/site-packages/Django-1.2.1-py2.6.egg/django/core/serializers/base.py", line 165, in save
+        #models.Model.save_base(self.object, using=using, raw=True)
+      #File "/home/luciano/prj/ct/django1.2-env/lib/python2.6/site-packages/Django-1.2.1-py2.6.egg/django/db/models/base.py", line 543, in save_base
+        #created=(not record_exists), raw=raw)
+      #File "/home/luciano/prj/ct/django1.2-env/lib/python2.6/site-packages/Django-1.2.1-py2.6.egg/django/dispatch/dispatcher.py", line 162, in send
+        #response = receiver(signal=self, sender=sender, **named)
+      #File "/home/luciano/prj/ct/svn/trunk/clinicaltrials/reviewapp/signals.py", line 242, in check_trial_fields
+        #instance.submission.fields_status = pickle.dumps(fields_status)
+      #File "/home/luciano/prj/ct/django1.2-env/lib/python2.6/site-packages/Django-1.2.1-py2.6.egg/django/db/models/fields/related.py", line 226, in __get__
+        #rel_obj = self.related.model._base_manager.using(db).get(**params)
+      #File "/home/luciano/prj/ct/django1.2-env/lib/python2.6/site-packages/Django-1.2.1-py2.6.egg/django/db/models/query.py", line 341, in get
+        #% self.model._meta.object_name)
+    #DoesNotExist: Submission matching query does not exist.
+    
+    
 
