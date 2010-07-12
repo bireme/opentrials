@@ -65,6 +65,7 @@ def check_trial_fields(sender, instance,**kwargs):
     
     from repository.trds_forms import STEP_FORM_MATRIX
     from repository.models import ClinicalTrial
+    from reviewapp.models import Submission
     from settings import MANAGED_LANGUAGES
     import re
     import pickle
@@ -242,9 +243,13 @@ def check_trial_fields(sender, instance,**kwargs):
     # TODO: the next two lines generate an exception on syncdb,
     # we need to find a work around for this, perhaps detecting
     # when the signal is not fired by user action but by a
-    # bulk data load
-    instance.submission.fields_status = pickle.dumps(fields_status)
-    instance.submission.save()
+    # bulk data load.
+    # Remove try/except (fix and revise code)
+    try:
+        instance.submission.fields_status = pickle.dumps(fields_status)
+        instance.submission.save()
+    except Submission.DoesNotExist:
+        pass
     # The exception:
     #Installing json fixture 'initial_data' from '/home/luciano/prj/ct/svn/trunk/clinicaltrials/repository/fixtures'.
     #Problem installing fixture '/home/luciano/prj/ct/svn/trunk/clinicaltrials/repository/fixtures/initial_data.json': Traceback (most recent call last):
