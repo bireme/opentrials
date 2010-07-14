@@ -104,7 +104,14 @@ class Submission(models.Model):
     def get_trans_languages(self):
         return self.get_mandatory_languages() - set([self.language])
 
-
+    def get_secondary_language(self):
+        sec = None
+        for lang in self.get_mandatory_languages():
+            # fixme: get from settings
+            if lang != 'en':
+                sec = lang.lower()
+                break
+        return sec
 
     def get_absolute_url(self):
         # TODO: use reverse to replace absolute path
@@ -204,7 +211,6 @@ class News(models.Model):
     
     def __unicode__(self):
         return '%s' % (self.short_title())
-        
-        
+
 
 post_save.connect(create_user_profile, sender=User)

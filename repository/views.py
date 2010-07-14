@@ -82,24 +82,10 @@ def edit_trial_index(request, trial_pk):
             data = dict(label=_(name))
             data['url'] = reverse('step_' + str(i + 1), args=[trial_pk])
             
-            step_status = fields_status.get(ct.submission.language.lower(), {}).get('step_' + str(i + 1), None)
-            if step_status == "MISSING":
-                data['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_error.gif'
-            elif step_status == "BLANK": 
-                data['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_alert.gif'
-            elif step_status == "OK":
-                data['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_success.gif'
-            else:
-                data['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_error.gif'
-            
-            if step_status is None:
-                data['msg'] = _('Error')
-            else:
-                data['msg'] = _(step_status.title() + ' fields')
-            
             trans_list = []
-            for lang in ct.submission.get_trans_languages():
+            for lang in ct.submission.get_mandatory_languages():
                 trans = {}
+                lang = lang.lower()
                 step_status = fields_status.get(lang, {}).get('step_' + str(i + 1), None)
                 if step_status == "MISSING":
                     trans['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_error.gif'
@@ -194,7 +180,8 @@ def step_1(request, trial_pk):
             form.save()
             return HttpResponseRedirect(reverse('step_1',args=[trial_pk]))
     else:
-        form = TrialIdentificationForm(instance=ct)
+        form = TrialIdentificationForm(instance=ct, 
+                                       default_second_language=ct.submission.get_secondary_language())
         SecondaryIdSet = inlineformset_factory(ClinicalTrial, TrialNumber,
                                                form=SecondaryIdForm,
                                                extra=EXTRA_FORMS, can_delete=True)
@@ -208,6 +195,8 @@ def step_1(request, trial_pk):
                                'title':TRIAL_FORMS[0],
                                'steps': step_list(trial_pk),
                                'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[0])),
+                               'default_second_language': ct.submission.get_secondary_language(),
+                               'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],
                                },
                                context_instance=RequestContext(request))
 
@@ -232,7 +221,8 @@ def step_2(request, trial_pk):
             form.save()
         return HttpResponseRedirect(reverse('step_2',args=[trial_pk]))
     else:
-        form = PrimarySponsorForm(instance=ct)
+        form = PrimarySponsorForm(instance=ct, 
+                                  default_second_language=ct.submission.get_secondary_language())
         SecondarySponsorSet = inlineformset_factory(ClinicalTrial, TrialSecondarySponsor,
             form=SecondarySponsorForm,extra=EXTRA_FORMS, can_delete=True)
         SupportSourceSet = inlineformset_factory(ClinicalTrial, TrialSupportSource,
@@ -248,7 +238,9 @@ def step_2(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[1],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[1])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[1])),
+                               'default_second_language': ct.submission.get_secondary_language(),
+                               'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
 
@@ -295,7 +287,8 @@ def step_3(request, trial_pk):
             
             return HttpResponseRedirect(reverse('step_3',args=[trial_pk]))
     else:
-        form = HealthConditionsForm(instance=ct)
+        form = HealthConditionsForm(instance=ct,
+                                    default_second_language=ct.submission.get_secondary_language())
         general_desc_formset = GeneralDescriptorSet(queryset=general_qs,prefix='g')
         specific_desc_formset = SpecificDescriptorSet(queryset=specific_qs,prefix='s')
 
@@ -307,7 +300,9 @@ def step_3(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[2],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[2])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[2])),
+                               'default_second_language': ct.submission.get_secondary_language(),
+                               'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
 
@@ -339,7 +334,8 @@ def step_4(request, trial_pk):
             form.save()
             return HttpResponseRedirect(reverse('step_4',args=[trial_pk]))
     else:
-        form = InterventionForm(instance=ct)
+        form = InterventionForm(instance=ct,
+                                default_second_language=ct.submission.get_secondary_language())
         specific_desc_formset = DescriptorFormSet(queryset=queryset)
 
     forms = [form]
@@ -349,7 +345,9 @@ def step_4(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[3],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[3])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[3])),
+                               'default_second_language': ct.submission.get_secondary_language(),
+                               'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
 
@@ -364,7 +362,8 @@ def step_5(request, trial_pk):
             form.save()
             return HttpResponseRedirect(reverse('step_5',args=[trial_pk]))
     else:
-        form = RecruitmentForm(instance=ct)
+        form = RecruitmentForm(instance=ct,
+                               default_second_language=ct.submission.get_secondary_language())
 
     forms = [form]
     return render_to_response('repository/trial_form.html',
@@ -372,7 +371,9 @@ def step_5(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[4],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[4])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[4])),
+                               'default_second_language': ct.submission.get_secondary_language(),
+                               'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
 
@@ -387,7 +388,8 @@ def step_6(request, trial_pk):
             form.save()
             return HttpResponseRedirect(reverse('step_6',args=[trial_pk]))
     else:
-        form = StudyTypeForm(instance=ct)
+        form = StudyTypeForm(instance=ct, 
+                             default_second_language=ct.submission.get_secondary_language())
 
     forms = [form]
     return render_to_response('repository/trial_form.html',
@@ -395,7 +397,9 @@ def step_6(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[5],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[5])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[5])),
+                               'default_second_language': ct.submission.get_secondary_language(),
+                               'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
 
@@ -440,7 +444,9 @@ def step_7(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[6],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[6])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[6])),
+                               'default_second_language': ct.submission.get_secondary_language(),
+                               'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
 
@@ -491,7 +497,9 @@ def step_8(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[7],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[7])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[7])),
+                               'default_second_language': ct.submission.get_secondary_language(),
+                               'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
 @login_required
@@ -532,7 +540,9 @@ def step_9(request, trial_pk):
                                'title':TRIAL_FORMS[8],
                                'host': request.get_host(),
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[8])),},
+                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[8])),
+                               'default_second_language': ct.submission.get_secondary_language(),
+                               'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
 def list_all(request, page=0, **kwargs):

@@ -10,9 +10,9 @@
         <tr>
             <th>{% trans "Part" %}</th>
             <th>{% trans "Form name" %}</th>
-            <th>{% trans "Status" %} ({{ submission.language }})</th>
-            {% for lang in submission.get_trans_languages %}
-                <th>{% trans lang %}</th>
+
+            {% for lang in submission.get_mandatory_languages %}
+                <th>{% trans "Status" %} ({% trans lang %})</th>
             {% endfor %}    
         </tr>
     </thead>
@@ -20,7 +20,6 @@
         <tr>
             <td>{{forloop.counter}}</td>
             <td><a href="{{link.url}}">{{ link.label }}</a></td>
-            <td><img src="{{link.icon}}" alt="{{link.msg}}" title="{{link.msg}}"/>&nbsp;&nbsp;{{link.msg}} {{link.status}}</td>
             {% for lang in link.trans %}
                 <td><img src="{{lang.icon}}" alt="{{lang.msg}}" title="{{lang.msg}}"/>&nbsp;&nbsp;{{lang.msg}}</td>
             {% endfor %}    
