@@ -21,8 +21,9 @@ from reviewapp.forms import UploadTrial, InitialTrialForm, OpenRemarkForm
 from reviewapp.forms import UserForm, PrimarySponsorForm, UserProfileForm
 from reviewapp.forms import ContactForm
 
-from repository.models import ClinicalTrial, CountryCode
+from repository.models import ClinicalTrial, CountryCode, ClinicalTrialTranslation
 from datetime import datetime
+import pickle
 
 def index(request):
     clinical_trials = ClinicalTrial.published.all()[:3]
@@ -145,16 +146,40 @@ def new_submission(request):
             trial = ClinicalTrial()
             su = Submission(creator=request.user)
             su.language = initial_form.cleaned_data['language']
-            trial.scientific_title = su.title = initial_form.cleaned_data['scientific_title']
+            su.title = initial_form.cleaned_data['scientific_title']
+            if su.language == 'en':
+                trial.scientific_title = su.title
+            else:
+                trial.save()
+                ctt = ClinicalTrialTranslation()
+                ctt.language = su.language
+                ctt.scientific_title = su.title
+                trial.translations.add(ctt)
 
             trial.save()
             su.save()
-
+            
             trial.primary_sponsor = su.primary_sponsor = sponsor_form.save()
             trial.recruitment_country = [CountryCode.objects.get(pk=id) for id in initial_form.cleaned_data['recruitment_country']]
             su.trial = trial
 
             trial.save()
+            su.save()
+            
+            # sets the initial status of the fields
+            fields_status = {}
+            FIELDS = {
+                'step_1': 'MISSING', 'step_2': 'BLANK', 'step_3': 'MISSING',
+                'step_4': 'MISSING', 'step_5': 'MISSING', 'step_6': 'MISSING', 
+                'step_7': 'MISSING', 'step_8': 'MISSING', 'step_9': 'BLANK'
+            }
+            for lang in su.get_mandatory_languages():
+                lang = lang.lower()
+                fields_status.update({lang: dict(FIELDS)})
+                if lang == su.language.lower():
+                    fields_status[lang].update({'step_1': 'BLANK'})
+            
+            su.fields_status = pickle.dumps(fields_status)
             su.save()
 
             return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))
