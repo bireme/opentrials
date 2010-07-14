@@ -84,7 +84,9 @@ class ReviewModelForm(forms.ModelForm):
 
         if commit:
             self.save_translations(obj)
-
+            # to check fields after the update of the translations
+            obj = super(ReviewModelForm, self).save(commit=commit)
+        
         return obj
 
     def save_translations(self, obj):
