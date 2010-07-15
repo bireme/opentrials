@@ -94,7 +94,8 @@ class Submission(models.Model):
 
     def get_mandatory_languages(self):
         langs = set([u'en'])
-        langs.add(self.trial.primary_sponsor.country.submission_language)
+        if self.trial.primary_sponsor is not None:
+            langs.add(self.trial.primary_sponsor.country.submission_language)
 
         for rc in self.trial.recruitment_country.all():
             langs.add(rc.submission_language)
