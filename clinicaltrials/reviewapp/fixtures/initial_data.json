@@ -1,130 +1,518 @@
 [
   {
     "pk": 1, 
-    "model": "reviewapp.submission", 
+    "model": "reviewapp.userprofile", 
     "fields": {
-      "status": "draft", 
-      "updated": "2010-01-07 18:48:20", 
-      "title": "A randomised, double-blind, placebo-controlled, factorial-design trial to assess the effect of aspirin and fish oil in the prevention of early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis", 
-      "language": "en",
-      "created": "2009-10-19 21:10:04", 
-      "trial": 1, 
-      "updater": 1, 
-      "staff_note": "", 
-      "creator": 1, 
-      "primary_sponsor": 1
+      "user": 1, 
+      "preferred_language": "en"
     }
   }, 
   {
     "pk": 2, 
-    "model": "reviewapp.submission", 
+    "model": "reviewapp.userprofile", 
     "fields": {
-      "status": "draft", 
-      "updated": "2010-01-07 18:48:20", 
-      "title": "Minimal trial record (only required fields)", 
-      "language": "en",
-      "created": "2009-10-19 21:10:15", 
-      "trial": 2, 
-      "updater": 1, 
-      "staff_note": "", 
-      "creator": 1, 
-      "primary_sponsor": null
+      "user": 2, 
+      "preferred_language": "pt-BR"
     }
   }, 
   {
     "pk": 3, 
-    "model": "reviewapp.submission", 
+    "model": "reviewapp.userprofile", 
     "fields": {
-      "status": "draft", 
-      "updated": "2010-01-07 18:48:20", 
-      "title": "Effect of Ascorbic Acid and Grape Seed Extract \"Vitis Vinifera L.\" on Oxidative Stress Induced by on Pump Coronary Artery by Pass Grafting Surgery", 
-      "language": "en",
-      "created": "2009-10-19 21:10:21", 
-      "trial": 3, 
-      "updater": 1, 
-      "staff_note": "", 
-      "creator": 1, 
-      "primary_sponsor": 2
+      "user": 3, 
+      "preferred_language": "pt-BR"
     }
   }, 
   {
     "pk": 4, 
-    "model": "reviewapp.submission", 
+    "model": "reviewapp.userprofile", 
     "fields": {
-      "status": "draft", 
-      "updated": null, 
-      "title": "ABSORB EXTEND Clinical Investigation: A Continuation in the Clinical Evaluation of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the Treatment of Subjects With de Novo Native Coronary Artery Lesions  ", 
-      "language": "en",
-      "created": "2010-03-02 13:34:30", 
-      "trial": 4, 
-      "updater": null, 
-      "staff_note": "", 
-      "creator": 1, 
-      "primary_sponsor": 3
+      "user": 4, 
+      "preferred_language": "pt-BR"
     }
   }, 
   {
     "pk": 5, 
-    "model": "reviewapp.submission", 
+    "model": "reviewapp.userprofile", 
     "fields": {
-      "status": "draft", 
-      "updated": null, 
-      "title": "Teste da reuni\u00e3o Elluminate", 
-      "language": "pt-BR",
-      "created": "2010-03-30 18:51:44", 
-      "trial": 5, 
-      "updater": null, 
-      "staff_note": "", 
-      "creator": 1, 
-      "primary_sponsor": 4
+      "user": 5, 
+      "preferred_language": "pt-BR"
     }
   }, 
   {
     "pk": 6, 
-    "model": "reviewapp.submission", 
+    "model": "reviewapp.userprofile", 
     "fields": {
-      "status": "draft", 
-      "updated": null, 
-      "title": "teste de Margot", 
-      "language": "pt-BR",
-      "created": "2010-04-05 16:56:59", 
-      "trial": 6, 
-      "updater": null, 
-      "staff_note": "", 
-      "creator": 1, 
-      "primary_sponsor": 5
+      "user": 6, 
+      "preferred_language": "pt-BR"
     }
   }, 
   {
     "pk": 7, 
-    "model": "reviewapp.submission", 
+    "model": "reviewapp.userprofile", 
     "fields": {
-      "status": "draft", 
-      "updated": "2010-04-22 13:18:47", 
-      "title": "Avalia\u00e7\u00e3o da dosagem do praziquantel para o tratamento da esquistossomose no Brasil", 
-      "language": "pt-BR",
-      "created": "2010-04-22 13:18:47", 
-      "trial": 7, 
-      "updater": null, 
-      "staff_note": "", 
-      "creator": 1, 
-      "primary_sponsor": 6
+      "user": 7, 
+      "preferred_language": "pt-BR"
     }
   }, 
   {
     "pk": 8, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 8, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 9, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 10, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 11, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 12, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 13, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 14, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 15, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 16, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 17, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 18, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 19, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 20, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 21, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 22, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "pending", 
+      "updated": "2010-07-15 17:05:12", 
+      "language": "en", 
+      "title": "RCT of Antioxidant Therapy to Prevent Preeclampsia in Brazil", 
+      "created": "2010-07-13 19:07:15", 
+      "trial": 29, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng4\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nssVes\np16\n(dp17\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 5, 
+      "primary_sponsor": 36
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "pending", 
+      "updated": "2010-07-15 17:05:12", 
+      "language": "pt-BR", 
+      "title": "The Efficacy of Hand NBUVB Versus Excilite Treatment in Vitiligo After Minigrafting on the Dorsal Hands", 
+      "created": "2010-07-07 12:47:53", 
+      "trial": 28, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'OK'\np6\nsS'step_2'\np7\ng6\nsS'step_5'\np8\nS'MISSING'\np9\nsS'step_4'\np10\ng6\nsS'step_7'\np11\ng6\nsS'step_6'\np12\ng6\nsS'step_9'\np13\ng4\nsS'step_8'\np14\ng6\nssVpt-br\np15\n(dp16\ng3\ng4\nsg5\ng6\nsg8\ng9\nsg10\ng6\nsg12\ng6\nssVes\np17\n(dp18\ng3\ng9\nsg5\ng9\nsg8\ng9\nsg10\ng9\nsg12\ng9\nss.", 
+      "staff_note": "", 
+      "creator": 11, 
+      "primary_sponsor": 34
+    }
+  }, 
+  {
+    "pk": 27, 
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-04-22 19:17:28", 
-      "title": "Prevention of Heterotopic Ossification With Arcoxia After Total Hip Replacement", 
-      "language": "en",
-      "created": "2010-04-22 19:17:28", 
-      "trial": 8, 
+      "updated": "2010-07-15 17:05:12", 
+      "language": "pt-BR", 
+      "title": "Teste 30/jun", 
+      "created": "2010-06-30 13:27:51", 
+      "trial": 27, 
       "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng6\nsg5\ng6\nsg7\ng4\nsg8\ng6\nsg9\ng6\nsg10\ng6\nsg11\ng6\nsg12\ng4\nsg13\ng6\nssVes\np16\n(dp17\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
       "staff_note": "", 
-      "creator": 1,
-      "primary_sponsor": 7
+      "creator": 1, 
+      "primary_sponsor": 33
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "pending", 
+      "updated": "2010-07-15 17:05:12", 
+      "language": "pt-BR", 
+      "title": "Avalia\u00e7\u00e3o do Benznidazol para interrup\u00e7\u00e3o da tripanosom\u00edase \u2013 ensaio BENEFIT", 
+      "created": "2010-06-30 11:25:32", 
+      "trial": 26, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'OK'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\nS'MISSING'\np9\nsS'step_4'\np10\ng9\nsS'step_7'\np11\ng6\nsS'step_6'\np12\ng6\nsS'step_9'\np13\ng4\nsS'step_8'\np14\ng9\nssVpt-br\np15\n(dp16\ng3\ng4\nsg5\ng6\nsg8\ng6\nsg10\ng9\nsg12\ng6\nssVes\np17\n(dp18\ng3\ng9\nsg5\ng9\nsg8\ng9\nsg10\ng9\nsg12\ng9\nss.", 
+      "staff_note": "", 
+      "creator": 11, 
+      "primary_sponsor": 32
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:12", 
+      "language": "pt-BR", 
+      "title": "titulo cientifico teste", 
+      "created": "2010-06-29 14:08:33", 
+      "trial": 25, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng4\nsg5\ng6\nsg7\ng4\nsg8\ng6\nsg9\ng6\nsg10\ng6\nsg11\ng6\nsg12\ng4\nsg13\ng6\nssVes\np16\n(dp17\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 12, 
+      "primary_sponsor": 30
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "approved", 
+      "updated": "2010-07-15 17:05:12", 
+      "language": "pt-BR", 
+      "title": "Efficacy Study of Pioglitazone Compared to Glimepiride on Coronary Atherosclerotic Disease Progression in Subjects With Type 2 Diabetes Mellitus (PERISCOPE)", 
+      "created": "2010-06-22 10:41:42", 
+      "trial": 24, 
+      "updater": 1, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'OK'\np6\nsS'step_2'\np7\ng6\nsS'step_5'\np8\nS'MISSING'\np9\nsS'step_4'\np10\ng6\nsS'step_7'\np11\ng6\nsS'step_6'\np12\ng6\nsS'step_9'\np13\ng4\nsS'step_8'\np14\ng4\nssVpt-br\np15\n(dp16\ng3\ng4\nsg5\ng6\nsg8\ng6\nsg10\ng6\nsg12\ng6\nssVes\np17\n(dp18\ng3\ng9\nsg5\ng9\nsg8\ng9\nsg10\ng9\nsg12\ng9\nss.", 
+      "staff_note": "", 
+      "creator": 17, 
+      "primary_sponsor": 28
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "pending", 
+      "updated": "2010-07-15 17:05:12", 
+      "language": "pt-BR", 
+      "title": "t\u00edtulo em ingl\u00eas", 
+      "created": "2010-06-21 21:26:44", 
+      "trial": 23, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'OK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng4\nsS'step_6'\np11\ng4\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng4\nssVpt-br\np14\n(dp15\ng3\nS'BLANK'\np16\nsg5\ng6\nsg8\ng6\nsg9\ng4\nsg11\ng4\nssVes\np17\n(dp18\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 7, 
+      "primary_sponsor": 27
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "en", 
+      "title": "\u201cEstudo TEAM (Efic\u00e1cia do Tasigna em Melanoma Avan\u00e7ado): Estudo fase III, de dois bra\u00e7os, randomizado, aberto e multic\u00eantrico para comparar a efic\u00e1cia de Tasigna\u00ae versus dacarbazina (DTIC) no tratamento de pacientes com melanoma metast\u00e1tico e/ou inoper\u00e1vel contendo uma muta\u00e7\u00e3o do c-Kit\u201d", 
+      "created": "2010-06-21 20:35:22", 
+      "trial": 22, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\nS'OK'\np14\nssVpt-br\np15\n(dp16\ng3\ng6\nsg5\ng14\nsg8\ng6\nsg9\ng6\nsg11\ng6\nssVes\np17\n(dp18\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 19, 
+      "primary_sponsor": 26
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "en", 
+      "title": "teste", 
+      "created": "2010-06-21 13:55:07", 
+      "trial": 21, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 2, 
+      "primary_sponsor": 25
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "en", 
+      "title": "A Phase II Study of Single-Agent Lenalidomide in Subjects With Relapsed Or Refractory T-Cell Non-Hodgkin's Lymphoma (EXPECT)", 
+      "created": "2010-06-18 19:16:12", 
+      "trial": 20, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'MISSING'\np4\nsS'step_3'\np5\ng4\nsS'step_2'\np6\nS'OK'\np7\nsS'step_5'\np8\ng4\nsS'step_4'\np9\ng4\nsS'step_7'\np10\ng4\nsS'step_6'\np11\ng4\nsS'step_9'\np12\nS'BLANK'\np13\nsS'step_8'\np14\ng4\nssVpt-br\np15\n(dp16\ng3\ng13\nsg5\ng7\nsg8\ng4\nsg9\ng4\nsg11\ng4\nssVes\np17\n(dp18\ng3\ng4\nsg5\ng4\nsg8\ng4\nsg9\ng4\nsg11\ng4\nss.", 
+      "staff_note": "", 
+      "creator": 7, 
+      "primary_sponsor": 22
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "en", 
+      "title": "hghjghjghjhj", 
+      "created": "2010-06-17 19:26:29", 
+      "trial": 19, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 16, 
+      "primary_sponsor": 21
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "pt-BR", 
+      "title": "fdfdfdfdf", 
+      "created": "2010-06-17 19:23:02", 
+      "trial": 18, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng4\nsg5\ng6\nsg7\ng4\nsg8\ng6\nsg9\ng6\nsg10\ng6\nsg12\ng4\nsg13\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 16, 
+      "primary_sponsor": 20
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "pt-BR", 
+      "title": "Segundo teste do dia 17/06", 
+      "created": "2010-06-17 17:48:22", 
+      "trial": 17, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng4\nsg5\ng6\nsg7\ng4\nsg8\ng6\nsg9\ng6\nsg10\ng6\nsg12\ng4\nsg13\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 16, 
+      "primary_sponsor": 19
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "pending", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "pt-BR", 
+      "title": "Teste do dia 17/06", 
+      "created": "2010-06-17 17:47:04", 
+      "trial": 16, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng4\nsg5\ng6\nsg7\ng4\nsg8\ng6\nsg9\ng6\nsg10\ng6\nsg12\ng4\nsg13\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 16, 
+      "primary_sponsor": 18
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "en", 
+      "title": "My new clinical trial", 
+      "created": "2010-06-15 23:27:27", 
+      "trial": 15, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'MISSING'\np4\nsS'step_3'\np5\ng4\nsS'step_2'\np6\nS'BLANK'\np7\nsS'step_5'\np8\ng4\nsS'step_4'\np9\ng4\nsS'step_7'\np10\ng4\nsS'step_6'\np11\ng4\nsS'step_9'\np12\nS'OK'\np13\nsS'step_8'\np14\ng4\nssVpt-br\np15\n(dp16\ng3\ng4\nsg5\ng4\nsg6\ng7\nsg8\ng4\nsg9\ng4\nsg10\ng4\nsg11\ng4\nsg12\ng13\nsg14\ng4\nssVes\np17\n(dp18\ng3\ng4\nsg5\ng4\nsg8\ng4\nsg9\ng4\nsg11\ng4\nss.", 
+      "staff_note": "", 
+      "creator": 15, 
+      "primary_sponsor": 17
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "en", 
+      "title": "Teste do Luciano em 14 de jun de 2010", 
+      "created": "2010-06-14 17:48:11", 
+      "trial": 14, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 14, 
+      "primary_sponsor": 16
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "en-US", 
+      "title": "Uso da metformina em pacientes com diabetes tipo 2", 
+      "created": "2010-06-14 13:44:50", 
+      "trial": 13, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 7, 
+      "primary_sponsor": 15
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "approved", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "en-US", 
+      "title": "Demo do dia 14 de junho", 
+      "created": "2010-06-14 13:40:25", 
+      "trial": 12, 
+      "updater": 1, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 4, 
+      "primary_sponsor": 14
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "pt-BR", 
+      "title": "T\u00edtulo A", 
+      "created": "2010-06-14 13:00:40", 
+      "trial": 11, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 6, 
+      "primary_sponsor": 10
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "pending", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "pt-BR", 
+      "title": "Teste de 12/06/2010", 
+      "created": "2010-06-12 20:47:20", 
+      "trial": 10, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'MISSING'\np4\nsS'step_3'\np5\ng4\nsS'step_2'\np6\nS'BLANK'\np7\nsS'step_5'\np8\ng4\nsS'step_4'\np9\ng4\nsS'step_7'\np10\ng4\nsS'step_6'\np11\ng4\nsS'step_9'\np12\ng7\nsS'step_8'\np13\ng4\nssVpt-br\np14\n(dp15\ng3\nS'OK'\np16\nsg5\ng4\nsg6\ng7\nsg8\ng4\nsg9\ng4\nsg10\ng4\nsg11\ng4\nsg12\ng7\nsg13\ng4\nssVes\np17\n(dp18\ng3\ng4\nsg5\ng4\nsg8\ng4\nsg9\ng4\nsg11\ng4\nss.", 
+      "staff_note": "", 
+      "creator": 5, 
+      "primary_sponsor": 9
     }
   }, 
   {
@@ -132,22 +520,161 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-04-22 20:01:45", 
-      "title": "The efficacy of penicillin G potassium in reducing aphthous ulcer pain and lesion size in a Chinese cohort: a randomized, double-blinded, placebo and blank controlled, multicenter clinical trial.",
-      "language": "en",
+      "updated": "2010-07-15 17:05:12", 
+      "language": "en-US", 
+      "title": "The efficacy of penicillin G potassium in reducing aphthous ulcer pain and lesion size in a Chinese cohort: a randomized, double-blinded, placebo and blank controlled, multicenter clinical trial.", 
       "created": "2010-04-22 20:01:45", 
       "trial": 9, 
       "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\nS'OK'\np14\nssVpt-br\np15\n(dp16\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nssVes\np17\n(dp18\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
       "staff_note": "", 
-      "creator": 1,
+      "creator": 1, 
       "primary_sponsor": 8
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:12", 
+      "language": "en-US", 
+      "title": "Prevention of Heterotopic Ossification With Arcoxia After Total Hip Replacement", 
+      "created": "2010-04-22 19:17:28", 
+      "trial": 8, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nssVes\np16\n(dp17\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": 7
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:12", 
+      "language": "pt-BR", 
+      "title": "Avalia\u00e7\u00e3o da dosagem do praziquantel para o tratamento da esquistossomose no Brasil", 
+      "created": "2010-04-22 13:18:47", 
+      "trial": 7, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng6\nsg5\ng6\nsg7\ng4\nsg8\ng6\nsg9\ng6\nsg10\ng6\nsg11\ng6\nsg12\ng4\nsg13\ng6\nssVes\np16\n(dp17\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": 6
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:12", 
+      "language": "pt-BR", 
+      "title": "teste de Margot", 
+      "created": "2010-04-05 16:56:59", 
+      "trial": 6, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng6\nsg5\ng6\nsg7\ng4\nsg8\ng6\nsg9\ng6\nsg10\ng6\nsg11\ng6\nsg12\ng4\nsg13\ng6\nssVes\np16\n(dp17\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": 5
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:13", 
+      "language": "pt-BR", 
+      "title": "Teste da reuni\u00e3o Elluminate", 
+      "created": "2010-03-30 18:51:44", 
+      "trial": 5, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": 4
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:12", 
+      "language": "en-US", 
+      "title": "ABSORB EXTEND Clinical Investigation: A Continuation in the Clinical Evaluation of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the Treatment of Subjects With de Novo Native Coronary Artery Lesions  ", 
+      "created": "2010-03-02 13:34:30", 
+      "trial": 4, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'OK'\np4\nsS'step_3'\np5\ng4\nsS'step_2'\np6\nS'BLANK'\np7\nsS'step_5'\np8\nS'MISSING'\np9\nsS'step_4'\np10\ng9\nsS'step_7'\np11\ng7\nsS'step_6'\np12\ng9\nsS'step_9'\np13\ng7\nsS'step_8'\np14\ng7\nssVpt-br\np15\n(dp16\ng3\ng9\nsg5\ng9\nsg6\ng7\nsg8\ng9\nsg10\ng9\nsg11\ng9\nsg12\ng9\nsg13\ng7\nsg14\ng7\nssVes\np17\n(dp18\ng3\ng9\nsg5\ng9\nsg8\ng9\nsg10\ng9\nsg12\ng9\nss.", 
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": 3
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:11", 
+      "language": "en-US", 
+      "title": "Effect of Ascorbic Acid and Grape Seed Extract \"Vitis Vinifera L.\" on Oxidative Stress Induced by on Pump Coronary Artery by Pass Grafting Surgery", 
+      "created": "2009-10-19 21:10:21", 
+      "trial": 3, 
+      "updater": 1, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'OK'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\nS'MISSING'\np10\nsS'step_7'\np11\ng6\nsS'step_6'\np12\ng6\nsS'step_9'\np13\ng4\nsS'step_8'\np14\ng4\nssVpt-br\np15\n(dp16\ng3\ng4\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg12\ng10\nssVes\np17\n(dp18\ng3\ng10\nsg5\ng10\nsg8\ng10\nsg9\ng10\nsg12\ng10\nss.", 
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": 2
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:11", 
+      "language": "en-US", 
+      "title": "Minimal trial record (only required fields)", 
+      "created": "2009-10-19 21:10:15", 
+      "trial": 2, 
+      "updater": 1, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nssVes\np16\n(dp17\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": null
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-15 17:05:11", 
+      "language": "en-US", 
+      "title": "A randomised, double-blind, placebo-controlled, factorial-design trial to assess the effect of aspirin and fish oil in the prevention of early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis", 
+      "created": "2009-10-19 21:10:04", 
+      "trial": 1, 
+      "updater": 1, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\nS'OK'\np11\nsS'step_6'\np12\ng6\nsS'step_9'\np13\ng4\nsS'step_8'\np14\ng6\nssVpt-br\np15\n(dp16\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg12\ng6\nssVes\np17\n(dp18\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg12\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 1, 
+      "primary_sponsor": 1
     }
   }, 
   {
     "pk": 1, 
     "model": "reviewapp.recruitmentcountry", 
     "fields": {
-      "country": 14, 
+      "country": [
+        "AW"
+      ], 
       "submission": 1
     }
   }, 
@@ -155,7 +682,9 @@
     "pk": 2, 
     "model": "reviewapp.recruitmentcountry", 
     "fields": {
-      "country": 158, 
+      "country": [
+        "NZ"
+      ], 
       "submission": 1
     }
   }, 
@@ -163,10 +692,114 @@
     "pk": 3, 
     "model": "reviewapp.recruitmentcountry", 
     "fields": {
-      "country": 103, 
+      "country": [
+        "IR"
+      ], 
       "submission": 3
     }
-  },
+  }, 
+  {
+    "pk": 1, 
+    "model": "reviewapp.attachment", 
+    "fields": {
+      "public": false, 
+      "description": "teste", 
+      "file": "/home/aplicacoes-bvs/ensaiosclinicos/clinicaltrials/static/attachments/teste.php", 
+      "submission": 15
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "reviewapp.attachment", 
+    "fields": {
+      "public": false, 
+      "description": "descr", 
+      "file": "/home/aplicacoes-bvs/ensaiosclinicos/clinicaltrials/static/attachments/a.txt", 
+      "submission": 23
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "reviewapp.attachment", 
+    "fields": {
+      "public": false, 
+      "description": "mesma descri\u00e7\u00e3o", 
+      "file": "/home/aplicacoes-bvs/ensaiosclinicos/clinicaltrials/static/attachments/a_1.txt", 
+      "submission": 23
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "reviewapp.remark", 
+    "fields": {
+      "status": "opened", 
+      "submission": 12, 
+      "created": "2010-06-14 13:54:42", 
+      "text": "Se voc\u00ea infora o acronimo, \u00e9 necessario informar a expansao do acronimo", 
+      "creator": 1, 
+      "context": "Trial Identification"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "reviewapp.remark", 
+    "fields": {
+      "status": "opened", 
+      "submission": 24, 
+      "created": "2010-06-22 14:24:11", 
+      "text": "Acabei de criar este remark, que diz respeito ao formul\u00e1rio de identifica\u00e7\u00e3o do ensaio.", 
+      "creator": 1, 
+      "context": "trial-identification"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "reviewapp.remark", 
+    "fields": {
+      "status": "opened", 
+      "submission": 24, 
+      "created": "2010-06-22 14:24:33", 
+      "text": "D\u00e1 pra ter mais de um remark, certo?", 
+      "creator": 1, 
+      "context": "trial-identification"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "reviewapp.remark", 
+    "fields": {
+      "status": "opened", 
+      "submission": 24, 
+      "created": "2010-06-22 14:25:06", 
+      "text": "Agora um remark para os Patrocinadores.", 
+      "creator": 1, 
+      "context": "sponsors"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "reviewapp.remark", 
+    "fields": {
+      "status": "opened", 
+      "submission": 24, 
+      "created": "2010-06-22 14:32:04", 
+      "text": "Especificar fator de Gantt", 
+      "creator": 1, 
+      "context": "health-conditions"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "reviewapp.remark", 
+    "fields": {
+      "status": "acknowledged", 
+      "submission": 24, 
+      "created": "2010-06-22 14:36:52", 
+      "text": "Inform ammount given", 
+      "creator": 1, 
+      "context": "sponsors"
+    }
+  }, 
   {
     "pk": 1, 
     "model": "reviewapp.news", 
@@ -220,6 +853,17 @@
       "created": "2010-06-01 14:39:01", 
       "creator": 1, 
       "title": "Quisque feugiat hendrerit sagittis"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "reviewapp.news", 
+    "fields": {
+      "status": "published", 
+      "text": "Texto do teste Texto do teste Texto do teste Texto do teste Texto do teste Texto do teste Texto do teste Texto do teste Texto do teste ", 
+      "created": "2010-06-22 15:11:29", 
+      "creator": 1, 
+      "title": "Not\u00edcia teste do dia 22"
     }
   }
 ]

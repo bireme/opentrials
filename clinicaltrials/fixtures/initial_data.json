@@ -1,5 +1,947 @@
 [
   {
+    "pk": 41, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "attachment", 
+      "name": "attachment", 
+      "app_label": "reviewapp"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "attachmenttype", 
+      "name": "attachment type", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 47, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "category", 
+      "name": "category", 
+      "app_label": "assistance"
+    }
+  }, 
+  {
+    "pk": 48, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "categorytranslation", 
+      "name": "category translation", 
+      "app_label": "assistance"
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "clinicaltrial", 
+      "name": "clinical trial", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "clinicaltrialtranslation", 
+      "name": "clinical trial translation", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "contact", 
+      "name": "contact", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "contenttype", 
+      "name": "content type", 
+      "app_label": "contenttypes"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "countrycode", 
+      "name": "country code", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "decsdisease", 
+      "name": "decs disease", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "descriptor", 
+      "name": "descriptor", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "descriptortranslation", 
+      "name": "descriptor translation", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 51, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "fieldhelp", 
+      "name": "field help", 
+      "app_label": "assistance"
+    }
+  }, 
+  {
+    "pk": 52, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "fieldhelptranslation", 
+      "name": "field help translation", 
+      "app_label": "assistance"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "flatpage", 
+      "name": "flat page", 
+      "app_label": "flatpages"
+    }
+  }, 
+  {
+    "pk": 45, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "followup", 
+      "name": "followup", 
+      "app_label": "tickets"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "group", 
+      "name": "group", 
+      "app_label": "auth"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "icdchapter", 
+      "name": "icd chapter", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "institution", 
+      "name": "institution", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "interventionassigment", 
+      "name": "intervention assigment", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "interventioncode", 
+      "name": "intervention code", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "logentry", 
+      "name": "log entry", 
+      "app_label": "admin"
+    }
+  }, 
+  {
+    "pk": 46, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "media", 
+      "name": "media", 
+      "app_label": "tickets"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "message", 
+      "name": "message", 
+      "app_label": "auth"
+    }
+  }, 
+  {
+    "pk": 43, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "news", 
+      "name": "news", 
+      "app_label": "reviewapp"
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "outcome", 
+      "name": "outcome", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "outcometranslation", 
+      "name": "outcome translation", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "permission", 
+      "name": "permission", 
+      "app_label": "auth"
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "publiccontact", 
+      "name": "public contact", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 49, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "question", 
+      "name": "question", 
+      "app_label": "assistance"
+    }
+  }, 
+  {
+    "pk": 50, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "questiontranslation", 
+      "name": "question translation", 
+      "app_label": "assistance"
+    }
+  }, 
+  {
+    "pk": 40, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "recruitmentcountry", 
+      "name": "recruitment country", 
+      "app_label": "reviewapp"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "recruitmentstatus", 
+      "name": "recruitment status", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 53, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "registrationprofile", 
+      "name": "registration profile", 
+      "app_label": "registration"
+    }
+  }, 
+  {
+    "pk": 42, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "remark", 
+      "name": "remark", 
+      "app_label": "reviewapp"
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "scientificcontact", 
+      "name": "scientific contact", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "session", 
+      "name": "session", 
+      "app_label": "sessions"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "site", 
+      "name": "site", 
+      "app_label": "sites"
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "sitecontact", 
+      "name": "site contact", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "studyallocation", 
+      "name": "study allocation", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "studymasking", 
+      "name": "study masking", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "studyphase", 
+      "name": "study phase", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "studypurpose", 
+      "name": "study purpose", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "studytype", 
+      "name": "study type", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 39, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "submission", 
+      "name": "submission", 
+      "app_label": "reviewapp"
+    }
+  }, 
+  {
+    "pk": 44, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "ticket", 
+      "name": "ticket", 
+      "app_label": "tickets"
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "trialnumber", 
+      "name": "trial number", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "trialnumberissuingauthority", 
+      "name": "trial number issuing authority", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "trialsecondarysponsor", 
+      "name": "trial secondary sponsor", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "trialsupportsource", 
+      "name": "trial support source", 
+      "app_label": "repository"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "user", 
+      "name": "user", 
+      "app_label": "auth"
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "userprofile", 
+      "name": "user profile", 
+      "app_label": "reviewapp"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+      "model": "vocabularytranslation", 
+      "name": "vocabulary translation", 
+      "app_label": "vocabulary"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "ec.beta.bvsalud.org", 
+      "name": "EnsaiosClinicos.gov.br (BETA)"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "ec.homolog.bvsalud.org", 
+      "name": "EnsaiosClinicos.gov.br (HOMOLOG)"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "ec.teste.bvsalud.org", 
+      "name": "EnsaiosClinicos.gov.br (TESTE)"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "example.com", 
+      "name": "example.com"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 15:12:03", 
+      "object_repr": "Not\u00edcia teste do dia 22", 
+      "object_id": "6", 
+      "change_message": "Modificado status.", 
+      "user": 1, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-06-22 15:11:29", 
+      "object_repr": "Not\u00edcia teste do dia 22", 
+      "object_id": "6", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-06-22 15:05:46", 
+      "object_repr": "Is Dunga nice?", 
+      "object_id": "12", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 15:03:11", 
+      "object_repr": "admin_gamarski", 
+      "object_id": "20", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 15:03:03", 
+      "object_repr": "admin_claudio", 
+      "object_id": "21", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 14:44:06", 
+      "object_repr": "josue", 
+      "object_id": "11", 
+      "change_message": "Modificado password e is_active.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 14:28:48", 
+      "object_repr": "josue", 
+      "object_id": "11", 
+      "change_message": "Modificado email.", 
+      "user": 17, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 14:21:19", 
+      "object_repr": "admin_josue", 
+      "object_id": "17", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 14:19:04", 
+      "object_repr": "Efficacy Study of Pioglitazone Compared to Glimepiride on Coronary Atherosclerotic Disease Progression in Subjects With\u2026", 
+      "object_id": "24", 
+      "change_message": "Modificado status.", 
+      "user": 1, 
+      "content_type": [
+        "reviewapp", 
+        "submission"
+      ]
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 13:30:56", 
+      "object_repr": "reviewer", 
+      "object_id": "3", 
+      "change_message": "Modificado user_permissions.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-18 14:33:32", 
+      "object_repr": "admin_margot", 
+      "object_id": "6", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-14 17:45:40", 
+      "object_repr": "admin", 
+      "object_id": "1", 
+      "change_message": "Modificado email.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-14 14:48:32", 
+      "object_repr": "margot", 
+      "object_id": "9", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-06-14 14:46:55", 
+      "object_repr": "Aspirima d\u00e1 dor de barriga?", 
+      "object_id": "11", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-06-14 14:46:19", 
+      "object_repr": "Medicamentos", 
+      "object_id": "4", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": [
+        "assistance", 
+        "category"
+      ]
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-14 13:55:51", 
+      "object_repr": "Demo do dia 14 de junho", 
+      "object_id": "12", 
+      "change_message": "Modificado status.", 
+      "user": 1, 
+      "content_type": [
+        "reviewapp", 
+        "submission"
+      ]
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-14 13:34:02", 
+      "object_repr": "gamarski", 
+      "object_id": "5", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-14 13:33:18", 
+      "object_repr": "laguardia", 
+      "object_id": "7", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-14 13:19:01", 
+      "object_repr": "laguardia", 
+      "object_id": "7", 
+      "change_message": "Modificado is_active.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "flatpages.flatpage", 
+    "fields": {
+      "registration_required": false, 
+      "title": "About", 
+      "url": "/about/", 
+      "template_name": "", 
+      "sites": [
+        4, 
+        3, 
+        2
+      ], 
+      "content": "<p>Etiam sed vehicula arcu. Etiam hendrerit rhoncus lacus nec semper. Phasellus mattis luctus mauris vitae dapibus. Aliquam at justo mi, eu ultrices turpis. Nulla a mauris tortor, ut scelerisque leo. Suspendisse in felis sapien, vel pellentesque nisi. Nulla ut facilisis dui. Sed ac rhoncus elit. Phasellus ut sollicitudin nisi. Suspendisse quis tellus massa, ac ullamcorper leo. Aliquam vitae convallis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisis vestibulum pharetra. Fusce ipsum sapien, accumsan non vulputate quis, ullamcorper ut mauris. Proin tempus tortor sed lectus interdum tempor. Mauris eu quam et elit pulvinar volutpat. Pellentesque vel quam neque. Cras justo velit, faucibus eget euismod nec, accumsan ac magna. Ut non feugiat erat. Sed euismod, sapien vitae ultrices interdum, nisl est pharetra ligula, at iaculis ligula quam quis nisi.</p>\r\n\r\n<p>Sed et turpis urna. Nunc pretium pulvinar mauris nec molestie. Pellentesque id lacus ac est tristique porttitor sed vitae sem. Suspendisse potenti. Curabitur pharetra lacinia justo, nec faucibus velit mollis at. Mauris ornare congue risus eget bibendum. Pellentesque dignissim, lorem at vestibulum accumsan, sapien neque sagittis augue, vitae consectetur magna mi quis felis. Sed nisl quam, gravida sed varius sed, pharetra quis erat. Phasellus ut augue in neque euismod euismod. Nam lacinia mauris sit amet purus suscipit nec facilisis diam porttitor.</p>\r\n\r\n<p>Integer consequat sodales diam nec blandit. Sed semper faucibus congue. Nunc dictum dui ultrices dui semper interdum. In hac habitasse platea dictumst. Donec pharetra aliquet libero in condimentum. Ut id nibh quam. Nulla facilisi. Pellentesque nisi metus, tristique et varius vel, mattis venenatis quam. Donec nibh neque, pulvinar nec sagittis ullamcorper, dictum ac nisl. Proin lorem augue, pharetra id gravida nec, mollis sed lorem. Nullam tortor purus, semper sit amet ornare non, vulputate ut lacus. Donec aliquam felis ante, ut scelerisque neque. Pellentesque tincidunt tempus tellus, sit amet viverra nulla accumsan a. Quisque imperdiet faucibus tincidunt. Suspendisse a pulvinar felis. Vivamus convallis tristique porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>\r\n\r\n<p>Ut vel velit non lectus vestibulum volutpat eu vel dui. Cras dignissim imperdiet est, et porttitor velit porta sed. Nullam in felis tellus. Pellentesque eget lorem ipsum, cursus rutrum turpis. Duis semper tortor nec enim vulputate luctus. Suspendisse nec sem orci. Donec non purus pretium tellus fermentum porttitor. Vestibulum semper, nibh eu gravida fermentum, augue tortor viverra est, mattis luctus enim massa ac felis. Integer et erat non mauris ornare consectetur at eu dui. Nulla non dolor ante, at suscipit nibh. Vestibulum malesuada magna in nisi scelerisque cursus. Ut in sem id orci aliquam placerat. Ut tellus libero, interdum sed facilisis ut, tempor at nunc. Vivamus sit amet magna odio, sed imperdiet mi. Aenean mollis sagittis dui, id auctor est blandit sed. Pellentesque dui magna, egestas semper tincidunt sit amet, mattis nec lectus. Aliquam suscipit nunc at arcu fermentum vitae dapibus orci sollicitudin.</p>\r\n\r\n<p>Phasellus mi mauris, malesuada at egestas at, mattis a odio. Aliquam vehicula viverra iaculis. Suspendisse ultricies leo tristique lectus tempor tristique sit amet vel elit. Vivamus sem ipsum, semper eget sollicitudin nec, sodales ac nisl. Morbi id tortor nec leo posuere mattis. Vestibulum pharetra, tellus a dictum semper, risus felis pulvinar diam, eget commodo urna eros ut urna. Suspendisse eu eros augue, nec hendrerit sem. Curabitur pharetra purus sed neque venenatis facilisis. Vestibulum cursus, orci eget eleifend pellentesque, ligula diam eleifend neque, id mattis est ante tristique nibh. Suspendisse at purus sit amet neque suscipit scelerisque. Ut in eros sit amet sem euismod pellentesque ac nec metus. Proin est libero, blandit ut elementum in, luctus nec tortor. </p>", 
+      "enable_comments": false
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 5
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 6
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 7
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 8
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 9
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 14
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 15
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 16
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 17
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "7dd385471cf8bab58b6fb365e51b8199db231483", 
+      "user": 18
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 19
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 20
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 21
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "27480b4b99d67bfad68fb010fab84916a395d4ce", 
+      "user": 22
+    }
+  }, 
+  {
     "pk": 22, 
     "model": "auth.permission", 
     "fields": {
@@ -39,8 +981,8 @@
     "pk": 140, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_category", 
-      "name": "Can add category", 
+      "codename": "add_registrationprofile", 
+      "name": "Can add registration profile", 
       "content_type": [
         "assistance", 
         "category"
@@ -51,8 +993,8 @@
     "pk": 141, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_category", 
-      "name": "Can change category", 
+      "codename": "change_registrationprofile", 
+      "name": "Can change registration profile", 
       "content_type": [
         "assistance", 
         "category"
@@ -63,8 +1005,8 @@
     "pk": 142, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_category", 
-      "name": "Can delete category", 
+      "codename": "delete_registrationprofile", 
+      "name": "Can delete registration profile", 
       "content_type": [
         "assistance", 
         "category"
@@ -435,8 +1377,8 @@
     "pk": 25, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_flatpage", 
-      "name": "Can add flat page", 
+      "codename": "add_clinicaltrial", 
+      "name": "Can add clinical trial", 
       "content_type": [
         "flatpages", 
         "flatpage"
@@ -447,8 +1389,8 @@
     "pk": 26, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_flatpage", 
-      "name": "Can change flat page", 
+      "codename": "change_clinicaltrial", 
+      "name": "Can change clinical trial", 
       "content_type": [
         "flatpages", 
         "flatpage"
@@ -459,8 +1401,8 @@
     "pk": 27, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_flatpage", 
-      "name": "Can delete flat page", 
+      "codename": "delete_clinicaltrial", 
+      "name": "Can delete clinical trial", 
       "content_type": [
         "flatpages", 
         "flatpage"
@@ -507,8 +1449,8 @@
     "pk": 70, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_clinicaltrial", 
-      "name": "Can add clinical trial", 
+      "codename": "add_studytype", 
+      "name": "Can add study type", 
       "content_type": [
         "repository", 
         "clinicaltrial"
@@ -519,8 +1461,8 @@
     "pk": 71, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_clinicaltrial", 
-      "name": "Can change clinical trial", 
+      "codename": "change_studytype", 
+      "name": "Can change study type", 
       "content_type": [
         "repository", 
         "clinicaltrial"
@@ -531,8 +1473,8 @@
     "pk": 72, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_clinicaltrial", 
-      "name": "Can delete clinical trial", 
+      "codename": "delete_studytype", 
+      "name": "Can delete study type", 
       "content_type": [
         "repository", 
         "clinicaltrial"
@@ -543,8 +1485,8 @@
     "pk": 73, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_clinicaltrialtranslation", 
-      "name": "Can add clinical trial translation", 
+      "codename": "add_studypurpose", 
+      "name": "Can add study purpose", 
       "content_type": [
         "repository", 
         "clinicaltrialtranslation"
@@ -555,8 +1497,8 @@
     "pk": 74, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_clinicaltrialtranslation", 
-      "name": "Can change clinical trial translation", 
+      "codename": "change_studypurpose", 
+      "name": "Can change study purpose", 
       "content_type": [
         "repository", 
         "clinicaltrialtranslation"
@@ -567,8 +1509,8 @@
     "pk": 75, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_clinicaltrialtranslation", 
-      "name": "Can delete clinical trial translation", 
+      "codename": "delete_studypurpose", 
+      "name": "Can delete study purpose", 
       "content_type": [
         "repository", 
         "clinicaltrialtranslation"
@@ -579,8 +1521,8 @@
     "pk": 88, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_contact", 
-      "name": "Can add contact", 
+      "codename": "add_recruitmentstatus", 
+      "name": "Can add recruitment status", 
       "content_type": [
         "repository", 
         "contact"
@@ -591,8 +1533,8 @@
     "pk": 89, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_contact", 
-      "name": "Can change contact", 
+      "codename": "change_recruitmentstatus", 
+      "name": "Can change recruitment status", 
       "content_type": [
         "repository", 
         "contact"
@@ -603,8 +1545,8 @@
     "pk": 90, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_contact", 
-      "name": "Can delete contact", 
+      "codename": "delete_recruitmentstatus", 
+      "name": "Can delete recruitment status", 
       "content_type": [
         "repository", 
         "contact"
@@ -612,23 +1554,11 @@
     }
   }, 
   {
-    "pk": 106, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_descriptor", 
-      "name": "Can add descriptor", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ]
-    }
-  }, 
-  {
     "pk": 107, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_descriptor", 
-      "name": "Can change descriptor", 
+      "codename": "add_attachment", 
+      "name": "Can add attachment", 
       "content_type": [
         "repository", 
         "descriptor"
@@ -639,8 +1569,8 @@
     "pk": 108, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_descriptor", 
-      "name": "Can delete descriptor", 
+      "codename": "change_attachment", 
+      "name": "Can change attachment", 
       "content_type": [
         "repository", 
         "descriptor"
@@ -651,11 +1581,11 @@
     "pk": 109, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_descriptortranslation", 
-      "name": "Can add descriptor translation", 
+      "codename": "delete_attachment", 
+      "name": "Can delete attachment", 
       "content_type": [
         "repository", 
-        "descriptortranslation"
+        "descriptor"
       ]
     }
   }, 
@@ -663,8 +1593,8 @@
     "pk": 110, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_descriptortranslation", 
-      "name": "Can change descriptor translation", 
+      "codename": "add_remark", 
+      "name": "Can add remark", 
       "content_type": [
         "repository", 
         "descriptortranslation"
@@ -675,8 +1605,20 @@
     "pk": 111, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_descriptortranslation", 
-      "name": "Can delete descriptor translation", 
+      "codename": "change_remark", 
+      "name": "Can change remark", 
+      "content_type": [
+        "repository", 
+        "descriptortranslation"
+      ]
+    }
+  }, 
+  {
+    "pk": 112, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_remark", 
+      "name": "Can delete remark", 
       "content_type": [
         "repository", 
         "descriptortranslation"
@@ -687,8 +1629,8 @@
     "pk": 85, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_institution", 
-      "name": "Can add institution", 
+      "codename": "add_studyphase", 
+      "name": "Can add study phase", 
       "content_type": [
         "repository", 
         "institution"
@@ -699,8 +1641,8 @@
     "pk": 86, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_institution", 
-      "name": "Can change institution", 
+      "codename": "change_studyphase", 
+      "name": "Can change study phase", 
       "content_type": [
         "repository", 
         "institution"
@@ -711,8 +1653,8 @@
     "pk": 87, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_institution", 
-      "name": "Can delete institution", 
+      "codename": "delete_studyphase", 
+      "name": "Can delete study phase", 
       "content_type": [
         "repository", 
         "institution"
@@ -723,8 +1665,8 @@
     "pk": 100, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_outcome", 
-      "name": "Can add outcome", 
+      "codename": "add_submission", 
+      "name": "Can add submission", 
       "content_type": [
         "repository", 
         "outcome"
@@ -735,8 +1677,8 @@
     "pk": 101, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_outcome", 
-      "name": "Can change outcome", 
+      "codename": "change_submission", 
+      "name": "Can change submission", 
       "content_type": [
         "repository", 
         "outcome"
@@ -747,8 +1689,8 @@
     "pk": 102, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_outcome", 
-      "name": "Can delete outcome", 
+      "codename": "delete_submission", 
+      "name": "Can delete submission", 
       "content_type": [
         "repository", 
         "outcome"
@@ -759,11 +1701,11 @@
     "pk": 103, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_outcometranslation", 
-      "name": "Can add outcome translation", 
+      "codename": "review", 
+      "name": "Can review", 
       "content_type": [
         "repository", 
-        "outcometranslation"
+        "outcome"
       ]
     }
   }, 
@@ -771,8 +1713,8 @@
     "pk": 104, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_outcometranslation", 
-      "name": "Can change outcome translation", 
+      "codename": "add_recruitmentcountry", 
+      "name": "Can add recruitment country", 
       "content_type": [
         "repository", 
         "outcometranslation"
@@ -783,8 +1725,20 @@
     "pk": 105, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_outcometranslation", 
-      "name": "Can delete outcome translation", 
+      "codename": "change_recruitmentcountry", 
+      "name": "Can change recruitment country", 
+      "content_type": [
+        "repository", 
+        "outcometranslation"
+      ]
+    }
+  }, 
+  {
+    "pk": 106, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_recruitmentcountry", 
+      "name": "Can delete recruitment country", 
       "content_type": [
         "repository", 
         "outcometranslation"
@@ -795,8 +1749,8 @@
     "pk": 91, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_publiccontact", 
-      "name": "Can add public contact", 
+      "codename": "add_decsdisease", 
+      "name": "Can add decs disease", 
       "content_type": [
         "repository", 
         "publiccontact"
@@ -807,8 +1761,8 @@
     "pk": 92, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_publiccontact", 
-      "name": "Can change public contact", 
+      "codename": "change_decsdisease", 
+      "name": "Can change decs disease", 
       "content_type": [
         "repository", 
         "publiccontact"
@@ -819,8 +1773,8 @@
     "pk": 93, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_publiccontact", 
-      "name": "Can delete public contact", 
+      "codename": "delete_decsdisease", 
+      "name": "Can delete decs disease", 
       "content_type": [
         "repository", 
         "publiccontact"
@@ -831,8 +1785,8 @@
     "pk": 94, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_scientificcontact", 
-      "name": "Can add scientific contact", 
+      "codename": "add_icdchapter", 
+      "name": "Can add icd chapter", 
       "content_type": [
         "repository", 
         "scientificcontact"
@@ -843,8 +1797,8 @@
     "pk": 95, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_scientificcontact", 
-      "name": "Can change scientific contact", 
+      "codename": "change_icdchapter", 
+      "name": "Can change icd chapter", 
       "content_type": [
         "repository", 
         "scientificcontact"
@@ -855,8 +1809,8 @@
     "pk": 96, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_scientificcontact", 
-      "name": "Can delete scientific contact", 
+      "codename": "delete_icdchapter", 
+      "name": "Can delete icd chapter", 
       "content_type": [
         "repository", 
         "scientificcontact"
@@ -867,8 +1821,8 @@
     "pk": 97, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_sitecontact", 
-      "name": "Can add site contact", 
+      "codename": "add_attachmenttype", 
+      "name": "Can add attachment type", 
       "content_type": [
         "repository", 
         "sitecontact"
@@ -879,8 +1833,8 @@
     "pk": 98, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_sitecontact", 
-      "name": "Can change site contact", 
+      "codename": "change_attachmenttype", 
+      "name": "Can change attachment type", 
       "content_type": [
         "repository", 
         "sitecontact"
@@ -891,8 +1845,8 @@
     "pk": 99, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_sitecontact", 
-      "name": "Can delete site contact", 
+      "codename": "delete_attachmenttype", 
+      "name": "Can delete attachment type", 
       "content_type": [
         "repository", 
         "sitecontact"
@@ -903,8 +1857,8 @@
     "pk": 76, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_trialnumber", 
-      "name": "Can add trial number", 
+      "codename": "add_interventionassigment", 
+      "name": "Can add intervention assigment", 
       "content_type": [
         "repository", 
         "trialnumber"
@@ -915,8 +1869,8 @@
     "pk": 77, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_trialnumber", 
-      "name": "Can change trial number", 
+      "codename": "change_interventionassigment", 
+      "name": "Can change intervention assigment", 
       "content_type": [
         "repository", 
         "trialnumber"
@@ -927,8 +1881,8 @@
     "pk": 78, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_trialnumber", 
-      "name": "Can delete trial number", 
+      "codename": "delete_interventionassigment", 
+      "name": "Can delete intervention assigment", 
       "content_type": [
         "repository", 
         "trialnumber"
@@ -939,8 +1893,8 @@
     "pk": 79, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_trialsecondarysponsor", 
-      "name": "Can add trial secondary sponsor", 
+      "codename": "add_studymasking", 
+      "name": "Can add study masking", 
       "content_type": [
         "repository", 
         "trialsecondarysponsor"
@@ -951,8 +1905,8 @@
     "pk": 80, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_trialsecondarysponsor", 
-      "name": "Can change trial secondary sponsor", 
+      "codename": "change_studymasking", 
+      "name": "Can change study masking", 
       "content_type": [
         "repository", 
         "trialsecondarysponsor"
@@ -963,8 +1917,8 @@
     "pk": 81, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_trialsecondarysponsor", 
-      "name": "Can delete trial secondary sponsor", 
+      "codename": "delete_studymasking", 
+      "name": "Can delete study masking", 
       "content_type": [
         "repository", 
         "trialsecondarysponsor"
@@ -975,8 +1929,8 @@
     "pk": 82, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_trialsupportsource", 
-      "name": "Can add trial support source", 
+      "codename": "add_studyallocation", 
+      "name": "Can add study allocation", 
       "content_type": [
         "repository", 
         "trialsupportsource"
@@ -987,8 +1941,8 @@
     "pk": 83, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_trialsupportsource", 
-      "name": "Can change trial support source", 
+      "codename": "change_studyallocation", 
+      "name": "Can change study allocation", 
       "content_type": [
         "repository", 
         "trialsupportsource"
@@ -999,8 +1953,8 @@
     "pk": 84, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_trialsupportsource", 
-      "name": "Can delete trial support source", 
+      "codename": "delete_studyallocation", 
+      "name": "Can delete study allocation", 
       "content_type": [
         "repository", 
         "trialsupportsource"
@@ -1011,8 +1965,8 @@
     "pk": 122, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_attachment", 
-      "name": "Can add attachment", 
+      "codename": "add_category", 
+      "name": "Can add category", 
       "content_type": [
         "reviewapp", 
         "attachment"
@@ -1023,8 +1977,8 @@
     "pk": 123, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_attachment", 
-      "name": "Can change attachment", 
+      "codename": "change_category", 
+      "name": "Can change category", 
       "content_type": [
         "reviewapp", 
         "attachment"
@@ -1035,8 +1989,8 @@
     "pk": 124, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_attachment", 
-      "name": "Can delete attachment", 
+      "codename": "delete_category", 
+      "name": "Can delete category", 
       "content_type": [
         "reviewapp", 
         "attachment"
@@ -1047,8 +2001,8 @@
     "pk": 128, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_news", 
-      "name": "Can add news", 
+      "codename": "add_question", 
+      "name": "Can add question", 
       "content_type": [
         "reviewapp", 
         "news"
@@ -1059,8 +2013,8 @@
     "pk": 129, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_news", 
-      "name": "Can change news", 
+      "codename": "change_question", 
+      "name": "Can change question", 
       "content_type": [
         "reviewapp", 
         "news"
@@ -1071,8 +2025,8 @@
     "pk": 130, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_news", 
-      "name": "Can delete news", 
+      "codename": "delete_question", 
+      "name": "Can delete question", 
       "content_type": [
         "reviewapp", 
         "news"
@@ -1083,8 +2037,8 @@
     "pk": 119, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_recruitmentcountry", 
-      "name": "Can add recruitment country", 
+      "codename": "add_media", 
+      "name": "Can add media", 
       "content_type": [
         "reviewapp", 
         "recruitmentcountry"
@@ -1095,8 +2049,8 @@
     "pk": 120, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_recruitmentcountry", 
-      "name": "Can change recruitment country", 
+      "codename": "change_media", 
+      "name": "Can change media", 
       "content_type": [
         "reviewapp", 
         "recruitmentcountry"
@@ -1107,8 +2061,8 @@
     "pk": 121, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_recruitmentcountry", 
-      "name": "Can delete recruitment country", 
+      "codename": "delete_media", 
+      "name": "Can delete media", 
       "content_type": [
         "reviewapp", 
         "recruitmentcountry"
@@ -1119,8 +2073,8 @@
     "pk": 125, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_remark", 
-      "name": "Can add remark", 
+      "codename": "add_categorytranslation", 
+      "name": "Can add category translation", 
       "content_type": [
         "reviewapp", 
         "remark"
@@ -1131,8 +2085,8 @@
     "pk": 126, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_remark", 
-      "name": "Can change remark", 
+      "codename": "change_categorytranslation", 
+      "name": "Can change category translation", 
       "content_type": [
         "reviewapp", 
         "remark"
@@ -1143,8 +2097,8 @@
     "pk": 127, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_remark", 
-      "name": "Can delete remark", 
+      "codename": "delete_categorytranslation", 
+      "name": "Can delete category translation", 
       "content_type": [
         "reviewapp", 
         "remark"
@@ -1152,23 +2106,11 @@
     }
   }, 
   {
-    "pk": 115, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_submission", 
-      "name": "Can add submission", 
-      "content_type": [
-        "reviewapp", 
-        "submission"
-      ]
-    }
-  }, 
-  {
     "pk": 116, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_submission", 
-      "name": "Can change submission", 
+      "codename": "add_followup", 
+      "name": "Can add followup", 
       "content_type": [
         "reviewapp", 
         "submission"
@@ -1179,8 +2121,8 @@
     "pk": 117, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_submission", 
-      "name": "Can delete submission", 
+      "codename": "change_followup", 
+      "name": "Can change followup", 
       "content_type": [
         "reviewapp", 
         "submission"
@@ -1191,8 +2133,8 @@
     "pk": 118, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "review", 
-      "name": "Can review", 
+      "codename": "delete_followup", 
+      "name": "Can delete followup", 
       "content_type": [
         "reviewapp", 
         "submission"
@@ -1200,23 +2142,11 @@
     }
   }, 
   {
-    "pk": 112, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_userprofile", 
-      "name": "Can add user profile", 
-      "content_type": [
-        "reviewapp", 
-        "userprofile"
-      ]
-    }
-  }, 
-  {
     "pk": 113, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_userprofile", 
-      "name": "Can change user profile", 
+      "codename": "add_ticket", 
+      "name": "Can add ticket", 
       "content_type": [
         "reviewapp", 
         "userprofile"
@@ -1227,8 +2157,20 @@
     "pk": 114, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_userprofile", 
-      "name": "Can delete user profile", 
+      "codename": "change_ticket", 
+      "name": "Can change ticket", 
+      "content_type": [
+        "reviewapp", 
+        "userprofile"
+      ]
+    }
+  }, 
+  {
+    "pk": 115, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_ticket", 
+      "name": "Can delete ticket", 
       "content_type": [
         "reviewapp", 
         "userprofile"
@@ -1311,8 +2253,8 @@
     "pk": 134, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_followup", 
-      "name": "Can add followup", 
+      "codename": "add_fieldhelp", 
+      "name": "Can add field help", 
       "content_type": [
         "tickets", 
         "followup"
@@ -1323,8 +2265,8 @@
     "pk": 135, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_followup", 
-      "name": "Can change followup", 
+      "codename": "change_fieldhelp", 
+      "name": "Can change field help", 
       "content_type": [
         "tickets", 
         "followup"
@@ -1335,8 +2277,8 @@
     "pk": 136, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_followup", 
-      "name": "Can delete followup", 
+      "codename": "delete_fieldhelp", 
+      "name": "Can delete field help", 
       "content_type": [
         "tickets", 
         "followup"
@@ -1347,8 +2289,8 @@
     "pk": 137, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_media", 
-      "name": "Can add media", 
+      "codename": "add_fieldhelptranslation", 
+      "name": "Can add field help translation", 
       "content_type": [
         "tickets", 
         "media"
@@ -1359,8 +2301,8 @@
     "pk": 138, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_media", 
-      "name": "Can change media", 
+      "codename": "change_fieldhelptranslation", 
+      "name": "Can change field help translation", 
       "content_type": [
         "tickets", 
         "media"
@@ -1371,8 +2313,8 @@
     "pk": 139, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_media", 
-      "name": "Can delete media", 
+      "codename": "delete_fieldhelptranslation", 
+      "name": "Can delete field help translation", 
       "content_type": [
         "tickets", 
         "media"
@@ -1383,8 +2325,8 @@
     "pk": 131, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_ticket", 
-      "name": "Can add ticket", 
+      "codename": "add_questiontranslation", 
+      "name": "Can add question translation", 
       "content_type": [
         "tickets", 
         "ticket"
@@ -1395,8 +2337,8 @@
     "pk": 132, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_ticket", 
-      "name": "Can change ticket", 
+      "codename": "change_questiontranslation", 
+      "name": "Can change question translation", 
       "content_type": [
         "tickets", 
         "ticket"
@@ -1407,8 +2349,8 @@
     "pk": 133, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_ticket", 
-      "name": "Can delete ticket", 
+      "codename": "delete_questiontranslation", 
+      "name": "Can delete question translation", 
       "content_type": [
         "tickets", 
         "ticket"
@@ -1419,8 +2361,8 @@
     "pk": 67, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_attachmenttype", 
-      "name": "Can add attachment type", 
+      "codename": "add_interventioncode", 
+      "name": "Can add intervention code", 
       "content_type": [
         "vocabulary", 
         "attachmenttype"
@@ -1431,8 +2373,8 @@
     "pk": 68, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_attachmenttype", 
-      "name": "Can change attachment type", 
+      "codename": "change_interventioncode", 
+      "name": "Can change intervention code", 
       "content_type": [
         "vocabulary", 
         "attachmenttype"
@@ -1443,8 +2385,8 @@
     "pk": 69, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_attachmenttype", 
-      "name": "Can delete attachment type", 
+      "codename": "delete_interventioncode", 
+      "name": "Can delete intervention code", 
       "content_type": [
         "vocabulary", 
         "attachmenttype"
@@ -1455,8 +2397,8 @@
     "pk": 31, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_countrycode", 
-      "name": "Can add country code", 
+      "codename": "add_trialsecondarysponsor", 
+      "name": "Can add trial secondary sponsor", 
       "content_type": [
         "vocabulary", 
         "countrycode"
@@ -1467,8 +2409,8 @@
     "pk": 32, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_countrycode", 
-      "name": "Can change country code", 
+      "codename": "change_trialsecondarysponsor", 
+      "name": "Can change trial secondary sponsor", 
       "content_type": [
         "vocabulary", 
         "countrycode"
@@ -1479,8 +2421,8 @@
     "pk": 33, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_countrycode", 
-      "name": "Can delete country code", 
+      "codename": "delete_trialsecondarysponsor", 
+      "name": "Can delete trial secondary sponsor", 
       "content_type": [
         "vocabulary", 
         "countrycode"
@@ -1491,8 +2433,8 @@
     "pk": 61, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_decsdisease", 
-      "name": "Can add decs disease", 
+      "codename": "add_countrycode", 
+      "name": "Can add country code", 
       "content_type": [
         "vocabulary", 
         "decsdisease"
@@ -1503,8 +2445,8 @@
     "pk": 62, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_decsdisease", 
-      "name": "Can change decs disease", 
+      "codename": "change_countrycode", 
+      "name": "Can change country code", 
       "content_type": [
         "vocabulary", 
         "decsdisease"
@@ -1515,8 +2457,8 @@
     "pk": 63, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_decsdisease", 
-      "name": "Can delete decs disease", 
+      "codename": "delete_countrycode", 
+      "name": "Can delete country code", 
       "content_type": [
         "vocabulary", 
         "decsdisease"
@@ -1527,8 +2469,8 @@
     "pk": 64, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_icdchapter", 
-      "name": "Can add icd chapter", 
+      "codename": "add_trialnumberissuingauthority", 
+      "name": "Can add trial number issuing authority", 
       "content_type": [
         "vocabulary", 
         "icdchapter"
@@ -1539,8 +2481,8 @@
     "pk": 65, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_icdchapter", 
-      "name": "Can change icd chapter", 
+      "codename": "change_trialnumberissuingauthority", 
+      "name": "Can change trial number issuing authority", 
       "content_type": [
         "vocabulary", 
         "icdchapter"
@@ -1551,8 +2493,8 @@
     "pk": 66, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_icdchapter", 
-      "name": "Can delete icd chapter", 
+      "codename": "delete_trialnumberissuingauthority", 
+      "name": "Can delete trial number issuing authority", 
       "content_type": [
         "vocabulary", 
         "icdchapter"
@@ -1563,8 +2505,8 @@
     "pk": 46, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_interventionassigment", 
-      "name": "Can add intervention assigment", 
+      "codename": "add_scientificcontact", 
+      "name": "Can add scientific contact", 
       "content_type": [
         "vocabulary", 
         "interventionassigment"
@@ -1575,8 +2517,8 @@
     "pk": 47, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_interventionassigment", 
-      "name": "Can change intervention assigment", 
+      "codename": "change_scientificcontact", 
+      "name": "Can change scientific contact", 
       "content_type": [
         "vocabulary", 
         "interventionassigment"
@@ -1587,8 +2529,8 @@
     "pk": 48, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_interventionassigment", 
-      "name": "Can delete intervention assigment", 
+      "codename": "delete_scientificcontact", 
+      "name": "Can delete scientific contact", 
       "content_type": [
         "vocabulary", 
         "interventionassigment"
@@ -1599,8 +2541,8 @@
     "pk": 37, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_interventioncode", 
-      "name": "Can add intervention code", 
+      "codename": "add_institution", 
+      "name": "Can add institution", 
       "content_type": [
         "vocabulary", 
         "interventioncode"
@@ -1611,8 +2553,8 @@
     "pk": 38, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_interventioncode", 
-      "name": "Can change intervention code", 
+      "codename": "change_institution", 
+      "name": "Can change institution", 
       "content_type": [
         "vocabulary", 
         "interventioncode"
@@ -1623,8 +2565,8 @@
     "pk": 39, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_interventioncode", 
-      "name": "Can delete intervention code", 
+      "codename": "delete_institution", 
+      "name": "Can delete institution", 
       "content_type": [
         "vocabulary", 
         "interventioncode"
@@ -1635,8 +2577,8 @@
     "pk": 58, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_recruitmentstatus", 
-      "name": "Can add recruitment status", 
+      "codename": "add_vocabularytranslation", 
+      "name": "Can add vocabulary translation", 
       "content_type": [
         "vocabulary", 
         "recruitmentstatus"
@@ -1647,8 +2589,8 @@
     "pk": 59, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_recruitmentstatus", 
-      "name": "Can change recruitment status", 
+      "codename": "change_vocabularytranslation", 
+      "name": "Can change vocabulary translation", 
       "content_type": [
         "vocabulary", 
         "recruitmentstatus"
@@ -1659,8 +2601,8 @@
     "pk": 60, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_recruitmentstatus", 
-      "name": "Can delete recruitment status", 
+      "codename": "delete_vocabularytranslation", 
+      "name": "Can delete vocabulary translation", 
       "content_type": [
         "vocabulary", 
         "recruitmentstatus"
@@ -1671,8 +2613,8 @@
     "pk": 52, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_studyallocation", 
-      "name": "Can add study allocation", 
+      "codename": "add_outcome", 
+      "name": "Can add outcome", 
       "content_type": [
         "vocabulary", 
         "studyallocation"
@@ -1683,8 +2625,8 @@
     "pk": 53, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_studyallocation", 
-      "name": "Can change study allocation", 
+      "codename": "change_outcome", 
+      "name": "Can change outcome", 
       "content_type": [
         "vocabulary", 
         "studyallocation"
@@ -1695,8 +2637,8 @@
     "pk": 54, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_studyallocation", 
-      "name": "Can delete study allocation", 
+      "codename": "delete_outcome", 
+      "name": "Can delete outcome", 
       "content_type": [
         "vocabulary", 
         "studyallocation"
@@ -1707,8 +2649,8 @@
     "pk": 49, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_studymasking", 
-      "name": "Can add study masking", 
+      "codename": "add_sitecontact", 
+      "name": "Can add site contact", 
       "content_type": [
         "vocabulary", 
         "studymasking"
@@ -1719,8 +2661,8 @@
     "pk": 50, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_studymasking", 
-      "name": "Can change study masking", 
+      "codename": "change_sitecontact", 
+      "name": "Can change site contact", 
       "content_type": [
         "vocabulary", 
         "studymasking"
@@ -1731,8 +2673,8 @@
     "pk": 51, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_studymasking", 
-      "name": "Can delete study masking", 
+      "codename": "delete_sitecontact", 
+      "name": "Can delete site contact", 
       "content_type": [
         "vocabulary", 
         "studymasking"
@@ -1743,8 +2685,8 @@
     "pk": 55, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_studyphase", 
-      "name": "Can add study phase", 
+      "codename": "add_descriptor", 
+      "name": "Can add descriptor", 
       "content_type": [
         "vocabulary", 
         "studyphase"
@@ -1755,8 +2697,8 @@
     "pk": 56, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_studyphase", 
-      "name": "Can change study phase", 
+      "codename": "change_descriptor", 
+      "name": "Can change descriptor", 
       "content_type": [
         "vocabulary", 
         "studyphase"
@@ -1767,8 +2709,8 @@
     "pk": 57, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_studyphase", 
-      "name": "Can delete study phase", 
+      "codename": "delete_descriptor", 
+      "name": "Can delete descriptor", 
       "content_type": [
         "vocabulary", 
         "studyphase"
@@ -1779,8 +2721,8 @@
     "pk": 43, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_studypurpose", 
-      "name": "Can add study purpose", 
+      "codename": "add_publiccontact", 
+      "name": "Can add public contact", 
       "content_type": [
         "vocabulary", 
         "studypurpose"
@@ -1791,8 +2733,8 @@
     "pk": 44, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_studypurpose", 
-      "name": "Can change study purpose", 
+      "codename": "change_publiccontact", 
+      "name": "Can change public contact", 
       "content_type": [
         "vocabulary", 
         "studypurpose"
@@ -1803,8 +2745,8 @@
     "pk": 45, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_studypurpose", 
-      "name": "Can delete study purpose", 
+      "codename": "delete_publiccontact", 
+      "name": "Can delete public contact", 
       "content_type": [
         "vocabulary", 
         "studypurpose"
@@ -1815,8 +2757,8 @@
     "pk": 40, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_studytype", 
-      "name": "Can add study type", 
+      "codename": "add_contact", 
+      "name": "Can add contact", 
       "content_type": [
         "vocabulary", 
         "studytype"
@@ -1827,8 +2769,8 @@
     "pk": 41, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_studytype", 
-      "name": "Can change study type", 
+      "codename": "change_contact", 
+      "name": "Can change contact", 
       "content_type": [
         "vocabulary", 
         "studytype"
@@ -1839,8 +2781,8 @@
     "pk": 42, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_studytype", 
-      "name": "Can delete study type", 
+      "codename": "delete_contact", 
+      "name": "Can delete contact", 
       "content_type": [
         "vocabulary", 
         "studytype"
@@ -1851,8 +2793,8 @@
     "pk": 34, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_trialnumberissuingauthority", 
-      "name": "Can add trial number issuing authority", 
+      "codename": "add_trialsupportsource", 
+      "name": "Can add trial support source", 
       "content_type": [
         "vocabulary", 
         "trialnumberissuingauthority"
@@ -1863,8 +2805,8 @@
     "pk": 35, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_trialnumberissuingauthority", 
-      "name": "Can change trial number issuing authority", 
+      "codename": "change_trialsupportsource", 
+      "name": "Can change trial support source", 
       "content_type": [
         "vocabulary", 
         "trialnumberissuingauthority"
@@ -1875,8 +2817,8 @@
     "pk": 36, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_trialnumberissuingauthority", 
-      "name": "Can delete trial number issuing authority", 
+      "codename": "delete_trialsupportsource", 
+      "name": "Can delete trial support source", 
       "content_type": [
         "vocabulary", 
         "trialnumberissuingauthority"
@@ -1887,8 +2829,8 @@
     "pk": 28, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "add_vocabularytranslation", 
-      "name": "Can add vocabulary translation", 
+      "codename": "add_trialnumber", 
+      "name": "Can add trial number", 
       "content_type": [
         "vocabulary", 
         "vocabularytranslation"
@@ -1899,8 +2841,8 @@
     "pk": 29, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "change_vocabularytranslation", 
-      "name": "Can change vocabulary translation", 
+      "codename": "change_trialnumber", 
+      "name": "Can change trial number", 
       "content_type": [
         "vocabulary", 
         "vocabularytranslation"
@@ -1911,8 +2853,8 @@
     "pk": 30, 
     "model": "auth.permission", 
     "fields": {
-      "codename": "delete_vocabularytranslation", 
-      "name": "Can delete vocabulary translation", 
+      "codename": "delete_trialnumber", 
+      "name": "Can delete trial number", 
       "content_type": [
         "vocabulary", 
         "vocabularytranslation"
@@ -1926,362 +2868,362 @@
       "name": "reviewers", 
       "permissions": [
         [
-          "add_clinicaltrial", 
+          "add_studytype", 
           "repository", 
           "clinicaltrial"
         ], 
         [
-          "change_clinicaltrial", 
+          "change_studytype", 
           "repository", 
           "clinicaltrial"
         ], 
         [
-          "delete_clinicaltrial", 
+          "delete_studytype", 
           "repository", 
           "clinicaltrial"
         ], 
         [
-          "add_clinicaltrialtranslation", 
+          "add_studypurpose", 
           "repository", 
           "clinicaltrialtranslation"
         ], 
         [
-          "change_clinicaltrialtranslation", 
+          "change_studypurpose", 
           "repository", 
           "clinicaltrialtranslation"
         ], 
         [
-          "delete_clinicaltrialtranslation", 
+          "delete_studypurpose", 
           "repository", 
           "clinicaltrialtranslation"
-        ], 
-        [
-          "add_contact", 
-          "repository", 
-          "contact"
-        ], 
-        [
-          "change_contact", 
-          "repository", 
-          "contact"
-        ], 
-        [
-          "delete_contact", 
-          "repository", 
-          "contact"
-        ], 
-        [
-          "change_descriptortranslation", 
-          "repository", 
-          "descriptortranslation"
-        ], 
-        [
-          "delete_descriptortranslation", 
-          "repository", 
-          "descriptortranslation"
-        ], 
-        [
-          "add_institution", 
-          "repository", 
-          "institution"
-        ], 
-        [
-          "change_institution", 
-          "repository", 
-          "institution"
-        ], 
-        [
-          "delete_institution", 
-          "repository", 
-          "institution"
-        ], 
-        [
-          "add_publiccontact", 
-          "repository", 
-          "publiccontact"
-        ], 
-        [
-          "change_publiccontact", 
-          "repository", 
-          "publiccontact"
-        ], 
-        [
-          "delete_publiccontact", 
-          "repository", 
-          "publiccontact"
-        ], 
-        [
-          "add_scientificcontact", 
-          "repository", 
-          "scientificcontact"
-        ], 
-        [
-          "change_scientificcontact", 
-          "repository", 
-          "scientificcontact"
-        ], 
-        [
-          "delete_scientificcontact", 
-          "repository", 
-          "scientificcontact"
-        ], 
-        [
-          "add_sitecontact", 
-          "repository", 
-          "sitecontact"
-        ], 
-        [
-          "change_sitecontact", 
-          "repository", 
-          "sitecontact"
-        ], 
-        [
-          "delete_sitecontact", 
-          "repository", 
-          "sitecontact"
-        ], 
-        [
-          "add_trialnumber", 
-          "repository", 
-          "trialnumber"
-        ], 
-        [
-          "change_trialnumber", 
-          "repository", 
-          "trialnumber"
-        ], 
-        [
-          "delete_trialnumber", 
-          "repository", 
-          "trialnumber"
-        ], 
-        [
-          "add_trialsecondarysponsor", 
-          "repository", 
-          "trialsecondarysponsor"
-        ], 
-        [
-          "change_trialsecondarysponsor", 
-          "repository", 
-          "trialsecondarysponsor"
-        ], 
-        [
-          "delete_trialsecondarysponsor", 
-          "repository", 
-          "trialsecondarysponsor"
-        ], 
-        [
-          "add_trialsupportsource", 
-          "repository", 
-          "trialsupportsource"
-        ], 
-        [
-          "change_trialsupportsource", 
-          "repository", 
-          "trialsupportsource"
-        ], 
-        [
-          "delete_trialsupportsource", 
-          "repository", 
-          "trialsupportsource"
-        ], 
-        [
-          "add_attachment", 
-          "reviewapp", 
-          "attachment"
-        ], 
-        [
-          "change_attachment", 
-          "reviewapp", 
-          "attachment"
-        ], 
-        [
-          "delete_attachment", 
-          "reviewapp", 
-          "attachment"
-        ], 
-        [
-          "add_news", 
-          "reviewapp", 
-          "news"
-        ], 
-        [
-          "change_news", 
-          "reviewapp", 
-          "news"
-        ], 
-        [
-          "delete_news", 
-          "reviewapp", 
-          "news"
-        ], 
-        [
-          "add_recruitmentcountry", 
-          "reviewapp", 
-          "recruitmentcountry"
-        ], 
-        [
-          "change_recruitmentcountry", 
-          "reviewapp", 
-          "recruitmentcountry"
-        ], 
-        [
-          "delete_recruitmentcountry", 
-          "reviewapp", 
-          "recruitmentcountry"
-        ], 
-        [
-          "add_remark", 
-          "reviewapp", 
-          "remark"
-        ], 
-        [
-          "change_remark", 
-          "reviewapp", 
-          "remark"
-        ], 
-        [
-          "delete_remark", 
-          "reviewapp", 
-          "remark"
-        ], 
-        [
-          "add_submission", 
-          "reviewapp", 
-          "submission"
-        ], 
-        [
-          "change_submission", 
-          "reviewapp", 
-          "submission"
-        ], 
-        [
-          "delete_submission", 
-          "reviewapp", 
-          "submission"
-        ], 
-        [
-          "review", 
-          "reviewapp", 
-          "submission"
-        ], 
-        [
-          "add_userprofile", 
-          "reviewapp", 
-          "userprofile"
-        ], 
-        [
-          "change_userprofile", 
-          "reviewapp", 
-          "userprofile"
-        ], 
-        [
-          "delete_userprofile", 
-          "reviewapp", 
-          "userprofile"
-        ], 
-        [
-          "add_followup", 
-          "tickets", 
-          "followup"
-        ], 
-        [
-          "change_followup", 
-          "tickets", 
-          "followup"
-        ], 
-        [
-          "delete_followup", 
-          "tickets", 
-          "followup"
-        ], 
-        [
-          "add_media", 
-          "tickets", 
-          "media"
-        ], 
-        [
-          "change_media", 
-          "tickets", 
-          "media"
-        ], 
-        [
-          "delete_media", 
-          "tickets", 
-          "media"
-        ], 
-        [
-          "add_ticket", 
-          "tickets", 
-          "ticket"
-        ], 
-        [
-          "change_ticket", 
-          "tickets", 
-          "ticket"
-        ], 
-        [
-          "delete_ticket", 
-          "tickets", 
-          "ticket"
-        ], 
-        [
-          "add_attachmenttype", 
-          "vocabulary", 
-          "attachmenttype"
-        ], 
-        [
-          "change_attachmenttype", 
-          "vocabulary", 
-          "attachmenttype"
-        ], 
-        [
-          "delete_attachmenttype", 
-          "vocabulary", 
-          "attachmenttype"
-        ], 
-        [
-          "add_decsdisease", 
-          "vocabulary", 
-          "decsdisease"
-        ], 
-        [
-          "change_decsdisease", 
-          "vocabulary", 
-          "decsdisease"
-        ], 
-        [
-          "delete_decsdisease", 
-          "vocabulary", 
-          "decsdisease"
-        ], 
-        [
-          "add_icdchapter", 
-          "vocabulary", 
-          "icdchapter"
-        ], 
-        [
-          "change_icdchapter", 
-          "vocabulary", 
-          "icdchapter"
-        ], 
-        [
-          "delete_icdchapter", 
-          "vocabulary", 
-          "icdchapter"
         ], 
         [
           "add_recruitmentstatus", 
-          "vocabulary", 
-          "recruitmentstatus"
+          "repository", 
+          "contact"
         ], 
         [
           "change_recruitmentstatus", 
+          "repository", 
+          "contact"
+        ], 
+        [
+          "delete_recruitmentstatus", 
+          "repository", 
+          "contact"
+        ], 
+        [
+          "add_remark", 
+          "repository", 
+          "descriptortranslation"
+        ], 
+        [
+          "change_remark", 
+          "repository", 
+          "descriptortranslation"
+        ], 
+        [
+          "delete_remark", 
+          "repository", 
+          "descriptortranslation"
+        ], 
+        [
+          "add_studyphase", 
+          "repository", 
+          "institution"
+        ], 
+        [
+          "change_studyphase", 
+          "repository", 
+          "institution"
+        ], 
+        [
+          "delete_studyphase", 
+          "repository", 
+          "institution"
+        ], 
+        [
+          "add_decsdisease", 
+          "repository", 
+          "publiccontact"
+        ], 
+        [
+          "change_decsdisease", 
+          "repository", 
+          "publiccontact"
+        ], 
+        [
+          "delete_decsdisease", 
+          "repository", 
+          "publiccontact"
+        ], 
+        [
+          "add_icdchapter", 
+          "repository", 
+          "scientificcontact"
+        ], 
+        [
+          "change_icdchapter", 
+          "repository", 
+          "scientificcontact"
+        ], 
+        [
+          "delete_icdchapter", 
+          "repository", 
+          "scientificcontact"
+        ], 
+        [
+          "add_attachmenttype", 
+          "repository", 
+          "sitecontact"
+        ], 
+        [
+          "change_attachmenttype", 
+          "repository", 
+          "sitecontact"
+        ], 
+        [
+          "delete_attachmenttype", 
+          "repository", 
+          "sitecontact"
+        ], 
+        [
+          "add_interventionassigment", 
+          "repository", 
+          "trialnumber"
+        ], 
+        [
+          "change_interventionassigment", 
+          "repository", 
+          "trialnumber"
+        ], 
+        [
+          "delete_interventionassigment", 
+          "repository", 
+          "trialnumber"
+        ], 
+        [
+          "add_studymasking", 
+          "repository", 
+          "trialsecondarysponsor"
+        ], 
+        [
+          "change_studymasking", 
+          "repository", 
+          "trialsecondarysponsor"
+        ], 
+        [
+          "delete_studymasking", 
+          "repository", 
+          "trialsecondarysponsor"
+        ], 
+        [
+          "add_studyallocation", 
+          "repository", 
+          "trialsupportsource"
+        ], 
+        [
+          "change_studyallocation", 
+          "repository", 
+          "trialsupportsource"
+        ], 
+        [
+          "delete_studyallocation", 
+          "repository", 
+          "trialsupportsource"
+        ], 
+        [
+          "add_category", 
+          "reviewapp", 
+          "attachment"
+        ], 
+        [
+          "change_category", 
+          "reviewapp", 
+          "attachment"
+        ], 
+        [
+          "delete_category", 
+          "reviewapp", 
+          "attachment"
+        ], 
+        [
+          "add_question", 
+          "reviewapp", 
+          "news"
+        ], 
+        [
+          "change_question", 
+          "reviewapp", 
+          "news"
+        ], 
+        [
+          "delete_question", 
+          "reviewapp", 
+          "news"
+        ], 
+        [
+          "add_media", 
+          "reviewapp", 
+          "recruitmentcountry"
+        ], 
+        [
+          "change_media", 
+          "reviewapp", 
+          "recruitmentcountry"
+        ], 
+        [
+          "delete_media", 
+          "reviewapp", 
+          "recruitmentcountry"
+        ], 
+        [
+          "add_categorytranslation", 
+          "reviewapp", 
+          "remark"
+        ], 
+        [
+          "change_categorytranslation", 
+          "reviewapp", 
+          "remark"
+        ], 
+        [
+          "delete_categorytranslation", 
+          "reviewapp", 
+          "remark"
+        ], 
+        [
+          "add_followup", 
+          "reviewapp", 
+          "submission"
+        ], 
+        [
+          "change_followup", 
+          "reviewapp", 
+          "submission"
+        ], 
+        [
+          "delete_followup", 
+          "reviewapp", 
+          "submission"
+        ], 
+        [
+          "add_ticket", 
+          "reviewapp", 
+          "userprofile"
+        ], 
+        [
+          "change_ticket", 
+          "reviewapp", 
+          "userprofile"
+        ], 
+        [
+          "delete_ticket", 
+          "reviewapp", 
+          "userprofile"
+        ], 
+        [
+          "add_fieldhelp", 
+          "tickets", 
+          "followup"
+        ], 
+        [
+          "change_fieldhelp", 
+          "tickets", 
+          "followup"
+        ], 
+        [
+          "delete_fieldhelp", 
+          "tickets", 
+          "followup"
+        ], 
+        [
+          "add_fieldhelptranslation", 
+          "tickets", 
+          "media"
+        ], 
+        [
+          "change_fieldhelptranslation", 
+          "tickets", 
+          "media"
+        ], 
+        [
+          "delete_fieldhelptranslation", 
+          "tickets", 
+          "media"
+        ], 
+        [
+          "add_questiontranslation", 
+          "tickets", 
+          "ticket"
+        ], 
+        [
+          "change_questiontranslation", 
+          "tickets", 
+          "ticket"
+        ], 
+        [
+          "delete_questiontranslation", 
+          "tickets", 
+          "ticket"
+        ], 
+        [
+          "add_interventioncode", 
+          "vocabulary", 
+          "attachmenttype"
+        ], 
+        [
+          "change_interventioncode", 
+          "vocabulary", 
+          "attachmenttype"
+        ], 
+        [
+          "delete_interventioncode", 
+          "vocabulary", 
+          "attachmenttype"
+        ], 
+        [
+          "add_countrycode", 
+          "vocabulary", 
+          "decsdisease"
+        ], 
+        [
+          "change_countrycode", 
+          "vocabulary", 
+          "decsdisease"
+        ], 
+        [
+          "delete_countrycode", 
+          "vocabulary", 
+          "decsdisease"
+        ], 
+        [
+          "add_trialnumberissuingauthority", 
+          "vocabulary", 
+          "icdchapter"
+        ], 
+        [
+          "change_trialnumberissuingauthority", 
+          "vocabulary", 
+          "icdchapter"
+        ], 
+        [
+          "delete_trialnumberissuingauthority", 
+          "vocabulary", 
+          "icdchapter"
+        ], 
+        [
+          "add_vocabularytranslation", 
           "vocabulary", 
           "recruitmentstatus"
         ], 
         [
-          "delete_recruitmentstatus", 
+          "change_vocabularytranslation", 
+          "vocabulary", 
+          "recruitmentstatus"
+        ], 
+        [
+          "delete_vocabularytranslation", 
           "vocabulary", 
           "recruitmentstatus"
         ]
@@ -2298,12 +3240,30 @@
       "is_active": true, 
       "is_superuser": true, 
       "is_staff": true, 
-      "last_login": "2010-06-17 18:23:09", 
+      "last_login": "2010-07-15 16:39:32", 
       "groups": [], 
       "user_permissions": [], 
-      "password": "sha1$32f74$7dcf05d9e2289b0ddd79e76d24b01d4197e94b29", 
-      "email": "a@b.cd", 
-      "date_joined": "2010-06-17 18:22:53"
+      "password": "sha1$e51b1$627a1107fb3ca30bbf23985572a2c38530eafaf6", 
+      "email": "appec@bireme.org", 
+      "date_joined": "2010-06-01 14:41:59"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "luciano", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-06-14 17:47:14", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$6baab$a4326bfc04978632052f66ff40d5f0a7681ae10d", 
+      "email": "luciano.ramalho@bireme.org", 
+      "date_joined": "2010-06-14 17:46:31"
     }
   }, 
   {
@@ -2316,7 +3276,7 @@
       "is_active": true, 
       "is_superuser": true, 
       "is_staff": true, 
-      "last_login": "2010-05-06 17:47:14", 
+      "last_login": "2010-06-21 13:54:43", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$d881c$be0d760aff23f91bcb0985ac4eaa64c6f22a2984", 
@@ -2334,23 +3294,23 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": true, 
-      "last_login": "2010-05-06 17:50:31", 
+      "last_login": "2010-06-22 13:30:10", 
       "groups": [
         1
       ], 
       "user_permissions": [
         [
-          "add_remark", 
+          "add_categorytranslation", 
           "reviewapp", 
           "remark"
         ], 
         [
-          "change_remark", 
+          "change_categorytranslation", 
           "reviewapp", 
           "remark"
         ], 
         [
-          "delete_remark", 
+          "delete_categorytranslation", 
           "reviewapp", 
           "remark"
         ]
@@ -2379,76 +3339,309 @@
     }
   }, 
   {
-    "pk": "d80fae5230b4d723b54bc0a52d4e3d30", 
-    "model": "sessions.session", 
+    "pk": 5, 
+    "model": "auth.user", 
     "fields": {
-      "expire_date": "2010-07-01 18:23:09", 
-      "session_data": "gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigEBdS5mYjcwM2E3NWMyZTNkNzlkYmM4\nMjM5YzFkNzViNjU4Nw==\n"
+      "username": "gamarski", 
+      "first_name": "Ricardo", 
+      "last_name": "Gamarski", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-07-14 12:56:24", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$0ebc0$2049a31c4d4d9810746cad1e99a89c4b74fc0884", 
+      "email": "ricardo.gamarski@gmail.com", 
+      "date_joined": "2010-06-01 14:54:45"
     }
   }, 
   {
-    "pk": 4, 
-    "model": "sites.site", 
+    "pk": 6, 
+    "model": "auth.user", 
     "fields": {
-      "domain": "ec.beta.bvsalud.org", 
-      "name": "EnsaiosClinicos.gov.br (BETA)"
+      "username": "admin_margot", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": true, 
+      "is_staff": true, 
+      "last_login": "2010-07-08 13:51:18", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$85de4$105803c27067e017d6c76124ff6ad89d16bffd9f", 
+      "email": "margot.fiocruz@gmail.com", 
+      "date_joined": "2010-06-01 17:11:38"
     }
   }, 
   {
-    "pk": 3, 
-    "model": "sites.site", 
+    "pk": 7, 
+    "model": "auth.user", 
     "fields": {
-      "domain": "ec.homolog.bvsalud.org", 
-      "name": "EnsaiosClinicos.gov.br (HOMOLOG)"
+      "username": "nishizawa", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-06-22 11:35:43", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$a0685$79494e41ac14ceb1c573840e25b46437397e5007", 
+      "email": "claudio.nishizawa@anvisa.gov.br", 
+      "date_joined": "2010-06-02 18:29:49"
     }
   }, 
   {
-    "pk": 2, 
-    "model": "sites.site", 
+    "pk": 8, 
+    "model": "auth.user", 
     "fields": {
-      "domain": "ec.teste.bvsalud.org", 
-      "name": "EnsaiosClinicos.gov.br (TESTE)"
+      "username": "Alessandro", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-06-02 18:39:23", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$bebed$fefaf620a8ca93dc1f4568169bbaa4ce9ccb18b0", 
+      "email": "alecnas@gmail.com", 
+      "date_joined": "2010-06-02 18:38:29"
     }
   }, 
   {
-    "pk": 1, 
-    "model": "sites.site", 
+    "pk": 9, 
+    "model": "auth.user", 
     "fields": {
-      "domain": "example.com", 
-      "name": "example.com"
+      "username": "fanny_moura", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": false, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-06-02 19:01:09", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$94167$55b48b097597cc075126e2ef9a2eb7c4c5ff311f", 
+      "email": "fanny.moura@anvisa.gov.br", 
+      "date_joined": "2010-06-02 19:01:09"
     }
   }, 
   {
-    "pk": 1, 
-    "model": "admin.logentry", 
+    "pk": 10, 
+    "model": "auth.user", 
     "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-17 18:24:23", 
-      "object_repr": "reviewer", 
-      "object_id": "3", 
-      "change_message": "Modificado user_permissions.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
+      "username": "clarice", 
+      "first_name": "clarice", 
+      "last_name": "petramale", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-06-02 21:00:22", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$bf9ba$d9f3c0718576afd6af3cab3f3c4df35d5ff98566", 
+      "email": "clarice.petramale@anvisa.gov.br", 
+      "date_joined": "2010-06-02 20:55:26"
     }
   }, 
   {
-    "pk": 1, 
-    "model": "flatpages.flatpage", 
+    "pk": 11, 
+    "model": "auth.user", 
     "fields": {
-      "registration_required": false, 
-      "title": "About", 
-      "url": "/about/", 
-      "template_name": "", 
-      "sites": [
-        4, 
-        3, 
-        2
-      ], 
-      "content": "<p>Etiam sed vehicula arcu. Etiam hendrerit rhoncus lacus nec semper. Phasellus mattis luctus mauris vitae dapibus. Aliquam at justo mi, eu ultrices turpis. Nulla a mauris tortor, ut scelerisque leo. Suspendisse in felis sapien, vel pellentesque nisi. Nulla ut facilisis dui. Sed ac rhoncus elit. Phasellus ut sollicitudin nisi. Suspendisse quis tellus massa, ac ullamcorper leo. Aliquam vitae convallis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisis vestibulum pharetra. Fusce ipsum sapien, accumsan non vulputate quis, ullamcorper ut mauris. Proin tempus tortor sed lectus interdum tempor. Mauris eu quam et elit pulvinar volutpat. Pellentesque vel quam neque. Cras justo velit, faucibus eget euismod nec, accumsan ac magna. Ut non feugiat erat. Sed euismod, sapien vitae ultrices interdum, nisl est pharetra ligula, at iaculis ligula quam quis nisi.</p>\r\n\r\n<p>Sed et turpis urna. Nunc pretium pulvinar mauris nec molestie. Pellentesque id lacus ac est tristique porttitor sed vitae sem. Suspendisse potenti. Curabitur pharetra lacinia justo, nec faucibus velit mollis at. Mauris ornare congue risus eget bibendum. Pellentesque dignissim, lorem at vestibulum accumsan, sapien neque sagittis augue, vitae consectetur magna mi quis felis. Sed nisl quam, gravida sed varius sed, pharetra quis erat. Phasellus ut augue in neque euismod euismod. Nam lacinia mauris sit amet purus suscipit nec facilisis diam porttitor.</p>\r\n\r\n<p>Integer consequat sodales diam nec blandit. Sed semper faucibus congue. Nunc dictum dui ultrices dui semper interdum. In hac habitasse platea dictumst. Donec pharetra aliquet libero in condimentum. Ut id nibh quam. Nulla facilisi. Pellentesque nisi metus, tristique et varius vel, mattis venenatis quam. Donec nibh neque, pulvinar nec sagittis ullamcorper, dictum ac nisl. Proin lorem augue, pharetra id gravida nec, mollis sed lorem. Nullam tortor purus, semper sit amet ornare non, vulputate ut lacus. Donec aliquam felis ante, ut scelerisque neque. Pellentesque tincidunt tempus tellus, sit amet viverra nulla accumsan a. Quisque imperdiet faucibus tincidunt. Suspendisse a pulvinar felis. Vivamus convallis tristique porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>\r\n\r\n<p>Ut vel velit non lectus vestibulum volutpat eu vel dui. Cras dignissim imperdiet est, et porttitor velit porta sed. Nullam in felis tellus. Pellentesque eget lorem ipsum, cursus rutrum turpis. Duis semper tortor nec enim vulputate luctus. Suspendisse nec sem orci. Donec non purus pretium tellus fermentum porttitor. Vestibulum semper, nibh eu gravida fermentum, augue tortor viverra est, mattis luctus enim massa ac felis. Integer et erat non mauris ornare consectetur at eu dui. Nulla non dolor ante, at suscipit nibh. Vestibulum malesuada magna in nisi scelerisque cursus. Ut in sem id orci aliquam placerat. Ut tellus libero, interdum sed facilisis ut, tempor at nunc. Vivamus sit amet magna odio, sed imperdiet mi. Aenean mollis sagittis dui, id auctor est blandit sed. Pellentesque dui magna, egestas semper tincidunt sit amet, mattis nec lectus. Aliquam suscipit nunc at arcu fermentum vitae dapibus orci sollicitudin.</p>\r\n\r\n<p>Phasellus mi mauris, malesuada at egestas at, mattis a odio. Aliquam vehicula viverra iaculis. Suspendisse ultricies leo tristique lectus tempor tristique sit amet vel elit. Vivamus sem ipsum, semper eget sollicitudin nec, sodales ac nisl. Morbi id tortor nec leo posuere mattis. Vestibulum pharetra, tellus a dictum semper, risus felis pulvinar diam, eget commodo urna eros ut urna. Suspendisse eu eros augue, nec hendrerit sem. Curabitur pharetra purus sed neque venenatis facilisis. Vestibulum cursus, orci eget eleifend pellentesque, ligula diam eleifend neque, id mattis est ante tristique nibh. Suspendisse at purus sit amet neque suscipit scelerisque. Ut in eros sit amet sem euismod pellentesque ac nec metus. Proin est libero, blandit ut elementum in, luctus nec tortor. </p>", 
-      "enable_comments": false
+      "username": "josue", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-07-07 12:46:08", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$7d10c$241ececd7ce9b9b65d73adb13ec41aec7a9299d2", 
+      "email": "josue_laguardia@yahoo.com.br", 
+      "date_joined": "2010-06-06 22:19:31"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "margot", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-06-22 18:21:46", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$de0c2$7e96ac383990d9b69a450e6a09d6fbc4de1f2c5e", 
+      "email": "margot.fiocruz@gmail.com", 
+      "date_joined": "2010-06-07 17:32:29"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "m", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-06-08 14:27:36", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$4b14e$ba2945fa9ac5a83d6b5458152f04b560261a2007", 
+      "email": "margot.fiocruz@gmail.com", 
+      "date_joined": "2010-06-08 14:26:40"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "fabio_montefuscolo", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-06-15 23:26:24", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$5fa6f$df15676a026406ca7eacf42d9b6febf8f86088b1", 
+      "email": "fabio.montefuscolo@gmail.com", 
+      "date_joined": "2010-06-15 23:24:30"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "ricardogamarski", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-06-17 19:08:49", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$ad5da$e1c265cdbeb1c5bf22bc6be5b81a284a674279f1", 
+      "email": "ricardo.gamarski@saude.gov.br", 
+      "date_joined": "2010-06-17 17:40:27"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "admin_josue", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": true, 
+      "is_staff": true, 
+      "last_login": "2010-06-22 18:15:30", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$93c18$3185d2f9fe9ab816158530225ee0667cc2dfe13a", 
+      "email": "josue.laguardia@gmail.com", 
+      "date_joined": "2010-06-21 14:58:43"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "fabio_montefuscolo2", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": false, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-06-21 17:15:19", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$c4ca4$0dd7f6656e2f4d110381f1869f5ceb336c7db6db", 
+      "email": "fabio.montefuscolo@yahoo.com.br", 
+      "date_joined": "2010-06-21 17:15:19"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "ricardoeccard", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-06-21 20:33:45", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$b7a94$52aba8e76a3f3c53b77072ce98c5bc01d4c83220", 
+      "email": "ricardo.eccard@anvisa.gov.br", 
+      "date_joined": "2010-06-21 20:33:08"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "admin_gamarski", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": true, 
+      "is_staff": true, 
+      "last_login": "2010-06-22 14:41:56", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$128c5$b69cb8975babd1b75ff196463d58dcce9f95cb4b", 
+      "email": "ricardo.gamarski@globo.com", 
+      "date_joined": "2010-06-22 14:24:57"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "admin_claudio", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": true, 
+      "is_staff": true, 
+      "last_login": "2010-06-22 17:40:06", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$e89f6$707c8113684b79407a89ec2790a8c5128026a99b", 
+      "email": "claudio.fsp.usp@gmail.com", 
+      "date_joined": "2010-06-22 14:26:59"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "jlwing", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": false, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-06-24 11:53:54", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$1cb16$acf7b2986ee6c7cc8a8367c3a3b98cfb7feb6551", 
+      "email": "jennifer.wing@malix.univ-paris1.fr", 
+      "date_joined": "2010-06-24 11:53:54"
     }
   }
 ]
