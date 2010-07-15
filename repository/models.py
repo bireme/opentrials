@@ -239,11 +239,17 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         return self.trial_id or '(req:%s)' % self.pk
 
     def short_title(self):
+        scientific_title = self.scientific_title
+        if scientific_title == '':
+            trans = self.translations.filter(language=self.submission.language)
+            if len(trans) > 0:
+                scientific_title = trans[0].scientific_title
+        
         if self.scientific_acronym:
             tit = u'%s - %s' % (self.scientific_acronym,
-                                self.scientific_title)
+                                scientific_title)
         else:
-            tit = self.scientific_title
+            tit = scientific_title
         return safe_truncate(tit, 120)
         
     def very_short_title(self):
@@ -543,5 +549,6 @@ class Descriptor(TrialRegistrationDataSetModel):
 
 class DescriptorTranslation(Translation):
     text = models.CharField(_('Text'), max_length=255, blank=True)
+
 
 post_save.connect(check_trial_fields, sender=ClinicalTrial)
