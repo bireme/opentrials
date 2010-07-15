@@ -1,11 +1,11 @@
 [
   {
-    "pk": 1, 
+    "pk": 3, 
     "model": "tickets.ticket", 
     "fields": {
-      "created": "2009-12-14 15:55:03", 
+      "created": "2009-12-16 18:17:28", 
       "type": "review", 
-      "context": "ct_repository_field_1", 
+      "context": "ct_repository_field_11", 
       "creator": 1
     }
   }, 
@@ -20,12 +20,12 @@
     }
   }, 
   {
-    "pk": 3, 
+    "pk": 1, 
     "model": "tickets.ticket", 
     "fields": {
-      "created": "2009-12-16 18:17:28", 
+      "created": "2009-12-14 15:55:03", 
       "type": "review", 
-      "context": "ct_repository_field_11", 
+      "context": "ct_repository_field_1", 
       "creator": 1
     }
   }, 
