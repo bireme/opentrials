@@ -62,7 +62,7 @@ def search(request, lang, term, prefix='401'):
         count = request.GET['count']
         
     params = urllib.urlencode({
-        'bool': '%s %s' % (prefix, term),
+        'bool': '%s %s' % (prefix, term.encode('iso-8859-1')),
         'lang': lang,
         'count': count,
         })
