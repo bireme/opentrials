@@ -585,7 +585,8 @@ class ContactForm(ReviewModelForm):
     affiliation = forms.ModelChoiceField(Institution.objects.all(),
                                          label=_('Affiliation'))
 
-    address = forms.CharField(label=_('Address'), max_length=255,required=False)
+    address = forms.CharField(label=_('Address'), max_length=255,required=False, 
+                              widget=forms.TextInput(attrs={'style': 'width:400px;'}))
     city = forms.CharField(label=_('City'), max_length=255)
 
     country = forms.ModelChoiceField(CountryCode.objects.all(),
