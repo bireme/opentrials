@@ -45,7 +45,7 @@ such as those from Vocabulary application.
 
 <!-- TRDS 15b: study_endpoint attributes -->
 <!ENTITY % endpoint.options
-    "safety|efficacy|bioequivalence|biodisponibility|
+    "safety|efficacy|bioequivalence|bioavailability|
      pharmacokinetics|pharmacodynamics|pharmacogenetics">
 
 <!-- TRDS 15c -->
