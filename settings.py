@@ -102,6 +102,7 @@ TEMPLATE_CONTEXT_PROCESSORS =(
     'django.core.context_processors.csrf',
     'django.core.context_processors.media',
     'context_processors.clinicaltrials.polyglot',
+    'context_processors.clinicaltrials.jquery',
 )
 
 AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
@@ -146,6 +147,9 @@ SUBMISSIONS_XML_PATH = os.path.join(MEDIA_ROOT, 'submissions_xml')
 FIXTURE_DIRS = ('fixtures',)
 
 PAGINATOR_CT_PER_PAGE = 10
+
+JQUERY_URL = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
+JQUERY_UI_URL = 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js'
 
 ### END Clinical Trials Repository customization settings
 #################################################################

@@ -24,6 +24,12 @@ EMAIL_USE_TLS = False
 
 SERVER_EMAIL = EMAIL_HOST_USER
 
+JQUERY_LOCAL = MEDIA_URL + 'js/local/jquery.js'
+JQUERY_UI_LOCAL = MEDIA_URL + 'js/local/jquery-ui.js'
+### uncomment the following lines to use the jquery locally
+#JQUERY_URL = JQUERY_LOCAL
+#JQUERY_UI_URL = JQUERY_UI_LOCAL
+
 if DEBUG:
     DEBUG_PROPAGATE_EXCEPTIONS = True
     MIDDLEWARE_CLASSES += (
