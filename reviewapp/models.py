@@ -65,7 +65,8 @@ class Submission(models.Model):
     status = models.CharField(_('Status'), max_length=64,
                               choices=SUBMISSION_STATUS,
                               default=SUBMISSION_STATUS[0][0])
-    fields_status = models.TextField(_('Fields Status'), max_length=512, null=True, blank=True)
+    fields_status = models.TextField(_('Fields Status'), max_length=512, null=True, 
+                                     blank=True, editable=False)
     language = models.CharField(_('Submission language'), max_length=10,
                                 choices=settings.MANAGED_LANGUAGES_CHOICES)
     staff_note = models.TextField(_('Submission note (staff use only)'), max_length=255,
