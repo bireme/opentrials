@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from lxml.etree import ElementTree
 import urllib
+from json import dumps as json_dumps
+from json import loads as json_loads
 
 DECS_LANGS = ['en','es','pt']
 JSON_TERM = '{"fields":{"description":"%s","label":"%s"}}'
@@ -26,8 +28,8 @@ def getterm(request, lang, code):
         descriptors = tree.findall('decsws_response/record_list/record/descriptor_list/descriptor')
         description = ','.join(['"%s":"%s"'%(d.attrib['lang'],d.text) for d in descriptors])
         json = '[%s]' % (JSON_MULTILINGUAL_TERM % (description,result.attrib['tree_id']))
-           
-    return HttpResponse(json, mimetype='application/json');
+    
+    return HttpResponse(json, mimetype='application/json')
 
 def getdescendants(request, code):
     params = {}
@@ -52,10 +54,12 @@ def getdescendants(request, code):
                 results[ d.attrib['tree_id'] ] = '"%s":"%s"' % (lang,d.text.capitalize())
 
     json = '[%s]' % ','.join((JSON_MULTILINGUAL_TERM % (id,desc) for desc,id in results.items()))
+    json_response = json_loads(json)
+    json_response.sort(key=lambda x: x['fields']['description'][lang])
+        
+    return HttpResponse(json_dumps(json_response), mimetype='application/json')
 
-    return HttpResponse(json, mimetype='application/json');
-
-def search(request, lang, term, prefix='401'):
+def search(request, lang, term, prefix='403'):
     # about the prefix: http://wiki.reddes.bvsalud.org/index.php/DeCS_services
     count = 30
     if 'count' in request.GET and request.GET['count'].isdigit():
@@ -67,7 +71,7 @@ def search(request, lang, term, prefix='401'):
         'count': count,
         })
     resource = urllib.urlopen(settings.DECS_SERVICE, params)
-    print resource.url+'?'+params
+    
     tree = ElementTree()
     tree.parse(resource)
 
@@ -79,8 +83,10 @@ def search(request, lang, term, prefix='401'):
         description = ','.join(('"%s":"%s"'%(d.attrib['lang'],d.text) for d in descriptors ))
         json.append(JSON_MULTILINGUAL_TERM % (description,occ.attrib['tree_id']))
 
-    json_response = '[%s]' % ','.join(json)
-    return HttpResponse(json_response, mimetype='application/json');
+    json_response = json_loads('[%s]' % ','.join(json))
+    json_response.sort(key=lambda x: x['fields']['description'][lang])
+    
+    return HttpResponse(json_dumps(json_response), mimetype='application/json')
 
 def test_search(request):
     return render_to_response("test_search.html", request)
