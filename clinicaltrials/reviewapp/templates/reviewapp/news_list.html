@@ -4,11 +4,14 @@
 
 {% block body_title %}{% trans 'News' %}{% endblock %}
 
+{% block stepmenu_top %}
+    {{ block.super }}
+    <big>/ {% trans 'News' %}</big>
+{% endblock %}
+
 {% block body %}
 
 <div class="news">
-
-    <h2>{% trans 'News' %}</h2>
 
     {% if object_list %}
         <ul>

@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 {% load i18n %}
+
+{% block stepmenu_top %}
+    {{ block.super }}
+    <small>
+        / <a href="{% url reviewapp.submissionlist %}">{% trans 'Submissions' %}</a>
+    </small>
+    <big>/ {% trans 'New Submission' %}</big>
+{% endblock %}
+
 {% block body %}
 
 <script type="text/javascript">
@@ -37,7 +46,6 @@
 </script>
 
 <form method="post" action="/accounts/newsubmission/" enctype="multipart/form-data">{% csrf_token %}
-    <h2>{% trans "New Submission" %}</h2>
 {% for form in forms %}
 <fieldset>
     <legend>{{ form.form_title }}</legend>

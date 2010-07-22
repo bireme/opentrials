@@ -4,9 +4,12 @@
 
 {% block body_title %}{% trans 'Contact us' %}{% endblock %}
 
-{% block body %}
+{% block stepmenu_top %}
+    {{ block.super }}
+    <big>/ {% trans 'Contact us' %}</big>
+{% endblock %}
 
-<h2>{% trans 'Contact us' %}</h2>
+{% block body %}
 
     {% if form.errors %}
     <div class="warning"><strong>{% trans 'Please fill out all fields correctly.' %}</strong></div>

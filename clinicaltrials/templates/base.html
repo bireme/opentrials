@@ -149,7 +149,15 @@
                 {% endblock %}
                 <div class="spacer">&#160;</div>
             </div>
-            {% block stepmenu_top %}{% endblock %}
+            {% if request.path != '/' %}
+                <div class="breadcrumb">
+                {% block stepmenu_top %}
+                    <small>
+                        <a href="{% url reviewapp.home %}">{% trans 'Home' %}</a>
+                    </small>
+                {% endblock %}
+                </div>
+            {% endif %}
             <div class="middle">
                 <div class="mainContent">
                     {% block body %}{% endblock %}

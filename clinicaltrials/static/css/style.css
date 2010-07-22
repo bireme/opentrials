@@ -403,7 +403,7 @@ blockquote {
     display: inline;
 }
 
-.middle .news A.NewsTitle {
+.middle .news A.NewsTitle, SPAN.NewsTitle {
     font-size: 150%;
     color: #0c4762;
     text-decoration: none;
@@ -513,6 +513,17 @@ table.dataTable TH {
     background: #dedede;
     font-size: 110%;
 }
+
+table.dataTable th A {
+    color: #0c4762;
+    text-decoration: none;
+    font-weight: bold;
+}
+table.dataTable th A:hover {
+    color: #1073a0;
+    text-decoration: none;
+}
+
 table.dataTable .even TD {
     background: #f5f5f5;
 }

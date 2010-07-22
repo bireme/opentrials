@@ -4,11 +4,16 @@
 
 {% block body_title %}FAQ{% endblock %}
 
+{% block stepmenu_top %}
+    {{ block.super }}
+    <big>
+        / {% trans 'FAQ' %}
+    </big>
+{% endblock %}
+
 {% block body %}
 
 <div class="links">
-
-    <h2>FAQ</h2>
 
     {% if object_list %}
 

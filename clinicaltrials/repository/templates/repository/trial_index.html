@@ -2,9 +2,16 @@
 {% load i18n %}
 {% block body_title %}{% trans "Trial Summary" %}{% endblock %}
 
+{% block stepmenu_top %}
+    {{ block.super }}
+    <small>
+        / <a href="{% url reviewapp.submissionlist %}">{% trans 'Submissions' %}</a>
+    </small>
+    <big>/ {% trans 'Trial Summary' %}</big>
+{% endblock %}
+
 {% block body %}
 
-<h2>{% trans "Trial Summary" %}</h2>
 <table class="dataTable trialsummary">
     <thead>
         <tr>

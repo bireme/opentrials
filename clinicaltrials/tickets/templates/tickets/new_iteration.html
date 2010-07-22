@@ -1,12 +1,19 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block body %}
 
-<h2>{% trans "Add iteration in ticket" %}</h2>
+{% block stepmenu_top %}
+    {{ block.super }}
+    <small>
+        / <a href="{% url ticket.index %}">{% trans 'Tickets' %}</a>
+    </small>
+    <big>/ {% trans 'Add iteration' %}</big>
+{% endblock %}
+
+{% block body %}
 
 <form method="post" action="/ticket/{{ mode }}/{{ ticket_id }}/">{% csrf_token %}
     <fieldset>
-        <legend>Ticket info</legend>
+        <legend>{% trans 'Ticket info' %}</legend>
         <table class="table">
             <col width="20%">
             <col width="80%">
@@ -30,7 +37,7 @@
     </fieldset>
 
     <fieldset>
-        <legend>Iteration text</legend>
+        <legend>{% trans 'Iteration text' %}</legend>
         {{form.description}}
     </fieldset>
 

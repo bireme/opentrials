@@ -1,6 +1,11 @@
 {% extends "base_columns.html" %}
 {% load i18n %}
 
+{% block stepmenu_top %}
+    {{ block.super }}
+    <big>/ {% trans 'Register' %}</big>
+{% endblock %}
+
 {% block body %}
 
 {% if form.errors %}

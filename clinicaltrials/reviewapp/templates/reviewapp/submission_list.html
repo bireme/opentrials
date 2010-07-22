@@ -17,6 +17,11 @@ $(document).ready(function() {
 </script>
 {% endblock %}
 
+{% block stepmenu_top %}
+    {{ block.super }}
+    <big>/ {% trans 'Submissions' %}</big>
+{% endblock %}
+
 {% block body %}
 <h2>{% trans "Submit a new Clinical Trial" %}</h2>
 <p>{% trans "Choose one of the ways below to submit a new clinical trial" %}</p>
