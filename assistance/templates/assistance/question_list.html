@@ -21,10 +21,10 @@
         </ol>
 
         {% for category in category_list %}
-            <h3 id="{{ category.grouper }}" name="{{ category.grouper }}">{{ forloop.counter }}. {{ category.grouper }}</h3>
+            <h2 id="{{ category.grouper }}" name="{{ category.grouper }}">{{ forloop.counter }} - {{ category.grouper }}</h2>
             {% for item in category.list %}
-            <h4>{{ item.title}}</h4>
-            <p>{{ item.answer }}</p>
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.answer|safe }}</p>
             {% endfor %}
         {% endfor %}
     
