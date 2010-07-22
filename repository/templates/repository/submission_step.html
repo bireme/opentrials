@@ -8,7 +8,6 @@
 {% endblock extrahead %}
 
 {% block stepmenu_top %}
-<div class="breadcrumb">
     <small>
         <a href="{% url repository.edittrial trial_pk %}">{% trans "Summary" %}</a>
     </small>
@@ -18,7 +17,6 @@
         <a href="{{ step.link }}">{% trans step.name %}</a>
     </small>
     {% endfor %}
-</div>
 {% endblock %}
 
 {% block stepmenu_bottom %}

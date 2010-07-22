@@ -4,9 +4,15 @@
 
 {% block login %}{% endblock %}
 
+{% block stepmenu_top %}
+    {{ block.super }}
+    <big>/ {% trans 'Login' %}</big>
+{% endblock %}
+
 {% block body %}
+
 {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
+    <p>{% trans "Your username and password didn't match. Please try again." %}</p>
 {% endif %}
 
 <form method="post" action="{% url django.contrib.auth.views.login %}">{% csrf_token %}

@@ -4,16 +4,24 @@
 
 {% block body_title %}{% trans 'News' %}{% endblock %}
 
+{% block stepmenu_top %}
+    {{ block.super }}
+    <small>
+        / <a href="{% url reviewapp.newslist %}">{% trans 'News' %}</a>
+    </small>
+    <big>/ {{ object.title|truncatewords:5 }}</big>
+{% endblock %}
+
 {% block body %}
 
 {% if object %}
 
-<h2>{{ object.title }}</h2>
+    <span class="NewsTitle">{{ object.title }}</span>
 
     <p>{{ object.text|linebreaks }}</p>
     <br />
 
-<div class="date">{% trans 'Created:' %} {{ object.created|date:'d/m/Y - H:i' }}</div>
+    <div class="date">{% trans 'Created:' %} {{ object.created|date:'d/m/Y - H:i' }}</div>
     
 {% else %}
     <p>{% trans 'News unavailable.' %}</p>

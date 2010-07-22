@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+{% block stepmenu_top %}
+    {{ block.super }}
+    <small>
+        / <a href="{% url reviewapp.submissionlist %}">{% trans 'Submissions' %}</a>
+    </small>
+    <big>/ {% trans 'Upload trial' %}</big>
+{% endblock %}
+
 {% block body %}
-<h2>{% trans "Upload trial" %}</h2>
 
 <p>
     {% trans "Here you can upload an XML on ICTRP standard to submit your clinical trial." %}

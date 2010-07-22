@@ -4,8 +4,16 @@
 
 {% block body_title %}{% trans 'Clinical Trial' %}{% endblock %}
 
+{% block stepmenu_top %}
+    {{ block.super }}
+    <small>
+        / <a href="{% url repository.list_all %}">{% trans 'Registered Trials' %}</a>
+    </small>
+    <big>/ {{ object.identifier }}</big>
+{% endblock %}
+
 {% block body %}
-    <h2>{{ object.very_short_title }}</h2>
+    <span class="NewsTitle">{{ object.scientific_title }}</span>
 
 
     <style type="text/css">

@@ -1,6 +1,14 @@
 {% extends "base_columns.html" %}
 {% load i18n %}
 
+{% block stepmenu_top %}
+    {{ block.super }}
+    <small>
+        / <a href="/accounts/register">{% trans 'Register' %}</a>
+    </small>
+    <big>/ {% trans 'Complete' %}</big>
+{% endblock %}
+
 {% block body %}
 
 <h2>{% trans "A confirmation e-mail is on the way" %}</h2>
