@@ -1,29 +1,110 @@
 [
   {
-    "pk": 1, 
+    "pk": 4, 
     "model": "assistance.categorytranslation", 
     "fields": {
-      "label": "Futebol", 
+      "label": "Ambiente operacional", 
       "content_type": [
         "assistance", 
         "category"
       ], 
       "language": "pt-BR", 
-      "object_id": 5
+      "object_id": 1
     }
   }, 
   {
-    "pk": 1, 
+    "pk": 2, 
+    "model": "assistance.categorytranslation", 
+    "fields": {
+      "label": "Registro do estudo", 
+      "content_type": [
+        "assistance", 
+        "category"
+      ], 
+      "language": "pt-BR", 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "assistance.categorytranslation", 
+    "fields": {
+      "label": "Registro del estudio", 
+      "content_type": [
+        "assistance", 
+        "category"
+      ], 
+      "language": "es", 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "assistance.categorytranslation", 
+    "fields": {
+      "label": "Sistema operacional", 
+      "content_type": [
+        "assistance", 
+        "category"
+      ], 
+      "language": "es", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 3, 
     "model": "assistance.questiontranslation", 
     "fields": {
-      "answer": "Sim, o personagem da Disney \u00e9 simp\u00e1tico", 
-      "title": "O Dunga \u00e9 simp\u00e1tico?", 
+      "answer": "Ensaios devem ser registrados ap\u00f3s a aprova\u00e7\u00e3o de um comit\u00ea de \u00e9tica nacional e antes do registro do recrutamento do primeiro paciente\r\n", 
+      "title": "Quando os estudos devem ser registrados?", 
       "content_type": [
         "assistance", 
         "question"
       ], 
       "language": "pt-BR", 
-      "object_id": 12
+      "object_id": 14
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "Todos os estudos envolvendo pesquisadores ou participantes brasileiros, em todas as \u00e1reas da sa\u00fade, e com testes de todas as formas de interven\u00e7\u00f5es, devem ser registrados. Os estudos sendo realizados em outros pa\u00edses n\u00e3o ser\u00e3o aceitos para registro no RBEC.\r\nEstudos devem atender a defini\u00e7\u00e3o <a href=\"http://www.who.int/ictrp/en/\" title=\"World Health Organization\" target=\"_blank\">WHO</a> / ICMJE 2008 de um ensaio cl\u00ednico para serem registrados. Ou seja, qualquer pesquisa que prospectivamente designa participantes, humanos ou grupos de seres humanos, para uma ou mais interven\u00e7\u00f5es relacionadas \u00e0 sa\u00fade, para avaliar os efeitos na sa\u00fade. Interven\u00e7\u00f5es m\u00e9dicas incluem qualquer interven\u00e7\u00e3o usada para modificar um desfecho de sa\u00fade e incluem drogas, procedimentos cir\u00fargicos, aparelhos, tratamentos comportamentais, etc. Se estiver em d\u00favida se um estudo deve ser registrado ou n\u00e3o, o registro \u00e9 recomendado.\r\n", 
+      "title": "Que estudos precisam ser registrados?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-BR", 
+      "object_id": 13
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "O coordenador, patrocinador do estudo ou um representante adequado \u00e9 respons\u00e1vel pelo registro de um estudo. O patrocinador \u00e9 um indiv\u00edduo ou empresa, p\u00fablica ou privada, que ap\u00f3ia financeiramente a pesquisa, conforme definido pela RDC 39.\r\nPara os estudos cl\u00ednicos patrocinados por ag\u00eancias nacionais ou internacionais de fomento \u00e0 pesquisa, entidades filantr\u00f3picas, organiza\u00e7\u00f5es n\u00e3o governamentais (ONGs) ou outras entidades sem fins lucrativos, o(s) investigador(es) respons\u00e1vel(ies) pela coordena\u00e7\u00e3o da pesquisa assumem o papel de representante do patrocinador, caso n\u00e3o haja uma ORPC respons\u00e1vel pela condu\u00e7\u00e3o da mesma.\r\nNo caso de estudos independentes, em que o investigador n\u00e3o tem apoio financeiro de um patrocinador espec\u00edfico, incluindo os casos que recebem os medicamentos de investiga\u00e7\u00e3o sob a forma de doa\u00e7\u00e3o onde o doador n\u00e3o deseja ser caracterizado como patrocinador do estudo.\r\n", 
+      "title": "Quem \u00e9 respons\u00e1vel pelo registro de um estudo?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-BR", 
+      "object_id": 15
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "Na primeira vez, os usu\u00e1rios precisam criar um nome de login e uma senha, clicando no bot\u00e3o \u201cRegistrar-se\u201d. Um email de confirma\u00e7\u00e3o ser\u00e1 enviado para a conta de e-mail informado.\r\nO bot\u00e3o de \u201cNova Submiss\u00e3o\u201d levar\u00e1 o requerente para as telas que precisam ser preenchidas. Isso inclui informa\u00e7\u00f5es b\u00e1sicas, como os tipos de participantes, as interven\u00e7\u00f5es que est\u00e3o sendo testadas e os desfechos a serem avaliados. Outras informa\u00e7\u00f5es requeridas incluem detalhes do desenho do estudo, tamanho da amostra e informa\u00e7\u00f5es dos contatos. Cada campo tem um bot\u00e3o de ajuda (\u00edcone \u201c?\u201d) para auxiliar os requerentes a inserirem os dados corretos. Uma vez que cada formul\u00e1rio \u00e9 preenchido, o requerente deve clicar no bot\u00e3o \"Salvar\" para salvar as informa\u00e7\u00f5es no Registro Brasileiro de Ensaios Cl\u00ednicos. Uma vez que todas as informa\u00e7\u00f5es obrigat\u00f3rias estiverem sido preenchidas nos formul\u00e1rios, o requerente deve clicar no bot\u00e3o \u201cEnviar para revis\u00e3o\u201d.\r\nAp\u00f3s a submiss\u00e3o dos dados, a equipe do RBEC ir\u00e1 verificar os dados submetidos e consultar o requerente se necessitar que alguma informa\u00e7\u00e3o seja esclarecida. Uma vez que quaisquer d\u00favidas sejam confirmadas, os estudos s\u00e3o oficialmente registrados e ser\u00e1 atribu\u00eddo um n\u00famero de registro \u00fanico. Tanto a data da submiss\u00e3o e a data de registro s\u00e3o armazenados. ", 
+      "title": "Como fa\u00e7o para registrar um estudo?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-BR", 
+      "object_id": 16
     }
   }, 
   {
@@ -714,6 +795,150 @@
   }, 
   {
     "pk": 1, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 5
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 6
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 7
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 8
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 9
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 14
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 15
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 16
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 17
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "7dd385471cf8bab58b6fb365e51b8199db231483", 
+      "user": 18
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 19
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 20
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 21
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "27480b4b99d67bfad68fb010fab84916a395d4ce", 
+      "user": 22
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 23
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 24
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 25
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 26
+    }
+  }, 
+  {
+    "pk": 1, 
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "scientific_title", 
@@ -1299,7 +1524,7 @@
       "field": "relation", 
       "example": "", 
       "form": "ContactForm", 
-      "text": "Please enter here wich is the relation of the contact: a contact for Public Queries, for Scientific Queries or for Site Queries."
+      "text": "Please enter here which is the relation of the contact: a contact for Public Queries, for Scientific Queries or for Site Queries."
     }
   }, 
   {
@@ -1393,80 +1618,47 @@
     }
   }, 
   {
-    "pk": 6, 
+    "pk": 16, 
     "model": "assistance.question", 
     "fields": {
-      "category": 1, 
-      "answer": "Donec euismod lectus et justo convallis fermentum. Donec iaculis tempor sapien, nec varius orci consequat at. Etiam scelerisque sollicitudin fringilla. Duis ipsum metus, convallis ut fermentum ac, molestie id odio. Mauris ultricies nisi non purus tempor porttitor. Suspendisse potenti. Vestibulum eleifend vestibulum ipsum, ut tempor diam aliquam rhoncus. Sed suscipit facilisis vestibulum. Proin mattis, est a eleifend euismod, arcu est accumsan dolor, nec dictum leo felis et mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ligula et metus tempor lacinia vel eget erat. Ut ut magna nibh, eu semper dolor. Nunc ornare pellentesque odio ut condimentum. Praesent id tellus id orci luctus commodo eget a lorem. Nulla et tellus ac nibh fringilla bibendum. Phasellus vel dolor purus. ", 
-      "created": "2009-12-14 17:59:31", 
-      "order": 2, 
-      "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+      "category": 6, 
+      "answer": "First time users need to create a login name and password by clicking on the Register button. A confirmation e-mail will be sent to the informed e-mail account.\r\nThe New Submission button will take the registrant to the screens that need to be completed. This includes basic trial information such as the types of participants, the interventions being tested and the outcomes to be assessed. Other information required includes details of the study design, sample size and contact information. Each field has an information button to assist registrants in entering the correct data. Once each screen is completed, the registrant should click the 'Save' button to save the information to the online registry database. Once all the mandatory information has been entered, the registrant should click the 'Send to review' button. \r\nFollowing submission of the data, the BCTR staff will check the data submitted and query the contact person should anything need clarification. Once any queries are confirmed, trials are officially 'registered' and allocated a unique registration number. Both date of submission and date of registration are recorded. ", 
+      "created": "2010-07-21 21:29:01", 
+      "order": 160, 
+      "title": "How do I register a trial?"
     }
   }, 
   {
-    "pk": 7, 
+    "pk": 15, 
     "model": "assistance.question", 
     "fields": {
-      "category": 3, 
-      "answer": "dui ante porta eros, at sodales est tortor nec odio. Donec auctor, urna at blandit interdum, est massa aliquam dolor, at volutpat lorem augue a mi. Nulla venenatis diam quis nunc euismod sollicitudin. Nam eget lacus metus, vitae interdum dui. Nullam odio justo, pretium vitae pretium id, fermentum ut orci. Vestibulum odio massa, porta vel volutpat eget, gravida hendrerit velit. Pellentesque adipiscing elementum purus vel rutrum. Cras non felis sit amet enim ultricies tempus venenatis id sem. Vestibulum a libero ut erat aliquam consequat vitae vitae turpis. Nunc sit amet quam neque, a sagittis erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent arcu felis, rhoncus vitae varius venenatis, gravida et orci. ", 
-      "created": "2009-12-14 18:00:28", 
-      "order": 5, 
-      "title": "Mauris aliquam, mi non hendrerit luctus?"
+      "category": 6, 
+      "answer": "The study's coordinator, sponsor or an appropriate representative is responsible for registering a trial. The sponsor is an individual or company, public or private, which financially supports the research as defined by the RDC 39. \r\nIn clinical studies regulated by this rule and sponsored by national or international agencies to promote the research, philanthropic entities, non-governmental organizations (NGOs) or other non-profit organizations, it is assumed that investigator assumes the role of representative of the sponsor, if there is a Clinical Research Organization (CRO) responsible for the conduct of it, should meet as a representative of the study. \r\nIn the case of independent studies, for which the investigator has no financial assistance from a specific sponsor, including cases in receiving the medicines of research in the form of donation where the donor does not want to be characterized as a sponsor of the study, the researcher additionally assume the responsibilities of study.\r\nFor the cases referred to in the preceding paragraph, the researcher is now called \"investigator-sponsor.\" \r\n", 
+      "created": "2010-07-21 21:23:10", 
+      "order": 150, 
+      "title": "Who is responsible for registering a trial?"
     }
   }, 
   {
-    "pk": 8, 
+    "pk": 14, 
     "model": "assistance.question", 
     "fields": {
-      "category": 2, 
-      "answer": "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer at dolor ut arcu posuere auctor ut quis nisi. Etiam sed mauris elit, eget molestie sem. Integer luctus odio vitae dolor euismod laoreet. Donec rutrum ultrices erat, sed ultrices risus lobortis at. Maecenas in dolor vel turpis posuere tempor. Etiam eu condimentum nulla. Nullam fringilla tortor sed risus porttitor et pharetra urna ullamcorper. Nulla in ipsum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. ", 
-      "created": "2009-12-14 18:03:22", 
-      "order": 1, 
-      "title": "Vestibulum aliquet nisi vel risus pharetra auctor?"
+      "category": 6, 
+      "answer": "Trials should be registered after approval from a national ethics committee and before enrolment of the first patient.\r\n", 
+      "created": "2010-07-21 18:27:19", 
+      "order": 140, 
+      "title": "When should studies be registered?"
     }
   }, 
   {
-    "pk": 9, 
+    "pk": 13, 
     "model": "assistance.question", 
     "fields": {
-      "category": 2, 
-      "answer": "Quisque viverra, diam id commodo adipiscing, velit dui pharetra orci, id iaculis libero metus vestibulum mi. Nullam nec elit lacus. Aliquam a lectus metus. Nam gravida dui sit amet nibh aliquam nec fermentum lorem tempus. Donec magna magna, porttitor sit amet viverra sit amet, porttitor eget nisi. Nullam ac orci in quam varius vulputate. Pellentesque viverra est in nibh suscipit scelerisque. Mauris nec tortor fringilla libero ultrices vulputate. Nullam vitae metus tortor. Phasellus vel odio quam, quis varius magna. Curabitur rhoncus porttitor eleifend. Proin rutrum euismod tempus. Mauris eu augue arcu, ut lobortis sem. Nulla tincidunt, orci non pharetra dapibus, risus mauris vestibulum libero, non egestas magna arcu quis ipsum. Fusce accumsan magna at enim imperdiet quis iaculis odio porttitor. Aliquam vitae felis ipsum. ", 
-      "created": "2009-12-14 18:04:04", 
-      "order": 1, 
-      "title": "Donec hendrerit ligula eget arcu congue gravida?"
-    }
-  }, 
-  {
-    "pk": 10, 
-    "model": "assistance.question", 
-    "fields": {
-      "category": 3, 
-      "answer": "Nulla nisl felis, accumsan sed gravida in, pellentesque ac neque. Aliquam at lorem dolor. Nam vel elit et diam adipiscing posuere. Aliquam erat volutpat. Nulla justo mauris, elementum id interdum sed, euismod et eros. Nunc porta dictum risus, vel malesuada dolor aliquet ac. Suspendisse in ullamcorper mi. Suspendisse potenti. Vestibulum vitae libero dolor. Maecenas vitae fermentum mi. Donec eleifend fermentum lacus. Maecenas ante ipsum, facilisis vel gravida non, accumsan a tellus. ", 
-      "created": "2009-12-14 18:05:38", 
-      "order": 1, 
-      "title": "Pellentesque ullamcorper augue at ante rhoncus ultrices?"
-    }
-  }, 
-  {
-    "pk": 11, 
-    "model": "assistance.question", 
-    "fields": {
-      "category": 4, 
-      "answer": "Sim, se voc\u00ea tomar muitas", 
-      "created": "2010-06-14 14:46:55", 
-      "order": 110, 
-      "title": "Aspirima d\u00e1 dor de barriga?"
-    }
-  }, 
-  {
-    "pk": 12, 
-    "model": "assistance.question", 
-    "fields": {
-      "category": 5, 
-      "answer": "Yes, the Disney character is quite nice", 
-      "created": "2010-06-22 15:05:46", 
-      "order": 120, 
-      "title": "Is Dunga nice?"
+      "category": 6, 
+      "answer": "All clinical trials involving brazilian investigators or participants, in all areas of health and testing all forms of interventions should be registered. Clinical trials being conducted in other countries will not be accepted for  registration on the BCTR. \r\nStudies must meet the <a href=\"http://www.who.int/ictrp/en/\" title=\"World Health Organization\" target=\"_blank\">WHO</a> definition of a clinical trial to be registered. That is, any research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes . Medical interventions include any intervention used to modify a health outcome and include drugs, surgical procedures, devices, behavioural treatments, etc. If in doubt about whether to register or not, registration is recommended. \r\n", 
+      "created": "2010-07-21 18:20:25", 
+      "order": 130, 
+      "title": "What studies need to be registered?"
     }
   }, 
   {
@@ -1491,17 +1683,10 @@
     }
   }, 
   {
-    "pk": 4, 
+    "pk": 6, 
     "model": "assistance.category", 
     "fields": {
-      "label": "Medicamentos"
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "assistance.category", 
-    "fields": {
-      "label": "Football (Soccer)"
+      "label": "Study registration"
     }
   }
 ]

@@ -26,6 +26,16 @@ from datetime import date
 
 import settings
 
+TRIAL_FORMS = ['Trial Identification',
+               'Sponsors',
+               'Health Conditions',
+               'Interventions',
+               'Recruitment',
+               'Study Type',
+               'Outcomes',
+               'Contacts',
+               'Attachments']
+
 class ReviewModelForm(forms.ModelForm):
     available_languages = [code.lower() for code in settings.MANAGED_LANGUAGES]
     default_second_language = 'pt-br'
@@ -303,7 +313,7 @@ class SecondaryIdForm(ReviewModelForm):
     title = _('Secondary Identifying Numbers')
     # this is just to inherit the custom _html_output and as_table methods
 
-STEP_FORM_MATRIX['step_1'] = [TrialIdentificationForm, SecondaryIdForm]
+STEP_FORM_MATRIX[TRIAL_FORMS[0]] = [TrialIdentificationForm, SecondaryIdForm]
 
 ### step_2 #####################################################################
 class PrimarySponsorForm(ReviewModelForm):
@@ -335,7 +345,7 @@ class SupportSourceForm(ReviewModelForm):
     title = _('Source(s) of Monetary or Material Support')
     relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[0][0])
 
-STEP_FORM_MATRIX['step_2'] = [PrimarySponsorForm, SecondarySponsorForm, SupportSourceForm]
+STEP_FORM_MATRIX[TRIAL_FORMS[1]] = [PrimarySponsorForm, SecondarySponsorForm, SupportSourceForm]
 
 
 
@@ -378,7 +388,7 @@ class SpecificHealthDescriptorForm(ReviewModelForm):
     level = forms.CharField(widget=forms.HiddenInput,
                              initial=choices.DESCRIPTOR_LEVEL[1][0])
 
-STEP_FORM_MATRIX['step_3'] = [HealthConditionsForm, GeneralHealthDescriptorForm, SpecificHealthDescriptorForm]
+STEP_FORM_MATRIX[TRIAL_FORMS[2]] = [HealthConditionsForm, GeneralHealthDescriptorForm, SpecificHealthDescriptorForm]
 
 ### step_4 #####################################################################
 class InterventionDescriptorForm(ReviewModelForm):
@@ -409,7 +419,7 @@ class InterventionForm(ReviewModelForm):
     i_code = forms.ModelMultipleChoiceField(label=_("Intervention Code(s)"),
                                             queryset=InterventionCode.objects.all(),
                                             widget=forms.CheckboxSelectMultiple())
-STEP_FORM_MATRIX['step_4'] = [InterventionForm, InterventionDescriptorForm]
+STEP_FORM_MATRIX[TRIAL_FORMS[3]] = [InterventionForm, InterventionDescriptorForm]
 
 ### step_5 #####################################################################
 class RecruitmentForm(ReviewModelForm):
@@ -461,7 +471,7 @@ class RecruitmentForm(ReviewModelForm):
     exclusion_criteria = forms.CharField(label=_('Exclusion Criteria'),required=False,
                                         max_length=8000, widget=forms.Textarea,)
 
-STEP_FORM_MATRIX['step_5'] = [RecruitmentForm]
+STEP_FORM_MATRIX[TRIAL_FORMS[4]] = [RecruitmentForm]
 
 ### step_6 #####################################################################
 class StudyTypeForm(ReviewModelForm):
@@ -493,7 +503,7 @@ class StudyTypeForm(ReviewModelForm):
                                               choices=[(None,_('Unknown')),
                                                        (True,_('Yes')),
                                                        (False,_('No')),])
-STEP_FORM_MATRIX['step_6'] = [StudyTypeForm]
+STEP_FORM_MATRIX[TRIAL_FORMS[5]] = [StudyTypeForm]
 
 ### step_7 #####################################################################
 class PrimaryOutcomesForm(ReviewModelForm):
@@ -522,7 +532,7 @@ class SecondaryOutcomesForm(ReviewModelForm):
     interest = forms.CharField(initial=choices.OUTCOME_INTEREST[1][0],
                                widget=forms.HiddenInput)
 
-STEP_FORM_MATRIX['step_7'] = [PrimaryOutcomesForm,SecondaryOutcomesForm]
+STEP_FORM_MATRIX[TRIAL_FORMS[6]] = [PrimaryOutcomesForm,SecondaryOutcomesForm]
 
 ### step_8 #####################################################################
 class PublicContactForm(ReviewModelForm):
@@ -555,7 +565,7 @@ class SiteContactForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         queryset = SiteContact.objects.all()
-        min_required = 0
+        min_required = 1
         polyglot = False
         fields = ['contact']
 
@@ -564,7 +574,7 @@ class SiteContactForm(ReviewModelForm):
                                initial=choices.CONTACT_RELATION[2][0],
                                widget=forms.HiddenInput)
 
-STEP_FORM_MATRIX['step_8'] = [PublicContactForm,ScientificContactForm,SiteContactForm]
+STEP_FORM_MATRIX[TRIAL_FORMS[7]] = [PublicContactForm,ScientificContactForm,SiteContactForm]
 
 #step8-partof
 class ContactForm(ReviewModelForm):
