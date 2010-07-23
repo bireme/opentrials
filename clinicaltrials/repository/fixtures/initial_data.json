@@ -1,2780 +1,6 @@
 [
   {
     "pk": 1, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 0, 
-      "code": "C14", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "Cardiovascular diseases", 
-      "trial": 3, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 9, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 0, 
-      "code": "C14.240.850.750.147", 
-      "vocabulary": "DeCS", 
-      "level": "specific", 
-      "text": "Arteriovenous Fistula", 
-      "trial": 1, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 11, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 0, 
-      "code": "C14", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "Cardiovascular diseases", 
-      "trial": 4, 
-      "version": "2010", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 15, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 0, 
-      "code": "23414", 
-      "vocabulary": "ICD-10", 
-      "level": "general", 
-      "text": "", 
-      "trial": 20, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 18, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 0, 
-      "code": "C43-C44", 
-      "vocabulary": "ICD-10", 
-      "level": "general", 
-      "text": "", 
-      "trial": 22, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 22, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 0, 
-      "code": "C18", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "Nutritional and metabolic diseases", 
-      "trial": 24, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 24, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 0, 
-      "code": "adfdfasd", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "", 
-      "trial": 23, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 29, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 0, 
-      "code": "C14", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "Cardiovascular diseases", 
-      "trial": 26, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 32, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 0, 
-      "code": "C03", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "Parasitic diseases", 
-      "trial": 25, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 33, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 0, 
-      "code": "C17", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "Skin and connective tissue diseases", 
-      "trial": 28, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 36, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 0, 
-      "code": "454545", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "XE321", 
-      "trial": 30, 
-      "version": "", 
-      "aspect": "Intervention"
-    }
-  }, 
-  {
-    "pk": 37, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 0, 
-      "code": "C01", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "Bacterial infections and mycoses", 
-      "trial": 31, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 41, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 0, 
-      "code": "E02.095.135.164", 
-      "vocabulary": "DeCS", 
-      "level": "specific", 
-      "text": "Blood Transfusion, Autologous", 
-      "trial": 14, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 8, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 1, 
-      "code": "50-81-7", 
-      "vocabulary": "CAS", 
-      "level": "specific", 
-      "text": "L-Ascorbic acid", 
-      "trial": 3, 
-      "version": "", 
-      "aspect": "Intervention"
-    }
-  }, 
-  {
-    "pk": 10, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 1, 
-      "code": "50-78-2", 
-      "vocabulary": "CAS", 
-      "level": "specific", 
-      "text": "Benzoic acid, 2-(acetyloxy)-", 
-      "trial": 1, 
-      "version": "", 
-      "aspect": "Intervention"
-    }
-  }, 
-  {
-    "pk": 12, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 1, 
-      "code": "C14.280.647", 
-      "vocabulary": "DeCS", 
-      "level": "specific", 
-      "text": "Myocardial Ischemia", 
-      "trial": 4, 
-      "version": "2010", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 16, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 1, 
-      "code": "C22", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "Animal diseases", 
-      "trial": 20, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 19, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 1, 
-      "code": "C43-C44", 
-      "vocabulary": "ICD-10", 
-      "level": "specific", 
-      "text": "", 
-      "trial": 22, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 23, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 1, 
-      "code": "e11", 
-      "vocabulary": "ICD-10", 
-      "level": "specific", 
-      "text": "Non-insulin dependent Diabetes mellitus ", 
-      "trial": 24, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 25, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 1, 
-      "code": "c40", 
-      "vocabulary": "ICD-10", 
-      "level": "specific", 
-      "text": "", 
-      "trial": 23, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 30, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 1, 
-      "code": "B57.2", 
-      "vocabulary": "ICD-10", 
-      "level": "specific", 
-      "text": "Trypanosomiasis with cardiac involvement", 
-      "trial": 26, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 34, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 1, 
-      "code": "L80", 
-      "vocabulary": "ICD-10", 
-      "level": "specific", 
-      "text": "vitiligo", 
-      "trial": 28, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 38, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 1, 
-      "code": "C20", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "Immune system diseases", 
-      "trial": 31, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 2, 
-      "code": "C14.280.647", 
-      "vocabulary": "DeCS", 
-      "level": "specific", 
-      "text": "Myocardial Ischemia", 
-      "trial": 3, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 13, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 2, 
-      "code": "C14.280.647.250.285", 
-      "vocabulary": "DeCS", 
-      "level": "specific", 
-      "text": "Coronary Stenosis", 
-      "trial": 4, 
-      "version": "2010", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 17, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 2, 
-      "code": "3332", 
-      "vocabulary": "ICD-10", 
-      "level": "specific", 
-      "text": "", 
-      "trial": 20, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 20, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 2, 
-      "code": "C04", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "Neoplasms", 
-      "trial": 22, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 26, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 2, 
-      "code": "D09.546.359.448.500", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "glycemy", 
-      "trial": 24, 
-      "version": "", 
-      "aspect": "Intervention"
-    }
-  }, 
-  {
-    "pk": 27, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 2, 
-      "code": "2222", 
-      "vocabulary": "CAS", 
-      "level": "general", 
-      "text": "bevacizumab", 
-      "trial": 23, 
-      "version": "", 
-      "aspect": "Intervention"
-    }
-  }, 
-  {
-    "pk": 31, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 2, 
-      "code": "C03", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "Parasitic diseases", 
-      "trial": 26, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 35, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 2, 
-      "code": "E01.370.600.620.750", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "skin pigmentation", 
-      "trial": 28, 
-      "version": "", 
-      "aspect": "Intervention"
-    }
-  }, 
-  {
-    "pk": 39, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 2, 
-      "code": "A15.9", 
-      "vocabulary": "ICD-10", 
-      "level": "specific", 
-      "text": "Respiratory tuberculosis unspecified, confirmed bacteriologically and histologically", 
-      "trial": 31, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 3, 
-      "code": "C14.280.647.250.260", 
-      "vocabulary": "DeCS", 
-      "level": "specific", 
-      "text": "Coronary Artery Disease", 
-      "trial": 3, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 14, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 3, 
-      "code": "C14.280.647.250.285.200", 
-      "vocabulary": "DeCS", 
-      "level": "specific", 
-      "text": "Coronary Restenosis", 
-      "trial": 4, 
-      "version": "2010", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 21, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 3, 
-      "code": "C04", 
-      "vocabulary": "DeCS", 
-      "level": "specific", 
-      "text": "", 
-      "trial": 22, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 28, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 3, 
-      "code": "0000", 
-      "vocabulary": "CAS", 
-      "level": "general", 
-      "text": "placebo", 
-      "trial": 23, 
-      "version": "", 
-      "aspect": "Intervention"
-    }
-  }, 
-  {
-    "pk": 40, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 3, 
-      "code": "D04.345.295.750.700", 
-      "vocabulary": "DeCS", 
-      "level": "general", 
-      "text": "Rifampin", 
-      "trial": 31, 
-      "version": "", 
-      "aspect": "Intervention"
-    }
-  }, 
-  {
-    "pk": 7, 
-    "model": "repository.descriptor", 
-    "fields": {
-      "_order": 4, 
-      "code": "C14.280.647.250.285", 
-      "vocabulary": "DeCS", 
-      "level": "specific", 
-      "text": "Coronary Stenosis", 
-      "trial": 3, 
-      "version": "", 
-      "aspect": "HealthCondition"
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 1, 
-      "_order": 0, 
-      "description": "The primary outcome measure is (unassisted) patency of the AVF at ninety (90)days after surgery. This is defined as the presence of an audible bruit over the site of the arterio-venous anastomosis, without the need for surgical or radiological intervention from the time of creation until the time of assessment.\r\nThe assessment of patency will be made at this time even if the AVF is not yet used for haemodialysis (11). Measurement of bruit will also be taken at 1 month to better define the natural history of thrombotic events.", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 6, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 3, 
-      "_order": 0, 
-      "description": "Left Ventricular Ejection Fraction (LVEF). Timepoint: Before and after CABG. Method of measurement: Trans Thoracic Echocardiography (TTE)", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 8, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 0, 
-      "description": "(This trial has no primary outcome, all outcomes are of equal weight) Acute success (clinical device and clinical procedure). Acute Success is classified according to the following definitions: Clinical Device Success Successful delivery and deployment of the Clinical Investigation stent at the target lesion and successful withdrawal of the stent delivery system with attainment of final residual stenosis < 50% by Qualitative Coronary Angiography (QCA) (by visual estimation if QCA is unavailable). Standard pre-dilation catheters and post-dilatation catheters (if applicable) may be used. Bailout subjects will be included as device success only if the above criteria for clinical device success are met. Clinical Procedure Success Successful delivery and deployment of the Clinical Investigation stent at the target lesion and successful withdrawal of the stent delivery system with attainment of final residual stenosis of < 50% by QCA (by visual estimation if QCA unavailable) and/or using any adjunctive device without the occurrence of ischemia driven major adverse cardiac event (MACE) during the hospital stay with a maximum of first seven days post index procedure. In a dual lesion setting both lesions must meet clinical procedure success. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 36, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 24, 
-      "_order": 0, 
-      "description": "Effect of treatment on the nominal change in percent atheroma volume of the identified target coronary artery segment from baseline after 18 months of treatment as measured by intravascular ultrasound (IVUS) imaging of the coronary arteries.", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 38, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 23, 
-      "_order": 0, 
-      "description": "pain relief", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 42, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 26, 
-      "_order": 0, 
-      "description": "The first occurrence of any of the following clinically significant outcomes: \r\ndeath\r\ncardiac arrest, requiring defibrillator or cardioversion\r\ndocumented sustained ventricular tachycardia requiring cardioversion\r\nnew development of symptomatic congestive heart failure\r\n#pacemaker or implantable cardiac defibrillator implantation\r\nstroke or any other thromboembolic event in patients with no prior thromboembolic phenomena", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 44, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 28, 
-      "_order": 0, 
-      "description": "Prospective investigator-blinded study involving 25 adult male and female subjects with vitiligo on the backs of both hands. Punch minigrafting will be performed on both hands taking skin from the thighs and/or buttocks. Light treatments will be administered starting at week one after grafting. One hand will receive narrow-band ultraviolet B light and the other will receive focal 308-nm light treatments. Light treatments will be administered 3 times per week for 12 weeks. A long term follow-up visit will be completed at week 25. The investigator will evaluate the subjects at week 4, 7, 13 and 25 in addition to screening and baseline evaluations/procedures.", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 46, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 29, 
-      "_order": 0, 
-      "description": "Incidence of preeclampsia", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 47, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 31, 
-      "_order": 0, 
-      "description": "proportion of patients with viral load < 80 at the end of tuberculosis therapy \r\n\r\n[Time Frame: 6 months] \r\n\r\n", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 7, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 3, 
-      "_order": 1, 
-      "description": "Total Antioxidant Capacity (TAC) . Timepoint: Before, middle and after CABG. Method of measurement: Biochemistry (blood sample)", 
-      "interest": "secondary"
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 1, 
-      "_order": 1, 
-      "description": "Functional patency at 6 months. This is defined as the ability to use the AVF for a minimum of 3 consecutive dialysis treatments to the satisfaction of the clinician(s), without the need to use alternative dialysis access, or to delay commencement of dialysis. In patients who have not needed to start dialysis,\r\nassessment of functional patency will be delayed until commencement of dialysis. ", 
-      "interest": "secondary"
-    }
-  }, 
-  {
-    "pk": 9, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 1, 
-      "description": "Cardiac Death (CD): Any death due to proximate cardiac cause (e.g., myocardial infarction, low-output failure, fatal arrhythmia), unwitnessed death, death of unknown cause, and all procedure-related deaths, including those related to concomitant treatment. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 37, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 24, 
-      "_order": 1, 
-      "description": "    * Compare the effect of pioglitazone HCl and glimepiride on the nominal change in total atheroma volume \r\n    * Compare the effect of pioglitazone HCl and glimepiride on the occurrence of cardiovascular events as a composite of cardiovascular mortality, nonfatal myocardial infarction, nonfatal stroke. ", 
-      "interest": "secondary"
-    }
-  }, 
-  {
-    "pk": 39, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 23, 
-      "_order": 1, 
-      "description": "quality of life", 
-      "interest": "secondary"
-    }
-  }, 
-  {
-    "pk": 43, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 26, 
-      "_order": 1, 
-      "description": "New development of any of the following echo changes clinically indicated or done for the trial: \r\nventricular aneurysm\r\nreduction in left ventricular (LV) ejection fraction > 5%\r\nincrease in left ventricular diastolic dysfunction (LVDD) > 5.0 mm compared with baseline\r\nProgression of New York Heart Association (NYHA) functional class by at least one category\r\nEvaluation of safety (adverse events: dermatitis, peripheral neuropathy, gastro-intestinal intolerance, leucopenia [2500 x 10^9 L]), tolerance and adherence to treatment", 
-      "interest": "secondary"
-    }
-  }, 
-  {
-    "pk": 45, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 28, 
-      "_order": 1, 
-      "description": "Percent repigmentation of individual surviving grafts, percent repigmentation of all surviving grafts per hand, and percent repigmentation of lesional skin with each light source. Time Frame: 25 weeks", 
-      "interest": "secondary"
-    }
-  }, 
-  {
-    "pk": 48, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 31, 
-      "_order": 1, 
-      "description": "proportion of adverse events in each group \r\n\r\n[Time Frame: 6 months] ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 1, 
-      "_order": 2, 
-      "description": "Time to failure of primary patency. Time from AVF creation to need for first intervention. An event is defined as revision surgery, need for alternative access, or abandonment of AVF which ever comes first. Censored observations are defined as regaining renal function such that dialysis is not needed or still having a patent AVF at time of study analysis. There will be a minimum of 12 months follow up time for each patient. ", 
-      "interest": "secondary"
-    }
-  }, 
-  {
-    "pk": 10, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 2, 
-      "description": "Myocardial Infarction (MI): Q wave MI Development of new, pathological Q wave on the Electrocardiogram (ECG) Non-Q wave MI Elevation of Creatine Kinase (CK) levels to greater than or equal to two times the upper limit of normal (ULN) with elevated Creatine Kinase-Myocardial Band (CK-MB) in the absence of new pathological Q waves. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 40, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 23, 
-      "_order": 2, 
-      "description": "1", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 49, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 31, 
-      "_order": 2, 
-      "description": "Immunologic reconstitution \r\n\r\n[Time Frame: 6 months]", 
-      "interest": "secondary"
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 1, 
-      "_order": 3, 
-      "description": "Time to failure of assisted patency. This is defined as time from AVF creation to abandonment of access. That is, radiological and surgical interventions to preserve or restore patency do not constitute failure. An event is defined as abandonment of the AVF as dialysis access. Censored observations will be as for time to failure of primary patency above. ", 
-      "interest": "secondary"
-    }
-  }, 
-  {
-    "pk": 11, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 3, 
-      "description": "Target Vessel Myocardial Infarction (TV-MI): Please see \"MI\" in outcome #2. An MI which originates in the target vessel (vessel to be treated) based on information entered by site personnel. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 41, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 23, 
-      "_order": 3, 
-      "description": "1", 
-      "interest": "secondary"
-    }
-  }, 
-  {
-    "pk": 50, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 31, 
-      "_order": 3, 
-      "description": "Genotyping resistance\r\n\r\n[Time Frame: 6 months]", 
-      "interest": "secondary"
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 1, 
-      "_order": 4, 
-      "description": "Adverse events. All serious adverse events (see section 5.4) will be collected. The analysis of this secondary outcome will focus specifically on bleeding events.", 
-      "interest": "secondary"
-    }
-  }, 
-  {
-    "pk": 12, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 4, 
-      "description": "Ischemia Driven Major Adverse Cardiac Events (ID MACE): The composite endpoint composed of cardiac death, myocardial infarction (MI) ischemia-driven target lesion revascularization (TLR) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 13, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 5, 
-      "description": "Ischemia driven Target Vessel Failure (ID TVF): Any repeat percutaneous intervention or surgical bypass of any segment of the target vessel. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 14, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 6, 
-      "description": "Ischemia Driven Target Lesion Revascularization (ID TLR): Any repeat percutaneous intervention of the target lesion or bypass surgery of the target vessel performed for restenosis or other complication of the target lesion. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 15, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 7, 
-      "description": "Ischemia Driven Target Vessel Revascularization (ID TVR): Any repeat percutaneous intervention or surgical bypass of any segment of the target vessel. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 16, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 8, 
-      "description": "Stent thrombosis: Clinical presentation of acute coronary syndrome with angiographic evidence of stent thrombosis. In the absence of angiography, any unexplained death, or acute MI in the distribution of the target lesion within 30 days This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 17, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 9, 
-      "description": "Descriptive analysis of strut, lesion and vessel morphology post-procedure by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in Percutaneous Coronary Intervention (PCI). This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 18, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 10, 
-      "description": "Stent area post-procedure assessed by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in PCI. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 19, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 11, 
-      "description": "Lumen area assessed by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in PCI. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 20, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 12, 
-      "description": "Minimum luminal area (MLA) assessed by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in PCI. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 21, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 13, 
-      "description": "Incomplete apposition (baseline), persisting incomplete apposition, late incomplete apposition assessed by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in PCI. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 22, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 14, 
-      "description": "In-stent Late Loss (LL) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 23, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 15, 
-      "description": "In-segment LL assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 24, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 16, 
-      "description": "Proximal LL (proximal defined as within 5 mm of tissue proximal to stent placement) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 25, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 17, 
-      "description": "Distal LL (distal defined as within 5 mm of tissue distal to stent placement) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 26, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 18, 
-      "description": "In-stent and in-segment Minimum Luminal Diameter (MLD) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 27, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 19, 
-      "description": "In-stent and in-segment % Diameter Stenosis (DS) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 28, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 20, 
-      "description": "In-stent and in-segment Angiographic Binary Restenosis (ABR) rate assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 29, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 21, 
-      "description": "Aneurysm, thrombus, persisting dissection assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 30, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 22, 
-      "description": "Vessel area assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 31, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 23, 
-      "description": "Stent area post-procedure and (if analyzable) assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 32, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 24, 
-      "description": "Minimum luminal area (MLA) assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 33, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 25, 
-      "description": "In-stent %Volume Obstruction (VO) assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 34, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 26, 
-      "description": "Incomplete apposition (baseline), persisting incomplete apposition, late incomplete apposition assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 35, 
-    "model": "repository.outcome", 
-    "fields": {
-      "trial": 4, 
-      "_order": 27, 
-      "description": "Descriptive analysis of vascular and stent morphology using Multi-Slice Computed Tomography (MSCT) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
-      "interest": "primary"
-    }
-  }, 
-  {
-    "pk": 14, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Teste do Luciano em 14 de jun de 2010", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-20 20:08:49", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-14 17:48:11", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 16, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 31, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Anti-retroviral Efficacy, Tolerance and Other Pharmacologic Interactions of the Non Nucleoside Analog Efavirenz in Association With Rifampicin to Treat Tuberculosis and AIDS", 
-      "public_title": "Randomized Clinical Trial to Assess the Efficacy and Safety of Concomitant Use of Rifampicin and Efavirenz 600 X 800mg (IPEC-EFV)", 
-      "enrollment_end_actual": null, 
-      "trial_id": "RBR-9rm-tzr", 
-      "inclusion_criteria": "* Adults with tuberculosis diagnosis, HIV positive.\r\n\r\n* Agreement to avoid not allowed drugs during the trial, agreement to participate in the study (informed consent)\r\n", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [
-        [
-          "drug"
-        ]
-      ], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": false, 
-      "agemin_unit": "Y", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "Tuberculosis\r\nHIV Infections", 
-      "masking": [
-        "open"
-      ], 
-      "exported": null, 
-      "number_of_arms": 2, 
-      "status": "published", 
-      "updated": "2010-07-20 15:32:17", 
-      "target_sample_size": 178, 
-      "study_type": null, 
-      "i_freetext": "efavirenz", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": null, 
-      "enrollment_end_planned": null, 
-      "allocation": [
-        "randomized-controlled"
-      ], 
-      "scientific_acronym_expansion": "", 
-      "purpose": [
-        "treatment"
-      ], 
-      "phase": [
-        "4"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 18, 
-      "enrollment_start_planned": "2010-10-01", 
-      "staff_note": "", 
-      "study_design": "Study Type:  \t Interventional\r\n\r\nControl: Dose Comparison\r\nEndpoint Classification: Safety/Efficacy Study\r\n\r\nPrimary Purpose: Treatment\r\nAllocation: Randomized\r\nMasking: Open Label\r\nIntervention Model: Parallel Assignment\r\n", 
-      "created": "2010-07-19 20:36:14", 
-      "gender": "-", 
-      "intervention_assignment": [
-        "parallel"
-      ], 
-      "exclusion_criteria": "* Active liver disease\r\n* Pregnancy or breast feeding\r\n* CD4 counts > 350\r\n", 
-      "primary_sponsor": 39, 
-      "recruitment_status": [
-        "pending"
-      ]
-    }
-  }, 
-  {
-    "pk": 28, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "The Efficacy of Hand-Foot Narrow-Band UVB Versus Focal 308-nm Treatment in Inducing Repigmentation of Vitiligo After Minigrafting on the Dorsal Hands", 
-      "public_title": "The Efficacy of Hand NBUVB Versus Excilite Treatment in Vitiligo After Minigrafting on the Dorsal Hands", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ], 
-        [
-          "US"
-        ]
-      ], 
-      "i_code": [
-        [
-          "device"
-        ]
-      ], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": false, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "Vitiligo", 
-      "masking": [
-        "single-blind"
-      ], 
-      "exported": null, 
-      "number_of_arms": 2, 
-      "status": "processing", 
-      "updated": "2010-07-19 17:45:50", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "Device: Daavlin Spectra UVB Hand/Foot Box Narrow-band ultraviolet B hand box\r\nDevice: Excilite Focal 308-nm light\r\n\r\nActive Comparator\r\nRight hand treated with narrow-band UVB light and left hand treated with focal 308-nm light\r\nIntervention: Device: Daavlin Spectra UVB Hand/Foot Box\r\nActive Comparator\r\nRight hand treated with focal 308-nm light and left hand treated with narrow-band UVB light\r\nIntervention: Device: Excilite Focal 308-nm light", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": [
-        "randomized-controlled"
-      ], 
-      "scientific_acronym_expansion": "", 
-      "purpose": [
-        "treatment"
-      ], 
-      "phase": [
-        "1-2"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "Allocation:  Randomized\r\nControl:  Active Control\r\nEndpoint Classification:  Safety/Efficacy Study\r\nIntervention Model:  Single Group Assignment\r\nMasking:  Single Blind (Investigator)\r\nPrimary Purpose:  Treatment", 
-      "created": "2010-07-07 12:47:53", 
-      "gender": "-", 
-      "intervention_assignment": [
-        "single-group"
-      ], 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 34, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 30, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Title10\r\na\r\nb\r\nc\r\n3\r\n3\r\n\r\n2\r\n\r\n3\r\n3\r\n4", 
-      "public_title": "", 
-      "enrollment_end_actual": null, 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [
-        [
-          "drug"
-        ]
-      ], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-19 14:35:33", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": null, 
-      "enrollment_end_planned": null, 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": null, 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-07-16 19:32:32", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 37, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 27, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Teste 30/jun", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-16 13:35:33", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-30 13:27:51", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 33, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "A randomised, double-blind, placebo-controlled, factorial-design trial to assess the effect of aspirin and fish oil in the prevention of early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "1. Stage 4 or 5 chronic kidney disease\r\n2. Currently on haemodialysis or haemodialysis is planned to start within 6\r\nmonths (including patients currently on peritoneal dialysis).\r\n3. Planned AVF will be the primary haemodialysis access mechanism.\r\n4. Surgery to create an arterio-venous fistula in the upper or lower arm is planned.\r\n5. Aged over 18 years\r\n6. Life expectancy predicted to be 12 months minimum\r\n7. Treating team agreeable to patient\\'s involvement in the trial\r\n8. Informed consent ", 
-      "recruitment_country": [
-        [
-          "AW"
-        ], 
-        [
-          "NZ"
-        ]
-      ], 
-      "i_code": [
-        [
-          "drug"
-        ], 
-        [
-          "dietary supplement"
-        ]
-      ], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "Y", 
-      "scientific_acronym": "FAVOURED (Fish oil and Aspirin in Vascular acccess OUtcomes in REnal Disease)", 
-      "acronym": "", 
-      "hc_freetext": "Early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis.", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-15 17:00:13", 
-      "target_sample_size": 1200, 
-      "study_type": [
-        "interventional"
-      ], 
-      "i_freetext": "Aspirin 100 mg per day or matching placebo, commencing on the day prior to scheduled surgery and continuing for 3 months.", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": [
-        "1"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 18, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-01-20 17:47:08", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "1. Revision of existing AVF rather than de novo AVF\r\n2. Medical indication for anti-platelet agent(s)\r\n3. Known intolerance of agents including hypersensitivity to aspirin\r\n4. Current use of aspirin within two weeks of commencing trial, and of fish oil within 4 weeks of commencing trial.\r\n5. Pregnancy, lactation or intention to fall pregnant during the time course of the study\r\n6. Known bleeding disorder or established diagnosis of active or suspected bleeding\r\n7. Known active peptic ulcer disease\r\n8. Already receiving anti-coagulation therapy such as warfarin\r\n9. Receiving regular anti-inflammatory agents for another indication such as\r\narthritis\r\n10.Potential non-compliance with treatment regimen in the view of the\r\ntreating clinicians\r\n11.Involved in another clinical trial where the intervention being trialled is likely to confound the outcome of this trial\r\n12.Previously randomised to this trial. ", 
-      "primary_sponsor": 1, 
-      "recruitment_status": [
-        "pending"
-      ]
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Minimal trial record (only required fields)", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-15 16:58:49", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-01-20 17:47:08", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": null, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Effect of Ascorbic Acid and Grape Seed Extract \"Vitis Vinifera L.\" on Oxidative Stress Induced by on Pump Coronary Artery bypass Grafting Surgery", 
-      "public_title": "Comparison of Ascorbic Acid and Grape Seed Extract in Oxidative Stress Induced by on Pump Heart Surgery", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "Candidates for elective CABG surgery with pump for first time, 3 Vessel Disease (3VD).", 
-      "recruitment_country": [
-        [
-          "IR"
-        ]
-      ], 
-      "i_code": [
-        [
-          "drug"
-        ]
-      ], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "Condition 1: Coronary Atrery Bypass Graft (CABG).\r\nCondition 2: Atherosclerotic heart disease.\r\nCondition 3: Ischaemic cardiomyopathy.", 
-      "masking": [
-        "double-blind"
-      ], 
-      "exported": null, 
-      "number_of_arms": 3, 
-      "status": "processing", 
-      "updated": "2010-07-15 16:57:56", 
-      "target_sample_size": 75, 
-      "study_type": [
-        "interventional"
-      ], 
-      "i_freetext": "Intervention 1: Control Group: without intervention.\r\nIntervention 2: Grape Seed Extract 100 mg/6h .\r\nIntervention 3: Vit C 25 mg/kg.", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": [
-        "randomized-controlled"
-      ], 
-      "scientific_acronym_expansion": "", 
-      "purpose": [
-        "treatment"
-      ], 
-      "phase": [
-        "2-3"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "2008-11-01", 
-      "staff_note": "", 
-      "study_design": "Randomization: randomized. Blinding: Double blind. Placebo: not used. Assignment: Parallel. Purpose: Supportive care. Other design features: .", 
-      "created": "2010-01-20 17:47:08", 
-      "gender": "-", 
-      "intervention_assignment": [
-        "parallel"
-      ], 
-      "exclusion_criteria": "High risk patients, Those who need another heart surgery beside CABG, Urgent patients Diabetics, Ischemic time more than 120 min.", 
-      "primary_sponsor": 2, 
-      "recruitment_status": [
-        "completed"
-      ]
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Clinical Investigation: A Continuation in the Clinical Evaluation of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the Treatment of Subjects With de Novo Native Coronary Artery Lesions  ", 
-      "public_title": "Clinical Investigation: An assessment of the safety and performance of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the treatment of patients with de novo native coronary artery lesions.", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "Up to two de novo lesions can be treated, each located in a separate native epicardial vessel.\r\n\r\nTarget lesion(s) must measure <= 28 mm in length by Qualitative Coronary Angiography (QCA), or by visual estimation if on line QCA is not available.\r\n\r\nTarget lesion(s) must be in a major artery or branch with a visually estimated stenosis of >= 50% and < 100% with a Thrombolysis in Myocardial Infarction (TIMI) flow of >= 1.\r\n\r\nIf two treatable lesions meet the inclusion criteria they must be in separate major epicardial vessels.\r\n\r\nPercutaneous interventions for lesions in a non-target vessel are allowed if done >= 30 days prior to or if planned to be done > 6 months after the index procedure.\r\n\r\nPercutaneous intervention for lesions in the target vessel are allowed if done > 6 months prior to or if planned to be done 6 months after the index procedure.", 
-      "recruitment_country": [
-        [
-          "AU"
-        ], 
-        [
-          "BE"
-        ], 
-        [
-          "BR"
-        ], 
-        [
-          "DK"
-        ], 
-        [
-          "FR"
-        ], 
-        [
-          "IT"
-        ], 
-        [
-          "NL"
-        ], 
-        [
-          "PL"
-        ], 
-        [
-          "CH"
-        ]
-      ], 
-      "i_code": [
-        [
-          "device"
-        ]
-      ], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "Y", 
-      "scientific_acronym": "ABSORB EXTEND", 
-      "acronym": "ABSORB EXTEND", 
-      "hc_freetext": "Coronary Artery Stenosis\r\nCoronary Disease\r\nCoronary Artery Disease\r\n", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-15 16:52:06", 
-      "target_sample_size": 1000, 
-      "study_type": null, 
-      "i_freetext": "Bioabsorbable Vascular Solutions Everolimus Eluting Coronary Stent System (BVS EECSS). Percutaneous Coronary Intervention (PCI) is commonly known as coronary angioplasty. Typically, PCI is performed by threading a slender balloon-tipped tube, a catheter, from an artery in the groin to a trouble spot in an artery of the heart. The balloon is then inflated, compressing the plaque and dilating (widening) the narrowed coronary artery so that blood can flow more easily. During PCI for this study, the BVS EECSS is then placed in the coronary artery to support the previously narrowed area. The BVS EECSS will remain in place until the bioabsorbtion process is complete, your physician will discuss this process with you. The duration of the PCI procedure will depend on many factors, and is typically less than 2 hours. Your physician will discuss those factors and the length of your procedure with you.\r\n\r\nOptical Coherence Tomography (OCT) subgroup definition:\r\n- A subgroup of up to 50 subjects who:\r\n\r\n- Have their procedures performed at selected investigational sites with OCT capability; and\r\n\r\n- Receive planned overlapping stent treatment of the target lesion.\r\n\r\n- The need for planned overlapping of BVS stents will be determined by the investigator up to the time of the index procedure.\r\n\r\n- Angiography, Intravascular Ultrasound (IVUS) and OCT are required for all subjects in the OCT subgroup post-procedure and at 2-year follow-up\r\n\r\n\r\n\r\nMulti-Slice Computed Tomography subgroup definition:\r\n\r\n- A subgroup of up to 100 subjects who:\r\n\r\n- Have their procedures performed at selected investigational sites having both OCT and MSCT capability; and\r\n\r\n- Receive at least one BVS EECSS in the target lesion.\r\n\r\nMSCT imaging and clinical follow-up at 18 months is required for all subjects in the MSCT subgroup.", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 18, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-03-02 13:34:30", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "Lesion(s) located within an arterial or saphenous vein graft or distal to a diseased (defined as vessel irregularity per angiogram and > 20% stenosed lesion by visual estimation) arterial or saphenous vein graft. Lesion(s) involving a bifurcation with side branch vessel >= 2 mm in diameter, ostial lesion > 40% stenosed by visual estimation or side branch requiring predilatation. Total occlusion (TIMI flow 0), prior to wire passing. Target vessel(s) contains visible thrombus. Another clinically significant lesion is located in the same epicardial vessel (including side branch) as the target lesion(s). Subject has received brachytherapy in any epicardial vessel (including side branches).", 
-      "primary_sponsor": 3, 
-      "recruitment_status": [
-        "recruiting"
-      ]
-    }
-  }, 
-  {
-    "pk": 6, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "teste de Margot", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-15 16:44:19", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-04-05 16:56:59", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 5, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 7, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Avalia\u00e7\u00e3o da dosagem do praziquantel para o tratamento da esquistossomose no Brasil", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-15 16:42:49", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-04-22 13:18:47", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 6, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 8, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Prevention of Heterotopic Ossification With Arcoxia After Total Hip Replacement", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "NL"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-15 16:42:30", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-04-22 19:17:28", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 7, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 9, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "The efficacy of penicillin G potassium in reducing aphthous ulcer pain and lesion size in a Chinese cohort: a randomized, double-blinded, placebo and blank controlled, multicenter clinical trial.", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "CN"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-15 16:41:00", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-04-22 20:01:45", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 8, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 29, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "RCT of Antioxidant Therapy to Prevent Preeclampsia in Brazil", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": false, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-13 19:19:26", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": [
-        "3"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-07-13 19:07:15", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 36, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 26, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Benznidazole evaluation for interrupting tripanosomiasis \u2013 BENEFIT trial", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "Consenting patients (between 18 and 75 years of age) with serological evidence of Chagas infection (any combination of 2 positive tests) and that have one or more of the following:\r\nAbnormal electrocardiogram with at least two components (complete RBBB or LBBB; left anterior or posterior fascicular block; ventricular premature beat; first degree atrioventricular [AV] block; Mobitz type I AV block; sinus bradycardia; primary ST-T changes; abnormal Q waves; low voltage QRS; or atrial fibrillation);\r\nAbnormal ECG (Mobitz type II, advanced or third degree AV block)", 
-      "recruitment_country": [
-        [
-          "AR"
-        ], 
-        [
-          "BR"
-        ], 
-        [
-          "CA"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 75, 
-      "agemax_unit": "Y", 
-      "expanded_access_program": false, 
-      "agemin_unit": "Y", 
-      "scientific_acronym": "BENEFIT", 
-      "acronym": "", 
-      "hc_freetext": "Chagas Disease\r\nTrypanosomiasis\r\nHeart Disease\r\n", 
-      "masking": [
-        "double-blind"
-      ], 
-      "exported": null, 
-      "number_of_arms": 1, 
-      "status": "processing", 
-      "updated": "2010-07-07 14:17:55", 
-      "target_sample_size": 600, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": [
-        "randomized-controlled"
-      ], 
-      "scientific_acronym_expansion": "Benznidazole Evaluation for Interrupting Trypanosomiasis", 
-      "purpose": [
-        "treatment"
-      ], 
-      "phase": [
-        "1-2"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 18, 
-      "enrollment_start_planned": "2004-01-11", 
-      "staff_note": "", 
-      "study_design": "Double-Blind, randomized placebo control safety and efficacy study with single Group Assignment for treatment os Chagas Disease", 
-      "created": "2010-06-30 11:25:32", 
-      "gender": "-", 
-      "intervention_assignment": [
-        "single-group"
-      ], 
-      "exclusion_criteria": "NYHA heart failure class IV or decompensated heart failure\r\nEvidence of concomitant coronary artery disease (CAD) or other etiology of dilated cardiomyopathy\r\nPrevious treatment with antitrypanosomal agents or an accepted indication for antiparasitic therapy\r\nHistory of severe alcohol abuse within 2 years\r\nKnown chronic renal or hepatic insufficiency\r\nPregnancy or breast feeding\r\n", 
-      "primary_sponsor": 32, 
-      "recruitment_status": [
-        "recruiting"
-      ]
-    }
-  }, 
-  {
-    "pk": 25, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "title scientific test", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-01 13:53:07", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-29 14:08:33", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 30, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 24, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Efficacy Study of Pioglitazone Compared to Glimepiride on Coronary Atherosclerotic Disease Progression in Subjects With Type 2 Diabetes Mellitus (PERISCOPE)", 
-      "public_title": "Efficacy Study of Pioglitazone Compared to Glimepiride on Coronary Atherosclerotic Disease Progression in Subjects With Type 2 Diabetes Mellitus", 
-      "enrollment_end_actual": "", 
-      "trial_id": "RBR-7k3-rct", 
-      "inclusion_criteria": "nclusion Criteria:\r\n\r\n    * Females of childbearing potential who were sexually active agreed to use adequate ontraception, and can neither be pregnant nor lactating from screening throughout the duration of the study.\r\n    * Had a diagnosis of type 2 diabetes mellitus\r\n    * Have received appropriate counseling on lifestyle modification for type 2 diabetes, including diet and exercise.\r\n    * na\u00efve to or was not currently taking antidiabetic therapy\r\n    * Had a glycosylated hemoglobin level greater than or equal to 6.0% and less than 9% at screening if taking antidiabetic medication", 
-      "recruitment_country": [
-        [
-          "BR"
-        ], 
-        [
-          "CA"
-        ], 
-        [
-          "CL"
-        ], 
-        [
-          "US"
-        ]
-      ], 
-      "i_code": [
-        [
-          "drug"
-        ]
-      ], 
-      "agemax_value": 85, 
-      "agemax_unit": "Y", 
-      "expanded_access_program": false, 
-      "agemin_unit": "Y", 
-      "scientific_acronym": "PERISCOPE", 
-      "acronym": "", 
-      "hc_freetext": "Diabetes mellitus", 
-      "masking": [
-        "double-blind"
-      ], 
-      "exported": null, 
-      "number_of_arms": 2, 
-      "status": "published", 
-      "updated": "2010-06-22 14:19:04", 
-      "target_sample_size": 544, 
-      "study_type": null, 
-      "i_freetext": "    * Drug: Pioglitazone\r\n      Up to 45 mg pioglitazone (optimized for glucose control), tablets, orally, once daily for up to 72 weeks.\r\n      Other Names: ACTOS\u00ae, AD4833\r\n    * Drug: Glimepiride\r\n      Up to 4 mg of glimepiride (optimized for glucose control), tablets, orally, once daily for up to 72 weeks.\r\n", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": [
-        "randomized-controlled"
-      ], 
-      "scientific_acronym_expansion": "Pioglitazone Effect on Regression of Intravascular Sonographic Coronary Obstruction Prospective Evaluation", 
-      "purpose": [
-        "treatment"
-      ], 
-      "phase": [
-        "3"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 35, 
-      "enrollment_start_planned": "2010-01-07", 
-      "staff_note": "", 
-      "study_design": "A Double-Blind, Randomized, parallel phase III Study", 
-      "created": "2010-06-22 10:41:42", 
-      "gender": "-", 
-      "intervention_assignment": [
-        "parallel"
-      ], 
-      "exclusion_criteria": "Exclusion Criteria:\r\n\r\n    * Had type I diabetes mellitus.\r\n    * Had participated in another investigational study, or participated in an investigational study 30 days prior to the start of this study\r\n    * Male subjects who had a serum creatinine level greater than or equal to 2.0 mg/dL ", 
-      "primary_sponsor": 28, 
-      "recruitment_status": [
-        "pending"
-      ]
-    }
-  }, 
-  {
-    "pk": 23, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "t\u00edtulo em ingl\u00eas", 
-      "public_title": "asdf", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "AM"
-        ], 
-        [
-          "AU"
-        ], 
-        [
-          "BZ"
-        ], 
-        [
-          "BT"
-        ]
-      ], 
-      "i_code": [
-        [
-          "drug"
-        ]
-      ], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": false, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "as3", 
-      "acronym": "2342", 
-      "hc_freetext": "", 
-      "masking": [
-        "double-blind"
-      ], 
-      "exported": null, 
-      "number_of_arms": 3, 
-      "status": "processing", 
-      "updated": "2010-06-22 12:46:59", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "342", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": [
-        "randomized-controlled"
-      ], 
-      "scientific_acronym_expansion": "2434", 
-      "purpose": [
-        "treatment"
-      ], 
-      "phase": [
-        "3"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "randomized controlled trial\r\n", 
-      "created": "2010-06-21 21:26:44", 
-      "gender": "-", 
-      "intervention_assignment": [
-        "parallel"
-      ], 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 27, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 22, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "\u201cEstudo TEAM (Efic\u00e1cia do Tasigna em Melanoma Avan\u00e7ado): Estudo fase III, de dois bra\u00e7os, randomizado, aberto e multic\u00eantrico para comparar a efic\u00e1cia de Tasigna\u00ae versus dacarbazina (DTIC) no tratamento de pacientes com melanoma metast\u00e1tico e/ou inoper\u00e1vel contendo uma muta\u00e7\u00e3o do c-Kit\u201d", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-06-21 20:53:31", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-21 20:35:22", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 26, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 21, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "teste", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "AF"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-06-21 13:55:07", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-21 13:55:07", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 25, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 20, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "A Phase II Study of Single-Agent Lenalidomide in Subjects With Relapsed Or Refractory T-Cell Non-Hodgkin's Lymphoma (EXPECT)", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "AU"
-        ], 
-        [
-          "BE"
-        ], 
-        [
-          "FR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "(EXPECT)", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-06-18 19:53:13", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-18 19:16:12", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 22, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 19, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "hghjghjghjhj", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "AT"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-06-17 19:26:29", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-17 19:26:29", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 21, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 18, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "fdfdfdfdf", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-06-17 19:23:02", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-17 19:23:02", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 20, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 17, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Segundo teste do dia 17/06", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-06-17 17:48:22", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-17 17:48:22", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 19, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 16, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Teste do dia 17/06", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-06-17 17:47:04", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-17 17:47:04", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 18, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 15, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "My new clinical trial", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-06-15 23:27:39", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-15 23:27:27", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 17, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 12, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Demo do dia 14 de junho", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": "RBR-46w-jsc", 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "published", 
-      "updated": "2010-06-14 13:55:51", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-14 13:40:25", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 14, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 13, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Uso da metformina em pacientes com diabetes tipo 2", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "AF"
-        ], 
-        [
-          "AO"
-        ], 
-        [
-          "BD"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-06-14 13:44:50", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-14 13:44:50", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 15, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 11, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "T\u00edtulo A", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "UG"
-        ], 
-        [
-          "AE"
-        ], 
-        [
-          "UY"
-        ], 
-        [
-          "VU"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-06-14 13:00:40", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-14 13:00:40", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 10, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 10, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "06/12/2010 Test", 
-      "public_title": "06/12/2010 Test", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "Test", 
-      "acronym": "Teste", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-06-12 20:51:27", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "test", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "Test", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-12 20:47:20", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 9, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Teste da reuni\u00e3o Elluminate", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "DZ"
-        ], 
-        [
-          "AO"
-        ], 
-        [
-          "AW"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-03-30 18:55:44", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-03-30 18:51:44", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 4, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 1, 
     "model": "repository.clinicaltrialtranslation", 
     "fields": {
       "scientific_title": "Efeito do \u00e1cido asc\u00f3rbico e extrato de semente de Uva \"Vitis Vinifera L.\" sobre o estresse oxidativo induzido por bomba em cirurgia de revasculariza\u00e7\u00e3o de art\u00e9ria coronariana", 
@@ -6381,6 +3607,2780 @@
       ], 
       "language": "pt-br", 
       "object_id": 41
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "C14", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Cardiovascular diseases", 
+      "trial": 3, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "C14.240.850.750.147", 
+      "vocabulary": "DeCS", 
+      "level": "specific", 
+      "text": "Arteriovenous Fistula", 
+      "trial": 1, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "C14", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Cardiovascular diseases", 
+      "trial": 4, 
+      "version": "2010", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "23414", 
+      "vocabulary": "ICD-10", 
+      "level": "general", 
+      "text": "", 
+      "trial": 20, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "C43-C44", 
+      "vocabulary": "ICD-10", 
+      "level": "general", 
+      "text": "", 
+      "trial": 22, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "C18", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Nutritional and metabolic diseases", 
+      "trial": 24, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "adfdfasd", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "", 
+      "trial": 23, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "C14", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Cardiovascular diseases", 
+      "trial": 26, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "C03", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Parasitic diseases", 
+      "trial": 25, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "C17", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Skin and connective tissue diseases", 
+      "trial": 28, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "454545", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "XE321", 
+      "trial": 30, 
+      "version": "", 
+      "aspect": "Intervention"
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "C01", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Bacterial infections and mycoses", 
+      "trial": 31, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 41, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "E02.095.135.164", 
+      "vocabulary": "DeCS", 
+      "level": "specific", 
+      "text": "Blood Transfusion, Autologous", 
+      "trial": 14, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 1, 
+      "code": "50-81-7", 
+      "vocabulary": "CAS", 
+      "level": "specific", 
+      "text": "L-Ascorbic acid", 
+      "trial": 3, 
+      "version": "", 
+      "aspect": "Intervention"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 1, 
+      "code": "50-78-2", 
+      "vocabulary": "CAS", 
+      "level": "specific", 
+      "text": "Benzoic acid, 2-(acetyloxy)-", 
+      "trial": 1, 
+      "version": "", 
+      "aspect": "Intervention"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 1, 
+      "code": "C14.280.647", 
+      "vocabulary": "DeCS", 
+      "level": "specific", 
+      "text": "Myocardial Ischemia", 
+      "trial": 4, 
+      "version": "2010", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 1, 
+      "code": "C22", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Animal diseases", 
+      "trial": 20, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 1, 
+      "code": "C43-C44", 
+      "vocabulary": "ICD-10", 
+      "level": "specific", 
+      "text": "", 
+      "trial": 22, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 1, 
+      "code": "e11", 
+      "vocabulary": "ICD-10", 
+      "level": "specific", 
+      "text": "Non-insulin dependent Diabetes mellitus ", 
+      "trial": 24, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 1, 
+      "code": "c40", 
+      "vocabulary": "ICD-10", 
+      "level": "specific", 
+      "text": "", 
+      "trial": 23, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 1, 
+      "code": "B57.2", 
+      "vocabulary": "ICD-10", 
+      "level": "specific", 
+      "text": "Trypanosomiasis with cardiac involvement", 
+      "trial": 26, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 1, 
+      "code": "L80", 
+      "vocabulary": "ICD-10", 
+      "level": "specific", 
+      "text": "vitiligo", 
+      "trial": 28, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 1, 
+      "code": "C20", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Immune system diseases", 
+      "trial": 31, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 2, 
+      "code": "C14.280.647", 
+      "vocabulary": "DeCS", 
+      "level": "specific", 
+      "text": "Myocardial Ischemia", 
+      "trial": 3, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 2, 
+      "code": "C14.280.647.250.285", 
+      "vocabulary": "DeCS", 
+      "level": "specific", 
+      "text": "Coronary Stenosis", 
+      "trial": 4, 
+      "version": "2010", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 2, 
+      "code": "3332", 
+      "vocabulary": "ICD-10", 
+      "level": "specific", 
+      "text": "", 
+      "trial": 20, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 2, 
+      "code": "C04", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Neoplasms", 
+      "trial": 22, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 2, 
+      "code": "D09.546.359.448.500", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "glycemy", 
+      "trial": 24, 
+      "version": "", 
+      "aspect": "Intervention"
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 2, 
+      "code": "2222", 
+      "vocabulary": "CAS", 
+      "level": "general", 
+      "text": "bevacizumab", 
+      "trial": 23, 
+      "version": "", 
+      "aspect": "Intervention"
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 2, 
+      "code": "C03", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Parasitic diseases", 
+      "trial": 26, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 2, 
+      "code": "E01.370.600.620.750", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "skin pigmentation", 
+      "trial": 28, 
+      "version": "", 
+      "aspect": "Intervention"
+    }
+  }, 
+  {
+    "pk": 39, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 2, 
+      "code": "A15.9", 
+      "vocabulary": "ICD-10", 
+      "level": "specific", 
+      "text": "Respiratory tuberculosis unspecified, confirmed bacteriologically and histologically", 
+      "trial": 31, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 3, 
+      "code": "C14.280.647.250.260", 
+      "vocabulary": "DeCS", 
+      "level": "specific", 
+      "text": "Coronary Artery Disease", 
+      "trial": 3, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 3, 
+      "code": "C14.280.647.250.285.200", 
+      "vocabulary": "DeCS", 
+      "level": "specific", 
+      "text": "Coronary Restenosis", 
+      "trial": 4, 
+      "version": "2010", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 3, 
+      "code": "C04", 
+      "vocabulary": "DeCS", 
+      "level": "specific", 
+      "text": "", 
+      "trial": 22, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 3, 
+      "code": "0000", 
+      "vocabulary": "CAS", 
+      "level": "general", 
+      "text": "placebo", 
+      "trial": 23, 
+      "version": "", 
+      "aspect": "Intervention"
+    }
+  }, 
+  {
+    "pk": 40, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 3, 
+      "code": "D04.345.295.750.700", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Rifampin", 
+      "trial": 31, 
+      "version": "", 
+      "aspect": "Intervention"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 4, 
+      "code": "C14.280.647.250.285", 
+      "vocabulary": "DeCS", 
+      "level": "specific", 
+      "text": "Coronary Stenosis", 
+      "trial": 3, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 1, 
+      "_order": 0, 
+      "description": "The primary outcome measure is (unassisted) patency of the AVF at ninety (90)days after surgery. This is defined as the presence of an audible bruit over the site of the arterio-venous anastomosis, without the need for surgical or radiological intervention from the time of creation until the time of assessment.\r\nThe assessment of patency will be made at this time even if the AVF is not yet used for haemodialysis (11). Measurement of bruit will also be taken at 1 month to better define the natural history of thrombotic events.", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 3, 
+      "_order": 0, 
+      "description": "Left Ventricular Ejection Fraction (LVEF). Timepoint: Before and after CABG. Method of measurement: Trans Thoracic Echocardiography (TTE)", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 0, 
+      "description": "(This trial has no primary outcome, all outcomes are of equal weight) Acute success (clinical device and clinical procedure). Acute Success is classified according to the following definitions: Clinical Device Success Successful delivery and deployment of the Clinical Investigation stent at the target lesion and successful withdrawal of the stent delivery system with attainment of final residual stenosis < 50% by Qualitative Coronary Angiography (QCA) (by visual estimation if QCA is unavailable). Standard pre-dilation catheters and post-dilatation catheters (if applicable) may be used. Bailout subjects will be included as device success only if the above criteria for clinical device success are met. Clinical Procedure Success Successful delivery and deployment of the Clinical Investigation stent at the target lesion and successful withdrawal of the stent delivery system with attainment of final residual stenosis of < 50% by QCA (by visual estimation if QCA unavailable) and/or using any adjunctive device without the occurrence of ischemia driven major adverse cardiac event (MACE) during the hospital stay with a maximum of first seven days post index procedure. In a dual lesion setting both lesions must meet clinical procedure success. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 24, 
+      "_order": 0, 
+      "description": "Effect of treatment on the nominal change in percent atheroma volume of the identified target coronary artery segment from baseline after 18 months of treatment as measured by intravascular ultrasound (IVUS) imaging of the coronary arteries.", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 23, 
+      "_order": 0, 
+      "description": "pain relief", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 42, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 26, 
+      "_order": 0, 
+      "description": "The first occurrence of any of the following clinically significant outcomes: \r\ndeath\r\ncardiac arrest, requiring defibrillator or cardioversion\r\ndocumented sustained ventricular tachycardia requiring cardioversion\r\nnew development of symptomatic congestive heart failure\r\n#pacemaker or implantable cardiac defibrillator implantation\r\nstroke or any other thromboembolic event in patients with no prior thromboembolic phenomena", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 44, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 28, 
+      "_order": 0, 
+      "description": "Prospective investigator-blinded study involving 25 adult male and female subjects with vitiligo on the backs of both hands. Punch minigrafting will be performed on both hands taking skin from the thighs and/or buttocks. Light treatments will be administered starting at week one after grafting. One hand will receive narrow-band ultraviolet B light and the other will receive focal 308-nm light treatments. Light treatments will be administered 3 times per week for 12 weeks. A long term follow-up visit will be completed at week 25. The investigator will evaluate the subjects at week 4, 7, 13 and 25 in addition to screening and baseline evaluations/procedures.", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 46, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 29, 
+      "_order": 0, 
+      "description": "Incidence of preeclampsia", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 47, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 31, 
+      "_order": 0, 
+      "description": "proportion of patients with viral load < 80 at the end of tuberculosis therapy \r\n\r\n[Time Frame: 6 months] \r\n\r\n", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 3, 
+      "_order": 1, 
+      "description": "Total Antioxidant Capacity (TAC) . Timepoint: Before, middle and after CABG. Method of measurement: Biochemistry (blood sample)", 
+      "interest": "secondary"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 1, 
+      "_order": 1, 
+      "description": "Functional patency at 6 months. This is defined as the ability to use the AVF for a minimum of 3 consecutive dialysis treatments to the satisfaction of the clinician(s), without the need to use alternative dialysis access, or to delay commencement of dialysis. In patients who have not needed to start dialysis,\r\nassessment of functional patency will be delayed until commencement of dialysis. ", 
+      "interest": "secondary"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 1, 
+      "description": "Cardiac Death (CD): Any death due to proximate cardiac cause (e.g., myocardial infarction, low-output failure, fatal arrhythmia), unwitnessed death, death of unknown cause, and all procedure-related deaths, including those related to concomitant treatment. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 24, 
+      "_order": 1, 
+      "description": "    * Compare the effect of pioglitazone HCl and glimepiride on the nominal change in total atheroma volume \r\n    * Compare the effect of pioglitazone HCl and glimepiride on the occurrence of cardiovascular events as a composite of cardiovascular mortality, nonfatal myocardial infarction, nonfatal stroke. ", 
+      "interest": "secondary"
+    }
+  }, 
+  {
+    "pk": 39, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 23, 
+      "_order": 1, 
+      "description": "quality of life", 
+      "interest": "secondary"
+    }
+  }, 
+  {
+    "pk": 43, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 26, 
+      "_order": 1, 
+      "description": "New development of any of the following echo changes clinically indicated or done for the trial: \r\nventricular aneurysm\r\nreduction in left ventricular (LV) ejection fraction > 5%\r\nincrease in left ventricular diastolic dysfunction (LVDD) > 5.0 mm compared with baseline\r\nProgression of New York Heart Association (NYHA) functional class by at least one category\r\nEvaluation of safety (adverse events: dermatitis, peripheral neuropathy, gastro-intestinal intolerance, leucopenia [2500 x 10^9 L]), tolerance and adherence to treatment", 
+      "interest": "secondary"
+    }
+  }, 
+  {
+    "pk": 45, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 28, 
+      "_order": 1, 
+      "description": "Percent repigmentation of individual surviving grafts, percent repigmentation of all surviving grafts per hand, and percent repigmentation of lesional skin with each light source. Time Frame: 25 weeks", 
+      "interest": "secondary"
+    }
+  }, 
+  {
+    "pk": 48, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 31, 
+      "_order": 1, 
+      "description": "proportion of adverse events in each group \r\n\r\n[Time Frame: 6 months] ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 1, 
+      "_order": 2, 
+      "description": "Time to failure of primary patency. Time from AVF creation to need for first intervention. An event is defined as revision surgery, need for alternative access, or abandonment of AVF which ever comes first. Censored observations are defined as regaining renal function such that dialysis is not needed or still having a patent AVF at time of study analysis. There will be a minimum of 12 months follow up time for each patient. ", 
+      "interest": "secondary"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 2, 
+      "description": "Myocardial Infarction (MI): Q wave MI Development of new, pathological Q wave on the Electrocardiogram (ECG) Non-Q wave MI Elevation of Creatine Kinase (CK) levels to greater than or equal to two times the upper limit of normal (ULN) with elevated Creatine Kinase-Myocardial Band (CK-MB) in the absence of new pathological Q waves. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 40, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 23, 
+      "_order": 2, 
+      "description": "1", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 49, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 31, 
+      "_order": 2, 
+      "description": "Immunologic reconstitution \r\n\r\n[Time Frame: 6 months]", 
+      "interest": "secondary"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 1, 
+      "_order": 3, 
+      "description": "Time to failure of assisted patency. This is defined as time from AVF creation to abandonment of access. That is, radiological and surgical interventions to preserve or restore patency do not constitute failure. An event is defined as abandonment of the AVF as dialysis access. Censored observations will be as for time to failure of primary patency above. ", 
+      "interest": "secondary"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 3, 
+      "description": "Target Vessel Myocardial Infarction (TV-MI): Please see \"MI\" in outcome #2. An MI which originates in the target vessel (vessel to be treated) based on information entered by site personnel. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 41, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 23, 
+      "_order": 3, 
+      "description": "1", 
+      "interest": "secondary"
+    }
+  }, 
+  {
+    "pk": 50, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 31, 
+      "_order": 3, 
+      "description": "Genotyping resistance\r\n\r\n[Time Frame: 6 months]", 
+      "interest": "secondary"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 1, 
+      "_order": 4, 
+      "description": "Adverse events. All serious adverse events (see section 5.4) will be collected. The analysis of this secondary outcome will focus specifically on bleeding events.", 
+      "interest": "secondary"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 4, 
+      "description": "Ischemia Driven Major Adverse Cardiac Events (ID MACE): The composite endpoint composed of cardiac death, myocardial infarction (MI) ischemia-driven target lesion revascularization (TLR) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 5, 
+      "description": "Ischemia driven Target Vessel Failure (ID TVF): Any repeat percutaneous intervention or surgical bypass of any segment of the target vessel. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 6, 
+      "description": "Ischemia Driven Target Lesion Revascularization (ID TLR): Any repeat percutaneous intervention of the target lesion or bypass surgery of the target vessel performed for restenosis or other complication of the target lesion. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 7, 
+      "description": "Ischemia Driven Target Vessel Revascularization (ID TVR): Any repeat percutaneous intervention or surgical bypass of any segment of the target vessel. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 8, 
+      "description": "Stent thrombosis: Clinical presentation of acute coronary syndrome with angiographic evidence of stent thrombosis. In the absence of angiography, any unexplained death, or acute MI in the distribution of the target lesion within 30 days This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 9, 
+      "description": "Descriptive analysis of strut, lesion and vessel morphology post-procedure by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in Percutaneous Coronary Intervention (PCI). This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 10, 
+      "description": "Stent area post-procedure assessed by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in PCI. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 11, 
+      "description": "Lumen area assessed by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in PCI. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 12, 
+      "description": "Minimum luminal area (MLA) assessed by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in PCI. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 13, 
+      "description": "Incomplete apposition (baseline), persisting incomplete apposition, late incomplete apposition assessed by Optical Coherence Tomography (OCT), which is a catheter based optical imaging modality used in PCI. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 14, 
+      "description": "In-stent Late Loss (LL) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 15, 
+      "description": "In-segment LL assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 16, 
+      "description": "Proximal LL (proximal defined as within 5 mm of tissue proximal to stent placement) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 17, 
+      "description": "Distal LL (distal defined as within 5 mm of tissue distal to stent placement) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 18, 
+      "description": "In-stent and in-segment Minimum Luminal Diameter (MLD) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 19, 
+      "description": "In-stent and in-segment % Diameter Stenosis (DS) assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 20, 
+      "description": "In-stent and in-segment Angiographic Binary Restenosis (ABR) rate assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 21, 
+      "description": "Aneurysm, thrombus, persisting dissection assessed by Angiography done for patients within the OCT subgroup. This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 22, 
+      "description": "Vessel area assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 23, 
+      "description": "Stent area post-procedure and (if analyzable) assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 24, 
+      "description": "Minimum luminal area (MLA) assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 25, 
+      "description": "In-stent %Volume Obstruction (VO) assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 26, 
+      "description": "Incomplete apposition (baseline), persisting incomplete apposition, late incomplete apposition assessed by Intravscular Ultrasound (IVUS) done for patients within the OCT subgroup. (IVUS is a catheter based ultrasound imaging modality used in PCI.) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 4, 
+      "_order": 27, 
+      "description": "Descriptive analysis of vascular and stent morphology using Multi-Slice Computed Tomography (MSCT) This data is entered into electronic case report forms by investigational site personnel, personal information is kept confidential. ", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Teste 30/jun", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:30:07", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-30 13:27:51", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 33, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "06/12/2010 Test", 
+      "public_title": "06/12/2010 Test", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "Test", 
+      "acronym": "Teste", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:42", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "test", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "Test", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-12 20:47:20", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 9, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Teste da reuni\u00e3o Elluminate", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "DZ"
+        ], 
+        [
+          "AO"
+        ], 
+        [
+          "AW"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:42", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-03-30 18:51:44", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 4, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Efficacy Study of Pioglitazone Compared to Glimepiride on Coronary Atherosclerotic Disease Progression in Subjects With Type 2 Diabetes Mellitus (PERISCOPE)", 
+      "public_title": "Efficacy Study of Pioglitazone Compared to Glimepiride on Coronary Atherosclerotic Disease Progression in Subjects With Type 2 Diabetes Mellitus", 
+      "enrollment_end_actual": "", 
+      "trial_id": "RBR-7k3-rct", 
+      "inclusion_criteria": "nclusion Criteria:\r\n\r\n    * Females of childbearing potential who were sexually active agreed to use adequate ontraception, and can neither be pregnant nor lactating from screening throughout the duration of the study.\r\n    * Had a diagnosis of type 2 diabetes mellitus\r\n    * Have received appropriate counseling on lifestyle modification for type 2 diabetes, including diet and exercise.\r\n    * na\u00efve to or was not currently taking antidiabetic therapy\r\n    * Had a glycosylated hemoglobin level greater than or equal to 6.0% and less than 9% at screening if taking antidiabetic medication", 
+      "recruitment_country": [
+        [
+          "BR"
+        ], 
+        [
+          "CA"
+        ], 
+        [
+          "CL"
+        ], 
+        [
+          "US"
+        ]
+      ], 
+      "i_code": [
+        [
+          "drug"
+        ]
+      ], 
+      "agemax_value": 85, 
+      "agemax_unit": "Y", 
+      "expanded_access_program": false, 
+      "agemin_unit": "Y", 
+      "scientific_acronym": "PERISCOPE", 
+      "acronym": "", 
+      "hc_freetext": "Diabetes mellitus", 
+      "masking": [
+        "double-blind"
+      ], 
+      "exported": null, 
+      "number_of_arms": 2, 
+      "status": "published", 
+      "updated": "2010-07-23 12:25:41", 
+      "target_sample_size": 544, 
+      "study_type": null, 
+      "i_freetext": "    * Drug: Pioglitazone\r\n      Up to 45 mg pioglitazone (optimized for glucose control), tablets, orally, once daily for up to 72 weeks.\r\n      Other Names: ACTOS\u00ae, AD4833\r\n    * Drug: Glimepiride\r\n      Up to 4 mg of glimepiride (optimized for glucose control), tablets, orally, once daily for up to 72 weeks.\r\n", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": [
+        "randomized-controlled"
+      ], 
+      "scientific_acronym_expansion": "Pioglitazone Effect on Regression of Intravascular Sonographic Coronary Obstruction Prospective Evaluation", 
+      "purpose": [
+        "treatment"
+      ], 
+      "phase": [
+        "3"
+      ], 
+      "date_registration": null, 
+      "agemin_value": 35, 
+      "enrollment_start_planned": "2010-01-07", 
+      "staff_note": "", 
+      "study_design": "A Double-Blind, Randomized, parallel phase III Study", 
+      "created": "2010-06-22 10:41:42", 
+      "gender": "-", 
+      "intervention_assignment": [
+        "parallel"
+      ], 
+      "exclusion_criteria": "Exclusion Criteria:\r\n\r\n    * Had type I diabetes mellitus.\r\n    * Had participated in another investigational study, or participated in an investigational study 30 days prior to the start of this study\r\n    * Male subjects who had a serum creatinine level greater than or equal to 2.0 mg/dL ", 
+      "primary_sponsor": 28, 
+      "recruitment_status": [
+        "pending"
+      ]
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "t\u00edtulo em ingl\u00eas", 
+      "public_title": "asdf", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "AM"
+        ], 
+        [
+          "AU"
+        ], 
+        [
+          "BZ"
+        ], 
+        [
+          "BT"
+        ]
+      ], 
+      "i_code": [
+        [
+          "drug"
+        ]
+      ], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": false, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "as3", 
+      "acronym": "2342", 
+      "hc_freetext": "", 
+      "masking": [
+        "double-blind"
+      ], 
+      "exported": null, 
+      "number_of_arms": 3, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:41", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "342", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": [
+        "randomized-controlled"
+      ], 
+      "scientific_acronym_expansion": "2434", 
+      "purpose": [
+        "treatment"
+      ], 
+      "phase": [
+        "3"
+      ], 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "randomized controlled trial\r\n", 
+      "created": "2010-06-21 21:26:44", 
+      "gender": "-", 
+      "intervention_assignment": [
+        "parallel"
+      ], 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 27, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "\u201cEstudo TEAM (Efic\u00e1cia do Tasigna em Melanoma Avan\u00e7ado): Estudo fase III, de dois bra\u00e7os, randomizado, aberto e multic\u00eantrico para comparar a efic\u00e1cia de Tasigna\u00ae versus dacarbazina (DTIC) no tratamento de pacientes com melanoma metast\u00e1tico e/ou inoper\u00e1vel contendo uma muta\u00e7\u00e3o do c-Kit\u201d", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:41", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-21 20:35:22", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 26, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "teste", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "AF"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:41", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-21 13:55:07", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 25, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "A Phase II Study of Single-Agent Lenalidomide in Subjects With Relapsed Or Refractory T-Cell Non-Hodgkin's Lymphoma (EXPECT)", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "AU"
+        ], 
+        [
+          "BE"
+        ], 
+        [
+          "FR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "(EXPECT)", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:41", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-18 19:16:12", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 22, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "hghjghjghjhj", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "AT"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:41", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-17 19:26:29", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 21, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "fdfdfdfdf", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:41", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-17 19:23:02", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 20, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Segundo teste do dia 17/06", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:41", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-17 17:48:22", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 19, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Teste do dia 17/06", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:41", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-17 17:47:04", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 18, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "My new clinical trial", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:41", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-15 23:27:27", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 17, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Demo do dia 14 de junho", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": "RBR-46w-jsc", 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "published", 
+      "updated": "2010-07-23 12:25:41", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-14 13:40:25", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 14, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Uso da metformina em pacientes com diabetes tipo 2", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "AF"
+        ], 
+        [
+          "AO"
+        ], 
+        [
+          "BD"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:41", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-14 13:44:50", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 15, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "T\u00edtulo A", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "UG"
+        ], 
+        [
+          "AE"
+        ], 
+        [
+          "UY"
+        ], 
+        [
+          "VU"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:41", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-14 13:00:40", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 10, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "A randomised, double-blind, placebo-controlled, factorial-design trial to assess the effect of aspirin and fish oil in the prevention of early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "1. Stage 4 or 5 chronic kidney disease\r\n2. Currently on haemodialysis or haemodialysis is planned to start within 6\r\nmonths (including patients currently on peritoneal dialysis).\r\n3. Planned AVF will be the primary haemodialysis access mechanism.\r\n4. Surgery to create an arterio-venous fistula in the upper or lower arm is planned.\r\n5. Aged over 18 years\r\n6. Life expectancy predicted to be 12 months minimum\r\n7. Treating team agreeable to patient\\'s involvement in the trial\r\n8. Informed consent ", 
+      "recruitment_country": [
+        [
+          "AW"
+        ], 
+        [
+          "NZ"
+        ]
+      ], 
+      "i_code": [
+        [
+          "drug"
+        ], 
+        [
+          "dietary supplement"
+        ]
+      ], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "Y", 
+      "scientific_acronym": "FAVOURED (Fish oil and Aspirin in Vascular acccess OUtcomes in REnal Disease)", 
+      "acronym": "", 
+      "hc_freetext": "Early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis.", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:40", 
+      "target_sample_size": 1200, 
+      "study_type": [
+        "interventional"
+      ], 
+      "i_freetext": "Aspirin 100 mg per day or matching placebo, commencing on the day prior to scheduled surgery and continuing for 3 months.", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": [
+        "1"
+      ], 
+      "date_registration": null, 
+      "agemin_value": 18, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-01-20 17:47:08", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "1. Revision of existing AVF rather than de novo AVF\r\n2. Medical indication for anti-platelet agent(s)\r\n3. Known intolerance of agents including hypersensitivity to aspirin\r\n4. Current use of aspirin within two weeks of commencing trial, and of fish oil within 4 weeks of commencing trial.\r\n5. Pregnancy, lactation or intention to fall pregnant during the time course of the study\r\n6. Known bleeding disorder or established diagnosis of active or suspected bleeding\r\n7. Known active peptic ulcer disease\r\n8. Already receiving anti-coagulation therapy such as warfarin\r\n9. Receiving regular anti-inflammatory agents for another indication such as\r\narthritis\r\n10.Potential non-compliance with treatment regimen in the view of the\r\ntreating clinicians\r\n11.Involved in another clinical trial where the intervention being trialled is likely to confound the outcome of this trial\r\n12.Previously randomised to this trial. ", 
+      "primary_sponsor": 1, 
+      "recruitment_status": [
+        "pending"
+      ]
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Minimal trial record (only required fields)", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:40", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-01-20 17:47:08", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": null, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Effect of Ascorbic Acid and Grape Seed Extract \"Vitis Vinifera L.\" on Oxidative Stress Induced by on Pump Coronary Artery bypass Grafting Surgery", 
+      "public_title": "Comparison of Ascorbic Acid and Grape Seed Extract in Oxidative Stress Induced by on Pump Heart Surgery", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "Candidates for elective CABG surgery with pump for first time, 3 Vessel Disease (3VD).", 
+      "recruitment_country": [
+        [
+          "IR"
+        ]
+      ], 
+      "i_code": [
+        [
+          "drug"
+        ]
+      ], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "Condition 1: Coronary Atrery Bypass Graft (CABG).\r\nCondition 2: Atherosclerotic heart disease.\r\nCondition 3: Ischaemic cardiomyopathy.", 
+      "masking": [
+        "double-blind"
+      ], 
+      "exported": null, 
+      "number_of_arms": 3, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:40", 
+      "target_sample_size": 75, 
+      "study_type": [
+        "interventional"
+      ], 
+      "i_freetext": "Intervention 1: Control Group: without intervention.\r\nIntervention 2: Grape Seed Extract 100 mg/6h .\r\nIntervention 3: Vit C 25 mg/kg.", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": [
+        "randomized-controlled"
+      ], 
+      "scientific_acronym_expansion": "", 
+      "purpose": [
+        "treatment"
+      ], 
+      "phase": [
+        "2-3"
+      ], 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "2008-11-01", 
+      "staff_note": "", 
+      "study_design": "Randomization: randomized. Blinding: Double blind. Placebo: not used. Assignment: Parallel. Purpose: Supportive care. Other design features: .", 
+      "created": "2010-01-20 17:47:08", 
+      "gender": "-", 
+      "intervention_assignment": [
+        "parallel"
+      ], 
+      "exclusion_criteria": "High risk patients, Those who need another heart surgery beside CABG, Urgent patients Diabetics, Ischemic time more than 120 min.", 
+      "primary_sponsor": 2, 
+      "recruitment_status": [
+        "completed"
+      ]
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Clinical Investigation: A Continuation in the Clinical Evaluation of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the Treatment of Subjects With de Novo Native Coronary Artery Lesions  ", 
+      "public_title": "Clinical Investigation: An assessment of the safety and performance of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the treatment of patients with de novo native coronary artery lesions.", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "Up to two de novo lesions can be treated, each located in a separate native epicardial vessel.\r\n\r\nTarget lesion(s) must measure <= 28 mm in length by Qualitative Coronary Angiography (QCA), or by visual estimation if on line QCA is not available.\r\n\r\nTarget lesion(s) must be in a major artery or branch with a visually estimated stenosis of >= 50% and < 100% with a Thrombolysis in Myocardial Infarction (TIMI) flow of >= 1.\r\n\r\nIf two treatable lesions meet the inclusion criteria they must be in separate major epicardial vessels.\r\n\r\nPercutaneous interventions for lesions in a non-target vessel are allowed if done >= 30 days prior to or if planned to be done > 6 months after the index procedure.\r\n\r\nPercutaneous intervention for lesions in the target vessel are allowed if done > 6 months prior to or if planned to be done 6 months after the index procedure.", 
+      "recruitment_country": [
+        [
+          "AU"
+        ], 
+        [
+          "BE"
+        ], 
+        [
+          "BR"
+        ], 
+        [
+          "DK"
+        ], 
+        [
+          "FR"
+        ], 
+        [
+          "IT"
+        ], 
+        [
+          "NL"
+        ], 
+        [
+          "PL"
+        ], 
+        [
+          "CH"
+        ]
+      ], 
+      "i_code": [
+        [
+          "device"
+        ]
+      ], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "Y", 
+      "scientific_acronym": "ABSORB EXTEND", 
+      "acronym": "ABSORB EXTEND", 
+      "hc_freetext": "Coronary Artery Stenosis\r\nCoronary Disease\r\nCoronary Artery Disease\r\n", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:40", 
+      "target_sample_size": 1000, 
+      "study_type": null, 
+      "i_freetext": "Bioabsorbable Vascular Solutions Everolimus Eluting Coronary Stent System (BVS EECSS). Percutaneous Coronary Intervention (PCI) is commonly known as coronary angioplasty. Typically, PCI is performed by threading a slender balloon-tipped tube, a catheter, from an artery in the groin to a trouble spot in an artery of the heart. The balloon is then inflated, compressing the plaque and dilating (widening) the narrowed coronary artery so that blood can flow more easily. During PCI for this study, the BVS EECSS is then placed in the coronary artery to support the previously narrowed area. The BVS EECSS will remain in place until the bioabsorbtion process is complete, your physician will discuss this process with you. The duration of the PCI procedure will depend on many factors, and is typically less than 2 hours. Your physician will discuss those factors and the length of your procedure with you.\r\n\r\nOptical Coherence Tomography (OCT) subgroup definition:\r\n- A subgroup of up to 50 subjects who:\r\n\r\n- Have their procedures performed at selected investigational sites with OCT capability; and\r\n\r\n- Receive planned overlapping stent treatment of the target lesion.\r\n\r\n- The need for planned overlapping of BVS stents will be determined by the investigator up to the time of the index procedure.\r\n\r\n- Angiography, Intravascular Ultrasound (IVUS) and OCT are required for all subjects in the OCT subgroup post-procedure and at 2-year follow-up\r\n\r\n\r\n\r\nMulti-Slice Computed Tomography subgroup definition:\r\n\r\n- A subgroup of up to 100 subjects who:\r\n\r\n- Have their procedures performed at selected investigational sites having both OCT and MSCT capability; and\r\n\r\n- Receive at least one BVS EECSS in the target lesion.\r\n\r\nMSCT imaging and clinical follow-up at 18 months is required for all subjects in the MSCT subgroup.", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 18, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-03-02 13:34:30", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "Lesion(s) located within an arterial or saphenous vein graft or distal to a diseased (defined as vessel irregularity per angiogram and > 20% stenosed lesion by visual estimation) arterial or saphenous vein graft. Lesion(s) involving a bifurcation with side branch vessel >= 2 mm in diameter, ostial lesion > 40% stenosed by visual estimation or side branch requiring predilatation. Total occlusion (TIMI flow 0), prior to wire passing. Target vessel(s) contains visible thrombus. Another clinically significant lesion is located in the same epicardial vessel (including side branch) as the target lesion(s). Subject has received brachytherapy in any epicardial vessel (including side branches).", 
+      "primary_sponsor": 3, 
+      "recruitment_status": [
+        "recruiting"
+      ]
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "teste de Margot", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:40", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-04-05 16:56:59", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 5, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Avalia\u00e7\u00e3o da dosagem do praziquantel para o tratamento da esquistossomose no Brasil", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:40", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-04-22 13:18:47", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 6, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Prevention of Heterotopic Ossification With Arcoxia After Total Hip Replacement", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "NL"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:40", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-04-22 19:17:28", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 7, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "The efficacy of penicillin G potassium in reducing aphthous ulcer pain and lesion size in a Chinese cohort: a randomized, double-blinded, placebo and blank controlled, multicenter clinical trial.", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "CN"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:40", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-04-22 20:01:45", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 8, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "RCT of Antioxidant Therapy to Prevent Preeclampsia in Brazil", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": false, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:40", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": [
+        "3"
+      ], 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-07-13 19:07:15", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 36, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Benznidazole evaluation for interrupting tripanosomiasis \u2013 BENEFIT trial", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "Consenting patients (between 18 and 75 years of age) with serological evidence of Chagas infection (any combination of 2 positive tests) and that have one or more of the following:\r\nAbnormal electrocardiogram with at least two components (complete RBBB or LBBB; left anterior or posterior fascicular block; ventricular premature beat; first degree atrioventricular [AV] block; Mobitz type I AV block; sinus bradycardia; primary ST-T changes; abnormal Q waves; low voltage QRS; or atrial fibrillation);\r\nAbnormal ECG (Mobitz type II, advanced or third degree AV block)", 
+      "recruitment_country": [
+        [
+          "AR"
+        ], 
+        [
+          "BR"
+        ], 
+        [
+          "CA"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 75, 
+      "agemax_unit": "Y", 
+      "expanded_access_program": false, 
+      "agemin_unit": "Y", 
+      "scientific_acronym": "BENEFIT", 
+      "acronym": "", 
+      "hc_freetext": "Chagas Disease\r\nTrypanosomiasis\r\nHeart Disease\r\n", 
+      "masking": [
+        "double-blind"
+      ], 
+      "exported": null, 
+      "number_of_arms": 1, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:40", 
+      "target_sample_size": 600, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": [
+        "randomized-controlled"
+      ], 
+      "scientific_acronym_expansion": "Benznidazole Evaluation for Interrupting Trypanosomiasis", 
+      "purpose": [
+        "treatment"
+      ], 
+      "phase": [
+        "1-2"
+      ], 
+      "date_registration": null, 
+      "agemin_value": 18, 
+      "enrollment_start_planned": "2004-01-11", 
+      "staff_note": "", 
+      "study_design": "Double-Blind, randomized placebo control safety and efficacy study with single Group Assignment for treatment os Chagas Disease", 
+      "created": "2010-06-30 11:25:32", 
+      "gender": "-", 
+      "intervention_assignment": [
+        "single-group"
+      ], 
+      "exclusion_criteria": "NYHA heart failure class IV or decompensated heart failure\r\nEvidence of concomitant coronary artery disease (CAD) or other etiology of dilated cardiomyopathy\r\nPrevious treatment with antitrypanosomal agents or an accepted indication for antiparasitic therapy\r\nHistory of severe alcohol abuse within 2 years\r\nKnown chronic renal or hepatic insufficiency\r\nPregnancy or breast feeding\r\n", 
+      "primary_sponsor": 32, 
+      "recruitment_status": [
+        "recruiting"
+      ]
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "title scientific test", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:40", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-29 14:08:33", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 30, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Teste do Luciano em 14 de jun de 2010", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:39", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-14 17:48:11", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 16, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Anti-retroviral Efficacy, Tolerance and Other Pharmacologic Interactions of the Non Nucleoside Analog Efavirenz in Association With Rifampicin to Treat Tuberculosis and AIDS", 
+      "public_title": "Randomized Clinical Trial to Assess the Efficacy and Safety of Concomitant Use of Rifampicin and Efavirenz 600 X 800mg (IPEC-EFV)", 
+      "enrollment_end_actual": null, 
+      "trial_id": "RBR-9rm-tzr", 
+      "inclusion_criteria": "* Adults with tuberculosis diagnosis, HIV positive.\r\n\r\n* Agreement to avoid not allowed drugs during the trial, agreement to participate in the study (informed consent)\r\n", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [
+        [
+          "drug"
+        ]
+      ], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": false, 
+      "agemin_unit": "Y", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "Tuberculosis\r\nHIV Infections", 
+      "masking": [
+        "open"
+      ], 
+      "exported": null, 
+      "number_of_arms": 2, 
+      "status": "published", 
+      "updated": "2010-07-23 12:25:39", 
+      "target_sample_size": 178, 
+      "study_type": null, 
+      "i_freetext": "efavirenz", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": null, 
+      "enrollment_end_planned": null, 
+      "allocation": [
+        "randomized-controlled"
+      ], 
+      "scientific_acronym_expansion": "", 
+      "purpose": [
+        "treatment"
+      ], 
+      "phase": [
+        "4"
+      ], 
+      "date_registration": null, 
+      "agemin_value": 18, 
+      "enrollment_start_planned": "2010-10-01", 
+      "staff_note": "", 
+      "study_design": "Study Type:  \t Interventional\r\n\r\nControl: Dose Comparison\r\nEndpoint Classification: Safety/Efficacy Study\r\n\r\nPrimary Purpose: Treatment\r\nAllocation: Randomized\r\nMasking: Open Label\r\nIntervention Model: Parallel Assignment\r\n", 
+      "created": "2010-07-19 20:36:14", 
+      "gender": "-", 
+      "intervention_assignment": [
+        "parallel"
+      ], 
+      "exclusion_criteria": "* Active liver disease\r\n* Pregnancy or breast feeding\r\n* CD4 counts > 350\r\n", 
+      "primary_sponsor": 39, 
+      "recruitment_status": [
+        "pending"
+      ]
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "The Efficacy of Hand-Foot Narrow-Band UVB Versus Focal 308-nm Treatment in Inducing Repigmentation of Vitiligo After Minigrafting on the Dorsal Hands", 
+      "public_title": "The Efficacy of Hand NBUVB Versus Excilite Treatment in Vitiligo After Minigrafting on the Dorsal Hands", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ], 
+        [
+          "US"
+        ]
+      ], 
+      "i_code": [
+        [
+          "device"
+        ]
+      ], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": false, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "Vitiligo", 
+      "masking": [
+        "single-blind"
+      ], 
+      "exported": null, 
+      "number_of_arms": 2, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:39", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "Device: Daavlin Spectra UVB Hand/Foot Box Narrow-band ultraviolet B hand box\r\nDevice: Excilite Focal 308-nm light\r\n\r\nActive Comparator\r\nRight hand treated with narrow-band UVB light and left hand treated with focal 308-nm light\r\nIntervention: Device: Daavlin Spectra UVB Hand/Foot Box\r\nActive Comparator\r\nRight hand treated with focal 308-nm light and left hand treated with narrow-band UVB light\r\nIntervention: Device: Excilite Focal 308-nm light", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": [
+        "randomized-controlled"
+      ], 
+      "scientific_acronym_expansion": "", 
+      "purpose": [
+        "treatment"
+      ], 
+      "phase": [
+        "1-2"
+      ], 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "Allocation:  Randomized\r\nControl:  Active Control\r\nEndpoint Classification:  Safety/Efficacy Study\r\nIntervention Model:  Single Group Assignment\r\nMasking:  Single Blind (Investigator)\r\nPrimary Purpose:  Treatment", 
+      "created": "2010-07-07 12:47:53", 
+      "gender": "-", 
+      "intervention_assignment": [
+        "single-group"
+      ], 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 34, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Title10\r\na\r\nb\r\nc\r\n3\r\n3\r\n\r\n2\r\n\r\n3\r\n3\r\n4", 
+      "public_title": "", 
+      "enrollment_end_actual": null, 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        [
+          "BR"
+        ]
+      ], 
+      "i_code": [
+        [
+          "drug"
+        ]
+      ], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-07-23 12:25:39", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": null, 
+      "enrollment_end_planned": null, 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": null, 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-07-16 19:32:32", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 37, 
+      "recruitment_status": null
     }
   }
 ]
