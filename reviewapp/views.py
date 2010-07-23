@@ -20,8 +20,10 @@ from reviewapp.models import Submission, News
 from reviewapp.forms import UploadTrial, InitialTrialForm, OpenRemarkForm
 from reviewapp.forms import UserForm, PrimarySponsorForm, UserProfileForm
 from reviewapp.forms import ContactForm
+from reviewapp.signals import REMARK, MISSING, PARTIAL, COMPLETE
 
 from repository.models import ClinicalTrial, CountryCode, ClinicalTrialTranslation
+from repository.trds_forms import TRIAL_FORMS
 from datetime import datetime
 import pickle
 
@@ -169,15 +171,15 @@ def new_submission(request):
             # sets the initial status of the fields
             fields_status = {}
             FIELDS = {
-                'step_1': 'MISSING', 'step_2': 'BLANK', 'step_3': 'MISSING',
-                'step_4': 'MISSING', 'step_5': 'MISSING', 'step_6': 'MISSING', 
-                'step_7': 'MISSING', 'step_8': 'MISSING', 'step_9': 'BLANK'
+                TRIAL_FORMS[0]: MISSING, TRIAL_FORMS[1]: PARTIAL, TRIAL_FORMS[2]: MISSING,
+                TRIAL_FORMS[3]: MISSING, TRIAL_FORMS[4]: MISSING, TRIAL_FORMS[5]: MISSING, 
+                TRIAL_FORMS[6]: MISSING, TRIAL_FORMS[7]: MISSING, TRIAL_FORMS[8]: PARTIAL
             }
             for lang in su.get_mandatory_languages():
                 lang = lang.lower()
                 fields_status.update({lang: dict(FIELDS)})
                 if lang == su.language.lower():
-                    fields_status[lang].update({'step_1': 'BLANK'})
+                    fields_status[lang].update({TRIAL_FORMS[0]: PARTIAL})
             
             su.fields_status = pickle.dumps(fields_status)
             su.save()

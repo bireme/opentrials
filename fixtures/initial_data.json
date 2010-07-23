@@ -509,6 +509,358 @@
     }
   }, 
   {
+    "pk": 41, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-22 11:51:24", 
+      "object_repr": "What studies need to be registered?", 
+      "object_id": "13", 
+      "change_message": "Modificado answer. Modificado answer para question translation \"pt-BR\".", 
+      "user": 1, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 40, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-22 11:40:30", 
+      "object_repr": "What studies need to be registered?", 
+      "object_id": "13", 
+      "change_message": "Modificado answer para question translation \"pt-BR\".", 
+      "user": 1, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 39, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-21 21:38:25", 
+      "object_repr": "System", 
+      "object_id": "1", 
+      "change_message": "Adicionado category translation \"pt-BR\" Adicionado category translation \"es\"", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "category"
+      ]
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-07-21 21:29:01", 
+      "object_repr": "How do I register a trial?", 
+      "object_id": "16", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-07-21 21:23:10", 
+      "object_repr": "Who is responsible for registering a trial?", 
+      "object_id": "15", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-07-21 18:27:19", 
+      "object_repr": "When should studies be registered?", 
+      "object_id": "14", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:25:19", 
+      "object_repr": "Football (Soccer)", 
+      "object_id": "5", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "category"
+      ]
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:25:19", 
+      "object_repr": "Medicamentos", 
+      "object_id": "4", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "category"
+      ]
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Is Dunga nice?", 
+      "object_id": "12", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Aspirima d\u00e1 dor de barriga?", 
+      "object_id": "11", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Pellentesque ullamcorper augue at ante rhoncus ultrices?", 
+      "object_id": "10", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Donec hendrerit ligula eget arcu congue gravida?", 
+      "object_id": "9", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Vestibulum aliquet nisi vel risus pharetra auctor?", 
+      "object_id": "8", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Mauris aliquam, mi non hendrerit luctus?", 
+      "object_id": "7", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", 
+      "object_id": "6", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-21 18:23:59", 
+      "object_repr": "What studies need to be registered?", 
+      "object_id": "13", 
+      "change_message": "Modificado answer.", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-07-21 18:20:25", 
+      "object_repr": "What studies need to be registered?", 
+      "object_id": "13", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-21 18:13:37", 
+      "object_repr": "Study registration", 
+      "object_id": "6", 
+      "change_message": "Nenhum campo modificado.", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "category"
+      ]
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-07-21 18:13:31", 
+      "object_repr": "Study registration", 
+      "object_id": "6", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "category"
+      ]
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-20 23:58:56", 
+      "object_repr": "Please enter here which is the relation of the contact: a contact for Public Queries, for Scientific Queries or for Site Queries.", 
+      "object_id": "59", 
+      "change_message": "Modificado text.", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-20 23:55:52", 
+      "object_repr": "/about/ -- About", 
+      "object_id": "1", 
+      "change_message": "Modificado content.", 
+      "user": 17, 
+      "content_type": [
+        "flatpages", 
+        "flatpage"
+      ]
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-20 15:32:17", 
+      "object_repr": "Ensaio cl\u00ednico randomizado para avaliar a efic\u00e1cia e seguran\u00e7a do uso concomitante de rifampicina e 600 X Efavirenz\u2026", 
+      "object_id": "31", 
+      "change_message": "Modificado status e fields_status.", 
+      "user": 1, 
+      "content_type": [
+        "reviewapp", 
+        "submission"
+      ]
+    }
+  }, 
+  {
     "pk": 19, 
     "model": "admin.logentry", 
     "fields": {
@@ -825,120 +1177,8 @@
         3, 
         2
       ], 
-      "content": "<p>Etiam sed vehicula arcu. Etiam hendrerit rhoncus lacus nec semper. Phasellus mattis luctus mauris vitae dapibus. Aliquam at justo mi, eu ultrices turpis. Nulla a mauris tortor, ut scelerisque leo. Suspendisse in felis sapien, vel pellentesque nisi. Nulla ut facilisis dui. Sed ac rhoncus elit. Phasellus ut sollicitudin nisi. Suspendisse quis tellus massa, ac ullamcorper leo. Aliquam vitae convallis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisis vestibulum pharetra. Fusce ipsum sapien, accumsan non vulputate quis, ullamcorper ut mauris. Proin tempus tortor sed lectus interdum tempor. Mauris eu quam et elit pulvinar volutpat. Pellentesque vel quam neque. Cras justo velit, faucibus eget euismod nec, accumsan ac magna. Ut non feugiat erat. Sed euismod, sapien vitae ultrices interdum, nisl est pharetra ligula, at iaculis ligula quam quis nisi.</p>\r\n\r\n<p>Sed et turpis urna. Nunc pretium pulvinar mauris nec molestie. Pellentesque id lacus ac est tristique porttitor sed vitae sem. Suspendisse potenti. Curabitur pharetra lacinia justo, nec faucibus velit mollis at. Mauris ornare congue risus eget bibendum. Pellentesque dignissim, lorem at vestibulum accumsan, sapien neque sagittis augue, vitae consectetur magna mi quis felis. Sed nisl quam, gravida sed varius sed, pharetra quis erat. Phasellus ut augue in neque euismod euismod. Nam lacinia mauris sit amet purus suscipit nec facilisis diam porttitor.</p>\r\n\r\n<p>Integer consequat sodales diam nec blandit. Sed semper faucibus congue. Nunc dictum dui ultrices dui semper interdum. In hac habitasse platea dictumst. Donec pharetra aliquet libero in condimentum. Ut id nibh quam. Nulla facilisi. Pellentesque nisi metus, tristique et varius vel, mattis venenatis quam. Donec nibh neque, pulvinar nec sagittis ullamcorper, dictum ac nisl. Proin lorem augue, pharetra id gravida nec, mollis sed lorem. Nullam tortor purus, semper sit amet ornare non, vulputate ut lacus. Donec aliquam felis ante, ut scelerisque neque. Pellentesque tincidunt tempus tellus, sit amet viverra nulla accumsan a. Quisque imperdiet faucibus tincidunt. Suspendisse a pulvinar felis. Vivamus convallis tristique porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>\r\n\r\n<p>Ut vel velit non lectus vestibulum volutpat eu vel dui. Cras dignissim imperdiet est, et porttitor velit porta sed. Nullam in felis tellus. Pellentesque eget lorem ipsum, cursus rutrum turpis. Duis semper tortor nec enim vulputate luctus. Suspendisse nec sem orci. Donec non purus pretium tellus fermentum porttitor. Vestibulum semper, nibh eu gravida fermentum, augue tortor viverra est, mattis luctus enim massa ac felis. Integer et erat non mauris ornare consectetur at eu dui. Nulla non dolor ante, at suscipit nibh. Vestibulum malesuada magna in nisi scelerisque cursus. Ut in sem id orci aliquam placerat. Ut tellus libero, interdum sed facilisis ut, tempor at nunc. Vivamus sit amet magna odio, sed imperdiet mi. Aenean mollis sagittis dui, id auctor est blandit sed. Pellentesque dui magna, egestas semper tincidunt sit amet, mattis nec lectus. Aliquam suscipit nunc at arcu fermentum vitae dapibus orci sollicitudin.</p>\r\n\r\n<p>Phasellus mi mauris, malesuada at egestas at, mattis a odio. Aliquam vehicula viverra iaculis. Suspendisse ultricies leo tristique lectus tempor tristique sit amet vel elit. Vivamus sem ipsum, semper eget sollicitudin nec, sodales ac nisl. Morbi id tortor nec leo posuere mattis. Vestibulum pharetra, tellus a dictum semper, risus felis pulvinar diam, eget commodo urna eros ut urna. Suspendisse eu eros augue, nec hendrerit sem. Curabitur pharetra purus sed neque venenatis facilisis. Vestibulum cursus, orci eget eleifend pellentesque, ligula diam eleifend neque, id mattis est ante tristique nibh. Suspendisse at purus sit amet neque suscipit scelerisque. Ut in eros sit amet sem euismod pellentesque ac nec metus. Proin est libero, blandit ut elementum in, luctus nec tortor. </p>", 
+      "content": "<p>O Registro Brasileiro de Ensaios Cl\u00ednicos (RBEC) \u00e9 uma plataforma virtual de acesso livre para registro gratuito de ensaios cl\u00ednicos realizados em seres humanos, em andamento ou finalizados, por pesquisadores brasileiros e estrangeiros. O RBEC inclui ensaios cl\u00ednicos que avaliam interven\u00e7\u00f5es em sa\u00fade resultantes de uso de medicamentos, procedimentos cir\u00fargicos, terapias comportamentais de reabilita\u00e7\u00e3o e terapias complementares.<p> \r\n\r\n<p>O RBEC proporciona a pacientes, m\u00e9dicos, investigadores, comit\u00eas de \u00e9tica e patrocinadores acesso a informa\u00e7\u00f5es sobre os ensaios cl\u00ednicos em curso e conclu\u00eddos, evitando a duplica\u00e7\u00e3o de esfor\u00e7os e impulsionando o avan\u00e7o do conhecimento e a coopera\u00e7\u00e3o entre grupos de pesquisa.<p> \r\n\r\n<p>Sendo uma das mais valiosas fontes de evid\u00eancia sobre a efic\u00e1cia e a seguran\u00e7a das interven\u00e7\u00f5es em sa\u00fade, o ensaio cl\u00ednico, quando registrado em bases de dados p\u00fablicas, garante a todos os interessados o acesso \u00e0 informa\u00e7\u00e3o sobre os efeitos de um produto ou procedimento sob investiga\u00e7\u00e3o. Nesse sentido, aumenta a transpar\u00eancia na pesquisa, fortalecendo o valor \u00e9tico e cient\u00edfico dos estudos de interven\u00e7\u00e3o e observacionais.<p>\r\n\r\n<p>Um ensaio cl\u00ednico pode reduzir a duplica\u00e7\u00e3o desnecess\u00e1ria de esfor\u00e7os de pesquisa ao informar os profissionais que planejam novos estudos acerca de todos os ensaios existentes; aumentar as taxas de recrutamento de participantes para ensaios cl\u00ednicos (especialmente para doen\u00e7as raras ou condi\u00e7\u00f5es de alto risco), desse modo aumentando as chances de um desfecho bem-sucedido de alguns ensaios cl\u00ednicos; agregar valor aos resultados da pesquisa ao prover uma fonte de informa\u00e7\u00e3o confi\u00e1vel sobre ensaio cl\u00ednico para revis\u00f5es sistem\u00e1ticas, metan\u00e1lises e diretrizes baseados em evid\u00eancias e aprimorar as evid\u00eancias dispon\u00edveis que orientem as pr\u00e1ticas de sa\u00fade. <p>\r\n\r\n<p>Fruto de um esfor\u00e7o conjunto do Minist\u00e9rio da Sa\u00fade, do Instituto de Comunica\u00e7\u00e3o e Informa\u00e7\u00e3o Cient\u00edfica e Tecnol\u00f3gica em Sa\u00fade (Icict/Fiocruz), da Organiza\u00e7\u00e3o Panamericana de Sa\u00fade (Opas) e do Centro Latinoamericano e do Caribe de Informa\u00e7\u00e3o em Ci\u00eancias da Sa\u00fade (Bireme), o RBEC aumenta a efic\u00e1cia dos esfor\u00e7os dos ensaios cl\u00ednicos ao divulgar os estudos que n\u00e3o s\u00e3o publicado em revistas cient\u00edficas, reduzindo o vi\u00e9s da publica\u00e7\u00e3o. Desse modo, o RBEC torna-se uma importante fonte de informa\u00e7\u00e3o para pacientes, profissionais de sa\u00fade, pesquisadores, empresas e centros de pesquisa, propiciando maior intera\u00e7\u00e3o e inser\u00e7\u00e3o internacional. </p>", 
       "enable_comments": false
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 5
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 6
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 7
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 8
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 9
-    }
-  }, 
-  {
-    "pk": 6, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 14
-    }
-  }, 
-  {
-    "pk": 7, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 15
-    }
-  }, 
-  {
-    "pk": 8, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 16
-    }
-  }, 
-  {
-    "pk": 9, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 17
-    }
-  }, 
-  {
-    "pk": 10, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "7dd385471cf8bab58b6fb365e51b8199db231483", 
-      "user": 18
-    }
-  }, 
-  {
-    "pk": 11, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 19
-    }
-  }, 
-  {
-    "pk": 12, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 20
-    }
-  }, 
-  {
-    "pk": 13, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 21
-    }
-  }, 
-  {
-    "pk": 14, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "27480b4b99d67bfad68fb010fab84916a395d4ce", 
-      "user": 22
     }
   }, 
   {
@@ -3240,7 +3480,7 @@
       "is_active": true, 
       "is_superuser": true, 
       "is_staff": true, 
-      "last_login": "2010-07-15 16:39:32", 
+      "last_login": "2010-07-23 11:45:23", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$e51b1$627a1107fb3ca30bbf23985572a2c38530eafaf6", 
@@ -3258,10 +3498,10 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": false, 
-      "last_login": "2010-06-14 17:47:14", 
+      "last_login": "2010-07-20 20:20:49", 
       "groups": [], 
       "user_permissions": [], 
-      "password": "sha1$6baab$a4326bfc04978632052f66ff40d5f0a7681ae10d", 
+      "password": "sha1$503bc$6cf37568a859e69938ae032072d166a140684b90", 
       "email": "luciano.ramalho@bireme.org", 
       "date_joined": "2010-06-14 17:46:31"
     }
@@ -3294,7 +3534,7 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": true, 
-      "last_login": "2010-06-22 13:30:10", 
+      "last_login": "2010-07-20 19:39:55", 
       "groups": [
         1
       ], 
@@ -3315,7 +3555,7 @@
           "remark"
         ]
       ], 
-      "password": "sha1$f2f49$b593c6fc0966a5eac9420e83c018f4df54b53453", 
+      "password": "sha1$3d1a9$b1f22e10df7aee8e864c219ccd2c62c8c9dae379", 
       "email": "", 
       "date_joined": "2010-05-06 17:50:09"
     }
@@ -3348,7 +3588,7 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": false, 
-      "last_login": "2010-07-14 12:56:24", 
+      "last_login": "2010-07-19 12:52:35", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$0ebc0$2049a31c4d4d9810746cad1e99a89c4b74fc0884", 
@@ -3366,7 +3606,7 @@
       "is_active": true, 
       "is_superuser": true, 
       "is_staff": true, 
-      "last_login": "2010-07-08 13:51:18", 
+      "last_login": "2010-07-22 19:14:06", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$85de4$105803c27067e017d6c76124ff6ad89d16bffd9f", 
@@ -3384,7 +3624,7 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": false, 
-      "last_login": "2010-06-22 11:35:43", 
+      "last_login": "2010-07-20 13:02:56", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$a0685$79494e41ac14ceb1c573840e25b46437397e5007", 
@@ -3456,7 +3696,7 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": false, 
-      "last_login": "2010-07-07 12:46:08", 
+      "last_login": "2010-07-21 21:25:21", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$7d10c$241ececd7ce9b9b65d73adb13ec41aec7a9299d2", 
@@ -3474,7 +3714,7 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": false, 
-      "last_login": "2010-06-22 18:21:46", 
+      "last_login": "2010-07-22 18:35:31", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$de0c2$7e96ac383990d9b69a450e6a09d6fbc4de1f2c5e", 
@@ -3546,7 +3786,7 @@
       "is_active": true, 
       "is_superuser": true, 
       "is_staff": true, 
-      "last_login": "2010-06-22 18:15:30", 
+      "last_login": "2010-07-21 21:27:42", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$93c18$3185d2f9fe9ab816158530225ee0667cc2dfe13a", 
@@ -3642,6 +3882,78 @@
       "password": "sha1$1cb16$acf7b2986ee6c7cc8a8367c3a3b98cfb7feb6551", 
       "email": "jennifer.wing@malix.univ-paris1.fr", 
       "date_joined": "2010-06-24 11:53:54"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "arthurtreuherz", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-07-22 14:54:04", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$236d0$e61102aa90e7a7bb6b790de4a80d679c49c399d3", 
+      "email": "arthur.treuherz@bireme.org", 
+      "date_joined": "2010-07-22 14:53:22"
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "lmckenney", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-07-22 17:29:15", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$2b8ea$43ac1039c96e7b44d8f5228e316999b197ead058", 
+      "email": "lmckenney@secassociates.com", 
+      "date_joined": "2010-07-22 17:01:22"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "matosfarias", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-07-22 19:27:51", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$5c159$8836427e262dc2d5f1c5c2dc53de86cb26fa5cb1", 
+      "email": "matosfarias@yahoo.com.br", 
+      "date_joined": "2010-07-22 19:26:04"
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "cavalcantimanso", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-07-22 20:42:16", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$884f4$4892923fe8121e3e4d9afc7db7c43a5b4fc8e8c5", 
+      "email": "cavalcantimanso@globo.com", 
+      "date_joined": "2010-07-22 20:42:16"
     }
   }
 ]

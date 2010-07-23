@@ -17,9 +17,10 @@ from repository.trds_forms import InterventionDescriptorForm, InterventionForm
 from repository.trds_forms import RecruitmentForm, StudyTypeForm, PrimaryOutcomesForm
 from repository.trds_forms import SecondaryOutcomesForm, PublicContactForm
 from repository.trds_forms import ScientificContactForm, ContactForm, NewInstitution
-from repository.trds_forms import SiteContactForm
+from repository.trds_forms import SiteContactForm, TRIAL_FORMS
 
 from reviewapp.signals import check_trial_fields
+from reviewapp.signals import STEP_STATES, REMARK, MISSING, PARTIAL, COMPLETE
 
 import choices
 import settings
@@ -39,15 +40,6 @@ from django.template.defaultfilters import slugify
 import pickle
 
 EXTRA_FORMS = 1
-TRIAL_FORMS = ['Trial Identification',
-               'Sponsors',
-               'Health Conditions',
-               'Interventions',
-               'Recruitment',
-               'Study Type',
-               'Outcomes',
-               'Contacts',
-               'Attachments']
 
 MENU_SHORT_TITLE = [_('Trial Identif.'),
                     _('Spons.'),
@@ -86,20 +78,22 @@ def edit_trial_index(request, trial_pk):
             for lang in ct.submission.get_mandatory_languages():
                 trans = {}
                 lang = lang.lower()
-                step_status = fields_status.get(lang, {}).get('step_' + str(i + 1), None)
-                if step_status == "MISSING":
-                    trans['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_error.gif'
-                elif step_status == "BLANK": 
-                    trans['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_alert.gif'
-                elif step_status == "OK":
-                    trans['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_success.gif'
+                step_status = fields_status.get(lang, {}).get(name, None)
+                if step_status == MISSING:
+                    trans['icon'] = settings.MEDIA_URL + 'images/form-status-missing.png'
+                elif step_status == PARTIAL: 
+                    trans['icon'] = settings.MEDIA_URL + 'images/form-status-partial.png'
+                elif step_status == COMPLETE:
+                    trans['icon'] = settings.MEDIA_URL + 'images/form-status-complete.png'
+                elif step_status == REMARK:
+                    trans['icon'] = settings.MEDIA_URL + 'images/form-status-remark.png'
                 else:
                     trans['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_error.gif'
                 
                 if step_status is None:
                     trans['msg'] = _('Error')
                 else:
-                    trans['msg'] = _(step_status.title() + ' fields')
+                    trans['msg'] = _(STEP_STATES[(step_status-1)][1].title())
                 trans_list.append(trans)
             data['trans'] = trans_list
             links.append(data)

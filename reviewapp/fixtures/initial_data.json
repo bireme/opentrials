@@ -4,7 +4,7 @@
     "model": "reviewapp.userprofile", 
     "fields": {
       "user": 1, 
-      "preferred_language": "en"
+      "preferred_language": "pt-BR"
     }
   }, 
   {
@@ -176,6 +176,72 @@
     }
   }, 
   {
+    "pk": 23, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 23, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 24, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 25, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 26, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "approved", 
+      "updated": "2010-07-20 15:32:17", 
+      "language": "pt-BR", 
+      "title": "Ensaio cl\u00ednico randomizado para avaliar a efic\u00e1cia e seguran\u00e7a do uso concomitante de rifampicina e 600 X Efavirenz 800mg (EFV-IPEC)", 
+      "created": "2010-07-19 20:36:14", 
+      "trial": 31, 
+      "updater": 1, 
+      "fields_status": "(dp0\r\nVen\r\np1\r\n(dp2\r\nS'step_1'\r\np3\r\nS'BLANK'\r\np4\r\nsS'step_3'\r\np5\r\nS'OK'\r\np6\r\nsS'step_2'\r\np7\r\ng4\r\nsS'step_5'\r\np8\r\ng6\r\nsS'step_4'\r\np9\r\ng6\r\nsS'step_7'\r\np10\r\ng6\r\nsS'step_6'\r\np11\r\ng6\r\nsS'step_9'\r\np12\r\ng4\r\nsS'step_8'\r\np13\r\ng4\r\nssVpt-br\r\np14\r\n(dp15\r\ng3\r\ng4\r\nsg5\r\ng6\r\nsg7\r\ng4\r\nsg8\r\ng6\r\nsg9\r\ng6\r\nsg10\r\ng6\r\nsg11\r\nS'MISSING'\r\np16\r\nsg12\r\ng4\r\nsg13\r\ng4\r\nssVes\r\np17\r\n(dp18\r\ng3\r\ng16\r\nsg5\r\ng16\r\nsg8\r\ng16\r\nsg9\r\ng16\r\nsg11\r\ng16\r\nss.", 
+      "staff_note": "", 
+      "creator": 14, 
+      "primary_sponsor": 39
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-07-19 14:35:33", 
+      "language": "pt-BR", 
+      "title": "titulo10", 
+      "created": "2010-07-16 19:32:32", 
+      "trial": 30, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng4\nsg5\ng6\nsg7\ng4\nsg8\ng6\nsg9\nS'OK'\np16\nsg10\ng6\nsg11\ng6\nsg12\ng4\nsg13\ng6\nssVes\np17\n(dp18\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
+      "staff_note": "", 
+      "creator": 7, 
+      "primary_sponsor": 37
+    }
+  }, 
+  {
     "pk": 29, 
     "model": "reviewapp.submission", 
     "fields": {
@@ -197,13 +263,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "pending", 
-      "updated": "2010-07-15 17:05:12", 
+      "updated": "2010-07-19 17:45:50", 
       "language": "pt-BR", 
       "title": "The Efficacy of Hand NBUVB Versus Excilite Treatment in Vitiligo After Minigrafting on the Dorsal Hands", 
       "created": "2010-07-07 12:47:53", 
       "trial": 28, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'OK'\np6\nsS'step_2'\np7\ng6\nsS'step_5'\np8\nS'MISSING'\np9\nsS'step_4'\np10\ng6\nsS'step_7'\np11\ng6\nsS'step_6'\np12\ng6\nsS'step_9'\np13\ng4\nsS'step_8'\np14\ng6\nssVpt-br\np15\n(dp16\ng3\ng4\nsg5\ng6\nsg8\ng9\nsg10\ng6\nsg12\ng6\nssVes\np17\n(dp18\ng3\ng9\nsg5\ng9\nsg8\ng9\nsg10\ng9\nsg12\ng9\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'OK'\np6\nsS'step_2'\np7\ng6\nsS'step_5'\np8\nS'MISSING'\np9\nsS'step_4'\np10\ng6\nsS'step_7'\np11\ng6\nsS'step_6'\np12\ng6\nsS'step_9'\np13\ng4\nsS'step_8'\np14\ng6\nssVpt-br\np15\n(dp16\ng3\ng4\nsg5\ng6\nsg7\ng6\nsg8\ng9\nsg10\ng6\nsg11\ng6\nsg12\ng6\nsg13\ng4\nsg14\ng6\nssVes\np17\n(dp18\ng3\ng9\nsg5\ng9\nsg8\ng9\nsg10\ng9\nsg12\ng9\nss.", 
       "staff_note": "", 
       "creator": 11, 
       "primary_sponsor": 34
@@ -214,13 +280,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-15 17:05:12", 
+      "updated": "2010-07-16 13:35:33", 
       "language": "pt-BR", 
       "title": "Teste 30/jun", 
       "created": "2010-06-30 13:27:51", 
       "trial": 27, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng6\nsg5\ng6\nsg7\ng4\nsg8\ng6\nsg9\ng6\nsg10\ng6\nsg11\ng6\nsg12\ng4\nsg13\ng6\nssVes\np16\n(dp17\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng4\nsg5\ng6\nsg7\ng4\nsg8\ng6\nsg9\ng6\nsg10\ng6\nsg11\ng6\nsg12\ng4\nsg13\ng6\nssVes\np16\n(dp17\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
       "staff_note": "", 
       "creator": 1, 
       "primary_sponsor": 33
@@ -248,7 +314,7 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-15 17:05:12", 
+      "updated": "2010-07-15 21:35:35", 
       "language": "pt-BR", 
       "title": "titulo cientifico teste", 
       "created": "2010-06-29 14:08:33", 
@@ -435,13 +501,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-15 17:05:13", 
+      "updated": "2010-07-20 20:08:49", 
       "language": "en", 
       "title": "Teste do Luciano em 14 de jun de 2010", 
       "created": "2010-06-14 17:48:11", 
       "trial": 14, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'step_1'\np3\nS'BLANK'\np4\nsS'step_3'\np5\nS'MISSING'\np6\nsS'step_2'\np7\ng4\nsS'step_5'\np8\ng6\nsS'step_4'\np9\ng6\nsS'step_7'\np10\ng6\nsS'step_6'\np11\ng6\nsS'step_9'\np12\ng4\nsS'step_8'\np13\ng6\nssVpt-br\np14\n(dp15\ng3\ng6\nsg5\ng6\nsg7\ng4\nsg8\ng6\nsg9\ng6\nsg10\ng6\nsg11\ng6\nsg12\ng4\nsg13\ng6\nssVes\np16\n(dp17\ng3\ng6\nsg5\ng6\nsg8\ng6\nsg9\ng6\nsg11\ng6\nss.", 
       "staff_note": "", 
       "creator": 14, 
       "primary_sponsor": 16
@@ -485,8 +551,8 @@
     "pk": 11, 
     "model": "reviewapp.submission", 
     "fields": {
-      "status": "draft", 
-      "updated": "2010-07-15 17:05:13", 
+      "status": "pending", 
+      "updated": "2010-07-19 20:10:39", 
       "language": "pt-BR", 
       "title": "T\u00edtulo A", 
       "created": "2010-06-14 13:00:40", 
@@ -796,6 +862,42 @@
       "submission": 24, 
       "created": "2010-06-22 14:36:52", 
       "text": "Inform ammount given", 
+      "creator": 1, 
+      "context": "sponsors"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "reviewapp.remark", 
+    "fields": {
+      "status": "opened", 
+      "submission": 24, 
+      "created": "2010-07-16 13:39:30", 
+      "text": "Remark na se\u00e7\u00e3o identifica\u00e7\u00e3o do ensaio.", 
+      "creator": 1, 
+      "context": "trial-identification"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "reviewapp.remark", 
+    "fields": {
+      "status": "opened", 
+      "submission": 9, 
+      "created": "2010-07-16 14:02:36", 
+      "text": "teste", 
+      "creator": 1, 
+      "context": "trial-identification"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "reviewapp.remark", 
+    "fields": {
+      "status": "acknowledged", 
+      "submission": 4, 
+      "created": "2010-07-19 20:15:55", 
+      "text": "Informar CNPJ do patrocinador primario", 
       "creator": 1, 
       "context": "sponsors"
     }
