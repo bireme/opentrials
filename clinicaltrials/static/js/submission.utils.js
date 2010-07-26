@@ -69,13 +69,17 @@ function make_decstool_callback(decs){
         $('#'+decs.id('select')).change(function(evt){
             decs = make_decs_for(evt.target,decs.lang);
             $("input#id_"+decs.set+"-code")
-                .attr("value",this.value);
+                .attr("value",this.value)
+                .attr("disabled","disabled");
             $("input[name="+decs.set+"-text]")
-                .attr("value",window.decsdata[this.value].en);
+                .attr("value",window.decsdata[this.value].en)
+                .attr("disabled","disabled");
             $("input[name="+decs.set+"-text|es]")
-                .attr("value",window.decsdata[this.value].es);
+                .attr("value",window.decsdata[this.value].es)
+                .attr("disabled","disabled");
             $("input[name="+decs.set+"-text|pt-br]")
-                .attr("value",window.decsdata[this.value].pt);
+                .attr("value",window.decsdata[this.value].pt)
+                .attr("disabled","disabled");
         });
     }
 }
