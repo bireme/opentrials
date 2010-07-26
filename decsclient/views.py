@@ -5,6 +5,7 @@ from lxml.etree import ElementTree
 import urllib
 from json import dumps as json_dumps
 from json import loads as json_loads
+import re
 
 DECS_LANGS = ['en','es','pt']
 JSON_TERM = '{"fields":{"description":"%s","label":"%s"}}'
@@ -64,7 +65,16 @@ def search(request, lang, term, prefix='403'):
     count = 30
     if 'count' in request.GET and request.GET['count'].isdigit():
         count = request.GET['count']
-        
+
+    term = term.strip()
+    match = re.match('^"([^"]+)"$',term)
+    if re.match('^"[^"]+"$',term):
+        term = match.group(1)
+        prefix = '103'
+    elif len(term) > 0:
+        term = ' AND '.join( term.split(' ') )
+
+
     params = urllib.urlencode({
         'bool': '%s %s' % (prefix, term.encode('iso-8859-1')),
         'lang': lang,
