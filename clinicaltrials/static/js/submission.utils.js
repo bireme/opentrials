@@ -81,6 +81,11 @@ function make_decstool_callback(decs){
                 .attr("value",window.decsdata[this.value].pt)
                 .attr("disabled","disabled");
         });
+
+        if( data.length === 1){
+            $('#'+decs.id('select') + " option").attr("selected","selected");
+            $('#'+decs.id('select')).change();
+        }
     }
 }
 
