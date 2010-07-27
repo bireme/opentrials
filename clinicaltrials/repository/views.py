@@ -7,17 +7,17 @@ from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
 
 from repository.models import ClinicalTrial, Descriptor, TrialNumber
 from repository.models import TrialSecondarySponsor, TrialSupportSource, Outcome
-from repository.models import PublicContact, ScientificContact, SiteContact, Contact
+from repository.models import PublicContact, ScientificContact, SiteContact, Contact, Institution
 
 from repository.trds_forms import GeneralHealthDescriptorForm, PrimarySponsorForm
-from repository.trds_forms import SecondaryIdForm, SecondarySponsorForm
-from repository.trds_forms import SupportSourceForm, TrialIdentificationForm
+from repository.trds_forms import SecondaryIdForm, make_secondary_sponsor_form
+from repository.trds_forms import make_support_source_form, TrialIdentificationForm
 from repository.trds_forms import SpecificHealthDescriptorForm, HealthConditionsForm
 from repository.trds_forms import InterventionDescriptorForm, InterventionForm
 from repository.trds_forms import RecruitmentForm, StudyTypeForm, PrimaryOutcomesForm
-from repository.trds_forms import SecondaryOutcomesForm, PublicContactForm
-from repository.trds_forms import ScientificContactForm, ContactForm, NewInstitution
-from repository.trds_forms import SiteContactForm, TRIAL_FORMS
+from repository.trds_forms import SecondaryOutcomesForm, make_public_contact_form
+from repository.trds_forms import make_scientifc_contact_form, make_contact_form, NewInstitution
+from repository.trds_forms import make_site_contact_form, TRIAL_FORMS
 
 from reviewapp.signals import check_trial_fields
 from reviewapp.signals import STEP_STATES, REMARK, MISSING, PARTIAL, COMPLETE
@@ -135,7 +135,9 @@ def new_institution(request):
     if request.POST:
         new_institution = NewInstitution(request.POST)
         if new_institution.is_valid():
-            institution = new_institution.save()
+            institution = new_institution.save(commit=False)
+            institution.creator = request.user
+            institution.save()
             json = serializers.serialize('json',[institution])
             return HttpResponse(json, mimetype='application/json')
         else:
@@ -198,13 +200,15 @@ def step_1(request, trial_pk):
 @login_required
 def step_2(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    
+    qs_primary_sponsor = Institution.objects.filter(creator=request.user).order_by('name')
 
     if request.POST:
-        form = PrimarySponsorForm(request.POST, instance=ct)
+        form = PrimarySponsorForm(request.POST, instance=ct, queryset=qs_primary_sponsor)
         SecondarySponsorSet = inlineformset_factory(ClinicalTrial, TrialSecondarySponsor,
-                           form=SecondarySponsorForm,extra=EXTRA_FORMS)
+                           form=make_secondary_sponsor_form(request.user),extra=EXTRA_FORMS)
         SupportSourceSet = inlineformset_factory(ClinicalTrial, TrialSupportSource,
-                           form=SupportSourceForm,extra=EXTRA_FORMS)
+                           form=make_support_source_form(request.user),extra=EXTRA_FORMS)
 
         secondary_forms = SecondarySponsorSet(request.POST, instance=ct)
         sources_form = SupportSourceSet(request.POST, instance=ct)
@@ -215,12 +219,12 @@ def step_2(request, trial_pk):
             form.save()
         return HttpResponseRedirect(reverse('step_2',args=[trial_pk]))
     else:
-        form = PrimarySponsorForm(instance=ct, 
+        form = PrimarySponsorForm(instance=ct, queryset=qs_primary_sponsor,
                                   default_second_language=ct.submission.get_secondary_language())
         SecondarySponsorSet = inlineformset_factory(ClinicalTrial, TrialSecondarySponsor,
-            form=SecondarySponsorForm,extra=EXTRA_FORMS, can_delete=True)
+            form=make_secondary_sponsor_form(request.user),extra=EXTRA_FORMS, can_delete=True)
         SupportSourceSet = inlineformset_factory(ClinicalTrial, TrialSupportSource,
-               form=SupportSourceForm,extra=EXTRA_FORMS,can_delete=True)
+               form=make_support_source_form(request.user),extra=EXTRA_FORMS,can_delete=True)
 
         secondary_forms = SecondarySponsorSet(instance=ct)
         sources_form = SupportSourceSet(instance=ct)
@@ -449,9 +453,9 @@ def step_8(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
     contact_type = {
-        'PublicContact': (PublicContact,PublicContactForm),
-        'ScientificContact': (ScientificContact,ScientificContactForm),
-        'SiteContact': (SiteContact,SiteContactForm)
+        'PublicContact': (PublicContact,make_public_contact_form(request.user)),
+        'ScientificContact': (ScientificContact,make_scientifc_contact_form(request.user)),
+        'SiteContact': (SiteContact,make_site_contact_form(request.user))
     }
 
     InlineFormSetClasses = []
@@ -460,7 +464,7 @@ def step_8(request, trial_pk):
             inlineformset_factory(ClinicalTrial,model,form=form,can_delete=True,extra=EXTRA_FORMS)
         )
 
-    ContactFormSet = modelformset_factory(Contact, form=ContactForm, extra=1)
+    ContactFormSet = modelformset_factory(Contact, form=make_contact_form(request.user), extra=1)
 
     contact_qs = Contact.objects.none()
 

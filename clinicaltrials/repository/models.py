@@ -3,6 +3,7 @@ from django.db import models, IntegrityError
 from django.utils.translation import ugettext_lazy as _
 from django.utils.html import linebreaks
 from django.contrib.contenttypes import generic
+from django.contrib.auth.models import User
 
 from datetime import datetime
 import string
@@ -101,7 +102,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     scientific_acronym_expansion = models.CharField(_('Scientific Acronym Expansion'),
                                                     blank=True, max_length=255)
     # TRDS 5
-    primary_sponsor = models.OneToOneField('Institution', null=True, blank=True,
+    primary_sponsor = models.ForeignKey('Institution', null=True, blank=True,
                                         verbose_name=_('Primary Sponsor'))
     # TRDS 7
     public_contact = models.ManyToManyField('Contact', through='PublicContact',
@@ -435,6 +436,8 @@ class Institution(TrialRegistrationDataSetModel):
     name = models.CharField(_('Name'), max_length=255)
     address = models.TextField(_('Postal Address'), max_length=1500, blank=True)
     country = models.ForeignKey(CountryCode, verbose_name=_('Country'))
+    
+    creator = models.ForeignKey(User, related_name='institution_creator', editable=False)
 
     def __unicode__(self):
         return safe_truncate(self.name, 120)
@@ -448,13 +451,15 @@ class Contact(TrialRegistrationDataSetModel):
     lastname = models.CharField(_('Last Name'), max_length=50)
     email = models.EmailField(_('E-mail'), max_length=255)
     affiliation = models.ForeignKey(Institution, null=True, blank=True,
-                                    verbose_name=_('Affiliation'))
+                                    verbose_name=_('Institution'))
     address = models.CharField(_('Address'), max_length=255, blank=True)
     city = models.CharField(_('City'), max_length=255, blank=True)
     country = models.ForeignKey(CountryCode, null=True, blank=True,
                                 verbose_name=_('Country'),)
     zip = models.CharField(_('Postal Code'), max_length=50, blank=True)
     telephone = models.CharField(_('Telephone'), max_length=255, blank=True)
+    
+    creator = models.ForeignKey(User, related_name='contact_creator', editable=False)
 
     def name(self):
         names = self.firstname + u' ' + self.middlename + u' ' + self.lastname

@@ -1182,6 +1182,150 @@
     }
   }, 
   {
+    "pk": 1, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 5
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 6
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 7
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 8
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 9
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 14
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 15
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 16
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 17
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "7dd385471cf8bab58b6fb365e51b8199db231483", 
+      "user": 18
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 19
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 20
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 21
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "27480b4b99d67bfad68fb010fab84916a395d4ce", 
+      "user": 22
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 23
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 24
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 25
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "registration.registrationprofile", 
+    "fields": {
+      "activation_key": "ALREADY_ACTIVATED", 
+      "user": 26
+    }
+  }, 
+  {
     "pk": 22, 
     "model": "auth.permission", 
     "fields": {
@@ -3480,7 +3624,7 @@
       "is_active": true, 
       "is_superuser": true, 
       "is_staff": true, 
-      "last_login": "2010-07-23 11:45:23", 
+      "last_login": "2010-07-27 13:48:12", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$e51b1$627a1107fb3ca30bbf23985572a2c38530eafaf6", 
@@ -3588,7 +3732,7 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": false, 
-      "last_login": "2010-07-19 12:52:35", 
+      "last_login": "2010-07-26 17:04:24", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$0ebc0$2049a31c4d4d9810746cad1e99a89c4b74fc0884", 
@@ -3606,7 +3750,7 @@
       "is_active": true, 
       "is_superuser": true, 
       "is_staff": true, 
-      "last_login": "2010-07-22 19:14:06", 
+      "last_login": "2010-07-26 13:23:33", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$85de4$105803c27067e017d6c76124ff6ad89d16bffd9f", 
@@ -3750,7 +3894,7 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": false, 
-      "last_login": "2010-06-15 23:26:24", 
+      "last_login": "2010-07-25 13:17:58", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$5fa6f$df15676a026406ca7eacf42d9b6febf8f86088b1", 
