@@ -23,6 +23,12 @@
         <script type="text/javascript">
             function new_institution(){
                 var data = '', op = '';
+
+                var target = document.location.toString();
+                if(target.match('#')){
+                    target = target.split('#')[1];
+                }
+
                 $('form *[name]').each(function(){data+=op+this.name+'='+this.value;op='&'});
                 $.post(
                     $('form').attr('action'),
@@ -32,9 +38,21 @@
                           $("table.dataTable").html(data);
                         } else {
                           data=$.parseJSON(data);
-                          opener.$('select').append(
-                              $('<option>').attr('value',data[0].pk).html(data[0].fields.name)
-                          );
+                          opener.$('select').each(function(){
+                              var newoption = $('<option>').attr('value',data[0].pk).html(data[0].fields.name);
+                              $(this).append(newoption);
+
+                          });
+                          var total = opener.$("div."+target+" select").length;
+                          var targetSel = opener.$('#id_'+target+'-'+(total-1)+'-institution')[0];
+                          if(targetSel.selectedIndex === 0){
+                            targetSel.selectedIndex = $(targetSel).find("option").length-1;
+                          }else{
+                              opener.cloneMore('div.'+target+' table:last',target);
+                              targetSel = opener.$('#id_'+target+'-'+total+'-institution')[0];
+                              targetSel.selectedIndex = $(targetSel).find("option").length-1;
+                          }
+
                           window.close();
                         }
                     },
