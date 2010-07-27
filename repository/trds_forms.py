@@ -320,32 +320,50 @@ class PrimarySponsorForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['primary_sponsor']
+        
+    def __init__(self, *args, **kwargs):
+        queryset = kwargs.pop('queryset', None)
+        super(PrimarySponsorForm, self).__init__(*args, **kwargs)
+        if queryset:
+            self.fields['primary_sponsor'].queryset = queryset
 
     title = _('Primary Sponsor')
 
-class SecondarySponsorForm(ReviewModelForm):
-    class Meta:
-        model = TrialSecondarySponsor
-        queryset = TrialSecondarySponsor.objects.all()
-        min_required = 0
-        polyglot = False
-        fields = ['institution','relation']
+def make_secondary_sponsor_form(user=None):
+    class SecondarySponsorForm(ReviewModelForm):
+        class Meta:
+            model = TrialSecondarySponsor
+            queryset = TrialSecondarySponsor.objects.all()
+            min_required = 0
+            polyglot = False
+            fields = ['institution','relation']
 
-    title = _('Secondary Sponsor(s)')
-    relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[1][0])
+        title = _('Secondary Sponsor(s)')
+        if user:
+            institution = forms.ModelChoiceField(queryset=Institution.objects.filter(creator=user).order_by('name'),
+                                                 label=_('Institution'))
+        relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[1][0])
+    
+    return SecondarySponsorForm
 
-class SupportSourceForm(ReviewModelForm):
-    class Meta:
-        model = TrialSupportSource
-        queryset = TrialSupportSource.objects.all()
-        min_required = 0
-        polyglot = False
-        fields = ['institution','relation']
+def make_support_source_form(user=None):
+    class SupportSourceForm(ReviewModelForm):
+        class Meta:
+            model = TrialSupportSource
+            queryset = TrialSupportSource.objects.all()
+            min_required = 0
+            polyglot = False
+            fields = ['institution','relation']
 
-    title = _('Source(s) of Monetary or Material Support')
-    relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[0][0])
+        title = _('Source(s) of Monetary or Material Support')
+        if user:
+            institution = forms.ModelChoiceField(queryset=Institution.objects.filter(creator=user).order_by('name'),
+                                                 label=_('Institution'))
+        relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[0][0])
+        
+    return SupportSourceForm
 
-STEP_FORM_MATRIX[TRIAL_FORMS[1]] = [PrimarySponsorForm, SecondarySponsorForm, SupportSourceForm]
+STEP_FORM_MATRIX[TRIAL_FORMS[1]] = [PrimarySponsorForm, make_secondary_sponsor_form(), make_support_source_form()]
 
 
 
@@ -535,75 +553,98 @@ class SecondaryOutcomesForm(ReviewModelForm):
 STEP_FORM_MATRIX[TRIAL_FORMS[6]] = [PrimaryOutcomesForm,SecondaryOutcomesForm]
 
 ### step_8 #####################################################################
-class PublicContactForm(ReviewModelForm):
-    class Meta:
-        model = ClinicalTrial
-        queryset = PublicContact.objects.all()
-        min_required = 0
-        polyglot = False
-        fields = ['contact']
+def make_public_contact_form(user=None):
+    class PublicContactForm(ReviewModelForm):
+        class Meta:
+            model = ClinicalTrial
+            queryset = PublicContact.objects.all()
+            min_required = 0
+            polyglot = False
+            fields = ['contact']
 
-    title = _('Contact(s) for Public Queries')
-    relation = forms.CharField(label=_('Relation'), 
-                               initial=choices.CONTACT_RELATION[0][0],
-                               widget=forms.HiddenInput)
+        title = _('Contact(s) for Public Queries')
+        relation = forms.CharField(label=_('Relation'), 
+                                   initial=choices.CONTACT_RELATION[0][0],
+                                   widget=forms.HiddenInput)
+        if user:
+            contact = forms.ModelChoiceField(queryset=Contact.objects.filter(creator=user).order_by('firstname', 'middlename', 'lastname'),
+                                                 label=_('Contact'))
+    return PublicContactForm
 
-class ScientificContactForm(ReviewModelForm):
-    class Meta:
-        model = ClinicalTrial
-        queryset = ScientificContact.objects.all()
-        min_required = 1
-        polyglot = False
-        fields = ['contact']
+def make_scientifc_contact_form(user=None):
+    class ScientificContactForm(ReviewModelForm):
+        class Meta:
+            model = ClinicalTrial
+            queryset = ScientificContact.objects.all()
+            min_required = 1
+            polyglot = False
+            fields = ['contact']
 
-    title = _('Contact(s) for Scientific Queries')
-    relation = forms.CharField(label=_('Relation'), 
-                               initial=choices.CONTACT_RELATION[1][0],
-                               widget=forms.HiddenInput)
+        title = _('Contact(s) for Scientific Queries')
+        relation = forms.CharField(label=_('Relation'), 
+                                   initial=choices.CONTACT_RELATION[1][0],
+                                   widget=forms.HiddenInput)
+        if user:
+            contact = forms.ModelChoiceField(queryset=Contact.objects.filter(creator=user).order_by('firstname', 'middlename', 'lastname'),
+                                                 label=_('Contact'))
+    return ScientificContactForm
 
-class SiteContactForm(ReviewModelForm):
-    class Meta:
-        model = ClinicalTrial
-        queryset = SiteContact.objects.all()
-        min_required = 1
-        polyglot = False
-        fields = ['contact']
+def make_site_contact_form(user=None):
+    class SiteContactForm(ReviewModelForm):
+        class Meta:
+            model = ClinicalTrial
+            queryset = SiteContact.objects.all()
+            min_required = 1
+            polyglot = False
+            fields = ['contact']
 
-    title = _('Contact(s) for Site Queries')
-    relation = forms.CharField(label=_('Relation'), 
-                               initial=choices.CONTACT_RELATION[2][0],
-                               widget=forms.HiddenInput)
+        title = _('Contact(s) for Site Queries')
+        relation = forms.CharField(label=_('Relation'), 
+                                   initial=choices.CONTACT_RELATION[2][0],
+                                   widget=forms.HiddenInput)
+        if user:
+            contact = forms.ModelChoiceField(queryset=Contact.objects.filter(creator=user).order_by('firstname', 'middlename', 'lastname'),
+                                                 label=_('Contact'))
+    return SiteContactForm
 
-STEP_FORM_MATRIX[TRIAL_FORMS[7]] = [PublicContactForm,ScientificContactForm,SiteContactForm]
+STEP_FORM_MATRIX[TRIAL_FORMS[7]] = [make_public_contact_form(),make_scientifc_contact_form(),make_scientifc_contact_form()]
 
 #step8-partof
-class ContactForm(ReviewModelForm):
-    class Meta:
-        model = Contact
+# http://www.b-list.org/weblog/2008/nov/09/dynamic-forms/
+# http://stackoverflow.com/questions/622982/django-passing-custom-form-parameters-to-formset
+def make_contact_form(user):
+    class ContactForm(ReviewModelForm):
+        class Meta:
+            model = Contact
+            
+        def __init__(self, *args, **kwargs):
+            super(ReviewModelForm, self).__init__(*args, **kwargs)
+            self.fields.insert(0, 'relation', forms.ChoiceField(label=_('Contact Type'), 
+                                   widget=forms.RadioSelect,
+                                   choices=choices.CONTACT_RELATION))
 
-    title = _('New Contact(s)')
-    relation = forms.ChoiceField(label=_('Relation'), 
-                               widget=forms.RadioSelect,
-                               choices=choices.CONTACT_RELATION)
+        title = _('New Contact(s)')
 
-    firstname = forms.CharField(label=_('First Name'), max_length=50)
-    middlename = forms.CharField(label=_('Middle Name'), max_length=50,required=False)
-    lastname = forms.CharField(label=_('Last Name'), max_length=50)
+        firstname = forms.CharField(label=_('First Name'), max_length=50)
+        middlename = forms.CharField(label=_('Middle Name'), max_length=50,required=False)
+        lastname = forms.CharField(label=_('Last Name'), max_length=50)
 
-    email = forms.EmailField(label=_('E-mail'), max_length=255)
+        email = forms.EmailField(label=_('E-mail'), max_length=255)
 
-    affiliation = forms.ModelChoiceField(Institution.objects.all(),
-                                         label=_('Affiliation'))
+        affiliation = forms.ModelChoiceField(queryset=Institution.objects.filter(creator=user).order_by('name'),
+                                             label=_('Institution'))
 
-    address = forms.CharField(label=_('Address'), max_length=255,required=False, 
-                              widget=forms.TextInput(attrs={'style': 'width:400px;'}))
-    city = forms.CharField(label=_('City'), max_length=255)
+        address = forms.CharField(label=_('Address'), max_length=255,required=False, 
+                                  widget=forms.TextInput(attrs={'style': 'width:400px;'}))
+        city = forms.CharField(label=_('City'), max_length=255)
 
-    country = forms.ModelChoiceField(CountryCode.objects.all(),
-                                     label=_('Country'))
+        country = forms.ModelChoiceField(CountryCode.objects.all(),
+                                         label=_('Country'))
 
-    zip = forms.CharField(label=_('Postal Code'), max_length=50)
-    telephone = forms.CharField(label=_('Telephone'), max_length=255)
+        zip = forms.CharField(label=_('Postal Code'), max_length=50)
+        telephone = forms.CharField(label=_('Telephone'), max_length=255)
+        
+    return ContactForm
 
 class NewInstitution(ReviewModelForm):
     class Meta:

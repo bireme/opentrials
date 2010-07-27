@@ -1422,6 +1422,7 @@
       "country": [
         "NZ"
       ], 
+      "creator": 1, 
       "name": "National Institute for Health Innovation", 
       "address": "School of Population Health\r\nTamaki Campus\r\nThe University of Auckland\r\nPrivate Bag 92019 \r\nAuckland Mail Centre\r\nAuckland 1142"
     }
@@ -1433,6 +1434,7 @@
       "country": [
         "IR"
       ], 
+      "creator": 1, 
       "name": "Tabriz University of Medical Sciences", 
       "address": "Daneshgah St,Tabriz Univ Med Sci\r\nTabriz\r\nZip: 51656-65811"
     }
@@ -1444,6 +1446,7 @@
       "country": [
         "US"
       ], 
+      "creator": 1, 
       "name": "Abbott Vascular", 
       "address": ""
     }
@@ -1455,6 +1458,7 @@
       "country": [
         "DZ"
       ], 
+      "creator": 1, 
       "name": "Fooo", 
       "address": ""
     }
@@ -1466,6 +1470,7 @@
       "country": [
         "AU"
       ], 
+      "creator": 1, 
       "name": "Patrocinador xyz", 
       "address": ""
     }
@@ -1477,6 +1482,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 1, 
       "name": "Funda\u00e7\u00e3o Oswaldo Cruz", 
       "address": ""
     }
@@ -1488,6 +1494,7 @@
       "country": [
         "NL"
       ], 
+      "creator": 1, 
       "name": "Radboud University ", 
       "address": ""
     }
@@ -1499,6 +1506,7 @@
       "country": [
         "CN"
       ], 
+      "creator": 1, 
       "name": " \tWest China Hospital, Sichuan University", 
       "address": ""
     }
@@ -1510,6 +1518,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 5, 
       "name": "Fiocruz", 
       "address": ""
     }
@@ -1521,6 +1530,7 @@
       "country": [
         "AT"
       ], 
+      "creator": 6, 
       "name": "Eudgo aaaaaaaaaa. Inc.", 
       "address": ""
     }
@@ -1532,6 +1542,7 @@
       "country": [
         "US"
       ], 
+      "creator": 1, 
       "name": "Genentech, Inc.", 
       "address": ""
     }
@@ -1543,6 +1554,7 @@
       "country": [
         "US"
       ], 
+      "creator": 1, 
       "name": "Genentech, Inc.", 
       "address": "sdf"
     }
@@ -1554,6 +1566,7 @@
       "country": [
         "US"
       ], 
+      "creator": 1, 
       "name": "Genentech, Inc.", 
       "address": "sdf"
     }
@@ -1565,6 +1578,7 @@
       "country": [
         "AR"
       ], 
+      "creator": 4, 
       "name": "ACME", 
       "address": ""
     }
@@ -1576,6 +1590,7 @@
       "country": [
         "AR"
       ], 
+      "creator": 7, 
       "name": "ACME", 
       "address": ""
     }
@@ -1587,6 +1602,7 @@
       "country": [
         "US"
       ], 
+      "creator": 14, 
       "name": "ACME", 
       "address": ""
     }
@@ -1598,6 +1614,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 15, 
       "name": "FM Inc.", 
       "address": ""
     }
@@ -1609,6 +1626,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 16, 
       "name": "Minist\u00e9rio da Sa\u00fade", 
       "address": ""
     }
@@ -1620,6 +1638,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 16, 
       "name": "Minist\u00e9rio da Sa\u00fade", 
       "address": ""
     }
@@ -1631,6 +1650,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 16, 
       "name": "Ministerio", 
       "address": ""
     }
@@ -1642,6 +1662,7 @@
       "country": [
         "AT"
       ], 
+      "creator": 16, 
       "name": "teste", 
       "address": ""
     }
@@ -1653,6 +1674,7 @@
       "country": [
         "US"
       ], 
+      "creator": 7, 
       "name": "Celgene Corporation", 
       "address": ""
     }
@@ -1664,6 +1686,7 @@
       "country": [
         "GB"
       ], 
+      "creator": 1, 
       "name": "Jumperkraft", 
       "address": "Heal Highway, 311\r\nPO 3WWWEQ"
     }
@@ -1675,6 +1698,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 1, 
       "name": "Klintban", 
       "address": "av. norte, sn\r\nvlia dos alpes\r\n"
     }
@@ -1686,6 +1710,7 @@
       "country": [
         "BS"
       ], 
+      "creator": 2, 
       "name": "tete", 
       "address": ""
     }
@@ -1697,6 +1722,7 @@
       "country": [
         "CH"
       ], 
+      "creator": 19, 
       "name": "Novartis", 
       "address": ""
     }
@@ -1708,6 +1734,7 @@
       "country": [
         "US"
       ], 
+      "creator": 7, 
       "name": "Clyde corp.", 
       "address": ""
     }
@@ -1719,6 +1746,7 @@
       "country": [
         "US"
       ], 
+      "creator": 17, 
       "name": "Takeda Research Group", 
       "address": ""
     }
@@ -1730,6 +1758,7 @@
       "country": [
         "US"
       ], 
+      "creator": 1, 
       "name": "National Diabetes Association", 
       "address": "1340 W Street, Auckland California 13900"
     }
@@ -1741,6 +1770,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 12, 
       "name": "FIOCRUZ", 
       "address": ""
     }
@@ -1752,6 +1782,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 1, 
       "name": "TESTE", 
       "address": "DKFA ~KF ASKLF \u00c3LKsdf "
     }
@@ -1763,6 +1794,7 @@
       "country": [
         "CA"
       ], 
+      "creator": 11, 
       "name": "Hamilton health Sciences", 
       "address": ""
     }
@@ -1774,6 +1806,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 1, 
       "name": "ACME", 
       "address": ""
     }
@@ -1785,6 +1818,7 @@
       "country": [
         "US"
       ], 
+      "creator": 11, 
       "name": "University of Texas Southwestern Medical Center ", 
       "address": ""
     }
@@ -1796,6 +1830,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 1, 
       "name": "Lightec", 
       "address": "Rua da Quitanda, 90 - 2\u00ba andar\n20011-030 - Rio de Janeiro - RJ\nTel: (21) 3501-9900\nFax: (21) 3501-5302"
     }
@@ -1807,6 +1842,7 @@
       "country": [
         "US"
       ], 
+      "creator": 5, 
       "name": "Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD)", 
       "address": ""
     }
@@ -1818,6 +1854,7 @@
       "country": [
         "NL"
       ], 
+      "creator": 7, 
       "name": "NedX", 
       "address": ""
     }
@@ -1829,6 +1866,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 1, 
       "name": "wwert", 
       "address": "a13039\nasd\n\n23423"
     }
@@ -1840,6 +1878,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 14, 
       "name": "Funda\u00e7\u00e3o Oswaldo Cruz", 
       "address": ""
     }
@@ -1851,6 +1890,7 @@
       "country": [
         "BR"
       ], 
+      "creator": 1, 
       "name": "Conselho Nacional de Desenvolvimento Cient\u00edfico e Tecnol\u00f3gico", 
       "address": "SEPN 507 Ed. CNPq - Terreo - Sala 7, 0, \n70740-901 - Brasilia - DF\n\n"
     }
@@ -1862,6 +1902,7 @@
       "country": [
         "AT"
       ], 
+      "creator": 1, 
       "name": "United Nations Office On Drugs and Crime (UNODC)", 
       "address": "Vienna International Centre\nWagramer Strasse 5 \nA 1400 Vienna "
     }
@@ -1873,6 +1914,7 @@
       "city": "Tabriz", 
       "zip": "51656-65811", 
       "firstname": "Naser", 
+      "creator": 1, 
       "middlename": "", 
       "lastname": "Safaei", 
       "telephone": "+98-411-3357767", 
@@ -1891,6 +1933,7 @@
       "city": "Santa Clara", 
       "zip": "Ca. 950504", 
       "firstname": "Candace", 
+      "creator": 1, 
       "middlename": "", 
       "lastname": "Elek", 
       "telephone": "+1 408-845-3133", 
@@ -1909,6 +1952,7 @@
       "city": "Santa Clara", 
       "zip": "Ca. 950504", 
       "firstname": "Robert", 
+      "creator": 1, 
       "middlename": "", 
       "lastname": "McGreevy", 
       "telephone": "+1 408-845-3932", 
@@ -1927,6 +1971,7 @@
       "city": "Oakland", 
       "zip": "345678", 
       "firstname": "John", 
+      "creator": 1, 
       "middlename": "Henry", 
       "lastname": "Doe", 
       "telephone": "21-23409985", 
@@ -1945,6 +1990,7 @@
       "city": "teste", 
       "zip": "123456", 
       "firstname": "teste", 
+      "creator": 1, 
       "middlename": "teste", 
       "lastname": "teste", 
       "telephone": "11 4448-7897", 
@@ -1963,6 +2009,7 @@
       "city": "aaa", 
       "zip": "123456", 
       "firstname": "joao", 
+      "creator": 1, 
       "middlename": "pedro", 
       "lastname": "silva", 
       "telephone": "11 4448-7897", 
@@ -1981,6 +2028,7 @@
       "city": "qqqq", 
       "zip": "12456", 
       "firstname": "Paulo", 
+      "creator": 1, 
       "middlename": "", 
       "lastname": "Souza", 
       "telephone": "12346", 
@@ -1999,6 +2047,7 @@
       "city": "rio de janeiro", 
       "zip": "123456", 
       "firstname": "teste novo contato", 
+      "creator": 1, 
       "middlename": "xx", 
       "lastname": "yy", 
       "telephone": "1234567", 
@@ -2017,6 +2066,7 @@
       "city": "Rio de Janeiro", 
       "zip": "21040-900", 
       "firstname": "Valeria", 
+      "creator": 1, 
       "middlename": "C", 
       "lastname": "Rolla", 
       "telephone": "+55-21-3865-9607", 
@@ -2035,6 +2085,7 @@
       "city": "Rio de Janeiro", 
       "zip": "21040-900", 
       "firstname": "Simone", 
+      "creator": 1, 
       "middlename": "S", 
       "lastname": "Cavalho", 
       "telephone": "+55 21 38659601", 
