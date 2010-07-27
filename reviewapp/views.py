@@ -161,7 +161,11 @@ def new_submission(request):
             trial.save()
             su.save()
             
-            trial.primary_sponsor = su.primary_sponsor = sponsor_form.save()
+            sponsor = sponsor_form.save(commit=False)
+            sponsor.creator = request.user
+            sponsor.save()
+            
+            trial.primary_sponsor = su.primary_sponsor = sponsor
             trial.recruitment_country = [CountryCode.objects.get(pk=id) for id in initial_form.cleaned_data['recruitment_country']]
             su.trial = trial
 
