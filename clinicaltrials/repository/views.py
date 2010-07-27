@@ -478,7 +478,9 @@ def step_8(request, trial_pk):
             for contactform in new_contact_formset.forms:
                 if contactform.cleaned_data:
                     Relation = contact_type[contactform.cleaned_data.pop('relation')][0]
-                    new_contact = contactform.save()
+                    new_contact = contactform.save(commit=False)
+                    new_contact.creator = request.user
+                    new_contact.save()
                     Relation.objects.create(trial=ct,contact=new_contact)
 
             for fs in inlineformsets:
