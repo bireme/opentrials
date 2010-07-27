@@ -14,10 +14,10 @@
             $(document).ready(function() {
                 $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
             });
-            function new_institution(){
-                return window.open('{% url new_institution %}','n_i','status=0,location=0,height=380');
+            function new_institution(target){
+                return window.open('{% url new_institution %}#'+target,'n_i','status=0,location=0,height=380');
             }
         </script>
 {% endblock %}
 
-{% block extra_buttons %}<input onclick="new_institution()" type="button" value="{% trans 'New Institution' %}"/>{% endblock %}
+{% block extra_buttons %}<input onclick="new_institution('{{formset.management_form.prefix}}')" type="button" value="{% trans 'New Institution' %}"/>{% endblock %}
