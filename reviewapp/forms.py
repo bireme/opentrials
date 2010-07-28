@@ -18,6 +18,13 @@ ACCESS = [
 
 
 class InitialTrialForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super(InitialTrialForm, self).__init__(*args, **kwargs)
+        if self.user:
+            self.fields['language'] = forms.ChoiceField(label=_('Submission language'), 
+                        choices=settings.MANAGED_LANGUAGES_CHOICES, initial=self.user.get_profile().preferred_language)
+            
     form_title = _('Initial Trial Data')
     scientific_title = forms.CharField(widget=forms.Textarea, 
                                        label=_('Scientific Title'), 
