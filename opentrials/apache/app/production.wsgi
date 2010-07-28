@@ -1,6 +1,6 @@
 INSTALL_BASE = '/home/aplicacoes-bvs/ensaiosclinicos'
 
-PROJECT_NAME = 'clinicaltrials'
+PROJECT_NAME = 'opentrials'
 import os, sys
 sys.path.append(os.path.join(INSTALL_BASE,PROJECT_NAME))
 sys.path.append(INSTALL_BASE)

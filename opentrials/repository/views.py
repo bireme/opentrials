@@ -1,29 +1,5 @@
-#coding: utf-8
+# coding: utf-8
 
-from clinicaltrials.repository.trds_forms import MultilingualBaseFormSet
-from django.template.context import RequestContext
-from reviewapp.models import Attachment, Submission, Remark, SUBMISSION_STATUS
-from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
-
-from repository.models import ClinicalTrial, Descriptor, TrialNumber
-from repository.models import TrialSecondarySponsor, TrialSupportSource, Outcome
-from repository.models import PublicContact, ScientificContact, SiteContact, Contact, Institution
-
-from repository.trds_forms import GeneralHealthDescriptorForm, PrimarySponsorForm
-from repository.trds_forms import SecondaryIdForm, make_secondary_sponsor_form
-from repository.trds_forms import make_support_source_form, TrialIdentificationForm
-from repository.trds_forms import SpecificHealthDescriptorForm, HealthConditionsForm
-from repository.trds_forms import InterventionDescriptorForm, InterventionForm
-from repository.trds_forms import RecruitmentForm, StudyTypeForm, PrimaryOutcomesForm
-from repository.trds_forms import SecondaryOutcomesForm, make_public_contact_form
-from repository.trds_forms import make_scientifc_contact_form, make_contact_form, NewInstitution
-from repository.trds_forms import make_site_contact_form, TRIAL_FORMS
-
-from reviewapp.signals import check_trial_fields
-from reviewapp.signals import STEP_STATES, REMARK, MISSING, PARTIAL, COMPLETE
-
-import choices
-import settings
 from django.core import serializers
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
@@ -36,6 +12,30 @@ from django.db.models import Q
 from django.views.generic.list_detail import object_list
 from django.conf import settings
 from django.template.defaultfilters import slugify
+from django.template.context import RequestContext
+
+from reviewapp.signals import check_trial_fields
+from reviewapp.signals import STEP_STATES, REMARK, MISSING, PARTIAL, COMPLETE
+from reviewapp.models import Attachment, Submission, Remark, SUBMISSION_STATUS
+from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
+
+from repository.models import ClinicalTrial, Descriptor, TrialNumber
+from repository.models import TrialSecondarySponsor, TrialSupportSource, Outcome
+from repository.models import PublicContact, ScientificContact, SiteContact, Contact, Institution
+from repository.trds_forms import MultilingualBaseFormSet
+from repository.trds_forms import GeneralHealthDescriptorForm, PrimarySponsorForm
+from repository.trds_forms import SecondaryIdForm, make_secondary_sponsor_form
+from repository.trds_forms import make_support_source_form, TrialIdentificationForm
+from repository.trds_forms import SpecificHealthDescriptorForm, HealthConditionsForm
+from repository.trds_forms import InterventionDescriptorForm, InterventionForm
+from repository.trds_forms import RecruitmentForm, StudyTypeForm, PrimaryOutcomesForm
+from repository.trds_forms import SecondaryOutcomesForm, make_public_contact_form
+from repository.trds_forms import make_scientifc_contact_form, make_contact_form, NewInstitution
+from repository.trds_forms import make_site_contact_form, TRIAL_FORMS
+
+
+import choices
+import settings
 
 import pickle
 

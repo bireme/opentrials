@@ -770,7 +770,7 @@
     "fields": {
       "public": false, 
       "description": "teste", 
-      "file": "/home/aplicacoes-bvs/ensaiosclinicos/clinicaltrials/static/attachments/teste.php", 
+      "file": "/home/aplicacoes-bvs/ensaiosclinicos/opentrials/static/attachments/teste.php", 
       "submission": 15
     }
   }, 
@@ -780,7 +780,7 @@
     "fields": {
       "public": false, 
       "description": "descr", 
-      "file": "/home/aplicacoes-bvs/ensaiosclinicos/clinicaltrials/static/attachments/a.txt", 
+      "file": "/home/aplicacoes-bvs/ensaiosclinicos/opentrials/static/attachments/a.txt", 
       "submission": 23
     }
   }, 
@@ -790,7 +790,7 @@
     "fields": {
       "public": false, 
       "description": "mesma descri\u00e7\u00e3o", 
-      "file": "/home/aplicacoes-bvs/ensaiosclinicos/clinicaltrials/static/attachments/a_1.txt", 
+      "file": "/home/aplicacoes-bvs/ensaiosclinicos/opentrials/static/attachments/a_1.txt", 
       "submission": 23
     }
   }, 

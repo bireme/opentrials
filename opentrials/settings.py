@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-# Django settings for clinicaltrials project.
+# Django settings for opentrials project.
 
 import os
 from django.utils.translation import ugettext_lazy as _
@@ -66,7 +66,7 @@ MIDDLEWARE_CLASSES = (
 
 )
 
-ROOT_URLCONF = 'clinicaltrials.urls'
+ROOT_URLCONF = 'opentrials.urls'
 LOGIN_REDIRECT_URL = '/accounts/dashboard/'
 
 TEMPLATE_DIRS = (
@@ -102,8 +102,8 @@ TEMPLATE_CONTEXT_PROCESSORS =(
     'django.core.context_processors.csrf',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
-    'context_processors.clinicaltrials.polyglot',
-    'context_processors.clinicaltrials.jquery',
+    'context_processors.opentrials.polyglot',
+    'context_processors.opentrials.jquery',
 )
 
 AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
@@ -115,7 +115,7 @@ AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
 
 # this id must match the record with the correct domain name in the
 # django_site table; the initial values for that table are defined
-# in clinicaltrials/fixture/initial_data.json
+# in opentrials/fixtures/initial_data.json
 SITE_ID = 2 # change if necessary to match a record in django_site
 
 SITE_TITLE = u'Registro Brasileiro de Ensaios Clínicos'
