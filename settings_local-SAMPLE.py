@@ -7,7 +7,7 @@ ADMINS = (
 DATABASES = {
     'default' : {
         'ENGINE':'mysql',
-        'NAME':'clinicaltrials',
+        'NAME':'opentrials',
         'USER':'tester',
         'PASSWORD':'puffpuff',
     }

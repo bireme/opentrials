@@ -1,9 +1,9 @@
 # coding: utf-8
 
-from clinicaltrials.repository.trds_forms import ReviewModelForm
-from clinicaltrials.reviewapp.models import Remark
-from clinicaltrials.reviewapp.models import UserProfile
-from clinicaltrials.reviewapp.models import Attachment
+from opentrials.repository.trds_forms import ReviewModelForm
+from opentrials.reviewapp.models import Remark
+from opentrials.reviewapp.models import UserProfile
+from opentrials.reviewapp.models import Attachment
 from django import forms
 from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User

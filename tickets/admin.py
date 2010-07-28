@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-from clinicaltrials.tickets.models import *
+from opentrials.tickets.models import *
 
 class MediaInline(admin.StackedInline):
     model = Media

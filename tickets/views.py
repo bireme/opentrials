@@ -2,16 +2,14 @@
 from django.template import Context, loader
 from django.template.context import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
-from clinicaltrials.tickets.models import Ticket, Followup
 from django.contrib.auth.models import User
 from django.forms.models import inlineformset_factory
 from django.http import HttpResponseRedirect, HttpResponse
-
-
 from django import forms
 from django.utils.translation import ugettext as _
-
 from django.contrib.auth.decorators import login_required
+
+from opentrials.tickets.models import Ticket, Followup
 import choices
 
 @login_required
