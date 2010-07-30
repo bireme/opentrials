@@ -94,6 +94,7 @@ INSTALLED_APPS = (
     'polyglot',
     'rosetta',
     'registration',  # django-registration package
+    'south',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =(

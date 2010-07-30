@@ -16,7 +16,7 @@ class Migration(SchemaMigration):
             ('scientific_title', self.gf('django.db.models.fields.TextField')(max_length=2000)),
             ('scientific_acronym', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
             ('scientific_acronym_expansion', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
-            ('primary_sponsor', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['repository.Institution'], unique=True, null=True, blank=True)),
+            ('primary_sponsor', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['repository.Institution'], null=True, blank=True)),
             ('public_title', self.gf('django.db.models.fields.TextField')(max_length=2000, blank=True)),
             ('acronym', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
             ('acronym_expansion', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
@@ -24,9 +24,9 @@ class Migration(SchemaMigration):
             ('i_freetext', self.gf('django.db.models.fields.TextField')(max_length=8000, blank=True)),
             ('inclusion_criteria', self.gf('django.db.models.fields.TextField')(max_length=8000, blank=True)),
             ('gender', self.gf('django.db.models.fields.CharField')(default='-', max_length=1)),
-            ('agemin_value', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
+            ('agemin_value', self.gf('django.db.models.fields.PositiveIntegerField')(default=0, null=True)),
             ('agemin_unit', self.gf('django.db.models.fields.CharField')(default='-', max_length=1)),
-            ('agemax_value', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
+            ('agemax_value', self.gf('django.db.models.fields.PositiveIntegerField')(default=0, null=True)),
             ('agemax_unit', self.gf('django.db.models.fields.CharField')(default='-', max_length=1)),
             ('exclusion_criteria', self.gf('django.db.models.fields.TextField')(max_length=8000, blank=True)),
             ('study_type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['vocabulary.StudyType'], null=True, blank=True)),
@@ -38,10 +38,10 @@ class Migration(SchemaMigration):
             ('masking', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['vocabulary.StudyMasking'], null=True, blank=True)),
             ('allocation', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['vocabulary.StudyAllocation'], null=True, blank=True)),
             ('phase', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['vocabulary.StudyPhase'], null=True, blank=True)),
-            ('enrollment_start_planned', self.gf('django.db.models.fields.CharField')(max_length=10, blank=True)),
-            ('enrollment_start_actual', self.gf('django.db.models.fields.CharField')(max_length=10, blank=True)),
-            ('enrollment_end_planned', self.gf('django.db.models.fields.CharField')(max_length=10, blank=True)),
-            ('enrollment_end_actual', self.gf('django.db.models.fields.CharField')(max_length=10, blank=True)),
+            ('enrollment_start_planned', self.gf('django.db.models.fields.CharField')(max_length=10, null=True, blank=True)),
+            ('enrollment_start_actual', self.gf('django.db.models.fields.CharField')(max_length=10, null=True, blank=True)),
+            ('enrollment_end_planned', self.gf('django.db.models.fields.CharField')(max_length=10, null=True, blank=True)),
+            ('enrollment_end_actual', self.gf('django.db.models.fields.CharField')(max_length=10, null=True, blank=True)),
             ('target_sample_size', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
             ('recruitment_status', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['vocabulary.RecruitmentStatus'], null=True, blank=True)),
             ('created', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
@@ -67,6 +67,29 @@ class Migration(SchemaMigration):
             ('countrycode', models.ForeignKey(orm['vocabulary.countrycode'], null=False))
         ))
         db.create_unique('repository_clinicaltrial_recruitment_country', ['clinicaltrial_id', 'countrycode_id'])
+
+        # Adding model 'ClinicalTrialTranslation'
+        db.create_table('repository_clinicaltrialtranslation', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('language', self.gf('django.db.models.fields.CharField')(max_length=8, db_index=True)),
+            ('content_type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['contenttypes.ContentType'])),
+            ('object_id', self.gf('django.db.models.fields.PositiveIntegerField')(db_index=True)),
+            ('scientific_title', self.gf('django.db.models.fields.TextField')(max_length=2000)),
+            ('scientific_acronym', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
+            ('scientific_acronym_expansion', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
+            ('public_title', self.gf('django.db.models.fields.TextField')(max_length=2000, blank=True)),
+            ('acronym', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
+            ('acronym_expansion', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
+            ('hc_freetext', self.gf('django.db.models.fields.TextField')(max_length=8000, blank=True)),
+            ('i_freetext', self.gf('django.db.models.fields.TextField')(max_length=8000, blank=True)),
+            ('inclusion_criteria', self.gf('django.db.models.fields.TextField')(max_length=8000, blank=True)),
+            ('exclusion_criteria', self.gf('django.db.models.fields.TextField')(max_length=8000, blank=True)),
+            ('study_design', self.gf('django.db.models.fields.TextField')(max_length=1000, blank=True)),
+        ))
+        db.send_create_signal('repository', ['ClinicalTrialTranslation'])
+
+        # Adding unique constraint on 'ClinicalTrialTranslation', fields ['content_type', 'object_id', 'language']
+        db.create_unique('repository_clinicaltrialtranslation', ['content_type_id', 'object_id', 'language'])
 
         # Adding model 'TrialNumber'
         db.create_table('repository_trialnumber', (
@@ -99,6 +122,7 @@ class Migration(SchemaMigration):
             ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
             ('address', self.gf('django.db.models.fields.TextField')(max_length=1500, blank=True)),
             ('country', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['vocabulary.CountryCode'])),
+            ('creator', self.gf('django.db.models.fields.related.ForeignKey')(related_name='institution_creator', to=orm['auth.User'])),
         ))
         db.send_create_signal('repository', ['Institution'])
 
@@ -115,6 +139,7 @@ class Migration(SchemaMigration):
             ('country', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['vocabulary.CountryCode'], null=True, blank=True)),
             ('zip', self.gf('django.db.models.fields.CharField')(max_length=50, blank=True)),
             ('telephone', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
+            ('creator', self.gf('django.db.models.fields.related.ForeignKey')(related_name='contact_creator', to=orm['auth.User'])),
         ))
         db.send_create_signal('repository', ['Contact'])
 
@@ -164,6 +189,19 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal('repository', ['Outcome'])
 
+        # Adding model 'OutcomeTranslation'
+        db.create_table('repository_outcometranslation', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('language', self.gf('django.db.models.fields.CharField')(max_length=8, db_index=True)),
+            ('content_type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['contenttypes.ContentType'])),
+            ('object_id', self.gf('django.db.models.fields.PositiveIntegerField')(db_index=True)),
+            ('description', self.gf('django.db.models.fields.TextField')(max_length=8000)),
+        ))
+        db.send_create_signal('repository', ['OutcomeTranslation'])
+
+        # Adding unique constraint on 'OutcomeTranslation', fields ['content_type', 'object_id', 'language']
+        db.create_unique('repository_outcometranslation', ['content_type_id', 'object_id', 'language'])
+
         # Adding model 'Descriptor'
         db.create_table('repository_descriptor', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
@@ -178,6 +216,19 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal('repository', ['Descriptor'])
 
+        # Adding model 'DescriptorTranslation'
+        db.create_table('repository_descriptortranslation', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('language', self.gf('django.db.models.fields.CharField')(max_length=8, db_index=True)),
+            ('content_type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['contenttypes.ContentType'])),
+            ('object_id', self.gf('django.db.models.fields.PositiveIntegerField')(db_index=True)),
+            ('text', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
+        ))
+        db.send_create_signal('repository', ['DescriptorTranslation'])
+
+        # Adding unique constraint on 'DescriptorTranslation', fields ['content_type', 'object_id', 'language']
+        db.create_unique('repository_descriptortranslation', ['content_type_id', 'object_id', 'language'])
+
 
     def backwards(self, orm):
         
@@ -189,6 +240,12 @@ class Migration(SchemaMigration):
 
         # Removing M2M table for field recruitment_country on 'ClinicalTrial'
         db.delete_table('repository_clinicaltrial_recruitment_country')
+
+        # Deleting model 'ClinicalTrialTranslation'
+        db.delete_table('repository_clinicaltrialtranslation')
+
+        # Removing unique constraint on 'ClinicalTrialTranslation', fields ['content_type', 'object_id', 'language']
+        db.delete_unique('repository_clinicaltrialtranslation', ['content_type_id', 'object_id', 'language'])
 
         # Deleting model 'TrialNumber'
         db.delete_table('repository_trialnumber')
@@ -226,11 +283,52 @@ class Migration(SchemaMigration):
         # Deleting model 'Outcome'
         db.delete_table('repository_outcome')
 
+        # Deleting model 'OutcomeTranslation'
+        db.delete_table('repository_outcometranslation')
+
+        # Removing unique constraint on 'OutcomeTranslation', fields ['content_type', 'object_id', 'language']
+        db.delete_unique('repository_outcometranslation', ['content_type_id', 'object_id', 'language'])
+
         # Deleting model 'Descriptor'
         db.delete_table('repository_descriptor')
 
+        # Deleting model 'DescriptorTranslation'
+        db.delete_table('repository_descriptortranslation')
+
+        # Removing unique constraint on 'DescriptorTranslation', fields ['content_type', 'object_id', 'language']
+        db.delete_unique('repository_descriptortranslation', ['content_type_id', 'object_id', 'language'])
+
 
     models = {
+        'auth.group': {
+            'Meta': {'object_name': 'Group'},
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '80'}),
+            'permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'})
+        },
+        'auth.permission': {
+            'Meta': {'unique_together': "(('content_type', 'codename'),)", 'object_name': 'Permission'},
+            'codename': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'})
+        },
+        'auth.user': {
+            'Meta': {'object_name': 'User'},
+            'date_joined': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
+            'email': ('django.db.models.fields.EmailField', [], {'max_length': '75', 'blank': 'True'}),
+            'first_name': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
+            'groups': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['auth.Group']", 'symmetrical': 'False', 'blank': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'is_active': ('django.db.models.fields.BooleanField', [], {'default': 'True', 'blank': 'True'}),
+            'is_staff': ('django.db.models.fields.BooleanField', [], {'default': 'False', 'blank': 'True'}),
+            'is_superuser': ('django.db.models.fields.BooleanField', [], {'default': 'False', 'blank': 'True'}),
+            'last_login': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
+            'last_name': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
+            'password': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
+            'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'}),
+            'username': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '30'})
+        },
         'contenttypes.contenttype': {
             'Meta': {'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},
             'app_label': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
@@ -243,16 +341,16 @@ class Migration(SchemaMigration):
             'acronym': ('django.db.models.fields.CharField', [], {'max_length': '255', 'blank': 'True'}),
             'acronym_expansion': ('django.db.models.fields.CharField', [], {'max_length': '255', 'blank': 'True'}),
             'agemax_unit': ('django.db.models.fields.CharField', [], {'default': "'-'", 'max_length': '1'}),
-            'agemax_value': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'}),
+            'agemax_value': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0', 'null': 'True'}),
             'agemin_unit': ('django.db.models.fields.CharField', [], {'default': "'-'", 'max_length': '1'}),
-            'agemin_value': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'}),
+            'agemin_value': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0', 'null': 'True'}),
             'allocation': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['vocabulary.StudyAllocation']", 'null': 'True', 'blank': 'True'}),
             'created': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
             'date_registration': ('django.db.models.fields.DateField', [], {'null': 'True', 'db_index': 'True'}),
-            'enrollment_end_actual': ('django.db.models.fields.CharField', [], {'max_length': '10', 'blank': 'True'}),
-            'enrollment_end_planned': ('django.db.models.fields.CharField', [], {'max_length': '10', 'blank': 'True'}),
-            'enrollment_start_actual': ('django.db.models.fields.CharField', [], {'max_length': '10', 'blank': 'True'}),
-            'enrollment_start_planned': ('django.db.models.fields.CharField', [], {'max_length': '10', 'blank': 'True'}),
+            'enrollment_end_actual': ('django.db.models.fields.CharField', [], {'max_length': '10', 'null': 'True', 'blank': 'True'}),
+            'enrollment_end_planned': ('django.db.models.fields.CharField', [], {'max_length': '10', 'null': 'True', 'blank': 'True'}),
+            'enrollment_start_actual': ('django.db.models.fields.CharField', [], {'max_length': '10', 'null': 'True', 'blank': 'True'}),
+            'enrollment_start_planned': ('django.db.models.fields.CharField', [], {'max_length': '10', 'null': 'True', 'blank': 'True'}),
             'exclusion_criteria': ('django.db.models.fields.TextField', [], {'max_length': '8000', 'blank': 'True'}),
             'expanded_access_program': ('django.db.models.fields.NullBooleanField', [], {'null': 'True', 'blank': 'True'}),
             'exported': ('django.db.models.fields.DateTimeField', [], {'null': 'True'}),
@@ -266,7 +364,7 @@ class Migration(SchemaMigration):
             'masking': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['vocabulary.StudyMasking']", 'null': 'True', 'blank': 'True'}),
             'number_of_arms': ('django.db.models.fields.PositiveIntegerField', [], {'null': 'True', 'blank': 'True'}),
             'phase': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['vocabulary.StudyPhase']", 'null': 'True', 'blank': 'True'}),
-            'primary_sponsor': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['repository.Institution']", 'unique': 'True', 'null': 'True', 'blank': 'True'}),
+            'primary_sponsor': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['repository.Institution']", 'null': 'True', 'blank': 'True'}),
             'public_contact': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'public_contact_of_set'", 'symmetrical': 'False', 'through': "orm['repository.PublicContact']", 'to': "orm['repository.Contact']"}),
             'public_title': ('django.db.models.fields.TextField', [], {'max_length': '2000', 'blank': 'True'}),
             'purpose': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['vocabulary.StudyPurpose']", 'null': 'True', 'blank': 'True'}),
@@ -284,12 +382,31 @@ class Migration(SchemaMigration):
             'trial_id': ('django.db.models.fields.CharField', [], {'max_length': '255', 'unique': 'True', 'null': 'True'}),
             'updated': ('django.db.models.fields.DateTimeField', [], {'null': 'True'})
         },
+        'repository.clinicaltrialtranslation': {
+            'Meta': {'unique_together': "(('content_type', 'object_id', 'language'),)", 'object_name': 'ClinicalTrialTranslation'},
+            'acronym': ('django.db.models.fields.CharField', [], {'max_length': '255', 'blank': 'True'}),
+            'acronym_expansion': ('django.db.models.fields.CharField', [], {'max_length': '255', 'blank': 'True'}),
+            'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
+            'exclusion_criteria': ('django.db.models.fields.TextField', [], {'max_length': '8000', 'blank': 'True'}),
+            'hc_freetext': ('django.db.models.fields.TextField', [], {'max_length': '8000', 'blank': 'True'}),
+            'i_freetext': ('django.db.models.fields.TextField', [], {'max_length': '8000', 'blank': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'inclusion_criteria': ('django.db.models.fields.TextField', [], {'max_length': '8000', 'blank': 'True'}),
+            'language': ('django.db.models.fields.CharField', [], {'max_length': '8', 'db_index': 'True'}),
+            'object_id': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
+            'public_title': ('django.db.models.fields.TextField', [], {'max_length': '2000', 'blank': 'True'}),
+            'scientific_acronym': ('django.db.models.fields.CharField', [], {'max_length': '255', 'blank': 'True'}),
+            'scientific_acronym_expansion': ('django.db.models.fields.CharField', [], {'max_length': '255', 'blank': 'True'}),
+            'scientific_title': ('django.db.models.fields.TextField', [], {'max_length': '2000'}),
+            'study_design': ('django.db.models.fields.TextField', [], {'max_length': '1000', 'blank': 'True'})
+        },
         'repository.contact': {
             'Meta': {'object_name': 'Contact'},
             'address': ('django.db.models.fields.CharField', [], {'max_length': '255', 'blank': 'True'}),
             'affiliation': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['repository.Institution']", 'null': 'True', 'blank': 'True'}),
             'city': ('django.db.models.fields.CharField', [], {'max_length': '255', 'blank': 'True'}),
             'country': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['vocabulary.CountryCode']", 'null': 'True', 'blank': 'True'}),
+            'creator': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'contact_creator'", 'to': "orm['auth.User']"}),
             'email': ('django.db.models.fields.EmailField', [], {'max_length': '255'}),
             'firstname': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
@@ -310,10 +427,19 @@ class Migration(SchemaMigration):
             'version': ('django.db.models.fields.CharField', [], {'max_length': '64', 'blank': 'True'}),
             'vocabulary': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
+        'repository.descriptortranslation': {
+            'Meta': {'unique_together': "(('content_type', 'object_id', 'language'),)", 'object_name': 'DescriptorTranslation'},
+            'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'language': ('django.db.models.fields.CharField', [], {'max_length': '8', 'db_index': 'True'}),
+            'object_id': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
+            'text': ('django.db.models.fields.CharField', [], {'max_length': '255', 'blank': 'True'})
+        },
         'repository.institution': {
             'Meta': {'object_name': 'Institution'},
             'address': ('django.db.models.fields.TextField', [], {'max_length': '1500', 'blank': 'True'}),
             'country': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['vocabulary.CountryCode']"}),
+            'creator': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'institution_creator'", 'to': "orm['auth.User']"}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
@@ -324,6 +450,14 @@ class Migration(SchemaMigration):
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'interest': ('django.db.models.fields.CharField', [], {'default': "'primary'", 'max_length': '32'}),
             'trial': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['repository.ClinicalTrial']"})
+        },
+        'repository.outcometranslation': {
+            'Meta': {'unique_together': "(('content_type', 'object_id', 'language'),)", 'object_name': 'OutcomeTranslation'},
+            'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
+            'description': ('django.db.models.fields.TextField', [], {'max_length': '8000'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'language': ('django.db.models.fields.CharField', [], {'max_length': '8', 'db_index': 'True'}),
+            'object_id': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'})
         },
         'repository.publiccontact': {
             'Meta': {'unique_together': "(('trial', 'contact'),)", 'object_name': 'PublicContact'},
