@@ -165,7 +165,8 @@ def step_1(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
     if request.POST:
-        form = TrialIdentificationForm(request.POST, instance=ct)
+        form = TrialIdentificationForm(request.POST, instance=ct,
+                                       display_language=request.user.get_profile().preferred_language)
         SecondaryIdSet = inlineformset_factory(ClinicalTrial, TrialNumber,
                                                form=SecondaryIdForm,
                                                extra=EXTRA_FORMS)
@@ -177,7 +178,9 @@ def step_1(request, trial_pk):
             return HttpResponseRedirect(reverse('step_1',args=[trial_pk]))
     else:
         form = TrialIdentificationForm(instance=ct, 
-                                       default_second_language=ct.submission.get_secondary_language())
+                                       default_second_language=ct.submission.get_secondary_language(),
+                                       display_language=request.user.get_profile().preferred_language,
+                                       )
         SecondaryIdSet = inlineformset_factory(ClinicalTrial, TrialNumber,
                                                form=SecondaryIdForm,
                                                extra=EXTRA_FORMS, can_delete=True)
@@ -204,7 +207,8 @@ def step_2(request, trial_pk):
     qs_primary_sponsor = Institution.objects.filter(creator=request.user).order_by('name')
 
     if request.POST:
-        form = PrimarySponsorForm(request.POST, instance=ct, queryset=qs_primary_sponsor)
+        form = PrimarySponsorForm(request.POST, instance=ct, queryset=qs_primary_sponsor,
+                                  display_language=request.user.get_profile().preferred_language)
         SecondarySponsorSet = inlineformset_factory(ClinicalTrial, TrialSecondarySponsor,
                            form=make_secondary_sponsor_form(request.user),extra=EXTRA_FORMS)
         SupportSourceSet = inlineformset_factory(ClinicalTrial, TrialSupportSource,
@@ -220,7 +224,8 @@ def step_2(request, trial_pk):
         return HttpResponseRedirect(reverse('step_2',args=[trial_pk]))
     else:
         form = PrimarySponsorForm(instance=ct, queryset=qs_primary_sponsor,
-                                  default_second_language=ct.submission.get_secondary_language())
+                                  default_second_language=ct.submission.get_secondary_language(),
+                                  display_language=request.user.get_profile().preferred_language)
         SecondarySponsorSet = inlineformset_factory(ClinicalTrial, TrialSecondarySponsor,
             form=make_secondary_sponsor_form(request.user),extra=EXTRA_FORMS, can_delete=True)
         SupportSourceSet = inlineformset_factory(ClinicalTrial, TrialSupportSource,
@@ -267,7 +272,8 @@ def step_3(request, trial_pk):
                                            level=choices.DESCRIPTOR_LEVEL[1][0])
 
     if request.POST:
-        form = HealthConditionsForm(request.POST, instance=ct)
+        form = HealthConditionsForm(request.POST, instance=ct,
+                                    display_language=request.user.get_profile().preferred_language)
         general_desc_formset = GeneralDescriptorSet(request.POST,queryset=general_qs,prefix='g')
         specific_desc_formset = SpecificDescriptorSet(request.POST,queryset=specific_qs,prefix='s')
 
@@ -286,7 +292,8 @@ def step_3(request, trial_pk):
             return HttpResponseRedirect(reverse('step_3',args=[trial_pk]))
     else:
         form = HealthConditionsForm(instance=ct,
-                                    default_second_language=ct.submission.get_secondary_language())
+                                    default_second_language=ct.submission.get_secondary_language(),
+                                    display_language=request.user.get_profile().preferred_language)
         general_desc_formset = GeneralDescriptorSet(queryset=general_qs,prefix='g')
         specific_desc_formset = SpecificDescriptorSet(queryset=specific_qs,prefix='s')
 
@@ -318,7 +325,8 @@ def step_4(request, trial_pk):
                                            aspect=choices.TRIAL_ASPECT[1][0],
                                            level=choices.DESCRIPTOR_LEVEL[0][0])
     if request.POST:
-        form = InterventionForm(request.POST, instance=ct)
+        form = InterventionForm(request.POST, instance=ct,
+                                display_language=request.user.get_profile().preferred_language)
         specific_desc_formset = DescriptorFormSet(request.POST, queryset=queryset)
 
         if form.is_valid() and specific_desc_formset.is_valid():
@@ -333,7 +341,8 @@ def step_4(request, trial_pk):
             return HttpResponseRedirect(reverse('step_4',args=[trial_pk]))
     else:
         form = InterventionForm(instance=ct,
-                                default_second_language=ct.submission.get_secondary_language())
+                                default_second_language=ct.submission.get_secondary_language(),
+                                display_language=request.user.get_profile().preferred_language)
         specific_desc_formset = DescriptorFormSet(queryset=queryset)
 
     forms = [form]
@@ -354,14 +363,16 @@ def step_5(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
     if request.POST:
-        form = RecruitmentForm(request.POST, instance=ct)
+        form = RecruitmentForm(request.POST, instance=ct,
+                               display_language=request.user.get_profile().preferred_language)
 
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('step_5',args=[trial_pk]))
     else:
         form = RecruitmentForm(instance=ct,
-                               default_second_language=ct.submission.get_secondary_language())
+                               default_second_language=ct.submission.get_secondary_language(),
+                               display_language=request.user.get_profile().preferred_language)
 
     forms = [form]
     return render_to_response('repository/trial_form.html',
@@ -380,14 +391,16 @@ def step_6(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
     if request.POST:
-        form = StudyTypeForm(request.POST, instance=ct)
+        form = StudyTypeForm(request.POST, instance=ct,
+                             display_language=request.user.get_profile().preferred_language)
 
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('step_6',args=[trial_pk]))
     else:
         form = StudyTypeForm(instance=ct, 
-                             default_second_language=ct.submission.get_secondary_language())
+                             default_second_language=ct.submission.get_secondary_language(),
+                             display_language=request.user.get_profile().preferred_language)
 
     forms = [form]
     return render_to_response('repository/trial_form.html',
