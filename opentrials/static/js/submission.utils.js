@@ -2,8 +2,12 @@
  * Clone form elements in Django forms. JQuery
  * is required by this function.
  */
-function cloneMore(selector, type) {
+function cloneMore(selector, type, visitor) {
     var newElement = $(selector).clone(true);
+
+    if( typeof visitor == "function"){
+        visitor(newElement);
+    }
 
     var classname = newElement.attr('class');
     if( classname.search('even') > -1 ){
@@ -29,6 +33,11 @@ function cloneMore(selector, type) {
     newElement.hide();
     $(selector).after(newElement);
     newElement.show("fast",function(){this.style.display='';});
+}
+
+function hide_decs_div(node){
+    $(node).find(".showdecs").removeAttr("class");
+    $(node).find(":input[disabled]").removeAttr("disabled");
 }
 
 /**
