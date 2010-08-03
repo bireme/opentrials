@@ -37,7 +37,7 @@ function cloneMore(selector, type, visitor) {
 
 function hide_decs_div(node){
     $(node).find(".showdecs").removeAttr("class");
-    $(node).find(":input[disabled]").removeAttr("disabled");
+    $(node).find(":input[readonly='']").removeAttr("readonly");
 }
 
 /**
@@ -79,16 +79,16 @@ function make_decstool_callback(decs){
             decs = make_decs_for(evt.target,decs.lang);
             $("input#id_"+decs.set+"-code")
                 .attr("value",this.value)
-                .attr("disabled","disabled");
+                .attr("readonly","readonly");
             $("input[name="+decs.set+"-text]")
                 .attr("value",window.decsdata[this.value].en)
-                .attr("disabled","disabled");
+                .attr("readonly","readonly");
             $("input[name="+decs.set+"-text|es]")
                 .attr("value",window.decsdata[this.value].es)
-                .attr("disabled","disabled");
+                .attr("readonly","readonly");
             $("input[name="+decs.set+"-text|pt-br]")
                 .attr("value",window.decsdata[this.value].pt)
-                .attr("disabled","disabled");
+                .attr("readonly","readonly");
         });
 
         if( data.length === 1){
