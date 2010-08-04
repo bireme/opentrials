@@ -1,6 +1,5 @@
 #coding: utf-8
 
-from django.forms.models import BaseModelFormSet
 from assistance.models import FieldHelp
 from vocabulary.models import CountryCode
 from repository.models import ClinicalTrial, Contact, Descriptor, Institution
@@ -20,8 +19,8 @@ from django import forms
 from django.forms.forms import BoundField, conditional_escape
 
 from polyglot.multilingual_forms import MultilingualCharField, MultilingualTextField,\
-        MultilingualModelChoiceField, MultilingualModelMultipleChoiceField
-from polyglot.models import get_multilingual_fields
+        MultilingualModelChoiceField, MultilingualModelMultipleChoiceField, MultilingualBaseForm,\
+        MultilingualBaseFormSet
 
 from datetime import date
 
@@ -37,174 +36,7 @@ TRIAL_FORMS = ['Trial Identification',
                'Contacts',
                'Attachments']
 
-# ------------- TO MOVE TO APP POLYGLOT - BEGIN
-
-class MultiLingualForm(forms.ModelForm):
-    available_languages = [code.lower() for code in settings.MANAGED_LANGUAGES]
-    default_second_language = 'pt-br' # FIXME: shouldn't be settings.LANGUAGE_CODE?
-    display_language = 'pt-br' # FIXME: shouldn't be settings.LANGUAGE_CODE?
-
-    def __init__(self, *args, **kwargs):
-        # Gets multilingual fields from translation class
-        self.multilingual_fields = get_multilingual_fields(self._meta.model)
-
-        if self.multilingual_fields:
-            # Gets default second language from arguments, if informed. Default value is None
-            self.default_second_language = kwargs.pop('default_second_language', self.default_second_language) # Optional
-            self.available_languages = kwargs.pop('available_languages', [code.lower() for code in settings.MANAGED_LANGUAGES]) # Mandatory (FIXME, to remove default tuple)
-            self.display_language = kwargs.pop('display_language', self.display_language)
-
-            # Change field widgets replacing common TextInput and Textarea to Multilingual respective ones
-            for field_name in self.multilingual_fields:
-                if field_name not in self.base_fields:
-                    continue
-
-                if isinstance(self.base_fields[field_name], forms.CharField):
-                    if isinstance(self.base_fields[field_name].widget,forms.Textarea):
-                        self.base_fields[field_name] = MultilingualTextField(
-                                                            label=_(self.base_fields[field_name].label),
-                                                            required=self.base_fields[field_name].required)
-                    else:
-                        self.base_fields[field_name] = MultilingualCharField(
-                                                            label=_(self.base_fields[field_name].label),
-                                                            required=self.base_fields[field_name].required,
-                                                            max_length=self.base_fields[field_name].max_length)
-
-        super(MultiLingualForm, self).__init__(*args, **kwargs)
-
-        if self.multilingual_fields:
-            # Sets instance attributes on multilingual fields
-            for field_name in (self.multilingual_fields or []):
-                if field_name not in self.fields:
-                    continue
-
-                # Field
-                self.fields[field_name].instance = self.instance
-                self.fields[field_name].default_second_language = self.default_second_language
-                self.fields[field_name].available_languages = self.available_languages
-
-                # Widget
-                self.fields[field_name].widget.instance = self.instance
-                self.fields[field_name].widget.default_second_language = self.default_second_language
-                self.fields[field_name].widget.available_languages = self.available_languages
-
-                if self.data:
-                    self.fields[field_name].widget.form_data = self.data
-
-        # Display language for multilingual select widgets
-        # OBS: those aren't multilingual fields from self.multilingual_fields because their
-        # translation is from another model class
-        for field_name in self.fields.keys():
-            if isinstance(self.fields[field_name], (MultilingualModelChoiceField,)):
-                self.fields[field_name].widget.display_language = self.display_language
-                self.fields[field_name].widget.model = self.fields[field_name].model
-                self.fields[field_name].widget.label_field = self.fields[field_name].label_field
-
-    def save(self, commit=True):
-        obj = super(MultiLingualForm, self).save(commit=commit)
-
-        if commit:
-            self.save_translations(obj)
-            # to check fields after the update of the translations --- strange code TODO: check it
-            obj = super(MultiLingualForm, self).save(commit=commit)
-        
-        return obj
-
-    def save_translations(self, obj):
-        """This method is because you can save without commit, so you can call this yourself."""
-
-        if not hasattr(obj, 'translations'):
-            return
-        
-        for lang,label in settings.TARGET_LANGUAGES:
-            lang = lang.lower()
-            # Get or create translation object
-            try:
-                trans = obj.translations.get(language=lang)
-            except obj.translations.model.DoesNotExist:
-                trans = obj.translations.model(language=lang)
-                trans.content_object = obj
-
-            # Sets fields values
-            for field_name in (self.multilingual_fields or []):
-                # FIXME: get main language from settings
-                if lang == 'en' or field_name not in self.fields:
-                    continue
-
-                field_name_trans = '%s|%s'%(field_name,lang)
-                if self.prefix:
-                    field_name_trans = '%s-%s'%(self.prefix,field_name_trans)
-
-                if field_name_trans in self.data:
-                    setattr(trans, field_name, self.data[field_name_trans])
-
-            trans.save()
-
-class MultilingualBaseFormSet(BaseModelFormSet):
-
-    def __init__(self, data=None, files=None, auto_id='id_%s', prefix=None,
-                 queryset=None, **kwargs):
-        self.queryset = queryset
-        defaults = {'data': data, 'files': files, 'auto_id': auto_id, 'prefix': prefix}
-        defaults.update(kwargs)
-    
-        super(BaseModelFormSet, self).__init__(**defaults)
-
-    # Override
-    def save(self, commit=True):
-        if not commit:
-            self.saved_forms = []
-            def save_m2m():
-                for form in self.saved_forms:
-                    form.save_m2m()
-            self.save_m2m = save_m2m
-
-        saved_instances = self.save_existing_objects(commit) + self.save_new_objects(commit)
-
-        if commit:
-            for form in self.forms:
-                if form.is_valid() and form.instance.pk:
-                    form.save_translations(form.instance)
-
-        return saved_instances
-
-    # Override
-    def save_existing_objects(self, commit=True):
-        self.changed_objects = []
-        self.deleted_objects = []
-        if not self.get_queryset():
-            return []
-
-        saved_instances = []
-        for form in self.initial_forms:
-            pk_name = self._pk_field.name
-            raw_pk_value = form._raw_value(pk_name)
-            
-            pk_value = form.fields[pk_name].clean(raw_pk_value)
-            pk_value = getattr(pk_value, 'pk', pk_value)
-
-            obj = self._existing_object(pk_value)
-            if self.can_delete:
-                raw_delete_value = form._raw_value(DELETION_FIELD_NAME)
-                should_delete = form.fields[DELETION_FIELD_NAME].clean(raw_delete_value)
-                if should_delete:
-                    self.deleted_objects.append(obj)
-
-                    # http://code.djangoproject.com/attachment/ticket/10284/modelformset_false_delete.diff
-                    if commit:
-                        obj.delete()
-                        
-                    continue
-            if form.has_changed():
-                self.changed_objects.append((obj, form.changed_data))
-                saved_instances.append(self.save_existing(form, obj, commit=commit))
-                if not commit:
-                    self.saved_forms.append(form)
-        return saved_instances
-
-# ------------- TO MOVE TO APP POLYGLOT - END
-
-class ReviewModelForm(MultiLingualForm):
+class ReviewModelForm(MultilingualBaseForm):
 
     def _html_output(self, normal_row, error_row, row_ender, help_text_html, errors_on_separate_row):
         "Helper function for outputting HTML. Used by as_table(), as_ul(), as_p()."
