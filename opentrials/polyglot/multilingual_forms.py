@@ -4,6 +4,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.core.validators import EMPTY_VALUES
 from django.forms.models import BaseModelFormSet
 from django.utils.translation import ugettext_lazy as _
+from django.forms.models import modelformset_factory as django_modelformset_factory
 
 from models import Translation, get_multilingual_fields
 import re
@@ -296,13 +297,22 @@ class MultilingualBaseForm(forms.ModelForm):
             trans.save()
 
 class MultilingualBaseFormSet(BaseModelFormSet):
+    """Fixing the bug registered at: http://code.djangoproject.com/ticket/10284"""
+
+    display_language = 'en' # FIXME: shouldn't be settings.LANGUAGE_CODE?
+    available_languages = ('en',)
+    default_second_language = None
 
     def __init__(self, data=None, files=None, auto_id='id_%s', prefix=None,
                  queryset=None, **kwargs):
         self.queryset = queryset
         defaults = {'data': data, 'files': files, 'auto_id': auto_id, 'prefix': prefix}
         defaults.update(kwargs)
-    
+   
+        self.available_languages = kwargs.pop('available_languages', [code.lower() for code in settings.MANAGED_LANGUAGES]) # Mandatory (FIXME, to remove default tuple)
+        self.default_second_language = kwargs.pop('default_second_language', self.default_second_language)
+        self.display_language = kwargs.pop('display_language', self.display_language)
+
         super(BaseModelFormSet, self).__init__(**defaults)
 
     # Override
@@ -356,4 +366,31 @@ class MultilingualBaseFormSet(BaseModelFormSet):
                 if not commit:
                     self.saved_forms.append(form)
         return saved_instances
+
+    def _construct_form(self, i, **kwargs):
+        form = super(MultilingualBaseFormSet, self)._construct_form(i, **kwargs)
+
+        # This override exists to set the following language-related attributes to children forms
+        form.available_languages = self.available_languages
+        form.default_second_language = self.default_second_language
+        form.display_language = self.display_language
+
+        return form
+
+def modelformset_factory(*args, **kwargs):
+    """This is just a monkey path to implement the argument 'extra_formset_attrs' to set extra
+    attributes to formset instance"""
+
+    # Stores extra formset attributes
+    extra_formset_attrs = kwargs.pop('extra_formset_attrs', None)
+
+    # Does what Django does
+    formset_class = django_modelformset_factory(*args, **kwargs)
+
+    # Sets attributes to formset class
+    if isinstance(extra_formset_attrs, dict):
+        for k,v in extra_formset_attrs.items():
+            setattr(formset_class, k, v)
+
+    return formset_class
 
