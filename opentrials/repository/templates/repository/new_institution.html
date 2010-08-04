@@ -47,8 +47,8 @@
                         }else {
                             data=$.parseJSON(data);
                             opener.$('select').each(function(){
-                                var newoption = $('<option>').attr('value',data[0].pk).html(data[0].fields.name);
-                                $(this).append(newoption);
+                                var newoption = opener.$('<option>').attr('value',data[0].pk).html(data[0].fields.name);
+                                opener.$(this).append(newoption);
                             });
                             var total = opener.$("div."+target+" select").length;
                             var targetSel = opener.$('#id_'+target+'-'+(total-1)+'-institution')[0];
@@ -78,8 +78,8 @@
                         } else {
                             data=$.parseJSON(data);
                             opener.$('select[id$=affiliation]').each(function(){
-                                var newoption = $('<option>').attr('value',data[0].pk).html(data[0].fields.name);
-                                $(this).append(newoption);
+                                var newoption = opener.$('<option>').attr('value',data[0].pk).html(data[0].fields.name);
+                                opener.$(this).append(newoption);
                             });
                             var total = opener.$("div."+target+" select[id$=affiliation]").length;
                             var targetSel = opener.$('#id_'+target+'-'+(total-1)+'-affiliation')[0];
