@@ -18,9 +18,9 @@ from django.forms.formsets import DELETION_FIELD_NAME
 from django import forms
 from django.forms.forms import BoundField, conditional_escape
 
-from polyglot.multilingual_forms import MultilingualCharField, MultilingualTextField,\
-        MultilingualModelChoiceField, MultilingualModelMultipleChoiceField, MultilingualBaseForm,\
-        MultilingualBaseFormSet
+from polyglot.multilingual_forms import MultilingualCharField, MultilingualTextField
+from polyglot.multilingual_forms import MultilingualModelChoiceField, MultilingualModelMultipleChoiceField
+from polyglot.multilingual_forms import MultilingualBaseForm, MultilingualBaseFormSet
 
 from datetime import date
 
