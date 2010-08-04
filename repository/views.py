@@ -4,7 +4,7 @@ from django.core import serializers
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.utils.translation import ugettext_lazy as _
-from django.forms.models import inlineformset_factory, modelformset_factory
+from django.forms.models import inlineformset_factory
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.template import loader
@@ -33,6 +33,7 @@ from repository.trds_forms import SecondaryOutcomesForm, make_public_contact_for
 from repository.trds_forms import make_scientifc_contact_form, make_contact_form, NewInstitution
 from repository.trds_forms import make_site_contact_form, TRIAL_FORMS
 
+from polyglot.multilingual_forms import modelformset_factory
 
 import choices
 import settings
@@ -255,13 +256,25 @@ def step_3(request, trial_pk):
                                                 formset=MultilingualBaseFormSet,
                                                 form=GeneralHealthDescriptorForm,
                                                 can_delete=True,
-                                                extra=EXTRA_FORMS)
+                                                extra=EXTRA_FORMS,
+                                                extra_formset_attrs={
+                                                    'default_second_language':ct.submission.get_secondary_language(),
+                                                    'available_languages':[lang.lower() for lang in ct.submission.get_mandatory_languages()],
+                                                    'display_language':request.user.get_profile().preferred_language,
+                                                    },
+                                                )
 
     SpecificDescriptorSet = modelformset_factory(Descriptor,
                                                 formset=MultilingualBaseFormSet,
                                                 form=SpecificHealthDescriptorForm,
                                                 can_delete=True,
-                                                extra=EXTRA_FORMS)
+                                                extra=EXTRA_FORMS,
+                                                extra_formset_attrs={
+                                                    'default_second_language':ct.submission.get_secondary_language(),
+                                                    'available_languages':[lang.lower() for lang in ct.submission.get_mandatory_languages()],
+                                                    'display_language':request.user.get_profile().preferred_language,
+                                                    },
+                                                )
 
     general_qs = Descriptor.objects.filter(trial=trial_pk,
                                            aspect=choices.TRIAL_ASPECT[0][0],
@@ -319,7 +332,13 @@ def step_4(request, trial_pk):
                                           formset=MultilingualBaseFormSet,
                                           form=InterventionDescriptorForm,
                                           can_delete=True,
-                                          extra=EXTRA_FORMS)
+                                          extra=EXTRA_FORMS,
+                                          extra_formset_attrs={
+                                            'default_second_language':ct.submission.get_secondary_language(),
+                                            'available_languages':[lang.lower() for lang in ct.submission.get_mandatory_languages()],
+                                            'display_language':request.user.get_profile().preferred_language,
+                                            },
+                                          )
 
     queryset = Descriptor.objects.filter(trial=trial_pk,
                                            aspect=choices.TRIAL_ASPECT[1][0],
@@ -421,11 +440,23 @@ def step_7(request, trial_pk):
     PrimaryOutcomesSet = modelformset_factory( Outcome,
                                 formset=MultilingualBaseFormSet,
                                 form=PrimaryOutcomesForm,extra=EXTRA_FORMS,
-                                can_delete=True)
+                                can_delete=True,
+                                extra_formset_attrs={
+                                    'default_second_language':ct.submission.get_secondary_language(),
+                                    'available_languages':[lang.lower() for lang in ct.submission.get_mandatory_languages()],
+                                    'display_language':request.user.get_profile().preferred_language,
+                                    },
+                                )
     SecondaryOutcomesSet = modelformset_factory(Outcome,
                                 formset=MultilingualBaseFormSet,
                                 form=SecondaryOutcomesForm,extra=EXTRA_FORMS,
-                                can_delete=True)
+                                can_delete=True,
+                                extra_formset_attrs={
+                                    'default_second_language':ct.submission.get_secondary_language(),
+                                    'available_languages':[lang.lower() for lang in ct.submission.get_mandatory_languages()],
+                                    'display_language':request.user.get_profile().preferred_language,
+                                    },
+                                )
 
     primary_qs = Outcome.objects.filter(trial=ct, interest=choices.OUTCOME_INTEREST[0][0])
     secondary_qs = Outcome.objects.filter(trial=ct, interest=choices.OUTCOME_INTEREST[1][0])
