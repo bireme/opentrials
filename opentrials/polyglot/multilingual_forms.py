@@ -5,6 +5,7 @@ from django.core.validators import EMPTY_VALUES
 from django.forms.models import BaseModelFormSet
 from django.utils.translation import ugettext_lazy as _
 from django.forms.models import modelformset_factory as django_modelformset_factory
+from django.forms.formsets import DELETION_FIELD_NAME
 
 from models import Translation, get_multilingual_fields
 import re
