@@ -79,12 +79,8 @@
           margin-right: 14pt;
         }
     </style>
-    <p><span class="label">{% trans 'Scientific Title' %}</span>:</p>
-        <div class="title">
-            <h2>en</h2>
-            <p>{{ object.scientific_title }}</p>
-        </div>
-        {% for t in translations %}
+    <h3>{% trans 'Scientific Title' %}:</h3>
+        {% for t in translations|dictsortreversed:"language" %}
             {% if t.scientific_title %}
             <div class="title">
                 <h2>{{ t.language }}</h2>
@@ -92,30 +88,76 @@
             </div>
             {% endif %}
         {% endfor %}
+        {% if object.scientific_title %}
+            <div class="title">
+                <h2>en</h2>
+                <p>{{ object.scientific_title }}</p>
+            </div>
+        {% endif %}
         <div class="spacer"> </div>
     <h3>{% trans 'Trial Identification' %}</h3>
     <ul>
         <li>
-            <span class="label">{% trans 'Scientific Acronym' %}:</span>
-            <span class="value">{{ object.scientific_acronym_display }}</span>
+            <p><span class="label">{% trans 'Public Title' %}:</span></p>
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.public_title %}
+                <div class="title">
+                    <h2>{{ t.language }}</h2>
+                    <p>{{ t.public_title }}</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+            {% if object.public_title %}
+                <div class="title">
+                    <h2>en</h2>
+                    <p>{{ object.public_title }}</p>
+                </div>
+            {% endif %}
         </li>
+        <div class="spacer"> </div>
         <li>
-            <span class="label">{% trans 'Public Title' %}:</span>
-            <span class="value">{{ object.public_title }}</span>
+            <p><span class="label">{% trans 'Scientific Acronym' %}:</span></p>
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.scientific_acronym %}
+                <div class="title">
+                    <h2>{{ t.language }}</h2>
+                    <p>{{ t.scientific_acronym }}: {{ t.scientific_acronym_expansion }}</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+            {% if object.scientific_acronym %}
+                <div class="title">
+                    <h2>en</h2>
+                    <p>{{ object.scientific_acronym_display }}</p>
+                </div>
+            {% endif %}
         </li>
+        <div class="spacer"> </div>
         <li>
-            <span class="label">{% trans 'Public Acronym' %}:</span>
-            <span class="value">{{ object.acronym_display }}</span>
+            <p><span class="label">{% trans 'Public Acronym' %}:</span></p>
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.acronym %}
+                <div class="title">
+                    <h2>{{ t.language }}</h2>
+                    <p>{{ t.acronym }}: {{ t.acronym_expansion }}</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+            {% if object.acronym %}
+                <div class="title">
+                    <h2>en</h2>
+                    <p>{{ object.acronym_display }}</p>
+                </div>
+            {% endif %}
         </li>
+        <div class="spacer"> </div>
         <li class="subset">
+            <span class="legend">{% trans 'Secondary Identifying Numbers' %}:</span>
             {% for secid in object.trial_number %}
             <ul class="{% cycle 'even' 'odd' %}">
                 <li>
-                    <span class="label">{% trans 'Secondary Identifying Numbers' %}:</span>
-                    <span class="value">{{ secid.id_number }}</span>
-                </li>
-                <li>
-                    <span class="label">{% trans 'Issuing Authority' %}:</span>
+                    <span class="label">{{ secid.id_number }}</span><br />
+                    <span class="value">{% trans 'Issuing Authority' %}:</span>
                     <span class="value">{{ secid.issuing_authority }}</span>
                 </li>
             </ul>
@@ -133,8 +175,8 @@
             <span class="value">{{ object.primary_sponsor }}</span>
         </li>
         {% if object.secondary_sponsors %}
-        <li>
-            <span class="label">{% trans 'Secondary Sponsors' %}</span>
+        <li class="subset">
+            <span class="legend">{% trans 'Secondary Sponsors' %}:</span>
             <ul>
             {%  for sponsors in object.secondary_sponsors %}
                 <li class="{% cycle 'even' 'odd' %}">
@@ -146,7 +188,7 @@
         </li>
         {% endif %}
         <li class="subset">
-            <span class="legend">{% trans 'Source(s) of Monetary or Material Support' %}</span>
+            <span class="legend">{% trans 'Source(s) of Monetary or Material Support' %}:</span>
             <ul>
             {%  for source_support in object.support_sources %}
                 <li class="{% cycle 'even' 'odd' %}">
@@ -164,30 +206,74 @@
     <h3>{% trans 'Health Conditions' %}</h3>
     <ul>
         <li>
-            <span class="label">{% trans 'Health Condition(s) or Problem(s)' %}:</span>
-            <pre class="value">{{ object.hc_freetext }}</pre>
+        <p><span class="label">{% trans 'Health Condition(s) or Problem(s)' %}:</span></p>
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.hc_freetext %}
+                <div class="title">
+                    <h2>{{ t.language }}</h2>
+                    <p>{{ t.hc_freetext }}</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+            {% if object.hc_freetext %}
+                <div class="title">
+                    <h2>en</h2>
+                    <p>{{ object.hc_freetext }}</p>
+                </div>
+            {% endif %}
         </li>
-        <li class="subset">
-            <span class="legend">{% trans 'General Descriptors for Health Condition(s)' %}</span>
-            <ul>
+        <div class="spacer"> </div>
+        <li>
+            <p><span class="label">{% trans 'General Descriptors for Health Condition(s)' %}:</span></p>
             {% for hc in object.hc_code %}
-                <li>
-                    <span class="label">{{ hc.code }}:</span>
-                    <span class="value">{{ hc.text }}</span>
-                </li>
+                {% for hc_trans in hc.translations_all|dictsortreversed:"language" %}
+                    {% if hc_trans.text %}
+                    <div class="title">
+                        <h2>{{ hc_trans.language }}</h2>
+                        <p>
+                            <span class="label">{{ hc.code }}:</span>
+                            <span class="value">{{ hc_trans.text }}</span>
+                        </p>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                {% if hc.text %}
+                    <div class="title">
+                        <h2>en</h2>
+                        <p>
+                            <span class="label">{{ hc.code }}:</span>
+                            <span class="value">{{ hc.text }}</span>
+                        </p>
+                    </div>
+                {% endif %}
+                <div class="spacer"> </div>
             {% endfor %}
-            </ul>
         </li>
-        <li class="subset">
-            <span class="legend">{% trans 'Specific Descriptors for Health Condition(s)' %}</span>
-            <ul>
+        <li>
+            <p><span class="label">{% trans 'Specific Descriptors for Health Condition(s)' %}:</span></p>
             {% for hc in object.hc_keyword %}
-                <li>
-                    <span class="label">{{ hc.code }}:</span>
-                    <span class="value">{{ hc.text }}</span>
-                </li>
+                {% for hc_trans in hc.translations_all|dictsortreversed:"language" %}
+                    {% if hc_trans.text %}
+                    <div class="title">
+                        <h2>{{ hc_trans.language }}</h2>
+                        <p>
+                            <span class="label">{{ hc.code }}:</span>
+                            <span class="value">{{ hc_trans.text }}</span>
+                        </p>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                {% if hc.text %}
+                    <div class="title">
+                        <h2>en</h2>
+                        <p>
+                            <span class="label">{{ hc.code }}:</span>
+                            <span class="value">{{ hc.text }}</span>
+                        </p>
+                    </div>
+                {% endif %}
+                <div class="spacer"> </div>
             {% endfor %}
-            </ul>
         </li>
         {% if perms.reviewapp.add_remark %}
         <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Health Conditions'|slugify %}">{% trans 'Remark' %}</a></li>
@@ -196,31 +282,59 @@
     
     <h3>{% trans 'Interventions' %}</h3>
     <ul>
-        <li>
-            <span class="label">{% trans 'Interventions' %}:</span>
-            <pre class="value">{{ object.i_freetext }}</pre>
-        </li>
         <li class="subset">
             <span class="legend">{% trans 'Intervention Code(s)' %}</span>
             <ul>
             {% for iv in object.intervention_code %}
                 <li>
-                    <span class="label">{{ iv.label }}:</span>
-                    <span class="value">{{ iv.description }}</span>
+                    <span class="label">{{ iv.label }}</span>
                 </li>
             {% endfor %}
             </ul>
         </li>
-        <li class="subset">
-            <span class="legend">{% trans 'Descriptor for Intervention(s)' %}</span>
-            <ul>
-            {% for iv in object.intervention_keyword %}
-                <li>
-                    <span class="label">{{ iv.code }}:</span>
-                    <span class="value">{{ iv.text }}</span>
-                </li>
+        <li>
+        <p><span class="label">{% trans 'Interventions' %}:</span></p>
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.i_freetext %}
+                <div class="title">
+                    <h2>{{ t.language }}</h2>
+                    <p>{{ t.i_freetext|linebreaksbr }}</p>
+                </div>
+                {% endif %}
             {% endfor %}
-            </ul>
+            {% if object.i_freetext %}
+                <div class="title">
+                    <h2>en</h2>
+                    <p>{{ object.i_freetext|linebreaksbr }}</p>
+                </div>
+            {% endif %}
+        </li>
+        <div class="spacer"> </div>
+        <li>
+            <p><span class="label">{% trans 'Descriptor for Intervention(s)' %}:</span></p>
+            {% for intervention in object.intervention_keyword %}
+                {% for i_trans in intervention.translations_all|dictsortreversed:"language" %}
+                    {% if i_trans.text %}
+                    <div class="title">
+                        <h2>{{ i_trans.language }}</h2>
+                        <p>
+                            <span class="label">{{ intervention.code }}:</span>
+                            <span class="value">{{ i_trans.text }}</span>
+                        </p>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                {% if intervention.text %}
+                    <div class="title">
+                        <h2>en</h2>
+                        <p>
+                            <span class="label">{{ intervention.code }}:</span>
+                            <span class="value">{{ intervention.text }}</span>
+                        </p>
+                    </div>
+                {% endif %}
+                <div class="spacer"> </div>
+            {% endfor %}
         </li>
         {% if perms.reviewapp.add_remark %}
         <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Interventions'|slugify %}">{% trans 'Remark' %}</a></li>
@@ -262,13 +376,41 @@
             </table>
         </li>
         <li>
-            <span class="label">{% trans 'Inclusion Criteria' %}:</span>
-            <pre class="value">{{ object.inclusion_criteria }}</pre>
+            <p><span class="label">{% trans 'Inclusion Criteria' %}:</span></p>
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.inclusion_criteria %}
+                <div class="title">
+                    <h2>{{ t.language }}</h2>
+                    <p>{{ t.inclusion_criteria|linebreaksbr }}</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+            {% if object.inclusion_criteria %}
+                <div class="title">
+                    <h2>en</h2>
+                    <p>{{ object.inclusion_criteria|linebreaksbr }}</p>
+                </div>
+            {% endif %}
         </li>
+        <div class="spacer"> </div>
         <li>
-            <span class="label">{% trans 'Exclusion Criteria' %}:</span>
-            <pre class="value">{{ object.exclusion_criteria }}</pre>
+            <p><span class="label">{% trans 'Exclusion Criteria' %}:</span></p>
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.exclusion_criteria %}
+                <div class="title">
+                    <h2>{{ t.language }}</h2>
+                    <p>{{ t.exclusion_criteria|linebreaksbr }}</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+            {% if object.exclusion_criteria %}
+                <div class="title">
+                    <h2>en</h2>
+                    <p>{{ object.exclusion_criteria|linebreaksbr }}</p>
+                </div>
+            {% endif %}
         </li>
+        <div class="spacer"> </div>
         {% if perms.reviewapp.add_remark %}  
         <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Recruitment'|slugify %}">{% trans 'Remark' %}</a></li>
         {% endif %}
@@ -277,9 +419,23 @@
     <h3>{% trans 'Study Type' %}</h3>
     <ul>
         <li>
-            <span class="label">{% trans 'Study Design' %}:</span>
-            <pre class="value">{{ object.study_design }}</pre>
+            <p><span class="label">{% trans 'Study Design' %}:</span></p>
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.study_design %}
+                <div class="title">
+                    <h2>{{ t.language }}</h2>
+                    <p>{{ t.study_design }}</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+            {% if object.study_design|linebreaksbr %}
+                <div class="title">
+                    <h2>en</h2>
+                    <p>{{ object.study_design|linebreaksbr }}</p>
+                </div>
+            {% endif %}
         </li>
+        <div class="spacer"> </div>
         <li>
             <table class="dataTable">
                 <tr>
@@ -309,25 +465,45 @@
     
     <h3>{% trans 'Outcomes' %}</h3>
     <ul>
-        <li class="subset">
-            <span class="legend">{% trans 'Primary Outcomes' %}</span>
-            <ul>
-            {% for outcomes in object.primary_outcomes %}
-                <li style="background-color: #ddffdd; padding: 10px;">
-                    {{ forloop.counter }} - {{ outcomes.description }}
-                </li>
+        <li>
+            <p><span class="label">{% trans 'Primary Outcomes' %}:</span></p>
+            {% for outcome in object.primary_outcomes %}
+                {% for out_trans in outcome.translations_all|dictsortreversed:"language" %}
+                    {% if out_trans.description %}
+                    <div class="title">
+                        <h2>{{ out_trans.language }}</h2>
+                        <p>{{ out_trans.description|linebreaksbr }}</p>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                {% if outcome.description %}
+                    <div class="title">
+                        <h2>en</h2>
+                        <p>{{ outcome.description|linebreaksbr }}</p>
+                    </div>
+                {% endif %}
+                <div class="spacer"> </div>
             {% endfor %}
-            </ul>
         </li>
-        <li class="subset">
-            <span class="legend">{% trans 'Secondary Outcomes' %}</span>
-            <ul>
-            {% for outcomes in object.secondary_outcomes %}
-                <li style="background-color: #ddffdd; padding: 10px;">
-                    {{ forloop.counter }} - {{ outcomes.description }}
-                </li>
+        <li>
+            <p><span class="label">{% trans 'Secondary Outcomes' %}:</span></p>
+            {% for outcome in object.secondary_outcomes %}
+                {% for out_trans in outcome.translations_all|dictsortreversed:"language" %}
+                    {% if out_trans.description %}
+                    <div class="title">
+                        <h2>{{ out_trans.language }}</h2>
+                        <p>{{ out_trans.description|linebreaksbr }}</p>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                {% if outcome.description %}
+                    <div class="title">
+                        <h2>en</h2>
+                        <p>{{ outcome.description|linebreaksbr }}</p>
+                    </div>
+                {% endif %}
+                <div class="spacer"> </div>
             {% endfor %}
-            </ul>
         </li>
         {% if perms.reviewapp.add_remark %}
         <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Outcomes'|slugify %}">{% trans 'Remark' %}</a></li>
