@@ -4,7 +4,7 @@ body {
     text-align: left;
     font-size: 78%;
     font-family: Trebuchet MS, Arial, sans-serif;
-    background: #FFF;
+    background: #f2f2f0;
 }
 
 P {
@@ -22,7 +22,7 @@ H2, .topMenu LI A, .NewsTitle {
 
 
 H2 {
-    color: #b00303;
+    color: #006837;
     text-transform: uppercase;
     margin: 0px;
 }
@@ -57,17 +57,18 @@ blockquote {
 /* STYLE for BORDERED MAIN BLOCKS */
 
 .container {
-    min-width: 1004px;
-    margin: 0px;
-    padding: 0;
+    margin:0 auto;
+	width:1004px;
     line-height: 1.7em;
+	background:#fff;
 }
 
 /*TOP BANNER*/
 .top {
-    background: url(../images/top_bg.jpg) repeat-x;
-    border-bottom: 2px solid #acc0c9;
-    height: 90px;
+    background: #089046 url(../images/top_bg.jpg) repeat-y;
+    height: 110px;
+	border-top:5px solid #2E3192;
+	border-bottom:3px solid #2E3192;
 }
 
 .top .banner {
@@ -78,20 +79,21 @@ blockquote {
 }
 .identification {
     position: absolute;
-    top: 4em;
+    top: 2em;
     left: 0;
 }
 .identification H1 {
     margin: 0px 0px 0px 40px;
     clear: both;
-    padding-top: 12px;
-    font-size: 200%;
-    font-weight: normal;
+    padding-top: 5px;
+    height:58px;
+	background: url(../images/logo.png) bottom left no-repeat;
 }
 
 .identification H1 A {
     color: #0c4762;
     text-decoration: none;
+
 }
 .institutions UL {
     margin: 0px;
@@ -105,13 +107,13 @@ blockquote {
     display: block;
     width: 104px;
     height: 30px;
-    background: url(../images/fiocruz.png) no-repeat;
+    xbackground: url(../images/fiocruz.png) no-repeat;
 }
 .institutions A#BIREME {
     display: block;
     width: 55px;
     height: 30px;
-    background: url(../images/bireme.png) no-repeat;
+    xbackground: url(../images/bireme.png) no-repeat;
 }
 .institutions A SPAN {
     display: none;
@@ -121,7 +123,7 @@ blockquote {
     width: 440px;
     padding: 0px;
     margin-right: 10px;
-    background: url(../images/login_bg.jpg) no-repeat;
+    background: url(../images/login_bg.png) no-repeat;
 }
 
 /* LOGIN */
@@ -131,9 +133,10 @@ blockquote {
 }
 .loginForm LABEL {
     display: block;
-    color: #0c4762;
+    color: #666666;
     text-transform: uppercase;
     font-size: 90%;
+	font-weight:bold;
 }
 .loginForm .formSegment {
     float: left;
@@ -141,10 +144,11 @@ blockquote {
 }
 .loginForm .submit {
     background: url(../images/submit_login.gif) no-repeat;
-    color: #1c4507;
+    color: #ffffff;
     text-transform: uppercase;
     font-size: 80%;
     border: 0px;
+	font-weight:bold;
     padding: 4px 8px;
     margin: 21px 0px 0px 0px;
     width: 52px;
@@ -303,13 +307,13 @@ blockquote {
     width: 60%;
 }
 .middle {
-    width: 75%;
+    width: 92%;
     margin: 20px auto 0px auto;
     min-height: 349px;
 }
 .middle .mainContent {
     float: left;
-    width: 70%;
+    width: 50%;
     margin-right: 2em;
     padding-right: 2em;
     border-right: 1px solid #d7d7d7;
@@ -393,7 +397,9 @@ blockquote {
     margin-bottom: 26px;
 }
 .middle .news SMALL {
-    color: #547e91;
+    color: #0071bc;
+	font-size:11px;
+	font-weight:bold;
 }
 .middle .news SMALL, .middle .news A {
     display: block;
@@ -404,10 +410,12 @@ blockquote {
 }
 
 .middle .news A.NewsTitle, SPAN.NewsTitle {
-    font-size: 150%;
-    color: #0c4762;
+    font-family:helvetica;
+font-size:101%;
+    color: #39b54a;
     text-decoration: none;
     font-weight: bold;
+	letter-spacing: 0px;
 }
 .middle .news A.NewsTitle:hover {
     color: #1073a0;
@@ -773,13 +781,13 @@ legend{
 /* BARRA GOVERNO FEDERAL */
 
 #govbar {
-    -moz-border-radius-topleft:20px;
-    -moz-border-radius-topright:20px;
-    -webkit-border-top-left-radius:20px;
-    -webkit-border-top-right-radius:20px;
+    x-moz-border-radius-topleft:20px;
+    x-moz-border-radius-topright:20px;
+    x-webkit-border-top-left-radius:20px;
+    x-webkit-border-top-right-radius:20px;
 
     background:url("/static/images/ms.png") no-repeat scroll 0 0 transparent;
-    height:35px;
+    height:32px;
     width:100%;
 }
 
@@ -835,3 +843,26 @@ legend{
 .barra_MSaude .barra1000 DIV a span  {
     display: none;
 }
+.news p {
+	color:#666666;
+	}
+a.pnumber{
+	color:#0071bc;
+	font-weight:bold;
+	text-decoration:none;
+	}
+.news table{
+	 background: url(../images/line.gif) bottom left repeat-x;
+	 min-width:70%;
+	 color:#808080;
+	}
+td a.NewsExcerpt{
+	text-align:right;
+	font-weight:bold;
+	color:#9d9c9c !important;
+	}
+	
+ul{
+	margin-left:0px;
+	padding-left:0px; 
+	}
