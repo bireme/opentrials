@@ -524,6 +524,9 @@ class Outcome(TrialRegistrationDataSetModel):
 
     def __unicode__(self):
         return safe_truncate(self.description, 80)
+        
+    def translations_all(self):
+        return self.translations.all()
 
 class OutcomeTranslation(Translation):
     description = models.TextField(_('Outcome Description'), max_length=8000)
@@ -551,6 +554,9 @@ class Descriptor(TrialRegistrationDataSetModel):
 
     def trial_identifier(self):
         return self.trial.identifier()
+        
+    def translations_all(self):
+        return self.translations.all()
 
 class DescriptorTranslation(Translation):
     text = models.CharField(_('Text'), max_length=255, blank=True)
