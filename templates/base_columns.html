@@ -9,7 +9,13 @@
     <div class="links">
         {% load recruiting_trials %}
         {% get_latest_recruiting_trials 5 as latest_recruiting_trials %}
-        <h2>{% trans 'Recruiting' %}</h2>
+        <table border="0" cellpading="0" cellspacing="0">
+        <tr>
+            <td>
+                <h2><a title="{% trans 'List all' %}" href="#">{% trans 'Recruiting' %}</a></h2>
+            </td>
+        </tr>
+        </table>
         <ul>
         {% if latest_recruiting_trials %}
             {% for ct in latest_recruiting_trials %}
@@ -17,6 +23,31 @@
             {% endfor %}
         {% else %}
             <li>{% trans 'No clinical trials recruiting.' %}</li>
+        {% endif %}
+        </ul>
+    </div>
+    
+    <div class="news">
+        {% load news %}
+        {% get_latest_news 3 as latest_news %}
+        <table border="0" cellpading="0" cellspacing="0">
+        <tr>
+            <td>
+                <h2><a title="{% trans 'List all' %}" href="{% url reviewapp.newslist %}">{% trans 'News' %}</a></h2>
+            </td>
+        </tr>
+        </table>
+        <ul>
+        {% if latest_news %}
+            {% for news in latest_news %}
+                <li>
+                <small>{{ news.created|date:'d/m/Y - H:i' }}</small>
+                <a class="NewsTitle" title="{{ news.title }}" href="{% url reviewapp.news news.id %}">{{ news.title }}</a>
+                <a class="NewsExcerpt" href="{% url reviewapp.news news.id %}">{{ news.short_text }}</a>
+            </li>
+            {% endfor %}
+        {% else %}
+            <li>{% trans 'No news have been published.' %}</li>
         {% endif %}
         </ul>
     </div>
