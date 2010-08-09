@@ -25,7 +25,7 @@ H2, H2 a {
     color: #006837;
     text-transform: uppercase;
     margin: 0px;
-	text-decoration:none;
+    text-decoration:none;
 }
 IMG {
     border: none;
@@ -59,17 +59,17 @@ blockquote {
 
 .container {
     margin:0 auto;
-	width:1004px;
+    width:1004px;
     line-height: 1.7em;
-	background:#fff;
+    background:#fff;
 }
 
 /*TOP BANNER*/
 .top {
     background: #089046 url(../images/top_bg.jpg) repeat-y;
     height: 110px;
-	border-top:5px solid #2E3192;
-	border-bottom:3px solid #2E3192;
+    border-top:5px solid #2E3192;
+    border-bottom:3px solid #2E3192;
 }
 
 .top .banner {
@@ -131,7 +131,7 @@ blockquote {
     color: #666666;
     text-transform: uppercase;
     font-size: 90%;
-	font-weight:bold;
+    font-weight:bold;
 }
 .loginForm .formSegment {
     float: left;
@@ -143,7 +143,7 @@ blockquote {
     text-transform: uppercase;
     font-size: 80%;
     border: 0px;
-	font-weight:bold;
+    font-weight:bold;
     padding: 4px 8px;
     margin: 21px 0px 0px 0px;
     width: 52px;
@@ -253,7 +253,7 @@ blockquote {
     xfont-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
-	font-size:16px;
+    font-size:16px;
 }
 .topMenu LI A:hover, languages A:hover {
     color: #05914f;
@@ -269,7 +269,7 @@ blockquote {
     font-size: 90%;
     border: 0px;
     padding: 4px;
-	font-weight:bold;
+    font-weight:bold;
     width: 118px;
 
 }
@@ -423,8 +423,8 @@ blockquote {
 }
 .middle .news SMALL {
     color: #0071bc;
-	font-size:11px;
-	font-weight:bold;
+    font-size:11px;
+    font-weight:bold;
 }
 .middle .news SMALL, .middle .news A {
     display: block;
@@ -440,7 +440,7 @@ font-size:101%;
     color: #39b54a;
     text-decoration: none;
     font-weight: bold;
-	letter-spacing: 0px;
+    letter-spacing: 0px;
 }
 .middle .news A.NewsTitle:hover {
     color: #1073a0;
@@ -462,12 +462,12 @@ font-size:101%;
 .highlights img{
    height:46px;
 margin-left:112px;
-	
+    
 }
 
 .highlights ul {
  margin-top:0px !important;
-	
+    
 }
 .links LI {
     margin-bottom: 12px;
@@ -880,26 +880,26 @@ legend{
     display: none;
 }
 .news p {
-	color:#666666;
-	}
+    color:#666666;
+    }
 a.pnumber{
-	color:#0071bc;
-	font-weight:bold;
-	text-decoration:none;
-	}
+    color:#0071bc;
+    font-weight:bold;
+    text-decoration:none;
+    }
 .news table{
-	 background: url(../images/line.gif) bottom left no-repeat;
-	 min-width:59%;
-	 color:#808080;
-	}
+     background: url(../images/line.gif) bottom left no-repeat;
+     min-width:59%;
+     color:#808080;
+    }
 td a.NewsExcerpt{
-	text-align:right;
-	font-weight:bold;
-	color:#9d9c9c !important;
-	}
-	
+    text-align:right;
+    font-weight:bold;
+    color:#9d9c9c !important;
+    }
+    
 ul{
-	margin-left:0px;
-	padding-left:0px; 
-	}
+    margin-left:0px;
+    padding-left:0px; 
+    }
 
