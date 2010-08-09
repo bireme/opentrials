@@ -14,6 +14,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.conf import settings
 from django.contrib.sites.models import RequestSite
 from django.contrib.sites.models import Site
+from django.contrib.flatpages.models import FlatPage
 from tickets.models import Ticket
 
 from reviewapp.models import Submission, News
@@ -34,9 +35,17 @@ def index(request):
         latest = None
     else:
         latest = latest[0]
+    
+    pages = FlatPage.objects.filter(url='/site-description/')
+    if len(pages) < 1:
+        page = None
+    else:
+        page = pages[0]
+
     return render_to_response('reviewapp/index.html', {
                               'clinical_trials': clinical_trials,
-                              'news': latest,},
+                              'news': latest,
+                              'page': page,},
                               context_instance=RequestContext(request))
 
 @login_required
