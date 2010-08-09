@@ -301,7 +301,7 @@ class RecruitmentForm(ReviewModelForm):
 
     # TRDS 18
     recruitment_status = MultilingualModelChoiceField(
-            label=_('Recruitment Status'),
+            label=_('Study Status'),
             initial=RecruitmentStatus.objects.get(pk=1),
             model=RecruitmentStatus,
             label_field='label',
@@ -310,7 +310,7 @@ class RecruitmentForm(ReviewModelForm):
     recruitment_country = MultilingualModelMultipleChoiceField(
             label=_('Recruitment Country'),
             model=CountryCode,
-            label_field='label',
+            label_field='description',
             )
 
     # TRDS 16a,b (type_enrollment: anticipated or actual)
