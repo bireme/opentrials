@@ -6,15 +6,10 @@
 
 {% block sidebar %}
 <div class="sideBar">
-    <div class="highlights">
-        <ul>
-            <li><a href="{% url reviewapp.new_submission %}" title="{% trans 'New Submission' %}"><img src="/static/images/button_newSubmission.jpg" alt="{% trans 'New Submission' %}"/></a></li>
-        </ul>
-    </div>
     <div class="links">
         {% load recruiting_trials %}
         {% get_latest_recruiting_trials 5 as latest_recruiting_trials %}
-        <h2>{% trans 'Recruitment' %}</h2>
+        <h2>{% trans 'Recruiting' %}</h2>
         <ul>
         {% if latest_recruiting_trials %}
             {% for ct in latest_recruiting_trials %}

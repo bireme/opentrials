@@ -4,17 +4,14 @@
 
 {% block body %}
     <div class="news">
-
+    
     {% if news %}
         <table border="0" cellpading="0" cellspacing="0">
         <tr>
             <td>
-                <h2>{% trans 'News' %}</h2>
+                <h2><a title="{% trans 'List all' %}" href="{% url reviewapp.newslist %}">{% trans 'News' %}</a></h2>
             </td>
             <td>&nbsp;</td>
-            <td>
-                <a class="NewsExcerpt" title="{% trans 'List all' %}" href="{% url reviewapp.newslist %}">({% trans 'List all' %})</a>
-            </td>
         </tr>
         </table>
         <ul>
@@ -29,11 +26,15 @@
     <table border="0" cellpading="0" cellspacing="0">
     <tr>
         <td>
-            <h2>{% trans 'Latest published trials' %}</h2>
+            <h2><a title="{% trans 'List all' %}" href="{% url repository.list_all %}">{% trans 'Registered trials' %}</a></h2>
         </td>
         <td>&nbsp;</td>
         <td>
-            <a class="NewsExcerpt" title="{% trans 'List all' %}" href="{% url repository.list_all %}">({% trans 'List all' %})</a>
+            <div class="highlights">
+                <ul>
+                    <li><a href="{% url reviewapp.new_submission %}" title="{% trans 'New Submission' %}"><img src="/static/images/button_newSubmission.jpg" alt="{% trans 'New Submission' %}"/></a></li>
+                </ul>
+            </div>
         </td>
     </tr>
     </table>
@@ -45,8 +46,6 @@
                 <a class="NewsTitle" href="{% url repository.trialview ct.id %}">{{ ct.main_title }}</a>
                 <p>
                     <b>{% trans 'Primary Id Number' %}</b>: <a class="pnumber" href="{% url repository.trialview ct.id %}">{{ ct.trial_id }}</a><br/>
-                    <b>{% trans 'Recruitment Status' %}</b>: {{ ct.recruitment_status }}<br/>
-                    <b>{% trans 'Date of Registration' %}</b>: {{ ct.date_registration }}<br/>
                 </p>
             </li>
         {% endfor %}

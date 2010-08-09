@@ -225,10 +225,21 @@ blockquote {
     vertical-align: middle;
 }
 
+.menu {
+    background: #e6ecef;
+    padding: 12px 40px;
+    text-transform: uppercase;
+}
+
+.bottomMenu {
+    float: left;
+    margin: 19px 2px 0px 2px;
+}
+
 /* TOP MENU */
 .topMenu {
     float: left;
-    margin: 19px 2px 0px 2px;
+    margin: 3px 2px 0px 2px;
 }
 .topMenu UL {
     margin: 0px;
@@ -252,7 +263,9 @@ blockquote {
     color: #ff0000;
 }
 .search {
-    margin-top: 18px;
+    margin-top: 4px;
+    width: 40%;
+    float: left;
 }
 .search .submit {
     background: url(../images/submit_search.gif) no-repeat;
@@ -261,11 +274,36 @@ blockquote {
     font-size: 80%;
     border: 0px;
     padding: 4px;
-    width: 61px;
+    width: 96px;
     height: 20px;
 }
 .search .submit:hover {
     background: url(../images/submit_searchHover.gif) no-repeat;
+}
+.languages {
+    float: right;
+    margin: 3px 2px 0px 2px;
+}
+.languages UL {
+    margin: 0px;
+    padding: 0px;
+}
+.languages LI {
+    display: inline;
+    border-right: 1px solid #b00303;
+    padding: 0px 8px 0px 4px;
+}
+.languages LI:last-child {
+    border-right: none;
+}
+.languages LI A {
+    color: #b00303;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.languages LI A:hover {
+    color: #ff0000;
 }
 
 /* BREADCRUMB */
