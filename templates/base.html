@@ -23,47 +23,13 @@
     </head>
     <body>
         <div class="{% block container_class %}container wide{% endblock %}">
-            <!--<div class="barra_MSaude">
-                <div class="barra1000">
-                    <div class="minSaude">
-                        <a href="http://www.saude.gov.br" title="Ministério da Saúde" target="_blank"><span>Ministério da Saúde</span></a>
-                    </div>
-                    <div class="form">
-                        <form method="post" action="/" id="govform" name="govform">
-                            <select name="opcoes" class="pr">
-                                <option>Destaques do governo</option>
-                                <option value="http://www.brasil.gov.br">Portal do Governo Federal</option>
-                                <option value="http://www.e.gov.br">Portal de Serviços do Governo</option>
-                                <option value="http://www.radiobras.gov.br">Portal da Agência de Notícias</option>
-                                <option value="http://www.previdenciasocial.gov.br">Reforma da Previdência</option>
-                                <option value="http://www.fomezero.gov.br">Programa Fome Zero</option>
-                            </select>
-                        </form>
-                        <script type="text/javascript">
-                            $('form#govform select option[value]').click(function(){
-                                window.open(this.value);
-                            });
-                        </script>
-                    </div>
-                </div>
-            </div>-->
             <div id="govbar">
   	            <a class="saude" href="http://www.saude.gov.br" title="Ministério da Saúde" target="_blank"><span>Ministério da Saúde</span></a>
             </div>
             <div class="top">
                 <div class="banner">
-                    <div class="institutions">
-                        <ul>
-                            <li>
-                                <a href="http://www.fiocruz.br/cgi/cgilua.exe/sys/start.htm?tpl=home" title="Fundação Oswaldo Cruz" target="_blank" class="logo" id="FIOCRUZ"><span>FioCruz</span></a>
-                            </li>
-                            <li>
-                                <a href="http://regional.bvsalud.org/php/index.php?lang=pt" title="Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde" target="_blank" class="logo" id="BIREME"><span>BIREME</span></a>
-                            </li>
-                        </ul>
-                    </div>
                     <div class="identification">
-                        <h1><a href="{% url reviewapp.home %}">{% trans 'Registro Brasileiro de Ensaios Clínicos' %}</a></h1>
+                        <h1><a href="{% url reviewapp.home %}"><span><img alt="{% trans 'Registro Brasileiro de Ensaios Clínicos' %}" src="/static/images/logo.png"></span></a></h1>
                     </div>
                 </div>
                 {% block login %}
@@ -131,22 +97,33 @@
                         <div class="spacer">&#160;</div>
                     </div>
                     {% endif %}
-                    <div class="topMenu">
-                        <ul>
-                            <li><a href="{% url reviewapp.newslist %}">{% trans "News" %}</a></li>
-                            <li><a href="/about/">{% trans "About" %}</a></li>
-                            <li><a href="{% url assistance.faq %}">{% trans "Help" %}</a></li>
-                            <li><a href="{% url reviewapp.contact %}">{% trans "Contact" %}</a></li>
-                        </ul>
-                    </div>
-                    <div class="search">
-                        <form action="{% url repository.list_all %}" method="get">
-                            <input type="text" name="q" class="textEntry" id="search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" />
-                            <input type="submit" class="submit" value="{% trans 'Search' %}" />
-                        </form>
-                    </div>
+                    <div class="bottomMenu"></div>
                 </div>
                 {% endblock %}
+                <div class="spacer">&#160;</div>
+            </div>
+            <div class="menu">
+                <div class="topMenu">
+                    <ul>
+                        <li><a href="{% url reviewapp.newslist %}">{% trans "News" %}</a></li>
+                        <li><a href="/about/">{% trans "About" %}</a></li>
+                        <li><a href="{% url assistance.faq %}">{% trans "Help" %}</a></li>
+                        <li><a href="{% url reviewapp.contact %}">{% trans "Contact" %}</a></li>
+                    </ul>
+                </div>
+                <div class="search">
+                    <form action="{% url repository.list_all %}" method="get">
+                        <input type="text" name="q" class="textEntry" id="search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" />
+                        <input type="submit" class="submit" value="{% trans 'Search trials' %}" />
+                    </form>
+                </div>
+                <div class="languages">
+                    <ul>
+                        <li><a href="#">{% trans "PT" %}</a></li>
+                        <li><a href="#">{% trans "ES" %}</a></li>
+                        <li><a href="#">{% trans "EN" %}</a></li>
+                    </ul>
+                </div>
                 <div class="spacer">&#160;</div>
             </div>
             {% if request.path != '/' %}
@@ -166,14 +143,25 @@
                 <div class="spacer">&#160;</div>
             </div>
             <div id="footer">
-                <p>
-                    <strong>BIREME - OPAS - OMS</strong>
-                    <br/>
-                    Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde
-                    <br/>
-                    Rua Botucatu, 862 - 04023-901 - São Paulo/SP - Brasil - Tel: (55 11) 5576-9800 - Fax: (55 11) 5575-8868
-                    <br/>
-                </p>
+                <div class="institutions">
+                    <ul>
+                        <li>
+                            <a href="http://regional.bvsalud.org/php/index.php?lang=pt" title="Centro Latino-Americano e do Caribe de Informação em Ciências da Saúde" target="_blank" class="logo" id="BIREME"><span>BIREME</span></a>
+                        </li>
+                        <li>
+                            <a href="http://www.fiocruz.br/cgi/cgilua.exe/sys/start.htm?tpl=home" title="Fundação Oswaldo Cruz" target="_blank" class="logo" id="FIOCRUZ"><span>FioCruz</span></a>
+                        </li>
+                        <li>
+                            <a href="http://portal.saude.gov.br/portal/saude/visualizar_texto.cfm?idtxt=24627" title="SUS" target="_blank" class="logo" id="SUS"><span>SUS</span></a>
+                        </li>
+                        <li>
+                            <a href="http://www.saude.gov.br" title="Ministério da Saúde" target="_blank" class="logo" id="MINISTERIOSAUDE"><span>Ministério da Saúde</span></a>
+                        </li>
+                        <li>
+                            <a href="http://www.governofederal.com.br" title="Governo Federal" target="_blank" class="logo" id="GOVERNOFEDERAL"><span>Governo Federal</span></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </body>
