@@ -1,3 +1,5 @@
+import pickle
+
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
@@ -10,7 +12,6 @@ from utilities import safe_truncate
 
 from tickets.models import Ticket
 
-from reviewapp.signals import create_user_profile
 from django.db.models.signals import post_save
 
 import settings
@@ -119,6 +120,12 @@ class Submission(models.Model):
         # TODO: use reverse to replace absolute path
         return '/accounts/submission/%s/' % self.id
 
+    def get_fields_status(self):
+        if not getattr(self, '_fields_status', None):
+            self._fields_status = pickle.loads(self.fields_status.encode('utf-8'))
+
+        return self._fields_status
+
 class RecruitmentCountry(models.Model):
     class Meta:
         verbose_name_plural = _('Recruitment Countries')
@@ -214,5 +221,8 @@ class News(models.Model):
     def __unicode__(self):
         return '%s' % (self.short_title())
 
-
+# SIGNALS
+def create_user_profile(sender, instance,**kwargs):
+    UserProfile.objects.get_or_create(user=instance)
+    
 post_save.connect(create_user_profile, sender=User)

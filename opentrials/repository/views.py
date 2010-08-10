@@ -14,11 +14,11 @@ from django.conf import settings
 from django.template.defaultfilters import slugify
 from django.template.context import RequestContext
 
-from reviewapp.signals import check_trial_fields
-from reviewapp.signals import STEP_STATES, REMARK, MISSING, PARTIAL, COMPLETE
 from reviewapp.models import Attachment, Submission, Remark, SUBMISSION_STATUS
 from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
+from reviewapp.consts import STEP_STATES, REMARK, MISSING, PARTIAL, COMPLETE
 
+from repository.trial_validation import trial_validator
 from repository.models import ClinicalTrial, Descriptor, TrialNumber
 from repository.models import TrialSecondarySponsor, TrialSupportSource, Outcome
 from repository.models import PublicContact, ScientificContact, SiteContact, Contact, Institution
@@ -474,7 +474,10 @@ def step_7(request, trial_pk):
 
             primary_outcomes_formset.save()
             secondary_outcomes_formset.save()
-            check_trial_fields(sender=ClinicalTrial,instance=ct)
+
+            # Executes validation of current trial submission (for mandatory fields)
+            trial_validator.validate(ct)
+
             return HttpResponseRedirect(reverse('step_7',args=[trial_pk]))
     else:
         primary_outcomes_formset = PrimaryOutcomesSet(queryset=primary_qs, prefix='primary')
@@ -529,7 +532,10 @@ def step_8(request, trial_pk):
 
             for fs in inlineformsets:
                 fs.save()
-            check_trial_fields(sender=ClinicalTrial,instance=ct)
+
+            # Executes validation of current trial submission (for mandatory fields)
+            trial_validator.validate(ct)
+
             return HttpResponseRedirect(reverse('step_8',args=[trial_pk]))
     else:
         inlineformsets = [fs(instance=ct) for fs in InlineFormSetClasses]

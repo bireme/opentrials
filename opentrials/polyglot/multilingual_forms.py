@@ -27,6 +27,17 @@ class BaseMultilingualWidget(forms.Widget):
         self.widget_class = widget_class
         super(BaseMultilingualWidget, self).__init__(attrs)
 
+    def get_value_by_language(self, field_name, value, language):
+        # Returns translation for given language and value
+        try:
+            translation = self.instance.translations.get(language=language)
+
+        except self.instance.translations.model.DoesNotExist:
+            return ''
+
+        else:
+            return getattr(translation, field_name, '')
+
     def render(self, name, value, attrs=None):
         # Calculates values
         values = {}
@@ -43,19 +54,16 @@ class BaseMultilingualWidget(forms.Widget):
             # If there is an instance (modifying), get translation from it
             elif self.instance:
                 values[lang] = value
-                try:
-                    # try to remove the formset prefix
-                    column = name
-                    pattern = re.compile('^[a-z_][a-z0-9_]*-[0-9]+-(.+)$')
-                    match = pattern.match(column)
-                    if match:
-                        column = match.group(1)
-                        
-                    # Just get translation translation helper object for given language
-                    translation = self.instance.translations.get(language=lang)
-                    values[lang] = getattr(translation, column, '')
-                except self.instance.translations.model.DoesNotExist:
-                    values[lang] = ''
+
+                # try to remove the formset prefix
+                column = name
+                pattern = re.compile('^[a-z_][a-z0-9_]*-[0-9]+-(.+)$')
+                match = pattern.match(column)
+                if match:
+                    column = match.group(1)
+
+                # Sets the current language to values dictionary
+                values[lang] = self.get_value_by_language(column, value, lang)
 
             # If it's adding, translated value is empty
             else:
@@ -82,16 +90,9 @@ class BaseMultilingualWidget(forms.Widget):
     def get_widget_args(self):
         return {}
 
-    #def value_from_datadict(self, data, files, name):
-    #    raise Exception(super(BaseMultilingualWidget, self).value_from_datadict(data, files, name))
-
 class MultilingualTextInput(BaseMultilingualWidget):
     def __init__(self, *args, **kwargs):
         super(MultilingualTextInput, self).__init__(widget_class=forms.TextInput, *args, **kwargs)
-
-    #def get_widget_args(self):
-    #    raise Exception(self.attrs)
-    #    return {'max_length': self.max_length}
 
 class MultilingualTextarea(BaseMultilingualWidget):
     def __init__(self, *args, **kwargs):
