@@ -52,13 +52,13 @@ class ReviewModelForm(MultilingualBaseForm):
                     if self.label_suffix:
                         if label[-1] not in ':?.!':
                             label += self.label_suffix
+                    # Sets label with an asterisk if this is a obligatory field according to to validation rules
+                    if trial_validator.field_is_required(self, name):
+                        label = '* ' + label
                     label = bf.label_tag(label) or ''
                 else:
                     label = ''
 
-                # Sets label with an asterisk if this is a obligatory field according to to validation rules
-                if trial_validator.field_is_required(self, name):
-                    label = label + ' (*)'
 
                 # Gets the field status for this field to use it as CSS class
                 if self.instance:
