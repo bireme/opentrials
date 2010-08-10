@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-09 18:47+0000\n"
+"POT-Creation-Date: 2010-08-10 16:23+0000\n"
 "PO-Revision-Date: 2010-06-25 19:07\n"
 "Last-Translator: <a@b.cd>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -307,7 +307,7 @@ msgstr ""
 #: repository/models.py:90
 #: repository/templates/repository/clinicaltrial_list.html:26
 #: repository/templates/repository/latest_clinicalTrials.html:21
-#: reviewapp/templates/reviewapp/index.html:48
+#: reviewapp/templates/reviewapp/index.html:33
 msgid "Primary Id Number"
 msgstr ""
 
@@ -462,7 +462,7 @@ msgstr ""
 msgid "Target Sample Size"
 msgstr ""
 
-#: repository/models.py:196 repository/trds_forms.py:304
+#: repository/models.py:196
 #: repository/templates/repository/clinicaltrial_detail.html:347
 #: repository/templates/repository/clinicaltrial_list.html:28
 #: repository/templates/repository/latest_clinicalTrials.html:22
@@ -682,6 +682,10 @@ msgstr ""
 msgid "Recruitment"
 msgstr ""
 
+#: repository/trds_forms.py:304
+msgid "Study Status"
+msgstr ""
+
 #: repository/trds_forms.py:311
 #: repository/templates/repository/clinicaltrial_detail.html:351
 msgid "Recruitment Country"
@@ -745,7 +749,7 @@ msgid "New Contact(s)"
 msgstr ""
 
 #: repository/trds_forms.py:506 repository/templates/repository/step_2.html:23
-#: repository/templates/repository/step_8.html:23
+#: repository/templates/repository/step_8.html:26
 msgid "New Institution"
 msgstr "Nueva Institución"
 
@@ -820,15 +824,13 @@ msgid "New attachment form"
 msgstr ""
 
 #: repository/templates/repository/attachments.html:56
-#: repository/templates/repository/step_3.html:32
-#: repository/templates/repository/step_4.html:27
-#: repository/templates/repository/trial_form.html:68
+#: repository/templates/repository/trial_form.html:69
 msgid "Add more"
 msgstr ""
 
 #: repository/templates/repository/attachments.html:60
 #: repository/templates/repository/new_institution.html:113
-#: repository/templates/repository/trial_form.html:76
+#: repository/templates/repository/trial_form.html:78
 #: reviewapp/templates/reviewapp/user_profile.html:41
 msgid "Save"
 msgstr "Guardar"
@@ -900,7 +902,7 @@ msgstr ""
 
 #: repository/templates/repository/clinicaltrial_list.html:60
 #: repository/templates/repository/latest_clinicalTrials.html:29
-#: reviewapp/templates/reviewapp/index.html:54
+#: reviewapp/templates/reviewapp/index.html:39
 msgid "No clinical trials have been published."
 msgstr ""
 
@@ -911,6 +913,10 @@ msgstr ""
 #: repository/templates/repository/step_3.html:22
 #: repository/templates/repository/step_4.html:18
 msgid "Search terms"
+msgstr ""
+
+#: repository/templates/repository/step_8.html:25
+msgid "Save new contact"
 msgstr ""
 
 #: repository/templates/repository/submission_step.html:12
@@ -1056,11 +1062,11 @@ msgstr "Pendiente"
 msgid "Published"
 msgstr "Publicado"
 
-#: reviewapp/models.py:199 reviewapp/templates/reviewapp/index.html:12
-#: reviewapp/templates/reviewapp/news_detail.html:5
+#: reviewapp/models.py:199 reviewapp/templates/reviewapp/news_detail.html:5
 #: reviewapp/templates/reviewapp/news_detail.html:10
 #: reviewapp/templates/reviewapp/news_list.html:5
 #: reviewapp/templates/reviewapp/news_list.html:9 templates/base.html:108
+#: templates/base_columns.html:36
 msgid "News"
 msgstr "Noticias"
 
@@ -1110,7 +1116,7 @@ msgid "Dashboard"
 msgstr "Tablero"
 
 #: reviewapp/templates/reviewapp/dashboard.html:14
-#: reviewapp/templates/reviewapp/index.html:35
+#: reviewapp/templates/reviewapp/index.html:20
 #: reviewapp/templates/reviewapp/new_submission.html:9
 #: reviewapp/templates/reviewapp/submission_list.html:34
 msgid "New Submission"
@@ -1131,12 +1137,16 @@ msgstr ""
 msgid "Submission"
 msgstr ""
 
-#: reviewapp/templates/reviewapp/index.html:12
-#: reviewapp/templates/reviewapp/index.html:29
+#: reviewapp/templates/reviewapp/index.html:9
+msgid "Read more"
+msgstr ""
+
+#: reviewapp/templates/reviewapp/index.html:15 templates/base_columns.html:15
+#: templates/base_columns.html.py:36
 msgid "List all"
 msgstr ""
 
-#: reviewapp/templates/reviewapp/index.html:29
+#: reviewapp/templates/reviewapp/index.html:15
 msgid "Registered trials"
 msgstr ""
 
@@ -1175,6 +1185,7 @@ msgid "News unavailable."
 msgstr ""
 
 #: reviewapp/templates/reviewapp/news_list.html:27
+#: templates/base_columns.html:50
 msgid "No news have been published."
 msgstr ""
 
@@ -1483,12 +1494,12 @@ msgstr "Ayuda"
 msgid "Search trials"
 msgstr "Búsqueda"
 
-#: templates/base_columns.html:12
+#: templates/base_columns.html:15
 #, fuzzy
 msgid "Recruiting"
 msgstr "Descripción"
 
-#: templates/base_columns.html:19
+#: templates/base_columns.html:25
 msgid "No clinical trials recruiting."
 msgstr ""
 

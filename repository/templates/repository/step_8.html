@@ -20,4 +20,8 @@
         </script>
 {% endblock %}
 
-{% block extra_buttons_step_8 %}<input onclick="new_institution('{{formset.management_form.prefix}}')" type="button" value="{% trans 'New Institution' %}"/>{% endblock %}
+{% block disappear_clone_button %}{% endblock %}
+{% block extra_buttons_step_8 %}
+    <input type="submit" value="{% trans 'Save new contact' %}"/>
+    <input onclick="new_institution('{{formset.management_form.prefix}}')" type="button" value="{% trans 'New Institution' %}"/>
+{% endblock %}

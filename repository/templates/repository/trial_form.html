@@ -65,7 +65,9 @@
             {% endfor %}
             </div>
             <div style="text-align: center">
+                {% block disappear_clone_button %}
                 <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="{% trans 'Add more' %}" />
+                {% endblock %}
                 {% block extra_buttons %}{% endblock %}
                 {% if forloop.last %}
                     {% block extra_buttons_step_8 %}{% endblock %}
