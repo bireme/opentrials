@@ -14,6 +14,7 @@ from django.utils.encoding import force_unicode
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 from django.forms.formsets import DELETION_FIELD_NAME
+from django.template.defaultfilters import linebreaksbr
 
 from django import forms
 from django.forms.forms import BoundField, conditional_escape
@@ -74,7 +75,7 @@ class ReviewModelForm(MultilingualBaseForm):
                 #import pdb; pdb.set_trace()
                 help_record, new = FieldHelp.objects.get_or_create(form=form_name, field=name)
                 help_text = help_text + u' ' + force_unicode(help_record)
-                help_text = help_text_html % help_text
+                help_text = linebreaksbr(help_text_html % help_text)
                 output.append(normal_row % {'errors': force_unicode(bf_errors),
                                             'label': force_unicode(label),
                                             'field': unicode(bf),
