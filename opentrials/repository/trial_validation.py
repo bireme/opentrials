@@ -28,14 +28,16 @@ FIELDS = {
     },
     TRIAL_FORMS[3]: {
         'i_freetext': {'required': True, 'type': 'text', 'poly': True}, 
-        'intervention_code': {'required': True, 'type': 'mult', 'poly': False, 'queryset': None}
+        'i_code': {'required': True, 'type': 'mult', 'poly': False, 'queryset': None}
     },
     TRIAL_FORMS[4]: {
         'recruitment_status': {'required': True, 'type': 'text', 'poly': False}, 
         'recruitment_country': {'required': True, 'type': 'mult', 'poly': False, 'queryset': None},
-        'enrollment_start_planned': {'required': True, 'type': 'text', 'poly': False}, 
+        'enrollment_start_planned': {'required': True, 'type': 'text', 'poly': False},
+        #'enrollment_end_planned': {'required': True, 'type': 'text', 'poly': False},  
         'target_sample_size': {'required': True, 'type': 'text', 'poly': False}, 
-        'inclusion_criteria': {'required': True, 'type': 'text', 'poly': True}, 
+        'inclusion_criteria': {'required': True, 'type': 'text', 'poly': True},
+        'exclusion_criteria': {'required': True, 'type': 'text', 'poly': True},  
         'gender': {'required': True, 'type': 'text', 'poly': False}, 
         'agemin_value': {'required': True, 'type': 'text', 'poly': False}, 
         'agemin_unit': {'required': True, 'type': 'text', 'poly': False}, 
@@ -43,14 +45,15 @@ FIELDS = {
         'agemax_unit': {'required': True, 'type': 'text', 'poly': False}, 
     },
     TRIAL_FORMS[5]: {
-        'study_type': {'required': True, 'type': 'text', 'poly': False}, 
+        #'study_type': {'required': True, 'type': 'text', 'poly': False}, 
         'study_design': {'required': True, 'type': 'text', 'poly': True}, 
         'phase': {'required': True, 'type': 'text', 'poly': False},
-        #'expanded_access_program': {'required': False, 'type': 'text', 'poly': False}, 
-        'intervention_assignment': {'required': False, 'type': 'text', 'poly': False}, 
-        'number_of_arms': {'required': False, 'type': 'text', 'poly': False},
-        'masking': {'required': False, 'type': 'text', 'poly': False},
-        'allocation': {'required': False, 'type': 'text', 'poly': False}
+        'expanded_access_program': {'required': True, 'type': 'text', 'poly': False}, 
+        'intervention_assignment': {'required': True, 'type': 'text', 'poly': False}, 
+        'number_of_arms': {'required': True, 'type': 'text', 'poly': False},
+        'masking': {'required': True, 'type': 'text', 'poly': False},
+        'allocation': {'required': True, 'type': 'text', 'poly': False},
+        'purpose': {'required': True, 'type': 'text', 'poly': False}
     },
     TRIAL_FORMS[6]: {},
     TRIAL_FORMS[7]: {}
@@ -81,7 +84,7 @@ class TrialValidator(object):
         fields_status = {}
 
         # Setting instance queryset on validation fields
-        FIELDS[TRIAL_FORMS[3]]['intervention_code']['queryset'] = instance.intervention_code()
+        FIELDS[TRIAL_FORMS[3]]['i_code']['queryset'] = instance.intervention_code()
         FIELDS[TRIAL_FORMS[4]]['recruitment_country']['queryset'] = instance.recruitment_country.all()
 
         # attachment
