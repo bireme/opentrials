@@ -20,7 +20,7 @@ from polyglot.models import Translation
 
 from repository import choices
 
-from reviewapp.signals import check_trial_fields
+from trial_validation import trial_validator
 from django.db.models.signals import post_save
 
 # remove digits that look like letters and vice-versa
@@ -369,6 +369,9 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     def trial_attach(self):
         return self.submission.attachment_set.all().select_related()
 
+# Sets validation model to ClinicalTrial
+trial_validator.model = ClinicalTrial
+
 
 class ClinicalTrialTranslation(Translation):
     # TRDS 10a
@@ -561,5 +564,12 @@ class Descriptor(TrialRegistrationDataSetModel):
 class DescriptorTranslation(Translation):
     text = models.CharField(_('Text'), max_length=255, blank=True)
 
+# SIGNALS
 
-post_save.connect(check_trial_fields, sender=ClinicalTrial)
+def clinicaltrial_post_save(sender, instance, signal, **kwargs):
+    # This signal calls validation method to validate the instance according to
+    # rules made with mandatory fields but aren't obligatory on the model
+    trial_validator.validate(instance)
+
+post_save.connect(clinicaltrial_post_save, sender=ClinicalTrial)
+

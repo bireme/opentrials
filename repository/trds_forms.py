@@ -22,19 +22,11 @@ from polyglot.multilingual_forms import MultilingualCharField, MultilingualTextF
 from polyglot.multilingual_forms import MultilingualModelChoiceField, MultilingualModelMultipleChoiceField
 from polyglot.multilingual_forms import MultilingualBaseForm, MultilingualBaseFormSet
 
+from trial_validation import trial_validator, TRIAL_FORMS
+
 from datetime import date
 
 import settings
-
-TRIAL_FORMS = ['Trial Identification',
-               'Sponsors',
-               'Health Conditions',
-               'Interventions',
-               'Recruitment',
-               'Study Type',
-               'Outcomes',
-               'Contacts',
-               'Attachments']
 
 class ReviewModelForm(MultilingualBaseForm):
 
@@ -63,6 +55,17 @@ class ReviewModelForm(MultilingualBaseForm):
                     label = bf.label_tag(label) or ''
                 else:
                     label = ''
+
+                # Sets label with an asterisk if this is a obligatory field according to to validation rules
+                if trial_validator.field_is_required(self, name):
+                    label = label + ' (*)'
+
+                # Gets the field status for this field to use it as CSS class
+                if self.instance:
+                    field_status = trial_validator.get_field_status(self, name, self.instance)
+                else:
+                    field_status = ''
+
                 if field.help_text:
                     help_text = help_text_html % force_unicode(field.help_text)
                 else:
@@ -77,6 +80,7 @@ class ReviewModelForm(MultilingualBaseForm):
                                             'field': unicode(bf),
                                             'help_text': help_text,
                                             'help_id': 'id_%s-help%s' % ((self.prefix or name),help_record.pk),
+                                            'field_class': field_status,
                                             })
         if top_errors:
             output.insert(0, error_row % force_unicode(top_errors))
@@ -110,7 +114,7 @@ class ReviewModelForm(MultilingualBaseForm):
     def as_table(self):
         "Returns this form rendered as HTML <tr>s -- excluding the <table></table>."
         normal_row = u'''
-            <tr><th><img src="/static/help.png" rel="#%(help_id)s"/>
+            <tr class="%(field_class)s"><th><img src="/static/help.png" rel="#%(help_id)s"/>
                     <div id="%(help_id)s" class="help">%(help_text)s</div>
                     %(label)s</th>
                 <td>%(errors)s%(field)s
@@ -125,7 +129,6 @@ class ReviewModelForm(MultilingualBaseForm):
 # Forms
 #
 
-STEP_FORM_MATRIX = {}
 
 ### step_1 #####################################################################
 class TrialIdentificationForm(ReviewModelForm):
@@ -161,7 +164,7 @@ class SecondaryIdForm(ReviewModelForm):
     title = _('Secondary Identifying Numbers')
     # this is just to inherit the custom _html_output and as_table methods
 
-STEP_FORM_MATRIX[TRIAL_FORMS[0]] = [TrialIdentificationForm, SecondaryIdForm]
+trial_validator.register(TRIAL_FORMS[0], [TrialIdentificationForm, SecondaryIdForm])
 
 ### step_2 #####################################################################
 class PrimarySponsorForm(ReviewModelForm):
@@ -211,7 +214,7 @@ def make_support_source_form(user=None):
         
     return SupportSourceForm
 
-STEP_FORM_MATRIX[TRIAL_FORMS[1]] = [PrimarySponsorForm, make_secondary_sponsor_form(), make_support_source_form()]
+trial_validator.register(TRIAL_FORMS[1], [PrimarySponsorForm, make_secondary_sponsor_form(), make_support_source_form()])
 
 
 
@@ -254,7 +257,7 @@ class SpecificHealthDescriptorForm(ReviewModelForm):
     level = forms.CharField(widget=forms.HiddenInput,
                              initial=choices.DESCRIPTOR_LEVEL[1][0])
 
-STEP_FORM_MATRIX[TRIAL_FORMS[2]] = [HealthConditionsForm, GeneralHealthDescriptorForm, SpecificHealthDescriptorForm]
+trial_validator.register(TRIAL_FORMS[2], [HealthConditionsForm, GeneralHealthDescriptorForm, SpecificHealthDescriptorForm])
 
 ### step_4 #####################################################################
 class InterventionDescriptorForm(ReviewModelForm):
@@ -285,7 +288,8 @@ class InterventionForm(ReviewModelForm):
     i_code = forms.ModelMultipleChoiceField(label=_("Intervention Code(s)"),
                                             queryset=InterventionCode.objects.all(),
                                             widget=forms.CheckboxSelectMultiple())
-STEP_FORM_MATRIX[TRIAL_FORMS[3]] = [InterventionForm, InterventionDescriptorForm]
+
+trial_validator.register(TRIAL_FORMS[3], [InterventionForm, InterventionDescriptorForm])
 
 ### step_5 #####################################################################
 class RecruitmentForm(ReviewModelForm):
@@ -342,7 +346,7 @@ class RecruitmentForm(ReviewModelForm):
     exclusion_criteria = forms.CharField(label=_('Exclusion Criteria'),required=False,
                                         max_length=8000, widget=forms.Textarea,)
 
-STEP_FORM_MATRIX[TRIAL_FORMS[4]] = [RecruitmentForm]
+trial_validator.register(TRIAL_FORMS[4], [RecruitmentForm])
 
 ### step_6 #####################################################################
 class StudyTypeForm(ReviewModelForm):
@@ -374,7 +378,8 @@ class StudyTypeForm(ReviewModelForm):
                                               choices=[(None,_('Unknown')),
                                                        (True,_('Yes')),
                                                        (False,_('No')),])
-STEP_FORM_MATRIX[TRIAL_FORMS[5]] = [StudyTypeForm]
+
+trial_validator.register(TRIAL_FORMS[5], [StudyTypeForm])
 
 ### step_7 #####################################################################
 class PrimaryOutcomesForm(ReviewModelForm):
@@ -403,7 +408,7 @@ class SecondaryOutcomesForm(ReviewModelForm):
     interest = forms.CharField(initial=choices.OUTCOME_INTEREST[1][0],
                                widget=forms.HiddenInput)
 
-STEP_FORM_MATRIX[TRIAL_FORMS[6]] = [PrimaryOutcomesForm,SecondaryOutcomesForm]
+trial_validator.register(TRIAL_FORMS[6], [PrimaryOutcomesForm,SecondaryOutcomesForm])
 
 ### step_8 #####################################################################
 def make_public_contact_form(user=None):
@@ -460,7 +465,7 @@ def make_site_contact_form(user=None):
                                                  label=_('Contact'))
     return SiteContactForm
 
-STEP_FORM_MATRIX[TRIAL_FORMS[7]] = [make_public_contact_form(),make_scientifc_contact_form(),make_scientifc_contact_form()]
+trial_validator.register(TRIAL_FORMS[7], [make_public_contact_form(),make_scientifc_contact_form(),make_scientifc_contact_form()])
 
 #step8-partof
 # http://www.b-list.org/weblog/2008/nov/09/dynamic-forms/

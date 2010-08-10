@@ -21,7 +21,7 @@ from reviewapp.models import Submission, News
 from reviewapp.forms import UploadTrial, InitialTrialForm, OpenRemarkForm
 from reviewapp.forms import UserForm, PrimarySponsorForm, UserProfileForm
 from reviewapp.forms import ContactForm
-from reviewapp.signals import REMARK, MISSING, PARTIAL, COMPLETE
+from reviewapp.consts import REMARK, MISSING, PARTIAL, COMPLETE
 
 from repository.models import ClinicalTrial, CountryCode, ClinicalTrialTranslation
 from repository.trds_forms import TRIAL_FORMS
