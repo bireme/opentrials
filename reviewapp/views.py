@@ -3,6 +3,7 @@ from django.http import Http404, HttpResponse
 from reviewapp.models import UserProfile, REMARK_TRANSITIONS, Remark
 from registration.models import RegistrationProfile
 from django.core.urlresolvers import reverse
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import loader, Context
 from django.template.context import RequestContext
@@ -64,7 +65,23 @@ def user_dump(request):
 
 @login_required
 def submissions_list(request):
-    object_list = Submission.objects.filter(creator=request.user)
+            
+    submission_list = Submission.objects.filter(creator=request.user)
+
+    def objects_with_title_translated():
+        # TODO for #125: Change this to a better solution
+        for obj in submission_list:
+            obj.title = obj.trial.scientific_title
+            try:
+                t = obj.trial.translations.get(language=request.LANGUAGE_CODE)
+                if t.scientific_title != '':
+                    obj.title = t.scientific_title
+            except ObjectDoesNotExist:
+                pass
+            yield obj
+    
+    object_list = objects_with_title_translated()
+    
     username = request.user.username if request.user.is_authenticated() else None
     return render_to_response('reviewapp/submission_list.html', locals(),
                                context_instance=RequestContext(request))
