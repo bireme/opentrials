@@ -33,8 +33,19 @@
         </tr>
     {% endfor %}    
 </table>
-<form name="submit_submission" action="#" method="POST">
-  {% csrf_token %}
-  <input type="submit" name="submit_submission" value="{% trans "Submit for Review" %}"/>
-</form>
+<table border="0">
+    <tr>
+    <td>
+        <form name="submit_submission" action="#" method="POST">
+            {% csrf_token %}
+            <input type="submit" name="submit_submission" value="{% trans "Submit for Review" %}" {% if not submit %} disabled="disabled" {% endif %} />
+        </form>
+    </td>
+    <td>
+        <div style="margin-left:10px;">
+            <img src="{{ status_message.icon }}" alt="{{status_message.msg}}" title="{{status_message.msg}}" />&nbsp;&nbsp;{{ status_message.msg }}
+        </div>
+    </td>
+    </tr>
+</table>
 {% endblock %}

@@ -56,7 +56,14 @@ MENU_SHORT_TITLE = [_('Trial Identif.'),
 def edit_trial_index(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
 
-    if request.POST:
+    status = ct.submission.get_status()
+    
+    if status in [REMARK, MISSING]:
+        submit = False
+    else:
+        submit = True
+
+    if request.POST and submit:
         sub = ct.submission
         sub.status = SUBMISSION_STATUS[1][0]
 
@@ -65,10 +72,7 @@ def edit_trial_index(request, trial_pk):
     else:
         ''' start view '''
         
-        if ct.submission.fields_status is None:
-            fields_status = {}
-        else:
-            fields_status = pickle.loads(ct.submission.fields_status.encode('utf-8'))
+        fields_status = ct.submission.get_fields_status()
 
         links = []
         for i, name in enumerate(TRIAL_FORMS):
@@ -98,10 +102,31 @@ def edit_trial_index(request, trial_pk):
                 trans_list.append(trans)
             data['trans'] = trans_list
             links.append(data)
+        
+        status_message = {}
+        if status == REMARK:
+            status_message['icon'] = settings.MEDIA_URL + 'images/form-status-remark.png'
+            status_message['msg'] = _("There are fields with remarks.")
+        elif status == MISSING:
+            status_message['icon'] = settings.MEDIA_URL + 'images/form-status-missing.png'
+            status_message['msg'] = _("There are required fields missing.")
+        elif status == PARTIAL:
+            status_message['icon'] = settings.MEDIA_URL + 'images/form-status-partial.png'
+            status_message['msg'] = _("All required fields were filled.")
+        elif status == COMPLETE:
+            status_message['icon'] = settings.MEDIA_URL + 'images/form-status-complete.png'
+            status_message['msg'] = _("All fields were filled.")
+        else:
+            status_message['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_error.gif'
+            status_message['msg'] = _("Error")
+        
         return render_to_response('repository/trial_index.html',
                                   {'trial_pk':trial_pk,
                                    'submission':ct.submission,
-                                   'links':links},
+                                   'links':links,
+                                   'status': status,
+                                   'submit': submit,
+                                   'status_message': status_message,},
                                    context_instance=RequestContext(request))
 
 def full_view(request, trial_pk):
