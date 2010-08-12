@@ -45,7 +45,7 @@ $(document).ready(function() {
         <tr>
             <td>{{ submission.created|date:'Y/m/d H:i' }}</td>
             <td>
-                <a href="{% url repository.edittrial submission.trial.pk %}">{{ submission.short_title }}</a>
+                <a href="{% url repository.edittrial submission.trial__pk %}">{{ submission.short_title }}</a>
             </td>
             <td>{{ submission.status }}</td>
         </tr>
@@ -54,3 +54,4 @@ $(document).ready(function() {
 </table>
 
 {% endblock %}
+
