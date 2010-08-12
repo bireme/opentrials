@@ -48,7 +48,7 @@ FIELDS = {
         #'study_type': {'required': True, 'type': 'text', 'poly': False}, 
         'study_design': {'required': True, 'type': 'text', 'poly': True}, 
         'phase': {'required': True, 'type': 'text', 'poly': False},
-        'expanded_access_program': {'required': True, 'type': 'text', 'poly': False}, 
+        #'expanded_access_program': {'required': True, 'type': 'text', 'poly': False}, 
         'intervention_assignment': {'required': True, 'type': 'text', 'poly': False}, 
         'number_of_arms': {'required': True, 'type': 'text', 'poly': False},
         'masking': {'required': True, 'type': 'text', 'poly': False},
@@ -82,6 +82,7 @@ class TrialValidator(object):
             return
         
         fields_status = {}
+        mandatory_languages = [lang.lower() for lang in instance.submission.get_mandatory_languages()]
 
         # Setting instance queryset on validation fields
         FIELDS[TRIAL_FORMS[3]]['i_code']['queryset'] = instance.intervention_code()
@@ -90,8 +91,7 @@ class TrialValidator(object):
         # attachment
         remarks = instance.submission.remark_set.filter(status='opened').filter(context=slugify(TRIAL_FORMS[8])).count()
         count = instance.submission.attachment_set.all().count()
-        for lang in instance.submission.get_mandatory_languages():
-            lang = lang.lower()
+        for lang in mandatory_languages:
             if remarks > 0:
                 fields_status.update({lang: {TRIAL_FORMS[8]: REMARK}})
             elif count == 0:
@@ -105,16 +105,14 @@ class TrialValidator(object):
             
             remarks = instance.submission.remark_set.filter(status='opened').filter(context=slugify(step)).count()
             if remarks > 0:
-                for lang in instance.submission.get_mandatory_languages():
-                    lang = lang.lower()
+                for lang in mandatory_languages:
                     step_status.update({lang: REMARK})
             else:
                 for form in forms:
                     if hasattr(form.Meta,'queryset'):
                         count = form.Meta.queryset.filter(trial=instance).count()
                         
-                        for lang in instance.submission.get_mandatory_languages():
-                            lang = lang.lower()
+                        for lang in mandatory_languages:
                             if count < form.Meta.min_required:
                                 step_status.update({lang: MISSING})
                             elif count == 0:
@@ -174,10 +172,11 @@ class TrialValidator(object):
                                             values.update({'en': getattr(instance, field)})
                                             
                                             for trans in instance.translations.all():
-                                                if check_fields[field]['poly']:
-                                                    values.update({trans.language.lower(): getattr(trans, field)})
-                                                else:
-                                                    values.update({trans.language.lower(): values['en']})
+                                                if trans.language.lower() in mandatory_languages:
+                                                    if check_fields[field]['poly']:
+                                                        values.update({trans.language.lower(): getattr(trans, field)})
+                                                    else:
+                                                        values.update({trans.language.lower(): values['en']})
                                                         
                                             for lang, value in values.items():
                                                 if value is None:
@@ -211,8 +210,7 @@ class TrialValidator(object):
                                             if check_fields[field]['type'] == 'mult':
                                                 count = check_fields[field]['queryset'].count()
 
-                                                for lang in instance.submission.get_mandatory_languages():
-                                                    lang = lang.lower()
+                                                for lang in mandatory_languages:
                                                     if count < 1:
                                                         step_status.update({lang: MISSING})
                                                     else:

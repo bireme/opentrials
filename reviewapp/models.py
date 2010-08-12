@@ -1,19 +1,18 @@
 import pickle
+from datetime import datetime
 
 from django.db import models
+from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
-from django.conf import settings
-from datetime import datetime
+
 from repository.models import ClinicalTrial, Institution
 from repository.choices import PROCESSING_STATUS, PUBLISHED_STATUS
-from vocabulary.models import CountryCode
-from utilities import safe_truncate
-
 from tickets.models import Ticket
+from utilities import safe_truncate
+from vocabulary.models import CountryCode
 
-from django.db.models.signals import post_save
-
+from consts import REMARK, MISSING, PARTIAL, COMPLETE
 import settings
 
 
@@ -125,6 +124,16 @@ class Submission(models.Model):
             self._fields_status = pickle.loads(self.fields_status.encode('utf-8'))
 
         return self._fields_status
+
+    def get_status(self):
+        status = [field for step in self.get_fields_status().values() for field in step.values()]
+        if REMARK in status:
+            return REMARK
+        elif MISSING in status:
+            return MISSING
+        elif PARTIAL in status:
+            return PARTIAL
+        return COMPLETE
 
 class RecruitmentCountry(models.Model):
     class Meta:
