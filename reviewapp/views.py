@@ -28,6 +28,7 @@ from repository.models import ClinicalTrial, CountryCode, ClinicalTrialTranslati
 from repository.trds_forms import TRIAL_FORMS
 from datetime import datetime
 import pickle
+from utilities import safe_truncate
 
 def index(request):
     clinical_trials = ClinicalTrial.published.all()[:3]
@@ -65,19 +66,31 @@ def user_dump(request):
 
 @login_required
 def submissions_list(request):
-            
+    
+    # Gets the list of submissions
     submission_list = Submission.objects.filter(creator=request.user)
+
+    # Submission list is optimized to retunrs only the necessary fields
+    submission_list = submission_list.values('pk','created','title','status',
+            'trial__pk','trial__scientific_title')
 
     def objects_with_title_translated():
         # TODO for #125: Change this to a better solution
         for obj in submission_list:
-            obj.title = obj.trial.scientific_title
+            obj['title'] = obj['trial__scientific_title']
             try:
-                t = obj.trial.translations.get(language=request.LANGUAGE_CODE)
+                #t = obj.trial.translations.get(language=request.LANGUAGE_CODE)
+                t = ClinicalTrialTranslation.objects.get_translation_for_object(
+                        request.LANGUAGE_CODE, model=ClinicalTrial, object_id=obj['trial__pk'],
+                        )
                 if t.scientific_title != '':
-                    obj.title = t.scientific_title
+                    obj['title'] = t.scientific_title
             except ObjectDoesNotExist:
                 pass
+
+            # Forces a safe trancate
+            obj['short_title'] = safe_truncate(obj['title'], 120)
+
             yield obj
     
     object_list = objects_with_title_translated()
