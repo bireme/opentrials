@@ -7,7 +7,7 @@
 {% block stepmenu_top %}
     {{ block.super }}
     <small>
-        / <a href="{% url repository.list_all %}">{% trans 'Registered Trials' %}</a>
+        / <a href="{% url repository.index %}">{% trans 'Registered Trials' %}</a>
     </small>
     <big>/ {{ object.identifier }}</big>
 {% endblock %}

@@ -12,7 +12,7 @@
     <table border="0" cellpading="0" cellspacing="0">
     <tr>
         <td>
-            <h2><a title="{% trans 'List all' %}" href="{% url repository.list_all %}">{% trans 'Registered trials' %}</a></h2>
+            <h2><a title="{% trans 'List all' %}" href="{% url repository.index %}">{% trans 'Registered trials' %}</a></h2>
         </td>
         <td>
             <div class="highlights">
@@ -28,9 +28,9 @@
         <ul>
         {% for ct in clinical_trials %}
             <li>
-                <a class="NewsTitle" href="{% url repository.trialview ct.id %}">{{ ct.main_title }}</a>
+                <a class="NewsTitle" href="{% url repository.trial_registered ct.trial_id %}">{{ ct.main_title }}</a>
                 <p>
-                    <b>{% trans 'Primary Id Number' %}</b>: <a class="pnumber" href="{% url repository.trialview ct.id %}">{{ ct.trial_id }}</a><br/>
+                    <b>{% trans 'Primary Id Number' %}</b>: <a class="pnumber" href="{% url repository.trial_registered ct.trial_id %}">{{ ct.trial_id }}</a><br/>
                 </p>
             </li>
         {% endfor %}

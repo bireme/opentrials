@@ -112,7 +112,7 @@
                     </ul>
                 </div>
                 <div class="search">
-                    <form action="{% url repository.list_all %}" method="get">
+                    <form action="{% url repository.index %}" method="get">
                         <input type="text" name="q" class="textEntry" id="search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" />
                         <input type="submit" class="submit" value="{% trans 'Search trials' %}" />
                     </form>
