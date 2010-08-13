@@ -17,6 +17,9 @@
         <a href="{{ step.link }}">{% trans step.name %}</a>
     </small>
     {% endfor %}
+    <div style="float:right; margin-right:20px;">
+        <small><a href="{% url repository.trialview trial_pk %}">{% trans 'Preview' %}</a></small>
+    </div>
 {% endblock %}
 
 {% block stepmenu_bottom %}

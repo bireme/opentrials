@@ -137,17 +137,69 @@ def full_view(request, trial_pk):
                                context_instance=RequestContext(request))
 
 
-def index(request):
-    latest_clinicalTrials = ClinicalTrial.objects.all()[:5]
-    t = loader.get_template('repository/latest_clinicalTrials.html')
-    c  = RequestContext(request,{
-        'latest_clinicalTrials': latest_clinicalTrials,
-    })
-    return HttpResponse(t.render(c))
+@login_required
+def list_all(request, page=0, **kwargs):
+    ''' List all trials of a user logged
+        If you use a search term, the result is filtered 
+    '''
+    q = request.GET.get('q', '')
+    queryset = ClinicalTrial.objects.filter(submission__creator=request.user)
+    if q:
+        queryset = queryset.filter(Q(scientific_title__icontains=q)
+                                               |Q(public_title__icontains=q)
+                                               |Q(trial_id__iexact=q)
+                                               |Q(acronym__iexact=q)
+                                               |Q(acronym_expansion__icontains=q)
+                                               |Q(scientific_acronym__iexact=q)
+                                               |Q(scientific_acronym_expansion__icontains=q))
 
-def details(request, trial_pk):
-    ''' clinical trial details '''
-    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    return object_list(
+                  request,
+                  queryset = queryset,
+                  paginate_by = getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10),
+                  page = page,
+                  extra_context = {'q': q,},
+                  **kwargs)
+
+
+def index(request, page=0, **kwargs):
+    ''' List all registered trials
+        If you use a search term, the result is filtered 
+    '''
+    q = request.GET.get('q', '')
+    if q:
+        queryset = ClinicalTrial.published.filter(Q(scientific_title__icontains=q)
+                                               |Q(public_title__icontains=q)
+                                               |Q(trial_id__iexact=q)
+                                               |Q(acronym__iexact=q)
+                                               |Q(acronym_expansion__icontains=q)
+                                               |Q(scientific_acronym__iexact=q)
+                                               |Q(scientific_acronym_expansion__icontains=q))
+    else:
+        queryset = ClinicalTrial.published.all()
+
+    return object_list(
+                  request,
+                  queryset = queryset,
+                  paginate_by = getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10),
+                  page = page,
+                  extra_context = {'q': q,},
+                  **kwargs)
+
+@login_required
+def trial_view(request, trial_pk):
+    ''' show details of a trial of a user logged '''
+    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk), submission__creator=request.user)
+    translations = [t for t in ct.translations.all()]
+    return render_to_response('repository/clinicaltrial_detail_user.html',
+                                {'object': ct,
+                                'translations': translations,
+                                'host': request.get_host()},
+                                context_instance=RequestContext(request))
+                                
+def trial_registered(request, trial_id):
+    ''' show details of a trial registered '''
+    ct = get_object_or_404(ClinicalTrial, trial_id=trial_id, status='published')
     translations = [t for t in ct.translations.all()]
     return render_to_response('repository/clinicaltrial_detail.html',
                                 {'object': ct,
@@ -620,21 +672,4 @@ def step_9(request, trial_pk):
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
-def list_all(request, page=0, **kwargs):
-
-    q = request.GET.get('q', '')
-
-    if q:
-        queryset = ClinicalTrial.published.filter(Q(scientific_title__contains=q)
-                                               |Q(public_title__contains=q))
-    else:
-        queryset = ClinicalTrial.published.all()
-
-    return object_list(
-                  request,
-                  queryset = queryset,
-                  paginate_by = getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10),
-                  page = page,
-                  extra_context = {'q': q,},
-                  **kwargs)
 
