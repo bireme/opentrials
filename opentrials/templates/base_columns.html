@@ -19,7 +19,7 @@
         <ul>
         {% if latest_recruiting_trials %}
             {% for ct in latest_recruiting_trials %}
-                <li><a href="{% url repository.trialview ct.id %}">{{ ct.short_title }}</a></li>
+                <li><a href="{% url repository.trial_registered ct.trial_id %}">{{ ct.short_title }}</a></li>
             {% endfor %}
         {% else %}
             <li>{% trans 'No clinical trials recruiting.' %}</li>

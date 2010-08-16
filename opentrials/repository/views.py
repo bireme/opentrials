@@ -189,7 +189,10 @@ def index(request, page=0, **kwargs):
 @login_required
 def trial_view(request, trial_pk):
     ''' show details of a trial of a user logged '''
-    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk), submission__creator=request.user)
+    if request.user.is_staff:
+        ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    else:
+        ct = get_object_or_404(ClinicalTrial, id=int(trial_pk), submission__creator=request.user)
     translations = [t for t in ct.translations.all()]
     return render_to_response('repository/clinicaltrial_detail_user.html',
                                 {'object': ct,
