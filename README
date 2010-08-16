@@ -13,4 +13,46 @@ http://svn.reddes.bvsalud.org/clinical-trials
 
 There is also a git-svn mirror at:
 
-http://github.com/bireme/clinicaltrials
+http://github.com/bireme/opentrials
+
+Dependencies
+------------
+
+- Python 2.4 or higher. Preference for 2.6
+- Django 1.2 or higher
+- Some of database wrappers, like psycopg2 or MySQLDb
+- Python Imaging Library ( http://www.pythonware.com/products/pil/ )
+- django-registration
+- django-rosetta
+- south
+
+zc.buildout
+-----------
+
+This package helps on the deploy process, because installs depended packages on their required
+versions. Helps also to find good solutions for tests, continuous integration and others.
+
+Before all you must install the script "raminelrecipe" from::
+
+    git clone git://github.com/marinho/raminel-recipe.git
+    cd raminel-recipe
+    sudo python setup.py install
+
+"raminelrecipe" is just an extension of "djangorecipe" that changes the way of set the project
+'settings' module, ignoring the project name (instead of set it, on original version), because
+some projects do not use the project as the root module.
+
+After that::
+
+    python bootstrap.py
+    ./bin/buildout
+
+.. note::
+    We used the recipe "djangorecipe" to help on Django's projeto deploy. So, to run management
+    commands, you have to replace the old ``python manage.py`` for ``./bin/django/``.
+    
+    Examples: ./bin/django migrate; ./bin/django runserver
+
+    There is also a WSGI script automatically created in ./bin/ directory that should be used
+    by Apache or Lighttpd (or another web server).
+
