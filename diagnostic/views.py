@@ -13,6 +13,7 @@ from django.db.models import get_apps, get_app
 
 from django.shortcuts import render_to_response
 from django.utils.datastructures import SortedDict
+from django.template.context import RequestContext
 
 @staff_member_required
 def export_database(request):
@@ -40,8 +41,14 @@ def dump_data(request,appname):
     app_list = SortedDict()
     
     try:
-        app = get_app(appname)
-        app_list[app] = None
+        if request.POST:
+            for appname in request.POST.getlist('apps'):
+                app = get_app(appname)
+                app_list[app] = None
+            appname = 'choices'
+        else:
+            app = get_app(appname)
+            app_list[app] = None
     except ImproperlyConfigured:
         if appname == 'all':
             for app in get_apps():
@@ -58,7 +65,7 @@ def dump_data(request,appname):
         response['Content-Disposition'] = 'attachment; filename=%s_%s_fixture.json' % (date.today().__str__(),appname)
         return response
 
-    return render_to_response('diagnostic/dumpdata.html')
+    return render_to_response('diagnostic/dumpdata.html',context_instance=RequestContext(request))
 
 def smoke_test(request):
     from datetime import datetime

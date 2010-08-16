@@ -6,21 +6,24 @@
     </head>
     <body>
         <h1>Available fixtures</h1>
-        <ul>
-            <li><a href="/diag/dumpdata/auth">auth</a></li>
-            <li><a href="/diag/dumpdata/contenttypes">contenttypes</a></li>
-            <li><a href="/diag/dumpdata/sessions">sessions</a></li>
-            <li><a href="/diag/dumpdata/sites">sites</a></li>
-            <li><a href="/diag/dumpdata/admin">admin</a></li>
-            <li><a href="/diag/dumpdata/flatpages">flatpages</a></li>
-            <li><a href="/diag/dumpdata/repository">repository</a></li>
-            <li><a href="/diag/dumpdata/vocabulary">vocabulary</a></li>
-            <li><a href="/diag/dumpdata/reviewapp">reviewapp</a></li>
-            <li><a href="/diag/dumpdata/tickets">tickets</a></li>
-            <li><a href="/diag/dumpdata/assistance">assistance</a></li>
-            <li><a href="/diag/dumpdata/polyglot">polyglot</a></li>
-            <li><a href="/diag/dumpdata/rosetta">rosetta</a></li>
-            <li><a href="/diag/dumpdata/registration">registration</a></li>
-        </ul>
+        <form action="/diag/dumpdata/" method="post">{% csrf_token %}
+            <ul>
+                <li><input type="checkbox" name="apps" value="auth"/><a href="/diag/dumpdata/auth">auth</a></li>
+                <li><input type="checkbox" name="apps" value="contenttypes"/><a href="/diag/dumpdata/contenttypes">contenttypes</a></li>
+                <li><input type="checkbox" name="apps" value="sessions"/><a href="/diag/dumpdata/sessions">sessions</a></li>
+                <li><input type="checkbox" name="apps" value="sites"/><a href="/diag/dumpdata/sites">sites</a></li>
+                <li><input type="checkbox" name="apps" value="admin"/><a href="/diag/dumpdata/admin">admin</a></li>
+                <li><input type="checkbox" name="apps" value="flatpages"/><a href="/diag/dumpdata/flatpages">flatpages</a></li>
+                <li><input type="checkbox" name="apps" value="repository"/><a href="/diag/dumpdata/repository">repository</a></li>
+                <li><input type="checkbox" name="apps" value="vocabulary"/><a href="/diag/dumpdata/vocabulary">vocabulary</a></li>
+                <li><input type="checkbox" name="apps" value="reviewapp"/><a href="/diag/dumpdata/reviewapp">reviewapp</a></li>
+                <li><input type="checkbox" name="apps" value="tickets"/><a href="/diag/dumpdata/tickets">tickets</a></li>
+                <li><input type="checkbox" name="apps" value="assistance"/><a href="/diag/dumpdata/assistance">assistance</a></li>
+                <li><input type="checkbox" name="apps" value="polyglot"/><a href="/diag/dumpdata/polyglot">polyglot</a></li>
+                <li><input type="checkbox" name="apps" value="rosetta"/><a href="/diag/dumpdata/rosetta">rosetta</a></li>
+                <li><input type="checkbox" name="apps" value="registration"/><a href="/diag/dumpdata/registration">registration</a></li>
+            </ul>
+            <input type="submit" value="Export"/>
+        </form>
     </body>
 </html>
