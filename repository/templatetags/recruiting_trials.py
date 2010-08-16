@@ -18,7 +18,7 @@ class LatestRecruitingTrialsNode(Node):
         self.varname = varname
     
     def render(self, context):
-        context[self.varname] = ClinicalTrial.objects.select_related().filter(recruitment_status__label__contains='recruiting').order_by('-date_registration',)[:self.num]
+        context[self.varname] = ClinicalTrial.published.filter(recruitment_status__label='recruiting').order_by('-date_registration',)[:self.num]
         return ''
 
 get_latest_recruiting_trials = register.tag(get_latest_recruiting_trials)
