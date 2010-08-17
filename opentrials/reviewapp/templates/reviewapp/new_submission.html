@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+{% block extrahead %}
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("select[multiple]").asmSelect({
+                        addItemTarget: 'bottom',
+                        animate: true,
+                        highlight: true,
+                        sortable: false
+                });
+                $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
+            });
+        </script>
+{% endblock %}
+
 {% block stepmenu_top %}
     {{ block.super }}
     <small>
@@ -10,40 +24,6 @@
 {% endblock %}
 
 {% block body %}
-
-<script type="text/javascript">
-    //{# From http://stackoverflow.com/questions/501719/dynamically-adding-a-form-to-a-django-formset-with-ajax#669982 */ #}
-    function cloneMore(selector, type) {
-        var newElement = $(selector).clone(true);
-        var total = $('#id_' + type + '-TOTAL_FORMS').val();
-        newElement.find(':input').each(function() {
-            var name = $(this).attr('name').replace('-' + (total-1) + '-','-' + total + '-');
-            var id = 'id_' + name;
-            $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
-        });
-        newElement.find('label').each(function() {
-            var newFor = $(this).attr('for').replace('-' + (total-1) + '-','-' + total + '-');
-            $(this).attr('for', newFor);
-        });
-        total++;
-        $('#id_' + type + '-TOTAL_FORMS').val(total);
-        newElement.css("display","none");
-        $(selector).after(newElement);
-        newElement.show("fast");
-    }
-
-    $(document).ready(function() {
-            $("input#addmore").click(function(){
-                cloneMore('table:last','form');
-            });
-            $("select[multiple]").asmSelect({
-                    addItemTarget: 'bottom',
-                    animate: true,
-                    highlight: true,
-                    sortable: false
-            });
-    });
-</script>
 
 <form method="post" action="/accounts/newsubmission/" enctype="multipart/form-data">{% csrf_token %}
 {% for form in forms %}

@@ -3,7 +3,7 @@
 from opentrials.repository.trds_forms import ReviewModelForm
 from opentrials.reviewapp.models import Remark
 from opentrials.reviewapp.models import UserProfile
-from opentrials.reviewapp.models import Attachment
+from opentrials.reviewapp.models import Attachment, Submission
 from django import forms
 from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
@@ -17,13 +17,18 @@ ACCESS = [
 ]
 
 
-class InitialTrialForm(forms.Form):
+class InitialTrialForm(ReviewModelForm):
+    class Meta:
+        model = Submission
+        exclude = ['primary_sponsor', 'trial', 'status', 'staff_note', 'title']
+        
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user', None)
         super(InitialTrialForm, self).__init__(*args, **kwargs)
         if self.user:
             self.fields['language'] = forms.ChoiceField(label=_('Submission language'), 
-                        choices=settings.MANAGED_LANGUAGES_CHOICES, initial=self.user.get_profile().preferred_language)
+                        choices=settings.MANAGED_LANGUAGES_CHOICES, 
+                        initial=self.user.get_profile().preferred_language)
             
     form_title = _('Initial Trial Data')
     scientific_title = forms.CharField(widget=forms.Textarea, 
@@ -35,7 +40,7 @@ class InitialTrialForm(forms.Form):
     language = forms.ChoiceField(label=_('Submission language'), 
                                  choices=settings.MANAGED_LANGUAGES_CHOICES)
     
-class PrimarySponsorForm(forms.ModelForm):
+class PrimarySponsorForm(ReviewModelForm):
     class Meta:
         model = Institution
         exclude = ['address']
