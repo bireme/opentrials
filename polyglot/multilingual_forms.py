@@ -72,7 +72,12 @@ class BaseMultilingualWidget(forms.Widget):
         # Creates and renders widgets
         wargs = self.get_widget_args()
         widgets, rendereds = [], []
-        for lang,label in settings.MANAGED_LANGUAGES_CHOICES:
+
+        # Sorts the languages list with priority to display language first
+        ordered_languages = ([lang for lang in settings.MANAGED_LANGUAGES_CHOICES if lang[0] == self.display_language] +
+                             [lang for lang in settings.MANAGED_LANGUAGES_CHOICES if lang[0] != self.display_language])
+
+        for lang,label in ordered_languages:
             lang = lang.lower()
             widget = self.widget_class(**wargs)
             widgets.append(widget)
@@ -240,11 +245,13 @@ class MultilingualBaseForm(forms.ModelForm):
                 self.fields[field_name].instance = self.instance
                 self.fields[field_name].default_second_language = self.default_second_language
                 self.fields[field_name].available_languages = self.available_languages
+                self.fields[field_name].display_language = self.display_language
 
                 # Widget
                 self.fields[field_name].widget.instance = self.instance
                 self.fields[field_name].widget.default_second_language = self.default_second_language
                 self.fields[field_name].widget.available_languages = self.available_languages
+                self.fields[field_name].widget.display_language = self.display_language
 
                 if self.data:
                     self.fields[field_name].widget.form_data = self.data
