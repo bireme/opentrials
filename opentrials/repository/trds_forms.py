@@ -80,10 +80,13 @@ class ReviewModelForm(MultilingualBaseForm):
                     help_text = FieldHelpTranslation.objects.get_translation_for_object(
                         lang=self.display_language, model=FieldHelp, object_id=help_record.pk,
                         ).text
+
+                    if not help_text.strip():
+                        help_text = unicode(help_record)
                 except (FieldHelpTranslation.DoesNotExist, AttributeError):
                     help_text = help_record.text
 
-                help_text = help_text + u' ' + force_unicode(help_record)
+                help_text = help_text + u' ' + force_unicode(help_text)
                 help_text = linebreaksbr(help_text_html % help_text)
                 output.append(normal_row % {'errors': force_unicode(bf_errors),
                                             'label': force_unicode(label),
