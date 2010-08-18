@@ -1,6 +1,6 @@
 #coding: utf-8
 
-from assistance.models import FieldHelp
+from assistance.models import FieldHelp, FieldHelpTranslation
 from vocabulary.models import CountryCode
 from repository.models import ClinicalTrial, Contact, Descriptor, Institution
 from repository.models import InterventionCode, Outcome, RecruitmentStatus
@@ -74,6 +74,15 @@ class ReviewModelForm(MultilingualBaseForm):
                 form_name = self.__class__.__name__
                 #import pdb; pdb.set_trace()
                 help_record, new = FieldHelp.objects.get_or_create(form=form_name, field=name)
+
+                # Trying to get the translation for help_record
+                try:
+                    help_text = FieldHelpTranslation.objects.get_translation_for_object(
+                        lang=self.display_language, model=FieldHelp, object_id=help_record.pk,
+                        ).text
+                except (FieldHelpTranslation.DoesNotExist, AttributeError):
+                    help_text = help_record.text
+
                 help_text = help_text + u' ' + force_unicode(help_record)
                 help_text = linebreaksbr(help_text_html % help_text)
                 output.append(normal_row % {'errors': force_unicode(bf_errors),
