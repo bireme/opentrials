@@ -110,6 +110,18 @@ Now getting translation for the object "page1"
     >>> bool(trans1)
     False
 
+The function 'get_translation_for_object' gets a translation object and stores in cache,
+so, when called again, it will save database calls and get directly using the Django's
+cache system.
+
+    >>> key = Translation.objects.make_cache_key(model=FlatPageTranslation, object_id=page1.pk, lang='pt-br')
+    >>> key
+    'polyglot:translation:temporary_test.FlatPageTranslation|1|pt-br'
+
+    >>> from django.core.cache import cache
+    >>> isinstance(cache.get(key), FlatPageTranslation)
+    True
+
 Multilingual fields
 -------------------
 
