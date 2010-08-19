@@ -101,7 +101,7 @@ class ReviewModelForm(MultilingualBaseForm):
                                             'field_class': field_status,
                                             })
         
-        # if necessary, updates the count of repetitive forms rendered
+        # if necessary, updates the count of rendered repetitive forms
         if hasattr(self.Meta,'min_required'):
             if hasattr(self.Meta,'count'):
                 self.Meta.count = self.Meta.count + 1
