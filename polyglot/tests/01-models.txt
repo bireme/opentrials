@@ -1,0 +1,117 @@
+MODELS
+======
+
+    >>> from django.db import models
+    >>> from django.contrib.contenttypes.models import ContentType
+    >>> from djangoplus.test_utils import model_has_fields, is_model_class_fk, is_field_type, is_model_pk
+
+Translation
+-----------
+
+Translation is a simple model class to be used as just an abstraction, what means you must
+extend it to be used.
+
+    >>> from polyglot.models import Translation
+    >>> Translation._meta.abstract
+    True
+
+Fields are just a language code (i.e.: pt-br, en, es, etc.), the generic related content type
+relation and the object ID.
+
+    >>> model_has_fields(Translation, ('language','content_type','object_id',))
+    []
+
+To be used as more generic as possible, object ID should be a CharField, not a PositiveIntegerField
+
+    >>> #is_field_type(Translation, 'object_id', models.CharField, max_length=100, db_index=True)
+    True
+
+There must have a unique together index to make sure there is only a translation for a language +
+a content type + an object ID
+
+    >>> ('content_type','object_id','language') in Translation._meta.unique_together
+    True
+
+    >>> is_model_class_fk(Translation, 'content_type', ContentType)
+    True
+
+    >>> from django.contrib.contenttypes import generic
+    >>> isinstance(Translation.content_object, generic.GenericForeignKey)
+    True
+
+Using and extending Translation
+-------------------------------
+
+    >>> from django.contrib.flatpages.models import FlatPage
+
+    >>> class FlatPageTranslation(Translation):
+    ...     class Meta:
+    ...         app_label = 'temporary_test'
+    ...     title = models.CharField(max_length=255, blank=True)
+    ...     content = models.TextField(max_length=2000, blank=True)
+
+The related class has an attribute 'translations' with a generic relation to our translation subclass
+
+    >>> FlatPage.translations = generic.GenericRelation('FlatPageTranslation')
+
+Create the table in database
+
+    >>> from django.db import connection
+    >>> from django.core.management.color import no_style
+
+    >>> cursor = connection.cursor()
+    >>> style = no_style()
+    >>> tables = connection.introspection.table_names()
+    >>> seen_models = connection.introspection.installed_models(tables)
+    >>> sql, references = connection.creation.sql_create_model(FlatPageTranslation, style, seen_models)
+
+    >>> pending_references = {}
+    >>> for refto, refs in references.items():
+    ...     pending_references.setdefault(refto, []).extend(refs)
+    ...     if refto in seen_models:
+    ...         sql.extend(connection.creation.sql_for_pending_references(refto, style, pending_references))
+    >>> sql.extend(connection.creation.sql_for_pending_references(FlatPageTranslation, style, pending_references))
+    >>> for statement in sql:
+    ...     cursor.execute(statement)
+
+Test table created with successful
+
+    >>> FlatPageTranslation.objects.count()
+    0
+
+Creating a flat page as the original object to be translated
+
+    >>> page1 = FlatPage.objects.create(title='About', content='This is a page about our institute.')
+
+Now translating the object "page1"
+
+    >>> trans1 = FlatPageTranslation()
+    >>> trans1.language = 'pt-br'
+    >>> trans1.content_object = page1
+    >>> trans1.title = 'Sobre'
+    >>> trans1.content = u'Esta é uma página sobre nosso instituto.'
+    >>> trans1.save()
+
+TranslationManager
+------------------
+
+    >>> from polyglot.models import TranslationManager
+
+    >>> isinstance(Translation.objects, TranslationManager)
+    True
+
+Now getting translation for the object "page1"
+
+    >>> trans1 = Translation.objects.get_translation_for_object(lang='pt-br', obj=page1)
+    >>> trans1.language == 'pt-br'
+    True
+
+    >>> trans1 = Translation.objects.get_translation_for_object(lang='es', obj=page1)
+    >>> bool(trans1)
+    False
+
+Multilingual fields
+-------------------
+
+    >>> from polyglot.models import get_multilingual_fields
+
