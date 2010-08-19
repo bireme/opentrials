@@ -54,7 +54,13 @@ class ReviewModelForm(MultilingualBaseForm):
                         if label[-1] not in ':?.!':
                             label += self.label_suffix
                     # Sets label with an asterisk if this is a obligatory field according to to validation rules
-                    if trial_validator.field_is_required(self, name):
+                    if hasattr(self.Meta,'min_required'):
+                        if not hasattr(self.Meta,'count'):
+                            self.Meta.count = 0
+                        if self.Meta.min_required > 0 and self.Meta.count < self.Meta.min_required:
+                            if name != 'DELETE':
+                                label = '* ' + label
+                    elif trial_validator.field_is_required(self, name):
                         label = '* ' + label
                     label = bf.label_tag(label) or ''
                 else:
@@ -72,7 +78,6 @@ class ReviewModelForm(MultilingualBaseForm):
                 else:
                     help_text = u''
                 form_name = self.__class__.__name__
-                #import pdb; pdb.set_trace()
                 help_record, new = FieldHelp.objects.get_or_create(form=form_name, field=name)
 
                 # Trying to get the translation for help_record
@@ -95,6 +100,12 @@ class ReviewModelForm(MultilingualBaseForm):
                                             'help_id': 'id_%s-help%s' % ((self.prefix or name),help_record.pk),
                                             'field_class': field_status,
                                             })
+        
+        # if necessary, updates the count of repetitive forms rendered
+        if hasattr(self.Meta,'min_required'):
+            if hasattr(self.Meta,'count'):
+                self.Meta.count = self.Meta.count + 1
+
         if top_errors:
             output.insert(0, error_row % force_unicode(top_errors))
         if hidden_fields: # Insert any hidden fields in the last row.
