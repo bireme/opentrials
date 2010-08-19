@@ -17,14 +17,14 @@
             <thead>
                 <tr>
                     <th colspan="3">
-                      <a href="{% url repository.trialview ct.id %}">{{ ct.main_title }}</a>
+                      <a href="{% url repository.trial_registered ct.trial_id %}">{{ ct.main_title }}</a>
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td width="33%">{% trans 'Primary Id Number' %}: 
-                    <a href="{% url repository.trialview ct.id %}">{{ ct.trial_id }}</a></td>
+                    <a href="{% url repository.trial_registered ct.trial_id %}">{{ ct.trial_id }}</a></td>
                     <td width="33%">{% trans 'Recruitment Status' %}: {{ ct.recruitment_status }}</td>
                     <td width="33%">{% trans 'Date of Registration' %}: {{ ct.date_registration }}</td>
                 </tr>
@@ -57,6 +57,6 @@
         {% endif %}
 
     {% else %}
-        <p>{% trans 'No clinical trials have been published.' %}.</p>
+        <p>{% trans 'No clinical trials have been registered.' %}.</p>
     {% endif %}
 {% endblock %}
