@@ -95,6 +95,7 @@ INSTALLED_APPS = (
     'rosetta',
     'registration',  # django-registration package
     'south',
+    'django_nose',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =(
@@ -152,6 +153,12 @@ PAGINATOR_CT_PER_PAGE = 10
 
 JQUERY_URL = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
 JQUERY_UI_URL = 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js'
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+NOSE_ARGS = ['--with-coverage', '--with-doctest', '--doctest-tests', '--doctest-extension=txt'] # --doctest-fixtures, --with-profile
+#NOSE_PLUGINS = []
+SKIP_SOUTH_TESTS = True
+SOUTH_TESTS_MIGRATE = False
 
 ### END Clinical Trials Repository customization settings
 #################################################################
