@@ -26,6 +26,10 @@ Dependencies
 - django-rosetta
 - south
 
+We suggest you read a more detailed page at:
+
+    http://reddes.bvsalud.org/projects/clinical-trials/wiki/HowToInstall
+
 zc.buildout
 -----------
 
