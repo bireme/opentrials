@@ -1,0 +1,43 @@
+FORMS
+=====
+
+Here are functionalities to make multilingual forms, and their fields and widgets.
+
+A multilingual form is a form that supports multilingual fields.
+
+    >>> from polyglot.multilingual_forms import MultilingualBaseForm
+    >>> from django.contrib.flatpages.models import FlatPage
+
+    >>> class FlatPageForm(MultilingualBaseForm):
+    ...     class Meta:
+    ...         model = FlatPage
+
+    >>> form = FlatPageForm()
+    >>> form.fields.keys()
+    ['url', 'title', 'content', 'enable_comments', 'template_name', 'registration_required', 'sites']
+
+    >>> form.multilingual_fields
+    ['title', 'content']
+
+The multilingual fields are collected from model class using a function...
+
+    >>> from polyglot.models import get_multilingual_fields
+
+    >>> get_multilingual_fields(FlatPage)
+    ['title', 'content']
+
+Once that form is instanciated, you must inform what languages are available, what is the
+default second language and what is the language to display information.
+
+English is aways the main language, that field values are stored in table fields.
+
+The other languages are stored in a Translation subclass.
+
+A multilingual field is associated to a multilingual widget.
+
+There are multilingual fields you can inform the same value for many available languages.
+
+There are multilingual fields you can show a select with choices.
+
+Multilingual formset is a formset with many multilingual forms.
+

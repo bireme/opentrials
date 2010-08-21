@@ -1,6 +1,7 @@
 MODELS
 ======
 
+    >>> import re
     >>> from django.db import models
     >>> from django.contrib.contenttypes.models import ContentType
     >>> from djangoplus.test_utils import model_has_fields, is_model_class_fk, is_field_type, is_model_pk
@@ -23,7 +24,7 @@ relation and the object ID.
 
 To be used as more generic as possible, object ID should be a CharField, not a PositiveIntegerField
 
-    >>> #is_field_type(Translation, 'object_id', models.CharField, max_length=100, db_index=True)
+    >>> is_field_type(Translation, 'object_id', models.CharField, max_length=100, db_index=True)
     True
 
 There must have a unique together index to make sure there is only a translation for a language +
@@ -43,36 +44,16 @@ Using and extending Translation
 -------------------------------
 
     >>> from django.contrib.flatpages.models import FlatPage
-
-    >>> class FlatPageTranslation(Translation):
-    ...     class Meta:
-    ...         app_label = 'temporary_test'
-    ...     title = models.CharField(max_length=255, blank=True)
-    ...     content = models.TextField(max_length=2000, blank=True)
+    >>> from polyglot.tests.test_models import FlatPageTranslation, create_flatpage_translation_table
 
 The related class has an attribute 'translations' with a generic relation to our translation subclass
 
-    >>> FlatPage.translations = generic.GenericRelation('FlatPageTranslation')
+    >>> isinstance(FlatPage.translations, generic.GenericRelation)
+    True
 
 Create the table in database
 
-    >>> from django.db import connection
-    >>> from django.core.management.color import no_style
-
-    >>> cursor = connection.cursor()
-    >>> style = no_style()
-    >>> tables = connection.introspection.table_names()
-    >>> seen_models = connection.introspection.installed_models(tables)
-    >>> sql, references = connection.creation.sql_create_model(FlatPageTranslation, style, seen_models)
-
-    >>> pending_references = {}
-    >>> for refto, refs in references.items():
-    ...     pending_references.setdefault(refto, []).extend(refs)
-    ...     if refto in seen_models:
-    ...         sql.extend(connection.creation.sql_for_pending_references(refto, style, pending_references))
-    >>> sql.extend(connection.creation.sql_for_pending_references(FlatPageTranslation, style, pending_references))
-    >>> for statement in sql:
-    ...     cursor.execute(statement)
+    >>> create_flatpage_translation_table()
 
 Test table created with successful
 
@@ -102,11 +83,11 @@ TranslationManager
 
 Now getting translation for the object "page1"
 
-    >>> trans1 = Translation.objects.get_translation_for_object(lang='pt-br', obj=page1)
+    >>> trans1 = FlatPageTranslation.objects.get_translation_for_object(lang='pt-br', obj=page1)
     >>> trans1.language == 'pt-br'
     True
 
-    >>> trans1 = Translation.objects.get_translation_for_object(lang='es', obj=page1)
+    >>> trans1 = FlatPageTranslation.objects.get_translation_for_object(lang='es', obj=page1)
     >>> bool(trans1)
     False
 
@@ -114,16 +95,11 @@ The function 'get_translation_for_object' gets a translation object and stores i
 so, when called again, it will save database calls and get directly using the Django's
 cache system.
 
-    >>> key = Translation.objects.make_cache_key(model=FlatPageTranslation, object_id=page1.pk, lang='pt-br')
-    >>> key
-    'polyglot:translation:temporary_test.FlatPageTranslation|1|pt-br'
+    >>> key = FlatPageTranslation.objects.make_cache_key(model=FlatPageTranslation, object_id=page1.pk, lang='pt-br')
+    >>> bool(re.match('polyglot:translation:temporary_test.FlatPageTranslation|\d+|pt-br', key))
+    True
 
     >>> from django.core.cache import cache
     >>> isinstance(cache.get(key), FlatPageTranslation)
     True
-
-Multilingual fields
--------------------
-
-    >>> from polyglot.models import get_multilingual_fields
 
