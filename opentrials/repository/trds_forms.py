@@ -7,7 +7,7 @@ from repository.models import InterventionCode, Outcome, RecruitmentStatus
 from repository.models import StudyPhase, TrialSecondarySponsor, TrialSupportSource
 from repository.models import SiteContact, PublicContact, ScientificContact
 from repository.models import TrialNumber
-from repository.widgets import SelectWithLink
+from repository.widgets import SelectWithLink, SelectInstitution
 
 import choices
 
@@ -514,7 +514,7 @@ trial_validator.register(TRIAL_FORMS[7], [make_public_contact_form(),make_scient
 #step8-partof
 # http://www.b-list.org/weblog/2008/nov/09/dynamic-forms/
 # http://stackoverflow.com/questions/622982/django-passing-custom-form-parameters-to-formset
-def make_contact_form(user):
+def make_contact_form(user,formset_prefix=''):
     class ContactForm(ReviewModelForm):
         class Meta:
             model = Contact
@@ -534,7 +534,8 @@ def make_contact_form(user):
         email = forms.EmailField(label=_('E-mail'), max_length=255)
 
         affiliation = forms.ModelChoiceField(queryset=Institution.objects.filter(creator=user).order_by('name'),
-                                             label=_('Institution'))
+                                             label=_('Institution'),
+                                             widget=SelectInstitution(formset_prefix=formset_prefix))
 
         address = forms.CharField(label=_('Address'), max_length=255,required=False, 
                                   widget=forms.TextInput(attrs={'style': 'width:400px;'}))
