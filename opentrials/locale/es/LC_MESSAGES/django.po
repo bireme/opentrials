@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-23 12:11+0000\n"
+"POT-Creation-Date: 2010-08-23 12:42+0000\n"
 "PO-Revision-Date: 2010-06-25 19:07\n"
 "Last-Translator: <a@b.cd>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: repository/models.py:423 repository/models.py:431 repository/models.py:457
 #: repository/trds_forms.py:220 repository/trds_forms.py:237
-#: repository/trds_forms.py:524
+#: repository/trds_forms.py:537
 #: repository/templates/repository/clinicaltrial_detail.html:183
 #: repository/templates/repository/clinicaltrial_detail.html:195
 msgid "Institution"
@@ -522,46 +522,46 @@ msgid "Postal Address"
 msgstr ""
 
 #: repository/models.py:441 repository/models.py:461
-#: repository/trds_forms.py:531 reviewapp/models.py:143
+#: repository/trds_forms.py:544 reviewapp/models.py:143
 msgid "Country"
 msgstr ""
 
-#: repository/models.py:452 repository/trds_forms.py:517
+#: repository/models.py:452 repository/trds_forms.py:530
 msgid "First Name"
 msgstr ""
 
-#: repository/models.py:453 repository/trds_forms.py:518
+#: repository/models.py:453 repository/trds_forms.py:531
 msgid "Middle Name"
 msgstr ""
 
-#: repository/models.py:454 repository/trds_forms.py:519
+#: repository/models.py:454 repository/trds_forms.py:532
 msgid "Last Name"
 msgstr ""
 
-#: repository/models.py:455 repository/trds_forms.py:521
+#: repository/models.py:455 repository/trds_forms.py:534
 #: reviewapp/forms.py:101
 msgid "E-mail"
 msgstr "E-mail"
 
-#: repository/models.py:458 repository/trds_forms.py:526
+#: repository/models.py:458 repository/trds_forms.py:539
 #: repository/templates/repository/clinicaltrial_detail.html:527
 #: repository/templates/repository/clinicaltrial_detail.html:575
 #: repository/templates/repository/clinicaltrial_detail.html:624
 msgid "Address"
 msgstr ""
 
-#: repository/models.py:459 repository/trds_forms.py:528
+#: repository/models.py:459 repository/trds_forms.py:541
 #: repository/templates/repository/clinicaltrial_detail.html:531
 #: repository/templates/repository/clinicaltrial_detail.html:579
 #: repository/templates/repository/clinicaltrial_detail.html:628
 msgid "City"
 msgstr "Ciudad"
 
-#: repository/models.py:462 repository/trds_forms.py:533
+#: repository/models.py:462 repository/trds_forms.py:546
 msgid "Postal Code"
 msgstr "Código Postal"
 
-#: repository/models.py:463 repository/trds_forms.py:534
+#: repository/models.py:463 repository/trds_forms.py:547
 #: repository/templates/repository/clinicaltrial_detail.html:541
 #: repository/templates/repository/clinicaltrial_detail.html:589
 #: repository/templates/repository/clinicaltrial_detail.html:638
@@ -569,8 +569,9 @@ msgid "Telephone"
 msgstr "Teléfono"
 
 #: repository/models.py:476 repository/models.py:489 repository/models.py:502
-#: repository/trds_forms.py:454 repository/trds_forms.py:472
-#: repository/trds_forms.py:491 repository/trds_forms.py:495
+#: repository/trds_forms.py:454 repository/trds_forms.py:458
+#: repository/trds_forms.py:477 repository/trds_forms.py:481
+#: repository/trds_forms.py:503 repository/trds_forms.py:507
 #: templates/base.html:111
 msgid "Contact"
 msgstr "Contacto"
@@ -730,31 +731,38 @@ msgstr ""
 msgid "Contact(s) for Public Queries"
 msgstr ""
 
-#: repository/trds_forms.py:449 repository/trds_forms.py:467
-#: repository/trds_forms.py:485
+#: repository/trds_forms.py:449 repository/trds_forms.py:472
+#: repository/trds_forms.py:497
 #, fuzzy
 msgid "Relation"
 msgstr "Afiliación"
 
-#: repository/trds_forms.py:466
+#: repository/trds_forms.py:455 repository/trds_forms.py:459
+#: repository/trds_forms.py:478 repository/trds_forms.py:482
+#: repository/trds_forms.py:504 repository/trds_forms.py:508
+#, fuzzy
+msgid "New Contact"
+msgstr "Contacto"
+
+#: repository/trds_forms.py:471
 msgid "Contact(s) for Scientific Queries"
 msgstr ""
 
-#: repository/trds_forms.py:484
+#: repository/trds_forms.py:496
 #: repository/templates/repository/clinicaltrial_detail.html:614
 msgid "Contact(s) for Site Queries"
 msgstr ""
 
-#: repository/trds_forms.py:511
+#: repository/trds_forms.py:524
 #, fuzzy
 msgid "Contact Type"
 msgstr "Contacto"
 
-#: repository/trds_forms.py:515
+#: repository/trds_forms.py:528
 msgid "New Contact(s)"
 msgstr ""
 
-#: repository/trds_forms.py:542 repository/templates/repository/step_2.html:23
+#: repository/trds_forms.py:555 repository/templates/repository/step_2.html:23
 #: repository/templates/repository/step_8.html:26
 msgid "New Institution"
 msgstr "Nueva Institución"
