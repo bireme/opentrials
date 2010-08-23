@@ -53,7 +53,7 @@
 
         {% for formset in formsets %}
             {{ formset.management_form }}
-            <fieldset>
+            <fieldset id="{{formset.management_form.prefix}}">
             <legend>{{ formset.form.title }}</legend>
 
 

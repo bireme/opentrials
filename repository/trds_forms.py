@@ -7,6 +7,7 @@ from repository.models import InterventionCode, Outcome, RecruitmentStatus
 from repository.models import StudyPhase, TrialSecondarySponsor, TrialSupportSource
 from repository.models import SiteContact, PublicContact, ScientificContact
 from repository.models import TrialNumber
+from repository.widgets import SelectWithLink
 
 import choices
 
@@ -450,7 +451,12 @@ def make_public_contact_form(user=None):
                                    widget=forms.HiddenInput)
         if user:
             contact = forms.ModelChoiceField(queryset=Contact.objects.filter(creator=user).order_by('firstname', 'middlename', 'lastname'),
-                                                 label=_('Contact'))
+                                             label=_('Contact'),
+                                             widget=SelectWithLink(link='#new_contact', text=_('New Contact')))
+        else:
+            contact = forms.ModelChoiceField(queryset=Contact.objects.all(),
+                                             label=_('Contact'),
+                                             widget=SelectWithLink(link='#new_contact', text=_('New Contact')))
     return PublicContactForm
 
 def make_scientifc_contact_form(user=None):
@@ -468,7 +474,14 @@ def make_scientifc_contact_form(user=None):
                                    widget=forms.HiddenInput)
         if user:
             contact = forms.ModelChoiceField(queryset=Contact.objects.filter(creator=user).order_by('firstname', 'middlename', 'lastname'),
-                                                 label=_('Contact'))
+                                             label=_('Contact'),
+                                             widget=SelectWithLink(link='#new_contact', text=_('New Contact')))
+        else:
+            contact = forms.ModelChoiceField(queryset=Contact.objects.all(),
+                                             label=_('Contact'),
+                                             widget=SelectWithLink(link='#new_contact', text=_('New Contact')))
+
+            
     return ScientificContactForm
 
 def make_site_contact_form(user=None):
@@ -484,9 +497,16 @@ def make_site_contact_form(user=None):
         relation = forms.CharField(label=_('Relation'), 
                                    initial=choices.CONTACT_RELATION[2][0],
                                    widget=forms.HiddenInput)
+                                   
         if user:
             contact = forms.ModelChoiceField(queryset=Contact.objects.filter(creator=user).order_by('firstname', 'middlename', 'lastname'),
-                                                 label=_('Contact'))
+                                             label=_('Contact'),
+                                             widget=SelectWithLink(link='#new_contact', text=_('New Contact')))
+        else:
+            contact = forms.ModelChoiceField(queryset=Contact.objects.all(),
+                                             label=_('Contact'),
+                                             widget=SelectWithLink(link='#new_contact', text=_('New Contact')))
+            
     return SiteContactForm
 
 trial_validator.register(TRIAL_FORMS[7], [make_public_contact_form(),make_scientifc_contact_form(),make_scientifc_contact_form()])
@@ -500,7 +520,7 @@ def make_contact_form(user):
             model = Contact
             
         def __init__(self, *args, **kwargs):
-            super(ReviewModelForm, self).__init__(*args, **kwargs)
+            super(ContactForm, self).__init__(*args, **kwargs)
             self.fields.insert(0, 'relation', forms.ChoiceField(label=_('Contact Type'), 
                                    widget=forms.RadioSelect,
                                    choices=choices.CONTACT_RELATION))
