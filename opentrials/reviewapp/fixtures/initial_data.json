@@ -208,17 +208,91 @@
     }
   }, 
   {
+    "pk": 27, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 27, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 28, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 29, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 30, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "reviewapp.userprofile", 
+    "fields": {
+      "user": 31, 
+      "preferred_language": "pt-BR"
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-08-23 20:06:54", 
+      "language": "pt-BR", 
+      "title": "Tratamento com selenio e Cardiopatia Chag\u00e1sica(CCTE): um ensaio cl\u00ednico prospectivo aleatorizado em pacientes do doen\u00e7a de Chagas", 
+      "created": "2010-08-20 13:00:35", 
+      "trial": 33, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Attachments'\np3\nI3\nssVpt-br\np4\n(dp5\ng3\nI3\nss.", 
+      "staff_note": "", 
+      "creator": 11, 
+      "primary_sponsor": 43
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "reviewapp.submission", 
+    "fields": {
+      "status": "draft", 
+      "updated": "2010-08-23 20:33:18", 
+      "language": "pt-BR", 
+      "title": "x", 
+      "created": "2010-07-31 00:09:37", 
+      "trial": 32, 
+      "updater": null, 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI3\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
+      "staff_note": "", 
+      "creator": 7, 
+      "primary_sponsor": 42
+    }
+  }, 
+  {
     "pk": 31, 
     "model": "reviewapp.submission", 
     "fields": {
       "status": "approved", 
-      "updated": "2010-07-23 12:25:39", 
+      "updated": "2010-08-23 20:33:16", 
       "language": "pt-BR", 
       "title": "Ensaio cl\u00ednico randomizado para avaliar a efic\u00e1cia e seguran\u00e7a do uso concomitante de rifampicina e 600 X Efavirenz 800mg (EFV-IPEC)", 
       "created": "2010-07-19 20:36:14", 
       "trial": 31, 
       "updater": 1, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI4\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI3\nsS'Health Conditions'\np7\nI4\nsS'Study Type'\np8\nI4\nsS'Interventions'\np9\nI4\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI4\nssVpt-br\np12\n(dp13\ng3\nI4\nsg4\nI3\nsg5\nI3\nsg6\nI3\nsg7\nI4\nsg8\nI2\nsg9\nI4\nsg10\nI3\nsg11\nI4\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI4\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI3\nsS'Health Conditions'\np7\nI4\nsS'Study Type'\np8\nI4\nsS'Interventions'\np9\nI4\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI4\nssVpt-br\np12\n(dp13\ng3\nI4\nsg4\nI3\nsg5\nI3\nsg6\nI3\nsg7\nI4\nsg8\nI2\nsg9\nI4\nsg10\nI3\nsg11\nI4\nss.", 
       "staff_note": "", 
       "creator": 14, 
       "primary_sponsor": 39
@@ -229,13 +303,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:39", 
+      "updated": "2010-08-23 20:33:13", 
       "language": "pt-BR", 
       "title": "titulo10", 
       "created": "2010-07-16 19:32:32", 
       "trial": 30, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI3\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI4\nsg10\nI3\nsg11\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI3\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI4\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 7, 
       "primary_sponsor": 37
@@ -246,13 +320,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "pending", 
-      "updated": "2010-07-23 12:25:40", 
+      "updated": "2010-08-23 20:33:11", 
       "language": "en", 
       "title": "RCT of Antioxidant Therapy to Prevent Preeclampsia in Brazil", 
       "created": "2010-07-13 19:07:15", 
       "trial": 29, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI3\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI3\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI3\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI3\nss.", 
       "staff_note": "", 
       "creator": 5, 
       "primary_sponsor": 36
@@ -263,13 +337,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "pending", 
-      "updated": "2010-07-23 12:25:39", 
+      "updated": "2010-08-23 20:33:08", 
       "language": "pt-BR", 
       "title": "The Efficacy of Hand NBUVB Versus Excilite Treatment in Vitiligo After Minigrafting on the Dorsal Hands", 
       "created": "2010-07-07 12:47:53", 
       "trial": 28, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI4\nsS'Health Conditions'\np7\nI4\nsS'Study Type'\np8\nI4\nsS'Interventions'\np9\nI4\nsS'Sponsors'\np10\nI4\nsS'Outcomes'\np11\nI4\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI3\nsg5\nI3\nsg6\nI4\nsg7\nI4\nsg8\nI4\nsg9\nI4\nsg10\nI4\nsg11\nI4\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI4\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI4\nsS'Health Conditions'\np7\nI4\nsS'Study Type'\np8\nI4\nsS'Interventions'\np9\nI4\nsS'Sponsors'\np10\nI4\nsS'Outcomes'\np11\nI4\nssVpt-br\np12\n(dp13\ng3\nI4\nsg4\nI3\nsg5\nI3\nsg6\nI4\nsg7\nI4\nsg8\nI4\nsg9\nI4\nsg10\nI4\nsg11\nI4\nss.", 
       "staff_note": "", 
       "creator": 11, 
       "primary_sponsor": 34
@@ -280,13 +354,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:30:07", 
+      "updated": "2010-08-23 20:33:06", 
       "language": "pt-BR", 
       "title": "Teste 30/jun", 
       "created": "2010-06-30 13:27:51", 
       "trial": 27, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI3\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI3\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 1, 
       "primary_sponsor": 33
@@ -297,13 +371,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "pending", 
-      "updated": "2010-07-23 12:25:40", 
+      "updated": "2010-08-23 20:33:04", 
       "language": "pt-BR", 
       "title": "Avalia\u00e7\u00e3o do Benznidazol para interrup\u00e7\u00e3o da tripanosom\u00edase \u2013 ensaio BENEFIT", 
       "created": "2010-06-30 11:25:32", 
       "trial": 26, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI4\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI4\nsS'Study Type'\np8\nI4\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI4\nssVpt-br\np12\n(dp13\ng3\nI4\nsg4\nI3\nsg5\nI3\nsg6\nI2\nsg7\nI4\nsg8\nI4\nsg9\nI2\nsg10\nI3\nsg11\nI4\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI4\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI4\nsS'Study Type'\np8\nI4\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI4\nssVpt-br\np12\n(dp13\ng3\nI4\nsg4\nI3\nsg5\nI3\nsg6\nI2\nsg7\nI4\nsg8\nI4\nsg9\nI2\nsg10\nI3\nsg11\nI4\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 11, 
       "primary_sponsor": 32
@@ -314,13 +388,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:33:01", 
       "language": "pt-BR", 
       "title": "titulo cientifico teste", 
       "created": "2010-06-29 14:08:33", 
       "trial": 25, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI3\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI4\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI3\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI4\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 12, 
       "primary_sponsor": 30
@@ -331,13 +405,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "approved", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:59", 
       "language": "pt-BR", 
       "title": "Efficacy Study of Pioglitazone Compared to Glimepiride on Coronary Atherosclerotic Disease Progression in Subjects With Type 2 Diabetes Mellitus (PERISCOPE)", 
       "created": "2010-06-22 10:41:42", 
       "trial": 24, 
       "updater": 1, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI4\nsS'Trial Identification'\np4\nI1\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI3\nsS'Health Conditions'\np7\nI1\nsS'Study Type'\np8\nI4\nsS'Interventions'\np9\nI4\nsS'Sponsors'\np10\nI1\nsS'Outcomes'\np11\nI4\nssVpt-br\np12\n(dp13\ng3\nI4\nsg4\nI1\nsg5\nI3\nsg6\nI3\nsg7\nI1\nsg8\nI4\nsg9\nI4\nsg10\nI1\nsg11\nI4\nssVes\np14\n(dp15\ng3\nI2\nsg8\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI4\nsS'Trial Identification'\np4\nI1\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI4\nsS'Health Conditions'\np7\nI1\nsS'Study Type'\np8\nI4\nsS'Interventions'\np9\nI4\nsS'Sponsors'\np10\nI1\nsS'Outcomes'\np11\nI4\nssVpt-br\np12\n(dp13\ng3\nI4\nsg4\nI1\nsg5\nI3\nsg6\nI4\nsg7\nI1\nsg8\nI4\nsg9\nI4\nsg10\nI1\nsg11\nI4\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI1\nsg5\nI3\nsg6\nI4\nsg7\nI1\nsg8\nI2\nsg9\nI2\nsg10\nI1\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 17, 
       "primary_sponsor": 28
@@ -348,13 +422,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "pending", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:56", 
       "language": "pt-BR", 
       "title": "t\u00edtulo em ingl\u00eas", 
       "created": "2010-06-21 21:26:44", 
       "trial": 23, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI4\nsS'Attachments'\np5\nI4\nsS'Contacts'\np6\nI4\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI4\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI4\nsS'Outcomes'\np11\nI4\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI3\nsg8\nI4\nsg7\nI2\nsg9\nI4\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI4\nsS'Attachments'\np5\nI4\nsS'Contacts'\np6\nI4\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI4\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI4\nsS'Outcomes'\np11\nI4\nss.", 
       "staff_note": "", 
       "creator": 7, 
       "primary_sponsor": 27
@@ -365,13 +439,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:54", 
       "language": "en", 
       "title": "\u201cEstudo TEAM (Efic\u00e1cia do Tasigna em Melanoma Avan\u00e7ado): Estudo fase III, de dois bra\u00e7os, randomizado, aberto e multic\u00eantrico para comparar a efic\u00e1cia de Tasigna\u00ae versus dacarbazina (DTIC) no tratamento de pacientes com melanoma metast\u00e1tico e/ou inoper\u00e1vel contendo uma muta\u00e7\u00e3o do c-Kit\u201d", 
       "created": "2010-06-21 20:35:22", 
       "trial": 22, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI4\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI4\nsg7\nI4\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI4\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI4\nsg7\nI4\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 19, 
       "primary_sponsor": 26
@@ -382,7 +456,7 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:52", 
       "language": "en", 
       "title": "teste", 
       "created": "2010-06-21 13:55:07", 
@@ -399,13 +473,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:50", 
       "language": "en", 
       "title": "A Phase II Study of Single-Agent Lenalidomide in Subjects With Relapsed Or Refractory T-Cell Non-Hodgkin's Lymphoma (EXPECT)", 
       "created": "2010-06-18 19:16:12", 
       "trial": 20, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI2\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI4\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI3\nsg8\nI2\nsg7\nI4\nsg9\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI2\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI4\nsS'Outcomes'\np11\nI2\nss.", 
       "staff_note": "", 
       "creator": 7, 
       "primary_sponsor": 22
@@ -416,7 +490,7 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:47", 
       "language": "en", 
       "title": "hghjghjghjhj", 
       "created": "2010-06-17 19:26:29", 
@@ -433,13 +507,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:44", 
       "language": "pt-BR", 
       "title": "fdfdfdfdf", 
       "created": "2010-06-17 19:23:02", 
       "trial": 18, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI4\nsg4\nI3\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 16, 
       "primary_sponsor": 20
@@ -450,13 +524,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:42", 
       "language": "pt-BR", 
       "title": "Segundo teste do dia 17/06", 
       "created": "2010-06-17 17:48:22", 
       "trial": 17, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI4\nsg4\nI3\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 16, 
       "primary_sponsor": 19
@@ -467,13 +541,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "pending", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:40", 
       "language": "pt-BR", 
       "title": "Teste do dia 17/06", 
       "created": "2010-06-17 17:47:04", 
       "trial": 16, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI4\nsg4\nI3\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 16, 
       "primary_sponsor": 18
@@ -484,13 +558,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:38", 
       "language": "en", 
       "title": "My new clinical trial", 
       "created": "2010-06-15 23:27:27", 
       "trial": 15, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI2\nsS'Attachments'\np5\nI4\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI4\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI2\nsS'Attachments'\np5\nI4\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI4\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 15, 
       "primary_sponsor": 17
@@ -501,13 +575,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:39", 
+      "updated": "2010-08-23 20:32:35", 
       "language": "en", 
       "title": "Teste do Luciano em 14 de jun de 2010", 
       "created": "2010-06-14 17:48:11", 
       "trial": 14, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 14, 
       "primary_sponsor": 16
@@ -518,13 +592,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:41", 
-      "language": "en-US", 
+      "updated": "2010-08-23 20:32:33", 
+      "language": "en", 
       "title": "Uso da metformina em pacientes com diabetes tipo 2", 
       "created": "2010-06-14 13:44:50", 
       "trial": 13, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVes\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 7, 
       "primary_sponsor": 15
@@ -535,13 +609,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "approved", 
-      "updated": "2010-07-23 12:25:41", 
-      "language": "en-US", 
+      "updated": "2010-08-23 20:32:31", 
+      "language": "en", 
       "title": "Demo do dia 14 de junho", 
       "created": "2010-06-14 13:40:25", 
       "trial": 12, 
       "updater": 1, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI4\nsg4\nI3\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 4, 
       "primary_sponsor": 14
@@ -552,13 +626,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "pending", 
-      "updated": "2010-07-23 12:25:42", 
+      "updated": "2010-08-23 20:32:29", 
       "language": "pt-BR", 
       "title": "T\u00edtulo A", 
       "created": "2010-06-14 13:00:40", 
       "trial": 11, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVes\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 6, 
       "primary_sponsor": 10
@@ -569,13 +643,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "pending", 
-      "updated": "2010-07-23 12:25:42", 
+      "updated": "2010-08-23 20:32:26", 
       "language": "pt-BR", 
       "title": "Teste de 12/06/2010", 
       "created": "2010-06-12 20:47:20", 
       "trial": 10, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI2\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI4\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI2\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI4\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 5, 
       "primary_sponsor": 9
@@ -586,13 +660,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:40", 
-      "language": "en-US", 
+      "updated": "2010-08-23 20:32:24", 
+      "language": "en", 
       "title": "The efficacy of penicillin G potassium in reducing aphthous ulcer pain and lesion size in a Chinese cohort: a randomized, double-blinded, placebo and blank controlled, multicenter clinical trial.", 
       "created": "2010-04-22 20:01:45", 
       "trial": 9, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI1\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI4\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI4\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nss.", 
       "staff_note": "", 
       "creator": 1, 
       "primary_sponsor": 8
@@ -603,13 +677,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:40", 
-      "language": "en-US", 
+      "updated": "2010-08-23 20:32:21", 
+      "language": "en", 
       "title": "Prevention of Heterotopic Ossification With Arcoxia After Total Hip Replacement", 
       "created": "2010-04-22 19:17:28", 
       "trial": 8, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nss.", 
       "staff_note": "", 
       "creator": 1, 
       "primary_sponsor": 7
@@ -620,13 +694,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:40", 
+      "updated": "2010-08-23 20:32:19", 
       "language": "pt-BR", 
       "title": "Avalia\u00e7\u00e3o da dosagem do praziquantel para o tratamento da esquistossomose no Brasil", 
       "created": "2010-04-22 13:18:47", 
       "trial": 7, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI4\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI3\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI4\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI3\nss.", 
       "staff_note": "", 
       "creator": 1, 
       "primary_sponsor": 6
@@ -637,13 +711,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:40", 
+      "updated": "2010-08-23 20:32:17", 
       "language": "pt-BR", 
       "title": "teste de Margot", 
       "created": "2010-04-05 16:56:59", 
       "trial": 6, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI2\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 1, 
       "primary_sponsor": 5
@@ -654,7 +728,7 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:42", 
+      "updated": "2010-08-23 20:32:15", 
       "language": "pt-BR", 
       "title": "Teste da reuni\u00e3o Elluminate", 
       "created": "2010-03-30 18:51:44", 
@@ -671,13 +745,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:40", 
-      "language": "en-US", 
+      "updated": "2010-08-23 20:32:13", 
+      "language": "en", 
       "title": "ABSORB EXTEND Clinical Investigation: A Continuation in the Clinical Evaluation of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the Treatment of Subjects With de Novo Native Coronary Artery Lesions  ", 
       "created": "2010-03-02 13:34:30", 
       "trial": 4, 
       "updater": null, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI4\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI3\nsS'Health Conditions'\np7\nI4\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI3\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI3\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI4\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI4\nsS'Health Conditions'\np7\nI4\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI3\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg5\nI3\nsg6\nI4\nsg7\nI2\nsg8\nI2\nsg9\nI2\nsg10\nI3\nsg11\nI2\nss.", 
       "staff_note": "", 
       "creator": 1, 
       "primary_sponsor": 3
@@ -688,13 +762,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:40", 
-      "language": "en-US", 
+      "updated": "2010-08-23 20:32:10", 
+      "language": "en", 
       "title": "Effect of Ascorbic Acid and Grape Seed Extract \"Vitis Vinifera L.\" on Oxidative Stress Induced by on Pump Coronary Artery by Pass Grafting Surgery", 
       "created": "2009-10-19 21:10:21", 
       "trial": 3, 
       "updater": 1, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI4\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI3\nsS'Health Conditions'\np7\nI4\nsS'Study Type'\np8\nI4\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI4\nssVpt-br\np12\n(dp13\ng3\nI4\nsg4\nI3\nsg8\nI2\nsg7\nI4\nsg9\nI4\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI4\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI4\nsS'Health Conditions'\np7\nI4\nsS'Study Type'\np8\nI4\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI4\nss.", 
       "staff_note": "", 
       "creator": 1, 
       "primary_sponsor": 2
@@ -705,13 +779,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:40", 
-      "language": "en-US", 
+      "updated": "2010-08-23 20:32:08", 
+      "language": "en", 
       "title": "Minimal trial record (only required fields)", 
       "created": "2009-10-19 21:10:15", 
       "trial": 2, 
       "updater": 1, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI2\nss.", 
       "staff_note": "", 
       "creator": 1, 
       "primary_sponsor": null
@@ -722,13 +796,13 @@
     "model": "reviewapp.submission", 
     "fields": {
       "status": "draft", 
-      "updated": "2010-07-23 12:25:40", 
-      "language": "en-US", 
+      "updated": "2010-08-23 20:32:05", 
+      "language": "en", 
       "title": "A randomised, double-blind, placebo-controlled, factorial-design trial to assess the effect of aspirin and fish oil in the prevention of early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis", 
       "created": "2009-10-19 21:10:04", 
       "trial": 1, 
       "updater": 1, 
-      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI4\nssVpt-br\np12\n(dp13\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nssVes\np14\n(dp15\ng3\nI2\nsg4\nI2\nsg8\nI2\nsg7\nI2\nsg9\nI2\nss.", 
+      "fields_status": "(dp0\nVen\np1\n(dp2\nS'Recruitment'\np3\nI2\nsS'Trial Identification'\np4\nI3\nsS'Attachments'\np5\nI3\nsS'Contacts'\np6\nI2\nsS'Health Conditions'\np7\nI2\nsS'Study Type'\np8\nI2\nsS'Interventions'\np9\nI2\nsS'Sponsors'\np10\nI3\nsS'Outcomes'\np11\nI4\nss.", 
       "staff_note": "", 
       "creator": 1, 
       "primary_sponsor": 1
@@ -738,9 +812,7 @@
     "pk": 1, 
     "model": "reviewapp.recruitmentcountry", 
     "fields": {
-      "country": [
-        "AW"
-      ], 
+      "country": 14, 
       "submission": 1
     }
   }, 
@@ -748,9 +820,7 @@
     "pk": 2, 
     "model": "reviewapp.recruitmentcountry", 
     "fields": {
-      "country": [
-        "NZ"
-      ], 
+      "country": 158, 
       "submission": 1
     }
   }, 
@@ -758,9 +828,7 @@
     "pk": 3, 
     "model": "reviewapp.recruitmentcountry", 
     "fields": {
-      "country": [
-        "IR"
-      ], 
+      "country": 103, 
       "submission": 3
     }
   }, 
@@ -770,7 +838,7 @@
     "fields": {
       "public": false, 
       "description": "teste", 
-      "file": "/home/aplicacoes-bvs/ensaiosclinicos/opentrials/static/attachments/teste.php", 
+      "file": "/home/aplicacoes-bvs/ensaiosclinicos/clinicaltrials/static/attachments/teste.php", 
       "submission": 15
     }
   }, 
@@ -780,7 +848,7 @@
     "fields": {
       "public": false, 
       "description": "descr", 
-      "file": "/home/aplicacoes-bvs/ensaiosclinicos/opentrials/static/attachments/a.txt", 
+      "file": "/home/aplicacoes-bvs/ensaiosclinicos/clinicaltrials/static/attachments/a.txt", 
       "submission": 23
     }
   }, 
@@ -790,7 +858,7 @@
     "fields": {
       "public": false, 
       "description": "mesma descri\u00e7\u00e3o", 
-      "file": "/home/aplicacoes-bvs/ensaiosclinicos/opentrials/static/attachments/a_1.txt", 
+      "file": "/home/aplicacoes-bvs/ensaiosclinicos/clinicaltrials/static/attachments/a_1.txt", 
       "submission": 23
     }
   }, 
@@ -882,7 +950,7 @@
     "pk": 8, 
     "model": "reviewapp.remark", 
     "fields": {
-      "status": "opened", 
+      "status": "acknowledged", 
       "submission": 9, 
       "created": "2010-07-16 14:02:36", 
       "text": "teste", 
@@ -966,6 +1034,39 @@
       "created": "2010-06-22 15:11:29", 
       "creator": 1, 
       "title": "Not\u00edcia teste do dia 22"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "reviewapp.news", 
+    "fields": {
+      "status": "published", 
+      "text": "Since 2005 May 20 is celebrated as the International Clinical Trials Day to remind us the importance of clinical trial as a means of improving health and wellbeing and highlights how partnerships between patients and healthcare practitioners are vital to high-quality, relevant research. The day itself commemorates a trial by the eighteenth-century surgeon James Lind in which he gave a dozen sailors one of six possible treatments for scurvy. The interventions included sea water and vinegar, as well as oranges and lemons and the fruit turned out to have the best effect.", 
+      "created": "2010-08-13 15:21:21", 
+      "creator": 17, 
+      "title": "International Clinical Trials Day"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "reviewapp.news", 
+    "fields": {
+      "status": "published", 
+      "text": "The article of Zhao-Xiang Bian and Tai-Xiang Wu published in Trials, volume 11, points to the relevance of establishing a global network for the trial registration to ensure uniform, international consistency in policy and enforcement of trial registration and data transparency. Their concern relates to the differences on clinical trial registration legislation between countries. Their proposal is to establish this network in regional basis with an international advisory committee formed by WHO to provide consultation for each country and help them to meet this aim. Also, this advisory committee could be charged with the responsibility of monitoring the implementation of such legislation through different approaches, such as publishing white paper of trial registration annually. Read more at http://www.trialsjournal.com/content/11/1/64 ", 
+      "created": "2010-08-13 16:29:51", 
+      "creator": 17, 
+      "title": "Article on clinical trial registration legislation"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "reviewapp.news", 
+    "fields": {
+      "status": "published", 
+      "text": "A meeting to discuss a potential Clinical Trials Registry Network for Latin America and the Caribbean (LAC) was held in Washington DC, 27-28 April 2010. The overall aim was to discuss the potential development of a cooperative network of interoperable national and regional clinical trials registries in the region. Specific aims were:\r\n\r\n    1) To share the current state of development of the ICTRP and the participation of LAC\r\n\r\n    2) To develop a strategy for achieving clinical trial registration in LAC, including:\r\n\r\n          * A strategy for developing a cooperative network of primary and partner registries meeting WHO criteria and a single regional registration platform\r\n          * A strategy for developing common and interoperable software platform\r\n          * Sharing the experience of LAC and other regions developing strategies for clinical trial registration\r\n          * Identifying key partners and potential advisers to the implementation\r\n\r\nsource: ICTRP/WHO", 
+      "created": "2010-08-10 18:27:45", 
+      "creator": 17, 
+      "title": "Clinical Trials Registry Network for Latin America and the Caribbean"
     }
   }
 ]
