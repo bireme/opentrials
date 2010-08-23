@@ -22,6 +22,7 @@ languages are stored in a Translation subclass.
     ...     available_languages=('en','pt-br','es'),
     ...     display_language='pt-br',
     ... )
+
     >>> form.fields.keys()
     ['url', 'title', 'content', 'enable_comments', 'template_name', 'registration_required', 'sites']
 

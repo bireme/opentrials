@@ -41,7 +41,7 @@
     {% endif %}
 
     <h2>{% trans title %}</h2>
-    <form action="./" method="POST">{% csrf_token %}
+    <form action="./" method="POST" class="confirm-before-leave">{% csrf_token %}
         {% for form in forms %}
         <fieldset>
             <legend>{% firstof form.title form.form.title %}</legend>
