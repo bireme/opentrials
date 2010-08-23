@@ -1,1331 +1,5 @@
 [
   {
-    "pk": 41, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "attachment", 
-      "name": "attachment", 
-      "app_label": "reviewapp"
-    }
-  }, 
-  {
-    "pk": 23, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "attachmenttype", 
-      "name": "attachment type", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 47, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "category", 
-      "name": "category", 
-      "app_label": "assistance"
-    }
-  }, 
-  {
-    "pk": 48, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "categorytranslation", 
-      "name": "category translation", 
-      "app_label": "assistance"
-    }
-  }, 
-  {
-    "pk": 24, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "clinicaltrial", 
-      "name": "clinical trial", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 25, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "clinicaltrialtranslation", 
-      "name": "clinical trial translation", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 30, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "contact", 
-      "name": "contact", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "contenttype", 
-      "name": "content type", 
-      "app_label": "contenttypes"
-    }
-  }, 
-  {
-    "pk": 11, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "countrycode", 
-      "name": "country code", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 21, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "decsdisease", 
-      "name": "decs disease", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 36, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "descriptor", 
-      "name": "descriptor", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 37, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "descriptortranslation", 
-      "name": "descriptor translation", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 51, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "fieldhelp", 
-      "name": "field help", 
-      "app_label": "assistance"
-    }
-  }, 
-  {
-    "pk": 52, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "fieldhelptranslation", 
-      "name": "field help translation", 
-      "app_label": "assistance"
-    }
-  }, 
-  {
-    "pk": 9, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "flatpage", 
-      "name": "flat page", 
-      "app_label": "flatpages"
-    }
-  }, 
-  {
-    "pk": 45, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "followup", 
-      "name": "followup", 
-      "app_label": "tickets"
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "group", 
-      "name": "group", 
-      "app_label": "auth"
-    }
-  }, 
-  {
-    "pk": 22, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "icdchapter", 
-      "name": "icd chapter", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 29, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "institution", 
-      "name": "institution", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 16, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "interventionassigment", 
-      "name": "intervention assigment", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 13, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "interventioncode", 
-      "name": "intervention code", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 8, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "logentry", 
-      "name": "log entry", 
-      "app_label": "admin"
-    }
-  }, 
-  {
-    "pk": 46, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "media", 
-      "name": "media", 
-      "app_label": "tickets"
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "message", 
-      "name": "message", 
-      "app_label": "auth"
-    }
-  }, 
-  {
-    "pk": 43, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "news", 
-      "name": "news", 
-      "app_label": "reviewapp"
-    }
-  }, 
-  {
-    "pk": 34, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "outcome", 
-      "name": "outcome", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 35, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "outcometranslation", 
-      "name": "outcome translation", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "permission", 
-      "name": "permission", 
-      "app_label": "auth"
-    }
-  }, 
-  {
-    "pk": 31, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "publiccontact", 
-      "name": "public contact", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 49, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "question", 
-      "name": "question", 
-      "app_label": "assistance"
-    }
-  }, 
-  {
-    "pk": 50, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "questiontranslation", 
-      "name": "question translation", 
-      "app_label": "assistance"
-    }
-  }, 
-  {
-    "pk": 40, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "recruitmentcountry", 
-      "name": "recruitment country", 
-      "app_label": "reviewapp"
-    }
-  }, 
-  {
-    "pk": 20, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "recruitmentstatus", 
-      "name": "recruitment status", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 53, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "registrationprofile", 
-      "name": "registration profile", 
-      "app_label": "registration"
-    }
-  }, 
-  {
-    "pk": 42, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "remark", 
-      "name": "remark", 
-      "app_label": "reviewapp"
-    }
-  }, 
-  {
-    "pk": 32, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "scientificcontact", 
-      "name": "scientific contact", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 6, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "session", 
-      "name": "session", 
-      "app_label": "sessions"
-    }
-  }, 
-  {
-    "pk": 7, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "site", 
-      "name": "site", 
-      "app_label": "sites"
-    }
-  }, 
-  {
-    "pk": 33, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "sitecontact", 
-      "name": "site contact", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 18, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "studyallocation", 
-      "name": "study allocation", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 17, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "studymasking", 
-      "name": "study masking", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 19, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "studyphase", 
-      "name": "study phase", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 15, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "studypurpose", 
-      "name": "study purpose", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 14, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "studytype", 
-      "name": "study type", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 39, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "submission", 
-      "name": "submission", 
-      "app_label": "reviewapp"
-    }
-  }, 
-  {
-    "pk": 44, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "ticket", 
-      "name": "ticket", 
-      "app_label": "tickets"
-    }
-  }, 
-  {
-    "pk": 26, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "trialnumber", 
-      "name": "trial number", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 12, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "trialnumberissuingauthority", 
-      "name": "trial number issuing authority", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 27, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "trialsecondarysponsor", 
-      "name": "trial secondary sponsor", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 28, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "trialsupportsource", 
-      "name": "trial support source", 
-      "app_label": "repository"
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "user", 
-      "name": "user", 
-      "app_label": "auth"
-    }
-  }, 
-  {
-    "pk": 38, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "userprofile", 
-      "name": "user profile", 
-      "app_label": "reviewapp"
-    }
-  }, 
-  {
-    "pk": 10, 
-    "model": "contenttypes.contenttype", 
-    "fields": {
-      "model": "vocabularytranslation", 
-      "name": "vocabulary translation", 
-      "app_label": "vocabulary"
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "sites.site", 
-    "fields": {
-      "domain": "ec.beta.bvsalud.org", 
-      "name": "EnsaiosClinicos.gov.br (BETA)"
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "sites.site", 
-    "fields": {
-      "domain": "ec.homolog.bvsalud.org", 
-      "name": "EnsaiosClinicos.gov.br (HOMOLOG)"
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "sites.site", 
-    "fields": {
-      "domain": "ec.teste.bvsalud.org", 
-      "name": "EnsaiosClinicos.gov.br (TESTE)"
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "sites.site", 
-    "fields": {
-      "domain": "example.com", 
-      "name": "example.com"
-    }
-  }, 
-  {
-    "pk": 41, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-22 11:51:24", 
-      "object_repr": "What studies need to be registered?", 
-      "object_id": "13", 
-      "change_message": "Modificado answer. Modificado answer para question translation \"pt-BR\".", 
-      "user": 1, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 40, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-22 11:40:30", 
-      "object_repr": "What studies need to be registered?", 
-      "object_id": "13", 
-      "change_message": "Modificado answer para question translation \"pt-BR\".", 
-      "user": 1, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 39, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-21 21:38:25", 
-      "object_repr": "System", 
-      "object_id": "1", 
-      "change_message": "Adicionado category translation \"pt-BR\" Adicionado category translation \"es\"", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 38, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-07-21 21:29:01", 
-      "object_repr": "How do I register a trial?", 
-      "object_id": "16", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 37, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-07-21 21:23:10", 
-      "object_repr": "Who is responsible for registering a trial?", 
-      "object_id": "15", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 36, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-07-21 18:27:19", 
-      "object_repr": "When should studies be registered?", 
-      "object_id": "14", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 34, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:25:19", 
-      "object_repr": "Football (Soccer)", 
-      "object_id": "5", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 35, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:25:19", 
-      "object_repr": "Medicamentos", 
-      "object_id": "4", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 27, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Is Dunga nice?", 
-      "object_id": "12", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 28, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Aspirima d\u00e1 dor de barriga?", 
-      "object_id": "11", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 29, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Pellentesque ullamcorper augue at ante rhoncus ultrices?", 
-      "object_id": "10", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 30, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Donec hendrerit ligula eget arcu congue gravida?", 
-      "object_id": "9", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 31, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Vestibulum aliquet nisi vel risus pharetra auctor?", 
-      "object_id": "8", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 32, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Mauris aliquam, mi non hendrerit luctus?", 
-      "object_id": "7", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 33, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", 
-      "object_id": "6", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 26, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-21 18:23:59", 
-      "object_repr": "What studies need to be registered?", 
-      "object_id": "13", 
-      "change_message": "Modificado answer.", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 25, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-07-21 18:20:25", 
-      "object_repr": "What studies need to be registered?", 
-      "object_id": "13", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 24, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-21 18:13:37", 
-      "object_repr": "Study registration", 
-      "object_id": "6", 
-      "change_message": "Nenhum campo modificado.", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 23, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-07-21 18:13:31", 
-      "object_repr": "Study registration", 
-      "object_id": "6", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 22, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-20 23:58:56", 
-      "object_repr": "Please enter here which is the relation of the contact: a contact for Public Queries, for Scientific Queries or for Site Queries.", 
-      "object_id": "59", 
-      "change_message": "Modificado text.", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 21, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-20 23:55:52", 
-      "object_repr": "/about/ -- About", 
-      "object_id": "1", 
-      "change_message": "Modificado content.", 
-      "user": 17, 
-      "content_type": [
-        "flatpages", 
-        "flatpage"
-      ]
-    }
-  }, 
-  {
-    "pk": 20, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-20 15:32:17", 
-      "object_repr": "Ensaio cl\u00ednico randomizado para avaliar a efic\u00e1cia e seguran\u00e7a do uso concomitante de rifampicina e 600 X Efavirenz\u2026", 
-      "object_id": "31", 
-      "change_message": "Modificado status e fields_status.", 
-      "user": 1, 
-      "content_type": [
-        "reviewapp", 
-        "submission"
-      ]
-    }
-  }, 
-  {
-    "pk": 19, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 15:12:03", 
-      "object_repr": "Not\u00edcia teste do dia 22", 
-      "object_id": "6", 
-      "change_message": "Modificado status.", 
-      "user": 1, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 18, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-06-22 15:11:29", 
-      "object_repr": "Not\u00edcia teste do dia 22", 
-      "object_id": "6", 
-      "change_message": "", 
-      "user": 1, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 17, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-06-22 15:05:46", 
-      "object_repr": "Is Dunga nice?", 
-      "object_id": "12", 
-      "change_message": "", 
-      "user": 1, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 16, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 15:03:11", 
-      "object_repr": "admin_gamarski", 
-      "object_id": "20", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 15, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 15:03:03", 
-      "object_repr": "admin_claudio", 
-      "object_id": "21", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 14, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 14:44:06", 
-      "object_repr": "josue", 
-      "object_id": "11", 
-      "change_message": "Modificado password e is_active.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 13, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 14:28:48", 
-      "object_repr": "josue", 
-      "object_id": "11", 
-      "change_message": "Modificado email.", 
-      "user": 17, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 12, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 14:21:19", 
-      "object_repr": "admin_josue", 
-      "object_id": "17", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 11, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 14:19:04", 
-      "object_repr": "Efficacy Study of Pioglitazone Compared to Glimepiride on Coronary Atherosclerotic Disease Progression in Subjects With\u2026", 
-      "object_id": "24", 
-      "change_message": "Modificado status.", 
-      "user": 1, 
-      "content_type": [
-        "reviewapp", 
-        "submission"
-      ]
-    }
-  }, 
-  {
-    "pk": 10, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 13:30:56", 
-      "object_repr": "reviewer", 
-      "object_id": "3", 
-      "change_message": "Modificado user_permissions.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 9, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-18 14:33:32", 
-      "object_repr": "admin_margot", 
-      "object_id": "6", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 8, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-14 17:45:40", 
-      "object_repr": "admin", 
-      "object_id": "1", 
-      "change_message": "Modificado email.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 7, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-14 14:48:32", 
-      "object_repr": "margot", 
-      "object_id": "9", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 6, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-06-14 14:46:55", 
-      "object_repr": "Aspirima d\u00e1 dor de barriga?", 
-      "object_id": "11", 
-      "change_message": "", 
-      "user": 1, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-06-14 14:46:19", 
-      "object_repr": "Medicamentos", 
-      "object_id": "4", 
-      "change_message": "", 
-      "user": 1, 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-14 13:55:51", 
-      "object_repr": "Demo do dia 14 de junho", 
-      "object_id": "12", 
-      "change_message": "Modificado status.", 
-      "user": 1, 
-      "content_type": [
-        "reviewapp", 
-        "submission"
-      ]
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-14 13:34:02", 
-      "object_repr": "gamarski", 
-      "object_id": "5", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-14 13:33:18", 
-      "object_repr": "laguardia", 
-      "object_id": "7", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-14 13:19:01", 
-      "object_repr": "laguardia", 
-      "object_id": "7", 
-      "change_message": "Modificado is_active.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "flatpages.flatpage", 
-    "fields": {
-      "registration_required": false, 
-      "title": "About", 
-      "url": "/about/", 
-      "template_name": "", 
-      "sites": [
-        4, 
-        3, 
-        2
-      ], 
-      "content": "<p>O Registro Brasileiro de Ensaios Cl\u00ednicos (RBEC) \u00e9 uma plataforma virtual de acesso livre para registro gratuito de ensaios cl\u00ednicos realizados em seres humanos, em andamento ou finalizados, por pesquisadores brasileiros e estrangeiros. O RBEC inclui ensaios cl\u00ednicos que avaliam interven\u00e7\u00f5es em sa\u00fade resultantes de uso de medicamentos, procedimentos cir\u00fargicos, terapias comportamentais de reabilita\u00e7\u00e3o e terapias complementares.<p> \r\n\r\n<p>O RBEC proporciona a pacientes, m\u00e9dicos, investigadores, comit\u00eas de \u00e9tica e patrocinadores acesso a informa\u00e7\u00f5es sobre os ensaios cl\u00ednicos em curso e conclu\u00eddos, evitando a duplica\u00e7\u00e3o de esfor\u00e7os e impulsionando o avan\u00e7o do conhecimento e a coopera\u00e7\u00e3o entre grupos de pesquisa.<p> \r\n\r\n<p>Sendo uma das mais valiosas fontes de evid\u00eancia sobre a efic\u00e1cia e a seguran\u00e7a das interven\u00e7\u00f5es em sa\u00fade, o ensaio cl\u00ednico, quando registrado em bases de dados p\u00fablicas, garante a todos os interessados o acesso \u00e0 informa\u00e7\u00e3o sobre os efeitos de um produto ou procedimento sob investiga\u00e7\u00e3o. Nesse sentido, aumenta a transpar\u00eancia na pesquisa, fortalecendo o valor \u00e9tico e cient\u00edfico dos estudos de interven\u00e7\u00e3o e observacionais.<p>\r\n\r\n<p>Um ensaio cl\u00ednico pode reduzir a duplica\u00e7\u00e3o desnecess\u00e1ria de esfor\u00e7os de pesquisa ao informar os profissionais que planejam novos estudos acerca de todos os ensaios existentes; aumentar as taxas de recrutamento de participantes para ensaios cl\u00ednicos (especialmente para doen\u00e7as raras ou condi\u00e7\u00f5es de alto risco), desse modo aumentando as chances de um desfecho bem-sucedido de alguns ensaios cl\u00ednicos; agregar valor aos resultados da pesquisa ao prover uma fonte de informa\u00e7\u00e3o confi\u00e1vel sobre ensaio cl\u00ednico para revis\u00f5es sistem\u00e1ticas, metan\u00e1lises e diretrizes baseados em evid\u00eancias e aprimorar as evid\u00eancias dispon\u00edveis que orientem as pr\u00e1ticas de sa\u00fade. <p>\r\n\r\n<p>Fruto de um esfor\u00e7o conjunto do Minist\u00e9rio da Sa\u00fade, do Instituto de Comunica\u00e7\u00e3o e Informa\u00e7\u00e3o Cient\u00edfica e Tecnol\u00f3gica em Sa\u00fade (Icict/Fiocruz), da Organiza\u00e7\u00e3o Panamericana de Sa\u00fade (Opas) e do Centro Latinoamericano e do Caribe de Informa\u00e7\u00e3o em Ci\u00eancias da Sa\u00fade (Bireme), o RBEC aumenta a efic\u00e1cia dos esfor\u00e7os dos ensaios cl\u00ednicos ao divulgar os estudos que n\u00e3o s\u00e3o publicado em revistas cient\u00edficas, reduzindo o vi\u00e9s da publica\u00e7\u00e3o. Desse modo, o RBEC torna-se uma importante fonte de informa\u00e7\u00e3o para pacientes, profissionais de sa\u00fade, pesquisadores, empresas e centros de pesquisa, propiciando maior intera\u00e7\u00e3o e inser\u00e7\u00e3o internacional. </p>", 
-      "enable_comments": false
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 5
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 6
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 7
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 8
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 9
-    }
-  }, 
-  {
-    "pk": 6, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 14
-    }
-  }, 
-  {
-    "pk": 7, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 15
-    }
-  }, 
-  {
-    "pk": 8, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 16
-    }
-  }, 
-  {
-    "pk": 9, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 17
-    }
-  }, 
-  {
-    "pk": 10, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "7dd385471cf8bab58b6fb365e51b8199db231483", 
-      "user": 18
-    }
-  }, 
-  {
-    "pk": 11, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 19
-    }
-  }, 
-  {
-    "pk": 12, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 20
-    }
-  }, 
-  {
-    "pk": 13, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 21
-    }
-  }, 
-  {
-    "pk": 14, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "27480b4b99d67bfad68fb010fab84916a395d4ce", 
-      "user": 22
-    }
-  }, 
-  {
-    "pk": 15, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 23
-    }
-  }, 
-  {
-    "pk": 16, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 24
-    }
-  }, 
-  {
-    "pk": 17, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 25
-    }
-  }, 
-  {
-    "pk": 18, 
-    "model": "registration.registrationprofile", 
-    "fields": {
-      "activation_key": "ALREADY_ACTIVATED", 
-      "user": 26
-    }
-  }, 
-  {
     "pk": 22, 
     "model": "auth.permission", 
     "fields": {
@@ -1770,6 +444,18 @@
     }
   }, 
   {
+    "pk": 161, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "add_flatpage", 
+      "name": "Can add flat page", 
+      "content_type": [
+        "flatpages", 
+        "flatpage"
+      ]
+    }
+  }, 
+  {
     "pk": 26, 
     "model": "auth.permission", 
     "fields": {
@@ -1782,11 +468,35 @@
     }
   }, 
   {
+    "pk": 162, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "change_flatpage", 
+      "name": "Can change flat page", 
+      "content_type": [
+        "flatpages", 
+        "flatpage"
+      ]
+    }
+  }, 
+  {
     "pk": 27, 
     "model": "auth.permission", 
     "fields": {
       "codename": "delete_clinicaltrial", 
       "name": "Can delete clinical trial", 
+      "content_type": [
+        "flatpages", 
+        "flatpage"
+      ]
+    }
+  }, 
+  {
+    "pk": 163, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_flatpage", 
+      "name": "Can delete flat page", 
       "content_type": [
         "flatpages", 
         "flatpage"
@@ -2630,6 +1340,42 @@
       "content_type": [
         "sites", 
         "site"
+      ]
+    }
+  }, 
+  {
+    "pk": 164, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "add_migrationhistory", 
+      "name": "Can add migration history", 
+      "content_type": [
+        "south", 
+        "migrationhistory"
+      ]
+    }
+  }, 
+  {
+    "pk": 165, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "change_migrationhistory", 
+      "name": "Can change migration history", 
+      "content_type": [
+        "south", 
+        "migrationhistory"
+      ]
+    }
+  }, 
+  {
+    "pk": 166, 
+    "model": "auth.permission", 
+    "fields": {
+      "codename": "delete_migrationhistory", 
+      "name": "Can delete migration history", 
+      "content_type": [
+        "south", 
+        "migrationhistory"
       ]
     }
   }, 
@@ -3624,7 +2370,7 @@
       "is_active": true, 
       "is_superuser": true, 
       "is_staff": true, 
-      "last_login": "2010-07-27 13:48:12", 
+      "last_login": "2010-08-23 19:30:10", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$e51b1$627a1107fb3ca30bbf23985572a2c38530eafaf6", 
@@ -3732,7 +2478,7 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": false, 
-      "last_login": "2010-07-26 17:04:24", 
+      "last_login": "2010-08-17 19:42:56", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$0ebc0$2049a31c4d4d9810746cad1e99a89c4b74fc0884", 
@@ -3750,7 +2496,7 @@
       "is_active": true, 
       "is_superuser": true, 
       "is_staff": true, 
-      "last_login": "2010-07-26 13:23:33", 
+      "last_login": "2010-08-16 16:55:56", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$85de4$105803c27067e017d6c76124ff6ad89d16bffd9f", 
@@ -3768,7 +2514,7 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": false, 
-      "last_login": "2010-07-20 13:02:56", 
+      "last_login": "2010-08-20 21:03:04", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$a0685$79494e41ac14ceb1c573840e25b46437397e5007", 
@@ -3840,7 +2586,7 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": false, 
-      "last_login": "2010-07-21 21:25:21", 
+      "last_login": "2010-08-20 15:50:28", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$7d10c$241ececd7ce9b9b65d73adb13ec41aec7a9299d2", 
@@ -3858,7 +2604,7 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": false, 
-      "last_login": "2010-07-22 18:35:31", 
+      "last_login": "2010-08-20 17:48:31", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$de0c2$7e96ac383990d9b69a450e6a09d6fbc4de1f2c5e", 
@@ -3894,7 +2640,7 @@
       "is_active": true, 
       "is_superuser": false, 
       "is_staff": false, 
-      "last_login": "2010-07-25 13:17:58", 
+      "last_login": "2010-08-16 19:38:30", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$5fa6f$df15676a026406ca7eacf42d9b6febf8f86088b1", 
@@ -3930,7 +2676,7 @@
       "is_active": true, 
       "is_superuser": true, 
       "is_staff": true, 
-      "last_login": "2010-07-21 21:27:42", 
+      "last_login": "2010-08-20 12:38:12", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$93c18$3185d2f9fe9ab816158530225ee0667cc2dfe13a", 
@@ -4002,7 +2748,7 @@
       "is_active": true, 
       "is_superuser": true, 
       "is_staff": true, 
-      "last_login": "2010-06-22 17:40:06", 
+      "last_login": "2010-08-10 23:23:16", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$e89f6$707c8113684b79407a89ec2790a8c5128026a99b", 
@@ -4098,6 +2844,2986 @@
       "password": "sha1$884f4$4892923fe8121e3e4d9afc7db7c43a5b4fc8e8c5", 
       "email": "cavalcantimanso@globo.com", 
       "date_joined": "2010-07-22 20:42:16"
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "llozano", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": false, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-08-02 18:57:02", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$91c52$4b66cb31737fc0d3f3f5c41a61e105ef95f6f04e", 
+      "email": "llozano@terra.com.br", 
+      "date_joined": "2010-08-02 18:57:02"
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "reratchr", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": false, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-08-05 18:36:07", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$a104d$2c2b9db005db449d507e6d2e8dd8156d69d39abb", 
+      "email": "reratchr@bra.ops-oms.org", 
+      "date_joined": "2010-08-05 18:36:07"
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "SeABD", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": false, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-08-19 17:40:17", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$6ef8b$7e6ffd8ceeedfd82f550c520f0fffd5e0263cf9b", 
+      "email": "seabd@ufscar.br", 
+      "date_joined": "2010-08-19 17:40:17"
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "Tatiane", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": false, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-08-19 17:53:56", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$9ae7d$5ba5747c75157703810ab0c7b533c341e084571b", 
+      "email": "bl@ufscar.br", 
+      "date_joined": "2010-08-19 17:53:56"
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "tdc2010", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": false, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2010-08-21 13:54:50", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$ea80b$ff10065379f33cb1a0a1acc7608b8cc81fc41fda", 
+      "email": "luciano@ramalho.org", 
+      "date_joined": "2010-08-21 13:54:50"
+    }
+  }, 
+  {
+    "pk": "92820e467eb9b20c98611d0d3e996a60", 
+    "model": "sessions.session", 
+    "fields": {
+      "expire_date": "2010-09-06 18:57:58", 
+      "session_data": "gAJ9cQEuM2QxM2Y0MGRhODIzMTE1MTYzMDE5Yjk3OTgzM2E5MjA=\n"
+    }
+  }, 
+  {
+    "pk": "a0229b9350bc1ffa9a112f163b290898", 
+    "model": "sessions.session", 
+    "fields": {
+      "expire_date": "2010-09-06 19:29:39", 
+      "session_data": "gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjQxMmEwZmZlNTNhNWE1NGUzNmRkZDNkODQz\nZjYwMTBi\n"
+    }
+  }, 
+  {
+    "pk": "de363bff0c50e88d4feabd410af57b0e", 
+    "model": "sessions.session", 
+    "fields": {
+      "expire_date": "2010-09-06 19:30:10", 
+      "session_data": "gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigEBdS5mYjcwM2E3NWMyZTNkNzlkYmM4\nMjM5YzFkNzViNjU4Nw==\n"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "ec.beta.bvsalud.org", 
+      "name": "EnsaiosClinicos.gov.br (BETA)"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "ec.homolog.bvsalud.org", 
+      "name": "EnsaiosClinicos.gov.br (HOMOLOG)"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "ec.teste.bvsalud.org", 
+      "name": "EnsaiosClinicos.gov.br (TESTE)"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "example.com", 
+      "name": "example.com"
+    }
+  }, 
+  {
+    "pk": 175, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-08-20 12:40:12", 
+      "object_repr": "RBR-7k3-rct PERISCOPE - Efficacy Study of Pioglitazone Compared to Glimepiride on Coronary Atherosclerotic Disease Progression in\u2026", 
+      "object_id": "24", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "repository", 
+        "clinicaltrial"
+      ]
+    }
+  }, 
+  {
+    "pk": 174, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-08-13 16:29:51", 
+      "object_repr": "Article on clinical trial registration legislation", 
+      "object_id": "9", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 173, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-08-13 15:21:21", 
+      "object_repr": "International Clinical Trials Day", 
+      "object_id": "8", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 172, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-13 13:52:38", 
+      "object_repr": "Blinding refers to methods used to prevent participants and investigators from knowing what interventions are being used. Masking refers to the methods used to camouflage interventions to achieve blin", 
+      "object_id": "37", 
+      "change_message": "Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 171, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 20:07:36", 
+      "object_repr": "Please enter here the description of the file attached to this study.", 
+      "object_id": "67", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 170, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 20:05:39", 
+      "object_repr": "Please enter here the file to be attached to this study.", 
+      "object_id": "66", 
+      "change_message": "Modificado text e example. Modificado text e example para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 169, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 20:00:34", 
+      "object_repr": "Please enter here the address of the new institution.", 
+      "object_id": "62", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 168, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 19:59:18", 
+      "object_repr": "Please enter here the name of the new institution.", 
+      "object_id": "61", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 167, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 19:58:42", 
+      "object_repr": "Please enter here the expansion of the trial public acronym, if available.", 
+      "object_id": "60", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 166, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 19:57:52", 
+      "object_repr": "Select here the relation of the contact: a contact for Public Queries, for Scientific Queries or for Site Queries.", 
+      "object_id": "59", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 165, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 19:50:34", 
+      "object_repr": "Please enter here the phase of the study.", 
+      "object_id": "39", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 164, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 19:49:50", 
+      "object_repr": "Please enter here the participant assignment to the intervention groups:\r\n\r\n    * N/A: single arm study\r\n    * Randomized Controlled Trial: participants are assigned to intervention groups by chance\r\n", 
+      "object_id": "38", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 163, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 19:39:04", 
+      "object_repr": "Please enter the type of outcome: primary or secondary. Primary outcomes are events, variables, or experiences that are measured because it is believed that they may be influenced by the intervention.", 
+      "object_id": "40", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 162, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 19:27:16", 
+      "object_repr": "Please enter the type of outcome: primary or secondary. Primary outcomes are events, variables, or experiences that are measured because it is believed that they may be influenced by the intervention.", 
+      "object_id": "40", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 161, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 19:15:23", 
+      "object_repr": "Blinding refers to methods used to prevent participants and investigators from knowing what interventions are being used. Masking refers to the methods used to camouflage interventions to achieve blin", 
+      "object_id": "37", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 160, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 19:10:04", 
+      "object_repr": "Please enter here the intervention assignment of the trial.\r\n\r\n* Single Group: single arm study\r\n* Parallel: participants are assigned to one of two or more groups in parallel for the duration of the ", 
+      "object_id": "35", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 159, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 19:03:41", 
+      "object_repr": "Please select here the most apropriate purpose of your study. Only choose \"Other\" option if none of the listed categories are adequate to define the purpose of your study.\r\n\r\n   * Diagnostic: conducte", 
+      "object_id": "34", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 158, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 19:02:17", 
+      "object_repr": "Please select here the intervention category:\r\n\r\n* drug\r\n* device\r\n* biological/vaccine\r\n* procedure/surgery\r\n* radiation\r\n* behavioural\r\n* genetics\r\n* dietary supplement\r\n* other\r\n\r\n", 
+      "object_id": "31", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 157, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 19:01:46", 
+      "object_repr": "Please select here the specific name of the intervention(s) and the comparator/control(s) being studied. Use the International Non-Proprietary Name if possible (not brand/trade names). For an unregist", 
+      "object_id": "30", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 156, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 18:46:17", 
+      "object_repr": "Please enter here the health condition descriptor text.\r\nIf you choose one descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will automatically filled.\r\n", 
+      "object_id": "29", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 155, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 18:45:45", 
+      "object_repr": "Please enter here the health condition descriptor code.\r\nIf you choose one descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will be automatically filled.\r\n", 
+      "object_id": "28", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 154, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 18:45:12", 
+      "object_repr": "Please select here the vocabulary will be used to choose the descriptor of the health condition: \r\nDeCS: Health Sciences Descriptors or\r\nICD-10: International Classification of Diseases or\r\nChemical A", 
+      "object_id": "26", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 153, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 18:44:31", 
+      "object_repr": "Please enter here which is the health condition descriptor code.\r\nIf you choose one descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will be automatically filled.\r\n", 
+      "object_id": "28", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 152, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 18:42:31", 
+      "object_repr": "Please enter here the major source(s) of monetary or material or infrastructural support for the trial (e.g., funding agency, foundation, company, hospital, university, etc).", 
+      "object_id": "23", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 151, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 18:40:00", 
+      "object_repr": "Please enter here the name of additional individuals, organizations or other legal persons, if any, that have agreed with the primary sponsor to take on responsibilities of sponsorship.\r\nA secondary s", 
+      "object_id": "21", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 150, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 18:22:29", 
+      "object_repr": "Please select here which is the most apropriate purpose of your study. Only choose \"Other\" option if none of the listed categories are adequate to define the purpose of your study.\r\n\r\n\r\n   * Diagnosti", 
+      "object_id": "34", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 149, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 18:19:16", 
+      "object_repr": "Please enter here which is the purpose of the study.\r\n\r\n   * Diagnostic: conducted to find better tests or procedures for diagnosing a particular disease or condition.\r\n   * Etiological: identify caus", 
+      "object_id": "34", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 148, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 18:08:10", 
+      "object_repr": "Blinding refers to methods used to prevent participants and investigators from knowing what interventions are being used. Masking refers to the methods used to camouflage interventions to achieve blin", 
+      "object_id": "37", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 147, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:56:03", 
+      "object_repr": "Please enter here the primary spondor.\r\nThe Primary Sponsor is the individual, organization, group or other legal entity which takes responsibility for initiating, managing and/or financing the study.", 
+      "object_id": "20", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 146, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:47:52", 
+      "object_repr": "Please enter here the exclusion criteria for participant selection, including age and sex.", 
+      "object_id": "19", 
+      "change_message": "Modificado text.", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 145, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:46:50", 
+      "object_repr": "Please enter here the temporal unit of maximal age in inclusion criteria.", 
+      "object_id": "18", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 144, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:43:55", 
+      "object_repr": "Please enter here the maximal age in inclusion criteria of participants.", 
+      "object_id": "17", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 143, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:43:19", 
+      "object_repr": "Please enter here the primary health condition(s) or problem(s) studied. If the study is conducted in healthy human volunteers belonging to the target population of the intervention (e.g., preventive ", 
+      "object_id": "25", 
+      "change_message": "Modificado text e example. Modificado example para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 142, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:29:51", 
+      "object_repr": "Please enter here the temporal unit of minimal age in the inclusion criteria of participants.", 
+      "object_id": "16", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 141, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:29:10", 
+      "object_repr": "Please enter here the gender selected in the inclusion criteria (female, male or both) of participants.", 
+      "object_id": "14", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 140, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:28:46", 
+      "object_repr": "Please enter here the minimal age in the inclusion criteria of participants.", 
+      "object_id": "15", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 139, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:27:50", 
+      "object_repr": "Please enter here the gender selected in the inclusion criteria (female, male or both).", 
+      "object_id": "14", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 138, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:23:49", 
+      "object_repr": "Please enter here the inclusion criteria for participant selection.", 
+      "object_id": "13", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 137, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:22:08", 
+      "object_repr": "Please enter here the number of participants that this trial plans to enroll.", 
+      "object_id": "12", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 136, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:21:05", 
+      "object_repr": "Please enter here the anticipated or actual date of enrollment of the first participant.", 
+      "object_id": "11", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 135, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:20:25", 
+      "object_repr": "Please enter here the countries from which participants will be, are intended to be, or have been recruited.", 
+      "object_id": "10", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 134, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:15:42", 
+      "object_repr": "Please enter here the recruitment status of this trial:\r\n\r\n    * Pending: participants are not yet being recruited or enrolled at any site\r\n    * Recruiting: participants are currently being recruited", 
+      "object_id": "9", 
+      "change_message": "Modificado text.", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 133, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:14:32", 
+      "object_repr": "Please select this field to delete the corresponding secondary trial number.", 
+      "object_id": "8", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 132, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:13:49", 
+      "object_repr": "Please enter here any other secondary identifying numbers, such as protocol number, institutional review board/ethics committee approval, registration number at regulatory agencies or any other Trial ", 
+      "object_id": "7", 
+      "change_message": "Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 131, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:12:25", 
+      "object_repr": "Please enter here the institution or organization that assigned a secondary identification number, besides the Primary Registry, if any.", 
+      "object_id": "6", 
+      "change_message": "Modificado text.", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 130, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:11:46", 
+      "object_repr": "Please enter here the trial public acronym if available.", 
+      "object_id": "5", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 129, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:11:10", 
+      "object_repr": "Please enter here the title intended for the lay public in easily understood language.", 
+      "object_id": "4", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 128, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:10:25", 
+      "object_repr": "Please enter here the expansion of the trial scientific acronym if available.", 
+      "object_id": "3", 
+      "change_message": "Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 127, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:08:08", 
+      "object_repr": "Please enter here the expansion of the trial scientific acronym if available.", 
+      "object_id": "3", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 126, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:07:13", 
+      "object_repr": "Please enter here the trial scientific acronym if available.", 
+      "object_id": "2", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 125, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-12 13:06:12", 
+      "object_repr": "Please enter here the scientific title of the study as it appears in the protocol submitted for funding and ethical review.", 
+      "object_id": "1", 
+      "change_message": "Modificado text.", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 124, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-11 20:18:25", 
+      "object_repr": "Please enter here any other secondary identifying numbers, such as protocol number, institutional review board/ethics committee approval, registration number at regulatory agencies or any other Trial ", 
+      "object_id": "7", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 123, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-11 17:40:50", 
+      "object_repr": "Please enter here which is the institution or organization that assigned a secondary identification number, besides the Primary Registry, if any.", 
+      "object_id": "6", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 122, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 21:17:29", 
+      "object_repr": "Please enter here which is the trial public acronym, if available.", 
+      "object_id": "5", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 121, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 21:17:15", 
+      "object_repr": "Please enter here which is the expansion of the trial scientific acronym, if available.", 
+      "object_id": "3", 
+      "change_message": "Nenhum campo modificado.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 120, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 21:16:30", 
+      "object_repr": "Please enter here which is the public trial acronym, if available.", 
+      "object_id": "5", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 119, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 21:08:04", 
+      "object_repr": "Please enter here other secondary identifying numbers, of the corresponding issuing authorities, besides the Primary Registry, if any. \r\nInclude the sponsor name and sponsor-issued trial number (e.g.,", 
+      "object_id": "7", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 118, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 21:03:34", 
+      "object_repr": "Please enter here other identifying numbers and issuing authorities besides the Primary Registry, if any. \r\nInclude the sponsor name and sponsor-issued trial number (e.g., protocol number) if availabl", 
+      "object_id": "6", 
+      "change_message": "Modificado example. Modificado text e example para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 117, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 21:01:20", 
+      "object_repr": "Please enter here other identifying numbers, of the corresponding issuing authorities, besides the Primary Registry, if any. \r\nInclude the sponsor name and sponsor-issued trial number (e.g., protocol ", 
+      "object_id": "7", 
+      "change_message": "Modificado example. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 116, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 20:57:58", 
+      "object_repr": "Please enter here other identifying numbers, of the corresponding issuing authorities, besides the Primary Registry, if any. \r\nInclude the sponsor name and sponsor-issued trial number (e.g., protocol ", 
+      "object_id": "7", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 115, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 20:56:03", 
+      "object_repr": "Please enter here other identifying numbers and issuing authorities besides the Primary Registry, if any. \r\nInclude the sponsor name and sponsor-issued trial number (e.g., protocol number) if availabl", 
+      "object_id": "6", 
+      "change_message": "Modificado text e example. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 114, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 20:45:03", 
+      "object_repr": "Please select this field to delete the corresponding descriptor..", 
+      "object_id": "64", 
+      "change_message": "Modificado example. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 113, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 20:44:23", 
+      "object_repr": "Please enter here the anticipated or actual date of enrollment of the first participant. \r\nPlease use the format dd/mm/yyyy,", 
+      "object_id": "65", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 112, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 20:36:15", 
+      "object_repr": "Please select this field if the file attached to this study will be public to every user of the EnsaiosClinicos.gov.br.", 
+      "object_id": "68", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 111, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 20:02:49", 
+      "object_repr": "Please select this field if the file attached to this study will be public to everyone.", 
+      "object_id": "68", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 110, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 20:01:20", 
+      "object_repr": "Please enter here which is the description of the file attached to this study.", 
+      "object_id": "67", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 109, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 20:00:03", 
+      "object_repr": "Please enter here which is the file to be attached to this study.", 
+      "object_id": "66", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 108, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 19:56:17", 
+      "object_repr": "Please select this field to delete the corresponding descriptor..", 
+      "object_id": "64", 
+      "change_message": "Modificado text e example.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 107, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 19:55:16", 
+      "object_repr": "Please select this field to delete the corresponding descriptor.", 
+      "object_id": "64", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 106, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 19:54:00", 
+      "object_repr": "Please enter here which is the country of the new institution.", 
+      "object_id": "63", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 105, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 19:53:17", 
+      "object_repr": "Please enter here which is the address of the new institution.", 
+      "object_id": "62", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 104, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 19:52:24", 
+      "object_repr": "Please enter here which is the name of the new institution.", 
+      "object_id": "61", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 103, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-08-10 19:09:28", 
+      "object_repr": "When to cite a record on a clinical trials register", 
+      "object_id": "18", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 102, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 18:56:50", 
+      "object_repr": "How to cite a record on a clinical trials register", 
+      "object_id": "17", 
+      "change_message": "Modificado answer. Modificado answer para question translation \"pt-BR\".", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 101, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-08-10 18:53:15", 
+      "object_repr": "How to cite a record on a clinical trials register", 
+      "object_id": "17", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 100, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 18:30:58", 
+      "object_repr": "Clinical Trials Registry Network for Latin America and the Caribbean", 
+      "object_id": "7", 
+      "change_message": "Modificado text.", 
+      "user": 17, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 99, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 18:30:36", 
+      "object_repr": "Clinical Trials Registry Network for Latin America and the Caribbean", 
+      "object_id": "7", 
+      "change_message": "Modificado text.", 
+      "user": 17, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 98, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 18:28:51", 
+      "object_repr": "Clinical Trials Registry Network for Latin America and the Caribbean", 
+      "object_id": "7", 
+      "change_message": "Modificado status.", 
+      "user": 17, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 97, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-08-10 18:27:45", 
+      "object_repr": "Clinical Trials Registry Network for Latin America and the Caribbean", 
+      "object_id": "7", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 91, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-08-10 18:26:11", 
+      "object_repr": "Not\u00edcia teste do dia 22", 
+      "object_id": "6", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 92, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-08-10 18:26:11", 
+      "object_repr": "Quisque feugiat hendrerit sagittis", 
+      "object_id": "5", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 93, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-08-10 18:26:11", 
+      "object_repr": "Nam non odio purus, ut condimentum dui", 
+      "object_id": "4", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 94, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-08-10 18:26:11", 
+      "object_repr": "Cras porttitor scelerisque congue", 
+      "object_id": "3", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 95, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-08-10 18:26:11", 
+      "object_repr": "Nullam elit sapien, faucibus non accumsan et, suscipit et arcu", 
+      "object_id": "2", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 96, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-08-10 18:26:11", 
+      "object_repr": "Aenean euismod, magna id rhoncus semper", 
+      "object_id": "1", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 90, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 15:47:53", 
+      "object_repr": "Please select here which is the intervention description.", 
+      "object_id": "30", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 89, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 15:41:30", 
+      "object_repr": "Please select here which is the intervention category:\r\n\r\n* drug\r\n* device\r\n* biological/vaccine\r\n* procedure/surgery\r\n* radiation\r\n* behavioural\r\n* genetics\r\n* dietary supplement\r\n* other\r\n\r\n", 
+      "object_id": "31", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 88, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 15:37:25", 
+      "object_repr": "Please choose here which is the intervantion category:\r\n\r\n* drug\r\n* device\r\n* biological/vaccine\r\n* procedure/surgery\r\n* radiation\r\n* behavioural\r\n* genetics\r\n* dietary supplement\r\n* other\r\n\r\n", 
+      "object_id": "31", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 87, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 15:31:46", 
+      "object_repr": "Please enter here which is the health condition descriptor code.\r\nIf you choose one descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will automatically filled.\r\n", 
+      "object_id": "28", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 86, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 15:31:31", 
+      "object_repr": "Please enter here which is the health condition descriptor text.\r\nIf you choose one descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will automatically filled.\r\n", 
+      "object_id": "29", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 85, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-10 14:14:16", 
+      "object_repr": "Please enter here which is the Institution of the Secondary Sponsor.", 
+      "object_id": "21", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 84, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 21:37:32", 
+      "object_repr": "/site-description/ -- Site description", 
+      "object_id": "2", 
+      "change_message": "Modificado content.", 
+      "user": 1, 
+      "content_type": [
+        "flatpages", 
+        "flatpage"
+      ]
+    }
+  }, 
+  {
+    "pk": 83, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-08-09 21:22:20", 
+      "object_repr": "/site-description/ -- Site description", 
+      "object_id": "2", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": [
+        "flatpages", 
+        "flatpage"
+      ]
+    }
+  }, 
+  {
+    "pk": 82, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 21:18:15", 
+      "object_repr": "/about/ -- About", 
+      "object_id": "1", 
+      "change_message": "Modificado content.", 
+      "user": 1, 
+      "content_type": [
+        "flatpages", 
+        "flatpage"
+      ]
+    }
+  }, 
+  {
+    "pk": 81, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 20:24:01", 
+      "object_repr": "terminated", 
+      "object_id": "6", 
+      "change_message": "Modificado label e description.", 
+      "user": 1, 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ]
+    }
+  }, 
+  {
+    "pk": 80, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 20:23:58", 
+      "object_repr": "not yet recruiting", 
+      "object_id": "1", 
+      "change_message": "Modificado label e description.", 
+      "user": 1, 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ]
+    }
+  }, 
+  {
+    "pk": 79, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 20:23:26", 
+      "object_repr": "Term", 
+      "object_id": "6", 
+      "change_message": "Modificado label.", 
+      "user": 1, 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ]
+    }
+  }, 
+  {
+    "pk": 78, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 20:21:32", 
+      "object_repr": "terminated", 
+      "object_id": "1", 
+      "change_message": "Modificado label e description.", 
+      "user": 1, 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ]
+    }
+  }, 
+  {
+    "pk": 77, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 20:18:47", 
+      "object_repr": "recruitment completed", 
+      "object_id": "4", 
+      "change_message": "Modificado label.", 
+      "user": 1, 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ]
+    }
+  }, 
+  {
+    "pk": 76, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-08-09 20:17:43", 
+      "object_repr": "data analysis completed", 
+      "object_id": "8", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ]
+    }
+  }, 
+  {
+    "pk": 75, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-08-09 20:17:24", 
+      "object_repr": "withdrawn", 
+      "object_id": "7", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ]
+    }
+  }, 
+  {
+    "pk": 74, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-08-09 20:17:09", 
+      "object_repr": "not yet recruiting", 
+      "object_id": "6", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ]
+    }
+  }, 
+  {
+    "pk": 73, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 20:12:04", 
+      "object_repr": "Please enter here which is the health condition descriptor text.\r\nIf you choose a descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will automatically filled.\r\n", 
+      "object_id": "29", 
+      "change_message": "Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 72, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 20:11:35", 
+      "object_repr": "Please enter here which is the health condition descriptor text.\r\nIf you choose a descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will automatically filled.\r\n", 
+      "object_id": "29", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 71, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 20:10:11", 
+      "object_repr": "Please enter here which is the health condition descriptor code.\r\nIf you choose a descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will automatically filled.\r\n", 
+      "object_id": "28", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 70, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 20:01:52", 
+      "object_repr": "Please select here which vocabulary will be used to choose the descriptor of the health condition: \r\nDeCS: Health Sciences Descriptors or\r\nICD-10: International Classification of Diseases or\r\nChemical", 
+      "object_id": "26", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 69, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 19:19:37", 
+      "object_repr": "Please select here one descriptor: \r\nDeCS: Descritores em Ci\u00eancias da Sa\u00fade or \r\nICD-10: Classifica\u00e7\u00e3o Internacional de Doen\u00e7as or\r\nChemical Abstracts Service\r\n\r\n", 
+      "object_id": "26", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 68, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:56:07", 
+      "object_repr": "Please enter here which is the Trial financial or material Support Source.", 
+      "object_id": "23", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 67, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:54:08", 
+      "object_repr": "Please enter here which is primary spondor.\r\nThe Primary Sponsor is the individual, organization, group or other legal entity which takes responsibility for initiating, managing and/or financing the s", 
+      "object_id": "20", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 66, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:43:46", 
+      "object_repr": "Please enter here which is the Secondary Sponsor.", 
+      "object_id": "21", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 65, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:28:36", 
+      "object_repr": "Please enter here which is the individual, organization, group or other legal entity which takes responsibility for initiating, managing and/or financing the study. \r\nThe Primary Sponsor is responsibl", 
+      "object_id": "20", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 64, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:27:37", 
+      "object_repr": "Please enter here which is the exclusion criteria for participant selection, including age and sex.", 
+      "object_id": "19", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 63, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:27:23", 
+      "object_repr": "Please enter here which is the temporal unit of maximal age in inclusion criteria.", 
+      "object_id": "18", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 62, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:27:06", 
+      "object_repr": "Please enter here which is the maximal age in inclusion criteria.", 
+      "object_id": "17", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 61, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:26:51", 
+      "object_repr": "Please enter here which is the temporal unit of minimal age in inclusion criteria.", 
+      "object_id": "16", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 60, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:26:36", 
+      "object_repr": "Please enter here which is the minimal age in inclusion criteria.", 
+      "object_id": "15", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 59, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:26:17", 
+      "object_repr": "Please enter here which is the inclusion criteria for participant selection.", 
+      "object_id": "13", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 58, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:25:24", 
+      "object_repr": "Please enter here which is the gender in inclusion criteria (female, male or both).", 
+      "object_id": "14", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 57, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:25:03", 
+      "object_repr": "Please enter here which is the inclusion criteria for participant selection, including maxinal and minimal age and sex.", 
+      "object_id": "13", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 56, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:24:13", 
+      "object_repr": "Please enter here which is the number of participants that this trial plans to enroll.", 
+      "object_id": "12", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 55, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:23:59", 
+      "object_repr": "Please enter here which is the anticipated or actual date of enrollment of the first participant.", 
+      "object_id": "11", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 54, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:23:45", 
+      "object_repr": "Please enter here which is the countries from which participants will be, are intended to be, or have been recruited.", 
+      "object_id": "10", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 53, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:23:25", 
+      "object_repr": "Please enter here which is the recruitment status of this trial:\r\n\r\n    * Pending: participants are not yet being recruited or enrolled at any site\r\n    * Recruiting: participants are currently being ", 
+      "object_id": "9", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 52, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:18:48", 
+      "object_repr": "Please enter here which is the expansion of the trial public acronym, if available.", 
+      "object_id": "60", 
+      "change_message": "Modificado example. Modificado example para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 51, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:17:50", 
+      "object_repr": "Please enter here which is the expansion of the trial public acronym, if available.", 
+      "object_id": "60", 
+      "change_message": "Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 50, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:17:28", 
+      "object_repr": "Please enter here which is the expansion of the trial public acronym, if available.", 
+      "object_id": "60", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 49, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:16:16", 
+      "object_repr": "Please enter here which is the trial public acronym, if available.", 
+      "object_id": "5", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 48, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:15:28", 
+      "object_repr": "Please enter here which is the title intended for the lay public in easily understood language.", 
+      "object_id": "4", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 47, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:13:46", 
+      "object_repr": "Please enter here which is the expansion of the trial scientific acronym, if available.", 
+      "object_id": "3", 
+      "change_message": "Modificado example. Modificado example para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 46, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:10:06", 
+      "object_repr": "Please enter here which is the expansion of the trial scientific acronym, if available.", 
+      "object_id": "3", 
+      "change_message": "Modificado text para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 45, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:09:34", 
+      "object_repr": "Please enter here which is the expansion of the trial scientific acronym, if available.", 
+      "object_id": "3", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 44, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 18:08:21", 
+      "object_repr": "Please enter here which is the expansion of the scientific acronym.", 
+      "object_id": "3", 
+      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 43, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 17:11:02", 
+      "object_repr": "Please enter here which is the trial scientific acronym, if available.", 
+      "object_id": "2", 
+      "change_message": "Modificado text.", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 42, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-08-09 17:10:11", 
+      "object_repr": "Please enter here which is scientific title of the study as it appears in the protocol submitted for funding and ethical review.", 
+      "object_id": "1", 
+      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\". Deletado field help translation \"es\".", 
+      "user": 6, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 41, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-22 11:51:24", 
+      "object_repr": "What studies need to be registered?", 
+      "object_id": "13", 
+      "change_message": "Modificado answer. Modificado answer para question translation \"pt-BR\".", 
+      "user": 1, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 40, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-22 11:40:30", 
+      "object_repr": "What studies need to be registered?", 
+      "object_id": "13", 
+      "change_message": "Modificado answer para question translation \"pt-BR\".", 
+      "user": 1, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 39, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-21 21:38:25", 
+      "object_repr": "System", 
+      "object_id": "1", 
+      "change_message": "Adicionado category translation \"pt-BR\" Adicionado category translation \"es\"", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "category"
+      ]
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-07-21 21:29:01", 
+      "object_repr": "How do I register a trial?", 
+      "object_id": "16", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-07-21 21:23:10", 
+      "object_repr": "Who is responsible for registering a trial?", 
+      "object_id": "15", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-07-21 18:27:19", 
+      "object_repr": "When should studies be registered?", 
+      "object_id": "14", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:25:19", 
+      "object_repr": "Football (Soccer)", 
+      "object_id": "5", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "category"
+      ]
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:25:19", 
+      "object_repr": "Medicamentos", 
+      "object_id": "4", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "category"
+      ]
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Is Dunga nice?", 
+      "object_id": "12", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Aspirima d\u00e1 dor de barriga?", 
+      "object_id": "11", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Pellentesque ullamcorper augue at ante rhoncus ultrices?", 
+      "object_id": "10", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Donec hendrerit ligula eget arcu congue gravida?", 
+      "object_id": "9", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Vestibulum aliquet nisi vel risus pharetra auctor?", 
+      "object_id": "8", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Mauris aliquam, mi non hendrerit luctus?", 
+      "object_id": "7", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 3, 
+      "action_time": "2010-07-21 18:24:58", 
+      "object_repr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", 
+      "object_id": "6", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-21 18:23:59", 
+      "object_repr": "What studies need to be registered?", 
+      "object_id": "13", 
+      "change_message": "Modificado answer.", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-07-21 18:20:25", 
+      "object_repr": "What studies need to be registered?", 
+      "object_id": "13", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-21 18:13:37", 
+      "object_repr": "Study registration", 
+      "object_id": "6", 
+      "change_message": "Nenhum campo modificado.", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "category"
+      ]
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-07-21 18:13:31", 
+      "object_repr": "Study registration", 
+      "object_id": "6", 
+      "change_message": "", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "category"
+      ]
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-20 23:58:56", 
+      "object_repr": "Please enter here which is the relation of the contact: a contact for Public Queries, for Scientific Queries or for Site Queries.", 
+      "object_id": "59", 
+      "change_message": "Modificado text.", 
+      "user": 17, 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ]
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-20 23:55:52", 
+      "object_repr": "/about/ -- About", 
+      "object_id": "1", 
+      "change_message": "Modificado content.", 
+      "user": 17, 
+      "content_type": [
+        "flatpages", 
+        "flatpage"
+      ]
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-07-20 15:32:17", 
+      "object_repr": "Ensaio cl\u00ednico randomizado para avaliar a efic\u00e1cia e seguran\u00e7a do uso concomitante de rifampicina e 600 X Efavirenz\u2026", 
+      "object_id": "31", 
+      "change_message": "Modificado status e fields_status.", 
+      "user": 1, 
+      "content_type": [
+        "reviewapp", 
+        "submission"
+      ]
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 15:12:03", 
+      "object_repr": "Not\u00edcia teste do dia 22", 
+      "object_id": "6", 
+      "change_message": "Modificado status.", 
+      "user": 1, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-06-22 15:11:29", 
+      "object_repr": "Not\u00edcia teste do dia 22", 
+      "object_id": "6", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": [
+        "reviewapp", 
+        "news"
+      ]
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-06-22 15:05:46", 
+      "object_repr": "Is Dunga nice?", 
+      "object_id": "12", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 15:03:11", 
+      "object_repr": "admin_gamarski", 
+      "object_id": "20", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 15:03:03", 
+      "object_repr": "admin_claudio", 
+      "object_id": "21", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 14:44:06", 
+      "object_repr": "josue", 
+      "object_id": "11", 
+      "change_message": "Modificado password e is_active.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 14:28:48", 
+      "object_repr": "josue", 
+      "object_id": "11", 
+      "change_message": "Modificado email.", 
+      "user": 17, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 14:21:19", 
+      "object_repr": "admin_josue", 
+      "object_id": "17", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 14:19:04", 
+      "object_repr": "Efficacy Study of Pioglitazone Compared to Glimepiride on Coronary Atherosclerotic Disease Progression in Subjects With\u2026", 
+      "object_id": "24", 
+      "change_message": "Modificado status.", 
+      "user": 1, 
+      "content_type": [
+        "reviewapp", 
+        "submission"
+      ]
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-22 13:30:56", 
+      "object_repr": "reviewer", 
+      "object_id": "3", 
+      "change_message": "Modificado user_permissions.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-18 14:33:32", 
+      "object_repr": "admin_margot", 
+      "object_id": "6", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-14 17:45:40", 
+      "object_repr": "admin", 
+      "object_id": "1", 
+      "change_message": "Modificado email.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-14 14:48:32", 
+      "object_repr": "margot", 
+      "object_id": "9", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-06-14 14:46:55", 
+      "object_repr": "Aspirima d\u00e1 dor de barriga?", 
+      "object_id": "11", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": [
+        "assistance", 
+        "question"
+      ]
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 1, 
+      "action_time": "2010-06-14 14:46:19", 
+      "object_repr": "Medicamentos", 
+      "object_id": "4", 
+      "change_message": "", 
+      "user": 1, 
+      "content_type": [
+        "assistance", 
+        "category"
+      ]
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-14 13:55:51", 
+      "object_repr": "Demo do dia 14 de junho", 
+      "object_id": "12", 
+      "change_message": "Modificado status.", 
+      "user": 1, 
+      "content_type": [
+        "reviewapp", 
+        "submission"
+      ]
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-14 13:34:02", 
+      "object_repr": "gamarski", 
+      "object_id": "5", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-14 13:33:18", 
+      "object_repr": "laguardia", 
+      "object_id": "7", 
+      "change_message": "Modificado is_staff e is_superuser.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "admin.logentry", 
+    "fields": {
+      "action_flag": 2, 
+      "action_time": "2010-06-14 13:19:01", 
+      "object_repr": "laguardia", 
+      "object_id": "7", 
+      "change_message": "Modificado is_active.", 
+      "user": 1, 
+      "content_type": [
+        "auth", 
+        "user"
+      ]
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "flatpages.flatpage", 
+    "fields": {
+      "registration_required": false, 
+      "title": "About", 
+      "url": "/about/", 
+      "template_name": "", 
+      "sites": [
+        4, 
+        3, 
+        2
+      ], 
+      "content": "<p>O Registro Brasileiro de Ensaios Cl\u00ednicos (RBEC) \u00e9 uma plataforma virtual de acesso livre para registro gratuito de ensaios cl\u00ednicos realizados em seres humanos, em andamento ou finalizados, por pesquisadores brasileiros e estrangeiros. O RBEC inclui ensaios cl\u00ednicos que avaliam interven\u00e7\u00f5es em sa\u00fade resultantes de uso de medicamentos, procedimentos cir\u00fargicos, terapias comportamentais de reabilita\u00e7\u00e3o e terapias complementares.</p> \r\n\r\n<p>O RBEC proporciona a pacientes, m\u00e9dicos, investigadores, comit\u00eas de \u00e9tica e patrocinadores acesso a informa\u00e7\u00f5es sobre os ensaios cl\u00ednicos em curso e conclu\u00eddos, evitando a duplica\u00e7\u00e3o de esfor\u00e7os e impulsionando o avan\u00e7o do conhecimento e a coopera\u00e7\u00e3o entre grupos de pesquisa.</p> \r\n\r\n<p>Sendo uma das mais valiosas fontes de evid\u00eancia sobre a efic\u00e1cia e a seguran\u00e7a das interven\u00e7\u00f5es em sa\u00fade, o ensaio cl\u00ednico, quando registrado em bases de dados p\u00fablicas, garante a todos os interessados o acesso \u00e0 informa\u00e7\u00e3o sobre os efeitos de um produto ou procedimento sob investiga\u00e7\u00e3o. Nesse sentido, aumenta a transpar\u00eancia na pesquisa, fortalecendo o valor \u00e9tico e cient\u00edfico dos estudos de interven\u00e7\u00e3o e observacionais.</p>\r\n\r\n<p>Um ensaio cl\u00ednico pode reduzir a duplica\u00e7\u00e3o desnecess\u00e1ria de esfor\u00e7os de pesquisa ao informar os profissionais que planejam novos estudos acerca de todos os ensaios existentes; aumentar as taxas de recrutamento de participantes para ensaios cl\u00ednicos (especialmente para doen\u00e7as raras ou condi\u00e7\u00f5es de alto risco), desse modo aumentando as chances de um desfecho bem-sucedido de alguns ensaios cl\u00ednicos; agregar valor aos resultados da pesquisa ao prover uma fonte de informa\u00e7\u00e3o confi\u00e1vel sobre ensaio cl\u00ednico para revis\u00f5es sistem\u00e1ticas, metan\u00e1lises e diretrizes baseados em evid\u00eancias e aprimorar as evid\u00eancias dispon\u00edveis que orientem as pr\u00e1ticas de sa\u00fade. </p>\r\n\r\n<p>Fruto de um esfor\u00e7o conjunto do Minist\u00e9rio da Sa\u00fade, do Instituto de Comunica\u00e7\u00e3o e Informa\u00e7\u00e3o Cient\u00edfica e Tecnol\u00f3gica em Sa\u00fade (Icict/Fiocruz), da Organiza\u00e7\u00e3o Panamericana de Sa\u00fade (Opas) e do Centro Latinoamericano e do Caribe de Informa\u00e7\u00e3o em Ci\u00eancias da Sa\u00fade (Bireme), o RBEC aumenta a efic\u00e1cia dos esfor\u00e7os dos ensaios cl\u00ednicos ao divulgar os estudos que n\u00e3o s\u00e3o publicado em revistas cient\u00edficas, reduzindo o vi\u00e9s da publica\u00e7\u00e3o. Desse modo, o RBEC torna-se uma importante fonte de informa\u00e7\u00e3o para pacientes, profissionais de sa\u00fade, pesquisadores, empresas e centros de pesquisa, propiciando maior intera\u00e7\u00e3o e inser\u00e7\u00e3o internacional. </p>", 
+      "enable_comments": false
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "flatpages.flatpage", 
+    "fields": {
+      "registration_required": false, 
+      "title": "Site description", 
+      "url": "/site-description/", 
+      "template_name": "", 
+      "sites": [
+        4, 
+        3, 
+        2
+      ], 
+      "content": "<p>O Registro Brasileiro de Ensaios Cl\u00ednicos (RBEC) \u00e9 uma plataforma virtual de acesso livre para registro gratuito de ensaios cl\u00ednicos realizados em seres humanos, em andamento ou finalizados, por pesquisadores brasileiros e estrangeiros.</p>", 
+      "enable_comments": false
     }
   }
 ]

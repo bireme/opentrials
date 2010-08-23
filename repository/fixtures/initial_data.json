@@ -15,10 +15,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "Candidatos a cirurgia de revasculariza\u00e7\u00e3o mioc\u00e1rdica eletiva, com bomba pela primeira vez, doen\u00e7a dos tr\u00eas vasos (3VD).", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": "Pacientes de alto risco; aqueles que necessitam de outra cirurgia card\u00edaca al\u00e9m de RM; pacientes de urg\u00eancia; diab\u00e9ticos; tempo de isquemia superior a 120 min"
     }
   }, 
@@ -38,10 +35,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -61,10 +55,7 @@
       "acronym": "Teste", 
       "scientific_acronym_expansion": "Teste", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -84,10 +75,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -107,10 +95,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -130,10 +115,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -153,10 +135,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -176,10 +155,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -199,10 +175,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -222,10 +195,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -245,10 +215,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -268,10 +235,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -291,10 +255,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -314,10 +275,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "T\u00edtulo Em Portug\u00eas", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -337,10 +295,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -360,10 +315,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "Crit\u00e9rios de inclus\u00e3o:\r\n * Mulehres com potencial para procria\u00e7\u00e3o que s\u00e3o sexualmente ativas e concordaram com uso de contracep\u00e7\u00e3o adequada e n\u00e3o podem estar gr\u00e1vidas ou em lacta\u00e7\u00e3o desde o rastreamento e ao longo do estudo\r\n * Ter tido diagn\u00f3stico de diabetes tipo 2\r\n * Ter recebido aconselhamento apropriado de modifica\u00e7\u00e3o do estilo de vida para diabetes tipo 2, incluindo dieta e exerc\u00edcio.\r\n * nunca ter se tratado ou n\u00e3o estar atualmente em terapia antidiab\u00e9tica\r\n * ter n\u00edvel d ehemoglobina glicosada maior ou igual a 6% e menor que 9% no rastramento se estiver tomando medica\u00e7\u00e3o para diabetes", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": "Crit\u00e9rios de exclus\u00e3o:\r\n\r\n * Ter diabetes mellitus tipo 1\r\n * Ter participado em outro estudo investigativo nos 30 dias pr\u00e9vios ao in\u00edcio deste estudo\r\n * Homens com n\u00edvel de creatinina s\u00e9rica maior ou igual a 2,0 mg/dL"
     }
   }, 
@@ -383,10 +335,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -406,10 +355,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "Pacientes com idade entre 18 e 75 anos com evid\u00eancia sorol\u00f3gica de infec\u00e7\u00e3o por Chagas (qualquer combina\u00e7\u00e3o de 2 testes positivos) e que tenha uma ou mais das seguintes condi\u00e7\u00f5es:\r\nEletrocardiograma anormal com no m\u00ednimo dois componentes (bloqueio completo do ramo direito, bloqueio divisional \u00e2ntero-superior esquerdo, altera\u00e7\u00e3o da repolariza\u00e7\u00e3o inferolateral e sobrecarga ventricular esquerda, bradicardia sinusal e fibrila\u00e7\u00e3o atrial);\r\nECG anormal (Mobitz tipo II, bloqueio AV avan\u00e7ado ou de terceiro grau)", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": "Insufici\u00eancia card\u00edaca n\u00e3o-compensada ou insuficiencia card\u00edaca classe IV (NYHA)\r\nEvid\u00eancia de doen\u00e7a cardio-coronariana concomitante ou outra etiologia de miocardiopatia\r\nTratamento pr\u00e9vio com agentes antitripanosomiais ou indica\u00e7\u00e3o aceita para terapia antiparasit\u00e1ria\tHist\u00f3ria de alcoolismo grave nos \u00faltimos dois anos\r\nInsuficiencia renal ou hep\u00e1tica cr\u00f4nica\r\nGravidez ou em amamenta\u00e7\u00e3o\r\n"
     }
   }, 
@@ -429,10 +375,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -452,10 +395,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -475,10 +415,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -497,12 +434,9 @@
       "scientific_acronym": "", 
       "acronym": "", 
       "scientific_acronym_expansion": "", 
-      "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
-      "exclusion_criteria": ""
+      "inclusion_criteria": "* pele tipo III-VI\r\n* vitiligo em ambos dorsos da m\u00e3o\r\n* hist\u00f3ria de vitiligo est\u00e1vel (nenhuma lesao nova e n\u00e3o mais do que 10% de aumento das les\u00f5es existentes) para seis meses com aus\u00eancia de fen\u00f4meno de Kebner (novas les\u00f5es aparecendo ap\u00f3s trauma da pele)\r\n* refrat\u00e1rio a ester\u00f3ides t\u00f3picos e imunomoduladores", 
+      "content_type": 24, 
+      "exclusion_criteria": "* gravidez e/ou amamaenta\u00e7\u00e3o\r\n* hist\u00f3ria de cancer de pele\r\n* hist\u00f3ria detomada de medica\u00e7\u00e3o fotossensibilizadora\r\n* hist\u00f3ria de fototerapia recente ou medica\u00e7\u00e3o t\u00f3pica no prazo de um m\u00eas pr\u00e9vio ao recrutamento\r\n* hist\u00f3ria de transplante de \u00f3rg\u00e3o"
     }
   }, 
   {
@@ -521,10 +455,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -544,10 +475,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -567,10 +495,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -590,10 +515,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -613,10 +535,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -636,10 +555,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -659,10 +575,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -682,10 +595,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -705,10 +615,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -716,22 +623,19 @@
     "pk": 32, 
     "model": "repository.clinicaltrialtranslation", 
     "fields": {
-      "scientific_title": "", 
+      "scientific_title": "adadasa", 
       "study_design": "", 
       "hc_freetext": "", 
       "language": "pt-br", 
-      "public_title": "", 
+      "public_title": "asdasd", 
       "i_freetext": "", 
-      "acronym_expansion": "", 
+      "acronym_expansion": "adfsfs", 
       "object_id": 7, 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "scientific_acronym_expansion": "", 
+      "scientific_acronym": "asdsa", 
+      "acronym": "sadfsa", 
+      "scientific_acronym_expansion": "asdas", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -751,10 +655,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -774,10 +675,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -797,10 +695,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -820,10 +715,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -843,10 +735,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -866,10 +755,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -889,10 +775,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -912,10 +795,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -935,10 +815,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -958,10 +835,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -981,10 +855,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -1004,10 +875,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "* Adultos com diagn\u00f3stico de tuberculose, HIV positivo.\r\n\r\n* Concord\u00e2ncia para evitar as drogas n\u00e3o permitidas durante o ensaio, concord\u00e2ncia para participar do estudo (consentimento informado)", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": "* Doen\u00e7a hep\u00e1tica ativa\r\n* Gestante ou amamentando\r\n* Contagem CD4 > 350"
     }
   }, 
@@ -1027,10 +895,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -1050,10 +915,7 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -1073,10 +935,447 @@
       "acronym": "", 
       "scientific_acronym_expansion": "", 
       "inclusion_criteria": "", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ], 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 50, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "Tratamento com selenio e Cardiopatia Chag\u00e1sica(CCTE): um ensaio cl\u00ednico prospectivo aleatorizado em pacientes do doen\u00e7a de Chagas", 
+      "study_design": "Estudo duplo cego, paralelo, randomizado, controle placebo", 
+      "hc_freetext": "Cardiopatia chag\u00e1sica", 
+      "language": "pt-BR", 
+      "public_title": "Tratamento com selenio e cardiopatia chag\u00e1sica", 
+      "i_freetext": "Grupo 1: suplementa\u00e7\u00e3o diet\u00e9tica com sel\u00eanio (100 ug de selenito de s\u00f3dio)durante 12 meses\r\nGrupo 2: placebo", 
+      "acronym_expansion": "", 
+      "object_id": 33, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "* ecocardiografia alterada (LVEF entre 0,35% e 45%)\r\n\r\n", 
+      "content_type": 24, 
+      "exclusion_criteria": "* patients acima de 65 anso de idade\r\n* fumo, pacientes com cardiopatia n\u00e3o-chag\u00e1sica, moradia pr\u00f3xima a jazidas minerais, industrias metal\u00fargicas e lugares com exposi\u00e7\u00e3o radioativa, vegetariano\r\n* perfil de depress\u00e3o\r\n* gr\u00e1vida ou amamentando\r\n* diabetes ou c\u00e2ncer atualmente ou no passado.\r\n* pacientes ser\u00e3o exclu\u00eddos se tomam medicamentos anti-convulsivantes (Clozapina, \u00c1cido valpr\u00f3ico)\r\n"
+    }
+  }, 
+  {
+    "pk": 51, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "es", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 33, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 48, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "peas", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "pt-BR", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 32, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 49, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "es", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 32, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 52, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "es", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 5, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 53, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "pt-br", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 5, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 54, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "es", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 11, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 55, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "pt-br", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 11, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 56, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "es", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 12, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 57, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "pt-br", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 12, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 58, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "es", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 13, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 59, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "pt-br", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 13, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 60, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "es", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 16, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 61, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "pt-br", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 16, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 62, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "es", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 17, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 63, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "pt-br", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 17, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 64, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "es", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 18, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 65, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "pt-br", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 18, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 66, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "es", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 19, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 67, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "pt-br", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 19, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 68, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "es", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 21, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
+      "exclusion_criteria": ""
+    }
+  }, 
+  {
+    "pk": 69, 
+    "model": "repository.clinicaltrialtranslation", 
+    "fields": {
+      "scientific_title": "", 
+      "study_design": "", 
+      "hc_freetext": "", 
+      "language": "pt-br", 
+      "public_title": "", 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "object_id": 21, 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "scientific_acronym_expansion": "", 
+      "inclusion_criteria": "", 
+      "content_type": 24, 
       "exclusion_criteria": ""
     }
   }, 
@@ -1288,6 +1587,24 @@
     }
   }, 
   {
+    "pk": 26, 
+    "model": "repository.trialnumber", 
+    "fields": {
+      "id_number": "NCT00875173", 
+      "trial": 33, 
+      "issuing_authority": "clinicaltrials.gov"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "repository.trialnumber", 
+    "fields": {
+      "id_number": "234234", 
+      "trial": 7, 
+      "issuing_authority": "sada"
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "repository.trialsecondarysponsor", 
     "fields": {
@@ -1341,6 +1658,22 @@
     "fields": {
       "trial": 30, 
       "institution": 38
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "repository.trialsecondarysponsor", 
+    "fields": {
+      "trial": 33, 
+      "institution": 44
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "repository.trialsecondarysponsor", 
+    "fields": {
+      "trial": 25, 
+      "institution": 30
     }
   }, 
   {
@@ -1416,12 +1749,18 @@
     }
   }, 
   {
+    "pk": 10, 
+    "model": "repository.trialsupportsource", 
+    "fields": {
+      "trial": 25, 
+      "institution": 30
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "NZ"
-      ], 
+      "country": 158, 
       "creator": 1, 
       "name": "National Institute for Health Innovation", 
       "address": "School of Population Health\r\nTamaki Campus\r\nThe University of Auckland\r\nPrivate Bag 92019 \r\nAuckland Mail Centre\r\nAuckland 1142"
@@ -1431,9 +1770,7 @@
     "pk": 2, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "IR"
-      ], 
+      "country": 103, 
       "creator": 1, 
       "name": "Tabriz University of Medical Sciences", 
       "address": "Daneshgah St,Tabriz Univ Med Sci\r\nTabriz\r\nZip: 51656-65811"
@@ -1443,9 +1780,7 @@
     "pk": 3, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "creator": 1, 
       "name": "Abbott Vascular", 
       "address": ""
@@ -1455,9 +1790,7 @@
     "pk": 4, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "DZ"
-      ], 
+      "country": 5, 
       "creator": 1, 
       "name": "Fooo", 
       "address": ""
@@ -1467,9 +1800,7 @@
     "pk": 5, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "AU"
-      ], 
+      "country": 15, 
       "creator": 1, 
       "name": "Patrocinador xyz", 
       "address": ""
@@ -1479,9 +1810,7 @@
     "pk": 6, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 1, 
       "name": "Funda\u00e7\u00e3o Oswaldo Cruz", 
       "address": ""
@@ -1491,9 +1820,7 @@
     "pk": 7, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "NL"
-      ], 
+      "country": 155, 
       "creator": 1, 
       "name": "Radboud University ", 
       "address": ""
@@ -1503,9 +1830,7 @@
     "pk": 8, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "CN"
-      ], 
+      "country": 45, 
       "creator": 1, 
       "name": " \tWest China Hospital, Sichuan University", 
       "address": ""
@@ -1515,9 +1840,7 @@
     "pk": 9, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 5, 
       "name": "Fiocruz", 
       "address": ""
@@ -1527,9 +1850,7 @@
     "pk": 10, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "AT"
-      ], 
+      "country": 16, 
       "creator": 6, 
       "name": "Eudgo aaaaaaaaaa. Inc.", 
       "address": ""
@@ -1539,9 +1860,7 @@
     "pk": 11, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "creator": 1, 
       "name": "Genentech, Inc.", 
       "address": ""
@@ -1551,9 +1870,7 @@
     "pk": 12, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "creator": 1, 
       "name": "Genentech, Inc.", 
       "address": "sdf"
@@ -1563,9 +1880,7 @@
     "pk": 13, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "creator": 1, 
       "name": "Genentech, Inc.", 
       "address": "sdf"
@@ -1575,9 +1890,7 @@
     "pk": 14, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "AR"
-      ], 
+      "country": 12, 
       "creator": 4, 
       "name": "ACME", 
       "address": ""
@@ -1587,9 +1900,7 @@
     "pk": 15, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "AR"
-      ], 
+      "country": 12, 
       "creator": 7, 
       "name": "ACME", 
       "address": ""
@@ -1599,9 +1910,7 @@
     "pk": 16, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "creator": 14, 
       "name": "ACME", 
       "address": ""
@@ -1611,9 +1920,7 @@
     "pk": 17, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 15, 
       "name": "FM Inc.", 
       "address": ""
@@ -1623,9 +1930,7 @@
     "pk": 18, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 16, 
       "name": "Minist\u00e9rio da Sa\u00fade", 
       "address": ""
@@ -1635,9 +1940,7 @@
     "pk": 19, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 16, 
       "name": "Minist\u00e9rio da Sa\u00fade", 
       "address": ""
@@ -1647,9 +1950,7 @@
     "pk": 20, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 16, 
       "name": "Ministerio", 
       "address": ""
@@ -1659,9 +1960,7 @@
     "pk": 21, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "AT"
-      ], 
+      "country": 16, 
       "creator": 16, 
       "name": "teste", 
       "address": ""
@@ -1671,9 +1970,7 @@
     "pk": 22, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "creator": 7, 
       "name": "Celgene Corporation", 
       "address": ""
@@ -1683,9 +1980,7 @@
     "pk": 23, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "GB"
-      ], 
+      "country": 232, 
       "creator": 1, 
       "name": "Jumperkraft", 
       "address": "Heal Highway, 311\r\nPO 3WWWEQ"
@@ -1695,9 +1990,7 @@
     "pk": 24, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 1, 
       "name": "Klintban", 
       "address": "av. norte, sn\r\nvlia dos alpes\r\n"
@@ -1707,9 +2000,7 @@
     "pk": 25, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BS"
-      ], 
+      "country": 18, 
       "creator": 2, 
       "name": "tete", 
       "address": ""
@@ -1719,9 +2010,7 @@
     "pk": 26, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "CH"
-      ], 
+      "country": 213, 
       "creator": 19, 
       "name": "Novartis", 
       "address": ""
@@ -1731,9 +2020,7 @@
     "pk": 27, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "creator": 7, 
       "name": "Clyde corp.", 
       "address": ""
@@ -1743,9 +2030,7 @@
     "pk": 28, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "creator": 17, 
       "name": "Takeda Research Group", 
       "address": ""
@@ -1755,9 +2040,7 @@
     "pk": 29, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "creator": 1, 
       "name": "National Diabetes Association", 
       "address": "1340 W Street, Auckland California 13900"
@@ -1767,9 +2050,7 @@
     "pk": 30, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 12, 
       "name": "FIOCRUZ", 
       "address": ""
@@ -1779,9 +2060,7 @@
     "pk": 31, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 1, 
       "name": "TESTE", 
       "address": "DKFA ~KF ASKLF \u00c3LKsdf "
@@ -1791,9 +2070,7 @@
     "pk": 32, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "CA"
-      ], 
+      "country": 39, 
       "creator": 11, 
       "name": "Hamilton health Sciences", 
       "address": ""
@@ -1803,9 +2080,7 @@
     "pk": 33, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 1, 
       "name": "ACME", 
       "address": ""
@@ -1815,9 +2090,7 @@
     "pk": 34, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "creator": 11, 
       "name": "University of Texas Southwestern Medical Center ", 
       "address": ""
@@ -1827,9 +2100,7 @@
     "pk": 35, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 1, 
       "name": "Lightec", 
       "address": "Rua da Quitanda, 90 - 2\u00ba andar\n20011-030 - Rio de Janeiro - RJ\nTel: (21) 3501-9900\nFax: (21) 3501-5302"
@@ -1839,9 +2110,7 @@
     "pk": 36, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "creator": 5, 
       "name": "Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD)", 
       "address": ""
@@ -1851,9 +2120,7 @@
     "pk": 37, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "NL"
-      ], 
+      "country": 155, 
       "creator": 7, 
       "name": "NedX", 
       "address": ""
@@ -1863,9 +2130,7 @@
     "pk": 38, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 1, 
       "name": "wwert", 
       "address": "a13039\nasd\n\n23423"
@@ -1875,9 +2140,7 @@
     "pk": 39, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 14, 
       "name": "Funda\u00e7\u00e3o Oswaldo Cruz", 
       "address": ""
@@ -1887,9 +2150,7 @@
     "pk": 40, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "creator": 1, 
       "name": "Conselho Nacional de Desenvolvimento Cient\u00edfico e Tecnol\u00f3gico", 
       "address": "SEPN 507 Ed. CNPq - Terreo - Sala 7, 0, \n70740-901 - Brasilia - DF\n\n"
@@ -1899,12 +2160,50 @@
     "pk": 41, 
     "model": "repository.institution", 
     "fields": {
-      "country": [
-        "AT"
-      ], 
+      "country": 16, 
       "creator": 1, 
       "name": "United Nations Office On Drugs and Crime (UNODC)", 
       "address": "Vienna International Centre\nWagramer Strasse 5 \nA 1400 Vienna "
+    }
+  }, 
+  {
+    "pk": 42, 
+    "model": "repository.institution", 
+    "fields": {
+      "country": 17, 
+      "creator": 7, 
+      "name": "d", 
+      "address": ""
+    }
+  }, 
+  {
+    "pk": 43, 
+    "model": "repository.institution", 
+    "fields": {
+      "country": 1, 
+      "creator": 11, 
+      "name": "Funda\u00e7\u00e3o Oswaldo Cruz", 
+      "address": ""
+    }
+  }, 
+  {
+    "pk": 44, 
+    "model": "repository.institution", 
+    "fields": {
+      "country": 1, 
+      "creator": 11, 
+      "name": "Conselho Nacional de Desenvolvimento Cient\u00edfico e Tecnol\u00f3gico", 
+      "address": ""
+    }
+  }, 
+  {
+    "pk": 45, 
+    "model": "repository.institution", 
+    "fields": {
+      "country": 1, 
+      "creator": 12, 
+      "name": "aaa", 
+      "address": "sdfas asfasfsaef"
     }
   }, 
   {
@@ -1920,9 +2219,7 @@
       "telephone": "+98-411-3357767", 
       "affiliation": 2, 
       "address": "Daneshgah St, Tabriz Univ Med Sci", 
-      "country": [
-        "IR"
-      ], 
+      "country": 103, 
       "email": "drsafaei@yahoo.com"
     }
   }, 
@@ -1939,9 +2236,7 @@
       "telephone": "+1 408-845-3133", 
       "affiliation": 3, 
       "address": "3200 Lakeside Dr.", 
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "email": "Candace.Elek@av.abbott.com"
     }
   }, 
@@ -1958,9 +2253,7 @@
       "telephone": "+1 408-845-3932", 
       "affiliation": 3, 
       "address": "3200 Lakeside Dr.", 
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "email": "Robert.Mcgreevy@av.abbott.com"
     }
   }, 
@@ -1977,9 +2270,7 @@
       "telephone": "21-23409985", 
       "affiliation": 29, 
       "address": "K Street 456 ", 
-      "country": [
-        "US"
-      ], 
+      "country": 233, 
       "email": "jhdoe@aol.com"
     }
   }, 
@@ -1996,9 +2287,7 @@
       "telephone": "11 4448-7897", 
       "affiliation": 3, 
       "address": "teste", 
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "email": "teste@teste.com"
     }
   }, 
@@ -2015,9 +2304,7 @@
       "telephone": "11 4448-7897", 
       "affiliation": 5, 
       "address": "aaa", 
-      "country": [
-        "DZ"
-      ], 
+      "country": 5, 
       "email": "joao@teste.com"
     }
   }, 
@@ -2034,9 +2321,7 @@
       "telephone": "12346", 
       "affiliation": 5, 
       "address": "qqq", 
-      "country": [
-        "BS"
-      ], 
+      "country": 18, 
       "email": "paulo@teste.com.br"
     }
   }, 
@@ -2053,9 +2338,7 @@
       "telephone": "1234567", 
       "affiliation": 9, 
       "address": "xxxxx", 
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "email": "margot.rj@gmail.com"
     }
   }, 
@@ -2072,9 +2355,7 @@
       "telephone": "+55-21-3865-9607", 
       "affiliation": 6, 
       "address": "", 
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "email": "valeria.rolla@ipec.fiocruz.br"
     }
   }, 
@@ -2091,9 +2372,7 @@
       "telephone": "+55 21 38659601", 
       "affiliation": 6, 
       "address": "", 
-      "country": [
-        "BR"
-      ], 
+      "country": 1, 
       "email": "simone.carvalho@ipec.fiocruz.br"
     }
   }, 
@@ -2300,10 +2579,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 36
     }
@@ -2313,10 +2589,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "Efeito do tratamento na mudan\u00e7a nominal no volume percentual de ateroma de segmento identificado de art\u00e9ria coron\u00e1ria alvo desde a linha de base ap\u00f3s 18 meses de tratamentomedido pela imagem de ultrassom intravascular de art\u00e9rias coron\u00e1rias", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 36
     }
@@ -2326,10 +2599,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 37
     }
@@ -2339,10 +2609,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "* Comparar o efeito da pioglitazona e da glimepirida na mudan\u00e7a nominal do volume total do ateroma \r\n* Comparar o efeito da pioglitazona e glimepirida na ocorr\u00eancia de eventos cardiovasculares como um comp\u00f3sito de mortalidade cardiovascular, infarto agudo do mioc\u00e1rdio n\u00e3o=fatal, acidente vascular cerebral n\u00e3o-fatal", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 37
     }
@@ -2352,10 +2619,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 38
     }
@@ -2365,10 +2629,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "al\u00edvio da dor", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 38
     }
@@ -2378,10 +2639,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 39
     }
@@ -2391,10 +2649,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "qualidade de vida", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 39
     }
@@ -2404,10 +2659,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 40
     }
@@ -2417,10 +2669,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "1", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 40
     }
@@ -2430,10 +2679,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 41
     }
@@ -2443,10 +2689,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "2", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 41
     }
@@ -2456,10 +2699,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 42
     }
@@ -2469,10 +2709,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "A primeira ocorr\u00eancia de qual um dos seguintes desfechos clinicamente significativos: \r\nmorte\r\nparada card\u00edaca que requer desfribila\u00e7\u00e3o ou cardiovers\u00e3o\r\ntaquicardia ventricular embasada por dicumenta\u00e7\u00e3o que requer cardiovers\u00e3o\r\nnovo desenvolvimento de insufici\u00eancia card\u00edaca congestiva sintom\u00e1tica\r\nimplanta\u00e7\u00e3o de marcapasso ou desfibrilador\r\nacidente vascular encef\u00e1lico ou qualquer outro evento tromb\u00f3tico em pacientes com fen\u00f4menos tromboemb\u00f3licos pr\u00e9vios", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 42
     }
@@ -2482,10 +2719,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 43
     }
@@ -2495,10 +2729,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "Desenvolvimento de qualquer uma das seguintes mudan\u00e7as ecocardiogr\u00e1ficas: \r\naneurisma ventricular\r\nredu\u00e7\u00e3o da fra\u00e7\u00e3o de eje\u00e7\u00e3o ventricular esquerda > 5%, aumento na disfun\u00e7\u00e3o diast\u00f3lica ventricular esquerda > 5.0 mm  comparada \u00e0 avalia\u00e7\u00e3o inicial\r\nprogress\u00e3o na classe funcional da New York Heart Association (NYHA) em pelo menos uma categoria, avalia\u00e7\u00e3o da seguran\u00e7a (eventos adversos: dermatite, neuropatia perif\u00e9rica, intoler\u00e2ncia gastrointestinal, leucopenia [2500 x 10^9 L]), toler\u00e2ncia e ader\u00eancia ao tratamento", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 43
     }
@@ -2508,10 +2739,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 44
     }
@@ -2521,10 +2749,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "Estudo prospectivo cego para o investigador que envolve 25 homens e mulheres adultos com vitiligo no dorso das m\u00e3os. Ministransplante punch ser\u00e1 realizado em ambas as m\u00e3os retirando a pele de coxas e/ou n\u00e1degas. Tratamentos com luz ser\u00e3o administrados uma semana ap\u00f3s o transplante. Uma m\u00e3o receber\u00e1 luz ultravioleta B de banda estreita e a outra receber\u00e1 tratamento com luz focal de 308-nm. Os tratamentos de luz ser\u00e3o administrados 3 vezes por semana durante 12 semanas. Uma visita de seguimento de longo prazo ser\u00e1 completada na 25a semana. O investigador ir\u00e1 avaliar os participantes nas semanas 4, 7, 13 e 25, al\u00e9m de rastreamento e avalia\u00e7\u00f5es/procedimentos no in\u00edcio do estudo.", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 44
     }
@@ -2534,10 +2759,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 45
     }
@@ -2547,10 +2769,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "Pwercentual da repigmenta\u00e7\u00e3o dos transplantes individuais sobreviventes, percntual de repigmenta\u00e7\u00e3o de todos os transplantes sobreviventes e percentual de repigmenta\u00e7\u00e3o das les\u00f5es de pele com cada fonte de luz. Tempo total do estudo: 25 semanas. ", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 45
     }
@@ -2560,10 +2779,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 46
     }
@@ -2573,10 +2789,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "incid\u00eancia de pr\u00e9-eclampsia", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 46
     }
@@ -2586,10 +2799,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 47
     }
@@ -2599,10 +2809,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "propor\u00e7\u00e3o de pacientes com carga viral inferior a 80 ao final do tratamento da tuberculose \r\n\r\n[Per\u00edodo de observa\u00e7\u00e3o: 6 meses] ", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 47
     }
@@ -2612,10 +2819,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 48
     }
@@ -2625,10 +2829,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "propor\u00e7\u00e3o de eventos adversos em cada grupo \r\n\r\n[Per\u00edodo de observa\u00e7\u00e3o: 6 meses]", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 48
     }
@@ -2638,10 +2839,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 49
     }
@@ -2651,10 +2849,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "reconstitui\u00e7\u00e3o imunol\u00f3gica \r\n\r\n[Per\u00edodo de observa\u00e7\u00e3o: 6 meses]", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 49
     }
@@ -2664,10 +2859,7 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "es", 
       "object_id": 50
     }
@@ -2677,12 +2869,69 @@
     "model": "repository.outcometranslation", 
     "fields": {
       "description": "Genotipagem da resist\u00eancia \r\n\r\n[Per\u00edodo de observa\u00e7\u00e3o: 6 meses]", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ], 
+      "content_type": 34, 
       "language": "pt-br", 
       "object_id": 50
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "repository.outcometranslation", 
+    "fields": {
+      "description": "", 
+      "content_type": 34, 
+      "language": "es", 
+      "object_id": 52
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "repository.outcometranslation", 
+    "fields": {
+      "description": "Redu\u00e7\u00e3o de 50% na taxa de progress\u00e3o dos sintomas card\u00edacos pela compara\u00e7\u00e3o das m\u00e9dias de fra\u00e7\u00e3o de eje\u00e7\u00e3o ventricular esquerda", 
+      "content_type": 34, 
+      "language": "pt-br", 
+      "object_id": 52
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "repository.outcometranslation", 
+    "fields": {
+      "description": "", 
+      "content_type": 34, 
+      "language": "es", 
+      "object_id": 53
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "repository.outcometranslation", 
+    "fields": {
+      "description": "Revers\u00e3o parcial ou total nas altera\u00e7\u00f5es eletrocardiogr\u00e1ficas", 
+      "content_type": 34, 
+      "language": "pt-br", 
+      "object_id": 53
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "repository.outcometranslation", 
+    "fields": {
+      "description": "", 
+      "content_type": 34, 
+      "language": "es", 
+      "object_id": 51
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "repository.outcometranslation", 
+    "fields": {
+      "description": "adasdsa", 
+      "content_type": 34, 
+      "language": "pt-br", 
+      "object_id": 51
     }
   }, 
   {
@@ -2690,10 +2939,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "en", 
       "object_id": 15
     }
@@ -2703,10 +2949,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "cefal\u00e9ia", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 15
     }
@@ -2716,10 +2959,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 15
     }
@@ -2729,10 +2969,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "en", 
       "object_id": 16
     }
@@ -2742,10 +2979,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Doen\u00e7as dos animais", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 16
     }
@@ -2755,10 +2989,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Enfermedades de los animales", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 16
     }
@@ -2768,10 +2999,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "en", 
       "object_id": 17
     }
@@ -2781,10 +3009,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 17
     }
@@ -2794,10 +3019,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 17
     }
@@ -2807,10 +3029,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 18
     }
@@ -2820,10 +3039,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "melanoma ", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 18
     }
@@ -2833,10 +3049,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 19
     }
@@ -2846,10 +3059,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "melanoma irressec\u00e1vel ou metast\u00e1tico", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 19
     }
@@ -2859,10 +3069,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Neoplasias", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 20
     }
@@ -2872,10 +3079,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Neoplasias", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 20
     }
@@ -2885,10 +3089,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 21
     }
@@ -2898,10 +3099,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "melanoma", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 21
     }
@@ -2911,10 +3109,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Enfermedades nutricionales y metab\u00f3licas", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 22
     }
@@ -2924,10 +3119,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Doen\u00e7as nutricionais e metab\u00f3licas", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 22
     }
@@ -2937,10 +3129,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 23
     }
@@ -2950,10 +3139,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Diabetes mellitus n\u00e3o-insulino dependente", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 23
     }
@@ -2963,10 +3149,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 24
     }
@@ -2976,10 +3159,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "asfdasdfafda", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 24
     }
@@ -2989,10 +3169,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 25
     }
@@ -3002,10 +3179,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "1111111111", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 25
     }
@@ -3015,10 +3189,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 26
     }
@@ -3028,10 +3199,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "glicemia", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 26
     }
@@ -3041,10 +3209,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 27
     }
@@ -3054,10 +3219,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "bevacizumabe", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 27
     }
@@ -3067,10 +3229,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 28
     }
@@ -3080,10 +3239,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "placebo", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 28
     }
@@ -3093,10 +3249,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Enfermedades cardiovasculares", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 29
     }
@@ -3106,10 +3259,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Doen\u00e7as cardiovasculares", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 29
     }
@@ -3119,10 +3269,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 30
     }
@@ -3132,10 +3279,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Doen\u00e7a de Chagas (cr\u00f4nica) com comprometimento card\u00edaco", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 30
     }
@@ -3145,10 +3289,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Enfermedades parasitarias", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 31
     }
@@ -3158,10 +3299,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Doen\u00e7as parasit\u00e1rias", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 31
     }
@@ -3171,10 +3309,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Enfermedades parasitarias", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 32
     }
@@ -3184,10 +3319,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Doen\u00e7as parasit\u00e1rias", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 32
     }
@@ -3197,10 +3329,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Enfermedades de la piel y tejido conjuntivo", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 33
     }
@@ -3210,10 +3339,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Doen\u00e7as da pele e do tecido conjuntivo", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 33
     }
@@ -3223,10 +3349,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 34
     }
@@ -3236,10 +3359,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "vitiligo", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 34
     }
@@ -3249,10 +3369,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 35
     }
@@ -3262,10 +3379,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "pigmenta\u00e7\u00e3o da pele", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 35
     }
@@ -3275,10 +3389,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Enfermedades cardiovasculares", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 11
     }
@@ -3288,10 +3399,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Doen\u00e7as cardiovasculares", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 11
     }
@@ -3301,10 +3409,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Isquemia Mioc\u00e1rdica", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 12
     }
@@ -3314,10 +3419,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Isquemia Mioc\u00e1rdica", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 12
     }
@@ -3327,10 +3429,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Estenosis Coronaria", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 13
     }
@@ -3340,10 +3439,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Estenose Coron\u00e1ria", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 13
     }
@@ -3353,10 +3449,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Reestenosis Coronaria", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 14
     }
@@ -3366,10 +3459,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Reestenose Coron\u00e1ria", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 14
     }
@@ -3379,10 +3469,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Enfermedades cardiovasculares", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 1
     }
@@ -3392,10 +3479,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Doen\u00e7as cardiovasculares", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 1
     }
@@ -3405,10 +3489,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Isquemia Mioc\u00e1rdica", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 2
     }
@@ -3418,10 +3499,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Isquemia Mioc\u00e1rdica", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 2
     }
@@ -3431,10 +3509,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Enfermedad de la Arteria Coronaria", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 3
     }
@@ -3444,10 +3519,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Doen\u00e7a da Art\u00e9ria Coronariana", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 3
     }
@@ -3457,10 +3529,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Estenosis Coronaria", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 7
     }
@@ -3470,10 +3539,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Estenose Coron\u00e1ria", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 7
     }
@@ -3483,10 +3549,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "F\u00edstula Arteriovenosa", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 9
     }
@@ -3496,10 +3559,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "F\u00edstula Arteriovenosa", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 9
     }
@@ -3509,10 +3569,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 36
     }
@@ -3522,10 +3579,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "XE321", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 36
     }
@@ -3535,10 +3589,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Infecciones bacterianas y micosis", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 37
     }
@@ -3548,10 +3599,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Infec\u00e7\u00f5es bacterianas e micoses", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 37
     }
@@ -3561,10 +3609,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Enfermedades del sistema inmune", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 38
     }
@@ -3574,10 +3619,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Doen\u00e7as do sistema imune", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 38
     }
@@ -3587,10 +3629,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 39
     }
@@ -3600,10 +3639,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Tuberculose n\u00e3o especificada das vias respirat\u00f3rias, com confirma\u00e7\u00e3o bacteriol\u00f3gica e histol\u00f3gica", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 39
     }
@@ -3613,10 +3649,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 40
     }
@@ -3626,10 +3659,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Rifampina", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 40
     }
@@ -3639,10 +3669,7 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Transfusi\u00f3n de Sangre Aut\u00f3loga", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "es", 
       "object_id": 41
     }
@@ -3652,12 +3679,129 @@
     "model": "repository.descriptortranslation", 
     "fields": {
       "text": "Transfus\u00e3o de Sangue Aut\u00f3loga", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ], 
+      "content_type": 36, 
       "language": "pt-br", 
       "object_id": 41
+    }
+  }, 
+  {
+    "pk": 82, 
+    "model": "repository.descriptortranslation", 
+    "fields": {
+      "text": "", 
+      "content_type": 36, 
+      "language": "es", 
+      "object_id": 45
+    }
+  }, 
+  {
+    "pk": 81, 
+    "model": "repository.descriptortranslation", 
+    "fields": {
+      "text": "Doen\u00e7as cardiovasculares", 
+      "content_type": 36, 
+      "language": "pt-br", 
+      "object_id": 44
+    }
+  }, 
+  {
+    "pk": 80, 
+    "model": "repository.descriptortranslation", 
+    "fields": {
+      "text": "Enfermedades cardiovasculares", 
+      "content_type": 36, 
+      "language": "es", 
+      "object_id": 44
+    }
+  }, 
+  {
+    "pk": 76, 
+    "model": "repository.descriptortranslation", 
+    "fields": {
+      "text": "Enfermedades urogenitales masculinas", 
+      "content_type": 36, 
+      "language": "es", 
+      "object_id": 42
+    }
+  }, 
+  {
+    "pk": 77, 
+    "model": "repository.descriptortranslation", 
+    "fields": {
+      "text": "Doen\u00e7as urogenitais masculinas", 
+      "content_type": 36, 
+      "language": "pt-br", 
+      "object_id": 42
+    }
+  }, 
+  {
+    "pk": 78, 
+    "model": "repository.descriptortranslation", 
+    "fields": {
+      "text": "Servicios M\u00e9dicos de Urgencia", 
+      "content_type": 36, 
+      "language": "es", 
+      "object_id": 43
+    }
+  }, 
+  {
+    "pk": 79, 
+    "model": "repository.descriptortranslation", 
+    "fields": {
+      "text": "Servi\u00e7os M\u00e9dicos de Emerg\u00eancia", 
+      "content_type": 36, 
+      "language": "pt-br", 
+      "object_id": 43
+    }
+  }, 
+  {
+    "pk": 83, 
+    "model": "repository.descriptortranslation", 
+    "fields": {
+      "text": "Doen\u00e7a de Chagas (cr\u00f4nica) com comprometimento card\u00edaco", 
+      "content_type": 36, 
+      "language": "pt-br", 
+      "object_id": 45
+    }
+  }, 
+  {
+    "pk": 84, 
+    "model": "repository.descriptortranslation", 
+    "fields": {
+      "text": "Cardiomiopat\u00eda Chag\u00e1sica", 
+      "content_type": 36, 
+      "language": "es", 
+      "object_id": 46
+    }
+  }, 
+  {
+    "pk": 85, 
+    "model": "repository.descriptortranslation", 
+    "fields": {
+      "text": "Cardiomiopatia Chag\u00e1sica", 
+      "content_type": 36, 
+      "language": "pt-br", 
+      "object_id": 46
+    }
+  }, 
+  {
+    "pk": 86, 
+    "model": "repository.descriptortranslation", 
+    "fields": {
+      "text": "Selenito de Sodio", 
+      "content_type": 36, 
+      "language": "es", 
+      "object_id": 47
+    }
+  }, 
+  {
+    "pk": 87, 
+    "model": "repository.descriptortranslation", 
+    "fields": {
+      "text": "Selenito de S\u00f3dio", 
+      "content_type": 36, 
+      "language": "pt-br", 
+      "object_id": 47
     }
   }, 
   {
@@ -3843,6 +3987,34 @@
     }
   }, 
   {
+    "pk": 44, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "C14", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Cardiovascular diseases", 
+      "trial": 33, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 42, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 0, 
+      "code": "C12", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Male urogenital diseases", 
+      "trial": 27, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
     "pk": 8, 
     "model": "repository.descriptor", 
     "fields": {
@@ -3983,6 +4155,34 @@
     }
   }, 
   {
+    "pk": 45, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 1, 
+      "code": "B57.2", 
+      "vocabulary": "ICD-10", 
+      "level": "specific", 
+      "text": "Chagas disease with cronic cardiac involvement", 
+      "trial": 33, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
+    "pk": 43, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 1, 
+      "code": "N02.421.297", 
+      "vocabulary": "DeCS", 
+      "level": "specific", 
+      "text": "Emergency Medical Services", 
+      "trial": 27, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
     "pk": 2, 
     "model": "repository.descriptor", 
     "fields": {
@@ -4109,6 +4309,20 @@
     }
   }, 
   {
+    "pk": 46, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 2, 
+      "code": "C03.752.300.900.200.190", 
+      "vocabulary": "DeCS", 
+      "level": "specific", 
+      "text": "Chagas Cardiomyopathy", 
+      "trial": 33, 
+      "version": "", 
+      "aspect": "HealthCondition"
+    }
+  }, 
+  {
     "pk": 3, 
     "model": "repository.descriptor", 
     "fields": {
@@ -4174,6 +4388,20 @@
       "level": "general", 
       "text": "Rifampin", 
       "trial": 31, 
+      "version": "", 
+      "aspect": "Intervention"
+    }
+  }, 
+  {
+    "pk": 47, 
+    "model": "repository.descriptor", 
+    "fields": {
+      "_order": 3, 
+      "code": "D01.810.950", 
+      "vocabulary": "DeCS", 
+      "level": "general", 
+      "text": "Sodium Selenite", 
+      "trial": 33, 
       "version": "", 
       "aspect": "Intervention"
     }
@@ -4283,6 +4511,26 @@
     }
   }, 
   {
+    "pk": 52, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 33, 
+      "_order": 0, 
+      "description": "Reduction of 50 % in the progression rate of heart dysfunction by the comparison of the means of left ventricular ejection fraction.", 
+      "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 51, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 7, 
+      "_order": 0, 
+      "description": "Adads", 
+      "interest": "primary"
+    }
+  }, 
+  {
     "pk": 7, 
     "model": "repository.outcome", 
     "fields": {
@@ -4360,6 +4608,16 @@
       "_order": 1, 
       "description": "proportion of adverse events in each group \r\n\r\n[Time Frame: 6 months] ", 
       "interest": "primary"
+    }
+  }, 
+  {
+    "pk": 53, 
+    "model": "repository.outcome", 
+    "fields": {
+      "trial": 33, 
+      "_order": 1, 
+      "description": "Partial or total reversion in electrocardiography alterations", 
+      "interest": "secondary"
     }
   }, 
   {
@@ -4693,18 +4951,17 @@
     }
   }, 
   {
-    "pk": 27, 
+    "pk": 32, 
     "model": "repository.clinicaltrial", 
     "fields": {
-      "scientific_title": "Teste 30/jun", 
+      "scientific_title": "asdfaefsfdas", 
       "public_title": "", 
-      "enrollment_end_actual": "", 
+      "enrollment_end_actual": null, 
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
-        [
-          "BR"
-        ]
+        6, 
+        1
       ], 
       "i_code": [], 
       "agemax_value": 0, 
@@ -4718,7 +4975,254 @@
       "exported": null, 
       "number_of_arms": null, 
       "status": "processing", 
-      "updated": "2010-07-23 12:30:07", 
+      "updated": "2010-08-23 20:33:18", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": null, 
+      "enrollment_end_planned": null, 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": null, 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-07-31 00:09:37", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 42, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Anti-retroviral Efficacy, Tolerance and Other Pharmacologic Interactions of the Non Nucleoside Analog Efavirenz in Association With Rifampicin to Treat Tuberculosis and AIDS", 
+      "public_title": "Randomized Clinical Trial to Assess the Efficacy and Safety of Concomitant Use of Rifampicin and Efavirenz 600 X 800mg (IPEC-EFV)", 
+      "enrollment_end_actual": null, 
+      "trial_id": "RBR-9rm-tzr", 
+      "inclusion_criteria": "* Adults with tuberculosis diagnosis, HIV positive.\r\n\r\n* Agreement to avoid not allowed drugs during the trial, agreement to participate in the study (informed consent)\r\n", 
+      "recruitment_country": [
+        1
+      ], 
+      "i_code": [
+        1
+      ], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": false, 
+      "agemin_unit": "Y", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "Tuberculosis\r\nHIV Infections", 
+      "masking": 1, 
+      "exported": null, 
+      "number_of_arms": 2, 
+      "status": "published", 
+      "updated": "2010-08-23 20:33:15", 
+      "target_sample_size": 178, 
+      "study_type": null, 
+      "i_freetext": "efavirenz", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": null, 
+      "enrollment_end_planned": null, 
+      "allocation": 2, 
+      "scientific_acronym_expansion": "", 
+      "purpose": 5, 
+      "phase": 8, 
+      "date_registration": null, 
+      "agemin_value": 18, 
+      "enrollment_start_planned": "2010-10-01", 
+      "staff_note": "", 
+      "study_design": "Study Type:  \t Interventional\r\n\r\nControl: Dose Comparison\r\nEndpoint Classification: Safety/Efficacy Study\r\n\r\nPrimary Purpose: Treatment\r\nAllocation: Randomized\r\nMasking: Open Label\r\nIntervention Model: Parallel Assignment\r\n", 
+      "created": "2010-07-19 20:36:14", 
+      "gender": "-", 
+      "intervention_assignment": 2, 
+      "exclusion_criteria": "* Active liver disease\r\n* Pregnancy or breast feeding\r\n* CD4 counts > 350\r\n", 
+      "primary_sponsor": 39, 
+      "recruitment_status": 1
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Title", 
+      "public_title": "", 
+      "enrollment_end_actual": null, 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        1
+      ], 
+      "i_code": [
+        1
+      ], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "mialgy", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:33:13", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": null, 
+      "enrollment_end_planned": null, 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": null, 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-07-16 19:32:32", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 37, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "RCT of Antioxidant Therapy to Prevent Preeclampsia in Brazil", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        1
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": false, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:33:10", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": 7, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-07-13 19:07:15", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 36, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "The Efficacy of Hand-Foot Narrow-Band UVB Versus Focal 308-nm Treatment in Inducing Repigmentation of Vitiligo After Minigrafting on the Dorsal Hands", 
+      "public_title": "The Efficacy of Hand NBUVB Versus Excilite Treatment in Vitiligo After Minigrafting on the Dorsal Hands", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "* skin type III-VI\r\n* vitiligo on both dorsal hands\r\n* history of stable vitiligo ( no new lesions and no more than 10% enlargement of existing lesions) for six months with an absence of Kebner phenomenon (new lesions appearing after trauma to the skin)\r\n    * refractory to topical steroids and immunomodulators", 
+      "recruitment_country": [
+        1, 
+        233
+      ], 
+      "i_code": [
+        2
+      ], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": false, 
+      "agemin_unit": "Y", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "Vitiligo", 
+      "masking": 2, 
+      "exported": null, 
+      "number_of_arms": 2, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:33:08", 
+      "target_sample_size": 34, 
+      "study_type": null, 
+      "i_freetext": "Device: Daavlin Spectra UVB Hand/Foot Box Narrow-band ultraviolet B hand box\r\nDevice: Excilite Focal 308-nm light\r\n\r\nActive Comparator\r\nRight hand treated with narrow-band UVB light and left hand treated with focal 308-nm light\r\nIntervention: Device: Daavlin Spectra UVB Hand/Foot Box\r\nActive Comparator\r\nRight hand treated with focal 308-nm light and left hand treated with narrow-band UVB light\r\nIntervention: Device: Excilite Focal 308-nm light", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": 2, 
+      "scientific_acronym_expansion": "", 
+      "purpose": 5, 
+      "phase": 4, 
+      "date_registration": null, 
+      "agemin_value": 18, 
+      "enrollment_start_planned": "2010-01-10", 
+      "staff_note": "", 
+      "study_design": "Allocation:  Randomized\r\nControl:  Active Control\r\nEndpoint Classification:  Safety/Efficacy Study\r\nIntervention Model:  Single Group Assignment\r\nMasking:  Single Blind (Investigator)\r\nPrimary Purpose:  Treatment", 
+      "created": "2010-07-07 12:47:53", 
+      "gender": "-", 
+      "intervention_assignment": 1, 
+      "exclusion_criteria": "* pregnant and/or breast-feeding females\r\n* history of skin cancer\r\n* history of taking photosensitizing medications\r\n* history of recent phototherapy (light therapy) or topical medications within one month prior to enrollment\r\n* history of organ transplantation", 
+      "primary_sponsor": 34, 
+      "recruitment_status": 1
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Teste 30/jun", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        1
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:33:06", 
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
@@ -4743,74 +5247,66 @@
     }
   }, 
   {
-    "pk": 10, 
+    "pk": 26, 
     "model": "repository.clinicaltrial", 
     "fields": {
-      "scientific_title": "06/12/2010 Test", 
-      "public_title": "06/12/2010 Test", 
+      "scientific_title": "Benznidazole evaluation for interrupting tripanosomiasis \u2013 BENEFIT trial", 
+      "public_title": "", 
       "enrollment_end_actual": "", 
       "trial_id": null, 
-      "inclusion_criteria": "", 
+      "inclusion_criteria": "Consenting patients (between 18 and 75 years of age) with serological evidence of Chagas infection (any combination of 2 positive tests) and that have one or more of the following:\r\nAbnormal electrocardiogram with at least two components (complete RBBB or LBBB; left anterior or posterior fascicular block; ventricular premature beat; first degree atrioventricular [AV] block; Mobitz type I AV block; sinus bradycardia; primary ST-T changes; abnormal Q waves; low voltage QRS; or atrial fibrillation);\r\nAbnormal ECG (Mobitz type II, advanced or third degree AV block)", 
       "recruitment_country": [
-        [
-          "BR"
-        ]
+        12, 
+        1, 
+        39
       ], 
       "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "Test", 
-      "acronym": "Teste", 
-      "hc_freetext": "", 
-      "masking": null, 
+      "agemax_value": 75, 
+      "agemax_unit": "Y", 
+      "expanded_access_program": false, 
+      "agemin_unit": "Y", 
+      "scientific_acronym": "BENEFIT", 
+      "acronym": "", 
+      "hc_freetext": "Chagas Disease\r\nTrypanosomiasis\r\nHeart Disease\r\n", 
+      "masking": 3, 
       "exported": null, 
-      "number_of_arms": null, 
+      "number_of_arms": 1, 
       "status": "processing", 
-      "updated": "2010-07-23 12:25:42", 
-      "target_sample_size": 0, 
+      "updated": "2010-08-23 20:33:04", 
+      "target_sample_size": 600, 
       "study_type": null, 
       "i_freetext": "", 
-      "acronym_expansion": "test", 
+      "acronym_expansion": "", 
       "enrollment_start_actual": "", 
       "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "Test", 
-      "purpose": null, 
-      "phase": null, 
+      "allocation": 2, 
+      "scientific_acronym_expansion": "Benznidazole Evaluation for Interrupting Trypanosomiasis", 
+      "purpose": 5, 
+      "phase": 4, 
       "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
+      "agemin_value": 18, 
+      "enrollment_start_planned": "2004-01-11", 
       "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-12 20:47:20", 
+      "study_design": "Double-Blind, randomized placebo control safety and efficacy study with single Group Assignment for treatment os Chagas Disease", 
+      "created": "2010-06-30 11:25:32", 
       "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 9, 
-      "recruitment_status": null
+      "intervention_assignment": 1, 
+      "exclusion_criteria": "NYHA heart failure class IV or decompensated heart failure\r\nEvidence of concomitant coronary artery disease (CAD) or other etiology of dilated cardiomyopathy\r\nPrevious treatment with antitrypanosomal agents or an accepted indication for antiparasitic therapy\r\nHistory of severe alcohol abuse within 2 years\r\nKnown chronic renal or hepatic insufficiency\r\nPregnancy or breast feeding\r\n", 
+      "primary_sponsor": 32, 
+      "recruitment_status": 2
     }
   }, 
   {
-    "pk": 5, 
+    "pk": 25, 
     "model": "repository.clinicaltrial", 
     "fields": {
-      "scientific_title": "Teste da reuni\u00e3o Elluminate", 
+      "scientific_title": "title scientific test", 
       "public_title": "", 
       "enrollment_end_actual": "", 
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
-        [
-          "DZ"
-        ], 
-        [
-          "AO"
-        ], 
-        [
-          "AW"
-        ]
+        1
       ], 
       "i_code": [], 
       "agemax_value": 0, 
@@ -4824,7 +5320,7 @@
       "exported": null, 
       "number_of_arms": null, 
       "status": "processing", 
-      "updated": "2010-07-23 12:25:42", 
+      "updated": "2010-08-23 20:33:01", 
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
@@ -4840,11 +5336,11 @@
       "enrollment_start_planned": "", 
       "staff_note": "", 
       "study_design": "", 
-      "created": "2010-03-30 18:51:44", 
+      "created": "2010-06-29 14:08:33", 
       "gender": "-", 
       "intervention_assignment": null, 
       "exclusion_criteria": "", 
-      "primary_sponsor": 4, 
+      "primary_sponsor": 30, 
       "recruitment_status": null
     }
   }, 
@@ -4858,23 +5354,13 @@
       "trial_id": "RBR-7k3-rct", 
       "inclusion_criteria": "nclusion Criteria:\r\n\r\n    * Females of childbearing potential who were sexually active agreed to use adequate ontraception, and can neither be pregnant nor lactating from screening throughout the duration of the study.\r\n    * Had a diagnosis of type 2 diabetes mellitus\r\n    * Have received appropriate counseling on lifestyle modification for type 2 diabetes, including diet and exercise.\r\n    * na\u00efve to or was not currently taking antidiabetic therapy\r\n    * Had a glycosylated hemoglobin level greater than or equal to 6.0% and less than 9% at screening if taking antidiabetic medication", 
       "recruitment_country": [
-        [
-          "BR"
-        ], 
-        [
-          "CA"
-        ], 
-        [
-          "CL"
-        ], 
-        [
-          "US"
-        ]
+        1, 
+        39, 
+        44, 
+        233
       ], 
       "i_code": [
-        [
-          "drug"
-        ]
+        1
       ], 
       "agemax_value": 85, 
       "agemax_unit": "Y", 
@@ -4883,29 +5369,21 @@
       "scientific_acronym": "PERISCOPE", 
       "acronym": "", 
       "hc_freetext": "Diabetes mellitus", 
-      "masking": [
-        "double-blind"
-      ], 
+      "masking": 3, 
       "exported": null, 
       "number_of_arms": 2, 
       "status": "published", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:59", 
       "target_sample_size": 544, 
       "study_type": null, 
       "i_freetext": "    * Drug: Pioglitazone\r\n      Up to 45 mg pioglitazone (optimized for glucose control), tablets, orally, once daily for up to 72 weeks.\r\n      Other Names: ACTOS\u00ae, AD4833\r\n    * Drug: Glimepiride\r\n      Up to 4 mg of glimepiride (optimized for glucose control), tablets, orally, once daily for up to 72 weeks.\r\n", 
       "acronym_expansion": "", 
       "enrollment_start_actual": "", 
       "enrollment_end_planned": "", 
-      "allocation": [
-        "randomized-controlled"
-      ], 
+      "allocation": 2, 
       "scientific_acronym_expansion": "Pioglitazone Effect on Regression of Intravascular Sonographic Coronary Obstruction Prospective Evaluation", 
-      "purpose": [
-        "treatment"
-      ], 
-      "phase": [
-        "3"
-      ], 
+      "purpose": 5, 
+      "phase": 7, 
       "date_registration": null, 
       "agemin_value": 35, 
       "enrollment_start_planned": "2010-01-07", 
@@ -4913,14 +5391,10 @@
       "study_design": "A Double-Blind, Randomized, parallel phase III Study", 
       "created": "2010-06-22 10:41:42", 
       "gender": "-", 
-      "intervention_assignment": [
-        "parallel"
-      ], 
+      "intervention_assignment": 2, 
       "exclusion_criteria": "Exclusion Criteria:\r\n\r\n    * Had type I diabetes mellitus.\r\n    * Had participated in another investigational study, or participated in an investigational study 30 days prior to the start of this study\r\n    * Male subjects who had a serum creatinine level greater than or equal to 2.0 mg/dL ", 
       "primary_sponsor": 28, 
-      "recruitment_status": [
-        "pending"
-      ]
+      "recruitment_status": 1
     }
   }, 
   {
@@ -4933,23 +5407,13 @@
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
-        [
-          "AM"
-        ], 
-        [
-          "AU"
-        ], 
-        [
-          "BZ"
-        ], 
-        [
-          "BT"
-        ]
+        13, 
+        15, 
+        24, 
+        27
       ], 
       "i_code": [
-        [
-          "drug"
-        ]
+        1
       ], 
       "agemax_value": 0, 
       "agemax_unit": "-", 
@@ -4958,29 +5422,21 @@
       "scientific_acronym": "as3", 
       "acronym": "2342", 
       "hc_freetext": "", 
-      "masking": [
-        "double-blind"
-      ], 
+      "masking": 3, 
       "exported": null, 
       "number_of_arms": 3, 
       "status": "processing", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:56", 
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
       "acronym_expansion": "342", 
       "enrollment_start_actual": "", 
       "enrollment_end_planned": "", 
-      "allocation": [
-        "randomized-controlled"
-      ], 
+      "allocation": 2, 
       "scientific_acronym_expansion": "2434", 
-      "purpose": [
-        "treatment"
-      ], 
-      "phase": [
-        "3"
-      ], 
+      "purpose": 5, 
+      "phase": 7, 
       "date_registration": null, 
       "agemin_value": 0, 
       "enrollment_start_planned": "", 
@@ -4988,9 +5444,7 @@
       "study_design": "randomized controlled trial\r\n", 
       "created": "2010-06-21 21:26:44", 
       "gender": "-", 
-      "intervention_assignment": [
-        "parallel"
-      ], 
+      "intervention_assignment": 2, 
       "exclusion_criteria": "", 
       "primary_sponsor": 27, 
       "recruitment_status": null
@@ -5006,9 +5460,7 @@
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
-        [
-          "BR"
-        ]
+        1
       ], 
       "i_code": [], 
       "agemax_value": 0, 
@@ -5022,7 +5474,7 @@
       "exported": null, 
       "number_of_arms": null, 
       "status": "processing", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:54", 
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
@@ -5056,9 +5508,7 @@
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
-        [
-          "AF"
-        ]
+        2
       ], 
       "i_code": [], 
       "agemax_value": 0, 
@@ -5072,7 +5522,7 @@
       "exported": null, 
       "number_of_arms": null, 
       "status": "processing", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:52", 
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
@@ -5106,15 +5556,9 @@
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
-        [
-          "AU"
-        ], 
-        [
-          "BE"
-        ], 
-        [
-          "FR"
-        ]
+        15, 
+        23, 
+        74
       ], 
       "i_code": [], 
       "agemax_value": 0, 
@@ -5128,7 +5572,7 @@
       "exported": null, 
       "number_of_arms": null, 
       "status": "processing", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:50", 
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
@@ -5162,9 +5606,7 @@
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
-        [
-          "AT"
-        ]
+        16
       ], 
       "i_code": [], 
       "agemax_value": 0, 
@@ -5178,7 +5620,7 @@
       "exported": null, 
       "number_of_arms": null, 
       "status": "processing", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:47", 
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
@@ -5212,9 +5654,7 @@
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
-        [
-          "BR"
-        ]
+        1
       ], 
       "i_code": [], 
       "agemax_value": 0, 
@@ -5228,7 +5668,7 @@
       "exported": null, 
       "number_of_arms": null, 
       "status": "processing", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:44", 
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
@@ -5262,9 +5702,7 @@
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
-        [
-          "BR"
-        ]
+        1
       ], 
       "i_code": [], 
       "agemax_value": 0, 
@@ -5278,7 +5716,7 @@
       "exported": null, 
       "number_of_arms": null, 
       "status": "processing", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:42", 
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
@@ -5312,9 +5750,7 @@
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
-        [
-          "BR"
-        ]
+        1
       ], 
       "i_code": [], 
       "agemax_value": 0, 
@@ -5328,7 +5764,7 @@
       "exported": null, 
       "number_of_arms": null, 
       "status": "processing", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:40", 
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
@@ -5362,9 +5798,7 @@
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
-        [
-          "BR"
-        ]
+        1
       ], 
       "i_code": [], 
       "agemax_value": 0, 
@@ -5378,7 +5812,7 @@
       "exported": null, 
       "number_of_arms": null, 
       "status": "processing", 
-      "updated": "2010-07-23 12:25:41", 
+      "updated": "2010-08-23 20:32:38", 
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
@@ -5403,801 +5837,6 @@
     }
   }, 
   {
-    "pk": 12, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Demo do dia 14 de junho", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": "RBR-46w-jsc", 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "published", 
-      "updated": "2010-07-23 12:25:41", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-14 13:40:25", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 14, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 13, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Uso da metformina em pacientes com diabetes tipo 2", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "AF"
-        ], 
-        [
-          "AO"
-        ], 
-        [
-          "BD"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:41", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-14 13:44:50", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 15, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 11, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "T\u00edtulo A", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "UG"
-        ], 
-        [
-          "AE"
-        ], 
-        [
-          "UY"
-        ], 
-        [
-          "VU"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:41", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-14 13:00:40", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 10, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "A randomised, double-blind, placebo-controlled, factorial-design trial to assess the effect of aspirin and fish oil in the prevention of early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "1. Stage 4 or 5 chronic kidney disease\r\n2. Currently on haemodialysis or haemodialysis is planned to start within 6\r\nmonths (including patients currently on peritoneal dialysis).\r\n3. Planned AVF will be the primary haemodialysis access mechanism.\r\n4. Surgery to create an arterio-venous fistula in the upper or lower arm is planned.\r\n5. Aged over 18 years\r\n6. Life expectancy predicted to be 12 months minimum\r\n7. Treating team agreeable to patient\\'s involvement in the trial\r\n8. Informed consent ", 
-      "recruitment_country": [
-        [
-          "AW"
-        ], 
-        [
-          "NZ"
-        ]
-      ], 
-      "i_code": [
-        [
-          "drug"
-        ], 
-        [
-          "dietary supplement"
-        ]
-      ], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "Y", 
-      "scientific_acronym": "FAVOURED (Fish oil and Aspirin in Vascular acccess OUtcomes in REnal Disease)", 
-      "acronym": "", 
-      "hc_freetext": "Early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis.", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:40", 
-      "target_sample_size": 1200, 
-      "study_type": [
-        "interventional"
-      ], 
-      "i_freetext": "Aspirin 100 mg per day or matching placebo, commencing on the day prior to scheduled surgery and continuing for 3 months.", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": [
-        "1"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 18, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-01-20 17:47:08", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "1. Revision of existing AVF rather than de novo AVF\r\n2. Medical indication for anti-platelet agent(s)\r\n3. Known intolerance of agents including hypersensitivity to aspirin\r\n4. Current use of aspirin within two weeks of commencing trial, and of fish oil within 4 weeks of commencing trial.\r\n5. Pregnancy, lactation or intention to fall pregnant during the time course of the study\r\n6. Known bleeding disorder or established diagnosis of active or suspected bleeding\r\n7. Known active peptic ulcer disease\r\n8. Already receiving anti-coagulation therapy such as warfarin\r\n9. Receiving regular anti-inflammatory agents for another indication such as\r\narthritis\r\n10.Potential non-compliance with treatment regimen in the view of the\r\ntreating clinicians\r\n11.Involved in another clinical trial where the intervention being trialled is likely to confound the outcome of this trial\r\n12.Previously randomised to this trial. ", 
-      "primary_sponsor": 1, 
-      "recruitment_status": [
-        "pending"
-      ]
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Minimal trial record (only required fields)", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:40", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-01-20 17:47:08", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": null, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Effect of Ascorbic Acid and Grape Seed Extract \"Vitis Vinifera L.\" on Oxidative Stress Induced by on Pump Coronary Artery bypass Grafting Surgery", 
-      "public_title": "Comparison of Ascorbic Acid and Grape Seed Extract in Oxidative Stress Induced by on Pump Heart Surgery", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "Candidates for elective CABG surgery with pump for first time, 3 Vessel Disease (3VD).", 
-      "recruitment_country": [
-        [
-          "IR"
-        ]
-      ], 
-      "i_code": [
-        [
-          "drug"
-        ]
-      ], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "Condition 1: Coronary Atrery Bypass Graft (CABG).\r\nCondition 2: Atherosclerotic heart disease.\r\nCondition 3: Ischaemic cardiomyopathy.", 
-      "masking": [
-        "double-blind"
-      ], 
-      "exported": null, 
-      "number_of_arms": 3, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:40", 
-      "target_sample_size": 75, 
-      "study_type": [
-        "interventional"
-      ], 
-      "i_freetext": "Intervention 1: Control Group: without intervention.\r\nIntervention 2: Grape Seed Extract 100 mg/6h .\r\nIntervention 3: Vit C 25 mg/kg.", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": [
-        "randomized-controlled"
-      ], 
-      "scientific_acronym_expansion": "", 
-      "purpose": [
-        "treatment"
-      ], 
-      "phase": [
-        "2-3"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "2008-11-01", 
-      "staff_note": "", 
-      "study_design": "Randomization: randomized. Blinding: Double blind. Placebo: not used. Assignment: Parallel. Purpose: Supportive care. Other design features: .", 
-      "created": "2010-01-20 17:47:08", 
-      "gender": "-", 
-      "intervention_assignment": [
-        "parallel"
-      ], 
-      "exclusion_criteria": "High risk patients, Those who need another heart surgery beside CABG, Urgent patients Diabetics, Ischemic time more than 120 min.", 
-      "primary_sponsor": 2, 
-      "recruitment_status": [
-        "completed"
-      ]
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Clinical Investigation: A Continuation in the Clinical Evaluation of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the Treatment of Subjects With de Novo Native Coronary Artery Lesions  ", 
-      "public_title": "Clinical Investigation: An assessment of the safety and performance of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the treatment of patients with de novo native coronary artery lesions.", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "Up to two de novo lesions can be treated, each located in a separate native epicardial vessel.\r\n\r\nTarget lesion(s) must measure <= 28 mm in length by Qualitative Coronary Angiography (QCA), or by visual estimation if on line QCA is not available.\r\n\r\nTarget lesion(s) must be in a major artery or branch with a visually estimated stenosis of >= 50% and < 100% with a Thrombolysis in Myocardial Infarction (TIMI) flow of >= 1.\r\n\r\nIf two treatable lesions meet the inclusion criteria they must be in separate major epicardial vessels.\r\n\r\nPercutaneous interventions for lesions in a non-target vessel are allowed if done >= 30 days prior to or if planned to be done > 6 months after the index procedure.\r\n\r\nPercutaneous intervention for lesions in the target vessel are allowed if done > 6 months prior to or if planned to be done 6 months after the index procedure.", 
-      "recruitment_country": [
-        [
-          "AU"
-        ], 
-        [
-          "BE"
-        ], 
-        [
-          "BR"
-        ], 
-        [
-          "DK"
-        ], 
-        [
-          "FR"
-        ], 
-        [
-          "IT"
-        ], 
-        [
-          "NL"
-        ], 
-        [
-          "PL"
-        ], 
-        [
-          "CH"
-        ]
-      ], 
-      "i_code": [
-        [
-          "device"
-        ]
-      ], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "Y", 
-      "scientific_acronym": "ABSORB EXTEND", 
-      "acronym": "ABSORB EXTEND", 
-      "hc_freetext": "Coronary Artery Stenosis\r\nCoronary Disease\r\nCoronary Artery Disease\r\n", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:40", 
-      "target_sample_size": 1000, 
-      "study_type": null, 
-      "i_freetext": "Bioabsorbable Vascular Solutions Everolimus Eluting Coronary Stent System (BVS EECSS). Percutaneous Coronary Intervention (PCI) is commonly known as coronary angioplasty. Typically, PCI is performed by threading a slender balloon-tipped tube, a catheter, from an artery in the groin to a trouble spot in an artery of the heart. The balloon is then inflated, compressing the plaque and dilating (widening) the narrowed coronary artery so that blood can flow more easily. During PCI for this study, the BVS EECSS is then placed in the coronary artery to support the previously narrowed area. The BVS EECSS will remain in place until the bioabsorbtion process is complete, your physician will discuss this process with you. The duration of the PCI procedure will depend on many factors, and is typically less than 2 hours. Your physician will discuss those factors and the length of your procedure with you.\r\n\r\nOptical Coherence Tomography (OCT) subgroup definition:\r\n- A subgroup of up to 50 subjects who:\r\n\r\n- Have their procedures performed at selected investigational sites with OCT capability; and\r\n\r\n- Receive planned overlapping stent treatment of the target lesion.\r\n\r\n- The need for planned overlapping of BVS stents will be determined by the investigator up to the time of the index procedure.\r\n\r\n- Angiography, Intravascular Ultrasound (IVUS) and OCT are required for all subjects in the OCT subgroup post-procedure and at 2-year follow-up\r\n\r\n\r\n\r\nMulti-Slice Computed Tomography subgroup definition:\r\n\r\n- A subgroup of up to 100 subjects who:\r\n\r\n- Have their procedures performed at selected investigational sites having both OCT and MSCT capability; and\r\n\r\n- Receive at least one BVS EECSS in the target lesion.\r\n\r\nMSCT imaging and clinical follow-up at 18 months is required for all subjects in the MSCT subgroup.", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 18, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-03-02 13:34:30", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "Lesion(s) located within an arterial or saphenous vein graft or distal to a diseased (defined as vessel irregularity per angiogram and > 20% stenosed lesion by visual estimation) arterial or saphenous vein graft. Lesion(s) involving a bifurcation with side branch vessel >= 2 mm in diameter, ostial lesion > 40% stenosed by visual estimation or side branch requiring predilatation. Total occlusion (TIMI flow 0), prior to wire passing. Target vessel(s) contains visible thrombus. Another clinically significant lesion is located in the same epicardial vessel (including side branch) as the target lesion(s). Subject has received brachytherapy in any epicardial vessel (including side branches).", 
-      "primary_sponsor": 3, 
-      "recruitment_status": [
-        "recruiting"
-      ]
-    }
-  }, 
-  {
-    "pk": 6, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "teste de Margot", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:40", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-04-05 16:56:59", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 5, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 7, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Avalia\u00e7\u00e3o da dosagem do praziquantel para o tratamento da esquistossomose no Brasil", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:40", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-04-22 13:18:47", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 6, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 8, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Prevention of Heterotopic Ossification With Arcoxia After Total Hip Replacement", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "NL"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:40", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-04-22 19:17:28", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 7, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 9, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "The efficacy of penicillin G potassium in reducing aphthous ulcer pain and lesion size in a Chinese cohort: a randomized, double-blinded, placebo and blank controlled, multicenter clinical trial.", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "CN"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:40", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-04-22 20:01:45", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 8, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 29, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "RCT of Antioxidant Therapy to Prevent Preeclampsia in Brazil", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": false, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:40", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": [
-        "3"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-07-13 19:07:15", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 36, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 26, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Benznidazole evaluation for interrupting tripanosomiasis \u2013 BENEFIT trial", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "Consenting patients (between 18 and 75 years of age) with serological evidence of Chagas infection (any combination of 2 positive tests) and that have one or more of the following:\r\nAbnormal electrocardiogram with at least two components (complete RBBB or LBBB; left anterior or posterior fascicular block; ventricular premature beat; first degree atrioventricular [AV] block; Mobitz type I AV block; sinus bradycardia; primary ST-T changes; abnormal Q waves; low voltage QRS; or atrial fibrillation);\r\nAbnormal ECG (Mobitz type II, advanced or third degree AV block)", 
-      "recruitment_country": [
-        [
-          "AR"
-        ], 
-        [
-          "BR"
-        ], 
-        [
-          "CA"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 75, 
-      "agemax_unit": "Y", 
-      "expanded_access_program": false, 
-      "agemin_unit": "Y", 
-      "scientific_acronym": "BENEFIT", 
-      "acronym": "", 
-      "hc_freetext": "Chagas Disease\r\nTrypanosomiasis\r\nHeart Disease\r\n", 
-      "masking": [
-        "double-blind"
-      ], 
-      "exported": null, 
-      "number_of_arms": 1, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:40", 
-      "target_sample_size": 600, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": [
-        "randomized-controlled"
-      ], 
-      "scientific_acronym_expansion": "Benznidazole Evaluation for Interrupting Trypanosomiasis", 
-      "purpose": [
-        "treatment"
-      ], 
-      "phase": [
-        "1-2"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 18, 
-      "enrollment_start_planned": "2004-01-11", 
-      "staff_note": "", 
-      "study_design": "Double-Blind, randomized placebo control safety and efficacy study with single Group Assignment for treatment os Chagas Disease", 
-      "created": "2010-06-30 11:25:32", 
-      "gender": "-", 
-      "intervention_assignment": [
-        "single-group"
-      ], 
-      "exclusion_criteria": "NYHA heart failure class IV or decompensated heart failure\r\nEvidence of concomitant coronary artery disease (CAD) or other etiology of dilated cardiomyopathy\r\nPrevious treatment with antitrypanosomal agents or an accepted indication for antiparasitic therapy\r\nHistory of severe alcohol abuse within 2 years\r\nKnown chronic renal or hepatic insufficiency\r\nPregnancy or breast feeding\r\n", 
-      "primary_sponsor": 32, 
-      "recruitment_status": [
-        "recruiting"
-      ]
-    }
-  }, 
-  {
-    "pk": 25, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "title scientific test", 
-      "public_title": "", 
-      "enrollment_end_actual": "", 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": null, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "", 
-      "masking": null, 
-      "exported": null, 
-      "number_of_arms": null, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:40", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": null, 
-      "scientific_acronym_expansion": "", 
-      "purpose": null, 
-      "phase": null, 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "", 
-      "created": "2010-06-29 14:08:33", 
-      "gender": "-", 
-      "intervention_assignment": null, 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 30, 
-      "recruitment_status": null
-    }
-  }, 
-  {
     "pk": 14, 
     "model": "repository.clinicaltrial", 
     "fields": {
@@ -6207,9 +5846,7 @@
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
-        [
-          "BR"
-        ]
+        1
       ], 
       "i_code": [], 
       "agemax_value": 0, 
@@ -6223,7 +5860,7 @@
       "exported": null, 
       "number_of_arms": null, 
       "status": "processing", 
-      "updated": "2010-07-23 12:25:39", 
+      "updated": "2010-08-23 20:32:35", 
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
@@ -6248,157 +5885,20 @@
     }
   }, 
   {
-    "pk": 31, 
+    "pk": 13, 
     "model": "repository.clinicaltrial", 
     "fields": {
-      "scientific_title": "Anti-retroviral Efficacy, Tolerance and Other Pharmacologic Interactions of the Non Nucleoside Analog Efavirenz in Association With Rifampicin to Treat Tuberculosis and AIDS", 
-      "public_title": "Randomized Clinical Trial to Assess the Efficacy and Safety of Concomitant Use of Rifampicin and Efavirenz 600 X 800mg (IPEC-EFV)", 
-      "enrollment_end_actual": null, 
-      "trial_id": "RBR-9rm-tzr", 
-      "inclusion_criteria": "* Adults with tuberculosis diagnosis, HIV positive.\r\n\r\n* Agreement to avoid not allowed drugs during the trial, agreement to participate in the study (informed consent)\r\n", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [
-        [
-          "drug"
-        ]
-      ], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": false, 
-      "agemin_unit": "Y", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "Tuberculosis\r\nHIV Infections", 
-      "masking": [
-        "open"
-      ], 
-      "exported": null, 
-      "number_of_arms": 2, 
-      "status": "published", 
-      "updated": "2010-07-23 12:25:39", 
-      "target_sample_size": 178, 
-      "study_type": null, 
-      "i_freetext": "efavirenz", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": null, 
-      "enrollment_end_planned": null, 
-      "allocation": [
-        "randomized-controlled"
-      ], 
-      "scientific_acronym_expansion": "", 
-      "purpose": [
-        "treatment"
-      ], 
-      "phase": [
-        "4"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 18, 
-      "enrollment_start_planned": "2010-10-01", 
-      "staff_note": "", 
-      "study_design": "Study Type:  \t Interventional\r\n\r\nControl: Dose Comparison\r\nEndpoint Classification: Safety/Efficacy Study\r\n\r\nPrimary Purpose: Treatment\r\nAllocation: Randomized\r\nMasking: Open Label\r\nIntervention Model: Parallel Assignment\r\n", 
-      "created": "2010-07-19 20:36:14", 
-      "gender": "-", 
-      "intervention_assignment": [
-        "parallel"
-      ], 
-      "exclusion_criteria": "* Active liver disease\r\n* Pregnancy or breast feeding\r\n* CD4 counts > 350\r\n", 
-      "primary_sponsor": 39, 
-      "recruitment_status": [
-        "pending"
-      ]
-    }
-  }, 
-  {
-    "pk": 28, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "The Efficacy of Hand-Foot Narrow-Band UVB Versus Focal 308-nm Treatment in Inducing Repigmentation of Vitiligo After Minigrafting on the Dorsal Hands", 
-      "public_title": "The Efficacy of Hand NBUVB Versus Excilite Treatment in Vitiligo After Minigrafting on the Dorsal Hands", 
+      "scientific_title": "Uso da metformina em pacientes com diabetes tipo 2", 
+      "public_title": "", 
       "enrollment_end_actual": "", 
       "trial_id": null, 
       "inclusion_criteria": "", 
       "recruitment_country": [
-        [
-          "BR"
-        ], 
-        [
-          "US"
-        ]
+        2, 
+        8, 
+        20
       ], 
-      "i_code": [
-        [
-          "device"
-        ]
-      ], 
-      "agemax_value": 0, 
-      "agemax_unit": "-", 
-      "expanded_access_program": false, 
-      "agemin_unit": "-", 
-      "scientific_acronym": "", 
-      "acronym": "", 
-      "hc_freetext": "Vitiligo", 
-      "masking": [
-        "single-blind"
-      ], 
-      "exported": null, 
-      "number_of_arms": 2, 
-      "status": "processing", 
-      "updated": "2010-07-23 12:25:39", 
-      "target_sample_size": 0, 
-      "study_type": null, 
-      "i_freetext": "Device: Daavlin Spectra UVB Hand/Foot Box Narrow-band ultraviolet B hand box\r\nDevice: Excilite Focal 308-nm light\r\n\r\nActive Comparator\r\nRight hand treated with narrow-band UVB light and left hand treated with focal 308-nm light\r\nIntervention: Device: Daavlin Spectra UVB Hand/Foot Box\r\nActive Comparator\r\nRight hand treated with focal 308-nm light and left hand treated with narrow-band UVB light\r\nIntervention: Device: Excilite Focal 308-nm light", 
-      "acronym_expansion": "", 
-      "enrollment_start_actual": "", 
-      "enrollment_end_planned": "", 
-      "allocation": [
-        "randomized-controlled"
-      ], 
-      "scientific_acronym_expansion": "", 
-      "purpose": [
-        "treatment"
-      ], 
-      "phase": [
-        "1-2"
-      ], 
-      "date_registration": null, 
-      "agemin_value": 0, 
-      "enrollment_start_planned": "", 
-      "staff_note": "", 
-      "study_design": "Allocation:  Randomized\r\nControl:  Active Control\r\nEndpoint Classification:  Safety/Efficacy Study\r\nIntervention Model:  Single Group Assignment\r\nMasking:  Single Blind (Investigator)\r\nPrimary Purpose:  Treatment", 
-      "created": "2010-07-07 12:47:53", 
-      "gender": "-", 
-      "intervention_assignment": [
-        "single-group"
-      ], 
-      "exclusion_criteria": "", 
-      "primary_sponsor": 34, 
-      "recruitment_status": null
-    }
-  }, 
-  {
-    "pk": 30, 
-    "model": "repository.clinicaltrial", 
-    "fields": {
-      "scientific_title": "Title10\r\na\r\nb\r\nc\r\n3\r\n3\r\n\r\n2\r\n\r\n3\r\n3\r\n4", 
-      "public_title": "", 
-      "enrollment_end_actual": null, 
-      "trial_id": null, 
-      "inclusion_criteria": "", 
-      "recruitment_country": [
-        [
-          "BR"
-        ]
-      ], 
-      "i_code": [
-        [
-          "drug"
-        ]
-      ], 
+      "i_code": [], 
       "agemax_value": 0, 
       "agemax_unit": "-", 
       "expanded_access_program": null, 
@@ -6410,28 +5910,673 @@
       "exported": null, 
       "number_of_arms": null, 
       "status": "processing", 
-      "updated": "2010-07-23 12:25:39", 
+      "updated": "2010-08-23 20:32:33", 
       "target_sample_size": 0, 
       "study_type": null, 
       "i_freetext": "", 
       "acronym_expansion": "", 
-      "enrollment_start_actual": null, 
-      "enrollment_end_planned": null, 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
       "allocation": null, 
       "scientific_acronym_expansion": "", 
       "purpose": null, 
       "phase": null, 
       "date_registration": null, 
       "agemin_value": 0, 
-      "enrollment_start_planned": null, 
+      "enrollment_start_planned": "", 
       "staff_note": "", 
       "study_design": "", 
-      "created": "2010-07-16 19:32:32", 
+      "created": "2010-06-14 13:44:50", 
       "gender": "-", 
       "intervention_assignment": null, 
       "exclusion_criteria": "", 
-      "primary_sponsor": 37, 
+      "primary_sponsor": 15, 
       "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Demo do dia 14 de junho", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": "RBR-46w-jsc", 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        1
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "published", 
+      "updated": "2010-08-23 20:32:31", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-14 13:40:25", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 14, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "T\u00edtulo A", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        229, 
+        231, 
+        235, 
+        237
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:32:28", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-14 13:00:40", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 10, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "06/12/2010 Test", 
+      "public_title": "06/12/2010 Test", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        1
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "Test", 
+      "acronym": "Teste", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:32:26", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "test", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "Test", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-06-12 20:47:20", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 9, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "The efficacy of penicillin G potassium in reducing aphthous ulcer pain and lesion size in a Chinese cohort: a randomized, double-blinded, placebo and blank controlled, multicenter clinical trial.", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        45
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:32:23", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-04-22 20:01:45", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 8, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Prevention of Heterotopic Ossification With Arcoxia After Total Hip Replacement", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        155
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:32:21", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-04-22 19:17:28", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 7, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Avalia\u00e7\u00e3o da dosagem do praziquantel para o tratamento da esquistossomose no Brasil", 
+      "public_title": "sadsad", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        1
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "asdasd", 
+      "acronym": "asdas", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:32:19", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "asdasd", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "sdad", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-04-22 13:18:47", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 6, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "teste de Margot", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        1
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:32:17", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-04-05 16:56:59", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 5, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Teste da reuni\u00e3o Elluminate", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [
+        5, 
+        8, 
+        14
+      ], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:32:15", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-03-30 18:51:44", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": 4, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Clinical Investigation: A Continuation in the Clinical Evaluation of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the Treatment of Subjects With de Novo Native Coronary Artery Lesions  ", 
+      "public_title": "Clinical Investigation: An assessment of the safety and performance of the Bioabsorbable Vascular Solutions (BVS) Everolimus Eluting Coronary Stent System (EECCS) in the treatment of patients with de novo native coronary artery lesions.", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "Up to two de novo lesions can be treated, each located in a separate native epicardial vessel.\r\n\r\nTarget lesion(s) must measure <= 28 mm in length by Qualitative Coronary Angiography (QCA), or by visual estimation if on line QCA is not available.\r\n\r\nTarget lesion(s) must be in a major artery or branch with a visually estimated stenosis of >= 50% and < 100% with a Thrombolysis in Myocardial Infarction (TIMI) flow of >= 1.\r\n\r\nIf two treatable lesions meet the inclusion criteria they must be in separate major epicardial vessels.\r\n\r\nPercutaneous interventions for lesions in a non-target vessel are allowed if done >= 30 days prior to or if planned to be done > 6 months after the index procedure.\r\n\r\nPercutaneous intervention for lesions in the target vessel are allowed if done > 6 months prior to or if planned to be done 6 months after the index procedure.", 
+      "recruitment_country": [
+        15, 
+        23, 
+        1, 
+        59, 
+        74, 
+        108, 
+        155, 
+        176, 
+        213
+      ], 
+      "i_code": [
+        2
+      ], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "Y", 
+      "scientific_acronym": "ABSORB EXTEND", 
+      "acronym": "ABSORB EXTEND", 
+      "hc_freetext": "Coronary Artery Stenosis\r\nCoronary Disease\r\nCoronary Artery Disease\r\n", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:32:12", 
+      "target_sample_size": 1000, 
+      "study_type": null, 
+      "i_freetext": "Bioabsorbable Vascular Solutions Everolimus Eluting Coronary Stent System (BVS EECSS). Percutaneous Coronary Intervention (PCI) is commonly known as coronary angioplasty. Typically, PCI is performed by threading a slender balloon-tipped tube, a catheter, from an artery in the groin to a trouble spot in an artery of the heart. The balloon is then inflated, compressing the plaque and dilating (widening) the narrowed coronary artery so that blood can flow more easily. During PCI for this study, the BVS EECSS is then placed in the coronary artery to support the previously narrowed area. The BVS EECSS will remain in place until the bioabsorbtion process is complete, your physician will discuss this process with you. The duration of the PCI procedure will depend on many factors, and is typically less than 2 hours. Your physician will discuss those factors and the length of your procedure with you.\r\n\r\nOptical Coherence Tomography (OCT) subgroup definition:\r\n- A subgroup of up to 50 subjects who:\r\n\r\n- Have their procedures performed at selected investigational sites with OCT capability; and\r\n\r\n- Receive planned overlapping stent treatment of the target lesion.\r\n\r\n- The need for planned overlapping of BVS stents will be determined by the investigator up to the time of the index procedure.\r\n\r\n- Angiography, Intravascular Ultrasound (IVUS) and OCT are required for all subjects in the OCT subgroup post-procedure and at 2-year follow-up\r\n\r\n\r\n\r\nMulti-Slice Computed Tomography subgroup definition:\r\n\r\n- A subgroup of up to 100 subjects who:\r\n\r\n- Have their procedures performed at selected investigational sites having both OCT and MSCT capability; and\r\n\r\n- Receive at least one BVS EECSS in the target lesion.\r\n\r\nMSCT imaging and clinical follow-up at 18 months is required for all subjects in the MSCT subgroup.", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 18, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-03-02 13:34:30", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "Lesion(s) located within an arterial or saphenous vein graft or distal to a diseased (defined as vessel irregularity per angiogram and > 20% stenosed lesion by visual estimation) arterial or saphenous vein graft. Lesion(s) involving a bifurcation with side branch vessel >= 2 mm in diameter, ostial lesion > 40% stenosed by visual estimation or side branch requiring predilatation. Total occlusion (TIMI flow 0), prior to wire passing. Target vessel(s) contains visible thrombus. Another clinically significant lesion is located in the same epicardial vessel (including side branch) as the target lesion(s). Subject has received brachytherapy in any epicardial vessel (including side branches).", 
+      "primary_sponsor": 3, 
+      "recruitment_status": 2
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Effect of Ascorbic Acid and Grape Seed Extract \"Vitis Vinifera L.\" on Oxidative Stress Induced by on Pump Coronary Artery bypass Grafting Surgery", 
+      "public_title": "Comparison of Ascorbic Acid and Grape Seed Extract in Oxidative Stress Induced by on Pump Heart Surgery", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "Candidates for elective CABG surgery with pump for first time, 3 Vessel Disease (3VD).", 
+      "recruitment_country": [
+        103
+      ], 
+      "i_code": [
+        1
+      ], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "Condition 1: Coronary Atrery Bypass Graft (CABG).\r\nCondition 2: Atherosclerotic heart disease.\r\nCondition 3: Ischaemic cardiomyopathy.", 
+      "masking": 3, 
+      "exported": null, 
+      "number_of_arms": 3, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:32:10", 
+      "target_sample_size": 75, 
+      "study_type": 1, 
+      "i_freetext": "Intervention 1: Control Group: without intervention.\r\nIntervention 2: Grape Seed Extract 100 mg/6h .\r\nIntervention 3: Vit C 25 mg/kg.", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": 2, 
+      "scientific_acronym_expansion": "", 
+      "purpose": 5, 
+      "phase": 6, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "2008-11-01", 
+      "staff_note": "", 
+      "study_design": "Randomization: randomized. Blinding: Double blind. Placebo: not used. Assignment: Parallel. Purpose: Supportive care. Other design features: .", 
+      "created": "2010-01-20 17:47:08", 
+      "gender": "-", 
+      "intervention_assignment": 2, 
+      "exclusion_criteria": "High risk patients, Those who need another heart surgery beside CABG, Urgent patients Diabetics, Ischemic time more than 120 min.", 
+      "primary_sponsor": 2, 
+      "recruitment_status": 4
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Minimal trial record (only required fields)", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "", 
+      "recruitment_country": [], 
+      "i_code": [], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "-", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:32:08", 
+      "target_sample_size": 0, 
+      "study_type": null, 
+      "i_freetext": "", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": null, 
+      "date_registration": null, 
+      "agemin_value": 0, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-01-20 17:47:08", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "", 
+      "primary_sponsor": null, 
+      "recruitment_status": null
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "A randomised, double-blind, placebo-controlled, factorial-design trial to assess the effect of aspirin and fish oil in the prevention of early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis", 
+      "public_title": "", 
+      "enrollment_end_actual": "", 
+      "trial_id": null, 
+      "inclusion_criteria": "1. Stage 4 or 5 chronic kidney disease\r\n2. Currently on haemodialysis or haemodialysis is planned to start within 6\r\nmonths (including patients currently on peritoneal dialysis).\r\n3. Planned AVF will be the primary haemodialysis access mechanism.\r\n4. Surgery to create an arterio-venous fistula in the upper or lower arm is planned.\r\n5. Aged over 18 years\r\n6. Life expectancy predicted to be 12 months minimum\r\n7. Treating team agreeable to patient\\'s involvement in the trial\r\n8. Informed consent ", 
+      "recruitment_country": [
+        14, 
+        158
+      ], 
+      "i_code": [
+        1, 
+        8
+      ], 
+      "agemax_value": 0, 
+      "agemax_unit": "-", 
+      "expanded_access_program": null, 
+      "agemin_unit": "Y", 
+      "scientific_acronym": "FAVOURED (Fish oil and Aspirin in Vascular acccess OUtcomes in REnal Disease)", 
+      "acronym": "", 
+      "hc_freetext": "Early thrombosis in arterio-venous fistulae in patients with Stage IV or V chronic kidney disease requiring haemodialysis.", 
+      "masking": null, 
+      "exported": null, 
+      "number_of_arms": null, 
+      "status": "processing", 
+      "updated": "2010-08-23 20:32:05", 
+      "target_sample_size": 1200, 
+      "study_type": 1, 
+      "i_freetext": "Aspirin 100 mg per day or matching placebo, commencing on the day prior to scheduled surgery and continuing for 3 months.", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": "", 
+      "enrollment_end_planned": "", 
+      "allocation": null, 
+      "scientific_acronym_expansion": "", 
+      "purpose": null, 
+      "phase": 3, 
+      "date_registration": null, 
+      "agemin_value": 18, 
+      "enrollment_start_planned": "", 
+      "staff_note": "", 
+      "study_design": "", 
+      "created": "2010-01-20 17:47:08", 
+      "gender": "-", 
+      "intervention_assignment": null, 
+      "exclusion_criteria": "1. Revision of existing AVF rather than de novo AVF\r\n2. Medical indication for anti-platelet agent(s)\r\n3. Known intolerance of agents including hypersensitivity to aspirin\r\n4. Current use of aspirin within two weeks of commencing trial, and of fish oil within 4 weeks of commencing trial.\r\n5. Pregnancy, lactation or intention to fall pregnant during the time course of the study\r\n6. Known bleeding disorder or established diagnosis of active or suspected bleeding\r\n7. Known active peptic ulcer disease\r\n8. Already receiving anti-coagulation therapy such as warfarin\r\n9. Receiving regular anti-inflammatory agents for another indication such as\r\narthritis\r\n10.Potential non-compliance with treatment regimen in the view of the\r\ntreating clinicians\r\n11.Involved in another clinical trial where the intervention being trialled is likely to confound the outcome of this trial\r\n12.Previously randomised to this trial. ", 
+      "primary_sponsor": 1, 
+      "recruitment_status": 1
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "repository.clinicaltrial", 
+    "fields": {
+      "scientific_title": "Selenium Treatment and Chagasic Cardiopathy(STCC): A Prospective Randomized Trial in Patients With Chagas Disease", 
+      "public_title": "Selenium tretment and Chagasic Cardiopathy", 
+      "enrollment_end_actual": null, 
+      "trial_id": null, 
+      "inclusion_criteria": "* altered ECHO (LVEF between 0,35 % and 45 %)\r\n\r\n", 
+      "recruitment_country": [
+        1
+      ], 
+      "i_code": [
+        8
+      ], 
+      "agemax_value": 65, 
+      "agemax_unit": "Y", 
+      "expanded_access_program": false, 
+      "agemin_unit": "Y", 
+      "scientific_acronym": "", 
+      "acronym": "", 
+      "hc_freetext": "Chagasic cardiopathy", 
+      "masking": 3, 
+      "exported": null, 
+      "number_of_arms": 2, 
+      "status": "processing", 
+      "updated": "2010-08-23 19:56:28", 
+      "target_sample_size": 130, 
+      "study_type": null, 
+      "i_freetext": "Group 1: Dietary Supplement: Selenium\r\n100 \u00b5g Se as sodium selenite during 12 months \r\nGroup 2: placebo", 
+      "acronym_expansion": "", 
+      "enrollment_start_actual": null, 
+      "enrollment_end_planned": null, 
+      "allocation": 2, 
+      "scientific_acronym_expansion": "", 
+      "purpose": 5, 
+      "phase": 7, 
+      "date_registration": null, 
+      "agemin_value": 20, 
+      "enrollment_start_planned": "2008-01-10", 
+      "staff_note": "", 
+      "study_design": "Double blind, randomized, placebo control, safety/efficacy study with parallel assignment", 
+      "created": "2010-08-20 13:00:35", 
+      "gender": "-", 
+      "intervention_assignment": 2, 
+      "exclusion_criteria": "    * patients > 65 years of age\r\n    * smoke habit, patients with non-chagasic cardiopathy, live close to mineral deposit, metals industries and place with radioactive exposition, vegetarian\r\n    * depressive psychological profile\r\n    * pregnant or in lactating period\r\n    * present or presented cancer or diabetes.\r\n    * patients will be excluded if they take anti-convulsive medicines (Clozapine, Valproic Acid)\r\n", 
+      "primary_sponsor": 43, 
+      "recruitment_status": 1
     }
   }
 ]
