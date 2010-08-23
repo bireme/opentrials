@@ -87,8 +87,11 @@ Now getting translation for the object "page1"
     >>> trans1.language == 'pt-br'
     True
 
-    >>> trans1 = FlatPageTranslation.objects.get_translation_for_object(lang='es', obj=page1)
-    >>> bool(trans1)
+    >>> try:
+    ...     trans1 = FlatPageTranslation.objects.get_translation_for_object(lang='es', obj=page1)
+    ...     bool(trans1)
+    ... except FlatPageTranslation.DoesNotExist:
+    ...     print False
     False
 
 The function 'get_translation_for_object' gets a translation object and stores in cache,

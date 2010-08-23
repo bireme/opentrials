@@ -95,8 +95,11 @@ def get_multilingual_fields(model):
     try:
         trans_model = model.translations.field.rel.to
     except AttributeError:
-        # Unrecognized class or field
-        return []
+        try:
+            trans_model = model.translations.rel.to
+        except AttributeError, e:
+            # Unrecognized class or field
+            return []
 
     try: # customization hook, this try allows the
         return trans_model.get_multilingual_fields()
