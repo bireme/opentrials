@@ -591,7 +591,9 @@ def step_8(request, trial_pk):
             inlineformset_factory(ClinicalTrial,model,form=form,can_delete=True,extra=EXTRA_FORMS)
         )
 
-    ContactFormSet = modelformset_factory(Contact, form=make_contact_form(request.user), extra=1)
+    ContactFormSet = modelformset_factory(Contact, 
+                                          form=make_contact_form(request.user,formset_prefix='new_contact'), 
+                                          extra=1)
 
     contact_qs = Contact.objects.none()
 
