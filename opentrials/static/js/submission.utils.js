@@ -205,3 +205,27 @@ function ack_remark(remark_id){
         }
     });
 }
+
+$(document).ready(function() {
+    // Confirm before user leave page and lose modified data without save them
+    $('form.confirm-before-leave').submit(function(){
+        $(this).data('modified', false);
+        window.onbeforeunload = null;
+    }).each(function(){
+        // Sets this form to modified as false, but after some field be modified, so update this attribute to true
+        $(this).data('modified', false);
+    });
+    
+    // Sets inputs change event to set form modified as true
+    $('form.confirm-before-leave').find(':input').change(function(){
+        $(this).parents('form').data('modified', true);
+
+        // When a user leaves the current page without save, and has modified some field, asks for its confirmation
+        window.onbeforeunload = confirmExit;
+        function confirmExit(){
+            // TODO: translate
+            return 'You have done modifications on some fields. Are you sure you want to leave without save before?';
+        }
+    });
+});
+
