@@ -44,16 +44,16 @@ Using and extending Translation
 -------------------------------
 
     >>> from django.contrib.flatpages.models import FlatPage
-    >>> from polyglot.tests.test_models import FlatPageTranslation, create_flatpage_translation_table
+    >>> from polyglot.tests.test_models import FlatPageTranslation, create_tables
 
 The related class has an attribute 'translations' with a generic relation to our translation subclass
 
-    >>> isinstance(FlatPage.translations, generic.GenericRelation)
+    >>> isinstance(FlatPage.translations, generic.ReverseGenericRelatedObjectsDescriptor)
     True
 
 Create the table in database
 
-    >>> create_flatpage_translation_table()
+    >>> create_tables()
 
 Test table created with successful
 
@@ -62,14 +62,14 @@ Test table created with successful
 
 Creating a flat page as the original object to be translated
 
-    >>> page1 = FlatPage.objects.create(title='About', content='This is a page about our institute.')
+    >>> page1 = FlatPage.objects.create(title='About Test', content='This is a page about our institute.')
 
 Now translating the object "page1"
 
     >>> trans1 = FlatPageTranslation()
     >>> trans1.language = 'pt-br'
     >>> trans1.content_object = page1
-    >>> trans1.title = 'Sobre'
+    >>> trans1.title = 'Sobre o Teste'
     >>> trans1.content = u'Esta é uma página sobre nosso instituto.'
     >>> trans1.save()
 

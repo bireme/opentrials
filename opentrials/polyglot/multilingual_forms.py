@@ -106,14 +106,14 @@ class MultilingualTextarea(BaseMultilingualWidget):
 class BaseMultilingualSelect(object):
     display_language = 'en' # FIXME: shouldn't be settings.LANGUAGE_CODE?
     instance = None
-    model = None
+    queryset = None
     label_field = None
 
     def get_translated_choices(self):
         choices = []
 
         # Loops in the model choice objects
-        for item in self.model.objects.all():
+        for item in self.queryset.all():
             # If there is a translation...
             try:
                 item_trans = item.translations.get(language__iexact=self.display_language)
@@ -126,9 +126,9 @@ class BaseMultilingualSelect(object):
         return choices
 
 class MultilingualSelect(forms.Select, BaseMultilingualSelect):
-    def __init__(self, display_language=None, model=None, label_field=None, attrs=None):
+    def __init__(self, display_language=None, queryset=None, label_field=None, attrs=None):
         self.display_language = display_language or self.display_language
-        self.model = model
+        self.queryset = queryset
         self.label_field = label_field
 
         super(MultilingualSelect, self).__init__(attrs)
@@ -139,9 +139,9 @@ class MultilingualSelect(forms.Select, BaseMultilingualSelect):
         return super(MultilingualSelect, self).render(name, value, attrs)
 
 class MultilingualSelectMultiple(forms.SelectMultiple, BaseMultilingualSelect):
-    def __init__(self, display_language=None, model=None, label_field=None, attrs=None):
+    def __init__(self, display_language=None, queryset=None, label_field=None, attrs=None):
         self.display_language = display_language or self.display_language
-        self.model = model
+        self.queryset = queryset
         self.label_field = label_field
 
         super(MultilingualSelectMultiple, self).__init__(attrs)
@@ -173,11 +173,11 @@ class MultilingualTextField(MultilingualField):
 
 class MultilingualModelChoiceField(MultilingualField):
     widget = MultilingualSelect
-    model = None
+    queryset = None
     label_field = None
 
     def __init__(self, *args, **kwargs):
-        self.model = kwargs.pop('model')
+        self.queryset = kwargs.pop('queryset')
         self.label_field = kwargs.pop('label_field')
 
         super(MultilingualModelChoiceField, self).__init__(*args, **kwargs)
@@ -186,7 +186,7 @@ class MultilingualModelChoiceField(MultilingualField):
         if value in EMPTY_VALUES:
             return None
         try:
-            value = self.model.objects.get(pk=value)
+            value = self.queryset.get(pk=value)
         except ObjectDoesNotExist:
             raise ValidationError(self.error_messages['invalid_choice'])
         return value
@@ -198,7 +198,7 @@ class MultilingualModelMultipleChoiceField(MultilingualModelChoiceField):
         if value in EMPTY_VALUES:
             return None
 
-        return self.model.objects.filter(pk__in=value)
+        return self.queryset.filter(pk__in=value)
 
 # ---------- FORMS -----------
 
@@ -211,12 +211,12 @@ class MultilingualBaseForm(forms.ModelForm):
         # Gets multilingual fields from translation class
         self.multilingual_fields = get_multilingual_fields(self._meta.model)
 
-        if self.multilingual_fields:
-            # Gets default second language from arguments, if informed. Default value is None
-            self.default_second_language = kwargs.pop('default_second_language', self.default_second_language) # Optional
-            self.available_languages = kwargs.pop('available_languages', [code.lower() for code in settings.MANAGED_LANGUAGES]) # Mandatory (FIXME, to remove default tuple)
-            self.display_language = kwargs.pop('display_language', self.display_language)
+        # Gets default second language from arguments, if informed. Default value is None
+        self.default_second_language = kwargs.pop('default_second_language', self.default_second_language) # Optional
+        self.available_languages = kwargs.pop('available_languages', [code.lower() for code in settings.MANAGED_LANGUAGES]) # Mandatory (FIXME, to remove default tuple)
+        self.display_language = kwargs.pop('display_language', self.display_language)
 
+        if self.multilingual_fields:
             # Change field widgets replacing common TextInput and Textarea to Multilingual respective ones
             for field_name in self.multilingual_fields:
                 if field_name not in self.base_fields:
@@ -262,7 +262,7 @@ class MultilingualBaseForm(forms.ModelForm):
         for field_name in self.fields.keys():
             if isinstance(self.fields[field_name], (MultilingualModelChoiceField,)):
                 self.fields[field_name].widget.display_language = self.display_language
-                self.fields[field_name].widget.model = self.fields[field_name].model
+                self.fields[field_name].widget.queryset = self.fields[field_name].queryset
                 self.fields[field_name].widget.label_field = self.fields[field_name].label_field
 
     def save(self, commit=True):

@@ -11,6 +11,7 @@ A multilingual form is a form that supports multilingual fields.
     >>> class FlatPageForm(MultilingualBaseForm):
     ...     class Meta:
     ...         model = FlatPage
+    ...         fields = ('title','content','url','sites')
 
 You must inform what languages are available, what is the default second language and what
 is the language to display information.
@@ -23,18 +24,18 @@ languages are stored in a Translation subclass.
     ...     display_language='pt-br',
     ... )
 
-    >>> form.fields.keys()
-    ['url', 'title', 'content', 'enable_comments', 'template_name', 'registration_required', 'sites']
+    >>> set(form.fields.keys()) == set(['title','content','url','sites'])
+    True
 
-    >>> form.multilingual_fields
-    ['title', 'content']
+    >>> set(form.multilingual_fields) == set(['title', 'content'])
+    True
 
 The multilingual fields are collected from model class using a function...
 
     >>> from polyglot.models import get_multilingual_fields
 
-    >>> get_multilingual_fields(FlatPage)
-    ['title', 'content']
+    >>> set(get_multilingual_fields(FlatPage)) == set(['title', 'content'])
+    True
 
 A multilingual field is associated to a multilingual widget.
 
@@ -44,9 +45,133 @@ A multilingual field is associated to a multilingual widget.
     >>> isinstance(form.fields['content'], MultilingualTextField)
     True
 
+Test of form saving
+
+    >>> data = {
+    ...     'title': 'This is the original title',
+    ...     'content': 'This is the original content',
+    ...     'url': '/url/',
+    ...     'sites': ['1'],
+    ... }
+
+    >>> form = FlatPageForm(
+    ...     data=data,
+    ...     default_second_language='pt-br',
+    ...     available_languages=('en','pt-br','es'),
+    ...     display_language='pt-br',
+    ... )
+
+    >>> form.is_valid()
+    True
+
+    >>> print form.errors
+    <BLANKLINE>
+
+    >>> page = form.save()
+
+    >>> isinstance(page, FlatPage)
+    True
+
+    >>> page.translations.values('title','content')
+    [{'content': u'', 'title': u''}, {'content': u'', 'title': u''}]
+
+    >>> form = FlatPageForm(
+    ...     instance=page,
+    ...     default_second_language='pt-br',
+    ...     available_languages=('en','pt-br','es'),
+    ...     display_language='pt-br',
+    ... )
+
+    >>> form.fields['title'].widget.render('title', page.title)
+    u'<div class="multilingual"><div class="multilingual-value en"><b>English</b><input type="text" name="title" value="This is the original title" /></div>\n<div class="multilingual-value es"><b>Espa\xf1ol</b><input type="text" name="title|es" /></div>\n<div class="multilingual-value pt-br default-second-language"><b>Portuguese</b><input type="text" name="title|pt-br" /></div></div>'
+
+    >>> form.fields['content'].widget.render('content', page.content)
+    u'<div class="multilingual"><div class="multilingual-value en"><b>English</b><textarea rows="10" cols="40" name="content">This is the original content</textarea></div>\n<div class="multilingual-value es"><b>Espa\xf1ol</b><textarea rows="10" cols="40" name="content|es"></textarea></div>\n<div class="multilingual-value pt-br default-second-language"><b>Portuguese</b><textarea rows="10" cols="40" name="content|pt-br"></textarea></div></div>'
+
 There are multilingual fields you can inform the same value for many available languages.
 
+    >>> data = form.initial
+    >>> data['title|es'] = 'Titulo en español'
+    >>> data['title|pt-br'] = u'Título em português brasileiro'
+    >>> data['content|es'] = u'Conteúdo en español'
+    >>> data['content|pt-br'] = u'Conteúdo em português brasileiro'
+
+    >>> form = FlatPageForm(
+    ...     data=data,
+    ...     instance=page,
+    ...     default_second_language='pt-br',
+    ...     available_languages=('en','pt-br','es'),
+    ...     display_language='pt-br',
+    ... )
+
+    >>> form.is_valid()
+    True
+
+    >>> print form.errors
+    <BLANKLINE>
+
+    >>> page = form.save()
+
+    >>> page.translations.values('title','content')
+    [{'content': u'Conte\xc3\xbado en espa\xc3\xb1ol', 'title': u'Titulo en espa\xf1ol'}, {'content': u'Conte\xc3\xbado em portugu\xc3\xaas brasileiro', 'title': u'T\xc3\xadtulo em portugu\xc3\xaas brasileiro'}]
+
 There are multilingual fields you can show a select with choices.
+
+    >>> from polyglot.multilingual_forms import MultilingualModelChoiceField, MultilingualModelMultipleChoiceField
+    >>> from polyglot.tests.test_models import FlatPageRelative
+
+    >>> page2 = FlatPage.objects.get(title='About Test')
+
+    >>> class FormFlatPageRelative(MultilingualBaseForm):
+    ...     class Meta:
+    ...         model = FlatPageRelative
+    ... 
+    ...     subpages = MultilingualModelMultipleChoiceField(
+    ...         queryset=FlatPage.objects.filter(title__in=(page.title, page2.title)),
+    ...         label_field='title',
+    ...         required=False,
+    ...     )
+    ... 
+    ...     def __init__(self, *args, **kwargs):
+    ...         self.base_fields['page'] = MultilingualModelChoiceField(
+    ...             queryset=FlatPage.objects.filter(title__in=(page.title, page2.title)),
+    ...             label_field='title',
+    ...             required=False,
+    ...         )
+    ... 
+    ...         super(FormFlatPageRelative, self).__init__(*args, **kwargs)
+
+    >>> set(FormFlatPageRelative.base_fields.keys()) == set(['page','subpages','information'])
+    True
+
+When a form is instantiated, the choices of a multilingual choice field are shown depending
+on the display language informed.
+
+    >>> data = {
+    ...     'page': unicode(page.pk),
+    ...     'information': 'Nothing important here.',
+    ... }
+
+    >>> form = FormFlatPageRelative(
+    ...     data=data,
+    ...     default_second_language='pt-br',
+    ...     available_languages=('en','pt-br','es'),
+    ...     display_language='pt-br',
+    ... )
+
+    >>> form.fields['page'].widget.render('page', unicode(page.pk))
+    u'<select name="page">\n<option value="3">Sobre o Teste</option>\n<option value="4" selected="selected">T\xc3\xadtulo em portugu\xc3\xaas brasileiro</option>\n</select>'
+
+    >>> form.fields['subpages'].widget.render('subpages', None)
+    u'<select multiple="multiple" name="subpages">\n<option value="3">Sobre o Teste</option>\n<option value="4">T\xc3\xadtulo em portugu\xc3\xaas brasileiro</option>\n</select>'
+
+    >>> form.is_valid()
+    True
+
+    >>> print form.errors
+    <BLANKLINE>
+
+    >>> relative = form.save()
 
 Multilingual formset is a formset with many multilingual forms.
 
