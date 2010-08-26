@@ -1,5 +1,6 @@
 {% extends "repository/trial_form.html" %}
 {% load i18n %}
+{% load polyglot_tags %}
 
 {% block extrahead %}
         <link rel="stylesheet" type="text/css" href="/static/css/multilingual.css"/>
@@ -7,10 +8,8 @@
         <script type="text/javascript" src="{{MEDIA_URL}}js/submission.utils.js"></script>
 
         <script type="text/javascript">
-            MULTILINGUAL_FIELDS = {
-                available_languages: ['{{ MANAGED_LANGUAGES_LC|join:"','" }}'],
-                default_second_language: 'pt-br'
-            };
+            {% polyglot_js_constants %}
+
             $(document).ready(function() {
                 $("div.form select")
                     .change(search_event(

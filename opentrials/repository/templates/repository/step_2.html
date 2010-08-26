@@ -1,15 +1,13 @@
 {% extends "repository/trial_form.html" %}
 {% load i18n %}
+{% load polyglot_tags %}
 
 {% block extrahead %}
         <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/multilingual.css"/>
         <script type="text/javascript" src="{{MEDIA_URL}}js/multilingual.js"></script>
 
         <script type="text/javascript">
-            MULTILINGUAL_FIELDS = {
-                available_languages: ['{{ MANAGED_LANGUAGES_LC|join:"','" }}'],
-                default_second_language: 'pt-br'
-            };
+            {% polyglot_js_constants %}
 
             $(document).ready(function() {
                 $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
