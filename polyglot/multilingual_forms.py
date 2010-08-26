@@ -177,7 +177,10 @@ class MultilingualModelChoiceField(MultilingualField):
     label_field = None
 
     def __init__(self, *args, **kwargs):
-        self.queryset = kwargs.pop('queryset')
+        try:
+            self.queryset = kwargs.pop('queryset')
+        except KeyError:
+            self.queryset = kwargs.pop('model').objects.all()
         self.label_field = kwargs.pop('label_field')
 
         super(MultilingualModelChoiceField, self).__init__(*args, **kwargs)
