@@ -106,3 +106,16 @@ def get_multilingual_fields(model):
     except AttributeError:
         return [field.name for field in trans_model._meta.fields if field.name not in ('id','language','content_type','object_id')]
 
+def get_ordered_languages(display_language, lower=False):
+    """Returns available languages ordered according to display language given"""
+
+    # Just sorts languages placing preferred language first
+    languages = ([lang[0] for lang in settings.MANAGED_LANGUAGES_CHOICES if lang[0] == display_language] +
+                 [lang[0] for lang in settings.MANAGED_LANGUAGES_CHOICES if lang[0] != display_language])
+    languages = map(str, languages)
+
+    if lower:
+        languages = map(lambda s: s.lower(), languages)
+
+    return languages
+
