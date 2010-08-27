@@ -1,17 +1,21 @@
 from django import template
-from django.conf import settings
+
+from polyglot.models import get_ordered_languages
 
 register = template.Library()
 
 class JSConstantsNode(template.Node):
     def render(self, context):
+        # It depends on 'request' template context processor
         display_language = context['request'].user.get_profile().preferred_language.lower()
 
-        ordered_languages = ([lang[0] for lang in settings.MANAGED_LANGUAGES_CHOICES if lang[0] == display_language] +
-                             [lang[0] for lang in settings.MANAGED_LANGUAGES_CHOICES if lang[0] != display_language])
-        ordered_languages = map(lambda s: s.lower(), map(str, ordered_languages))
+        ordered_languages = get_ordered_languages(display_language, lower=True)
 
-        default_second_language = ordered_languages[0] == 'en' and display_language or 'en'
+        # Default second language must be english
+        if len(ordered_languages) <= 1:
+            default_second_language = None
+        else:
+            default_second_language = ordered_languages[1]
 
         return """MULTILINGUAL_FIELDS = {
                     available_languages: %s,

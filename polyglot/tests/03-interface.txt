@@ -1,0 +1,49 @@
+INTERFACE TESTS
+===============
+
+Testing interface functions as much as possible.
+
+    >>> from django.contrib.auth.models import User
+    >>> from django.template.loader import get_template_from_string
+    >>> from django.template import Context
+
+Template to test template tag
+
+    >>> my_template = """{% load polyglot_tags %}
+    ... <html>
+    ... <head>
+    ... {% polyglot_js_constants %}
+    ... </head>
+    ... </html>
+    ... """
+
+User to make tests
+
+    >>> user = User(username='tester')
+    >>> user.set_password('1')
+    >>> user.save()
+
+    >>> from polyglot.models import get_ordered_languages
+
+    >>> get_ordered_languages(user)
+    ['en', 'es', 'pt-br']
+
+Fake request to mock an authenticated user
+
+    >>> class FakeRequest(object): user = user
+    >>> request = FakeRequest()
+
+    >>> tpl = get_template_from_string(my_template)
+    >>> print tpl.render(Context({'request': request}))
+    <BLANKLINE>
+    <html>
+    <head>
+    MULTILINGUAL_FIELDS = {
+                        available_languages: ['en', 'es', 'pt-br'],
+                        default_second_language: 'es',
+                        display_language: 'pt-br'
+                      };
+    </head>
+    </html>
+    <BLANKLINE>
+

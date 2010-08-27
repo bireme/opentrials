@@ -11,14 +11,15 @@ class UserLocaleMiddleware(object):
     """
 
     def process_request(self, request):
-        if request.user.is_authenticated():
-            language = request.user.get_profile().preferred_language
-            translation.activate(language)
-            request.LANGUAGE_CODE = translation.get_language()
-        else:
-            language = translation.get_language_from_request(request)
-            translation.activate(language)
-            request.LANGUAGE_CODE = translation.get_language()
+        if not request.session.get('django_language', None):
+            if request.user.is_authenticated():
+                language = request.user.get_profile().preferred_language
+                translation.activate(language)
+                request.LANGUAGE_CODE = translation.get_language()
+            else:
+                language = translation.get_language_from_request(request)
+                translation.activate(language)
+                request.LANGUAGE_CODE = translation.get_language()
 
     def process_response(self, request, response):
         patch_vary_headers(response, ('Accept-Language',))
