@@ -18,6 +18,7 @@
         <script type="text/javascript" src="/static/js/jquery.cluetip.min.js"></script>
         <script type="text/javascript" src="/static/js/jquery.hoverIntent.js"></script>
         <script type="text/javascript" src="/static/js/submission.utils.js"></script>
+        <script type="text/javascript" src="/static/js/language.js"></script>
 
         {% block extrahead %}{% endblock %}
     </head>
@@ -118,11 +119,15 @@
                     </form>
                 </div>
                 <div class="languages">
+                    <form name="form_language" id="form_language" action="/i18n/setlang/" method="post">
                     <ul>
-                        <li><a href="#">PT</a></li>
-                        <li><a href="#">ES</a></li>
-                        <li><a href="#">EN</a></li>
+                        {% csrf_token %}
+                        <input type="hidden" id="language" name="language">
+                        <li><a id="lang_pt-BR" href="" title="{% trans 'Change language to Portuguese' %}">PT</a></li>
+                        <li><a id="lang_es" href="" title="{% trans 'Change language to Spanish' %}">ES</a></li>
+                        <li><a id="lang_en" href="" title="{% trans 'Change language to English' %}">EN</a></li>
                     </ul>
+                    </form>
                 </div>
                 <div class="spacer">&#160;</div>
             </div>
