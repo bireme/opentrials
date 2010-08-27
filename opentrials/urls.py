@@ -29,6 +29,8 @@ urlpatterns = patterns('',
 
     # system diagnostic views (may be disabled in production)
     url(r'^diag/', include('opentrials.diagnostic.urls')),
+    
+    (r'^i18n/', include('django.conf.urls.i18n')),
 
 
 )
