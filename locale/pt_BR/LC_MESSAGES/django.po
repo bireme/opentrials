@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-30 18:43+0000\n"
-"PO-Revision-Date: 2010-08-30 18:45\n"
+"POT-Creation-Date: 2010-08-30 19:34+0000\n"
+"PO-Revision-Date: 2010-08-30 19:36\n"
 "Last-Translator: <appec@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -973,6 +973,10 @@ msgstr "Visualização prévia"
 #: repository/templates/repository/trds.html:4
 msgid "Trial Registration Data Set"
 msgstr "Conjunto de dados de registro de ensaio"
+
+#: repository/templates/repository/trial_form.html:101
+msgid "You have done modifications on some fields. Are you sure you want to leave without save before?"
+msgstr "Você fez modificações em alguns campos. Tem certeza que quer sair sem salvar?"
 
 #: repository/templates/repository/trial_index.html:3
 #: repository/templates/repository/trial_index.html:10

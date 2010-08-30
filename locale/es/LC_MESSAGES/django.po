@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-30 18:43+0000\n"
+"POT-Creation-Date: 2010-08-30 19:34+0000\n"
 "PO-Revision-Date: 2010-06-25 19:07\n"
 "Last-Translator: <a@b.cd>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -987,6 +987,12 @@ msgstr ""
 #: repository/templates/repository/trds.html:3
 #: repository/templates/repository/trds.html:4
 msgid "Trial Registration Data Set"
+msgstr ""
+
+#: repository/templates/repository/trial_form.html:101
+msgid ""
+"You have done modifications on some fields. Are you sure you want to leave "
+"without save before?"
 msgstr ""
 
 #: repository/templates/repository/trial_index.html:3
