@@ -1,5 +1,5 @@
 from repository.models import ClinicalTrial
-from django.template import Library, Node
+from django.template import Library, Node, TemplateSyntaxError
 
 register = Library()
 
