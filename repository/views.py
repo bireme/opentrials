@@ -197,7 +197,9 @@ def trial_view(request, trial_pk):
     trial_forms = []
     for tf in TRIAL_FORMS:
          remarks = ct.submission.remark_set.filter(context=slugify(tf))
-         trial_forms.append(remarks)
+         if remarks:
+            trial_forms.append(remarks)
+
     return render_to_response('repository/clinicaltrial_detail_user.html',
                                 {'object': ct,
                                 'translations': translations,
