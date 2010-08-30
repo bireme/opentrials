@@ -107,7 +107,6 @@ function make_decstool_callback(decs){
 
         if( data.length === 1){
             $('#'+decs.id('select') + " option").attr("selected","selected");
-            $('#'+decs.id('select')).change();
         }
 
         if($("input#id_"+decs.set+"-code").val().match(/^[A-Z](\d{2,2}(\.\d{3,3})*)?$/)){
@@ -115,6 +114,8 @@ function make_decstool_callback(decs){
             $('#'+decs.id('select'))
                 .find('option[value='+code+']')
                 .attr('selected','selected');
+        } else {
+            $('#'+decs.id('select')).change();
         }
     }
 }
