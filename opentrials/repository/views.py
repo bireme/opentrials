@@ -146,12 +146,12 @@ def list_all(request, page=0, **kwargs):
     queryset = ClinicalTrial.objects.filter(submission__creator=request.user)
     if q:
         queryset = queryset.filter(Q(scientific_title__icontains=q)
-                                               |Q(public_title__icontains=q)
-                                               |Q(trial_id__iexact=q)
-                                               |Q(acronym__iexact=q)
-                                               |Q(acronym_expansion__icontains=q)
-                                               |Q(scientific_acronym__iexact=q)
-                                               |Q(scientific_acronym_expansion__icontains=q))
+                                   |Q(public_title__icontains=q)
+                                   |Q(trial_id__iexact=q)
+                                   |Q(acronym__iexact=q)
+                                   |Q(acronym_expansion__icontains=q)
+                                   |Q(scientific_acronym__iexact=q)
+                                   |Q(scientific_acronym_expansion__icontains=q))
 
     return object_list(
                   request,

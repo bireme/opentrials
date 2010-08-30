@@ -98,7 +98,7 @@
             window.onbeforeunload = confirmExit;
             function confirmExit(){
                 // TODO: translate
-                return 'You have done modifications on some fields. Are you sure you want to leave without save before?';
+                return '{% trans 'You have done modifications on some fields. Are you sure you want to leave without save before?' %}';
             }
         });
     });
