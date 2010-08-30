@@ -79,6 +79,23 @@
           margin-right: 14pt;
         }
     </style>
+    {% if trial_forms %}
+    <div class="warning">
+        <a class="minimize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-down.gif"/></a>
+        <a class="maximize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-up.gif"/></a>
+        <h2>{% trans 'Remarks' %}</h2>
+        <ul>
+            {% for remarks in trial_forms %}
+                {% for remark in remarks %}
+                <li id="remark_{{ remark.id }}"><b>{% trans remark.context_title %}:</b> {{ remark.text }}<a onclick="ack_remark({{ remark.id }})">
+                <span>{% trans "Mark as reviewed" %}</span>
+                <img alt="{% trans "Mark as reviewed" %}" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    
     <h3>{% trans 'Scientific Title' %}:</h3>
         {% for t in translations|dictsortreversed:"language" %}
             {% if t.scientific_title %}

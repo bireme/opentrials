@@ -194,10 +194,15 @@ def trial_view(request, trial_pk):
     else:
         ct = get_object_or_404(ClinicalTrial, id=int(trial_pk), submission__creator=request.user)
     translations = [t for t in ct.translations.all()]
+    trial_forms = []
+    for tf in TRIAL_FORMS:
+         remarks = ct.submission.remark_set.filter(context=slugify(tf))
+         trial_forms.append(remarks)
     return render_to_response('repository/clinicaltrial_detail_user.html',
                                 {'object': ct,
                                 'translations': translations,
-                                'host': request.get_host()},
+                                'host': request.get_host(),
+                                'trial_forms': trial_forms,},
                                 context_instance=RequestContext(request))
                                 
 def trial_registered(request, trial_id):

@@ -8,6 +8,9 @@
         / <a href="{% url reviewapp.submissionlist %}">{% trans 'Submissions' %}</a>
     </small>
     <big>/ {% trans 'Trial Summary' %}</big>
+    <div style="float:right; margin-right:20px;">
+        <small><a href="{% url repository.trialview trial_pk %}">{% trans 'Preview' %}</a></small>
+    </div>
 {% endblock %}
 
 {% block body %}

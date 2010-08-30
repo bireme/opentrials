@@ -203,6 +203,9 @@ class Remark(models.Model):
 
     def short_text(self):
         return safe_truncate(self.text, 60)
+        
+    def context_title(self):
+        return _(self.context.title().replace('-', ' '))
 
 NEWS_STATUS = [
     ('pending', _('Pending')),
