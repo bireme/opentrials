@@ -381,6 +381,7 @@ blockquote {
 
 .mainContent .warning ul li {
     list-style-type: decimal;
+    list-style-position: inside;
 }
 .mainContent .warning ul li a span{
     display: none;
