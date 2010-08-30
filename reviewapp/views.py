@@ -26,6 +26,7 @@ from reviewapp.consts import REMARK, MISSING, PARTIAL, COMPLETE
 
 from repository.models import ClinicalTrial, CountryCode, ClinicalTrialTranslation
 from repository.trds_forms import TRIAL_FORMS
+from repository.trial_validation import trial_validator
 from datetime import datetime
 import pickle
 from utilities import safe_truncate
@@ -258,6 +259,9 @@ def open_remark(request, submission_id, context):
             remark.status = 'opened'
             form.save()
 
+            # Executes validation of current trial submission (for mandatory fields)
+            trial_validator.validate(submission.trial)
+            
             return HttpResponseRedirect(reverse('repository.trialview',args=[submission.trial.id]))
 
     form = OpenRemarkForm()
@@ -276,6 +280,10 @@ def change_remark_status(request, remark_id, status):
 
     remark.status = status
     remark.save()
+    
+    # Executes validation of current trial submission (for mandatory fields)
+    trial_validator.validate(remark.submission.trial)
+    
     return HttpResponse(remark.status, mimetype='text/plain')
     
 def contact(request):
