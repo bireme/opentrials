@@ -10,7 +10,7 @@ class JSConstantsNode(template.Node):
         display_language = context['request'].user.get_profile().preferred_language.lower()
 
         ordered_languages = get_ordered_languages(display_language, lower=True)
-
+        print "####################################### %s" % display_language
         # Default second language must be english
         if len(ordered_languages) <= 1:
             default_second_language = None
