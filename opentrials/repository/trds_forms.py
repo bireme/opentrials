@@ -92,7 +92,7 @@ class ReviewModelForm(MultilingualBaseForm):
                 except (FieldHelpTranslation.DoesNotExist, AttributeError):
                     help_text = help_record.text
 
-                help_text = help_text + u' ' + force_unicode(help_text)
+                help_text = u'' + force_unicode(help_text)
                 help_text = linebreaksbr(help_text_html % help_text)
                 output.append(normal_row % {'errors': force_unicode(bf_errors),
                                             'label': force_unicode(label),
