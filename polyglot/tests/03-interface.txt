@@ -26,7 +26,7 @@ User to make tests
     >>> from polyglot.models import get_ordered_languages
 
     >>> get_ordered_languages(user)
-    ['en', 'es', 'pt-br']
+    ['en', 'es', 'pt-BR']
 
 Fake request to mock an authenticated user
 
