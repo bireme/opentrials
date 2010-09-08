@@ -86,19 +86,25 @@ def edit_trial_index(request, trial_pk):
                 step_status = fields_status.get(lang, {}).get(name, None)
                 if step_status == MISSING:
                     trans['icon'] = settings.MEDIA_URL + 'images/form-status-missing.png'
+                    trans['msg'] = STEP_STATES[MISSING-1][1]
+                    trans['leg'] = _("There are required fields missing.")
                 elif step_status == PARTIAL: 
                     trans['icon'] = settings.MEDIA_URL + 'images/form-status-partial.png'
+                    trans['msg'] = STEP_STATES[PARTIAL-1][1]
+                    trans['leg'] = _("All required fields were filled.")
                 elif step_status == COMPLETE:
                     trans['icon'] = settings.MEDIA_URL + 'images/form-status-complete.png'
+                    trans['msg'] = STEP_STATES[COMPLETE-1][1]
+                    trans['leg'] = _("All fields were filled.")
                 elif step_status == REMARK:
                     trans['icon'] = settings.MEDIA_URL + 'images/form-status-remark.png'
+                    trans['msg'] = STEP_STATES[REMARK-1][1]
+                    trans['leg'] = _("There are fields with remarks.")
                 else:
                     trans['icon'] = settings.MEDIA_URL + 'media/img/admin/icon_error.gif'
-                
-                if step_status is None:
                     trans['msg'] = _('Error')
-                else:
-                    trans['msg'] = _(STEP_STATES[(step_status-1)][1].title())
+                    trans['leg'] = _('Error')
+                
                 trans_list.append(trans)
             data['trans'] = trans_list
             links.append(data)
