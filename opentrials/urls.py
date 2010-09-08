@@ -25,7 +25,7 @@ urlpatterns = patterns('',
     url(r'^decs/', include('opentrials.decsclient.urls')),
 
     # django-registration views
-    url(r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^accounts/', include('registration.urls')),
 
     # system diagnostic views (may be disabled in production)
     url(r'^diag/', include('opentrials.diagnostic.urls')),
