@@ -31,7 +31,12 @@ class TicketAdmin(admin.ModelAdmin):
         instance.creator = request.user
 
         super(TicketAdmin, self).save_model(request, instance, form, change)
-        
-admin.site.register(Ticket, TicketAdmin)
-admin.site.register(Followup, FollowupAdmin)
-admin.site.register(Media, MediaAdmin)
+
+if Ticket not in admin.site._registry:
+    admin.site.register(Ticket, TicketAdmin)
+
+if Followup not in admin.site._registry:
+    admin.site.register(Followup, FollowupAdmin)
+
+if Media not in admin.site._registry:
+    admin.site.register(Media, MediaAdmin)
