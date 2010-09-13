@@ -24,16 +24,13 @@ EMAIL_USE_TLS = False
 
 SERVER_EMAIL = EMAIL_HOST_USER
 
-### uncomment the following lines to use the jquery locally
-#if 'MEDIA_URL' in dir():
-#    JQUERY_LOCAL = MEDIA_URL + 'js/local/jquery.js'
-#    JQUERY_UI_LOCAL = MEDIA_URL + 'js/local/jquery-ui.js'
-
-#JQUERY_URL = JQUERY_LOCAL
-#JQUERY_UI_URL = JQUERY_UI_LOCAL
-
 if DEBUG:
     DEBUG_PROPAGATE_EXCEPTIONS = True
+    
+    ### setting to use the jquery locally
+    if 'MEDIA_URL' in dir():
+        JQUERY_URL = MEDIA_URL + 'js/local/jquery.js'
+        JQUERY_UI_URL = MEDIA_URL + 'js/local/jquery-ui.js'
 
     if 'MIDDLEWARE_CLASSES' in dir():
         MIDDLEWARE_CLASSES += (
