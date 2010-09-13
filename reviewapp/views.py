@@ -47,9 +47,6 @@ def index(request):
         page = pages[0]
         try:
             trans = page.translations.get(language__iexact=request.LANGUAGE_CODE)
-
-            trans.registration_required = page.registration_required
-            trans.template_name = page.template_name
         except FlatPageTranslation.DoesNotExist:
             trans = page
 
