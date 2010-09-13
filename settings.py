@@ -64,7 +64,8 @@ MIDDLEWARE_CLASSES = (
     'middleware.scriptprefix.ScriptPrefixMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'middleware.user_locale.UserLocaleMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    #'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'flatpages_polyglot.middleware.FlatPagePolyglotMiddleware',
 )
 
 ROOT_URLCONF = 'opentrials.urls'
@@ -97,6 +98,7 @@ INSTALLED_APPS = (
     'registration',  # django-registration package
     'south',
     'django_nose',
+    'flatpages_polyglot',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =(
