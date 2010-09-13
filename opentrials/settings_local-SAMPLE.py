@@ -24,24 +24,29 @@ EMAIL_USE_TLS = False
 
 SERVER_EMAIL = EMAIL_HOST_USER
 
-JQUERY_LOCAL = MEDIA_URL + 'js/local/jquery.js'
-JQUERY_UI_LOCAL = MEDIA_URL + 'js/local/jquery-ui.js'
 ### uncomment the following lines to use the jquery locally
+#if 'MEDIA_URL' in dir():
+#    JQUERY_LOCAL = MEDIA_URL + 'js/local/jquery.js'
+#    JQUERY_UI_LOCAL = MEDIA_URL + 'js/local/jquery-ui.js'
+
 #JQUERY_URL = JQUERY_LOCAL
 #JQUERY_UI_URL = JQUERY_UI_LOCAL
 
 if DEBUG:
     DEBUG_PROPAGATE_EXCEPTIONS = True
-    MIDDLEWARE_CLASSES += (
-        ## external dependency for debug purposes only
-        # 'debug_middleware.DebugFooter',
-    )
 
-    INSTALLED_APPS += (
-        ## external dependency for generating model ER diagrams
-        # 'graphviz',
-        ## external dependency for migrating database schemas
-        # 'south',
-    )
+    if 'MIDDLEWARE_CLASSES' in dir():
+        MIDDLEWARE_CLASSES += (
+            ## external dependency for debug purposes only
+            # 'debug_middleware.DebugFooter',
+        )
+
+    if 'INSTALLED_APPS' in dir():
+        INSTALLED_APPS += (
+            ## external dependency for generating model ER diagrams
+            # 'graphviz',
+            ## external dependency for migrating database schemas
+            # 'south',
+        )
 
     GRAPHVIZ_DOT_CMD = '/usr/bin/dot'
