@@ -40,6 +40,11 @@ class QuestionAdmin(TranslationAdmin):
     def short_text(self, obj):
         return safe_truncate(obj.answer)
 
-admin.site.register(FieldHelp, FieldHelpAdmin)
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Question, QuestionAdmin)
+if FieldHelp not in admin.site._registry:
+    admin.site.register(FieldHelp, FieldHelpAdmin)
+
+if Category not in admin.site._registry:
+    admin.site.register(Category, CategoryAdmin)
+
+if Question not in admin.site._registry:
+    admin.site.register(Question, QuestionAdmin)

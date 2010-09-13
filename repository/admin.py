@@ -31,7 +31,14 @@ class ClinicalTrialAdmin(admin.ModelAdmin):
 class DescriptorAdmin(admin.ModelAdmin):
     list_display = ('trial_identifier','vocabulary','code', 'text')
 
-admin.site.register(ClinicalTrial, ClinicalTrialAdmin)
-admin.site.register(Descriptor, DescriptorAdmin)
-admin.site.register(Institution)
-admin.site.register(Contact)
+if ClinicalTrial not in admin.site._registry:
+    admin.site.register(ClinicalTrial, ClinicalTrialAdmin)
+
+if Descriptor not in admin.site._registry:
+    admin.site.register(Descriptor, DescriptorAdmin)
+
+if Institution not in admin.site._registry:
+    admin.site.register(Institution)
+
+if Contact not in admin.site._registry:
+    admin.site.register(Contact)

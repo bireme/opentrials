@@ -48,7 +48,11 @@ class NewsAdmin(admin.ModelAdmin):
             instance.creator = request.user
         super(NewsAdmin, self).save_model(request, instance, form, change)
         
+if Submission not in admin.site._registry:
+    admin.site.register(Submission, SubmissionAdmin)
 
-admin.site.register(Submission, SubmissionAdmin)
-admin.site.register(Remark, RemarkAdmin)
-admin.site.register(News, NewsAdmin)
+if Remark not in admin.site._registry:
+    admin.site.register(Remark, RemarkAdmin)
+
+if News not in admin.site._registry:
+    admin.site.register(News, NewsAdmin)
