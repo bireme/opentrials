@@ -16,6 +16,7 @@ from django.conf import settings
 from django.contrib.sites.models import RequestSite
 from django.contrib.sites.models import Site
 from django.contrib.flatpages.models import FlatPage
+from flatpages_polyglot.models import FlatPageTranslation
 from tickets.models import Ticket
 
 from reviewapp.models import Submission, News
@@ -41,15 +42,22 @@ def index(request):
     
     pages = FlatPage.objects.filter(url='/site-description/')
     if len(pages) < 1:
-        page = None
+        trans = None
     else:
         page = pages[0]
+        try:
+            trans = page.translations.get(language__iexact=request.LANGUAGE_CODE)
+
+            trans.registration_required = page.registration_required
+            trans.template_name = page.template_name
+        except FlatPageTranslation.DoesNotExist:
+            trans = page
 
     return render_to_response('reviewapp/index.html', {
-                              'clinical_trials': clinical_trials,
-                              'news': latest,
-                              'page': page,},
-                              context_instance=RequestContext(request))
+                          'clinical_trials': clinical_trials,
+                          'news': latest,
+                          'page': trans,},
+                          context_instance=RequestContext(request))
 
 @login_required
 def dashboard(request):

@@ -17,7 +17,7 @@ class FormFlatPageTranslation(forms.ModelForm):
 
         self.fields.keyOrder = ['flatpage','language','title','content']
 
-        if self.instance:
+        if self.instance and hasattr(self.instance.content_object, 'pk'):
             self.fields['flatpage'].initial = self.instance.content_object.pk
 
     def save(self, commit=True):
