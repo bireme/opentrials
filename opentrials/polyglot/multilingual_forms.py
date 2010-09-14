@@ -134,7 +134,8 @@ class MultilingualSelect(forms.Select, BaseMultilingualSelect):
         super(MultilingualSelect, self).__init__(attrs)
 
     def render(self, name, value, attrs=None):
-        self.choices = self.get_translated_choices()
+        self.choices = [('', u"---------")]
+        self.choices.extend(self.get_translated_choices())
 
         return super(MultilingualSelect, self).render(name, value, attrs)
 
@@ -150,6 +151,19 @@ class MultilingualSelectMultiple(forms.SelectMultiple, BaseMultilingualSelect):
         self.choices = self.get_translated_choices()
 
         return super(MultilingualSelectMultiple, self).render(name, value, attrs, choices)
+
+class MultilingualCheckboxSelectMultiple(forms.CheckboxSelectMultiple, BaseMultilingualSelect):
+    def __init__(self, display_language=None, queryset=None, label_field=None, attrs=None):
+        self.display_language = display_language or self.display_language
+        self.queryset = queryset
+        self.label_field = label_field
+
+        super(MultilingualCheckboxSelectMultiple, self).__init__(attrs)
+
+    def render(self, name, value, attrs=None, choices=()):
+        self.choices = self.get_translated_choices()
+
+        return super(MultilingualCheckboxSelectMultiple, self).render(name, value, attrs, choices)
 
 # FIELDS
 
@@ -196,6 +210,15 @@ class MultilingualModelChoiceField(MultilingualField):
 
 class MultilingualModelMultipleChoiceField(MultilingualModelChoiceField):
     widget = MultilingualSelectMultiple
+
+    def to_python(self, value):
+        if value in EMPTY_VALUES:
+            return None
+
+        return self.queryset.filter(pk__in=value)
+        
+class MultilingualModelCheckboxField(MultilingualModelChoiceField):
+    widget = MultilingualCheckboxSelectMultiple
 
     def to_python(self, value):
         if value in EMPTY_VALUES:
