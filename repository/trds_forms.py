@@ -1,12 +1,13 @@
 #coding: utf-8
 
 from assistance.models import FieldHelp, FieldHelpTranslation
-from vocabulary.models import CountryCode
 from repository.models import ClinicalTrial, Contact, Descriptor, Institution
-from repository.models import InterventionCode, Outcome, RecruitmentStatus
-from repository.models import StudyPhase, TrialSecondarySponsor, TrialSupportSource
+from repository.models import Outcome, TrialNumber
+from repository.models import TrialSecondarySponsor, TrialSupportSource
 from repository.models import SiteContact, PublicContact, ScientificContact
-from repository.models import TrialNumber
+from vocabulary.models import CountryCode, StudyPhase, StudyType, RecruitmentStatus
+from vocabulary.models import InterventionCode, StudyMasking, StudyAllocation
+from vocabulary.models import StudyPurpose, InterventionAssigment
 from repository.widgets import SelectWithLink, SelectInstitution
 
 import choices
@@ -23,6 +24,7 @@ from django.forms.forms import BoundField, conditional_escape
 from polyglot.multilingual_forms import MultilingualCharField, MultilingualTextField
 from polyglot.multilingual_forms import MultilingualModelChoiceField, MultilingualModelMultipleChoiceField
 from polyglot.multilingual_forms import MultilingualBaseForm, MultilingualBaseFormSet
+from polyglot.multilingual_forms import MultilingualModelCheckboxField
 
 from trial_validation import trial_validator, TRIAL_FORMS
 
@@ -310,10 +312,12 @@ class InterventionForm(ReviewModelForm):
                                          required=False, max_length=8000,
                                          widget=forms.Textarea)
 
-    i_code = forms.ModelMultipleChoiceField(label=_("Intervention Code(s)"),
-                                            queryset=InterventionCode.objects.all(),
-                                            widget=forms.CheckboxSelectMultiple())
-
+    i_code = MultilingualModelCheckboxField(
+                label=_("Intervention Code(s)"),
+                model=InterventionCode,
+                label_field='label',
+            )
+    
 trial_validator.register(TRIAL_FORMS[3], [InterventionForm, InterventionDescriptorForm])
 
 ### step_5 #####################################################################
@@ -331,8 +335,8 @@ class RecruitmentForm(ReviewModelForm):
     # TRDS 18
     recruitment_status = MultilingualModelChoiceField(
             label=_('Study Status'),
-            initial=RecruitmentStatus.objects.get(pk=1),
-            model=RecruitmentStatus,
+            queryset=RecruitmentStatus.objects.all().order_by('label'),
+            required=False,
             label_field='label',
             )
 
@@ -393,16 +397,50 @@ class StudyTypeForm(ReviewModelForm):
                                          required=False, max_length=1000,
                                          widget=forms.Textarea)
 
+    purpose = MultilingualModelChoiceField(
+        label=_('Study Purpose'),
+        queryset=StudyPurpose.objects.all().order_by('label'),
+        required=False,
+        label_field='label',
+        )
+        
+    intervention_assignment = MultilingualModelChoiceField(
+        label=_('Intervention Assignment'),
+        queryset=InterventionAssigment.objects.all().order_by('label'),
+        required=False,
+        label_field='label',
+        )
+    
+    masking = MultilingualModelChoiceField(
+        label=_('Masking type'),
+        queryset=StudyMasking.objects.all().order_by('label'),
+        required=False,
+        label_field='label',
+        )
+    
+    allocation = MultilingualModelChoiceField(
+        label=_('Allocation type'),
+        queryset=StudyAllocation.objects.all().order_by('label'),
+        required=False,
+        label_field='label',
+        )
+    
     # TRDS 15c
-    phase = forms.ModelChoiceField(label=_('Study Phase'),
-                                   required=False,
-                                   queryset=StudyPhase.objects.all())
-                                   
-    expanded_access_program = forms.ChoiceField(label=_('Expanded access program'),
-                                              required=False,
-                                              choices=[(None,_('Unknown')),
-                                                       (True,_('Yes')),
-                                                       (False,_('No')),])
+    phase = MultilingualModelChoiceField(
+        label=_('Study Phase'),
+        queryset=StudyPhase.objects.all().order_by('label'),
+        required=False,
+        label_field='label',
+        )
+
+    expanded_access_program = forms.ChoiceField(
+        label=_('Expanded access program'),
+        required=False,
+        choices=[
+            (None,_('Unknown')),
+            (True,_('Yes')),
+            (False,_('No')),
+        ])
 
 trial_validator.register(TRIAL_FORMS[5], [StudyTypeForm])
 
