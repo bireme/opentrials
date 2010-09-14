@@ -5,6 +5,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from django.core.cache import cache
+from django.core.exceptions import ObjectDoesNotExist
 
 class TranslationManager(models.Manager):
     def make_cache_key(self, model, object_id, lang):
@@ -16,7 +17,7 @@ class TranslationManager(models.Manager):
                 model._meta.app_label, model.__name__, object_id, lang,
                 )
 
-    def get_translation_for_object(self, lang, obj=None, model=None, object_id=None):
+    def get_translation_for_object(self, lang, obj=None, model=None, object_id=None, returns_default=False):
         """Returns the translation object for a given object and language.
         
         Before call database, checks if there is a cached data for this."""
@@ -38,7 +39,13 @@ class TranslationManager(models.Manager):
         c_type = ContentType.objects.get_for_model(model)
 
         # Gets the translation
-        trans = self.get(language=lang, content_type=c_type, object_id=object_id)
+        try:
+            trans = self.get(language__iexact=lang, content_type=c_type, object_id=object_id)
+        except ObjectDoesNotExist:
+            if returns_default:
+                return obj
+            
+            raise
 
         # Stores in cache
         cache.set(cache_key, trans)

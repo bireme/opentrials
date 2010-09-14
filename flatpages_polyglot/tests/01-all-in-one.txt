@@ -83,10 +83,36 @@ Just appending polyglot flatpages middleware to settings...
     >>> if 'flatpages_polyglot.middleware.FlatPagePolyglotMiddleware' not in settings.MIDDLEWARE_CLASSES:
     ...     settings.MIDDLEWARE_CLASSES = settings.MIDDLEWARE_CLASSES + ('flatpages_polyglot.middleware.FlatPagePolyglotMiddleware',)
 
-Starting the test web client
+Getting flatpage for language defined in settings
+
+    >>> import re
 
     >>> resp = cl.get('/about-me/')
     >>> resp.status_code
     200
 
+    >>> current_translation = FlatPageTranslation.objects.get_translation_for_object(
+    ...     settings.LANGUAGE_CODE, page_about_me, returns_default=True)
+
+Is the same title?
+
+    >>> re.findall('<title>(.*?) -', resp.content)[0] == current_translation.title
+    True
+
+Changes the current language at current session
+
+    >>> session = cl.session
+    >>> session['django_language'] = 'es'
+    >>> session.save()
+
+    >>> resp = cl.get('/about-me/')
+    >>> resp.status_code
+    200
+
+    >>> current_translation = FlatPageTranslation.objects.get_translation_for_object('es', page_about_me, returns_default=True)
+
+Is the same title for spanish?
+
+    >>> re.findall('<title>(.*?) -', resp.content)[0] == current_translation.title
+    True
 
