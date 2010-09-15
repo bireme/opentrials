@@ -8,7 +8,7 @@
         <script type="text/javascript" src="{{MEDIA_URL}}js/multilingual.js"></script>
 
         <script type="text/javascript">
-            {% polyglot_js_constants %}
+            {% polyglot_js_constants available_languages %}
 
             $(document).ready(function() {
                 $("select[multiple]").asmSelect({
