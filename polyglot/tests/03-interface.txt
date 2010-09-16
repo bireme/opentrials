@@ -39,7 +39,7 @@ Fake request to mock an authenticated user
     <html>
     <head>
     MULTILINGUAL_FIELDS = {
-                        available_languages: ['en', 'es', 'pt-br'],
+                        available_languages: ["en", "es", "pt-br"],
                         default_second_language: 'es',
                         display_language: 'pt-br'
                       };

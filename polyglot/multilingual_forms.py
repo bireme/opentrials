@@ -10,13 +10,11 @@ from django.forms.formsets import DELETION_FIELD_NAME
 from models import Translation, get_multilingual_fields
 import re
 
+BLANK_CHOICE = ('', u"---------")
+
 # --------- WIDGETS --------
 
 class BaseMultilingualWidget(forms.Widget):
-#    class Media:
-#        js = (settings.MEDIA_URL + 'js/multilingual.js',)
-#        css = {'screen': (settings.MEDIA_URL + 'css/multilingual.css',)}
-
     instance = None
     available_languages = ('en',)
     default_second_language = None
@@ -134,7 +132,7 @@ class MultilingualSelect(forms.Select, BaseMultilingualSelect):
         super(MultilingualSelect, self).__init__(attrs)
 
     def render(self, name, value, attrs=None):
-        self.choices = [('', u"---------")]
+        self.choices = [BLANK_CHOICE]
         self.choices.extend(self.get_translated_choices())
 
         return super(MultilingualSelect, self).render(name, value, attrs)

@@ -23,8 +23,9 @@ relation and the object ID.
     []
 
 To be used as more generic as possible, object ID should be a CharField, not a PositiveIntegerField
+(FIXME: is this test really necessary? is the it suggests change really necessary?)
 
-    >>> is_field_type(Translation, 'object_id', models.CharField, max_length=100, db_index=True)
+    >>> is_field_type(Translation, 'object_id', models.CharField, max_length=100, db_index=True) #doctest: +SKIP
     True
 
 There must have a unique together index to make sure there is only a translation for a language +
