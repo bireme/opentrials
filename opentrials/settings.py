@@ -94,10 +94,7 @@ INSTALLED_APPS = (
     'decsclient',
     'diagnostic',
     'polyglot',
-    'rosetta',
     'registration',  # django-registration package
-    'south',
-    'django_nose',
     'flatpages_polyglot',
 )
 
@@ -166,6 +163,6 @@ SOUTH_TESTS_MIGRATE = False
 ### END Clinical Trials Repository customization settings
 #################################################################
 
-# Deployment settings: there *must* be an unversioned settings_local.py
-# file in the current directory. See sample file at settings_local-SAMPLE.py
-execfile(os.path.join(PROJECT_PATH,'settings_local.py'))
+# Deployment settings: there *must* be an unversioned settings_local.include
+# file in the current directory. See sample file at settings_local-SAMPLE.include
+execfile(os.path.join(PROJECT_PATH,'settings_local.include'))

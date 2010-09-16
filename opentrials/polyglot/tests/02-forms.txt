@@ -160,7 +160,7 @@ on the display language informed.
     ... )
 
     >>> form.fields['page'].widget.render('page', unicode(page.pk))
-    u'<select name="page">\n<option value="3">Sobre o Teste</option>\n<option value="4" selected="selected">T\xc3\xadtulo em portugu\xc3\xaas brasileiro</option>\n</select>'
+    u'<select name="page">\n<option value="">---------</option>\n<option value="3">Sobre o Teste</option>\n<option value="4" selected="selected">T\xc3\xadtulo em portugu\xc3\xaas brasileiro</option>\n</select>'
 
     >>> form.fields['subpages'].widget.render('subpages', None)
     u'<select multiple="multiple" name="subpages">\n<option value="3">Sobre o Teste</option>\n<option value="4">T\xc3\xadtulo em portugu\xc3\xaas brasileiro</option>\n</select>'

@@ -28,22 +28,23 @@ if DEBUG:
     DEBUG_PROPAGATE_EXCEPTIONS = True
     
     ### setting to use the jquery locally
-    if 'MEDIA_URL' in dir():
-        JQUERY_URL = MEDIA_URL + 'js/local/jquery.js'
-        JQUERY_UI_URL = MEDIA_URL + 'js/local/jquery-ui.js'
+    JQUERY_URL = MEDIA_URL + 'js/local/jquery.js'
+    JQUERY_UI_URL = MEDIA_URL + 'js/local/jquery-ui.js'
 
-    if 'MIDDLEWARE_CLASSES' in dir():
-        MIDDLEWARE_CLASSES += (
-            ## external dependency for debug purposes only
-            # 'debug_middleware.DebugFooter',
-        )
+    MIDDLEWARE_CLASSES += (
+        ## external dependency for debug purposes only
+        # 'debug_middleware.DebugFooter',
+    )
 
-    if 'INSTALLED_APPS' in dir():
-        INSTALLED_APPS += (
-            ## external dependency for generating model ER diagrams
-            # 'graphviz',
-            ## external dependency for migrating database schemas
-            # 'south',
-        )
+    INSTALLED_APPS += (
+        ## external dependency for generating model ER diagrams
+        # 'graphviz',
+        ## external dependency for migrating database schemas
+        # 'south',
+        ## external dependency for translating UI strings
+        # 'rosetta',
+        ## external dependency for running tests with nose
+        # 'django_nose',
+    )
 
     GRAPHVIZ_DOT_CMD = '/usr/bin/dot'
