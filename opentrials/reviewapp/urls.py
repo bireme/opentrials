@@ -8,7 +8,7 @@ from reviewapp.views import index, user_dump, new_submission, submissions_list
 from reviewapp.views import dashboard, submission_detail, user_profile
 from reviewapp.views import upload_trial, open_remark, resend_activation_email
 from reviewapp.views import change_remark_status
-from reviewapp.views import contact
+from reviewapp.views import contact, submission_delete
 
 from reviewapp.models import Submission, News
 
@@ -37,6 +37,9 @@ urlpatterns = patterns('',
 
     url(r'^accounts/submission/(\d+)/$', submission_detail, 
         name='reviewapp.submission'),
+        
+    url(r'^accounts/submission/delete/(\d+)/$', submission_delete, 
+        name='reviewapp.submission_delete'),
 
     url(r'^accounts/newsubmission/$', new_submission,
         name='reviewapp.new_submission'),

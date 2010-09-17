@@ -13,6 +13,12 @@ $(document).ready(function() {
         dateFormat: 'uk',
         textExtraction: 'complex',
     });
+    
+    $('input.button-confirm-delete').click(function(){
+        if (confirm('{% trans "Want to delete this submission?" %}')){
+            $(this).parents('form').submit();
+        }
+    });
 });
 </script>
 {% endblock %}
@@ -30,24 +36,47 @@ $(document).ready(function() {
     <li><a href="{% url reviewapp.uploadtrial %}"><strike>{% trans "Uploading an XML file." %}</strike></a></li>
 </ul>
 
+<div class="actions" style="margin-right:40px;">
+    <ul>
+        <li><a href="{% url reviewapp.new_submission %}" title="{% trans 'New Submission' %}"><img src="/static/images/button_newSubmission.jpg" alt="{% trans 'New Submission' %}"/></a></li>
+    </ul>
+</div>
+
 <h2>{% trans "Your Submissions list" %}</h2>
-<div class="actions"><a href="{% url reviewapp.new_submission %}" class="button addNew">{% trans 'New Submission' %}</a></div>
+
+<div class="spacer"> </div>
+{% if delete %}
+<div class="success"><strong>{% trans 'The submission was deleted successfully.' %}</strong></div>
+{% endif %}
+{% if no_delete %}
+<div class="warning"><strong>{% trans 'This submission can not be deleted.' %}</strong></div>
+{% endif %}
+
 <table class="dataTable" id="table_submissions">
     <thead>
         <tr>
             <th>{% trans "Created" %}</th>
             <th>{% trans "Submission Title" %}</th>
             <th>{% trans "Situation" %}</th>
+            <td></td>
         </tr>
     </thead>
     <tbody>
         {% for submission in object_list %}
         <tr>
-            <td>{{ submission.created|date:'Y/m/d H:i' }}</td>
+            <td style="width:140px">{{ submission.created|date:'Y/m/d H:i' }}</td>
             <td>
                 <a href="{% url repository.edittrial submission.trial__pk %}">{{ submission.short_title }}</a>
             </td>
-            <td>{{ submission.status }}</td>
+            <td style="width:90px; text-align:center;">{{ submission.status }}</td>
+            <td>
+            {% if submission.can_delete %}
+                <form action="{% url reviewapp.submission_delete submission.pk %}" method="POST" class="confirm-delete">
+                {% csrf_token %}
+                <input class="button-confirm-delete" type="button" style="font-size: 80%;" value="{% trans 'Delete' %}" title="{% trans 'Delete' %}" />
+                </form>
+            {% endif %}
+            </td>
         </tr>
         {% endfor %}
     </tbody>

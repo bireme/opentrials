@@ -17,10 +17,10 @@ import settings
 
 
 SUBMISSION_STATUS = [
-    ('draft', 'draft'), # clinical trial is 'processing'
-    ('pending', 'pending'), # clinical trial remains 'processing'
-    ('approved', 'approved'), # clinical trial is 'published'
-    ('rejected', 'rejected'), # clinical trial remains or becomes 'processing'
+    ('draft', _('draft')), # clinical trial is 'processing'
+    ('pending', _('pending')), # clinical trial remains 'processing'
+    ('approved', _('approved')), # clinical trial is 'published'
+    ('rejected', _('rejected')), # clinical trial remains or becomes 'processing'
 ]
 STATUS_DRAFT = SUBMISSION_STATUS[0][0]
 STATUS_PENDING = SUBMISSION_STATUS[1][0]
@@ -29,8 +29,8 @@ STATUS_REJECTED = SUBMISSION_STATUS[3][0]
 
 
 ACCESS = [
-    ('public', 'Public'),
-    ('private', 'Private'),
+    ('public', _('Public')),
+    ('private', _('Private')),
 ]
 
 class UserProfile(models.Model):
@@ -134,6 +134,9 @@ class Submission(models.Model):
         elif PARTIAL in status:
             return PARTIAL
         return COMPLETE
+        
+    def can_delete(self):
+        return self.status in [SUBMISSION_STATUS[0][0]]
 
 class RecruitmentCountry(models.Model):
     class Meta:
