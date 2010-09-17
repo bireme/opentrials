@@ -74,11 +74,14 @@ def user_dump(request):
 def submissions_list(request):
     
     # Gets the list of submissions
-    submission_list = Submission.objects.filter(creator=request.user)
+    submission = Submission.objects.filter(creator=request.user)
 
     # Submission list is optimized to retunrs only the necessary fields
-    submission_list = submission_list.values('pk','created','title','status',
+    submission_list = submission.values('pk','created','title','status',
             'trial__pk','trial__scientific_title')
+            
+    for sub in submission_list:
+        sub['can_delete'] = submission.get(pk=sub['pk']).can_delete()
 
     def objects_with_title_translated():
         # TODO for #125: Change this to a better solution
@@ -101,6 +104,14 @@ def submissions_list(request):
     
     object_list = objects_with_title_translated()
     
+    delete = False
+    no_delete = False
+    if request.GET.get('delete'):
+        if request.GET.get('delete') == 'ok':
+            delete = True
+        elif request.GET.get('delete') == 'no':
+            no_delete = True
+    
     username = request.user.username if request.user.is_authenticated() else None
     return render_to_response('reviewapp/submission_list.html', locals(),
                                context_instance=RequestContext(request))
@@ -111,6 +122,15 @@ def submission_detail(request,pk):
     username = request.user.username if request.user.is_authenticated() else None
     return render_to_response('reviewapp/submission_detail.html', locals(),
                                context_instance=RequestContext(request))
+
+@login_required
+def submission_delete(request, id):
+    submission = get_object_or_404(Submission, pk=id)
+    if submission.can_delete():
+        submission.delete()
+        return HttpResponseRedirect('/accounts/submissionlist/?delete=ok')
+    else:
+        return HttpResponseRedirect('/accounts/submissionlist/?delete=no')
 
 @login_required
 def user_profile(request):
@@ -185,6 +205,7 @@ def resend_activation_email(request):
 
 @login_required
 def new_submission(request):
+
     if request.method == 'POST':
         initial_form = InitialTrialForm(request.POST,request.FILES)
         sponsor_form = PrimarySponsorForm(request.POST)
