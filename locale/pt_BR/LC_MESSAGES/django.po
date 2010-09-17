@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-09-17 22:04+0000\n"
-"PO-Revision-Date: 2010-09-17 22:04\n"
+"PO-Revision-Date: 2010-09-17 22:20\n"
 "Last-Translator: <appec@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1203,7 +1203,7 @@ msgstr "não pertence a nenhum usuário cadastrado."
 
 #: reviewapp/templates/reviewapp/submission_list.html:18
 msgid "Want to delete this submission?"
-msgstr "Quer apagar esta submissão?"
+msgstr "Deseja excluir esta submissão?"
 
 #: reviewapp/templates/reviewapp/submission_list.html:32
 msgid "Submit a new Clinical Trial"
@@ -1247,7 +1247,7 @@ msgstr "Situação"
 
 #: reviewapp/templates/reviewapp/submission_list.html:76
 msgid "Delete"
-msgstr "Apagar"
+msgstr "Excluir"
 
 #: reviewapp/templates/reviewapp/upload_trial.html:9
 msgid "Upload trial"
