@@ -14,7 +14,7 @@ Flatpages are still what they were before... this wasn't changed in nothing
     ...     content='text about in english',
     ... )
 
-    >>> page_about_me.sites.add(Site.objects.get(pk=settings.SITE_ID))
+    >>> page_about_me.sites.add(Site.objects.get_or_create(pk=settings.SITE_ID, defaults={'domain':'localhost:8000'})[0])
 
 Translations are created from relationship between FlatPage and FlatPageTranslation
 

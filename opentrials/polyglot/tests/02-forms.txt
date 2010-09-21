@@ -159,11 +159,19 @@ on the display language informed.
     ...     display_language='pt-br',
     ... )
 
-    >>> form.fields['page'].widget.render('page', unicode(page.pk))
-    u'<select name="page">\n<option value="">---------</option>\n<option value="3">Sobre o Teste</option>\n<option value="4" selected="selected">T\xc3\xadtulo em portugu\xc3\xaas brasileiro</option>\n</select>'
+    >>> renderized = form.fields['page'].widget.render('page', unicode(page.pk))
+    >>> (renderized.startswith(u'<select name="page">'),
+    ... u'>Sobre o Teste<' in renderized,
+    ... u' selected="selected">Título em português brasileiro<' in renderized,
+    ... renderized.endswith(u'</select>'),)
+    (True, True, True, True)
 
-    >>> form.fields['subpages'].widget.render('subpages', None)
-    u'<select multiple="multiple" name="subpages">\n<option value="3">Sobre o Teste</option>\n<option value="4">T\xc3\xadtulo em portugu\xc3\xaas brasileiro</option>\n</select>'
+    >>> renderized = form.fields['subpages'].widget.render('subpages', None)
+    >>> (renderized.startswith(u'<select multiple="multiple" name="subpages">'),
+    ... u'>Sobre o Teste<' in renderized,
+    ... u'>Título em português brasileiro<' in renderized,
+    ... renderized.endswith(u'</select>'),)
+    (True, True, True, True)
 
     >>> form.is_valid()
     True
