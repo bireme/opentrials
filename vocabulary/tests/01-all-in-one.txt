@@ -1,0 +1,112 @@
+VOCABULARY
+==========
+
+Starting basic tests for application "vocabulary".
+
+    >>> from djangoplus.test_utils import model_has_fields
+
+SimpleVocabulary is the main model class. It abstracts all the others.
+
+    --------------------             --------------------------
+    | SimpleVocabulary |<------------| CountryCode and others |
+    --------------------   extends   --------------------------
+            1 |
+              |
+              |generic relation
+              |
+         0..* V
+    -------------------------
+    | VocabularyTranslation |
+    -------------------------
+
+SimpleVocabulary
+----------------
+
+    >>> from vocabulary.models import SimpleVocabulary
+
+SimpleVocabulary is the super class here. All of the others have the same fields.
+
+    >>> model_has_fields(SimpleVocabulary, ('label', 'description'))
+    []
+
+It is abstract, so it doesn't support saving and deleting, etc.
+
+    >>> try:
+    ...     SimpleVocabulary.objects.create(label='Testing', description='Just testing invalid persistency.')
+    ... except AttributeError:
+    ...     None
+
+The others model classes
+------------------------
+
+    >>> from vocabulary.models import CountryCode, TrialNumberIssuingAuthority, InterventionCode,\
+    ...     StudyType, StudyPurpose, InterventionAssigment, StudyMasking, StudyAllocation,\
+    ...     StudyPhase, RecruitmentStatus, DecsDisease, IcdChapter, AttachmentType
+
+All of them extend SimpleVocabulary
+
+    >>> issubclass(CountryCode, SimpleVocabulary)
+    True
+
+    >>> issubclass(TrialNumberIssuingAuthority, SimpleVocabulary)
+    True
+
+    >>> issubclass(InterventionCode, SimpleVocabulary)
+    True
+
+    >>> issubclass(StudyType, SimpleVocabulary)
+    True
+
+    >>> issubclass(StudyPurpose, SimpleVocabulary)
+    True
+
+    >>> issubclass(InterventionAssigment, SimpleVocabulary)
+    True
+
+    >>> issubclass(StudyMasking, SimpleVocabulary)
+    True
+
+    >>> issubclass(StudyAllocation, SimpleVocabulary)
+    True
+
+    >>> issubclass(StudyPhase, SimpleVocabulary)
+    True
+
+    >>> issubclass(RecruitmentStatus, SimpleVocabulary)
+    True
+
+    >>> issubclass(DecsDisease, SimpleVocabulary)
+    True
+
+    >>> issubclass(IcdChapter, SimpleVocabulary)
+    True
+
+    >>> issubclass(AttachmentType, SimpleVocabulary)
+    True
+
+Creating an object as example
+
+    >>> country_code = CountryCode.objects.create(label='BR', description='Brazil')
+
+Translations
+------------
+
+    >>> from vocabulary.models import VocabularyTranslation
+    >>> from django.contrib.contenttypes.models import ContentType
+    >>> ctype = ContentType.objects.get_for_model(country_code)
+
+Vocabulary objects can be translated to many languages, using the polyglot functions as below
+
+    >>> pt_br = VocabularyTranslation.objects.create(
+    ...     content_type=ctype,
+    ...     object_id=country_code.pk,
+    ...     language='pt_BR',
+    ...     label='BR',
+    ...     description='Brasil',
+    ...     )
+    >>> country_code.translations.add(pt_br)
+
+    >>> trans = VocabularyTranslation.objects.get_translation_for_object('pt_BR', country_code)
+    >>> trans.description
+    u'Brasil'
+
