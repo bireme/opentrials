@@ -1,11 +1,11 @@
 #coding: utf-8
 
-import unittest
 from django.test.client import Client
+from django.test import TestCase
 
 from repository.models import *
 
-class SecondaryNumbers(unittest.TestCase):
+class SecondaryNumbers(TestCase):
     fixtures = ['first_3_trials.json']
 
     def setUp(self):
@@ -30,7 +30,7 @@ class SecondaryNumbers(unittest.TestCase):
         self.assert_(len(contacts)==1)
         self.assert_(contacts[0].firstname==u'Naser')
 
-class Step3Test(unittest.TestCase):
+class Step3Test(TestCase):
     
     def setUp(self):
         self.client = Client()
@@ -58,4 +58,5 @@ class Step3Test(unittest.TestCase):
                 's-0-text|es': 'Malaria',
             })
         self.failUnlessEqual(response.status_code, 200)
+
 
