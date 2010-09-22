@@ -106,6 +106,7 @@ TEMPLATE_CONTEXT_PROCESSORS =(
     'django.core.context_processors.request',
     'context_processors.opentrials.polyglot',
     'context_processors.opentrials.jquery',
+    'context_processors.opentrials.google_analytics',
 )
 
 AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
