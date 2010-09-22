@@ -16,3 +16,11 @@ def jquery(request):
     context_extra['JQUERY_UI_URL'] = settings.JQUERY_UI_URL
 
     return context_extra
+
+def google_analytics(request):
+    context_extra = {}
+
+    if hasattr(settings, 'GOOGLE_ANALYTICS_ID') and settings.GOOGLE_ANALYTICS_ID != '':
+        context_extra['GOOGLE_ANALYTICS_ID'] = settings.GOOGLE_ANALYTICS_ID
+
+    return context_extra
