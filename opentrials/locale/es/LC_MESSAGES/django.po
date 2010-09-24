@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-17 22:04+0000\n"
+"POT-Creation-Date: 2010-09-24 19:25+0000\n"
 "PO-Revision-Date: 2010-06-25 19:07\n"
 "Last-Translator: <a@b.cd>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,15 +16,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.5.1\n"
 
-#: settings.py:132
+#: settings.py:133
 msgid "English"
 msgstr "Inglés"
 
-#: settings.py:133
+#: settings.py:134
 msgid "Español"
 msgstr ""
 
-#: settings.py:134
+#: settings.py:135
 msgid "Portuguese"
 msgstr ""
 
@@ -48,6 +48,25 @@ msgstr "Respuesta"
 
 #: assistance/models.py:51
 msgid "Field Help"
+msgstr ""
+
+#: assistance/models.py:74 reviewapp/forms.py:119
+#: reviewapp/templates/reviewapp/consent.html:9
+msgid "Term of consent"
+msgstr ""
+
+#: assistance/models.py:75
+msgid "Terms of consent"
+msgstr ""
+
+#: assistance/models.py:77 assistance/models.py:91 repository/models.py:551
+#: repository/models.py:565 reviewapp/models.py:195 reviewapp/models.py:224
+#: reviewapp/templates/reviewapp/dashboard.html:46
+msgid "Text"
+msgstr "Texto"
+
+#: assistance/models.py:78
+msgid "Order"
 msgstr ""
 
 #: assistance/templates/assistance/question_list.html:10
@@ -194,7 +213,7 @@ msgstr ""
 #: repository/models.py:96 repository/models.py:378 repository/trds.py:15
 #: repository/trds_forms.py:170
 #: repository/templates/repository/clinicaltrial_detail.html:111
-#: reviewapp/forms.py:35
+#: reviewapp/forms.py:37
 msgid "Scientific Title"
 msgstr ""
 
@@ -210,7 +229,7 @@ msgstr ""
 
 #: repository/models.py:106 repository/trds.py:10 repository/trds_forms.py:208
 #: repository/templates/repository/clinicaltrial_detail.html:203
-#: reviewapp/forms.py:47 reviewapp/models.py:62
+#: reviewapp/forms.py:49 reviewapp/models.py:62
 msgid "Primary Sponsor"
 msgstr ""
 
@@ -391,7 +410,7 @@ msgstr ""
 msgid "Institution"
 msgstr "Institución"
 
-#: repository/models.py:439 reviewapp/forms.py:100
+#: repository/models.py:439 reviewapp/forms.py:102
 msgid "Name"
 msgstr "Nombre"
 
@@ -417,7 +436,7 @@ msgid "Last Name"
 msgstr ""
 
 #: repository/models.py:455 repository/trds_forms.py:572
-#: reviewapp/forms.py:101
+#: reviewapp/forms.py:103
 msgid "E-mail"
 msgstr "E-mail"
 
@@ -481,11 +500,6 @@ msgstr "Nivel"
 #: repository/models.py:550
 msgid "Code"
 msgstr "Código"
-
-#: repository/models.py:551 repository/models.py:565 reviewapp/models.py:195
-#: reviewapp/models.py:224 reviewapp/templates/reviewapp/dashboard.html:46
-msgid "Text"
-msgstr "Texto"
 
 #: repository/trds.py:6
 msgid "Primary Registry and Trial Identifying Number"
@@ -715,7 +729,7 @@ msgstr ""
 msgid "Existing attachments"
 msgstr ""
 
-#: repository/templates/repository/attachments.html:28 reviewapp/forms.py:55
+#: repository/templates/repository/attachments.html:28 reviewapp/forms.py:57
 #: reviewapp/models.py:151
 msgid "File"
 msgstr ""
@@ -844,6 +858,7 @@ msgstr ""
 
 #: repository/templates/repository/clinicaltrial_detail_user.html:12
 #: repository/templates/repository/trial_index.html:8
+#: reviewapp/templates/reviewapp/consent.html:7
 #: reviewapp/templates/reviewapp/dashboard.html:13
 #: reviewapp/templates/reviewapp/new_submission.html:21
 #: reviewapp/templates/reviewapp/submission_list.html:28
@@ -931,53 +946,57 @@ msgstr ""
 msgid "COMPLETE"
 msgstr ""
 
-#: reviewapp/forms.py:29 reviewapp/forms.py:40 reviewapp/models.py:70
+#: reviewapp/forms.py:31 reviewapp/forms.py:42 reviewapp/models.py:70
 msgid "Submission language"
 msgstr ""
 
-#: reviewapp/forms.py:33
+#: reviewapp/forms.py:35
 msgid "Initial Trial Data"
 msgstr ""
 
-#: reviewapp/forms.py:38
+#: reviewapp/forms.py:40
 msgid "Recruitment country"
 msgstr ""
 
-#: reviewapp/forms.py:54
+#: reviewapp/forms.py:56
 msgid "Existing Attachment"
 msgstr ""
 
-#: reviewapp/forms.py:62
+#: reviewapp/forms.py:64
 msgid "New Attachment"
 msgstr ""
 
-#: reviewapp/forms.py:73
+#: reviewapp/forms.py:75
 msgid ""
 "This email address is already in use. Please supply a different email "
 "address."
 msgstr ""
 
-#: reviewapp/forms.py:80
+#: reviewapp/forms.py:82
 msgid "User Profile"
 msgstr ""
 
-#: reviewapp/forms.py:87
+#: reviewapp/forms.py:89
 msgid "Aditional info for profile"
 msgstr ""
 
-#: reviewapp/forms.py:97 reviewapp/templates/reviewapp/open_remark.html:7
+#: reviewapp/forms.py:99 reviewapp/templates/reviewapp/open_remark.html:7
 msgid "Open Remark"
 msgstr ""
 
-#: reviewapp/forms.py:102 tickets/models.py:70 tickets/views.py:138
+#: reviewapp/forms.py:104 tickets/models.py:70 tickets/views.py:138
 #: tickets/templates/tickets/ticket_detail.html:22
 #: tickets/templates/tickets/user_tickets.html:37
 msgid "Subject"
 msgstr ""
 
-#: reviewapp/forms.py:103
+#: reviewapp/forms.py:105
 msgid "Message"
 msgstr "Mensaje"
+
+#: reviewapp/forms.py:123
+msgid "You must agree to all terms."
+msgstr ""
 
 #: reviewapp/models.py:20
 msgid "draft"
@@ -1052,6 +1071,10 @@ msgstr "Publicado"
 #: templates/base_columns.html:36
 msgid "News"
 msgstr "Noticias"
+
+#: reviewapp/templates/reviewapp/consent.html:19
+msgid "I agree with the terms selected above"
+msgstr ""
 
 #: reviewapp/templates/reviewapp/contact.html:5
 #: reviewapp/templates/reviewapp/contact.html:9
