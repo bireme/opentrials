@@ -37,6 +37,8 @@ def generate_trial_id(prefix, num_digits):
     return '-'.join([prefix, s[:num_digits/2], s[num_digits/2:]])
 
 class TrialRegistrationDataSetModel(models.Model):
+    """More details on:
+        http://reddes.bvsalud.org/projects/clinical-trials/wiki/TrialRegistrationDataSet"""
 
     def html_dump(self, seen=None, follow_sets=True):
         html = [] # the enclosing <table> and </table> must be provided by the template
