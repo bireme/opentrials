@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-17 22:04+0000\n"
-"PO-Revision-Date: 2010-09-17 22:20\n"
+"POT-Creation-Date: 2010-09-24 19:25+0000\n"
+"PO-Revision-Date: 2010-09-24 19:26\n"
 "Last-Translator: <appec@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.5.6\n"
 
-#: settings.py:132
+#: settings.py:133
 msgid "English"
 msgstr "Inglês"
 
-#: settings.py:133
+#: settings.py:134
 msgid "Español"
 msgstr "Espanhol"
 
-#: settings.py:134
+#: settings.py:135
 msgid "Portuguese"
 msgstr "Português"
 
@@ -50,6 +50,25 @@ msgstr "Resposta"
 #: assistance/models.py:51
 msgid "Field Help"
 msgstr "Auxílio a nível de campo"
+
+#: assistance/models.py:74 reviewapp/forms.py:119
+#: reviewapp/templates/reviewapp/consent.html:9
+msgid "Term of consent"
+msgstr "Termo de consentimento"
+
+#: assistance/models.py:75
+msgid "Terms of consent"
+msgstr "Termos de consentimento"
+
+#: assistance/models.py:77 assistance/models.py:91 repository/models.py:551
+#: repository/models.py:565 reviewapp/models.py:195 reviewapp/models.py:224
+#: reviewapp/templates/reviewapp/dashboard.html:46
+msgid "Text"
+msgstr "Texto"
+
+#: assistance/models.py:78
+msgid "Order"
+msgstr "Ordem"
 
 #: assistance/templates/assistance/question_list.html:10
 msgid "FAQ"
@@ -190,7 +209,7 @@ msgstr "Data de registro"
 #: repository/models.py:96 repository/models.py:378 repository/trds.py:15
 #: repository/trds_forms.py:170
 #: repository/templates/repository/clinicaltrial_detail.html:111
-#: reviewapp/forms.py:35
+#: reviewapp/forms.py:37
 msgid "Scientific Title"
 msgstr "Título científico"
 
@@ -206,7 +225,7 @@ msgstr "Expansão do acrônimo científico"
 
 #: repository/models.py:106 repository/trds.py:10 repository/trds_forms.py:208
 #: repository/templates/repository/clinicaltrial_detail.html:203
-#: reviewapp/forms.py:47 reviewapp/models.py:62
+#: reviewapp/forms.py:49 reviewapp/models.py:62
 msgid "Primary Sponsor"
 msgstr "Patrocinador primário"
 
@@ -387,7 +406,7 @@ msgstr "Identificador secundário"
 msgid "Institution"
 msgstr "Instituição"
 
-#: repository/models.py:439 reviewapp/forms.py:100
+#: repository/models.py:439 reviewapp/forms.py:102
 msgid "Name"
 msgstr "Nome"
 
@@ -413,7 +432,7 @@ msgid "Last Name"
 msgstr "Sobrenome"
 
 #: repository/models.py:455 repository/trds_forms.py:572
-#: reviewapp/forms.py:101
+#: reviewapp/forms.py:103
 msgid "E-mail"
 msgstr "E-mail"
 
@@ -477,11 +496,6 @@ msgstr "Nível"
 #: repository/models.py:550
 msgid "Code"
 msgstr "Código"
-
-#: repository/models.py:551 repository/models.py:565 reviewapp/models.py:195
-#: reviewapp/models.py:224 reviewapp/templates/reviewapp/dashboard.html:46
-msgid "Text"
-msgstr "Texto"
 
 #: repository/trds.py:6
 msgid "Primary Registry and Trial Identifying Number"
@@ -708,7 +722,7 @@ msgstr "adicionado."
 msgid "Existing attachments"
 msgstr "Anexos existentes"
 
-#: repository/templates/repository/attachments.html:28 reviewapp/forms.py:55
+#: repository/templates/repository/attachments.html:28 reviewapp/forms.py:57
 #: reviewapp/models.py:151
 msgid "File"
 msgstr "Arquivo"
@@ -835,6 +849,7 @@ msgstr "Home"
 
 #: repository/templates/repository/clinicaltrial_detail_user.html:12
 #: repository/templates/repository/trial_index.html:8
+#: reviewapp/templates/reviewapp/consent.html:7
 #: reviewapp/templates/reviewapp/dashboard.html:13
 #: reviewapp/templates/reviewapp/new_submission.html:21
 #: reviewapp/templates/reviewapp/submission_list.html:28
@@ -920,51 +935,55 @@ msgstr "Parcial"
 msgid "COMPLETE"
 msgstr "Concluído"
 
-#: reviewapp/forms.py:29 reviewapp/forms.py:40 reviewapp/models.py:70
+#: reviewapp/forms.py:31 reviewapp/forms.py:42 reviewapp/models.py:70
 msgid "Submission language"
 msgstr "Idioma da submissão"
 
-#: reviewapp/forms.py:33
+#: reviewapp/forms.py:35
 msgid "Initial Trial Data"
 msgstr "Dados iniciais do ensaio"
 
-#: reviewapp/forms.py:38
+#: reviewapp/forms.py:40
 msgid "Recruitment country"
 msgstr "País de recrutamento"
 
-#: reviewapp/forms.py:54
+#: reviewapp/forms.py:56
 msgid "Existing Attachment"
 msgstr "Anexo existente"
 
-#: reviewapp/forms.py:62
+#: reviewapp/forms.py:64
 msgid "New Attachment"
 msgstr "Novo anexo"
 
-#: reviewapp/forms.py:73
+#: reviewapp/forms.py:75
 msgid "This email address is already in use. Please supply a different email address."
 msgstr "Este endereço de e-mail já está em uso. Por favor, forneça um endereço de e-mail diferente."
 
-#: reviewapp/forms.py:80
+#: reviewapp/forms.py:82
 msgid "User Profile"
 msgstr "Perfil de usuário"
 
-#: reviewapp/forms.py:87
+#: reviewapp/forms.py:89
 msgid "Aditional info for profile"
 msgstr "Informações adicionais para o perfil"
 
-#: reviewapp/forms.py:97 reviewapp/templates/reviewapp/open_remark.html:7
+#: reviewapp/forms.py:99 reviewapp/templates/reviewapp/open_remark.html:7
 msgid "Open Remark"
 msgstr "Observações em aberto"
 
-#: reviewapp/forms.py:102 tickets/models.py:70 tickets/views.py:138
+#: reviewapp/forms.py:104 tickets/models.py:70 tickets/views.py:138
 #: tickets/templates/tickets/ticket_detail.html:22
 #: tickets/templates/tickets/user_tickets.html:37
 msgid "Subject"
 msgstr "Assunto"
 
-#: reviewapp/forms.py:103
+#: reviewapp/forms.py:105
 msgid "Message"
 msgstr "Mensagem"
+
+#: reviewapp/forms.py:123
+msgid "You must agree to all terms."
+msgstr "Você deve concordar com todos os termos."
 
 #: reviewapp/models.py:20
 msgid "draft"
@@ -1036,6 +1055,10 @@ msgstr "Publicado"
 #: templates/base_columns.html:36
 msgid "News"
 msgstr "Notícias"
+
+#: reviewapp/templates/reviewapp/consent.html:19
+msgid "I agree with the terms selected above"
+msgstr "Eu concordo com os termos selecionados acima"
 
 #: reviewapp/templates/reviewapp/contact.html:5
 #: reviewapp/templates/reviewapp/contact.html:9
@@ -1581,9 +1604,6 @@ msgstr "Situação do recrutamento"
 
 #~ msgid "I have read and agree to the Terms of Service"
 #~ msgstr "Eu li e concordo com os Termos de Serviço"
-
-#~ msgid "You must agree to the terms to register"
-#~ msgstr "Você deve concordar com os termos para registrar-se"
 
 #~ msgid "Registration using free email addresses is prohibited. Please supply a different email address."
 #~ msgstr "É proibido registrar-se usando endereços de e-mail gratuitos. Por favor, forneça um endereço de e-mail diferente."

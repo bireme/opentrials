@@ -1,6 +1,6 @@
 from django import forms
 from django.conf import settings
-from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.core.validators import EMPTY_VALUES
 from django.forms.models import BaseModelFormSet
 from django.utils.translation import ugettext_lazy as _

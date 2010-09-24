@@ -22,7 +22,7 @@ from tickets.models import Ticket
 from reviewapp.models import Submission, News
 from reviewapp.forms import UploadTrial, InitialTrialForm, OpenRemarkForm
 from reviewapp.forms import UserForm, PrimarySponsorForm, UserProfileForm
-from reviewapp.forms import ContactForm
+from reviewapp.forms import ContactForm, ConsentForm
 from reviewapp.consts import REMARK, MISSING, PARTIAL, COMPLETE
 
 from repository.models import ClinicalTrial, CountryCode, ClinicalTrialTranslation
@@ -207,61 +207,71 @@ def resend_activation_email(request):
 def new_submission(request):
 
     if request.method == 'POST':
-        initial_form = InitialTrialForm(request.POST,request.FILES)
-        sponsor_form = PrimarySponsorForm(request.POST)
+        consent_form = ConsentForm(request.POST)
+        if consent_form.is_valid():
+            initial_form = InitialTrialForm(user=request.user)
+            sponsor_form = PrimarySponsorForm()
 
-        if initial_form.is_valid() and sponsor_form.is_valid():
-            trial = ClinicalTrial()
-            su = Submission(creator=request.user)
-            su.language = initial_form.cleaned_data['language']
-            su.title = initial_form.cleaned_data['scientific_title']
-            if su.language == 'en':
-                trial.scientific_title = su.title
-            else:
+            forms = [initial_form, sponsor_form]
+            return render_to_response('reviewapp/new_submission.html', {
+                'forms': forms },
+                context_instance=RequestContext(request))
+        else:
+            initial_form = InitialTrialForm(request.POST,request.FILES)
+            sponsor_form = PrimarySponsorForm(request.POST)
+
+            if initial_form.is_valid() and sponsor_form.is_valid():
+                trial = ClinicalTrial()
+                su = Submission(creator=request.user)
+                su.language = initial_form.cleaned_data['language']
+                su.title = initial_form.cleaned_data['scientific_title']
+                if su.language == 'en':
+                    trial.scientific_title = su.title
+                else:
+                    trial.save()
+                    ctt = ClinicalTrialTranslation()
+                    ctt.language = su.language
+                    ctt.scientific_title = su.title
+                    trial.translations.add(ctt)
+
                 trial.save()
-                ctt = ClinicalTrialTranslation()
-                ctt.language = su.language
-                ctt.scientific_title = su.title
-                trial.translations.add(ctt)
+                su.save()
+                
+                sponsor = sponsor_form.save(commit=False)
+                sponsor.creator = request.user
+                sponsor.save()
+                
+                trial.primary_sponsor = su.primary_sponsor = sponsor
+                trial.recruitment_country = [CountryCode.objects.get(pk=id) for id in initial_form.cleaned_data['recruitment_country']]
+                su.trial = trial
 
-            trial.save()
-            su.save()
-            
-            sponsor = sponsor_form.save(commit=False)
-            sponsor.creator = request.user
-            sponsor.save()
-            
-            trial.primary_sponsor = su.primary_sponsor = sponsor
-            trial.recruitment_country = [CountryCode.objects.get(pk=id) for id in initial_form.cleaned_data['recruitment_country']]
-            su.trial = trial
+                trial.save()
+                su.save()
+                
+                # sets the initial status of the fields
+                fields_status = {}
+                FIELDS = {
+                    TRIAL_FORMS[0]: MISSING, TRIAL_FORMS[1]: PARTIAL, TRIAL_FORMS[2]: MISSING,
 
-            trial.save()
-            su.save()
-            
-            # sets the initial status of the fields
-            fields_status = {}
-            FIELDS = {
-                TRIAL_FORMS[0]: MISSING, TRIAL_FORMS[1]: PARTIAL, TRIAL_FORMS[2]: MISSING,
-                TRIAL_FORMS[3]: MISSING, TRIAL_FORMS[4]: MISSING, TRIAL_FORMS[5]: MISSING, 
-                TRIAL_FORMS[6]: MISSING, TRIAL_FORMS[7]: MISSING, TRIAL_FORMS[8]: PARTIAL
-            }
-            for lang in su.get_mandatory_languages():
-                lang = lang.lower()
-                fields_status.update({lang: dict(FIELDS)})
-                if lang == su.language.lower():
-                    fields_status[lang].update({TRIAL_FORMS[0]: PARTIAL})
-            
-            su.fields_status = pickle.dumps(fields_status)
-            su.save()
+                    TRIAL_FORMS[3]: MISSING, TRIAL_FORMS[4]: MISSING, TRIAL_FORMS[5]: MISSING, 
+                    TRIAL_FORMS[6]: MISSING, TRIAL_FORMS[7]: MISSING, TRIAL_FORMS[8]: PARTIAL
+                }
+                for lang in su.get_mandatory_languages():
+                    lang = lang.lower()
+                    fields_status.update({lang: dict(FIELDS)})
+                    if lang == su.language.lower():
+                        fields_status[lang].update({TRIAL_FORMS[0]: PARTIAL})
+                
+                su.fields_status = pickle.dumps(fields_status)
+                su.save()
 
-            return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))
+                return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))    
     else:
-        initial_form = InitialTrialForm(user=request.user)
-        sponsor_form = PrimarySponsorForm()
+        consent_form = ConsentForm()
 
-    forms = [initial_form, sponsor_form]
-    return render_to_response('reviewapp/new_submission.html', {
-        'forms': forms },
+    form = consent_form
+    return render_to_response('reviewapp/consent.html', {
+        'form': form},
         context_instance=RequestContext(request))
 
 @login_required

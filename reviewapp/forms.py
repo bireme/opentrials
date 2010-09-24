@@ -4,7 +4,9 @@ from opentrials.repository.trds_forms import ReviewModelForm
 from opentrials.reviewapp.models import Remark
 from opentrials.reviewapp.models import UserProfile
 from opentrials.reviewapp.models import Attachment, Submission
+from opentrials.assistance.models import Consent
 from django import forms
+from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
 from django.conf import settings
@@ -101,4 +103,22 @@ class ContactForm(forms.Form):
     from_email = forms.EmailField(label=_("E-mail"))
     subject = forms.CharField(label=_("Subject"), max_length=50)
     message = forms.CharField(label=_("Message"), widget=forms.Textarea)
+    
+class ModelMultipleChoiceAllFields(forms.models.ModelMultipleChoiceField):
+    def clean(self, value):
+        if len(value) != len(self.queryset.all()):
+            raise ValidationError(self.error_messages['consent'])
+        qs = super(ModelMultipleChoiceAllFields, self).clean(value)
+        return qs
+
+class ConsentForm(forms.ModelForm):
+    class Meta:
+        model = Consent
+        exclude = ['order']
+        
+    title = _("Term of consent")
+    
+    text = ModelMultipleChoiceAllFields(queryset=Consent.objects.all(),
+            label='', widget=forms.widgets.CheckboxSelectMultiple,
+            error_messages={'consent': _('You must agree to all terms.')})  
 
