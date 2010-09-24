@@ -1,0 +1,178 @@
+REPOSITORY - MODELS
+===================
+
+    >>> from djangoplus.test_utils import model_has_fields, is_model_class_fk, is_field_type, is_model_pk
+
+                    ---------------------------------
+                    | TrialRegistrationDataSetModel | abstract
+                    ---------------------------------
+                            A           A
+                            |           |
+    -------------------------           |
+    |                                   |
+    |   -----------------               |       -------------------------
+    |---| ClinicalTrial |               |-------| TrialSecondarySponsor |
+    |   -----------------               |       -------------------------
+    |                                   |
+    |   ---------------                 |       ----------------------
+    |---| TrialNumber |                 |-------| TrialSupportSource |
+    |   ---------------                 |       ----------------------
+    |                                   |
+    |   ---------------                 |       -----------
+    |---| Institution |                 |-------| Contact |
+    |   ---------------                 |       -----------
+    |                                   |
+    |   -----------------               |       ---------------------
+    |---| PublicContact |               |-------| ScientificContact |
+    |   -----------------               |       ---------------------
+    |                                   |
+    |   ---------------                 |       -----------
+    |---| SiteContact |                 --------| Outcome |
+    |   ---------------                         -----------
+    |
+    |   --------------
+    ----| Descriptor |
+        --------------
+
+What is the abstract model class "TrialRegistrationDataSetModel" for?
+---------------------------------------------------------------------
+
+This abstract model class is detailed on the OpenTrials's official wiki:
+
+    http://reddes.bvsalud.org/projects/clinical-trials/wiki/TrialRegistrationDataSet
+
+In regards to the code, this mode class just generalizes a method to dump HTML with a
+table with its field values.
+
+    >>> from repository.models import TrialRegistrationDataSetModel
+
+ClinicalTrial
+-------------
+
+    >>> from repository.models import ClinicalTrial
+
+    >>> issubclass(ClinicalTrial, TrialRegistrationDataSetModel)
+    True
+
+    >>> model_has_fields(ClinicalTrial, ('id', 'trial_id', 'date_registration', 'scientific_title',
+    ...     'scientific_acronym', 'scientific_acronym_expansion', 'primary_sponsor', 'public_title',
+    ...     'acronym', 'acronym_expansion', 'hc_freetext', 'i_freetext', 'inclusion_criteria', 'gender',
+    ...     'agemin_value', 'agemin_unit', 'agemax_value', 'agemax_unit', 'exclusion_criteria', 'study_type', 
+    ...     'study_design', 'expanded_access_program', 'purpose', 'intervention_assignment', 'number_of_arms', 
+    ...     'masking', 'allocation', 'phase', 'enrollment_start_planned', 'enrollment_start_actual', 
+    ...     'enrollment_end_planned', 'enrollment_end_actual', 'target_sample_size', 'recruitment_status', 
+    ...     'created', 'updated', 'exported', 'status', 'staff_note'))
+    []
+
+TrialSecondarySponsor
+---------------------
+
+    >>> from repository.models import TrialSecondarySponsor
+
+    >>> issubclass(TrialSecondarySponsor, TrialRegistrationDataSetModel)
+    True
+
+    >>> model_has_fields(TrialSecondarySponsor, ('id', 'trial', 'institution'))
+    []
+
+TrialNumber
+-----------
+
+    >>> from repository.models import TrialNumber
+
+    >>> issubclass(TrialNumber, TrialRegistrationDataSetModel)
+    True
+
+    >>> model_has_fields(TrialNumber, ('id', 'trial', 'issuing_authority', 'id_number'))
+    []
+
+TrialSupportSource
+------------------
+
+    >>> from repository.models import TrialSupportSource
+
+    >>> issubclass(TrialSupportSource, TrialRegistrationDataSetModel)
+    True
+
+    >>> model_has_fields(TrialSupportSource, ('id', 'trial', 'institution'))
+    []
+
+Institution
+-----------
+
+    >>> from repository.models import Institution
+
+    >>> issubclass(Institution, TrialRegistrationDataSetModel)
+    True
+
+    >>> model_has_fields(Institution, ('id', 'name', 'address', 'country', 'creator'))
+    []
+
+Contact
+-------
+
+    >>> from repository.models import Contact
+
+    >>> issubclass(Contact, TrialRegistrationDataSetModel)
+    True
+
+    >>> model_has_fields(Contact, ('id', 'firstname', 'middlename', 'lastname', 'email',
+    ...     'affiliation', 'address', 'city', 'country', 'zip', 'telephone', 'creator'))
+    []
+
+PublicContact
+-------------
+
+    >>> from repository.models import PublicContact
+
+    >>> issubclass(PublicContact, TrialRegistrationDataSetModel)
+    True
+
+    >>> model_has_fields(PublicContact, ('id', 'trial', 'contact', 'status'))
+    []
+
+ScientificContact
+-----------------
+
+    >>> from repository.models import ScientificContact
+
+    >>> issubclass(ScientificContact, TrialRegistrationDataSetModel)
+    True
+
+    >>> model_has_fields(ScientificContact, ('id', 'trial', 'contact', 'status'))
+    []
+
+SiteContact
+-----------
+
+    >>> from repository.models import SiteContact
+
+    >>> issubclass(SiteContact, TrialRegistrationDataSetModel)
+    True
+
+    >>> model_has_fields(SiteContact, ('id', 'trial', 'contact', 'status'))
+    []
+
+Outcome
+-------
+
+    >>> from repository.models import Outcome
+
+    >>> issubclass(Outcome, TrialRegistrationDataSetModel)
+    True
+
+    >>> model_has_fields(Outcome, ('id', 'trial', 'interest', 'description', '_order'))
+    []
+
+Descriptor
+----------
+
+    >>> from repository.models import Descriptor
+
+    >>> issubclass(Descriptor, TrialRegistrationDataSetModel)
+    True
+
+    >>> model_has_fields(Descriptor, ('id', 'trial', 'aspect', 'vocabulary', 'version',
+    ...     'level', 'code', 'text', '_order'))
+    []
+
