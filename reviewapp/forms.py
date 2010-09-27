@@ -106,7 +106,7 @@ class ContactForm(forms.Form):
     
 class ModelMultipleChoiceAllFields(forms.models.ModelMultipleChoiceField):
     def clean(self, value):
-        if len(value) != len(self.queryset.all()):
+        if set(value) != set(self.queryset.values_list('pk', flat=True)):
             raise ValidationError(self.error_messages['consent'])
         qs = super(ModelMultipleChoiceAllFields, self).clean(value)
         return qs
