@@ -112,20 +112,22 @@ def submissions_list(request):
         elif request.GET.get('delete') == 'no':
             no_delete = True
     
-    username = request.user.username if request.user.is_authenticated() else None
     return render_to_response('reviewapp/submission_list.html', locals(),
                                context_instance=RequestContext(request))
 
 @login_required
 def submission_detail(request,pk):
     object = get_object_or_404(Submission, id=int(pk))
-    username = request.user.username if request.user.is_authenticated() else None
     return render_to_response('reviewapp/submission_detail.html', locals(),
                                context_instance=RequestContext(request))
 
 @login_required
 def submission_delete(request, id):
     submission = get_object_or_404(Submission, pk=id)
+    if not request.user.is_staff:
+        if request.user != submission.creator:
+            return render_to_response('403.html', {'site': Site.objects.get_current(),},
+                            context_instance=RequestContext(request))
     if submission.can_delete():
         submission.delete()
         return HttpResponseRedirect('/accounts/submissionlist/?delete=ok')
