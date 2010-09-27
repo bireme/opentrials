@@ -13,6 +13,7 @@ from django.views.generic.list_detail import object_list
 from django.conf import settings
 from django.template.defaultfilters import slugify
 from django.template.context import RequestContext
+from django.contrib.sites.models import Site
 
 from reviewapp.models import Attachment, Submission, Remark, SUBMISSION_STATUS
 from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
@@ -55,6 +56,11 @@ MENU_SHORT_TITLE = [_('Trial Identif.'),
 @login_required
 def edit_trial_index(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    
+    if not request.user.is_staff:
+        if request.user != ct.submission.creator:
+            return render_to_response('403.html', {'site': Site.objects.get_current(),},
+                            context_instance=RequestContext(request))
 
     status = ct.submission.get_status()
     
@@ -197,6 +203,9 @@ def trial_view(request, trial_pk):
     ''' show details of a trial of a user logged '''
     if request.user.is_staff:
         ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+        if request.user != ct.submission.creator:
+            return render_to_response('403.html', {'site': Site.objects.get_current(),},
+                            context_instance=RequestContext(request))
     else:
         ct = get_object_or_404(ClinicalTrial, id=int(trial_pk), submission__creator=request.user)
     translations = [t for t in ct.translations.all()]
@@ -257,6 +266,11 @@ def step_list(trial_pk):
 @login_required
 def step_1(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    
+    if not request.user.is_staff:
+        if request.user != ct.submission.creator:
+            return render_to_response('403.html', {'site': Site.objects.get_current(),},
+                            context_instance=RequestContext(request))
 
     if request.POST:
         form = TrialIdentificationForm(request.POST, instance=ct,
@@ -297,6 +311,11 @@ def step_1(request, trial_pk):
 @login_required
 def step_2(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    
+    if not request.user.is_staff:
+        if request.user != ct.submission.creator:
+            return render_to_response('403.html', {'site': Site.objects.get_current(),},
+                            context_instance=RequestContext(request))
     
     qs_primary_sponsor = Institution.objects.filter(creator=request.user).order_by('name')
 
@@ -344,6 +363,11 @@ def step_2(request, trial_pk):
 @login_required
 def step_3(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    
+    if not request.user.is_staff:
+        if request.user != ct.submission.creator:
+            return render_to_response('403.html', {'site': Site.objects.get_current(),},
+                            context_instance=RequestContext(request))
 
     GeneralDescriptorSet = modelformset_factory(Descriptor,
                                                 formset=MultilingualBaseFormSet,
@@ -420,6 +444,11 @@ def step_3(request, trial_pk):
 @login_required
 def step_4(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    
+    if not request.user.is_staff:
+        if request.user != ct.submission.creator:
+            return render_to_response('403.html', {'site': Site.objects.get_current(),},
+                            context_instance=RequestContext(request))
 
     DescriptorFormSet = modelformset_factory(Descriptor,
                                           formset=MultilingualBaseFormSet,
@@ -473,6 +502,11 @@ def step_4(request, trial_pk):
 @login_required
 def step_5(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    
+    if not request.user.is_staff:
+        if request.user != ct.submission.creator:
+            return render_to_response('403.html', {'site': Site.objects.get_current(),},
+                            context_instance=RequestContext(request))
 
     if request.POST:
         form = RecruitmentForm(request.POST, instance=ct,
@@ -501,6 +535,11 @@ def step_5(request, trial_pk):
 @login_required
 def step_6(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    
+    if not request.user.is_staff:
+        if request.user != ct.submission.creator:
+            return render_to_response('403.html', {'site': Site.objects.get_current(),},
+                            context_instance=RequestContext(request))
 
     if request.POST:
         form = StudyTypeForm(request.POST, instance=ct,
@@ -529,6 +568,11 @@ def step_6(request, trial_pk):
 @login_required
 def step_7(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    
+    if not request.user.is_staff:
+        if request.user != ct.submission.creator:
+            return render_to_response('403.html', {'site': Site.objects.get_current(),},
+                            context_instance=RequestContext(request))
 
     PrimaryOutcomesSet = modelformset_factory( Outcome,
                                 formset=MultilingualBaseFormSet,
@@ -591,6 +635,11 @@ def step_7(request, trial_pk):
 @login_required
 def step_8(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    
+    if not request.user.is_staff:
+        if request.user != ct.submission.creator:
+            return render_to_response('403.html', {'site': Site.objects.get_current(),},
+                            context_instance=RequestContext(request))
 
     contact_type = {
         'PublicContact': (PublicContact,make_public_contact_form(request.user)),
@@ -651,6 +700,12 @@ def step_8(request, trial_pk):
 def step_9(request, trial_pk):
     # TODO: this function should be on another place
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    
+    if not request.user.is_staff:
+        if request.user != ct.submission.creator:
+            return render_to_response('403.html', {'site': Site.objects.get_current(),},
+                            context_instance=RequestContext(request))
+    
     su = Submission.objects.get(trial=ct)
                                              
     NewAttachmentFormSet = modelformset_factory(Attachment,
