@@ -11,6 +11,8 @@ from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
 from django.conf import settings
 
+from polyglot.multilingual_forms import MultilingualBaseForm, ModelMultipleChoiceAllFields
+
 from repository.models import Institution, CountryCode
 
 ACCESS = [
@@ -103,15 +105,8 @@ class ContactForm(forms.Form):
     from_email = forms.EmailField(label=_("E-mail"))
     subject = forms.CharField(label=_("Subject"), max_length=50)
     message = forms.CharField(label=_("Message"), widget=forms.Textarea)
-    
-class ModelMultipleChoiceAllFields(forms.models.ModelMultipleChoiceField):
-    def clean(self, value):
-        if set(value) != set(self.queryset.values_list('pk', flat=True)):
-            raise ValidationError(self.error_messages['consent'])
-        qs = super(ModelMultipleChoiceAllFields, self).clean(value)
-        return qs
 
-class ConsentForm(forms.ModelForm):
+class ConsentForm(MultilingualBaseForm):
     class Meta:
         model = Consent
         exclude = ['order']
@@ -119,6 +114,6 @@ class ConsentForm(forms.ModelForm):
     title = _("Term of consent")
     
     text = ModelMultipleChoiceAllFields(queryset=Consent.objects.all(),
-            label='', widget=forms.widgets.CheckboxSelectMultiple,
+            label='', label_field='text',
             error_messages={'consent': _('You must agree to all terms.')})  
 
