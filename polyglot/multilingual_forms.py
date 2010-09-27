@@ -1,3 +1,8 @@
+try:
+    set
+except:
+    from sets import Set as set
+
 from django import forms
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
@@ -223,6 +228,13 @@ class MultilingualModelCheckboxField(MultilingualModelChoiceField):
             return None
 
         return self.queryset.filter(pk__in=value)
+    
+class ModelMultipleChoiceAllFields(MultilingualModelCheckboxField):
+    def clean(self, value):
+        if set(value) != set(self.queryset.values_list('pk', flat=True)):
+            raise ValidationError(self.error_messages['consent'])
+        qs = super(ModelMultipleChoiceAllFields, self).clean(value)
+        return qs
 
 # ---------- FORMS -----------
 
