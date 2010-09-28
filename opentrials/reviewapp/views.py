@@ -129,6 +129,8 @@ def submission_delete(request, id):
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
     if submission.can_delete():
+        if hasattr(submission, 'trial'):
+            submission.trial.delete()
         submission.delete()
         return HttpResponseRedirect('/accounts/submissionlist/?delete=ok')
     else:
