@@ -1,2365 +1,573 @@
 [
   {
-    "pk": 22, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_logentry", 
-      "name": "Can add log entry", 
-      "content_type": [
-        "admin", 
-        "logentry"
-      ]
-    }
-  }, 
-  {
-    "pk": 23, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_logentry", 
-      "name": "Can change log entry", 
-      "content_type": [
-        "admin", 
-        "logentry"
-      ]
-    }
-  }, 
-  {
-    "pk": 24, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_logentry", 
-      "name": "Can delete log entry", 
-      "content_type": [
-        "admin", 
-        "logentry"
-      ]
-    }
-  }, 
-  {
-    "pk": 140, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_registrationprofile", 
-      "name": "Can add registration profile", 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 141, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_registrationprofile", 
-      "name": "Can change registration profile", 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 142, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_registrationprofile", 
-      "name": "Can delete registration profile", 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 143, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_categorytranslation", 
-      "name": "Can add category translation", 
-      "content_type": [
-        "assistance", 
-        "categorytranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 144, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_categorytranslation", 
-      "name": "Can change category translation", 
-      "content_type": [
-        "assistance", 
-        "categorytranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 145, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_categorytranslation", 
-      "name": "Can delete category translation", 
-      "content_type": [
-        "assistance", 
-        "categorytranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 152, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_fieldhelp", 
-      "name": "Can add field help", 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 153, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_fieldhelp", 
-      "name": "Can change field help", 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 154, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_fieldhelp", 
-      "name": "Can delete field help", 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 155, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_fieldhelptranslation", 
-      "name": "Can add field help translation", 
-      "content_type": [
-        "assistance", 
-        "fieldhelptranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 156, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_fieldhelptranslation", 
-      "name": "Can change field help translation", 
-      "content_type": [
-        "assistance", 
-        "fieldhelptranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 157, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_fieldhelptranslation", 
-      "name": "Can delete field help translation", 
-      "content_type": [
-        "assistance", 
-        "fieldhelptranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 146, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_question", 
-      "name": "Can add question", 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 147, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_question", 
-      "name": "Can change question", 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 148, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_question", 
-      "name": "Can delete question", 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 149, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_questiontranslation", 
-      "name": "Can add question translation", 
-      "content_type": [
-        "assistance", 
-        "questiontranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 150, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_questiontranslation", 
-      "name": "Can change question translation", 
-      "content_type": [
-        "assistance", 
-        "questiontranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 151, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_questiontranslation", 
-      "name": "Can delete question translation", 
-      "content_type": [
-        "assistance", 
-        "questiontranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_group", 
-      "name": "Can add group", 
-      "content_type": [
-        "auth", 
-        "group"
-      ]
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_group", 
-      "name": "Can change group", 
-      "content_type": [
-        "auth", 
-        "group"
-      ]
-    }
-  }, 
-  {
-    "pk": 6, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_group", 
-      "name": "Can delete group", 
-      "content_type": [
-        "auth", 
-        "group"
-      ]
-    }
-  }, 
-  {
-    "pk": 10, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_message", 
-      "name": "Can add message", 
-      "content_type": [
-        "auth", 
-        "message"
-      ]
-    }
-  }, 
-  {
-    "pk": 11, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_message", 
-      "name": "Can change message", 
-      "content_type": [
-        "auth", 
-        "message"
-      ]
-    }
-  }, 
-  {
-    "pk": 12, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_message", 
-      "name": "Can delete message", 
-      "content_type": [
-        "auth", 
-        "message"
-      ]
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_permission", 
-      "name": "Can add permission", 
-      "content_type": [
-        "auth", 
-        "permission"
-      ]
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_permission", 
-      "name": "Can change permission", 
-      "content_type": [
-        "auth", 
-        "permission"
-      ]
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_permission", 
-      "name": "Can delete permission", 
-      "content_type": [
-        "auth", 
-        "permission"
-      ]
-    }
-  }, 
-  {
-    "pk": 7, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_user", 
-      "name": "Can add user", 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 8, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_user", 
-      "name": "Can change user", 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 9, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_user", 
-      "name": "Can delete user", 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 13, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_contenttype", 
-      "name": "Can add content type", 
-      "content_type": [
-        "contenttypes", 
-        "contenttype"
-      ]
-    }
-  }, 
-  {
-    "pk": 14, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_contenttype", 
-      "name": "Can change content type", 
-      "content_type": [
-        "contenttypes", 
-        "contenttype"
-      ]
-    }
-  }, 
-  {
-    "pk": 15, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_contenttype", 
-      "name": "Can delete content type", 
-      "content_type": [
-        "contenttypes", 
-        "contenttype"
-      ]
-    }
-  }, 
-  {
-    "pk": 25, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_clinicaltrial", 
-      "name": "Can add clinical trial", 
-      "content_type": [
-        "flatpages", 
-        "flatpage"
-      ]
-    }
-  }, 
-  {
-    "pk": 161, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_flatpage", 
-      "name": "Can add flat page", 
-      "content_type": [
-        "flatpages", 
-        "flatpage"
-      ]
-    }
-  }, 
-  {
-    "pk": 26, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_clinicaltrial", 
-      "name": "Can change clinical trial", 
-      "content_type": [
-        "flatpages", 
-        "flatpage"
-      ]
-    }
-  }, 
-  {
-    "pk": 162, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_flatpage", 
-      "name": "Can change flat page", 
-      "content_type": [
-        "flatpages", 
-        "flatpage"
-      ]
-    }
-  }, 
-  {
-    "pk": 27, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_clinicaltrial", 
-      "name": "Can delete clinical trial", 
-      "content_type": [
-        "flatpages", 
-        "flatpage"
-      ]
-    }
-  }, 
-  {
-    "pk": 163, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_flatpage", 
-      "name": "Can delete flat page", 
-      "content_type": [
-        "flatpages", 
-        "flatpage"
-      ]
-    }
-  }, 
-  {
-    "pk": 158, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_registrationprofile", 
-      "name": "Can add registration profile", 
-      "content_type": [
-        "registration", 
-        "registrationprofile"
-      ]
-    }
-  }, 
-  {
-    "pk": 159, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_registrationprofile", 
-      "name": "Can change registration profile", 
-      "content_type": [
-        "registration", 
-        "registrationprofile"
-      ]
-    }
-  }, 
-  {
-    "pk": 160, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_registrationprofile", 
-      "name": "Can delete registration profile", 
-      "content_type": [
-        "registration", 
-        "registrationprofile"
-      ]
-    }
-  }, 
-  {
-    "pk": 70, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_studytype", 
-      "name": "Can add study type", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ]
-    }
-  }, 
-  {
-    "pk": 71, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_studytype", 
-      "name": "Can change study type", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ]
-    }
-  }, 
-  {
-    "pk": 72, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_studytype", 
-      "name": "Can delete study type", 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ]
-    }
-  }, 
-  {
-    "pk": 73, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_studypurpose", 
-      "name": "Can add study purpose", 
-      "content_type": [
-        "repository", 
-        "clinicaltrialtranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 74, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_studypurpose", 
-      "name": "Can change study purpose", 
-      "content_type": [
-        "repository", 
-        "clinicaltrialtranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 75, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_studypurpose", 
-      "name": "Can delete study purpose", 
-      "content_type": [
-        "repository", 
-        "clinicaltrialtranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 88, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_recruitmentstatus", 
-      "name": "Can add recruitment status", 
-      "content_type": [
-        "repository", 
-        "contact"
-      ]
-    }
-  }, 
-  {
-    "pk": 89, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_recruitmentstatus", 
-      "name": "Can change recruitment status", 
-      "content_type": [
-        "repository", 
-        "contact"
-      ]
-    }
-  }, 
-  {
-    "pk": 90, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_recruitmentstatus", 
-      "name": "Can delete recruitment status", 
-      "content_type": [
-        "repository", 
-        "contact"
-      ]
-    }
-  }, 
-  {
-    "pk": 107, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_attachment", 
-      "name": "Can add attachment", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ]
-    }
-  }, 
-  {
-    "pk": 108, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_attachment", 
-      "name": "Can change attachment", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ]
-    }
-  }, 
-  {
-    "pk": 109, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_attachment", 
-      "name": "Can delete attachment", 
-      "content_type": [
-        "repository", 
-        "descriptor"
-      ]
-    }
-  }, 
-  {
-    "pk": 110, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_remark", 
-      "name": "Can add remark", 
-      "content_type": [
-        "repository", 
-        "descriptortranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 111, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_remark", 
-      "name": "Can change remark", 
-      "content_type": [
-        "repository", 
-        "descriptortranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 112, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_remark", 
-      "name": "Can delete remark", 
-      "content_type": [
-        "repository", 
-        "descriptortranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 85, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_studyphase", 
-      "name": "Can add study phase", 
-      "content_type": [
-        "repository", 
-        "institution"
-      ]
-    }
-  }, 
-  {
-    "pk": 86, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_studyphase", 
-      "name": "Can change study phase", 
-      "content_type": [
-        "repository", 
-        "institution"
-      ]
-    }
-  }, 
-  {
-    "pk": 87, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_studyphase", 
-      "name": "Can delete study phase", 
-      "content_type": [
-        "repository", 
-        "institution"
-      ]
-    }
-  }, 
-  {
-    "pk": 100, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_submission", 
-      "name": "Can add submission", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ]
-    }
-  }, 
-  {
-    "pk": 101, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_submission", 
-      "name": "Can change submission", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ]
-    }
-  }, 
-  {
-    "pk": 102, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_submission", 
-      "name": "Can delete submission", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ]
-    }
-  }, 
-  {
-    "pk": 103, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "review", 
-      "name": "Can review", 
-      "content_type": [
-        "repository", 
-        "outcome"
-      ]
-    }
-  }, 
-  {
-    "pk": 104, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_recruitmentcountry", 
-      "name": "Can add recruitment country", 
-      "content_type": [
-        "repository", 
-        "outcometranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 105, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_recruitmentcountry", 
-      "name": "Can change recruitment country", 
-      "content_type": [
-        "repository", 
-        "outcometranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 106, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_recruitmentcountry", 
-      "name": "Can delete recruitment country", 
-      "content_type": [
-        "repository", 
-        "outcometranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 91, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_decsdisease", 
-      "name": "Can add decs disease", 
-      "content_type": [
-        "repository", 
-        "publiccontact"
-      ]
-    }
-  }, 
-  {
-    "pk": 92, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_decsdisease", 
-      "name": "Can change decs disease", 
-      "content_type": [
-        "repository", 
-        "publiccontact"
-      ]
-    }
-  }, 
-  {
-    "pk": 93, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_decsdisease", 
-      "name": "Can delete decs disease", 
-      "content_type": [
-        "repository", 
-        "publiccontact"
-      ]
-    }
-  }, 
-  {
-    "pk": 94, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_icdchapter", 
-      "name": "Can add icd chapter", 
-      "content_type": [
-        "repository", 
-        "scientificcontact"
-      ]
-    }
-  }, 
-  {
-    "pk": 95, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_icdchapter", 
-      "name": "Can change icd chapter", 
-      "content_type": [
-        "repository", 
-        "scientificcontact"
-      ]
-    }
-  }, 
-  {
-    "pk": 96, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_icdchapter", 
-      "name": "Can delete icd chapter", 
-      "content_type": [
-        "repository", 
-        "scientificcontact"
-      ]
-    }
-  }, 
-  {
-    "pk": 97, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_attachmenttype", 
-      "name": "Can add attachment type", 
-      "content_type": [
-        "repository", 
-        "sitecontact"
-      ]
-    }
-  }, 
-  {
-    "pk": 98, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_attachmenttype", 
-      "name": "Can change attachment type", 
-      "content_type": [
-        "repository", 
-        "sitecontact"
-      ]
-    }
-  }, 
-  {
-    "pk": 99, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_attachmenttype", 
-      "name": "Can delete attachment type", 
-      "content_type": [
-        "repository", 
-        "sitecontact"
-      ]
-    }
-  }, 
-  {
-    "pk": 76, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_interventionassigment", 
-      "name": "Can add intervention assigment", 
-      "content_type": [
-        "repository", 
-        "trialnumber"
-      ]
-    }
-  }, 
-  {
-    "pk": 77, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_interventionassigment", 
-      "name": "Can change intervention assigment", 
-      "content_type": [
-        "repository", 
-        "trialnumber"
-      ]
-    }
-  }, 
-  {
-    "pk": 78, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_interventionassigment", 
-      "name": "Can delete intervention assigment", 
-      "content_type": [
-        "repository", 
-        "trialnumber"
-      ]
-    }
-  }, 
-  {
-    "pk": 79, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_studymasking", 
-      "name": "Can add study masking", 
-      "content_type": [
-        "repository", 
-        "trialsecondarysponsor"
-      ]
-    }
-  }, 
-  {
-    "pk": 80, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_studymasking", 
-      "name": "Can change study masking", 
-      "content_type": [
-        "repository", 
-        "trialsecondarysponsor"
-      ]
-    }
-  }, 
-  {
-    "pk": 81, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_studymasking", 
-      "name": "Can delete study masking", 
-      "content_type": [
-        "repository", 
-        "trialsecondarysponsor"
-      ]
-    }
-  }, 
-  {
-    "pk": 82, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_studyallocation", 
-      "name": "Can add study allocation", 
-      "content_type": [
-        "repository", 
-        "trialsupportsource"
-      ]
-    }
-  }, 
-  {
-    "pk": 83, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_studyallocation", 
-      "name": "Can change study allocation", 
-      "content_type": [
-        "repository", 
-        "trialsupportsource"
-      ]
-    }
-  }, 
-  {
-    "pk": 84, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_studyallocation", 
-      "name": "Can delete study allocation", 
-      "content_type": [
-        "repository", 
-        "trialsupportsource"
-      ]
-    }
-  }, 
-  {
-    "pk": 122, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_category", 
-      "name": "Can add category", 
-      "content_type": [
-        "reviewapp", 
-        "attachment"
-      ]
-    }
-  }, 
-  {
-    "pk": 123, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_category", 
-      "name": "Can change category", 
-      "content_type": [
-        "reviewapp", 
-        "attachment"
-      ]
-    }
-  }, 
-  {
-    "pk": 124, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_category", 
-      "name": "Can delete category", 
-      "content_type": [
-        "reviewapp", 
-        "attachment"
-      ]
-    }
-  }, 
-  {
-    "pk": 128, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_question", 
-      "name": "Can add question", 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 129, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_question", 
-      "name": "Can change question", 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 130, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_question", 
-      "name": "Can delete question", 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 119, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_media", 
-      "name": "Can add media", 
-      "content_type": [
-        "reviewapp", 
-        "recruitmentcountry"
-      ]
-    }
-  }, 
-  {
-    "pk": 120, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_media", 
-      "name": "Can change media", 
-      "content_type": [
-        "reviewapp", 
-        "recruitmentcountry"
-      ]
-    }
-  }, 
-  {
-    "pk": 121, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_media", 
-      "name": "Can delete media", 
-      "content_type": [
-        "reviewapp", 
-        "recruitmentcountry"
-      ]
-    }
-  }, 
-  {
-    "pk": 125, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_categorytranslation", 
-      "name": "Can add category translation", 
-      "content_type": [
-        "reviewapp", 
-        "remark"
-      ]
-    }
-  }, 
-  {
-    "pk": 126, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_categorytranslation", 
-      "name": "Can change category translation", 
-      "content_type": [
-        "reviewapp", 
-        "remark"
-      ]
-    }
-  }, 
-  {
-    "pk": 127, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_categorytranslation", 
-      "name": "Can delete category translation", 
-      "content_type": [
-        "reviewapp", 
-        "remark"
-      ]
-    }
-  }, 
-  {
-    "pk": 116, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_followup", 
-      "name": "Can add followup", 
-      "content_type": [
-        "reviewapp", 
-        "submission"
-      ]
-    }
-  }, 
-  {
-    "pk": 117, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_followup", 
-      "name": "Can change followup", 
-      "content_type": [
-        "reviewapp", 
-        "submission"
-      ]
-    }
-  }, 
-  {
-    "pk": 118, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_followup", 
-      "name": "Can delete followup", 
-      "content_type": [
-        "reviewapp", 
-        "submission"
-      ]
-    }
-  }, 
-  {
-    "pk": 113, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_ticket", 
-      "name": "Can add ticket", 
-      "content_type": [
-        "reviewapp", 
-        "userprofile"
-      ]
-    }
-  }, 
-  {
-    "pk": 114, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_ticket", 
-      "name": "Can change ticket", 
-      "content_type": [
-        "reviewapp", 
-        "userprofile"
-      ]
-    }
-  }, 
-  {
-    "pk": 115, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_ticket", 
-      "name": "Can delete ticket", 
-      "content_type": [
-        "reviewapp", 
-        "userprofile"
-      ]
-    }
-  }, 
-  {
-    "pk": 16, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_session", 
-      "name": "Can add session", 
-      "content_type": [
-        "sessions", 
-        "session"
-      ]
-    }
-  }, 
-  {
-    "pk": 17, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_session", 
-      "name": "Can change session", 
-      "content_type": [
-        "sessions", 
-        "session"
-      ]
-    }
-  }, 
-  {
-    "pk": 18, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_session", 
-      "name": "Can delete session", 
-      "content_type": [
-        "sessions", 
-        "session"
-      ]
-    }
-  }, 
-  {
-    "pk": 19, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_site", 
-      "name": "Can add site", 
-      "content_type": [
-        "sites", 
-        "site"
-      ]
-    }
-  }, 
-  {
-    "pk": 20, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_site", 
-      "name": "Can change site", 
-      "content_type": [
-        "sites", 
-        "site"
-      ]
-    }
-  }, 
-  {
-    "pk": 21, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_site", 
-      "name": "Can delete site", 
-      "content_type": [
-        "sites", 
-        "site"
-      ]
-    }
-  }, 
-  {
-    "pk": 164, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_migrationhistory", 
-      "name": "Can add migration history", 
-      "content_type": [
-        "south", 
-        "migrationhistory"
-      ]
-    }
-  }, 
-  {
-    "pk": 165, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_migrationhistory", 
-      "name": "Can change migration history", 
-      "content_type": [
-        "south", 
-        "migrationhistory"
-      ]
-    }
-  }, 
-  {
-    "pk": 166, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_migrationhistory", 
-      "name": "Can delete migration history", 
-      "content_type": [
-        "south", 
-        "migrationhistory"
-      ]
-    }
-  }, 
-  {
-    "pk": 134, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_fieldhelp", 
-      "name": "Can add field help", 
-      "content_type": [
-        "tickets", 
-        "followup"
-      ]
-    }
-  }, 
-  {
-    "pk": 135, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_fieldhelp", 
-      "name": "Can change field help", 
-      "content_type": [
-        "tickets", 
-        "followup"
-      ]
-    }
-  }, 
-  {
-    "pk": 136, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_fieldhelp", 
-      "name": "Can delete field help", 
-      "content_type": [
-        "tickets", 
-        "followup"
-      ]
-    }
-  }, 
-  {
-    "pk": 137, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_fieldhelptranslation", 
-      "name": "Can add field help translation", 
-      "content_type": [
-        "tickets", 
-        "media"
-      ]
-    }
-  }, 
-  {
-    "pk": 138, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_fieldhelptranslation", 
-      "name": "Can change field help translation", 
-      "content_type": [
-        "tickets", 
-        "media"
-      ]
-    }
-  }, 
-  {
-    "pk": 139, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_fieldhelptranslation", 
-      "name": "Can delete field help translation", 
-      "content_type": [
-        "tickets", 
-        "media"
-      ]
-    }
-  }, 
-  {
-    "pk": 131, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_questiontranslation", 
-      "name": "Can add question translation", 
-      "content_type": [
-        "tickets", 
-        "ticket"
-      ]
-    }
-  }, 
-  {
-    "pk": 132, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_questiontranslation", 
-      "name": "Can change question translation", 
-      "content_type": [
-        "tickets", 
-        "ticket"
-      ]
-    }
-  }, 
-  {
-    "pk": 133, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_questiontranslation", 
-      "name": "Can delete question translation", 
-      "content_type": [
-        "tickets", 
-        "ticket"
-      ]
-    }
-  }, 
-  {
-    "pk": 67, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_interventioncode", 
-      "name": "Can add intervention code", 
-      "content_type": [
-        "vocabulary", 
-        "attachmenttype"
-      ]
-    }
-  }, 
-  {
-    "pk": 68, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_interventioncode", 
-      "name": "Can change intervention code", 
-      "content_type": [
-        "vocabulary", 
-        "attachmenttype"
-      ]
-    }
-  }, 
-  {
-    "pk": 69, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_interventioncode", 
-      "name": "Can delete intervention code", 
-      "content_type": [
-        "vocabulary", 
-        "attachmenttype"
-      ]
-    }
-  }, 
-  {
-    "pk": 31, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_trialsecondarysponsor", 
-      "name": "Can add trial secondary sponsor", 
-      "content_type": [
-        "vocabulary", 
-        "countrycode"
-      ]
-    }
-  }, 
-  {
-    "pk": 32, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_trialsecondarysponsor", 
-      "name": "Can change trial secondary sponsor", 
-      "content_type": [
-        "vocabulary", 
-        "countrycode"
-      ]
-    }
-  }, 
-  {
-    "pk": 33, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_trialsecondarysponsor", 
-      "name": "Can delete trial secondary sponsor", 
-      "content_type": [
-        "vocabulary", 
-        "countrycode"
-      ]
-    }
-  }, 
-  {
-    "pk": 61, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_countrycode", 
-      "name": "Can add country code", 
-      "content_type": [
-        "vocabulary", 
-        "decsdisease"
-      ]
-    }
-  }, 
-  {
-    "pk": 62, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_countrycode", 
-      "name": "Can change country code", 
-      "content_type": [
-        "vocabulary", 
-        "decsdisease"
-      ]
-    }
-  }, 
-  {
-    "pk": 63, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_countrycode", 
-      "name": "Can delete country code", 
-      "content_type": [
-        "vocabulary", 
-        "decsdisease"
-      ]
-    }
-  }, 
-  {
-    "pk": 64, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_trialnumberissuingauthority", 
-      "name": "Can add trial number issuing authority", 
-      "content_type": [
-        "vocabulary", 
-        "icdchapter"
-      ]
-    }
-  }, 
-  {
-    "pk": 65, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_trialnumberissuingauthority", 
-      "name": "Can change trial number issuing authority", 
-      "content_type": [
-        "vocabulary", 
-        "icdchapter"
-      ]
-    }
-  }, 
-  {
-    "pk": 66, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_trialnumberissuingauthority", 
-      "name": "Can delete trial number issuing authority", 
-      "content_type": [
-        "vocabulary", 
-        "icdchapter"
-      ]
-    }
-  }, 
-  {
-    "pk": 46, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_scientificcontact", 
-      "name": "Can add scientific contact", 
-      "content_type": [
-        "vocabulary", 
-        "interventionassigment"
-      ]
-    }
-  }, 
-  {
-    "pk": 47, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_scientificcontact", 
-      "name": "Can change scientific contact", 
-      "content_type": [
-        "vocabulary", 
-        "interventionassigment"
-      ]
-    }
-  }, 
-  {
-    "pk": 48, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_scientificcontact", 
-      "name": "Can delete scientific contact", 
-      "content_type": [
-        "vocabulary", 
-        "interventionassigment"
-      ]
-    }
-  }, 
-  {
-    "pk": 37, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_institution", 
-      "name": "Can add institution", 
-      "content_type": [
-        "vocabulary", 
-        "interventioncode"
-      ]
-    }
-  }, 
-  {
-    "pk": 38, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_institution", 
-      "name": "Can change institution", 
-      "content_type": [
-        "vocabulary", 
-        "interventioncode"
-      ]
-    }
-  }, 
-  {
-    "pk": 39, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_institution", 
-      "name": "Can delete institution", 
-      "content_type": [
-        "vocabulary", 
-        "interventioncode"
-      ]
-    }
-  }, 
-  {
-    "pk": 58, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_vocabularytranslation", 
-      "name": "Can add vocabulary translation", 
-      "content_type": [
-        "vocabulary", 
-        "recruitmentstatus"
-      ]
-    }
-  }, 
-  {
-    "pk": 59, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_vocabularytranslation", 
-      "name": "Can change vocabulary translation", 
-      "content_type": [
-        "vocabulary", 
-        "recruitmentstatus"
-      ]
-    }
-  }, 
-  {
-    "pk": 60, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_vocabularytranslation", 
-      "name": "Can delete vocabulary translation", 
-      "content_type": [
-        "vocabulary", 
-        "recruitmentstatus"
-      ]
-    }
-  }, 
-  {
-    "pk": 52, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_outcome", 
-      "name": "Can add outcome", 
-      "content_type": [
-        "vocabulary", 
-        "studyallocation"
-      ]
-    }
-  }, 
-  {
-    "pk": 53, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_outcome", 
-      "name": "Can change outcome", 
-      "content_type": [
-        "vocabulary", 
-        "studyallocation"
-      ]
-    }
-  }, 
-  {
-    "pk": 54, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_outcome", 
-      "name": "Can delete outcome", 
-      "content_type": [
-        "vocabulary", 
-        "studyallocation"
-      ]
-    }
-  }, 
-  {
-    "pk": 49, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_sitecontact", 
-      "name": "Can add site contact", 
-      "content_type": [
-        "vocabulary", 
-        "studymasking"
-      ]
-    }
-  }, 
-  {
-    "pk": 50, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_sitecontact", 
-      "name": "Can change site contact", 
-      "content_type": [
-        "vocabulary", 
-        "studymasking"
-      ]
-    }
-  }, 
-  {
-    "pk": 51, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_sitecontact", 
-      "name": "Can delete site contact", 
-      "content_type": [
-        "vocabulary", 
-        "studymasking"
-      ]
-    }
-  }, 
-  {
-    "pk": 55, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_descriptor", 
-      "name": "Can add descriptor", 
-      "content_type": [
-        "vocabulary", 
-        "studyphase"
-      ]
-    }
-  }, 
-  {
-    "pk": 56, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_descriptor", 
-      "name": "Can change descriptor", 
-      "content_type": [
-        "vocabulary", 
-        "studyphase"
-      ]
-    }
-  }, 
-  {
-    "pk": 57, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_descriptor", 
-      "name": "Can delete descriptor", 
-      "content_type": [
-        "vocabulary", 
-        "studyphase"
-      ]
-    }
-  }, 
-  {
-    "pk": 43, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_publiccontact", 
-      "name": "Can add public contact", 
-      "content_type": [
-        "vocabulary", 
-        "studypurpose"
-      ]
-    }
-  }, 
-  {
-    "pk": 44, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_publiccontact", 
-      "name": "Can change public contact", 
-      "content_type": [
-        "vocabulary", 
-        "studypurpose"
-      ]
-    }
-  }, 
-  {
-    "pk": 45, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_publiccontact", 
-      "name": "Can delete public contact", 
-      "content_type": [
-        "vocabulary", 
-        "studypurpose"
-      ]
-    }
-  }, 
-  {
-    "pk": 40, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_contact", 
-      "name": "Can add contact", 
-      "content_type": [
-        "vocabulary", 
-        "studytype"
-      ]
-    }
-  }, 
-  {
-    "pk": 41, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_contact", 
-      "name": "Can change contact", 
-      "content_type": [
-        "vocabulary", 
-        "studytype"
-      ]
-    }
-  }, 
-  {
-    "pk": 42, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_contact", 
-      "name": "Can delete contact", 
-      "content_type": [
-        "vocabulary", 
-        "studytype"
-      ]
-    }
-  }, 
-  {
-    "pk": 34, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_trialsupportsource", 
-      "name": "Can add trial support source", 
-      "content_type": [
-        "vocabulary", 
-        "trialnumberissuingauthority"
-      ]
-    }
-  }, 
-  {
-    "pk": 35, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_trialsupportsource", 
-      "name": "Can change trial support source", 
-      "content_type": [
-        "vocabulary", 
-        "trialnumberissuingauthority"
-      ]
-    }
-  }, 
-  {
-    "pk": 36, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_trialsupportsource", 
-      "name": "Can delete trial support source", 
-      "content_type": [
-        "vocabulary", 
-        "trialnumberissuingauthority"
-      ]
-    }
-  }, 
-  {
-    "pk": 28, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "add_trialnumber", 
-      "name": "Can add trial number", 
-      "content_type": [
-        "vocabulary", 
-        "vocabularytranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 29, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "change_trialnumber", 
-      "name": "Can change trial number", 
-      "content_type": [
-        "vocabulary", 
-        "vocabularytranslation"
-      ]
-    }
-  }, 
-  {
-    "pk": 30, 
-    "model": "auth.permission", 
-    "fields": {
-      "codename": "delete_trialnumber", 
-      "name": "Can delete trial number", 
-      "content_type": [
-        "vocabulary", 
-        "vocabularytranslation"
-      ]
-    }
-  }, 
-  {
     "pk": 1, 
     "model": "auth.group", 
     "fields": {
       "name": "reviewers", 
       "permissions": [
         [
-          "add_studytype", 
+          "add_clinicaltrial", 
           "repository", 
           "clinicaltrial"
         ], 
         [
-          "change_studytype", 
+          "change_clinicaltrial", 
           "repository", 
           "clinicaltrial"
         ], 
         [
-          "delete_studytype", 
+          "delete_clinicaltrial", 
           "repository", 
           "clinicaltrial"
         ], 
         [
-          "add_studypurpose", 
+          "add_clinicaltrialtranslation", 
           "repository", 
           "clinicaltrialtranslation"
         ], 
         [
-          "change_studypurpose", 
+          "change_clinicaltrialtranslation", 
           "repository", 
           "clinicaltrialtranslation"
         ], 
         [
-          "delete_studypurpose", 
+          "delete_clinicaltrialtranslation", 
           "repository", 
           "clinicaltrialtranslation"
         ], 
         [
-          "add_recruitmentstatus", 
+          "add_contact", 
           "repository", 
           "contact"
         ], 
         [
-          "change_recruitmentstatus", 
+          "change_contact", 
           "repository", 
           "contact"
         ], 
         [
-          "delete_recruitmentstatus", 
+          "delete_contact", 
           "repository", 
           "contact"
+        ], 
+        [
+          "add_descriptor", 
+          "repository", 
+          "descriptor"
+        ], 
+        [
+          "change_descriptor", 
+          "repository", 
+          "descriptor"
+        ], 
+        [
+          "delete_descriptor", 
+          "repository", 
+          "descriptor"
+        ], 
+        [
+          "add_descriptortranslation", 
+          "repository", 
+          "descriptortranslation"
+        ], 
+        [
+          "change_descriptortranslation", 
+          "repository", 
+          "descriptortranslation"
+        ], 
+        [
+          "delete_descriptortranslation", 
+          "repository", 
+          "descriptortranslation"
+        ], 
+        [
+          "add_institution", 
+          "repository", 
+          "institution"
+        ], 
+        [
+          "change_institution", 
+          "repository", 
+          "institution"
+        ], 
+        [
+          "delete_institution", 
+          "repository", 
+          "institution"
+        ], 
+        [
+          "add_outcome", 
+          "repository", 
+          "outcome"
+        ], 
+        [
+          "change_outcome", 
+          "repository", 
+          "outcome"
+        ], 
+        [
+          "delete_outcome", 
+          "repository", 
+          "outcome"
+        ], 
+        [
+          "add_outcometranslation", 
+          "repository", 
+          "outcometranslation"
+        ], 
+        [
+          "change_outcometranslation", 
+          "repository", 
+          "outcometranslation"
+        ], 
+        [
+          "delete_outcometranslation", 
+          "repository", 
+          "outcometranslation"
+        ], 
+        [
+          "add_publiccontact", 
+          "repository", 
+          "publiccontact"
+        ], 
+        [
+          "change_publiccontact", 
+          "repository", 
+          "publiccontact"
+        ], 
+        [
+          "delete_publiccontact", 
+          "repository", 
+          "publiccontact"
+        ], 
+        [
+          "add_scientificcontact", 
+          "repository", 
+          "scientificcontact"
+        ], 
+        [
+          "change_scientificcontact", 
+          "repository", 
+          "scientificcontact"
+        ], 
+        [
+          "delete_scientificcontact", 
+          "repository", 
+          "scientificcontact"
+        ], 
+        [
+          "add_sitecontact", 
+          "repository", 
+          "sitecontact"
+        ], 
+        [
+          "change_sitecontact", 
+          "repository", 
+          "sitecontact"
+        ], 
+        [
+          "delete_sitecontact", 
+          "repository", 
+          "sitecontact"
+        ], 
+        [
+          "add_trialnumber", 
+          "repository", 
+          "trialnumber"
+        ], 
+        [
+          "change_trialnumber", 
+          "repository", 
+          "trialnumber"
+        ], 
+        [
+          "delete_trialnumber", 
+          "repository", 
+          "trialnumber"
+        ], 
+        [
+          "add_trialsecondarysponsor", 
+          "repository", 
+          "trialsecondarysponsor"
+        ], 
+        [
+          "change_trialsecondarysponsor", 
+          "repository", 
+          "trialsecondarysponsor"
+        ], 
+        [
+          "delete_trialsecondarysponsor", 
+          "repository", 
+          "trialsecondarysponsor"
+        ], 
+        [
+          "add_trialsupportsource", 
+          "repository", 
+          "trialsupportsource"
+        ], 
+        [
+          "change_trialsupportsource", 
+          "repository", 
+          "trialsupportsource"
+        ], 
+        [
+          "delete_trialsupportsource", 
+          "repository", 
+          "trialsupportsource"
+        ], 
+        [
+          "add_attachment", 
+          "reviewapp", 
+          "attachment"
+        ], 
+        [
+          "change_attachment", 
+          "reviewapp", 
+          "attachment"
+        ], 
+        [
+          "delete_attachment", 
+          "reviewapp", 
+          "attachment"
+        ], 
+        [
+          "add_news", 
+          "reviewapp", 
+          "news"
+        ], 
+        [
+          "change_news", 
+          "reviewapp", 
+          "news"
+        ], 
+        [
+          "delete_news", 
+          "reviewapp", 
+          "news"
+        ], 
+        [
+          "add_recruitmentcountry", 
+          "reviewapp", 
+          "recruitmentcountry"
+        ], 
+        [
+          "change_recruitmentcountry", 
+          "reviewapp", 
+          "recruitmentcountry"
+        ], 
+        [
+          "delete_recruitmentcountry", 
+          "reviewapp", 
+          "recruitmentcountry"
         ], 
         [
           "add_remark", 
-          "repository", 
-          "descriptortranslation"
+          "reviewapp", 
+          "remark"
         ], 
         [
           "change_remark", 
-          "repository", 
-          "descriptortranslation"
+          "reviewapp", 
+          "remark"
         ], 
         [
           "delete_remark", 
-          "repository", 
-          "descriptortranslation"
-        ], 
-        [
-          "add_studyphase", 
-          "repository", 
-          "institution"
-        ], 
-        [
-          "change_studyphase", 
-          "repository", 
-          "institution"
-        ], 
-        [
-          "delete_studyphase", 
-          "repository", 
-          "institution"
-        ], 
-        [
-          "add_decsdisease", 
-          "repository", 
-          "publiccontact"
-        ], 
-        [
-          "change_decsdisease", 
-          "repository", 
-          "publiccontact"
-        ], 
-        [
-          "delete_decsdisease", 
-          "repository", 
-          "publiccontact"
-        ], 
-        [
-          "add_icdchapter", 
-          "repository", 
-          "scientificcontact"
-        ], 
-        [
-          "change_icdchapter", 
-          "repository", 
-          "scientificcontact"
-        ], 
-        [
-          "delete_icdchapter", 
-          "repository", 
-          "scientificcontact"
-        ], 
-        [
-          "add_attachmenttype", 
-          "repository", 
-          "sitecontact"
-        ], 
-        [
-          "change_attachmenttype", 
-          "repository", 
-          "sitecontact"
-        ], 
-        [
-          "delete_attachmenttype", 
-          "repository", 
-          "sitecontact"
-        ], 
-        [
-          "add_interventionassigment", 
-          "repository", 
-          "trialnumber"
-        ], 
-        [
-          "change_interventionassigment", 
-          "repository", 
-          "trialnumber"
-        ], 
-        [
-          "delete_interventionassigment", 
-          "repository", 
-          "trialnumber"
-        ], 
-        [
-          "add_studymasking", 
-          "repository", 
-          "trialsecondarysponsor"
-        ], 
-        [
-          "change_studymasking", 
-          "repository", 
-          "trialsecondarysponsor"
-        ], 
-        [
-          "delete_studymasking", 
-          "repository", 
-          "trialsecondarysponsor"
-        ], 
-        [
-          "add_studyallocation", 
-          "repository", 
-          "trialsupportsource"
-        ], 
-        [
-          "change_studyallocation", 
-          "repository", 
-          "trialsupportsource"
-        ], 
-        [
-          "delete_studyallocation", 
-          "repository", 
-          "trialsupportsource"
-        ], 
-        [
-          "add_category", 
-          "reviewapp", 
-          "attachment"
-        ], 
-        [
-          "change_category", 
-          "reviewapp", 
-          "attachment"
-        ], 
-        [
-          "delete_category", 
-          "reviewapp", 
-          "attachment"
-        ], 
-        [
-          "add_question", 
-          "reviewapp", 
-          "news"
-        ], 
-        [
-          "change_question", 
-          "reviewapp", 
-          "news"
-        ], 
-        [
-          "delete_question", 
-          "reviewapp", 
-          "news"
-        ], 
-        [
-          "add_media", 
-          "reviewapp", 
-          "recruitmentcountry"
-        ], 
-        [
-          "change_media", 
-          "reviewapp", 
-          "recruitmentcountry"
-        ], 
-        [
-          "delete_media", 
-          "reviewapp", 
-          "recruitmentcountry"
-        ], 
-        [
-          "add_categorytranslation", 
           "reviewapp", 
           "remark"
         ], 
         [
-          "change_categorytranslation", 
+          "add_submission", 
           "reviewapp", 
-          "remark"
+          "submission"
         ], 
         [
-          "delete_categorytranslation", 
+          "change_submission", 
           "reviewapp", 
-          "remark"
+          "submission"
+        ], 
+        [
+          "delete_submission", 
+          "reviewapp", 
+          "submission"
+        ], 
+        [
+          "review", 
+          "reviewapp", 
+          "submission"
+        ], 
+        [
+          "add_userprofile", 
+          "reviewapp", 
+          "userprofile"
+        ], 
+        [
+          "change_userprofile", 
+          "reviewapp", 
+          "userprofile"
+        ], 
+        [
+          "delete_userprofile", 
+          "reviewapp", 
+          "userprofile"
         ], 
         [
           "add_followup", 
-          "reviewapp", 
-          "submission"
+          "tickets", 
+          "followup"
         ], 
         [
           "change_followup", 
-          "reviewapp", 
-          "submission"
+          "tickets", 
+          "followup"
         ], 
         [
           "delete_followup", 
-          "reviewapp", 
-          "submission"
+          "tickets", 
+          "followup"
+        ], 
+        [
+          "add_media", 
+          "tickets", 
+          "media"
+        ], 
+        [
+          "change_media", 
+          "tickets", 
+          "media"
+        ], 
+        [
+          "delete_media", 
+          "tickets", 
+          "media"
         ], 
         [
           "add_ticket", 
-          "reviewapp", 
-          "userprofile"
+          "tickets", 
+          "ticket"
         ], 
         [
           "change_ticket", 
-          "reviewapp", 
-          "userprofile"
+          "tickets", 
+          "ticket"
         ], 
         [
           "delete_ticket", 
-          "reviewapp", 
-          "userprofile"
-        ], 
-        [
-          "add_fieldhelp", 
-          "tickets", 
-          "followup"
-        ], 
-        [
-          "change_fieldhelp", 
-          "tickets", 
-          "followup"
-        ], 
-        [
-          "delete_fieldhelp", 
-          "tickets", 
-          "followup"
-        ], 
-        [
-          "add_fieldhelptranslation", 
-          "tickets", 
-          "media"
-        ], 
-        [
-          "change_fieldhelptranslation", 
-          "tickets", 
-          "media"
-        ], 
-        [
-          "delete_fieldhelptranslation", 
-          "tickets", 
-          "media"
-        ], 
-        [
-          "add_questiontranslation", 
           "tickets", 
           "ticket"
         ], 
         [
-          "change_questiontranslation", 
-          "tickets", 
-          "ticket"
-        ], 
-        [
-          "delete_questiontranslation", 
-          "tickets", 
-          "ticket"
-        ], 
-        [
-          "add_interventioncode", 
+          "add_attachmenttype", 
           "vocabulary", 
           "attachmenttype"
         ], 
         [
-          "change_interventioncode", 
+          "change_attachmenttype", 
           "vocabulary", 
           "attachmenttype"
         ], 
         [
-          "delete_interventioncode", 
+          "delete_attachmenttype", 
           "vocabulary", 
           "attachmenttype"
         ], 
         [
           "add_countrycode", 
           "vocabulary", 
-          "decsdisease"
+          "countrycode"
         ], 
         [
           "change_countrycode", 
           "vocabulary", 
-          "decsdisease"
+          "countrycode"
         ], 
         [
           "delete_countrycode", 
           "vocabulary", 
+          "countrycode"
+        ], 
+        [
+          "add_decsdisease", 
+          "vocabulary", 
           "decsdisease"
+        ], 
+        [
+          "change_decsdisease", 
+          "vocabulary", 
+          "decsdisease"
+        ], 
+        [
+          "delete_decsdisease", 
+          "vocabulary", 
+          "decsdisease"
+        ], 
+        [
+          "add_icdchapter", 
+          "vocabulary", 
+          "icdchapter"
+        ], 
+        [
+          "change_icdchapter", 
+          "vocabulary", 
+          "icdchapter"
+        ], 
+        [
+          "delete_icdchapter", 
+          "vocabulary", 
+          "icdchapter"
+        ], 
+        [
+          "add_interventionassigment", 
+          "vocabulary", 
+          "interventionassigment"
+        ], 
+        [
+          "change_interventionassigment", 
+          "vocabulary", 
+          "interventionassigment"
+        ], 
+        [
+          "delete_interventionassigment", 
+          "vocabulary", 
+          "interventionassigment"
+        ], 
+        [
+          "add_interventioncode", 
+          "vocabulary", 
+          "interventioncode"
+        ], 
+        [
+          "change_interventioncode", 
+          "vocabulary", 
+          "interventioncode"
+        ], 
+        [
+          "delete_interventioncode", 
+          "vocabulary", 
+          "interventioncode"
+        ], 
+        [
+          "add_recruitmentstatus", 
+          "vocabulary", 
+          "recruitmentstatus"
+        ], 
+        [
+          "change_recruitmentstatus", 
+          "vocabulary", 
+          "recruitmentstatus"
+        ], 
+        [
+          "delete_recruitmentstatus", 
+          "vocabulary", 
+          "recruitmentstatus"
+        ], 
+        [
+          "add_studyallocation", 
+          "vocabulary", 
+          "studyallocation"
+        ], 
+        [
+          "change_studyallocation", 
+          "vocabulary", 
+          "studyallocation"
+        ], 
+        [
+          "delete_studyallocation", 
+          "vocabulary", 
+          "studyallocation"
+        ], 
+        [
+          "add_studymasking", 
+          "vocabulary", 
+          "studymasking"
+        ], 
+        [
+          "change_studymasking", 
+          "vocabulary", 
+          "studymasking"
+        ], 
+        [
+          "delete_studymasking", 
+          "vocabulary", 
+          "studymasking"
+        ], 
+        [
+          "add_studyphase", 
+          "vocabulary", 
+          "studyphase"
+        ], 
+        [
+          "change_studyphase", 
+          "vocabulary", 
+          "studyphase"
+        ], 
+        [
+          "delete_studyphase", 
+          "vocabulary", 
+          "studyphase"
+        ], 
+        [
+          "add_studypurpose", 
+          "vocabulary", 
+          "studypurpose"
+        ], 
+        [
+          "change_studypurpose", 
+          "vocabulary", 
+          "studypurpose"
+        ], 
+        [
+          "delete_studypurpose", 
+          "vocabulary", 
+          "studypurpose"
+        ], 
+        [
+          "add_studytype", 
+          "vocabulary", 
+          "studytype"
+        ], 
+        [
+          "change_studytype", 
+          "vocabulary", 
+          "studytype"
+        ], 
+        [
+          "delete_studytype", 
+          "vocabulary", 
+          "studytype"
         ], 
         [
           "add_trialnumberissuingauthority", 
           "vocabulary", 
-          "icdchapter"
+          "trialnumberissuingauthority"
         ], 
         [
           "change_trialnumberissuingauthority", 
           "vocabulary", 
-          "icdchapter"
+          "trialnumberissuingauthority"
         ], 
         [
           "delete_trialnumberissuingauthority", 
           "vocabulary", 
-          "icdchapter"
+          "trialnumberissuingauthority"
         ], 
         [
           "add_vocabularytranslation", 
           "vocabulary", 
-          "recruitmentstatus"
+          "vocabularytranslation"
         ], 
         [
           "change_vocabularytranslation", 
           "vocabulary", 
-          "recruitmentstatus"
+          "vocabularytranslation"
         ], 
         [
           "delete_vocabularytranslation", 
           "vocabulary", 
-          "recruitmentstatus"
+          "vocabularytranslation"
         ]
       ]
     }
-  }, 
+  },
   {
     "pk": 1, 
     "model": "auth.user", 
@@ -2370,3426 +578,59 @@
       "is_active": true, 
       "is_superuser": true, 
       "is_staff": true, 
-      "last_login": "2010-08-23 19:30:10", 
+      "last_login": "2010-09-28 12:45:55", 
       "groups": [], 
       "user_permissions": [], 
       "password": "sha1$e51b1$627a1107fb3ca30bbf23985572a2c38530eafaf6", 
-      "email": "appec@bireme.org", 
+      "email": "admin@admin.com", 
       "date_joined": "2010-06-01 14:41:59"
     }
-  }, 
-  {
-    "pk": 14, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "luciano", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-07-20 20:20:49", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$503bc$6cf37568a859e69938ae032072d166a140684b90", 
-      "email": "luciano.ramalho@bireme.org", 
-      "date_joined": "2010-06-14 17:46:31"
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "appec", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": true, 
-      "is_staff": true, 
-      "last_login": "2010-06-21 13:54:43", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$d881c$be0d760aff23f91bcb0985ac4eaa64c6f22a2984", 
-      "email": "appec@bireme.org", 
-      "date_joined": "2010-05-06 17:46:08"
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "reviewer", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": true, 
-      "last_login": "2010-07-20 19:39:55", 
-      "groups": [
-        1
-      ], 
-      "user_permissions": [
-        [
-          "add_categorytranslation", 
-          "reviewapp", 
-          "remark"
-        ], 
-        [
-          "change_categorytranslation", 
-          "reviewapp", 
-          "remark"
-        ], 
-        [
-          "delete_categorytranslation", 
-          "reviewapp", 
-          "remark"
-        ]
-      ], 
-      "password": "sha1$3d1a9$b1f22e10df7aee8e864c219ccd2c62c8c9dae379", 
-      "email": "", 
-      "date_joined": "2010-05-06 17:50:09"
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "trialist", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-05-06 17:52:34", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$7bb56$19c239c22381bf77f529a039b8ad71d1148cee62", 
-      "email": "test1@lab.tmp.br", 
-      "date_joined": "2010-05-06 17:51:45"
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "gamarski", 
-      "first_name": "Ricardo", 
-      "last_name": "Gamarski", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-08-17 19:42:56", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$0ebc0$2049a31c4d4d9810746cad1e99a89c4b74fc0884", 
-      "email": "ricardo.gamarski@gmail.com", 
-      "date_joined": "2010-06-01 14:54:45"
-    }
-  }, 
-  {
-    "pk": 6, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "admin_margot", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": true, 
-      "is_staff": true, 
-      "last_login": "2010-08-16 16:55:56", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$85de4$105803c27067e017d6c76124ff6ad89d16bffd9f", 
-      "email": "margot.fiocruz@gmail.com", 
-      "date_joined": "2010-06-01 17:11:38"
-    }
-  }, 
-  {
-    "pk": 7, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "nishizawa", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-08-20 21:03:04", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$a0685$79494e41ac14ceb1c573840e25b46437397e5007", 
-      "email": "claudio.nishizawa@anvisa.gov.br", 
-      "date_joined": "2010-06-02 18:29:49"
-    }
-  }, 
-  {
+  },
+    {
     "pk": 8, 
-    "model": "auth.user", 
+    "model": "reviewapp.news", 
     "fields": {
-      "username": "Alessandro", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-06-02 18:39:23", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$bebed$fefaf620a8ca93dc1f4568169bbaa4ce9ccb18b0", 
-      "email": "alecnas@gmail.com", 
-      "date_joined": "2010-06-02 18:38:29"
+      "status": "published", 
+      "text": "Since 2005 May 20 is celebrated as the International Clinical Trials Day to remind us the importance of clinical trial as a means of improving health and wellbeing and highlights how partnerships between patients and healthcare practitioners are vital to high-quality, relevant research. The day itself commemorates a trial by the eighteenth-century surgeon James Lind in which he gave a dozen sailors one of six possible treatments for scurvy. The interventions included sea water and vinegar, as well as oranges and lemons and the fruit turned out to have the best effect.", 
+      "created": "2010-08-13 15:21:21", 
+      "creator": 17, 
+      "title": "International Clinical Trials Day"
     }
   }, 
   {
     "pk": 9, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "fanny_moura", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": false, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-06-02 19:01:09", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$94167$55b48b097597cc075126e2ef9a2eb7c4c5ff311f", 
-      "email": "fanny.moura@anvisa.gov.br", 
-      "date_joined": "2010-06-02 19:01:09"
-    }
-  }, 
-  {
-    "pk": 10, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "clarice", 
-      "first_name": "clarice", 
-      "last_name": "petramale", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-06-02 21:00:22", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$bf9ba$d9f3c0718576afd6af3cab3f3c4df35d5ff98566", 
-      "email": "clarice.petramale@anvisa.gov.br", 
-      "date_joined": "2010-06-02 20:55:26"
-    }
-  }, 
-  {
-    "pk": 11, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "josue", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-08-20 15:50:28", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$7d10c$241ececd7ce9b9b65d73adb13ec41aec7a9299d2", 
-      "email": "josue_laguardia@yahoo.com.br", 
-      "date_joined": "2010-06-06 22:19:31"
-    }
-  }, 
-  {
-    "pk": 12, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "margot", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-08-20 17:48:31", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$de0c2$7e96ac383990d9b69a450e6a09d6fbc4de1f2c5e", 
-      "email": "margot.fiocruz@gmail.com", 
-      "date_joined": "2010-06-07 17:32:29"
-    }
-  }, 
-  {
-    "pk": 13, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "m", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-06-08 14:27:36", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$4b14e$ba2945fa9ac5a83d6b5458152f04b560261a2007", 
-      "email": "margot.fiocruz@gmail.com", 
-      "date_joined": "2010-06-08 14:26:40"
-    }
-  }, 
-  {
-    "pk": 15, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "fabio_montefuscolo", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-08-16 19:38:30", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$5fa6f$df15676a026406ca7eacf42d9b6febf8f86088b1", 
-      "email": "fabio.montefuscolo@gmail.com", 
-      "date_joined": "2010-06-15 23:24:30"
-    }
-  }, 
-  {
-    "pk": 16, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "ricardogamarski", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-06-17 19:08:49", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$ad5da$e1c265cdbeb1c5bf22bc6be5b81a284a674279f1", 
-      "email": "ricardo.gamarski@saude.gov.br", 
-      "date_joined": "2010-06-17 17:40:27"
-    }
-  }, 
-  {
-    "pk": 17, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "admin_josue", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": true, 
-      "is_staff": true, 
-      "last_login": "2010-08-20 12:38:12", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$93c18$3185d2f9fe9ab816158530225ee0667cc2dfe13a", 
-      "email": "josue.laguardia@gmail.com", 
-      "date_joined": "2010-06-21 14:58:43"
-    }
-  }, 
-  {
-    "pk": 18, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "fabio_montefuscolo2", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": false, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-06-21 17:15:19", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$c4ca4$0dd7f6656e2f4d110381f1869f5ceb336c7db6db", 
-      "email": "fabio.montefuscolo@yahoo.com.br", 
-      "date_joined": "2010-06-21 17:15:19"
-    }
-  }, 
-  {
-    "pk": 19, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "ricardoeccard", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-06-21 20:33:45", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$b7a94$52aba8e76a3f3c53b77072ce98c5bc01d4c83220", 
-      "email": "ricardo.eccard@anvisa.gov.br", 
-      "date_joined": "2010-06-21 20:33:08"
-    }
-  }, 
-  {
-    "pk": 20, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "admin_gamarski", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": true, 
-      "is_staff": true, 
-      "last_login": "2010-06-22 14:41:56", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$128c5$b69cb8975babd1b75ff196463d58dcce9f95cb4b", 
-      "email": "ricardo.gamarski@globo.com", 
-      "date_joined": "2010-06-22 14:24:57"
-    }
-  }, 
-  {
-    "pk": 21, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "admin_claudio", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": true, 
-      "is_staff": true, 
-      "last_login": "2010-08-10 23:23:16", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$e89f6$707c8113684b79407a89ec2790a8c5128026a99b", 
-      "email": "claudio.fsp.usp@gmail.com", 
-      "date_joined": "2010-06-22 14:26:59"
-    }
-  }, 
-  {
-    "pk": 22, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "jlwing", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": false, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-06-24 11:53:54", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$1cb16$acf7b2986ee6c7cc8a8367c3a3b98cfb7feb6551", 
-      "email": "jennifer.wing@malix.univ-paris1.fr", 
-      "date_joined": "2010-06-24 11:53:54"
-    }
-  }, 
-  {
-    "pk": 23, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "arthurtreuherz", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-07-22 14:54:04", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$236d0$e61102aa90e7a7bb6b790de4a80d679c49c399d3", 
-      "email": "arthur.treuherz@bireme.org", 
-      "date_joined": "2010-07-22 14:53:22"
-    }
-  }, 
-  {
-    "pk": 24, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "lmckenney", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-07-22 17:29:15", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$2b8ea$43ac1039c96e7b44d8f5228e316999b197ead058", 
-      "email": "lmckenney@secassociates.com", 
-      "date_joined": "2010-07-22 17:01:22"
-    }
-  }, 
-  {
-    "pk": 25, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "matosfarias", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-07-22 19:27:51", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$5c159$8836427e262dc2d5f1c5c2dc53de86cb26fa5cb1", 
-      "email": "matosfarias@yahoo.com.br", 
-      "date_joined": "2010-07-22 19:26:04"
-    }
-  }, 
-  {
-    "pk": 26, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "cavalcantimanso", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-07-22 20:42:16", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$884f4$4892923fe8121e3e4d9afc7db7c43a5b4fc8e8c5", 
-      "email": "cavalcantimanso@globo.com", 
-      "date_joined": "2010-07-22 20:42:16"
-    }
-  }, 
-  {
-    "pk": 27, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "llozano", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": false, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-08-02 18:57:02", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$91c52$4b66cb31737fc0d3f3f5c41a61e105ef95f6f04e", 
-      "email": "llozano@terra.com.br", 
-      "date_joined": "2010-08-02 18:57:02"
-    }
-  }, 
-  {
-    "pk": 28, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "reratchr", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": false, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-08-05 18:36:07", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$a104d$2c2b9db005db449d507e6d2e8dd8156d69d39abb", 
-      "email": "reratchr@bra.ops-oms.org", 
-      "date_joined": "2010-08-05 18:36:07"
-    }
-  }, 
-  {
-    "pk": 29, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "SeABD", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": false, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-08-19 17:40:17", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$6ef8b$7e6ffd8ceeedfd82f550c520f0fffd5e0263cf9b", 
-      "email": "seabd@ufscar.br", 
-      "date_joined": "2010-08-19 17:40:17"
-    }
-  }, 
-  {
-    "pk": 30, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "Tatiane", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": false, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-08-19 17:53:56", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$9ae7d$5ba5747c75157703810ab0c7b533c341e084571b", 
-      "email": "bl@ufscar.br", 
-      "date_joined": "2010-08-19 17:53:56"
-    }
-  }, 
-  {
-    "pk": 31, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "tdc2010", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": false, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2010-08-21 13:54:50", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$ea80b$ff10065379f33cb1a0a1acc7608b8cc81fc41fda", 
-      "email": "luciano@ramalho.org", 
-      "date_joined": "2010-08-21 13:54:50"
-    }
-  }, 
-  {
-    "pk": "92820e467eb9b20c98611d0d3e996a60", 
-    "model": "sessions.session", 
-    "fields": {
-      "expire_date": "2010-09-06 18:57:58", 
-      "session_data": "gAJ9cQEuM2QxM2Y0MGRhODIzMTE1MTYzMDE5Yjk3OTgzM2E5MjA=\n"
-    }
-  }, 
-  {
-    "pk": "a0229b9350bc1ffa9a112f163b290898", 
-    "model": "sessions.session", 
-    "fields": {
-      "expire_date": "2010-09-06 19:29:39", 
-      "session_data": "gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjQxMmEwZmZlNTNhNWE1NGUzNmRkZDNkODQz\nZjYwMTBi\n"
-    }
-  }, 
-  {
-    "pk": "de363bff0c50e88d4feabd410af57b0e", 
-    "model": "sessions.session", 
-    "fields": {
-      "expire_date": "2010-09-06 19:30:10", 
-      "session_data": "gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigEBdS5mYjcwM2E3NWMyZTNkNzlkYmM4\nMjM5YzFkNzViNjU4Nw==\n"
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "sites.site", 
-    "fields": {
-      "domain": "ec.beta.bvsalud.org", 
-      "name": "EnsaiosClinicos.gov.br (BETA)"
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "sites.site", 
-    "fields": {
-      "domain": "ec.homolog.bvsalud.org", 
-      "name": "EnsaiosClinicos.gov.br (HOMOLOG)"
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "sites.site", 
-    "fields": {
-      "domain": "ec.teste.bvsalud.org", 
-      "name": "EnsaiosClinicos.gov.br (TESTE)"
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "sites.site", 
-    "fields": {
-      "domain": "example.com", 
-      "name": "example.com"
-    }
-  }, 
-  {
-    "pk": 175, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-08-20 12:40:12", 
-      "object_repr": "RBR-7k3-rct PERISCOPE - Efficacy Study of Pioglitazone Compared to Glimepiride on Coronary Atherosclerotic Disease Progression in\u2026", 
-      "object_id": "24", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "repository", 
-        "clinicaltrial"
-      ]
-    }
-  }, 
-  {
-    "pk": 174, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-08-13 16:29:51", 
-      "object_repr": "Article on clinical trial registration legislation", 
-      "object_id": "9", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 173, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-08-13 15:21:21", 
-      "object_repr": "International Clinical Trials Day", 
-      "object_id": "8", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 172, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-13 13:52:38", 
-      "object_repr": "Blinding refers to methods used to prevent participants and investigators from knowing what interventions are being used. Masking refers to the methods used to camouflage interventions to achieve blin", 
-      "object_id": "37", 
-      "change_message": "Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 171, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 20:07:36", 
-      "object_repr": "Please enter here the description of the file attached to this study.", 
-      "object_id": "67", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 170, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 20:05:39", 
-      "object_repr": "Please enter here the file to be attached to this study.", 
-      "object_id": "66", 
-      "change_message": "Modificado text e example. Modificado text e example para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 169, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 20:00:34", 
-      "object_repr": "Please enter here the address of the new institution.", 
-      "object_id": "62", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 168, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 19:59:18", 
-      "object_repr": "Please enter here the name of the new institution.", 
-      "object_id": "61", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 167, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 19:58:42", 
-      "object_repr": "Please enter here the expansion of the trial public acronym, if available.", 
-      "object_id": "60", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 166, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 19:57:52", 
-      "object_repr": "Select here the relation of the contact: a contact for Public Queries, for Scientific Queries or for Site Queries.", 
-      "object_id": "59", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 165, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 19:50:34", 
-      "object_repr": "Please enter here the phase of the study.", 
-      "object_id": "39", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 164, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 19:49:50", 
-      "object_repr": "Please enter here the participant assignment to the intervention groups:\r\n\r\n    * N/A: single arm study\r\n    * Randomized Controlled Trial: participants are assigned to intervention groups by chance\r\n", 
-      "object_id": "38", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 163, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 19:39:04", 
-      "object_repr": "Please enter the type of outcome: primary or secondary. Primary outcomes are events, variables, or experiences that are measured because it is believed that they may be influenced by the intervention.", 
-      "object_id": "40", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 162, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 19:27:16", 
-      "object_repr": "Please enter the type of outcome: primary or secondary. Primary outcomes are events, variables, or experiences that are measured because it is believed that they may be influenced by the intervention.", 
-      "object_id": "40", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 161, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 19:15:23", 
-      "object_repr": "Blinding refers to methods used to prevent participants and investigators from knowing what interventions are being used. Masking refers to the methods used to camouflage interventions to achieve blin", 
-      "object_id": "37", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 160, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 19:10:04", 
-      "object_repr": "Please enter here the intervention assignment of the trial.\r\n\r\n* Single Group: single arm study\r\n* Parallel: participants are assigned to one of two or more groups in parallel for the duration of the ", 
-      "object_id": "35", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 159, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 19:03:41", 
-      "object_repr": "Please select here the most apropriate purpose of your study. Only choose \"Other\" option if none of the listed categories are adequate to define the purpose of your study.\r\n\r\n   * Diagnostic: conducte", 
-      "object_id": "34", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 158, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 19:02:17", 
-      "object_repr": "Please select here the intervention category:\r\n\r\n* drug\r\n* device\r\n* biological/vaccine\r\n* procedure/surgery\r\n* radiation\r\n* behavioural\r\n* genetics\r\n* dietary supplement\r\n* other\r\n\r\n", 
-      "object_id": "31", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 157, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 19:01:46", 
-      "object_repr": "Please select here the specific name of the intervention(s) and the comparator/control(s) being studied. Use the International Non-Proprietary Name if possible (not brand/trade names). For an unregist", 
-      "object_id": "30", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 156, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 18:46:17", 
-      "object_repr": "Please enter here the health condition descriptor text.\r\nIf you choose one descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will automatically filled.\r\n", 
-      "object_id": "29", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 155, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 18:45:45", 
-      "object_repr": "Please enter here the health condition descriptor code.\r\nIf you choose one descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will be automatically filled.\r\n", 
-      "object_id": "28", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 154, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 18:45:12", 
-      "object_repr": "Please select here the vocabulary will be used to choose the descriptor of the health condition: \r\nDeCS: Health Sciences Descriptors or\r\nICD-10: International Classification of Diseases or\r\nChemical A", 
-      "object_id": "26", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 153, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 18:44:31", 
-      "object_repr": "Please enter here which is the health condition descriptor code.\r\nIf you choose one descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will be automatically filled.\r\n", 
-      "object_id": "28", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 152, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 18:42:31", 
-      "object_repr": "Please enter here the major source(s) of monetary or material or infrastructural support for the trial (e.g., funding agency, foundation, company, hospital, university, etc).", 
-      "object_id": "23", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 151, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 18:40:00", 
-      "object_repr": "Please enter here the name of additional individuals, organizations or other legal persons, if any, that have agreed with the primary sponsor to take on responsibilities of sponsorship.\r\nA secondary s", 
-      "object_id": "21", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 150, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 18:22:29", 
-      "object_repr": "Please select here which is the most apropriate purpose of your study. Only choose \"Other\" option if none of the listed categories are adequate to define the purpose of your study.\r\n\r\n\r\n   * Diagnosti", 
-      "object_id": "34", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 149, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 18:19:16", 
-      "object_repr": "Please enter here which is the purpose of the study.\r\n\r\n   * Diagnostic: conducted to find better tests or procedures for diagnosing a particular disease or condition.\r\n   * Etiological: identify caus", 
-      "object_id": "34", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 148, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 18:08:10", 
-      "object_repr": "Blinding refers to methods used to prevent participants and investigators from knowing what interventions are being used. Masking refers to the methods used to camouflage interventions to achieve blin", 
-      "object_id": "37", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 147, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:56:03", 
-      "object_repr": "Please enter here the primary spondor.\r\nThe Primary Sponsor is the individual, organization, group or other legal entity which takes responsibility for initiating, managing and/or financing the study.", 
-      "object_id": "20", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 146, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:47:52", 
-      "object_repr": "Please enter here the exclusion criteria for participant selection, including age and sex.", 
-      "object_id": "19", 
-      "change_message": "Modificado text.", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 145, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:46:50", 
-      "object_repr": "Please enter here the temporal unit of maximal age in inclusion criteria.", 
-      "object_id": "18", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 144, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:43:55", 
-      "object_repr": "Please enter here the maximal age in inclusion criteria of participants.", 
-      "object_id": "17", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 143, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:43:19", 
-      "object_repr": "Please enter here the primary health condition(s) or problem(s) studied. If the study is conducted in healthy human volunteers belonging to the target population of the intervention (e.g., preventive ", 
-      "object_id": "25", 
-      "change_message": "Modificado text e example. Modificado example para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 142, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:29:51", 
-      "object_repr": "Please enter here the temporal unit of minimal age in the inclusion criteria of participants.", 
-      "object_id": "16", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 141, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:29:10", 
-      "object_repr": "Please enter here the gender selected in the inclusion criteria (female, male or both) of participants.", 
-      "object_id": "14", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 140, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:28:46", 
-      "object_repr": "Please enter here the minimal age in the inclusion criteria of participants.", 
-      "object_id": "15", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 139, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:27:50", 
-      "object_repr": "Please enter here the gender selected in the inclusion criteria (female, male or both).", 
-      "object_id": "14", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 138, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:23:49", 
-      "object_repr": "Please enter here the inclusion criteria for participant selection.", 
-      "object_id": "13", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 137, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:22:08", 
-      "object_repr": "Please enter here the number of participants that this trial plans to enroll.", 
-      "object_id": "12", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 136, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:21:05", 
-      "object_repr": "Please enter here the anticipated or actual date of enrollment of the first participant.", 
-      "object_id": "11", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 135, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:20:25", 
-      "object_repr": "Please enter here the countries from which participants will be, are intended to be, or have been recruited.", 
-      "object_id": "10", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 134, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:15:42", 
-      "object_repr": "Please enter here the recruitment status of this trial:\r\n\r\n    * Pending: participants are not yet being recruited or enrolled at any site\r\n    * Recruiting: participants are currently being recruited", 
-      "object_id": "9", 
-      "change_message": "Modificado text.", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 133, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:14:32", 
-      "object_repr": "Please select this field to delete the corresponding secondary trial number.", 
-      "object_id": "8", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 132, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:13:49", 
-      "object_repr": "Please enter here any other secondary identifying numbers, such as protocol number, institutional review board/ethics committee approval, registration number at regulatory agencies or any other Trial ", 
-      "object_id": "7", 
-      "change_message": "Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 131, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:12:25", 
-      "object_repr": "Please enter here the institution or organization that assigned a secondary identification number, besides the Primary Registry, if any.", 
-      "object_id": "6", 
-      "change_message": "Modificado text.", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 130, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:11:46", 
-      "object_repr": "Please enter here the trial public acronym if available.", 
-      "object_id": "5", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 129, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:11:10", 
-      "object_repr": "Please enter here the title intended for the lay public in easily understood language.", 
-      "object_id": "4", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 128, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:10:25", 
-      "object_repr": "Please enter here the expansion of the trial scientific acronym if available.", 
-      "object_id": "3", 
-      "change_message": "Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 127, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:08:08", 
-      "object_repr": "Please enter here the expansion of the trial scientific acronym if available.", 
-      "object_id": "3", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 126, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:07:13", 
-      "object_repr": "Please enter here the trial scientific acronym if available.", 
-      "object_id": "2", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 125, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-12 13:06:12", 
-      "object_repr": "Please enter here the scientific title of the study as it appears in the protocol submitted for funding and ethical review.", 
-      "object_id": "1", 
-      "change_message": "Modificado text.", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 124, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-11 20:18:25", 
-      "object_repr": "Please enter here any other secondary identifying numbers, such as protocol number, institutional review board/ethics committee approval, registration number at regulatory agencies or any other Trial ", 
-      "object_id": "7", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 123, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-11 17:40:50", 
-      "object_repr": "Please enter here which is the institution or organization that assigned a secondary identification number, besides the Primary Registry, if any.", 
-      "object_id": "6", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 122, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 21:17:29", 
-      "object_repr": "Please enter here which is the trial public acronym, if available.", 
-      "object_id": "5", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 121, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 21:17:15", 
-      "object_repr": "Please enter here which is the expansion of the trial scientific acronym, if available.", 
-      "object_id": "3", 
-      "change_message": "Nenhum campo modificado.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 120, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 21:16:30", 
-      "object_repr": "Please enter here which is the public trial acronym, if available.", 
-      "object_id": "5", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 119, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 21:08:04", 
-      "object_repr": "Please enter here other secondary identifying numbers, of the corresponding issuing authorities, besides the Primary Registry, if any. \r\nInclude the sponsor name and sponsor-issued trial number (e.g.,", 
-      "object_id": "7", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 118, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 21:03:34", 
-      "object_repr": "Please enter here other identifying numbers and issuing authorities besides the Primary Registry, if any. \r\nInclude the sponsor name and sponsor-issued trial number (e.g., protocol number) if availabl", 
-      "object_id": "6", 
-      "change_message": "Modificado example. Modificado text e example para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 117, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 21:01:20", 
-      "object_repr": "Please enter here other identifying numbers, of the corresponding issuing authorities, besides the Primary Registry, if any. \r\nInclude the sponsor name and sponsor-issued trial number (e.g., protocol ", 
-      "object_id": "7", 
-      "change_message": "Modificado example. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 116, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 20:57:58", 
-      "object_repr": "Please enter here other identifying numbers, of the corresponding issuing authorities, besides the Primary Registry, if any. \r\nInclude the sponsor name and sponsor-issued trial number (e.g., protocol ", 
-      "object_id": "7", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 115, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 20:56:03", 
-      "object_repr": "Please enter here other identifying numbers and issuing authorities besides the Primary Registry, if any. \r\nInclude the sponsor name and sponsor-issued trial number (e.g., protocol number) if availabl", 
-      "object_id": "6", 
-      "change_message": "Modificado text e example. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 114, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 20:45:03", 
-      "object_repr": "Please select this field to delete the corresponding descriptor..", 
-      "object_id": "64", 
-      "change_message": "Modificado example. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 113, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 20:44:23", 
-      "object_repr": "Please enter here the anticipated or actual date of enrollment of the first participant. \r\nPlease use the format dd/mm/yyyy,", 
-      "object_id": "65", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 112, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 20:36:15", 
-      "object_repr": "Please select this field if the file attached to this study will be public to every user of the EnsaiosClinicos.gov.br.", 
-      "object_id": "68", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 111, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 20:02:49", 
-      "object_repr": "Please select this field if the file attached to this study will be public to everyone.", 
-      "object_id": "68", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 110, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 20:01:20", 
-      "object_repr": "Please enter here which is the description of the file attached to this study.", 
-      "object_id": "67", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 109, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 20:00:03", 
-      "object_repr": "Please enter here which is the file to be attached to this study.", 
-      "object_id": "66", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 108, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 19:56:17", 
-      "object_repr": "Please select this field to delete the corresponding descriptor..", 
-      "object_id": "64", 
-      "change_message": "Modificado text e example.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 107, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 19:55:16", 
-      "object_repr": "Please select this field to delete the corresponding descriptor.", 
-      "object_id": "64", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 106, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 19:54:00", 
-      "object_repr": "Please enter here which is the country of the new institution.", 
-      "object_id": "63", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 105, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 19:53:17", 
-      "object_repr": "Please enter here which is the address of the new institution.", 
-      "object_id": "62", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 104, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 19:52:24", 
-      "object_repr": "Please enter here which is the name of the new institution.", 
-      "object_id": "61", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 103, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-08-10 19:09:28", 
-      "object_repr": "When to cite a record on a clinical trials register", 
-      "object_id": "18", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 102, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 18:56:50", 
-      "object_repr": "How to cite a record on a clinical trials register", 
-      "object_id": "17", 
-      "change_message": "Modificado answer. Modificado answer para question translation \"pt-BR\".", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 101, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-08-10 18:53:15", 
-      "object_repr": "How to cite a record on a clinical trials register", 
-      "object_id": "17", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 100, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 18:30:58", 
-      "object_repr": "Clinical Trials Registry Network for Latin America and the Caribbean", 
-      "object_id": "7", 
-      "change_message": "Modificado text.", 
-      "user": 17, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 99, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 18:30:36", 
-      "object_repr": "Clinical Trials Registry Network for Latin America and the Caribbean", 
-      "object_id": "7", 
-      "change_message": "Modificado text.", 
-      "user": 17, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 98, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 18:28:51", 
-      "object_repr": "Clinical Trials Registry Network for Latin America and the Caribbean", 
-      "object_id": "7", 
-      "change_message": "Modificado status.", 
-      "user": 17, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 97, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-08-10 18:27:45", 
-      "object_repr": "Clinical Trials Registry Network for Latin America and the Caribbean", 
-      "object_id": "7", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 91, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-08-10 18:26:11", 
-      "object_repr": "Not\u00edcia teste do dia 22", 
-      "object_id": "6", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 92, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-08-10 18:26:11", 
-      "object_repr": "Quisque feugiat hendrerit sagittis", 
-      "object_id": "5", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 93, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-08-10 18:26:11", 
-      "object_repr": "Nam non odio purus, ut condimentum dui", 
-      "object_id": "4", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 94, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-08-10 18:26:11", 
-      "object_repr": "Cras porttitor scelerisque congue", 
-      "object_id": "3", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 95, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-08-10 18:26:11", 
-      "object_repr": "Nullam elit sapien, faucibus non accumsan et, suscipit et arcu", 
-      "object_id": "2", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 96, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-08-10 18:26:11", 
-      "object_repr": "Aenean euismod, magna id rhoncus semper", 
-      "object_id": "1", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 90, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 15:47:53", 
-      "object_repr": "Please select here which is the intervention description.", 
-      "object_id": "30", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 89, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 15:41:30", 
-      "object_repr": "Please select here which is the intervention category:\r\n\r\n* drug\r\n* device\r\n* biological/vaccine\r\n* procedure/surgery\r\n* radiation\r\n* behavioural\r\n* genetics\r\n* dietary supplement\r\n* other\r\n\r\n", 
-      "object_id": "31", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 88, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 15:37:25", 
-      "object_repr": "Please choose here which is the intervantion category:\r\n\r\n* drug\r\n* device\r\n* biological/vaccine\r\n* procedure/surgery\r\n* radiation\r\n* behavioural\r\n* genetics\r\n* dietary supplement\r\n* other\r\n\r\n", 
-      "object_id": "31", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 87, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 15:31:46", 
-      "object_repr": "Please enter here which is the health condition descriptor code.\r\nIf you choose one descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will automatically filled.\r\n", 
-      "object_id": "28", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 86, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 15:31:31", 
-      "object_repr": "Please enter here which is the health condition descriptor text.\r\nIf you choose one descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will automatically filled.\r\n", 
-      "object_id": "29", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 85, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-10 14:14:16", 
-      "object_repr": "Please enter here which is the Institution of the Secondary Sponsor.", 
-      "object_id": "21", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 84, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 21:37:32", 
-      "object_repr": "/site-description/ -- Site description", 
-      "object_id": "2", 
-      "change_message": "Modificado content.", 
-      "user": 1, 
-      "content_type": [
-        "flatpages", 
-        "flatpage"
-      ]
-    }
-  }, 
-  {
-    "pk": 83, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-08-09 21:22:20", 
-      "object_repr": "/site-description/ -- Site description", 
-      "object_id": "2", 
-      "change_message": "", 
-      "user": 1, 
-      "content_type": [
-        "flatpages", 
-        "flatpage"
-      ]
-    }
-  }, 
-  {
-    "pk": 82, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 21:18:15", 
-      "object_repr": "/about/ -- About", 
-      "object_id": "1", 
-      "change_message": "Modificado content.", 
-      "user": 1, 
-      "content_type": [
-        "flatpages", 
-        "flatpage"
-      ]
-    }
-  }, 
-  {
-    "pk": 81, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 20:24:01", 
-      "object_repr": "terminated", 
-      "object_id": "6", 
-      "change_message": "Modificado label e description.", 
-      "user": 1, 
-      "content_type": [
-        "vocabulary", 
-        "recruitmentstatus"
-      ]
-    }
-  }, 
-  {
-    "pk": 80, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 20:23:58", 
-      "object_repr": "not yet recruiting", 
-      "object_id": "1", 
-      "change_message": "Modificado label e description.", 
-      "user": 1, 
-      "content_type": [
-        "vocabulary", 
-        "recruitmentstatus"
-      ]
-    }
-  }, 
-  {
-    "pk": 79, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 20:23:26", 
-      "object_repr": "Term", 
-      "object_id": "6", 
-      "change_message": "Modificado label.", 
-      "user": 1, 
-      "content_type": [
-        "vocabulary", 
-        "recruitmentstatus"
-      ]
-    }
-  }, 
-  {
-    "pk": 78, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 20:21:32", 
-      "object_repr": "terminated", 
-      "object_id": "1", 
-      "change_message": "Modificado label e description.", 
-      "user": 1, 
-      "content_type": [
-        "vocabulary", 
-        "recruitmentstatus"
-      ]
-    }
-  }, 
-  {
-    "pk": 77, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 20:18:47", 
-      "object_repr": "recruitment completed", 
-      "object_id": "4", 
-      "change_message": "Modificado label.", 
-      "user": 1, 
-      "content_type": [
-        "vocabulary", 
-        "recruitmentstatus"
-      ]
-    }
-  }, 
-  {
-    "pk": 76, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-08-09 20:17:43", 
-      "object_repr": "data analysis completed", 
-      "object_id": "8", 
-      "change_message": "", 
-      "user": 1, 
-      "content_type": [
-        "vocabulary", 
-        "recruitmentstatus"
-      ]
-    }
-  }, 
-  {
-    "pk": 75, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-08-09 20:17:24", 
-      "object_repr": "withdrawn", 
-      "object_id": "7", 
-      "change_message": "", 
-      "user": 1, 
-      "content_type": [
-        "vocabulary", 
-        "recruitmentstatus"
-      ]
-    }
-  }, 
-  {
-    "pk": 74, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-08-09 20:17:09", 
-      "object_repr": "not yet recruiting", 
-      "object_id": "6", 
-      "change_message": "", 
-      "user": 1, 
-      "content_type": [
-        "vocabulary", 
-        "recruitmentstatus"
-      ]
-    }
-  }, 
-  {
-    "pk": 73, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 20:12:04", 
-      "object_repr": "Please enter here which is the health condition descriptor text.\r\nIf you choose a descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will automatically filled.\r\n", 
-      "object_id": "29", 
-      "change_message": "Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 72, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 20:11:35", 
-      "object_repr": "Please enter here which is the health condition descriptor text.\r\nIf you choose a descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will automatically filled.\r\n", 
-      "object_id": "29", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 71, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 20:10:11", 
-      "object_repr": "Please enter here which is the health condition descriptor code.\r\nIf you choose a descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will automatically filled.\r\n", 
-      "object_id": "28", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 70, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 20:01:52", 
-      "object_repr": "Please select here which vocabulary will be used to choose the descriptor of the health condition: \r\nDeCS: Health Sciences Descriptors or\r\nICD-10: International Classification of Diseases or\r\nChemical", 
-      "object_id": "26", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 69, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 19:19:37", 
-      "object_repr": "Please select here one descriptor: \r\nDeCS: Descritores em Ci\u00eancias da Sa\u00fade or \r\nICD-10: Classifica\u00e7\u00e3o Internacional de Doen\u00e7as or\r\nChemical Abstracts Service\r\n\r\n", 
-      "object_id": "26", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 68, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:56:07", 
-      "object_repr": "Please enter here which is the Trial financial or material Support Source.", 
-      "object_id": "23", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 67, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:54:08", 
-      "object_repr": "Please enter here which is primary spondor.\r\nThe Primary Sponsor is the individual, organization, group or other legal entity which takes responsibility for initiating, managing and/or financing the s", 
-      "object_id": "20", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 66, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:43:46", 
-      "object_repr": "Please enter here which is the Secondary Sponsor.", 
-      "object_id": "21", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 65, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:28:36", 
-      "object_repr": "Please enter here which is the individual, organization, group or other legal entity which takes responsibility for initiating, managing and/or financing the study. \r\nThe Primary Sponsor is responsibl", 
-      "object_id": "20", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 64, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:27:37", 
-      "object_repr": "Please enter here which is the exclusion criteria for participant selection, including age and sex.", 
-      "object_id": "19", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 63, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:27:23", 
-      "object_repr": "Please enter here which is the temporal unit of maximal age in inclusion criteria.", 
-      "object_id": "18", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 62, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:27:06", 
-      "object_repr": "Please enter here which is the maximal age in inclusion criteria.", 
-      "object_id": "17", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 61, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:26:51", 
-      "object_repr": "Please enter here which is the temporal unit of minimal age in inclusion criteria.", 
-      "object_id": "16", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 60, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:26:36", 
-      "object_repr": "Please enter here which is the minimal age in inclusion criteria.", 
-      "object_id": "15", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 59, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:26:17", 
-      "object_repr": "Please enter here which is the inclusion criteria for participant selection.", 
-      "object_id": "13", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 58, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:25:24", 
-      "object_repr": "Please enter here which is the gender in inclusion criteria (female, male or both).", 
-      "object_id": "14", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 57, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:25:03", 
-      "object_repr": "Please enter here which is the inclusion criteria for participant selection, including maxinal and minimal age and sex.", 
-      "object_id": "13", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 56, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:24:13", 
-      "object_repr": "Please enter here which is the number of participants that this trial plans to enroll.", 
-      "object_id": "12", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 55, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:23:59", 
-      "object_repr": "Please enter here which is the anticipated or actual date of enrollment of the first participant.", 
-      "object_id": "11", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 54, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:23:45", 
-      "object_repr": "Please enter here which is the countries from which participants will be, are intended to be, or have been recruited.", 
-      "object_id": "10", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 53, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:23:25", 
-      "object_repr": "Please enter here which is the recruitment status of this trial:\r\n\r\n    * Pending: participants are not yet being recruited or enrolled at any site\r\n    * Recruiting: participants are currently being ", 
-      "object_id": "9", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 52, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:18:48", 
-      "object_repr": "Please enter here which is the expansion of the trial public acronym, if available.", 
-      "object_id": "60", 
-      "change_message": "Modificado example. Modificado example para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 51, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:17:50", 
-      "object_repr": "Please enter here which is the expansion of the trial public acronym, if available.", 
-      "object_id": "60", 
-      "change_message": "Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 50, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:17:28", 
-      "object_repr": "Please enter here which is the expansion of the trial public acronym, if available.", 
-      "object_id": "60", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 49, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:16:16", 
-      "object_repr": "Please enter here which is the trial public acronym, if available.", 
-      "object_id": "5", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 48, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:15:28", 
-      "object_repr": "Please enter here which is the title intended for the lay public in easily understood language.", 
-      "object_id": "4", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 47, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:13:46", 
-      "object_repr": "Please enter here which is the expansion of the trial scientific acronym, if available.", 
-      "object_id": "3", 
-      "change_message": "Modificado example. Modificado example para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 46, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:10:06", 
-      "object_repr": "Please enter here which is the expansion of the trial scientific acronym, if available.", 
-      "object_id": "3", 
-      "change_message": "Modificado text para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 45, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:09:34", 
-      "object_repr": "Please enter here which is the expansion of the trial scientific acronym, if available.", 
-      "object_id": "3", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 44, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 18:08:21", 
-      "object_repr": "Please enter here which is the expansion of the scientific acronym.", 
-      "object_id": "3", 
-      "change_message": "Modificado text. Adicionado field help translation \"pt-BR\"", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 43, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 17:11:02", 
-      "object_repr": "Please enter here which is the trial scientific acronym, if available.", 
-      "object_id": "2", 
-      "change_message": "Modificado text.", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 42, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-08-09 17:10:11", 
-      "object_repr": "Please enter here which is scientific title of the study as it appears in the protocol submitted for funding and ethical review.", 
-      "object_id": "1", 
-      "change_message": "Modificado text. Modificado text para field help translation \"pt-BR\". Deletado field help translation \"es\".", 
-      "user": 6, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 41, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-22 11:51:24", 
-      "object_repr": "What studies need to be registered?", 
-      "object_id": "13", 
-      "change_message": "Modificado answer. Modificado answer para question translation \"pt-BR\".", 
-      "user": 1, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 40, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-22 11:40:30", 
-      "object_repr": "What studies need to be registered?", 
-      "object_id": "13", 
-      "change_message": "Modificado answer para question translation \"pt-BR\".", 
-      "user": 1, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 39, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-21 21:38:25", 
-      "object_repr": "System", 
-      "object_id": "1", 
-      "change_message": "Adicionado category translation \"pt-BR\" Adicionado category translation \"es\"", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 38, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-07-21 21:29:01", 
-      "object_repr": "How do I register a trial?", 
-      "object_id": "16", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 37, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-07-21 21:23:10", 
-      "object_repr": "Who is responsible for registering a trial?", 
-      "object_id": "15", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 36, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-07-21 18:27:19", 
-      "object_repr": "When should studies be registered?", 
-      "object_id": "14", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 34, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:25:19", 
-      "object_repr": "Football (Soccer)", 
-      "object_id": "5", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 35, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:25:19", 
-      "object_repr": "Medicamentos", 
-      "object_id": "4", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 27, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Is Dunga nice?", 
-      "object_id": "12", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 28, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Aspirima d\u00e1 dor de barriga?", 
-      "object_id": "11", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 29, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Pellentesque ullamcorper augue at ante rhoncus ultrices?", 
-      "object_id": "10", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 30, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Donec hendrerit ligula eget arcu congue gravida?", 
-      "object_id": "9", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 31, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Vestibulum aliquet nisi vel risus pharetra auctor?", 
-      "object_id": "8", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 32, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Mauris aliquam, mi non hendrerit luctus?", 
-      "object_id": "7", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 33, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 3, 
-      "action_time": "2010-07-21 18:24:58", 
-      "object_repr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", 
-      "object_id": "6", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 26, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-21 18:23:59", 
-      "object_repr": "What studies need to be registered?", 
-      "object_id": "13", 
-      "change_message": "Modificado answer.", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 25, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-07-21 18:20:25", 
-      "object_repr": "What studies need to be registered?", 
-      "object_id": "13", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 24, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-21 18:13:37", 
-      "object_repr": "Study registration", 
-      "object_id": "6", 
-      "change_message": "Nenhum campo modificado.", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 23, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-07-21 18:13:31", 
-      "object_repr": "Study registration", 
-      "object_id": "6", 
-      "change_message": "", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 22, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-20 23:58:56", 
-      "object_repr": "Please enter here which is the relation of the contact: a contact for Public Queries, for Scientific Queries or for Site Queries.", 
-      "object_id": "59", 
-      "change_message": "Modificado text.", 
-      "user": 17, 
-      "content_type": [
-        "assistance", 
-        "fieldhelp"
-      ]
-    }
-  }, 
-  {
-    "pk": 21, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-20 23:55:52", 
-      "object_repr": "/about/ -- About", 
-      "object_id": "1", 
-      "change_message": "Modificado content.", 
-      "user": 17, 
-      "content_type": [
-        "flatpages", 
-        "flatpage"
-      ]
-    }
-  }, 
-  {
-    "pk": 20, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-07-20 15:32:17", 
-      "object_repr": "Ensaio cl\u00ednico randomizado para avaliar a efic\u00e1cia e seguran\u00e7a do uso concomitante de rifampicina e 600 X Efavirenz\u2026", 
-      "object_id": "31", 
-      "change_message": "Modificado status e fields_status.", 
-      "user": 1, 
-      "content_type": [
-        "reviewapp", 
-        "submission"
-      ]
-    }
-  }, 
-  {
-    "pk": 19, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 15:12:03", 
-      "object_repr": "Not\u00edcia teste do dia 22", 
-      "object_id": "6", 
-      "change_message": "Modificado status.", 
-      "user": 1, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 18, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-06-22 15:11:29", 
-      "object_repr": "Not\u00edcia teste do dia 22", 
-      "object_id": "6", 
-      "change_message": "", 
-      "user": 1, 
-      "content_type": [
-        "reviewapp", 
-        "news"
-      ]
-    }
-  }, 
-  {
-    "pk": 17, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-06-22 15:05:46", 
-      "object_repr": "Is Dunga nice?", 
-      "object_id": "12", 
-      "change_message": "", 
-      "user": 1, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 16, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 15:03:11", 
-      "object_repr": "admin_gamarski", 
-      "object_id": "20", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 15, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 15:03:03", 
-      "object_repr": "admin_claudio", 
-      "object_id": "21", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 14, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 14:44:06", 
-      "object_repr": "josue", 
-      "object_id": "11", 
-      "change_message": "Modificado password e is_active.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 13, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 14:28:48", 
-      "object_repr": "josue", 
-      "object_id": "11", 
-      "change_message": "Modificado email.", 
-      "user": 17, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 12, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 14:21:19", 
-      "object_repr": "admin_josue", 
-      "object_id": "17", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 11, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 14:19:04", 
-      "object_repr": "Efficacy Study of Pioglitazone Compared to Glimepiride on Coronary Atherosclerotic Disease Progression in Subjects With\u2026", 
-      "object_id": "24", 
-      "change_message": "Modificado status.", 
-      "user": 1, 
-      "content_type": [
-        "reviewapp", 
-        "submission"
-      ]
-    }
-  }, 
-  {
-    "pk": 10, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-22 13:30:56", 
-      "object_repr": "reviewer", 
-      "object_id": "3", 
-      "change_message": "Modificado user_permissions.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 9, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-18 14:33:32", 
-      "object_repr": "admin_margot", 
-      "object_id": "6", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 8, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-14 17:45:40", 
-      "object_repr": "admin", 
-      "object_id": "1", 
-      "change_message": "Modificado email.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
+    "model": "reviewapp.news", 
+    "fields": {
+      "status": "published", 
+      "text": "The article of Zhao-Xiang Bian and Tai-Xiang Wu published in Trials, volume 11, points to the relevance of establishing a global network for the trial registration to ensure uniform, international consistency in policy and enforcement of trial registration and data transparency. Their concern relates to the differences on clinical trial registration legislation between countries. Their proposal is to establish this network in regional basis with an international advisory committee formed by WHO to provide consultation for each country and help them to meet this aim. Also, this advisory committee could be charged with the responsibility of monitoring the implementation of such legislation through different approaches, such as publishing white paper of trial registration annually. Read more at http://www.trialsjournal.com/content/11/1/64 ", 
+      "created": "2010-08-13 16:29:51", 
+      "creator": 17, 
+      "title": "Article on clinical trial registration legislation"
     }
   }, 
   {
     "pk": 7, 
-    "model": "admin.logentry", 
+    "model": "reviewapp.news", 
     "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-14 14:48:32", 
-      "object_repr": "margot", 
-      "object_id": "9", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
+      "status": "published", 
+      "text": "A meeting to discuss a potential Clinical Trials Registry Network for Latin America and the Caribbean (LAC) was held in Washington DC, 27-28 April 2010. The overall aim was to discuss the potential development of a cooperative network of interoperable national and regional clinical trials registries in the region. Specific aims were:\r\n\r\n    1) To share the current state of development of the ICTRP and the participation of LAC\r\n\r\n    2) To develop a strategy for achieving clinical trial registration in LAC, including:\r\n\r\n          * A strategy for developing a cooperative network of primary and partner registries meeting WHO criteria and a single regional registration platform\r\n          * A strategy for developing common and interoperable software platform\r\n          * Sharing the experience of LAC and other regions developing strategies for clinical trial registration\r\n          * Identifying key partners and potential advisers to the implementation\r\n\r\nsource: ICTRP/WHO", 
+      "created": "2010-08-10 18:27:45", 
+      "creator": 17, 
+      "title": "Clinical Trials Registry Network for Latin America and the Caribbean"
     }
-  }, 
-  {
-    "pk": 6, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-06-14 14:46:55", 
-      "object_repr": "Aspirima d\u00e1 dor de barriga?", 
-      "object_id": "11", 
-      "change_message": "", 
-      "user": 1, 
-      "content_type": [
-        "assistance", 
-        "question"
-      ]
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 1, 
-      "action_time": "2010-06-14 14:46:19", 
-      "object_repr": "Medicamentos", 
-      "object_id": "4", 
-      "change_message": "", 
-      "user": 1, 
-      "content_type": [
-        "assistance", 
-        "category"
-      ]
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-14 13:55:51", 
-      "object_repr": "Demo do dia 14 de junho", 
-      "object_id": "12", 
-      "change_message": "Modificado status.", 
-      "user": 1, 
-      "content_type": [
-        "reviewapp", 
-        "submission"
-      ]
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-14 13:34:02", 
-      "object_repr": "gamarski", 
-      "object_id": "5", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "admin.logentry", 
-    "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-14 13:33:18", 
-      "object_repr": "laguardia", 
-      "object_id": "7", 
-      "change_message": "Modificado is_staff e is_superuser.", 
-      "user": 1, 
-      "content_type": [
-        "auth", 
-        "user"
-      ]
-    }
-  }, 
+  },
   {
     "pk": 1, 
-    "model": "admin.logentry", 
+    "model": "flatpages_polyglot.flatpagetranslation", 
     "fields": {
-      "action_flag": 2, 
-      "action_time": "2010-06-14 13:19:01", 
-      "object_repr": "laguardia", 
-      "object_id": "7", 
-      "change_message": "Modificado is_active.", 
-      "user": 1, 
+      "content": "<p><b>Esta \u00e9 uma vers\u00e3o beta do Registro Brasileiro de Ensaios Cl\u00ednicos (RBEC) e os registros de ensaios cadastrados s\u00e3o fict\u00edcios.</b> O Registro Brasileiro de Ensaios Cl\u00ednicos \u00e9 uma plataforma virtual de acesso livre para registro gratuito de ensaios cl\u00ednicos realizados em seres humanos, em andamento ou finalizados, por pesquisadores brasileiros e estrangeiros.</p>", 
+      "title": "Descri\u00e7\u00e3o do site", 
       "content_type": [
-        "auth", 
-        "user"
-      ]
+        "flatpages", 
+        "flatpage"
+      ], 
+      "language": "pt-BR", 
+      "object_id": 2
     }
   }, 
   {
@@ -5822,7 +663,7 @@
         3, 
         2
       ], 
-      "content": "<p>O Registro Brasileiro de Ensaios Cl\u00ednicos (RBEC) \u00e9 uma plataforma virtual de acesso livre para registro gratuito de ensaios cl\u00ednicos realizados em seres humanos, em andamento ou finalizados, por pesquisadores brasileiros e estrangeiros.</p>", 
+      "content": "<p><b>This is a beta version of the Brazilian Clinical Trial Registry (BCTR) and the registers showed here are fictional.</b> The Brazilian Clinical Trial Registry is a open access virtual platform for free registration of ongoing or completed clinical trials performed in human beings by brazilian and foreign researchers.</p>", 
       "enable_comments": false
     }
   }
