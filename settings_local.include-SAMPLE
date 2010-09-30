@@ -41,8 +41,6 @@ if DEBUG:
     INSTALLED_APPS += (
         ## external dependency for generating model ER diagrams
         # 'graphviz',
-        ## external dependency for migrating database schemas
-        # 'south',
         ## external dependency for translating UI strings
         # 'rosetta',
         ## external dependency for running tests with nose
