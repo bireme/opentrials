@@ -4,7 +4,7 @@ body {
     text-align: left;
     font-size: 78%;
     font-family: Trebuchet MS, Arial, sans-serif;
-    background: #f2f2f0;
+    background: #FFF;
 }
 
 P {
@@ -17,16 +17,14 @@ pre {
 }
 
 H2, .topMenu LI A, .NewsTitle {
-    xletter-spacing: -1px;
+    letter-spacing: -1px;
 }
 
 
-H2, H2 a {
-    color: #006837;
+H2 {
+    color: #b00303;
     text-transform: uppercase;
     margin: 0px;
-	text-decoration:none;
-	font-size:19px;
 }
 IMG {
     border: none;
@@ -59,18 +57,17 @@ blockquote {
 /* STYLE for BORDERED MAIN BLOCKS */
 
 .container {
-    margin:0 auto;
-	width:1004px;
+    min-width: 1004px;
+    margin: 0px;
+    padding: 0;
     line-height: 1.7em;
-	background:#fff;
 }
 
 /*TOP BANNER*/
 .top {
-    background: #089046 url(../images/top_bg.jpg) repeat-y;
-    height: 110px;
-	border-top:5px solid #2E3192;
-	border-bottom:3px solid #2E3192;
+    background: url(../images/top_bg.jpg) repeat-x;
+    border-bottom: 2px solid #acc0c9;
+    height: 90px;
 }
 
 .top .banner {
@@ -81,28 +78,50 @@ blockquote {
 }
 .identification {
     position: absolute;
-    top: -1em;
+    top: 4em;
     left: 0;
 }
-
+.identification H1 {
+    margin: 0px 0px 0px 40px;
+    clear: both;
+    padding-top: 12px;
+    font-size: 200%;
+    font-weight: normal;
+}
 
 .identification H1 A {
-    color: transparent;
+    color: #0c4762;
     text-decoration: none;
-
 }
 .institutions UL {
     margin: 0px;
     padding-left: 3.2em;
 }
-
-
+.institutions UL LI {
+    float: left;
+    margin-right: 12px;
+}
+.institutions A#FIOCRUZ {
+    display: block;
+    width: 104px;
+    height: 30px;
+    background: url(../images/fiocruz.png) no-repeat;
+}
+.institutions A#BIREME {
+    display: block;
+    width: 55px;
+    height: 30px;
+    background: url(../images/bireme.png) no-repeat;
+}
+.institutions A SPAN {
+    display: none;
+}
 .topRight {
     float: right;
     width: 440px;
     padding: 0px;
     margin-right: 10px;
-    background: url(../images/login_bg.png) no-repeat;
+    background: url(../images/login_bg.jpg) no-repeat;
 }
 
 /* LOGIN */
@@ -112,10 +131,9 @@ blockquote {
 }
 .loginForm LABEL {
     display: block;
-    color: #666666;
+    color: #0c4762;
     text-transform: uppercase;
     font-size: 90%;
-	font-weight:bold;
 }
 .loginForm .formSegment {
     float: left;
@@ -123,11 +141,10 @@ blockquote {
 }
 .loginForm .submit {
     background: url(../images/submit_login.gif) no-repeat;
-    color: #ffffff;
+    color: #1c4507;
     text-transform: uppercase;
     font-size: 80%;
     border: 0px;
-	font-weight:bold;
     padding: 4px 8px;
     margin: 21px 0px 0px 0px;
     width: 52px;
@@ -204,65 +221,51 @@ blockquote {
     vertical-align: middle;
 }
 
-.menu {
-    background: #e6ecef;
-    padding: 12px 40px;
-    text-transform: uppercase;
-}
-
-.bottomMenu {
-    float: left;
-    margin: 19px 2px 0px 2px;
-}
-
 /* TOP MENU */
 .topMenu {
     float: left;
-    margin: 3px 2px 0px 2px;
+    margin: 19px 2px 0px 2px;
 }
 .topMenu UL {
     margin: 0px;
     padding: 0px;
 }
-.topMenu LI, .languages LI {
+.topMenu LI {
     display: inline;
-    border-right: 1px solid #006837;
+    border-right: 1px solid #b00303;
     padding: 0px 8px 0px 4px;
 }
 .topMenu LI:last-child {
     border-right: none;
 }
-.topMenu LI A, .languages A {
-    color: #006837;
-    xfont-weight: bold;
+.topMenu LI A {
+    color: #b00303;
+    font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
-	font-size:16px;
 }
-.topMenu LI A:hover, languages A:hover {
-    color: #05914f;
+.topMenu LI A:hover {
+    color: #ff0000;
 }
 .search {
-    margin-top: 4px;
-    width: 40%;
-    float: left;
+    margin-top: 18px;
 }
 .search .submit {
     background: url(../images/submit_search.gif) no-repeat;
-    color: #FFF;
-    font-size: 90%;
+    color: #1c4507;
+    text-transform: uppercase;
+    font-size: 80%;
     border: 0px;
-    padding: 5px;
-	font-weight:bold;
-    width: 118px;
-
+    padding: 4px;
+    width: 61px;
+    height: 20px;
 }
 .search .submit:hover {
     xbackground: url(../images/submit_searchHover.gif) no-repeat;
 }
 .languages {
     float: right;
-    margin: 3px 2px 0px 2px;
+    margin: 62px 12px 0px 2px;
 }
 .languages UL {
     margin: 0px;
@@ -275,11 +278,20 @@ blockquote {
 .languages LI:last-child {
     border-right: none;
 }
-
+.languages A {
+    color: #0c4762;
+    xfont-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+	font-size:14px;
+}
+.languages A:hover {
+    color: #1073a0;
+}
 
 /* BREADCRUMB */
 .breadcrumb {
-    background: #f6fbfd;
+    background: #e6ecef;
     padding: 12px 40px;
     text-transform: uppercase;
 }
@@ -287,16 +299,16 @@ blockquote {
     color: #0c4762;
     font-weight: bold;
     letter-spacing: -1px;
-    font-size: 115%;
+    font-size: 130%;
 }
 .breadcrumb SMALL.current A {
-    color: #006837;
+    color: #b00303;
     font-weight: bold;
     letter-spacing: -1px;
     font-size: 150%;
 }
 .breadcrumb BIG {
-    color: #006837;
+    color: #b00303;
     font-weight: bold;
     letter-spacing: -1px;
     font-size: 150%;
@@ -326,7 +338,7 @@ blockquote {
     margin-right: 2em;
     padding-right: 2em;
     border-right: 1px solid #d7d7d7;
-    min-height: 349px;
+    min-height: 500px;
 }
 
 .wide .middle .mainContent {
@@ -412,12 +424,15 @@ blockquote {
     margin-bottom: 26px;
 }
 .middle .news SMALL {
-    color: #0071bc;
-	font-size:11px;
-	font-weight:bold;
+    color: #547e91;
 }
 .middle .news SMALL, .middle .news A {
     display: block;
+    color: #0c4762;
+}
+
+.middle .news SMALL, .middle .news A:hover {
+    color: #1073a0;
 }
 
 .middle .news A.pnumber {
@@ -426,8 +441,8 @@ blockquote {
 
 .middle .news A.NewsTitle, SPAN.NewsTitle {
     font-family:helvetica;
-font-size:101%;
-    color: #39b54a;
+    font-size:101%;
+    color: #0c4762;
     text-decoration: none;
     font-weight: bold;
 	letter-spacing: 0px;
@@ -734,10 +749,9 @@ table.trialsummary {
     clear: both;
     margin-top: 20px;
     padding: 5px;
-    border-top: 5px solid #2e3192;
-    background:#ffcb00;
+    border-width: 1px 0 0;
+    background:#0c4762;
     font-size:80%;
-	height:60px;
 
 }
 
@@ -756,52 +770,7 @@ table.trialsummary {
     margin-left: 20px;
     line-height: 150%;
 }
-.institutions{
-	margin-left:180px;
-	}
-.institutions UL LI {
-    float: left;
-    margin-right: 12px;
-	display:inline;
-}
-.institutions A#FIOCRUZ {
-    width: 104px;
-    height: 30px;
-    background: url(../images/fiocruz.png) no-repeat !important;
-	display:block;
-	margin-top:10px;
-}
-.institutions A#BIREME {
-   height:48px;
-margin-top:10px;
-width:114px;
-    background: url(../images/bireme.png) no-repeat !important;
-	display:block;
 
-}
-.institutions A#SUS{
-    width: 90px;
-    height: 50px;
-    background: url(../images/sus.gif) no-repeat !important;
-	display:block;
-}
-.institutions A#MINISTERIOSAUDE{
-    width: 97px;
-    height: 30px;
-    background: url(../images/ms.gif) no-repeat !important;
-	display:block;
-	margin-top:10px;
-}
-.institutions A#GOVERNOFEDERAL {
-    width: 112px;
-    height: 30px;
-    background: url(../images/gov.gif) no-repeat !important;
-	display:block;
-	margin-top:10px;
-}
-.institutions A SPAN {
- 	display:none;
-}
 
 /* AJAX DeCS Tools */
 td div.decstool {
@@ -852,69 +821,17 @@ legend{
 
 /* BARRA GOVERNO FEDERAL */
 
-#govbar {
-    x-moz-border-radius-topleft:20px;
-    x-moz-border-radius-topright:20px;
-    x-webkit-border-top-left-radius:20px;
-    x-webkit-border-top-right-radius:20px;
-
-    background:url("/static/images/ms.png") no-repeat scroll 0 0 transparent;
-    height:32px;
-    width:100%;
-}
-
-#govbar .saude {
-    display:block;
-    float:left;
+#bar_top {
+    -moz-border-radius-topleft:20px;
+    -moz-border-radius-topright:20px;
+    -webkit-border-top-left-radius:20px;
+    -webkit-border-top-right-radius:20px;
+    
+    background-color: #0C4762;
     height:35px;
-    margin:0 0 0 42px;
-    text-indent:-5000px;
-    width:175px;
-}
-
-.barra_MSaude {
-    width: 100%;
-    height: 30px;
-    background:#ffcc00;
-}
-
-.barra_MSaude .barra1000 {
     width:100%;
-    margin: 0 auto;
-}
-.barra_MSaude .barra1000 .minSaude a {
-    width: 152px;
-    height: 21px;
-    float: left;
-    margin: 1px;
-    background: url(../images/ms.gif) top left no-repeat;
-}
-/*.barra_MSaude .barra1000 .brasilGov a {
-    margin: 1px;
-    width: 96px;
-    height: 21px;
-    float: right;
-    background: url(../images/brasil.gif) top left no-repeat;
-}*/
-.barra_MSaude .barra1000 .minSaude, .barra_MSaude .barra1000 .form  {
-    float: left;
 }
 
-.barra_MSaude .barra1000 .form {
-    margin: 2px 0px 0px 50px;
-
-}
-.barra_MSaude .barra1000 .form .pr{
-    background: #ffcc00 !important;
-    font-size: 10px;
-}
-
-.barra_MSaude .barra1000 .brasilGov  {
-    float: right;
-}
-.barra_MSaude .barra1000 DIV a span  {
-    display: none;
-}
 .news p {
 	color:#666666;
 	}
@@ -924,7 +841,6 @@ a.pnumber{
 	text-decoration:none;
 	}
 .news table{
-	 background: url(../images/line.gif) bottom left no-repeat;
 	 min-width:59%;
 	 color:#808080;
 	}
