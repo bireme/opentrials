@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block body %}
+
+<h2>{% trans "Forbidden (403)" %}</h2>
+<p>{% trans "You don't have permission to access "%}http://{{ site.domain }}{{ request.path }}</p>
+
+{% endblock %}

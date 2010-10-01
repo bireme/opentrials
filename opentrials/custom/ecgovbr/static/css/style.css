@@ -1,0 +1,940 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 78%;
+    font-family: Trebuchet MS, Arial, sans-serif;
+    background: #f2f2f0;
+}
+
+P {
+    font-family: arial;
+}
+
+pre {
+    font-family: inherit;
+    font-size: 1em;
+}
+
+H2, .topMenu LI A, .NewsTitle {
+    xletter-spacing: -1px;
+}
+
+
+H2, H2 a {
+    color: #006837;
+    text-transform: uppercase;
+    margin: 0px;
+	text-decoration:none;
+	font-size:19px;
+}
+IMG {
+    border: none;
+}
+
+FORM {
+    margin: 0px;
+}
+blockquote {
+    font-weight: bold;
+    font-style: italic;
+}
+.spacer {
+    clear: both;
+    display: block;
+    font-size: 1px;
+    margin: 0px;
+    padding: 0px;
+    height: 1px;
+}
+.textEntry {
+    width: 110px;
+    border: 1px solid #848484;
+    background: url(../images/input_bg.gif) no-repeat;
+}
+.textEntryFocus {
+    border: 1px solid #0c4762;
+}
+
+/* STYLE for BORDERED MAIN BLOCKS */
+
+.container {
+    margin:0 auto;
+	width:1004px;
+    line-height: 1.7em;
+	background:#fff;
+}
+
+/*TOP BANNER*/
+.top {
+    background: #089046 url(../images/top_bg.jpg) repeat-y;
+    height: 110px;
+	border-top:5px solid #2E3192;
+	border-bottom:3px solid #2E3192;
+}
+
+.top .banner {
+    width: 50%;
+    float: left;
+    padding-top: 15px;
+    position: relative;
+}
+.identification {
+    position: absolute;
+    top: -1em;
+    left: 0;
+}
+
+
+.identification H1 A {
+    color: transparent;
+    text-decoration: none;
+
+}
+.institutions UL {
+    margin: 0px;
+    padding-left: 3.2em;
+}
+
+
+.topRight {
+    float: right;
+    width: 440px;
+    padding: 0px;
+    margin-right: 10px;
+    background: url(../images/login_bg.png) no-repeat;
+}
+
+/* LOGIN */
+.loginForm {
+    float: left;
+    margin: 0px 8px 0px 12px;
+}
+.loginForm LABEL {
+    display: block;
+    color: #666666;
+    text-transform: uppercase;
+    font-size: 90%;
+	font-weight:bold;
+}
+.loginForm .formSegment {
+    float: left;
+    margin: 1px 8px 0px 0px;
+}
+.loginForm .submit {
+    background: url(../images/submit_login.gif) no-repeat;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 80%;
+    border: 0px;
+	font-weight:bold;
+    padding: 4px 8px;
+    margin: 21px 0px 0px 0px;
+    width: 52px;
+    height: 20px;
+}
+.loginForm .submit:hover {
+    background: url(../images/submit_loginHover.gif) no-repeat;
+}
+.loginOption {
+    padding-top: 18px;
+}
+.loginOption UL {
+    margin: 0px;
+}
+.loginOption LI, .userData_block LI {
+    line-height: 90%;
+}
+.loginOption UL A, .userData_block LI A {
+    font-size: 80%;
+    color: #333;
+    text-decoration: none;
+}
+
+/* USER DATA */
+.userData {
+    margin-left: 10px;
+}
+.userData .userData_block {
+    float: left;
+    margin: 0px 8px 0px 12px;
+}
+.userData .userData_block, .userData .userData_block A {
+    color:#0c4762;
+}
+.userData .userData_block A:hover {
+    text-decoration: underline;
+}
+.userData .userData_block SPAN {
+    font-size: 80%;
+    text-transform: uppercase;
+}
+.userData .userData_block BIG {
+    display: block;
+}
+.userData .userData_block UL {
+    margin: 0px 0px 0px 12px;
+    padding: 18px 0px 0px 0px;
+}
+.userData .logout {
+    width: 80px;
+    height: 29px;
+    margin-top: 12px;
+}
+
+.userData .logout A {
+    margin-top: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.userData .logout A img.hover {
+    display: none;
+}
+
+.userData .logout A:hover img.hover {
+    display: inline;
+}
+
+.userData .logout A:hover img.nohover {
+    display: none;
+}
+
+.userData .logout A img {
+    vertical-align: middle;
+}
+
+.menu {
+    background: #e6ecef;
+    padding: 12px 40px;
+    text-transform: uppercase;
+}
+
+.bottomMenu {
+    float: left;
+    margin: 19px 2px 0px 2px;
+}
+
+/* TOP MENU */
+.topMenu {
+    float: left;
+    margin: 3px 2px 0px 2px;
+}
+.topMenu UL {
+    margin: 0px;
+    padding: 0px;
+}
+.topMenu LI, .languages LI {
+    display: inline;
+    border-right: 1px solid #006837;
+    padding: 0px 8px 0px 4px;
+}
+.topMenu LI:last-child {
+    border-right: none;
+}
+.topMenu LI A, .languages A {
+    color: #006837;
+    xfont-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+	font-size:16px;
+}
+.topMenu LI A:hover, languages A:hover {
+    color: #05914f;
+}
+.search {
+    margin-top: 4px;
+    width: 40%;
+    float: left;
+}
+.search .submit {
+    background: url(../images/submit_search.gif) no-repeat;
+    color: #FFF;
+    font-size: 90%;
+    border: 0px;
+    padding: 5px;
+	font-weight:bold;
+    width: 118px;
+
+}
+.search .submit:hover {
+    xbackground: url(../images/submit_searchHover.gif) no-repeat;
+}
+.languages {
+    float: right;
+    margin: 3px 2px 0px 2px;
+}
+.languages UL {
+    margin: 0px;
+    padding: 0px;
+}
+.languages LI {
+    display: inline;
+    padding: 0px 8px 0px 4px;
+}
+.languages LI:last-child {
+    border-right: none;
+}
+
+
+/* BREADCRUMB */
+.breadcrumb {
+    background: #f6fbfd;
+    padding: 12px 40px;
+    text-transform: uppercase;
+}
+.breadcrumb SMALL A {
+    color: #0c4762;
+    font-weight: bold;
+    letter-spacing: -1px;
+    font-size: 115%;
+}
+.breadcrumb SMALL.current A {
+    color: #006837;
+    font-weight: bold;
+    letter-spacing: -1px;
+    font-size: 150%;
+}
+.breadcrumb BIG {
+    color: #006837;
+    font-weight: bold;
+    letter-spacing: -1px;
+    font-size: 150%;
+    margin-left: 4px;
+}
+/* MIDDLE */
+.wide .middle {
+    width: 90%;
+}
+.middle .leftCol, .middle .rightCol {
+    float: left;
+    margin: 0 1%;
+    width: 48%;
+}
+.middle .leftCol H2, .middle .rightCol H2{
+    float: left;
+    width: 60%;
+}
+.middle {
+    width: 92%;
+    margin: 20px auto 0px auto;
+    min-height: 349px;
+}
+.middle .mainContent {
+    float: left;
+    width: 50%;
+    margin-right: 2em;
+    padding-right: 2em;
+    border-right: 1px solid #d7d7d7;
+    min-height: 349px;
+}
+
+.wide .middle .mainContent {
+    border: none;
+    width: 100%;
+    margin-right: 0em;
+    padding-right: 0em;
+}
+
+.mainContent .success {
+    border: 1px solid #99AA99;
+    background-color: #CCFFCC;
+    padding: 0.7em 0.5em 0.5em;
+    margin: 0 0 1em;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    position: relative;
+}
+
+.mainContent .warning {
+    border: 1px solid #999900;
+    background-color: #FFFFCC;
+    padding: 0.7em 0.5em 0.5em;
+    margin: 0 0 1em;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    position: relative;
+}
+
+.mainContent .warning a.button {
+    position: absolute;
+    cursor: pointer;
+    right: 15px;
+    top: 5px;
+}
+
+.mainContent .warning a.maximize {
+    display: none;
+}
+
+.mainContent .warning-minimized a.minimize {
+    display: none;
+}
+
+.mainContent .warning-minimized a.maximize {
+    display: inline;
+}
+/*
+.mainContent .warning-minimized ul {
+    display: none;
+}*/
+
+.mainContent .warning ul li {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+.mainContent .warning ul li a span{
+    display: none;
+}
+
+.mainContent .warning ul li a img{
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.mainContent .warning ul li.ack{
+    text-decoration: line-through;
+}
+
+.mainContent .warning ul li.ack a{
+    display: none;
+}
+
+.sideBar {
+    float: left;
+    width: 43%;
+}
+
+.middle .news {
+    padding-right: 17px;
+}
+.middle .news LI {
+    margin-bottom: 26px;
+}
+.middle .news SMALL {
+    color: #0071bc;
+	font-size:11px;
+	font-weight:bold;
+}
+.middle .news SMALL, .middle .news A {
+    display: block;
+}
+
+.middle .news A.pnumber {
+    display: inline;
+}
+
+.middle .news A.NewsTitle, SPAN.NewsTitle {
+    font-family:helvetica;
+font-size:101%;
+    color: #39b54a;
+    text-decoration: none;
+    font-weight: bold;
+	letter-spacing: 0px;
+}
+.middle .news A.NewsTitle:hover {
+    color: #1073a0;
+    text-decoration: none;
+}
+.middle .news A.NewsExcerpt {
+    color: #333;
+    text-decoration: none;
+    font-family: arial;
+}
+.middle .news A.NewsExcerpt:hover {
+    text-decoration: underline;
+}
+
+.highlights {
+    height:41px;
+}
+
+.highlights img{
+   height:46px;
+margin-left:112px;
+	
+}
+
+.highlights ul {
+ margin-top:0px !important;
+	
+}
+.links LI {
+    margin-bottom: 12px;
+}
+.links LI A {
+    font-family: arial;
+    color: #333;
+    text-decoration: none;
+}
+.links LI A:hover {
+    text-decoration: underline;
+}
+
+
+/* TABLES */
+table.dataTable {
+    margin-bottom: 10px;
+    clear: both;
+    width: 100%;
+}
+
+form table.dataTable {
+    width: 100%;
+}
+
+form table.dataTable th {
+    width: 15%;
+}
+
+form table.dataTable img {
+    margin-right: 0.5em;
+    vertical-align: middle;
+    display:block;
+    float: left;
+}
+
+form table.dataTable label {
+    display:block;
+    float: left;
+    width: 81%;
+}
+
+form table.dataTable th,
+form table.dataTable td {
+    border: none;
+}
+
+form table.odd th {
+    background-color: #DEEEDE;
+}
+
+form table.odd td {
+    background-color: #EFFFEF;
+}
+
+table.dataTable, table.dataTable td {
+    color:#333;
+}
+table.dataTable td {
+    font-family: arial;
+    font-size: 80%;
+    line-height: 120%;
+    vertical-align: top;
+}
+table.dataTable td.title, table.dataTable td.subject {
+    font-weight: bold;
+}
+table.dataTable td.date {
+
+}
+table.dataTable td A {
+    color: #333;
+    text-decoration: none;
+}
+table.dataTable td A:hover {
+    color: #333;
+    text-decoration: underline;
+}
+table.dataTable TH, table.dataTable TD {
+    border-bottom: 1px solid #c9c9c9;
+    padding: 6px 4px;
+}
+
+table.dataTable TH {
+    color: #0c4762;
+    font-size: 120%;
+    background: #dedede;
+    font-size: 110%;
+}
+
+table.dataTable th A {
+    color: #0c4762;
+    text-decoration: none;
+    font-weight: bold;
+}
+table.dataTable th A:hover {
+    color: #1073a0;
+    text-decoration: none;
+}
+
+table.dataTable .even TD {
+    background: #f5f5f5;
+}
+table.dataTable .odd TD {
+    background: #EFEFEF;
+}
+
+table.dataTable textarea {
+    width: 60%;
+}
+
+table.dataTable td.help div.issue {
+}
+
+table.trialsummary {
+    width: 100%;
+}
+.dataTable UL {
+    margin: 0px;
+    padding: 0px;
+}
+.dataTable TD LI {
+    float: left;
+    margin-right: 4px;
+}
+
+.dataTable td li.asmListItem {
+    float: none;
+}
+
+.dataTable A.history, .dataTable A.iteraction {
+    display: block;
+    width: 16px;
+    height: 16px;
+
+}
+.dataTable A.history {
+    background: url(../images/icon_history.gif) no-repeat;
+}
+.dataTable A.iteraction {
+    background: url(../images/icon_iteraction.gif) no-repeat;
+}
+.dataTable TD LI A SPAN {
+    display: none;
+}
+.actions {
+    padding: 8px 0px;
+    float: right;
+    width: 91px;
+    text-align: right;
+}
+
+.showAll, .addNew {
+    display: block;
+    width: 91px;
+    height: 20px;
+    background: url(../images/button_showAll.gif) no-repeat;
+    color: #7d7d7d;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 80%;
+}
+.showAll:hover, .addNew:hover {
+    background: url(../images/button_showAllHover.gif) no-repeat;
+    color: #b25d02;
+}
+/* GROUP STEPS NAVIGATION AND CONTENT */
+#workarea {
+    float: left;
+    left: 100%;
+    width: 81%;
+}
+
+#rebracmenu {
+    float: left;
+    width: 16%;
+    left: 1%;
+}
+
+#rebracmenu #usermenu div {
+    padding: 3em;
+    border-bottom: 1px dotted #D4D4FF;
+    line-height: 100%;
+    text-align: center;
+}
+
+#rebracmenu #usermenu div * {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+#rebracmenu ul {
+    list-style-type: none;
+    padding-left: 1em;
+}
+
+#rebracmenu li {
+    text-transform: capitalize;
+    margin-bottom: 0.5em;
+    border-bottom: 1px dotted #D4D4FF;
+}
+
+/* STEPS NAVIGATION*/
+.stepmenu {
+    background: transparent url(/static/bg_stepmenu.png) repeat-x;
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+.stepmenu ul {
+    margin: 0;
+    padding: 0 0 0 2em;
+    list-style: none;
+}
+
+.stepmenu ul li {
+    display: block;
+    float: left;
+    width: 9%;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.stepmenu li.current {
+    border: 1px inset white;
+}
+
+.stepmenu a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #0a5172;
+    font-weight: bold;
+    font-size:11px;
+}
+
+.stepmenu li:hover {
+    text-decoration: underline;
+}
+
+.stepmenu-top {
+    border-width: 0 0 1px;
+}
+
+.stepmenu-bottom {
+    border-width: 1px 0 0;
+}
+
+/*MAIN CONTENT*/
+#content {
+    padding: 10px;
+}
+
+#content a:link, #content a:visited {
+    text-decoration: none;
+    background: inherit;
+
+}
+
+#content a:hover {
+    text-decoration: underline;
+
+}
+
+#content h2 {
+    padding: 0.2em 0;
+    font-weight:normal;
+    margin-top:30px;
+}
+
+/*FOOTER*/
+#footer {
+    clear: both;
+    margin-top: 20px;
+    padding: 5px;
+    border-top: 5px solid #2e3192;
+    background:#ffcb00;
+    font-size:80%;
+	height:60px;
+
+}
+
+#footer a:link, #footer a:visited {
+
+    background: inherit;
+
+}
+#footer, #footer a {
+    color:#FFF;
+}
+#footer a{
+    text-decoration:underline;
+}
+#footer P {
+    margin-left: 20px;
+    line-height: 150%;
+}
+.institutions{
+	margin-left:180px;
+	}
+.institutions UL LI {
+    float: left;
+    margin-right: 12px;
+	display:inline;
+}
+.institutions A#FIOCRUZ {
+    width: 104px;
+    height: 30px;
+    background: url(../images/fiocruz.png) no-repeat !important;
+	display:block;
+	margin-top:10px;
+}
+.institutions A#BIREME {
+   height:48px;
+margin-top:10px;
+width:114px;
+    background: url(../images/bireme.png) no-repeat !important;
+	display:block;
+
+}
+.institutions A#SUS{
+    width: 90px;
+    height: 50px;
+    background: url(../images/sus.gif) no-repeat !important;
+	display:block;
+}
+.institutions A#MINISTERIOSAUDE{
+    width: 97px;
+    height: 30px;
+    background: url(../images/ms.gif) no-repeat !important;
+	display:block;
+	margin-top:10px;
+}
+.institutions A#GOVERNOFEDERAL {
+    width: 112px;
+    height: 30px;
+    background: url(../images/gov.gif) no-repeat !important;
+	display:block;
+	margin-top:10px;
+}
+.institutions A SPAN {
+ 	display:none;
+}
+
+/* AJAX DeCS Tools */
+td div.decstool {
+    display: none;
+}
+
+td div select {
+    display: block;
+}
+
+/*td select,*/
+td div.decstool input {
+    width: 46%;
+}
+
+td.showdecs div.decstool {
+    display: block;
+}
+
+.issue{
+    font-size:10px;
+    color:#5d5d5d;
+}
+
+fieldset{
+    border: 1px solid #CCC;
+    margin-bottom:30px;
+}
+
+label{
+    font-weight:normal;
+}
+
+ul li{
+    list-style:none;
+}
+
+legend{
+    font-weight:bold;
+}
+
+#content a.buttonadd {
+    background:#527FA3 url(/static/add.png) no-repeat scroll right center;
+    border:1px solid #EBECF0;
+    color:#FFFFFF;
+    padding:5px 2em 5px 1em;
+}
+
+/* BARRA GOVERNO FEDERAL */
+
+#govbar {
+    x-moz-border-radius-topleft:20px;
+    x-moz-border-radius-topright:20px;
+    x-webkit-border-top-left-radius:20px;
+    x-webkit-border-top-right-radius:20px;
+
+    background:url("/static/images/ms.png") no-repeat scroll 0 0 transparent;
+    height:32px;
+    width:100%;
+}
+
+#govbar .saude {
+    display:block;
+    float:left;
+    height:35px;
+    margin:0 0 0 42px;
+    text-indent:-5000px;
+    width:175px;
+}
+
+.barra_MSaude {
+    width: 100%;
+    height: 30px;
+    background:#ffcc00;
+}
+
+.barra_MSaude .barra1000 {
+    width:100%;
+    margin: 0 auto;
+}
+.barra_MSaude .barra1000 .minSaude a {
+    width: 152px;
+    height: 21px;
+    float: left;
+    margin: 1px;
+    background: url(../images/ms.gif) top left no-repeat;
+}
+/*.barra_MSaude .barra1000 .brasilGov a {
+    margin: 1px;
+    width: 96px;
+    height: 21px;
+    float: right;
+    background: url(../images/brasil.gif) top left no-repeat;
+}*/
+.barra_MSaude .barra1000 .minSaude, .barra_MSaude .barra1000 .form  {
+    float: left;
+}
+
+.barra_MSaude .barra1000 .form {
+    margin: 2px 0px 0px 50px;
+
+}
+.barra_MSaude .barra1000 .form .pr{
+    background: #ffcc00 !important;
+    font-size: 10px;
+}
+
+.barra_MSaude .barra1000 .brasilGov  {
+    float: right;
+}
+.barra_MSaude .barra1000 DIV a span  {
+    display: none;
+}
+.news p {
+	color:#666666;
+	}
+a.pnumber{
+	color:#0071bc;
+	font-weight:bold;
+	text-decoration:none;
+	}
+.news table{
+	 background: url(../images/line.gif) bottom left no-repeat;
+	 min-width:59%;
+	 color:#808080;
+	}
+td a.NewsExcerpt{
+	text-align:right;
+	font-weight:bold;
+	color:#9d9c9c !important;
+	}
+	
+ul{
+	margin-left:0px;
+	padding-left:0px; 
+	}
