@@ -52,7 +52,6 @@ USE_L10N = True
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
 
-#MEDIA_ROOT = os.path.join(PROJECT_PATH, 'custom/ecgovbr/static')
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'static')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
@@ -95,7 +94,6 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     
-    #os.path.join(PROJECT_PATH, 'custom/ecgovbr/templates'),
     os.path.join(PROJECT_PATH, 'templates'),
 )
 
