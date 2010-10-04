@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-30 11:55+0000\n"
-"PO-Revision-Date: 2010-09-30 12:16\n"
+"POT-Creation-Date: 2010-10-04 18:53+0000\n"
+"PO-Revision-Date: 2010-10-04 18:43\n"
 "Last-Translator: <appec@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,15 +16,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.5.6\n"
 
-#: settings.py:150
+#: settings.py:153
 msgid "English"
 msgstr "Inglés"
 
-#: settings.py:151
+#: settings.py:154
 msgid "Español"
 msgstr "Español"
 
-#: settings.py:152
+#: settings.py:155
 msgid "Portuguese"
 msgstr "Portugués"
 
@@ -76,6 +76,236 @@ msgstr "Preguntas más frecuentes"
 #: assistance/templates/assistance/question_list.html:37
 msgid "No FAQ available."
 msgstr "No hay FAQ disponibles."
+
+#: custom/ecgovbr/templates/403.html:6 templates/403.html:6
+msgid "Forbidden (403)"
+msgstr "Prohibida (403)"
+
+#: custom/ecgovbr/templates/403.html:7 templates/403.html:7
+msgid "You don't have permission to access "
+msgstr "Usted no tiene permiso para acceder a"
+
+#: custom/ecgovbr/templates/404.html:6 templates/404.html:6
+msgid "Page not found (404)"
+msgstr "Página no encontrada (404)"
+
+#: custom/ecgovbr/templates/500.html:6 templates/500.html:6
+msgid "Internal Server Error (500)"
+msgstr "Error interno del servidor (500)"
+
+#: custom/ecgovbr/templates/500.html:8 templates/500.html:8
+msgid ""
+"The server encountered an unexpected condition which prevented it from "
+"fulfilling the request."
+msgstr ""
+
+#: custom/ecgovbr/templates/base.html:7
+msgid "Clinical Trials Platform"
+msgstr "Plataforma de Ensayos Clínicos"
+
+#: custom/ecgovbr/templates/base.html:33
+msgid "Registro Brasileiro de Ensaios Clínicos"
+msgstr "Registro Brasileño de Ensaios Clínicos"
+
+#: custom/ecgovbr/templates/base.html:41 custom/ecgovbr/templates/base.html:81
+#: templates/base.html:51 templates/base.html.py:91
+msgid "Username"
+msgstr "Usuario"
+
+#: custom/ecgovbr/templates/base.html:45
+#: repository/templates/repository/clinicaltrial_detail_user.html:12
+#: repository/templates/repository/trial_index.html:8
+#: reviewapp/templates/reviewapp/consent.html:7
+#: reviewapp/templates/reviewapp/dashboard.html:13
+#: reviewapp/templates/reviewapp/new_submission.html:21
+#: reviewapp/templates/reviewapp/submission_list.html:28
+#: reviewapp/templates/reviewapp/upload_trial.html:7 templates/base.html:55
+msgid "Submissions"
+msgstr ""
+
+#: custom/ecgovbr/templates/base.html:49 templates/base.html:59
+#: tickets/templates/tickets/new_iteration.html:7
+#: tickets/templates/tickets/open_ticket.html:7
+#: tickets/templates/tickets/ticket_detail.html:8
+#: tickets/templates/tickets/user_tickets.html:25
+msgid "Tickets"
+msgstr ""
+
+#: custom/ecgovbr/templates/base.html:54
+#: reviewapp/templates/reviewapp/user_profile.html:17 templates/base.html:64
+msgid "Profile"
+msgstr "Perfil"
+
+#: custom/ecgovbr/templates/base.html:55
+#: reviewapp/templates/reviewapp/dashboard.html:6 templates/base.html:65
+msgid "Dashboard"
+msgstr "Tablero"
+
+#: custom/ecgovbr/templates/base.html:62 custom/ecgovbr/templates/base.html:66
+#: custom/ecgovbr/templates/base.html:67 templates/base.html:72
+#: templates/base.html.py:76 templates/base.html:77
+msgid "Logout"
+msgstr "Logout"
+
+#: custom/ecgovbr/templates/base.html:85 templates/base.html:95
+msgid "Password"
+msgstr "Contraseña"
+
+#: custom/ecgovbr/templates/base.html:88 templates/base.html:98
+msgid "login"
+msgstr "login"
+
+#: custom/ecgovbr/templates/base.html:94
+#: reviewapp/templates/reviewapp/login.html:34
+#: reviewapp/templates/reviewapp/login.html:35
+#: reviewapp/templates/reviewapp/password_reset_form.html:6
+#: templates/base.html:104
+msgid "Forgot password?"
+msgstr "¿Olvidaste tu contraseña?"
+
+#: custom/ecgovbr/templates/base.html:95
+#: reviewapp/templates/reviewapp/login.html:32 templates/base.html:105
+msgid "create an account to submit trial records"
+msgstr ""
+
+#: custom/ecgovbr/templates/base.html:95
+#: custom/ecgovbr/templates/registration/registration_complete.html:7
+#: custom/ecgovbr/templates/registration/registration_form.html:6
+#: reviewapp/templates/reviewapp/login.html:33 templates/base.html:105
+#: templates/registration/registration_complete.html:7
+#: templates/registration/registration_form.html:6
+msgid "Register"
+msgstr ""
+
+#: custom/ecgovbr/templates/base.html:109
+#: custom/ecgovbr/templates/base_columns.html:36 reviewapp/models.py:221
+#: reviewapp/templates/reviewapp/news_detail.html:5
+#: reviewapp/templates/reviewapp/news_detail.html:10
+#: reviewapp/templates/reviewapp/news_list.html:5
+#: reviewapp/templates/reviewapp/news_list.html:9 templates/base.html:113
+#: templates/base_columns.html:36
+msgid "News"
+msgstr "Noticias"
+
+#: custom/ecgovbr/templates/base.html:110 templates/base.html:114
+msgid "About"
+msgstr "Sobre"
+
+#: custom/ecgovbr/templates/base.html:111 templates/base.html:115
+msgid "Help"
+msgstr "Ayuda"
+
+#: custom/ecgovbr/templates/base.html:112 repository/models.py:478
+#: repository/models.py:491 repository/models.py:504
+#: repository/trds_forms.py:492 repository/trds_forms.py:496
+#: repository/trds_forms.py:515 repository/trds_forms.py:519
+#: repository/trds_forms.py:541 repository/trds_forms.py:545
+#: templates/base.html:116
+msgid "Contact"
+msgstr "Contacto"
+
+#: custom/ecgovbr/templates/base.html:118
+#, fuzzy
+msgid "Search trials"
+msgstr "Búsqueda"
+
+#: custom/ecgovbr/templates/base.html:126
+msgid "Change language to Portuguese"
+msgstr "Cambiar el idioma a Portugués"
+
+#: custom/ecgovbr/templates/base.html:127
+msgid "Change language to Spanish"
+msgstr "Cambiar el idioma a Español"
+
+#: custom/ecgovbr/templates/base.html:128
+msgid "Change language to English"
+msgstr "Cambiar el idioma a Inglés"
+
+#: custom/ecgovbr/templates/base.html:138
+#: repository/templates/repository/clinicaltrial_detail_user.html:9
+#: templates/base.html:133
+msgid "Home"
+msgstr "Home"
+
+#: custom/ecgovbr/templates/base_columns.html:15
+#: custom/ecgovbr/templates/base_columns.html:36
+#: reviewapp/templates/reviewapp/index.html:15 templates/base_columns.html:15
+#: templates/base_columns.html.py:36
+msgid "List all"
+msgstr "Lista de todos los"
+
+#: custom/ecgovbr/templates/base_columns.html:15
+#: templates/base_columns.html:15
+msgid "Recruiting"
+msgstr "Reclutamiento"
+
+#: custom/ecgovbr/templates/base_columns.html:25
+#: templates/base_columns.html:25
+msgid "No clinical trials recruiting."
+msgstr ""
+
+#: custom/ecgovbr/templates/base_columns.html:50
+#: reviewapp/templates/reviewapp/news_list.html:27
+#: templates/base_columns.html:50
+msgid "No news have been published."
+msgstr ""
+
+#: custom/ecgovbr/templates/registration/activation_complete.html:6
+#: templates/registration/activation_complete.html:6
+msgid "Activation Complete"
+msgstr "Activación completa"
+
+#: custom/ecgovbr/templates/registration/activation_complete.html:11
+#: templates/registration/activation_complete.html:11
+msgid "Your account is now activated."
+msgstr ""
+
+#: custom/ecgovbr/templates/registration/activation_complete.html:13
+#: templates/registration/activation_complete.html:13
+msgid "You may now login using your username and password."
+msgstr "Ahora puede ingresar usando su nombre de usuario y contraseña."
+
+#: custom/ecgovbr/templates/registration/registration_complete.html:9
+#: templates/registration/registration_complete.html:9
+msgid "Complete"
+msgstr ""
+
+#: custom/ecgovbr/templates/registration/registration_complete.html:14
+#: templates/registration/registration_complete.html:14
+msgid "A confirmation e-mail is on the way"
+msgstr ""
+
+#: custom/ecgovbr/templates/registration/registration_complete.html:16
+#: templates/registration/registration_complete.html:16
+msgid ""
+"Please click the activation link included in the e-mail to confirm you "
+"registration."
+msgstr ""
+
+#: custom/ecgovbr/templates/registration/registration_form.html:12
+#: templates/registration/registration_form.html:12
+msgid "Please correct the errors below."
+msgstr ""
+
+#: custom/ecgovbr/templates/registration/registration_form.html:19
+#: templates/registration/registration_form.html:19
+msgid "register"
+msgstr ""
+
+#: custom/ecgovbr/templates/registration/registration_form.html:24
+#: templates/registration/registration_form.html:24
+msgid "If this email belongs to you,"
+msgstr ""
+
+#: custom/ecgovbr/templates/registration/registration_form.html:26
+#: templates/registration/registration_form.html:26
+msgid "click here"
+msgstr ""
+
+#: custom/ecgovbr/templates/registration/registration_form.html:26
+#: templates/registration/registration_form.html:26
+msgid "to retrieve your username and password."
+msgstr "para recuperar su nombre de usuario y contraseña."
 
 #: polyglot/models.py:76
 msgid "Language"
@@ -460,14 +690,6 @@ msgstr "Código Postal"
 msgid "Telephone"
 msgstr "Teléfono"
 
-#: repository/models.py:478 repository/models.py:491 repository/models.py:504
-#: repository/trds_forms.py:492 repository/trds_forms.py:496
-#: repository/trds_forms.py:515 repository/trds_forms.py:519
-#: repository/trds_forms.py:541 repository/trds_forms.py:545
-#: templates/base.html:112
-msgid "Contact"
-msgstr "Contacto"
-
 #: repository/models.py:520
 msgid "Interest"
 msgstr ""
@@ -841,21 +1063,6 @@ msgstr "Afiliación"
 msgid "Attachments"
 msgstr ""
 
-#: repository/templates/repository/clinicaltrial_detail_user.html:9
-#: templates/base.html:138
-msgid "Home"
-msgstr "Home"
-
-#: repository/templates/repository/clinicaltrial_detail_user.html:12
-#: repository/templates/repository/trial_index.html:8
-#: reviewapp/templates/reviewapp/consent.html:7
-#: reviewapp/templates/reviewapp/dashboard.html:13
-#: reviewapp/templates/reviewapp/new_submission.html:21
-#: reviewapp/templates/reviewapp/submission_list.html:28
-#: reviewapp/templates/reviewapp/upload_trial.html:7 templates/base.html:45
-msgid "Submissions"
-msgstr ""
-
 #: repository/templates/repository/clinicaltrial_detail_user.html:15
 #: repository/templates/repository/submission_step.html:12
 #: repository/templates/repository/submission_step.html:28
@@ -890,7 +1097,9 @@ msgid "Trial Registration Data Set"
 msgstr ""
 
 #: repository/templates/repository/trial_form.html:101
-msgid "You have done modifications on some fields. Are you sure you want to leave without save before?"
+msgid ""
+"You have done modifications on some fields. Are you sure you want to leave "
+"without save before?"
 msgstr ""
 
 #: repository/templates/repository/trial_index.html:3
@@ -955,7 +1164,9 @@ msgid "New Attachment"
 msgstr ""
 
 #: reviewapp/forms.py:77
-msgid "This email address is already in use. Please supply a different email address."
+msgid ""
+"This email address is already in use. Please supply a different email "
+"address."
 msgstr ""
 
 #: reviewapp/forms.py:84
@@ -1050,14 +1261,6 @@ msgstr "Pendiente"
 msgid "Published"
 msgstr "Publicado"
 
-#: reviewapp/models.py:221 reviewapp/templates/reviewapp/news_detail.html:5
-#: reviewapp/templates/reviewapp/news_detail.html:10
-#: reviewapp/templates/reviewapp/news_list.html:5
-#: reviewapp/templates/reviewapp/news_list.html:9 templates/base.html:109
-#: templates/base_columns.html:36
-msgid "News"
-msgstr "Noticias"
-
 #: reviewapp/templates/reviewapp/consent.html:19
 msgid "I agree with the terms selected above"
 msgstr ""
@@ -1087,10 +1290,6 @@ msgstr "Enviar mensaje"
 msgid "Send"
 msgstr "Enviar"
 
-#: reviewapp/templates/reviewapp/dashboard.html:6 templates/base.html:55
-msgid "Dashboard"
-msgstr "Tablero"
-
 #: reviewapp/templates/reviewapp/dashboard.html:14
 #: reviewapp/templates/reviewapp/index.html:20
 #: reviewapp/templates/reviewapp/new_submission.html:23
@@ -1117,11 +1316,6 @@ msgstr ""
 msgid "Read more"
 msgstr "Leer más"
 
-#: reviewapp/templates/reviewapp/index.html:15 templates/base_columns.html:15
-#: templates/base_columns.html.py:36
-msgid "List all"
-msgstr "Lista de todos los"
-
 #: reviewapp/templates/reviewapp/index.html:15
 msgid "Registered trials"
 msgstr ""
@@ -1139,23 +1333,6 @@ msgstr "login"
 msgid "Your username and password didn't match. Please try again."
 msgstr ""
 
-#: reviewapp/templates/reviewapp/login.html:32 templates/base.html:95
-msgid "create an account to submit trial records"
-msgstr ""
-
-#: reviewapp/templates/reviewapp/login.html:33 templates/base.html:95
-#: templates/registration/registration_complete.html:7
-#: templates/registration/registration_form.html:6
-msgid "Register"
-msgstr ""
-
-#: reviewapp/templates/reviewapp/login.html:34
-#: reviewapp/templates/reviewapp/login.html:35
-#: reviewapp/templates/reviewapp/password_reset_form.html:6
-#: templates/base.html:94
-msgid "Forgot password?"
-msgstr "¿Has olvidado tu contraseña?"
-
 #: reviewapp/templates/reviewapp/new_submission.html:38
 #: tickets/templates/tickets/new_iteration.html:44
 #: tickets/templates/tickets/open_ticket.html:32
@@ -1168,11 +1345,6 @@ msgstr "Creado:"
 
 #: reviewapp/templates/reviewapp/news_detail.html:27
 msgid "News unavailable."
-msgstr ""
-
-#: reviewapp/templates/reviewapp/news_list.html:27
-#: templates/base_columns.html:50
-msgid "No news have been published."
 msgstr ""
 
 #: reviewapp/templates/reviewapp/open_remark.html:13
@@ -1201,9 +1373,8 @@ msgid "Enter your new password below to reset your password:"
 msgstr ""
 
 #: reviewapp/templates/reviewapp/password_reset_done.html:8
-#, fuzzy
 msgid "Forgot Password?"
-msgstr "¿Has olvidado tu contraseña?"
+msgstr "¿Olvidaste tu contraseña?"
 
 #: reviewapp/templates/reviewapp/password_reset_done.html:10
 #, fuzzy
@@ -1211,11 +1382,15 @@ msgid "E-mail sent"
 msgstr "E-mail"
 
 #: reviewapp/templates/reviewapp/password_reset_done.html:15
-msgid "We have sent you an email with a link to reset your password. Please check your email and click the link to continue."
+msgid ""
+"We have sent you an email with a link to reset your password. Please check "
+"your email and click the link to continue."
 msgstr ""
 
 #: reviewapp/templates/reviewapp/password_reset_form.html:12
-msgid "Enter your email in the form below and we'll send you instructions for creating a new one."
+msgid ""
+"Enter your email in the form below and we'll send you instructions for "
+"creating a new one."
 msgstr ""
 
 #: reviewapp/templates/reviewapp/resend_activation_email.html:8
@@ -1283,16 +1458,13 @@ msgid "Upload trial"
 msgstr ""
 
 #: reviewapp/templates/reviewapp/upload_trial.html:15
-msgid "Here you can upload an XML on ICTRP standard to submit your clinical trial."
+msgid ""
+"Here you can upload an XML on ICTRP standard to submit your clinical trial."
 msgstr ""
 
 #: reviewapp/templates/reviewapp/upload_trial.html:20
 msgid "Select your XML file"
 msgstr ""
-
-#: reviewapp/templates/reviewapp/user_profile.html:17 templates/base.html:54
-msgid "Profile"
-msgstr "Perfil"
 
 #: reviewapp/templates/reviewapp/user_profile.html:24
 msgid "Change your profile"
@@ -1302,133 +1474,14 @@ msgstr "Cambiar el perfil"
 msgid "Change your password"
 msgstr "Cambie su contraseña"
 
-#: templates/403.html:6
-msgid "Forbidden (403)"
-msgstr "Prohibida (403)"
-
-#: templates/403.html:7
-msgid "You don't have permission to access "
-msgstr "Usted no tiene permiso para acceder a"
-
-#: templates/404.html:6
-msgid "Page not found (404)"
-msgstr "Página no encontrada (404)"
-
-#: templates/500.html:6
-msgid "Internal Server Error (500)"
-msgstr "Error interno del servidor (500)"
-
-#: templates/500.html:8
-msgid "The server encountered an unexpected condition which prevented it from fulfilling the request."
-msgstr ""
-
-#: templates/base.html:7
-msgid "Clinical Trials Platform"
+#: templates/base.html:7 templates/base.html.py:43
+#, fuzzy
+msgid "OpenTrials Platform"
 msgstr "Plataforma de Ensayos Clínicos"
 
-#: templates/base.html:33
-msgid "Registro Brasileiro de Ensaios Clínicos"
-msgstr "Registro Brasileño de Ensaios Clínicos"
-
-#: templates/base.html:41 templates/base.html.py:81
-msgid "Username"
-msgstr "Usuario"
-
-#: templates/base.html:49 tickets/templates/tickets/new_iteration.html:7
-#: tickets/templates/tickets/open_ticket.html:7
-#: tickets/templates/tickets/ticket_detail.html:8
-#: tickets/templates/tickets/user_tickets.html:25
-msgid "Tickets"
-msgstr ""
-
-#: templates/base.html:62 templates/base.html.py:66 templates/base.html:67
-msgid "Logout"
-msgstr "Logout"
-
-#: templates/base.html:85
-msgid "Password"
-msgstr "Contraseña"
-
-#: templates/base.html:88
-msgid "login"
-msgstr "login"
-
-#: templates/base.html:110
-msgid "About"
-msgstr "Sobre"
-
-#: templates/base.html:111
-msgid "Help"
-msgstr "Ayuda"
-
-#: templates/base.html:118
-#, fuzzy
-msgid "Search trials"
+#: templates/base.html:122
+msgid "Search"
 msgstr "Búsqueda"
-
-#: templates/base.html:126
-msgid "Change language to Portuguese"
-msgstr "Cambiar el idioma a Portugués"
-
-#: templates/base.html:127
-msgid "Change language to Spanish"
-msgstr "Cambiar el idioma a Español"
-
-#: templates/base.html:128
-msgid "Change language to English"
-msgstr "Cambiar el idioma a Inglés"
-
-#: templates/base_columns.html:15
-msgid "Recruiting"
-msgstr "Reclutamiento"
-
-#: templates/base_columns.html:25
-msgid "No clinical trials recruiting."
-msgstr ""
-
-#: templates/registration/activation_complete.html:6
-msgid "Activation Complete"
-msgstr "Activación completa"
-
-#: templates/registration/activation_complete.html:11
-msgid "Your account is now activated."
-msgstr ""
-
-#: templates/registration/activation_complete.html:13
-msgid "You may now login using your username and password."
-msgstr "Ahora puede ingresar usando su nombre de usuario y contraseña."
-
-#: templates/registration/registration_complete.html:9
-msgid "Complete"
-msgstr ""
-
-#: templates/registration/registration_complete.html:14
-msgid "A confirmation e-mail is on the way"
-msgstr ""
-
-#: templates/registration/registration_complete.html:16
-msgid "Please click the activation link included in the e-mail to confirm you registration."
-msgstr ""
-
-#: templates/registration/registration_form.html:12
-msgid "Please correct the errors below."
-msgstr ""
-
-#: templates/registration/registration_form.html:19
-msgid "register"
-msgstr ""
-
-#: templates/registration/registration_form.html:24
-msgid "If this email belongs to you,"
-msgstr ""
-
-#: templates/registration/registration_form.html:26
-msgid "click here"
-msgstr ""
-
-#: templates/registration/registration_form.html:26
-msgid "to retrieve your username and password."
-msgstr "para recuperar su nombre de usuario y contraseña."
 
 #: tickets/models.py:18 tickets/templates/tickets/new_iteration.html:33
 msgid "Ticket Type"
@@ -1530,7 +1583,9 @@ msgid "Assigned to"
 msgstr ""
 
 #: tickets/templates/tickets/ticket_detail.html:72
-msgid "To show the \"add iteration button\" the ticket must be diferente from \"closed\"."
+msgid ""
+"To show the \"add iteration button\" the ticket must be diferente from "
+"\"closed\"."
 msgstr ""
 
 #: tickets/templates/tickets/ticket_list.html:15
@@ -1618,9 +1673,6 @@ msgstr ""
 
 #~ msgid "All"
 #~ msgstr "Todos"
-
-#~ msgid "Search"
-#~ msgstr "Búsqueda"
 
 #~ msgid "Go"
 #~ msgstr "Ir"
