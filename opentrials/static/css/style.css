@@ -78,13 +78,13 @@ blockquote {
 }
 .identification {
     position: absolute;
-    top: 4em;
+    top: 0em;
     left: 0;
 }
 .identification H1 {
     margin: 0px 0px 0px 40px;
     clear: both;
-    padding-top: 12px;
+    padding-top: 0px;
     font-size: 200%;
     font-weight: normal;
 }
@@ -265,7 +265,7 @@ blockquote {
 }
 .languages {
     float: right;
-    margin: 62px 12px 0px 2px;
+    margin: 5px 12px 0px 2px;
 }
 .languages UL {
     margin: 0px;
@@ -279,14 +279,13 @@ blockquote {
     border-right: none;
 }
 .languages A {
-    color: #0c4762;
+    color: #cccccc;
     xfont-weight: bold;
-    text-transform: uppercase;
     text-decoration: none;
-	font-size:14px;
+	font-size:12px;
 }
 .languages A:hover {
-    color: #1073a0;
+    color: #ffffff;
 }
 
 /* BREADCRUMB */
@@ -819,16 +818,14 @@ legend{
     padding:5px 2em 5px 1em;
 }
 
-/* BARRA GOVERNO FEDERAL */
-
 #bar_top {
-    -moz-border-radius-topleft:20px;
+    /*-moz-border-radius-topleft:20px;
     -moz-border-radius-topright:20px;
     -webkit-border-top-left-radius:20px;
-    -webkit-border-top-right-radius:20px;
+    -webkit-border-top-right-radius:20px;*/
     
     background-color: #0C4762;
-    height:35px;
+    height:30px;
     width:100%;
 }
 
