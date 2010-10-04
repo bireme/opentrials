@@ -78,8 +78,8 @@ blockquote {
 }
 .identification {
     position: absolute;
-    top: 0em;
-    left: 0;
+    top: 14px;
+    left: 24px;
 }
 .identification H1 {
     margin: 0px 0px 0px 40px;
