@@ -1,264 +1,38 @@
 [
   {
     "pk": 1, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "example.com", 
+      "name": "example.com"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "opentrials.bvsalud.org", 
+      "name": "OpenTrials"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "opentrials.teste.bvsalud.org", 
+      "name": "OpenTrials (TESTE)"
+    }
+  }, 
+  {
+    "pk": 1, 
     "model": "auth.group", 
     "fields": {
       "name": "reviewers", 
       "permissions": [
         [
-          "add_clinicaltrial", 
-          "repository", 
-          "clinicaltrial"
-        ], 
-        [
           "change_clinicaltrial", 
           "repository", 
           "clinicaltrial"
-        ], 
-        [
-          "delete_clinicaltrial", 
-          "repository", 
-          "clinicaltrial"
-        ], 
-        [
-          "add_clinicaltrialtranslation", 
-          "repository", 
-          "clinicaltrialtranslation"
-        ], 
-        [
-          "change_clinicaltrialtranslation", 
-          "repository", 
-          "clinicaltrialtranslation"
-        ], 
-        [
-          "delete_clinicaltrialtranslation", 
-          "repository", 
-          "clinicaltrialtranslation"
-        ], 
-        [
-          "add_contact", 
-          "repository", 
-          "contact"
-        ], 
-        [
-          "change_contact", 
-          "repository", 
-          "contact"
-        ], 
-        [
-          "delete_contact", 
-          "repository", 
-          "contact"
-        ], 
-        [
-          "add_descriptor", 
-          "repository", 
-          "descriptor"
-        ], 
-        [
-          "change_descriptor", 
-          "repository", 
-          "descriptor"
-        ], 
-        [
-          "delete_descriptor", 
-          "repository", 
-          "descriptor"
-        ], 
-        [
-          "add_descriptortranslation", 
-          "repository", 
-          "descriptortranslation"
-        ], 
-        [
-          "change_descriptortranslation", 
-          "repository", 
-          "descriptortranslation"
-        ], 
-        [
-          "delete_descriptortranslation", 
-          "repository", 
-          "descriptortranslation"
-        ], 
-        [
-          "add_institution", 
-          "repository", 
-          "institution"
-        ], 
-        [
-          "change_institution", 
-          "repository", 
-          "institution"
-        ], 
-        [
-          "delete_institution", 
-          "repository", 
-          "institution"
-        ], 
-        [
-          "add_outcome", 
-          "repository", 
-          "outcome"
-        ], 
-        [
-          "change_outcome", 
-          "repository", 
-          "outcome"
-        ], 
-        [
-          "delete_outcome", 
-          "repository", 
-          "outcome"
-        ], 
-        [
-          "add_outcometranslation", 
-          "repository", 
-          "outcometranslation"
-        ], 
-        [
-          "change_outcometranslation", 
-          "repository", 
-          "outcometranslation"
-        ], 
-        [
-          "delete_outcometranslation", 
-          "repository", 
-          "outcometranslation"
-        ], 
-        [
-          "add_publiccontact", 
-          "repository", 
-          "publiccontact"
-        ], 
-        [
-          "change_publiccontact", 
-          "repository", 
-          "publiccontact"
-        ], 
-        [
-          "delete_publiccontact", 
-          "repository", 
-          "publiccontact"
-        ], 
-        [
-          "add_scientificcontact", 
-          "repository", 
-          "scientificcontact"
-        ], 
-        [
-          "change_scientificcontact", 
-          "repository", 
-          "scientificcontact"
-        ], 
-        [
-          "delete_scientificcontact", 
-          "repository", 
-          "scientificcontact"
-        ], 
-        [
-          "add_sitecontact", 
-          "repository", 
-          "sitecontact"
-        ], 
-        [
-          "change_sitecontact", 
-          "repository", 
-          "sitecontact"
-        ], 
-        [
-          "delete_sitecontact", 
-          "repository", 
-          "sitecontact"
-        ], 
-        [
-          "add_trialnumber", 
-          "repository", 
-          "trialnumber"
-        ], 
-        [
-          "change_trialnumber", 
-          "repository", 
-          "trialnumber"
-        ], 
-        [
-          "delete_trialnumber", 
-          "repository", 
-          "trialnumber"
-        ], 
-        [
-          "add_trialsecondarysponsor", 
-          "repository", 
-          "trialsecondarysponsor"
-        ], 
-        [
-          "change_trialsecondarysponsor", 
-          "repository", 
-          "trialsecondarysponsor"
-        ], 
-        [
-          "delete_trialsecondarysponsor", 
-          "repository", 
-          "trialsecondarysponsor"
-        ], 
-        [
-          "add_trialsupportsource", 
-          "repository", 
-          "trialsupportsource"
-        ], 
-        [
-          "change_trialsupportsource", 
-          "repository", 
-          "trialsupportsource"
-        ], 
-        [
-          "delete_trialsupportsource", 
-          "repository", 
-          "trialsupportsource"
-        ], 
-        [
-          "add_attachment", 
-          "reviewapp", 
-          "attachment"
-        ], 
-        [
-          "change_attachment", 
-          "reviewapp", 
-          "attachment"
-        ], 
-        [
-          "delete_attachment", 
-          "reviewapp", 
-          "attachment"
-        ], 
-        [
-          "add_news", 
-          "reviewapp", 
-          "news"
-        ], 
-        [
-          "change_news", 
-          "reviewapp", 
-          "news"
-        ], 
-        [
-          "delete_news", 
-          "reviewapp", 
-          "news"
-        ], 
-        [
-          "add_recruitmentcountry", 
-          "reviewapp", 
-          "recruitmentcountry"
-        ], 
-        [
-          "change_recruitmentcountry", 
-          "reviewapp", 
-          "recruitmentcountry"
-        ], 
-        [
-          "delete_recruitmentcountry", 
-          "reviewapp", 
-          "recruitmentcountry"
         ], 
         [
           "add_remark", 
@@ -276,17 +50,7 @@
           "remark"
         ], 
         [
-          "add_submission", 
-          "reviewapp", 
-          "submission"
-        ], 
-        [
           "change_submission", 
-          "reviewapp", 
-          "submission"
-        ], 
-        [
-          "delete_submission", 
           "reviewapp", 
           "submission"
         ], 
@@ -294,280 +58,10 @@
           "review", 
           "reviewapp", 
           "submission"
-        ], 
-        [
-          "add_userprofile", 
-          "reviewapp", 
-          "userprofile"
-        ], 
-        [
-          "change_userprofile", 
-          "reviewapp", 
-          "userprofile"
-        ], 
-        [
-          "delete_userprofile", 
-          "reviewapp", 
-          "userprofile"
-        ], 
-        [
-          "add_followup", 
-          "tickets", 
-          "followup"
-        ], 
-        [
-          "change_followup", 
-          "tickets", 
-          "followup"
-        ], 
-        [
-          "delete_followup", 
-          "tickets", 
-          "followup"
-        ], 
-        [
-          "add_media", 
-          "tickets", 
-          "media"
-        ], 
-        [
-          "change_media", 
-          "tickets", 
-          "media"
-        ], 
-        [
-          "delete_media", 
-          "tickets", 
-          "media"
-        ], 
-        [
-          "add_ticket", 
-          "tickets", 
-          "ticket"
-        ], 
-        [
-          "change_ticket", 
-          "tickets", 
-          "ticket"
-        ], 
-        [
-          "delete_ticket", 
-          "tickets", 
-          "ticket"
-        ], 
-        [
-          "add_attachmenttype", 
-          "vocabulary", 
-          "attachmenttype"
-        ], 
-        [
-          "change_attachmenttype", 
-          "vocabulary", 
-          "attachmenttype"
-        ], 
-        [
-          "delete_attachmenttype", 
-          "vocabulary", 
-          "attachmenttype"
-        ], 
-        [
-          "add_countrycode", 
-          "vocabulary", 
-          "countrycode"
-        ], 
-        [
-          "change_countrycode", 
-          "vocabulary", 
-          "countrycode"
-        ], 
-        [
-          "delete_countrycode", 
-          "vocabulary", 
-          "countrycode"
-        ], 
-        [
-          "add_decsdisease", 
-          "vocabulary", 
-          "decsdisease"
-        ], 
-        [
-          "change_decsdisease", 
-          "vocabulary", 
-          "decsdisease"
-        ], 
-        [
-          "delete_decsdisease", 
-          "vocabulary", 
-          "decsdisease"
-        ], 
-        [
-          "add_icdchapter", 
-          "vocabulary", 
-          "icdchapter"
-        ], 
-        [
-          "change_icdchapter", 
-          "vocabulary", 
-          "icdchapter"
-        ], 
-        [
-          "delete_icdchapter", 
-          "vocabulary", 
-          "icdchapter"
-        ], 
-        [
-          "add_interventionassigment", 
-          "vocabulary", 
-          "interventionassigment"
-        ], 
-        [
-          "change_interventionassigment", 
-          "vocabulary", 
-          "interventionassigment"
-        ], 
-        [
-          "delete_interventionassigment", 
-          "vocabulary", 
-          "interventionassigment"
-        ], 
-        [
-          "add_interventioncode", 
-          "vocabulary", 
-          "interventioncode"
-        ], 
-        [
-          "change_interventioncode", 
-          "vocabulary", 
-          "interventioncode"
-        ], 
-        [
-          "delete_interventioncode", 
-          "vocabulary", 
-          "interventioncode"
-        ], 
-        [
-          "add_recruitmentstatus", 
-          "vocabulary", 
-          "recruitmentstatus"
-        ], 
-        [
-          "change_recruitmentstatus", 
-          "vocabulary", 
-          "recruitmentstatus"
-        ], 
-        [
-          "delete_recruitmentstatus", 
-          "vocabulary", 
-          "recruitmentstatus"
-        ], 
-        [
-          "add_studyallocation", 
-          "vocabulary", 
-          "studyallocation"
-        ], 
-        [
-          "change_studyallocation", 
-          "vocabulary", 
-          "studyallocation"
-        ], 
-        [
-          "delete_studyallocation", 
-          "vocabulary", 
-          "studyallocation"
-        ], 
-        [
-          "add_studymasking", 
-          "vocabulary", 
-          "studymasking"
-        ], 
-        [
-          "change_studymasking", 
-          "vocabulary", 
-          "studymasking"
-        ], 
-        [
-          "delete_studymasking", 
-          "vocabulary", 
-          "studymasking"
-        ], 
-        [
-          "add_studyphase", 
-          "vocabulary", 
-          "studyphase"
-        ], 
-        [
-          "change_studyphase", 
-          "vocabulary", 
-          "studyphase"
-        ], 
-        [
-          "delete_studyphase", 
-          "vocabulary", 
-          "studyphase"
-        ], 
-        [
-          "add_studypurpose", 
-          "vocabulary", 
-          "studypurpose"
-        ], 
-        [
-          "change_studypurpose", 
-          "vocabulary", 
-          "studypurpose"
-        ], 
-        [
-          "delete_studypurpose", 
-          "vocabulary", 
-          "studypurpose"
-        ], 
-        [
-          "add_studytype", 
-          "vocabulary", 
-          "studytype"
-        ], 
-        [
-          "change_studytype", 
-          "vocabulary", 
-          "studytype"
-        ], 
-        [
-          "delete_studytype", 
-          "vocabulary", 
-          "studytype"
-        ], 
-        [
-          "add_trialnumberissuingauthority", 
-          "vocabulary", 
-          "trialnumberissuingauthority"
-        ], 
-        [
-          "change_trialnumberissuingauthority", 
-          "vocabulary", 
-          "trialnumberissuingauthority"
-        ], 
-        [
-          "delete_trialnumberissuingauthority", 
-          "vocabulary", 
-          "trialnumberissuingauthority"
-        ], 
-        [
-          "add_vocabularytranslation", 
-          "vocabulary", 
-          "vocabularytranslation"
-        ], 
-        [
-          "change_vocabularytranslation", 
-          "vocabulary", 
-          "vocabularytranslation"
-        ], 
-        [
-          "delete_vocabularytranslation", 
-          "vocabulary", 
-          "vocabularytranslation"
         ]
       ]
     }
-  },
+  }, 
   {
     "pk": 1, 
     "model": "auth.user", 
@@ -623,7 +117,7 @@
     "pk": 1, 
     "model": "flatpages_polyglot.flatpagetranslation", 
     "fields": {
-      "content": "<p><b>Esta \u00e9 uma vers\u00e3o beta do Registro Brasileiro de Ensaios Cl\u00ednicos (RBEC) e os registros de ensaios cadastrados s\u00e3o fict\u00edcios.</b> O Registro Brasileiro de Ensaios Cl\u00ednicos \u00e9 uma plataforma virtual de acesso livre para registro gratuito de ensaios cl\u00ednicos realizados em seres humanos, em andamento ou finalizados, por pesquisadores brasileiros e estrangeiros.</p>", 
+      "content": "<p><b>Esta \u00e9 uma vers\u00e3o de demonstra\u00e7\u00e3o do sistema OpenTrials e os registros mostrados aqui s\u00e3o fict\u00edcios.</b> OpenTrials \u00e9 uma plataforma Open Source (LGPL) criada pela BIREME/PAHO/WHO, Fiocruz e o Minist\u00e9rio da Sa\u00fade do Brasil.</p>", 
       "title": "Descri\u00e7\u00e3o do site", 
       "content_type": [
         "flatpages", 
@@ -631,6 +125,20 @@
       ], 
       "language": "pt-BR", 
       "object_id": 2
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "flatpages_polyglot.flatpagetranslation", 
+    "fields": {
+      "content": "<p>Leia mais sobre o projeto <a href=\"http://reddes.bvsalud.org/projects/clinical-trials\">OpenTrials</a>.</p>", 
+      "title": "Sobre", 
+      "content_type": [
+        "flatpages", 
+        "flatpage"
+      ], 
+      "language": "pt-BR", 
+      "object_id": 1
     }
   }, 
   {
@@ -642,11 +150,10 @@
       "url": "/about/", 
       "template_name": "", 
       "sites": [
-        4, 
-        3, 
-        2
+        2, 
+        3
       ], 
-      "content": "<p>O Registro Brasileiro de Ensaios Cl\u00ednicos (RBEC) \u00e9 uma plataforma virtual de acesso livre para registro gratuito de ensaios cl\u00ednicos realizados em seres humanos, em andamento ou finalizados, por pesquisadores brasileiros e estrangeiros. O RBEC inclui ensaios cl\u00ednicos que avaliam interven\u00e7\u00f5es em sa\u00fade resultantes de uso de medicamentos, procedimentos cir\u00fargicos, terapias comportamentais de reabilita\u00e7\u00e3o e terapias complementares.</p> \r\n\r\n<p>O RBEC proporciona a pacientes, m\u00e9dicos, investigadores, comit\u00eas de \u00e9tica e patrocinadores acesso a informa\u00e7\u00f5es sobre os ensaios cl\u00ednicos em curso e conclu\u00eddos, evitando a duplica\u00e7\u00e3o de esfor\u00e7os e impulsionando o avan\u00e7o do conhecimento e a coopera\u00e7\u00e3o entre grupos de pesquisa.</p> \r\n\r\n<p>Sendo uma das mais valiosas fontes de evid\u00eancia sobre a efic\u00e1cia e a seguran\u00e7a das interven\u00e7\u00f5es em sa\u00fade, o ensaio cl\u00ednico, quando registrado em bases de dados p\u00fablicas, garante a todos os interessados o acesso \u00e0 informa\u00e7\u00e3o sobre os efeitos de um produto ou procedimento sob investiga\u00e7\u00e3o. Nesse sentido, aumenta a transpar\u00eancia na pesquisa, fortalecendo o valor \u00e9tico e cient\u00edfico dos estudos de interven\u00e7\u00e3o e observacionais.</p>\r\n\r\n<p>Um ensaio cl\u00ednico pode reduzir a duplica\u00e7\u00e3o desnecess\u00e1ria de esfor\u00e7os de pesquisa ao informar os profissionais que planejam novos estudos acerca de todos os ensaios existentes; aumentar as taxas de recrutamento de participantes para ensaios cl\u00ednicos (especialmente para doen\u00e7as raras ou condi\u00e7\u00f5es de alto risco), desse modo aumentando as chances de um desfecho bem-sucedido de alguns ensaios cl\u00ednicos; agregar valor aos resultados da pesquisa ao prover uma fonte de informa\u00e7\u00e3o confi\u00e1vel sobre ensaio cl\u00ednico para revis\u00f5es sistem\u00e1ticas, metan\u00e1lises e diretrizes baseados em evid\u00eancias e aprimorar as evid\u00eancias dispon\u00edveis que orientem as pr\u00e1ticas de sa\u00fade. </p>\r\n\r\n<p>Fruto de um esfor\u00e7o conjunto do Minist\u00e9rio da Sa\u00fade, do Instituto de Comunica\u00e7\u00e3o e Informa\u00e7\u00e3o Cient\u00edfica e Tecnol\u00f3gica em Sa\u00fade (Icict/Fiocruz), da Organiza\u00e7\u00e3o Panamericana de Sa\u00fade (Opas) e do Centro Latinoamericano e do Caribe de Informa\u00e7\u00e3o em Ci\u00eancias da Sa\u00fade (Bireme), o RBEC aumenta a efic\u00e1cia dos esfor\u00e7os dos ensaios cl\u00ednicos ao divulgar os estudos que n\u00e3o s\u00e3o publicado em revistas cient\u00edficas, reduzindo o vi\u00e9s da publica\u00e7\u00e3o. Desse modo, o RBEC torna-se uma importante fonte de informa\u00e7\u00e3o para pacientes, profissionais de sa\u00fade, pesquisadores, empresas e centros de pesquisa, propiciando maior intera\u00e7\u00e3o e inser\u00e7\u00e3o internacional. </p>", 
+      "content": "<p>Read more about the project <a href=\"http://reddes.bvsalud.org/projects/clinical-trials\">OpenTrials</a>.</p>", 
       "enable_comments": false
     }
   }, 
@@ -659,11 +166,10 @@
       "url": "/site-description/", 
       "template_name": "", 
       "sites": [
-        4, 
-        3, 
-        2
+        2, 
+        3
       ], 
-      "content": "<p><b>This is a beta version of the Brazilian Clinical Trial Registry (BCTR) and the registers showed here are fictional.</b> The Brazilian Clinical Trial Registry is a open access virtual platform for free registration of ongoing or completed clinical trials performed in human beings by brazilian and foreign researchers.</p>", 
+      "content": "<p><b>This is a demonstration version of the OpenTrials registration system and the records shown here are fictional.</b> OpenTrials is an Open Source (LGPL) platform created by BIREME/PAHO/WHO, Fiocruz and the Brazilian Ministry of Health.</p>", 
       "enable_comments": false
     }
   }
