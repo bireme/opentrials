@@ -19,7 +19,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import os
-from django.utils.translation import ugettext_lazy as _ # FIXME: Isso é perigoso, o correto é: _ = lambda a: a
+gettext = lambda s: s
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -150,9 +150,9 @@ DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
 # 2) the first managed language is considered the default and is
 #    also the source language for content translation purposes
 MANAGED_LANGUAGES_CHOICES = (
-    (u'en', _(u'English')),
-    (u'es', _(u'Español')),
-    (u'pt-BR', _(u'Portuguese')),
+    (u'en', gettext(u'English')),
+    (u'es', gettext(u'Español')),
+    (u'pt-BR', gettext(u'Portuguese')),
 )
 TARGET_LANGUAGES = MANAGED_LANGUAGES_CHOICES[1:] # exlude source language
 MANAGED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES_CHOICES]
