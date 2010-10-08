@@ -19,7 +19,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import os
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _ # FIXME: Isso é perigoso, o correto é: _ = lambda a: a
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
