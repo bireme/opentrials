@@ -155,6 +155,9 @@ class Attachment(models.Model):
 
     def get_relative_url(self):
         return self.file.url.replace(settings.PROJECT_PATH, u'')
+        
+    def __unicode__(self):
+        return u"%s" % self.description
 
 REMARK_STATUS = [
     # initial state, as created by reviewer
