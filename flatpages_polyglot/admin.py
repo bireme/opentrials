@@ -5,8 +5,6 @@ from django import forms
 from django.contrib.contenttypes.generic import GenericTabularInline as TabularInline
 from django.contrib.flatpages.admin import FlatpageForm, FlatPageAdmin
 
-from reversion.admin import VersionAdmin
-
 from models import FlatPageTranslation, FlatPage
 
 class FormFlatPageTranslation(forms.ModelForm):
@@ -41,7 +39,7 @@ class InlineFlatPageTranslation(TabularInline):
     model = FlatPageTranslation
     form = FormFlatPageTranslation
 
-class NewFlatPageAdmin(VersionAdmin):
+class NewFlatPageAdmin(ModelAdmin):
     form = FlatpageForm
     inlines = (InlineFlatPageTranslation,)
     fieldsets = FlatPageAdmin.fieldsets
