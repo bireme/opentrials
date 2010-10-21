@@ -6,6 +6,26 @@
 
 {% block sidebar %}
 <div class="sideBar">
+    <div class="twitter">
+        <table border="0" cellpading="0" cellspacing="0">
+        <tr>
+            <td>
+                <h2>{% trans 'Latest Tweets' %}</h2>
+            </td>
+        </tr>
+        </table>
+        <ul id="twitter_update_list">
+        </ul>
+        <div style="text-align:right;">
+        <a href="http://twitter.com/ensaiosclinicos" target="_blank" id="twitter-link">
+        {% trans "Follow us on Twitter!" %}</a>
+        <a href="http://twitter.com/ensaiosclinicos" target="_blank" id="twitter-link">
+        <img style="vertical-align:text-bottom;" title="{% trans 'Follow us on Twitter!' %}" alt="{% trans 'Follow us on Twitter!' %}" src="/static/images/twitter.png"></a>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+    <script type="text/javascript" src="http://twitter.com/statuses/user_timeline/ensaiosclinicos.json?callback=twitterCallback2&amp;count=1"></script>
+
     <div class="links news">
         {% load recruiting_trials %}
         {% get_latest_recruiting_trials 5 as latest_recruiting_trials %}
@@ -19,35 +39,10 @@
         <ul>
         {% if latest_recruiting_trials %}
             {% for ct in latest_recruiting_trials %}
-                <li><a href="{% url repository.trial_registered ct.trial_id %}">{{ ct.short_title }}</a></li>
+                <li><a class="NewsTitle" href="{% url repository.trial_registered ct.trial_id %}">{{ ct.short_title }}</a></li>
             {% endfor %}
         {% else %}
             <li>{% trans 'No clinical trials recruiting.' %}</li>
-        {% endif %}
-        </ul>
-    </div>
-    
-    <div class="news">
-        {% load news %}
-        {% get_latest_news 3 as latest_news %}
-        <table border="0" cellpading="0" cellspacing="0">
-        <tr>
-            <td>
-                <h2><a title="{% trans 'List all' %}" href="{% url reviewapp.newslist %}">{% trans 'News' %}</a></h2>
-            </td>
-        </tr>
-        </table>
-        <ul>
-        {% if latest_news %}
-            {% for news in latest_news %}
-                <li>
-                <small>{{ news.created|date:'d/m/Y - H:i' }}</small>
-                <a class="NewsTitle" title="{{ news.title }}" href="{% url reviewapp.news news.id %}">{{ news.title }}</a>
-                <a class="NewsExcerpt" href="{% url reviewapp.news news.id %}">{{ news.short_text }}</a>
-            </li>
-            {% endfor %}
-        {% else %}
-            <li>{% trans 'No news have been published.' %}</li>
         {% endif %}
         </ul>
     </div>

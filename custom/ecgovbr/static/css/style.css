@@ -445,6 +445,36 @@ font-size:101%;
     text-decoration: underline;
 }
 
+/* Twitter */
+.twitter {
+    padding-right: 17px;
+    margin-bottom: 22px;
+}
+#twitter_update_list A {
+    font-family:helvetica;
+    font-size:101%;
+    color: #39b54a;
+    text-decoration: none;
+    font-weight: bold;
+	letter-spacing: 0px;
+}
+#twitter_update_list A:hover {
+    color: #1073a0;
+    text-decoration: none;
+}
+#twitter-link {
+    font-family:helvetica;
+    font-size:101%;
+    color: #39b54a;
+    text-decoration: none;
+    font-weight: bold;
+	letter-spacing: 0px;
+}
+#twitter-link:hover {
+    color: #1073a0;
+    text-decoration: none;
+}
+
 .highlights {
     height:41px;
 }
@@ -924,6 +954,11 @@ a.pnumber{
 	text-decoration:none;
 	}
 .news table{
+	 background: url(../images/line.gif) bottom left no-repeat;
+	 min-width:59%;
+	 color:#808080;
+	}
+.twitter table{
 	 background: url(../images/line.gif) bottom left no-repeat;
 	 min-width:59%;
 	 color:#808080;
