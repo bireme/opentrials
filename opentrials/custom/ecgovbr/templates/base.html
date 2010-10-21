@@ -4,7 +4,7 @@
     {% load i18n %}
     <head>
         <meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8"/>
-        <title>{% block page_title %}{% trans "Clinical Trials Platform" %}{% endblock %}</title>
+        <title>{% block page_title %}{% trans "Brazilian Registry of Clinical Trials" %}{% endblock %}</title>
         <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="/static/css/asmselect/jquery.asmselect.css"/>
         <link rel="stylesheet" type="text/css" href="/static/css/jquery.cluetip.css"/>
@@ -30,7 +30,11 @@
             <div class="top">
                 <div class="banner">
                     <div class="identification">
-                        <h1><a href="{% url reviewapp.home %}"><span><img alt="{% trans 'Registro Brasileiro de Ensaios Clínicos' %}" src="/static/images/logo.png"></span></a></h1>
+                        <h1><a href="{% url reviewapp.home %}">
+                        <span>
+                          <img title="{% trans 'Brazilian Registry of Clinical Trials' %}" alt="{% trans 'Brazilian Registry of Clinical Trials' %}" src="/static/images/logo.png">
+                        </span>
+                        </a></h1>
                     </div>
                 </div>
                 {% block login %}
