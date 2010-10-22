@@ -973,3 +973,11 @@ ul{
 	margin-left:0px;
 	padding-left:0px; 
 	}
+
+.errorlist li {
+    color: #ff0000;
+    display: block;
+    margin: 0 0 3px;
+    padding: 4px 5px;
+}
+
