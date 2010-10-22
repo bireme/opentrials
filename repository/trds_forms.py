@@ -62,9 +62,9 @@ class ReviewModelForm(MultilingualBaseForm):
                             self.Meta.count = 0
                         if self.Meta.min_required > 0 and self.Meta.count < self.Meta.min_required:
                             if name != 'DELETE':
-                                label = '* ' + label
+                                label = label + ' <span class="required_field">(*)</span>'
                     elif trial_validator.field_is_required(self, name):
-                        label = '* ' + label
+                        label = label + ' <span class="required_field">(*)</span>'
                     label = bf.label_tag(label) or ''
                 else:
                     label = ''
