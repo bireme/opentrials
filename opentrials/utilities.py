@@ -77,6 +77,10 @@ def export_json(modeladmin, request, queryset):
     return response
 export_json.short_description = 'Export selected records in JSON format'
 
+def user_in_group(user, group):
+    return user.groups.filter(name=group).count() != 0 if user else False
+
+
 if __name__=='__main__':
     import doctest
     doctest.testmod()

@@ -36,6 +36,8 @@ from repository.trds_forms import make_site_contact_form, TRIAL_FORMS
 
 from polyglot.multilingual_forms import modelformset_factory
 
+from utilities import user_in_group
+
 import choices
 import settings
 
@@ -57,7 +59,7 @@ MENU_SHORT_TITLE = [_('Trial Identif.'),
 def edit_trial_index(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     
-    if not request.user.is_staff:
+    if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
@@ -201,13 +203,13 @@ def index(request, page=0, **kwargs):
 @login_required
 def trial_view(request, trial_pk):
     ''' show details of a trial of a user logged '''
-    if request.user.is_staff:
-        ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+
+    if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
-    else:
-        ct = get_object_or_404(ClinicalTrial, id=int(trial_pk), submission__creator=request.user)
+
     translations = [t for t in ct.translations.all()]
     trial_forms = []
     for tf in TRIAL_FORMS:
@@ -267,7 +269,7 @@ def step_list(trial_pk):
 def step_1(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     
-    if not request.user.is_staff:
+    if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
@@ -312,7 +314,7 @@ def step_1(request, trial_pk):
 def step_2(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     
-    if not request.user.is_staff:
+    if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
@@ -364,7 +366,7 @@ def step_2(request, trial_pk):
 def step_3(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     
-    if not request.user.is_staff:
+    if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
@@ -445,7 +447,7 @@ def step_3(request, trial_pk):
 def step_4(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     
-    if not request.user.is_staff:
+    if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
@@ -503,7 +505,7 @@ def step_4(request, trial_pk):
 def step_5(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     
-    if not request.user.is_staff:
+    if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
@@ -536,7 +538,7 @@ def step_5(request, trial_pk):
 def step_6(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     
-    if not request.user.is_staff:
+    if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
@@ -569,7 +571,7 @@ def step_6(request, trial_pk):
 def step_7(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     
-    if not request.user.is_staff:
+    if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
@@ -636,7 +638,7 @@ def step_7(request, trial_pk):
 def step_8(request, trial_pk):
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     
-    if not request.user.is_staff:
+    if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
@@ -701,7 +703,7 @@ def step_9(request, trial_pk):
     # TODO: this function should be on another place
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
     
-    if not request.user.is_staff:
+    if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
