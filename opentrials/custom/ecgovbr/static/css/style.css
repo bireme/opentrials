@@ -981,3 +981,7 @@ ul{
     padding: 4px 5px;
 }
 
+.required_field {
+    color: #ff0000;
+}
+
