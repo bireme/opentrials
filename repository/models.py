@@ -34,7 +34,7 @@ TRIAL_ID_TRIES = 3
 def generate_trial_id(prefix, num_digits):
     s = str(randrange(2,10)) # start with a numeric digit 2...9
     s += ''.join(choice(BASE28) for i in range(1, num_digits))
-    return '-'.join([prefix, s[:num_digits/2], s[num_digits/2:]])
+    return '-'.join([prefix, s])
 
 class TrialRegistrationDataSetModel(models.Model):
     """More details on:
