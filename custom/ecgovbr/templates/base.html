@@ -102,7 +102,23 @@
                         <div class="spacer">&#160;</div>
                     </div>
                     {% endif %}
-                    <div class="bottomMenu"></div>
+                    <div class="bottomMenu">
+                        <div class="languages">
+                            <form name="form_language" id="form_language" action="/i18n/setlang/" method="post">
+                            <ul>
+                                {% csrf_token %}
+                                <input type="hidden" id="language" name="language">
+                                <li><a id="lang_pt-BR" href="javascript: void(0)" title="Alterar o idioma para Português">
+                                {% if request.LANGUAGE_CODE == 'pt-br' %}<span class="selected_language">PT</span>{% else %}PT{% endif %}</a></li>
+                                <li><a id="lang_es" href="javascript: void(0)" title="Cambiar el idioma a Español">
+                                {% if request.LANGUAGE_CODE == 'es' %}<span class="selected_language">ES</span>{% else %}ES{% endif %}</a></li>
+                                <li><a id="lang_en" href="javascript: void(0)" title="Change language to English">
+                                {% if request.LANGUAGE_CODE == 'en' %}<span class="selected_language">EN</span>{% else %}EN{% endif %}</a></li>
+                            </ul>
+                            </form>
+                        </div>
+                        <div class="spacer">&#160;</div>
+                    </div>
                 </div>
                 {% endblock %}
                 <div class="spacer">&#160;</div>
@@ -120,17 +136,6 @@
                     <form action="{% url repository.index %}" method="get">
                         <input type="text" name="q" class="textEntry" id="search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" />
                         <input type="submit" class="submit" value="{% trans 'Search trials' %}" />
-                    </form>
-                </div>
-                <div class="languages">
-                    <form name="form_language" id="form_language" action="/i18n/setlang/" method="post">
-                    <ul>
-                        {% csrf_token %}
-                        <input type="hidden" id="language" name="language">
-                        <li><a id="lang_pt-BR" href="javascript: void(0)" title="{% trans 'Change language to Portuguese' %}">PT</a></li>
-                        <li><a id="lang_es" href="javascript: void(0)" title="{% trans 'Change language to Spanish' %}">ES</a></li>
-                        <li><a id="lang_en" href="javascript: void(0)" title="{% trans 'Change language to English' %}">EN</a></li>
-                    </ul>
                     </form>
                 </div>
                 <div class="spacer">&#160;</div>
