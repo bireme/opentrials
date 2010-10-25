@@ -211,8 +211,8 @@ blockquote {
 }
 
 .bottomMenu {
-    float: left;
-    margin: 19px 2px 0px 2px;
+    float: right;
+    margin: 24px 40px 0px 0px;
 }
 
 /* TOP MENU */
@@ -239,13 +239,16 @@ blockquote {
     text-decoration: none;
 	font-size:16px;
 }
-.topMenu LI A:hover, languages A:hover {
+.topMenu LI A:hover, .languages A:hover {
     color: #05914f;
 }
+.selected_language {
+    font-weight: bold;
+    text-decoration: underline;
+}
 .search {
-    margin-top: 4px;
-    width: 40%;
-    float: left;
+    margin-top: 3px;
+    float: right;
 }
 .search .submit {
     background: url(../images/submit_search.gif) no-repeat;
@@ -263,6 +266,8 @@ blockquote {
 .languages {
     float: right;
     margin: 3px 2px 0px 2px;
+    width: 180px;
+    text-align: right;
 }
 .languages UL {
     margin: 0px;
