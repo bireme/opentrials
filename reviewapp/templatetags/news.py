@@ -18,7 +18,7 @@ class LatestNewsNode(Node):
         self.varname = varname
     
     def render(self, context):
-        context[self.varname] = News.objects.all().order_by('-created',)[:self.num]
+        context[self.varname] = News.objects.filter(status__exact='published').order_by('-created',)[:self.num]
         return ''
 
 get_latest_news = register.tag(get_latest_news)
