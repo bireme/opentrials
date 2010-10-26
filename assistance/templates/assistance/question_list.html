@@ -16,23 +16,16 @@
 <div class="links">
 
     {% if object_list %}
-
-        {% regroup object_list by category as category_list %}
-
         <ol>
-        {% for category in category_list %}
-            <li><a title="{{ category.grouper }}" href="#{{ category.grouper }}">{{ category.grouper }}</a></li>
+        {% for object in object_list %}
+            <li><a title="{{ object.pk }}" href="#{{ object.pk }}">{{ object.title }}</a></li>
         {% endfor %}
         </ol>
 
-        {% for category in category_list %}
-            <h2 id="{{ category.grouper }}" name="{{ category.grouper }}">{{ forloop.counter }} - {{ category.grouper }}</h2>
-            {% for item in category.list %}
-            <h4>{{ item.title }}</h4>
-            <p>{{ item.answer|safe }}</p>
-            {% endfor %}
+        {% for object in object_list %}
+            <h3 id="{{ object.pk }}" name="{{ object.pk }}">{{ forloop.counter }} - {{ object.title }}</h3>
+            <p>{{ object.answer|safe|linebreaksbr|urlizetrunc:30 }}</p>
         {% endfor %}
-    
     {% else %}
         <p>{% trans 'No FAQ available.' %}</p>
     {% endif %}
