@@ -34,6 +34,7 @@ def faq(request):
                 q.answer = trans.answer
                 q.order = question.order
                 q.created = question.created
+                q.pk = question.pk
             except QuestionTranslation.DoesNotExist:
                 q = question
             try:
