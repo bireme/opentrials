@@ -20,6 +20,18 @@
                 $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
             });
         </script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#id_target_sample_size').keyup(function() { 
+                    this.value = this.value.replace(/[^0-9]/g,'');
+                });
+                
+                $('#id_number_of_arms').keyup(function() { 
+                    this.value = this.value.replace(/[^0-9]/g,'');
+                });
+            });
+        </script>
 {% endblock %}
 
 {% block body %}
