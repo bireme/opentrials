@@ -2,11 +2,36 @@
 
 {% load i18n %}
 
+{% block extrahead %}
+    {% if show_beta_message %}
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/themes/south-street/jquery-ui.css" type="text/css" media="all" />
+    <script type="text/javascript">
+    $(document).ready(function() {	
+
+        $("#dialog").dialog("destroy");
+	
+  		  $("#dialog-modal").dialog({
+			      modal: true,
+            resizable: false,
+            width: 400,
+            draggable: false,
+  		  });
+	  });
+    </script>
+    {% endif %}
+{% endblock %}
+
 {% block body %}
+    {% if show_beta_message %}
+    <div id="dialog-modal" title="{% trans 'Warning: Beta Version' %}" style="display:None;">
+	      {{ beta_page.content|safe|linebreaks|urlizetrunc:30 }}
+    </div>
+    {% endif %}
+    
     <div class="news">
     
     {% if page %}
-        <a class="NewsExcerpt" href="/about/" title="{% trans 'Read more' %}">{{ page.content|safe }}</a>
+        {{ page.content|safe|linebreaks|urlizetrunc:30 }}
     {% endif %}
     
     <table border="0" cellpading="0" cellspacing="0">

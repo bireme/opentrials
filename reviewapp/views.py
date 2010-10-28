@@ -33,12 +33,20 @@ import pickle
 from utilities import safe_truncate
 
 def index(request):
+        
+    show_beta_message = request.session.get('show_beta_message', True)
+
+    # if the HTTP_REFERER is empty or the HTTP_HOST is not the same as HTTP_REFERER, 
+    # strength display the message
+    referer = request.META.get('HTTP_REFERER', '')
+    http_host = request.META.get('HTTP_HOST', '')
+    if not referer or referer.find(http_host) == -1:
+        show_beta_message = True
+        
+    if show_beta_message:
+        request.session['show_beta_message'] = False
+
     clinical_trials = ClinicalTrial.published.all()[:3]
-    latest = News.objects.filter(status__exact='published').order_by('-created',)[:1]
-    if len(latest) < 1:
-        latest = None
-    else:
-        latest = latest[0]
     
     pages = FlatPage.objects.filter(url='/site-description/')
     if len(pages) < 1:
@@ -49,11 +57,25 @@ def index(request):
             trans = page.translations.get(language__iexact=request.LANGUAGE_CODE)
         except FlatPageTranslation.DoesNotExist:
             trans = page
+            
+    beta_pages = FlatPage.objects.filter(url='/beta-message/')
+    if len(beta_pages) < 1:
+        beta_trans = None
+    else:
+        beta_page = beta_pages[0]
+        try:
+            beta_trans = beta_page.translations.get(language__iexact=request.LANGUAGE_CODE)
+        except FlatPageTranslation.DoesNotExist:
+            beta_trans = beta_page
+
+    if not beta_trans:
+        show_beta_message = False
 
     return render_to_response('reviewapp/index.html', {
                           'clinical_trials': clinical_trials,
-                          'news': latest,
-                          'page': trans,},
+                          'page': trans,
+                          'beta_page': beta_trans,
+                          'show_beta_message': show_beta_message},
                           context_instance=RequestContext(request))
 
 @login_required

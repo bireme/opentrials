@@ -181,6 +181,8 @@ NOSE_ARGS = ['--with-coverage', '--with-doctest', '--doctest-tests', '--doctest-
 SKIP_SOUTH_TESTS = True
 SOUTH_TESTS_MIGRATE = False
 
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
 ### END Clinical Trials Repository customization settings
 #################################################################
 
