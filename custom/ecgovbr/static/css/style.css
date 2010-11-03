@@ -991,3 +991,44 @@ ul{
     color: #ff0000;
 }
 
+
+table.trial_table {
+    margin-bottom: 20px;
+    clear: both;
+    width: 100%;
+}
+table.trial_table, table.trial_table td {
+    color:#333;
+}
+table.trial_table td {
+    font-family: arial;
+    font-size: 80%;
+    line-height: 120%;
+    vertical-align: top;
+}
+table.trial_table td.trial_label {
+    font-weight: bold;
+    color: #0c4762;
+    background: #E6ECEF;
+    font-size: 110%;
+}
+table.trial_table td.trial_title {
+    font-weight: bold;
+    color: #0c4762;
+    font-size: 100%;
+}
+table.trial_table td A {
+    color: #39b54a;
+    text-decoration: none;
+    font-weight: bold;
+}
+table.trial_table A:hover {
+    color: #1073a0;
+    text-decoration: none;
+}
+table.trial_table TD {
+    border-bottom: 1px solid #c9c9c9;
+    padding: 6px 4px;
+}
+
+

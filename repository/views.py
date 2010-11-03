@@ -23,6 +23,7 @@ from repository.trial_validation import trial_validator
 from repository.models import ClinicalTrial, Descriptor, TrialNumber
 from repository.models import TrialSecondarySponsor, TrialSupportSource, Outcome
 from repository.models import PublicContact, ScientificContact, SiteContact, Contact, Institution
+from repository.models import ClinicalTrialTranslation
 from repository.trds_forms import MultilingualBaseFormSet
 from repository.trds_forms import GeneralHealthDescriptorForm, PrimarySponsorForm
 from repository.trds_forms import SecondaryIdForm, make_secondary_sponsor_form
@@ -33,6 +34,7 @@ from repository.trds_forms import RecruitmentForm, StudyTypeForm, PrimaryOutcome
 from repository.trds_forms import SecondaryOutcomesForm, make_public_contact_form
 from repository.trds_forms import make_scientifc_contact_form, make_contact_form, NewInstitution
 from repository.trds_forms import make_site_contact_form, TRIAL_FORMS
+from vocabulary.models import RecruitmentStatus, VocabularyTranslation
 
 from polyglot.multilingual_forms import modelformset_factory
 
@@ -151,29 +153,37 @@ def full_view(request, trial_pk):
                                context_instance=RequestContext(request))
 
 
-@login_required
-def list_all(request, page=0, **kwargs):
-    ''' List all trials of a user logged
-        If you use a search term, the result is filtered 
+def recruiting(request, page=0, **kwargs):
+    ''' List all registered trials with recruitment_status = recruiting
     '''
-    q = request.GET.get('q', '')
-    queryset = ClinicalTrial.objects.filter(submission__creator=request.user)
-    if q:
-        queryset = queryset.filter(Q(scientific_title__icontains=q)
-                                   |Q(public_title__icontains=q)
-                                   |Q(trial_id__iexact=q)
-                                   |Q(acronym__iexact=q)
-                                   |Q(acronym_expansion__icontains=q)
-                                   |Q(scientific_acronym__iexact=q)
-                                   |Q(scientific_acronym_expansion__icontains=q))
+    recruitments = RecruitmentStatus.objects.filter(label__exact='recruiting')
+    if len(recruitments) > 0:
+        object_list = ClinicalTrial.published.filter(recruitment_status=recruitments[0])
+    else:
+        object_list = None
 
-    return object_list(
-                  request,
-                  queryset = queryset,
-                  paginate_by = getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10),
-                  page = page,
-                  extra_context = {'q': q,},
-                  **kwargs)
+    for obj in object_list:
+        try:
+            trans = obj.translations.get(language__iexact=request.LANGUAGE_CODE)
+        except ClinicalTrialTranslation.DoesNotExist:
+            trans = None
+        
+        if trans:
+            obj.public_title = trans.public_title
+            obj.scientific_title = trans.scientific_title
+        
+        try:
+            rec_status_trans = obj.recruitment_status.translations.get(language__iexact=request.LANGUAGE_CODE)
+        except VocabularyTranslation.DoesNotExist:
+            rec_status_trans = obj.recruitment_status
+        obj.rec_status = rec_status_trans.label
+        
+    return render_to_response('repository/clinicaltrial_recruiting.html',
+                              {'object_list': object_list,
+                               'paginate_by': getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10),
+                               'page': page,
+                               },
+                               context_instance=RequestContext(request))
 
 
 def index(request, page=0, **kwargs):

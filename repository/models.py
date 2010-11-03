@@ -224,6 +224,9 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         if self.id:
             self.updated = datetime.now()
         if self.status == choices.PUBLISHED_STATUS and not self.trial_id:
+            # assigns the date of publication/registration
+            self.date_registration = datetime.now()
+            
             for i in range(TRIAL_ID_TRIES):
                 self.trial_id = generate_trial_id(TRIAL_ID_PREFIX, TRIAL_ID_DIGITS)
                 try:
