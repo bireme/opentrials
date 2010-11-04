@@ -117,11 +117,11 @@
                         </ul>
                     </div>
                     <div class="search">
-                        <form action="{% url repository.list_all %}" method="get">
-                            <input type="text" name="q" class="textEntry" id="search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" />
-                            <input type="submit" class="submit" value="{% trans 'Search' %}" />
-                        </form>
-                    </div>
+                    <form action="{% url repository.index %}" method="get">
+                        <input type="text" name="q" class="textEntry" id="search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" />
+                        <input type="submit" class="submit" value="{% trans 'Search trials' %}" />
+                    </form>
+                </div>
                 </div>
                 {% endblock %}
                 <div class="spacer">&#160;</div>

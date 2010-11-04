@@ -14,6 +14,7 @@ from django.conf import settings
 from django.template.defaultfilters import slugify
 from django.template.context import RequestContext
 from django.contrib.sites.models import Site
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
 from reviewapp.models import Attachment, Submission, Remark, SUBMISSION_STATUS
 from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
@@ -153,7 +154,7 @@ def full_view(request, trial_pk):
                                context_instance=RequestContext(request))
 
 
-def recruiting(request, page=0, **kwargs):
+def recruiting(request):
     ''' List all registered trials with recruitment_status = recruiting
     '''
     recruitments = RecruitmentStatus.objects.filter(label__exact='recruiting')
@@ -172,43 +173,90 @@ def recruiting(request, page=0, **kwargs):
             obj.public_title = trans.public_title
             obj.scientific_title = trans.scientific_title
         
-        try:
-            rec_status_trans = obj.recruitment_status.translations.get(language__iexact=request.LANGUAGE_CODE)
-        except VocabularyTranslation.DoesNotExist:
-            rec_status_trans = obj.recruitment_status
-        obj.rec_status = rec_status_trans.label
+        if obj.recruitment_status:
+            try:
+                rec_status_trans = obj.recruitment_status.translations.get(language__iexact=request.LANGUAGE_CODE)
+            except VocabularyTranslation.DoesNotExist:
+                rec_status_trans = obj.recruitment_status
+            obj.rec_status = rec_status_trans.label
+    
+    # pagination
+    paginator = Paginator(object_list, getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10))
+    
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    try:
+        objects = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        objects = paginator.page(paginator.num_pages)
+
         
     return render_to_response('repository/clinicaltrial_recruiting.html',
-                              {'object_list': object_list,
-                               'paginate_by': getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10),
+                              {'objects': objects, 
                                'page': page,
-                               },
+                               'paginator': paginator},
                                context_instance=RequestContext(request))
 
 
-def index(request, page=0, **kwargs):
+def index(request):
     ''' List all registered trials
         If you use a search term, the result is filtered 
     '''
     q = request.GET.get('q', '')
     if q:
-        queryset = ClinicalTrial.published.filter(Q(scientific_title__icontains=q)
+        # TODO - implement the search in multiple languages, the search currently 
+        # works only in English
+        object_list = ClinicalTrial.published.filter(Q(scientific_title__icontains=q)
                                                |Q(public_title__icontains=q)
                                                |Q(trial_id__iexact=q)
                                                |Q(acronym__iexact=q)
                                                |Q(acronym_expansion__icontains=q)
                                                |Q(scientific_acronym__iexact=q)
                                                |Q(scientific_acronym_expansion__icontains=q))
+        
     else:
-        queryset = ClinicalTrial.published.all()
+        object_list = ClinicalTrial.published.all()
+        
+    for obj in object_list:
+        try:
+            trans = obj.translations.get(language__iexact=request.LANGUAGE_CODE)
+        except ClinicalTrialTranslation.DoesNotExist:
+            trans = None
+        
+        if trans:
+            obj.public_title = trans.public_title
+            obj.scientific_title = trans.scientific_title
+        
+        if obj.recruitment_status:
+            try:
+                rec_status_trans = obj.recruitment_status.translations.get(language__iexact=request.LANGUAGE_CODE)
+            except VocabularyTranslation.DoesNotExist:
+                rec_status_trans = obj.recruitment_status
+            obj.rec_status = rec_status_trans.label
+    
+    # pagination
+    paginator = Paginator(object_list, getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10))
+    
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
 
-    return object_list(
-                  request,
-                  queryset = queryset,
-                  paginate_by = getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10),
-                  page = page,
-                  extra_context = {'q': q,},
-                  **kwargs)
+    try:
+        objects = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        objects = paginator.page(paginator.num_pages)
+
+        
+    return render_to_response('repository/clinicaltrial_list.html',
+                              {'objects': objects, 
+                               'page': page,
+                               'paginator': paginator,
+                               'q': q},
+                               context_instance=RequestContext(request))
 
 @login_required
 def trial_view(request, trial_pk):
