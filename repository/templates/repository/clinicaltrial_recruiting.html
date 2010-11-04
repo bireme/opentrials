@@ -6,13 +6,13 @@
 
 {% block stepmenu_top %}
     {{ block.super }}
-    <big>/ {% trans 'Recruiting Trials' %}</big>
+    <big>/ {% trans 'Recruiting' %}</big>
 {% endblock %}
 
 {% block body %}
 
-    {% if object_list %}
-        {% for ct in object_list %}
+    {% if objects.object_list %}
+        {% for ct in objects.object_list %}
         <table class="trial_table">
             <tr>
                 <td class="trial_label" width="50%">{% trans 'Title' %}</td>
@@ -32,10 +32,10 @@
         {% endfor %}
         
         {% if paginator.num_pages > 1 %}
-        <span class="step-links">
-            {% if has_previous %}
-                <a href="?q={{ q }}&page=1"><<</a>
-                <a href="?q={{ q }}&page={{ page_obj.previous_page_number }}"><</a>
+        <div class="pagination">
+            {% if objects.has_previous %}
+                <a href="?page=1"><<</a>
+                <a href="?page={{ objects.previous_page_number }}"><</a>
             {% endif %}
             
             {% for p in paginator.page_range %}
@@ -44,15 +44,15 @@
                       {{ p }}
                   </span>
                 {% else %}
-                    <a href="?q={{ q }}&page={{ p }}">{{ p }}</a>
+                    <a href="?page={{ p }}">{{ p }}</a>
                 {% endif %}
             {% endfor %}
             
-            {% if has_next %}
-                  <a href="?q={{ q }}&page={{ page_obj.next_page_number }}">></a>
-                  <a href="?q={{ q }}&page={{ paginator.num_pages }}">>></a>
+            {% if objects.has_next %}
+                  <a href="?page={{ objects.next_page_number }}">></a>
+                  <a href="?page={{ paginator.num_pages }}">>></a>
             {% endif %}
-        </span>
+        </div>
         {% endif %}
 
     {% else %}
