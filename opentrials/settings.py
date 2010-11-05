@@ -183,6 +183,8 @@ SOUTH_TESTS_MIGRATE = False
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
+FORMAT_MODULE_PATH = 'formats'
+
 ### END Clinical Trials Repository customization settings
 #################################################################
 
