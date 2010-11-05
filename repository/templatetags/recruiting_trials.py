@@ -1,4 +1,4 @@
-from repository.models import ClinicalTrial
+from repository.models import ClinicalTrial, ClinicalTrialTranslation
 from django.template import Library, Node, TemplateSyntaxError
 
 register = Library()
@@ -18,7 +18,23 @@ class LatestRecruitingTrialsNode(Node):
         self.varname = varname
     
     def render(self, context):
-        context[self.varname] = ClinicalTrial.published.filter(recruitment_status__label='recruiting').order_by('-date_registration',)[:self.num]
+        request = context['request']
+        
+        object_list = ClinicalTrial.published.filter(recruitment_status__label='recruiting').order_by('-date_registration',)[:self.num]
+    
+        for obj in object_list:
+            try:
+                trans = obj.translations.get(language__iexact=request.LANGUAGE_CODE)
+            except ClinicalTrialTranslation.DoesNotExist:
+                trans = None
+            
+            if trans:
+                if trans.public_title:
+                    obj.public_title = trans.public_title
+                if trans.public_title:
+                    obj.scientific_title = trans.scientific_title
+            
+        context[self.varname] = object_list
         return ''
 
 get_latest_recruiting_trials = register.tag(get_latest_recruiting_trials)

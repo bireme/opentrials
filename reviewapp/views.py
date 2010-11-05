@@ -46,17 +46,15 @@ def index(request):
     if show_beta_message:
         request.session['show_beta_message'] = False
 
-    clinical_trials = ClinicalTrial.published.all()[:3]
-    
     pages = FlatPage.objects.filter(url='/site-description/')
     if len(pages) < 1:
-        trans = None
+        flat_trans = None
     else:
         page = pages[0]
         try:
-            trans = page.translations.get(language__iexact=request.LANGUAGE_CODE)
+            flat_trans = page.translations.get(language__iexact=request.LANGUAGE_CODE)
         except FlatPageTranslation.DoesNotExist:
-            trans = page
+            flat_trans = page
             
     beta_pages = FlatPage.objects.filter(url='/beta-message/')
     if len(beta_pages) < 1:
@@ -70,10 +68,24 @@ def index(request):
 
     if not beta_trans:
         show_beta_message = False
+        
+    clinical_trials = ClinicalTrial.published.all()[:3]
+    
+    for trial in clinical_trials:
+        try:
+            trans = trial.translations.get(language__iexact=request.LANGUAGE_CODE)
+        except ClinicalTrialTranslation.DoesNotExist:
+            trans = None
+        
+        if trans:
+            if trans.public_title:
+                trial.public_title = trans.public_title
+            if trans.public_title:
+                trial.scientific_title = trans.scientific_title
 
     return render_to_response('reviewapp/index.html', {
                           'clinical_trials': clinical_trials,
-                          'page': trans,
+                          'page': flat_trans,
                           'beta_page': beta_trans,
                           'show_beta_message': show_beta_message},
                           context_instance=RequestContext(request))

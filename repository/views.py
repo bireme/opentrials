@@ -170,8 +170,10 @@ def recruiting(request):
             trans = None
         
         if trans:
-            obj.public_title = trans.public_title
-            obj.scientific_title = trans.scientific_title
+            if trans.public_title:
+                obj.public_title = trans.public_title
+            if trans.public_title:
+                obj.scientific_title = trans.scientific_title
         
         if obj.recruitment_status:
             try:
@@ -227,8 +229,10 @@ def index(request):
             trans = None
         
         if trans:
-            obj.public_title = trans.public_title
-            obj.scientific_title = trans.scientific_title
+            if trans.public_title:
+                obj.public_title = trans.public_title
+            if trans.public_title:
+                obj.scientific_title = trans.scientific_title
         
         if obj.recruitment_status:
             try:

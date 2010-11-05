@@ -245,18 +245,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         return self.trial_id or '(req:%s)' % self.pk
 
     def short_title(self):
-        scientific_title = self.scientific_title
-        if scientific_title == '':
-            trans = self.translations.filter(language=self.submission.language)
-            if len(trans) > 0:
-                scientific_title = trans[0].scientific_title
-        
-        if self.scientific_acronym:
-            tit = u'%s - %s' % (self.scientific_acronym,
-                                scientific_title)
-        else:
-            tit = scientific_title
-        return safe_truncate(tit, 120)
+        return safe_truncate(self.main_title(), 120)
         
     def very_short_title(self):
         tit = u'%s - %s' % (self.identifier(),
