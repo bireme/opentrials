@@ -35,6 +35,7 @@ class QuestionAdmin(TranslationAdmin):
     inlines = [QuestionTranslationInline]
     list_display = ('title','short_text',
                     'translation_completed', 'missing_translations')
+    list_filter = ('category', )
     actions = [export_json]
 
     def short_text(self, obj):
