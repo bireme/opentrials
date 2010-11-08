@@ -111,7 +111,7 @@ class ConsentForm(MultilingualBaseForm):
         model = Consent
         exclude = ['order']
         
-    title = _("Term of consent")
+    title = _("Terms of use")
     
     text = ModelMultipleChoiceAllFields(queryset=Consent.objects.all(),
             label='', label_field='text',

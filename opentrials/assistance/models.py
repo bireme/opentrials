@@ -71,8 +71,8 @@ class FieldHelpTranslation(Translation):
 
 class Consent(models.Model):
     class Meta:
-        verbose_name = _("Term of consent")
-        verbose_name_plural = _("Terms of consent")
+        verbose_name = _("Term of use")
+        verbose_name_plural = _("Terms of use")
 
     text = models.TextField(_("Text"), max_length=2048)
     order = models.PositiveIntegerField(_("Order"), default=0)
