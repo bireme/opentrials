@@ -7,7 +7,7 @@ from django.views.generic.list_detail import object_list, object_detail
 from reviewapp.views import index, user_dump, new_submission, submissions_list, reviewlist
 from reviewapp.views import dashboard, submission_detail, user_profile
 from reviewapp.views import upload_trial, open_remark, resend_activation_email
-from reviewapp.views import change_remark_status
+from reviewapp.views import change_remark_status, delete_remark
 from reviewapp.views import contact, submission_delete
 
 from reviewapp.models import Submission, News
@@ -82,6 +82,9 @@ urlpatterns = patterns('',
 
     url(r'^remark/change/(?P<remark_id>\d+)/(?P<status>[a-z]+)/$', change_remark_status,
         name='reviewapp.changeremarkstatus'),
-
+        
+    url(r'^remark/delete/(?P<remark_id>\d+)/$', delete_remark,
+        name='reviewapp.delete_remark'),
+        
     url(r'^$', index, name='reviewapp.home'),  
 )

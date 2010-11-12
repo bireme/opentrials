@@ -16,3 +16,132 @@
     </small>
     <big>/ Trial {{ object }}</big>
 {% endblock %}
+
+    {% block remark_list %}
+        {% if remark_list %}
+        <div class="warning">
+            <a class="minimize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-down.gif"/></a>
+            <a class="maximize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-up.gif"/></a>
+            <h2>{% trans 'Remarks' %}</h2>
+            <ul>
+                {% for remarks in remark_list %}
+                    {% for remark in remarks %}
+                    <li id="remark_{{ remark.id }}"><b>{% trans remark.context_title %}:</b> {{ remark.text }}
+                    {% if review_mode %}
+                        {% if remark.status == 'opened' %}
+                            <br />{% trans 'Status' %}: {% trans "Opened (awaiting revision)" %}
+                            
+                            <form action="{% url reviewapp.delete_remark remark.pk %}" method="POST">
+                            {% csrf_token %}
+                            <input id="remark-delete" type="submit" style="font-size: 80%;" value="{% trans 'Delete' %}" title="{% trans 'Delete' %}" />
+                            </form>
+                            
+                        {% endif %}
+                        {% if remark.status == 'acknowledged' %}
+                            <br />{% trans 'Status' %}: {% trans "Revised" %}
+                            <br />
+                            <form action="{% url reviewapp.changeremarkstatus remark.pk 'closed' %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <input id="remark-approve" type="submit" style="font-size: 80%;" value="{% trans 'Approve' %}" title="{% trans 'Approve' %}" />
+                            </form>
+                            <form action="{% url reviewapp.changeremarkstatus remark.pk 'opened' %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <input id="remark-reopen" type="submit" style="font-size: 80%;" value="{% trans 'Reopen' %}" title="{% trans 'Reopen' %}" />
+                            </form>
+                        {% endif %}
+                    {% else %}
+                        {% if remark.status == 'opened' %}
+                            <br />{% trans 'Status' %}: {% trans "Mark as reviewed" %}
+                            <br />
+                            <form action="{% url reviewapp.changeremarkstatus remark.pk 'acknowledged' %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <input id="remark-acknowledged" type="submit" style="font-size: 80%;" value="{% trans 'Mark as reviewed' %}" title="{% trans 'Mark as reviewed' %}" />
+                            </form>
+                        {% endif %}
+                        {% if remark.status == 'acknowledged' %}
+                            <br />{% trans 'Status' %}: {% trans "Revised (awaiting approval)" %}
+                        {% endif %}
+                    {% endif %}
+                    {% if remark.status == 'closed' %}
+                        <br />{% trans 'Status' %}: {% trans "Closed" %}
+                    {% endif %}
+                    </li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    {% endblock %}
+    
+    {% if modo_review %}
+
+        {% block remark_step_1 %}
+            {% if perms.reviewapp.add_remark %}
+                <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Trial Identification'|slugify %}">{% trans 'Remark' %}</a></li>
+            {% endif %}
+        {% endblock %}
+        
+        {% block remark_step_2 %}
+            {% if perms.reviewapp.add_remark %}
+                <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Sponsors'|slugify %}">{% trans 'Remark' %}</a></li>
+            {% endif %}
+        {% endblock %}
+        
+        {% block remark_step_3 %}
+            {% if perms.reviewapp.add_remark %}
+                <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Health Conditions'|slugify %}">{% trans 'Remark' %}</a></li>
+            {% endif %}
+        {% endblock %}
+        
+        {% block remark_step_4 %}
+            {% if perms.reviewapp.add_remark %}
+                <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Interventions'|slugify %}">{% trans 'Remark' %}</a></li>
+            {% endif %}
+        {% endblock %}
+        
+        {% block remark_step_5 %}
+            {% if perms.reviewapp.add_remark %}  
+                <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Recruitment'|slugify %}">{% trans 'Remark' %}</a></li>
+            {% endif %}
+        {% endblock %}
+        
+        {% block remark_step_6 %}
+            {% if perms.reviewapp.add_remark %}   
+                <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Study Type'|slugify %}">{% trans 'Remark' %}</a></li>
+            {% endif %}
+        {% endblock %}
+        
+        {% block remark_step_7 %}
+            {% if perms.reviewapp.add_remark %}
+                <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Outcomes'|slugify %}">{% trans 'Remark' %}</a></li>
+            {% endif %}
+        {% endblock %}
+        
+        {% block remark_step_8 %}
+            {% if perms.reviewapp.add_remark %}
+                <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Contacts'|slugify %}">{% trans 'Remark' %}</a></li>
+            {% endif %}
+        {% endblock %}
+    {% endif %}
+    
+    {% block attachs %}
+    
+        {% if object.trial_attach %}
+            <h3>{% trans 'Attachments' %}</h3>
+            <ul>
+                {%  for attach in object.trial_attach %}
+                    {% if attach.public %}
+                        <li>
+                        <a href="http://{{host}}{{attach.get_relative_url}}">
+                        http://{{host}}{{attach.get_relative_url}}</a>
+                        ({{ attach.description }})
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                {% if perms.reviewapp.add_remark %}
+                <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Attachments'|slugify %}">{% trans 'Remark' %}</a></li>
+                {% endif %}
+            </ul>
+        {% endif %}
+    
+    {% endblock %}

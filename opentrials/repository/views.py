@@ -266,24 +266,26 @@ def index(request):
 def trial_view(request, trial_pk):
     ''' show details of a trial of a user logged '''
     ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
-
+    review_mode = True
     if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
+        review_mode = False
         if request.user != ct.submission.creator:
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
 
     translations = [t for t in ct.translations.all()]
-    trial_forms = []
+    remark_list = []
     for tf in TRIAL_FORMS:
          remarks = ct.submission.remark_set.filter(context=slugify(tf))
          if remarks:
-            trial_forms.append(remarks)
+            remark_list.append(remarks)
 
     return render_to_response('repository/clinicaltrial_detail_user.html',
                                 {'object': ct,
                                 'translations': translations,
                                 'host': request.get_host(),
-                                'trial_forms': trial_forms,},
+                                'remark_list': remark_list,
+                                'review_mode': review_mode,},
                                 context_instance=RequestContext(request))
                                 
 def trial_registered(request, trial_id):
