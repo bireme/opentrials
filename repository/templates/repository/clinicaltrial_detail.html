@@ -4,6 +4,72 @@
 
 {% block body_title %}{% trans 'Clinical Trial' %}{% endblock %}
 
+{% block extrahead %}
+<style type="text/css">
+    span.label, span.legend {
+        font-weight: bold;
+    }
+    span.legend {
+        display: block;
+        margin: 0.5em 0;
+        text-decoration: underline;
+    }
+    .mainContent ul li {
+        margin-bottom: 1em;
+    }
+    .mainContent li.subset {
+        border: 1px solid silver;
+        padding: 0.5em;
+        clear: both;
+    }
+    .mainContent li.subset ul {
+        padding: 0em;
+    }
+    .mainContent li.subset .odd {
+        background-color: #F4F9FD;
+    }
+    .mainContent li.subset ul.vcard {
+        float: left;
+        width: 33%;
+        margin: 1.5em 0 1em;
+    }
+    div.title {
+      margin-left: 1%;
+      border: 4px solid #CCC;
+      border-radius: 16px;
+      -moz-border-radius: 16px;
+      -webkit-border-radius: 16px;
+      margin-bottom: 2em;
+      background: #EEE;
+      overflow: hidden;
+      padding: 0;
+      width: 31%;
+      float: left;
+    }
+    
+    div.title h2 {
+      color: #CCC;
+      font-size: 18pt;
+      line-height: 54pt;
+      margin-top: -16px;
+      margin-right: 10px;
+      font-variant: small-caps;
+      letter-spacing: -1pt;
+      text-align: right;
+    }
+
+    html > body div.title h2 {
+      margin-bottom: -30pt;
+    }
+
+    div.title p {
+      margin-left: 14pt;
+      line-height: 200%;
+      margin-right: 14pt;
+    }
+</style>
+{% endblock %}
+
 {% block stepmenu_top %}
     {{ block.super }}
     <small>
@@ -13,88 +79,10 @@
 {% endblock %}
 
 {% block body %}
-    <span class="NewsTitle">{{ object.scientific_title }}</span>
 
-
-    <style type="text/css">
-        span.label, span.legend {
-            font-weight: bold;
-        }
-        span.legend {
-            display: block;
-            margin: 0.5em 0;
-            text-decoration: underline;
-        }
-        .mainContent ul li {
-            margin-bottom: 1em;
-        }
-        .mainContent li.subset {
-            border: 1px solid silver;
-            padding: 0.5em;
-            clear: both;
-        }
-        .mainContent li.subset ul {
-            padding: 0em;
-        }
-        .mainContent li.subset .odd {
-            background-color: #F4F9FD;
-        }
-        .mainContent li.subset ul.vcard {
-            float: left;
-            width: 33%;
-            margin: 1.5em 0 1em;
-        }
-        div.title {
-          margin-left: 1%;
-          border: 4px solid #CCC;
-          border-radius: 16px;
-          -moz-border-radius: 16px;
-          -webkit-border-radius: 16px;
-          margin-bottom: 2em;
-          background: #EEE;
-          overflow: hidden;
-          padding: 0;
-          width: 31%;
-          float: left;
-        }
-
-        div.title h2 {
-          color: #CCC;
-          font-size: 18pt;
-          line-height: 54pt;
-          margin-top: -16px;
-          margin-right: 10px;
-          font-variant: small-caps;
-          letter-spacing: -1pt;
-          text-align: right;
-        }
-
-        html > body div.title h2 {
-          margin-bottom: -30pt;
-        }
-
-        div.title p {
-          margin-left: 14pt;
-          line-height: 200%;
-          margin-right: 14pt;
-        }
-    </style>
-    {% if trial_forms %}
-    <div class="warning">
-        <a class="minimize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-down.gif"/></a>
-        <a class="maximize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-up.gif"/></a>
-        <h2>{% trans 'Remarks' %}</h2>
-        <ul>
-            {% for remarks in trial_forms %}
-                {% for remark in remarks %}
-                <li id="remark_{{ remark.id }}"><b>{% trans remark.context_title %}:</b> {{ remark.text }}<a onclick="ack_remark({{ remark.id }})">
-                <span>{% trans "Mark as reviewed" %}</span>
-                <img alt="{% trans "Mark as reviewed" %}" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
-                {% endfor %}
-            {% endfor %}
-        </ul>
-    </div>
-    {% endif %}
+    {% block remark_list %}{% endblock %}
+    
+    <h1>{{ object.scientific_title }}</h1>
     
     <h3>{% trans 'Scientific Title' %}:</h3>
         {% for t in translations|dictsortreversed:"language" %}
@@ -180,9 +168,7 @@
             </ul>
             {% endfor %}
         </li>
-        {% if perms.reviewapp.add_remark %}
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Trial Identification'|slugify %}">{% trans 'Remark' %}</a></li>
-        {% endif %}
+        {% block remark_step_1 %}{% endblock %}
     </ul>
 
     <h3>{% trans 'Sponsors' %}</h3>
@@ -215,9 +201,7 @@
             {% endfor %}
             </ul>
         </li>
-        {% if perms.reviewapp.add_remark %}
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Sponsors'|slugify %}">{% trans 'Remark' %}</a></li>
-        {% endif %}
+        {% block remark_step_2 %}{% endblock %}
     </ul>
     
     <h3>{% trans 'Health Conditions' %}</h3>
@@ -292,9 +276,7 @@
                 <div class="spacer"> </div>
             {% endfor %}
         </li>
-        {% if perms.reviewapp.add_remark %}
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Health Conditions'|slugify %}">{% trans 'Remark' %}</a></li>
-        {% endif %}
+        {% block remark_step_3 %}{% endblock %}
     </ul>
     
     <h3>{% trans 'Interventions' %}</h3>
@@ -353,9 +335,7 @@
                 <div class="spacer"> </div>
             {% endfor %}
         </li>
-        {% if perms.reviewapp.add_remark %}
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Interventions'|slugify %}">{% trans 'Remark' %}</a></li>
-        {% endif %}
+        {% block remark_step_4 %}{% endblock %}
     </ul>
     
     <h3>{% trans 'Recruitment' %}</h3>
@@ -428,9 +408,7 @@
             {% endif %}
         </li>
         <div class="spacer"> </div>
-        {% if perms.reviewapp.add_remark %}  
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Recruitment'|slugify %}">{% trans 'Remark' %}</a></li>
-        {% endif %}
+        {% block remark_step_5 %}{% endblock %}
     </ul>
 
     <h3>{% trans 'Study Type' %}</h3>
@@ -475,9 +453,7 @@
                 </tr>
             </table>
         </li>
-        {% if perms.reviewapp.add_remark %}   
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Study Type'|slugify %}">{% trans 'Remark' %}</a></li>
-        {% endif %}
+        {% block remark_step_6 %}{% endblock %}
     </ul>
     
     <h3>{% trans 'Outcomes' %}</h3>
@@ -522,9 +498,7 @@
                 <div class="spacer"> </div>
             {% endfor %}
         </li>
-        {% if perms.reviewapp.add_remark %}
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Outcomes'|slugify %}">{% trans 'Remark' %}</a></li>
-        {% endif %}
+        {% block remark_step_7 %}{% endblock %}
     </ul>
     
     <h3>{% trans 'Contacts' %}</h3>
@@ -673,26 +647,9 @@
             {% endfor %}
         </li>
         {% endif %}
-        {% if perms.reviewapp.add_remark %}
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Contacts'|slugify %}">{% trans 'Remark' %}</a></li>
-        {% endif %}
+        {% block remark_step_8 %}{% endblock %}
     </ul>
 
-    {% if object.trial_attach %}
-    <h3>{% trans 'Attachments' %}</h3>
-    <ul>
-        {%  for attach in object.trial_attach %}
-            {% if attach.public %}
-                <li>
-                <a href="http://{{host}}{{attach.get_relative_url}}">
-                http://{{host}}{{attach.get_relative_url}}</a>
-                ({{ attach.description }})
-                </li>
-            {% endif %}
-        {% endfor %}
-        {% if perms.reviewapp.add_remark %}
-        <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Attachments'|slugify %}">{% trans 'Remark' %}</a></li>
-        {% endif %}
-    </ul>
-    {% endif %}
+    {% block attachs %}{% endblock %}
+    
 {% endblock %}

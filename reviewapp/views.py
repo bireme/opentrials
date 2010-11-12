@@ -369,7 +369,25 @@ def change_remark_status(request, remark_id, status):
     # Executes validation of current trial submission (for mandatory fields)
     trial_validator.validate(remark.submission.trial)
     
-    return HttpResponse(remark.status, mimetype='text/plain')
+    if request.is_ajax():
+        return HttpResponse(remark.status, mimetype='text/plain')
+    else:
+        return HttpResponseRedirect(reverse('repository.views.trial_view', args=[remark.submission.trial.id]))
+        
+@login_required
+def delete_remark(request, remark_id):
+
+    remark = get_object_or_404(Remark, id=int(remark_id))
+    if remark.status != 'opened':
+        return HttpResponse(status=403)
+
+    trial = remark.submission.trial
+    remark.delete()
+    
+    # Executes validation of current trial submission (for mandatory fields)
+    trial_validator.validate(trial)
+    
+    return HttpResponseRedirect(reverse('repository.views.trial_view', args=[trial.id]))
     
 def contact(request):
     if request.method == 'POST':

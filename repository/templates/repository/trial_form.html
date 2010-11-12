@@ -42,9 +42,9 @@
         <h2>{% trans 'Remarks' %}</h2>
         <ul>
             {% for remark in remarks %}
-            <li id="remark_{{ remark.id }}">{{ remark.text }}<a onclick="ack_remark({{ remark.id }})">
-            <span>{% trans "Mark as reviewed" %}</span>
-            <img alt="{% trans "Mark as reviewed" %}" src="{{MEDIA_URL}}media/img/admin/icon_deletelink.gif"/></a></li>
+            <li id="remark_{{ remark.id }}">{{ remark.text }}
+                <input onclick="ack_remark({{ remark.id }})" type="button" style="font-size: 80%;" value="{% trans "Mark as reviewed" %}" title="{% trans "Mark as reviewed" %}" />
+            </li>
             {% endfor %}
         </ul>
     </div>
