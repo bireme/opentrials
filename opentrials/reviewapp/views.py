@@ -19,7 +19,7 @@ from django.contrib.flatpages.models import FlatPage
 from flatpages_polyglot.models import FlatPageTranslation
 from tickets.models import Ticket
 
-from reviewapp.models import Submission, News
+from reviewapp.models import Submission, News, STATUS_PENDING
 from reviewapp.forms import UploadTrial, InitialTrialForm, OpenRemarkForm
 from reviewapp.forms import UserForm, PrimarySponsorForm, UserProfileForm
 from reviewapp.forms import ContactForm, ConsentForm
@@ -94,6 +94,9 @@ def index(request):
 def dashboard(request):
     user_submissions = Submission.objects.filter(creator=request.user)
     remarks = Remark.objects.filter(submission__in=user_submissions)
+
+    if request.user.has_perm('reviewapp.review'):
+        submissions_to_review = Submission.objects.filter(status=STATUS_PENDING)
     
     return render_to_response('reviewapp/dashboard.html', locals(),
                                context_instance=RequestContext(request))
@@ -103,6 +106,14 @@ def user_dump(request):
     uvars = [{'k':k, 'v':v} for k, v in request.user.__dict__.items()]
     return render_to_response('reviewapp/user_dump.html', locals(),
                                context_instance=RequestContext(request))
+
+@permission_required('reviewapp.review')
+def reviewlist(request):
+    return render_to_response(
+            'reviewapp/review_list.html',
+            locals(),
+            context_instance=RequestContext(request),
+            )
 
 @login_required
 def submissions_list(request):

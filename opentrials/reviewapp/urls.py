@@ -4,7 +4,7 @@ from django.contrib.auth.views import password_reset, password_reset_done
 from django.contrib.auth.views import password_reset_complete, password_reset_confirm
 from django.views.generic.list_detail import object_list, object_detail
 
-from reviewapp.views import index, user_dump, new_submission, submissions_list
+from reviewapp.views import index, user_dump, new_submission, submissions_list, reviewlist
 from reviewapp.views import dashboard, submission_detail, user_profile
 from reviewapp.views import upload_trial, open_remark, resend_activation_email
 from reviewapp.views import change_remark_status
@@ -34,6 +34,7 @@ urlpatterns = patterns('',
     url(r'^accounts/uploadtrial/$', upload_trial, name='reviewapp.uploadtrial'), #same as accounts/profile
 
     url(r'^accounts/submissionlist/$', submissions_list, name='reviewapp.submissionlist'), #same as accounts/profile
+    url(r'^accounts/reviewlist/$', reviewlist, name='reviewapp.reviewlist'),
 
     url(r'^accounts/submission/(\d+)/$', submission_detail, 
         name='reviewapp.submission'),
