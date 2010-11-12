@@ -641,14 +641,14 @@ table.trialsummary {
 .actions {
     padding: 8px 0px;
     float: right;
-    width: 91px;
+    width: 100px;
     text-align: right;
 }
 
 .showAll, .addNew {
     display: block;
-    width: 91px;
-    height: 20px;
+    width: 100px;
+    height: 21px;
     background: url(../images/button_showAll.gif) no-repeat;
     color: #7d7d7d;
     text-decoration: none;
