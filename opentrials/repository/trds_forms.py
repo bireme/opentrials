@@ -335,7 +335,7 @@ class RecruitmentForm(ReviewModelForm):
     # TRDS 18
     recruitment_status = MultilingualModelChoiceField(
             label=_('Study Status'),
-            queryset=RecruitmentStatus.objects.all().order_by('label'),
+            queryset=RecruitmentStatus.objects.all(),
             required=False,
             label_field='label',
             )
@@ -399,28 +399,28 @@ class StudyTypeForm(ReviewModelForm):
 
     purpose = MultilingualModelChoiceField(
         label=_('Study Purpose'),
-        queryset=StudyPurpose.objects.all().order_by('label'),
+        queryset=StudyPurpose.objects.all(),
         required=False,
         label_field='label',
         )
         
     intervention_assignment = MultilingualModelChoiceField(
         label=_('Intervention Assignment'),
-        queryset=InterventionAssigment.objects.all().order_by('label'),
+        queryset=InterventionAssigment.objects.all(),
         required=False,
         label_field='label',
         )
     
     masking = MultilingualModelChoiceField(
         label=_('Masking type'),
-        queryset=StudyMasking.objects.all().order_by('label'),
+        queryset=StudyMasking.objects.all(),
         required=False,
         label_field='label',
         )
     
     allocation = MultilingualModelChoiceField(
         label=_('Allocation type'),
-        queryset=StudyAllocation.objects.all().order_by('label'),
+        queryset=StudyAllocation.objects.all(),
         required=False,
         label_field='label',
         )
@@ -428,7 +428,7 @@ class StudyTypeForm(ReviewModelForm):
     # TRDS 15c
     phase = MultilingualModelChoiceField(
         label=_('Study Phase'),
-        queryset=StudyPhase.objects.all().order_by('label'),
+        queryset=StudyPhase.objects.all(),
         required=False,
         label_field='label',
         )
