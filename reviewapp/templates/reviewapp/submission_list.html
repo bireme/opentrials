@@ -68,7 +68,7 @@ $(document).ready(function() {
             <td>
                 <a href="{% url repository.edittrial submission.trial__pk %}">{{ submission.short_title }}</a>
             </td>
-            <td style="width:90px; text-align:center;">{{ submission.status }}</td>
+            <td style="width:90px; text-align:center;">{% trans submission.status %}</td>
             <td>
             {% if submission.can_delete %}
                 <form action="{% url reviewapp.submission_delete submission.pk %}" method="POST" class="confirm-delete">

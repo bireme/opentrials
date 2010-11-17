@@ -20,12 +20,19 @@ SUBMISSION_STATUS = [
     ('draft', _('draft')), # clinical trial is 'processing'
     ('pending', _('pending')), # clinical trial remains 'processing'
     ('approved', _('approved')), # clinical trial is 'published'
-    ('rejected', _('rejected')), # clinical trial remains or becomes 'processing'
+    ('resubmit', _('resubmit')), # clinical trial remains 'processing'
 ]
 STATUS_DRAFT = SUBMISSION_STATUS[0][0]
 STATUS_PENDING = SUBMISSION_STATUS[1][0]
 STATUS_APPROVED = SUBMISSION_STATUS[2][0]
-STATUS_REJECTED = SUBMISSION_STATUS[3][0]
+STATUS_RESUBMIT = SUBMISSION_STATUS[3][0]
+
+SUBMISSION_TRANSITIONS = {
+    STATUS_DRAFT: [STATUS_PENDING],
+    STATUS_PENDING: [STATUS_APPROVED, STATUS_RESUBMIT],
+    STATUS_APPROVED: [],
+    STATUS_RESUBMIT: [STATUS_DRAFT],
+}
 
 
 ACCESS = [
@@ -77,9 +84,6 @@ class Submission(models.Model):
             self.updated = datetime.now()
         if self.status == STATUS_APPROVED and self.trial.status == PROCESSING_STATUS:
             self.trial.status = PUBLISHED_STATUS
-            self.trial.save()
-        if self.status == STATUS_REJECTED and self.trial.status == PUBLISHED_STATUS:
-            self.trial.status = PROCESSING_STATUS
             self.trial.save()
 
         super(Submission, self).save()
