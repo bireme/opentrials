@@ -16,17 +16,24 @@ class SimpleVocabulary(models.Model):
     label = models.CharField(_('Label'), max_length=255, unique=True)
     description = models.TextField(_('Description'), max_length=2000,
                                    blank=True)
+    order = models.PositiveIntegerField(default=0, blank=True, null=True)
     translations = generic.GenericRelation('VocabularyTranslation')
 
     class Meta:
         abstract = True
-        ordering = ['id']
+        ordering = ['order']
 
     def __unicode__(self):
         return self.label
     
     def natural_key(self):
         return (self.label,)
+    
+    def save(self):
+        super(SimpleVocabulary, self).save()
+        if self.order == 0:
+            self.order = self.id * 10
+            self.save()
 
     @classmethod
     def choices(cls):
