@@ -36,7 +36,7 @@
                     <td class="title">
                         <a href="{% url repository.edittrial submission.trial.pk %}">{{ submission.short_title }}</a>
                     </td>
-                    <td>{{ submission.status }}</td>
+                    <td>{% trans submission.status %}</td>
                 </tr>
                 {% endfor %}
             </tbody>

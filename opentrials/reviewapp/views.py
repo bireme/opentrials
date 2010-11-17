@@ -19,7 +19,8 @@ from django.contrib.flatpages.models import FlatPage
 from flatpages_polyglot.models import FlatPageTranslation
 from tickets.models import Ticket
 
-from reviewapp.models import Submission, News, STATUS_PENDING
+from reviewapp.models import Submission, News, STATUS_PENDING, STATUS_RESUBMIT
+from reviewapp.models import SUBMISSION_TRANSITIONS, STATUS_APPROVED
 from reviewapp.forms import UploadTrial, InitialTrialForm, OpenRemarkForm
 from reviewapp.forms import UserForm, PrimarySponsorForm, UserProfileForm
 from reviewapp.forms import ContactForm, ConsentForm
@@ -388,6 +389,30 @@ def delete_remark(request, remark_id):
     trial_validator.validate(trial)
     
     return HttpResponseRedirect(reverse('repository.views.trial_view', args=[trial.id]))
+    
+@login_required
+def change_submission_status(request, submission_pk, status):
+
+    if status not in SUBMISSION_TRANSITIONS:
+        raise Http404
+        
+    if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
+        return render_to_response('403.html', {'site': Site.objects.get_current(),},
+                        context_instance=RequestContext(request))
+                        
+    submission = get_object_or_404(Submission, id=int(submission_pk))
+    
+    if status not in SUBMISSION_TRANSITIONS[submission.status]:
+        return HttpResponse(status=403)
+
+    # not approve submissions with remarks
+    if status == STATUS_APPROVED and submission.remark_set.exclude(status='closed').count() > 0:
+        return HttpResponse(status=403)
+
+    submission.status = status
+    submission.save()
+    
+    return HttpResponseRedirect(reverse('repository.views.trial_view', args=[submission.trial.id]))
     
 def contact(request):
     if request.method == 'POST':

@@ -1051,3 +1051,8 @@ table.trial_table TD {
     text-decoration: none;
 }
 
+.review_buttons {
+    padding-bottom: 20px;
+    text-align: right;
+}
+

@@ -16,7 +16,7 @@ from django.template.context import RequestContext
 from django.contrib.sites.models import Site
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
-from reviewapp.models import Attachment, Submission, Remark, SUBMISSION_STATUS
+from reviewapp.models import Attachment, Submission, Remark, STATUS_PENDING
 from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
 from reviewapp.consts import STEP_STATES, REMARK, MISSING, PARTIAL, COMPLETE
 
@@ -76,7 +76,7 @@ def edit_trial_index(request, trial_pk):
 
     if request.POST and submit:
         sub = ct.submission
-        sub.status = SUBMISSION_STATUS[1][0]
+        sub.status = STATUS_PENDING
 
         sub.save()
         return HttpResponseRedirect(reverse('reviewapp.dashboard'))
@@ -272,6 +272,13 @@ def trial_view(request, trial_pk):
         if request.user != ct.submission.creator:
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
+                            
+    if review_mode:
+        can_approve = ct.submission.status == STATUS_PENDING and ct.submission.remark_set.exclude(status='closed').count() == 0
+        can_resubmit = ct.submission.status == STATUS_PENDING
+    else:
+        can_approve = False
+        can_resubmit = False
 
     translations = [t for t in ct.translations.all()]
     remark_list = []
@@ -285,7 +292,10 @@ def trial_view(request, trial_pk):
                                 'translations': translations,
                                 'host': request.get_host(),
                                 'remark_list': remark_list,
-                                'review_mode': review_mode,},
+                                'review_mode': review_mode,
+                                'can_approve': can_approve,    
+                                'can_resubmit': can_resubmit,
+                                },
                                 context_instance=RequestContext(request))
                                 
 def trial_registered(request, trial_id):
