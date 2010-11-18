@@ -5,12 +5,14 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.contenttypes import generic
 
 from repository.models import ClinicalTrial, Institution
 from repository.choices import PROCESSING_STATUS, PUBLISHED_STATUS
 from tickets.models import Ticket
 from utilities import safe_truncate
 from vocabulary.models import CountryCode
+from polyglot.models import Translation
 
 from consts import REMARK, MISSING, PARTIAL, COMPLETE
 import settings
@@ -232,6 +234,7 @@ class News(models.Model):
     creator = models.ForeignKey(User, related_name='news_creator', editable=False)
     status = models.CharField(_('Status'), max_length=16, choices=NEWS_STATUS,
                               default=NEWS_STATUS[0][0])
+    translations = generic.GenericRelation('NewsTranslation')
 
     def short_title(self):
         return safe_truncate(self.title, 120)
@@ -241,6 +244,10 @@ class News(models.Model):
     
     def __unicode__(self):
         return '%s' % (self.short_title())
+        
+class NewsTranslation(Translation):
+    title = models.CharField(_('Title'), max_length=256)
+    text = models.TextField(_('Text'), max_length=2048)
 
 # SIGNALS
 def create_user_profile(sender, instance,**kwargs):

@@ -19,8 +19,9 @@ from django.contrib.flatpages.models import FlatPage
 from flatpages_polyglot.models import FlatPageTranslation
 from tickets.models import Ticket
 
-from reviewapp.models import Submission, News, STATUS_PENDING, STATUS_RESUBMIT
+from reviewapp.models import Submission, STATUS_PENDING, STATUS_RESUBMIT
 from reviewapp.models import SUBMISSION_TRANSITIONS, STATUS_APPROVED
+from reviewapp.models import News, NewsTranslation
 from reviewapp.forms import UploadTrial, InitialTrialForm, OpenRemarkForm
 from reviewapp.forms import UserForm, PrimarySponsorForm, UserProfileForm
 from reviewapp.forms import ContactForm, ConsentForm
@@ -143,7 +144,7 @@ def submissions_list(request):
             except ObjectDoesNotExist:
                 pass
 
-            # Forces a safe trancate
+            # Forces a safe truncate
             obj['short_title'] = safe_truncate(obj['title'], 120)
 
             yield obj
@@ -442,4 +443,42 @@ def contact(request):
                               'form': form, 
                               'sent': sent },
                               context_instance=RequestContext(request))
+                              
+def news_list(request):
+
+    object_list = News.objects.filter(status__exact='published').order_by('-created',)
+    
+    for obj in object_list:
+        try:
+            trans = obj.translations.get(language__iexact=request.LANGUAGE_CODE)
+        except NewsTranslation.DoesNotExist:
+            trans = None
+        
+        if trans:
+            if trans.title:
+                obj.title = trans.title
+            if trans.text:
+                obj.text = trans.text
+    
+    return render_to_response('reviewapp/news_list.html', {
+                              'object_list': object_list, },
+                               context_instance=RequestContext(request))
+
+def news_detail(request, object_id):
+    obj = get_object_or_404(News, id=int(object_id))
+    
+    try:
+        trans = obj.translations.get(language__iexact=request.LANGUAGE_CODE)
+    except NewsTranslation.DoesNotExist:
+        trans = None
+    
+    if trans:
+        if trans.title:
+            obj.title = trans.title
+        if trans.text:
+            obj.text = trans.text
+    
+    return render_to_response('reviewapp/news_detail.html', {
+                              'object': obj, },
+                               context_instance=RequestContext(request))
 

@@ -19,7 +19,7 @@
             <li>
                 <small>{{ object.created|date:'d/m/Y - H:i' }}</small> 
                 <a class="NewsTitle" title="{{ object.title }}" href="{% url reviewapp.news object.id %}">{{ object.title }}</a>
-                <a class="NewsExcerpt" href="{% url reviewapp.news object.id %}">{{ object.short_text }}</a>
+                <a class="NewsExcerpt" href="{% url reviewapp.news object.id %}">{{ object.short_text|linebreaks|urlizetrunc:30 }}</a>
             </li>
         {% endfor %}
         </ul>

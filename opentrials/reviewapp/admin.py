@@ -3,7 +3,9 @@ from django.utils.safestring import mark_safe
 
 from settings import PROJECT_PATH
 from utilities import safe_truncate
-from reviewapp.models import Submission, RecruitmentCountry, Remark, News, Attachment
+from reviewapp.models import Submission, RecruitmentCountry, Remark, Attachment
+from reviewapp.models import News, NewsTranslation
+from polyglot.admin import TranslationInline, TranslationAdmin
 
 class AdminFileLinkWidget(admin.widgets.AdminFileWidget):
     """
@@ -67,9 +69,13 @@ class RemarkAdmin(admin.ModelAdmin):
     def short_text(self, obj):
         return safe_truncate(obj.text)
         
-class NewsAdmin(admin.ModelAdmin):
-
-    list_display = ('__unicode__', 'short_text', 'created', 'creator', 'status')
+class NewsTranslationInline(TranslationInline):
+    model = NewsTranslation
+        
+class NewsAdmin(TranslationAdmin):
+    inlines = [NewsTranslationInline]
+    list_display = ('__unicode__', 'short_text', 'translation_completed', 
+                    'missing_translations', 'created', 'creator', 'status')
     list_display_links = ('__unicode__', 'status')
     list_filter = ('created', 'status',)
     
