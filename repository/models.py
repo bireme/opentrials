@@ -22,6 +22,9 @@ from repository import choices
 
 from trial_validation import trial_validator
 from django.db.models.signals import post_save
+from serializers import serialize_trial, deserialize_trial
+from serializers import serialize_institution
+from serializers import serialize_contact
 
 # remove digits that look like letters and vice-versa
 # remove vowels to avoid forming words
@@ -87,12 +90,18 @@ class TrialsPublished(models.Manager):
     def get_query_set(self):
         return super(TrialsPublished, self).get_query_set().filter(status__exact='published')
 
+class ClinicalTrialManager(models.Manager):
+    def deserialize_for_fossil(self, data, persistent=False):
+        return deserialize_trial(data, persistent)
+
 class ClinicalTrial(TrialRegistrationDataSetModel):
+    objects = ClinicalTrialManager()
+
     # TRDS 1
     trial_id = models.CharField(_('Primary Id Number'), null=True, unique=True,
                                 max_length=255, editable=False)
     # TRDS 2
-    date_registration = models.DateField(_('Date of Registration'), null=True,
+    date_registration = models.DateTimeField(_('Date of Registration'), null=True,
                                          editable=False, db_index=True)
     # TRDS 10a
     scientific_title = models.TextField(_('Scientific Title'),
@@ -214,7 +223,6 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
 
     translations = generic.GenericRelation('ClinicalTrialTranslation')
     
-    objects = models.Manager()
     published = TrialsPublished()
 
     class Meta:
@@ -225,7 +233,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
             self.updated = datetime.now()
         if self.status == choices.PUBLISHED_STATUS and not self.trial_id:
             # assigns the date of publication/registration
-            self.date_registration = datetime.now()
+            self.date_registration = datetime.today()
             
             for i in range(TRIAL_ID_TRIES):
                 self.trial_id = generate_trial_id(TRIAL_ID_PREFIX, TRIAL_ID_DIGITS)
@@ -363,6 +371,9 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     def trial_attach(self):
         return self.submission.attachment_set.all().select_related()
 
+    def serialize_for_fossil(self, as_string=True):
+        return serialize_trial(self, as_string)
+
 # Sets validation model to ClinicalTrial
 trial_validator.model = ClinicalTrial
 
@@ -433,11 +444,13 @@ class Institution(TrialRegistrationDataSetModel):
     name = models.CharField(_('Name'), max_length=255)
     address = models.TextField(_('Postal Address'), max_length=1500, blank=True)
     country = models.ForeignKey(CountryCode, verbose_name=_('Country'))
-    
     creator = models.ForeignKey(User, related_name='institution_creator', editable=False)
 
     def __unicode__(self):
         return safe_truncate(self.name, 120)
+
+    def serialize_for_fossil(self, as_string=True):
+        return serialize_institution(self, as_string)
 
 # TRDS 7 - Contact for Public Queries
 # TRDS 8 - Contact for Scientific Queries
@@ -464,6 +477,9 @@ class Contact(TrialRegistrationDataSetModel):
 
     def __unicode__(self):
         return self.name()
+
+    def serialize_for_fossil(self, as_string=True):
+        return serialize_contact(self, as_string)
 
 class PublicContact(TrialRegistrationDataSetModel):
     trial = models.ForeignKey(ClinicalTrial)

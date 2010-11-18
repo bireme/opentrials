@@ -1,7 +1,8 @@
 REPOSITORY - MODELS
 ===================
 
-    >>> from djangoplus.test_utils import model_has_fields, is_model_class_fk, is_field_type, is_model_pk
+    >>> from djangoplus.test_utils import model_has_fields, is_model_class_fk,\
+    ...     is_field_type, is_model_pk
 
                     ---------------------------------
                     | TrialRegistrationDataSetModel | abstract

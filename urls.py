@@ -51,14 +51,11 @@ urlpatterns = patterns('',
     url(r'^diag/', include('opentrials.diagnostic.urls')),
     
     (r'^i18n/', include('django.conf.urls.i18n')),
-
-
 )
 
 from django.conf import settings
 if settings.DEBUG:
     # serve static files from develpment server
-    from django.views import static
     urlpatterns += patterns('',
         url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
             {'document_root': settings.MEDIA_ROOT}),
@@ -68,3 +65,4 @@ if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += patterns('',
         url(r'^rosetta/', include('rosetta.urls')),
     )
+
