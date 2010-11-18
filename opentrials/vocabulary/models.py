@@ -3,6 +3,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes import generic
+from django.utils import simplejson
 
 from polyglot.models import Translation
 
@@ -39,11 +40,32 @@ class SimpleVocabulary(models.Model):
     def choices(cls):
         return ( (term.id, term.label) for term in cls.objects.all() )
 
+    def serialize_for_fossil(self, as_string=True):
+        json = {
+            'label': self.label,
+            'translations': [trans.serialize_for_fossil(as_string) for trans in self.translations.all()],
+            }
+
+        if as_string:
+            json = simplejson.dumps(json)
+
+        return json
+
 class VocabularyTranslation(Translation):
     # same as SimpleVocabulary, except for unique=False
     label = models.CharField(_('Label'), max_length=255, unique=False)
     description = models.TextField(_('Description'), max_length=2000,
                                    blank=True)
+
+    def serialize_for_fossil(self, as_string=True):
+        json = {
+            'label': self.label,
+            }
+
+        if as_string:
+            json = simplejson.dumps(json)
+
+        return json
 
 class CountryCode(SimpleVocabulary):
     ''' TRDS 11, Countries of Recruitment

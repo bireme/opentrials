@@ -116,6 +116,7 @@ INSTALLED_APPS = (
     'registration',  # django-registration package
     'flatpages_polyglot',
     'south',
+    'fossil',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =(

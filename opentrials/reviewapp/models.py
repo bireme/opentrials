@@ -34,7 +34,6 @@ SUBMISSION_TRANSITIONS = {
     STATUS_RESUBMIT: [STATUS_DRAFT],
 }
 
-
 ACCESS = [
     ('public', _('Public')),
     ('private', _('Private')),
