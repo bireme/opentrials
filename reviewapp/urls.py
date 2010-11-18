@@ -9,23 +9,20 @@ from reviewapp.views import dashboard, submission_detail, user_profile
 from reviewapp.views import upload_trial, open_remark, resend_activation_email
 from reviewapp.views import change_remark_status, delete_remark
 from reviewapp.views import contact, submission_delete, change_submission_status
+from reviewapp.views import news_list, news_detail
 
-from reviewapp.models import Submission, News
+from reviewapp.models import Submission
 
 
 submissions = {
    'queryset':Submission.objects.all()
 }
 
-news = {
-    'queryset': News.objects.filter(status__exact='published').order_by('-created',),
-}
-
 urlpatterns = patterns('',
 
-    url(r'^news/$', object_list, news, name='reviewapp.newslist'),
+    url(r'^news/$', news_list, name='reviewapp.newslist'),
     
-    url(r'^news/(?P<object_id>\d+)/$', object_detail, news, name='reviewapp.news'),
+    url(r'^news/(?P<object_id>\d+)/$', news_detail, name='reviewapp.news'),
 
     url(r'^accounts/dashboard/$', dashboard, name='reviewapp.dashboard'),
 

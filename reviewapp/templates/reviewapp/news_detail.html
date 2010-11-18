@@ -18,7 +18,7 @@
 
     <span class="NewsTitle">{{ object.title }}</span>
 
-    <p>{{ object.text|linebreaks }}</p>
+    <p>{{ object.text|linebreaks|urlizetrunc:30 }}</p>
     <br />
 
     <div class="date">{% trans 'Created:' %} {{ object.created|date:'d/m/Y - H:i' }}</div>
