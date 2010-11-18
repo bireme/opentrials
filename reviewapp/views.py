@@ -4,6 +4,7 @@ from reviewapp.models import UserProfile, REMARK_TRANSITIONS, Remark
 from registration.models import RegistrationProfile
 from django.core.urlresolvers import reverse
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import loader, Context
 from django.template.context import RequestContext
@@ -16,6 +17,7 @@ from django.conf import settings
 from django.contrib.sites.models import RequestSite
 from django.contrib.sites.models import Site
 from django.contrib.flatpages.models import FlatPage
+
 from flatpages_polyglot.models import FlatPageTranslation
 from tickets.models import Ticket
 
@@ -459,9 +461,24 @@ def news_list(request):
                 obj.title = trans.title
             if trans.text:
                 obj.text = trans.text
+                
+    # pagination
+    paginator = Paginator(object_list, getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10))
+    
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    try:
+        objects = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        objects = paginator.page(paginator.num_pages)
     
     return render_to_response('reviewapp/news_list.html', {
-                              'object_list': object_list, },
+                              'objects': objects, 
+                              'page': page,
+                              'paginator': paginator, },
                                context_instance=RequestContext(request))
 
 def news_detail(request, object_id):
