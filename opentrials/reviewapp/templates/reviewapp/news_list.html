@@ -13,9 +13,9 @@
 
 <div class="news">
 
-    {% if object_list %}
+    {% if objects.object_list %}
         <ul>
-        {% for object in object_list %}
+        {% for object in objects.object_list %}
             <li>
                 <small>{{ object.created|date:'d/m/Y - H:i' }}</small> 
                 <a class="NewsTitle" title="{{ object.title }}" href="{% url reviewapp.news object.id %}">{{ object.title }}</a>
@@ -23,6 +23,31 @@
             </li>
         {% endfor %}
         </ul>
+        
+        {% if paginator.num_pages > 1 %}
+        <div class="pagination">
+            {% if objects.has_previous %}
+                <a href="?page=1"><<</a>
+                <a href="?page={{ objects.previous_page_number }}"><</a>
+            {% endif %}
+            
+            {% for p in paginator.page_range %}
+                {% if p == page %}
+                  <span class="current">
+                      {{ p }}
+                  </span>
+                {% else %}
+                    <a href="?page={{ p }}">{{ p }}</a>
+                {% endif %}
+            {% endfor %}
+            
+            {% if objects.has_next %}
+                  <a href="?page={{ objects.next_page_number }}">></a>
+                  <a href="?page={{ paginator.num_pages }}">>></a>
+            {% endif %}
+        </div>
+        {% endif %}
+        
     {% else %}
         <p>{% trans 'No news have been published.' %}</p>
     {% endif %}

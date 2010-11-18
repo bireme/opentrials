@@ -84,7 +84,7 @@
 
     {% block remark_list %}{% endblock %}
     
-    <h1>{{ object.scientific_title }}</h1>
+    <h2>{{ object.scientific_title }}</h2>
     
     <h3>{% trans 'Scientific Title' %}:</h3>
         {% for t in translations|dictsortreversed:"language" %}
