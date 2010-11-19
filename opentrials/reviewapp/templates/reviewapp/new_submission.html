@@ -13,6 +13,15 @@
                 $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
             });
         </script>
+        
+    <script type="text/javascript">
+        // customization for the Brazilian registry of clinical trials
+        // #190 Show Brazil at the beginning of the selects
+        $(document).ready(function(){
+            $("#asmSelect0 option").first().after($("#asmSelect0 option[value=1]"));
+            $("#id_country option").first().after($("#id_country option[value=1]"));
+        });
+    </script>
 {% endblock %}
 
 {% block stepmenu_top %}
