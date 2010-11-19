@@ -12,6 +12,7 @@ from django.contrib.auth.models import User
 from django.conf import settings
 
 from polyglot.multilingual_forms import MultilingualBaseForm, ModelMultipleChoiceAllFields
+from polyglot.multilingual_forms import MultilingualModelChoiceField, MultilingualModelMultipleChoiceField
 
 from repository.models import Institution, CountryCode
 
@@ -38,9 +39,10 @@ class InitialTrialForm(ReviewModelForm):
     scientific_title = forms.CharField(widget=forms.Textarea, 
                                        label=_('Scientific Title'), 
                                        max_length=2000)
-    recruitment_country = forms.MultipleChoiceField(
-                                label=_('Recruitment country'), 
-                                choices=((cc.pk,cc.description) for cc in CountryCode.objects.iterator()))
+    recruitment_country = MultilingualModelMultipleChoiceField(
+                                                    label=_('Recruitment Country'),
+                                                    model=CountryCode,
+                                                    label_field='description',)
     language = forms.ChoiceField(label=_('Submission language'), 
                                  choices=settings.MANAGED_LANGUAGES_CHOICES)
     
@@ -49,6 +51,12 @@ class PrimarySponsorForm(ReviewModelForm):
         model = Institution
         exclude = ['address']
     form_title = _('Primary Sponsor')
+    
+    country = MultilingualModelChoiceField(
+            label=_('Country'),
+            queryset=CountryCode.objects.all(),
+            required=False,
+            label_field='description',)
 
 class ExistingAttachmentForm(forms.ModelForm):
     class Meta:

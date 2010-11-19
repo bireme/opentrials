@@ -32,6 +32,14 @@
                 });
             });
         </script>
+        
+        <script type="text/javascript">
+            // customization for the Brazilian registry of clinical trials
+            // #190 Show Brazil at the beginning of the selects
+            $(document).ready(function(){
+                $("#asmSelect0 option").first().after($("#asmSelect0 option[value=1]"));
+            });
+        </script>
 {% endblock %}
 
 {% block body %}
