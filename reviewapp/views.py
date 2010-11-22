@@ -366,7 +366,7 @@ def open_remark(request, submission_id, context):
             remark.creator = request.user
             remark.submission = submission
             remark.context = context
-            remark.status = 'opened'
+            remark.status = 'open'
             form.save()
 
             # Executes validation of current trial submission (for mandatory fields)
@@ -403,7 +403,7 @@ def change_remark_status(request, remark_id, status):
 def delete_remark(request, remark_id):
 
     remark = get_object_or_404(Remark, id=int(remark_id))
-    if remark.status != 'opened':
+    if remark.status != 'open':
         return HttpResponse(status=403)
 
     trial = remark.submission.trial

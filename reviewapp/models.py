@@ -65,7 +65,8 @@ class SubmissionManager(models.Manager):
 
         # Simple fields
         for field in Submission._meta.fields:
-            if field.name not in trial_fossil
+            if field.name not in trial_fossil:
+                pass
 
         trial.save()
 
@@ -212,7 +213,7 @@ class Attachment(models.Model):
 
 REMARK_STATUS = [
     # initial state, as created by reviewer
-    ('opened', _('Opened')),
+    ('open', _('Open')),
     # marked as noted by user
     ('acknowledged', _('Acknowledged')),
     # final state, after reviewer verifies changes by the user
@@ -220,14 +221,14 @@ REMARK_STATUS = [
 ]
 
 REMARK_TRANSITIONS = {
-    'opened':['acknowledged'],
-    'acknowledged':['closed','opened'],
+    'open':['acknowledged'],
+    'acknowledged':['closed','open'],
     'closed':[],
 }
 
-class RemarksOpened(models.Manager):
+class RemarksOpen(models.Manager):
     def get_query_set(self):
-        return super(RemarksOpened, self).get_query_set().filter(status__exact='opened')
+        return super(RemarksOpen, self).get_query_set().filter(status__exact='open')
 
 class RemarksAcknowledged(models.Manager):
     def get_query_set(self):
@@ -251,9 +252,9 @@ class Remark(models.Model):
                               default=REMARK_STATUS[0][0])
 
     objects = models.Manager()
-    opened = RemarksOpened()
-    acknowledged = RemarksAcknowledged()
-    closed = RemarksClosed()
+    status_open = RemarksOpen()
+    status_acknowledged = RemarksAcknowledged()
+    status_closed = RemarksClosed()
 
     def __unicode__(self):
         return '%s:%s' % (self.pk, self.submission_id)

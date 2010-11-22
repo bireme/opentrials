@@ -89,7 +89,7 @@ class TrialValidator(object):
         FIELDS[TRIAL_FORMS[4]]['recruitment_country']['queryset'] = instance.recruitment_country.all()
 
         # attachment
-        remarks = instance.submission.remark_set.filter(status='opened').filter(context=slugify(TRIAL_FORMS[8])).count()
+        remarks = instance.submission.remark_set.filter(status='open').filter(context=slugify(TRIAL_FORMS[8])).count()
         count = instance.submission.attachment_set.all().count()
         for lang in mandatory_languages:
             if remarks > 0:
@@ -103,7 +103,7 @@ class TrialValidator(object):
         
             step_status = {}
             
-            remarks = instance.submission.remark_set.filter(status='opened').filter(context=slugify(step)).count()
+            remarks = instance.submission.remark_set.filter(status='open').filter(context=slugify(step)).count()
             if remarks > 0:
                 for lang in mandatory_languages:
                     step_status.update({lang: REMARK})
