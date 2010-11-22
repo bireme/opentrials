@@ -16,7 +16,8 @@ from django.template.context import RequestContext
 from django.contrib.sites.models import Site
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
-from reviewapp.models import Attachment, Submission, Remark, STATUS_PENDING
+from reviewapp.models import Attachment, Submission, Remark
+from reviewapp.models import STATUS_PENDING, STATUS_RESUBMIT, STATUS_DRAFT
 from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
 from reviewapp.consts import STEP_STATES, REMARK, MISSING, PARTIAL, COMPLETE
 
@@ -74,7 +75,7 @@ def edit_trial_index(request, trial_pk):
     else:
         submit = True
 
-    if request.POST and submit:
+    if request.method == 'POST' and submit:
         sub = ct.submission
         sub.status = STATUS_PENDING
 
@@ -82,6 +83,12 @@ def edit_trial_index(request, trial_pk):
         return HttpResponseRedirect(reverse('reviewapp.dashboard'))
     else:
         ''' start view '''
+
+        # Changes status from "resubmit" to "draft" if user is the creator
+        sub = ct.submission
+        if sub.status == STATUS_RESUBMIT and request.user == sub.creator:
+            sub.status = STATUS_DRAFT
+            sub.save()
         
         fields_status = ct.submission.get_fields_status()
 

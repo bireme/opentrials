@@ -14,6 +14,7 @@ from utilities import safe_truncate
 from vocabulary.models import CountryCode
 from polyglot.models import Translation
 
+from repository.trial_validation import TRIAL_FORMS
 from consts import REMARK, MISSING, PARTIAL, COMPLETE
 import settings
 
@@ -53,6 +54,31 @@ class UserProfile(models.Model):
     def amount_tickets(self):
         return u"%03d" % (Ticket.objects.filter(creator=self.user).count())
        
+class SubmissionManager(models.Manager):
+    def create_from_trial_fossil(self, trial_fossil, user):
+        """
+        Creates a new submission copying data from an existing trial fossil
+        """
+        obj_fossil = trial_fossil.get_object_fossil()
+
+        trial = ClinicalTrial()
+
+        # Simple fields
+        for field in Submission._meta.fields:
+            if field.name not in trial_fossil
+
+        trial.save()
+
+        # Many to many fields
+
+        # Translations
+
+        submission = Submission(creator=user)
+        submission.trial = trial
+        submission.fields_status = pickle.dumps({}) # XXX maybe FIXME
+        submission.save()
+
+        return submission
 
 class Submission(models.Model):
     class Meta:
@@ -60,6 +86,8 @@ class Submission(models.Model):
         permissions = (
             ("review", "Can review"),
         )
+
+    objects = SubmissionManager()
 
     creator = models.ForeignKey(User, related_name='submission_creator', editable=False)
     created = models.DateTimeField(default=datetime.now, editable=False)
@@ -80,14 +108,14 @@ class Submission(models.Model):
     staff_note = models.TextField(_('Submission note (staff use only)'), max_length=255,
                                     blank=True)
 
-    def save(self):
+    def save(self, *args, **kwargs):
         if self.id:
             self.updated = datetime.now()
         if self.status == STATUS_APPROVED and self.trial.status == PROCESSING_STATUS:
             self.trial.status = PUBLISHED_STATUS
             self.trial.save()
 
-        super(Submission, self).save()
+        super(Submission, self).save(*args, **kwargs)
 
     def short_title(self):
         return safe_truncate(self.title, 120)
@@ -123,6 +151,24 @@ class Submission(models.Model):
     def get_absolute_url(self):
         # TODO: use reverse to replace absolute path
         return '/accounts/submission/%s/' % self.id
+
+    def init_fields_status(self):
+        # sets the initial status of the fields
+        fields_status = {}
+        FIELDS = {
+            TRIAL_FORMS[0]: MISSING, TRIAL_FORMS[1]: PARTIAL, TRIAL_FORMS[2]: MISSING,
+
+            TRIAL_FORMS[3]: MISSING, TRIAL_FORMS[4]: MISSING, TRIAL_FORMS[5]: MISSING, 
+            TRIAL_FORMS[6]: MISSING, TRIAL_FORMS[7]: MISSING, TRIAL_FORMS[8]: PARTIAL
+        }
+        for lang in self.get_mandatory_languages():
+            lang = lang.lower()
+            fields_status.update({lang: dict(FIELDS)})
+            if lang == self.language.lower():
+                fields_status[lang].update({TRIAL_FORMS[0]: PARTIAL})
+        
+        self.fields_status = pickle.dumps(fields_status)
+        self.save()
 
     def get_fields_status(self):
         if not getattr(self, '_fields_status', None):

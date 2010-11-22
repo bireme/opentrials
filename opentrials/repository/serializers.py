@@ -4,7 +4,7 @@ from django.db.models import Model
 from django.contrib.auth.models import User
 from fossil.fields import FossilProxy
 
-def serialize_trial(trial, as_string=True):
+def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
     """
     Serialize a given ClinicalTrial and its dependencies in once trunk.
 
@@ -21,10 +21,15 @@ def serialize_trial(trial, as_string=True):
 
         * Should us serialize empty fields as None or ignore them?
     """
+    attrs_to_ignore = attrs_to_ignore or []
+
     json = {}
 
     # Common fields
     for field in trial._meta.fields:
+        if field.name in attrs_to_ignore:
+            continue
+
         try:
             value = getattr(trial, field.name)
         except AttributeError:
@@ -43,6 +48,9 @@ def serialize_trial(trial, as_string=True):
 
     # Many to many fields
     for field in trial._meta.many_to_many:
+        if field.name in attrs_to_ignore:
+            continue
+
         try:
             objects = getattr(trial, field.name).all()
         except AttributeError:
@@ -77,6 +85,7 @@ def serialize_institution(institution, as_string=True):
     Serializes a given institution object to JSON
     """
     json = {
+        'pk': institution.pk,
         'name': institution.name,
         'address': institution.address,
         'country': institution.country.serialize_for_fossil(as_string=False),
@@ -93,17 +102,18 @@ def serialize_contact(contact, as_string=True):
     Serializes a given contact object to JSON
     """
     json = {
+        'pk': contact.pk,
         'firstname': contact.firstname,
         'middlename': contact.middlename,
         'lastname': contact.lastname,
         'email': contact.email,
-        'affiliation': serialize_institution(contact.affiliation, as_string=False),
+        'affiliation': serialize_institution(contact.affiliation, as_string=False) if contact.affiliation else None,
         'address': contact.address,
         'city': contact.city,
-        'country': contact.country.serialize_for_fossil(as_string=False),
+        'country': contact.country.serialize_for_fossil(as_string=False) if contact.country else None,
         'zip': contact.zip,
         'telephone': contact.telephone,
-        'creator': serialize_user(contact.creator, as_string=False),
+        'creator': serialize_user(contact.creator, as_string=False) if contact.creator else None,
         }
 
     if as_string:

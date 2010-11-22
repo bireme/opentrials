@@ -20,6 +20,7 @@ from django.contrib.flatpages.models import FlatPage
 
 from flatpages_polyglot.models import FlatPageTranslation
 from tickets.models import Ticket
+from utilities import user_in_group
 
 from reviewapp.models import Submission, STATUS_PENDING, STATUS_RESUBMIT
 from reviewapp.models import SUBMISSION_TRANSITIONS, STATUS_APPROVED
@@ -35,6 +36,7 @@ from repository.trial_validation import trial_validator
 from datetime import datetime
 import pickle
 from utilities import safe_truncate
+from fossil.models import Fossil
 
 def index(request):
         
@@ -77,7 +79,10 @@ def index(request):
     
     for trial in clinical_trials:
         try:
-            trans = trial.translations.get(language__iexact=request.LANGUAGE_CODE)
+            #trans = trial.translations.get(language__iexact=request.LANGUAGE_CODE)
+            trans = ClinicalTrialTranslation.objects.get_translation_for_object(
+                        request.LANGUAGE_CODE.lower(), trial,
+                        )
         except ClinicalTrialTranslation.DoesNotExist:
             trans = None
         
@@ -139,7 +144,7 @@ def submissions_list(request):
             try:
                 #t = obj.trial.translations.get(language=request.LANGUAGE_CODE)
                 t = ClinicalTrialTranslation.objects.get_translation_for_object(
-                        request.LANGUAGE_CODE, model=ClinicalTrial, object_id=obj['trial__pk'],
+                        request.LANGUAGE_CODE.lower(), model=ClinicalTrial, object_id=obj['trial__pk'],
                         )
                 if t.scientific_title != '':
                     obj['title'] = t.scientific_title
@@ -282,10 +287,13 @@ def new_submission(request):
                     trial.scientific_title = su.title
                 else:
                     trial.save()
-                    ctt = ClinicalTrialTranslation()
-                    ctt.language = su.language
+                    ctt = ClinicalTrialTranslation.objects.get_translation_for_object(
+                            su.language, trial, create_if_not_exist=True
+                            )
+                    #ctt.language = su.language
                     ctt.scientific_title = su.title
-                    trial.translations.add(ctt)
+                    ctt.save()
+                    #trial.translations.add(ctt)
 
                 trial.save()
                 su.save()
@@ -295,13 +303,17 @@ def new_submission(request):
                 sponsor.save()
                 
                 trial.primary_sponsor = su.primary_sponsor = sponsor
-                trial.recruitment_country = [CountryCode.objects.get(pk=id) for id in initial_form.cleaned_data['recruitment_country']]
+                for country in initial_form.cleaned_data['recruitment_country']:
+                    trial.recruitment_country.add(country) # What about the removed ones? FIXME
+                #trial.recruitment_country = [CountryCode.objects.get(pk=id) for pk in initial_form.cleaned_data['recruitment_country']]
                 su.trial = trial
 
                 trial.save()
                 su.save()
                 
                 # sets the initial status of the fields
+                su.init_fields_status()
+                """
                 fields_status = {}
                 FIELDS = {
                     TRIAL_FORMS[0]: MISSING, TRIAL_FORMS[1]: PARTIAL, TRIAL_FORMS[2]: MISSING,
@@ -317,6 +329,7 @@ def new_submission(request):
                 
                 su.fields_status = pickle.dumps(fields_status)
                 su.save()
+                """
 
                 return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))    
     else:
@@ -326,6 +339,14 @@ def new_submission(request):
     return render_to_response('reviewapp/consent.html', {
         'form': form},
         context_instance=RequestContext(request))
+
+@login_required
+def new_submission_from_trial(request, trial_fossil_pk):
+    trial_fossil = get_object_or_404(Fossil, pk=trial_fossil_pk)
+
+    submission = Submission.objects.create_from_trial_fossil(trial_fossil, request.user)
+
+    return HttpResponseRedirect(reverse('repository.trialview', kwargs={'trial_pk': submission.trial.pk}))
 
 @login_required
 def upload_trial(request):
@@ -395,10 +416,9 @@ def delete_remark(request, remark_id):
     
 @login_required
 def change_submission_status(request, submission_pk, status):
-
     if status not in SUBMISSION_TRANSITIONS:
         raise Http404
-        
+
     if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         return render_to_response('403.html', {'site': Site.objects.get_current(),},
                         context_instance=RequestContext(request))
