@@ -5,6 +5,7 @@ from django.utils.html import linebreaks
 from django.contrib.contenttypes import generic
 from django.contrib.auth.models import User
 
+from fossil.models import Fossil
 from datetime import datetime
 import string
 from random import randrange, choice
@@ -407,6 +408,8 @@ class ClinicalTrialTranslation(Translation):
     #def get_multilingual_fields(cls):
     #    return ['public_title']
 
+    def serialize_for_fossil(self, as_string=True):
+        return serialize_trial(self, as_string, ['content_type','object_id'])
 
 ################################### Entities linked to a Clinical Trial ###
 
@@ -580,6 +583,10 @@ def clinicaltrial_post_save(sender, instance, signal, **kwargs):
     # This signal calls validation method to validate the instance according to
     # rules made with mandatory fields but aren't obligatory on the model
     trial_validator.validate(instance)
+
+    # Creates a fossil if the status is equal to 'published'
+    if instance.status == 'published':
+        Fossil.objects.create_for_object(instance)
 
 post_save.connect(clinicaltrial_post_save, sender=ClinicalTrial)
 

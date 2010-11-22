@@ -36,10 +36,14 @@ class TranslationManager(models.Manager):
                 model._meta.app_label, model.__name__, object_id, lang,
                 )
 
-    def get_translation_for_object(self, lang, obj=None, model=None, object_id=None, returns_default=False):
+    def get_translation_for_object(self, lang, obj=None, model=None, object_id=None,
+            returns_default=False, create_if_not_exist=False):
         """Returns the translation object for a given object and language.
         
         Before call database, checks if there is a cached data for this."""
+
+        # To make sure it is in format 'xx-xx'
+        lang = lang.replace('_','-') #.lower()
 
         # Gets object model and pk if informed
         if obj:
@@ -61,10 +65,12 @@ class TranslationManager(models.Manager):
         try:
             trans = self.get(language__iexact=lang, content_type=c_type, object_id=object_id)
         except ObjectDoesNotExist:
-            if returns_default:
+            if create_if_not_exist:
+                trans = self.create(language=lang, content_type=c_type, object_id=object_id)
+            elif returns_default:
                 return obj
-            
-            raise
+            else:
+                raise
 
         # Stores in cache
         cache.set(cache_key, trans)

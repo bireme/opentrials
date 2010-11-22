@@ -30,11 +30,11 @@ class SimpleVocabulary(models.Model):
     def natural_key(self):
         return (self.label,)
     
-    def save(self):
+    def save(self, *args, **kwargs):
         super(SimpleVocabulary, self).save()
         if self.order == 0:
             self.order = self.id * 10
-            self.save()
+            self.save(*args, **kwargs)
 
     @classmethod
     def choices(cls):
