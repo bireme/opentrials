@@ -384,7 +384,7 @@ def step_1(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[0],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[0])),
+                               'remarks':Remark.status_open.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[0])),
                                'default_second_language': ct.submission.get_secondary_language(),
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],
                                },
@@ -437,7 +437,7 @@ def step_2(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[1],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[1])),
+                               'remarks':Remark.status_open.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[1])),
                                'default_second_language': ct.submission.get_secondary_language(),
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
@@ -518,7 +518,7 @@ def step_3(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[2],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[2])),
+                               'remarks':Remark.status_open.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[2])),
                                'default_second_language': ct.submission.get_secondary_language(),
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
@@ -576,7 +576,7 @@ def step_4(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[3],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[3])),
+                               'remarks':Remark.status_open.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[3])),
                                'default_second_language': ct.submission.get_secondary_language(),
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
@@ -609,7 +609,7 @@ def step_5(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[4],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[4])),
+                               'remarks':Remark.status_open.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[4])),
                                'default_second_language': ct.submission.get_secondary_language(),
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
@@ -642,7 +642,7 @@ def step_6(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[5],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[5])),
+                               'remarks':Remark.status_open.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[5])),
                                'default_second_language': ct.submission.get_secondary_language(),
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
@@ -709,7 +709,7 @@ def step_7(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[6],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[6])),
+                               'remarks':Remark.status_open.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[6])),
                                'default_second_language': ct.submission.get_secondary_language(),
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
@@ -774,7 +774,7 @@ def step_8(request, trial_pk):
                                'trial_pk':trial_pk,
                                'title':TRIAL_FORMS[7],
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[7])),
+                               'remarks':Remark.status_open.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[7])),
                                'default_second_language': ct.submission.get_secondary_language(),
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
@@ -823,7 +823,7 @@ def step_9(request, trial_pk):
                                'title':TRIAL_FORMS[8],
                                'host': request.get_host(),
                                'steps': step_list(trial_pk),
-                               'remarks':Remark.opened.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[8])),
+                               'remarks':Remark.status_open.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[8])),
                                'default_second_language': ct.submission.get_secondary_language(),
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))

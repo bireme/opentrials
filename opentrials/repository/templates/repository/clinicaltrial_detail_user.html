@@ -43,8 +43,8 @@
                     {% for remark in remarks %}
                     <li id="remark_{{ remark.id }}"><b>{% trans remark.context_title %}:</b> {{ remark.text }}
                     {% if review_mode %}
-                        {% if remark.status == 'opened' %}
-                            <br />{% trans 'Status' %}: {% trans "Opened (awaiting revision)" %}
+                        {% if remark.status == 'open' %}
+                            <br />{% trans 'Status' %}: {% trans "Open (awaiting revision)" %}
                             
                             <form action="{% url reviewapp.delete_remark remark.pk %}" method="POST">
                             {% csrf_token %}
@@ -59,13 +59,13 @@
                             {% csrf_token %}
                             <input id="remark-approve" type="submit" style="font-size: 80%;" value="{% trans 'Approve' %}" title="{% trans 'Approve' %}" />
                             </form>
-                            <form action="{% url reviewapp.changeremarkstatus remark.pk 'opened' %}" method="POST" style="display:inline;">
+                            <form action="{% url reviewapp.changeremarkstatus remark.pk 'open' %}" method="POST" style="display:inline;">
                             {% csrf_token %}
                             <input id="remark-reopen" type="submit" style="font-size: 80%;" value="{% trans 'Reopen' %}" title="{% trans 'Reopen' %}" />
                             </form>
                         {% endif %}
                     {% else %}
-                        {% if remark.status == 'opened' %}
+                        {% if remark.status == 'open' %}
                             <br />{% trans 'Status' %}: {% trans "Mark as reviewed" %}
                             <br />
                             <form action="{% url reviewapp.changeremarkstatus remark.pk 'acknowledged' %}" method="POST" style="display:inline;">
