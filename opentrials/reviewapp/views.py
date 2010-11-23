@@ -266,7 +266,7 @@ def resend_activation_email(request):
 def new_submission(request):
 
     if request.method == 'POST':
-        consent_form = ConsentForm(request.POST, display_language=request.user.get_profile().preferred_language)
+        consent_form = ConsentForm(request.POST, display_language=request.LANGUAGE_CODE)
         if consent_form.is_valid():
             initial_form = InitialTrialForm(user=request.user)
             sponsor_form = PrimarySponsorForm()
@@ -334,7 +334,7 @@ def new_submission(request):
 
                 return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))    
     else:
-        consent_form = ConsentForm(display_language=request.user.get_profile().preferred_language)
+        consent_form = ConsentForm(display_language=request.LANGUAGE_CODE)
 
     form = consent_form
     return render_to_response('reviewapp/consent.html', {
