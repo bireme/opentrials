@@ -40,6 +40,8 @@ from vocabulary.models import RecruitmentStatus, VocabularyTranslation
 
 from polyglot.multilingual_forms import modelformset_factory
 
+from fossil.fields import DictKeyAttribute
+
 from utilities import user_in_group
 
 import choices
@@ -239,20 +241,22 @@ def index(request):
         If you use a search term, the result is filtered 
     '''
     q = request.GET.get('q', '')
+
+    object_list = ClinicalTrial.fossils.published()
+
     if q:
-        # TODO - implement the search in multiple languages, the search currently 
-        # works only in English
-        object_list = ClinicalTrial.published.filter(Q(scientific_title__icontains=q)
-                                               |Q(public_title__icontains=q)
-                                               |Q(trial_id__iexact=q)
-                                               |Q(acronym__iexact=q)
-                                               |Q(acronym_expansion__icontains=q)
-                                               |Q(scientific_acronym__iexact=q)
-                                               |Q(scientific_acronym_expansion__icontains=q))
-        
-    else:
-        object_list = ClinicalTrial.published.all()
-        
+        object_list = object_list.filter(serialized__icontains=q)
+        #object_list = ClinicalTrial.published.filter(Q(scientific_title__icontains=q)
+        #                                       |Q(public_title__icontains=q)
+        #                                       |Q(trial_id__iexact=q)
+        #                                       |Q(acronym__iexact=q)
+        #                                       |Q(acronym_expansion__icontains=q)
+        #                                       |Q(scientific_acronym__iexact=q)
+        #                                       |Q(scientific_acronym_expansion__icontains=q))
+
+    object_list = object_list.proxies(language=request.LANGUAGE_CODE)
+
+    """
     for obj in object_list:
         try:
             trans = obj.translations.get(language__iexact=request.LANGUAGE_CODE)
@@ -271,6 +275,7 @@ def index(request):
             except VocabularyTranslation.DoesNotExist:
                 rec_status_trans = obj.recruitment_status
             obj.rec_status = rec_status_trans.label
+    """
     
     # pagination
     paginator = Paginator(object_list, getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10))
@@ -285,7 +290,6 @@ def index(request):
     except (EmptyPage, InvalidPage):
         objects = paginator.page(paginator.num_pages)
 
-        
     return render_to_response('repository/clinicaltrial_list.html',
                               {'objects': objects, 
                                'page': page,
