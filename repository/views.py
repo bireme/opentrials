@@ -59,14 +59,38 @@ MENU_SHORT_TITLE = [_('Trial Identif.'),
                     _('Contacts'),
                     _('Attachs')]
 
+def check_user_can_edit_trial(func):
+    """
+    Decorator to check if current user has permission to edit a given clinical trial
+    """
+    def _inner(request, trial_pk, *args, **kwargs):
+        request.ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+
+        if ( not request.user.is_staff and # If this is a staff member...
+
+             # or the creator in status draft...
+             not( request.ct.submission.status in (STATUS_DRAFT, STATUS_RESUBMIT) and
+                  request.user == request.ct.submission.creator ) and
+
+             # or a reviewer in status pending
+             not( request.ct.submission.status == STATUS_PENDING and
+                  request.user != request.ct.submission.creator and
+                  user_in_group(request.user, 'reviewers')) ):
+
+            return render_to_response(
+                    '403.html',
+                    {'site': Site.objects.get_current()},
+                    context_instance=RequestContext(request),
+                    )
+
+        return func(request, trial_pk, *args, **kwargs)
+
+    return _inner
+
 @login_required
+@check_user_can_edit_trial
 def edit_trial_index(request, trial_pk):
-    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
-    
-    if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
-        if request.user != ct.submission.creator:
-            return render_to_response('403.html', {'site': Site.objects.get_current(),},
-                            context_instance=RequestContext(request))
+    ct = request.ct
 
     status = ct.submission.get_status()
     
@@ -347,8 +371,9 @@ def step_list(trial_pk):
     return steps
 
 @login_required
+@check_user_can_edit_trial
 def step_1(request, trial_pk):
-    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    ct = request.ct
     
     if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
@@ -392,8 +417,9 @@ def step_1(request, trial_pk):
 
 
 @login_required
+@check_user_can_edit_trial
 def step_2(request, trial_pk):
-    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    ct = request.ct
     
     if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
@@ -444,8 +470,9 @@ def step_2(request, trial_pk):
 
 
 @login_required
+@check_user_can_edit_trial
 def step_3(request, trial_pk):
-    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    ct = request.ct
     
     if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
@@ -525,8 +552,9 @@ def step_3(request, trial_pk):
 
 
 @login_required
+@check_user_can_edit_trial
 def step_4(request, trial_pk):
-    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    ct = request.ct
     
     if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
@@ -583,8 +611,9 @@ def step_4(request, trial_pk):
 
 
 @login_required
+@check_user_can_edit_trial
 def step_5(request, trial_pk):
-    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    ct = request.ct
     
     if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
@@ -616,8 +645,9 @@ def step_5(request, trial_pk):
 
 
 @login_required
+@check_user_can_edit_trial
 def step_6(request, trial_pk):
-    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    ct = request.ct
     
     if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
@@ -649,8 +679,9 @@ def step_6(request, trial_pk):
 
 
 @login_required
+@check_user_can_edit_trial
 def step_7(request, trial_pk):
-    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    ct = request.ct
     
     if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
@@ -716,8 +747,9 @@ def step_7(request, trial_pk):
 
 
 @login_required
+@check_user_can_edit_trial
 def step_8(request, trial_pk):
-    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    ct = request.ct
     
     if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:
@@ -780,9 +812,10 @@ def step_8(request, trial_pk):
                                context_instance=RequestContext(request))
 
 @login_required
+@check_user_can_edit_trial
 def step_9(request, trial_pk):
     # TODO: this function should be on another place
-    ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+    ct = request.ct
     
     if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         if request.user != ct.submission.creator:

@@ -351,7 +351,7 @@ def submission_edit_published(request, submission_pk):
     trial.status = PROCESSING_STATUS
     trial.save()
 
-    return HttpResponseRedirect(reverse('repository.trialview', kwargs={'trial_pk': submission.trial.pk}))
+    return HttpResponseRedirect(reverse('repository.edittrial', args=(submission.trial.pk,)))
 
 @login_required
 def upload_trial(request):

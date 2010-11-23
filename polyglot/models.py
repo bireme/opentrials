@@ -26,6 +26,8 @@ from django.conf import settings
 from django.core.cache import cache
 from django.core.exceptions import ObjectDoesNotExist
 
+lang_format = lambda lang: lang.replace('_','-').lower()
+
 class TranslationManager(models.Manager):
     def make_cache_key(self, model, object_id, lang):
         """Returns a string with the key used to store translation object in the cache.
@@ -43,7 +45,7 @@ class TranslationManager(models.Manager):
         Before call database, checks if there is a cached data for this."""
 
         # To make sure it is in format 'xx-xx'
-        lang = lang.replace('_','-') #.lower()
+        lang = lang_format(lang)
 
         # Gets object model and pk if informed
         if obj:
@@ -111,6 +113,8 @@ class Translation(models.Model):
     def save(self, *args, **kwargs):
         """This methods intercepts the 'save' method to force cache invalidation
         for this object"""
+
+        self.language = lang_format(self.language)
 
         ret = super(Translation, self).save(*args, **kwargs)
 

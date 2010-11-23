@@ -35,6 +35,11 @@
                     <td class="date">{{ submission.created|date:'Y/m/d H:i' }}</td>
                     <td class="title">
                         <a href="{% url repository.edittrial submission.trial.pk %}">{{ submission.short_title }}</a>
+                        {% if user == submission.creator and submission.status == 'approved' %}
+                        ( <a href="{% url reviewapp.submission_edit_published submission.pk %}">
+                            {% trans "Update" %}
+                        </a> )
+                        {% endif %}
                     </td>
                     <td>{% trans submission.status %}</td>
                 </tr>

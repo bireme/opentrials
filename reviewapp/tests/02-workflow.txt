@@ -28,9 +28,9 @@ This test aims to be the story test that implement the workflow you can found at
 
     >>> cl = Client()
 
-    >>> submiter = User.objects.create(username='submiter')
-    >>> submiter.set_password('1')
-    >>> submiter.save()
+    >>> trialist = User.objects.create(username='trialist')
+    >>> trialist.set_password('1')
+    >>> trialist.save()
 
     >>> reviewers = Group.objects.create(name='reviewers')
 
@@ -62,7 +62,7 @@ This test aims to be the story test that implement the workflow you can found at
 1. Submission draft / Trial processing
 --------------------------------------
 
-    >>> cl.login(username=submiter.username, password='1')
+    >>> cl.login(username=trialist.username, password='1')
     True
 
     >>> params = {
@@ -260,7 +260,7 @@ Create a remark
 4. Submission draft again / Trial processing
 --------------------------------------------
 
-    >>> cl.login(username=submiter.username, password='1')
+    >>> cl.login(username=trialist.username, password='1')
     True
 
     >>> resp = cl.get(reverse('repository.edittrial', args=(trial.pk,)), {})
@@ -344,7 +344,7 @@ Create a remark
 7. New submission record draft / New trial processing
 -----------------------------------------------------
 
-    >>> cl.login(username=submiter.username, password='1')
+    >>> cl.login(username=trialist.username, password='1')
     True
 
     >>> resp = cl.get(reverse('reviewapp.submission_edit_published', args=(submission.pk,)))
@@ -461,7 +461,7 @@ Create a remark
 10. New submission draft again / New trial processing
 -----------------------------------------------------
 
-    >>> cl.login(username=submiter.username, password='1')
+    >>> cl.login(username=trialist.username, password='1')
     True
 
     >>> resp = cl.get(reverse('repository.edittrial', args=(new_trial.pk,)), {})

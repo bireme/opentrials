@@ -31,7 +31,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.forms.models import modelformset_factory as django_modelformset_factory
 from django.forms.formsets import DELETION_FIELD_NAME
 
-from models import Translation, get_multilingual_fields
+from models import Translation, get_multilingual_fields, lang_format
 import re
 
 BLANK_CHOICE = ('', u"---------")
@@ -52,7 +52,7 @@ class BaseMultilingualWidget(forms.Widget):
     def get_value_by_language(self, field_name, value, language):
         # Returns translation for given language and value
         try:
-            translation = self.instance.translations.get(language=language)
+            translation = self.instance.translations.get(language=lang_format(language))
 
         except self.instance.translations.model.DoesNotExist:
             return ''
@@ -64,7 +64,7 @@ class BaseMultilingualWidget(forms.Widget):
         # Calculates values
         values = {}
 
-        for lang in self.available_languages:
+        for lang in map(lang_format, self.available_languages):
             # fixme: get from settings # English is the default language
             if lang == 'en':
                 values[lang] = value
@@ -96,11 +96,12 @@ class BaseMultilingualWidget(forms.Widget):
         widgets, rendereds = [], []
 
         # Sorts the languages list with priority to display language first
-        ordered_languages = ([lang for lang in settings.MANAGED_LANGUAGES_CHOICES if lang[0] == self.display_language] +
-                             [lang for lang in settings.MANAGED_LANGUAGES_CHOICES if lang[0] != self.display_language])
+        ordered_languages = ([lang for lang in settings.MANAGED_LANGUAGES_CHOICES if lang_format(lang[0]) == lang_format(self.display_language)] +
+                             [lang for lang in settings.MANAGED_LANGUAGES_CHOICES if lang_format(lang[0]) != lang_format(self.display_language)])
 
         for lang,label in ordered_languages:
-            lang = lang.lower()
+            lang = lang_format(lang)
+
             widget = self.widget_class(**wargs)
             widgets.append(widget)
             # FIXME: get main language from settings
@@ -267,9 +268,9 @@ class MultilingualBaseForm(forms.ModelForm):
         self.multilingual_fields = get_multilingual_fields(self._meta.model)
 
         # Gets default second language from arguments, if informed. Default value is None
-        self.default_second_language = kwargs.pop('default_second_language', self.default_second_language) # Optional
-        self.available_languages = kwargs.pop('available_languages', [code.lower() for code in settings.MANAGED_LANGUAGES]) # Mandatory (FIXME, to remove default tuple)
-        self.display_language = kwargs.pop('display_language', self.display_language)
+        self.default_second_language = lang_format(kwargs.pop('default_second_language', self.default_second_language)) # Optional
+        self.available_languages = map(lang_format, kwargs.pop('available_languages', [code.lower() for code in settings.MANAGED_LANGUAGES])) # Mandatory (FIXME, to remove default tuple)
+        self.display_language = lang_format(kwargs.pop('display_language', self.display_language))
 
         if self.multilingual_fields:
             # Change field widgets replacing common TextInput and Textarea to Multilingual respective ones
@@ -337,7 +338,8 @@ class MultilingualBaseForm(forms.ModelForm):
             return
         
         for lang,label in settings.TARGET_LANGUAGES:
-            lang = lang.lower()
+            lang = lang_format(lang)
+
             # Get or create translation object
             try:
                 trans = obj.translations.get(language=lang)
