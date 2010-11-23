@@ -3,6 +3,7 @@ from django.db import models, IntegrityError
 from django.utils.translation import ugettext_lazy as _
 from django.utils.html import linebreaks
 from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import User
 
 from fossil.models import Fossil
@@ -95,8 +96,41 @@ class ClinicalTrialManager(models.Manager):
     def deserialize_for_fossil(self, data, persistent=False):
         return deserialize_trial(data, persistent)
 
+class TrialFossilsQuerySet(models.query.QuerySet):
+    def proxies(self, language=None):
+        def get_proxy(obj):
+            ret = obj.get_object_fossil()
+            ret._language = language
+            return ret
+
+        return [get_proxy(obj) for obj in self.all()]
+
+class TrialsFossil(models.Manager):
+    _ctype = None
+
+    def get_query_set(self):
+        if not self._ctype:
+            self._ctype = ContentType.objects.get_for_model(self.model)
+
+        return TrialFossilsQuerySet(Fossil).filter(
+                content_type=self._ctype,
+                )
+
+    def published(self):
+        qs = self.get_query_set()
+        return qs.filter(is_most_recent=True)
+
+    def archived(self):
+        qs = self.get_query_set()
+        return qs.filter(is_most_recent=False)
+
+    def proxies(self, language=None):
+        return self.get_query_set().proxies(language=language)
+
 class ClinicalTrial(TrialRegistrationDataSetModel):
     objects = ClinicalTrialManager()
+    published = TrialsPublished()
+    fossils = TrialsFossil()
 
     # TRDS 1
     trial_id = models.CharField(_('Primary Id Number'), null=True, unique=True,
@@ -224,8 +258,6 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
 
     translations = generic.GenericRelation('ClinicalTrialTranslation')
     
-    published = TrialsPublished()
-
     class Meta:
         ordering = ['-updated',]
 

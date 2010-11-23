@@ -3,7 +3,9 @@ from django.utils import simplejson
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
+from django.core.exceptions import ObjectDoesNotExist
 from fossil.fields import FossilProxy, DictKeyAttribute
+from polyglot.models import lang_format
 
 def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
     """
@@ -355,13 +357,58 @@ class FossilClinicalTrial(FossilProxy):
 
     The instance of this class is not persistent.
     """
+    _language = None
+    _translations = None
+
+    def _load_translations(self):
+        if self._translations is None:
+            self._translations = dict([(lang_format(t['language']), t)
+                for t in self.object_fossil.translations])
     
     def __getattr__(self, name):
         value = super(FossilClinicalTrial, self).__getattr__(name)
 
-        if isinstance(value, basestring):
-            if name in ('date_registration','created','updated','exported'):
-                value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
+        if name in ('date_registration','created','updated','exported'):
+            if isinstance(value, basestring):
+                try:
+                    value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
+                except ValueError:
+                    value = datetime.datetime.strptime(value, '%Y-%m-%d')
+
+        elif self._language:
+            self._load_translations()
+
+            try:
+                value = self._translations[lang_format(self._language)][name]
+            except KeyError:
+                pass
+
+        return value
+
+    def main_title(self):
+        if self.public_title:
+            return self.public_title
+        else:
+            return self.scientific_title
+
+    def rec_status(self):
+        self._load_translations()
+
+        try:
+            value = self._translations[lang_format(self._language)]['recruitment_status']
+        except KeyError:
+            value = self.recruitment_status
+
+        # FIXME This should be serialized with right translation, so the following code
+        # would be unnecessary
+        if value:
+            from vocabulary.models import RecruitmentStatus
+            try:
+                rec_status = RecruitmentStatus.objects.get(label=value['label'])
+                trans = rec_status.translations.get(language=lang_format(self._language))
+                return trans.label
+            except ObjectDoesNotExist:
+                return value['label']
 
         return value
 

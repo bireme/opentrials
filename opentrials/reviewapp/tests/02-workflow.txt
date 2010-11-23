@@ -358,7 +358,7 @@ is going to be the fossil object and "submission" was changed to have a draft st
     >>> new_trial = new_submission.trial
     >>> trial = fossil_obj
 
-    >>> resp['Location'] == reverse('repository.trialview', kwargs={'trial_pk': new_trial.pk})
+    >>> resp['Location'] == reverse('repository.edittrial', args=(new_trial.pk,))
     True
 
     >>> new_submission.status
@@ -379,9 +379,6 @@ is going to be the fossil object and "submission" was changed to have a draft st
 Updates the field status with validation
 
     >>> trial_validator.validate(new_trial)
-
-    >>> new_submission.get_status() in (PARTIAL, COMPLETE)
-    True
 
 Fill trial fields
 
