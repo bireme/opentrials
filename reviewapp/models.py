@@ -8,7 +8,8 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes import generic
 
 from repository.models import ClinicalTrial, Institution
-from repository.choices import PROCESSING_STATUS, PUBLISHED_STATUS
+from repository.choices import PROCESSING_STATUS, PUBLISHED_STATUS, ARCHIVED_STATUS
+from repository.serializers import deserialize_trial
 from tickets.models import Ticket
 from utilities import safe_truncate
 from vocabulary.models import CountryCode
@@ -53,33 +54,6 @@ class UserProfile(models.Model):
 
     def amount_tickets(self):
         return u"%03d" % (Ticket.objects.filter(creator=self.user).count())
-       
-class SubmissionManager(models.Manager):
-    def create_from_trial_fossil(self, trial_fossil, user):
-        """
-        Creates a new submission copying data from an existing trial fossil
-        """
-        obj_fossil = trial_fossil.get_object_fossil()
-
-        trial = ClinicalTrial()
-
-        # Simple fields
-        for field in Submission._meta.fields:
-            if field.name not in trial_fossil:
-                pass
-
-        trial.save()
-
-        # Many to many fields
-
-        # Translations
-
-        submission = Submission(creator=user)
-        submission.trial = trial
-        submission.fields_status = pickle.dumps({}) # XXX maybe FIXME
-        submission.save()
-
-        return submission
 
 class Submission(models.Model):
     class Meta:
@@ -87,8 +61,6 @@ class Submission(models.Model):
         permissions = (
             ("review", "Can review"),
         )
-
-    objects = SubmissionManager()
 
     creator = models.ForeignKey(User, related_name='submission_creator', editable=False)
     created = models.DateTimeField(default=datetime.now, editable=False)

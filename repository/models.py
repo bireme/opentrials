@@ -373,7 +373,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         return self.submission.attachment_set.all().select_related()
 
     def serialize_for_fossil(self, as_string=True):
-        return serialize_trial(self, as_string)
+        return serialize_trial(self, as_string, attrs_to_ignore=['status'])
 
 # Sets validation model to ClinicalTrial
 trial_validator.model = ClinicalTrial
@@ -409,7 +409,7 @@ class ClinicalTrialTranslation(Translation):
     #    return ['public_title']
 
     def serialize_for_fossil(self, as_string=True):
-        return serialize_trial(self, as_string, ['content_type','object_id'])
+        return serialize_trial(self, as_string, attrs_to_ignore=['content_type','object_id'])
 
 ################################### Entities linked to a Clinical Trial ###
 
@@ -585,7 +585,7 @@ def clinicaltrial_post_save(sender, instance, signal, **kwargs):
     trial_validator.validate(instance)
 
     # Creates a fossil if the status is equal to 'published'
-    if instance.status == 'published':
+    if instance.status == choices.PUBLISHED_STATUS:
         Fossil.objects.create_for_object(instance)
 
 post_save.connect(clinicaltrial_post_save, sender=ClinicalTrial)
