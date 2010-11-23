@@ -11,8 +11,10 @@ This test aims to be the story test that implement the workflow you can found at
     >>> from django.contrib.auth.models import User, Group
     >>> from django.core.urlresolvers import reverse
     >>> from django.conf import settings
+    >>> from django.contrib.contenttypes.models import ContentType
 
     >>> from reviewapp.models import Submission, Remark
+    >>> from reviewapp.consts import MISSING, PARTIAL, COMPLETE
     >>> from repository.models import ClinicalTrial, TrialNumber, TrialSecondarySponsor
     >>> from repository.models import Institution, TrialSupportSource, Descriptor
     >>> from repository.models import Contact, PublicContact, ScientificContact, Outcome
@@ -92,8 +94,6 @@ This test aims to be the story test that implement the workflow you can found at
 
 2. Submission pending / Trial processing
 ----------------------------------------
-
-    >>> from reviewapp.consts import MISSING, PARTIAL
 
     >>> submission = Submission.objects.get(pk=submission.pk)
     >>> submission.get_status() == MISSING
@@ -326,7 +326,10 @@ Create a remark
     >>> Fossil.objects.count() == fossils_count_before + 1
     True
 
-    >>> trial_fossil = Fossil.objects.latest('pk')
+    >>> trial_fossil = Fossil.objects.filter(
+    ...     content_type=ContentType.objects.get_for_model(trial),
+    ...     object_id=trial.pk,
+    ... ).latest('creation')
     >>> fossil_obj = trial_fossil.get_object_fossil()
 
     >>> fossil_obj.public_title == trial.public_title
@@ -344,12 +347,16 @@ Create a remark
     >>> cl.login(username=submiter.username, password='1')
     True
 
-    >>> resp = cl.get(reverse('reviewapp.new_submission_from_trial', args=(trial_fossil.pk,)))
+    >>> resp = cl.get(reverse('reviewapp.submission_edit_published', args=(submission.pk,)))
     >>> resp.status_code
     302
 
-    >>> new_submission = Submission.objects.latest('pk')
+"new_trial" and "new_submission" are actually the old ones, but from here, "trial"
+is going to be the fossil object and "submission" was changed to have a draft status
+
+    >>> new_submission = Submission.objects.get(pk=submission.pk)
     >>> new_trial = new_submission.trial
+    >>> trial = fossil_obj
 
     >>> resp['Location'] == reverse('repository.trialview', kwargs={'trial_pk': new_trial.pk})
     True
@@ -360,8 +367,8 @@ Create a remark
     >>> new_trial.status
     u'processing'
 
-    >>> trial.status
-    u'published'
+    >>> trial_fossil.is_most_recent
+    True
 
 8. New submission pending / New trial processing
 ------------------------------------------------
@@ -369,7 +376,11 @@ Create a remark
     >>> new_submission = Submission.objects.get(pk=new_submission.pk)
     >>> new_trial = new_submission.trial
 
-    >>> new_submission.get_status() == MISSING
+Updates the field status with validation
+
+    >>> trial_validator.validate(new_trial)
+
+    >>> new_submission.get_status() in (PARTIAL, COMPLETE)
     True
 
 Fill trial fields
@@ -513,8 +524,20 @@ Create a remark
     >>> new_trial.status
     u'published'
 
-    >>> trial.status
-    u'archived'
+    >>> trial_fossil = Fossil.objects.get(pk=trial_fossil.pk)
+    >>> trial_fossil.is_most_recent
+    False
+
+    >>> new_trial_fossil = Fossil.objects.filter(
+    ...     content_type=ContentType.objects.get_for_model(new_trial),
+    ...     object_id=new_trial.pk,
+    ... ).latest('creation')
+
+    >>> new_trial_fossil.is_most_recent
+    True
+
+    >>> new_trial_fossil.previous_revision == trial_fossil
+    True
 
     >>> Fossil.objects.count() == fossils_count_before + 1
     True

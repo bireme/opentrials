@@ -22,7 +22,7 @@ from flatpages_polyglot.models import FlatPageTranslation
 from tickets.models import Ticket
 from utilities import user_in_group
 
-from reviewapp.models import Submission, STATUS_PENDING, STATUS_RESUBMIT
+from reviewapp.models import Submission, STATUS_PENDING, STATUS_RESUBMIT, STATUS_DRAFT
 from reviewapp.models import SUBMISSION_TRANSITIONS, STATUS_APPROVED
 from reviewapp.models import News, NewsTranslation
 from reviewapp.forms import UploadTrial, InitialTrialForm, OpenRemarkForm
@@ -33,6 +33,7 @@ from reviewapp.consts import REMARK, MISSING, PARTIAL, COMPLETE
 from repository.models import ClinicalTrial, CountryCode, ClinicalTrialTranslation
 from repository.trds_forms import TRIAL_FORMS
 from repository.trial_validation import trial_validator
+from repository.choices import PROCESSING_STATUS
 from datetime import datetime
 import pickle
 from utilities import safe_truncate
@@ -341,10 +342,14 @@ def new_submission(request):
         context_instance=RequestContext(request))
 
 @login_required
-def new_submission_from_trial(request, trial_fossil_pk):
-    trial_fossil = get_object_or_404(Fossil, pk=trial_fossil_pk)
+def submission_edit_published(request, submission_pk):
+    submission = get_object_or_404(Submission, pk=submission_pk)
+    submission.status = STATUS_DRAFT
+    submission.save()
 
-    submission = Submission.objects.create_from_trial_fossil(trial_fossil, request.user)
+    trial = submission.trial
+    trial.status = PROCESSING_STATUS
+    trial.save()
 
     return HttpResponseRedirect(reverse('repository.trialview', kwargs={'trial_pk': submission.trial.pk}))
 

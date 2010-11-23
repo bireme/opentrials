@@ -1,8 +1,9 @@
 import datetime
 from django.utils import simplejson
-from django.db.models import Model
+from django.db import models
 from django.contrib.auth.models import User
-from fossil.fields import FossilProxy
+from django.contrib.contenttypes.models import ContentType
+from fossil.fields import FossilProxy, DictKeyAttribute
 
 def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
     """
@@ -41,7 +42,7 @@ def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
             value = value.strftime('%Y-%m-%d')
         elif isinstance(value, User):
             value = serialize_user(value, as_string=False)
-        elif isinstance(value, Model):
+        elif isinstance(value, models.Model):
             value = value.serialize_for_fossil(as_string=False)
         
         json[field.name] = value
@@ -56,7 +57,6 @@ def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
         except AttributeError:
             continue
 
-        # TODO FIXME XXX
         json[field.name] = [item.serialize_for_fossil(as_string=False) for item in objects.all()]
 
     json['__unicode__'] = unicode(trial)
@@ -68,17 +68,103 @@ def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
 
     return json
 
-def deserialize_trial(data, persistent=False):
+def deserialize_trial(data, persistent=False, persistency_class=None, commit=True):
     """
     Gets a JSON text data and converts to an instance of ClinicalTrial model class.
     TODO: confirm if this must be a proxy class
     """
-    json = simplejson.loads(data)
-
-    if persistent:
-        pass # TODO
+    if isinstance(data, basestring):
+        json = simplejson.loads(data)
+    elif isinstance(data, dict):
+        json = data
     else:
+        raise Exception('Invalid trial serialized data.')
+
+    if not persistent:
         return FossilClinicalTrial(data)
+
+    else:
+        if persistency_class is None:
+            raise Exception('Persistent deserialization of a trial must inform the persistency class.')
+
+        from repository.models import ClinicalTrialTranslation, PublicContact, ScientificContact
+        from vocabulary.models import StudyType, StudyPurpose, InterventionAssigment
+        from vocabulary.models import StudyMasking, StudyAllocation, StudyPhase
+        from vocabulary.models import RecruitmentStatus, InterventionCode, CountryCode
+
+        obj_fossil = DictKeyAttribute(json)
+
+        trial = persistency_class()
+
+        # Simple fields
+        for field in persistency_class._meta.fields:
+            if field.name in ('id','trial_id','status'):
+                continue
+
+            try:
+                value = getattr(obj_fossil, field.name)
+            except AttributeError:
+                continue
+
+            if isinstance(field, (models.CharField, models.TextField, models.IntegerField,
+                models.PositiveIntegerField, models.DateTimeField, models.DateField,
+                models.NullBooleanField, models.BooleanField)):
+                setattr(trial, field.name, value)
+
+            elif isinstance(field, models.ForeignKey) and value is not None:
+                if field.name == 'primary_sponsor':
+                    trial.primary_sponsor = deserialize_institution(value, True)
+                elif field.name == 'study_type':
+                    trial.study_type = deserialize_vocabulary(value, True, StudyType)
+                elif field.name == 'purpose':
+                    trial.purpose = deserialize_vocabulary(value, True, StudyPurpose)
+                elif field.name == 'intervention_assignment':
+                    trial.intervention_assignment = deserialize_vocabulary(value, True, InterventionAssigment)
+                elif field.name == 'masking':
+                    trial.masking = deserialize_vocabulary(value, True, StudyMasking)
+                elif field.name == 'allocation':
+                    trial.allocation = deserialize_vocabulary(value, True, StudyAllocation)
+                elif field.name == 'phase':
+                    trial.phase = deserialize_vocabulary(value, True, StudyPhase)
+                elif field.name == 'recruitment_status':
+                    trial.recruitment_status = deserialize_vocabulary(value, True, RecruitmentStatus)
+
+        if not commit:
+            return trial
+
+        trial.save()
+
+        # Many to many fields
+        for contact_fossil in obj_fossil.public_contact:
+            contact = deserialize_contact(contact_fossil, True)
+
+            PublicContact.objects.create(trial=trial, contact=contact)
+
+        for contact_fossil in obj_fossil.scientific_contact:
+            contact = deserialize_contact(contact_fossil, True)
+
+            ScientificContact.objects.create(trial=trial, contact=contact)
+
+        for icode_fossil in obj_fossil.i_code:
+            icode = deserialize_vocabulary(icode_fossil, True, InterventionCode)
+
+            trial.i_code.add(icode)
+
+        for country_fossil in obj_fossil.recruitment_country:
+            country = deserialize_vocabulary(country_fossil, True, CountryCode)
+
+            trial.recruitment_country.add(country)
+
+        # Translations
+        for trans_fossil in obj_fossil.translations:
+            trans = deserialize_trial(trans_fossil, True, ClinicalTrialTranslation, False)
+            trans.content_object = trial
+            trans.save()
+
+        # Saves trial again to force fields validation
+        trial.save()
+
+        return trial
 
 def serialize_institution(institution, as_string=True):
     """
@@ -96,6 +182,68 @@ def serialize_institution(institution, as_string=True):
         json = simplejson.dumps(json)
 
     return json
+
+def deserialize_institution(data, persistent=False):
+    """
+    Transforms data (as JSON string or a dict) to an institution
+    """
+    if not data:
+        return None
+
+    if not persistent:
+        pass # TODO if necessary
+
+    else:
+        from repository.models import Institution
+        from vocabulary.models import CountryCode
+
+        if isinstance(data, basestring):
+            data = DictKeyAttribute(simplejson.loads(data))
+        elif isinstance(data, dict):
+            data = DictKeyAttribute(data)
+
+        try:
+            institution = Institution.objects.get(pk=data.pk)
+        except Institution.DoesNotExist:
+            institution = Institution()
+            institution.id = data.pk
+            institution.name = data.name
+            institution.address = data.address
+            institution.country = deserialize_vocabulary(data.country, True, CountryCode)
+            institution.creator = deserialize_user(data.creator, True)
+            institution.save()
+
+        return institution
+
+def deserialize_vocabulary(data, persistent=False, persistency_class=None):
+    """
+    Transforms data (as JSON string or a dict) to a vocabulary instance of
+    the given class
+    """
+    if not data:
+        return None
+
+    if not persistent:
+        pass # TODO if necessary
+
+    else:
+        if persistency_class is None:
+            raise Exception('Persistent deserialization of a vocabulary object must inform the persistency class.')
+
+        if isinstance(data, basestring):
+            data = DictKeyAttribute(simplejson.loads(data))
+        elif isinstance(data, dict):
+            data = DictKeyAttribute(data)
+
+        try:
+            obj = persistency_class.objects.get(label=data.label)
+        except persistency_class.DoesNotExist:
+            obj = persistency_class()
+            obj.label = data.label
+            obj.description = data.description
+            obj.save()
+
+        return obj
 
 def serialize_contact(contact, as_string=True):
     """
@@ -121,6 +269,45 @@ def serialize_contact(contact, as_string=True):
 
     return json
 
+def deserialize_contact(data, persistent=False):
+    """
+    Transforms data (as JSON string or a dict) to a contact object
+    """
+    if not data:
+        return None
+
+    if not persistent:
+        pass # TODO if necessary
+
+    else:
+        from repository.models import Contact
+        from vocabulary.models import CountryCode
+
+        if isinstance(data, basestring):
+            data = DictKeyAttribute(simplejson.loads(data))
+        elif isinstance(data, dict):
+            data = DictKeyAttribute(data)
+
+        try:
+            obj = Contact.objects.get(pk=data.pk)
+        except Contact.DoesNotExist:
+            obj = Contact()
+            obj.id = data.pk
+            obj.firstname = data.firstname
+            obj.middlename = data.middlename
+            obj.lastname = data.lastname
+            obj.email = data.email
+            obj.affiliation = deserialize_institution(data.affiliation, True)
+            obj.address = data.address
+            obj.city = data.city
+            obj.country = deserialize_vocabulary(data.country, True, CountryCode)
+            obj.zip = data.zip
+            obj.telephone = data.telephone
+            obj.creator = deserialize_user(data.creator, True)
+            obj.save()
+
+        return obj
+
 def serialize_user(user, as_string=True):
     """
     Serializes a given user object to JSON
@@ -134,6 +321,32 @@ def serialize_user(user, as_string=True):
         json = simplejson.dumps(json)
 
     return json
+
+def deserialize_user(data, persistent=False):
+    """
+    Transforms data (as JSON string or a dict) to a Django user
+    """
+    if not data:
+        return None
+
+    if not persistent:
+        pass # TODO if necessary
+
+    else:
+        if isinstance(data, basestring):
+            data = DictKeyAttribute(simplejson.loads(data))
+        elif isinstance(data, dict):
+            data = DictKeyAttribute(data)
+
+        try:
+            obj = User.objects.get(username=data.username)
+        except User.DoesNotExist:
+            obj = User()
+            obj.username = data.username
+            obj.email = data.email
+            obj.save()
+
+        return obj
 
 class FossilClinicalTrial(FossilProxy):
     """
