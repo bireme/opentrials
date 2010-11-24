@@ -177,7 +177,7 @@
     <ul>
         <li>
             <span class="label">{% trans 'Primary Sponsor' %}:</span>
-            <span class="value">{{ object.primary_sponsor }}</span>
+            <span class="value">{{ object.primary_sponsor.name }}</span>
         </li>
         {% if object.secondary_sponsors %}
         <li class="subset">
@@ -186,7 +186,7 @@
             {%  for sponsors in object.secondary_sponsors %}
                 <li class="{% cycle 'even' 'odd' %}">
                     <span class="label">{% trans 'Institution' %}:</span>
-                    <span class="value">{{ sponsors.institution }}</span>
+                    <span class="value">{{ sponsors.institution.name }}</span>
                 </li>
             {% endfor %}
             </ul>
@@ -344,12 +344,12 @@
     <ul>
         <li>
             <span class="label">{% trans 'Recruitment Status' %}:</span>
-            <span class="value">{{ object.recruitment_status }}</span>
+            <span class="value">{{ object.recruitment_status.description }}</span>
         </li>
         <li class="subset">
             <span class="legend">{% trans 'Recruitment Country' %}</span>
             <ul>
-            {% for recruitment in object.trial_recruitment_country %}
+            {% for recruitment in object.trial_recruitment_country.description %}
                 <li>{{ recruitment.description }}{% if not forloop.last %}, {% endif %}</li>
             {% endfor %}
             </ul>
@@ -421,14 +421,14 @@
                 {% if t.study_design %}
                 <div class="title">
                     <h2>{{ t.language }}</h2>
-                    <p>{{ t.study_design }}</p>
+                    <p>{{ t.study_design.description }}</p>
                 </div>
                 {% endif %}
             {% endfor %}
-            {% if object.study_design|linebreaksbr %}
+            {% if object.study_design.description|linebreaksbr %}
                 <div class="title">
                     <h2>en</h2>
-                    <p>{{ object.study_design|linebreaksbr }}</p>
+                    <p>{{ object.study_design.description|linebreaksbr }}</p>
                 </div>
             {% endif %}
         </li>
@@ -446,12 +446,12 @@
                 </tr>
                 <tr>
                     <td><span class="value">{{ object.expanded_access_program }}</span></td>
-                    <td><span class="value">{{ object.purpose }}</span></td>
-                    <td><span class="value">{{ object.intervention_assignment }}</span></td>
+                    <td><span class="value">{{ object.purpose.description }}</span></td>
+                    <td><span class="value">{{ object.intervention_assignment.description }}</span></td>
                     <td><span class="value">{{ object.number_of_arms }}</span></td>
-                    <td><span class="value">{{ object.masking }}</span></td>
-                    <td><span class="value">{{ object.allocation }}</span></td>
-                    <td><span class="value">{{ object.phase }}</span></td>
+                    <td><span class="value">{{ object.masking.description }}</span></td>
+                    <td><span class="value">{{ object.allocation.description }}</span></td>
+                    <td><span class="value">{{ object.phase.description }}</span></td>
                 </tr>
             </table>
         </li>
@@ -651,6 +651,12 @@
         {% endif %}
         {% block remark_step_8 %}{% endblock %}
     </ul>
+
+    {% if object.previous_revision %}
+    <div>
+        <a href="{% url repository.trial_registered trial_fossil_id=obj.previous_revision.pk %}">{% trans 'Previous Revision' %}</a>
+    </div>
+    {% endif %}
 
     {% block attachs %}{% endblock %}
     
