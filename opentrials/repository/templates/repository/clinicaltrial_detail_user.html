@@ -17,20 +17,18 @@
     <big>/ Trial {{ object }}</big>
 {% endblock %}
 
-    {% if modo_review %}
-        {% block review_buttons_top %}
-        <div class="review_buttons">
-            <form action="{% url reviewapp.change_submission_status object.submission.pk 'approved' %}" method="POST" style="display:inline;">
-            {% csrf_token %}
-            <input id="approve_review" type="submit" style="font-size: 80%;" value="{% trans 'Approve Submission' %}" title="{% trans 'Approve Submission' %}" {% if not can_approve %} disabled="disabled" {% endif %} />
-            </form>
-            <form action="{% url reviewapp.change_submission_status object.submission.pk 'resubmit' %}" method="POST" style="display:inline;">
-            {% csrf_token %}
-            <input id="resubmit_review" type="submit" style="font-size: 80%;" value="{% trans 'Resubmit Submission' %}" title="{% trans 'Resubmit Submission' %}" {% if not can_resubmit %} disabled="disabled" {% endif %} />
-            </form>
-        </div>
-        {% endblock %}
-    {% endif %}
+      {% block review_buttons_top %}
+      <div class="review_buttons" {% if not review_mode %}style="display:none;"{% endif %}>
+          <form action="{% url reviewapp.change_submission_status object.submission.pk 'approved' %}" method="POST" style="display:inline;">
+          {% csrf_token %}
+          <input id="approve_review" type="submit" style="font-size: 80%;" value="{% trans 'Approve Submission' %}" title="{% trans 'Approve Submission' %}" {% if not can_approve %} disabled="disabled" {% endif %} />
+          </form>
+          <form action="{% url reviewapp.change_submission_status object.submission.pk 'resubmit' %}" method="POST" style="display:inline;">
+          {% csrf_token %}
+          <input id="resubmit_review" type="submit" style="font-size: 80%;" value="{% trans 'Resubmit Submission' %}" title="{% trans 'Resubmit Submission' %}" {% if not can_resubmit %} disabled="disabled" {% endif %} />
+          </form>
+      </div>
+      {% endblock %}
 
     {% block remark_list %}
         {% if remark_list %}
