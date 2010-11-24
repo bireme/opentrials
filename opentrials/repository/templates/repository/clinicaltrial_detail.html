@@ -344,13 +344,13 @@
     <ul>
         <li>
             <span class="label">{% trans 'Recruitment Status' %}:</span>
-            <span class="value">{{ object.recruitment_status.description }}</span>
+            <span class="value">{{ object.recruitment_status.label }}</span>
         </li>
         <li class="subset">
             <span class="legend">{% trans 'Recruitment Country' %}</span>
             <ul>
-            {% for recruitment in object.trial_recruitment_country.description %}
-                <li>{{ recruitment.description }}{% if not forloop.last %}, {% endif %}</li>
+            {% for recruitment in object.trial_recruitment_country %}
+                <li>{{ recruitment.label }}{% if not forloop.last %}, {% endif %}</li>
             {% endfor %}
             </ul>
         </li>
@@ -446,12 +446,12 @@
                 </tr>
                 <tr>
                     <td><span class="value">{{ object.expanded_access_program }}</span></td>
-                    <td><span class="value">{{ object.purpose.description }}</span></td>
-                    <td><span class="value">{{ object.intervention_assignment.description }}</span></td>
+                    <td><span class="value">{{ object.purpose.label }}</span></td>
+                    <td><span class="value">{{ object.intervention_assignment.label }}</span></td>
                     <td><span class="value">{{ object.number_of_arms }}</span></td>
-                    <td><span class="value">{{ object.masking.description }}</span></td>
-                    <td><span class="value">{{ object.allocation.description }}</span></td>
-                    <td><span class="value">{{ object.phase.description }}</span></td>
+                    <td><span class="value">{{ object.masking.label }}</span></td>
+                    <td><span class="value">{{ object.allocation.label }}</span></td>
+                    <td><span class="value">{{ object.phase.label }}</span></td>
                 </tr>
             </table>
         </li>
