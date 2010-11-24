@@ -8,7 +8,7 @@ from repository.models import SiteContact, PublicContact, ScientificContact
 from vocabulary.models import CountryCode, StudyPhase, StudyType, RecruitmentStatus
 from vocabulary.models import InterventionCode, StudyMasking, StudyAllocation
 from vocabulary.models import StudyPurpose, InterventionAssigment
-from repository.widgets import SelectWithLink, SelectInstitution
+from repository.widgets import SelectWithLink, SelectInstitution, YearMonthWidget
 
 import choices
 
@@ -17,7 +17,6 @@ from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 from django.forms.formsets import DELETION_FIELD_NAME
 from django.template.defaultfilters import linebreaksbr
-from django.utils.dates import MONTHS
 
 from django import forms
 from django.forms.forms import BoundField, conditional_escape
@@ -320,39 +319,6 @@ class InterventionForm(ReviewModelForm):
             )
     
 trial_validator.register(TRIAL_FORMS[3], [InterventionForm, InterventionDescriptorForm])
-
-class YearMonthWidget(forms.MultiWidget):
-    """
-    This widget shows two combos with year and month and returns as a date of first day
-    of that month
-    """
-
-    def __init__(self, *args, **kwargs):
-        MONTHS_CHOICES = [('','-------')] + MONTHS.items()
-        YEARS_CHOICES = [('','-------')] + [(y,y) for y in range(2000,2050)]
-        widgets = [
-                forms.Select(choices=MONTHS_CHOICES),
-                forms.Select(choices=YEARS_CHOICES),
-                ]
-
-        super(YearMonthWidget, self).__init__(widgets=widgets, *args, **kwargs)
-
-    def decompress(self, value):
-        if not value:
-            ret = ['', '']
-        else:
-            ret = map(int, value.split('-')[:2])
-            ret.reverse()
-        return ret
-
-    def value_from_datadict(self, data, files, name):
-        month, year = data[name+'_0'], data[name+'_1']
-
-        try:
-            return date(int(year), int(month), 1)
-        except ValueError:
-            return None
-
 
 ### step_5 #####################################################################
 class RecruitmentForm(ReviewModelForm):
