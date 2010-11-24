@@ -48,8 +48,6 @@ from utilities import user_in_group
 import choices
 import settings
 
-import pickle
-
 EXTRA_FORMS = 1
 
 MENU_SHORT_TITLE = [_('Trial Identif.'),

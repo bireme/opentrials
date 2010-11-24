@@ -6,7 +6,8 @@ This test aims to be the story test that implement the workflow you can found at
 * http://reddes.bvsalud.org/projects/clinical-trials/wiki/SubmissionWorkflow
 * http://reddes.bvsalud.org/projects/clinical-trials/browser/trunk/docs/workflow-2010-07-08.pdf
 
-    >>> import datetime, pickle
+    >>> import datetime
+    >>> from django.utils import simplejson
     >>> from django.test.client import Client
     >>> from django.contrib.auth.models import User, Group
     >>> from django.core.urlresolvers import reverse
@@ -198,7 +199,7 @@ Changes manually the fields status to fake validation FIXME
 This manual change of status, should be temporarily
 
     >>> submission._fields_status = {u'en': {'Attachments': 3, 'Interventions': 3, 'Contacts': 3, 'Sponsors': 3, 'Outcomes': 3, 'Recruitment': 3, 'Trial Identification': 3, 'Health Conditions': 3, 'Study Type': 3}, u'pt-br': {'Attachments': 3, 'Interventions': 3, 'Contacts': 3, 'Sponsors': 3, 'Outcomes': 3, 'Recruitment': 3, 'Trial Identification': 3, 'Health Conditions': 3, 'Study Type': 3}}
-    >>> submission.fields_status = pickle.dumps(submission._fields_status)
+    >>> submission.fields_status = simplejson.dumps(submission._fields_status)
     >>> submission.save()
 
 Now the trial should be just partially filled
@@ -393,7 +394,7 @@ Changes manually the fields status to fake validation FIXME
 This manual change of status, should be temporarily
 
     >>> new_submission._fields_status = {u'en': {'Attachments': 3, 'Interventions': 3, 'Contacts': 3, 'Sponsors': 3, 'Outcomes': 3, 'Recruitment': 3, 'Trial Identification': 3, 'Health Conditions': 3, 'Study Type': 3}, u'pt-br': {'Attachments': 3, 'Interventions': 3, 'Contacts': 3, 'Sponsors': 3, 'Outcomes': 3, 'Recruitment': 3, 'Trial Identification': 3, 'Health Conditions': 3, 'Study Type': 3}}
-    >>> new_submission.fields_status = pickle.dumps(new_submission._fields_status)
+    >>> new_submission.fields_status = simplejson.dumps(new_submission._fields_status)
     >>> new_submission.save()
 
 Now the trial should be just partially filled
