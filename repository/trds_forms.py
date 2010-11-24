@@ -17,6 +17,7 @@ from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 from django.forms.formsets import DELETION_FIELD_NAME
 from django.template.defaultfilters import linebreaksbr
+from django.utils.dates import MONTHS
 
 from django import forms
 from django.forms.forms import BoundField, conditional_escape
@@ -320,12 +321,45 @@ class InterventionForm(ReviewModelForm):
     
 trial_validator.register(TRIAL_FORMS[3], [InterventionForm, InterventionDescriptorForm])
 
+class YearMonthWidget(forms.MultiWidget):
+    """
+    This widget shows two combos with year and month and returns as a date of first day
+    of that month
+    """
+
+    def __init__(self, *args, **kwargs):
+        MONTHS_CHOICES = [('','-------')] + MONTHS.items()
+        YEARS_CHOICES = [('','-------')] + [(y,y) for y in range(2000,2050)]
+        widgets = [
+                forms.Select(choices=MONTHS_CHOICES),
+                forms.Select(choices=YEARS_CHOICES),
+                ]
+
+        super(YearMonthWidget, self).__init__(widgets=widgets, *args, **kwargs)
+
+    def decompress(self, value):
+        if not value:
+            ret = ['', '']
+        else:
+            ret = map(int, value.split('-')[:2])
+            ret.reverse()
+        return ret
+
+    def value_from_datadict(self, data, files, name):
+        month, year = data[name+'_0'], data[name+'_1']
+
+        try:
+            return date(int(year), int(month), 1)
+        except ValueError:
+            return None
+
+
 ### step_5 #####################################################################
 class RecruitmentForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
-        fields = ['recruitment_status', 'recruitment_country','enrollment_start_planned',
-                  'enrollment_end_planned','target_sample_size', 'inclusion_criteria',
+        fields = ['recruitment_status', 'recruitment_country',
+                  'target_sample_size', 'inclusion_criteria',
                   'gender', 'agemin_value', 'agemin_unit',
                   'agemax_value', 'agemax_unit', 'exclusion_criteria',
                   ]
@@ -347,9 +381,16 @@ class RecruitmentForm(ReviewModelForm):
             )
 
     # TRDS 16a,b (type_enrollment: anticipated or actual)
-    enrollment_start_planned = forms.DateField( # yyyy-mm or yyyy-mm-dd
+    enrollment_start_date = forms.Field( # yyyy-mm or yyyy-mm-dd
         required=False,
-        label=_('Planned Date of First Enrollment'))
+        label=_('Planned Date of First Enrollment'),
+        widget=YearMonthWidget,
+        )
+    enrollment_end_date = forms.Field( # yyyy-mm or yyyy-mm-dd
+        required=False,
+        label=_('Planned Date of Last Enrollment'),
+        widget=YearMonthWidget,
+        )
 
     # TRDS 17
     target_sample_size = forms.IntegerField(label=_('Target Sample Size'),
@@ -374,6 +415,44 @@ class RecruitmentForm(ReviewModelForm):
     # TRDS 14e
     exclusion_criteria = forms.CharField(label=_('Exclusion Criteria'),required=False,
                                         max_length=8000, widget=forms.Textarea,)
+
+    def __init__(self, *args, **kwargs):
+        self.base_fields.keyOrder = ['recruitment_status', 'recruitment_country',
+                'enrollment_start_date', 'enrollment_end_date', 'target_sample_size',
+                'inclusion_criteria', 'gender', 'agemin_value', 'agemin_unit',
+                'agemax_value', 'agemax_unit', 'exclusion_criteria']
+
+        super(RecruitmentForm, self).__init__(*args, **kwargs)
+
+        if self.instance:
+            self.fields['enrollment_start_date'].initial = self.instance.enrollment_start_planned or\
+                                                           self.instance.enrollment_start_actual
+            self.fields['enrollment_end_date'].initial = self.instance.enrollment_end_planned or\
+                                                         self.instance.enrollment_end_actual
+
+    def save(self, commit=True, *args, **kwargs):
+        obj = super(RecruitmentForm, self).save(commit=False, *args, **kwargs)
+
+        obj.enrollment_start_planned = None
+        obj.enrollment_start_actual = None
+        if self.cleaned_data.get('enrollment_start_date', None):
+            if self.cleaned_data['enrollment_start_date'] > date.today():
+                obj.enrollment_start_planned = self.cleaned_data['enrollment_start_date']
+            else:
+                obj.enrollment_start_actual = self.cleaned_data['enrollment_start_date']
+
+        obj.enrollment_end_planned = None
+        obj.enrollment_end_actual = None
+        if self.cleaned_data.get('enrollment_end_date', None):
+            if self.cleaned_data['enrollment_end_date'] > date.today():
+                obj.enrollment_end_planned = self.cleaned_data['enrollment_end_date']
+            else:
+                obj.enrollment_end_actual = self.cleaned_data['enrollment_end_date']
+
+        if commit:
+            obj.save()
+
+        return obj
 
 trial_validator.register(TRIAL_FORMS[4], [RecruitmentForm])
 
