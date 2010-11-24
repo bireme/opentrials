@@ -35,7 +35,6 @@ from repository.trds_forms import TRIAL_FORMS
 from repository.trial_validation import trial_validator
 from repository.choices import PROCESSING_STATUS
 from datetime import datetime
-import pickle
 from utilities import safe_truncate
 from fossil.models import Fossil
 
@@ -314,23 +313,6 @@ def new_submission(request):
                 
                 # sets the initial status of the fields
                 su.init_fields_status()
-                """
-                fields_status = {}
-                FIELDS = {
-                    TRIAL_FORMS[0]: MISSING, TRIAL_FORMS[1]: PARTIAL, TRIAL_FORMS[2]: MISSING,
-
-                    TRIAL_FORMS[3]: MISSING, TRIAL_FORMS[4]: MISSING, TRIAL_FORMS[5]: MISSING, 
-                    TRIAL_FORMS[6]: MISSING, TRIAL_FORMS[7]: MISSING, TRIAL_FORMS[8]: PARTIAL
-                }
-                for lang in su.get_mandatory_languages():
-                    lang = lang.lower()
-                    fields_status.update({lang: dict(FIELDS)})
-                    if lang == su.language.lower():
-                        fields_status[lang].update({TRIAL_FORMS[0]: PARTIAL})
-                
-                su.fields_status = pickle.dumps(fields_status)
-                su.save()
-                """
 
                 return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))    
     else:

@@ -1,4 +1,3 @@
-import pickle
 from datetime import datetime
 
 from django.db import models
@@ -6,6 +5,7 @@ from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes import generic
+from django.utils import simplejson
 
 from repository.models import ClinicalTrial, Institution
 from repository.choices import PROCESSING_STATUS, PUBLISHED_STATUS, ARCHIVED_STATUS
@@ -140,12 +140,12 @@ class Submission(models.Model):
             if lang == self.language.lower():
                 fields_status[lang].update({TRIAL_FORMS[0]: PARTIAL})
         
-        self.fields_status = pickle.dumps(fields_status)
+        self.fields_status = simplejson.dumps(fields_status)
         self.save()
 
     def get_fields_status(self):
         if not getattr(self, '_fields_status', None):
-            self._fields_status = pickle.loads(self.fields_status.encode('utf-8'))
+            self._fields_status = simplejson.loads(self.fields_status)
 
         return self._fields_status
 

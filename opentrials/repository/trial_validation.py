@@ -4,9 +4,10 @@ This module aims to be the refactored code of old function "reviewapp/signals.py
 The method trial_validator.register() was created in replacement to STEP_FORM_MATRIX
 """
 
-import re, pickle # XXX: simplejson is more elegant than pickle to serialize validation messages
+import re
 
 from django.template.defaultfilters import slugify
+from django.utils import simplejson
 
 from reviewapp.consts import STEP_STATES, REMARK, MISSING, PARTIAL, COMPLETE, TRIAL_FORMS
 from polyglot.multilingual_forms import BaseMultilingualWidget
@@ -227,7 +228,7 @@ class TrialValidator(object):
         # Stores the serialized dictionary with fields statuses in the submission, to be
         # used in further later, when showing the form (also to block before the trial go
         # to the next state)
-        instance.submission.fields_status = pickle.dumps(fields_status)
+        instance.submission.fields_status = simplejson.dumps(fields_status)
         instance.submission.save()
 
     def field_is_required(self, form, field_name):
