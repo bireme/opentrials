@@ -309,8 +309,13 @@ def trial_view(request, trial_pk):
 def trial_registered(request, trial_fossil_id):
     ''' show details of a trial registered '''
     fossil = get_object_or_404(Fossil, pk=trial_fossil_id)
+
     ct = fossil.get_object_fossil()
+    ct.hash_code = fossil.pk
+    ct.previous_revision = fossil.previous_revision
+
     translations = ct.translations
+
     return render_to_response('repository/clinicaltrial_detail.html',
                                 {'object': ct,
                                 'translations': translations,
