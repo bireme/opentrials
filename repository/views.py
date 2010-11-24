@@ -41,6 +41,7 @@ from vocabulary.models import RecruitmentStatus, VocabularyTranslation
 from polyglot.multilingual_forms import modelformset_factory
 
 from fossil.fields import DictKeyAttribute
+from fossil.models import Fossil
 
 from utilities import user_in_group
 
@@ -246,36 +247,8 @@ def index(request):
 
     if q:
         object_list = object_list.filter(serialized__icontains=q)
-        #object_list = ClinicalTrial.published.filter(Q(scientific_title__icontains=q)
-        #                                       |Q(public_title__icontains=q)
-        #                                       |Q(trial_id__iexact=q)
-        #                                       |Q(acronym__iexact=q)
-        #                                       |Q(acronym_expansion__icontains=q)
-        #                                       |Q(scientific_acronym__iexact=q)
-        #                                       |Q(scientific_acronym_expansion__icontains=q))
 
     object_list = object_list.proxies(language=request.LANGUAGE_CODE)
-
-    """
-    for obj in object_list:
-        try:
-            trans = obj.translations.get(language__iexact=request.LANGUAGE_CODE)
-        except ClinicalTrialTranslation.DoesNotExist:
-            trans = None
-        
-        if trans:
-            if trans.public_title:
-                obj.public_title = trans.public_title
-            if trans.public_title:
-                obj.scientific_title = trans.scientific_title
-        
-        if obj.recruitment_status:
-            try:
-                rec_status_trans = obj.recruitment_status.translations.get(language__iexact=request.LANGUAGE_CODE)
-            except VocabularyTranslation.DoesNotExist:
-                rec_status_trans = obj.recruitment_status
-            obj.rec_status = rec_status_trans.label
-    """
     
     # pagination
     paginator = Paginator(object_list, getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10))
@@ -333,10 +306,11 @@ def trial_view(request, trial_pk):
                                 },
                                 context_instance=RequestContext(request))
                                 
-def trial_registered(request, trial_id):
+def trial_registered(request, trial_fossil_id):
     ''' show details of a trial registered '''
-    ct = get_object_or_404(ClinicalTrial, trial_id=trial_id, status='published')
-    translations = [t for t in ct.translations.all()]
+    fossil = get_object_or_404(Fossil, pk=trial_fossil_id)
+    ct = fossil.get_object_fossil()
+    translations = ct.translations
     return render_to_response('repository/clinicaltrial_detail.html',
                                 {'object': ct,
                                 'translations': translations,

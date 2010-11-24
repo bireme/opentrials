@@ -43,6 +43,7 @@ class SimpleVocabulary(models.Model):
     def serialize_for_fossil(self, as_string=True):
         json = {
             'label': self.label,
+            'description': self.description,
             'translations': [trans.serialize_for_fossil(as_string) for trans in self.translations.all()],
             }
 

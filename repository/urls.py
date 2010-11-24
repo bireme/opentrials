@@ -30,6 +30,6 @@ urlpatterns = patterns('',
     url(r'^step_9/(\d+)/$', step_9, name='step_9'),
     #public
     url(r'^recruiting/$', recruiting, name='repository.recruiting'),
-    url(r'^(?P<trial_id>[0-9A-Za-z-]+)/$', trial_registered, name='repository.trial_registered'),
+    url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/$', trial_registered, name='repository.trial_registered'),
     url(r'^$', index, name='repository.index'),
 )

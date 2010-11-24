@@ -101,6 +101,8 @@ class TrialFossilsQuerySet(models.query.QuerySet):
         def get_proxy(obj):
             ret = obj.get_object_fossil()
             ret._language = language
+            ret.hash_code = obj.pk
+            ret.previous_revision = obj.previous_revision
             return ret
 
         return [get_proxy(obj) for obj in self.all()]
