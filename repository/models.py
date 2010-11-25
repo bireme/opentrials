@@ -6,7 +6,7 @@ from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import User
 
-from fossil.models import Fossil
+from fossil.models import Fossil, FossilManager
 from datetime import datetime
 import string
 from random import randrange, choice
@@ -107,7 +107,7 @@ class TrialFossilsQuerySet(models.query.QuerySet):
 
         return [get_proxy(obj) for obj in self.all()]
 
-class TrialsFossil(models.Manager):
+class TrialsFossil(FossilManager):
     _ctype = None
 
     def get_query_set(self):
@@ -117,6 +117,9 @@ class TrialsFossil(models.Manager):
         return TrialFossilsQuerySet(Fossil).filter(
                 content_type=self._ctype,
                 )
+
+    def recruiting(self):
+        return self.indexed(recruitment_status='recruiting')
 
     def published(self):
         qs = self.get_query_set()

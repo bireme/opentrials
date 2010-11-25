@@ -186,9 +186,13 @@ def full_view(request, trial_pk):
                                context_instance=RequestContext(request))
 
 
-def recruiting(request):
+def recruiting(request): # XXX
     ''' List all registered trials with recruitment_status = recruiting
     '''
+    object_list = ClinicalTrial.fossils.recruiting()
+    object_list = object_list.proxies(language=request.LANGUAGE_CODE)
+
+    """
     recruitments = RecruitmentStatus.objects.filter(label__exact='recruiting')
     if len(recruitments) > 0:
         object_list = ClinicalTrial.published.filter(recruitment_status=recruitments[0])
@@ -213,7 +217,8 @@ def recruiting(request):
             except VocabularyTranslation.DoesNotExist:
                 rec_status_trans = obj.recruitment_status
             obj.rec_status = rec_status_trans.label
-    
+    """
+
     # pagination
     paginator = Paginator(object_list, getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10))
     
