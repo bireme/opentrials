@@ -626,7 +626,7 @@ def clinicaltrial_post_save(sender, instance, signal, **kwargs):
         fossil = Fossil.objects.create_for_object(instance)
         fossil.create_indexer(key='trial_id', value=instance.trial_id)
 
-        if value=instance.recruitment_status:
+        if value == instance.recruitment_status:
             fossil.create_indexer(key='recruitment_status', value=instance.recruitment_status.label)
 
 post_save.connect(clinicaltrial_post_save, sender=ClinicalTrial)
