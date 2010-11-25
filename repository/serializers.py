@@ -38,6 +38,8 @@ def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
             value = getattr(trial, field.name)
         except AttributeError:
             continue
+        except ObjectDoesNotExist:
+            value = None
 
         if isinstance(value, datetime.datetime):
             value = value.strftime('%Y-%m-%d %H:%M:%S')
