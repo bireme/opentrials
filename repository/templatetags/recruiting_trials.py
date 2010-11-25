@@ -19,7 +19,11 @@ class LatestRecruitingTrialsNode(Node):
     
     def render(self, context):
         request = context['request']
-        
+
+        object_list = ClinicalTrial.fossils.recruiting()
+        object_list = object_list.proxies(language=request.LANGUAGE_CODE)
+
+        """
         object_list = ClinicalTrial.published.filter(recruitment_status__label='recruiting').order_by('-date_registration',)[:self.num]
     
         for obj in object_list:
@@ -33,6 +37,7 @@ class LatestRecruitingTrialsNode(Node):
                     obj.public_title = trans.public_title
                 if trans.public_title:
                     obj.scientific_title = trans.scientific_title
+        """
             
         context[self.varname] = object_list
         return ''
