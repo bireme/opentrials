@@ -119,7 +119,7 @@ class TrialsFossil(FossilManager):
                 )
 
     def recruiting(self):
-        return self.indexed(recruitment_status='recruiting').published()
+        return self.indexed(recruitment_status='recruiting').filter(is_most_recent=True)
 
     def published(self):
         qs = self.get_query_set()
