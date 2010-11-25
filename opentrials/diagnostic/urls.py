@@ -9,5 +9,5 @@ urlpatterns = patterns('',
     url(r'^sysinfo/$', sys_info),
     url(r'^error/$', raise_error),
     url(r'^dumpdb/$', export_database),
-    url(r'^dumpdata/(?P<appname>[a-z]+)?/?$', dump_data, name='dumpdata'),
+    url(r'^dumpdata/(?P<appname>[a-z_]+)?/?$', dump_data, name='dumpdata'),
 )
