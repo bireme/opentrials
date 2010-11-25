@@ -75,8 +75,10 @@ def index(request):
     if not beta_trans:
         show_beta_message = False
         
-    clinical_trials = ClinicalTrial.published.all()[:3]
+    fossil_trials = ClinicalTrial.fossils.order_by('-creation')[:3]
+    clinical_trials = fossil_trials.proxies()
     
+    """
     for trial in clinical_trials:
         try:
             #trans = trial.translations.get(language__iexact=request.LANGUAGE_CODE)
@@ -91,6 +93,7 @@ def index(request):
                 trial.public_title = trans.public_title
             if trans.public_title:
                 trial.scientific_title = trans.scientific_title
+    """
 
     return render_to_response('reviewapp/index.html', {
                           'clinical_trials': clinical_trials,

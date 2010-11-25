@@ -6,6 +6,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ObjectDoesNotExist
 from fossil.fields import FossilProxy, DictKeyAttribute
 from polyglot.models import lang_format
+from utilities import safe_truncate
 
 def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
     """
@@ -411,4 +412,7 @@ class FossilClinicalTrial(FossilProxy):
                 return value['label']
 
         return value
+
+    def short_title(self):
+        return safe_truncate(self.main_title(), 120)
 
