@@ -186,7 +186,7 @@ def full_view(request, trial_pk):
                                context_instance=RequestContext(request))
 
 
-def recruiting(request): # XXX
+def recruiting(request):
     ''' List all registered trials with recruitment_status = recruiting
     '''
     object_list = ClinicalTrial.fossils.recruiting()
