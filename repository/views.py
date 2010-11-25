@@ -310,7 +310,7 @@ def trial_registered(request, trial_fossil_id):
         fossil = Fossil.objects.get(pk=trial_fossil_id)
     except Fossil.DoesNotExist:
         try:
-            fossil = Fossil.objects.get(is_most_recent=True, serialized__contains='"trial_id": "%s"'%trial_fossil_id)
+            fossil = Fossil.objects.indexed(trial_id=trial_fossil_id).get(is_most_recent=True)
         except Fossil.DoesNotExist:
             raise Http404
 

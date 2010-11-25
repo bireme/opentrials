@@ -620,7 +620,9 @@ def clinicaltrial_post_save(sender, instance, signal, **kwargs):
 
     # Creates a fossil if the status is equal to 'published'
     if instance.status == choices.PUBLISHED_STATUS:
-        Fossil.objects.create_for_object(instance)
+        fossil = Fossil.objects.create_for_object(instance)
+        fossil.create_indexer(key='trial_id', value=instance.trial_id)
+        fossil.create_indexer(key='recruitment_status', value=instance.recruitment_status.label)
 
 post_save.connect(clinicaltrial_post_save, sender=ClinicalTrial)
 
