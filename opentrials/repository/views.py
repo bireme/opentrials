@@ -1,7 +1,7 @@
 # coding: utf-8
 
 from django.core import serializers
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from django.utils.translation import ugettext_lazy as _
 from django.forms.models import inlineformset_factory
@@ -306,7 +306,13 @@ def trial_view(request, trial_pk):
                                 
 def trial_registered(request, trial_fossil_id):
     ''' show details of a trial registered '''
-    fossil = get_object_or_404(Fossil, pk=trial_fossil_id)
+    try:
+        fossil = Fossil.objects.get(pk=trial_fossil_id)
+    except Fossil.DoesNotExist:
+        try:
+            fossil = Fossil.objects.get(is_most_recent=True, serialized__contains='"trial_id": "%s"'%trial_fossil_id)
+        except Fossil.DoesNotExist:
+            raise Http404
 
     ct = fossil.get_object_fossil()
     ct.hash_code = fossil.pk

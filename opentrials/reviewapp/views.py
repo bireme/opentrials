@@ -75,25 +75,8 @@ def index(request):
     if not beta_trans:
         show_beta_message = False
         
-    fossil_trials = ClinicalTrial.fossils.order_by('-creation')[:3]
+    fossil_trials = ClinicalTrial.fossils.published().order_by('-creation')[:3]
     clinical_trials = fossil_trials.proxies()
-    
-    """
-    for trial in clinical_trials:
-        try:
-            #trans = trial.translations.get(language__iexact=request.LANGUAGE_CODE)
-            trans = ClinicalTrialTranslation.objects.get_translation_for_object(
-                        request.LANGUAGE_CODE.lower(), trial,
-                        )
-        except ClinicalTrialTranslation.DoesNotExist:
-            trans = None
-        
-        if trans:
-            if trans.public_title:
-                trial.public_title = trans.public_title
-            if trans.public_title:
-                trial.scientific_title = trans.scientific_title
-    """
 
     return render_to_response('reviewapp/index.html', {
                           'clinical_trials': clinical_trials,
