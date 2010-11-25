@@ -18354,6 +18354,20 @@
     }
   }, 
   {
+    "pk": 1967, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fase 0", 
+      "label": "0", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "pt-BR", 
+      "object_id": 9
+    }
+  }, 
+  {
     "pk": 2, 
     "model": "vocabulary.countrycode", 
     "fields": {
@@ -20856,14 +20870,6 @@
     }
   }, 
   {
-    "pk": 2, 
-    "model": "vocabulary.studyphase", 
-    "fields": {
-      "description": "exploratory trial", 
-      "label": "0"
-    }
-  }, 
-  {
     "pk": 3, 
     "model": "vocabulary.studyphase", 
     "fields": {
@@ -20909,6 +20915,14 @@
     "fields": {
       "description": "phase 4", 
       "label": "4"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "vocabulary.studyphase", 
+    "fields": {
+      "description": "phase zero", 
+      "label": "0"
     }
   }, 
   {
