@@ -53,9 +53,9 @@
         <ul>
         {% for ct in clinical_trials %}
             <li>
-                <a class="NewsTitle" href="{% url repository.trial_registered ct.trial_id %}">{{ ct.short_title }}</a>
+                <a class="NewsTitle" href="{% url repository.trial_registered ct.hash_code %}">{{ ct.short_title }}</a>
                 <p>
-                    <b>{% trans 'Primary Id Number' %}</b>: <a class="pnumber" href="{% url repository.trial_registered ct.trial_id %}">{{ ct.trial_id }}</a><br/>
+                    <b>{% trans 'Primary Id Number' %}</b>: <a class="pnumber" href="{% url repository.trial_registered ct.hash_code %}">{{ ct.trial_id }}</a><br/>
                 </p>
             </li>
         {% endfor %}
