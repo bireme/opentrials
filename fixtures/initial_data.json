@@ -1,26 +1,34 @@
 [
   {
-    "pk": 1, 
+    "pk": 4, 
     "model": "sites.site", 
     "fields": {
-      "domain": "example.com", 
-      "name": "example.com"
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "sites.site", 
-    "fields": {
-      "domain": "opentrials.bvsalud.org", 
-      "name": "OpenTrials"
+      "domain": "ec.beta.bvsalud.org", 
+      "name": "EnsaiosClinicos.gov.br (BETA)"
     }
   }, 
   {
     "pk": 3, 
     "model": "sites.site", 
     "fields": {
-      "domain": "opentrials.teste.bvsalud.org", 
-      "name": "OpenTrials (TESTE)"
+      "domain": "ec.homolog.bvsalud.org", 
+      "name": "EnsaiosClinicos.gov.br (HOMOLOG)"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "ec.teste.bvsalud.org", 
+      "name": "EnsaiosClinicos.gov.br (TESTE)"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "example.com", 
+      "name": "example.com"
     }
   }
 ]

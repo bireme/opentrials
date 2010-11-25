@@ -95,8 +95,8 @@
     "pk": 2, 
     "model": "assistance.questiontranslation", 
     "fields": {
-      "answer": "Todos os estudos envolvendo pesquisadores ou participantes brasileiros, em todas as \u00e1reas da sa\u00fade, e com testes de todas as formas de interven\u00e7\u00f5es, devem ser registrados. Os estudos sendo realizados em outros pa\u00edses n\u00e3o ser\u00e3o aceitos para registro no RBEC.\r\nEstudos devem atender a defini\u00e7\u00e3o <a href=\"http://www.who.int/ictrp/en/\" title=\"World Health Organization\" target=\"_blank\">WHO</a> / ICMJE 2008 de um ensaio cl\u00ednico para serem registrados. Ou seja, qualquer pesquisa que prospectivamente designa participantes, humanos ou grupos de seres humanos, para uma ou mais interven\u00e7\u00f5es relacionadas \u00e0 sa\u00fade, para avaliar os efeitos na sa\u00fade. Interven\u00e7\u00f5es m\u00e9dicas incluem qualquer interven\u00e7\u00e3o usada para modificar um desfecho de sa\u00fade e incluem drogas, procedimentos cir\u00fargicos, aparelhos, tratamentos comportamentais, etc. Se estiver em d\u00favida se um estudo deve ser registrado ou n\u00e3o, o registro \u00e9 recomendado.\r\n", 
-      "title": "Que estudos precisam ser registrados?", 
+      "answer": "Todos os ensaios cl\u00ednicos com participantes brasileiros, em todas as \u00e1reas da sa\u00fade, e com testes de todas as formas de interven\u00e7\u00f5es, devem ser registrados. \r\nEstudos devem atender a defini\u00e7\u00e3o <a href=\"http://www.who.int/ictrp/en/\" title=\"World Health Organization\" target=\"_blank\">WHO</a> / ICMJE 2008 de um ensaio cl\u00ednico para serem registrados. Ou seja, qualquer pesquisa que prospectivamente designa participantes, humanos ou grupos de seres humanos, para uma ou mais interven\u00e7\u00f5es relacionadas \u00e0 sa\u00fade, para avaliar os efeitos na sa\u00fade. Interven\u00e7\u00f5es m\u00e9dicas incluem qualquer interven\u00e7\u00e3o usada para modificar um desfecho de sa\u00fade e incluem drogas, procedimentos cir\u00fargicos, aparelhos, tratamentos comportamentais, etc. Em caso de d\u00favida se um ensaio cl\u00ednico deve ser registrado ou n\u00e3o, recomenda-se o registro desse estudo.\r\n", 
+      "title": "Quais estudos precisam ser registrados?", 
       "content_type": [
         "assistance", 
         "question"
@@ -152,13 +152,69 @@
     "model": "assistance.questiontranslation", 
     "fields": {
       "answer": "O registro de um ensaio ser\u00e1 o \u00fanico documento dispon\u00edvel publicamente at\u00e9 que os resultados desse estudo sejam publicados. Alguns exemplos de situa\u00e7\u00f5es nas quais os estudos poderiam ser citados s\u00e3o:\r\n\r\n    * Quando um manuscrito relatando os resultados do ensaio \u00e9 publicado ou reportado\r\n    * Quando um manuscrito relatando quest\u00f5es metodol\u00f3gicas a respeito de um ensaios espec\u00edfico \u00e9 publicado ou reportado\r\n    * Em protocolos para revis\u00f5es sistem\u00e1ticas ou revis\u00f5es sistem\u00e1ticas conclu\u00eddas (p.ex. quando uma lista de ensaios em curso s\u00e3o inclu\u00eddas)\r\n    * Em protocolos para metan\u00e1lises prospectives que ir\u00e3o listar os ensaios em curso a serem inclu\u00eddos\r\n    * Em qualquer manuscrito quando a refer\u00eancia a um ensaio em curso ou n\u00e3o-publicado (ou mesmo quando publicado) poderia ser relevante\r\n", 
-      "title": "When to cite a record on a clinical trials register", 
+      "title": "Quando citar um registro de um ensaio clinico", 
       "content_type": [
         "assistance", 
         "question"
       ], 
       "language": "pt-BR", 
       "object_id": 18
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "N\u00e3o. Apenas os estudos de confirma\u00e7\u00e3o terap\u00eautica (fase III) que poder\u00e3o subsidiar o registro\u00b9 na Ag\u00eancia Nacional de Vigil\u00e2ncia Sanit\u00e1ria (Anvisa), devem ser registrados em um dos registros prim\u00e1rios da rede de registros do International Clinical Trials Registration Plataform (ICTRP/WHO). Os demais projetos de pesquisa de ensaios cl\u00ednicos com medicamentos, produtos para sa\u00fade\u00b2 ou interven\u00e7\u00f5es Diet\u00e9ticas, fases I, II e VI, assim como os ensaios cl\u00ednicos em farmacogen\u00f4mica ou farmacogen\u00e9tica entre outros aprovados pela CTNBio ou pelo CGEN, que envolvam importa\u00e7\u00e3o e/ou exporta\u00e7\u00e3o dever\u00e3o ser registrado apenas na ANVISA.\r\nAtualmente os projetos de pesquisa de Biodisponibilidade e Bioequival\u00eancia para registro de medicamentos gen\u00e9ricos n\u00e3o devem ser submetidos \u00e0 avalia\u00e7\u00e3o pela ANVISA.\r\n\r\nNota: (1) produto inovador , nova indica\u00e7\u00e3o terap\u00eautica ou altera\u00e7\u00f5es de registro\r\n         (2) inclui materiais (\u00f3rteses; pr\u00f3teses), artigos, dispositivos, equipamentos", 
+      "title": "\u00c9 obrigat\u00f3rio o registro de todos os ensaios cl\u00ednicos no Registro Brasileiro de Ensaios Cl\u00ednicos \u00e9 obrigat\u00f3rio para obter a anu\u00eancia em pesquisa cl\u00ednica da ANVISA?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-BR", 
+      "object_id": 19
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "Estabelecer um registro amplo e atualizado dos estudos de interven\u00e7\u00e3o e observacionais do Brasil, Am\u00e9rica Latina & Caribe\r\n\r\nProver aos stakeholders interessados o acesso a estudos em curso ou conclu\u00eddos \u2013 dados confi\u00e1veis e sem \u00f4nus para revis\u00f5es/metan\u00e1lises, diretrizes e pol\u00edticas de pesquisa\r\n\r\nAumentar a transpar\u00eancia na pesquisa, fortalecendo o valor \u00e9tico e cient\u00edfico dos estudos de interven\u00e7\u00e3o e observacionais\r\n\r\nFacilitar a descoberta e o controle de vi\u00e9ses de desenho, de publica\u00e7\u00e3o e reduzir o vi\u00e9s de idioma\r\n\r\nIntegrar aos processos \u00e9ticos e regulat\u00f3rios\r\n\r\nAtender \u00e0s necessidades nacionais e regionais de informa\u00e7\u00e3o\r\n", 
+      "title": "Quais s\u00e3o os objetivos do Registro Brasileiro de Ensaios Cl\u00ednicos?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-BR", 
+      "object_id": 20
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "Um registro de ensaios cl\u00ednicos pode aumentar a efic\u00e1cia dos esfor\u00e7os dos ensaios cl\u00ednicos atuais ao:\r\n\r\nreduzir a duplica\u00e7\u00e3o desnecess\u00e1ria de esfor\u00e7os de pesquisa, porque os profissionais que planejam novos estudos estar\u00e3o cientes de todos os ensaios existentes\r\n\r\naumentar as taxas de recrutamento de participantes para ensaios cl\u00ednicos (especialmente para doen\u00e7as raras ou condi\u00e7\u00f5es de alto risco), desse modo aumentando as chances de desfechos bem-sucedidos de alguns ensaios cl\u00ednicos\r\n\r\nprover valor agregado aos resultados da pesquisa ao prover uma fonte de informa\u00e7\u00e3o confi\u00e1vel e n\u00e3o-enviesada sobre ensaio cl\u00ednicos para revis\u00f5es sistem\u00e1ticas, metan\u00e1lises e diretrizes baseadas em evid\u00eancias\r\n\r\naprimorar as evid\u00eancias dispon\u00edveis que orientem as pr\u00e1ticas de sa\u00fade\r\n", 
+      "title": "Quais s\u00e3o os benef\u00edcios de um Registro de Ensaios Cl\u00edncios?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-BR", 
+      "object_id": 21
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "N\u00e3o. O registro do estudo na Plataforma Brasil dever\u00e1 ser feito antes do seu registro no Registro Brasileiro de Ensaios Cl\u00ednicos (RBEC). Embora o formul\u00e1rio do RBEC compartilhe v\u00e1rios campos comuns \u00e0 Plataforma Brasil, o objetivo do RBEC \u00e9 informar a todos os interessados nacionais e internacionais acerca dos ensaios cl\u00ednicos realizados no Brasil atrav\u00e9s da integra\u00e7\u00e3o do RBEC e a Plataforma Internacional de Registro de Ensaios Cl\u00ednicos (ICTRP / Organiza\u00e7\u00e3o Mundial da Sa\u00fade). Esta integra\u00e7\u00e3o est\u00e1 baseada na ado\u00e7\u00e3o de procedimentos operacionais padr\u00f5es definidos pelo Secretariado do ICTRP.", 
+      "title": "O registro de um ensaio cl\u00ednico na Plataforma Brasil equivale a um registro no Registro Brasileiro de Ensaios Clinicos?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-BR", 
+      "object_id": 22
     }
   }, 
   {
@@ -1201,7 +1257,7 @@
     "pk": 1, 
     "model": "assistance.consenttranslation", 
     "fields": {
-      "text": "Exemplo 1: Eu autorizo a publica\u00e7\u00e3o dos dados apresentados neste registro", 
+      "text": "Eu autorizo a publica\u00e7\u00e3o dos dados apresentados neste registro", 
       "content_type": [
         "assistance", 
         "consent"
@@ -1211,11 +1267,32 @@
     }
   }, 
   {
+    "pk": 2, 
+    "model": "assistance.consenttranslation", 
+    "fields": {
+      "text": "Eu sou a pessoa designada pelo patrocinador prim\u00e1rio para registrar este ensaio.", 
+      "content_type": [
+        "assistance", 
+        "consent"
+      ], 
+      "language": "pt-BR", 
+      "object_id": 2
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "assistance.consent", 
     "fields": {
-      "text": "Example 1: I authorize the publication of the data presented in this record", 
+      "text": "I authorize the publication of the data presented in this record", 
       "order": 10
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "assistance.consent", 
+    "fields": {
+      "text": "I am the person assigned by the primary sponsor to register this trial.", 
+      "order": 20
     }
   }, 
   {
@@ -2022,6 +2099,50 @@
       "created": "2010-08-10 19:09:28", 
       "order": 180, 
       "title": "When to cite a record on a clinical trials register"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "No. Only phase III studies therapeutical confirmatory studies that request registration\u00b9 at Ag\u00eancia Nacional de Vigil\u00e2ncia Sanit\u00e1ria (Anvisa) must be registered in one of the primary registries of the International Clinical Trials Registration Plataform (ICTRP/WHO) network. Other clinical trials studies with drugs, devices\u00b2 or dietetical interventions of phases I, II and VI, as well as clinical trials in pharmacogenomics or pharmacogenetics approved by CTNBio or CGEN, which involves importation or exportation must be registered only at ANVISA.\r\nCurrently, research projects on bioavailability and bioequivalence for registration of generic drugs doesn\u00b4t need to be submitted to evaluation by ANVISA.\r\n\r\nNote: (1) innovative product, new therapeutical application or lregistration changes\r\n         (2) includes materials (orthesis; prosthesis), devices, equipments", 
+      "created": "2010-10-24 13:53:41", 
+      "order": 190, 
+      "title": "Is mandatory to register all clinical trials at the Brazilian Clinical Trials Registry to obtain the approval of ANVISA for the conduct of clinical research?"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "Estabilish a broad and update register of clinical trials with researchers and participants from Brazil, Latin America and the Caribbean\r\n\r\nProvide access to interested stakeholders of ongoing or completed clinical trials - source of reliable and free of charge data to be used in systematic reviews/metanalyses, evidence-based guidelines, research policy \r\n\r\nIncrease transparency in research, strenghening the ethical and cientific value of clinical trials\r\n\r\nFacilitate the discovery and control of design, publication bias and reduce language bias\r\n\r\nIntegrate into ethic and regulatory processes\r\n\r\nAttend the national and regional information needs", 
+      "created": "2010-10-24 21:03:54", 
+      "order": 200, 
+      "title": "What are the objectives of the Brazilian Clinical Trial Registry?"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "A Clinical Trials Registry can enhance the efficacy of current clinical trials studies by:\r\n\r\nreducing the unnecessary duplication of research efforts because those who are planning new studies will be aware of all existing trials\r\n\r\nraising the recruitment rates of participants of clinical trials (especially for rare diseases or high risk conditions) and therefore increasing the chances of well succeeded outcomes of some clincial trials\r\n\r\ngiving aggregate value to research results by providing a source of reliable and non-biased information on clinical trials for use in systematic reviews, metanalyses and evidence-based guidelines\r\n\r\nenhance the available evidences to health decision taking \r\n", 
+      "created": "2010-10-24 21:41:02", 
+      "order": 210, 
+      "title": "What are the benefits of a Clinical Trials Registry?"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "No. The study registration at Plataforma Brasil must be done before its registration at the Brazilian Clinical Trials Registry (RBEC). Although the form of RBEC share many of its fields with Plataforma Brasil, the objective of RBEC is to inform all national and international interested stakeholders about clinical trials performed in Brazil through the integration of RBEC and International Clinical Trials Registry Platform (ICTRP / World Health Organization). This integration is based upon the adoption of standard operating procedures defined by the Secretariat of th ICTRP.", 
+      "created": "2010-10-25 15:50:30", 
+      "order": 220, 
+      "title": "Is the  registration of a clinical trial at Plataforma Brasil equivalent to the registration at Brazilian Clinical Trials Registry?"
     }
   }, 
   {
