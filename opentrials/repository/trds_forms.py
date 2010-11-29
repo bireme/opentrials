@@ -85,14 +85,19 @@ class ReviewModelForm(MultilingualBaseForm):
 
                 # Trying to get the translation for help_record
                 try:
-                    help_text = FieldHelpTranslation.objects.get_translation_for_object(
+                    help_object = FieldHelpTranslation.objects.get_translation_for_object(
                         lang=self.display_language, model=FieldHelp, object_id=help_record.pk,
-                        ).text
+                        )
+                    help_text = "<div class='help_text'>%s</div>" % (help_object.text,)
+                    if help_object.example:
+                        help_text = "%s<div class='help_text_example'>%s:<br />%s</div>" % (help_text, _("Example"), help_object.example)
 
                     if not help_text.strip():
                         help_text = unicode(help_record)
                 except (FieldHelpTranslation.DoesNotExist, AttributeError):
-                    help_text = help_record.text
+                    help_text = "<div class='help_text'>%s</div>" % (help_record.text,)
+                    if help_record.example:
+                        help_text = "%s<div class='help_text_example'>%s:<br />%s</div>" % (help_text, _("Example"), help_record.example)
 
                 help_text = u'' + force_unicode(help_text)
                 help_text = linebreaksbr(help_text_html % help_text)

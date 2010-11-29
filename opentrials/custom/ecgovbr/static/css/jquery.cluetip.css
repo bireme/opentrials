@@ -55,6 +55,13 @@
 .cluetip-default #cluetip-inner {
   padding: 10px;
 }
+#cluetip-inner div.help_text {
+
+}
+#cluetip-inner div.help_text_example {
+  font-style: italic;
+  margin-top: 20px;
+}
 .cluetip-default div#cluetip-close {
   text-align: right;
   margin: 0 5px 5px;
