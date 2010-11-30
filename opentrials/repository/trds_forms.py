@@ -14,7 +14,7 @@ import choices
 
 from django.utils.encoding import force_unicode
 from django.utils.safestring import mark_safe
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, get_language
 from django.forms.formsets import DELETION_FIELD_NAME
 from django.template.defaultfilters import linebreaksbr
 
@@ -86,7 +86,7 @@ class ReviewModelForm(MultilingualBaseForm):
                 # Trying to get the translation for help_record
                 try:
                     help_object = FieldHelpTranslation.objects.get_translation_for_object(
-                        lang=self.display_language, model=FieldHelp, object_id=help_record.pk,
+                        lang=get_language(), model=FieldHelp, object_id=help_record.pk,
                         )
                     help_text = "<div class='help_text'>%s</div>" % (help_object.text,)
                     if help_object.example:
