@@ -27,6 +27,7 @@ from django.core.cache import cache
 from django.core.exceptions import ObjectDoesNotExist
 
 lang_format = lambda lang: lang.replace('_','-').lower()
+CHOICES_TARGET_LANGUAGES = [(lang_format(value), label) for value, label in settings.TARGET_LANGUAGES]
 
 class TranslationManager(models.Manager):
     def make_cache_key(self, model, object_id, lang):
@@ -83,7 +84,7 @@ class TranslationManager(models.Manager):
 class Translation(models.Model):
     language = models.CharField(_('Language'), max_length=8,
                                 blank=False, null=False, db_index=True,
-                                choices=settings.TARGET_LANGUAGES)
+                                choices=CHOICES_TARGET_LANGUAGES)
     # standard fields to link to any other model
     content_type = models.ForeignKey(ContentType)
     object_id = models.PositiveIntegerField(db_index=True)
@@ -106,7 +107,7 @@ class Translation(models.Model):
     @staticmethod
     def missing(content_object):
         ''' returns missing translation codes for a content object'''
-        targets = set(value for value, label in settings.TARGET_LANGUAGES)
+        targets = set(value for value, label in CHOICES_TARGET_LANGUAGES)
         done = set(t.language for t in content_object.translations.all())
         return targets-done
 
