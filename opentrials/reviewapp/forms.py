@@ -106,7 +106,7 @@ class OpenRemarkForm(forms.ModelForm):
         model = Remark
         exclude = ['submission','context','status']
 
-    title = _('Open Remark')
+    title = _('Open a new Remark')
     
 class ContactForm(forms.Form):
     name = forms.CharField(label=_("Name"), max_length=50)
