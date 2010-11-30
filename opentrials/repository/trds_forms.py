@@ -402,7 +402,7 @@ class RecruitmentForm(ReviewModelForm):
                                                          self.instance.enrollment_end_actual
 
     def save(self, commit=True, *args, **kwargs):
-        obj = super(RecruitmentForm, self).save(commit=False, *args, **kwargs)
+        obj = super(RecruitmentForm, self).save(commit=True, *args, **kwargs)
 
         obj.enrollment_start_planned = None
         obj.enrollment_start_actual = None
