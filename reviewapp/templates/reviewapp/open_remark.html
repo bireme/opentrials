@@ -4,7 +4,7 @@
 {% block login %}{% endblock %}
 
 {% block body %}
-<h2>{% trans 'Open Remark' %}</h2>
+<h2>{% trans 'Open a new Remark' %}</h2>
 <form method="post" action="./">{% csrf_token %}
     <table>
         {{ form.as_table }}
