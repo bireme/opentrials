@@ -864,6 +864,7 @@ def trial_ictrp(request, trial_fossil_id):
     - http://reddes.bvsalud.org/projects/clinical-trials/attachment/wiki/RegistrationDataModel/xmlsample.xml
     - http://reddes.bvsalud.org/projects/clinical-trials/attachment/wiki/RegistrationDataModel/ICTRPTrials.xml
     """
+
     try:
         fossil = Fossil.objects.get(pk=trial_fossil_id)
     except Fossil.DoesNotExist:
@@ -876,10 +877,14 @@ def trial_ictrp(request, trial_fossil_id):
     ct.hash_code = fossil.pk
     ct.previous_revision = fossil.previous_revision
 
-    return render_to_response(
+    resp = render_to_response(
             'repository/clinicaltrial_detail.xml',
             {'object': ct},
             context_instance=RequestContext(request),
             mimetype = 'text/xml'
             )
+
+    resp['Content-Disposition'] = 'attachment; filename=%s.xml' % ct.trial_id
+
+    return resp
 
