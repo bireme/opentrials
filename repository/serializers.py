@@ -1,9 +1,11 @@
 import datetime
+
 from django.utils import simplejson
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ObjectDoesNotExist
+
 from fossil.fields import FossilProxy, DictKeyAttribute
 from polyglot.models import lang_format
 from utilities import safe_truncate
@@ -64,9 +66,39 @@ def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
 
         json[field.name] = [item.serialize_for_fossil(as_string=False) for item in objects.all()]
 
+    # Other attributes
+    if hasattr(trial, 'hc_code'):
+        json['hc_code'] = [item.serialize_for_fossil(as_string=False) for item in trial.hc_code()]
+    if hasattr(trial, 'hc_keyword'):
+        json['hc_keyword'] = [item.serialize_for_fossil(as_string=False) for item in trial.hc_keyword()]
+    if hasattr(trial, 'intervention_keyword'):
+        json['intervention_keyword'] = [item.serialize_for_fossil(as_string=False) for item in trial.intervention_keyword()]
+    if hasattr(trial, 'primary_outcomes'):
+        json['primary_outcomes'] = [item.serialize_for_fossil(as_string=False) for item in trial.primary_outcomes()]
+    if hasattr(trial, 'secondary_outcomes'):
+        json['secondary_outcomes'] = [item.serialize_for_fossil(as_string=False) for item in trial.secondary_outcomes()]
+    if hasattr(trial, 'trial_number'):
+        json['trial_number'] = [item.serialize_for_fossil(as_string=False) for item in trial.trial_number()]
+    if hasattr(trial, 'support_sources'):
+        json['support_sources'] = [item.serialize_for_fossil(as_string=False) for item in trial.support_sources()]
+    if hasattr(trial, 'acronym_display'):
+        json['acronym_display'] = trial.acronym_display()
+    if hasattr(trial, 'scientific_acronym_display'):
+        json['scientific_acronym_display'] = trial.scientific_acronym_display()
+    if hasattr(trial, 'enrollment_start_planned'):
+        date = trial.enrollment_start_actual or trial.enrollment_start_planned
+        if date:
+            date = date.split('-')
+            date.reverse()
+            json['date_enrollment_start'] = '/'.join(date)
+
+    # Meta or auxiliar attributes
     json['__unicode__'] = unicode(trial)
     json['__model__'] = trial.__class__.__name__
     json['pk'] = trial.pk
+
+    if hasattr(trial, 'public_url'):
+        json['public_url'] = trial.public_url
 
     if as_string:
         json = simplejson.dumps(json)
@@ -352,6 +384,85 @@ def deserialize_user(data, persistent=False):
             obj.save()
 
         return obj
+
+def serialize_trialnumber(trialnumber, as_string=True):
+    """
+    Serializes a given trial number object to JSON
+    """
+    json = {
+            'issuing_authority': trialnumber.issuing_authority,
+            'id_number': trialnumber.id_number,
+        }
+
+    if as_string:
+        json = simplejson.dumps(json)
+
+    return json
+
+def serialize_trialsupportsource(source, as_string=True):
+    """
+    Serializes a given trial support source object to JSON
+    """
+    json = {
+            'institution': serialize_institution(source.institution, as_string=False),
+        }
+
+    if as_string:
+        json = simplejson.dumps(json)
+
+    return json
+
+def serialize_outcome(outcome, as_string=True):
+    """
+    Serializes a given trial outcome object to JSON
+    """
+    json = {
+            'description': outcome.description,
+        }
+
+    if hasattr(outcome, 'interest'):
+        json['interest'] = outcome.interest
+
+    if hasattr(outcome, 'translations'):
+        json['translations'] = [serialize_outcome(trans, as_string=False)
+                for trans in outcome.translations.all()]
+
+    if as_string:
+        json = simplejson.dumps(json)
+
+    return json
+
+def serialize_descriptor(descriptor, as_string=True):
+    """
+    Serializes a given trial descriptor object to JSON
+    """
+    json = {
+            'text': descriptor.text,
+        }
+
+    if hasattr(descriptor, 'aspect'):
+        json['aspect'] = descriptor.aspect
+
+    if hasattr(descriptor, 'vocabulary'):
+        json['vocabulary'] = descriptor.vocabulary
+
+    if hasattr(descriptor, 'version'):
+        json['version'] = descriptor.version
+
+    if hasattr(descriptor, 'level'):
+        json['level'] = descriptor.level
+
+    if hasattr(descriptor, 'code'):
+        json['code'] = descriptor.code
+
+    if hasattr(descriptor, 'translations'):
+        json['translations'] = [serialize_descriptor(trans, as_string=False)
+                for trans in descriptor.translations.all()]
+
+    if as_string:
+        json = simplejson.dumps(json)
+
+    return json
 
 class FossilClinicalTrial(FossilProxy):
     """

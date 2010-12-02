@@ -5,19 +5,12 @@ from repository.models import ClinicalTrial
 
 from repository.views import edit_trial_index, full_view, index, step_1, step_2, step_3
 from repository.views import step_4, step_5, step_6, step_7, step_8, step_9, new_institution
-from repository.views import trial_registered, trial_view, recruiting
+from repository.views import trial_registered, trial_view, recruiting, trial_ictrp
 
-
-info_dict_xml = {
-    'queryset': ClinicalTrial.objects.all(),
-    'template_name': 'repository/clinicaltrial_detail.xml',
-    'mimetype': 'text/xml',
-}
 
 urlpatterns = patterns('',
     url(r'^edit/(\d+)/$', edit_trial_index, name='repository.edittrial'),
     url(r'^view/(?P<trial_pk>\d+)/$', trial_view, name='repository.trialview'),
-    url(r'^xml/(?P<object_id>\d+)/$', object_detail, info_dict_xml, name='repository.xml'),
     url(r'^new_institution/$', new_institution, name='new_institution'),
     url(r'^step_1/(\d+)/$', step_1, name='step_1'),
     url(r'^step_2/(\d+)/$', step_2, name='step_2'),
@@ -31,5 +24,6 @@ urlpatterns = patterns('',
     #public
     url(r'^recruiting/$', recruiting, name='repository.recruiting'),
     url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/$', trial_registered, name='repository.trial_registered'),
+    url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/xml/$', trial_ictrp, name='repository.trial_ictrp'),
     url(r'^$', index, name='repository.index'),
 )

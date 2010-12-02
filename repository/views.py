@@ -853,4 +853,33 @@ def step_9(request, trial_pk):
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
+def trial_ictrp(request, trial_fossil_id):
+    """
+    Returns a XML content structured on ICTRP standard, you can find more details
+    about it on:
+
+    - http://reddes.bvsalud.org/projects/clinical-trials/wiki/RegistrationDataModel
+    - http://reddes.bvsalud.org/projects/clinical-trials/attachment/wiki/RegistrationDataModel/who_ictrp_dtd.txt
+    - http://reddes.bvsalud.org/projects/clinical-trials/attachment/wiki/RegistrationDataModel/ICTRP%20Data%20format%201.1%20.doc
+    - http://reddes.bvsalud.org/projects/clinical-trials/attachment/wiki/RegistrationDataModel/xmlsample.xml
+    - http://reddes.bvsalud.org/projects/clinical-trials/attachment/wiki/RegistrationDataModel/ICTRPTrials.xml
+    """
+    try:
+        fossil = Fossil.objects.get(pk=trial_fossil_id)
+    except Fossil.DoesNotExist:
+        try:
+            fossil = Fossil.objects.indexed(trial_id=trial_fossil_id).get(is_most_recent=True)
+        except Fossil.DoesNotExist:
+            raise Http404
+
+    ct = fossil.get_object_fossil()
+    ct.hash_code = fossil.pk
+    ct.previous_revision = fossil.previous_revision
+
+    return render_to_response(
+            'repository/clinicaltrial_detail.xml',
+            {'object': ct},
+            context_instance=RequestContext(request),
+            mimetype = 'text/xml'
+            )
 
