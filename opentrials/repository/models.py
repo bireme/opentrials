@@ -5,6 +5,8 @@ from django.utils.html import linebreaks
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import User
+from django.contrib.sites.models import Site
+from django.core.urlresolvers import reverse
 
 from fossil.models import Fossil, FossilManager
 from datetime import datetime
@@ -27,6 +29,10 @@ from django.db.models.signals import post_save
 from serializers import serialize_trial, deserialize_trial
 from serializers import serialize_institution
 from serializers import serialize_contact
+from serializers import serialize_descriptor
+from serializers import serialize_outcome
+from serializers import serialize_trialnumber
+from serializers import serialize_trialsupportsource
 
 # remove digits that look like letters and vice-versa
 # remove vowels to avoid forming words
@@ -412,6 +418,12 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     def serialize_for_fossil(self, as_string=True):
         return serialize_trial(self, as_string, attrs_to_ignore=['status'])
 
+    @property
+    def public_url(self):
+        site = Site.objects.get_current()
+        url = reverse('repository.trial_registered', kwargs={'trial_fossil_id': self.trial_id})
+        return 'http://%s%s'%(site.domain, url)
+
 # Sets validation model to ClinicalTrial
 trial_validator.model = ClinicalTrial
 
@@ -462,6 +474,9 @@ class TrialNumber(TrialRegistrationDataSetModel):
     def __unicode__(self):
         return u'%s: %s' % (self.issuing_authority, self.id_number)
 
+    def serialize_for_fossil(self, as_string=True):
+        return serialize_trialnumber(self, as_string)
+
 # TRDS 6 - Secondary Sponsor(s)
 class TrialSecondarySponsor(TrialRegistrationDataSetModel):
     trial = models.ForeignKey(ClinicalTrial)
@@ -477,6 +492,9 @@ class TrialSupportSource(TrialRegistrationDataSetModel):
 
     def __unicode__(self):
         return u'%s' % self.institution
+
+    def serialize_for_fossil(self, as_string=True):
+        return serialize_trialsupportsource(self, as_string)
 
 # TRDS 5 - Primary Sponsor
 
@@ -581,6 +599,9 @@ class Outcome(TrialRegistrationDataSetModel):
     def translations_all(self):
         return self.translations.all()
 
+    def serialize_for_fossil(self, as_string=True):
+        return serialize_outcome(self, as_string)
+
 class OutcomeTranslation(Translation):
     description = models.TextField(_('Outcome Description'), max_length=8000)
 
@@ -610,6 +631,9 @@ class Descriptor(TrialRegistrationDataSetModel):
         
     def translations_all(self):
         return self.translations.all()
+
+    def serialize_for_fossil(self, as_string=True):
+        return serialize_descriptor(self, as_string)
 
 class DescriptorTranslation(Translation):
     text = models.CharField(_('Text'), max_length=255, blank=True)

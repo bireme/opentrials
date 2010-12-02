@@ -7,25 +7,25 @@
             <trial_id>{{ object.trial_id }}</trial_id>
             <utrn>{{ object.utrn }}</utrn>
             <reg_name>{{ object.reg_name }}</reg_name>
-            <date_registration>{{ object.date_registration }}</date_registration>
-            <primary_sponsor>{{ object.primary_sponsor }}</primary_sponsor>
-            <public_title>{{ public_title }}</public_title>
+            <date_registration>{{ object.date_registration|date:"d/m/Y" }}</date_registration>
+            <primary_sponsor>{{ object.primary_sponsor.name }}</primary_sponsor>
+            <public_title>{{ object.public_title }}</public_title>
             <acronym>{{ object.acronym_display }}</acronym>
             <scientific_title>{{ object.scientific_title }}</scientific_title>
             <scientific_acronym>{{ object.scientific_acronym_display }}</scientific_acronym>
-            <date_enrolment>{{ object.date_enrollment_actual }}</date_enrolment>
-            <type_enrolment>{{ object.type_enrolment }}</type_enrolment>
+            <date_enrolment>{{ object.date_enrollment_start }}</date_enrolment>
+            <type_enrolment>{% if object.enrollment_start_actual %}actual{% else %}anticipated{% endif %}</type_enrolment>
             <target_size>{{ object.target_sample_size }}</target_size>
-            <recruitment_status>{{ object.recruitment_status }}</recruitment_status>
-            <url>{{ object.url }}</url>
-            <study_type>{{ object.study_type }}</study_type>
+            <recruitment_status>{{ object.recruitment_status.label }}</recruitment_status>
+            <url>{% if object.public_url %}{{ object.public_url }}{% else %}{% url repository.trial_registered trial_fossil_id=object.trial_id %}{% endif %}</url>
+            <study_type>{{ object.study_type.label }}</study_type>
             <study_design>{{ object.study_design }}</study_design>
-            <phase>{{ object.phase }}</phase>
+            <phase>{{ object.phase.label }}</phase>
             <hc_freetext>{{ object.hc_freetext }}</hc_freetext>
             <i_freetext>{{ object.i_freetext }}</i_freetext>            
         </main>
         <contacts>
-        {% for contact in object.public_contacts %}
+        {% for contact in object.public_contact %}
             <contact>
                 <type>public</type>
                 <firstname>{{ contact.firstname }}</firstname>
@@ -33,14 +33,14 @@
                 <lastname>{{ contact.lastname }}</lastname>
                 <address>{{ contact.address }}</address>
                 <city>{{ contact.city }}</city>
-                <country1>{{ contact.country }}</country1>
+                <country1>{{ contact.country.description }}</country1>
                 <zip>{{ contact.zip }}</zip>
                 <telephone>{{ contact.telephone }}</telephone>
                 <email>{{ contact.email }}</email>
-                <affiliation>{{ contact.affiliation }}</affiliation>
+                <affiliation>{{ contact.affiliation.name }}</affiliation>
             </contact>
         {% endfor %}
-        {% for contact in object.scientific_contacts %}
+        {% for contact in object.scientific_contact %}
             <contact>
                 <type>scientific</type>
                 <firstname>{{ contact.firstname }}</firstname>
@@ -48,23 +48,23 @@
                 <lastname>{{ contact.lastname }}</lastname>
                 <address>{{ contact.address }}</address>
                 <city>{{ contact.city }}</city>
-                <country1>{{ contact.country }}</country1>
+                <country1>{{ contact.country.description }}</country1>
                 <zip>{{ contact.zip }}</zip>
                 <telephone>{{ contact.telephone }}</telephone>
                 <email>{{ contact.email }}</email>
-                <affiliation>{{ contact.affiliation }}</affiliation>
+                <affiliation>{{ contact.affiliation.name }}</affiliation>
             </contact>
         {% endfor %}
         </contacts>
         <countries>
-        {% for country in object.trial_recruitment_country %}
+        {% for country in object.recruitment_country %}
             <country2>{{ country.description }}</country2>
         {% endfor %}
         </countries>
         <criteria>
             <inclusion_criteria>{{ object.inclusion_criteria }}</inclusion_criteria>
-            <agemin>{{ object.agemin }}</agemin>
-            <agemax>{{ object.agemax }}</agemax>
+            <agemin>{{ object.agemin_value }}{% if object.agemin_unit != '-' %}{{ object.agemin_unit }}{% endif %}</agemin>
+            <agemax>{{ object.agemax_value }}{% if object.agemax_unit != '-' %}{{ object.agemax_unit }}{% endif %}</agemax>
             <gender>{{ object.gender }}</gender>
             <exclusion_criteria>{{ object.exclusion_criteria }}</exclusion_criteria>
         </criteria>
@@ -79,7 +79,7 @@
             {% endfor %}
         </health_condition_keyword>
         <intervention_code>
-            {% for iv in object.intervention_code %}
+            {% for iv in object.i_code %}
             <i_code>{{ iv.label }}: {{ iv.description }}</i_code>
             {% endfor %}
         </intervention_code>
@@ -113,7 +113,7 @@
         </secondary_ids>
         <source_support>
             {%  for source_support in object.support_sources %}
-            <source_name>{{ source_support.institution }}</source_name>
+            <source_name>{{ source_support.institution.name }}</source_name>
             {% endfor %}
         </source_support>        
     </trial>
