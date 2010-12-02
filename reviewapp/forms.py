@@ -4,14 +4,13 @@ from opentrials.repository.trds_forms import ReviewModelForm
 from opentrials.reviewapp.models import Remark
 from opentrials.reviewapp.models import UserProfile
 from opentrials.reviewapp.models import Attachment, Submission
-from opentrials.assistance.models import Consent
 from django import forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
 from django.conf import settings
 
-from polyglot.multilingual_forms import MultilingualBaseForm, ModelMultipleChoiceAllFields
+from polyglot.multilingual_forms import MultilingualBaseForm
 from polyglot.multilingual_forms import MultilingualModelChoiceField, MultilingualModelMultipleChoiceField
 
 from repository.models import Institution, CountryCode
@@ -55,7 +54,7 @@ class PrimarySponsorForm(ReviewModelForm):
     country = MultilingualModelChoiceField(
             label=_('Country'),
             queryset=CountryCode.objects.all(),
-            required=False,
+            required=True,
             label_field='description',)
 
 class ExistingAttachmentForm(forms.ModelForm):
@@ -114,14 +113,7 @@ class ContactForm(forms.Form):
     subject = forms.CharField(label=_("Subject"), max_length=50)
     message = forms.CharField(label=_("Message"), widget=forms.Textarea)
 
-class ConsentForm(MultilingualBaseForm):
-    class Meta:
-        model = Consent
-        exclude = ['order']
-        
-    title = _("Terms of use")
-    
-    text = ModelMultipleChoiceAllFields(queryset=Consent.objects.all(),
-            label='', label_field='text',
-            error_messages={'consent': _('You must agree to all terms.')})  
+class TermsUseForm(forms.Form):
+    agree = forms.BooleanField(label=_("I read and agree to all terms above"), required=True, 
+                               error_messages={'required': _('You must agree to the terms')})
 

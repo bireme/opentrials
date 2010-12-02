@@ -69,24 +69,3 @@ class FieldHelpTranslation(Translation):
     text = models.TextField(max_length=2048, blank=True)
     example = models.TextField(max_length=255, blank=True)
 
-class Consent(models.Model):
-    class Meta:
-        verbose_name = _("Term of use")
-        verbose_name_plural = _("Terms of use")
-
-    text = models.TextField(_("Text"), max_length=2048)
-    order = models.PositiveIntegerField(_("Order"), default=0)
-    translations = generic.GenericRelation("ConsentTranslation")
-    
-    def save(self):
-        super(Consent, self).save()
-        if self.order == 0:
-            self.order = self.id*10
-            self.save()
-
-    def __unicode__(self):
-        return self.text
-
-class ConsentTranslation(Translation):
-    text = models.TextField(_("Text"), max_length=2048)
-

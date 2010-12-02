@@ -41,18 +41,6 @@ class QuestionAdmin(TranslationAdmin):
     def short_text(self, obj):
         return safe_truncate(obj.answer)
         
-class ConsentTranslationInline(TranslationInline):
-    model = ConsentTranslation
-
-class ConsentAdmin(TranslationAdmin):
-    inlines = [ConsentTranslationInline]
-    list_display = ('short_text',
-                    'translation_completed', 'missing_translations')
-    actions = [export_json]
-
-    def short_text(self, obj):
-        return safe_truncate(obj.text)
-
 if FieldHelp not in admin.site._registry:
     admin.site.register(FieldHelp, FieldHelpAdmin)
 
@@ -62,6 +50,4 @@ if Category not in admin.site._registry:
 if Question not in admin.site._registry:
     admin.site.register(Question, QuestionAdmin)
     
-if Consent not in admin.site._registry:
-    admin.site.register(Consent, ConsentAdmin)
 

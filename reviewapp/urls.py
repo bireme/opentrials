@@ -10,7 +10,7 @@ from reviewapp.views import dashboard, submission_detail, user_profile
 from reviewapp.views import upload_trial, open_remark, resend_activation_email
 from reviewapp.views import change_remark_status, delete_remark
 from reviewapp.views import contact, submission_delete, change_submission_status
-from reviewapp.views import news_list, news_detail
+from reviewapp.views import news_list, news_detail, terms_of_use
 
 from reviewapp.models import Submission
 
@@ -45,6 +45,9 @@ urlpatterns = patterns('',
 
     url(r'^accounts/newsubmission/$', new_submission,
         name='reviewapp.new_submission'),
+        
+    url(r'^accounts/termsofuse/$', terms_of_use,
+        name='reviewapp.terms_of_use'),
 
     url(r'^accounts/submission/edit-published/(\d+)/$', submission_edit_published,
         name='reviewapp.submission_edit_published'),

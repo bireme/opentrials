@@ -1255,48 +1255,6 @@
   }, 
   {
     "pk": 1, 
-    "model": "assistance.consenttranslation", 
-    "fields": {
-      "text": "Eu autorizo a publica\u00e7\u00e3o dos dados apresentados neste registro", 
-      "content_type": [
-        "assistance", 
-        "consent"
-      ], 
-      "language": "pt-BR", 
-      "object_id": 1
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "assistance.consenttranslation", 
-    "fields": {
-      "text": "Eu sou a pessoa designada pelo patrocinador prim\u00e1rio para registrar este ensaio.", 
-      "content_type": [
-        "assistance", 
-        "consent"
-      ], 
-      "language": "pt-BR", 
-      "object_id": 2
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "assistance.consent", 
-    "fields": {
-      "text": "I authorize the publication of the data presented in this record", 
-      "order": 10
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "assistance.consent", 
-    "fields": {
-      "text": "I am the person assigned by the primary sponsor to register this trial.", 
-      "order": 20
-    }
-  }, 
-  {
-    "pk": 1, 
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "scientific_title", 

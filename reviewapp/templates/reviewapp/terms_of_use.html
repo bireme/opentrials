@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block stepmenu_top %}
+    {{ block.super }}
+    <small>
+        / <a href="{% url reviewapp.submissionlist %}">{% trans 'Submissions' %}</a>
+    </small>
+    <big>/ {% trans 'Terms of use' %}</big>
+{% endblock %}
+
+{% block body %}
+
+    {% load markup %}
+
+    {% if page %}
+        <div class="markdown_content">
+            <fieldset>
+            {{ page.content|markdown }}
+            </fieldset>
+        </div>
+    {% endif %}
+
+    <form method="post" action="./">{% csrf_token %}
+        {% for field in form %}
+            {{ field.errors }}
+            <p>{{ field }} {{ field.label_tag }}</p>
+        {% endfor %}
+        <input name="submit" type="submit" value="{% trans "Continue" %}"/>
+    </form>
+
+{% endblock %}
