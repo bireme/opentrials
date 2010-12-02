@@ -1056,3 +1056,21 @@ table.trial_table TD {
     text-align: right;
 }
 
+.markdown_content fieldset {
+    padding-left: 25px;
+    padding-right: 20px;
+}
+
+.markdown_content li {
+    list-style: disc inside;
+}
+
+.markdown_content A {
+    color: #39b54a;
+    text-decoration: none;
+}
+
+.markdown_content A:hover {
+    color: #1073a0;
+    text-decoration: none;
+}

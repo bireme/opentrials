@@ -6,8 +6,12 @@
     
     <div class="news">
     
+    {% load markup %}
+
     {% if page %}
-        {{ page.content|safe|linebreaks|urlizetrunc:30 }}
+        <div class="markdown_content">
+            {{ page.content|markdown }}
+        </div>
     {% endif %}
     
     <table border="0" cellpading="0" cellspacing="0">

@@ -16,11 +16,13 @@
 
 {% if object %}
 
+    {% load markup %}
+
     <span class="NewsTitle">{{ object.title }}</span>
-
-    <p>{{ object.text|linebreaks|urlizetrunc:30 }}</p>
+    <div class="markdown_content">
+        <p>{{ object.text|markdown }}</p>
+    </div>
     <br />
-
     <div class="date">{% trans 'Created:' %} {{ object.created|date:'d/m/Y - H:i' }}</div>
     
 {% else %}

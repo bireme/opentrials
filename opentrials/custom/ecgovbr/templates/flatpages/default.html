@@ -11,6 +11,10 @@
 
 {% block body %}
 
-    {{ flatpage.content|linebreaks|safe }}
+    {% load markup %}
+    
+    <div class="markdown_content">
+        {{ flatpage.content|markdown }}
+    </div>
 
 {% endblock %}
