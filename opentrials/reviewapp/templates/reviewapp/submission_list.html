@@ -32,13 +32,13 @@ $(document).ready(function() {
 <h2>{% trans "Submit a new Clinical Trial" %}</h2>
 <p>{% trans "Choose one of the ways below to submit a new clinical trial" %}</p>
 <ul>
-    <li><a href="{% url reviewapp.new_submission %}">{% trans "Completing the submission form." %}</a></li>
+    <li><a href="{% url reviewapp.terms_of_use %}">{% trans "Completing the submission form." %}</a></li>
     <li><a href="{% url reviewapp.uploadtrial %}"><strike>{% trans "Uploading an XML file." %}</strike></a></li>
 </ul>
 
 <div class="actions" style="margin-right:40px;">
     <ul>
-        <li><a href="{% url reviewapp.new_submission %}" title="{% trans 'New Submission' %}"><img src="/static/images/button_newSubmission.jpg" alt="{% trans 'New Submission' %}"/></a></li>
+        <li><a href="{% url reviewapp.terms_of_use %}" title="{% trans 'New Submission' %}"><img src="/static/images/button_newSubmission.jpg" alt="{% trans 'New Submission' %}"/></a></li>
     </ul>
 </div>
 
