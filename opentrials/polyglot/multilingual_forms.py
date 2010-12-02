@@ -249,12 +249,6 @@ class MultilingualModelCheckboxField(MultilingualModelChoiceField):
 
         return self.queryset.filter(pk__in=value)
     
-class ModelMultipleChoiceAllFields(MultilingualModelCheckboxField):
-    def clean(self, value):
-        if set(value or []) != set(map(unicode, self.queryset.values_list('pk', flat=True))):
-            raise ValidationError(self.error_messages['consent'])
-        qs = super(ModelMultipleChoiceAllFields, self).clean(value)
-        return qs
 
 # ---------- FORMS -----------
 

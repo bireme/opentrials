@@ -27,7 +27,7 @@ from reviewapp.models import SUBMISSION_TRANSITIONS, STATUS_APPROVED
 from reviewapp.models import News, NewsTranslation
 from reviewapp.forms import UploadTrial, InitialTrialForm, OpenRemarkForm
 from reviewapp.forms import UserForm, PrimarySponsorForm, UserProfileForm
-from reviewapp.forms import ContactForm, ConsentForm
+from reviewapp.forms import ContactForm, TermsUseForm
 from reviewapp.consts import REMARK, MISSING, PARTIAL, COMPLETE
 
 from repository.models import ClinicalTrial, CountryCode, ClinicalTrialTranslation
@@ -221,66 +221,82 @@ def resend_activation_email(request):
                 context_instance=RequestContext(request))
 
 @login_required
+def terms_of_use(request):
+
+    pages = FlatPage.objects.filter(url='/terms-of-use/')
+    if len(pages) < 1:
+        flat_trans = None
+    else:
+        page = pages[0]
+        try:
+            flat_trans = page.translations.get(language__iexact=request.LANGUAGE_CODE)
+        except FlatPageTranslation.DoesNotExist:
+            flat_trans = page
+            
+    if request.method == 'POST':
+        terms_form = TermsUseForm(request.POST)
+        
+        if terms_form.is_valid():
+            return HttpResponseRedirect(reverse('reviewapp.new_submission'))
+    else: 
+        terms_form = TermsUseForm()
+        
+    form = terms_form
+    return render_to_response('reviewapp/terms_of_use.html', {
+                              'form': form, 
+                              'page': flat_trans},
+                              context_instance=RequestContext(request))
+                              
+@login_required
 def new_submission(request):
 
     if request.method == 'POST':
-        consent_form = ConsentForm(request.POST, display_language=request.LANGUAGE_CODE)
-        if consent_form.is_valid():
-            initial_form = InitialTrialForm(user=request.user)
-            sponsor_form = PrimarySponsorForm()
+        initial_form = InitialTrialForm(request.POST,request.FILES)
+        sponsor_form = PrimarySponsorForm(request.POST)
 
-            forms = [initial_form, sponsor_form]
-            return render_to_response('reviewapp/new_submission.html', {
-                'forms': forms },
-                context_instance=RequestContext(request))
-        else:
-            initial_form = InitialTrialForm(request.POST,request.FILES)
-            sponsor_form = PrimarySponsorForm(request.POST)
-
-            if initial_form.is_valid() and sponsor_form.is_valid():
-                trial = ClinicalTrial()
-                su = Submission(creator=request.user)
-                su.language = initial_form.cleaned_data['language']
-                su.title = initial_form.cleaned_data['scientific_title']
-                if su.language == 'en':
-                    trial.scientific_title = su.title
-                else:
-                    trial.save()
-                    ctt = ClinicalTrialTranslation.objects.get_translation_for_object(
-                            su.language, trial, create_if_not_exist=True
-                            )
-                    #ctt.language = su.language
-                    ctt.scientific_title = su.title
-                    ctt.save()
-                    #trial.translations.add(ctt)
-
+        if initial_form.is_valid() and sponsor_form.is_valid():
+            trial = ClinicalTrial()
+            su = Submission(creator=request.user)
+            su.language = initial_form.cleaned_data['language']
+            su.title = initial_form.cleaned_data['scientific_title']
+            if su.language == 'en':
+                trial.scientific_title = su.title
+            else:
                 trial.save()
-                su.save()
-                
-                sponsor = sponsor_form.save(commit=False)
-                sponsor.creator = request.user
-                sponsor.save()
-                
-                trial.primary_sponsor = su.primary_sponsor = sponsor
-                for country in initial_form.cleaned_data['recruitment_country']:
-                    trial.recruitment_country.add(country) # What about the removed ones? FIXME
-                #trial.recruitment_country = [CountryCode.objects.get(pk=id) for pk in initial_form.cleaned_data['recruitment_country']]
-                su.trial = trial
+                ctt = ClinicalTrialTranslation.objects.get_translation_for_object(
+                        su.language, trial, create_if_not_exist=True
+                        )
+                ctt.scientific_title = su.title
+                ctt.save()
 
-                trial.save()
-                su.save()
-                
-                # sets the initial status of the fields
-                su.init_fields_status()
+            trial.save()
+            su.save()
+            
+            sponsor = sponsor_form.save(commit=False)
+            sponsor.creator = request.user
+            sponsor.save()
+            
+            trial.primary_sponsor = su.primary_sponsor = sponsor
+            for country in initial_form.cleaned_data['recruitment_country']:
+                trial.recruitment_country.add(country) # What about the removed ones? FIXME
+            #trial.recruitment_country = [CountryCode.objects.get(pk=id) for pk in initial_form.cleaned_data['recruitment_country']]
+            su.trial = trial
 
-                return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))    
-    else:
-        consent_form = ConsentForm(display_language=request.LANGUAGE_CODE)
+            trial.save()
+            su.save()
+            
+            # sets the initial status of the fields
+            su.init_fields_status()
 
-    form = consent_form
-    return render_to_response('reviewapp/consent.html', {
-        'form': form},
-        context_instance=RequestContext(request))
+            return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))
+    else: 
+        initial_form = InitialTrialForm(user=request.user) 
+        sponsor_form = PrimarySponsorForm() 
+        
+    forms = [initial_form, sponsor_form] 
+    return render_to_response('reviewapp/new_submission.html', {
+                              'forms': forms,},
+                              context_instance=RequestContext(request))
 
 @login_required
 def submission_edit_published(request, submission_pk):
