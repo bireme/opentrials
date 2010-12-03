@@ -419,7 +419,7 @@ def serialize_trialsecondarysponsor(sponsor, as_string=True):
     Serializes a given trial number object to JSON
     """
     json = {
-            'id_number': sponsor.institution.name,
+            'institution': serialize_institution(sponsor.institution, as_string=False),
         }
 
     if as_string:
