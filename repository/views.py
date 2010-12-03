@@ -325,7 +325,7 @@ def trial_registered(request, trial_fossil_id):
 
     translations = ct.translations
 
-    return render_to_response('repository/clinicaltrial_detail.html',
+    return render_to_response('repository/clinicaltrial_detail_published.html',
                                 {'object': ct,
                                 'translations': translations,
                                 'host': request.get_host()},

@@ -70,22 +70,22 @@
         </criteria>
         <health_condition_code>
             {% for hc in object.hc_code %}
-            <hc_code>{{ hc.code }}: {{ hc.text }}</hc_code>
+            <hc_code>{{ hc.code }}</hc_code>
             {% endfor %}
         </health_condition_code>
         <health_condition_keyword>
             {% for hc in object.hc_keyword %}
-            <hc_keyword>{{ hc.code }}: {{ hc.text }}</hc_keyword>
+            <hc_keyword>{{ hc.code }}</hc_keyword>
             {% endfor %}
         </health_condition_keyword>
         <intervention_code>
             {% for iv in object.i_code %}
-            <i_code>{{ iv.label }}: {{ iv.description }}</i_code>
+            <i_code>{{ iv.label }}</i_code>
             {% endfor %}
         </intervention_code>
         <intervention_keyword>
             {% for iv in object.intervention_keyword %}
-            <i_keyword>{{ iv.code }}: {{ iv.text }}</i_keyword>
+            <i_keyword>{{ iv.code }}</i_keyword>
             {% endfor %}
         </intervention_keyword>
         <primary_outcome>
@@ -96,11 +96,15 @@
         <secondary_outcome>
             {% for outcomes in object.secondary_outcomes %}
             <sec_outcome>{{ outcomes.description }}</sec_outcome>
+            {% empty %}
+            <sec_outcome></sec_outcome>
             {% endfor %}
         </secondary_outcome>
         <secondary_sponsor>
             {%  for sponsors in object.secondary_sponsors %}
-            <sponsor_name>{{ sponsors.institution }}</sponsor_name>
+            <sponsor_name>{{ sponsors.institution.name }}</sponsor_name>
+            {% empty %}
+            <sponsor_name></sponsor_name>
             {% endfor %}
         </secondary_sponsor>
         <secondary_ids>
@@ -109,11 +113,18 @@
                 <sec_id>{{ secid.id_number }}</sec_id>
                 <issuing_authority>{{ secid.issuing_authority }}</issuing_authority>    
             </secondary_id>
+            {% empty %}
+            <secondary_id>
+                <sec_id></sec_id>
+                <issuing_authority></issuing_authority>    
+            </secondary_id>
             {% endfor %}
         </secondary_ids>
         <source_support>
             {%  for source_support in object.support_sources %}
             <source_name>{{ source_support.institution.name }}</source_name>
+            {% empty %}
+            <source_name></source_name>
             {% endfor %}
         </source_support>        
     </trial>
