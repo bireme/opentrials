@@ -282,7 +282,7 @@
         <li class="subset">
             <span class="legend">{% trans 'Intervention Code(s)' %}</span>
             <ul>
-            {% for iv in object.intervention_code %}
+            {% for iv in object.i_code %}
                 <li>
                     <span class="label">{{ iv.label }}</span>
                 </li>
@@ -344,14 +344,18 @@
         <li class="subset">
             <span class="legend">{% trans 'Recruitment Country' %}</span>
             <ul>
-            {% for recruitment in object.trial_recruitment_country %}
-                <li>{{ recruitment.label }}{% if not forloop.last %}, {% endif %}</li>
+            {% for recruitment in object.recruitment_country %}
+                <li>{{ recruitment.description }}{% if not forloop.last %}, {% endif %}</li>
             {% endfor %}
             </ul>
         </li>
         <li>
             <span class="label">{% trans 'Planned Date of First Enrollment' %}:</span>
-            <span class="value">{{ object.enrollment_start_planned }}</span>
+            {% if object.enrollment_start_actual %}
+                <span class="value">{{ object.enrollment_start_actual }}</span>
+            {% else %}
+                <span class="value">{{ object.enrollment_start_planned }}</span>
+            {% endif %}
         </li>
         <li>
             <table class="dataTable">
@@ -497,10 +501,10 @@
     
     <h3>{% trans 'Contacts' %}</h3>
     <ul>
-        {% if object.public_contacts %}
+        {% if object.public_contact %}
         <li class="subset">
             <span class="legend">{% trans 'Contacts for Public Queries' %}</span>
-            {% for contact in object.public_contacts %}
+            {% for contact in object.public_contact %}
             <ul class="vcard">
                 <li>
                     <b>{% trans 'Full Name' %}:</b>
@@ -545,10 +549,10 @@
         </li>
         {% endif %}
         
-        {% if object.scientific_contacts %}
+        {% if object.scientific_contact %}
         <li class="subset">
             <span class="legend">{% trans 'Contacts for Scientific Queries' %}</span>
-            {% for contact in object.scientific_contacts %}
+            {% for contact in object.scientific_contact %}
             <ul class="vcard">
                 <li>
                     <b>{% trans 'Full Name' %}:</b>
@@ -594,10 +598,10 @@
         {% endif %}
 
 
-        {% if object.site_contacts %}
+        {% if object.site_contact %}
         <li class="subset">
             <span class="legend">{% trans 'Contact(s) for Site Queries' %}</span>
-            {% for contact in object.site_contacts %}
+            {% for contact in object.site_contact %}
             <ul class="vcard">
                 <li>
                     <b>{% trans 'Full Name' %}:</b>
