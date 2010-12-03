@@ -67,6 +67,8 @@ def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
         json[field.name] = [item.serialize_for_fossil(as_string=False) for item in objects.all()]
 
     # Other attributes
+    if hasattr(trial, 'secondary_sponsors'):
+        json['secondary_sponsors'] = [item.serialize_for_fossil(as_string=False) for item in trial.secondary_sponsors()]
     if hasattr(trial, 'hc_code'):
         json['hc_code'] = [item.serialize_for_fossil(as_string=False) for item in trial.hc_code()]
     if hasattr(trial, 'hc_keyword'):
@@ -405,6 +407,19 @@ def serialize_trialsupportsource(source, as_string=True):
     """
     json = {
             'institution': serialize_institution(source.institution, as_string=False),
+        }
+
+    if as_string:
+        json = simplejson.dumps(json)
+
+    return json
+
+def serialize_trialsecondarysponsor(sponsor, as_string=True):
+    """
+    Serializes a given trial number object to JSON
+    """
+    json = {
+            'id_number': sponsor.institution.name,
         }
 
     if as_string:

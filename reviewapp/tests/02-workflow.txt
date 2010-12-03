@@ -21,7 +21,6 @@ This test aims to be the story test that implement the workflow you can found at
     >>> from repository.models import Contact, PublicContact, ScientificContact, Outcome
     >>> from repository.models import ClinicalTrialTranslation
     >>> from repository.trial_validation import trial_validator
-    >>> from assistance.models import Consent
     >>> from vocabulary.models import CountryCode, InterventionCode, RecruitmentStatus
     >>> from vocabulary.models import InterventionAssigment, StudyPurpose, StudyMasking
     >>> from vocabulary.models import StudyAllocation, StudyPhase
@@ -39,9 +38,6 @@ This test aims to be the story test that implement the workflow you can found at
     >>> reviewer.set_password('1')
     >>> reviewer.save()
     >>> reviewer.groups.add(reviewers)
-
-    >>> consent1 = Consent(text='Test of consent')
-    >>> consent1.save()
 
     >>> country1 = CountryCode.objects.get(label='BR')
 
