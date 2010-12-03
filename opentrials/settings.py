@@ -167,8 +167,8 @@ ACCOUNT_ACTIVATION_DAYS = 7
 # django-registration: set to False to suspend new user registrations
 REGISTRATION_OPEN = True
 
-ATTACHMENTS_PATH = os.path.join(MEDIA_ROOT, 'attachments')
-SUBMISSIONS_XML_PATH = os.path.join(MEDIA_ROOT, 'submissions_xml')
+ATTACHMENTS_PATH = 'attachments'
+SUBMISSIONS_XML_PATH = 'submissions_xml'
 
 FIXTURE_DIRS = ('fixtures',)
 
