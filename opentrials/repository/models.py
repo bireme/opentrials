@@ -33,6 +33,7 @@ from serializers import serialize_descriptor
 from serializers import serialize_outcome
 from serializers import serialize_trialnumber
 from serializers import serialize_trialsupportsource
+from serializers import serialize_trialsecondarysponsor
 
 # remove digits that look like letters and vice-versa
 # remove vowels to avoid forming words
@@ -484,6 +485,9 @@ class TrialSecondarySponsor(TrialRegistrationDataSetModel):
 
     def __unicode__(self):
         return u'%s' % self.institution
+
+    def serialize_for_fossil(self, as_string=True):
+        return serialize_trialsecondarysponsor(self, as_string)
 
 # TRDS 4 - Source(s) of Monetary Support
 class TrialSupportSource(TrialRegistrationDataSetModel):
