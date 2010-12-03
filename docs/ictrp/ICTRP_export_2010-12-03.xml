@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<trials>
+    <trial>
+        <main>
+            <trial_id>RBR-294d68</trial_id>
+            <utrn></utrn> 
+            <reg_name>RBR-294d68</reg_name>
+            <date_registration>03/12/2010</date_registration>
+            <primary_sponsor>Bireme</primary_sponsor>
+            <public_title>This record is just for testing</public_title>
+            <acronym>ERAPT</acronym>
+            <scientific_title>This record is just for testing</scientific_title>
+            <scientific_acronym>ERAPT</scientific_acronym>
+            <date_enrolment>01/08/2011</date_enrolment>
+            <type_enrolment>anticipated</type_enrolment>
+            <target_size>500</target_size>
+            <recruitment_status>not yet recruiting</recruitment_status>
+            <url>http://ec.teste.bvsalud.orghttp://localhost:8000/rg/RBR-294d68/</url>
+            <study_type></study_type>
+            <study_design>Double-Blind, randomized placebo control safety and efficacy study with single Group Assignment for treatment os Chagas Disease</study_design>
+            <phase>N/A</phase>
+            <hc_freetext>Chagas Disease
+Trypanosomiasis
+Heart Disease</hc_freetext>
+            <i_freetext>Group 1: 750 patients will receive 5 mg/kg per day for 60 days, with an upper limit of dosing at 300 mg per day. There will be a direct relationship between the number of days of treatment and the body weight. Thus, a 60 kg patient will take 300 mg for 60 days, a 80 kg patient with will take 300 mg per day for 80 days and a 40 kg patient will take 300 mg per day for 40 days.
+Group 2: placebo</i_freetext>            
+        </main>
+        <contacts>
+        
+            <contact>
+                <type>public</type>
+                <firstname>John</firstname>
+                <middlename>Henry</middlename>
+                <lastname>Doe</lastname>
+                <address>K Street 456 </address>
+                <city>Oakland</city>
+                <country1>United States</country1>
+                <zip>345678</zip>
+                <telephone>21-23409985</telephone>
+                <email>jhdoe@aol.com</email>
+                <affiliation>National Diabetes Association</affiliation>
+            </contact>
+        
+        
+            <contact>
+                <type>scientific</type>
+                <firstname>Candace</firstname>
+                <middlename></middlename>
+                <lastname>Elek</lastname>
+                <address>3200 Lakeside Dr.</address>
+                <city>Santa Clara</city>
+                <country1>United States</country1>
+                <zip>Ca. 950504</zip>
+                <telephone>+1 408-845-3133</telephone>
+                <email>Candace.Elek@av.abbott.com</email>
+                <affiliation>Abbott Vascular</affiliation>
+            </contact>
+        
+        </contacts>
+        <countries>
+        
+            <country2>Brazil</country2>
+        
+        </countries>
+        <criteria>
+            <inclusion_criteria>Consenting patients (between 18 and 75 years of age) with serological evidence of Chagas infection (any combination of 2 positive tests) and that have one or more of the following:
+Abnormal electrocardiogram with at least two components (complete RBBB or LBBB; left anterior or posterior fascicular block; ventricular premature beat; first degree atrioventricular [AV] block; Mobitz type I AV block; sinus bradycardia; primary ST-T changes; abnormal Q waves; low voltage QRS; or atrial fibrillation);
+Abnormal ECG (Mobitz type II, advanced or third degree AV block)</inclusion_criteria>
+            <agemin>20Y</agemin>
+            <agemax>60Y</agemax>
+            <gender>M</gender>
+            <exclusion_criteria>NYHA heart failure class IV or decompensated heart failure
+Evidence of concomitant coronary artery disease (CAD) or other etiology of dilated cardiomyopathy
+Previous treatment with antitrypanosomal agents or an accepted indication for antiparasitic therapy
+History of severe alcohol abuse within 2 years
+Known chronic renal or hepatic insufficiency
+Pregnancy or breast feeding
+</exclusion_criteria>
+        </criteria>
+        <health_condition_code>
+            
+            <hc_code>C22</hc_code>
+            
+        </health_condition_code>
+        <health_condition_keyword>
+            
+            <hc_keyword>B01.050.050.199</hc_keyword>
+            
+        </health_condition_keyword>
+        <intervention_code>
+            
+            <i_code>device</i_code>
+            
+            <i_code>biological/vaccine</i_code>
+            
+            <i_code>drug</i_code>
+            
+        </intervention_code>
+        <intervention_keyword>
+            
+            <i_keyword>B01.050.050.300</i_keyword>
+            
+        </intervention_keyword>
+        <primary_outcome>
+            
+            <prim_outcome>The first occurrence of any of the following clinically significant outcomes: 
+death
+cardiac arrest, requiring defibrillator or cardioversion
+documented sustained ventricular tachycardia requiring cardioversion
+new development of symptomatic congestive heart failure
+#pacemaker or implantable cardiac defibrillator implantation
+stroke or any other thromboembolic event in patients with no prior thromboembolic phenomena</prim_outcome>
+            
+        </primary_outcome>
+        <secondary_outcome>
+            
+            <sec_outcome>New development of any of the following echo changes clinically indicated or done for the trial: 
+ventricular aneurysm
+reduction in left ventricular (LV) ejection fraction &gt; 5%
+increase in left ventricular diastolic dysfunction (LVDD) &gt; 5.0 mm compared with baseline
+Progression of New York Heart Association (NYHA) functional class by at least one category
+Evaluation of safety (adverse events: dermatitis, peripheral neuropathy, gastro-intestinal intolerance, leucopenia [2500 x 10^9 L]), tolerance and adherence to treatment</sec_outcome>
+            
+        </secondary_outcome>
+        <secondary_sponsor>
+            
+            <sponsor_name></sponsor_name>
+            
+        </secondary_sponsor>
+        <secondary_ids>
+            
+            <secondary_id>
+                <sec_id>U1111-1111-4101</sec_id>
+                <issuing_authority>WHO/ICTRP</issuing_authority>    
+            </secondary_id>
+            
+        </secondary_ids>
+        <source_support>
+            
+            <source_name>ACME</source_name>
+            
+        </source_support>        
+    </trial>
+</trials>
+
+
