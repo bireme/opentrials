@@ -170,6 +170,9 @@ REGISTRATION_OPEN = True
 ATTACHMENTS_PATH = 'attachments'
 SUBMISSIONS_XML_PATH = 'submissions_xml'
 
+# Name of Primary Registry
+REG_NAME = 'RBEC'
+
 FIXTURE_DIRS = ('fixtures',)
 
 PAGINATOR_CT_PER_PAGE = 10
