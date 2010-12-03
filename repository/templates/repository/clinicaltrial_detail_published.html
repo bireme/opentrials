@@ -195,7 +195,7 @@
             {%  for source_support in object.support_sources %}
                 <li class="{% cycle 'even' 'odd' %}">
                     <span class="label">{% trans 'Institution' %}:</span>
-                    <span class="value">{{ source_support.institution }}</span>
+                    <span class="value">{{ source_support.institution.name }}</span>
                 </li>
             {% endfor %}
             </ul>
