@@ -17,7 +17,7 @@
             <type_enrolment>{% if object.enrollment_start_actual %}actual{% else %}anticipated{% endif %}</type_enrolment>
             <target_size>{{ object.target_sample_size }}</target_size>
             <recruitment_status>{{ object.recruitment_status.label }}</recruitment_status>
-            <url>{% if object.public_url %}{{ object.public_url }}{% else %}{% url repository.trial_registered trial_fossil_id=object.trial_id %}{% endif %}</url>
+            <url>{% url repository.trial_registered_version trial_fossil_id=object.trial_id, trial_version=object.version %}</url>
             <study_type>{{ object.study_type.label }}</study_type>
             <study_design>{{ object.study_design }}</study_design>
             <phase>{{ object.phase.label }}</phase>

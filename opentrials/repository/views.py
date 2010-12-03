@@ -309,19 +309,24 @@ def trial_view(request, trial_pk):
                                 },
                                 context_instance=RequestContext(request))
                                 
-def trial_registered(request, trial_fossil_id):
+def trial_registered(request, trial_fossil_id, trial_version=None):
     ''' show details of a trial registered '''
     try:
         fossil = Fossil.objects.get(pk=trial_fossil_id)
     except Fossil.DoesNotExist:
         try:
-            fossil = Fossil.objects.indexed(trial_id=trial_fossil_id).get(is_most_recent=True)
+            qs = Fossil.objects.indexed(trial_id=trial_fossil_id)
+            if trial_version:
+                fossil = qs.get(revision_sequential=trial_version)
+            else:
+                fossil = qs.get(is_most_recent=True)
         except Fossil.DoesNotExist:
             raise Http404
 
     ct = fossil.get_object_fossil()
     ct.hash_code = fossil.pk
     ct.previous_revision = fossil.previous_revision
+    ct.version = fossil.revision_sequential
 
     translations = ct.translations
 
@@ -853,7 +858,7 @@ def step_9(request, trial_pk):
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
-def trial_ictrp(request, trial_fossil_id):
+def trial_ictrp(request, trial_fossil_id, trial_version=None):
     """
     Returns a XML content structured on ICTRP standard, you can find more details
     about it on:
@@ -869,13 +874,18 @@ def trial_ictrp(request, trial_fossil_id):
         fossil = Fossil.objects.get(pk=trial_fossil_id)
     except Fossil.DoesNotExist:
         try:
-            fossil = Fossil.objects.indexed(trial_id=trial_fossil_id).get(is_most_recent=True)
+            qs = Fossil.objects.indexed(trial_id=trial_fossil_id)
+            if trial_version:
+                fossil = qs.get(revision_sequential=trial_version)
+            else:
+                fossil = qs.get(is_most_recent=True)
         except Fossil.DoesNotExist:
             raise Http404
 
     ct = fossil.get_object_fossil()
     ct.hash_code = fossil.pk
     ct.previous_revision = fossil.previous_revision
+    ct.version = fossil.revision_sequential
 
     resp = render_to_response(
             'repository/clinicaltrial_detail.xml',
