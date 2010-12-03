@@ -421,9 +421,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
 
     @property
     def public_url(self):
-        site = Site.objects.get_current()
-        url = reverse('repository.trial_registered', kwargs={'trial_fossil_id': self.trial_id})
-        return 'http://%s%s'%(site.domain, url)
+        return reverse('repository.trial_registered', kwargs={'trial_fossil_id': self.trial_id})
 
 # Sets validation model to ClinicalTrial
 trial_validator.model = ClinicalTrial

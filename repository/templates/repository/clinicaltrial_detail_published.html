@@ -655,7 +655,7 @@
     {% block additional_links %}
     <h3>{% trans 'Additional Links' %}:</h3>
     <ul>
-        <li><a href="{% url repository.trial_ictrp trial_fossil_id=object.trial_id %}">
+        <li><a href="{% url repository.trial_ictrp_version trial_fossil_id=object.trial_id,trial_version=object.version %}">
             {% trans "Download as ICTRP format" %}</a></li>
     </ul>
     {% endblock %}

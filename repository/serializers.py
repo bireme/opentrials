@@ -99,9 +99,6 @@ def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
     json['__model__'] = trial.__class__.__name__
     json['pk'] = trial.pk
 
-    if hasattr(trial, 'public_url'):
-        json['public_url'] = trial.public_url
-
     if as_string:
         json = simplejson.dumps(json)
 
