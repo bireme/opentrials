@@ -80,10 +80,6 @@
 
 {% block body %}
 
-    {% block review_buttons_top %}{% endblock %}
-
-    {% block remark_list %}{% endblock %}
-    
     <h2>{{ object.scientific_title }}</h2>
     
     <h3>{% trans 'Scientific Title' %}:</h3>
@@ -170,7 +166,6 @@
             </ul>
             {% endfor %}
         </li>
-        {% block remark_step_1 %}{% endblock %}
     </ul>
 
     <h3>{% trans 'Sponsors' %}</h3>
@@ -192,6 +187,8 @@
             </ul>
         </li>
         {% endif %}
+        
+        {% if object.support_sources %}
         <li class="subset">
             <span class="legend">{% trans 'Source(s) of Monetary or Material Support' %}:</span>
             <ul>
@@ -203,7 +200,7 @@
             {% endfor %}
             </ul>
         </li>
-        {% block remark_step_2 %}{% endblock %}
+        {% endif %}
     </ul>
     
     <h3>{% trans 'Health Conditions' %}</h3>
@@ -278,7 +275,6 @@
                 <div class="spacer"> </div>
             {% endfor %}
         </li>
-        {% block remark_step_3 %}{% endblock %}
     </ul>
     
     <h3>{% trans 'Interventions' %}</h3>
@@ -337,7 +333,6 @@
                 <div class="spacer"> </div>
             {% endfor %}
         </li>
-        {% block remark_step_4 %}{% endblock %}
     </ul>
     
     <h3>{% trans 'Recruitment' %}</h3>
@@ -410,7 +405,6 @@
             {% endif %}
         </li>
         <div class="spacer"> </div>
-        {% block remark_step_5 %}{% endblock %}
     </ul>
 
     <h3>{% trans 'Study Type' %}</h3>
@@ -421,14 +415,14 @@
                 {% if t.study_design %}
                 <div class="title">
                     <h2>{{ t.language }}</h2>
-                    <p>{{ t.study_design.description }}</p>
+                    <p>{{ t.study_design }}</p>
                 </div>
                 {% endif %}
             {% endfor %}
-            {% if object.study_design.description|linebreaksbr %}
+            {% if object.study_design|linebreaksbr %}
                 <div class="title">
                     <h2>en</h2>
-                    <p>{{ object.study_design.description|linebreaksbr }}</p>
+                    <p>{{ object.study_design|linebreaksbr }}</p>
                 </div>
             {% endif %}
         </li>
@@ -455,7 +449,6 @@
                 </tr>
             </table>
         </li>
-        {% block remark_step_6 %}{% endblock %}
     </ul>
     
     <h3>{% trans 'Outcomes' %}</h3>
@@ -500,7 +493,6 @@
                 <div class="spacer"> </div>
             {% endfor %}
         </li>
-        {% block remark_step_7 %}{% endblock %}
     </ul>
     
     <h3>{% trans 'Contacts' %}</h3>
@@ -649,7 +641,6 @@
             {% endfor %}
         </li>
         {% endif %}
-        {% block remark_step_8 %}{% endblock %}
     </ul>
 
     {% if object.previous_revision %}
