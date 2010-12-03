@@ -889,7 +889,8 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
 
     resp = render_to_response(
             'repository/clinicaltrial_detail.xml',
-            {'object': ct},
+            {'object': ct,
+             'reg_name': settings.REG_NAME},
             context_instance=RequestContext(request),
             mimetype = 'text/xml'
             )
