@@ -81,6 +81,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'middleware.scriptprefix.ScriptPrefixMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.transaction.TransactionMiddleware',
     'middleware.user_locale.UserLocaleMiddleware',
     #'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'flatpages_polyglot.middleware.FlatPagePolyglotMiddleware',
