@@ -22,10 +22,6 @@ def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
 
     The argument 'as_string' sets to return serialized as String. If False,
     it will return a dict.
-
-    XXX Questions to solve:
-
-        * Should us serialize empty fields as None or ignore them?
     """
     attrs_to_ignore = attrs_to_ignore or []
 
@@ -435,6 +431,9 @@ def serialize_outcome(outcome, as_string=True):
     if hasattr(outcome, 'interest'):
         json['interest'] = outcome.interest
 
+    if hasattr(outcome, 'language'):
+        json['language'] = outcome.language
+
     if hasattr(outcome, 'translations'):
         json['translations'] = [serialize_outcome(trans, as_string=False)
                 for trans in outcome.translations.all()]
@@ -466,6 +465,9 @@ def serialize_descriptor(descriptor, as_string=True):
 
     if hasattr(descriptor, 'code'):
         json['code'] = descriptor.code
+
+    if hasattr(descriptor, 'language'):
+        json['language'] = descriptor.language
 
     if hasattr(descriptor, 'translations'):
         json['translations'] = [serialize_descriptor(trans, as_string=False)
