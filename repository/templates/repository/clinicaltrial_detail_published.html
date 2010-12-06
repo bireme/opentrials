@@ -518,7 +518,7 @@
                         </li>
                         <li>
                             <b>{% trans 'City' %}: </b>
-                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country }}</span></span>
+                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country.description }}</span></span>
                         </li>
                         <li>
                             <b>{% trans 'Zip Code' %}:</b>
@@ -536,7 +536,7 @@
                 </li>
                 <li>
                     <b>{% trans 'Affiliation' %}:</b>
-                    <span class="org">{{ contact.affiliation }}</span>
+                    <span class="org">{{ contact.affiliation.name }}</span>
                 </li>
             </ul>
             {% if forloop.counter|divisibleby:3 and not forloop.last %}
@@ -566,7 +566,7 @@
                         </li>
                         <li>
                             <b>{% trans 'City' %}: </b>
-                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country }}</span></span>
+                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country.description }}</span></span>
                         </li>
                         <li>
                             <b>{% trans 'Zip Code' %}:</b>
@@ -584,7 +584,7 @@
                 </li>
                 <li>
                     <b>{% trans 'Affiliation' %}:</b>
-                    <span class="org">{{ contact.affiliation }}</span>
+                    <span class="org">{{ contact.affiliation.name }}</span>
                 </li>
             </ul>
             {% if forloop.counter|divisibleby:3 and not forloop.last %}
@@ -615,7 +615,7 @@
                         </li>
                         <li>
                             <b>{% trans 'City' %}: </b>
-                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country }}</span></span>
+                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country.description }}</span></span>
                         </li>
                         <li>
                             <b>{% trans 'Zip Code' %}:</b>
