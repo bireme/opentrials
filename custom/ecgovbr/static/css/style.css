@@ -807,9 +807,9 @@ table.trialsummary {
 	margin-top:10px;
 }
 .institutions A#BIREME {
-   height:48px;
-margin-top:10px;
-width:114px;
+    height:48px;
+    margin-top:10px;
+    width:114px;
     background: url(../images/bireme.png) no-repeat !important;
 	display:block;
 
@@ -828,9 +828,9 @@ width:114px;
 	margin-top:10px;
 }
 .institutions A#GOVERNOFEDERAL {
-    width: 112px;
-    height: 30px;
-    background: url(../images/gov.gif) no-repeat !important;
+    width: 104px;
+    height: 36px;
+    background: url(../images/BRASIL-104x36.png) no-repeat !important;
 	display:block;
 	margin-top:10px;
 }
