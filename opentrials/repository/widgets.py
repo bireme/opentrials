@@ -53,7 +53,7 @@ class YearMonthWidget(forms.MultiWidget):
     def __init__(self, *args, **kwargs):
         MONTHS_CHOICES = [('','-------')] + MONTHS.items()
         year = date.today().year
-        YEARS_CHOICES = [('','-------')] + [(y,y) for y in range(year-1, year+4)]
+        YEARS_CHOICES = [('','-------')] + [(y,y) for y in range(year-1, year+50)]
         widgets = [
                 forms.Select(choices=MONTHS_CHOICES),
                 forms.Select(choices=YEARS_CHOICES),
