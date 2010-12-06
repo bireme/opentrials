@@ -29,6 +29,7 @@ from polyglot.multilingual_forms import MultilingualModelCheckboxField
 from trial_validation import trial_validator, TRIAL_FORMS
 
 from datetime import date
+import re
 
 import settings
 
@@ -167,8 +168,8 @@ class TrialIdentificationForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['scientific_title','scientific_acronym',
-                  'scientific_acronym_expansion',
-                  'public_title','acronym','acronym_expansion']
+                  'scientific_acronym_expansion','public_title',
+                  'acronym','acronym_expansion','utrn_number']
 
     title = _('Trial Identification')
     # TRDS 10a
@@ -187,6 +188,14 @@ class TrialIdentificationForm(ReviewModelForm):
     # TRDS 9b
     acronym = forms.CharField(required=False, label=_('Acronym'),
                               max_length=255)
+                              
+    def clean_utrn_number(self):
+        data = self.cleaned_data['utrn_number'].strip()
+        if data:
+            if not re.match('^U[0-9]{4}-[0-9]{4}-[0-9]{4}$', data):
+                raise forms.ValidationError(_("Invalid format. Example: U1111-1111-1111"))
+        return data
+
 
 class SecondaryIdForm(ReviewModelForm):
     class Meta:

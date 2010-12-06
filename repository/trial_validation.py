@@ -19,7 +19,8 @@ FIELDS = {
         'scientific_acronym_expansion': {'required': False, 'type': 'text', 'poly': True},
         'public_title': {'required': False, 'type': 'text', 'poly': True},
         'acronym': {'required': False, 'type': 'text', 'poly': True},
-        'acronym_expansion': {'required': False, 'type': 'text', 'poly': True}
+        'acronym_expansion': {'required': False, 'type': 'text', 'poly': True},
+        'utrn_number': {'required': True, 'type': 'text', 'poly': False},
     }, 
     TRIAL_FORMS[1]: {
         'primary_sponsor': {'required': True, 'type': 'text', 'poly': False}
@@ -34,7 +35,7 @@ FIELDS = {
     TRIAL_FORMS[4]: {
         'recruitment_status': {'required': True, 'type': 'text', 'poly': False}, 
         'recruitment_country': {'required': True, 'type': 'mult', 'poly': False, 'queryset': None},
-        'enrollment_start_planned': {'required': True, 'type': 'text', 'poly': False},
+        #'enrollment_start_planned': {'required': True, 'type': 'text', 'poly': False},
         #'enrollment_end_planned': {'required': True, 'type': 'text', 'poly': False},  
         'target_sample_size': {'required': True, 'type': 'text', 'poly': False}, 
         'inclusion_criteria': {'required': True, 'type': 'text', 'poly': True},
@@ -166,7 +167,7 @@ class TrialValidator(object):
                         if hasattr(form.Meta,'model'):
                             if form.Meta.model == self.model:
                                 check_fields = FIELDS[step]
-                                for field in form.declared_fields.keys():
+                                for field in form.base_fields.keys():
                                     values = {}
                                     if field in check_fields.keys():
                                         if check_fields[field]['type'] == 'text':
