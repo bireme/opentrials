@@ -18368,9 +18368,304 @@
     }
   }, 
   {
+    "pk": 1968, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "droga", 
+      "content_type": [
+        "vocabulary", 
+        "interventioncode"
+      ], 
+      "language": "pt-br", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 1969, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "dispositivo", 
+      "content_type": [
+        "vocabulary", 
+        "interventioncode"
+      ], 
+      "language": "pt-br", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 1970, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "produto biol\u00f3gico / vacina", 
+      "content_type": [
+        "vocabulary", 
+        "interventioncode"
+      ], 
+      "language": "pt-br", 
+      "object_id": 3
+    }
+  }, 
+  {
+    "pk": 1971, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Procedimento/operat\u00f3ria/cirurgia", 
+      "content_type": [
+        "vocabulary", 
+        "interventioncode"
+      ], 
+      "language": "pt-br", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 1972, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "radia\u00e7\u00e3o", 
+      "content_type": [
+        "vocabulary", 
+        "interventioncode"
+      ], 
+      "language": "pt-br", 
+      "object_id": 5
+    }
+  }, 
+  {
+    "pk": 1973, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "P.ex. psicoterapia, aconselhamento de estilo de vida ", 
+      "label": "Comportamental ", 
+      "content_type": [
+        "vocabulary", 
+        "interventioncode"
+      ], 
+      "language": "pt-br", 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 1974, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "gen\u00e9tica", 
+      "content_type": [
+        "vocabulary", 
+        "interventioncode"
+      ], 
+      "language": "pt-br", 
+      "object_id": 7
+    }
+  }, 
+  {
+    "pk": 1975, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Suplementa\u00e7\u00e3o alimentar", 
+      "content_type": [
+        "vocabulary", 
+        "interventioncode"
+      ], 
+      "language": "pt-br", 
+      "object_id": 8
+    }
+  }, 
+  {
+    "pk": 1976, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Outro", 
+      "content_type": [
+        "vocabulary", 
+        "interventioncode"
+      ], 
+      "language": "pt-br", 
+      "object_id": 9
+    }
+  }, 
+  {
+    "pk": 1977, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "paralelo", 
+      "content_type": [
+        "vocabulary", 
+        "interventionassigment"
+      ], 
+      "language": "pt-br", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 1978, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "grupo \u00fanico", 
+      "content_type": [
+        "vocabulary", 
+        "interventionassigment"
+      ], 
+      "language": "pt-br", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 1979, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "fatorial", 
+      "content_type": [
+        "vocabulary", 
+        "interventionassigment"
+      ], 
+      "language": "pt-br", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 1980, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "outro", 
+      "content_type": [
+        "vocabulary", 
+        "interventionassigment"
+      ], 
+      "language": "pt-br", 
+      "object_id": 5
+    }
+  }, 
+  {
+    "pk": 1981, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "cruzado", 
+      "content_type": [
+        "vocabulary", 
+        "interventionassigment"
+      ], 
+      "language": "pt-br", 
+      "object_id": 3
+    }
+  }, 
+  {
+    "pk": 1982, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "aberto", 
+      "content_type": [
+        "vocabulary", 
+        "studymasking"
+      ], 
+      "language": "pt-br", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 1983, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "unicego", 
+      "content_type": [
+        "vocabulary", 
+        "studymasking"
+      ], 
+      "language": "pt-br", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 1984, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "duplo-cego", 
+      "content_type": [
+        "vocabulary", 
+        "studymasking"
+      ], 
+      "language": "pt-br", 
+      "object_id": 3
+    }
+  }, 
+  {
+    "pk": 1985, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "triplo-cego", 
+      "content_type": [
+        "vocabulary", 
+        "studymasking"
+      ], 
+      "language": "pt-br", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 1986, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "controlado n\u00e3o-randomizado", 
+      "content_type": [
+        "vocabulary", 
+        "studyallocation"
+      ], 
+      "language": "pt-br", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 1987, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "randomizado controlado", 
+      "content_type": [
+        "vocabulary", 
+        "studyallocation"
+      ], 
+      "language": "pt-br", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 1988, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "bra\u00e7o \u00fanico", 
+      "content_type": [
+        "vocabulary", 
+        "studyallocation"
+      ], 
+      "language": "pt-br", 
+      "object_id": 3
+    }
+  }, 
+  {
     "pk": 2, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Afghanistan", 
       "submission_language": "", 
       "label": "AF"
@@ -18380,6 +18675,7 @@
     "pk": 3, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Aland Islands", 
       "submission_language": "", 
       "label": "AX"
@@ -18389,6 +18685,7 @@
     "pk": 4, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Albania", 
       "submission_language": "", 
       "label": "AL"
@@ -18398,6 +18695,7 @@
     "pk": 5, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Algeria", 
       "submission_language": "", 
       "label": "DZ"
@@ -18407,6 +18705,7 @@
     "pk": 6, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "American Samoa", 
       "submission_language": "", 
       "label": "AS"
@@ -18416,6 +18715,7 @@
     "pk": 7, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Andorra", 
       "submission_language": "", 
       "label": "AD"
@@ -18425,6 +18725,7 @@
     "pk": 8, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Angola", 
       "submission_language": "", 
       "label": "AO"
@@ -18434,6 +18735,7 @@
     "pk": 9, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Anguilla", 
       "submission_language": "", 
       "label": "AI"
@@ -18443,6 +18745,7 @@
     "pk": 10, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Antarctica", 
       "submission_language": "", 
       "label": "AQ"
@@ -18452,6 +18755,7 @@
     "pk": 11, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Antigua and Barbuda", 
       "submission_language": "en", 
       "label": "AG"
@@ -18461,6 +18765,7 @@
     "pk": 12, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Argentina", 
       "submission_language": "es", 
       "label": "AR"
@@ -18470,6 +18775,7 @@
     "pk": 13, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Armenia", 
       "submission_language": "", 
       "label": "AM"
@@ -18479,6 +18785,7 @@
     "pk": 14, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Aruba", 
       "submission_language": "", 
       "label": "AW"
@@ -18488,6 +18795,7 @@
     "pk": 15, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Australia", 
       "submission_language": "", 
       "label": "AU"
@@ -18497,6 +18805,7 @@
     "pk": 16, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Austria", 
       "submission_language": "", 
       "label": "AT"
@@ -18506,6 +18815,7 @@
     "pk": 17, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Azerbaijan", 
       "submission_language": "", 
       "label": "AZ"
@@ -18515,6 +18825,7 @@
     "pk": 18, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Bahamas", 
       "submission_language": "en", 
       "label": "BS"
@@ -18524,6 +18835,7 @@
     "pk": 19, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Bahrain", 
       "submission_language": "", 
       "label": "BH"
@@ -18533,6 +18845,7 @@
     "pk": 20, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Bangladesh", 
       "submission_language": "", 
       "label": "BD"
@@ -18542,6 +18855,7 @@
     "pk": 21, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Barbados", 
       "submission_language": "en", 
       "label": "BB"
@@ -18551,6 +18865,7 @@
     "pk": 22, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Belarus", 
       "submission_language": "", 
       "label": "BY"
@@ -18560,6 +18875,7 @@
     "pk": 23, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Belgium", 
       "submission_language": "", 
       "label": "BE"
@@ -18569,6 +18885,7 @@
     "pk": 24, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Belize", 
       "submission_language": "en", 
       "label": "BZ"
@@ -18578,6 +18895,7 @@
     "pk": 25, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Benin", 
       "submission_language": "", 
       "label": "BJ"
@@ -18587,6 +18905,7 @@
     "pk": 26, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Bermuda", 
       "submission_language": "", 
       "label": "BM"
@@ -18596,6 +18915,7 @@
     "pk": 27, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Bhutan", 
       "submission_language": "", 
       "label": "BT"
@@ -18605,6 +18925,7 @@
     "pk": 28, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Bolivia", 
       "submission_language": "es", 
       "label": "BO"
@@ -18614,6 +18935,7 @@
     "pk": 29, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Bosnia and Herzegovina", 
       "submission_language": "", 
       "label": "BA"
@@ -18623,6 +18945,7 @@
     "pk": 30, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Botswana", 
       "submission_language": "", 
       "label": "BW"
@@ -18632,6 +18955,7 @@
     "pk": 31, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Bouvet Island", 
       "submission_language": "", 
       "label": "BV"
@@ -18641,6 +18965,7 @@
     "pk": 1, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Brazil", 
       "submission_language": "pt-BR", 
       "label": "BR"
@@ -18650,6 +18975,7 @@
     "pk": 32, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "British Indian Ocean Territory", 
       "submission_language": "", 
       "label": "IO"
@@ -18659,6 +18985,7 @@
     "pk": 33, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Brunei Darussalam", 
       "submission_language": "", 
       "label": "BN"
@@ -18668,6 +18995,7 @@
     "pk": 34, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Bulgaria", 
       "submission_language": "", 
       "label": "BG"
@@ -18677,6 +19005,7 @@
     "pk": 35, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Burkina Faso", 
       "submission_language": "", 
       "label": "BF"
@@ -18686,6 +19015,7 @@
     "pk": 36, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Burundi", 
       "submission_language": "", 
       "label": "BI"
@@ -18695,6 +19025,7 @@
     "pk": 37, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Cambodia", 
       "submission_language": "", 
       "label": "KH"
@@ -18704,6 +19035,7 @@
     "pk": 38, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Cameroon", 
       "submission_language": "", 
       "label": "CM"
@@ -18713,6 +19045,7 @@
     "pk": 39, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Canada", 
       "submission_language": "fr-FR", 
       "label": "CA"
@@ -18722,6 +19055,7 @@
     "pk": 40, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Cape Verde", 
       "submission_language": "", 
       "label": "CV"
@@ -18731,6 +19065,7 @@
     "pk": 41, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Cayman Islands", 
       "submission_language": "", 
       "label": "KY"
@@ -18740,6 +19075,7 @@
     "pk": 42, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Central African Republic", 
       "submission_language": "", 
       "label": "CF"
@@ -18749,6 +19085,7 @@
     "pk": 43, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Chad", 
       "submission_language": "", 
       "label": "TD"
@@ -18758,6 +19095,7 @@
     "pk": 44, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Chile", 
       "submission_language": "es", 
       "label": "CL"
@@ -18767,6 +19105,7 @@
     "pk": 45, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "China", 
       "submission_language": "", 
       "label": "CN"
@@ -18776,6 +19115,7 @@
     "pk": 46, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Christmas Island", 
       "submission_language": "", 
       "label": "CX"
@@ -18785,6 +19125,7 @@
     "pk": 47, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Cocos (Keeling) Islands", 
       "submission_language": "", 
       "label": "CC"
@@ -18794,6 +19135,7 @@
     "pk": 48, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Colombia", 
       "submission_language": "es", 
       "label": "CO"
@@ -18803,6 +19145,7 @@
     "pk": 49, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Comoros", 
       "submission_language": "", 
       "label": "KM"
@@ -18812,6 +19155,7 @@
     "pk": 50, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Congo", 
       "submission_language": "", 
       "label": "CG"
@@ -18821,6 +19165,7 @@
     "pk": 51, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Congo, The Democratic Republic of the", 
       "submission_language": "", 
       "label": "CD"
@@ -18830,6 +19175,7 @@
     "pk": 52, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Cook Islands", 
       "submission_language": "", 
       "label": "CK"
@@ -18839,6 +19185,7 @@
     "pk": 53, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Costa Rica", 
       "submission_language": "es", 
       "label": "CR"
@@ -18848,6 +19195,7 @@
     "pk": 54, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Cote d'Ivoire", 
       "submission_language": "", 
       "label": "CI"
@@ -18857,6 +19205,7 @@
     "pk": 55, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Croatia", 
       "submission_language": "", 
       "label": "HR"
@@ -18866,6 +19215,7 @@
     "pk": 56, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Cuba", 
       "submission_language": "es", 
       "label": "CU"
@@ -18875,6 +19225,7 @@
     "pk": 57, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Cyprus", 
       "submission_language": "", 
       "label": "CY"
@@ -18884,6 +19235,7 @@
     "pk": 58, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Czech Republic", 
       "submission_language": "", 
       "label": "CZ"
@@ -18893,6 +19245,7 @@
     "pk": 59, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Denmark", 
       "submission_language": "", 
       "label": "DK"
@@ -18902,6 +19255,7 @@
     "pk": 60, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Djibouti", 
       "submission_language": "", 
       "label": "DJ"
@@ -18911,6 +19265,7 @@
     "pk": 61, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Dominica", 
       "submission_language": "en", 
       "label": "DM"
@@ -18920,6 +19275,7 @@
     "pk": 62, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Dominican Republic", 
       "submission_language": "es", 
       "label": "DO"
@@ -18929,6 +19285,7 @@
     "pk": 63, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Ecuador", 
       "submission_language": "es", 
       "label": "EC"
@@ -18938,6 +19295,7 @@
     "pk": 64, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Egypt", 
       "submission_language": "", 
       "label": "EG"
@@ -18947,6 +19305,7 @@
     "pk": 65, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "El Salvador", 
       "submission_language": "es", 
       "label": "SV"
@@ -18956,6 +19315,7 @@
     "pk": 66, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Equatorial Guinea", 
       "submission_language": "", 
       "label": "GQ"
@@ -18965,6 +19325,7 @@
     "pk": 67, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Eritrea", 
       "submission_language": "", 
       "label": "ER"
@@ -18974,6 +19335,7 @@
     "pk": 68, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Estonia", 
       "submission_language": "", 
       "label": "EE"
@@ -18983,6 +19345,7 @@
     "pk": 69, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Ethiopia", 
       "submission_language": "", 
       "label": "ET"
@@ -18992,6 +19355,7 @@
     "pk": 70, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Falkland Islands (Malvinas)", 
       "submission_language": "", 
       "label": "FK"
@@ -19001,6 +19365,7 @@
     "pk": 71, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Faroe Islands", 
       "submission_language": "", 
       "label": "FO"
@@ -19010,6 +19375,7 @@
     "pk": 72, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Fiji", 
       "submission_language": "", 
       "label": "FJ"
@@ -19019,6 +19385,7 @@
     "pk": 73, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Finland", 
       "submission_language": "", 
       "label": "FI"
@@ -19028,6 +19395,7 @@
     "pk": 74, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "France", 
       "submission_language": "", 
       "label": "FR"
@@ -19037,6 +19405,7 @@
     "pk": 75, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "French Guiana", 
       "submission_language": "", 
       "label": "GF"
@@ -19046,6 +19415,7 @@
     "pk": 76, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "French Polynesia", 
       "submission_language": "", 
       "label": "PF"
@@ -19055,6 +19425,7 @@
     "pk": 77, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "French Southern Territories", 
       "submission_language": "", 
       "label": "TF"
@@ -19064,6 +19435,7 @@
     "pk": 78, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Gabon", 
       "submission_language": "", 
       "label": "GA"
@@ -19073,6 +19445,7 @@
     "pk": 79, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Gambia", 
       "submission_language": "", 
       "label": "GM"
@@ -19082,6 +19455,7 @@
     "pk": 80, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Georgia", 
       "submission_language": "", 
       "label": "GE"
@@ -19091,6 +19465,7 @@
     "pk": 81, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Germany", 
       "submission_language": "", 
       "label": "DE"
@@ -19100,6 +19475,7 @@
     "pk": 82, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Ghana", 
       "submission_language": "", 
       "label": "GH"
@@ -19109,6 +19485,7 @@
     "pk": 83, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Gibraltar", 
       "submission_language": "", 
       "label": "GI"
@@ -19118,6 +19495,7 @@
     "pk": 84, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Greece", 
       "submission_language": "", 
       "label": "GR"
@@ -19127,6 +19505,7 @@
     "pk": 85, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Greenland", 
       "submission_language": "", 
       "label": "GL"
@@ -19136,6 +19515,7 @@
     "pk": 86, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Grenada", 
       "submission_language": "en", 
       "label": "GD"
@@ -19145,6 +19525,7 @@
     "pk": 87, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Guadeloupe", 
       "submission_language": "", 
       "label": "GP"
@@ -19154,6 +19535,7 @@
     "pk": 88, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Guam", 
       "submission_language": "", 
       "label": "GU"
@@ -19163,6 +19545,7 @@
     "pk": 89, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Guatemala", 
       "submission_language": "es", 
       "label": "GT"
@@ -19172,6 +19555,7 @@
     "pk": 90, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Guernsey", 
       "submission_language": "", 
       "label": "GG"
@@ -19181,6 +19565,7 @@
     "pk": 91, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Guinea", 
       "submission_language": "", 
       "label": "GN"
@@ -19190,6 +19575,7 @@
     "pk": 92, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Guinea-Bissau", 
       "submission_language": "", 
       "label": "GW"
@@ -19199,6 +19585,7 @@
     "pk": 93, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Guyana", 
       "submission_language": "en", 
       "label": "GY"
@@ -19208,6 +19595,7 @@
     "pk": 94, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Haiti", 
       "submission_language": "fr", 
       "label": "HT"
@@ -19217,6 +19605,7 @@
     "pk": 95, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Heard Island and McDonald Islands", 
       "submission_language": "", 
       "label": "HM"
@@ -19226,6 +19615,7 @@
     "pk": 96, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Holy See (Vatican City State)", 
       "submission_language": "", 
       "label": "VA"
@@ -19235,6 +19625,7 @@
     "pk": 97, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Honduras", 
       "submission_language": "es", 
       "label": "HN"
@@ -19244,6 +19635,7 @@
     "pk": 98, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Hong Kong", 
       "submission_language": "", 
       "label": "HK"
@@ -19253,6 +19645,7 @@
     "pk": 99, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Hungary", 
       "submission_language": "", 
       "label": "HU"
@@ -19262,6 +19655,7 @@
     "pk": 100, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Iceland", 
       "submission_language": "", 
       "label": "IS"
@@ -19271,6 +19665,7 @@
     "pk": 101, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "India", 
       "submission_language": "", 
       "label": "IN"
@@ -19280,6 +19675,7 @@
     "pk": 102, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Indonesia", 
       "submission_language": "", 
       "label": "ID"
@@ -19289,6 +19685,7 @@
     "pk": 103, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Iran, Islamic Republic of", 
       "submission_language": "", 
       "label": "IR"
@@ -19298,6 +19695,7 @@
     "pk": 104, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Iraq", 
       "submission_language": "", 
       "label": "IQ"
@@ -19307,6 +19705,7 @@
     "pk": 105, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Ireland", 
       "submission_language": "", 
       "label": "IE"
@@ -19316,6 +19715,7 @@
     "pk": 106, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Isle of Man", 
       "submission_language": "", 
       "label": "IM"
@@ -19325,6 +19725,7 @@
     "pk": 107, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Israel", 
       "submission_language": "", 
       "label": "IL"
@@ -19334,6 +19735,7 @@
     "pk": 108, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Italy", 
       "submission_language": "", 
       "label": "IT"
@@ -19343,6 +19745,7 @@
     "pk": 109, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Jamaica", 
       "submission_language": "en", 
       "label": "JM"
@@ -19352,6 +19755,7 @@
     "pk": 110, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Japan", 
       "submission_language": "", 
       "label": "JP"
@@ -19361,6 +19765,7 @@
     "pk": 111, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Jersey", 
       "submission_language": "", 
       "label": "JE"
@@ -19370,6 +19775,7 @@
     "pk": 112, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Jordan", 
       "submission_language": "", 
       "label": "JO"
@@ -19379,6 +19785,7 @@
     "pk": 113, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Kazakhstan", 
       "submission_language": "", 
       "label": "KZ"
@@ -19388,6 +19795,7 @@
     "pk": 114, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Kenya", 
       "submission_language": "", 
       "label": "KE"
@@ -19397,6 +19805,7 @@
     "pk": 115, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Kiribati", 
       "submission_language": "", 
       "label": "KI"
@@ -19406,6 +19815,7 @@
     "pk": 116, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Korea, Democratic People's Republic of", 
       "submission_language": "", 
       "label": "KP"
@@ -19415,6 +19825,7 @@
     "pk": 117, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Korea, Republic of", 
       "submission_language": "", 
       "label": "KR"
@@ -19424,6 +19835,7 @@
     "pk": 118, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Kuwait", 
       "submission_language": "", 
       "label": "KW"
@@ -19433,6 +19845,7 @@
     "pk": 119, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Kyrgyzstan", 
       "submission_language": "", 
       "label": "KG"
@@ -19442,6 +19855,7 @@
     "pk": 120, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Lao People's Democratic Republic", 
       "submission_language": "", 
       "label": "LA"
@@ -19451,6 +19865,7 @@
     "pk": 121, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Latvia", 
       "submission_language": "", 
       "label": "LV"
@@ -19460,6 +19875,7 @@
     "pk": 122, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Lebanon", 
       "submission_language": "", 
       "label": "LB"
@@ -19469,6 +19885,7 @@
     "pk": 123, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Lesotho", 
       "submission_language": "", 
       "label": "LS"
@@ -19478,6 +19895,7 @@
     "pk": 124, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Liberia", 
       "submission_language": "", 
       "label": "LR"
@@ -19487,6 +19905,7 @@
     "pk": 125, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Libyan Arab Jamahiriya", 
       "submission_language": "", 
       "label": "LY"
@@ -19496,6 +19915,7 @@
     "pk": 126, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Liechtenstein", 
       "submission_language": "", 
       "label": "LI"
@@ -19505,6 +19925,7 @@
     "pk": 127, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Lithuania", 
       "submission_language": "", 
       "label": "LT"
@@ -19514,6 +19935,7 @@
     "pk": 128, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Luxembourg", 
       "submission_language": "", 
       "label": "LU"
@@ -19523,6 +19945,7 @@
     "pk": 129, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Macao", 
       "submission_language": "", 
       "label": "MO"
@@ -19532,6 +19955,7 @@
     "pk": 130, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Macedonia, The Former Yugoslav Republic of", 
       "submission_language": "", 
       "label": "MK"
@@ -19541,6 +19965,7 @@
     "pk": 131, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Madagascar", 
       "submission_language": "", 
       "label": "MG"
@@ -19550,6 +19975,7 @@
     "pk": 132, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Malawi", 
       "submission_language": "", 
       "label": "MW"
@@ -19559,6 +19985,7 @@
     "pk": 133, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Malaysia", 
       "submission_language": "", 
       "label": "MY"
@@ -19568,6 +19995,7 @@
     "pk": 134, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Maldives", 
       "submission_language": "", 
       "label": "MV"
@@ -19577,6 +20005,7 @@
     "pk": 135, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Mali", 
       "submission_language": "", 
       "label": "ML"
@@ -19586,6 +20015,7 @@
     "pk": 136, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Malta", 
       "submission_language": "", 
       "label": "MT"
@@ -19595,6 +20025,7 @@
     "pk": 137, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Marshall Islands", 
       "submission_language": "", 
       "label": "MH"
@@ -19604,6 +20035,7 @@
     "pk": 138, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Martinique", 
       "submission_language": "", 
       "label": "MQ"
@@ -19613,6 +20045,7 @@
     "pk": 139, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Mauritania", 
       "submission_language": "", 
       "label": "MR"
@@ -19622,6 +20055,7 @@
     "pk": 140, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Mauritius", 
       "submission_language": "", 
       "label": "MU"
@@ -19631,6 +20065,7 @@
     "pk": 141, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Mayotte", 
       "submission_language": "", 
       "label": "YT"
@@ -19640,6 +20075,7 @@
     "pk": 142, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Mexico", 
       "submission_language": "es", 
       "label": "MX"
@@ -19649,6 +20085,7 @@
     "pk": 143, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Micronesia, Federated States of", 
       "submission_language": "", 
       "label": "FM"
@@ -19658,6 +20095,7 @@
     "pk": 144, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Moldova", 
       "submission_language": "", 
       "label": "MD"
@@ -19667,6 +20105,7 @@
     "pk": 145, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Monaco", 
       "submission_language": "", 
       "label": "MC"
@@ -19676,6 +20115,7 @@
     "pk": 146, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Mongolia", 
       "submission_language": "", 
       "label": "MN"
@@ -19685,6 +20125,7 @@
     "pk": 147, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Montenegro", 
       "submission_language": "", 
       "label": "ME"
@@ -19694,6 +20135,7 @@
     "pk": 148, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Montserrat", 
       "submission_language": "", 
       "label": "MS"
@@ -19703,6 +20145,7 @@
     "pk": 149, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Morocco", 
       "submission_language": "", 
       "label": "MA"
@@ -19712,6 +20155,7 @@
     "pk": 150, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Mozambique", 
       "submission_language": "", 
       "label": "MZ"
@@ -19721,6 +20165,7 @@
     "pk": 151, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Myanmar", 
       "submission_language": "", 
       "label": "MM"
@@ -19730,6 +20175,7 @@
     "pk": 152, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Namibia", 
       "submission_language": "", 
       "label": "NA"
@@ -19739,6 +20185,7 @@
     "pk": 153, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Nauru", 
       "submission_language": "", 
       "label": "NR"
@@ -19748,6 +20195,7 @@
     "pk": 154, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Nepal", 
       "submission_language": "", 
       "label": "NP"
@@ -19757,6 +20205,7 @@
     "pk": 155, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Netherlands", 
       "submission_language": "", 
       "label": "NL"
@@ -19766,6 +20215,7 @@
     "pk": 156, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Netherlands Antilles", 
       "submission_language": "", 
       "label": "AN"
@@ -19775,6 +20225,7 @@
     "pk": 157, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "New Caledonia", 
       "submission_language": "", 
       "label": "NC"
@@ -19784,6 +20235,7 @@
     "pk": 158, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "New Zealand", 
       "submission_language": "", 
       "label": "NZ"
@@ -19793,6 +20245,7 @@
     "pk": 159, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Nicaragua", 
       "submission_language": "es", 
       "label": "NI"
@@ -19802,6 +20255,7 @@
     "pk": 160, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Niger", 
       "submission_language": "", 
       "label": "NE"
@@ -19811,6 +20265,7 @@
     "pk": 161, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Nigeria", 
       "submission_language": "", 
       "label": "NG"
@@ -19820,6 +20275,7 @@
     "pk": 162, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Niue", 
       "submission_language": "", 
       "label": "NU"
@@ -19829,6 +20285,7 @@
     "pk": 163, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Norfolk Island", 
       "submission_language": "", 
       "label": "NF"
@@ -19838,6 +20295,7 @@
     "pk": 164, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Northern Mariana Islands", 
       "submission_language": "", 
       "label": "MP"
@@ -19847,6 +20305,7 @@
     "pk": 165, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Norway", 
       "submission_language": "", 
       "label": "NO"
@@ -19856,6 +20315,7 @@
     "pk": 166, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Oman", 
       "submission_language": "", 
       "label": "OM"
@@ -19865,6 +20325,7 @@
     "pk": 167, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Pakistan", 
       "submission_language": "", 
       "label": "PK"
@@ -19874,6 +20335,7 @@
     "pk": 168, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Palau", 
       "submission_language": "", 
       "label": "PW"
@@ -19883,6 +20345,7 @@
     "pk": 169, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Palestinian Territory, Occupied", 
       "submission_language": "", 
       "label": "PS"
@@ -19892,6 +20355,7 @@
     "pk": 170, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Panama", 
       "submission_language": "es", 
       "label": "PA"
@@ -19901,6 +20365,7 @@
     "pk": 171, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Papua New Guinea", 
       "submission_language": "", 
       "label": "PG"
@@ -19910,6 +20375,7 @@
     "pk": 172, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Paraguay", 
       "submission_language": "es", 
       "label": "PY"
@@ -19919,6 +20385,7 @@
     "pk": 173, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Peru", 
       "submission_language": "es", 
       "label": "PE"
@@ -19928,6 +20395,7 @@
     "pk": 174, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Philippines", 
       "submission_language": "", 
       "label": "PH"
@@ -19937,6 +20405,7 @@
     "pk": 175, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Pitcairn", 
       "submission_language": "", 
       "label": "PN"
@@ -19946,6 +20415,7 @@
     "pk": 176, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Poland", 
       "submission_language": "", 
       "label": "PL"
@@ -19955,6 +20425,7 @@
     "pk": 177, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Portugal", 
       "submission_language": "", 
       "label": "pt-BR"
@@ -19964,6 +20435,7 @@
     "pk": 178, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Puerto Rico", 
       "submission_language": "", 
       "label": "PR"
@@ -19973,6 +20445,7 @@
     "pk": 179, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Qatar", 
       "submission_language": "", 
       "label": "QA"
@@ -19982,6 +20455,7 @@
     "pk": 180, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Reunion", 
       "submission_language": "", 
       "label": "RE"
@@ -19991,6 +20465,7 @@
     "pk": 181, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Romania", 
       "submission_language": "", 
       "label": "RO"
@@ -20000,6 +20475,7 @@
     "pk": 182, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Russian Federation", 
       "submission_language": "", 
       "label": "RU"
@@ -20009,6 +20485,7 @@
     "pk": 183, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Rwanda", 
       "submission_language": "", 
       "label": "RW"
@@ -20018,6 +20495,7 @@
     "pk": 184, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Saint Barthelemy", 
       "submission_language": "", 
       "label": "BL"
@@ -20027,6 +20505,7 @@
     "pk": 185, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Saint Helena", 
       "submission_language": "", 
       "label": "SH"
@@ -20036,6 +20515,7 @@
     "pk": 186, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Saint Kitts and Nevis", 
       "submission_language": "", 
       "label": "KN"
@@ -20045,6 +20525,7 @@
     "pk": 187, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Saint Lucia", 
       "submission_language": "en", 
       "label": "LC"
@@ -20054,6 +20535,7 @@
     "pk": 188, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Saint Martin", 
       "submission_language": "", 
       "label": "MF"
@@ -20063,6 +20545,7 @@
     "pk": 189, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Saint Pierre and Miquelon", 
       "submission_language": "", 
       "label": "PM"
@@ -20072,6 +20555,7 @@
     "pk": 190, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Saint Vincent and the Grenadines", 
       "submission_language": "", 
       "label": "VC"
@@ -20081,6 +20565,7 @@
     "pk": 191, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Samoa", 
       "submission_language": "", 
       "label": "WS"
@@ -20090,6 +20575,7 @@
     "pk": 192, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "San Marino", 
       "submission_language": "", 
       "label": "SM"
@@ -20099,6 +20585,7 @@
     "pk": 193, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Sao Tome and Principe", 
       "submission_language": "", 
       "label": "ST"
@@ -20108,6 +20595,7 @@
     "pk": 194, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Saudi Arabia", 
       "submission_language": "", 
       "label": "SA"
@@ -20117,6 +20605,7 @@
     "pk": 195, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Senegal", 
       "submission_language": "", 
       "label": "SN"
@@ -20126,6 +20615,7 @@
     "pk": 196, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Serbia", 
       "submission_language": "", 
       "label": "RS"
@@ -20135,6 +20625,7 @@
     "pk": 197, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Seychelles", 
       "submission_language": "", 
       "label": "SC"
@@ -20144,6 +20635,7 @@
     "pk": 198, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Sierra Leone", 
       "submission_language": "", 
       "label": "SL"
@@ -20153,6 +20645,7 @@
     "pk": 199, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Singapore", 
       "submission_language": "", 
       "label": "SG"
@@ -20162,6 +20655,7 @@
     "pk": 200, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Slovakia", 
       "submission_language": "", 
       "label": "SK"
@@ -20171,6 +20665,7 @@
     "pk": 201, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Slovenia", 
       "submission_language": "", 
       "label": "SI"
@@ -20180,6 +20675,7 @@
     "pk": 202, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Solomon Islands", 
       "submission_language": "", 
       "label": "SB"
@@ -20189,6 +20685,7 @@
     "pk": 203, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Somalia", 
       "submission_language": "", 
       "label": "SO"
@@ -20198,6 +20695,7 @@
     "pk": 204, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "South Africa", 
       "submission_language": "", 
       "label": "ZA"
@@ -20207,6 +20705,7 @@
     "pk": 205, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "South Georgia and the South Sandwich Islands", 
       "submission_language": "", 
       "label": "GS"
@@ -20216,6 +20715,7 @@
     "pk": 206, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Spain", 
       "submission_language": "", 
       "label": "es"
@@ -20225,6 +20725,7 @@
     "pk": 207, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Sri Lanka", 
       "submission_language": "", 
       "label": "LK"
@@ -20234,6 +20735,7 @@
     "pk": 208, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Sudan", 
       "submission_language": "", 
       "label": "SD"
@@ -20243,6 +20745,7 @@
     "pk": 209, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Suriname", 
       "submission_language": "nl", 
       "label": "SR"
@@ -20252,6 +20755,7 @@
     "pk": 210, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Svalbard and Jan Mayen", 
       "submission_language": "", 
       "label": "SJ"
@@ -20261,6 +20765,7 @@
     "pk": 211, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Swaziland", 
       "submission_language": "", 
       "label": "SZ"
@@ -20270,6 +20775,7 @@
     "pk": 212, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Sweden", 
       "submission_language": "", 
       "label": "SE"
@@ -20279,6 +20785,7 @@
     "pk": 213, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Switzerland", 
       "submission_language": "", 
       "label": "CH"
@@ -20288,6 +20795,7 @@
     "pk": 214, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Syrian Arab Republic", 
       "submission_language": "", 
       "label": "SY"
@@ -20297,6 +20805,7 @@
     "pk": 215, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Taiwan, Province of China", 
       "submission_language": "", 
       "label": "TW"
@@ -20306,6 +20815,7 @@
     "pk": 216, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Tajikistan", 
       "submission_language": "", 
       "label": "TJ"
@@ -20315,6 +20825,7 @@
     "pk": 217, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Tanzania, United Republic of", 
       "submission_language": "", 
       "label": "TZ"
@@ -20324,6 +20835,7 @@
     "pk": 218, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Thailand", 
       "submission_language": "", 
       "label": "TH"
@@ -20333,6 +20845,7 @@
     "pk": 219, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Timor-Leste", 
       "submission_language": "", 
       "label": "TL"
@@ -20342,6 +20855,7 @@
     "pk": 220, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Togo", 
       "submission_language": "", 
       "label": "TG"
@@ -20351,6 +20865,7 @@
     "pk": 221, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Tokelau", 
       "submission_language": "", 
       "label": "TK"
@@ -20360,6 +20875,7 @@
     "pk": 222, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Tonga", 
       "submission_language": "", 
       "label": "TO"
@@ -20369,6 +20885,7 @@
     "pk": 223, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Trinidad and Tobago", 
       "submission_language": "en", 
       "label": "TT"
@@ -20378,6 +20895,7 @@
     "pk": 224, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Tunisia", 
       "submission_language": "", 
       "label": "TN"
@@ -20387,6 +20905,7 @@
     "pk": 225, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Turkey", 
       "submission_language": "", 
       "label": "TR"
@@ -20396,6 +20915,7 @@
     "pk": 226, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Turkmenistan", 
       "submission_language": "", 
       "label": "TM"
@@ -20405,6 +20925,7 @@
     "pk": 227, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Turks and Caicos Islands", 
       "submission_language": "", 
       "label": "TC"
@@ -20414,6 +20935,7 @@
     "pk": 228, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Tuvalu", 
       "submission_language": "", 
       "label": "TV"
@@ -20423,6 +20945,7 @@
     "pk": 229, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Uganda", 
       "submission_language": "", 
       "label": "UG"
@@ -20432,6 +20955,7 @@
     "pk": 230, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Ukraine", 
       "submission_language": "", 
       "label": "UA"
@@ -20441,6 +20965,7 @@
     "pk": 231, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "United Arab Emirates", 
       "submission_language": "", 
       "label": "AE"
@@ -20450,6 +20975,7 @@
     "pk": 232, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "United Kingdom", 
       "submission_language": "", 
       "label": "GB"
@@ -20459,6 +20985,7 @@
     "pk": 233, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "United States", 
       "submission_language": "", 
       "label": "US"
@@ -20468,6 +20995,7 @@
     "pk": 234, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "United States Minor Outlying Islands", 
       "submission_language": "", 
       "label": "UM"
@@ -20477,6 +21005,7 @@
     "pk": 235, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Uruguay", 
       "submission_language": "es", 
       "label": "UY"
@@ -20486,6 +21015,7 @@
     "pk": 236, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Uzbekistan", 
       "submission_language": "", 
       "label": "UZ"
@@ -20495,6 +21025,7 @@
     "pk": 237, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Vanuatu", 
       "submission_language": "", 
       "label": "VU"
@@ -20504,6 +21035,7 @@
     "pk": 238, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Venezuela", 
       "submission_language": "es", 
       "label": "VE"
@@ -20513,6 +21045,7 @@
     "pk": 239, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Viet Nam", 
       "submission_language": "", 
       "label": "VN"
@@ -20522,6 +21055,7 @@
     "pk": 240, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Virgin Islands, British", 
       "submission_language": "", 
       "label": "VG"
@@ -20531,6 +21065,7 @@
     "pk": 241, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Virgin Islands, U.S.", 
       "submission_language": "", 
       "label": "VI"
@@ -20540,6 +21075,7 @@
     "pk": 242, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Wallis and Futuna", 
       "submission_language": "", 
       "label": "WF"
@@ -20549,6 +21085,7 @@
     "pk": 243, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Western Sahara", 
       "submission_language": "", 
       "label": "EH"
@@ -20558,6 +21095,7 @@
     "pk": 244, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Yemen", 
       "submission_language": "", 
       "label": "YE"
@@ -20567,6 +21105,7 @@
     "pk": 245, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Zambia", 
       "submission_language": "", 
       "label": "ZM"
@@ -20576,6 +21115,7 @@
     "pk": 246, 
     "model": "vocabulary.countrycode", 
     "fields": {
+      "order": 0, 
       "description": "Zimbabwe", 
       "submission_language": "", 
       "label": "ZW"
@@ -20585,6 +21125,7 @@
     "pk": 1, 
     "model": "vocabulary.trialnumberissuingauthority", 
     "fields": {
+      "order": 0, 
       "description": "World Health Organization, International Clinical Trials Registry Platform", 
       "label": "WHO ICTRP"
     }
@@ -20593,6 +21134,7 @@
     "pk": 2, 
     "model": "vocabulary.trialnumberissuingauthority", 
     "fields": {
+      "order": 0, 
       "description": "Comiss\u00e3o Nacional de \u00c9tica em Pesquisa, Conselho Nacional de Pesquisa, Minist\u00e9rio da Sa\u00fade, Brasil", 
       "label": "Plataforma Brasil (CONEP)"
     }
@@ -20601,6 +21143,7 @@
     "pk": 3, 
     "model": "vocabulary.trialnumberissuingauthority", 
     "fields": {
+      "order": 0, 
       "description": "National Library of Medicine (NLM), U.S. National Institutes of Health (NIH)", 
       "label": "ClinicalTrials.gov"
     }
@@ -20609,6 +21152,7 @@
     "pk": 4, 
     "model": "vocabulary.trialnumberissuingauthority", 
     "fields": {
+      "order": 0, 
       "description": "Australian New Zealand Clinical Trials Registry", 
       "label": "ANZCTR"
     }
@@ -20617,6 +21161,7 @@
     "pk": 5, 
     "model": "vocabulary.trialnumberissuingauthority", 
     "fields": {
+      "order": 0, 
       "description": "Iranian Registry of Clinical Trials", 
       "label": "IRCT"
     }
@@ -20625,6 +21170,7 @@
     "pk": 6, 
     "model": "vocabulary.trialnumberissuingauthority", 
     "fields": {
+      "order": 0, 
       "description": "Cochrane Renal Group", 
       "label": "CRG"
     }
@@ -20633,6 +21179,7 @@
     "pk": 1, 
     "model": "vocabulary.interventioncode", 
     "fields": {
+      "order": 10, 
       "description": "", 
       "label": "drug"
     }
@@ -20641,6 +21188,7 @@
     "pk": 2, 
     "model": "vocabulary.interventioncode", 
     "fields": {
+      "order": 20, 
       "description": "", 
       "label": "device"
     }
@@ -20649,7 +21197,8 @@
     "pk": 3, 
     "model": "vocabulary.interventioncode", 
     "fields": {
-      "description": "http://reddes.bvsaude.org/projects/clinical-trials/wiki/InterventionsField", 
+      "order": 30, 
+      "description": "", 
       "label": "biological/vaccine"
     }
   }, 
@@ -20657,6 +21206,7 @@
     "pk": 4, 
     "model": "vocabulary.interventioncode", 
     "fields": {
+      "order": 40, 
       "description": "", 
       "label": "procedure/surgery"
     }
@@ -20665,6 +21215,7 @@
     "pk": 5, 
     "model": "vocabulary.interventioncode", 
     "fields": {
+      "order": 50, 
       "description": "", 
       "label": "radiation"
     }
@@ -20673,6 +21224,7 @@
     "pk": 6, 
     "model": "vocabulary.interventioncode", 
     "fields": {
+      "order": 60, 
       "description": "ex. psychoteraphy, lifestyle counselling", 
       "label": "behavioural"
     }
@@ -20681,6 +21233,7 @@
     "pk": 7, 
     "model": "vocabulary.interventioncode", 
     "fields": {
+      "order": 70, 
       "description": "", 
       "label": "genetics"
     }
@@ -20689,6 +21242,7 @@
     "pk": 8, 
     "model": "vocabulary.interventioncode", 
     "fields": {
+      "order": 80, 
       "description": "", 
       "label": "dietary supplement"
     }
@@ -20697,6 +21251,7 @@
     "pk": 9, 
     "model": "vocabulary.interventioncode", 
     "fields": {
+      "order": 90, 
       "description": "", 
       "label": "other"
     }
@@ -20705,6 +21260,7 @@
     "pk": 1, 
     "model": "vocabulary.studytype", 
     "fields": {
+      "order": 0, 
       "description": "", 
       "label": "interventional"
     }
@@ -20713,6 +21269,7 @@
     "pk": 2, 
     "model": "vocabulary.studytype", 
     "fields": {
+      "order": 0, 
       "description": "", 
       "label": "observational"
     }
@@ -20721,6 +21278,7 @@
     "pk": 1, 
     "model": "vocabulary.studypurpose", 
     "fields": {
+      "order": 0, 
       "description": "", 
       "label": "diagnostic"
     }
@@ -20729,6 +21287,7 @@
     "pk": 2, 
     "model": "vocabulary.studypurpose", 
     "fields": {
+      "order": 0, 
       "description": "", 
       "label": "etiological"
     }
@@ -20737,6 +21296,7 @@
     "pk": 3, 
     "model": "vocabulary.studypurpose", 
     "fields": {
+      "order": 0, 
       "description": "", 
       "label": "prognostic"
     }
@@ -20745,6 +21305,7 @@
     "pk": 4, 
     "model": "vocabulary.studypurpose", 
     "fields": {
+      "order": 0, 
       "description": "", 
       "label": "prevention"
     }
@@ -20753,6 +21314,7 @@
     "pk": 5, 
     "model": "vocabulary.studypurpose", 
     "fields": {
+      "order": 0, 
       "description": "", 
       "label": "treatment"
     }
@@ -20761,6 +21323,7 @@
     "pk": 6, 
     "model": "vocabulary.studypurpose", 
     "fields": {
+      "order": 0, 
       "description": "", 
       "label": "other"
     }
@@ -20769,6 +21332,7 @@
     "pk": 1, 
     "model": "vocabulary.interventionassigment", 
     "fields": {
+      "order": 10, 
       "description": "", 
       "label": "single-group"
     }
@@ -20777,6 +21341,7 @@
     "pk": 2, 
     "model": "vocabulary.interventionassigment", 
     "fields": {
+      "order": 20, 
       "description": "", 
       "label": "parallel"
     }
@@ -20785,6 +21350,7 @@
     "pk": 3, 
     "model": "vocabulary.interventionassigment", 
     "fields": {
+      "order": 30, 
       "description": "", 
       "label": "cross-over"
     }
@@ -20793,6 +21359,7 @@
     "pk": 4, 
     "model": "vocabulary.interventionassigment", 
     "fields": {
+      "order": 40, 
       "description": "", 
       "label": "factorial"
     }
@@ -20801,6 +21368,7 @@
     "pk": 5, 
     "model": "vocabulary.interventionassigment", 
     "fields": {
+      "order": 50, 
       "description": "", 
       "label": "other"
     }
@@ -20809,6 +21377,7 @@
     "pk": 1, 
     "model": "vocabulary.studymasking", 
     "fields": {
+      "order": 10, 
       "description": "", 
       "label": "open"
     }
@@ -20817,6 +21386,7 @@
     "pk": 2, 
     "model": "vocabulary.studymasking", 
     "fields": {
+      "order": 20, 
       "description": "", 
       "label": "single-blind"
     }
@@ -20825,6 +21395,7 @@
     "pk": 3, 
     "model": "vocabulary.studymasking", 
     "fields": {
+      "order": 30, 
       "description": "", 
       "label": "double-blind"
     }
@@ -20833,6 +21404,7 @@
     "pk": 4, 
     "model": "vocabulary.studymasking", 
     "fields": {
+      "order": 40, 
       "description": "", 
       "label": "triple-blind"
     }
@@ -20841,6 +21413,7 @@
     "pk": 1, 
     "model": "vocabulary.studyallocation", 
     "fields": {
+      "order": 10, 
       "description": "", 
       "label": "non-randomized-controlled"
     }
@@ -20849,6 +21422,7 @@
     "pk": 2, 
     "model": "vocabulary.studyallocation", 
     "fields": {
+      "order": 20, 
       "description": "", 
       "label": "randomized-controlled"
     }
@@ -20857,6 +21431,7 @@
     "pk": 3, 
     "model": "vocabulary.studyallocation", 
     "fields": {
+      "order": 30, 
       "description": "", 
       "label": "single-arm-study"
     }
@@ -20865,14 +21440,25 @@
     "pk": 1, 
     "model": "vocabulary.studyphase", 
     "fields": {
+      "order": 0, 
       "description": "not applicable", 
       "label": "N/A"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "vocabulary.studyphase", 
+    "fields": {
+      "order": 0, 
+      "description": "phase zero", 
+      "label": "0"
     }
   }, 
   {
     "pk": 3, 
     "model": "vocabulary.studyphase", 
     "fields": {
+      "order": 0, 
       "description": "phase 1", 
       "label": "1"
     }
@@ -20881,6 +21467,7 @@
     "pk": 4, 
     "model": "vocabulary.studyphase", 
     "fields": {
+      "order": 0, 
       "description": "phases 1-2", 
       "label": "1-2"
     }
@@ -20889,6 +21476,7 @@
     "pk": 5, 
     "model": "vocabulary.studyphase", 
     "fields": {
+      "order": 0, 
       "description": "phase 2", 
       "label": "2"
     }
@@ -20897,6 +21485,7 @@
     "pk": 6, 
     "model": "vocabulary.studyphase", 
     "fields": {
+      "order": 0, 
       "description": "phases 2-3", 
       "label": "2-3"
     }
@@ -20905,6 +21494,7 @@
     "pk": 7, 
     "model": "vocabulary.studyphase", 
     "fields": {
+      "order": 0, 
       "description": "phase 3", 
       "label": "3"
     }
@@ -20913,22 +21503,16 @@
     "pk": 8, 
     "model": "vocabulary.studyphase", 
     "fields": {
+      "order": 0, 
       "description": "phase 4", 
       "label": "4"
-    }
-  }, 
-  {
-    "pk": 9, 
-    "model": "vocabulary.studyphase", 
-    "fields": {
-      "description": "phase zero", 
-      "label": "0"
     }
   }, 
   {
     "pk": 1, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
+      "order": 0, 
       "description": "Not yet recruiting", 
       "label": "not yet recruiting"
     }
@@ -20937,6 +21521,7 @@
     "pk": 2, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
+      "order": 0, 
       "description": "Open to recruitment\r\n", 
       "label": "recruiting"
     }
@@ -20945,6 +21530,7 @@
     "pk": 3, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
+      "order": 0, 
       "description": "Recruitment has been temporarily stopped", 
       "label": "suspended"
     }
@@ -20953,6 +21539,7 @@
     "pk": 4, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
+      "order": 0, 
       "description": "Participants are no longer being recruited. The trial is closed. Participants may, however, still be in follow-up.", 
       "label": "recruitment completed"
     }
@@ -20961,6 +21548,7 @@
     "pk": 5, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
+      "order": 0, 
       "description": "Other recruitment status", 
       "label": "other"
     }
@@ -20969,6 +21557,7 @@
     "pk": 6, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
+      "order": 0, 
       "description": "Terminated", 
       "label": "terminated"
     }
@@ -20977,6 +21566,7 @@
     "pk": 7, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
+      "order": 0, 
       "description": "Withdrawn", 
       "label": "withdrawn"
     }
@@ -20985,6 +21575,7 @@
     "pk": 8, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
+      "order": 0, 
       "description": "Data analysis completed", 
       "label": "data analysis completed"
     }
@@ -20993,6 +21584,7 @@
     "pk": 1, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Bacterial Infections and Mycoses", 
       "label": "C01"
     }
@@ -21001,6 +21593,7 @@
     "pk": 2, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Virus Diseases", 
       "label": "C02"
     }
@@ -21009,6 +21602,7 @@
     "pk": 3, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Parasitic Diseases", 
       "label": "C03"
     }
@@ -21017,6 +21611,7 @@
     "pk": 4, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Neoplasms", 
       "label": "C04"
     }
@@ -21025,6 +21620,7 @@
     "pk": 5, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Musculoskeletal Diseases", 
       "label": "C05"
     }
@@ -21033,6 +21629,7 @@
     "pk": 6, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Digestive System Diseases", 
       "label": "C06"
     }
@@ -21041,6 +21638,7 @@
     "pk": 7, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Stomatognathic Diseases", 
       "label": "C07"
     }
@@ -21049,6 +21647,7 @@
     "pk": 8, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Respiratory Tract Diseases", 
       "label": "C08"
     }
@@ -21057,6 +21656,7 @@
     "pk": 9, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Otorhinolaryngologic Diseases", 
       "label": "C09"
     }
@@ -21065,6 +21665,7 @@
     "pk": 10, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Nervous System Diseases", 
       "label": "C10"
     }
@@ -21073,6 +21674,7 @@
     "pk": 11, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Eye Diseases", 
       "label": "C11"
     }
@@ -21081,6 +21683,7 @@
     "pk": 12, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Male Urogenital Diseases", 
       "label": "C12"
     }
@@ -21089,6 +21692,7 @@
     "pk": 13, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Female Urogenital Diseases and Pregnancy Complications", 
       "label": "C13"
     }
@@ -21097,6 +21701,7 @@
     "pk": 14, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Cardiovascular Diseases", 
       "label": "C14"
     }
@@ -21105,6 +21710,7 @@
     "pk": 15, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Hemic and Lymphatic Diseases", 
       "label": "C15"
     }
@@ -21113,6 +21719,7 @@
     "pk": 16, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Congenital, Hereditary, and Neonatal Diseases and Abnormalities", 
       "label": "C16"
     }
@@ -21121,6 +21728,7 @@
     "pk": 17, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Skin and Connective Tissue Diseases", 
       "label": "C17"
     }
@@ -21129,6 +21737,7 @@
     "pk": 18, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Nutritional and Metabolic Diseases", 
       "label": "C18"
     }
@@ -21137,6 +21746,7 @@
     "pk": 19, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Endocrine System Diseases", 
       "label": "C19"
     }
@@ -21145,6 +21755,7 @@
     "pk": 20, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Immune System Diseases", 
       "label": "C20"
     }
@@ -21153,6 +21764,7 @@
     "pk": 21, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Disorders of Environmental Origin", 
       "label": "C21"
     }
@@ -21161,6 +21773,7 @@
     "pk": 22, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Animal Diseases", 
       "label": "C22"
     }
@@ -21169,6 +21782,7 @@
     "pk": 23, 
     "model": "vocabulary.decsdisease", 
     "fields": {
+      "order": 0, 
       "description": "Pathological Conditions, Signs and Symptoms", 
       "label": "C23"
     }
@@ -21177,6 +21791,7 @@
     "pk": 1, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Certain infectious and parasitic diseases", 
       "label": "I"
     }
@@ -21185,6 +21800,7 @@
     "pk": 2, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Neoplasms", 
       "label": "II"
     }
@@ -21193,6 +21809,7 @@
     "pk": 3, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism", 
       "label": "III"
     }
@@ -21201,6 +21818,7 @@
     "pk": 4, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Endocrine, nutritional and metabolic diseases", 
       "label": "IV"
     }
@@ -21209,6 +21827,7 @@
     "pk": 5, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Mental and behavioural disorders", 
       "label": "V"
     }
@@ -21217,6 +21836,7 @@
     "pk": 6, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Diseases of the nervous system", 
       "label": "VI"
     }
@@ -21225,6 +21845,7 @@
     "pk": 7, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Diseases of the eye and adnexa", 
       "label": "VII"
     }
@@ -21233,6 +21854,7 @@
     "pk": 8, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Diseases of the ear and mastoid process", 
       "label": "VIII"
     }
@@ -21241,6 +21863,7 @@
     "pk": 9, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Diseases of the circulatory system", 
       "label": "IX"
     }
@@ -21249,6 +21872,7 @@
     "pk": 10, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Diseases of the respiratory system", 
       "label": "X"
     }
@@ -21257,6 +21881,7 @@
     "pk": 11, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Diseases of the digestive system", 
       "label": "XI"
     }
@@ -21265,6 +21890,7 @@
     "pk": 12, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Diseases of the skin and subcutaneous tissue", 
       "label": "XII"
     }
@@ -21273,6 +21899,7 @@
     "pk": 13, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Diseases of the musculoskeletal system and connective tissue", 
       "label": "XIII"
     }
@@ -21281,6 +21908,7 @@
     "pk": 14, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Diseases of the genitourinary system", 
       "label": "XIV"
     }
@@ -21289,6 +21917,7 @@
     "pk": 15, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Pregnancy, childbirth and the puerperium", 
       "label": "XV"
     }
@@ -21297,6 +21926,7 @@
     "pk": 16, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Certain conditions originating in the perinatal period", 
       "label": "XVI"
     }
@@ -21305,6 +21935,7 @@
     "pk": 17, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Congenital malformations, deformations and chromosomal abnormalities", 
       "label": "XVII"
     }
@@ -21313,6 +21944,7 @@
     "pk": 18, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified", 
       "label": "XVIII"
     }
@@ -21321,6 +21953,7 @@
     "pk": 19, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Injury, poisoning and certain other consequences of external causes", 
       "label": "XIX"
     }
@@ -21329,6 +21962,7 @@
     "pk": 20, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "External causes of morbidity and mortality", 
       "label": "XX"
     }
@@ -21337,6 +21971,7 @@
     "pk": 21, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Factors influencing health status and contact with health services", 
       "label": "XXI"
     }
@@ -21345,6 +21980,7 @@
     "pk": 22, 
     "model": "vocabulary.icdchapter", 
     "fields": {
+      "order": 0, 
       "description": "Codes for special purposes", 
       "label": "XXII"
     }

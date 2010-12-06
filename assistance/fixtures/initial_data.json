@@ -1994,6 +1994,26 @@
     }
   }, 
   {
+    "pk": 75, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "enrollment_start_date", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 76, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "enrollment_end_date", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": ""
+    }
+  }, 
+  {
     "pk": 16, 
     "model": "assistance.question", 
     "fields": {
