@@ -5,7 +5,7 @@
     <trial>
         <main>
             <trial_id>{{ object.trial_id }}</trial_id>
-            <utrn>{{ object.utrn }}</utrn> {# XXX this field isn't part of ICTRP Date Format 1.1 #}
+            <utrn>{{ object.utrn_number }}</utrn>
             <reg_name>{{ reg_name }}</reg_name>
             <date_registration>{{ object.date_registration|date:"d/m/Y" }}</date_registration>
             <primary_sponsor>{{ object.primary_sponsor.name }}</primary_sponsor>

@@ -192,7 +192,7 @@ class TrialIdentificationForm(ReviewModelForm):
     def clean_utrn_number(self):
         data = self.cleaned_data['utrn_number'].strip()
         if data:
-            if not re.match('^U[0-9]{4}-[0-9]{4}-[0-9]{4}$', data):
+            if not re.match('^U\d{4}-\d{4}-\d{4}$', data):
                 raise forms.ValidationError(_("Invalid format. Example: U1111-1111-1111"))
         return data
 
