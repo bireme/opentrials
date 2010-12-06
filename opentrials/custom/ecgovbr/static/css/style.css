@@ -1074,3 +1074,12 @@ table.trial_table TD {
     color: #1073a0;
     text-decoration: none;
 }
+
+.required_fields {
+    float: right;
+    font-size: 10px;
+}
+
+.required_fields span {
+    color: #ff0000;
+}

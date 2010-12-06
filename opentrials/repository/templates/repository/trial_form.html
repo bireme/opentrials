@@ -57,7 +57,7 @@
         </ul>
     </div>
     {% endif %}
-
+    <div class="required_fields"><span>(*)</span> {% trans 'Required fields' %}</div>
     <h2>{% trans title %}</h2>
     <form action="./" method="POST" class="confirm-before-leave">{% csrf_token %}
         {% for form in forms %}
