@@ -1,0 +1,95 @@
+[
+  {
+    "pk": 1, 
+    "model": "flatpages_polyglot.flatpagetranslation", 
+    "fields": {
+      "content": "**Esta \u00e9 uma vers\u00e3o beta do Registro Brasileiro de Ensaios Cl\u00ednicos (RBEC) e os registros de ensaios cadastrados s\u00e3o fict\u00edcios.** O Registro Brasileiro de Ensaios Cl\u00ednicos \u00e9 uma plataforma virtual de acesso livre para registro gratuito de ensaios cl\u00ednicos realizados em seres humanos, em andamento ou finalizados, por pesquisadores brasileiros e estrangeiros.", 
+      "title": "Descri\u00e7\u00e3o do site", 
+      "content_type": [
+        "flatpages", 
+        "flatpage"
+      ], 
+      "language": "pt-br", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "flatpages_polyglot.flatpagetranslation", 
+    "fields": {
+      "content": "O Registro Brasileiro de Ensaios Cl\u00ednicos (RBEC) \u00e9 uma plataforma virtual de acesso livre para registro gratuito de ensaios cl\u00ednicos realizados em seres humanos, em andamento ou finalizados, por pesquisadores brasileiros e estrangeiros. O RBEC inclui ensaios cl\u00ednicos que avaliam interven\u00e7\u00f5es em sa\u00fade resultantes do uso de medicamentos, c\u00e9lulas e outros produtos biol\u00f3gicos, procedimentos cir\u00fargicos e radiol\u00f3gicos, dispositivos, terapias comportamentais e complementares, mudan\u00e7as no processo de aten\u00e7\u00e3o preventiva, entre outros.\r\n\r\nO RBEC proporciona a pacientes, m\u00e9dicos, investigadores, comit\u00eas de \u00e9tica e patrocinadores acesso a informa\u00e7\u00f5es sobre os ensaios cl\u00ednicos em curso e conclu\u00eddos, evitando a duplica\u00e7\u00e3o de esfor\u00e7os e impulsionando o avan\u00e7o do conhecimento e a coopera\u00e7\u00e3o entre grupos de pesquisa.\r\n\r\nSendo uma das mais valiosas fontes de evid\u00eancia sobre a efic\u00e1cia e a seguran\u00e7a das interven\u00e7\u00f5es em sa\u00fade, o ensaio cl\u00ednico, quando registrado em bases de dados p\u00fablicas, garante a todos os interessados o acesso \u00e0 informa\u00e7\u00e3o sobre os efeitos de um produto ou procedimento sob investiga\u00e7\u00e3o. Nesse sentido, aumenta a transpar\u00eancia na pesquisa, fortalecendo o valor \u00e9tico e cient\u00edfico dos estudos de interven\u00e7\u00e3o e observacionais.\r\n\r\nUm ensaio cl\u00ednico pode reduzir a duplica\u00e7\u00e3o desnecess\u00e1ria de esfor\u00e7os de pesquisa ao informar os profissionais que planejam novos estudos acerca de todos os ensaios existentes; aumentar as taxas de recrutamento de participantes para ensaios cl\u00ednicos (especialmente para doen\u00e7as raras ou condi\u00e7\u00f5es de alto risco), desse modo aumentando as chances de um desfecho bem-sucedido de alguns ensaios cl\u00ednicos; agregar valor aos resultados da pesquisa ao prover uma fonte de informa\u00e7\u00e3o confi\u00e1vel sobre ensaio cl\u00ednico para revis\u00f5es sistem\u00e1ticas, metan\u00e1lises e diretrizes baseados em evid\u00eancias e aprimorar as evid\u00eancias dispon\u00edveis que orientem as pr\u00e1ticas de sa\u00fade.\r\n\r\nFruto de um esfor\u00e7o conjunto do Minist\u00e9rio da Sa\u00fade, do Instituto de Comunica\u00e7\u00e3o e Informa\u00e7\u00e3o Cient\u00edfica e Tecnol\u00f3gica em Sa\u00fade (Icict/Fiocruz), da Organiza\u00e7\u00e3o Panamericana de Sa\u00fade (Opas) e do Centro Latinoamericano e do Caribe de Informa\u00e7\u00e3o em Ci\u00eancias da Sa\u00fade (Bireme), o RBEC aumenta a efic\u00e1cia dos esfor\u00e7os dos ensaios cl\u00ednicos ao divulgar os estudos que n\u00e3o s\u00e3o publicado em revistas cient\u00edficas, reduzindo o vi\u00e9s da publica\u00e7\u00e3o. Desse modo, o RBEC torna-se uma importante fonte de informa\u00e7\u00e3o para pacientes, profissionais de sa\u00fade, pesquisadores, empresas e centros de pesquisa, propiciando maior intera\u00e7\u00e3o e inser\u00e7\u00e3o internacional. ", 
+      "title": "Sobre", 
+      "content_type": [
+        "flatpages", 
+        "flatpage"
+      ], 
+      "language": "pt-br", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "flatpages_polyglot.flatpagetranslation", 
+    "fields": {
+      "content": "* Seu ensaio deveria ser registrado uma \u00fanica vez no RBEC. Por favor, verifique que o ensaio ainda n\u00e3o foi registrado no RBEC antes de prosseguir com o registro. \r\nClique [aqui](http://www.ensaiosclinicos.gov.br) para realizar a busca na base de dados do RBEC\r\n* Apenas o patrocinador prim\u00e1rio, institui\u00e7\u00f5es proponentes ou seus representantes autorizados deveriam registrar o ensaio cl\u00ednico. Por favor, assegure que voc\u00ea \u00e9 o registrante respons\u00e1vel antes de registrar o ensaio. Se, por exemplo, voc\u00ea \u00e9 respons\u00e1vel por s\u00edtio de estudo de uma pesquisa multic\u00eantrica, voc\u00ea n\u00e3o deveria registrar o ensaio. Contacte a pessoa respons\u00e1vel pelo coordena\u00e7\u00e3o geral do ensaio para verificar se voc\u00ea est\u00e1 autorizado a registrar o ensaio antes de prosseguir o registro. \r\nClique [aqui](http://www.ensaiosclinicos.gov.br/assistance/faq/#15) para mais informa\u00e7\u00f5es sobre registrantes respons\u00e1veis do ensaio\r\n* Eu autorizo a publica\u00e7\u00e3o dos dados apresentados neste registro.\r\n* Eu sou a pessoa designada pelo patrocinador prim\u00e1rio para registrar este ensaio.", 
+      "title": "Termos de uso", 
+      "content_type": [
+        "flatpages", 
+        "flatpage"
+      ], 
+      "language": "pt-br", 
+      "object_id": 3
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "flatpages.flatpage", 
+    "fields": {
+      "registration_required": false, 
+      "title": "About", 
+      "url": "/about/", 
+      "template_name": "", 
+      "sites": [
+        4, 
+        3, 
+        2
+      ], 
+      "content": "O Registro Brasileiro de Ensaios Cl\u00ednicos (RBEC) \u00e9 uma plataforma virtual de acesso livre para registro gratuito de ensaios cl\u00ednicos realizados em seres humanos, em andamento ou finalizados, por pesquisadores brasileiros e estrangeiros. O RBEC inclui ensaios cl\u00ednicos que avaliam interven\u00e7\u00f5es em sa\u00fade resultantes do uso de medicamentos, c\u00e9lulas e outros produtos biol\u00f3gicos, procedimentos cir\u00fargicos e radiol\u00f3gicos, dispositivos, terapias comportamentais e complementares, mudan\u00e7as no processo de aten\u00e7\u00e3o preventiva, entre outros.\r\n\r\nO RBEC proporciona a pacientes, m\u00e9dicos, investigadores, comit\u00eas de \u00e9tica e patrocinadores acesso a informa\u00e7\u00f5es sobre os ensaios cl\u00ednicos em curso e conclu\u00eddos, evitando a duplica\u00e7\u00e3o de esfor\u00e7os e impulsionando o avan\u00e7o do conhecimento e a coopera\u00e7\u00e3o entre grupos de pesquisa.\r\n\r\nSendo uma das mais valiosas fontes de evid\u00eancia sobre a efic\u00e1cia e a seguran\u00e7a das interven\u00e7\u00f5es em sa\u00fade, o ensaio cl\u00ednico, quando registrado em bases de dados p\u00fablicas, garante a todos os interessados o acesso \u00e0 informa\u00e7\u00e3o sobre os efeitos de um produto ou procedimento sob investiga\u00e7\u00e3o. Nesse sentido, aumenta a transpar\u00eancia na pesquisa, fortalecendo o valor \u00e9tico e cient\u00edfico dos estudos de interven\u00e7\u00e3o e observacionais.\r\n\r\nUm ensaio cl\u00ednico pode reduzir a duplica\u00e7\u00e3o desnecess\u00e1ria de esfor\u00e7os de pesquisa ao informar os profissionais que planejam novos estudos acerca de todos os ensaios existentes; aumentar as taxas de recrutamento de participantes para ensaios cl\u00ednicos (especialmente para doen\u00e7as raras ou condi\u00e7\u00f5es de alto risco), desse modo aumentando as chances de um desfecho bem-sucedido de alguns ensaios cl\u00ednicos; agregar valor aos resultados da pesquisa ao prover uma fonte de informa\u00e7\u00e3o confi\u00e1vel sobre ensaio cl\u00ednico para revis\u00f5es sistem\u00e1ticas, metan\u00e1lises e diretrizes baseados em evid\u00eancias e aprimorar as evid\u00eancias dispon\u00edveis que orientem as pr\u00e1ticas de sa\u00fade.\r\n\r\nFruto de um esfor\u00e7o conjunto do Minist\u00e9rio da Sa\u00fade, do Instituto de Comunica\u00e7\u00e3o e Informa\u00e7\u00e3o Cient\u00edfica e Tecnol\u00f3gica em Sa\u00fade (Icict/Fiocruz), da Organiza\u00e7\u00e3o Panamericana de Sa\u00fade (Opas) e do Centro Latinoamericano e do Caribe de Informa\u00e7\u00e3o em Ci\u00eancias da Sa\u00fade (Bireme), o RBEC aumenta a efic\u00e1cia dos esfor\u00e7os dos ensaios cl\u00ednicos ao divulgar os estudos que n\u00e3o s\u00e3o publicado em revistas cient\u00edficas, reduzindo o vi\u00e9s da publica\u00e7\u00e3o. Desse modo, o RBEC torna-se uma importante fonte de informa\u00e7\u00e3o para pacientes, profissionais de sa\u00fade, pesquisadores, empresas e centros de pesquisa, propiciando maior intera\u00e7\u00e3o e inser\u00e7\u00e3o internacional. ", 
+      "enable_comments": false
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "flatpages.flatpage", 
+    "fields": {
+      "registration_required": false, 
+      "title": "Site description", 
+      "url": "/site-description/", 
+      "template_name": "", 
+      "sites": [
+        4, 
+        3, 
+        2
+      ], 
+      "content": "**This is a beta version of the Brazilian Clinical Trial Registry (BCTR) and the registers showed here are fictional.** The Brazilian Clinical Trial Registry is a open access virtual platform for free registration of ongoing or completed clinical trials performed in human beings by brazilian and foreign researchers.", 
+      "enable_comments": false
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "flatpages.flatpage", 
+    "fields": {
+      "registration_required": false, 
+      "title": "Terms of use", 
+      "url": "/terms-of-use/", 
+      "template_name": "", 
+      "sites": [
+        4, 
+        3, 
+        2
+      ], 
+      "content": "* Only the trial's Primary Sponsor, proponent institutions, lead investigador  or their authorised representative should register the trial. Please ensure that you are the trial's responsible registrant before registering the trial. If, for example, you are the site manager of a multi-centre trial, you should not register the trial. Contact the person responsible for the trial's overall management to check if you are authorised to register the trial before proceeding further.\r\nClick [here](http://www.ensaiosclinicos.gov.br/assistance/faq/#15) for more information on trial responsible registrant\r\n* Your trial should only be registered once on the RBEC. Please check that the trial has not already been registered on the RBEC before proceeding further. \r\nClick [here](http://www.ensaiosclinicos.gov.br) to search the RBEC database\r\n* I authorize the publication of the data presented in this record\r\n* I am the person assigned by the primary sponsor to register this trial", 
+      "enable_comments": false
+    }
+  }
+]
