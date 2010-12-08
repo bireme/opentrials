@@ -262,7 +262,9 @@ class MultilingualBaseForm(forms.ModelForm):
         self.multilingual_fields = get_multilingual_fields(self._meta.model)
 
         # Gets default second language from arguments, if informed. Default value is None
-        self.default_second_language = lang_format(kwargs.pop('default_second_language', self.default_second_language)) # Optional
+        self.default_second_language = kwargs.pop('default_second_language', self.default_second_language)
+        if self.default_second_language is not None:
+            self.default_second_language = lang_format(self.default_second_language)
         self.available_languages = map(lang_format, kwargs.pop('available_languages', [code.lower() for code in settings.MANAGED_LANGUAGES])) # Mandatory (FIXME, to remove default tuple)
         self.display_language = lang_format(kwargs.pop('display_language', self.display_language))
 
