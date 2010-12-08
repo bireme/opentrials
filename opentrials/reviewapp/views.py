@@ -77,6 +77,7 @@ def user_dump(request):
 
 @permission_required('reviewapp.review')
 def reviewlist(request):
+    submissions_to_review = Submission.objects.filter(status=STATUS_PENDING)
     return render_to_response(
             'reviewapp/review_list.html',
             locals(),
