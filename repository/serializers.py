@@ -503,6 +503,12 @@ class FossilClinicalTrial(FossilProxy):
                 except ValueError:
                     value = datetime.datetime.strptime(value, '%Y-%m-%d')
 
+        elif isinstance(value, dict) and value.get('translations', None):
+            try:
+                value = [t for t in value['translations'] if t['language'].lower() == self._language.lower()][0]
+            except IndexError:
+                pass
+
         elif self._language:
             self._load_translations()
 
@@ -542,4 +548,63 @@ class FossilClinicalTrial(FossilProxy):
 
     def short_title(self):
         return safe_truncate(self.main_title(), 120)
+
+    @property
+    def recruitment_country(self):
+        countries = super(FossilClinicalTrial, self).__getattr__('recruitment_country')
+
+        def get_trans(item):
+            try:
+                return [t for t in item['translations'] if t['language'].lower() == self._language.lower()][0]
+            except IndexError:
+                return item
+
+        return map(get_trans, countries)
+
+    @property
+    def i_code(self):
+        codes = super(FossilClinicalTrial, self).__getattr__('i_code')
+
+        def get_trans(item):
+            try:
+                return [t for t in item['translations'] if t['language'].lower() == self._language.lower()][0]
+            except IndexError:
+                return item
+
+        return map(get_trans, codes)
+
+    @property
+    def public_contact(self):
+        contacts = super(FossilClinicalTrial, self).__getattr__('public_contact')
+
+        contacts = [FossilContact(contact, language=self._language) for contact in contacts]
+
+        return contacts
+
+    @property
+    def scientific_contact(self):
+        contacts = super(FossilClinicalTrial, self).__getattr__('scientific_contact')
+
+        contacts = [FossilContact(contact, language=self._language) for contact in contacts]
+
+        return contacts
+
+class FossilContact(FossilProxy):
+    _language = None
+
+    def __init__(self, contact, language):
+        contact['__model__'] = 'Contact'
+
+        super(FossilContact, self).__init__(contact)
+
+        self._language = language
+
+    @property
+    def country(self):
+        country = super(FossilContact, self).__getattr__('country')
+
+        try:
+            return [t for t in country['translations'] if t['language'].lower() == self._language.lower()][0]
+        except IndexError:
+            return country
 

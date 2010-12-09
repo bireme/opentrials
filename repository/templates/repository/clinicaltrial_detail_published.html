@@ -284,7 +284,7 @@
             <ul>
             {% for iv in object.i_code %}
                 <li>
-                    <span class="label">{{ iv.label }}</span>
+                    <span class="label">{{ iv.description|default:iv.label }}</span>
                 </li>
             {% endfor %}
             </ul>
@@ -339,7 +339,7 @@
     <ul>
         <li>
             <span class="label">{% trans 'Recruitment Status' %}:</span>
-            <span class="value">{{ object.recruitment_status.label }}</span>
+            <span class="value">{{ object.rec_status }}</span>
         </li>
         <li class="subset">
             <span class="legend">{% trans 'Recruitment Country' %}</span>
@@ -518,7 +518,8 @@
                         </li>
                         <li>
                             <b>{% trans 'City' %}: </b>
-                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country.description }}</span></span>
+                            <span><span class="locality">{{ contact.city }}</span> /
+                                <span class="country-name">{{ contact.country.description }}</span></span>
                         </li>
                         <li>
                             <b>{% trans 'Zip Code' %}:</b>
