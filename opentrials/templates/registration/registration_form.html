@@ -8,8 +8,12 @@
 
 {% block body %}
 
+<h3>{% trans 'You will receive an email with a link to activate your account.' %}</h3>
+
 {% if form.errors %}
-    <p>{% trans "Please correct the errors below." %}</p>
+    <ul class="errorlist">
+      <li>{% trans "Please correct the errors below." %}</li>
+    </ul>
 {% endif %}
 
 <form method="post" action="{% url registration_register %}">{% csrf_token %}
