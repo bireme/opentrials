@@ -107,6 +107,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.flatpages',
     'django.contrib.markup',
+    'deleting',
     'vocabulary',
     'repository',
     'reviewapp',
