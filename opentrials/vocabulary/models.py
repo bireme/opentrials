@@ -55,12 +55,13 @@ class SimpleVocabulary(models.Model):
 class VocabularyTranslation(Translation):
     # same as SimpleVocabulary, except for unique=False
     label = models.CharField(_('Label'), max_length=255, unique=False)
-    description = models.TextField(_('Description'), max_length=2000,
-                                   blank=True)
+    description = models.TextField(_('Description'), max_length=2000, blank=True)
 
     def serialize_for_fossil(self, as_string=True):
         json = {
             'label': self.label,
+            'description': self.description,
+            'language': self.language,
             }
 
         if as_string:
