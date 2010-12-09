@@ -1,6 +1,11 @@
-Message sent by the site: http://{{ site.domain }} ({{ site.name }})
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% blocktrans %}
+Message sent by the site: {{ site.domain }} ({{ site.name }})
 
 Message: {{ message }}
 
 {{ name }}
 
+{% endblocktrans %}

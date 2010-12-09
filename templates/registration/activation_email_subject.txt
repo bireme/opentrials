@@ -1,1 +1,5 @@
-Ativação de login para acesso a {{site.domain}}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% trans 'Activate your account' %} {{ site.name }}
+
