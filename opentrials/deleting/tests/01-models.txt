@@ -1,0 +1,104 @@
+CONTROLLED DELETION MODELS
+==========================
+
+    >>> from deleting.tests.test_models import MyClass, create_tables
+
+Create the table in database
+
+    >>> create_tables()
+
+Test table created with successful
+
+    >>> MyClass.objects.count()
+    0
+
+Creating some objects
+
+    >>> obj1 = MyClass.objects.create(title='Title 1', content='My content')
+    >>> obj2 = MyClass.objects.create(title='Title 2', content='My content')
+    >>> obj3 = MyClass.objects.create(title='Title 3', content='My content')
+
+    >>> MyClass.objects.count()
+    3
+
+Single methods
+--------------
+
+Deleting some ones
+
+    >>> obj1.delete()
+    >>> obj1._deleted
+    True
+
+    >>> MyClass.objects.count()
+    2
+
+    >>> MyClass.deleted_objects.count()
+    1
+
+    >>> MyClass.all_objects.count()
+    3
+
+Recovering object
+
+    >>> obj1.recover()
+    >>> obj1._deleted
+    False
+
+    >>> MyClass.objects.count()
+    3
+
+    >>> MyClass.deleted_objects.count()
+    0
+
+    >>> MyClass.all_objects.count()
+    3
+
+QuerySet methods
+----------------
+
+Deleting by QuerySet method (by manager isn't possible)
+
+    >>> MyClass.objects.filter(pk__lte=2).delete()
+
+    >>> MyClass.objects.count()
+    1
+
+    >>> MyClass.deleted_objects.count()
+    2
+
+    >>> MyClass.all_objects.count()
+    3
+
+Recovering by QuerySet method
+
+    >>> MyClass.objects.count()
+    1
+
+    >>> MyClass.deleted_objects.filter(pk__lte=2).count()
+    2
+
+    >>> MyClass.deleted_objects.filter(pk__lte=2).recover()
+
+    >>> MyClass.objects.count()
+    3
+
+    >>> MyClass.deleted_objects.count()
+    0
+
+    >>> MyClass.all_objects.count()
+    3
+
+Recovering by Manager method
+
+    >>> MyClass.deleted_objects.recover()
+
+    >>> MyClass.objects.count()
+    3
+
+    >>> MyClass.deleted_objects.count()
+    0
+
+    >>> MyClass.all_objects.count()
+    3
+
