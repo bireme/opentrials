@@ -253,9 +253,9 @@ def new_submission(request):
 
     if request.method == 'POST':
         initial_form = InitialTrialForm(request.POST,request.FILES)
-        sponsor_form = PrimarySponsorForm(request.POST)
+        #sponsor_form = PrimarySponsorForm(request.POST)
 
-        if initial_form.is_valid() and sponsor_form.is_valid():
+        if initial_form.is_valid(): # and sponsor_form.is_valid():
             trial = ClinicalTrial()
             su = Submission(creator=request.user)
             su.language = initial_form.cleaned_data['language']
@@ -273,11 +273,11 @@ def new_submission(request):
             trial.save()
             su.save()
             
-            sponsor = sponsor_form.save(commit=False)
-            sponsor.creator = request.user
-            sponsor.save()
+            #sponsor = sponsor_form.save(commit=False)
+            #sponsor.creator = request.user
+            #sponsor.save()
             
-            trial.primary_sponsor = su.primary_sponsor = sponsor
+            #trial.primary_sponsor = su.primary_sponsor = sponsor
             for country in initial_form.cleaned_data['recruitment_country']:
                 trial.recruitment_country.add(country) # What about the removed ones? FIXME
             #trial.recruitment_country = [CountryCode.objects.get(pk=id) for pk in initial_form.cleaned_data['recruitment_country']]
@@ -292,9 +292,9 @@ def new_submission(request):
             return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))
     else: 
         initial_form = InitialTrialForm(user=request.user) 
-        sponsor_form = PrimarySponsorForm() 
+        #sponsor_form = PrimarySponsorForm() 
         
-    forms = [initial_form, sponsor_form] 
+    forms = [initial_form] #, sponsor_form] 
     return render_to_response('reviewapp/new_submission.html', {
                               'forms': forms,},
                               context_instance=RequestContext(request))
