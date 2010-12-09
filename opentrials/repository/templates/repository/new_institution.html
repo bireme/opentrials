@@ -38,9 +38,32 @@
                 
                 if(target==='new_contact'){
                     new_institution_contact(target);
+                }else if(target==='primary_sponsor'){
+                    new_institution_field(target);
                 }else{
                     new_institution_sponsors(target);
                 }
+            }
+
+            function new_institution_field(target){
+                var data = '', op = '';
+                $('form *[name]').each(function(){data+=op+this.name+'='+this.value;op='&';});
+                $.post(
+                    $('form').attr('action'),
+                    data,
+                    function(data, ts, xmlhttp){
+                        if(data.match(/<[a-z]+[^>]+>/)){
+                            $("table.dataTable").html(data);
+                        }else {
+                            data=$.parseJSON(data);
+                            var select = opener.$('tr.'+target+' select');
+                            var newoption = opener.$('<option>').attr('value',data[0].pk).html(data[0].fields.name);
+                            select.append(newoption).val(data[0].pk);
+                            window.close();
+                        }
+                    },
+                    'text'
+                );
             }
 
             function new_institution_sponsors(target){

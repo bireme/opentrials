@@ -2,22 +2,22 @@
 {% load i18n %}
 
 {% block extrahead %}
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $("select[multiple]").asmSelect({
-                        addItemTarget: 'bottom',
-                        animate: true,
-                        highlight: true,
-                        sortable: false
-                });
-                $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
-            });
-        </script>
-        
     <script type="text/javascript">
-        // customization for the Brazilian registry of clinical trials
-        // #190 Show Brazil at the beginning of the selects
-        $(document).ready(function(){
+        function new_institution(target){
+            return window.open('{% url new_institution %}#'+target,'n_i','status=0,location=0,height=380');
+        }
+
+        $(document).ready(function() {
+            $("select[multiple]").asmSelect({
+                    addItemTarget: 'bottom',
+                    animate: true,
+                    highlight: true,
+                    sortable: false
+            });
+            $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
+
+            // customization for the Brazilian registry of clinical trials
+            // #190 Show Brazil at the beginning of the selects
             $("#asmSelect0 option").first().after($("#asmSelect0 option[value=1]"));
             $("#id_country option").first().after($("#id_country option[value=1]"));
         });

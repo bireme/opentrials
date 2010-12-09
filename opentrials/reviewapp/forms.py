@@ -14,6 +14,7 @@ from polyglot.multilingual_forms import MultilingualBaseForm
 from polyglot.multilingual_forms import MultilingualModelChoiceField, MultilingualModelMultipleChoiceField
 
 from repository.models import Institution, CountryCode
+from repository.widgets import SelectInstitution
 
 ACCESS = [
     ('public', 'Public'),
@@ -24,16 +25,25 @@ ACCESS = [
 class InitialTrialForm(ReviewModelForm):
     class Meta:
         model = Submission
-        exclude = ['primary_sponsor', 'trial', 'status', 'staff_note', 'title']
+        exclude = ['trial', 'status', 'staff_note', 'title']
         
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user', None)
+
+        self.base_fields.keyOrder = ['language', 'scientific_title', 'recruitment_country',
+                'primary_sponsor',]
+
         super(InitialTrialForm, self).__init__(*args, **kwargs)
+
+        self.fields['primary_sponsor'].queryset = Institution.objects.order_by('name')
+        self.fields['primary_sponsor'].widget = SelectInstitution(formset_prefix='primary_sponsor')
+
         if self.user:
             self.fields['language'] = forms.ChoiceField(label=_('Submission language'), 
                         choices=settings.MANAGED_LANGUAGES_CHOICES, 
                         initial=self.user.get_profile().preferred_language)
-            
+            self.fields['primary_sponsor'].queryset = self.fields['primary_sponsor'].queryset.filter(creator=self.user)
+
     form_title = _('Initial Trial Data')
     scientific_title = forms.CharField(widget=forms.Textarea, 
                                        label=_('Scientific Title'), 
@@ -44,7 +54,7 @@ class InitialTrialForm(ReviewModelForm):
                                                     label_field='description',)
     language = forms.ChoiceField(label=_('Submission language'), 
                                  choices=settings.MANAGED_LANGUAGES_CHOICES)
-    
+
 class PrimarySponsorForm(ReviewModelForm):
     class Meta:
         model = Institution
