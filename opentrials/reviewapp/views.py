@@ -252,14 +252,17 @@ def terms_of_use(request):
 def new_submission(request):
 
     if request.method == 'POST':
-        initial_form = InitialTrialForm(request.POST,request.FILES)
+        initial_form = InitialTrialForm(request.POST, request.FILES, user=request.user)
         #sponsor_form = PrimarySponsorForm(request.POST)
 
         if initial_form.is_valid(): # and sponsor_form.is_valid():
             trial = ClinicalTrial()
+
             su = Submission(creator=request.user)
             su.language = initial_form.cleaned_data['language']
             su.title = initial_form.cleaned_data['scientific_title']
+            su.primary_sponsor = initial_form.cleaned_data['primary_sponsor']
+
             if su.language == 'en':
                 trial.scientific_title = su.title
             else:
@@ -270,9 +273,11 @@ def new_submission(request):
                 ctt.scientific_title = su.title
                 ctt.save()
 
+            trial.primary_sponsor = su.primary_sponsor
             trial.save()
+
             su.save()
-            
+
             #sponsor = sponsor_form.save(commit=False)
             #sponsor.creator = request.user
             #sponsor.save()
@@ -291,7 +296,7 @@ def new_submission(request):
 
             return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))
     else: 
-        initial_form = InitialTrialForm(user=request.user) 
+        initial_form = InitialTrialForm(user=request.user)
         #sponsor_form = PrimarySponsorForm() 
         
     forms = [initial_form] #, sponsor_form] 

@@ -33,10 +33,11 @@ class InitialTrialForm(ReviewModelForm):
         self.base_fields.keyOrder = ['language', 'scientific_title', 'recruitment_country',
                 'primary_sponsor',]
 
+        self.base_fields['primary_sponsor'].widget = SelectInstitution(formset_prefix='primary_sponsor')
+
         super(InitialTrialForm, self).__init__(*args, **kwargs)
 
         self.fields['primary_sponsor'].queryset = Institution.objects.filter(creator=self.user).order_by('name')
-        self.fields['primary_sponsor'].widget = SelectInstitution(formset_prefix='primary_sponsor')
 
         if self.user:
             self.fields['language'] = forms.ChoiceField(label=_('Submission language'), 
