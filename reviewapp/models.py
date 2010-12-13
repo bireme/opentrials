@@ -67,7 +67,7 @@ class Submission(ControlledDeletion):
     updater = models.ForeignKey(User, null=True, related_name='submission_updater', editable=False)
     updated = models.DateTimeField(null=True, editable=False)
     title = models.TextField(u'Scientific title', max_length=2000)
-    primary_sponsor = models.OneToOneField(Institution, null=True, blank=True,
+    primary_sponsor = models.ForeignKey(Institution, null=True, blank=True,
                                     verbose_name=_('Primary Sponsor'))
 
     trial = models.OneToOneField(ClinicalTrial, null=True)
