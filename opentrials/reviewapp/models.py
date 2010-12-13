@@ -18,7 +18,7 @@ from polyglot.models import Translation
 from repository.trial_validation import TRIAL_FORMS
 from consts import REMARK, MISSING, PARTIAL, COMPLETE
 import settings
-
+from deleting.models import ControlledDeletion
 
 SUBMISSION_STATUS = [
     ('draft', _('draft')), # clinical trial is 'processing'
@@ -55,7 +55,7 @@ class UserProfile(models.Model):
     def amount_tickets(self):
         return u"%03d" % (Ticket.objects.filter(creator=self.user).count())
 
-class Submission(models.Model):
+class Submission(ControlledDeletion):
     class Meta:
         ordering = ['-created']
         permissions = (

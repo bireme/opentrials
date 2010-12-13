@@ -21,6 +21,7 @@ from vocabulary.models import InterventionCode
 from vocabulary.models import StudyPurpose, InterventionAssigment, StudyMasking, StudyAllocation
 
 from polyglot.models import Translation
+from deleting.models import ControlledDeletion, NotDeletedManager
 
 from repository import choices
 
@@ -48,7 +49,7 @@ def generate_trial_id(prefix, num_digits):
     s += ''.join(choice(BASE28) for i in range(1, num_digits))
     return '-'.join([prefix, s])
 
-class TrialRegistrationDataSetModel(models.Model):
+class TrialRegistrationDataSetModel(ControlledDeletion):
     """More details on:
         http://reddes.bvsalud.org/projects/clinical-trials/wiki/TrialRegistrationDataSet"""
 
@@ -95,11 +96,11 @@ class TrialRegistrationDataSetModel(models.Model):
     class Meta:
         abstract = True
         
-class TrialsPublished(models.Manager):
+class TrialsPublished(NotDeletedManager):
     def get_query_set(self):
         return super(TrialsPublished, self).get_query_set().filter(status__exact='published')
 
-class ClinicalTrialManager(models.Manager):
+class ClinicalTrialManager(NotDeletedManager):
     def deserialize_for_fossil(self, data, persistent=False):
         return deserialize_trial(data, persistent)
 
@@ -278,7 +279,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     class Meta:
         ordering = ['-updated',]
 
-    def save(self):
+    def save(self, *args, **kwargs):
         if self.id:
             self.updated = datetime.now()
         if self.status == choices.PUBLISHED_STATUS and not self.trial_id:
@@ -288,7 +289,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
             for i in range(TRIAL_ID_TRIES):
                 self.trial_id = generate_trial_id(TRIAL_ID_PREFIX, TRIAL_ID_DIGITS)
                 try:
-                    super(ClinicalTrial, self).save()
+                    super(ClinicalTrial, self).save(*args, **kwargs)
                 except IntegrityError:
                     if i < TRIAL_ID_TRIES:
                         sleep(2**i) # wait to try again
@@ -297,7 +298,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
                 else:
                     break # no need to try again
         else:
-            super(ClinicalTrial, self).save()
+            super(ClinicalTrial, self).save(*args, **kwargs)
 
     def identifier(self):
         return self.trial_id or '(req:%s)' % self.pk
@@ -422,7 +423,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         return self.submission.attachment_set.all().select_related()
 
     def serialize_for_fossil(self, as_string=True):
-        return serialize_trial(self, as_string, attrs_to_ignore=['status'])
+        return serialize_trial(self, as_string, attrs_to_ignore=['status','_deleted'])
 
     @property
     def public_url(self):

@@ -1,0 +1,39 @@
+DELETION CONTROL
+================
+
+Creating submission to delete and test deletion control
+-------------------------------------------------------
+
+    >>> from django.contrib.auth.models import User
+    >>> trialist, new = User.objects.get_or_create(username='trialist')
+
+    >>> from reviewapp.models import Submission
+    >>> from repository.models import ClinicalTrial
+
+    >>> first_submission = Submission.objects.create(creator=trialist)
+    >>> first_submission.trial = ClinicalTrial.objects.create()
+    >>> first_submission.save()
+    
+    >>> count_before = Submission.objects.count()
+
+    >>> first_submission.delete()
+    
+    >>> count_before == Submission.objects.count() + 1
+    True
+
+    >>> first_submission.recover()
+    
+    >>> count_before == Submission.objects.count()
+    True
+
+Phisical deletion
+
+    >>> first_submission.delete()
+    >>> Submission.deleted_objects.all().delete()
+    
+    >>> count_before == Submission.objects.count() + 1
+    True
+
+    >>> Submission.deleted_objects.count()
+    0
+
