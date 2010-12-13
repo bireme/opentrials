@@ -131,6 +131,7 @@ TEMPLATE_CONTEXT_PROCESSORS =(
     'context_processors.opentrials.polyglot',
     'context_processors.opentrials.jquery',
     'context_processors.opentrials.google_analytics',
+    'context_processors.opentrials.latest_tweets',
 )
 
 AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
@@ -178,6 +179,9 @@ REG_NAME = 'RBEC'
 FIXTURE_DIRS = ('fixtures',)
 
 PAGINATOR_CT_PER_PAGE = 10
+
+TWITTER = 'ensaiosclinicos'
+TWITTER_TIMEOUT = 18000 # expires in 5 min
 
 JQUERY_URL = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
 JQUERY_UI_URL = 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js'
