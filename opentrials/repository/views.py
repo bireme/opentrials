@@ -78,7 +78,7 @@ def check_user_can_edit_trial(func):
         elif request.user == request.ct.submission.creator:
             if request.ct.submission.status not in (STATUS_DRAFT, STATUS_RESUBMIT):
                 request.can_change_trial = False
-                messages.warning(request, unicode(_('You cannot modify this trial because it has not the status "Draft".')))
+                messages.warning(request, unicode(_('You cannot modify this trial because it is being revised.')))
 
         elif not request.user.is_staff: # If this is a staff member...
             request.can_change_trial = False
