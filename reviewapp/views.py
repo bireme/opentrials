@@ -51,7 +51,7 @@ def index(request):
             flat_trans = page
         
     fossil_trials = ClinicalTrial.fossils.published().order_by('-creation')[:3]
-    clinical_trials = fossil_trials.proxies()
+    clinical_trials = fossil_trials.proxies(language=request.LANGUAGE_CODE)
 
     return render_to_response('reviewapp/index.html', {
                           'clinical_trials': clinical_trials,

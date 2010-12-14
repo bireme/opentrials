@@ -1083,3 +1083,13 @@ table.trial_table TD {
 .required_fields span {
     color: #ff0000;
 }
+
+ul.messages { 
+} 
+
+ul.messages li { 
+    border: 2px solid #D2AA4F; 
+    background: #FAFC98; 
+    font-size: 1.2em; 
+    padding: 5px; 
+}
