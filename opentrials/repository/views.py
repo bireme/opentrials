@@ -16,9 +16,10 @@ from django.template.context import RequestContext
 from django.contrib.sites.models import Site
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.utils.translation import get_language
+from django.contrib import messages
 
 from reviewapp.models import Attachment, Submission, Remark
-from reviewapp.models import STATUS_PENDING, STATUS_RESUBMIT, STATUS_DRAFT
+from reviewapp.models import STATUS_PENDING, STATUS_RESUBMIT, STATUS_DRAFT, STATUS_APPROVED
 from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
 from reviewapp.consts import STEP_STATES, REMARK, MISSING, PARTIAL, COMPLETE
 
@@ -67,23 +68,34 @@ def check_user_can_edit_trial(func):
     """
     def _inner(request, trial_pk, *args, **kwargs):
         request.ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
+        request.can_change_trial = True
 
-        if ( not request.user.is_staff and # If this is a staff member...
+        if request.ct.submission.status == STATUS_APPROVED:
+            request.can_change_trial = False
+            messages.warning(request, unicode(_('This trial cannot be modified because it has already been approved.')))
 
-             # or the creator in status draft...
-             not( request.ct.submission.status in (STATUS_DRAFT, STATUS_RESUBMIT) and
-                  request.user == request.ct.submission.creator ) and
+        # Creator can edit in statuses draft and resubmited but can view on other statuses
+        elif request.user == request.ct.submission.creator:
+            if request.ct.submission.status not in (STATUS_DRAFT, STATUS_RESUBMIT):
+                request.can_change_trial = False
+                messages.warning(request, unicode(_('You cannot modify this trial because it has not the status "Draft".')))
 
-             # or a reviewer in status pending
-             not( request.ct.submission.status == STATUS_PENDING and
-                  request.user != request.ct.submission.creator and
-                  user_in_group(request.user, 'reviewers')) ):
+        elif not request.user.is_staff: # If this is a staff member...
+            request.can_change_trial = False
+            messages.warning(request, unicode(_('Only the creator can modify a trial.')))
 
-            return render_to_response(
-                    '403.html',
-                    {'site': Site.objects.get_current()},
-                    context_instance=RequestContext(request),
-                    )
+            # A reviewer in status pending
+            if not( request.ct.submission.status == STATUS_PENDING and
+                    user_in_group(request.user, 'reviewers') ):
+
+                resp = render_to_response(
+                        '403.html',
+                        {'site': Site.objects.get_current()},
+                        context_instance=RequestContext(request),
+                        )
+                resp.status_code = 403
+
+                return resp
 
         return func(request, trial_pk, *args, **kwargs)
 
@@ -99,7 +111,7 @@ def edit_trial_index(request, trial_pk):
     if status in [REMARK, MISSING]:
         submit = False
     else:
-        submit = True
+        submit = request.can_change_trial
 
     if request.method == 'POST' and submit:
         sub = ct.submission
@@ -341,7 +353,7 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
 @login_required
 def new_institution(request):
 
-    if request.POST:
+    if request.method == 'POST':
         new_institution = NewInstitution(request.POST)
         if new_institution.is_valid():
             institution = new_institution.save(commit=False)
@@ -379,7 +391,7 @@ def step_1(request, trial_pk):
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
 
-    if request.POST:
+    if request.method == 'POST' and request.can_change_trial:
         form = TrialIdentificationForm(request.POST, instance=ct,
                                        display_language=request.user.get_profile().preferred_language)
         SecondaryIdSet = inlineformset_factory(ClinicalTrial, TrialNumber,
@@ -427,7 +439,7 @@ def step_2(request, trial_pk):
     
     qs_primary_sponsor = Institution.objects.filter(creator=request.user).order_by('name')
 
-    if request.POST:
+    if request.method == 'POST' and request.can_change_trial:
         form = PrimarySponsorForm(request.POST, instance=ct, queryset=qs_primary_sponsor,
                                   display_language=request.user.get_profile().preferred_language)
         SecondarySponsorSet = inlineformset_factory(ClinicalTrial, TrialSecondarySponsor,
@@ -510,7 +522,7 @@ def step_3(request, trial_pk):
                                            aspect=choices.TRIAL_ASPECT[0][0],
                                            level=choices.DESCRIPTOR_LEVEL[1][0])
 
-    if request.POST:
+    if request.method == 'POST' and request.can_change_trial:
         form = HealthConditionsForm(request.POST, instance=ct,
                                     display_language=request.user.get_profile().preferred_language)
         general_desc_formset = GeneralDescriptorSet(request.POST,queryset=general_qs,prefix='g')
@@ -575,7 +587,7 @@ def step_4(request, trial_pk):
     queryset = Descriptor.objects.filter(trial=trial_pk,
                                            aspect=choices.TRIAL_ASPECT[1][0],
                                            level=choices.DESCRIPTOR_LEVEL[0][0])
-    if request.POST:
+    if request.method == 'POST' and request.can_change_trial:
         form = InterventionForm(request.POST, instance=ct,
                                 display_language=request.user.get_profile().preferred_language)
         specific_desc_formset = DescriptorFormSet(request.POST, queryset=queryset)
@@ -619,7 +631,7 @@ def step_5(request, trial_pk):
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
 
-    if request.POST:
+    if request.method == 'POST' and request.can_change_trial:
         form = RecruitmentForm(request.POST, instance=ct,
                                display_language=request.user.get_profile().preferred_language)
 
@@ -653,7 +665,7 @@ def step_6(request, trial_pk):
             return render_to_response('403.html', {'site': Site.objects.get_current(),},
                             context_instance=RequestContext(request))
 
-    if request.POST:
+    if request.method == 'POST' and request.can_change_trial:
         form = StudyTypeForm(request.POST, instance=ct,
                              display_language=request.user.get_profile().preferred_language)
 
@@ -711,7 +723,7 @@ def step_7(request, trial_pk):
     primary_qs = Outcome.objects.filter(trial=ct, interest=choices.OUTCOME_INTEREST[0][0])
     secondary_qs = Outcome.objects.filter(trial=ct, interest=choices.OUTCOME_INTEREST[1][0])
 
-    if request.POST:
+    if request.method == 'POST' and request.can_change_trial:
         primary_outcomes_formset = PrimaryOutcomesSet(request.POST, queryset=primary_qs, prefix='primary')
         secondary_outcomes_formset = SecondaryOutcomesSet(request.POST, queryset=secondary_qs, prefix='secondary')
 
@@ -773,7 +785,7 @@ def step_8(request, trial_pk):
 
     contact_qs = Contact.objects.none()
 
-    if request.POST:
+    if request.method == 'POST' and request.can_change_trial:
         inlineformsets = [fs(request.POST,instance=ct) for fs in InlineFormSetClasses]
         new_contact_formset = ContactFormSet(request.POST,queryset=contact_qs,prefix='new_contact')
 
@@ -830,7 +842,7 @@ def step_9(request, trial_pk):
 
     existing_attachments = Attachment.objects.filter(submission=su)
 
-    if request.method == 'POST':
+    if request.method == 'POST' and request.can_change_trial:
         new_attachment_formset = NewAttachmentFormSet(request.POST,
                                                       request.FILES,
                                                       prefix='new')

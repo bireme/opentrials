@@ -326,7 +326,7 @@ def upload_trial(request):
 def open_remark(request, submission_id, context):
     submission = get_object_or_404(Submission, id=int(submission_id))
 
-    if request.POST:
+    if request.method == 'POST':
         form = OpenRemarkForm(request.POST)
 
         if form.is_valid():

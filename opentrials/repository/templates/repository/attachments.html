@@ -20,6 +20,8 @@
 
     <h2>{% trans title %}</h2>
 
+    {% include "repository/messages.html" %}
+
     {% if existing_attachments %}
         <h3>{% trans 'Existing attachments' %}</h3>
 
@@ -57,7 +59,7 @@
             </div>
             </fieldset>
         {% endfor %}
-        <input type="submit" value="{% trans "Save" %}"/>
+        <input type="submit" value="{% trans "Save" %}" {% if not request.can_change_trial %}disabled="disabled"{% endif %}/>
     </form>
 
 {% endblock %}
