@@ -18363,7 +18363,7 @@
         "vocabulary", 
         "studyphase"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 9
     }
   }, 
@@ -18659,6 +18659,118 @@
       ], 
       "language": "pt-br", 
       "object_id": 3
+    }
+  }, 
+  {
+    "pk": 1989, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Iniciado ainda n\u00e3o recrutando", 
+      "label": "iniciado ainda n\u00e3o recrutando", 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ], 
+      "language": "pt-br", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 1990, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Recrutando", 
+      "label": "recrutando", 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ], 
+      "language": "pt-br", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 1991, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Suspenso", 
+      "label": "suspenso", 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ], 
+      "language": "pt-br", 
+      "object_id": 3
+    }
+  }, 
+  {
+    "pk": 1992, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Recrutamento conclu\u00eddo", 
+      "label": "recrutamento conclu\u00eddo", 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ], 
+      "language": "pt-br", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 1993, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Outro", 
+      "label": "outro", 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ], 
+      "language": "pt-br", 
+      "object_id": 5
+    }
+  }, 
+  {
+    "pk": 1994, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "T\u00e9rmino prematuro", 
+      "label": "t\u00e9rmino prematuro", 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ], 
+      "language": "pt-br", 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 1995, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Cancelado", 
+      "label": "cancelado", 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ], 
+      "language": "pt-br", 
+      "object_id": 7
+    }
+  }, 
+  {
+    "pk": 1996, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "An\u00e1lise de dados completa", 
+      "label": "an\u00e1lise de dados completa", 
+      "content_type": [
+        "vocabulary", 
+        "recruitmentstatus"
+      ], 
+      "language": "pt-br", 
+      "object_id": 8
     }
   }, 
   {
@@ -21446,15 +21558,6 @@
     }
   }, 
   {
-    "pk": 9, 
-    "model": "vocabulary.studyphase", 
-    "fields": {
-      "order": 0, 
-      "description": "phase zero", 
-      "label": "0"
-    }
-  }, 
-  {
     "pk": 3, 
     "model": "vocabulary.studyphase", 
     "fields": {
@@ -21509,10 +21612,19 @@
     }
   }, 
   {
+    "pk": 9, 
+    "model": "vocabulary.studyphase", 
+    "fields": {
+      "order": 90, 
+      "description": "phase zero", 
+      "label": "0"
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
-      "order": 0, 
+      "order": 10, 
       "description": "Not yet recruiting", 
       "label": "not yet recruiting"
     }
@@ -21521,7 +21633,7 @@
     "pk": 2, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
-      "order": 0, 
+      "order": 20, 
       "description": "Open to recruitment\r\n", 
       "label": "recruiting"
     }
@@ -21530,7 +21642,7 @@
     "pk": 3, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
-      "order": 0, 
+      "order": 30, 
       "description": "Recruitment has been temporarily stopped", 
       "label": "suspended"
     }
@@ -21539,7 +21651,7 @@
     "pk": 4, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
-      "order": 0, 
+      "order": 40, 
       "description": "Participants are no longer being recruited. The trial is closed. Participants may, however, still be in follow-up.", 
       "label": "recruitment completed"
     }
@@ -21548,7 +21660,7 @@
     "pk": 5, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
-      "order": 0, 
+      "order": 50, 
       "description": "Other recruitment status", 
       "label": "other"
     }
@@ -21557,7 +21669,7 @@
     "pk": 6, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
-      "order": 0, 
+      "order": 60, 
       "description": "Terminated", 
       "label": "terminated"
     }
@@ -21566,7 +21678,7 @@
     "pk": 7, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
-      "order": 0, 
+      "order": 70, 
       "description": "Withdrawn", 
       "label": "withdrawn"
     }
@@ -21575,7 +21687,7 @@
     "pk": 8, 
     "model": "vocabulary.recruitmentstatus", 
     "fields": {
-      "order": 0, 
+      "order": 80, 
       "description": "Data analysis completed", 
       "label": "data analysis completed"
     }
