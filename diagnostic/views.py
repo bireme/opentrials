@@ -41,7 +41,7 @@ def dump_data(request,appname):
     app_list = SortedDict()
     
     try:
-        if request.POST:
+        if request.method == 'POST':
             for appname in request.POST.getlist('apps'):
                 app = get_app(appname)
                 app_list[app] = None
