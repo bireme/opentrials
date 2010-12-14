@@ -8,7 +8,7 @@
         "assistance", 
         "category"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 1
     }
   }, 
@@ -21,7 +21,7 @@
         "assistance", 
         "category"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 6
     }
   }, 
@@ -60,7 +60,7 @@
         "assistance", 
         "category"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 2
     }
   }, 
@@ -87,7 +87,7 @@
         "assistance", 
         "question"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 14
     }
   }, 
@@ -101,7 +101,7 @@
         "assistance", 
         "question"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 13
     }
   }, 
@@ -115,7 +115,7 @@
         "assistance", 
         "question"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 15
     }
   }, 
@@ -129,7 +129,7 @@
         "assistance", 
         "question"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 16
     }
   }, 
@@ -143,7 +143,7 @@
         "assistance", 
         "question"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 17
     }
   }, 
@@ -157,7 +157,7 @@
         "assistance", 
         "question"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 18
     }
   }, 
@@ -171,7 +171,7 @@
         "assistance", 
         "question"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 19
     }
   }, 
@@ -185,7 +185,7 @@
         "assistance", 
         "question"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 20
     }
   }, 
@@ -199,7 +199,7 @@
         "assistance", 
         "question"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 21
     }
   }, 
@@ -213,7 +213,7 @@
         "assistance", 
         "question"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 22
     }
   }, 
@@ -227,7 +227,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 1
     }
   }, 
@@ -255,7 +255,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 2
     }
   }, 
@@ -269,7 +269,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 4
     }
   }, 
@@ -283,7 +283,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 25
     }
   }, 
@@ -297,7 +297,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 5
     }
   }, 
@@ -311,7 +311,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 9
     }
   }, 
@@ -325,7 +325,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 10
     }
   }, 
@@ -339,7 +339,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 11
     }
   }, 
@@ -353,7 +353,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 12
     }
   }, 
@@ -367,7 +367,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 19
     }
   }, 
@@ -381,7 +381,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 13
     }
   }, 
@@ -395,7 +395,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 20
     }
   }, 
@@ -409,7 +409,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 14
     }
   }, 
@@ -423,7 +423,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 17
     }
   }, 
@@ -437,7 +437,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 15
     }
   }, 
@@ -451,7 +451,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 18
     }
   }, 
@@ -465,7 +465,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 16
     }
   }, 
@@ -479,7 +479,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 32
     }
   }, 
@@ -493,7 +493,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 39
     }
   }, 
@@ -507,7 +507,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 34
     }
   }, 
@@ -521,7 +521,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 35
     }
   }, 
@@ -535,7 +535,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 36
     }
   }, 
@@ -549,7 +549,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 37
     }
   }, 
@@ -563,7 +563,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 38
     }
   }, 
@@ -577,7 +577,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 33
     }
   }, 
@@ -591,7 +591,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 40
     }
   }, 
@@ -605,7 +605,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 41
     }
   }, 
@@ -619,7 +619,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 42
     }
   }, 
@@ -633,7 +633,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 8
     }
   }, 
@@ -647,7 +647,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 22
     }
   }, 
@@ -661,7 +661,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 24
     }
   }, 
@@ -675,7 +675,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 46
     }
   }, 
@@ -689,7 +689,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 44
     }
   }, 
@@ -703,7 +703,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 48
     }
   }, 
@@ -717,7 +717,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 59
     }
   }, 
@@ -731,7 +731,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 58
     }
   }, 
@@ -745,7 +745,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 57
     }
   }, 
@@ -759,7 +759,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 56
     }
   }, 
@@ -773,7 +773,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 55
     }
   }, 
@@ -787,7 +787,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 54
     }
   }, 
@@ -801,7 +801,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 53
     }
   }, 
@@ -815,7 +815,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 52
     }
   }, 
@@ -829,7 +829,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 51
     }
   }, 
@@ -843,7 +843,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 50
     }
   }, 
@@ -857,7 +857,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 49
     }
   }, 
@@ -871,7 +871,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 47
     }
   }, 
@@ -885,7 +885,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 43
     }
   }, 
@@ -899,7 +899,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 45
     }
   }, 
@@ -913,7 +913,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 3
     }
   }, 
@@ -927,7 +927,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 60
     }
   }, 
@@ -941,7 +941,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 21
     }
   }, 
@@ -955,7 +955,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 23
     }
   }, 
@@ -969,7 +969,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 26
     }
   }, 
@@ -983,7 +983,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 28
     }
   }, 
@@ -997,7 +997,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 29
     }
   }, 
@@ -1011,7 +1011,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 31
     }
   }, 
@@ -1025,7 +1025,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 30
     }
   }, 
@@ -1039,7 +1039,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 61
     }
   }, 
@@ -1053,7 +1053,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 62
     }
   }, 
@@ -1067,7 +1067,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 63
     }
   }, 
@@ -1081,7 +1081,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 66
     }
   }, 
@@ -1095,7 +1095,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 67
     }
   }, 
@@ -1109,7 +1109,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 68
     }
   }, 
@@ -1123,7 +1123,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 65
     }
   }, 
@@ -1137,7 +1137,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 64
     }
   }, 
@@ -1151,7 +1151,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 6
     }
   }, 
@@ -1165,7 +1165,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 7
     }
   }, 
@@ -1179,7 +1179,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 69
     }
   }, 
@@ -1193,7 +1193,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 70
     }
   }, 
@@ -1207,7 +1207,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 71
     }
   }, 
@@ -1221,7 +1221,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 72
     }
   }, 
@@ -1235,7 +1235,7 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 73
     }
   }, 
@@ -1249,8 +1249,22 @@
         "assistance", 
         "fieldhelp"
       ], 
-      "language": "pt-BR", 
+      "language": "pt-br", 
       "object_id": 74
+    }
+  }, 
+  {
+    "pk": 75, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 27
     }
   }, 
   {
@@ -2014,6 +2028,44 @@
     }
   }, 
   {
+    "pk": 77, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "utrn_number", 
+      "example": "", 
+      "form": "TrialIdentificationForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "assistance.category", 
+    "fields": {
+      "label": "System"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "assistance.category", 
+    "fields": {
+      "label": "Interface"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "assistance.category", 
+    "fields": {
+      "label": "WorkFlow"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "assistance.category", 
+    "fields": {
+      "label": "Study registration"
+    }
+  }, 
+  {
     "pk": 16, 
     "model": "assistance.question", 
     "fields": {
@@ -2121,34 +2173,6 @@
       "created": "2010-10-25 15:50:30", 
       "order": 220, 
       "title": "Is the  registration of a clinical trial at Plataforma Brasil equivalent to the registration at Brazilian Clinical Trials Registry?"
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "assistance.category", 
-    "fields": {
-      "label": "System"
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "assistance.category", 
-    "fields": {
-      "label": "Interface"
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "assistance.category", 
-    "fields": {
-      "label": "WorkFlow"
-    }
-  }, 
-  {
-    "pk": 6, 
-    "model": "assistance.category", 
-    "fields": {
-      "label": "Study registration"
     }
   }
 ]
