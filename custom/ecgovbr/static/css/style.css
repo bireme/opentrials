@@ -1093,3 +1093,17 @@ ul.messages li {
     font-size: 1.2em; 
     padding: 5px; 
 }
+
+
+.i_code ul {
+  width: 98%;
+  margin-bottom:10px;
+  overflow:hidden;
+}
+.i_code li {
+  line-height:1.5em;
+  float:left;
+  display:inline;
+  width:30%;
+}
+
