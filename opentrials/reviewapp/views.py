@@ -274,6 +274,7 @@ def new_submission(request):
                 ctt.save()
 
             trial.primary_sponsor = su.primary_sponsor
+            trial.language = su.language
             trial.save()
 
             su.save()

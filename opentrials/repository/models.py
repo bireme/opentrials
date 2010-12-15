@@ -7,6 +7,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
+from django.conf import settings
 
 from fossil.models import Fossil, FossilManager
 from datetime import datetime
@@ -273,6 +274,9 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     staff_note = models.CharField(_('Record Note (staff use only)'),
                                   max_length='255',
                                   blank=True)
+    language = models.CharField(_('Submission language'), max_length=10,
+                                choices=settings.MANAGED_LANGUAGES_CHOICES,
+                                default=settings.LANGUAGE_CODE)
 
     translations = generic.GenericRelation('ClinicalTrialTranslation')
     

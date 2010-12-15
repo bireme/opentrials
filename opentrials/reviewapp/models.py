@@ -17,7 +17,7 @@ from polyglot.models import Translation
 
 from repository.trial_validation import TRIAL_FORMS
 from consts import REMARK, MISSING, PARTIAL, COMPLETE
-import settings
+from django.conf import settings
 from deleting.models import ControlledDeletion
 
 SUBMISSION_STATUS = [
