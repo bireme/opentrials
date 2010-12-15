@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-15 12:44+0000\n"
-"PO-Revision-Date: 2010-10-04 18:43\n"
+"POT-Creation-Date: 2010-12-15 21:31+0000\n"
+"PO-Revision-Date: 2010-12-15 21:44\n"
 "Last-Translator: <appec@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -80,14 +80,12 @@ msgid "Internal Server Error (500)"
 msgstr "Error interno del servidor (500)"
 
 #: custom/ecgovbr/templates/500.html:8 templates/500.html:8
-msgid ""
-"The server encountered an unexpected condition which prevented it from "
-"fulfilling the request."
+msgid "The server encountered an unexpected condition which prevented it from fulfilling the request."
 msgstr ""
 
 #: custom/ecgovbr/templates/base.html:7 custom/ecgovbr/templates/base.html:35
 msgid "Brazilian Registry of Clinical Trials"
-msgstr ""
+msgstr "Registro Brasileño de Ensayos Clínicos"
 
 #: custom/ecgovbr/templates/base.html:45 custom/ecgovbr/templates/base.html:85
 #: registration/forms.py:35 templates/base.html:51 templates/base.html.py:91
@@ -100,11 +98,11 @@ msgstr "Usuario"
 #: reviewapp/templates/reviewapp/dashboard.html:21
 #: reviewapp/templates/reviewapp/new_submission.html:30
 #: reviewapp/templates/reviewapp/review_list.html:22
-#: reviewapp/templates/reviewapp/submission_list.html:28
+#: reviewapp/templates/reviewapp/submission_list.html:29
 #: reviewapp/templates/reviewapp/terms_of_use.html:7
 #: reviewapp/templates/reviewapp/upload_trial.html:7 templates/base.html:55
 msgid "Submissions"
-msgstr ""
+msgstr "Sumisiones"
 
 #: custom/ecgovbr/templates/base.html:53 templates/base.html:59
 #: tickets/templates/tickets/new_iteration.html:7
@@ -112,7 +110,7 @@ msgstr ""
 #: tickets/templates/tickets/ticket_detail.html:8
 #: tickets/templates/tickets/user_tickets.html:25
 msgid "Tickets"
-msgstr ""
+msgstr "Tickets"
 
 #: custom/ecgovbr/templates/base.html:58
 #: reviewapp/templates/reviewapp/user_profile.html:17 templates/base.html:64
@@ -156,7 +154,7 @@ msgstr "¿Olvidaste tu contraseña?"
 #: custom/ecgovbr/templates/base.html:99
 #: reviewapp/templates/reviewapp/login.html:21 templates/base.html:105
 msgid "create an account to submit trial records"
-msgstr ""
+msgstr "cree una cuenta para someter un registro de ensayo clínico"
 
 #: custom/ecgovbr/templates/base.html:99
 #: custom/ecgovbr/templates/registration/registration_complete.html:7
@@ -165,7 +163,7 @@ msgstr ""
 #: templates/registration/registration_complete.html:7
 #: templates/registration/registration_form.html:6
 msgid "Register"
-msgstr ""
+msgstr "Regístrese"
 
 #: custom/ecgovbr/templates/base.html:129 reviewapp/models.py:248
 #: reviewapp/templates/reviewapp/news_detail.html:5
@@ -194,7 +192,6 @@ msgid "Contact"
 msgstr "Contacto"
 
 #: custom/ecgovbr/templates/base.html:138 templates/base.html:122
-#, fuzzy
 msgid "Search trials"
 msgstr "Búsqueda"
 
@@ -206,15 +203,15 @@ msgstr "Home"
 
 #: custom/ecgovbr/templates/base_columns.html:14
 msgid "Latest Tweets"
-msgstr ""
+msgstr "Últimos Tweets"
 
 #: custom/ecgovbr/templates/base_columns.html:22
 #: custom/ecgovbr/templates/base_columns.html:24
 msgid "Follow us on Twitter!"
-msgstr ""
+msgstr "Acompáñenos en el Twitter!"
 
 #: custom/ecgovbr/templates/base_columns.html:36
-#: reviewapp/templates/reviewapp/index.html:20 templates/base_columns.html:15
+#: reviewapp/templates/reviewapp/index.html:21 templates/base_columns.html:15
 #: templates/base_columns.html.py:36
 msgid "List all"
 msgstr "Lista de todos los"
@@ -229,7 +226,7 @@ msgstr "Reclutamiento"
 #: repository/templates/repository/clinicaltrial_recruiting.html:59
 #: templates/base_columns.html:25
 msgid "No clinical trials recruiting."
-msgstr ""
+msgstr "Ningún reclutamiento de ensayos clínicos."
 
 #: custom/ecgovbr/templates/registration/activation_complete.html:6
 #: templates/registration/activation_complete.html:6
@@ -239,7 +236,7 @@ msgstr "Activación completa"
 #: custom/ecgovbr/templates/registration/activation_complete.html:11
 #: templates/registration/activation_complete.html:11
 msgid "Your account is now activated"
-msgstr ""
+msgstr "Su cuenta está activa ahora"
 
 #: custom/ecgovbr/templates/registration/activation_complete.html:13
 #: templates/registration/activation_complete.html:13
@@ -249,7 +246,7 @@ msgstr "Ahora puede ingresar usando su nombre de usuario y contraseña."
 #: custom/ecgovbr/templates/registration/activation_email.txt:4
 #: templates/registration/activation_email.txt:4
 msgid "Please click on the link below to activate your account."
-msgstr ""
+msgstr "Por favor, pinche el enlace abajo para activar su cuenta."
 
 #: custom/ecgovbr/templates/registration/activation_email.txt:8
 #: templates/registration/activation_email.txt:8
@@ -262,49 +259,47 @@ msgstr ""
 #: custom/ecgovbr/templates/registration/activation_email_subject.txt:4
 #: templates/registration/activation_email_subject.txt:4
 msgid "Activate your account"
-msgstr ""
+msgstr "Activ su cuenta"
 
 #: custom/ecgovbr/templates/registration/registration_complete.html:9
 #: templates/registration/registration_complete.html:9
 msgid "Complete"
-msgstr ""
+msgstr "Completo"
 
 #: custom/ecgovbr/templates/registration/registration_complete.html:14
 #: templates/registration/registration_complete.html:14
 msgid "A confirmation e-mail is on the way"
-msgstr ""
+msgstr "Un correo electrónico de confirmación está a camino"
 
 #: custom/ecgovbr/templates/registration/registration_complete.html:16
 #: templates/registration/registration_complete.html:16
-msgid ""
-"Please click the activation link included in the e-mail to confirm you "
-"registration."
+msgid "Please click the activation link included in the e-mail to confirm you registration."
 msgstr ""
 
 #: custom/ecgovbr/templates/registration/registration_form.html:11
 #: templates/registration/registration_form.html:11
 msgid "You will receive an email with a link to activate your account."
-msgstr ""
+msgstr "Usted recibirá un correo electrónico con el enlace para activar su cuenta."
 
 #: custom/ecgovbr/templates/registration/registration_form.html:15
 #: templates/registration/registration_form.html:15
 msgid "Please correct the errors below."
-msgstr ""
+msgstr "Por favor, sírvase corregir los errores a continuación."
 
 #: custom/ecgovbr/templates/registration/registration_form.html:23
 #: templates/registration/registration_form.html:23
 msgid "register"
-msgstr ""
+msgstr "registro"
 
 #: custom/ecgovbr/templates/registration/registration_form.html:28
 #: templates/registration/registration_form.html:28
 msgid "If this email belongs to you,"
-msgstr ""
+msgstr "Si este correo electrónico pertenece a usted,"
 
 #: custom/ecgovbr/templates/registration/registration_form.html:30
 #: templates/registration/registration_form.html:30
 msgid "click here"
-msgstr ""
+msgstr "pinche acá"
 
 #: custom/ecgovbr/templates/registration/registration_form.html:30
 #: templates/registration/registration_form.html:30
@@ -317,7 +312,7 @@ msgstr "Idioma"
 
 #: registration/admin.py:23
 msgid "Activate users"
-msgstr ""
+msgstr "Activar usuarios"
 
 #: registration/admin.py:43
 #, fuzzy
@@ -326,11 +321,11 @@ msgstr "clave de activación"
 
 #: registration/forms.py:36
 msgid "This value must contain only letters, numbers and @/./+/-/_."
-msgstr ""
+msgstr "Este valor debe contener solo letras, números y @/./+/-/_."
 
 #: registration/forms.py:39
 msgid "Email address"
-msgstr ""
+msgstr "Dirección de correo electrónico"
 
 #: registration/forms.py:43
 msgid "Password (again)"
@@ -338,7 +333,7 @@ msgstr "Contraseña (otra vez)"
 
 #: registration/forms.py:55
 msgid "A user with that username already exists."
-msgstr "Ya existe un usuario con ese nombre de usuario."
+msgstr "Ya existe un usuario con este nombre de usuario."
 
 #: registration/forms.py:67
 msgid "The two password fields didn't match."
@@ -346,22 +341,18 @@ msgstr "Los dos campos de contraseña no coinciden."
 
 #: registration/forms.py:78
 msgid "I have read and agree to the Terms of Service"
-msgstr ""
+msgstr "Yo he leído y estoy de acuerdo con los Términos del Servicio"
 
 #: registration/forms.py:79
 msgid "You must agree to the terms to register"
-msgstr ""
+msgstr "Usted debe concordar con los terminos para registrarse"
 
 #: registration/forms.py:95 reviewapp/forms.py:94
-msgid ""
-"This email address is already in use. Please supply a different email "
-"address."
+msgid "This email address is already in use. Please supply a different email address."
 msgstr ""
 
 #: registration/forms.py:122
-msgid ""
-"Registration using free email addresses is prohibited. Please supply a "
-"different email address."
+msgid "Registration using free email addresses is prohibited. Please supply a different email address."
 msgstr ""
 
 #: registration/models.py:168
@@ -375,11 +366,11 @@ msgstr "clave de activación"
 
 #: registration/models.py:174
 msgid "registration profile"
-msgstr ""
+msgstr "perfil de registro"
 
 #: registration/models.py:175
 msgid "registration profiles"
-msgstr ""
+msgstr "perfil de registro"
 
 #: repository/admin.py:44
 #, fuzzy
@@ -398,7 +389,7 @@ msgstr "Plataforma de Ensayos Clínicos"
 
 #: repository/admin.py:51
 msgid "Publish the selected clinical trials"
-msgstr ""
+msgstr "Publicar los ensayos clínico seleccionado"
 
 #: repository/choices.py:8
 msgid "Source of monetary or material support"
@@ -410,27 +401,27 @@ msgstr "Patrocinador secundario"
 
 #: repository/choices.py:13
 msgid "Contact for Public Queries"
-msgstr ""
+msgstr "Contacto para consulta pública"
 
 #: repository/choices.py:14
 msgid "Contact for Scientific Queries"
-msgstr ""
+msgstr "Contacto para consulta científica"
 
 #: repository/choices.py:15
 msgid "Contact for Site Queries"
-msgstr ""
+msgstr "Contato para consulta acerca del sitio"
 
 #: repository/choices.py:19
 msgid "Active and current contact"
-msgstr ""
+msgstr "Contacto activo y actual"
 
 #: repository/choices.py:20
 msgid "Inactive or previous contact"
-msgstr ""
+msgstr "Contacto inactivo o anterior"
 
 #: repository/choices.py:24
 msgid "Primary"
-msgstr ""
+msgstr "Primario"
 
 #: repository/choices.py:25
 msgid "Secondary"
@@ -438,7 +429,7 @@ msgstr "Secundaria"
 
 #: repository/choices.py:32
 msgid "processing"
-msgstr ""
+msgstr "en procesamiento"
 
 #: repository/choices.py:33
 msgid "published"
@@ -446,7 +437,7 @@ msgstr "publicado"
 
 #: repository/choices.py:34
 msgid "archived"
-msgstr ""
+msgstr "archivado"
 
 #: repository/choices.py:41
 msgid "both"
@@ -515,7 +506,7 @@ msgstr ""
 #: repository/models.py:149
 #: repository/templates/repository/clinicaltrial_list.html:19
 #: repository/templates/repository/clinicaltrial_recruiting.html:19
-#: reviewapp/templates/reviewapp/index.html:38
+#: reviewapp/templates/reviewapp/index.html:53
 msgid "Primary Id Number"
 msgstr ""
 
@@ -1156,7 +1147,7 @@ msgstr ""
 #: repository/templates/repository/clinicaltrial_detail_published.html:76
 #: repository/templates/repository/clinicaltrial_list.html:9
 msgid "Registered Trials"
-msgstr ""
+msgstr "Ensayos registrados"
 
 #: repository/templates/repository/clinicaltrial_detail_published.html:140
 #: repository/templates/repository/clinicaltrial_detail_user.html:216
@@ -1244,7 +1235,7 @@ msgid "Open (awaiting revision)"
 msgstr ""
 
 #: repository/templates/repository/clinicaltrial_detail_user.html:114
-#: reviewapp/templates/reviewapp/submission_list.html:76
+#: reviewapp/templates/reviewapp/submission_list.html:91
 msgid "Delete"
 msgstr ""
 
@@ -1332,9 +1323,7 @@ msgid "Required fields"
 msgstr ""
 
 #: repository/templates/repository/trial_form.html:123
-msgid ""
-"You have done modifications on some fields. Are you sure you want to leave "
-"without save before?"
+msgid "You have done modifications on some fields. Are you sure you want to leave without save before?"
 msgstr ""
 
 #: repository/templates/repository/trial_index.html:3
@@ -1519,9 +1508,17 @@ msgid "Send"
 msgstr "Enviar"
 
 #: reviewapp/templates/reviewapp/dashboard.html:22
-#: reviewapp/templates/reviewapp/index.html:25
+#: reviewapp/templates/reviewapp/index.html:26
+#: reviewapp/templates/reviewapp/index.html:28
+#: reviewapp/templates/reviewapp/index.html:31
+#: reviewapp/templates/reviewapp/index.html:34
+#: reviewapp/templates/reviewapp/index.html:36
 #: reviewapp/templates/reviewapp/new_submission.html:32
-#: reviewapp/templates/reviewapp/submission_list.html:41
+#: reviewapp/templates/reviewapp/submission_list.html:42
+#: reviewapp/templates/reviewapp/submission_list.html:44
+#: reviewapp/templates/reviewapp/submission_list.html:47
+#: reviewapp/templates/reviewapp/submission_list.html:50
+#: reviewapp/templates/reviewapp/submission_list.html:52
 msgid "New Submission"
 msgstr ""
 
@@ -1570,11 +1567,11 @@ msgid ""
 "\n"
 msgstr ""
 
-#: reviewapp/templates/reviewapp/index.html:20
+#: reviewapp/templates/reviewapp/index.html:21
 msgid "Registered trials"
-msgstr ""
+msgstr "Ensayos registrados"
 
-#: reviewapp/templates/reviewapp/index.html:44
+#: reviewapp/templates/reviewapp/index.html:59
 msgid "No clinical trials have been published."
 msgstr ""
 
@@ -1634,9 +1631,7 @@ msgid "E-mail sent"
 msgstr "E-mail"
 
 #: reviewapp/templates/reviewapp/password_reset_done.html:15
-msgid ""
-"We have sent you an email with a link to reset your password. Please check "
-"your email and click the link to continue."
+msgid "We have sent you an email with a link to reset your password. Please check your email and click the link to continue."
 msgstr ""
 
 #: reviewapp/templates/reviewapp/password_reset_email.html:4
@@ -1653,15 +1648,12 @@ msgid ""
 "and you can access your account now: \n"
 "http://%(domain)s\n"
 "\n"
-"To reset your password, please click the following link, or copy and paste "
-"it\n"
+"To reset your password, please click the following link, or copy and paste it\n"
 "into your web browser:\n"
 msgstr ""
 
 #: reviewapp/templates/reviewapp/password_reset_form.html:12
-msgid ""
-"Enter your e-mail in the form below and we will send your username and "
-"instructions to create a new password."
+msgid "Enter your e-mail in the form below and we will send your username and instructions to create a new password."
 msgstr ""
 
 #: reviewapp/templates/reviewapp/resend_activation_email.html:8
@@ -1676,47 +1668,47 @@ msgstr ""
 msgid "not belong to any registered user."
 msgstr ""
 
-#: reviewapp/templates/reviewapp/submission_list.html:18
+#: reviewapp/templates/reviewapp/submission_list.html:19
 msgid "Want to delete this submission?"
 msgstr ""
 
-#: reviewapp/templates/reviewapp/submission_list.html:32
+#: reviewapp/templates/reviewapp/submission_list.html:33
 msgid "Submit a new Clinical Trial"
 msgstr ""
 
-#: reviewapp/templates/reviewapp/submission_list.html:33
+#: reviewapp/templates/reviewapp/submission_list.html:34
 msgid "Choose one of the ways below to submit a new clinical trial"
 msgstr ""
 
-#: reviewapp/templates/reviewapp/submission_list.html:35
+#: reviewapp/templates/reviewapp/submission_list.html:36
 msgid "Completing the submission form."
 msgstr ""
 
-#: reviewapp/templates/reviewapp/submission_list.html:36
+#: reviewapp/templates/reviewapp/submission_list.html:37
 msgid "Uploading an XML file."
 msgstr ""
 
-#: reviewapp/templates/reviewapp/submission_list.html:45
+#: reviewapp/templates/reviewapp/submission_list.html:60
 msgid "Your Submissions list"
 msgstr ""
 
-#: reviewapp/templates/reviewapp/submission_list.html:49
+#: reviewapp/templates/reviewapp/submission_list.html:64
 msgid "The submission was deleted successfully."
 msgstr ""
 
-#: reviewapp/templates/reviewapp/submission_list.html:52
+#: reviewapp/templates/reviewapp/submission_list.html:67
 msgid "This submission can not be deleted."
 msgstr ""
 
-#: reviewapp/templates/reviewapp/submission_list.html:58
+#: reviewapp/templates/reviewapp/submission_list.html:73
 msgid "Created"
 msgstr "Creado"
 
-#: reviewapp/templates/reviewapp/submission_list.html:59
+#: reviewapp/templates/reviewapp/submission_list.html:74
 msgid "Submission Title"
 msgstr ""
 
-#: reviewapp/templates/reviewapp/submission_list.html:60
+#: reviewapp/templates/reviewapp/submission_list.html:75
 msgid "Situation"
 msgstr "Situación"
 
@@ -1734,8 +1726,7 @@ msgid "Upload trial"
 msgstr ""
 
 #: reviewapp/templates/reviewapp/upload_trial.html:15
-msgid ""
-"Here you can upload an XML on ICTRP standard to submit your clinical trial."
+msgid "Here you can upload an XML on ICTRP standard to submit your clinical trial."
 msgstr ""
 
 #: reviewapp/templates/reviewapp/upload_trial.html:20
@@ -1885,9 +1876,7 @@ msgid "Assigned to"
 msgstr ""
 
 #: tickets/templates/tickets/ticket_detail.html:72
-msgid ""
-"To show the \"add iteration button\" the ticket must be diferente from "
-"\"closed\"."
+msgid "To show the \"add iteration button\" the ticket must be diferente from \"closed\"."
 msgstr ""
 
 #: tickets/templates/tickets/ticket_list.html:15
@@ -1961,83 +1950,63 @@ msgstr ""
 #~ msgid "Order"
 #~ msgstr "Orden"
 
-#, fuzzy
 #~ msgid "rejected"
 #~ msgstr "Creado"
 
-#, fuzzy
 #~ msgid "Logging"
 #~ msgstr "login"
 
-#, fuzzy
 #~ msgid "Log Messages"
 #~ msgstr "Mensaje"
 
-#, fuzzy
 #~ msgid "Signals"
 #~ msgstr "Original"
 
-#, fuzzy
 #~ msgid "Time"
 #~ msgstr "Título"
 
-#, fuzzy
 #~ msgid "Context switches"
 #~ msgstr "Contexto"
 
-#, fuzzy
 #~ msgid "Versions"
 #~ msgstr "Versión"
 
-#, fuzzy
 #~ msgid "Show Toolbar"
 #~ msgstr "Mostrar todos"
 
-#, fuzzy
 #~ msgid "Close"
 #~ msgstr "Cerrado"
 
-#, fuzzy
 #~ msgid "Location"
 #~ msgstr "Relación"
 
-#, fuzzy
 #~ msgid "Misses"
 #~ msgstr "Mensaje"
 
-#, fuzzy
 #~ msgid "Value"
 #~ msgstr "masculina"
 
-#, fuzzy
 #~ msgid "Setting"
 #~ msgstr "Situación"
 
-#, fuzzy
 #~ msgid "Signal"
 #~ msgstr "Original"
 
-#, fuzzy
 #~ msgid "Line"
 #~ msgstr "login"
 
-#, fuzzy
 #~ msgid "SQL Profiled"
 #~ msgstr "Perfil"
 
-#, fuzzy
 #~ msgid "SQL Selected"
 #~ msgstr "Creado"
 
-#, fuzzy
 #~ msgid "Empty set"
 #~ msgstr "E-mail"
 
-#, fuzzy
 #~ msgid "Toggle Context"
 #~ msgstr "Contexto"
 
-#, fuzzy
 #~ msgid "None"
 #~ msgstr "No"
 
@@ -2047,15 +2016,12 @@ msgstr ""
 #~ msgid "Closed."
 #~ msgstr "Cerrado."
 
-#, fuzzy
 #~ msgid "published."
 #~ msgstr "publicado"
 
-#, fuzzy
 #~ msgid "marked as published."
 #~ msgstr "publicado"
 
-#, fuzzy
 #~ msgid "Recruiting Trials"
 #~ msgstr "Reclutamiento"
 
