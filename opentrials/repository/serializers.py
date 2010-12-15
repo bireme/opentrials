@@ -490,7 +490,7 @@ class FossilClinicalTrial(FossilProxy):
 
     def _load_translations(self):
         if self._translations is None:
-            self._translations = dict([(lang_format(t['language']), t)
+            self._translations = dict([(lang_format(t.get('language', '').lower()), t)
                 for t in self.object_fossil.translations])
     
     def __getattr__(self, name):
@@ -505,7 +505,7 @@ class FossilClinicalTrial(FossilProxy):
 
         elif isinstance(value, dict) and value.get('translations', None):
             try:
-                value = [t for t in value['translations'] if t['language'].lower() == self._language.lower()][0]
+                value = [t for t in value['translations'] if t.get('language', '').lower() == self._language.lower()][0]
             except IndexError:
                 pass
 
@@ -555,7 +555,7 @@ class FossilClinicalTrial(FossilProxy):
 
         def get_trans(item):
             try:
-                return [t for t in item['translations'] if t['language'].lower() == self._language.lower()][0]
+                return [t for t in item['translations'] if t.get('language', '').lower() == self._language.lower()][0]
             except IndexError:
                 return item
 
@@ -567,7 +567,7 @@ class FossilClinicalTrial(FossilProxy):
 
         def get_trans(item):
             try:
-                return [t for t in item['translations'] if t['language'].lower() == self._language.lower()][0]
+                return [t for t in item['translations'] if t.get('language', '').lower() == self._language.lower()][0]
             except IndexError:
                 return item
 
@@ -604,7 +604,7 @@ class FossilContact(FossilProxy):
         country = super(FossilContact, self).__getattr__('country')
 
         try:
-            return [t for t in country['translations'] if t['language'].lower() == self._language.lower()][0]
+            return [t for t in country['translations'] if t.get('language', '').lower() == self._language.lower()][0]
         except IndexError:
             return country
 
