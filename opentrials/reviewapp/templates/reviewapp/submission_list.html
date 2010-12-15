@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block extrahead %}
 <link rel="stylesheet" type="text/css" href="/static/css/tablesorter/style.css"/>
@@ -38,7 +39,21 @@ $(document).ready(function() {
 
 <div class="actions" style="margin-right:40px;">
     <ul>
-        <li><a href="{% url reviewapp.terms_of_use %}" title="{% trans 'New Submission' %}"><img src="/static/images/button_newSubmission.jpg" alt="{% trans 'New Submission' %}"/></a></li>
+        <li><a href="{% url reviewapp.terms_of_use %}" title="{% trans 'New Submission' %}">
+        {% if LANGUAGE_CODE == 'pt-br' %}
+            <img src="/static/images/button_newSubmission.jpg" alt="{% trans 'New Submission' %}"/>
+        {% else %}
+            {% if LANGUAGE_CODE == 'en' %}
+                <img src="/static/images/button_newSubmissionEN.jpg" alt="{% trans 'New Submission' %}"/>
+            {% else %}
+                {% if LANGUAGE_CODE == 'es' %}
+                    <img src="/static/images/button_newSubmissionES.jpg" alt="{% trans 'New Submission' %}"/>
+                {% else %}
+                    {% trans 'New Submission' %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+        </a></li>
     </ul>
 </div>
 
