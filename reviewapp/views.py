@@ -17,6 +17,7 @@ from django.conf import settings
 from django.contrib.sites.models import RequestSite
 from django.contrib.sites.models import Site
 from django.contrib.flatpages.models import FlatPage
+from django.utils.translation import get_language
 
 from flatpages_polyglot.models import FlatPageTranslation
 from tickets.models import Ticket
@@ -51,7 +52,16 @@ def index(request):
             flat_trans = page
         
     fossil_trials = ClinicalTrial.fossils.published().order_by('-creation')[:3]
-    clinical_trials = fossil_trials.proxies(language=request.LANGUAGE_CODE)
+    
+    trials_language = 'en'
+    if request.user.is_authenticated():
+        trials_language = get_language()
+    elif request.session.get('django_language', None):
+        trials_language = request.session['django_language']
+    elif request.COOKIES.get('django_language', None):
+        trials_language = request.COOKIES['django_language']
+
+    clinical_trials = fossil_trials.proxies(language=trials_language)
 
     return render_to_response('reviewapp/index.html', {
                           'clinical_trials': clinical_trials,
