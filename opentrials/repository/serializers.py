@@ -513,7 +513,9 @@ class FossilClinicalTrial(FossilProxy):
             self._load_translations()
 
             try:
-                value = self._translations[lang_format(self._language)][name]
+                value_trans = self._translations[lang_format(self._language)][name]
+                if value_trans:
+                    value = value_trans
             except KeyError:
                 pass
 
