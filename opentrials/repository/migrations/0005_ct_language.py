@@ -3,6 +3,7 @@ import datetime
 from south.db import db
 from south.v2 import SchemaMigration
 from django.db import models
+from reviewapp.models import Submission
 
 class Migration(SchemaMigration):
 
@@ -10,6 +11,11 @@ class Migration(SchemaMigration):
         
         # Adding field 'ClinicalTrial.language'
         db.add_column('repository_clinicaltrial', 'language', self.gf('django.db.models.fields.CharField')(default='pt-BR', max_length=10), keep_default=False)
+
+        for submission in Submission.objects.all():
+            ct = submission.trial
+            ct.language = submission.language
+            ct.save()
 
 
     def backwards(self, orm):

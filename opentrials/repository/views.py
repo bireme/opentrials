@@ -15,7 +15,6 @@ from django.template.defaultfilters import slugify
 from django.template.context import RequestContext
 from django.contrib.sites.models import Site
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
-from django.utils.translation import get_language
 from django.contrib import messages
 
 from reviewapp.models import Attachment, Submission, Remark
@@ -337,7 +336,8 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
             raise Http404
 
     ct = fossil.get_object_fossil()
-    ct._language = ct.language or get_language()
+    ct.fossil['language'] = ct.fossil.get('language', settings.DEFAULT_SUBMISSION_LANGUAGE)
+    ct._language = ct.language
     ct.hash_code = fossil.pk
     ct.previous_revision = fossil.previous_revision
     ct.version = fossil.revision_sequential
