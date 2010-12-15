@@ -337,12 +337,13 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
             raise Http404
 
     ct = fossil.get_object_fossil()
-    ct._language = get_language()
+    ct._language = ct.language or get_language()
     ct.hash_code = fossil.pk
     ct.previous_revision = fossil.previous_revision
     ct.version = fossil.revision_sequential
 
-    translations = ct.translations
+    translations = [ct.fossil] # the Fossil dictionary must be one of the translations
+    translations.extend(ct.translations)
 
     return render_to_response('repository/clinicaltrial_detail_published.html',
                                 {'object': ct,

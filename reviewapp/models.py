@@ -77,7 +77,8 @@ class Submission(ControlledDeletion):
     fields_status = models.TextField(_('Fields Status'), max_length=512, null=True, 
                                      blank=True, editable=False)
     language = models.CharField(_('Submission language'), max_length=10,
-                                choices=settings.MANAGED_LANGUAGES_CHOICES)
+                                choices=settings.MANAGED_LANGUAGES_CHOICES,
+                                default=settings.DEFAULT_SUBMISSION_LANGUAGE)
     staff_note = models.TextField(_('Submission note (staff use only)'), max_length=255,
                                     blank=True)
 

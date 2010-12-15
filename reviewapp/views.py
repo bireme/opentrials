@@ -53,7 +53,7 @@ def index(request):
         
     fossil_trials = ClinicalTrial.fossils.published().order_by('-creation')[:3]
     
-    trials_language = 'en'
+    trials_language = 'en' # English is default if there's no choosen language
     if request.user.is_authenticated():
         trials_language = get_language()
     elif request.session.get('django_language', None):
