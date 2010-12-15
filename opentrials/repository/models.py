@@ -276,7 +276,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
                                   blank=True)
     language = models.CharField(_('Submission language'), max_length=10,
                                 choices=settings.MANAGED_LANGUAGES_CHOICES,
-                                default=settings.LANGUAGE_CODE)
+                                default=settings.DEFAULT_SUBMISSION_LANGUAGE)
 
     translations = generic.GenericRelation('ClinicalTrialTranslation')
     
