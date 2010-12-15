@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-15 11:41+0000\n"
+"POT-Creation-Date: 2010-12-15 12:44+0000\n"
 "PO-Revision-Date: 2010-10-04 18:43\n"
 "Last-Translator: <appec@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -245,6 +245,24 @@ msgstr ""
 #: templates/registration/activation_complete.html:13
 msgid "You may now login using your username and password."
 msgstr "Ahora puede ingresar usando su nombre de usuario y contraseña."
+
+#: custom/ecgovbr/templates/registration/activation_email.txt:4
+#: templates/registration/activation_email.txt:4
+msgid "Please click on the link below to activate your account."
+msgstr ""
+
+#: custom/ecgovbr/templates/registration/activation_email.txt:8
+#: templates/registration/activation_email.txt:8
+#, python-format
+msgid ""
+"\n"
+"This key will expire in %(expiration_days)s days.\n"
+msgstr ""
+
+#: custom/ecgovbr/templates/registration/activation_email_subject.txt:4
+#: templates/registration/activation_email_subject.txt:4
+msgid "Activate your account"
+msgstr ""
 
 #: custom/ecgovbr/templates/registration/registration_complete.html:9
 #: templates/registration/registration_complete.html:9
@@ -1538,6 +1556,18 @@ msgstr "Creado"
 
 #: reviewapp/templates/reviewapp/dashboard.html:85
 msgid "Submission"
+msgstr ""
+
+#: reviewapp/templates/reviewapp/email_contact.txt:4
+#, python-format
+msgid ""
+"\n"
+"Message sent by the site: %(site.domain)s (%(site.name)s)\n"
+"\n"
+"Message: %(message)s\n"
+"\n"
+"%(name)s\n"
+"\n"
 msgstr ""
 
 #: reviewapp/templates/reviewapp/index.html:20
