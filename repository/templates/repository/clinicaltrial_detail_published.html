@@ -83,42 +83,50 @@
     <h2>{{ scientific_title }}</h2>
     
     <h3>{% trans 'Scientific Title' %}:</h3>
-        {% for t in translations|dictsort:"language" %}
+        {% for t in translations|dictsortreversed:"language" %}
+            {% if t.scientific_title %} 
             <div class="title">
                 <h2>{{ t.language }}</h2>
                 <p>{{ t.scientific_title }}</p>
             </div>
+            {% endif %}
         {% endfor %}
         <div class="spacer"> </div>
     <h3>{% trans 'Trial Identification' %}</h3>
     <ul>
         <li>
             <p><span class="label">{% trans 'Public Title' %}:</span></p>
-            {% for t in translations|dictsort:"language" %}
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.public_title %}
                 <div class="title">
                     <h2>{{ t.language }}</h2>
                     <p>{{ t.public_title }}</p>
                 </div>
+                {% endif %}
             {% endfor %}
         </li>
         <div class="spacer"> </div>
         <li>
             <p><span class="label">{% trans 'Scientific Acronym' %}:</span></p>
-            {% for t in translations|dictsort:"language" %}
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.scientific_acronym %} 
                 <div class="title">
                     <h2>{{ t.language }}</h2>
                     <p>{{ t.scientific_acronym }}: {{ t.scientific_acronym_expansion }}</p>
                 </div>
+                {% endif %}
             {% endfor %}
         </li>
         <div class="spacer"> </div>
         <li>
             <p><span class="label">{% trans 'Public Acronym' %}:</span></p>
-            {% for t in translations|dictsort:"language" %}
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.acronym %}
                 <div class="title">
                     <h2>{{ t.language }}</h2>
                     <p>{{ t.acronym }}: {{ t.acronym_expansion }}</p>
                 </div>
+                {% endif %}
             {% endfor %}
         </li>
         <div class="spacer"> </div>
@@ -175,25 +183,21 @@
     <ul>
         <li>
         <p><span class="label">{% trans 'Health Condition(s) or Problem(s)' %}:</span></p>
-            {% for t in translations|dictsort:"language" %}
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.hc_freetext %} 
                 <div class="title">
                     <h2>{{ t.language }}</h2>
                     <p>{{ t.hc_freetext }}</p>
                 </div>
+                {% endif %}
             {% endfor %}
         </li>
         <div class="spacer"> </div>
         <li>
             <p><span class="label">{% trans 'General Descriptors for Health Condition(s)' %}:</span></p>
             {% for hc in object.hc_code %}
-                <div class="title">
-                    <h2>en</h2>
-                    <p>
-                        <span class="label">{{ hc.code }}:</span>
-                        <span class="value">{{ hc.text }}</span>
-                    </p>
-                </div>
-                {% for hc_trans in hc.translations|dictsort:"language" %}
+                {% for hc_trans in hc.translations|dictsortreversed:"language" %}
+                    {% if hc_trans.text %}
                     <div class="title">
                         <h2>{{ hc_trans.language }}</h2>
                         <p>
@@ -201,22 +205,23 @@
                             <span class="value">{{ hc_trans.text }}</span>
                         </p>
                     </div>
+                    {% endif %}
                 {% endfor %}
+                <div class="title">
+                    <h2>en</h2>
+                    <p>
+                        <span class="label">{{ hc.code }}:</span>
+                        <span class="value">{{ hc.text }}</span>
+                    </p>
+                </div>
                 <div class="spacer"> </div>
             {% endfor %}
         </li>
         <li>
             <p><span class="label">{% trans 'Specific Descriptors for Health Condition(s)' %}:</span></p>
             {% for hc in object.hc_keyword %}
-                <div class="title">
-                    <h2>en</h2>
-
-                    <p>
-                        <span class="label">{{ hc.code }}:</span>
-                        <span class="value">{{ hc.text }}</span>
-                    </p>
-                </div>
-                {% for hc_trans in hc.translations|dictsort:"language" %}
+                {% for hc_trans in hc.translations|dictsortreversed:"language" %}
+                    {% if hc_trans.text %}
                     <div class="title">
                         <h2>{{ hc_trans.language }}</h2>
                         <p>
@@ -224,7 +229,15 @@
                             <span class="value">{{ hc_trans.text }}</span>
                         </p>
                     </div>
+                    {% endif %}
                 {% endfor %}
+                <div class="title">
+                    <h2>en</h2>
+                    <p>
+                        <span class="label">{{ hc.code }}:</span>
+                        <span class="value">{{ hc.text }}</span>
+                    </p>
+                </div>
                 <div class="spacer"> </div>
             {% endfor %}
         </li>
@@ -244,18 +257,21 @@
         </li>
         <li>
         <p><span class="label">{% trans 'Interventions' %}:</span></p>
-            {% for t in translations|dictsort:"language" %}
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.i_freetext %}
                 <div class="title">
                     <h2>{{ t.language }}</h2>
                     <p>{{ t.i_freetext|linebreaksbr }}</p>
                 </div>
+                {% endif %}
             {% endfor %}
         </li>
         <div class="spacer"> </div>
         <li>
             <p><span class="label">{% trans 'Descriptor for Intervention(s)' %}:</span></p>
             {% for intervention in object.intervention_keyword %}
-                {% for i_trans in intervention.translations|dictsort:"language" %}
+                {% for i_trans in intervention.translations|dictsortreversed:"language" %}
+                    {% if i_trans.text %}
                     <div class="title">
                         <h2>{{ i_trans.language }}</h2>
                         <p>
@@ -263,6 +279,7 @@
                             <span class="value">{{ i_trans.text }}</span>
                         </p>
                     </div>
+                    {% endif %}
                 {% endfor %}
                 <div class="spacer"> </div>
             {% endfor %}
@@ -309,21 +326,25 @@
         </li>
         <li>
             <p><span class="label">{% trans 'Inclusion Criteria' %}:</span></p>
-            {% for t in translations|dictsort:"language" %}
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.inclusion_criteria %} 
                 <div class="title">
                     <h2>{{ t.language }}</h2>
                     <p>{{ t.inclusion_criteria|linebreaksbr }}</p>
                 </div>
+                {% endif %}
             {% endfor %}
         </li>
         <div class="spacer"> </div>
         <li>
             <p><span class="label">{% trans 'Exclusion Criteria' %}:</span></p>
-            {% for t in translations|dictsort:"language" %}
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.exclusion_criteria %}
                 <div class="title">
                     <h2>{{ t.language }}</h2>
                     <p>{{ t.exclusion_criteria|linebreaksbr }}</p>
                 </div>
+                {% endif %}
             {% endfor %}
         </li>
         <div class="spacer"> </div>
@@ -333,11 +354,13 @@
     <ul>
         <li>
             <p><span class="label">{% trans 'Study Design' %}:</span></p>
-            {% for t in translations|dictsort:"language" %}
+            {% for t in translations|dictsortreversed:"language" %}
+                {% if t.study_design %}
                 <div class="title">
                     <h2>{{ t.language }}</h2>
                     <p>{{ t.study_design }}</p>
                 </div>
+                {% endif %}
             {% endfor %}
         </li>
         <div class="spacer"> </div>
@@ -370,32 +393,36 @@
         <li>
             <p><span class="label">{% trans 'Primary Outcomes' %}:</span></p>
             {% for outcome in object.primary_outcomes %}
-                <div class="title">
-                    <h2>en</h2>
-                    <p>{{ outcome.description|linebreaksbr }}</p>
-                </div>
-                {% for out_trans in outcome.translations|dictsort:"language" %}
+                {% for out_trans in outcome.translations|dictsortreversed:"language" %}
+                    {% if out_trans.description %} 
                     <div class="title">
                         <h2>{{ out_trans.language }}</h2>
                         <p>{{ out_trans.description|linebreaksbr }}</p>
                     </div>
+                    {% endif %}
                 {% endfor %}
+                <div class="title">
+                    <h2>en</h2>
+                    <p>{{ outcome.description|linebreaksbr }}</p>
+                </div>
                 <div class="spacer"> </div>
             {% endfor %}
         </li>
         <li>
             <p><span class="label">{% trans 'Secondary Outcomes' %}:</span></p>
             {% for outcome in object.secondary_outcomes %}
-                <div class="title">
-                    <h2>en</h2>
-                    <p>{{ outcome.description|linebreaksbr }}</p>
-                </div>
-                {% for out_trans in outcome.translations|dictsort:"language" %}
+                {% for out_trans in outcome.translations|dictsortreversed:"language" %}
+                    {% if out_trans.description %}
                     <div class="title">
                         <h2>{{ out_trans.language }}</h2>
                         <p>{{ out_trans.description|linebreaksbr }}</p>
                     </div>
+                    {% endif %}
                 {% endfor %}
+                <div class="title">
+                    <h2>en</h2>
+                    <p>{{ outcome.description|linebreaksbr }}</p>
+                </div>
                 <div class="spacer"> </div>
             {% endfor %}
         </li>
