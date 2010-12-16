@@ -16,6 +16,7 @@ from django.template.context import RequestContext
 from django.contrib.sites.models import Site
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.contrib import messages
+from django.utils.translation import get_language
 
 from reviewapp.models import Attachment, Submission, Remark
 from reviewapp.models import STATUS_PENDING, STATUS_RESUBMIT, STATUS_DRAFT, STATUS_APPROVED
@@ -344,11 +345,17 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
 
     translations = [ct.fossil] # the Fossil dictionary must be one of the translations
     translations.extend(ct.translations)
+    try:
+        scientific_title = [t['scientific_title'] for t in translations
+                if t['language'] == get_language() and t['scientific_title'].strip()][0]
+    except IndexError:
+        scientific_title = ct.scientific_title
 
     return render_to_response('repository/clinicaltrial_detail_published.html',
                                 {'object': ct,
                                 'translations': translations,
-                                'host': request.get_host()},
+                                'host': request.get_host(),
+                                'scientific_title': scientific_title},
                                 context_instance=RequestContext(request))
 
 @login_required
