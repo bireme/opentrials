@@ -65,8 +65,18 @@ class YearMonthWidget(forms.MultiWidget):
         if not value:
             ret = ['', '']
         else:
-            ret = map(int, value.split('-')[:2])
-            ret.reverse()
+            if '-' in value:
+                # format YYYY-mm-dd
+                ret = map(int, value.split('-')[:2])
+                ret.reverse()
+            elif '/' in value:
+                # This was implemented to maintain compatibility (the fields 
+                # enrollment_start_planned, enrollment_start_actual, enrollment_end_planned and 
+                # enrollment_end_actual were open for typing)
+                # format dd/mm/YYYY
+                ret = map(int, value.split('/')[-2:])
+            else:
+                ret = ['', '']
         return ret
 
     def value_from_datadict(self, data, files, name):
