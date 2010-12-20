@@ -13,7 +13,7 @@ from repository.serializers import deserialize_trial
 from tickets.models import Ticket
 from utilities import safe_truncate
 from vocabulary.models import CountryCode
-from polyglot.models import Translation
+from polyglot.models import Translation, MANAGED_LANGUAGES_LOWER
 
 from repository.trial_validation import TRIAL_FORMS
 from consts import REMARK, MISSING, PARTIAL, COMPLETE
@@ -108,7 +108,7 @@ class Submission(ControlledDeletion):
         for rc in self.trial.recruitment_country.all():
             langs.add(rc.submission_language)
 
-        return langs.intersection(set(settings.MANAGED_LANGUAGES))
+        return langs.intersection(set(MANAGED_LANGUAGES_LOWER))
 
     def get_trans_languages(self):
         return self.get_mandatory_languages() - set([self.language])
