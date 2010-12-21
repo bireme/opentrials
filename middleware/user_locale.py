@@ -11,6 +11,7 @@ class UserLocaleMiddleware(object):
     """
 
     def process_request(self, request):
+        # Gets user's current language
         if not request.session.get('django_language', None):
             if request.user.is_authenticated():
                 language = request.user.get_profile().preferred_language
@@ -20,6 +21,17 @@ class UserLocaleMiddleware(object):
                 language = translation.get_language_from_request(request)
                 translation.activate(language)
                 request.LANGUAGE_CODE = translation.get_language()
+
+        # Defines language to be used as priority in trials
+        trials_language = 'en' # English is default if there's no choosen language
+        if request.user.is_authenticated():
+            request.trials_language = translation.get_language()
+        elif request.session.get('django_language', None):
+            request.trials_language = request.session['django_language']
+        elif request.COOKIES.get('django_language', None):
+            request.trials_language = request.COOKIES['django_language']
+        else:
+            request.trials_language = translation.get_language()
 
     def process_response(self, request, response):
         patch_vary_headers(response, ('Accept-Language',))
