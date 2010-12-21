@@ -351,11 +351,16 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
     except IndexError:
         scientific_title = ct.scientific_title
 
+    # This just copy managed languages to sorte with main language first XXX
+    languages = [lang.lower() for lang in settings.MANAGED_LANGUAGES]
+    languages.sort(lambda a,b: -1 if a == request.trials_language else cmp(a,b))
+
     return render_to_response('repository/clinicaltrial_detail_published.html',
                                 {'object': ct,
                                 'translations': translations,
                                 'host': request.get_host(),
-                                'scientific_title': scientific_title},
+                                'scientific_title': scientific_title,
+                                'languages': languages},
                                 context_instance=RequestContext(request))
 
 @login_required

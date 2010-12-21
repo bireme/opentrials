@@ -202,4 +202,5 @@ FORMAT_MODULE_PATH = 'formats'
 
 # Deployment settings: there *must* be an unversioned settings_local.include
 # file in the current directory. See sample file at settings_local-SAMPLE.include
+# FIXME: why not use a simple "try: from settings_local import * except ImportError: pass" ?
 execfile(os.path.join(PROJECT_PATH,'settings_local.include'))
