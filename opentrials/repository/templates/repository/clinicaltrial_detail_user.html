@@ -810,13 +810,11 @@
         <h3>{% trans 'Attachments' %}</h3>
         <ul>
             {%  for attach in object.trial_attach %}
-                {% if attach.public %}
-                    <li>
-                    <a href="http://{{host}}{{attach.get_relative_url}}">
-                    http://{{host}}{{attach.get_relative_url}}</a>
-                    ({{ attach.description }})
-                    </li>
-                {% endif %}
+                <li>
+                <a href="http://{{host}}{{attach.get_relative_url}}">
+                http://{{host}}{{attach.get_relative_url}}</a>
+                ({{ attach.description }})
+                </li>
             {% endfor %}
             {% if perms.reviewapp.add_remark %}
             <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Attachments'|slugify %}">{% trans 'Remark' %}</a></li>
