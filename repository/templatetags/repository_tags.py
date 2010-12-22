@@ -23,17 +23,18 @@ class ForTranslationNode(template.Node):
             done_languages = []
             obj = self.obj.resolve(context)
 
-            for lang in languages:
-                try:
-                    context[self.var] = [t for t in self.get_translations(self.get_value(obj, 'translations'))
-                            if self.get_value(t, 'language') == lang][0]
-                except IndexError:
-                    context[self.var] = obj
-                    self.set_language(obj, lang)
+            if obj:
+                for lang in languages:
+                    try:
+                        context[self.var] = [t for t in self.get_translations(self.get_value(obj, 'translations'))
+                                if self.get_value(t, 'language') == lang][0]
+                    except IndexError:
+                        context[self.var] = obj
+                        self.set_language(obj, lang)
 
-                if self.get_value(context[self.var], 'language') not in done_languages:
-                    output.append(self.nodelist.render(context))
-                    done_languages.append(self.get_value(context[self.var], 'language'))
+                    if self.get_value(context[self.var], 'language') not in done_languages:
+                        output.append(self.nodelist.render(context))
+                        done_languages.append(self.get_value(context[self.var], 'language'))
         else:
             translations = self.translations.resolve(context)
             for lang in languages:
@@ -44,7 +45,10 @@ class ForTranslationNode(template.Node):
         return u'\n'.join(output)
 
     def get_value(self, obj, key):
-        return obj[key]
+        try:
+            return obj[key]
+        except TypeError:
+            return None
 
     def get_translations(self, obj):
         return obj
