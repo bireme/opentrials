@@ -5,7 +5,9 @@ register = template.Library()
 class ForTranslationNode(template.Node):
     def __init__(self, trans, var, nodelist):
         if '.' in trans:
-            obj, self.translations = trans.split('.')
+            parts = trans.split('.')
+            obj = '.'.join(parts[:-1])
+            self.translations = parts[-1]
             self.obj = template.Variable(obj)
         else:
             self.obj = None
@@ -18,26 +20,50 @@ class ForTranslationNode(template.Node):
         languages = context['languages']
 
         if self.obj:
+            done_languages = []
             obj = self.obj.resolve(context)
+
             for lang in languages:
                 try:
-                    context[self.var] = [t for t in obj['translations'] if t['language'] == lang][0]
+                    context[self.var] = [t for t in self.get_translations(self.get_value(obj, 'translations'))
+                            if self.get_value(t, 'language') == lang][0]
                 except IndexError:
                     context[self.var] = obj
-                    obj.setdefault('language', lang)
+                    self.set_language(obj, lang)
 
-                output.append(self.nodelist.render(context))
+                if self.get_value(context[self.var], 'language') not in done_languages:
+                    output.append(self.nodelist.render(context))
+                    done_languages.append(self.get_value(context[self.var], 'language'))
         else:
             translations = self.translations.resolve(context)
             for lang in languages:
-                context[self.var] = [t for t in translations if t['language'].lower() == lang.lower()][0]
+                context[self.var] = [t for t in translations if self.get_value(t, 'language').lower() == lang.lower()][0]
 
                 output.append(self.nodelist.render(context))
 
         return u'\n'.join(output)
 
-@register.tag
-def for_trans(parser, token):
+    def get_value(self, obj, key):
+        return obj[key]
+
+    def get_translations(self, obj):
+        return obj
+
+    def set_language(self, obj, lang):
+        obj.setdefault('language', lang)
+
+class ForTranslationNodeObj(ForTranslationNode):
+    def get_value(self, obj, key):
+        return getattr(obj, key)
+
+    def get_translations(self, obj):
+        return obj.all()
+
+    def set_language(self, obj, lang):
+        obj.language = getattr(obj, 'language', lang)
+
+#@register.tag
+def do_for_trans(parser, token):
     """
     Usage example:
 
@@ -49,8 +75,14 @@ def for_trans(parser, token):
         {% endfor_trans %}
     """
     bits = token.split_contents()
-    nodelist = parser.parse(('endfor_trans',))
+    nodelist = parser.parse(('end'+bits[0],))
     parser.delete_first_token()    
 
-    return ForTranslationNode(bits[1], bits[3], nodelist)
+    if bits[0] == 'for_trans_obj':
+        return ForTranslationNodeObj(bits[1], bits[3], nodelist)
+    else:
+        return ForTranslationNode(bits[1], bits[3], nodelist)
+
+for_trans = register.tag('for_trans', do_for_trans)
+for_trans_obj = register.tag('for_trans_obj', do_for_trans)
 

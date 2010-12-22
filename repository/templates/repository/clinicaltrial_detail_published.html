@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load i18n repository_tags %}
+{% load i18n repository_tags adminmedia %}
 
 {% block body_title %}{% trans 'Clinical Trial' %}{% endblock %}
 
@@ -362,13 +362,36 @@
                     <th><span class="label">{% trans 'Study Phase' %}</span></th>
                 </tr>
                 <tr>
-                    <td><span class="value">{{ object.expanded_access_program }}</span></td>
-                    <td><span class="value">{{ object.purpose.label }}</span></td>
-                    <td><span class="value">{{ object.intervention_assignment.label }}</span></td>
+                    <td><span class="value">
+                        <img src="{% admin_media_prefix %}img/admin/icon-{% if object.expanded_access_program %}yes{% else %}{% if object.expanded_access_program == None %}unknown{% else %}no{% endif %}{% endif %}.gif"
+                            alt="{{ object.expanded_access_program|yesno }}"/> {{ object.expanded_access_program|yesno }}
+                    </span></td>
+                    <td><span class="value">
+                        {% for_trans object.purpose.translations as t %}
+                        {{ t.language }}: {{ t.label }}<br/>
+                        {% endfor_trans %}
+                    </span></td>
+                    <td><span class="value">
+                        {% for_trans object.intervention_assignment.translations as t %}
+                        {{ t.language }}: {{ t.label }}<br/>
+                        {% endfor_trans %}
+                    </span></td>
                     <td><span class="value">{{ object.number_of_arms }}</span></td>
-                    <td><span class="value">{{ object.masking.label }}</span></td>
-                    <td><span class="value">{{ object.allocation.label }}</span></td>
-                    <td><span class="value">{{ object.phase.label }}</span></td>
+                    <td><span class="value">
+                        {% for_trans object.masking.translations as t %}
+                        {{ t.language }}: {{ t.label }}<br/>
+                        {% endfor_trans %}
+                    </span></td>
+                    <td><span class="value">
+                        {% for_trans object.allocation.translations as t %}
+                        {{ t.language }}: {{ t.label }}<br/>
+                        {% endfor_trans %}
+                    </span></td>
+                    <td><span class="value">
+                        {% for_trans object.phase.translations as t %}
+                        {{ t.language }}: {{ t.label }}<br/>
+                        {% endfor_trans %}
+                    </span></td>
                 </tr>
             </table>
         </li>
