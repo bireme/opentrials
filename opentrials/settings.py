@@ -175,7 +175,7 @@ ATTACHMENTS_PATH = 'attachments'
 SUBMISSIONS_XML_PATH = 'submissions_xml'
 
 # Name of Primary Registry
-REG_NAME = 'RBEC'
+REG_NAME = 'REBEC'
 
 FIXTURE_DIRS = ('fixtures',)
 
