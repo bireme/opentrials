@@ -123,7 +123,7 @@
     "pk": 5, 
     "model": "assistance.questiontranslation", 
     "fields": {
-      "answer": "Na primeira vez, os usu\u00e1rios precisam criar um nome de login e uma senha, clicando no bot\u00e3o \u201cRegistrar-se\u201d. Um email de confirma\u00e7\u00e3o ser\u00e1 enviado para a conta de e-mail informado.\r\nO bot\u00e3o de \u201cNova Submiss\u00e3o\u201d levar\u00e1 o requerente para as telas que precisam ser preenchidas. Isso inclui informa\u00e7\u00f5es b\u00e1sicas, como os tipos de participantes, as interven\u00e7\u00f5es que est\u00e3o sendo testadas e os desfechos a serem avaliados. Outras informa\u00e7\u00f5es requeridas incluem detalhes do desenho do estudo, tamanho da amostra e informa\u00e7\u00f5es dos contatos. Cada campo tem um bot\u00e3o de ajuda (\u00edcone \u201c?\u201d) para auxiliar os requerentes a inserirem os dados corretos. Uma vez que cada formul\u00e1rio \u00e9 preenchido, o requerente deve clicar no bot\u00e3o \"Salvar\" para salvar as informa\u00e7\u00f5es no Registro Brasileiro de Ensaios Cl\u00ednicos. Uma vez que todas as informa\u00e7\u00f5es obrigat\u00f3rias estiverem sido preenchidas nos formul\u00e1rios, o requerente deve clicar no bot\u00e3o \u201cEnviar para revis\u00e3o\u201d.\r\nAp\u00f3s a submiss\u00e3o dos dados, a equipe do RBEC ir\u00e1 verificar os dados submetidos e consultar o requerente se necessitar que alguma informa\u00e7\u00e3o seja esclarecida. Uma vez que quaisquer d\u00favidas sejam confirmadas, os estudos s\u00e3o oficialmente registrados e ser\u00e1 atribu\u00eddo um n\u00famero de registro \u00fanico. Tanto a data da submiss\u00e3o e a data de registro s\u00e3o armazenados. ", 
+      "answer": "Na primeira vez, os usu\u00e1rios precisam criar um nome de login e uma senha, clicando no bot\u00e3o \u201cRegistrar-se\u201d. Um email de confirma\u00e7\u00e3o ser\u00e1 enviado para a conta de e-mail informado.\r\nO bot\u00e3o de \u201cNova Submiss\u00e3o\u201d levar\u00e1 o requerente para as telas que precisam ser preenchidas. Isso inclui informa\u00e7\u00f5es b\u00e1sicas, como os tipos de participantes, as interven\u00e7\u00f5es que est\u00e3o sendo testadas e os desfechos a serem avaliados. Outras informa\u00e7\u00f5es requeridas incluem detalhes do desenho do estudo, tamanho da amostra e informa\u00e7\u00f5es dos contatos. Cada campo tem um bot\u00e3o de ajuda (\u00edcone \u201c?\u201d) para auxiliar os requerentes a inserirem os dados corretos. Uma vez que cada formul\u00e1rio \u00e9 preenchido, o requerente deve clicar no bot\u00e3o \"Salvar\" para salvar as informa\u00e7\u00f5es no Registro Brasileiro de Ensaios Cl\u00ednicos. Uma vez que todas as informa\u00e7\u00f5es obrigat\u00f3rias estiverem sido preenchidas nos formul\u00e1rios, o requerente deve clicar no bot\u00e3o \u201cEnviar para revis\u00e3o\u201d.\r\nAp\u00f3s a submiss\u00e3o dos dados, a equipe do REBEC ir\u00e1 verificar os dados submetidos e consultar o requerente se necessitar que alguma informa\u00e7\u00e3o seja esclarecida. Uma vez que quaisquer d\u00favidas sejam confirmadas, os estudos s\u00e3o oficialmente registrados e ser\u00e1 atribu\u00eddo um n\u00famero de registro \u00fanico. Tanto a data da submiss\u00e3o e a data de registro s\u00e3o armazenados. ", 
       "title": "Como fa\u00e7o para registrar um estudo?", 
       "content_type": [
         "assistance", 
@@ -207,7 +207,7 @@
     "pk": 11, 
     "model": "assistance.questiontranslation", 
     "fields": {
-      "answer": "N\u00e3o. O registro do estudo na Plataforma Brasil dever\u00e1 ser feito antes do seu registro no Registro Brasileiro de Ensaios Cl\u00ednicos (RBEC). Embora o formul\u00e1rio do RBEC compartilhe v\u00e1rios campos comuns \u00e0 Plataforma Brasil, o objetivo do RBEC \u00e9 informar a todos os interessados nacionais e internacionais acerca dos ensaios cl\u00ednicos realizados no Brasil atrav\u00e9s da integra\u00e7\u00e3o do RBEC e a Plataforma Internacional de Registro de Ensaios Cl\u00ednicos (ICTRP / Organiza\u00e7\u00e3o Mundial da Sa\u00fade). Esta integra\u00e7\u00e3o est\u00e1 baseada na ado\u00e7\u00e3o de procedimentos operacionais padr\u00f5es definidos pelo Secretariado do ICTRP.", 
+      "answer": "N\u00e3o. O registro do estudo na Plataforma Brasil dever\u00e1 ser feito antes do seu registro no Registro Brasileiro de Ensaios Cl\u00ednicos (REBEC). Embora o formul\u00e1rio do RBEC compartilhe v\u00e1rios campos comuns \u00e0 Plataforma Brasil, o objetivo do REBEC \u00e9 informar a todos os interessados nacionais e internacionais acerca dos ensaios cl\u00ednicos realizados no Brasil atrav\u00e9s da integra\u00e7\u00e3o do RBEC e a Plataforma Internacional de Registro de Ensaios Cl\u00ednicos (ICTRP / Organiza\u00e7\u00e3o Mundial da Sa\u00fade). Esta integra\u00e7\u00e3o est\u00e1 baseada na ado\u00e7\u00e3o de procedimentos operacionais padr\u00f5es definidos pelo Secretariado do ICTRP.", 
       "title": "O registro de um ensaio cl\u00ednico na Plataforma Brasil equivale a um registro no Registro Brasileiro de Ensaios Clinicos?", 
       "content_type": [
         "assistance", 
@@ -571,7 +571,7 @@
     "pk": 26, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Por favor, indique se houver um programa de acesso expandido ou n\u00e3o ou se \u00e9 desconhecido.\r\n", 
+      "text": "Por favor, indique se houver um programa de acesso expandido ou n\u00e3o ou se \u00e9 desconhecido. O acesso expandido \u00e9 um processo patrocinado de disponibiliza\u00e7\u00e3o de produto novo, promissor, ainda sem registro na Ag\u00eancia Nacional de Vigil\u00e2ncia Sanit\u00e1ria - ANIVSA para pacientes com doen\u00e7as graves e que amea\u00e7am \u00e0 vida, na aus\u00eancia de alternativas terap\u00eauticas satisfat\u00f3rias disponibilizadas no Pa\u00eds, sem \u00f4nus adicional para o paciente. O produto deve estar em estudo de fase III em desenvolvimento no Brasil ou no pa\u00eds de origem e com programa de acesso expandido aprovado no pa\u00eds de origem, ou com registro do produto no pa\u00eds de origem (RDC.\r\n", 
       "example": "", 
       "content_type": [
         "assistance", 
@@ -1076,7 +1076,7 @@
     "model": "assistance.fieldhelptranslation", 
     "fields": {
       "text": "Por favor, inclua o arquivo a ser anexado a este estudo.\r\n", 
-      "example": "Carta de aprova\u00e7\u00e3o do Comit\u00ea de \u00c9tica (formato do arquivo: jpeg, tif, bmp)\r\n", 
+      "example": "Carta de aprova\u00e7\u00e3o do Comit\u00ea de \u00c9tica (formato do arquivo: jpeg, tif, bmp) e consentimento informado do seu estudo\r\n", 
       "content_type": [
         "assistance", 
         "fieldhelp"
@@ -1265,6 +1265,34 @@
       ], 
       "language": "pt-br", 
       "object_id": 27
+    }
+  }, 
+  {
+    "pk": 76, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "O N\u00famero de Refer\u00eancia Universal do Ensaio (Universal Trial Reference Number ou UTRN) \u00e9 um n\u00famero obtido pelo patrocinador ou proponente do estudo como primeiro passo no registro do ensaio no REBEC.  \r\nO UTRN tornar-se-\u00e1 ent\u00e3o parte da indentidade internacional do ensiao junto com o n\u00famero de registro do REBEC. \r\nSe o seu estudo \u00e9 um ensaio \u00e9 multic\u00eantrico internacional, verifique se j\u00e1 possui o UTRN. \r\nPara obter o UTRN voc\u00ea deve acessar o site http://apps.who.int/trialsearch/utn.aspx ", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 77
+    }
+  }, 
+  {
+    "pk": 77, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "es", 
+      "object_id": 77
     }
   }, 
   {
@@ -1594,7 +1622,7 @@
       "field": "expanded_access_program", 
       "example": "", 
       "form": "StudyTypeForm", 
-      "text": "Please enter if there is an expanded access program or not or if it is unknown.\r\n"
+      "text": "Please enter if there is an expanded access program or not or if it is unknown. The expanded access is a sponsored process of making available new, promising products, without registration at Ag\u00eancia Nacional de Vigil\u00e2ncia Sanit\u00e1ria - ANIVSA for patients with serious life-threating diseases and absence of satisfactory alternative treatments in the country and no aditional charges for the patient. The product must be under phase III study in Brazil or country of origin, expanded access program approved or registration at the country of origin (RDC 26).\r\n\r\n"
     }
   }, 
   {
@@ -1922,7 +1950,7 @@
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "file", 
-      "example": "Copy of letter of approval from the Ethics Committe or Institutional Review Board (file format - jpeg, tif, bmp)\r\n", 
+      "example": "Copy of letter of approval from the Ethics Committee or Institutional Review Board (file format - jpeg, tif, bmp) and consent form of your study\r\n", 
       "form": "AttachmentForm", 
       "text": "Please enter the file to be attached to this study.\r\n"
     }
@@ -2034,10 +2062,20 @@
       "field": "utrn_number", 
       "example": "", 
       "form": "TrialIdentificationForm", 
-      "text": ""
+      "text": "The Universal Trial Reference Number (UTRN) is a number, obtained by the trial's sponsor, proponent institution or principal investigator as the first step in registering a trial on the REBEC.  \r\nThe UTRN will then become part of the trial's international identity along with the REBEC registration number.\r\nIf your study is internationally multicentric trial, check out if it has a UTRN. \r\nTo obtain the UTRN you must acces the site http://apps.who.int/trialsearch/utn.aspx"
     }
   }, 
   {
+    "pk": 78, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "primary_sponsor", 
+      "example": "", 
+      "form": "InitialTrialForm", 
+      "text": ""
+    }
+  }, 
+    {
     "pk": 1, 
     "model": "assistance.category", 
     "fields": {
@@ -2070,7 +2108,7 @@
     "model": "assistance.question", 
     "fields": {
       "category": 6, 
-      "answer": "First time users need to create a login name and password by clicking on the Register button. A confirmation e-mail will be sent to the informed e-mail account.\r\nThe New Submission button will take the registrant to the screens that need to be completed. This includes basic trial information such as the types of participants, the interventions being tested and the outcomes to be assessed. Other information required includes details of the study design, sample size and contact information. Each field has an information button to assist registrants in entering the correct data. Once each screen is completed, the registrant should click the 'Save' button to save the information to the online registry database. Once all the mandatory information has been entered, the registrant should click the 'Send to review' button. \r\nFollowing submission of the data, the BCTR staff will check the data submitted and query the contact person should anything need clarification. Once any queries are confirmed, trials are officially 'registered' and allocated a unique registration number. Both date of submission and date of registration are recorded. ", 
+      "answer": "First time users need to create a login name and password by clicking on the Register button. A confirmation e-mail will be sent to the informed e-mail account.\r\nThe New Submission button will take the registrant to the screens that need to be completed. This includes basic trial information such as the types of participants, the interventions being tested and the outcomes to be assessed. Other information required includes details of the study design, sample size and contact information. Each field has an information button to assist registrants in entering the correct data. Once each screen is completed, the registrant should click the 'Save' button to save the information to the online registry database. Once all the mandatory information has been entered, the registrant should click the 'Send to review' button. \r\nFollowing submission of the data, the REBEC staff will check the data submitted and query the contact person should anything need clarification. Once any queries are confirmed, trials are officially 'registered' and allocated a unique registration number. Both date of submission and date of registration are recorded. ", 
       "created": "2010-07-21 21:29:01", 
       "order": 160, 
       "title": "How do I register a trial?"
@@ -2103,7 +2141,7 @@
     "model": "assistance.question", 
     "fields": {
       "category": 6, 
-      "answer": "All clinical trials involving brazilian investigators or participants, in all areas of health and testing all forms of interventions should be registered. Clinical trials being conducted in other countries will not be accepted for  registration on the BCTR. \r\nStudies must meet the <a href=\"http://www.who.int/ictrp/en/\" title=\"World Health Organization\" target=\"_blank\">WHO</a> definition of a clinical trial to be registered. That is, any research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes . Medical interventions include any intervention used to modify a health outcome and include drugs, surgical procedures, devices, behavioural treatments, etc. If in doubt about whether to register or not, registration is recommended. \r\n", 
+      "answer": "All clinical trials involving brazilian investigators or participants, in all areas of health and testing all forms of interventions should be registered. \r\nStudies must meet the <a href=\"http://www.who.int/ictrp/en/\" title=\"World Health Organization\" target=\"_blank\">WHO</a> definition of a clinical trial to be registered. That is, any research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes . Medical interventions include any intervention used to modify a health outcome and include drugs, surgical procedures, devices, behavioural treatments, etc. If in doubt about whether to register or not, registration is recommended. \r\n", 
       "created": "2010-07-21 18:20:25", 
       "order": 130, 
       "title": "What studies need to be registered?"
@@ -2169,7 +2207,7 @@
     "model": "assistance.question", 
     "fields": {
       "category": 6, 
-      "answer": "No. The study registration at Plataforma Brasil must be done before its registration at the Brazilian Clinical Trials Registry (RBEC). Although the form of RBEC share many of its fields with Plataforma Brasil, the objective of RBEC is to inform all national and international interested stakeholders about clinical trials performed in Brazil through the integration of RBEC and International Clinical Trials Registry Platform (ICTRP / World Health Organization). This integration is based upon the adoption of standard operating procedures defined by the Secretariat of th ICTRP.", 
+      "answer": "No. The study registration at Plataforma Brasil must be done before its registration at the Brazilian Clinical Trials Registry (REBEC). Although the form of RBEC share many of its fields with Plataforma Brasil, the objective of REBEC is to inform all national and international interested stakeholders about clinical trials performed in Brazil through the integration of RBEC and International Clinical Trials Registry Platform (ICTRP / World Health Organization). This integration is based upon the adoption of standard operating procedures defined by the Secretariat of th ICTRP.", 
       "created": "2010-10-25 15:50:30", 
       "order": 220, 
       "title": "Is the  registration of a clinical trial at Plataforma Brasil equivalent to the registration at Brazilian Clinical Trials Registry?"
