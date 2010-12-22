@@ -120,6 +120,7 @@ INSTALLED_APPS = (
     'flatpages_polyglot',
     'south',
     'fossil',
+    #'sentry',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =(
