@@ -25,6 +25,7 @@ Dependencies
 - django-registration
 - django-rosetta
 - south
+- django-compressor
 
 We suggest you read a more detailed page at:
 

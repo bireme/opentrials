@@ -75,9 +75,14 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.gzip.GZipMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.http.ConditionalGetMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
+
     'django.middleware.csrf.CsrfViewMiddleware',
     'middleware.scriptprefix.ScriptPrefixMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -120,7 +125,9 @@ INSTALLED_APPS = (
     'flatpages_polyglot',
     'south',
     'fossil',
-    #'sentry',
+
+    #'debug_toolbar',
+    'compressor',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =(
@@ -197,6 +204,14 @@ SOUTH_TESTS_MIGRATE = False
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 FORMAT_MODULE_PATH = 'formats'
+
+INTERNAL_IPS = ('127.0.0.1',)
+USE_ETAGS = True
+
+COMPRESS = True
+COMPRESS_OUTPUT_DIR = ''
+#COMPRESS_CSS_FILTERS = ['compressor.filters.cssmin.CSSMinFilter']
+#COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter']
 
 ### END Clinical Trials Repository customization settings
 #################################################################

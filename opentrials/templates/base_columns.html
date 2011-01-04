@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
-{% load i18n %}
+{% load i18n cache %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block container_class %}container{% endblock %}
 
@@ -28,6 +29,8 @@
     </div>
     
     <div class="news">
+        {% cache 120 home_news_bar LANGUAGE_CODE %}
+
         {% load news %}
         {% get_latest_news 3 as latest_news %}
         <table border="0" cellpading="0" cellspacing="0">
@@ -50,6 +53,8 @@
             <li>{% trans 'No news have been published.' %}</li>
         {% endif %}
         </ul>
+        
+        {% endcache %}
     </div>
 </div>
 {% endblock %}
