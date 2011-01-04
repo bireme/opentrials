@@ -2,23 +2,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
     {% load i18n %}
+    {% load compress %}
+
+    {% spaceless %}
     <head>
         <meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8"/>
         <title>{% block page_title %}{% trans "Brazilian Registry of Clinical Trials" %}{% endblock %}</title>
-        <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico"/>
-        <link rel="stylesheet" type="text/css" href="/static/css/asmselect/jquery.asmselect.css"/>
-        <link rel="stylesheet" type="text/css" href="/static/css/jquery.cluetip.css"/>
-        <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="{{ MEDIA_URL }}favicon.ico"/>
 
-        <!-- fetch JS libraries from Google -->
-        <script type="text/javascript" src="{{ JQUERY_URL }}"></script>
-        <script type="text/javascript" src="{{ JQUERY_UI_URL }}"></script>
-        <script type="text/javascript" src="/static/js/asmselect/jquery.asmselect.js"></script>
-        <script type="text/javascript" src="/static/js/jquery.bgiframe.min.js"></script>
-        <script type="text/javascript" src="/static/js/jquery.cluetip.min.js"></script>
-        <script type="text/javascript" src="/static/js/jquery.hoverIntent.js"></script>
-        <script type="text/javascript" src="/static/js/submission.utils.js"></script>
-        <script type="text/javascript" src="/static/js/language.js"></script>
+        {% compress css %}
+        <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/asmselect/jquery.asmselect.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/jquery.cluetip.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css"/>
+        {% endcompress %}
 
         {% block extrahead %}{% endblock %}
     </head>
@@ -32,7 +28,7 @@
                     <div class="identification">
                         <h1><a href="{% url reviewapp.home %}">
                         <span>
-                          <img title="{% trans 'Brazilian Registry of Clinical Trials' %}" alt="{% trans 'Brazilian Registry of Clinical Trials' %}" src="/static/images/logo.png">
+                          <img title="{% trans 'Brazilian Registry of Clinical Trials' %}" alt="{% trans 'Brazilian Registry of Clinical Trials' %}" src="{{ MEDIA_URL }}images/logo.png">
                         </span>
                         </a></h1>
                     </div>
@@ -67,8 +63,8 @@
                                 </td>
                                 <td>
                                     <a href="/accounts/logout">
-                                        <img class="nohover" src="/static/images/button_logout.gif" alt="{% trans 'Logout' %}"/>
-                                        <img class="hover" src="/static/images/button_logout_hover.gif" alt="{% trans 'Logout' %}"/>
+                                        <img class="nohover" src="{{ MEDIA_URL }}images/button_logout.gif" alt="{% trans 'Logout' %}"/>
+                                        <img class="hover" src="{{ MEDIA_URL }}images/button_logout_hover.gif" alt="{% trans 'Logout' %}"/>
                                     </a>
                                 </td>
                             </tr>
@@ -193,4 +189,19 @@
         {% endif %}
         {% block endjs %}{% endblock %}
     </body>
+    {% endspaceless %}
+
+    {% compress js %}
+    {# This script must be at the bottom to avoid blocking of parallel requests. #}
+
+    <!-- fetch JS libraries from Google -->
+    <script type="text/javascript" src="{{ JQUERY_URL }}"></script>
+    <script type="text/javascript" src="{{ JQUERY_UI_URL }}"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/asmselect/jquery.asmselect.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.bgiframe.min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.cluetip.min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.hoverIntent.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/submission.utils.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/language.js"></script>
+    {% endcompress %}
 </html>

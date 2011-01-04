@@ -1,6 +1,6 @@
 {% extends "base_columns.html" %}
 
-{% load i18n %}
+{% load i18n cache %}
 {% get_current_language as LANGUAGE_CODE %}
 
 {% block body %}
@@ -44,6 +44,8 @@
     </tr>
     </table>
 
+    {% cache 120 home_registered_trials LANGUAGE_CODE %}
+
     {% if clinical_trials %}
         <ul>
         {% for ct in clinical_trials %}
@@ -59,4 +61,6 @@
         <p>{% trans 'No clinical trials have been published.' %}</p>
     {% endif %}
     </div>
+
+    {% endcache %}
 {% endblock %}
