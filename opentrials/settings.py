@@ -209,7 +209,7 @@ INTERNAL_IPS = ('127.0.0.1',)
 USE_ETAGS = True
 
 COMPRESS = True
-COMPRESS_OUTPUT_DIR = ''
+COMPRESS_OUTPUT_DIR = 'compressor-cache'
 #COMPRESS_CSS_FILTERS = ['compressor.filters.cssmin.CSSMinFilter']
 #COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter']
 
