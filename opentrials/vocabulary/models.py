@@ -136,4 +136,5 @@ class IcdChapter(SimpleVocabulary):
 class AttachmentType(SimpleVocabulary):
     ''' Types of documents attached to Clinical Trial records '''
 
-
+class InstitutionType(SimpleVocabulary):
+    ''' Categories for types of institutions '''

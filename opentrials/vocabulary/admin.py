@@ -22,8 +22,8 @@ class CountryCodeAdmin(TranslationAdmin):
     inlines = [VocabularyTranslationInline]
 
 for model in (RecruitmentStatus, StudyType, StudyPhase, InterventionCode,
-    AttachmentType, TrialNumberIssuingAuthority,
-    StudyPurpose, InterventionAssigment, StudyMasking, StudyAllocation):
+    AttachmentType, TrialNumberIssuingAuthority, StudyPurpose, 
+    InterventionAssigment, StudyMasking, StudyAllocation, InstitutionType):
     if model not in admin.site._registry:
         admin.site.register(model, SimpleVocabularyAdmin)
 

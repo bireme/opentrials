@@ -18,7 +18,7 @@ from time import sleep
 from utilities import safe_truncate
 
 from vocabulary.models import CountryCode, StudyPhase, StudyType, RecruitmentStatus
-from vocabulary.models import InterventionCode
+from vocabulary.models import InterventionCode, InstitutionType
 from vocabulary.models import StudyPurpose, InterventionAssigment, StudyMasking, StudyAllocation
 
 from polyglot.models import Translation
@@ -515,6 +515,8 @@ class Institution(TrialRegistrationDataSetModel):
     address = models.TextField(_('Postal Address'), max_length=1500, blank=True)
     country = models.ForeignKey(CountryCode, verbose_name=_('Country'))
     creator = models.ForeignKey(User, related_name='institution_creator', editable=False)
+    i_type = models.ForeignKey(InstitutionType, null=True, blank=True,
+                                           verbose_name=_('Institution type'))
 
     def __unicode__(self):
         return safe_truncate(self.name, 120)
