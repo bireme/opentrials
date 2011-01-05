@@ -227,7 +227,7 @@ def deserialize_institution(data, persistent=False):
 
     else:
         from repository.models import Institution
-        from vocabulary.models import CountryCode
+        from vocabulary.models import CountryCode, InstitutionType
 
         if isinstance(data, basestring):
             data = DictKeyAttribute(simplejson.loads(data))
@@ -243,6 +243,7 @@ def deserialize_institution(data, persistent=False):
             institution.address = data.address
             institution.country = deserialize_vocabulary(data.country, True, CountryCode)
             institution.creator = deserialize_user(data.creator, True)
+            institution.i_type = deserialize_vocabulary(data.i_type, True, InstitutionType)
             institution.save()
 
         return institution

@@ -7,7 +7,7 @@ from repository.models import TrialSecondarySponsor, TrialSupportSource
 from repository.models import SiteContact, PublicContact, ScientificContact
 from vocabulary.models import CountryCode, StudyPhase, StudyType, RecruitmentStatus
 from vocabulary.models import InterventionCode, StudyMasking, StudyAllocation
-from vocabulary.models import StudyPurpose, InterventionAssigment
+from vocabulary.models import StudyPurpose, InterventionAssigment, InstitutionType
 from repository.widgets import SelectWithLink, SelectInstitution, YearMonthWidget
 
 import choices
@@ -652,3 +652,15 @@ class NewInstitution(ReviewModelForm):
         model = Institution
 
     title = _('New Institution')
+    
+    country = MultilingualModelChoiceField(
+                label=_('Country'),
+                queryset=CountryCode.objects.all(),
+                required=True,
+                label_field='description',)
+            
+    i_type = MultilingualModelChoiceField(
+                label=_('Institution type'),
+                queryset=InstitutionType.objects.all(),
+                required=False,
+                label_field='label',)
