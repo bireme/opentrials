@@ -3,24 +3,24 @@
     "pk": 4, 
     "model": "sites.site", 
     "fields": {
-      "domain": "ec.beta.bvsalud.org", 
-      "name": "EnsaiosClinicos.gov.br (BETA)"
+      "domain": "ec.teste.bvsalud.org", 
+      "name": "Registro Brasileiro de Ensaios Cl\u00ednicos (TESTE)"
     }
   }, 
   {
     "pk": 3, 
     "model": "sites.site", 
     "fields": {
-      "domain": "ec.homolog.bvsalud.org", 
-      "name": "EnsaiosClinicos.gov.br (HOMOLOG)"
+      "domain": "ecgovbr2.bvsalud.org", 
+      "name": "Registro Brasileiro de Ensaios Cl\u00ednicos (HOMOLOG)"
     }
   }, 
   {
     "pk": 2, 
     "model": "sites.site", 
     "fields": {
-      "domain": "ec.teste.bvsalud.org", 
-      "name": "EnsaiosClinicos.gov.br (TESTE)"
+      "domain": "www.ensaiosclinicos.gov.br", 
+      "name": "Registro Brasileiro de Ensaios Cl\u00ednicos"
     }
   }, 
   {

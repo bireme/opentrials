@@ -1,5 +1,7 @@
 DEBUG = True
 
+SITE_ID = 2 # change if necessary to match a record in django_site
+
 ADMINS = (
     ('Webmaster Ensaios Clinicos', 'appec@bireme.org'),
 )
@@ -23,6 +25,7 @@ EMAIL_HOST_PASSWORD = '?????'
 EMAIL_USE_TLS = False
 
 SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER # e-mail account used to send messages
 
 GOOGLE_ANALYTICS_ID = ''
 
