@@ -24,7 +24,7 @@ urlpatterns = patterns('',
     #public
     url(r'^recruiting/$', recruiting, name='repository.recruiting'),
     url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/$', trial_registered, name='repository.trial_registered'),
-    url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/xml/$', trial_ictrp, name='repository.trial_ictrp'),
+    url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/xml/ictrp/$', trial_ictrp, name='repository.trial_ictrp'),
     url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/v(?P<trial_version>\d+)/$', trial_registered, name='repository.trial_registered_version'),
     url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/v(?P<trial_version>\d+)/xml/$', trial_ictrp, name='repository.trial_ictrp_version'),
     url(r'^$', index, name='repository.index'),

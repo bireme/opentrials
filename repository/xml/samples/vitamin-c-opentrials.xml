@@ -1,6 +1,8 @@
-<?xml version="1.0"?>
-<!--N/U marks fields that are not used by when importing to the RECLAC platform-->
-<trials>
+<?xml version="1.0"?> <!-- standalone="no" -->
+<!-- <!DOCTYPE document PUBLIC "http://localhost:8000/xml/who_ictrp.dtd"> -->
+<!--N/U marks fields that are not used by when importing to the OpenTrials platform-->
+<trials xmlns="http://localhost:8000/xml/who_ictrp.dtd"
+        xmlns:opentrials="http://localhost:8000/xml/opentrials.dtd">
     <trial>
         <main>
             <trial_id>IRCT138708271460N1</trial_id> <!--becomes secondary id-->
@@ -30,8 +32,7 @@
                 Assignment: Parallel.
                 Purpose: Supportive care.
                 Other design features:
-                <reclac:study_design>
-                </reclac:study_design>
+                <!-- <opentrials:study_design></opentrials:study_design> -->
             </study_design>
             <phase>2-3</phase>
             <hc_freetext xml:lang="en">
@@ -88,16 +89,15 @@
                 heart surgery beside CABG, Urgent patients Diabetics, Ischemic
                 time more than 120 min.
             </exclusion_criteria>
-            <agemin reclac:unit="no-limit">0</agemin>
-            <>no limit</reclac:agemin_unit>
-            <agemax reclac:unit="years">150</agemax>
+            <agemin unit="null" opentrials:unit="no-limit">0</agemin>
+            <agemax opentrials:unit="years">150</agemax>
             <gender>both</gender>
         </criteria>
         <health_condition_code>
             <hc_code/>
         </health_condition_code>
         <health_condition_keyword>
-            <hc_keyword reclac:vocabulary="DeCS" reclac:code="C14.280.647">
+            <hc_keyword opentrials:vocabulary="DeCS" opentrials:code="C14.280.647">
                     Myocardial Ischemia
             </hc_keyword>
             <hc_keyword>Atherosclerotic heart disease</hc_keyword>

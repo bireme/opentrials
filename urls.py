@@ -61,6 +61,14 @@ if settings.DEBUG:
             {'document_root': settings.MEDIA_ROOT}),
     )
 
+    # Serve static XML files, specially DTD for XML references
+    import os, repository
+    REPOSITORY_XML_ROOT = os.path.join(os.path.dirname(repository.__file__), 'xml')
+    urlpatterns += patterns('',
+        url(r'^xml/(?P<path>.*)$', 'django.views.static.serve',
+            {'document_root': REPOSITORY_XML_ROOT}),
+    )
+
 if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += patterns('',
         url(r'^rosetta/', include('rosetta.urls')),

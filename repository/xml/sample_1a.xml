@@ -1,5 +1,5 @@
-<!DOCTYPE trial SYSTEM "reclac.dtd">
-<!--the simplest possible valid RECLAC trial XML-->
+<!DOCTYPE trial SYSTEM "opentrials.dtd">
+<!--the simplest possible valid OpenTrials trial XML-->
 <!--based on data from the ANZCTR; trial: ACTRN12610000133033-->
 <trial type="interventional">
     <trial_identification>
