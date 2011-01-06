@@ -887,6 +887,8 @@ def step_9(request, trial_pk):
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
+from repository.xml.generate import xml_ictrp
+
 def trial_ictrp(request, trial_fossil_id, trial_version=None):
     """
     Returns a XML content structured on ICTRP standard, you can find more details
@@ -916,11 +918,9 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
     ct.previous_revision = fossil.previous_revision
     ct.version = fossil.revision_sequential
 
-    resp = render_to_response(
-            'repository/clinicaltrial_detail.xml',
-            {'object': ct,
-             'reg_name': settings.REG_NAME},
-            context_instance=RequestContext(request),
+    xml = xml_ictrp(ct)
+
+    resp = HttpResponse(xml,
             mimetype = 'text/xml'
             )
 

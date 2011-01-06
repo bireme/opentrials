@@ -41,26 +41,26 @@
     <!ELEMENT criteria (inclusion_criteria,agemin,agemax,gender,exclusion_criteria)>
 	<!ELEMENT inclusion_criteria (#PCDATA)>                     <!--TRDS 14a-->
 	<!ELEMENT agemin (#PCDATA)>                                 <!--TRDS 14c-->
-	<!ELEMENT agemin_unit (#PCDATA)>                            <!--RECLAC-->
+	<!ELEMENT agemin_unit (#PCDATA)>                            <!--OpenTrials-->
 	<!ELEMENT agemax (#PCDATA)>                                 <!--TRDS 14d-->
-	<!ELEMENT agemax_unit (#PCDATA)>                            <!--RECLAC-->
+	<!ELEMENT agemax_unit (#PCDATA)>                            <!--OpenTrials-->
 	<!ELEMENT gender (#PCDATA)>                                 <!--TRDS 14b-->
 	<!ELEMENT exclusion_criteria (#PCDATA)>                     <!--TRDS 14e-->
 
     <!ELEMENT health_condition_code (hc_code+)>                     <!--TRDS 12b-->
 	<!ELEMENT hc_code (#PCDATA)>
-								    <!--RECLAC: add descriptor metadata-->
+								    <!--OpenTrials: add descriptor metadata-->
 
     <!ELEMENT health_condition_keyword (hc_keyword+)>               <!--TRDS 12c-->
 	<!ELEMENT hc_keyword (#PCDATA)>
-								    <!--RECLAC: add descriptor metadata-->
+								    <!--OpenTrials: add descriptor metadata-->
 
     <!ELEMENT intervention_code (i_code+)>                          <!--TRDS 13b-->
 	<!ELEMENT i_code (#PCDATA)>
 
     <!ELEMENT intervention_keyword (i_keyword+)>                    <!--TRDS 13c-->
 	<!ELEMENT i_keyword (#PCDATA)>
-								    <!--RECLAC: add descriptor metadata-->
+								    <!--OpenTrials: add descriptor metadata-->
 
     <!ELEMENT primary_outcome (prim_outcome+)>                      <!--TRDS 19-->
 	<!ELEMENT prim_outcome (#PCDATA)>
@@ -70,10 +70,10 @@
 
     <!ELEMENT secondary_sponsor (sponsor_name+)>                    <!--TRDS 6-->
 	<!ELEMENT sponsor_name (#PCDATA)>
-								    <!--RECLAC: institution fields-->
+								    <!--OpenTrials: institution fields-->
 
 
     <!ELEMENT source_support (source_name+)>                        <!--TRDS 4-->
 	<!ELEMENT source_name (#PCDATA)>
-								    <!--RECLAC: institution fields-->
+								    <!--OpenTrials: institution fields-->
 

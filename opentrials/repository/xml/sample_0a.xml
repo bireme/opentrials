@@ -1,4 +1,4 @@
-<!DOCTYPE trial SYSTEM "reclac.dtd">
+<!DOCTYPE trial SYSTEM "opentrials.dtd">
 <!--malformed XML (the study_type close tag is missing)-->
 <trial>
     <study_type>interventional

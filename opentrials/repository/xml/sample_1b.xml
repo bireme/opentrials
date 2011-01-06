@@ -1,5 +1,5 @@
-<!DOCTYPE trial SYSTEM "reclac.dtd">
-<!--a realistic and valid RECLAC trial XML-->
+<!DOCTYPE trial SYSTEM "opentrials.dtd">
+<!--a realistic and valid OpenTrials trial XML-->
 <!--based on data from the ANZCTR trial ACTRN12610000133033-->
 <!--source: http://www.anzctr.org.au/trial_view.aspx?ID=335059-->
 <trial type="interventional">
@@ -15,7 +15,7 @@
 	<!--TRDS 3a/3b (0-1)-->
 	<utn>U9999-9999-0102</utn>
 	<!--TRDS 1 (0-1)-->
-	<reclac_id>RBR-9zz-2bc</reclac_id>
+	<opentrials_id>RBR-9zz-2bc</opentrials_id>
 	<secondary_ids>
 	    <secondary_id>
 		<!--TRDS 3a (0-N)-->
