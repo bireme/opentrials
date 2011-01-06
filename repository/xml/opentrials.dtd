@@ -25,7 +25,8 @@ Comments:
 %vocabularies;
 
 <!ELEMENT trial (trial_identification, sponsors_and_support, health_conditions,
-          interventions, recruitment, study, outcomes, contacts, references?)>
+          interventions, recruitment, study, outcomes, contacts, references?,
+          staff_note?)>
     <!-- trial record must have explicit attribute type="interventional"
          in preparation for eventual support for observational studies -->
     <!ATTLIST trial
@@ -141,7 +142,7 @@ Comments:
     <!-- formset 6/9 -->
     <!ELEMENT study (study_design, phase, purpose, intervention_assignment,
                 masking, allocation)>
-        <!ATTLIST study_design
+        <!ATTLIST study
             lang (%language.options;) #IMPLIED
             expanded_access_program (yes|no) #IMPLIED
             number_of_arms NMTOKEN #IMPLIED
@@ -202,3 +203,6 @@ Comments:
     <!ELEMENT references (link*)>
         <!ELEMENT link (#PCDATA)>
         <!ATTLIST link url CDATA #REQUIRED>
+
+    <!ELEMENT staff_note (#PCDATA)>
+
