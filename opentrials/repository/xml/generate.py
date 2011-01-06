@@ -60,7 +60,10 @@ Comments:
 %(entities)s"""
 
 def xml_opentrials_dtd(**kwargs):
-    """Generates a DTD for Opentrials XML standard, based on model classes."""
+    """
+    This function doesn't really works. It is just to compare existing fields
+    with current standard while I work on the definitions (Marinho Brandao)
+    """
     entities = []
 
     # Vocabularies
