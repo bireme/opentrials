@@ -5,41 +5,6 @@
 
 {% block extrahead %}
         <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/multilingual.css"/>
-        <script type="text/javascript" src="{{MEDIA_URL}}js/multilingual.js"></script>
-
-        <script type="text/javascript">
-            {% polyglot_js_constants available_languages %}
-
-            $(document).ready(function() {
-                $("select[multiple]").asmSelect({
-                        addItemTarget: 'bottom',
-                        animate: true,
-                        highlight: true,
-                        sortable: false
-                });
-                $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
-            });
-        </script>
-        
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('#id_target_sample_size').keyup(function() { 
-                    this.value = this.value.replace(/[^0-9]/g,'');
-                });
-                
-                $('#id_number_of_arms').keyup(function() { 
-                    this.value = this.value.replace(/[^0-9]/g,'');
-                });
-            });
-        </script>
-        
-        <script type="text/javascript">
-            // customization for the Brazilian registry of clinical trials
-            // #190 Show Brazil at the beginning of the selects
-            $(document).ready(function(){
-                $("#asmSelect0 option").first().after($("#asmSelect0 option[value=1]"));
-            });
-        </script>
 {% endblock %}
 
 {% block body %}
@@ -101,6 +66,43 @@
 {% endblock %}
 
 {% block endjs %}{{ block.super }}
+
+<script type="text/javascript" src="{{MEDIA_URL}}js/multilingual.js"></script>
+
+<script type="text/javascript">
+    {% polyglot_js_constants available_languages %}
+
+    $(document).ready(function() {
+        $("select[multiple]").asmSelect({
+                addItemTarget: 'bottom',
+                animate: true,
+                highlight: true,
+                sortable: false
+        });
+        $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#id_target_sample_size').keyup(function() { 
+            this.value = this.value.replace(/[^0-9]/g,'');
+        });
+        
+        $('#id_number_of_arms').keyup(function() { 
+            this.value = this.value.replace(/[^0-9]/g,'');
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    // customization for the Brazilian registry of clinical trials
+    // #190 Show Brazil at the beginning of the selects
+    $(document).ready(function(){
+        $("#asmSelect0 option").first().after($("#asmSelect0 option[value=1]"));
+    });
+</script>
+
 <script type="text/javascript">
     $(document).ready(function() {
         // Confirm before user leave page and lose modified data without save them

@@ -2,20 +2,13 @@
 {% load i18n %}
 {% load polyglot_tags %}
 
-{% block extrahead %}
-        <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/multilingual.css"/>
-        <script type="text/javascript" src="{{MEDIA_URL}}js/multilingual.js"></script>
+{% block extra_buttons %}<input onclick="new_institution('{{formset.management_form.prefix}}')" type="button" value="{% trans 'New Institution' %}"/>{% endblock %}
 
-        <script type="text/javascript">
-            {% polyglot_js_constants available_languages %}
-
-            $(document).ready(function() {
-                $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
-            });
-            function new_institution(target){
-                return window.open('{% url new_institution %}#'+target,'n_i','status=0,location=0,height=380');
-            }
-        </script>
+{% block endjs %}{{ block.super }}
+    <script type="text/javascript">
+        function new_institution(target){
+            return window.open('{% url new_institution %}#'+target,'n_i','status=0,location=0,height=380');
+        }
+    </script>
 {% endblock %}
 
-{% block extra_buttons %}<input onclick="new_institution('{{formset.management_form.prefix}}')" type="button" value="{% trans 'New Institution' %}"/>{% endblock %}

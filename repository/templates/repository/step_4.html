@@ -2,23 +2,18 @@
 {% load i18n %}
 {% load polyglot_tags %}
 
-{% block extrahead %}
-        <link rel="stylesheet" type="text/css" href="/static/css/multilingual.css"/>
-        <script type="text/javascript" src="{{MEDIA_URL}}js/multilingual.js"></script>
-        <script type="text/javascript" src="{{MEDIA_URL}}js/submission.utils.js"></script>
-
-        <script type="text/javascript">
-            {% polyglot_js_constants available_languages %}
-
-            $(document).ready(function() {
-                $("div.form select")
-                    .change(search_event(
-                            '{% url decs.search lang=LANGUAGE_CODE,term="" %}',
-                            '{% trans "Search terms" %}',
-                            '{{LANGUAGE_CODE}}'))
-                    .each(function(){$(this).change();});
-                $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
-            });
-        </script>
+{% block endjs %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("div.form select")
+                .change(search_event(
+                        '{% url decs.search lang=LANGUAGE_CODE,term="" %}',
+                        '{% trans "Search terms" %}',
+                        '{{LANGUAGE_CODE}}'))
+                .each(function(){$(this).change();});
+        });
+    </script>
+{# the super is called at the end because the js change the elements above and generates conflicts with confirm-before-leave function #}
+{{ block.super }}
 {% endblock %}
 
