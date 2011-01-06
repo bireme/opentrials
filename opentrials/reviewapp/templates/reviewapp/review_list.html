@@ -3,18 +3,6 @@
 
 {% block extrahead %}
 <link rel="stylesheet" type="text/css" href="/static/css/tablesorter/style.css"/>
-<script type="text/javascript" src="/static/js/jquery.tablesorter.min.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-    // call the tablesorter plugin
-    $("#table_submissions").tablesorter({
-        sortList: [[0,1]],
-        dateFormat: 'uk',
-        textExtraction: 'complex',
-    });
-});
-</script>
 {% endblock %}
 
 {% block stepmenu_top %}
@@ -47,5 +35,20 @@ $(document).ready(function() {
     </tbody>
 </table>
 
+{% endblock %}
+
+{% block endjs %}{{ block.super }}
+<script type="text/javascript" src="/static/js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // call the tablesorter plugin
+    $("#table_submissions").tablesorter({
+        sortList: [[0,1]],
+        dateFormat: 'uk',
+        textExtraction: 'complex',
+    });
+});
+</script>
 {% endblock %}
 

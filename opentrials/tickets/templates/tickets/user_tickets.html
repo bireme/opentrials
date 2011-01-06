@@ -3,19 +3,6 @@
 
 {% block extrahead %}
 <link rel="stylesheet" type="text/css" href="/static/css/tablesorter/style.css"/>
-<script type="text/javascript" src="/static/js/jquery.tablesorter.min.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-    // call the tablesorter plugin
-    $("#table_tickets").tablesorter({
-        sortList: [[0,1]],
-        dateFormat: 'uk',
-        textExtraction: 'complex',
-        headers: { 6: { sorter: false}},
-    });
-});
-</script>
 {% endblock %}
 
 {% block body_title %}{% trans "User Tickets" %}{% endblock %}
@@ -63,3 +50,20 @@ $(document).ready(function() {
     <tbody>
 </table>
 {% endblock %}
+
+{% block endjs %}
+<script type="text/javascript" src="/static/js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // call the tablesorter plugin
+    $("#table_tickets").tablesorter({
+        sortList: [[0,1]],
+        dateFormat: 'uk',
+        textExtraction: 'complex',
+        headers: { 6: { sorter: false}},
+    });
+});
+</script>
+{% endblock %}
+

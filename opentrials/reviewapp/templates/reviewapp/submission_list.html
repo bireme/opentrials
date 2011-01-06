@@ -4,24 +4,6 @@
 
 {% block extrahead %}
 <link rel="stylesheet" type="text/css" href="/static/css/tablesorter/style.css"/>
-<script type="text/javascript" src="/static/js/jquery.tablesorter.min.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-    // call the tablesorter plugin
-    $("#table_submissions").tablesorter({
-        sortList: [[0,1]],
-        dateFormat: 'uk',
-        textExtraction: 'complex',
-    });
-    
-    $('input.button-confirm-delete').click(function(){
-        if (confirm('{% trans "Want to delete this submission?" %}')){
-            $(this).parents('form').submit();
-        }
-    });
-});
-</script>
 {% endblock %}
 
 {% block stepmenu_top %}
@@ -99,3 +81,23 @@ $(document).ready(function() {
 
 {% endblock %}
 
+{% block endjs %}{{ block.super }}
+<script type="text/javascript" src="/static/js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // call the tablesorter plugin
+    $("#table_submissions").tablesorter({
+        sortList: [[0,1]],
+        dateFormat: 'uk',
+        textExtraction: 'complex',
+    });
+    
+    $('input.button-confirm-delete').click(function(){
+        if (confirm('{% trans "Want to delete this submission?" %}')){
+            $(this).parents('form').submit();
+        }
+    });
+});
+</script>
+{% endblock %}
