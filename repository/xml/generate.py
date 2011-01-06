@@ -9,7 +9,7 @@ from repository import choices
 
 from vocabulary.models import CountryCode, InterventionCode, StudyPurpose
 from vocabulary.models import InterventionAssigment, StudyMasking, StudyAllocation
-from vocabulary.models import StudyPhase
+from vocabulary.models import StudyPhase, StudyType
 
 VALID_FUNCTIONS = (
     'xml_ictrp',
@@ -307,6 +307,13 @@ def xml_opentrials_mod(**kwargs):
     entities.append('\n'.join([
             '<!ENTITY % trialstatus.options',
             '    "%s">' % '|'.join(statuses),
+            ]))
+
+    # Study Types
+    study_types = StudyType.objects.values_list('label', flat=True)
+    entities.append('\n'.join([
+            '<!ENTITY % study_type.options',
+            '    "%s">' % '|'.join(study_types),
             ]))
 
     return MOD_TEMPLATE%{

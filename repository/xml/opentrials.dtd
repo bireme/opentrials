@@ -30,7 +30,6 @@ Comments:
     <!-- trial record must have explicit attribute type="interventional"
          in preparation for eventual support for observational studies -->
     <!ATTLIST trial
-        type (interventional) #REQUIRED
         status (%trialstatus.options;) #REQUIRED
         date_registration #REQUIRED
         created #REQUIRED
@@ -148,21 +147,18 @@ Comments:
             number_of_arms NMTOKEN #IMPLIED
         >
         <!ELEMENT study_design (#PCDATA)>
-        <!ELEMENT phase EMPTY>                                    <!--TRDS 15c (0..1)-->
-        <!ATTLIST phase
-            value (%phase.options;) #REQUIRED>
+        <!ELEMENT type EMPTY>                                    <!--TRDS 15c (0..1)-->
+            <!ATTLIST type value (%study_type.options;) #REQUIRED>
+        <!ELEMENT phase EMPTY>
+            <!ATTLIST phase value (%phase.options;) #REQUIRED>
         <!ELEMENT purpose EMPTY>
-        <!ATTLIST purpose
-            value (%purpose.options;) #REQUIRED>
+            <!ATTLIST purpose value (%purpose.options;) #REQUIRED>
         <!ELEMENT intervention_assignment EMPTY>
-        <!ATTLIST intervention_assignment
-            value (%assignment.options;) #REQUIRED>
+            <!ATTLIST intervention_assignment value (%assignment.options;) #REQUIRED>
         <!ELEMENT masking EMPTY>
-        <!ATTLIST masking
-            value (%masking.options;) #REQUIRED>
+            <!ATTLIST masking value (%masking.options;) #REQUIRED>
         <!ELEMENT allocation EMPTY>
-        <!ATTLIST allocation
-            value (%allocation.options;) #REQUIRED>
+            <!ATTLIST allocation value (%allocation.options;) #REQUIRED>
 
     <!-- formset 7/9 -->
     <!ELEMENT outcomes (primary_outcome+, secondary_outcome*)>
