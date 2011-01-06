@@ -55,3 +55,6 @@ such as those from Vocabulary application.
 
 <!ENTITY % trialstatus.options
     "processing|published|archived">
+
+<!ENTITY % study_type.options
+    "interventional|observational">
