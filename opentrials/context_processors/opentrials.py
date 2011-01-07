@@ -1,4 +1,4 @@
-import settings
+from django.conf import settings
 from django.core.cache import cache
 import urllib
 from django.utils.safestring import mark_safe
@@ -43,4 +43,7 @@ def latest_tweets(request):
         cache.set('tweets', tweets, settings.TWITTER_TIMEOUT)
 
     return {"tweets": tweets}
+
+def debug(request):
+    return {'DEBUG': settings.DEBUG}
 
