@@ -3,6 +3,7 @@ import datetime
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.db.models.loading import get_app, get_models
+from django.template.defaultfilters import slugify
 
 from repository.models import ClinicalTrial
 from repository import choices
@@ -224,17 +225,17 @@ def xml_opentrials_mod(**kwargs):
             ]))
 
     # Intervention codes
-    icodes = InterventionCode.objects.values_list('label', flat=True)
+    icodes = map(slugify, InterventionCode.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!-- TRDS 13: intervention descriptor attributes -->',
             '<!-- attribute options cannot contain slashes "/" -->',
             '<!ENTITY % interventioncode.options',
-            '    "%s">' % '|'.join(icodes), # FIXME: check why labes were defined with
+            '    "%s">' % '|'.join(icodes), # FIXME: check why labels were defined with
                                             # '-' replacing ' ' on old .mod
             ]))
 
     # Study statuses
-    statuses = InterventionCode.objects.values_list('label', flat=True)
+    statuses = map(slugify, InterventionCode.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!ENTITY % studystatus.options',
             '    "%s">' % '|'.join(statuses),
@@ -253,7 +254,7 @@ def xml_opentrials_mod(**kwargs):
             ]))
 
     # Purposes
-    purposes = StudyPurpose.objects.values_list('label', flat=True)
+    purposes = map(slugify, StudyPurpose.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!-- TRDS 15b: study_design attributes -->',
             '<!ENTITY % purpose.options',
@@ -261,28 +262,28 @@ def xml_opentrials_mod(**kwargs):
             ]))
 
     # Assignment
-    assignments = InterventionAssigment.objects.values_list('label', flat=True)
+    assignments = map(slugify, InterventionAssigment.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!ENTITY % assignment.options',
             '    "%s">' % '|'.join(assignments),
             ]))
 
     # Masking
-    maskings = StudyMasking.objects.values_list('label', flat=True)
+    maskings = map(slugify, StudyMasking.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!ENTITY % masking.options',
             '    "%s">' % '|'.join(maskings),
             ]))
 
     # Allocation
-    allocations = StudyAllocation.objects.values_list('label', flat=True)
+    allocations = map(slugify, StudyAllocation.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!ENTITY % allocation.options',
             '    "%s">' % '|'.join(allocations),
             ]))
 
     # Phases
-    phases = StudyPhase.objects.values_list('label', flat=True)
+    phases = map(slugify, StudyPhase.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!-- TRDS 15c -->',
             '<!ENTITY % phase.options',
@@ -296,7 +297,7 @@ def xml_opentrials_mod(**kwargs):
             ]))
 
     # Countries
-    countries = CountryCode.objects.values_list('label', flat=True)
+    countries = map(slugify, CountryCode.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!ENTITY % country.options',
             '    "%s">' % '|'.join(countries),
@@ -310,7 +311,7 @@ def xml_opentrials_mod(**kwargs):
             ]))
 
     # Study Types
-    study_types = StudyType.objects.values_list('label', flat=True)
+    study_types = map(slugify, StudyType.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!ENTITY % study_type.options',
             '    "%s">' % '|'.join(study_types),

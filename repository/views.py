@@ -887,7 +887,7 @@ def step_9(request, trial_pk):
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
-from repository.xml.generate import xml_ictrp
+from repository.xml.generate import xml_ictrp, xml_opentrials
 
 def trial_ictrp(request, trial_fossil_id, trial_version=None):
     """
@@ -919,6 +919,41 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
     ct.version = fossil.revision_sequential
 
     xml = xml_ictrp(ct)
+
+    resp = HttpResponse(xml,
+            mimetype = 'text/xml'
+            )
+
+    resp['Content-Disposition'] = 'attachment; filename=%s.xml' % ct.trial_id
+
+    return resp
+
+def trial_otxml(request, trial_fossil_id, trial_version=None):
+    """
+    Returns a XML content structured on OpenTrials standard, you can find more details
+    about it on:
+
+    - ToDo
+    """
+
+    try:
+        fossil = Fossil.objects.get(pk=trial_fossil_id)
+    except Fossil.DoesNotExist:
+        try:
+            qs = Fossil.objects.indexed(trial_id=trial_fossil_id)
+            if trial_version:
+                fossil = qs.get(revision_sequential=trial_version)
+            else:
+                fossil = qs.get(is_most_recent=True)
+        except Fossil.DoesNotExist:
+            raise Http404
+
+    ct = fossil.get_object_fossil()
+    ct.hash_code = fossil.pk
+    ct.previous_revision = fossil.previous_revision
+    ct.version = fossil.revision_sequential
+
+    xml = xml_opentrials(ct)
 
     resp = HttpResponse(xml,
             mimetype = 'text/xml'
