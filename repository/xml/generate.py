@@ -10,7 +10,7 @@ from repository import choices
 
 from vocabulary.models import CountryCode, InterventionCode, StudyPurpose
 from vocabulary.models import InterventionAssigment, StudyMasking, StudyAllocation
-from vocabulary.models import StudyPhase, StudyType
+from vocabulary.models import StudyPhase, StudyType, RecruitmentStatus
 
 VALID_FUNCTIONS = (
     'xml_ictrp',
@@ -28,7 +28,7 @@ def xml_ictrp(trial, **kwargs):
             {'object': trial, 'reg_name': settings.REG_NAME},
             )
 
-def xml_opentrials(trial, **kwargs):
+def xml_opentrials(trial, persons, **kwargs):
     """Generates an Opentrials XML for a given Clinical Trial and returns as string."""
     return render_to_string(
             'repository/xml/xml_opentrials.xml',
@@ -235,7 +235,7 @@ def xml_opentrials_mod(**kwargs):
             ]))
 
     # Study statuses
-    statuses = map(slugify, InterventionCode.objects.values_list('label', flat=True))
+    statuses = map(slugify, RecruitmentStatus.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!ENTITY % studystatus.options',
             '    "%s">' % '|'.join(statuses),
@@ -297,7 +297,7 @@ def xml_opentrials_mod(**kwargs):
             ]))
 
     # Countries
-    countries = map(slugify, CountryCode.objects.values_list('label', flat=True))
+    countries = CountryCode.objects.values_list('label', flat=True)
     entities.append('\n'.join([
             '<!ENTITY % country.options',
             '    "%s">' % '|'.join(countries),
