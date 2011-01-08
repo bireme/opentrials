@@ -90,3 +90,14 @@ def do_for_trans(parser, token):
 for_trans = register.tag('for_trans', do_for_trans)
 for_trans_obj = register.tag('for_trans_obj', do_for_trans)
 
+@register.filter
+def switch(value, key_labels):
+    """
+    Returns the equivalent label for a given key value.
+    
+    The example below will return "months":
+
+        {{ "M"|switch:"-=null,Y=years,M=months,W=weeks,D=days,H=hours" }}
+    """
+    key_labels = dict([item.split('=') for item in key_labels.split(',')])
+    return key_labels.get(value, value)

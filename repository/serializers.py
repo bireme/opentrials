@@ -120,6 +120,7 @@ def deserialize_trial(data, persistent=False, persistency_class=None, commit=Tru
             raise Exception('Persistent deserialization of a trial must inform the persistency class.')
 
         from repository.models import ClinicalTrialTranslation, PublicContact, ScientificContact
+        from repository.models import SiteContact
         from vocabulary.models import StudyType, StudyPurpose, InterventionAssigment
         from vocabulary.models import StudyMasking, StudyAllocation, StudyPhase
         from vocabulary.models import RecruitmentStatus, InterventionCode, CountryCode
@@ -176,6 +177,11 @@ def deserialize_trial(data, persistent=False, persistency_class=None, commit=Tru
             contact = deserialize_contact(contact_fossil, True)
 
             ScientificContact.objects.create(trial=trial, contact=contact)
+
+        for contact_fossil in obj_fossil.site_contact:
+            contact = deserialize_contact(contact_fossil, True)
+
+            SiteContact.objects.create(trial=trial, contact=contact)
 
         for icode_fossil in obj_fossil.i_code:
             icode = deserialize_vocabulary(icode_fossil, True, InterventionCode)
@@ -589,6 +595,16 @@ class FossilClinicalTrial(FossilProxy):
         contacts = super(FossilClinicalTrial, self).__getattr__('scientific_contact')
 
         contacts = [FossilContact(contact, language=self._language) for contact in contacts]
+
+        return contacts
+
+    @property
+    def site_contact(self):
+        try:
+            contacts = super(FossilClinicalTrial, self).__getattr__('site_contact')
+            contacts = [FossilContact(contact, language=self._language) for contact in contacts]
+        except AttributeError:
+            contacts = []
 
         return contacts
 

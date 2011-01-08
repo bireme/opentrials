@@ -175,20 +175,20 @@ Comments:
             lang (%language.options;) #IMPLIED>
 
     <!-- formset 8/9 -->
-    <!ELEMENT contacts (public_contact+, scientific_contact+, site_contact*, person+)>
+    <!ELEMENT contacts (person+, public_contact+, scientific_contact+, site_contact*)>
     <!ELEMENT public_contact EMPTY>
         <!ATTLIST public_contact
-            person IDREF #REQUIRED>
+            person CDATA #REQUIRED>
     <!ELEMENT scientific_contact EMPTY>
         <!ATTLIST scientific_contact
-            person IDREF #REQUIRED>
+            person CDATA #REQUIRED>
     <!ELEMENT site_contact EMPTY>
         <!ATTLIST site_contact
-            person IDREF #REQUIRED>
+            person CDATA #REQUIRED>
 
     <!ELEMENT person (firstname,middlename?,lastname,address,city,zip,telephone+,email,affiliation)>
         <!ATTLIST person
-            pid ID #REQUIRED
+            pid CDATA #REQUIRED
             country_code (%country.options;) #REQUIRED>
         <!ELEMENT firstname (#PCDATA)>
         <!ELEMENT middlename (#PCDATA)>

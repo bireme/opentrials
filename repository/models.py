@@ -176,6 +176,9 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     scientific_contact = models.ManyToManyField('Contact', through='ScientificContact',
                                             related_name='scientific_contact_of_set')
 
+    site_contact = models.ManyToManyField('Contact', through='SiteContact',
+                                            related_name='site_contact_of_set')
+
     # TRDS 9a
     public_title = models.TextField(_('Public Title'), blank=True,
                                     max_length=2000)
@@ -663,6 +666,7 @@ def clinicaltrial_post_save(sender, instance, signal, **kwargs):
     if instance.status == choices.PUBLISHED_STATUS:
         fossil = Fossil.objects.create_for_object(instance)
         fossil.create_indexer(key='trial_id', value=instance.trial_id)
+        fossil.create_indexer(key='status', value=instance.status)
 
         if instance.recruitment_status:
             fossil.create_indexer(key='recruitment_status', value=instance.recruitment_status.label)
