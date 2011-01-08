@@ -67,8 +67,10 @@ Serializing
     ...     'updated': None,
     ...     'exported': None,
     ...     'staff_note': '',
+    ...     'language': trial_small.language,
     ...     'public_contact': [],
     ...     'scientific_contact': [],
+    ...     'site_contact': [],
     ...     'i_code': [],
     ...     'recruitment_country': [],
     ...     'support_sources': [],
@@ -288,6 +290,7 @@ Serializing
     ...     'updated': trial_big.updated.strftime('%Y-%m-%d %H:%M:%S'),
     ...     'exported': trial_big.exported.strftime('%Y-%m-%d %H:%M:%S'),
     ...     'staff_note': trial_big.staff_note,
+    ...     'language': trial_big.language,
     ...     'public_contact': [{
     ...         'city': 'Goiania',
     ...         'zip': '74000-970',
@@ -337,6 +340,7 @@ Serializing
     ...         'affiliation': {'pk': 1, 'creator': {'username': 'serializer', 'email': ''}, 'name': 'ACME', 'address': 'Av. Goias, 1249, Centro', 'country': {'translations': [], 'description': '', 'label': 'Brazil'}}, 'address': 'Rua Boituva, 449', 'pk': 1, 'country': {'translations': [], 'description': '', 'label': 'Brazil'},
     ...         'email': 'tarsila@raminel.com.br'
     ...         }],
+    ...     'site_contact': [],
     ...     'i_code': [{'translations': [{'description': '', 'language': 'pt-br', 'label': 'droga'}], 'description': '', 'label': 'drug'}, {'translations': [{'description': '', 'language': 'pt-br', 'label': 'dispositivo'}], 'description': '', 'label': 'device'}],
     ...     'recruitment_country': [{'translations': [], 'description': '', 'label': 'Brazil'}],
     ...     'support_sources': [],
