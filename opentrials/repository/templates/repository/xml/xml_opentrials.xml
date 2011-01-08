@@ -1,5 +1,4 @@
 {% extends "base.xml" %}
-
 {% load repository_tags %}
 
 {% block root %}
@@ -130,7 +129,7 @@
             {% endfor %}
 
             {% for contact in object.site_contact %}
-            <site_contact person="{{ contact.id }}"></site_contact>
+            <site_contact person="{{ contact.pk }}"></site_contact>
             {% endfor %}
         </contacts>
 

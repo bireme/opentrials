@@ -929,7 +929,7 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
             mimetype = 'text/xml'
             )
 
-    resp['Content-Disposition'] = 'attachment; filename=%s.xml' % ct.trial_id
+    resp['Content-Disposition'] = 'attachment; filename=%s-ictrp.xml' % ct.trial_id
 
     return resp
 
@@ -957,7 +957,7 @@ def trial_otxml(request, trial_fossil_id, trial_version=None):
     ct.hash_code = fossil.pk
     ct.previous_revision = fossil.previous_revision
     ct.version = fossil.revision_sequential
-    ct.status = fossil.indexeds.key('status', fail_silent=True)
+    ct.status = fossil.indexeds.key('status', fail_silent=True).value
 
     persons = set(ct.scientific_contact + ct.public_contact + ct.site_contact)
 
@@ -967,7 +967,7 @@ def trial_otxml(request, trial_fossil_id, trial_version=None):
             mimetype = 'text/xml'
             )
 
-    resp['Content-Disposition'] = 'attachment; filename=%s.xml' % ct.trial_id
+    resp['Content-Disposition'] = 'attachment; filename=%s-ot.xml' % ct.trial_id
 
     return resp
 
