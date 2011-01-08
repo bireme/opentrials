@@ -31,11 +31,36 @@ We suggest you read a more detailed page at:
 
     http://reddes.bvsalud.org/projects/clinical-trials/wiki/HowToInstall
 
+virtualenv/pip
+--------------
+
+A way to install easilly a development/production environment is working with Virtualenv.
+
+To install it you just have to run the following commands:
+
+    virtualenv dev
+    source dev/bin/activate
+
+The following command will install all dependencies you need:
+
+    pip requirements.txt
+
+If some package wasn't installed properly, check one of those situations:
+
+- Depending on your operating system, pip will install only packages that aren't
+  already installed in your default Python library path;
+- Maybe some package is a new version with backward incompatibilities that are
+  conflicting with what we need.
+
+So, if you face one of above situations, please contact us so we can write it in
+our documentation.
+
 zc.buildout
 -----------
 
-This package helps on the deploy process, because installs depended packages on their required
-versions. Helps also to find good solutions for tests, continuous integration and others.
+An alternative to Virtualenv is to use zc.buildout. This package helps on the deploy
+process, because installs depended packages on their required versions. Helps also to
+find good solutions for tests, continuous integration and others.
 
 Before run installation you must install MySQL's client development package. On Ubuntu, the command is this::
 

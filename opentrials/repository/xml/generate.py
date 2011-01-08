@@ -32,7 +32,7 @@ def xml_opentrials(trial, persons, **kwargs):
     """Generates an Opentrials XML for a given Clinical Trial and returns as string."""
     return render_to_string(
             'repository/xml/xml_opentrials.xml',
-            {'object': trial, 'reg_name': settings.REG_NAME},
+            {'object': trial, 'reg_name': settings.REG_NAME, 'persons': persons},
             )
 
 DTD_TEMPLATE = """<!-- ===========================================================================

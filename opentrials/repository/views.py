@@ -1,5 +1,10 @@
 # coding: utf-8
 
+try:
+    set
+except:
+    from sets import Set as set
+
 from django.core import serializers
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.shortcuts import render_to_response, get_object_or_404
@@ -952,8 +957,11 @@ def trial_otxml(request, trial_fossil_id, trial_version=None):
     ct.hash_code = fossil.pk
     ct.previous_revision = fossil.previous_revision
     ct.version = fossil.revision_sequential
+    ct.status = fossil.indexeds.key('status', fail_silent=True)
 
-    xml = xml_opentrials(ct)
+    persons = set(ct.scientific_contact + ct.public_contact + ct.site_contact)
+
+    xml = xml_opentrials(ct, persons)
 
     resp = HttpResponse(xml,
             mimetype = 'text/xml'

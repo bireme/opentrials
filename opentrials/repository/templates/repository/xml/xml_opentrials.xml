@@ -1,8 +1,10 @@
 {% extends "base.xml" %}
 
+{% load repository_tags %}
+
 {% block root %}
 <trials>
-    <trial status="{{ object.status }}"
+    <trial status="{{ object.status|default_if_none:"published" }}"
            date_registration="{{ object.date_registration|date:"Y-m-d" }}"
            created="{{ object.created|date:"Y-m-d" }}"
            updated="{{ object.updated|date:"Y-m-d" }}">
@@ -10,30 +12,33 @@
             <trial_id>{{ object.trial_id }}</trial_id>
             <utrn>{{ object.utrn_number }}</utrn>
             <reg_name>{{ reg_name }}</reg_name>
-            <date_registration>{{ object.date_registration|date:"d/m/Y" }}</date_registration>
             <public_title>{{ object.public_title }}</public_title>
             <acronym>{{ object.acronym_display }}</acronym>
+            <acronym_expansion>{{ object.acronym_expansion }}</acronym_expansion>
             <scientific_title>{{ object.scientific_title }}</scientific_title>
             <scientific_acronym>{{ object.scientific_acronym_display }}</scientific_acronym>
-            <url>{% url repository.trial_registered_version trial_fossil_id=object.trial_id, trial_version=object.version %}</url>
+            <scientific_acronym_expansion>{{ object.scientific_acronym_expansion }}</scientific_acronym_expansion>
         </trial_identification>
 
         <sponsors_and_support>
-            <primary_sponsor>{{ object.primary_sponsor.name }}</primary_sponsor>
-            <secondary_sponsor>
-                {%  for sponsors in object.secondary_sponsors %}
-                <sponsor_name>{{ sponsors.institution.name }}</sponsor_name>
-                {% empty %}
-                <sponsor_name></sponsor_name>
-                {% endfor %}
+            <primary_sponsor country_code="{{ object.primary_sponsor.country.label }}">
+                <name>{{ object.primary_sponsor.name }}</name>
+                <address>{{ object.primary_sponsor.address }}</address>
+            </primary_sponsor>
+
+            {%  for sponsor in object.secondary_sponsors %}
+            <secondary_sponsor country_code="{{ sponsor.institution.country.label }}">
+                <name>{{ sponsor.institution.name }}</name>
+                <address>{{ sponsor.institution.address }}</address>
             </secondary_sponsor>
-            <source_support>
-                {%  for source_support in object.support_sources %}
-                <source_name>{{ source_support.institution.name }}</source_name>
-                {% empty %}
-                <source_name></source_name>
-                {% endfor %}
-            </source_support>        
+            {% endfor %}
+
+            {%  for source in object.support_sources %}
+            <source_support country_code="{{ source.institution.country.label }}">
+                <name>{{ source.institution.name }}</name>
+                <address>{{ source.institution.address }}</address>
+            </source_support>
+            {% endfor %}
         </sponsors_and_support>
 
         <health_conditions>
@@ -62,13 +67,13 @@
 
         <recruitment study_status="{{ object.recruitment_status.label|slugify }}">
             {% for country in object.recruitment_country %}
-            <recruitment_country>{{ country.label|slugify }}</recruitment_country>
+            <recruitment_country value="{{ country.label }}"></recruitment_country>
             {% endfor %}
 
             <inclusion_criteria>{{ object.inclusion_criteria }}</inclusion_criteria>
-            <agemin>{{ object.agemin_value }}{% if object.agemin_unit != '-' %}{{ object.agemin_unit }}{% endif %}</agemin>
-            <agemax>{{ object.agemax_value }}{% if object.agemax_unit != '-' %}{{ object.agemax_unit }}{% endif %}</agemax>
-            <gender>{{ object.gender }}</gender>
+            <gender value="{% if object.gender == '-' %}both{% else %}{{ object.gender }}{% endif %}"></gender>
+            <agemin value="{{ object.agemin_value }}" unit="{{ object.agemin_unit|switch:"-=null,Y=years,M=months,W=weeks,D=days,H=hours" }}"></agemin>
+            <agemax value="{{ object.agemax_value }}" unit="{{ object.agemax_unit|switch:"-=null,Y=years,M=months,W=weeks,D=days,H=hours" }}"></agemax>
             <exclusion_criteria>{{ object.exclusion_criteria }}</exclusion_criteria>
 
             {% if object.enrollment_start_actual %}
@@ -80,15 +85,15 @@
             <target_size>{{ object.target_sample_size }}</target_size>
         </recruitment>
 
-        <study expanded_access_program="{{ object.expanded_access_program }}"
+        <study expanded_access_program="{{ object.expanded_access_program|default_if_none:0|yesno }}"
                number_of_arms="{{ object.number_of_arms }}">
             <study_design>{{ object.study_design }}</study_design>
-            <phase>{{ object.phase.label|slugify }}</phase>
-            <purpose>{{ object.purpose.label|slugify }}</purpose>
-            <intervention_assignment>{{ object.intervention_assignment.label|slugify }}</intervention_assignment>
-            <type>{{ object.study_type.label|slugify }}</type>
-            <masking>{{ object.masking.label|slugify }}</masking>
-            <allocation>{{ object.allocation.label|slugify }}</allocation>
+            {% if object.study_type %}<type>{{ object.study_type.label|slugify }}</type>{% endif %}
+            <phase value="{{ object.phase.label|slugify }}"></phase>
+            <purpose value="{{ object.purpose.label|slugify }}"></purpose>
+            <intervention_assignment value="{{ object.intervention_assignment.label|slugify }}"></intervention_assignment>
+            <masking value="{{ object.masking.label|slugify }}"></masking>
+            <allocation value="{{ object.allocation.label|slugify }}"></allocation>
         </study>
 
         <outcomes>
@@ -102,36 +107,30 @@
         </outcomes>
 
         <contacts>
+            {% for person in persons %}
+            <person pid="{{ person.pk }}" country_code="{{ person.country.label }}">
+                <firstname>{{ person.firstname }}</firstname>
+                <middlename>{{ person.middlename }}</middlename>
+                <lastname>{{ person.lastname }}</lastname>
+                <address>{{ person.address }}</address>
+                <city>{{ person.city }}</city>
+                <zip>{{ person.zip }}</zip>
+                <telephone>{{ person.telephone }}</telephone>
+                <email>{{ person.email }}</email>
+                <affiliation>{{ person.affiliation.name }}</affiliation>
+            </person>
+            {% endfor %}
+
             {% for contact in object.public_contact %}
-            <public_contact>
-                <type>public</type>
-                <firstname>{{ contact.firstname }}</firstname>
-                <middlename>{{ contact.middlename }}</middlename>
-                <lastname>{{ contact.lastname }}</lastname>
-                <address>{{ contact.address }}</address>
-                <city>{{ contact.city }}</city>
-                <country1>{{ contact.country.description }}</country1>
-                <zip>{{ contact.zip }}</zip>
-                <telephone>{{ contact.telephone }}</telephone>
-                <email>{{ contact.email }}</email>
-                <affiliation>{{ contact.affiliation.name }}</affiliation>
-            </public_contact>
+            <public_contact person="{{ contact.pk }}"></public_contact>
             {% endfor %}
             
             {% for contact in object.scientific_contact %}
-            <scientific_contact>
-                <type>scientific</type>
-                <firstname>{{ contact.firstname }}</firstname>
-                <middlename>{{ contact.middlename }}</middlename>
-                <lastname>{{ contact.lastname }}</lastname>
-                <address>{{ contact.address }}</address>
-                <city>{{ contact.city }}</city>
-                <country1>{{ contact.country.description }}</country1>
-                <zip>{{ contact.zip }}</zip>
-                <telephone>{{ contact.telephone }}</telephone>
-                <email>{{ contact.email }}</email>
-                <affiliation>{{ contact.affiliation.name }}</affiliation>
-            </scientific_contact>
+            <scientific_contact person="{{ contact.pk }}"></scientific_contact>
+            {% endfor %}
+
+            {% for contact in object.site_contact %}
+            <site_contact person="{{ contact.id }}"></site_contact>
             {% endfor %}
         </contacts>
 
@@ -148,6 +147,10 @@
             </secondary_id>
             {% endfor %}
         </secondary_ids>
+
+        <references>
+            <link url="{% url repository.trial_registered_version trial_fossil_id=object.trial_id, trial_version=object.version %}"></link>
+        </references>
     </trial>
 </trials>
 {% endblock %}
