@@ -27,7 +27,7 @@ from reviewapp.models import SUBMISSION_TRANSITIONS, STATUS_APPROVED
 from reviewapp.models import News, NewsTranslation
 from reviewapp.forms import UploadTrial, InitialTrialForm, OpenRemarkForm
 from reviewapp.forms import UserForm, PrimarySponsorForm, UserProfileForm
-from reviewapp.forms import ContactForm, TermsUseForm
+from reviewapp.forms import ContactForm, TermsUseForm, ResendActivationEmail
 from reviewapp.consts import REMARK, MISSING, PARTIAL, COMPLETE
 
 from repository.models import ClinicalTrial, CountryCode, ClinicalTrialTranslation
@@ -185,42 +185,83 @@ def user_profile(request):
         
 def resend_activation_email(request):
     
-    email = request.GET.get('email', '')
-    users = User.objects.filter(email=email)
-    
-    if len(users) > 0:
-        user = users[0]
-    else:
-        return render_to_response('reviewapp/resend_activation_email.html', 
-                {'user_exist': False, 'email': email},
-                context_instance=RequestContext(request))
-        
-    if user.is_active:
-        return HttpResponseRedirect(reverse('reviewapp.password_reset')+'?email='+email)
-    else:
-   
-        profiles = RegistrationProfile.objects.filter(user=user)
-        
-        if len(profiles) > 0:
-            profile = profiles[0]
-            
-            if Site._meta.installed:
-                site = Site.objects.get_current()
+    if request.method == 'POST':
+        form = ResendActivationEmail(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            users = User.objects.filter(email=email)
+            if len(users) > 0:
+                user = users[0]
             else:
-                site = RequestSite(request)
-            
-            user.date_joined = datetime.now()
-            user.last_login = datetime.now()
-            user.save()
-            profile.send_activation_email(site)
+                return render_to_response('reviewapp/resend_activation_email_complete.html', 
+                        {'user_exist': False, 'email': email},
+                        context_instance=RequestContext(request))
+                        
+            profiles = RegistrationProfile.objects.filter(user=user)
+            if len(profiles) > 0:
+                profile = profiles[0]
+                
+                if profile.activation_key == 'ALREADY_ACTIVATED':
+                    return render_to_response('reviewapp/resend_activation_email_complete.html', 
+                        {'user_requestor': user},
+                        context_instance=RequestContext(request))
+                
+                if Site._meta.installed:
+                    site = Site.objects.get_current()
+                else:
+                    site = RequestSite(request)
+                
+                profile.send_activation_email(site)
 
-            return render_to_response('reviewapp/resend_activation_email.html', 
-                {'user_exist': True},
-                context_instance=RequestContext(request))
-        else:
-            return render_to_response('reviewapp/resend_activation_email.html', 
-                {'user_exist': False, 'email': email},
-                context_instance=RequestContext(request))
+                return render_to_response('reviewapp/resend_activation_email_complete.html', 
+                    {'user_exist': True, 'email': email},
+                    context_instance=RequestContext(request))
+            else:
+                return render_to_response('reviewapp/resend_activation_email_complete.html', 
+                    {'user_exist': False, 'email': email},
+                    context_instance=RequestContext(request))
+    else:
+        form = ResendActivationEmail()
+    
+    return render_to_response('reviewapp/resend_activation_email.html', {
+                              'form': form, },
+                              context_instance=RequestContext(request))
+#    email = request.GET.get('email', '')
+#    users = User.objects.filter(email=email)
+#    
+#    if len(users) > 0:
+#        user = users[0]
+#    else:
+#        return render_to_response('reviewapp/resend_activation_email.html', 
+#                {'user_exist': False, 'email': email},
+#                context_instance=RequestContext(request))
+#        
+#    if user.is_active:
+#        return HttpResponseRedirect(reverse('reviewapp.password_reset')+'?email='+email)
+#    else:
+#   
+#        profiles = RegistrationProfile.objects.filter(user=user)
+#        
+#        if len(profiles) > 0:
+#            profile = profiles[0]
+#            
+#            if Site._meta.installed:
+#                site = Site.objects.get_current()
+#            else:
+#                site = RequestSite(request)
+#            
+#            user.date_joined = datetime.now()
+#            user.last_login = datetime.now()
+#            user.save()
+#            profile.send_activation_email(site)
+
+#            return render_to_response('reviewapp/resend_activation_email.html', 
+#                {'user_exist': True},
+#                context_instance=RequestContext(request))
+#        else:
+#            return render_to_response('reviewapp/resend_activation_email.html', 
+#                {'user_exist': False, 'email': email},
+#                context_instance=RequestContext(request))
 
 @login_required
 def terms_of_use(request):
