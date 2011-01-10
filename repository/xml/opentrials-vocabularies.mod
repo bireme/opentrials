@@ -9,9 +9,6 @@ This file should be generated automatically from controlled vocabulary data
 such as those from Vocabulary application.
 =========================================================================== -->
 
-<!ENTITY % language.options
-    "en|es|fr|pt|other">
-
 <!-- TRDS 12: health condition attributes -->
 <!ENTITY % vocabulary.options
     "decs|icd10|other">

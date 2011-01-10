@@ -47,18 +47,10 @@ Comments:
     <!ELEMENT utrn (#PCDATA)>                                    <!--TRDS 3 (0..1)-->
     <!ELEMENT reg_name (#PCDATA)>
     <!ELEMENT public_title (#PCDATA)>                           <!--TRDS 9a (0..1)-->
-        <!ATTLIST public_title
-            lang (%language.options;) #IMPLIED>
     <!ELEMENT acronym (#PCDATA)>                                <!--TRDS 9b (0..1)-->
-        <!ATTLIST acronym
-            lang (%language.options;) #IMPLIED>
     <!ELEMENT acronym_expansion (#PCDATA)>                     <!--TRDS 10b (0..1)-->
     <!ELEMENT scientific_title (#PCDATA)>                       <!--TRDS 10a (1)-->
-        <!ATTLIST scientific_title
-            lang (%language.options;) #IMPLIED>
     <!ELEMENT scientific_acronym (#PCDATA)>                     <!--TRDS 10b (0..1)-->
-        <!ATTLIST scientific_acronym
-            lang (%language.options;) #IMPLIED>
     <!ELEMENT scientific_acronym_expansion (#PCDATA)>                     <!--TRDS 10b (0..1)-->
 
     <!ELEMENT secondary_ids (secondary_id+)>
@@ -83,8 +75,6 @@ Comments:
     <!-- formset 3/9 -->
     <!ELEMENT health_conditions (hc_code*, keyword*, freetext?)>
         <!ELEMENT freetext (#PCDATA)>                               <!--TRDS 12a, 13a (0..1)-->
-            <!ATTLIST freetext
-                lang (%language.options;) #IMPLIED>
         <!ELEMENT hc_code (#PCDATA)>                                <!--TRDS 12b (0..*)-->
             <!ATTLIST hc_code
                 vocabulary (%vocabulary.options;) #IMPLIED
@@ -117,11 +107,7 @@ Comments:
             <!ATTLIST recruitment_country
                 value (%country.options;) #REQUIRED>
         <!ELEMENT inclusion_criteria (#PCDATA)>                       <!--TRDS 14a (1)-->
-            <!ATTLIST inclusion_criteria
-                lang (%language.options;) #IMPLIED>
         <!ELEMENT exclusion_criteria (#PCDATA)>                       <!--TRDS 14e (0..1)-->
-            <!ATTLIST exclusion_criteria
-                lang (%language.options;) #IMPLIED>
         <!ELEMENT gender EMPTY>                                       <!--TRDS 14b (0..1)-->
             <!ATTLIST gender
                 value (%gender.options;) #REQUIRED>
@@ -147,7 +133,6 @@ Comments:
     <!ELEMENT study (study_design, type?, phase, purpose, intervention_assignment,
                 masking, allocation)>
         <!ATTLIST study
-            lang (%language.options;) #IMPLIED
             expanded_access_program (yes|no) #IMPLIED
             number_of_arms NMTOKEN #IMPLIED
         >
@@ -168,11 +153,7 @@ Comments:
     <!-- formset 7/9 -->
     <!ELEMENT outcomes (primary_outcome+, secondary_outcome*)>
     <!ELEMENT primary_outcome (#PCDATA)>
-        <!ATTLIST primary_outcome
-            lang (%language.options;) #IMPLIED>
     <!ELEMENT secondary_outcome (#PCDATA)>
-        <!ATTLIST secondary_outcome
-            lang (%language.options;) #IMPLIED>
 
     <!-- formset 8/9 -->
     <!ELEMENT contacts (person+, public_contact+, scientific_contact+, site_contact*)>
