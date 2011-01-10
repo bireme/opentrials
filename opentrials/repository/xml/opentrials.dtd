@@ -28,7 +28,7 @@ Comments:
 
 <!ELEMENT trial (trial_identification, sponsors_and_support, health_conditions,
           interventions, recruitment, study, outcomes, contacts, secondary_ids?,
-          references?, staff_note?)>
+          references?, staff_note?, translation*)>
     <!-- trial record must have explicit attribute type="interventional"
          in preparation for eventual support for observational studies -->
     <!ATTLIST trial
@@ -103,10 +103,10 @@ Comments:
     <!-- formset 5/9 -->
     <!ELEMENT recruitment (recruitment_country+,
                            inclusion_criteria,
+                           exclusion_criteria?,
                            gender?,
                            agemin?,
                            agemax?,
-                           exclusion_criteria?,
                            date_enrolment_anticipated?,
                            date_enrolment_actual?,
                            target_size?)>
@@ -119,6 +119,9 @@ Comments:
         <!ELEMENT inclusion_criteria (#PCDATA)>                       <!--TRDS 14a (1)-->
             <!ATTLIST inclusion_criteria
                 lang (%language.options;) #IMPLIED>
+        <!ELEMENT exclusion_criteria (#PCDATA)>                       <!--TRDS 14e (0..1)-->
+            <!ATTLIST exclusion_criteria
+                lang (%language.options;) #IMPLIED>
         <!ELEMENT gender EMPTY>                                       <!--TRDS 14b (0..1)-->
             <!ATTLIST gender
                 value (%gender.options;) #REQUIRED>
@@ -128,9 +131,6 @@ Comments:
         <!ELEMENT agemax EMPTY>                                   <!--TRDS 14d (0..1)-->
             <!ATTLIST agemax value CDATA #REQUIRED>
             <!ATTLIST agemax unit (%ageunit.options;) #IMPLIED>
-        <!ELEMENT exclusion_criteria (#PCDATA)>                       <!--TRDS 14e (0..1)-->
-            <!ATTLIST exclusion_criteria
-                lang (%language.options;) #IMPLIED>
         <!ELEMENT date_enrolment_anticipated EMPTY> <!--ISO-8601 date format: YYYY-MM-DD-->
             <!ATTLIST date_enrolment_anticipated
                 start CDATA #IMPLIED
@@ -206,4 +206,11 @@ Comments:
             <!ATTLIST link url CDATA #REQUIRED>
 
     <!ELEMENT staff_note (#PCDATA)>
+
+    <!ELEMENT translation (public_title?, acronym?, acronym_expansion?, scientific_title,
+                           scientific_acronym?, scientific_acronym_expansion?, hc_freetext?,
+                           i_freetext?, inclusion_criteria?, exclusion_criteria?, study_design?)>
+        <!ATTLIST translation lang CDATA #REQUIRED>
+        <!ELEMENT hc_freetext (#PCDATA)>
+        <!ELEMENT i_freetext (#PCDATA)>
 

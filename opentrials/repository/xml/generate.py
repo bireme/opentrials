@@ -28,11 +28,14 @@ def xml_ictrp(trial, **kwargs):
             {'object': trial, 'reg_name': settings.REG_NAME},
             )
 
-def xml_opentrials(trial, persons, **kwargs):
+def xml_opentrials(trial, persons, include_translations=True, **kwargs):
     """Generates an Opentrials XML for a given Clinical Trial and returns as string."""
     return render_to_string(
             'repository/xml/xml_opentrials.xml',
-            {'object': trial, 'reg_name': settings.REG_NAME, 'persons': persons},
+            {'object': trial,
+             'reg_name': settings.REG_NAME,
+             'persons': persons,
+             'include_translations': include_translations,},
             )
 
 DTD_TEMPLATE = """<!-- ===========================================================================
