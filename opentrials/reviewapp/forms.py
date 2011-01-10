@@ -127,3 +127,6 @@ class TermsUseForm(forms.Form):
     agree = forms.BooleanField(label=_("I read and agree to all terms above"), required=True, 
                                error_messages={'required': _('You must agree to the terms')})
 
+class ResendActivationEmail(forms.Form):
+    email = forms.EmailField(label=_("E-mail"))
+
