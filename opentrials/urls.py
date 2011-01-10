@@ -19,6 +19,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from django.conf.urls.defaults import *
+from registration.forms import RegistrationFormUniqueEmail
 
 import utilities
 
@@ -43,6 +44,12 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^decs/', include('opentrials.decsclient.urls')),
+    
+    # setting django-registration to use unique email form
+    url(r'^accounts/register/$', 'registration.views.register', 
+        {'backend': 'registration.backends.default.DefaultBackend', 
+        'form_class': RegistrationFormUniqueEmail},
+        name='registration_register'),
 
     # django-registration views
     url(r'^accounts/', include('registration.urls')),
