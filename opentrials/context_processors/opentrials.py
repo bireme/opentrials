@@ -46,4 +46,7 @@ def latest_tweets(request):
 
 def debug(request):
     return {'DEBUG': settings.DEBUG}
+    
+def default_from_email(request):
+    return {'DEFAULT_FROM_EMAIL': settings.DEFAULT_FROM_EMAIL}
 

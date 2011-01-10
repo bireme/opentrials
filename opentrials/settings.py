@@ -141,6 +141,7 @@ TEMPLATE_CONTEXT_PROCESSORS =(
     'context_processors.opentrials.google_analytics',
     'context_processors.opentrials.latest_tweets',
     'context_processors.opentrials.debug',
+    'context_processors.opentrials.default_from_email',
 )
 
 AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
