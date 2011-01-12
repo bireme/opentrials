@@ -34,6 +34,8 @@ GOOGLE_ANALYTICS_ID = ''
 #TEMPLATE_DIRS = (
 #    os.path.join(PROJECT_PATH, 'custom/ecgovbr/templates'),
 #)
+# Backup directory
+#BACKUP_DIR = os.path.join(MEDIA_ROOT, 'backup')
 
 if DEBUG:
     DEBUG_PROPAGATE_EXCEPTIONS = True

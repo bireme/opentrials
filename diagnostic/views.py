@@ -1,5 +1,6 @@
 import os
-from datetime import date
+from subprocess import Popen, PIPE
+from datetime import date, datetime
 from django.conf import settings
 from django.http import HttpResponse
 from django.contrib.auth.decorators import user_passes_test
@@ -14,25 +15,55 @@ from django.db.models import get_apps, get_app
 from django.shortcuts import render_to_response
 from django.utils.datastructures import SortedDict
 from django.template.context import RequestContext
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+
+BACKUP_DIR = getattr(settings, 'BACKUP_DIR', os.path.join(settings.MEDIA_ROOT, 'backup'))
+
+@staff_member_required
+def backup_database(request):
+
+    if request.method == 'POST':
+
+        output = Popen(['which', 'mysqldump'], stdout=PIPE, close_fds=True).communicate()[0]
+
+        mysqldump_bin = output.replace('\n','')
+
+        cmd = mysqldump_bin+' -h %s --opt --compact --skip-add-locks -u %s -p%s %s' % \
+                    (getattr(settings.DATABASES['default'], 'HOST', 'localhost'),
+                     settings.DATABASES['default']['USER'],
+                     settings.DATABASES['default']['PASSWORD'],
+                     settings.DATABASES['default']['NAME'])
+
+        pop1 = Popen(cmd.split(" "), stdout=PIPE, close_fds=True)
+        pop2 = Popen(["bzip2", "-c"], stdin=pop1.stdout, stdout=PIPE, close_fds=True)
+        output = pop2.communicate()[0]
+        
+        default_storage.save(BACKUP_DIR+"/"+datetime.today().strftime("%Y-%m-%d_%H:%M:%S")+"_db.sql.bz2", ContentFile(output))
+    
+    files = default_storage.listdir(BACKUP_DIR)[1]
+    files.sort(reverse=True)
+    return render_to_response('diagnostic/backupdb.html', 
+                                {'files':files,}, 
+                                context_instance=RequestContext(request))
 
 @staff_member_required
 def export_database(request):
-    #output backup
-    stdin,stdout = os.popen2(r'which mysqldump')
-    stdin.close()
+    output = Popen(['which', 'mysqldump'], stdout=PIPE, close_fds=True).communicate()[0]
 
-    mysqldump_bin = stdout.readline().replace('\n','')
-    stdout.close()
+    mysqldump_bin = output.replace('\n','')
 
-    cmd = mysqldump_bin+' --opt --compact --skip-add-locks -u %s -p%s %s | bzip2 -c' % \
-                (settings.DATABASES['default']['USER'],
+    cmd = mysqldump_bin+' -h %s --opt --compact --skip-add-locks -u %s -p%s %s' % \
+                (getattr(settings.DATABASES['default'], 'HOST', 'localhost'),
+                 settings.DATABASES['default']['USER'],
                  settings.DATABASES['default']['PASSWORD'],
                  settings.DATABASES['default']['NAME'])
+
+    pop1 = Popen(cmd.split(" "), stdout=PIPE, close_fds=True)
+    pop2 = Popen(["bzip2", "-c"], stdin=pop1.stdout, stdout=PIPE, close_fds=True)
+    output = pop2.communicate()[0]
     
-    stdin, stdout = os.popen2(cmd)
-    stdin.close()
-    
-    response = HttpResponse(stdout, mimetype="application/octet-stream")
+    response = HttpResponse(output, mimetype="application/octet-stream")
     response['Content-Disposition'] = 'attachment; filename=%s' % date.today().__str__()+'_db.sql.bz2'
     return response
 

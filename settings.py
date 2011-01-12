@@ -207,6 +207,9 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 FORMAT_MODULE_PATH = 'formats'
 
+# Backup directory
+BACKUP_DIR = os.path.join(MEDIA_ROOT, 'backup')
+
 INTERNAL_IPS = ('127.0.0.1',)
 USE_ETAGS = True
 
