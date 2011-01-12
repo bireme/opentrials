@@ -70,10 +70,10 @@
             {% endfor %}
 
             <inclusion_criteria>{{ object.inclusion_criteria }}</inclusion_criteria>
+            <exclusion_criteria>{{ object.exclusion_criteria }}</exclusion_criteria>
             <gender value="{% if object.gender == '-' %}both{% else %}{{ object.gender }}{% endif %}"></gender>
             <agemin value="{{ object.agemin_value }}" unit="{{ object.agemin_unit|switch:"-=null,Y=years,M=months,W=weeks,D=days,H=hours" }}"></agemin>
             <agemax value="{{ object.agemax_value }}" unit="{{ object.agemax_unit|switch:"-=null,Y=years,M=months,W=weeks,D=days,H=hours" }}"></agemax>
-            <exclusion_criteria>{{ object.exclusion_criteria }}</exclusion_criteria>
 
             {% if object.enrollment_start_actual %}
             <date_enrolment_actual start="{{ object.date_enrollment_start }}" end="{{ object.date_enrollment_end }}"></date_enrolment_actual>
@@ -150,6 +150,24 @@
         <references>
             <link url="{% url repository.trial_registered_version trial_fossil_id=object.trial_id, trial_version=object.version %}"></link>
         </references>
+
+        {% if include_translations %}
+        {% for translation in object.translations %}
+        <translation lang="{{ translation.language }}">
+            <public_title>{{ translation.public_title }}</public_title>
+            <acronym>{{ translation.acronym_display }}</acronym>
+            <acronym_expansion>{{ translation.acronym_expansion }}</acronym_expansion>
+            <scientific_title>{{ translation.scientific_title }}</scientific_title>
+            <scientific_acronym>{{ translation.scientific_acronym_display }}</scientific_acronym>
+            <scientific_acronym_expansion>{{ translation.scientific_acronym_expansion }}</scientific_acronym_expansion>
+            <hc_freetext>{{ translation.hc_freetext }}</hc_freetext>
+            <i_freetext>{{ translation.i_freetext }}</i_freetext>
+            <inclusion_criteria>{{ translation.inclusion_criteria }}</inclusion_criteria>
+            <exclusion_criteria>{{ translation.exclusion_criteria }}</exclusion_criteria>
+            <study_design>{{ translation.study_design }}</study_design>
+        </translation>
+        {% endfor %}
+        {% endif %}
     </trial>
 </trials>
 {% endblock %}

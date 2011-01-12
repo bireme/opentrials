@@ -54,9 +54,9 @@ Comments:
     <!ELEMENT scientific_acronym_expansion (#PCDATA)>                     <!--TRDS 10b (0..1)-->
 
     <!ELEMENT secondary_ids (secondary_id+)>
-        <!ELEMENT secondary_id (sec_id,issuing_authority)>
-        <!ELEMENT sec_id (#PCDATA)>                         <!--TRDS 3a (0..*)-->
-        <!ELEMENT issuing_authority (#PCDATA)>              <!--TRDS 3b (0..*)-->
+        <!ELEMENT secondary_id (sec_id, issuing_authority)>
+            <!ELEMENT sec_id (#PCDATA)>                         <!--TRDS 3a (0..*)-->
+            <!ELEMENT issuing_authority (#PCDATA)>              <!--TRDS 3b (0..*)-->
 
     <!-- formset 2/9 -->
     <!ELEMENT sponsors_and_support (primary_sponsor, secondary_sponsor*, source_support*)>
