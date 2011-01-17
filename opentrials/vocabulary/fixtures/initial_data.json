@@ -19404,6 +19404,104 @@
     }
   }, 
   {
+    "pk": 2042, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Rede de Pesquisa Cl\u00ednica", 
+      "label": "rede de pesquisa cl\u00ednica", 
+      "content_type": [
+        "vocabulary", 
+        "institutiontype"
+      ], 
+      "language": "pt-br", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 2043, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Ag\u00eancia Federal", 
+      "label": "ag\u00eancia federal", 
+      "content_type": [
+        "vocabulary", 
+        "institutiontype"
+      ], 
+      "language": "pt-br", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 2044, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Ind\u00fastria", 
+      "label": "ind\u00fastria", 
+      "content_type": [
+        "vocabulary", 
+        "institutiontype"
+      ], 
+      "language": "pt-br", 
+      "object_id": 3
+    }
+  }, 
+  {
+    "pk": 2045, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Minist\u00e9rio da Sa\u00fade", 
+      "label": "minist\u00e9rio da sa\u00fade", 
+      "content_type": [
+        "vocabulary", 
+        "institutiontype"
+      ], 
+      "language": "pt-br", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 2046, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Ag\u00eancia n\u00e3o-governamental", 
+      "label": "ag\u00eancia n\u00e3o-governamental", 
+      "content_type": [
+        "vocabulary", 
+        "institutiontype"
+      ], 
+      "language": "pt-br", 
+      "object_id": 5
+    }
+  }, 
+  {
+    "pk": 2047, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Funda\u00e7\u00e3o Estadual de Apoio \u00e0 Pesquisa", 
+      "label": "funda\u00e7\u00e3o estadual de apoio \u00e0 pesquisa", 
+      "content_type": [
+        "vocabulary", 
+        "institutiontype"
+      ], 
+      "language": "pt-br", 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 2048, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Outro", 
+      "label": "outro", 
+      "content_type": [
+        "vocabulary", 
+        "institutiontype"
+      ], 
+      "language": "pt-br", 
+      "object_id": 7
+    }
+  }, 
+  {
     "pk": 2, 
     "model": "vocabulary.countrycode", 
     "fields": {
@@ -22725,6 +22823,69 @@
       "order": 0, 
       "description": "Codes for special purposes", 
       "label": "XXII"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "vocabulary.institutiontype", 
+    "fields": {
+      "order": 10, 
+      "description": "Clinical Research Network", 
+      "label": "clinical research network"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.institutiontype", 
+    "fields": {
+      "order": 20, 
+      "description": "Federal Agency", 
+      "label": "federal agency"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.institutiontype", 
+    "fields": {
+      "order": 30, 
+      "description": "Industry", 
+      "label": "industry"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "vocabulary.institutiontype", 
+    "fields": {
+      "order": 40, 
+      "description": "Ministery of Health", 
+      "label": "ministery of health"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "vocabulary.institutiontype", 
+    "fields": {
+      "order": 50, 
+      "description": "Non-governamental Agency", 
+      "label": "non-governamental agency"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "vocabulary.institutiontype", 
+    "fields": {
+      "order": 60, 
+      "description": "State Research Support Foundation", 
+      "label": "state research support foundation"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "vocabulary.institutiontype", 
+    "fields": {
+      "order": 70, 
+      "description": "Other", 
+      "label": "other"
     }
   }
 ]
