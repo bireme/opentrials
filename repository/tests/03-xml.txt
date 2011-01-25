@@ -1,0 +1,197 @@
+SERIALIZING TO XML FORMATS
+==========================
+
+    >>> from fossil.models import Fossil
+    >>> from repository.models import ClinicalTrial
+
+    >>> fossil_null, fossil_valid = Fossil.objects.filter(is_most_recent=True)
+
+    >>> from repository.xml.generate import xml_ictrp, xml_opentrials
+    >>> from repository.xml.validate import validate_xml, ICTRP_DTD
+
+    >>> from tempfile import NamedTemporaryFile
+
+    >>> from django.contrib.auth.models import User
+    >>> user_trialist, new = User.objects.get_or_create(username='trialist')
+
+Serializing to format ICTRP
+---------------------------
+
+    >>> ct = fossil_valid.get_object_fossil()
+    >>> ct.hash_code = fossil_valid.pk
+    >>> ct.previous_revision = fossil_valid.previous_revision
+    >>> ct.version = fossil_valid.revision_sequential
+
+    >>> xml_from_ictrp = xml_ictrp(ct)
+
+Validation of ICTRP using DTD file
+
+    >>> fp = NamedTemporaryFile(mode='w', delete=False)
+    >>> fp.write(xml_from_ictrp)
+    >>> fp.close()
+
+    >>> validate_xml(fp.name, dtd=ICTRP_DTD)
+    True
+
+Deserializing and Importing from ICTRP
+--------------------------------------
+
+Delete Trial to import again (to make the 'round trip')
+
+    >>> count_before = ClinicalTrial.objects.count()
+    >>> ClinicalTrial.objects.filter(trial_id=ct.trial_id).delete()
+    >>> ClinicalTrial.deleted_objects.filter(trial_id=ct.trial_id).delete()
+
+    >>> count_before == ClinicalTrial.all_objects.count() + 1
+    True
+
+Import xml from temporary file
+
+    >>> from repository.xml.loading import OpenTrialsXMLImport
+    >>> importer = OpenTrialsXMLImport(creator=user_trialist)
+
+    >>> count_before = ClinicalTrial.objects.count()
+
+    >>> imported_trials = importer.import_ictrp(fp.name)
+
+    >>> len(imported_trials)
+    1
+
+    >>> count_before == ClinicalTrial.objects.count() - 1
+    True
+
+Checks imported trial and its fields
+
+    >>> new_ct = ClinicalTrial.objects.get(trial_id=ct.trial_id)
+    >>> new_fossil = Fossil.objects.fossils_of_object(new_ct)[0]
+    >>> ct = new_fossil.get_object_fossil()
+    >>> ct.hash_code = fossil_valid.pk
+    >>> ct.previous_revision = fossil_valid.previous_revision
+    >>> ct.version = fossil_valid.revision_sequential
+    >>> ct.status = fossil_valid.indexeds.key('status', fail_silent=True).value
+
+    >>> new_xml = xml_opentrials(ct, persons)
+
+    >>> fp_new = NamedTemporaryFile(mode='w', delete=False)
+    >>> fp_new.write(new_xml)
+    >>> fp_new.close()
+
+    >>> new_xml == xml_from_otxml
+    True
+
+    >>> #print fp.name, fp_new.name
+
+Serializing to format OpenTrials XML
+------------------------------------
+
+    >>> ct = fossil_valid.get_object_fossil()
+    >>> ct.hash_code = fossil_valid.pk
+    >>> ct.previous_revision = fossil_valid.previous_revision
+    >>> ct.version = fossil_valid.revision_sequential
+    >>> ct.status = fossil_valid.indexeds.key('status', fail_silent=True).value
+
+    >>> persons = set(ct.scientific_contact + ct.public_contact + ct.site_contact)
+
+    >>> xml_from_otxml = xml_opentrials(ct, persons)
+
+Validation of OpenTrials XML using DTD file
+
+    >>> fp = NamedTemporaryFile(mode='w', delete=False)
+    >>> fp.write(xml_from_otxml)
+    >>> fp.close()
+
+    >>> validate_xml(fp.name)
+    True
+
+Deserializing and Importing from OpenTrials XML
+-----------------------------------------------
+
+Delete Trial to import again (to make the 'round trip')
+
+    >>> count_before = ClinicalTrial.objects.count()
+    >>> ClinicalTrial.objects.filter(trial_id=ct.trial_id).delete()
+    >>> ClinicalTrial.deleted_objects.filter(trial_id=ct.trial_id).delete()
+
+    >>> count_before == ClinicalTrial.all_objects.count() + 1
+    True
+
+Import xml from temporary file
+
+    >>> from repository.xml.loading import OpenTrialsXMLImport
+    >>> importer = OpenTrialsXMLImport(creator=user_trialist)
+
+    >>> count_before = ClinicalTrial.objects.count()
+
+This import is for a not existing trial. Default for "if_exists" is "UPDATE_IF_EXISTS"
+
+    >>> imported_trials = importer.import_opentrials(fp.name)
+
+    >>> len(imported_trials)
+    1
+
+    >>> count_before == ClinicalTrial.objects.count() - 1
+    True
+
+Checks imported trial and its fields
+
+    >>> new_ct = ClinicalTrial.objects.get(trial_id=ct.trial_id)
+    >>> new_fossil = Fossil.objects.fossils_of_object(new_ct)[0]
+    >>> ct = new_fossil.get_object_fossil()
+    >>> ct.hash_code = fossil_valid.pk
+    >>> ct.previous_revision = fossil_valid.previous_revision
+    >>> ct.version = fossil_valid.revision_sequential
+    >>> ct.status = fossil_valid.indexeds.key('status', fail_silent=True).value
+
+    >>> new_xml = xml_opentrials(ct, persons)
+
+    >>> fp_new = NamedTemporaryFile(mode='w', delete=False)
+    >>> fp_new.write(new_xml)
+    >>> fp_new.close()
+
+    >>> new_xml == xml_from_otxml
+    True
+
+Cases for (already) existing trials
+
+    >>> from repository.xml.loading import REPLACE_IF_EXISTS, SKIP_IF_EXISTS
+
+    >>> imported_trials = importer.import_opentrials(fp.name, if_exists=SKIP_IF_EXISTS)
+
+    >>> len(imported_trials)
+    0
+
+    >>> count_before = ClinicalTrial.objects.count()
+
+    >>> imported_trials = importer.import_opentrials(fp.name, if_exists=REPLACE_IF_EXISTS)
+
+    >>> len(imported_trials)
+    1
+
+    >>> count_before == ClinicalTrial.objects.count()
+    True
+
+    >>> #print fp.name, fp_new.name
+
+Function that parses a XML file and loads it to memory without import it
+
+    >>> trials_to_import = importer.parse_opentrials(fp.name)
+
+    >>> len(trials_to_import)
+    1
+
+It returns a list of tuples. Each tuple has 2 nodes: the first is a dict with the new trial
+fields, and the second is the existing ClinicalTrial object (if exists).
+
+    >>> trials_to_import[0][0]['trial_id'] == ct.trial_id
+    True
+
+    >>> trials_to_import[0][1].trial_id == ct.trial_id
+    True
+
+And another function to import parsed files from memory
+
+    >>> imported_trials = importer.import_parsed(if_exists=REPLACE_IF_EXISTS)
+
+    >>> len(imported_trials)
+    1
+

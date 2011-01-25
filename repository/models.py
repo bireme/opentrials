@@ -96,7 +96,7 @@ class TrialRegistrationDataSetModel(ControlledDeletion):
 
     class Meta:
         abstract = True
-        
+ 
 class TrialsPublished(NotDeletedManager):
     def get_query_set(self):
         return super(TrialsPublished, self).get_query_set().filter(status__exact='published')
@@ -116,35 +116,60 @@ class TrialFossilsQuerySet(models.query.QuerySet):
 
         return [get_proxy(obj) for obj in self.all()]
 
-class TrialsFossil(FossilManager):
+class TrialsFossilManager(FossilManager):
     _ctype = None
 
     def get_query_set(self):
         if not self._ctype:
-            self._ctype = ContentType.objects.get_for_model(self.model)
+            self._ctype = ContentType.objects.get_for_model(ClinicalTrial)
 
-        return TrialFossilsQuerySet(Fossil).filter(
+        return TrialFossilsQuerySet(PublishedTrial).filter(
                 content_type=self._ctype,
                 )
 
     def recruiting(self):
-        return self.indexed(recruitment_status='recruiting').filter(is_most_recent=True)
+        return self.indexed(recruitment_status='recruiting', display='True').filter(is_most_recent=True)
 
     def published(self):
-        qs = self.get_query_set()
-        return qs.filter(is_most_recent=True)
+        return self.indexed(display='True').filter(is_most_recent=True)
 
     def archived(self):
-        qs = self.get_query_set()
-        return qs.filter(is_most_recent=False)
+        return self.indexed(display='True').filter(is_most_recent=False)
 
     def proxies(self, language=None):
         return self.get_query_set().proxies(language=language)
 
+class PublishedTrial(Fossil):
+    class Meta:
+        proxy = True
+        verbose_name = _('Published Trial')
+        verbose_name_plural = _('Published Trials')
+
+    objects = _default_manager = TrialsFossilManager()
+
+    @property
+    def trial_id(self):
+        return self.indexeds.key('trial_id').value
+
+    @property
+    def display(self):
+        return self.indexeds.key('display').value
+
+    @property
+    def status(self):
+        return self.indexeds.key('status').value
+
+    def get_object_fossil(self, force_load=False):
+        if force_load or not getattr(self, '_object_fossil', None):
+            self._object_fossil = super(PublishedTrial, self).get_object_fossil()
+
+        return self._object_fossil
+    trial = property(get_object_fossil)
+
 class ClinicalTrial(TrialRegistrationDataSetModel):
     objects = ClinicalTrialManager()
     published = TrialsPublished()
-    fossils = TrialsFossil()
+    fossils = TrialsFossilManager()
 
     # TRDS 1
     trial_id = models.CharField(_('Primary Id Number'), null=True, unique=True,
@@ -403,7 +428,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     def intervention_keyword(self):
         ''' return set of Intervention Keyword related to this trial with
         '''
-        return self.descriptor_set.filter(aspect='intervention').select_related()
+        return self.descriptor_set.filter(aspect='Intervention').select_related()
 
     #TRDS 19 - Primary Outcomes
     def primary_outcomes(self):
@@ -435,6 +460,17 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     @property
     def public_url(self):
         return reverse('repository.trial_registered', kwargs={'trial_fossil_id': self.trial_id})
+
+    def create_fossil(self):
+        fossil = PublishedTrial.objects.create_for_object(self)
+        fossil.set_indexer(key='trial_id', value=self.trial_id)
+        fossil.set_indexer(key='status', value=self.status)
+        fossil.set_indexer(key='display', value='True')
+
+        if self.recruitment_status:
+            fossil.set_indexer(key='recruitment_status', value=self.recruitment_status.label)
+
+        return fossil
 
 # Sets validation model to ClinicalTrial
 trial_validator.model = ClinicalTrial
@@ -664,12 +700,7 @@ def clinicaltrial_post_save(sender, instance, signal, **kwargs):
 
     # Creates a fossil if the status is equal to 'published'
     if instance.status == choices.PUBLISHED_STATUS:
-        fossil = Fossil.objects.create_for_object(instance)
-        fossil.create_indexer(key='trial_id', value=instance.trial_id)
-        fossil.create_indexer(key='status', value=instance.status)
-
-        if instance.recruitment_status:
-            fossil.create_indexer(key='recruitment_status', value=instance.recruitment_status.label)
+        instance.create_fossil()
 
 post_save.connect(clinicaltrial_post_save, sender=ClinicalTrial)
 
