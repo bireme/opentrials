@@ -2,13 +2,14 @@ import datetime
 
 from django.template.loader import render_to_string
 from django.conf import settings
-from django.template.defaultfilters import slugify
 
 from repository import choices
+from repository.xml import OPENTRIALS_XML_VERSION
+from repository.templatetags.repository_tags import prep_label_for_xml
 
 from vocabulary.models import CountryCode, InterventionCode, StudyPurpose
 from vocabulary.models import InterventionAssigment, StudyMasking, StudyAllocation
-from vocabulary.models import StudyPhase, StudyType, RecruitmentStatus
+from vocabulary.models import StudyPhase, StudyType, RecruitmentStatus, InstitutionType
 
 VALID_FUNCTIONS = (
     'xml_ictrp',
@@ -25,12 +26,27 @@ def xml_ictrp(trial, **kwargs):
 
 def xml_opentrials(trial, persons, include_translations=True, **kwargs):
     """Generates an Opentrials XML for a given Clinical Trial and returns as string."""
+
+    for translation in trial.translations:
+        translation['primary_outcomes'] = []
+        for outcome in trial.primary_outcomes:
+            for out_trans in outcome['translations']:
+                if out_trans['language'] == translation['language']:
+                    translation['primary_outcomes'].append(out_trans)
+
+        translation['secondary_outcomes'] = []
+        for outcome in trial.secondary_outcomes:
+            for out_trans in outcome['translations']:
+                if out_trans['language'] == translation['language']:
+                    translation['secondary_outcomes'].append(out_trans)
+
     return render_to_string(
             'repository/xml/xml_opentrials.xml',
             {'object': trial,
              'reg_name': settings.REG_NAME,
              'persons': persons,
-             'include_translations': include_translations,},
+             'include_translations': include_translations,
+             'opentrials_xml_version': OPENTRIALS_XML_VERSION},
             )
 
 MOD_TEMPLATE = """<!-- ===========================================================================
@@ -64,7 +80,7 @@ def xml_opentrials_mod(**kwargs):
             ]))
 
     # Intervention codes
-    icodes = map(slugify, InterventionCode.objects.values_list('label', flat=True))
+    icodes = map(prep_label_for_xml, InterventionCode.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!-- TRDS 13: intervention descriptor attributes -->',
             '<!-- attribute options cannot contain slashes "/" -->',
@@ -74,9 +90,9 @@ def xml_opentrials_mod(**kwargs):
             ]))
 
     # Study statuses
-    statuses = map(slugify, RecruitmentStatus.objects.values_list('label', flat=True))
+    statuses = map(prep_label_for_xml, RecruitmentStatus.objects.values_list('label', flat=True))
     entities.append('\n'.join([
-            '<!ENTITY % studystatus.options',
+            '<!ENTITY % requirementstatus.options',
             '    "%s">' % '|'.join(statuses),
             ]))
 
@@ -93,7 +109,7 @@ def xml_opentrials_mod(**kwargs):
             ]))
 
     # Purposes
-    purposes = map(slugify, StudyPurpose.objects.values_list('label', flat=True))
+    purposes = map(prep_label_for_xml, StudyPurpose.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!-- TRDS 15b: study_design attributes -->',
             '<!ENTITY % purpose.options',
@@ -101,28 +117,28 @@ def xml_opentrials_mod(**kwargs):
             ]))
 
     # Assignment
-    assignments = map(slugify, InterventionAssigment.objects.values_list('label', flat=True))
+    assignments = map(prep_label_for_xml, InterventionAssigment.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!ENTITY % assignment.options',
             '    "%s">' % '|'.join(assignments),
             ]))
 
     # Masking
-    maskings = map(slugify, StudyMasking.objects.values_list('label', flat=True))
+    maskings = map(prep_label_for_xml, StudyMasking.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!ENTITY % masking.options',
             '    "%s">' % '|'.join(maskings),
             ]))
 
     # Allocation
-    allocations = map(slugify, StudyAllocation.objects.values_list('label', flat=True))
+    allocations = map(prep_label_for_xml, StudyAllocation.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!ENTITY % allocation.options',
             '    "%s">' % '|'.join(allocations),
             ]))
 
     # Phases
-    phases = map(slugify, StudyPhase.objects.values_list('label', flat=True))
+    phases = map(prep_label_for_xml, StudyPhase.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!-- TRDS 15c -->',
             '<!ENTITY % phase.options',
@@ -150,10 +166,17 @@ def xml_opentrials_mod(**kwargs):
             ]))
 
     # Study Types
-    study_types = map(slugify, StudyType.objects.values_list('label', flat=True))
+    study_types = map(prep_label_for_xml, StudyType.objects.values_list('label', flat=True))
     entities.append('\n'.join([
             '<!ENTITY % study_type.options',
             '    "%s">' % '|'.join(study_types),
+            ]))
+
+    # Institution Types
+    institution_types = map(prep_label_for_xml, InstitutionType.objects.values_list('label', flat=True))
+    entities.append('\n'.join([
+            '<!ENTITY % institution_type.options',
+            '    "%s">' % '|'.join(institution_types),
             ]))
 
     return MOD_TEMPLATE%{

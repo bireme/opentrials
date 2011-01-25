@@ -12,14 +12,43 @@
 {% block body %}
 
 <p>
-    {% trans "Here you can upload an XML on ICTRP standard to submit your clinical trial." %}
+    {% trans "Here you can upload an XML on ICTRP or OpenTrials XML standards to submit your clinical trial." %}
 </p>
 
-<form>
+{{ form.non_field_errors }}
+
+<form method="post" enctype="multipart/form-data" id="form_import_xml">
+    {% csrf_token %}
+
+    {% if formset %}
+    <div>
+        <input type="checkbox" onclick="$('form#form_import_xml').find('input[type=checkbox]').attr('checked', $(this).attr('checked'))">{% trans "Mark/Unmark all" %} |
+        <a href="{% url reviewapp.uploadtrial %}">{% trans "Upload another file" %}</a>
+    </div>
+
+    <fieldset>
+        <legend>{% trans "The following trials has found in the uploaded file. Mark to import." %}</legend>
+        
+        {{ formset.management_form }}
+        <input type="hidden" name="session_key" value="{{ session_key }}"/>
+
+        {% for form in formset.forms %}
+        <div class="importing-{% if form.already_exists.value %}exists{% else %}new{% endif %}">{{ form.to_import }} {{ form.trial_id.value }} - {{ form.description.value }}
+            ({% if form.already_exists.value %}{% trans "Existing" %}{% else %}{% trans "New" %}{% endif %})
+            {{ form.trial_id}}</div>
+        {% endfor %}
+
+    </fieldset>
+    
+    {% else %}
     <fieldset>
         <legend>{% trans "Select your XML file" %}</legend>
-        {{ form.submission_xml }}
+        {{ form.submission_file }}
+        {{ form.errors.submission_file }}
     </fieldset>
+    {% endif %}
+
+    <input type="submit" value="{% trans "Submit" %}"/>
 </form>
 
 {% endblock %}

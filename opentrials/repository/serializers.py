@@ -216,6 +216,9 @@ def serialize_institution(institution, as_string=True):
         'creator': serialize_user(institution.creator, as_string=False),
         }
 
+    if institution.i_type:
+        json['i_type'] = institution.i_type.serialize_for_fossil(as_string=False)
+
     if as_string:
         json = simplejson.dumps(json)
 
@@ -503,6 +506,11 @@ class FossilClinicalTrial(FossilProxy):
     def __getattr__(self, name):
         value = super(FossilClinicalTrial, self).__getattr__(name)
 
+        def filter_by_language(item):
+            lang1 = (item.get('language', None) or '').lower()
+            lang2 = (self._language or '').lower()
+            return lang1 == lang2
+
         if name in ('date_registration','created','updated','exported'):
             if isinstance(value, basestring):
                 try:
@@ -512,7 +520,8 @@ class FossilClinicalTrial(FossilProxy):
 
         elif isinstance(value, dict) and value.get('translations', None):
             try:
-                value = [t for t in value['translations'] if t.get('language', '').lower() == self._language.lower()][0]
+                value = filter(filter_by_language, value['translations'])[0]
+                #value = [t for t in value['translations'] if t.get('language', '').lower() == self._language.lower()][0]
             except IndexError:
                 pass
 

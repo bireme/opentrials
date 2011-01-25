@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE trials SYSTEM "http://ensaiosclinicos.gov.br/xml/opentrials.dtd">
+<trials version="1">
+    <trial status="published"
+           date_registration="2011-01-19"
+           created="2011-01-19"
+           updated="2011-01-19">
+        <trial_identification>
+            <trial_id>RBR-9fm6bk</trial_id>
+            <utrn_number>None</utrn_number>
+            <reg_name>REBEC</reg_name>
+            <public_title>A long study about HIV</public_title>
+            <acronym>HIV Study</acronym>
+            <acronym_expansion>Long HIV Study</acronym_expansion>
+            <scientific_title>Full trial: a long study about HIV</scientific_title>
+            <scientific_acronym>HIV Study</scientific_acronym>
+            <scientific_acronym_expansion>Long HIV Study</scientific_acronym_expansion>
+        </trial_identification>
+
+        <sponsors_and_support>
+            <primary_sponsor country_code="BR" type="clinical_research_network">
+                <name>New name of ACNE</name>
+                <address>Av. Goias, 1249, Centro</address>
+            </primary_sponsor>
+
+            
+
+            
+        </sponsors_and_support>
+
+        <health_conditions>
+            
+            <hc_code vocabulary="decs" version="" code="C02">
+                <text>Virus diseases</text>
+                
+                
+                <text_translation lang="pt-br">Viroses</text_translation>
+                
+                
+            </hc_code>
+            
+
+            
+            <keyword vocabulary="decs" version="" code="D12.776.124.486.485.114.254.150.440">
+                <text>HIV Antibodies</text>
+                
+                
+                <text_translation lang="pt-br">Anticorpos Anti-HIV</text_translation>
+                
+                
+            </keyword>
+            
+
+            <freetext>HC free text</freetext>
+        </health_conditions>
+
+        <interventions>
+            
+            <i_code value="drug"></i_code>
+            
+            <i_code value="device"></i_code>
+            
+
+            
+            <keyword vocabulary="decs" version="" code="G02.111.570.080.689.330.400">
+                <text>HIV Enhancer</text>
+                
+                
+                <text_translation lang="pt-br">Ampliador HIV</text_translation>
+                
+                
+            </keyword>
+            
+
+            <freetext>I free text</freetext>
+        </interventions>
+
+        <recruitment status="not_yet_recruiting">
+            
+            <recruitment_country value="BR"></recruitment_country>
+            
+
+            <inclusion_criteria>Many criterias we could include here</inclusion_criteria>
+            <exclusion_criteria>Male at all</exclusion_criteria>
+            <gender value="female"></gender>
+            <agemin value="60" unit="years"></agemin>
+            <agemax value="5" unit="months"></agemax>
+
+            
+            <date_enrolment_actual start="11/2010" end=""></date_enrolment_actual>
+            
+
+            <target_size value="3"></target_size>
+        </recruitment>
+
+        <study expanded_access_program="no"
+               number_of_arms="2">
+            <study_design>The study design of this</study_design>
+            <type value="interventional"></type>
+            <phase value="null"></phase>
+            <purpose value="diagnostic"></purpose>
+            <intervention_assignment value="single-group"></intervention_assignment>
+            <masking value="open"></masking>
+            <allocation value="non-randomized-controlled"></allocation>
+        </study>
+
+        <outcomes>
+            
+            <primary_outcome value="Description of outcome 1">
+                
+            </primary_outcome>
+            
+
+            
+            <secondary_outcome value="Description of outcome 2">
+                
+            </secondary_outcome>
+            
+        </outcomes>
+
+        <contacts>
+            
+            <person pid="1" country_code="BR">
+                <firstname>Tarsila</firstname>
+                <middlename>Ribeiro</middlename>
+                <lastname>Neiva</lastname>
+                <address>Rua Boituva, 449</address>
+                <city>Goiania</city>
+                <zip>74000-970</zip>
+                <telephone>+55(62)4525-1343</telephone>
+                <email>tarsila@raminel.com.br</email>
+                
+                <affiliation country_code="BR" type="clinical_research_network">
+                    <name>New name of ACNE</name>
+                    <address>Av. Goias, 1249, Centro</address>
+                </affiliation>
+                
+            </person>
+            
+            <person pid="2" country_code="BR">
+                <firstname>Linus</firstname>
+                <middlename>Ribeiro</middlename>
+                <lastname>Neiva</lastname>
+                <address>Rua Boituva, 449</address>
+                <city>Goiania</city>
+                <zip>74000-970</zip>
+                <telephone>+55(62)4525-1343</telephone>
+                <email>linus@raminel.com.br</email>
+                
+                <affiliation country_code="BR" type="clinical_research_network">
+                    <name>New name of ACNE</name>
+                    <address>Av. Goias, 1249, Centro</address>
+                </affiliation>
+                
+            </person>
+            
+            <person pid="1" country_code="BR">
+                <firstname>Tarsila</firstname>
+                <middlename>Ribeiro</middlename>
+                <lastname>Neiva</lastname>
+                <address>Rua Boituva, 449</address>
+                <city>Goiania</city>
+                <zip>74000-970</zip>
+                <telephone>+55(62)4525-1343</telephone>
+                <email>tarsila@raminel.com.br</email>
+                
+                <affiliation country_code="BR" type="clinical_research_network">
+                    <name>New name of ACNE</name>
+                    <address>Av. Goias, 1249, Centro</address>
+                </affiliation>
+                
+            </person>
+            
+
+            
+            <public_contact person="1"></public_contact>
+            
+            <public_contact person="2"></public_contact>
+            
+            
+            
+            <scientific_contact person="1"></scientific_contact>
+            
+
+            
+        </contacts>
+
+        <secondary_ids>
+            
+        </secondary_ids>
+
+        <references>
+            <link url="/rg/RBR-9fm6bk/v3/"></link>
+        </references>
+
+        
+        
+        
+    </trial>
+</trials>
+
+

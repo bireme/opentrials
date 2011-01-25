@@ -1,4 +1,6 @@
 # coding: utf-8
+from tempfile import NamedTemporaryFile
+import lxml
 
 from opentrials.repository.trds_forms import ReviewModelForm
 from opentrials.reviewapp.models import Remark
@@ -9,12 +11,15 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
 from django.conf import settings
+from django.forms.formsets import formset_factory, BaseFormSet
 
 from polyglot.multilingual_forms import MultilingualBaseForm
 from polyglot.multilingual_forms import MultilingualModelChoiceField, MultilingualModelMultipleChoiceField
 
 from repository.models import Institution, CountryCode
 from repository.widgets import SelectInstitution
+from repository.xml.validate import validate_xml, InvalidOpenTrialsXML, ICTRP_DTD
+from repository.xml.loading import etree, OpenTrialsXMLImport, REPLACE_IF_EXISTS
 
 ACCESS = [
     ('public', 'Public'),
@@ -107,8 +112,56 @@ class UserProfileForm(forms.ModelForm):
 
     title = _('Aditional info for profile')
 
-class UploadTrial(forms.Form):
-    submission_xml = forms.CharField(widget=forms.FileInput,required=True)
+class UploadTrialForm(forms.Form):
+    submission_file = forms.Field(widget=forms.FileInput, required=True)
+
+    xml_format = 'opentrials'
+
+    def clean_submission_file(self):
+        submission_file = self.cleaned_data['submission_file']
+
+        # This is a XML file
+        try:
+            self.tree = etree.parse(submission_file)
+        except etree.XMLSyntaxError:
+            raise forms.ValidationError(_('Invalid XML syntax.'))
+
+        # Runs DTD validation for OpenTrials XML
+        try:
+            validate_xml(self.tree)
+            self.xml_format = 'opentrials'
+        except InvalidOpenTrialsXML:
+            try:
+                validate_xml(self.tree, dtd=ICTRP_DTD)
+                self.xml_format = 'ictrp'
+            except InvalidOpenTrialsXML:
+                raise forms.ValidationError('Invalid file or not detected format.')
+
+        return submission_file
+
+    def parse_file(self, user, xml_format=None):
+        xml_format = xml_format or self.xml_format
+        imp = OpenTrialsXMLImport(creator=user)
+
+        if xml_format == 'opentrials':
+            return imp.parse_opentrials(self.tree)
+        else:
+            return imp.parse_ictrp(self.tree)
+
+class ImportParsedForm(forms.Form):
+    trial_id = forms.Field(widget=forms.HiddenInput)
+    description = forms.Field(widget=forms.HiddenInput, required=False)
+    to_import = forms.BooleanField(required=False)
+
+class BaseImportParsedFormset(BaseFormSet):
+    def import_file(self, parsed_trials, user):
+        imp = OpenTrialsXMLImport(creator=user)
+
+        imp._parsed_trials = parsed_trials
+
+        return imp.import_parsed(if_exists=REPLACE_IF_EXISTS)
+
+ImportParsedFormset = formset_factory(ImportParsedForm, formset=BaseImportParsedFormset, extra=0)
 
 class OpenRemarkForm(forms.ModelForm):
     class Meta:

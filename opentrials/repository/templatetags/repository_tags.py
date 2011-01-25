@@ -1,4 +1,5 @@
 from django import template
+from django.template.defaultfilters import slugify
 
 register = template.Library()
 
@@ -101,3 +102,10 @@ def switch(value, key_labels):
     """
     key_labels = dict([item.split('=') for item in key_labels.split(',')])
     return key_labels.get(value, value)
+
+@register.filter
+def prep_label_for_xml(label):
+    """Returns a label replacing whitespaces for underlines because XML validation
+    doesn't support white spaces."""
+    return 'null' if label == 'N/A' else slugify(label.replace(' ', '_'))
+

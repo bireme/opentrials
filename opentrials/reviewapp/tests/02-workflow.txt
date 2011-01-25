@@ -129,7 +129,7 @@ Fill trial fields
     >>> trial.phase = phase1
     >>> trial.save()
 
-    >>> submission.get_mandatory_languages() == set([u'en', u'pt-BR'])
+    >>> submission.get_mandatory_languages() == set([u'en', u'pt-br'])
     True
 
     >>> trial_pt = ClinicalTrialTranslation.objects.get_translation_for_object(
