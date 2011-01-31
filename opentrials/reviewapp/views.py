@@ -229,42 +229,6 @@ def resend_activation_email(request):
     return render_to_response('reviewapp/resend_activation_email.html', {
                               'form': form, },
                               context_instance=RequestContext(request))
-#    email = request.GET.get('email', '')
-#    users = User.objects.filter(email=email)
-#    
-#    if len(users) > 0:
-#        user = users[0]
-#    else:
-#        return render_to_response('reviewapp/resend_activation_email.html', 
-#                {'user_exist': False, 'email': email},
-#                context_instance=RequestContext(request))
-#        
-#    if user.is_active:
-#        return HttpResponseRedirect(reverse('reviewapp.password_reset')+'?email='+email)
-#    else:
-#   
-#        profiles = RegistrationProfile.objects.filter(user=user)
-#        
-#        if len(profiles) > 0:
-#            profile = profiles[0]
-#            
-#            if Site._meta.installed:
-#                site = Site.objects.get_current()
-#            else:
-#                site = RequestSite(request)
-#            
-#            user.date_joined = datetime.now()
-#            user.last_login = datetime.now()
-#            user.save()
-#            profile.send_activation_email(site)
-
-#            return render_to_response('reviewapp/resend_activation_email.html', 
-#                {'user_exist': True},
-#                context_instance=RequestContext(request))
-#        else:
-#            return render_to_response('reviewapp/resend_activation_email.html', 
-#                {'user_exist': False, 'email': email},
-#                context_instance=RequestContext(request))
 
 @login_required
 def terms_of_use(request):
@@ -510,18 +474,25 @@ def contact(request):
                 c = Context({
                             'name': name,
                             'message': message,
-                            'site': Site.objects.get_current() })
+                            'site_domain': Site.objects.get_current().domain, 
+                            'site_name': Site.objects.get_current().name, })
                 send_mail(subject, t.render(c), from_email, recipient_list,
                           fail_silently=False)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return HttpResponseRedirect('/contact/?sent=ok')
+            
+            messages.success(request, _('Message sent successfully.'))
+            return HttpResponseRedirect('/contact/')
+        else:
+            messages.warning(request, _('Please fill out all fields correctly.'))
     else:
-        form = ContactForm()
-    sent = bool(request.GET.get('sent', ''))
+        if request.user.is_authenticated():
+            form = ContactForm(user=request.user)
+        else:
+            form = ContactForm()
+    
     return render_to_response('reviewapp/contact.html', {
-                              'form': form, 
-                              'sent': sent },
+                              'form': form, },
                               context_instance=RequestContext(request))
                               
 def news_list(request):

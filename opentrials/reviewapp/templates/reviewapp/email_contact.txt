@@ -2,7 +2,9 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 {% blocktrans %}
-Message sent by the site: {{ site.domain }} ({{ site.name }})
+Message sent by the site: 
+{{ site_name }}
+http://{{ site_domain }}
 
 Message: {{ message }}
 

@@ -11,12 +11,10 @@
 
 {% block body %}
 
-    {% if form.errors %}
-    <div class="warning"><strong>{% trans 'Please fill out all fields correctly.' %}</strong></div>
-    {% endif %}
-
-    {% if sent %}
-    <div class="success"><strong>{% trans 'Message sent successfully.' %}</strong></div>
+    {% if messages %}
+        {% for message in messages %}
+        <div{% if message.tags %} class="{{ message.tags }}"{% endif %}><strong>{{ message }}</strong></div>
+        {% endfor %}
     {% endif %}
 
     <form method="post" action="./">{% csrf_token %}
