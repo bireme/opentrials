@@ -62,7 +62,11 @@
                 {% trans "Country" %}: {{ field.value.country.description|default:field.value.country.label }}<br/>
                 {% trans "Creator" %}: {{ field.value.creator.username }}
               {% else %}{% if field.name in vocabulary_fields %}
-                {{ field.value.description|default:field.value.label }}
+                {% if field.value.description %}
+                  {{ field.value.description }}
+                {% else %}
+                  {{ field.value.label }}
+                {% endif %}
               {% else %}{% if field.name == "public_contact" %}
                 {% for item in field.value %}
                 {{ item.firstname }} {{ item.middlename }} {{ item.lastname }}<br/>
