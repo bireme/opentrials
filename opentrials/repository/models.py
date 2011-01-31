@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
 from django.conf import settings
+from django.core.exceptions import ObjectDoesNotExist
 
 from fossil.models import Fossil, FossilManager
 from datetime import datetime
@@ -149,15 +150,24 @@ class PublishedTrial(Fossil):
 
     @property
     def trial_id(self):
-        return self.indexeds.key('trial_id').value
+        try:
+            return self.indexeds.key('trial_id').value
+        except ObjectDoesNotExist:
+            return ''
 
     @property
     def display(self):
-        return self.indexeds.key('display').value
+        try:
+            return self.indexeds.key('display').value
+        except ObjectDoesNotExist:
+            return 'True'
 
     @property
     def status(self):
-        return self.indexeds.key('status').value
+        try:
+            return self.indexeds.key('status').value
+        except ObjectDoesNotExist:
+            return 'published' if self.is_most_recent else 'archived'
 
     def get_object_fossil(self, force_load=False):
         if force_load or not getattr(self, '_object_fossil', None):
