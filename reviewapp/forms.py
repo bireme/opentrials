@@ -171,6 +171,15 @@ class OpenRemarkForm(forms.ModelForm):
     title = _('Open a new Remark')
     
 class ContactForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+
+        super(ContactForm, self).__init__(*args, **kwargs)
+
+        if self.user:
+            self.fields['name'] = forms.CharField(label=_("Name"), max_length=50, initial=self.user.first_name)
+            self.fields['from_email'] = forms.EmailField(label=_("E-mail"), initial=self.user.email)
+                        
     name = forms.CharField(label=_("Name"), max_length=50)
     from_email = forms.EmailField(label=_("E-mail"))
     subject = forms.CharField(label=_("Subject"), max_length=50)

@@ -80,6 +80,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.http.ConditionalGetMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
 
     #'debug_toolbar.middleware.DebugToolbarMiddleware',
 
@@ -112,6 +113,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.flatpages',
     'django.contrib.markup',
+    'django.contrib.messages',
     'deleting',
     'vocabulary',
     'repository',
@@ -119,6 +121,7 @@ INSTALLED_APPS = (
     'tickets',
     'assistance',
     'decsclient',
+#    'icd10client',
     'diagnostic',
     'polyglot',
     'registration',  # django-registration package
@@ -137,6 +140,7 @@ TEMPLATE_CONTEXT_PROCESSORS =(
     'django.core.context_processors.media',
     'django.core.context_processors.request',
     'context_processors.opentrials.polyglot',
+    'django.contrib.messages.context_processors.messages',
     'context_processors.opentrials.jquery',
     'context_processors.opentrials.google_analytics',
     'context_processors.opentrials.latest_tweets',
@@ -159,6 +163,7 @@ SITE_ID = 2 # change if necessary to match a record in django_site
 SITE_TITLE = u'Registro Brasileiro de Ensaios Clínicos'
 SEND_BROKEN_LINK_EMAILS = True
 DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
+ICD10_SERVICE = 'http://bases.bireme.br/cgi-bin/mxlindG4.exe/cgi=@cid10/cid10'
 
 # Notes:
 # 1) source: http://www.i18nguy.com/unicode/language-identifiers.html
