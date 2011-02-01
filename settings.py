@@ -141,7 +141,6 @@ TEMPLATE_CONTEXT_PROCESSORS =(
     'django.core.context_processors.request',
     'context_processors.opentrials.polyglot',
     'django.contrib.messages.context_processors.messages',
-    'context_processors.opentrials.jquery',
     'context_processors.opentrials.google_analytics',
     'context_processors.opentrials.latest_tweets',
     'context_processors.opentrials.debug',
@@ -198,9 +197,6 @@ PAGINATOR_CT_PER_PAGE = 10
 
 TWITTER = 'ensaiosclinicos'
 TWITTER_TIMEOUT = 18000 # expires in 5 min
-
-JQUERY_URL = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
-JQUERY_UI_URL = 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js'
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = ['--with-coverage', '--with-doctest', '--doctest-tests', '--doctest-extension=txt'] # --doctest-fixtures, --with-profile
