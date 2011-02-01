@@ -29,21 +29,18 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER # e-mail account used to send messages
 
 GOOGLE_ANALYTICS_ID = ''
 
+# Backup directory
+BACKUP_DIR = os.path.join(MEDIA_ROOT, 'backup')
+
 ### uncomment the lines below to change the default layout
 #MEDIA_ROOT = os.path.join(PROJECT_PATH, 'custom/ecgovbr/static')
 #TEMPLATE_DIRS = (
 #    os.path.join(PROJECT_PATH, 'custom/ecgovbr/templates'),
 #)
-# Backup directory
-#BACKUP_DIR = os.path.join(MEDIA_ROOT, 'backup')
 
 if DEBUG:
     DEBUG_PROPAGATE_EXCEPTIONS = True
     
-    ### setting to use the jquery locally
-    JQUERY_URL = MEDIA_URL + 'js/local/jquery.js'
-    JQUERY_UI_URL = MEDIA_URL + 'js/local/jquery-ui.js'
-
     MIDDLEWARE_CLASSES += (
         ## external dependency for debug purposes only
         # 'debug_middleware.DebugFooter',

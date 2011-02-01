@@ -12,14 +12,6 @@ def polyglot(request):
 
     return context_extra
     
-def jquery(request):
-    context_extra = {}
-
-    context_extra['JQUERY_URL'] = settings.JQUERY_URL
-    context_extra['JQUERY_UI_URL'] = settings.JQUERY_UI_URL
-
-    return context_extra
-
 def google_analytics(request):
     context_extra = {}
 

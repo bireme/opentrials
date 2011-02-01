@@ -5,8 +5,8 @@
         <title>{{ form.title }}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         
-        <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="/static/css/jquery.cluetip.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/jquery.cluetip.css"/>
         
         <style type="text/css">
             fieldset  {
@@ -17,9 +17,9 @@
             }
         </style>
         
-        <script type="text/javascript" src="{{ JQUERY_URL }}"></script>
-        <script type="text/javascript" src="{{ JQUERY_UI_URL }}"></script>
-        <script type="text/javascript" src="/static/js/jquery.cluetip.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="{{ MEDIA_URL }}js/local/jquery.js"></script>
+        <script type="text/javascript" src="{{ MEDIA_URL }}js/local/jquery-ui.js"></script>
+        <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.cluetip.min.js" type="text/javascript"></script>
         
         <script type="text/javascript">
             // customization for the Brazilian registry of clinical trials
