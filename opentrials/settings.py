@@ -140,7 +140,6 @@ TEMPLATE_CONTEXT_PROCESSORS =(
     'django.core.context_processors.media',
     'django.core.context_processors.request',
     'context_processors.opentrials.polyglot',
-    'django.contrib.messages.context_processors.messages',
     'context_processors.opentrials.google_analytics',
     'context_processors.opentrials.latest_tweets',
     'context_processors.opentrials.debug',
