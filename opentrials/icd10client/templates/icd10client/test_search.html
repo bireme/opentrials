@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <title>ICD10 Client Search-test Interface</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("input#submit").click(function(){
+                    document.body.style.cursor = "progress";
+                    $.get("/icd10/search/"
+                            +$("select#lang").attr("value")   +'/'
+                            +$("select#prefix").attr("value") +'/'
+                            +$("input#search").attr("value"),
+                        'count='+$("input[name=count]:checked").val(),
+                        function(data){
+                            $("span#total").html("Total: "+data.length);
+                            $("tbody#result").html("");
+                            for(var i in data){
+                                $("<tr>").appendTo("tbody#result")
+                                    .append("<td>"+data[i].fields.label+"</td>")
+                                    .append("<td>en: "+data[i].fields.description.en+"<br />"+
+                                                "pt: "+data[i].fields.description.pt+"<br />"+
+                                                "es: "+data[i].fields.description.es+"</td>");
+                            }
+                            $("div#jsonstring").html(data.toSource());
+                            if(window.console !== undefined){
+                                window.icd10client_response = data;
+                                window.console.warn(window.icd10client_response);
+                            }
+                            document.body.style.cursor = "";
+                        },
+                        'json'
+                    );
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>ICD10 Client Search-test Interface</h1>
+        
+        Documentation: 
+        <a href="http://wiki.reddes.bvsalud.org/index.php/Serviços_CID-10">http://wiki.reddes.bvsalud.org/index.php/Serviços_CID-10</a>
+        
+        <h3>Examples:</h3>
+        
+        <table id="examples" width="100%" border="1" align="left">
+        <tbody>
+        <tr>
+            <td>
+              Prefix: LI<br />
+              Term: Capitulo A00-B99
+            </td>
+            <td>
+              Prefix: AL<br />
+              Term: R10
+            </td>
+            <td>
+              Prefix: TZ<br />
+              Term: sangue
+            </td>
+            <td>
+              Prefix: TX<br />
+              Term: sangue
+            </td>
+            <td>
+              Prefix: TW<br />
+              Term: sangue
+            </td>
+        </tr>
+        <tr>
+            <td>
+              Prefix: LI<br />
+              Term: Capitulo A00-B99 GRUPO
+            </td>
+            <td>
+              Prefix: EX<br />
+              Term: R10
+            </td>
+            <td>
+              Prefix: TY<br />
+              Term: sangue
+            </td>
+            <td>
+              Prefix: TV<br />
+              Term: sangue
+            </td>
+            
+            <td></td>
+        </tr>
+        </tbody>
+        </table>
+
+        <h2>Search form</h2>
+        <form method="get" action="">
+            <fieldset>
+                <legend>Complete the form</legend>
+
+                <br/>
+                <label>Search term</label><br/>
+                <input type="text" id="search"/><br/>
+
+                <br/>
+                <label>Lang</label><br/>
+                <select id="lang">
+                    <option value="en" selected="selected">en</option>
+                    <option value="es">es</option>
+                    <option value="pt">pt</option>
+                </select><br/>
+
+                <br/>
+                <label>Count</label>
+                <br/>
+                <label>10</label>
+                <input type="radio" name="count" value="10"/>
+                &nbsp;&nbsp;&nbsp;
+                <label>100</label>
+                <input type="radio" name="count" value="100" checked="checked"/>
+                &nbsp;&nbsp;&nbsp;
+                <label>1000</label>
+                <input type="radio" name="count" value="1000"/>
+                <br/>
+
+                <br/>
+                <label>Prefix</label><br/>
+                <select id="prefix">
+                    <option value="LI" selected="selected">LI Limites</option>
+                    <option value="AL">AL Códigos</option>
+                    <option value="EX">EX Códigos expandidos</option>
+                    <option value="TZ">TZ Termos e palavras (101)</option>
+                    <option value="TY">TY Termos de inclusão e palavras (102)</option>
+                    <option value="TX">TX Termos de exclusão e palavras (104)</option>
+                    <option value="TV">TV Termos, inclusão e palavras (103)</option>
+                    <option value="TW">TW Termos, inclusão, exclusão e palavras (107)</option>
+                    <option value="101">101 Termos e palavras</option>
+                    <option value="102">102 Termos de inclusão e palavras</option>
+                    <option value="103">103 Termos, termo de inclusão e palavras</option>
+                    <option value="104">104 Termos de exclusão e palavras</option>
+                    <option value="107">107 Termos, termos gerais, termo de inclusão, termos de exclusão e palavras</option>
+                </select><br/>
+                <br/>
+
+                <input id="submit" type="button" value="Search"/>
+            </fieldset>
+        </form>
+
+        <h2>Result list</h2>
+        <span id="total">Total: </span>
+        <table id="result" width="100%" border="1" align="left">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Term</th>
+                </tr>
+            </thead>
+            <tbody id="result">
+
+            </tbody>
+        </table>
+
+        <h2>Json String</h2>
+        <div id="jsonstring">
+            
+        </div>
+    </body>
+</html>

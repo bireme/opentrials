@@ -60,7 +60,9 @@ function handle_decs_div(node){
 if( window.decsdata == undefined ){
     window.decsdata = {};
 }
-
+if( window.icd10data == undefined ){
+    window.icd10data = {};
+}
 /**
  * A utility to name and create form elements
  */
@@ -82,7 +84,7 @@ function make_decs_for(node,lang){
 function make_decstool_callback(decs){
     return function(data){
         var lang = decs.lang.substring(0,2);
-        for(var i=0; i<data.length;i++){
+        for(var i=0; i < data.length; i++){
             var option = $("<option>").attr("value",data[i].fields.label)
                 .html(data[i].fields.description[lang])
                 .appendTo('#'+decs.id('select'));
@@ -94,15 +96,17 @@ function make_decstool_callback(decs){
             $("input#id_"+decs.set+"-code")
                 .attr("value",this.value)
                 .attr("readonly","readonly");
-            $("input[name="+decs.set+"-text]")
-                .attr("value",window.decsdata[this.value].en)
-                .attr("readonly","readonly");
-            $("input[name="+decs.set+"-text|es]")
-                .attr("value",window.decsdata[this.value].es)
-                .attr("readonly","readonly");
-            $("input[name="+decs.set+"-text|pt-br]")
-                .attr("value",window.decsdata[this.value].pt)
-                .attr("readonly","readonly");
+            if (typeof window.decsdata[this.value] != "undefined"){
+                $("input[name="+decs.set+"-text]")
+                    .attr("value",window.decsdata[this.value].en)
+                    .attr("readonly","readonly");
+                $("input[name="+decs.set+"-text|es]")
+                    .attr("value",window.decsdata[this.value].es)
+                    .attr("readonly","readonly");
+                $("input[name="+decs.set+"-text|pt-br]")
+                    .attr("value",window.decsdata[this.value].pt)
+                    .attr("readonly","readonly");
+            }
         });
 
         if( data.length === 1){
@@ -121,38 +125,60 @@ function make_decstool_callback(decs){
 }
 
 /**
- * Extend the django form and insert decs elements
+ * Extend the django form to insert decs and icd10 elements
  */
-function getterm_event(decsclient_url,lang) {
+function getterm_event(clients,lang) {
     return function(){
         this.parentNode.className = "";
-        if(this.value === 'DeCS'){
+        if (this.value === 'DeCS') {
+            client_url = clients['decs_url'];
             this.parentNode.className = "showdecs";
             var decs = make_decs_for(this,lang);
             $(this).parents('table').find(":input[type=text]").attr("readonly","readonly");
-            if($('#'+decs.id('select')).length === 0){
+            if ($('#'+decs.id('select')).length === 0) {
                 decs.create('div')
                     .attr('class','decstool')
                     .appendTo(this.parentNode)
                     .append(decs.create('select'));
 
-                $.get(decsclient_url,'',
+                $.get(client_url,'',
                     make_decstool_callback(decs),"json");
             }
             $(this.parentNode).find('.decstool :input[type=text]').removeAttr("readonly");
-        }else{
+        
+        } else if (this.value === 'ICD-10') {
+            client_url = clients['icd10_url'];
+            this.parentNode.className = "showicd10";
+            var icd10 = make_icd10_for(this,lang);
+            $(this).parents('table').find(":input[type=text]").attr("readonly","readonly");
+            if ($('#'+icd10.id('select')).length === 0) {
+                icd10.create('div')
+                    .attr('class','icd10tool')
+                    .appendTo(this.parentNode)
+                    .append(icd10.create('select'));
+
+                $.get(client_url,'',
+                    make_icd10tool_callback(icd10),"json");
+            }
+            $(this.parentNode).find('.icd10tool :input[type=text]').removeAttr("readonly");
+        
+        } else {
             $(this).parents('table').find(":input[type=text]").removeAttr("readonly");
         }
     }
 };
 
 /**
- * Extend the django form and insert decs elements
+ * Extend the django form to insert decs and icd10 elements
  */
-function search_event(decsclient_url,label,lang) {
+function search_event(clients,label,lang) {
     return function(){
         this.parentNode.className = "";
         if(this.value === 'DeCS'){
+            client_url = clients['decs_url'];
+            client_decs_url = clients['decs_url'];
+            client_icd10_url = clients['icd10_url'];
+            
             this.parentNode.className = "showdecs";
             var decs = make_decs_for(this,lang);
 
@@ -179,13 +205,64 @@ function search_event(decsclient_url,label,lang) {
                         }
                         $('#'+decs.id('select')).html('');
 
-                        $.get(decsclient_url+$('#'+decs.id('input')).val(),'',
+                        if($(this).parent().siblings().val() === 'DeCS'){
+                            client_url = client_decs_url;
+                        } else if($(this).parent().siblings().val() === 'ICD-10'){
+                            client_url = client_icd10_url;
+                        }
+                        $.get(client_url+$('#'+decs.id('input')).val(),'',
                             make_decstool_callback(decs),
                             'json');
                         return false;
                     });
             }
             $(this.parentNode).find('.decstool :input[type=text]').removeAttr("readonly");
+        }
+        else if(this.value === 'ICD-10'){
+            client_url = clients['icd10_url'];
+            client_icd10_url = clients['icd10_url'];
+            client_decs_url = clients['decs_url'];
+            
+            this.parentNode.className = "showicd10";
+            var icd10 = make_icd10_for(this, lang);
+
+            $(this).parents('table').find(":input[type=text]").attr("readonly","readonly");
+
+            if($(this.parentNode).find('.icd10tool').length === 0){
+                icd10.create('div')
+                   .attr('class','icd10tool')
+                   .appendTo(this.parentNode)
+                   .append(icd10.create('input').bind("keypress", function(e) {
+                            if(e.keyCode === 13){
+                                $('#'+icd10.id('button')).click();
+                                return false;
+                            }
+                        }))
+                   .append(icd10.create('button').html(label));
+
+                $('#'+icd10.id('button'))
+                    .click(function(evt){
+                        var icd10 = make_icd10_for(evt.target,lang);
+                        if($('#'+icd10.id('select')).length === 0){
+                            icd10.create('select')
+                                .insertAfter(this);
+                        }
+                        $('#'+icd10.id('select')).html('');
+
+                        if($(this).parent().siblings().val() === 'DeCS'){
+                            client_url = client_decs_url;
+                        } else if($(this).parent().siblings().val() === 'ICD-10'){
+                            client_url = client_icd10_url;
+                        }
+                        
+                        $.get(client_url+$('#'+icd10.id('input')).val(),'',
+                            make_icd10tool_callback(icd10),
+                            'json');
+                        return false;
+                    });
+            }
+            $(this.parentNode).find('.icd10tool :input[type=text]').removeAttr("readonly");
+            
         }else{
             $(this).parents('table').find(":input[type=text]").removeAttr("readonly");
         }
@@ -205,5 +282,85 @@ function ack_remark(remark_id){
             });
         }
     });
+};
+
+
+/**
+ * This is the callback for icd10client app
+ */
+function make_icd10tool_callback(icd10){
+    return function(data) {
+        var lang = icd10.lang.substring(0,2);
+        for (var i=0; i < data.length; i++) {
+            var option = $("<option>").attr("value", data[i].fields.label)
+                .html(data[i].fields.description[lang])
+                .appendTo('#'+icd10.id('select'));
+            window.icd10data[ data[i].fields.label ] = data[i].fields.description;
+        }
+
+        $('#'+icd10.id('select')).change(function(evt) {
+            icd10 = make_icd10_for(evt.target, icd10.lang);
+            $("input#id_"+icd10.set+"-code")
+                .attr("value",this.value)
+                .attr("readonly","readonly");
+            if (typeof window.icd10data[this.value] != "undefined"){
+                if (typeof window.icd10data[this.value].en != "undefined") {
+                    $("input[name="+icd10.set+"-text]")
+                        .attr("value",window.icd10data[this.value].en)
+                        .attr("readonly","readonly");
+                } else {
+                    $("input[name="+icd10.set+"-text]")
+                        .attr("value", '')
+                        .removeAttr("readonly");
+                }
+                if (typeof window.icd10data[this.value].es != "undefined") {
+                    $("input[name="+icd10.set+"-text|es]")
+                        .attr("value",window.icd10data[this.value].es)
+                        .attr("readonly","readonly");
+                } else {
+                    $("input[name="+icd10.set+"-text|es]")
+                        .attr("value", '')
+                        .removeAttr("readonly");
+                }
+                if (typeof window.icd10data[this.value].pt != "undefined") {
+                    $("input[name="+icd10.set+"-text|pt-br]")
+                        .attr("value",window.icd10data[this.value].pt)
+                        .attr("readonly","readonly");
+                } else {
+                    $("input[name="+icd10.set+"-text|pt-br]")
+                        .attr("value", '')
+                        .removeAttr("readonly");
+                }
+            }
+        });
+
+        if( data.length === 1){
+            $('#'+icd10.id('select') + " option").attr("selected", "selected");
+        }
+
+        if($("input#id_"+icd10.set+"-code").val()){
+            var code=$("input#id_"+icd10.set+"-code").val();
+            $('#'+icd10.id('select'))
+                .find('option[value='+code+']')
+                .attr('selected', 'selected');
+        } else {
+            $('#'+icd10.id('select')).change();
+        }
+    }
+}
+
+/**
+ * A utility to name and create form elements (ICD10)
+ */
+function make_icd10_for(node, lang){
+    var set = node.id.match(/[a-z]+-\d+/)[0]; // get django formset prefix
+    return {'lang':lang,
+            'select':set+"-comboicd10",
+            'div':set+'-icd10tools',
+            'input':set+'-icd10searchfield',
+            'button':set+'-icd10searchbutton',
+            'id':function(e){return 'id_'+ this[e];},
+            'create':function(e){return $('<'+e+'>').attr('id',this.id(e)).attr('name',this[e]);},
+            'set':set};
 }
 

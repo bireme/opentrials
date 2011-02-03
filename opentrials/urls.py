@@ -45,6 +45,8 @@ urlpatterns = patterns('',
 
     url(r'^decs/', include('opentrials.decsclient.urls')),
     
+    url(r'^icd10/', include('opentrials.icd10client.urls')),
+    
     # setting django-registration to use unique email form
     url(r'^accounts/register/$', 'registration.views.register', 
         {'backend': 'registration.backends.default.DefaultBackend', 

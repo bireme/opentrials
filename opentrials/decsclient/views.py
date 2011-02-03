@@ -35,6 +35,10 @@ def getterm(request, lang, code):
 def getdescendants(request, code):
     params = {}
     results = {}
+    
+    language = request.LANGUAGE_CODE.lower()
+    if language == 'pt-br':
+        language = 'pt'
 
     for lang in DECS_LANGS:
         params[lang] = urllib.urlencode({
@@ -56,7 +60,7 @@ def getdescendants(request, code):
 
     json = '[%s]' % ','.join((JSON_MULTILINGUAL_TERM % (id,desc) for desc,id in results.items()))
     json_response = json_loads(json)
-    json_response.sort(key=lambda x: x['fields']['description'][lang])
+    json_response.sort(key=lambda x: x['fields']['description'][language])
         
     return HttpResponse(json_dumps(json_response), mimetype='application/json')
 
@@ -99,4 +103,4 @@ def search(request, lang, term, prefix='403'):
     return HttpResponse(json_dumps(json_response), mimetype='application/json')
 
 def test_search(request):
-    return render_to_response("test_search.html", request)
+    return render_to_response("decsclient/test_search.html", request)
