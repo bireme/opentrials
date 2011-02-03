@@ -7,9 +7,10 @@
         $(document).ready(function() {
             $("div.form select")
                 .change(search_event(
-                        '{% url decs.search lang=LANGUAGE_CODE,term="" %}',
+                        {'decs_url': '{% url decs.search lang=LANGUAGE_CODE, term="" %}',
+                        'icd10_url': '{% url icd10.search lang=LANGUAGE_CODE, term="" %}'},
                         '{% trans "Search terms" %}',
-                        '{{LANGUAGE_CODE}}'))
+                        '{{ LANGUAGE_CODE }}'))
                 .each(function(){$(this).change();});
         });
     </script>

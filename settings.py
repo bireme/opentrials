@@ -121,7 +121,7 @@ INSTALLED_APPS = (
     'tickets',
     'assistance',
     'decsclient',
-#    'icd10client',
+    'icd10client',
     'diagnostic',
     'polyglot',
     'registration',  # django-registration package

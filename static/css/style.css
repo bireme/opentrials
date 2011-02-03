@@ -789,6 +789,20 @@ td.showdecs div.decstool {
     display: block;
 }
 
+/* AJAX ICD10 Tools */
+td div.icd10tool {
+    display: none;
+}
+
+/*td select,*/
+td div.icd10tool input {
+    width: 46%;
+}
+
+td.showicd10 div.icd10tool {
+    display: block;
+}
+
 .issue{
     font-size:10px;
     color:#5d5d5d;
