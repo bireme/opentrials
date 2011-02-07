@@ -284,6 +284,7 @@ def new_submission(request):
 
             trial.primary_sponsor = su.primary_sponsor
             trial.language = su.language
+            trial.utrn_number = initial_form.cleaned_data['utrn_number']
             trial.save()
 
             su.save()
