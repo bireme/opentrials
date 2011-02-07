@@ -1,6 +1,7 @@
 # coding: utf-8
 from tempfile import NamedTemporaryFile
 import lxml
+import re
 
 from opentrials.repository.trds_forms import ReviewModelForm
 from opentrials.reviewapp.models import Remark
@@ -16,10 +17,11 @@ from django.forms.formsets import formset_factory, BaseFormSet
 from polyglot.multilingual_forms import MultilingualBaseForm
 from polyglot.multilingual_forms import MultilingualModelChoiceField, MultilingualModelMultipleChoiceField
 
-from repository.models import Institution, CountryCode
+from repository.models import Institution, CountryCode, ClinicalTrial
 from repository.widgets import SelectInstitution
 from repository.xml.validate import validate_xml, InvalidOpenTrialsXML, ICTRP_DTD
 from repository.xml.loading import etree, OpenTrialsXMLImport, REPLACE_IF_EXISTS
+from repository.trds_forms import utrn_number_validate
 
 ACCESS = [
     ('public', 'Public'),
@@ -35,19 +37,19 @@ class InitialTrialForm(ReviewModelForm):
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user', None)
 
-        self.base_fields.keyOrder = ['language', 'scientific_title', 'recruitment_country',
-                'primary_sponsor',]
+        self.base_fields.keyOrder = ['language', 'scientific_title', 'recruitment_country', 
+                'utrn_number', 'primary_sponsor',]
 
-        self.base_fields['primary_sponsor'].widget = SelectInstitution(formset_prefix='primary_sponsor')
+        self.base_fields['primary_sponsor'] = forms.ModelChoiceField(queryset=Institution.objects.filter(creator=self.user).order_by('name'), 
+                                                label=_('Primary Sponsor'),
+                                                widget=SelectInstitution(formset_prefix='primary_sponsor'), 
+                                                required=True)
 
         super(InitialTrialForm, self).__init__(*args, **kwargs)
 
-        self.fields['primary_sponsor'].queryset = Institution.objects.filter(creator=self.user).order_by('name')
-
-        if self.user:
-            self.fields['language'] = forms.ChoiceField(label=_('Submission language'), 
-                        choices=settings.MANAGED_LANGUAGES_CHOICES, 
-                        initial=self.user.get_profile().preferred_language)
+        self.fields['language'] = forms.ChoiceField(label=_('Submission language'), 
+                    choices=settings.MANAGED_LANGUAGES_CHOICES, 
+                    initial=self.user.get_profile().preferred_language)
 
     form_title = _('Initial Trial Data')
     scientific_title = forms.CharField(widget=forms.Textarea, 
@@ -57,8 +59,15 @@ class InitialTrialForm(ReviewModelForm):
                                                     label=_('Recruitment Country'),
                                                     model=CountryCode,
                                                     label_field='description',)
+    utrn_number = forms.CharField(label=_('UTRN Number'), max_length=255, required=True)
     language = forms.ChoiceField(label=_('Submission language'), 
                                  choices=settings.MANAGED_LANGUAGES_CHOICES)
+
+    def clean_utrn_number(self):
+        data = utrn_number_validate(self.cleaned_data['utrn_number'].strip())
+        if ClinicalTrial.objects.filter(utrn_number=data).count() > 0:
+            raise forms.ValidationError(_('UTRN number already exists.'))
+        return data
 
 class PrimarySponsorForm(ReviewModelForm):
     class Meta:

@@ -163,6 +163,11 @@ class ReviewModelForm(MultilingualBaseForm):
 # Forms
 #
 
+def utrn_number_validate(data):
+    if data:
+        if not re.match('^U\d{4}-\d{4}-\d{4}$', data):
+            raise forms.ValidationError(_("Invalid format. Example: U1111-1111-1111"))
+    return data
 
 ### step_1 #####################################################################
 class TrialIdentificationForm(ReviewModelForm):
@@ -189,12 +194,11 @@ class TrialIdentificationForm(ReviewModelForm):
     # TRDS 9b
     acronym = forms.CharField(required=False, label=_('Acronym'),
                               max_length=255)
-                              
+
     def clean_utrn_number(self):
-        data = self.cleaned_data['utrn_number'].strip()
-        if data:
-            if not re.match('^U\d{4}-\d{4}-\d{4}$', data):
-                raise forms.ValidationError(_("Invalid format. Example: U1111-1111-1111"))
+        data = utrn_number_validate(self.cleaned_data['utrn_number'].strip())
+        if ClinicalTrial.objects.filter(utrn_number=data).exclude(pk=self.instance.pk).count() > 0:
+            raise forms.ValidationError(_('UTRN number already exists.'))
         return data
 
 
