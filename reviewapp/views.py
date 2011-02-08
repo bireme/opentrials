@@ -95,7 +95,7 @@ def submissions_list(request):
     submission = Submission.objects.filter(creator=request.user)
 
     # Submission list is optimized to retunrs only the necessary fields
-    submission_list = submission.values('pk','created','title','status',
+    submission_list = submission.values('pk','created','creator','title','status',
             'trial__pk','trial__scientific_title')
             
     for sub in submission_list:
@@ -122,14 +122,6 @@ def submissions_list(request):
     
     object_list = objects_with_title_translated()
     
-    delete = False
-    no_delete = False
-    if request.GET.get('delete'):
-        if request.GET.get('delete') == 'ok':
-            delete = True
-        elif request.GET.get('delete') == 'no':
-            no_delete = True
-    
     return render_to_response('reviewapp/submission_list.html', locals(),
                                context_instance=RequestContext(request))
 
@@ -150,9 +142,11 @@ def submission_delete(request, id):
         if hasattr(submission, 'trial'):
             submission.trial.delete()
         submission.delete()
-        return HttpResponseRedirect('/accounts/submissionlist/?delete=ok')
+        messages.success(request, _('The submission was deleted successfully.'))
     else:
-        return HttpResponseRedirect('/accounts/submissionlist/?delete=no')
+        messages.warning(request, _('This submission can not be deleted.'))
+
+    return HttpResponseRedirect('/accounts/submissionlist/')
 
 @login_required
 def user_profile(request):

@@ -14,6 +14,7 @@ from tickets.models import Ticket
 from utilities import safe_truncate
 from vocabulary.models import CountryCode
 from polyglot.models import Translation, MANAGED_LANGUAGES_LOWER
+from fossil.models import Fossil
 
 from repository.trial_validation import TRIAL_FORMS
 from consts import REMARK, MISSING, PARTIAL, COMPLETE
@@ -161,6 +162,8 @@ class Submission(ControlledDeletion):
         return COMPLETE
         
     def can_delete(self):
+        if Fossil.objects.filter(object_id=self.trial.pk).count() > 0:
+            return False
         return self.status in [SUBMISSION_STATUS[0][0]]
 
 class RecruitmentCountry(models.Model):
