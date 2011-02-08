@@ -28,20 +28,18 @@ def get_chapters(request):
 
     terms = tree.findall('cid10ws_response')
     
+    data = []
     for term in terms:
         description = {}
+        chapter = term.findall('tree/self/term_list/term')[0]
+
         for lang in ICD10_LANGS:
             term_trans = term.findall('record_list/record/descriptor_list/descriptor[@lang="%s"]' % lang)[0]
-            description[lang] = term_trans.text.strip().capitalize() if term_trans.text is not None else ""
-                
-        results[ term.attrib['tree_id'] ] = description
+            if term_trans.text:
+                 description[lang] = "%s - %s" % (chapter.attrib['chapter'], term_trans.text.strip().capitalize())
 
-    data = []
-    for id, desc in results.items():
-        data.append({'fields': {"description": desc, "label": id}}) 
+        data.append({'fields': {"description": description, "label": chapter.attrib['tree_id']}}) 
 
-    data.sort(key=lambda x: x['fields']['description'][language])
-        
     return HttpResponse(json.dumps(data), mimetype='application/json')
 
 def search(request, lang, term, prefix='TV'):
