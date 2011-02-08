@@ -29,7 +29,7 @@ def latest_tweets(request):
     if tweets:
         return {"tweets": tweets}
 
-    tweets = urllib.urlopen("http://twitter.com/statuses/user_timeline/"+ settings.TWITTER +".json?callback=twitterCallback2&count=1").readlines()
+    tweets = urllib.urlopen("http://twitter.com/statuses/user_timeline/"+ settings.TWITTER +".json?callback=twitterCallback2&count=2").readlines()
     if len(tweets) > 0:
         tweets = mark_safe(tweets[0])
         cache.set('tweets', tweets, settings.TWITTER_TIMEOUT)
