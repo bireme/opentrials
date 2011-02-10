@@ -957,7 +957,7 @@ def trial_otxml(request, trial_fossil_id, trial_version=None):
     ct.hash_code = fossil.pk
     ct.previous_revision = fossil.previous_revision
     ct.version = fossil.revision_sequential
-    ct.status = fossil.indexeds.key('status', fail_silent=True).value
+    ct.status = fossil.indexers.key('status', fail_silent=True).value
 
     persons = set(ct.scientific_contact + ct.public_contact + ct.site_contact)
 

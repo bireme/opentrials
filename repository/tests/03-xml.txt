@@ -68,7 +68,7 @@ Checks imported trial and its fields
     >>> ct.hash_code = fossil_valid.pk
     >>> ct.previous_revision = fossil_valid.previous_revision
     >>> ct.version = fossil_valid.revision_sequential
-    >>> ct.status = fossil_valid.indexeds.key('status', fail_silent=True).value
+    >>> ct.status = fossil_valid.indexers.key('status', fail_silent=True).value
 
     >>> new_xml = xml_opentrials(ct, persons)
 
@@ -88,7 +88,7 @@ Serializing to format OpenTrials XML
     >>> ct.hash_code = fossil_valid.pk
     >>> ct.previous_revision = fossil_valid.previous_revision
     >>> ct.version = fossil_valid.revision_sequential
-    >>> ct.status = fossil_valid.indexeds.key('status', fail_silent=True).value
+    >>> ct.status = fossil_valid.indexers.key('status', fail_silent=True).value
 
     >>> persons = set(ct.scientific_contact + ct.public_contact + ct.site_contact)
 
@@ -140,7 +140,7 @@ Checks imported trial and its fields
     >>> ct.hash_code = fossil_valid.pk
     >>> ct.previous_revision = fossil_valid.previous_revision
     >>> ct.version = fossil_valid.revision_sequential
-    >>> ct.status = fossil_valid.indexeds.key('status', fail_silent=True).value
+    >>> ct.status = fossil_valid.indexers.key('status', fail_silent=True).value
 
     >>> new_xml = xml_opentrials(ct, persons)
 
