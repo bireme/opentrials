@@ -151,21 +151,21 @@ class PublishedTrial(Fossil):
     @property
     def trial_id(self):
         try:
-            return self.indexeds.key('trial_id').value
+            return self.indexers.key('trial_id').value
         except ObjectDoesNotExist:
             return ''
 
     @property
     def display(self):
         try:
-            return self.indexeds.key('display').value
+            return self.indexers.key('display').value
         except ObjectDoesNotExist:
             return 'True'
 
     @property
     def status(self):
         try:
-            return self.indexeds.key('status').value
+            return self.indexers.key('status').value
         except ObjectDoesNotExist:
             return 'published' if self.is_most_recent else 'archived'
 
