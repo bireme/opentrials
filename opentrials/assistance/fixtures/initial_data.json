@@ -81,7 +81,7 @@
     "pk": 3, 
     "model": "assistance.questiontranslation", 
     "fields": {
-      "answer": "Ensaios devem ser registrados ap\u00f3s a aprova\u00e7\u00e3o de um comit\u00ea de \u00e9tica nacional e antes do registro do recrutamento do primeiro paciente\r\n", 
+      "answer": "Ensaios devem ser registrados ap\u00f3s a aprova\u00e7\u00e3o de um comit\u00ea de \u00e9tica nacional e antes do recrutamento do primeiro paciente\r\n", 
       "title": "Quando os estudos devem ser registrados?", 
       "content_type": [
         "assistance", 
@@ -95,7 +95,7 @@
     "pk": 2, 
     "model": "assistance.questiontranslation", 
     "fields": {
-      "answer": "Todos os ensaios cl\u00ednicos com participantes brasileiros, em todas as \u00e1reas da sa\u00fade, e com testes de todas as formas de interven\u00e7\u00f5es, devem ser registrados. \r\nEstudos devem atender a defini\u00e7\u00e3o <a href=\"http://www.who.int/ictrp/en/\" title=\"World Health Organization\" target=\"_blank\">WHO</a> / ICMJE 2008 de um ensaio cl\u00ednico para serem registrados. Ou seja, qualquer pesquisa que prospectivamente designa participantes, humanos ou grupos de seres humanos, para uma ou mais interven\u00e7\u00f5es relacionadas \u00e0 sa\u00fade, para avaliar os efeitos na sa\u00fade. Interven\u00e7\u00f5es m\u00e9dicas incluem qualquer interven\u00e7\u00e3o usada para modificar um desfecho de sa\u00fade e incluem drogas, procedimentos cir\u00fargicos, aparelhos, tratamentos comportamentais, etc. Em caso de d\u00favida se um ensaio cl\u00ednico deve ser registrado ou n\u00e3o, recomenda-se o registro desse estudo.\r\n", 
+      "answer": "Todos os ensaios cl\u00ednicos com participantes brasileiros, em todas as \u00e1reas da sa\u00fade, e com testes de todas as formas de interven\u00e7\u00f5es, devem ser registrados. \r\nEstudos devem atender a defini\u00e7\u00e3o <a href=\"http://www.who.int/ictrp/en/\" title=\"World Health Organization\" target=\"_blank\">WHO</a> / ICMJE 2008 de um ensaio cl\u00ednico para serem registrados. Ou seja, qualquer pesquisa que prospectivamente designa participantes humanos ou grupos de seres humanos, para uma ou mais interven\u00e7\u00f5es relacionadas \u00e0 sa\u00fade, para avaliar os efeitos na sa\u00fade. Interven\u00e7\u00f5es m\u00e9dicas incluem qualquer interven\u00e7\u00e3o usada para modificar um desfecho de sa\u00fade e incluem drogas, procedimentos cir\u00fargicos, aparelhos, tratamentos comportamentais, etc. Em caso de d\u00favida se um ensaio cl\u00ednico deve ser registrado ou n\u00e3o, recomenda-se o registro desse estudo.\r\n", 
       "title": "Quais estudos precisam ser registrados?", 
       "content_type": [
         "assistance", 
@@ -109,7 +109,7 @@
     "pk": 4, 
     "model": "assistance.questiontranslation", 
     "fields": {
-      "answer": "O coordenador, patrocinador do estudo ou um representante adequado \u00e9 respons\u00e1vel pelo registro de um estudo. O patrocinador \u00e9 um indiv\u00edduo ou empresa, p\u00fablica ou privada, que ap\u00f3ia financeiramente a pesquisa, conforme definido pela RDC 39.\r\nPara os estudos cl\u00ednicos patrocinados por ag\u00eancias nacionais ou internacionais de fomento \u00e0 pesquisa, entidades filantr\u00f3picas, organiza\u00e7\u00f5es n\u00e3o governamentais (ONGs) ou outras entidades sem fins lucrativos, o(s) investigador(es) respons\u00e1vel(ies) pela coordena\u00e7\u00e3o da pesquisa assumem o papel de representante do patrocinador, caso n\u00e3o haja uma ORPC respons\u00e1vel pela condu\u00e7\u00e3o da mesma.\r\nNo caso de estudos independentes, em que o investigador n\u00e3o tem apoio financeiro de um patrocinador espec\u00edfico, incluindo os casos que recebem os medicamentos de investiga\u00e7\u00e3o sob a forma de doa\u00e7\u00e3o onde o doador n\u00e3o deseja ser caracterizado como patrocinador do estudo.\r\n", 
+      "answer": "O coordenador, patrocinador do estudo ou um representante adequado pode ser respons\u00e1vel pelo registro de um estudo. O patrocinador \u00e9 um indiv\u00edduo ou empresa, p\u00fablica ou privada, que ap\u00f3ia financeiramente a pesquisa, conforme definido pela resolu\u00e7\u00e3o RDC 39 da Ag\u00eancia Nacional de Vigil\u00e2ncia Sanit\u00e1ria.\r\nPara os estudos cl\u00ednicos patrocinados por ag\u00eancias nacionais ou internacionais de fomento \u00e0 pesquisa, entidades filantr\u00f3picas, organiza\u00e7\u00f5es n\u00e3o governamentais (ONGs) ou outras entidades sem fins lucrativos, o(s) investigador(es) respons\u00e1vel(ies) pela coordena\u00e7\u00e3o da pesquisa assumem o papel de representante do patrocinador, caso n\u00e3o haja uma Organiza\u00e7\u00e3o Representativa para Pesquisa Cl\u00ednica (ORPC) respons\u00e1vel pela condu\u00e7\u00e3o da mesma.\r\nNo caso de estudos independentes, em que o investigador n\u00e3o tem apoio financeiro de um patrocinador espec\u00edfico, incluindo os casos que recebem os medicamentos de investiga\u00e7\u00e3o sob a forma de doa\u00e7\u00e3o onde o doador n\u00e3o deseja ser caracterizado como patrocinador do estudo, o investigador principal assume a responsabilidade pelo registro do estudo.\r\n", 
       "title": "Quem \u00e9 respons\u00e1vel pelo registro de um estudo?", 
       "content_type": [
         "assistance", 
@@ -123,7 +123,7 @@
     "pk": 5, 
     "model": "assistance.questiontranslation", 
     "fields": {
-      "answer": "Na primeira vez, os usu\u00e1rios precisam criar um nome de login e uma senha, clicando no bot\u00e3o \u201cRegistrar-se\u201d. Um email de confirma\u00e7\u00e3o ser\u00e1 enviado para a conta de e-mail informado.\r\nO bot\u00e3o de \u201cNova Submiss\u00e3o\u201d levar\u00e1 o requerente para as telas que precisam ser preenchidas. Isso inclui informa\u00e7\u00f5es b\u00e1sicas, como os tipos de participantes, as interven\u00e7\u00f5es que est\u00e3o sendo testadas e os desfechos a serem avaliados. Outras informa\u00e7\u00f5es requeridas incluem detalhes do desenho do estudo, tamanho da amostra e informa\u00e7\u00f5es dos contatos. Cada campo tem um bot\u00e3o de ajuda (\u00edcone \u201c?\u201d) para auxiliar os requerentes a inserirem os dados corretos. Uma vez que cada formul\u00e1rio \u00e9 preenchido, o requerente deve clicar no bot\u00e3o \"Salvar\" para salvar as informa\u00e7\u00f5es no Registro Brasileiro de Ensaios Cl\u00ednicos. Uma vez que todas as informa\u00e7\u00f5es obrigat\u00f3rias estiverem sido preenchidas nos formul\u00e1rios, o requerente deve clicar no bot\u00e3o \u201cEnviar para revis\u00e3o\u201d.\r\nAp\u00f3s a submiss\u00e3o dos dados, a equipe do REBEC ir\u00e1 verificar os dados submetidos e consultar o requerente se necessitar que alguma informa\u00e7\u00e3o seja esclarecida. Uma vez que quaisquer d\u00favidas sejam confirmadas, os estudos s\u00e3o oficialmente registrados e ser\u00e1 atribu\u00eddo um n\u00famero de registro \u00fanico. Tanto a data da submiss\u00e3o e a data de registro s\u00e3o armazenados. ", 
+      "answer": "Na primeira vez, os usu\u00e1rios precisam criar um nome de login e uma senha, clicando no bot\u00e3o \u201cRegistrar-se\u201d. Um email de confirma\u00e7\u00e3o ser\u00e1 enviado para a conta de e-mail informado.\r\nO bot\u00e3o de \u201cNova Submiss\u00e3o\u201d levar\u00e1 o requerente para as telas que precisam ser preenchidas. Isso inclui informa\u00e7\u00f5es b\u00e1sicas, como os tipos de participantes, as interven\u00e7\u00f5es que est\u00e3o sendo testadas e os desfechos a serem avaliados. Outras informa\u00e7\u00f5es requeridas incluem detalhes do desenho do estudo, tamanho da amostra e informa\u00e7\u00f5es dos contatos. Cada campo tem uma op\u00e7\u00e3o de ajuda (\u00edcone \u201c?\u201d) para auxiliar os requerentes a inserirem os dados corretos. Uma vez que cada formul\u00e1rio \u00e9 preenchido, o requerente deve clicar no bot\u00e3o \"Salvar\" para salvar as informa\u00e7\u00f5es no Registro Brasileiro de Ensaios Cl\u00ednicos. Uma vez que todas as informa\u00e7\u00f5es obrigat\u00f3rias estiverem sido preenchidas nos formul\u00e1rios, o requerente deve clicar no bot\u00e3o \u201cEnviar para revis\u00e3o\u201d.\r\nAp\u00f3s a submiss\u00e3o dos dados, a equipe do REBEC ir\u00e1 verificar os dados submetidos e consultar o requerente se necessitar que alguma informa\u00e7\u00e3o seja esclarecida. Uma vez que todas as d\u00favidas sejam esclarecidas, os estudos s\u00e3o oficialmente registrados e ser\u00e1 atribu\u00eddo um n\u00famero de registro \u00fanico. Tanto a data da submiss\u00e3o e a data de registro s\u00e3o armazenados. ", 
       "title": "Como fa\u00e7o para registrar um estudo?", 
       "content_type": [
         "assistance", 
@@ -137,7 +137,7 @@
     "pk": 6, 
     "model": "assistance.questiontranslation", 
     "fields": {
-      "answer": "Segundo as diretrizes do modelo de refer\u00eancia Vancouver para \"Part of a database on the internet\" (see http://www.nlm.nih.gov/bsd/uniform_requirements.html) e as diretrizes de cita\u00e7\u00e3o da National Library of Medicine (NLM) http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=citmed.section.57708) i\u00e9 recoimendado que a cita\u00e7\u00e3o de um registro em um registro de ensaios cl\u00ednicops consista de:\r\n\r\n * nome da base de dados\r\n * localiza\u00e7\u00e3o e nome do respons\u00e1vel pela base de dados - o ano que o s\u00edtio foi desenvolvido/online\r\n * o n\u00famero de identifica\u00e7\u00e3o \u00fanico (ID)\r\n * t\u00edtulo do registro\r\n * data do registro\r\n * data quando foi citado\r\n * n\u00famero aproximado de p\u00e1ginas - o endere\u00e7o web do registro\r\n\r\n Exemplo:\r\n\r\n RBEC\r\n Registro Brasileiro de Ensaios Cl\u00ednicos[Internet]: Rio de Janeiro (RJ): Instituto de Informa\u00e7\u00e3o Cient\u00edfica e Tecnol\u00f3gica em Sa\u00fade (Brazil); 2010 - . Identifier BCTR12345678. A multi-centre, randomised, double-blind, placebo-controlled clinical trial examining the efficacy and safety of low-dose aspirin after initial anticoagulation to prevent recurrent venous thromboembolism; 2010 Jul 12 [cited 2008 June 18]; [1 page]. Available from http://www.ensaiosclinocos.gov.br/BCTR12345678.aspx.", 
+      "answer": "Segundo as diretrizes do modelo de refer\u00eancia Vancouver para \"Part of a database on the internet\" (veja http://www.nlm.nih.gov/bsd/uniform_requirements.html) e as diretrizes de cita\u00e7\u00e3o da National Library of Medicine (NLM) http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=citmed.section.57708) i\u00e9 recoimendado que a cita\u00e7\u00e3o de um registro em um registro de ensaios cl\u00ednicops consista de:\r\n\r\n * nome da base de dados\r\n * localiza\u00e7\u00e3o e nome do respons\u00e1vel pela base de dados - o ano que o s\u00edtio foi desenvolvido/online\r\n * o n\u00famero de identifica\u00e7\u00e3o \u00fanico (ID)\r\n * t\u00edtulo do registro\r\n * data do registro\r\n * data quando foi citado\r\n * n\u00famero aproximado de p\u00e1ginas - o endere\u00e7o web do registro\r\n\r\n Exemplo:\r\n\r\n RBEC\r\n Registro Brasileiro de Ensaios Cl\u00ednicos[Internet]: Rio de Janeiro (RJ): Instituto de Informa\u00e7\u00e3o Cient\u00edfica e Tecnol\u00f3gica em Sa\u00fade (Brazil); 2010 - . Identifier BCTR12345678. A multi-centre, randomised, double-blind, placebo-controlled clinical trial examining the efficacy and safety of low-dose aspirin after initial anticoagulation to prevent recurrent venous thromboembolism; 2010 Jul 12 [cited 2008 June 18]; [1 page]. Available from http://www.ensaiosclinocos.gov.br/BCTR12345678.aspx.", 
       "title": "Como citar um registro em um Registro de Ensaios Cl\u00ednicos", 
       "content_type": [
         "assistance", 
@@ -151,7 +151,7 @@
     "pk": 7, 
     "model": "assistance.questiontranslation", 
     "fields": {
-      "answer": "O registro de um ensaio ser\u00e1 o \u00fanico documento dispon\u00edvel publicamente at\u00e9 que os resultados desse estudo sejam publicados. Alguns exemplos de situa\u00e7\u00f5es nas quais os estudos poderiam ser citados s\u00e3o:\r\n\r\nQuando um manuscrito relatando os resultados do ensaio \u00e9 publicado ou reportado\r\n\r\nQuando um manuscrito relatando quest\u00f5es metodol\u00f3gicas a respeito de um ensaios espec\u00edfico \u00e9 publicado ou reportado\r\n\r\nEm protocolos para revis\u00f5es sistem\u00e1ticas ou revis\u00f5es sistem\u00e1ticas conclu\u00eddas (p.ex. quando uma lista de ensaios em curso s\u00e3o inclu\u00eddas)\r\n\r\nEm protocolos para metan\u00e1lises prospectives que ir\u00e3o listar os ensaios em curso a serem inclu\u00eddos\r\n\r\nEm qualquer manuscrito quando a refer\u00eancia a um ensaio em curso ou n\u00e3o-publicado (ou mesmo quando publicado) poderia ser relevante\r\n", 
+      "answer": "O registro de um ensaio ser\u00e1 o \u00fanico documento dispon\u00edvel publicamente at\u00e9 que os resultados desse estudo sejam publicados. Alguns exemplos de situa\u00e7\u00f5es nas quais os estudos poderiam ser citados s\u00e3o:\r\n\r\nQuando um manuscrito relatando os resultados do ensaio \u00e9 publicado ou reportado\r\n\r\nQuando um manuscrito com relatos de quest\u00f5es metodol\u00f3gicas a respeito de um ensaios espec\u00edfico \u00e9 publicado ou reportado\r\n\r\nEm protocolos para revis\u00f5es sistem\u00e1ticas ou revis\u00f5es sistem\u00e1ticas conclu\u00eddas (p.ex. quando uma lista de ensaios em curso \u00e9 inclu\u00edda)\r\n\r\nEm protocolos para metan\u00e1lises prospectives que ir\u00e3o listar os ensaios em curso a serem inclu\u00eddos\r\n\r\nEm qualquer manuscrito quando a refer\u00eancia a um ensaio em curso ou n\u00e3o-publicado (ou mesmo quando publicado) poderia ser relevante\r\n", 
       "title": "Quando citar um registro de um ensaio clinico", 
       "content_type": [
         "assistance", 
@@ -193,8 +193,8 @@
     "pk": 10, 
     "model": "assistance.questiontranslation", 
     "fields": {
-      "answer": "Um registro de ensaios cl\u00ednicos pode aumentar a efic\u00e1cia dos esfor\u00e7os dos ensaios cl\u00ednicos atuais ao:\r\n\r\nReduzir a duplica\u00e7\u00e3o desnecess\u00e1ria de esfor\u00e7os de pesquisa, porque os profissionais que planejam novos estudos estar\u00e3o cientes de todos os ensaios existentes\r\n\r\nAumentar as taxas de recrutamento de participantes para ensaios cl\u00ednicos (especialmente para doen\u00e7as raras ou condi\u00e7\u00f5es de alto risco), desse modo aumentando as chances de desfechos bem-sucedidos de alguns ensaios cl\u00ednicos\r\n\r\nProver valor agregado aos resultados da pesquisa ao prover uma fonte de informa\u00e7\u00e3o confi\u00e1vel e n\u00e3o-enviesada sobre ensaio cl\u00ednicos para revis\u00f5es sistem\u00e1ticas, metan\u00e1lises e diretrizes baseadas em evid\u00eancias\r\n\r\nAprimorar as evid\u00eancias dispon\u00edveis que orientem as pr\u00e1ticas de sa\u00fade\r\n", 
-      "title": "Quais s\u00e3o os benef\u00edcios de um Registro de Ensaios Cl\u00edncios?", 
+      "answer": "Um registro de ensaios cl\u00ednicos pode aumentar a efic\u00e1cia dos esfor\u00e7os dos ensaios cl\u00ednicos atuais ao:\r\n\r\nReduzir a duplica\u00e7\u00e3o desnecess\u00e1ria de esfor\u00e7os de pesquisa, porque os profissionais que planejam novos estudos estar\u00e3o cientes de todos os ensaios existentes;\r\n\r\nAumentar as taxas de recrutamento de participantes para ensaios cl\u00ednicos (especialmente para doen\u00e7as raras ou condi\u00e7\u00f5es de alto risco), desse modo aumentando as chances de desfechos bem-sucedidos de alguns ensaios cl\u00ednicos;\r\n\r\nDar valor agregado aos resultados da pesquisa ao prover uma fonte de informa\u00e7\u00e3o confi\u00e1vel e n\u00e3o-enviesada sobre ensaios cl\u00ednicos para revis\u00f5es sistem\u00e1ticas, metan\u00e1lises e diretrizes baseadas em evid\u00eancias;\r\n\r\nAprimorar as evid\u00eancias dispon\u00edveis que orientem as pr\u00e1ticas de sa\u00fade.\r\n", 
+      "title": "Quais s\u00e3o os benef\u00edcios de um Registro de Ensaios Cl\u00ednicos?", 
       "content_type": [
         "assistance", 
         "question"
@@ -218,10 +218,24 @@
     }
   }, 
   {
+    "pk": 12, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "Antes de iniciar o registro do seu estudo certifique-se que voc\u00ea tem em m\u00e3os o protocolo do seu estudo, bem como uma c\u00f3pia do documento de aprova\u00e7\u00e3o (no formato PDF) emitido por um comit\u00ea de \u00e9tica brasileiro e o n\u00famero UTN. Esses documentos ser\u00e3o as fontes de informa\u00e7\u00e3o necess\u00e1rias para preencher todos os campos obrigat\u00f3rios requeridos para o registro do seu estudo. \r\nO documento de aprova\u00e7\u00e3o deve ser anexado na se\u00e7\u00e3o Anexos do registro. Este documento \u00e9 a prova da exist\u00eancia do seu estudo e de que foi aprovado por um comit\u00ea de \u00e9tica brasileiro.  Caso voc\u00ea queira que este documento seja p\u00fablico, o que significa que ser\u00e1 visto por todos os usu\u00e1rios, marque o campo P\u00fablico na se\u00e7\u00e3o Anexos. Caso contr\u00e1rio, ele s\u00f3 ser\u00e1 visto pela equipe do REBEC.\r\nO UTN \u00e9 um n\u00famero obtido pelo patrocinador ou proponente do estudo como primeiro passo no registro do ensaio no REBEC.  O UTN tornar-se-\u00e1 ent\u00e3o parte da identidade internacional do ensiao junto com o n\u00famero de registro do REBEC. Se o seu estudo \u00e9 um ensaio \u00e9 multic\u00eantrico internacional, verifique se j\u00e1 possui o UTN. \r\nPara obter o UTRN voc\u00ea deve acessar o site http://apps.who.int/trialsearch/utn.aspx ", 
+      "title": "Que documentos voc\u00ea deve ter em m\u00e3os antes de iniciar o registro do seu estudo?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-br", 
+      "object_id": 23
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Por favor, indique o t\u00edtulo cient\u00edfico do estudo, tal como consta no protocolo submetido para financiamento e avalia\u00e7\u00e3o do comit\u00ea de \u00e9tica.\r\n", 
+      "text": "Por favor, indique o t\u00edtulo cient\u00edfico do estudo, tal como consta no protocolo submetido para financiamento e avalia\u00e7\u00e3o do comit\u00ea de \u00e9tica. \r\nRecomendamos que n\u00e3o utilize caixa alta no preenchimento do campo.", 
       "example": "", 
       "content_type": [
         "assistance", 
@@ -249,8 +263,8 @@
     "pk": 3, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Por favor, indique o acr\u00f4nimo cient\u00edfico do ensaio, se disponivel.\r\n", 
-      "example": "", 
+      "text": "Por favor, insira o acr\u00f4nimo cient\u00edfico do ensaio, se disponivel.", 
+      "example": "MONICA \u00e9 o acr\u00f4nimo cient\u00edfico do estudo \"MONItoramento das Tend\u00eancias e Determinantes em Doen\u00e7as CArdiovasculares\"", 
       "content_type": [
         "assistance", 
         "fieldhelp"
@@ -389,7 +403,7 @@
     "pk": 13, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Por favor, indique qual \u00e9 o patrocinador prim\u00e1rio. \r\nUm patrocinador \u00e9 o indiv\u00edduo, organiza\u00e7\u00e3o, grupo ou outra entidade legal que assume a responsabilidade de iniciar, gerenciar e/ou financiar um estudo. \r\nO patrocinador prim\u00e1rio \u00e9 respons\u00e1vel por garantir que o ensaio est\u00e1 devidamente registrado. O patrocinador prim\u00e1rio pode ou n\u00e3o ser o principal financiador.\r\nNos estudos independentes, nos quais o investigador n\u00e3o tem aux\u00edlio financeiro de um patrocinador espec\u00edfico, incluindo os casos de medicamentos doados cujo doador n\u00e3o quer ser caracterizado como um patrocinador do estudo, o investigador \u00e9 considerado o patrocinador do estudo. \r\n", 
+      "text": "Por favor, indique qual \u00e9 o patrocinador prim\u00e1rio. \r\nUm patrocinador \u00e9 o indiv\u00edduo, organiza\u00e7\u00e3o (em geral, institui\u00e7\u00e3o proponente), grupo ou outra entidade legal que assume a responsabilidade de iniciar, gerenciar e/ou financiar um estudo. \r\nO patrocinador prim\u00e1rio \u00e9 respons\u00e1vel por garantir que o ensaio est\u00e1 devidamente registrado. O patrocinador prim\u00e1rio pode ou n\u00e3o ser o principal financiador.\r\nNos estudos independentes, nos quais o investigador n\u00e3o tem aux\u00edlio financeiro de um patrocinador espec\u00edfico, incluindo os casos de medicamentos doados cujo doador n\u00e3o quer ser caracterizado como um patrocinador do estudo, o investigador \u00e9 considerado o patrocinador do estudo. \r\n", 
       "example": "", 
       "content_type": [
         "assistance", 
@@ -907,8 +921,8 @@
     "pk": 50, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Por favor, indique a expans\u00e3o do acr\u00f4nimo cient\u00edfico do ensaio, se disponivel.\r\n", 
-      "example": "A expans\u00e3o do acronimo OMS \u00e9 Organiza\u00e7\u00e3o Mundial de Saude.\r\n", 
+      "text": "Por favor, insira a expans\u00e3o do acr\u00f4nimo cient\u00edfico do ensaio, se disponivel.\r\n", 
+      "example": "A expans\u00e3o do acr\u00f4nimo cient\u00edfico MONICA \u00e9 MONItoramento das Tend\u00eancias e Determinantes em Doen\u00e7as CArdiovasculares", 
       "content_type": [
         "assistance", 
         "fieldhelp"
@@ -1019,7 +1033,7 @@
     "pk": 58, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Por favor, indique todos os nomes das interven\u00e7\u00f5es e os comparadores/controles que est\u00e3o sendo estudados. Utilize nome internacional n\u00e3o-propriet\u00e1rio se poss\u00edvel (n\u00e3o use nomes comerciais). Para drogas n\u00e3o registradas, o nome gen\u00e9rico, oa denomina\u00e7\u00e3o qu\u00edmica ou n\u00famero serial da companhia \u00e9 aceit\u00e1vel. Se a interven\u00e7\u00e3o consiste de v\u00e1rios tratamentos, liste-os todos em uma \u00fanica linha separados por v\u00edrgula (e.g. \"baixo teor de gordura, dieta, exerc\u00edcio).\r\nA interven\u00e7\u00e3o de controle \u00e9 a interven\u00e7\u00e3o contra a qual a interven\u00e7\u00e3o de estudo \u00e9 avaliada (p.ex. placebo, sem tratamento, controle ativo). Se um controle ativo \u00e9 usado, assegure de incluir o nome da interven\u00e7\u00e3o ou inclua \"placebo\" ou \"sem tratamento\" se aplic\u00e1vel.\r\nPara cada interven\u00e7\u00e3o, descreva outros detalhes quando pertinentes (dose, dura\u00e7\u00e3o, modo de administra\u00e7\u00e3o, etc).\r\n", 
+      "text": "Por favor, descreva todas as interven\u00e7\u00f5es e os comparadores/controles que est\u00e3o sendo estudados. Para cada interven\u00e7\u00e3o, descreva outros detalhes quando pertinentes (dose, dura\u00e7\u00e3o, modo de administra\u00e7\u00e3o, etc).\r\nA interven\u00e7\u00e3o de controle \u00e9 a interven\u00e7\u00e3o contra a qual a interven\u00e7\u00e3o de estudo \u00e9 avaliada (p.ex. placebo, sem tratamento, controle ativo). Se um controle ativo \u00e9 usado, assegure de incluir o nome da interven\u00e7\u00e3o ou inclua \"placebo\" ou \"sem tratamento\" se aplic\u00e1vel.\r\nUtilize nome internacional n\u00e3o-propriet\u00e1rio se poss\u00edvel (n\u00e3o use nomes comerciais). Para drogas n\u00e3o registradas, o nome gen\u00e9rico, oa denomina\u00e7\u00e3o qu\u00edmica ou n\u00famero serial da companhia \u00e9 aceit\u00e1vel. Se a interven\u00e7\u00e3o consiste de v\u00e1rios tratamentos, liste-os todos em uma \u00fanica linha separados por v\u00edrgula (e.g. \"baixo teor de gordura, dieta, exerc\u00edcio).\r\n", 
       "example": "", 
       "content_type": [
         "assistance", 
@@ -1159,7 +1173,7 @@
     "pk": 68, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "Por favor, indique qualquer outro n\u00famero de identifica\u00e7\u00e3o secund\u00e1rio, como o n\u00famero do protocolo, n\u00famero da aprova\u00e7\u00e3o do comit\u00ea de \u00e9tica, n\u00famero de inscri\u00e7\u00e3o nas ag\u00eancias reguladoras ou qualquer outro n\u00famero de Registro de Ensaio, se tiver sido registrado em outro registro, tais como ClinicalTrials.gov, ACTR, ISRCTN, etc.\r\nN\u00e3o h\u00e1 limite na quantidade de n\u00fameros de identifica\u00e7\u00e3o secund\u00e1rias que podem ser informados.\r\n", 
+      "text": "Por favor, indique qualquer outro n\u00famero de identifica\u00e7\u00e3o secund\u00e1rio, como o n\u00famero do protocolo, n\u00famero da aprova\u00e7\u00e3o do comit\u00ea de \u00e9tica, n\u00famero de inscri\u00e7\u00e3o nas ag\u00eancias reguladoras ou qualquer outro n\u00famero de Registro de Ensaio Cl\u00ednico, se tiver sido registrado em outro registro, tais como ClinicalTrials.gov, ANZCTR, ISRCTN, etc.\r\nN\u00e3o h\u00e1 limite na quantidade de n\u00fameros de identifica\u00e7\u00e3o secund\u00e1rias que podem ser informados.\r\n", 
       "example": "exemplo 1 (UTN)\r\n    \u00d3rg\u00e3o emissor: WHO/ICTRP \r\n    Identificador secund\u00e1rio: U1111-1111-4101\r\n\r\nsample 2 (Plataforma Brasil)\r\n    \u00d3rg\u00e3o emissor: Comiss\u00e3o Nacional de \u00c9tica em Pesquisa (CONEP) \r\n    Identificador secund\u00e1rio: 1234567890\r\n\r\nsample 3\r\n    \u00d3rg\u00e3o emissor: ANVISA (comunicado especial)\r\n    Identificador secund\u00e1rio: 9876543210\r\n", 
       "content_type": [
         "assistance", 
@@ -1271,7 +1285,7 @@
     "pk": 76, 
     "model": "assistance.fieldhelptranslation", 
     "fields": {
-      "text": "O N\u00famero de Refer\u00eancia Universal do Ensaio (Universal Trial Reference Number ou UTRN) \u00e9 um n\u00famero obtido pelo patrocinador ou proponente do estudo como primeiro passo no registro do ensaio no REBEC.  \r\nO UTRN tornar-se-\u00e1 ent\u00e3o parte da indentidade internacional do ensiao junto com o n\u00famero de registro do REBEC. \r\nSe o seu estudo \u00e9 um ensaio \u00e9 multic\u00eantrico internacional, verifique se j\u00e1 possui o UTRN. \r\nPara obter o UTRN voc\u00ea deve acessar o site http://apps.who.int/trialsearch/utn.aspx ", 
+      "text": "Por favor inclua o N\u00famero Universal do Ensaio (Universal Trial Number ou UTN). O UTN \u00e9 um n\u00famero obtido pelo patrocinador ou proponente do estudo como primeiro passo no registro do ensaio no REBEC.  \r\nO UTN tornar-se-\u00e1 ent\u00e3o parte da identidade internacional do ensiao junto com o n\u00famero de registro do REBEC. \r\nSe o seu estudo \u00e9 um ensaio \u00e9 multic\u00eantrico internacional, verifique se j\u00e1 possui o UTN. \r\nPara obter o UTRN voc\u00ea deve acessar o site http://apps.who.int/trialsearch/utn.aspx ", 
       "example": "", 
       "content_type": [
         "assistance", 
@@ -1302,7 +1316,7 @@
       "field": "scientific_title", 
       "example": "", 
       "form": "TrialIdentificationForm", 
-      "text": "Please enter the scientific title of the study as it appears in the protocol submitted for funding and ethical review.\r\n"
+      "text": "Please enter the scientific title of the study as it appears in the protocol submitted for funding and ethical review.\r\nIt\u00b4s recommended not to use caps lock while writing filling out the field. "
     }
   }, 
   {
@@ -1310,9 +1324,9 @@
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "scientific_acronym", 
-      "example": "", 
+      "example": "MONICA is the scientific acronym for the study \"Multinational MONItoring of trends and determinants in CArdiovascular disease\"", 
       "form": "TrialIdentificationForm", 
-      "text": "Please enter the trial scientific acronym if available.\r\n"
+      "text": "Please enter the trial scientific acronym if available."
     }
   }, 
   {
@@ -1320,7 +1334,7 @@
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "scientific_acronym_expansion", 
-      "example": "The expansion of the acronym WHO is World Health Organization.\r\n", 
+      "example": "The expansion of the scientifi acronym MONICA is Multinational MONItoring of trends and determinants in CArdiovascular disease", 
       "form": "TrialIdentificationForm", 
       "text": "Please enter the expansion of the trial scientific acronym if available.\r\n"
     }
@@ -1362,7 +1376,7 @@
       "field": "id_number", 
       "example": "sample 1 (UTN)\r\n    issuing organization: WHO/ICTRP \r\n    secondary identification number: U1111-1111-4101\r\n\r\nsample 2 (Plataforma Brasil)\r\n    issuing organization: Comiss\u00e3o Nacional de \u00c9tica em Pesquisa (CONEP) \r\n    secondary identification number: 1234567890\r\n\r\nsample 3\r\n    issuing number: ANVISA (comunicado especial)\r\n    secondary identification number: 9876543210\r\n", 
       "form": "TrialNumberForm", 
-      "text": "Please enter any other secondary identifying numbers, such as protocol number, institutional review board/ethics committee approval, registration number at regulatory agencies or any other Trial Registry Number, if registered in another Registry, such as ClinicalTrials.gov, ACTR, ISRCTN etc. \r\nThere is no limit on the number of secondary identifying numbers that can be provided.\r\n"
+      "text": "Please enter any other secondary identifying numbers, such as protocol number, institutional review board/ethics committee approval, registration number at regulatory agencies or any other Trial Registry Number, if registered in another Clinical Trials Registry, such as ClinicalTrials.gov, ANZCTR, ISRCTN etc. \r\nThere is no limit on the number of secondary identifying numbers that can be provided.\r\n"
     }
   }, 
   {
@@ -1492,7 +1506,7 @@
       "field": "primary_sponsor", 
       "example": "", 
       "form": "PrimarySponsorForm", 
-      "text": "Please enter the primary spondor.\r\nThe Primary Sponsor is the individual, organization, group or other legal entity which takes responsibility for initiating, managing and/or financing the study.  \r\nThe Primary Spondor is responsible for ensuring that the trial is properly registered. \r\nThe Primary Sponsor may or may not be the main funder.\r\nIn independent studies, for which the investigator has no financial assistance from a specific sponsor, including cases of medicines donated where the donor does not want to be characterized as a sponsor of the study, the researcher is considered the sponsor of the study. \r\n"
+      "text": "Please enter the primary spondor.\r\nThe Primary Sponsor is the individual, organization (e.g. proponent institution), group or other legal entity which takes responsibility for initiating, managing and/or financing the study.  \r\nThe Primary Spondor is responsible for ensuring that the trial is properly registered. \r\nThe Primary Sponsor may or may not be the main funder.\r\nIn independent studies, for which the investigator has no financial assistance from a specific sponsor, including cases of medicines donated where the donor does not want to be characterized as a sponsor of the study, the researcher is considered the sponsor of the study. \r\n"
     }
   }, 
   {
@@ -1592,7 +1606,7 @@
       "field": "i_freetext", 
       "example": "", 
       "form": "InterventionForm", 
-      "text": "Please select the specific name of the intervention(s) and the comparator/control(s) being studied. Use the International Non-Proprietary Name if possible (not brand/trade names). For an unregistered drug, the generic name, chemical name, or company serial number is acceptable. If the intervention consists of several separate treatments, list them all in one line separated by commas (e.g., \"low-fat diet, exercise\").\r\nThe control intervention(s) is/are the interventions against which the study intervention is evaluated (e.g., placebo, no treatment, active control). If an active control is used, be sure to enter in the name(s) of that intervention, or enter \"placebo\" or \"no treatment\" as applicable.\r\nFor each intervention, describe other intervention details as applicable (dose, duration, mode of administration, etc).\r\n"
+      "text": "Please describe all the interventions and the comparator/control(s) being studied. For each intervention, describe other intervention details as applicable (dose, duration, mode of administration, etc).\r\nThe control intervention(s) is/are the interventions against which the study intervention is evaluated (e.g., placebo, no treatment, active control). If an active control is used, be sure to enter in the name(s) of that intervention, or enter \"placebo\" or \"no treatment\" as applicable.\r\nUse the International Non-Proprietary Name if possible (not brand/trade names). For an unregistered drug, the generic name, chemical name, or company serial number is acceptable. If the intervention consists of several separate treatments, list them all in one line separated by commas (e.g., \"low-fat diet, exercise\").\r\n"
     }
   }, 
   {
@@ -2062,7 +2076,7 @@
       "field": "utrn_number", 
       "example": "", 
       "form": "TrialIdentificationForm", 
-      "text": "The Universal Trial Reference Number (UTRN) is a number, obtained by the trial's sponsor, proponent institution or principal investigator as the first step in registering a trial on the REBEC.  \r\nThe UTRN will then become part of the trial's international identity along with the REBEC registration number.\r\nIf your study is internationally multicentric trial, check out if it has a UTRN. \r\nTo obtain the UTRN you must acces the site http://apps.who.int/trialsearch/utn.aspx"
+      "text": "Please enter the Universal Trial Number (UTN). The UTN is a number, obtained by the trial's sponsor, proponent institution or principal investigator as the first step in registering a trial on the REBEC.  \r\nThe UTN will then become part of the trial's international identity along with the REBEC registration number.\r\nIf your study is internationally multicentric trial, check out if it has a UTN. \r\nTo obtain the UTRN you must acces the site http://apps.who.int/trialsearch/utn.aspx"
     }
   }, 
   {
@@ -2070,12 +2084,23 @@
     "model": "assistance.fieldhelp", 
     "fields": {
       "field": "primary_sponsor", 
-      "example": "", 
+      "example": "Por favor, inclua o nome do patrocinador prim\u00e1rio, endere\u00e7o postal completo com telefones e e-mail para contato e pa\u00eds de localiza\u00e7\u00e3o do patrocinador prim\u00e1rio. \r\nUm patrocinador \u00e9 o indiv\u00edduo, organiza\u00e7\u00e3o, grupo ou outra entidade legal que assume a responsabilidade de iniciar, gerenciar e/ou financiar um estudo. \r\nO patrocinador prim\u00e1rio \u00e9 respons\u00e1vel por garantir que o ensaio est\u00e1 devidamente registrado. O patrocinador prim\u00e1rio pode ou n\u00e3o ser o principal financiador.\r\nNos estudos independentes, nos quais o investigador n\u00e3o tem aux\u00edlio financeiro de um patrocinador espec\u00edfico, incluindo os casos de medicamentos doados cujo doador n\u00e3o quer ser caracterizado como um patrocinador do estudo, o investigador \u00e9 considerado o patrocinador do estudo. \r\n", 
       "form": "InitialTrialForm", 
-      "text": ""
+      "text": "Please enter the primary sponsor name, complete postal address including telephone numbers and e-mail for contact and country of sponsor\u00b4s location. \r\nThe Primary Sponsor is the individual, organization, group or other legal entity which takes responsibility for initiating, managing and/or financing the study.  \r\nThe Primary Spondor is responsible for ensuring that the trial is properly registered. \r\nThe Primary Sponsor may or may not be the main funder.\r\nIn independent studies, for which the investigator has no financial assistance from a specific sponsor, including cases of medicines donated where the donor does not want to be characterized as a sponsor of the study, the researcher is considered the sponsor of the study. \r\n"
     }
   }, 
-    {
+  {
+    "pk": 23, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "Before initianting your registration, be sure you have on hand the protocol of your study, as well as a copy (in PDF format) of the letter of approval from a brazilian ethics committee/institutional review board and the UTN number. Those documents will be the sources of information necessary to fill all the obligatory fields required for the registration of your study. \r\nThe letter of approval must be uploaded in the attachments section of the registration form. This document is a proof of the existence of the study and that it was approved by a brazilian EC/IRB. If you wish to make it public, that meansit will be viewed by all users, mark the Public field. Otherwise, it will be viewed only by the REBEC staff.\r\nThe UTN is a number, obtained by the trial's sponsor, proponent institution or principal investigator as the first step in registering a trial on the REBEC. The UTRN will then become part of the trial's international identity along with the REBEC registration number.  If your study is internationally multicentric trial, check out if it has a UTRN. \r\nTo obtain the UTRN you must acces the site http://apps.who.int/trialsearch/utn.aspx", 
+      "created": "2011-01-20 08:01:42", 
+      "order": 230, 
+      "title": "What documents I must have on hand before registration?"
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "assistance.category", 
     "fields": {
@@ -2119,7 +2144,7 @@
     "model": "assistance.question", 
     "fields": {
       "category": 6, 
-      "answer": "The study's coordinator, sponsor or an appropriate representative is responsible for registering a trial. The sponsor is an individual or company, public or private, which financially supports the research as defined by the RDC 39. \r\nIn clinical studies regulated by this rule and sponsored by national or international agencies to promote the research, philanthropic entities, non-governmental organizations (NGOs) or other non-profit organizations, it is assumed that investigator assumes the role of representative of the sponsor, if there is a Clinical Research Organization (CRO) responsible for the conduct of it, should meet as a representative of the study. \r\nIn the case of independent studies, for which the investigator has no financial assistance from a specific sponsor, including cases in receiving the medicines of research in the form of donation where the donor does not want to be characterized as a sponsor of the study, the researcher additionally assume the responsibilities of study.\r\nFor the cases referred to in the preceding paragraph, the researcher is now called \"investigator-sponsor.\" \r\n", 
+      "answer": "The study's coordinator, sponsor or an appropriate representative is responsible for registering a trial. The sponsor is an individual or company, public or private, which financially supports the research as defined by the resolution RDC 39 from ANVISA. \r\nIn clinical studies regulated by this rule and sponsored by national or international agencies to promote the research, philanthropic entities, non-governmental organizations (NGOs) or other non-profit organizations, it is assumed that investigator assumes the role of representative of the sponsor, if there is a Clinical Research Organization (CRO) responsible for the conduct of it, should meet as a representative of the study. \r\nIn the case of independent studies, for which the investigator has no financial assistance from a specific sponsor, including cases in receiving the medicines of research in the form of donation where the donor does not want to be characterized as a sponsor of the study, the researcher additionally assume the responsibilities of registering the study.\r\nFor the cases referred to in the preceding paragraph, the researcher is now called \"investigator-sponsor.\" \r\n", 
       "created": "2010-07-21 21:23:10", 
       "order": 150, 
       "title": "Who is responsible for registering a trial?"
