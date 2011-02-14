@@ -104,7 +104,8 @@ def submissions_list(request):
     def objects_with_title_translated():
         # TODO for #125: Change this to a better solution
         for obj in submission_list:
-            obj['title'] = obj['trial__scientific_title']
+            if obj['trial__scientific_title']:
+                obj['title'] = obj['trial__scientific_title']
             try:
                 #t = obj.trial.translations.get(language=request.LANGUAGE_CODE)
                 t = ClinicalTrialTranslation.objects.get_translation_for_object(
