@@ -1,12 +1,30 @@
 {% extends "repository/submission_step.html" %}
 {% load i18n %}
+{% load remark %}
+{% load polyglot_tags %}
 
 {% block body %}
 
-    <h2>{% trans title %}</h2>
-
     {% include "repository/messages.html" %}
-
+    
+    {% if remarks %}
+    <div class="warning">
+        <a class="minimize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-down.gif"/></a>
+        <a class="maximize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-up.gif"/></a>
+        <h2>{% trans 'Remarks' %}</h2>
+        <ul>
+            {% for remark in remarks %}
+            <li id="remark_{{ remark.id }}">{{ remark.text }}
+                <input onclick="ack_remark({{ remark.id }})" type="button" style="font-size: 80%;" value="{% trans "Mark as reviewed" %}" title="{% trans "Mark as reviewed" %}" />
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    <div class="required_fields"><span>(*)</span> {% trans 'Required fields' %}</div>
+    
+    <h2>{% trans title %}</h2>
+    
     {% if existing_attachments %}
         <h3>{% trans 'Existing attachments' %}</h3>
 
@@ -22,7 +40,6 @@
         {% endfor %}
     {% endif %}
     
-
     <h3>{% trans 'New attachment form' %}</h3>
     <form action="./" method="POST" enctype="multipart/form-data">{% csrf_token %}
 
@@ -49,4 +66,48 @@
 
 {% endblock %}
 
+{% block endjs %}{{ block.super }}
+
+<script type="text/javascript" src="{{MEDIA_URL}}js/multilingual.js"></script>
+
+<script type="text/javascript">
+    {% polyglot_js_constants available_languages %}
+
+    $(document).ready(function() {
+        $("select[multiple]").asmSelect({
+                addItemTarget: 'bottom',
+                animate: true,
+                highlight: true,
+                sortable: false
+        });
+        $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        // Confirm before user leave page and lose modified data without save them
+        $('form.confirm-before-leave').submit(function(){
+            $(this).data('modified', false);
+            window.onbeforeunload = null;
+        }).each(function(){
+            // Sets this form to modified as false, but after some field be modified, so update this attribute to true
+            $(this).data('modified', false);
+        });
+        
+        // Sets inputs change event to set form modified as true
+        $('form.confirm-before-leave').find(':input').change(function(){
+            $(this).parents('form').data('modified', true);
+
+            // When a user leaves the current page without save, and has modified some field, asks for its confirmation
+            window.onbeforeunload = confirmExit;
+            function confirmExit(){
+                // TODO: translate
+                return '{% trans 'You have done modifications on some fields. Are you sure you want to leave without save before?' %}';
+            }
+        });
+    });
+</script>
+
+{% endblock %}
 
