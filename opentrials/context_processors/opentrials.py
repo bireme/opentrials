@@ -41,4 +41,7 @@ def debug(request):
     
 def default_from_email(request):
     return {'DEFAULT_FROM_EMAIL': settings.DEFAULT_FROM_EMAIL}
+    
+def opentrials_version(request):
+    return {'OPENTRIALS_VERSION': settings.OPENTRIALS_VERSION}
 

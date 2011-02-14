@@ -838,6 +838,18 @@ table.trialsummary {
  	display:none;
 }
 
+.powered_by {
+    text-align: center;
+    margin-top: 8px;    
+}
+.powered_by a:link, #powered_by a:visited {
+    background: inherit;
+}
+.powered_by a{
+    text-decoration: underline;
+    color:#000;
+}
+
 /* AJAX DeCS Tools */
 td div.decstool {
     display: none;
@@ -927,6 +939,7 @@ legend{
     height: 30px;
     background:#ffcc00;
 }
+
 
 .barra_MSaude .barra1000 {
     width:100%;
