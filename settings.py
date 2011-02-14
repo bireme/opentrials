@@ -144,6 +144,7 @@ TEMPLATE_CONTEXT_PROCESSORS =(
     'context_processors.opentrials.latest_tweets',
     'context_processors.opentrials.debug',
     'context_processors.opentrials.default_from_email',
+    'context_processors.opentrials.opentrials_version',
 )
 
 AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
@@ -157,6 +158,8 @@ AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
 # django_site table; the initial values for that table are defined
 # in opentrials/fixtures/initial_data.json
 SITE_ID = 2 # change if necessary to match a record in django_site
+
+OPENTRIALS_VERSION = 'v1.0.10' # this shold be the deployed tag number
 
 SITE_TITLE = u'Registro Brasileiro de Ensaios Clínicos'
 SEND_BROKEN_LINK_EMAILS = True
