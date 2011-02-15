@@ -12,7 +12,7 @@
     "model": "sites.site", 
     "fields": {
       "domain": "ecgovbr2.bvsalud.org", 
-      "name": "Registro Brasileiro de Ensaios Cl\u00ednicos (staging server)"
+      "name": "Registro Brasileiro de Ensaios Cl\u00ednicos (staging)"
     }
   }, 
   {
