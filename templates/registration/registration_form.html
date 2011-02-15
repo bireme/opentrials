@@ -17,7 +17,7 @@ below and then resend the activation e-mail:</p>
 <li>Add the {{ default_email }} e-mail in your contact list</li>
 </ul>
 {% endblocktrans %}
-<a href="{% url reviewapp.resend_activation_email %}">resend the activation e-mail</a>
+<a href="{% url reviewapp.resend_activation_email %}">{% trans 'resend the activation e-mail' %}</a>
 <br />
 {% if form.errors %}
     <ul class="errorlist">

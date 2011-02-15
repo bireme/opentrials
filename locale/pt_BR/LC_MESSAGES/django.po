@@ -8,26 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-14 15:34-0200\n"
-"PO-Revision-Date: 2011-02-14 15:48\n"
+"POT-Creation-Date: 2011-02-15 15:27-0200\n"
+"PO-Revision-Date: 2011-02-15 15:28\n"
 "Last-Translator: <rafael.soares@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.5.6\n"
-
-#: settings.py:174
-msgid "English"
-msgstr "Inglês"
-
-#: settings.py:175
-msgid "Español"
-msgstr "Espanhol"
-
-#: settings.py:176
-msgid "Portuguese"
-msgstr "Português"
 
 #: assistance/models.py:11
 msgid "Categories"
@@ -84,16 +72,16 @@ msgstr "Internal Server Error (500)"
 msgid "The server encountered an unexpected condition which prevented it from fulfilling the request."
 msgstr "O servidor encontrou uma condição inesperada que impediu de cumprir a solicitação."
 
-#: custom/ecgovbr/templates/base.html:10 custom/ecgovbr/templates/base.html:31
+#: custom/ecgovbr/templates/base.html:9 custom/ecgovbr/templates/base.html:30
 msgid "Brazilian Registry of Clinical Trials"
 msgstr "Registro Brasileiro de Ensaios Clínicos"
 
-#: custom/ecgovbr/templates/base.html:41 custom/ecgovbr/templates/base.html:81
-#: registration/forms.py:35 templates/base.html:46 templates/base.html.py:86
+#: custom/ecgovbr/templates/base.html:40 custom/ecgovbr/templates/base.html:80
+#: registration/forms.py:35 templates/base.html:45 templates/base.html.py:85
 msgid "Username"
 msgstr "Usuário"
 
-#: custom/ecgovbr/templates/base.html:45
+#: custom/ecgovbr/templates/base.html:44
 #: repository/templates/repository/clinicaltrial_detail_user.html:78
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:78
 #: repository/templates/repository/trial_index.html:8
@@ -102,11 +90,11 @@ msgstr "Usuário"
 #: reviewapp/templates/reviewapp/review_list.html:10
 #: reviewapp/templates/reviewapp/submission_list.html:11
 #: reviewapp/templates/reviewapp/terms_of_use.html:7
-#: reviewapp/templates/reviewapp/upload_trial.html:7 templates/base.html:50
+#: reviewapp/templates/reviewapp/upload_trial.html:7 templates/base.html:49
 msgid "Submissions"
 msgstr "Submissões"
 
-#: custom/ecgovbr/templates/base.html:49 templates/base.html:54
+#: custom/ecgovbr/templates/base.html:48 templates/base.html:53
 #: tickets/templates/tickets/new_iteration.html:7
 #: tickets/templates/tickets/open_ticket.html:7
 #: tickets/templates/tickets/ticket_detail.html:8
@@ -114,92 +102,92 @@ msgstr "Submissões"
 msgid "Tickets"
 msgstr "Pendências"
 
-#: custom/ecgovbr/templates/base.html:54
-#: reviewapp/templates/reviewapp/user_profile.html:17 templates/base.html:59
+#: custom/ecgovbr/templates/base.html:53
+#: reviewapp/templates/reviewapp/user_profile.html:17 templates/base.html:58
 msgid "Profile"
 msgstr "Perfil"
 
-#: custom/ecgovbr/templates/base.html:55
-#: reviewapp/templates/reviewapp/dashboard.html:6 templates/base.html:60
+#: custom/ecgovbr/templates/base.html:54
+#: reviewapp/templates/reviewapp/dashboard.html:6 templates/base.html:59
 msgid "Dashboard"
 msgstr "Painel"
 
-#: custom/ecgovbr/templates/base.html:62 custom/ecgovbr/templates/base.html:66
-#: custom/ecgovbr/templates/base.html:67 templates/base.html:67
-#: templates/base.html.py:71 templates/base.html:72
+#: custom/ecgovbr/templates/base.html:61 custom/ecgovbr/templates/base.html:65
+#: custom/ecgovbr/templates/base.html:66 templates/base.html:66
+#: templates/base.html.py:70 templates/base.html:71
 msgid "Logout"
 msgstr "Sair"
 
-#: custom/ecgovbr/templates/base.html:85 registration/forms.py:41
-#: templates/base.html:90
+#: custom/ecgovbr/templates/base.html:84 registration/forms.py:41
+#: templates/base.html:89
 msgid "Password"
 msgstr "Senha"
 
-#: custom/ecgovbr/templates/base.html:88 templates/base.html:93
+#: custom/ecgovbr/templates/base.html:87 templates/base.html:92
 msgid "login"
 msgstr "entrar"
 
-#: custom/ecgovbr/templates/base.html:94
+#: custom/ecgovbr/templates/base.html:93
 #: reviewapp/templates/reviewapp/login.html:23
 #: reviewapp/templates/reviewapp/login.html:24
 #: reviewapp/templates/reviewapp/password_reset_done.html:8
 #: reviewapp/templates/reviewapp/password_reset_form.html:6
-#: templates/base.html:99
+#: templates/base.html:98
 msgid "Forgot username or password"
 msgstr "Esqueci usuário ou senha"
 
-#: custom/ecgovbr/templates/base.html:94
+#: custom/ecgovbr/templates/base.html:93
 msgid "Forgot password?"
 msgstr "Esqueceu a senha?"
 
-#: custom/ecgovbr/templates/base.html:95
-#: reviewapp/templates/reviewapp/login.html:21 templates/base.html:100
+#: custom/ecgovbr/templates/base.html:94
+#: reviewapp/templates/reviewapp/login.html:21 templates/base.html:99
 msgid "create an account to submit trial records"
 msgstr "criar uma conta para enviar registros de ensaios"
 
-#: custom/ecgovbr/templates/base.html:95
+#: custom/ecgovbr/templates/base.html:94
 #: custom/ecgovbr/templates/registration/registration_complete.html:7
 #: custom/ecgovbr/templates/registration/registration_form.html:6
-#: reviewapp/templates/reviewapp/login.html:22 templates/base.html:100
+#: reviewapp/templates/reviewapp/login.html:22 templates/base.html:99
 #: templates/registration/registration_complete.html:7
 #: templates/registration/registration_form.html:6
 msgid "Register"
 msgstr "Registrar-se"
 
-#: custom/ecgovbr/templates/base.html:125 reviewapp/models.py:252
+#: custom/ecgovbr/templates/base.html:124 reviewapp/models.py:252
 #: reviewapp/templates/reviewapp/news_detail.html:5
 #: reviewapp/templates/reviewapp/news_detail.html:10
 #: reviewapp/templates/reviewapp/news_list.html:5
-#: reviewapp/templates/reviewapp/news_list.html:9 templates/base.html:108
+#: reviewapp/templates/reviewapp/news_list.html:9 templates/base.html:107
 #: templates/base_columns.html:39
 msgid "News"
 msgstr "Notícias"
 
-#: custom/ecgovbr/templates/base.html:126 templates/base.html:109
+#: custom/ecgovbr/templates/base.html:125 templates/base.html:108
 msgid "About"
 msgstr "Sobre"
 
-#: custom/ecgovbr/templates/base.html:127 templates/base.html:110
+#: custom/ecgovbr/templates/base.html:126 templates/base.html:109
 msgid "Help"
 msgstr "Ajuda"
 
-#: custom/ecgovbr/templates/base.html:128 repository/models.py:607
+#: custom/ecgovbr/templates/base.html:127 repository/models.py:607
 #: repository/models.py:620 repository/models.py:633
 #: repository/trds_forms.py:556 repository/trds_forms.py:560
 #: repository/trds_forms.py:579 repository/trds_forms.py:583
 #: repository/trds_forms.py:605 repository/trds_forms.py:609
-#: templates/base.html:111
+#: templates/base.html:110
 msgid "Contact"
 msgstr "Contato"
 
-#: custom/ecgovbr/templates/base.html:134 templates/base.html:117
+#: custom/ecgovbr/templates/base.html:133 templates/base.html:116
 msgid "Search trials"
 msgstr "Buscar ensaios"
 
-#: custom/ecgovbr/templates/base.html:143
+#: custom/ecgovbr/templates/base.html:142
 #: repository/templates/repository/clinicaltrial_detail_user.html:75
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:75
-#: templates/base.html:128
+#: templates/base.html:127
 msgid "Home"
 msgstr "Home"
 
@@ -2135,9 +2123,13 @@ msgstr "Preencha os campos abaixo para entrar em contato conosco"
 msgid "Request support"
 msgstr ""
 
-#: templates/base.html:9 templates/base.html.py:38
+#: templates/base.html:8 templates/base.html.py:37
 msgid "OpenTrials Platform"
 msgstr "Plataforma OpenTrials"
+
+#: templates/registration/registration_form.html:20
+msgid "resend the activation e-mail"
+msgstr "Reenviar e-mail de ativação"
 
 #: tickets/models.py:18 tickets/templates/tickets/new_iteration.html:33
 msgid "Ticket Type"
@@ -2304,6 +2296,15 @@ msgstr "Órgãos emissores de identificadores de ensaios"
 #: vocabulary/models.py:122
 msgid "Recruitment status"
 msgstr "Situação do recrutamento"
+
+#~ msgid "English"
+#~ msgstr "Inglês"
+
+#~ msgid "Español"
+#~ msgstr "Espanhol"
+
+#~ msgid "Portuguese"
+#~ msgstr "Português"
 
 #~ msgid "Chemical Abstracts Service"
 #~ msgstr "Chemical Abstracts Service"
