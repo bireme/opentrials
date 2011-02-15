@@ -19,7 +19,6 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import os
-gettext = lambda s: s
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -171,9 +170,9 @@ ICD10_SERVICE = 'http://bases.bireme.br/cgi-bin/mxlindG4.exe/cgi=@cid10/cid10'
 # 2) the first managed language is considered the default and is
 #    also the source language for content translation purposes
 MANAGED_LANGUAGES_CHOICES = (
-    (u'en', gettext(u'English')),
-    (u'es', gettext(u'Español')),
-    (u'pt-BR', gettext(u'Portuguese')),
+    (u'en', u'English'),
+    (u'es', u'Español'),
+    (u'pt-BR', u'Português'),
 )
 TARGET_LANGUAGES = MANAGED_LANGUAGES_CHOICES[1:] # exlude source language
 MANAGED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES_CHOICES]
