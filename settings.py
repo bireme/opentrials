@@ -159,7 +159,7 @@ AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
 # in opentrials/fixtures/initial_data.json
 SITE_ID = 2 # change if necessary to match a record in django_site
 
-OPENTRIALS_VERSION = 'v1.0.11' # this shold be the deployed tag number
+OPENTRIALS_VERSION = 'v1.0.12' # this shold be the deployed tag number
 
 SITE_TITLE = u'Registro Brasileiro de Ensaios Clínicos'
 SEND_BROKEN_LINK_EMAILS = True
