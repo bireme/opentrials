@@ -13,7 +13,6 @@ from django.forms.models import inlineformset_factory
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.template import loader
-from django.db.models import Q
 from django.views.generic.list_detail import object_list
 from django.conf import settings
 from django.template.defaultfilters import slugify
@@ -262,12 +261,9 @@ def index(request):
     ''' List all registered trials
         If you use a search term, the result is filtered 
     '''
-    q = request.GET.get('q', '')
+    q = request.GET.get('q', '').strip()
 
-    object_list = ClinicalTrial.fossils.published()
-
-    if q:
-        object_list = object_list.filter(serialized__icontains=q)
+    object_list = ClinicalTrial.fossils.published(q=q)
 
     object_list = object_list.proxies(language=request.LANGUAGE_CODE)
     
