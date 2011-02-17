@@ -26,8 +26,7 @@ PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
 ADMINS = (
     ('Luciano Ramalho', 'luciano.ramalho@bireme.org'),
-    ('Fabio Montefuscolo', 'fabio.montefuscolo@bireme.org'),
-    ('Rafael Soares', 'rafael.soares@bireme.org'),
+    ('Antonio Alves', 'antonio.alves@bireme.org'),
 )
 
 MANAGERS = ADMINS
