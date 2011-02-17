@@ -82,7 +82,10 @@ class YearMonthWidget(forms.MultiWidget):
 
     def value_from_datadict(self, data, files, name):
         month, year = data[name+'_0'], data[name+'_1']
-
+        
+        if bool(month) ^ bool(year):
+            return False
+        
         try:
             return date(int(year), int(month), 1)
         except ValueError:
