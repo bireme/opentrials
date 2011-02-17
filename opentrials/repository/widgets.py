@@ -4,7 +4,7 @@ from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 from django.utils.dates import MONTHS
 
-from datetime import date
+from datetime import date, datetime
 
 class SelectWithLink(forms.widgets.Select):
     def __init__(self, attrs=None, choices=(), **kwargs):
@@ -65,6 +65,7 @@ class YearMonthWidget(forms.MultiWidget):
         if not value:
             ret = ['', '']
         else:
+            value = value.strftime('%Y-%m-%d') if isinstance(value, (datetime, date)) else value
             if '-' in value:
                 # format YYYY-mm-dd
                 ret = map(int, value.split('-')[:2])

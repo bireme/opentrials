@@ -439,6 +439,16 @@ class RecruitmentForm(ReviewModelForm):
 
         return obj
 
+    def clean(self):
+        cleaned_data = super(RecruitmentForm, self).clean()
+
+        start_date = cleaned_data['enrollment_start_date']
+        end_date = cleaned_data['enrollment_end_date']
+        if start_date > end_date:
+            raise forms.ValidationError(_("Invalid date"))
+
+        return cleaned_data
+
 trial_validator.register(TRIAL_FORMS[4], [RecruitmentForm])
 
 ### step_6 #####################################################################
