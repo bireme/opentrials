@@ -41,10 +41,9 @@ class ForTranslationNode(template.Node):
             for lang in languages:
                 try:
                     context[self.var] = [t for t in translations if self.get_value(t, 'language').lower() == lang.lower()][0]
-                except Exception, e: # FIXME
-                    continue
-
-                output.append(self.nodelist.render(context))
+                    output.append(self.nodelist.render(context))
+                except IndexError:
+                    pass
 
         return u'\n'.join(output)
 
