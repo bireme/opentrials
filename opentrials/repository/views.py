@@ -6,6 +6,7 @@ except:
     from sets import Set as set
 
 from django.core import serializers
+from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from django.utils.translation import ugettext_lazy as _
@@ -42,7 +43,8 @@ from repository.trds_forms import RecruitmentForm, StudyTypeForm, PrimaryOutcome
 from repository.trds_forms import SecondaryOutcomesForm, make_public_contact_form
 from repository.trds_forms import make_scientifc_contact_form, make_contact_form, NewInstitution
 from repository.trds_forms import make_site_contact_form, TRIAL_FORMS
-from vocabulary.models import RecruitmentStatus, VocabularyTranslation
+from vocabulary.models import RecruitmentStatus, VocabularyTranslation, CountryCode, InterventionCode
+from vocabulary.models import StudyPurpose, InterventionAssigment, StudyMasking, StudyAllocation
 
 from polyglot.multilingual_forms import modelformset_factory
 
@@ -311,7 +313,45 @@ def trial_view(request, trial_pk):
          remarks = ct.submission.remark_set.filter(context=slugify(tf))
          if remarks:
             remark_list.append(remarks)
-
+            
+    # get translation for recruitment status
+    recruitment_status = ct.recruitment_status
+    if recruitment_status:
+        recruitment_label = recruitment_status.label
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                request.LANGUAGE_CODE.lower(), model=RecruitmentStatus, 
+                                object_id=recruitment_status.id)
+            if t.label:
+                recruitment_label = t.label
+        except ObjectDoesNotExist:
+            pass
+    else:
+        recruitment_label = ""
+    
+    # get translations for recruitment country
+    recruitment_country = ct.recruitment_country.all()
+    recruitment_country_list = recruitment_country.values('pk', 'description')
+    for obj in recruitment_country_list:
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                request.LANGUAGE_CODE.lower(), model=CountryCode, 
+                                object_id=obj['pk'])
+            if t.description:
+                obj['description'] = t.description
+        except ObjectDoesNotExist:
+            pass
+    
+#    for obj in ct.scientific_contacts():
+#        try:
+#            t = VocabularyTranslation.objects.get_translation_for_object(
+#                                request.LANGUAGE_CODE.lower(), model=CountryCode, 
+#                                object_id=obj.country.id)
+#            if t.description:
+#                obj['country_description'] = t.description
+#        except ObjectDoesNotExist:
+#            pass
+    
     return render_to_response('repository/clinicaltrial_detail_user.html',
                                 {'object': ct,
                                 'translations': translations,
@@ -320,7 +360,10 @@ def trial_view(request, trial_pk):
                                 'review_mode': review_mode,
                                 'can_approve': can_approve,    
                                 'can_resubmit': can_resubmit,
-                                'languages': get_sorted_languages(request),},
+                                'languages': get_sorted_languages(request),
+                                'recruitment_label': recruitment_label,
+                                'recruitment_country': recruitment_country_list,
+                                },
                                 context_instance=RequestContext(request))
 
 def get_sorted_languages(request):

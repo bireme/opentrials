@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load i18n %}
+{% load i18n adminmedia repository_tags %} 
 
 {% block body_title %}{% trans 'Clinical Trial' %}{% endblock %}
 
@@ -232,12 +232,17 @@
             {% endif %}
         </li>
         <div class="spacer"> </div>
+        <li>
+            <span class="label">{% trans 'UTN' %}:</span>
+            <span class="value">{{ object.utrn_number }}</span>
+        </li>
+        </li>
+        <div class="spacer"> </div>
         <li class="subset">
             <span class="legend">{% trans 'Secondary Identifying Numbers' %}:</span>
             {% for secid in object.trial_number %}
             <ul class="{% cycle 'even' 'odd' %}">
                 <li>
-
                     <span class="label">{{ secid.id_number }}</span><br />
                     <span class="value">{% trans 'Issuing Authority' %}:</span>
                     <span class="value">{{ secid.issuing_authority }}</span>
@@ -380,16 +385,19 @@
     
     <h3>{% trans 'Interventions' %}</h3>
     <ul>
-        <li class="subset">
-            <span class="legend">{% trans 'Intervention Code(s)' %}</span>
-            <ul>
-            {% for iv in object.intervention_code %}
-                <li>
-
-                    <span class="label">{{ iv.label }}</span>
-                </li>
+        <li>
+            <p><span class="label">{% trans 'Intervention Code(s)' %}:</span></p>
+            {% for i_code in object.intervention_code %}
+                {% for_trans_obj i_code.translations as t %}
+                    {% if t.label %}
+                    <div class="title">
+                        <h2>{{ t.language }}</h2>
+                        <p><span class="value">{{ t.label }}</span></p>
+                    </div>
+                    {% endif %}
+                {% endfor_trans_obj %}
+                <div class="spacer"> </div>
             {% endfor %}
-            </ul>
         </li>
         <li>
         <p><span class="label">{% trans 'Interventions' %}:</span></p>
@@ -449,13 +457,13 @@
     <ul>
         <li>
             <span class="label">{% trans 'Recruitment Status' %}:</span>
-            <span class="value">{{ object.recruitment_status.label }}</span>
+            <span class="value">{{ recruitment_label }}</span>
         </li>
 
         <li class="subset">
             <span class="legend">{% trans 'Recruitment Country' %}</span>
             <ul>
-            {% for recruitment in object.trial_recruitment_country %}
+            {% for recruitment in recruitment_country %}
                 <li>{{ recruitment.description }}{% if not forloop.last %}, {% endif %}</li>
             {% endfor %}
             </ul>
@@ -539,11 +547,11 @@
                 {% if t.study_design %}
                 <div class="title">
                     <h2>{{ t.language }}</h2>
-                    <p>{{ t.study_design }}</p>
+                    <p>{{ t.study_design|linebreaksbr }}</p>
                 </div>
                 {% endif %}
             {% endfor %}
-            {% if object.study_design|linebreaksbr %}
+            {% if object.study_design %}
                 <div class="title">
 
                     <h2>en</h2>
@@ -561,19 +569,40 @@
                     <th><span class="label">{% trans 'Intervention Assignment' %}</span></th>
                     <th><span class="label">{% trans 'Number of arms' %}</span></th>
                     <th><span class="label">{% trans 'Masking type' %}</span></th>
-
                     <th><span class="label">{% trans 'Allocation type' %}</span></th>
                     <th><span class="label">{% trans 'Study Phase' %}</span></th>
                 </tr>
                 <tr>
-                    <td><span class="value">{{ object.expanded_access_program }}</span></td>
-                    <td><span class="value">{{ object.purpose.label }}</span></td>
-                    <td><span class="value">{{ object.intervention_assignment.label }}</span></td>
-
+                    <td><span class="value">
+                    <img src="{% admin_media_prefix %}img/admin/icon-{% if object.expanded_access_program %}yes{% else %}{% if object.expanded_access_program == None %}unknown{% else %}no{% endif %}{% endif %}.gif"
+                            alt="{{ object.expanded_access_program|yesno }}"/> {{ object.expanded_access_program|yesno }}
+                    </span></td>
+	                  <td><span class="value">
+                        {% for_trans_obj object.purpose.translations as t %}
+                        {{ t.language }}: {{ t.label }}<br/>
+                        {% endfor_trans_obj %}
+                    </span></td>
+                    <td><span class="value">
+                        {% for_trans_obj object.intervention_assignment.translations as t %}
+                        {{ t.language }}: {{ t.label }}<br/>
+                        {% endfor_trans_obj %}
+                    </span></td>
                     <td><span class="value">{{ object.number_of_arms }}</span></td>
-                    <td><span class="value">{{ object.masking.label }}</span></td>
-                    <td><span class="value">{{ object.allocation.label }}</span></td>
-                    <td><span class="value">{{ object.phase.label }}</span></td>
+                    <td><span class="value">
+                        {% for_trans_obj object.masking.translations as t %}
+                        {{ t.language }}: {{ t.label }}<br/>
+                        {% endfor_trans_obj %}
+                    </span></td>
+                    <td><span class="value">
+                        {% for_trans_obj object.allocation.translations as t %}
+                        {{ t.language }}: {{ t.label }}<br/>
+                        {% endfor_trans_obj %}
+                    </span></td> 
+                    <td><span class="value">
+                        {% for_trans_obj object.phase.translations as t %}
+                        {{ t.language }}: {{ t.label }}<br/>
+                        {% endfor_trans_obj %}
+                    </span></td>
                 </tr>
             </table>
         </li>
@@ -812,9 +841,15 @@
             {%  for attach in object.trial_attach %}
                 {% if attach.public %}
                     <li>
+                    {{ attach.description }} ({% trans 'Public' %})<br />
                     <a href="http://{{host}}{{attach.get_relative_url}}">
                     http://{{host}}{{attach.get_relative_url}}</a>
-                    ({{ attach.description }})
+                    </li>
+                {% else %}
+                    <li>
+                    {{ attach.description }}<br />
+                    <a href="http://{{host}}{{attach.get_relative_url}}">
+                    http://{{host}}{{attach.get_relative_url}}</a>
                     </li>
                 {% endif %}
             {% endfor %}
