@@ -667,11 +667,11 @@
     
     <h3>{% trans 'Contacts' %}</h3>
     <ul>
-        {% if object.public_contacts %}
+        {% if public_contacts %}
         <li class="subset">
             <span class="legend">{% trans 'Contacts for Public Queries' %}</span>
 
-            {% for contact in object.public_contacts %}
+            {% for contact in public_contacts %}
             <ul class="vcard">
                 <li>
                     <b>{% trans 'Full Name' %}:</b>
@@ -679,15 +679,13 @@
                 </li>
                 <li>
                     <ul class="adr">
-
                         <li>
                             <b>{% trans 'Address' %}:</b>
                             <span class="street-address">{{ contact.address }}</span>
                         </li>
                         <li>
                             <b>{% trans 'City' %}: </b>
-                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country }}</span></span>
-
+                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country_description }}</span></span>
                         </li>
                         <li>
                             <b>{% trans 'Zip Code' %}:</b>
@@ -696,7 +694,6 @@
                     </ul>
                 </li>
                 <li>
-
                     <b>{% trans 'Telephone' %}:</b>
                     <span class="tel">{{ contact.telephone }}</span>
                 </li>
@@ -704,10 +701,9 @@
                     <b>E-mail:</b>
                     <span class="email">{{ contact.email }}</span>
                 </li>
-
                 <li>
                     <b>{% trans 'Affiliation' %}:</b>
-                    <span class="org">{{ contact.affiliation }}</span>
+                    <span class="org">{{ contact.affiliation__name }}</span>
                 </li>
             </ul>
             {% if forloop.counter|divisibleby:3 and not forloop.last %}
@@ -715,16 +711,15 @@
             {% endif %}
             {% if forloop.last %}
                 <div class="spacer">&nbsp;</div>
-
             {% endif %}
             {% endfor %}
         </li>
         {% endif %}
         
-        {% if object.scientific_contacts %}
+        {% if scientific_contacts %}
         <li class="subset">
             <span class="legend">{% trans 'Contacts for Scientific Queries' %}</span>
-            {% for contact in object.scientific_contacts %}
+            {% for contact in scientific_contacts %}
             <ul class="vcard">
                 <li>
                     <b>{% trans 'Full Name' %}:</b>
@@ -736,14 +731,12 @@
                         <li>
                             <b>{% trans 'Address' %}:</b>
                             <span class="street-address">{{ contact.address }}</span>
-
                         </li>
                         <li>
                             <b>{% trans 'City' %}: </b>
-                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country }}</span></span>
+                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country_description }}</span></span>
                         </li>
                         <li>
-
                             <b>{% trans 'Zip Code' %}:</b>
                             <span class="postal-code">{{ contact.zip }}</span>
                         </li>
@@ -759,9 +752,8 @@
                     <span class="email">{{ contact.email }}</span>
                 </li>
                 <li>
-
                     <b>{% trans 'Affiliation' %}:</b>
-                    <span class="org">{{ contact.affiliation }}</span>
+                    <span class="org">{{ contact.affiliation__name }}</span>
                 </li>
             </ul>
             {% if forloop.counter|divisibleby:3 and not forloop.last %}
@@ -772,19 +764,16 @@
             {% endif %}
             {% endfor %}
         </li>
-
         {% endif %}
 
-
-        {% if object.site_contacts %}
+        {% if site_contacts %}
         <li class="subset">
             <span class="legend">{% trans 'Contact(s) for Site Queries' %}</span>
-            {% for contact in object.site_contacts %}
+            {% for contact in site_contacts %}
             <ul class="vcard">
                 <li>
                     <b>{% trans 'Full Name' %}:</b>
                     <span class="fn">{{ contact.firstname }} {{ contact.middlename }} {{ contact.lastname }}</span>
-
                 </li>
                 <li>
                     <ul class="adr">
@@ -793,14 +782,12 @@
                             <span class="street-address">{{ contact.address }}</span>
                         </li>
                         <li>
-
                             <b>{% trans 'City' %}: </b>
-                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country }}</span></span>
+                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country_description }}</span></span>
                         </li>
                         <li>
                             <b>{% trans 'Zip Code' %}:</b>
                             <span class="postal-code">{{ contact.zip }}</span>
-
                         </li>
                     </ul>
                 </li>
@@ -815,9 +802,8 @@
                 </li>
                 <li>
                     <b>{% trans 'Affiliation' %}:</b>
-                    <span class="org">{{ contact.affiliation }}</span>
+                    <span class="org">{{ contact.affiliation__name }}</span>
                 </li>
-
             </ul>
             {% if forloop.counter|divisibleby:3 and not forloop.last %}
                 <hr class="spacer" size="1"/>

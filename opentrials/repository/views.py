@@ -341,16 +341,72 @@ def trial_view(request, trial_pk):
                 obj['description'] = t.description
         except ObjectDoesNotExist:
             pass
+
+    # get translations for scientific contacts country
+    scientific_contacts = ct.scientific_contacts()
+    scientific_contacts_list = scientific_contacts.values('pk', 'firstname', 'middlename', 
+                            'lastname', 'address', 'city', 'zip', 'country_id', 'telephone',
+                            'email', 'affiliation__name')
     
-#    for obj in ct.scientific_contacts():
-#        try:
-#            t = VocabularyTranslation.objects.get_translation_for_object(
-#                                request.LANGUAGE_CODE.lower(), model=CountryCode, 
-#                                object_id=obj.country.id)
-#            if t.description:
-#                obj['country_description'] = t.description
-#        except ObjectDoesNotExist:
-#            pass
+    for obj in scientific_contacts_list:
+        try:
+            country = CountryCode.objects.get(pk=obj['country_id'])
+            obj['country_description'] = country.description
+        except CountryCode.DoesNotExist:
+            obj['country_description'] = ""
+            
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                request.LANGUAGE_CODE.lower(), model=CountryCode, 
+                                object_id=obj['country_id'])
+            if t.description:
+                obj['country_description'] = t.description
+        except ObjectDoesNotExist:
+            pass
+
+    # get translations for public contacts country
+    public_contacts = ct.public_contacts()
+    public_contacts_list = public_contacts.values('pk', 'firstname', 'middlename', 
+                            'lastname', 'address', 'city', 'zip', 'country_id', 'telephone',
+                            'email', 'affiliation__name')
+    
+    for obj in public_contacts_list:
+        try:
+            country = CountryCode.objects.get(pk=obj['country_id'])
+            obj['country_description'] = country.description
+        except CountryCode.DoesNotExist:
+            obj['country_description'] = ""
+            
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                request.LANGUAGE_CODE.lower(), model=CountryCode, 
+                                object_id=obj['country_id'])
+            if t.description:
+                obj['country_description'] = t.description
+        except ObjectDoesNotExist:
+            pass
+            
+    # get translations for site contacts country
+    site_contacts = ct.site_contact.all().select_related()
+    site_contacts_list = site_contacts.values('pk', 'firstname', 'middlename', 
+                            'lastname', 'address', 'city', 'zip', 'country_id', 'telephone',
+                            'email', 'affiliation__name')
+    
+    for obj in site_contacts_list:
+        try:
+            country = CountryCode.objects.get(pk=obj['country_id'])
+            obj['country_description'] = country.description
+        except CountryCode.DoesNotExist:
+            obj['country_description'] = ""
+            
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                request.LANGUAGE_CODE.lower(), model=CountryCode, 
+                                object_id=obj['country_id'])
+            if t.description:
+                obj['country_description'] = t.description
+        except ObjectDoesNotExist:
+            pass
     
     return render_to_response('repository/clinicaltrial_detail_user.html',
                                 {'object': ct,
@@ -363,6 +419,9 @@ def trial_view(request, trial_pk):
                                 'languages': get_sorted_languages(request),
                                 'recruitment_label': recruitment_label,
                                 'recruitment_country': recruitment_country_list,
+                                'scientific_contacts': scientific_contacts_list,
+                                'public_contacts': public_contacts_list,
+                                'site_contacts': site_contacts_list,
                                 },
                                 context_instance=RequestContext(request))
 
