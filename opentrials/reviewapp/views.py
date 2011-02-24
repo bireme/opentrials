@@ -267,7 +267,7 @@ def new_submission(request):
             su.title = initial_form.cleaned_data['scientific_title']
             su.primary_sponsor = initial_form.cleaned_data['primary_sponsor']
 
-            if su.language == MANAGED_LANGUAGES_CHOICES[0]:
+            if su.language == settings.MANAGED_LANGUAGES_CHOICES[0]:
                 trial.scientific_title = su.title
             else:
                 trial.save()

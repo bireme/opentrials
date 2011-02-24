@@ -26,9 +26,7 @@ from django.conf import settings
 from django.core.cache import cache
 from django.core.exceptions import ObjectDoesNotExist
 
-def lang_format(lang):
-    return lang[:2].lower()
-
+def lang_format(lang): return lang[:2].lower()
 CHOICES_TARGET_LANGUAGES = [(lang_format(value), label) for value, label in settings.TARGET_LANGUAGES]
 
 class TranslationManager(models.Manager):
