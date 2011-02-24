@@ -26,9 +26,10 @@ from django.conf import settings
 from django.core.cache import cache
 from django.core.exceptions import ObjectDoesNotExist
 
-lang_format = lambda lang: lang.replace('_','-').lower()
+def lang_format(lang):
+    return lang[:2].lower()
+
 CHOICES_TARGET_LANGUAGES = [(lang_format(value), label) for value, label in settings.TARGET_LANGUAGES]
-MANAGED_LANGUAGES_LOWER = map(lang_format, settings.MANAGED_LANGUAGES)
 
 class TranslationManager(models.Manager):
     def make_cache_key(self, model, object_id, lang):
