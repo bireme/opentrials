@@ -253,9 +253,9 @@ class MultilingualModelCheckboxField(MultilingualModelChoiceField):
 # ---------- FORMS -----------
 
 class MultilingualBaseForm(forms.ModelForm):
-    available_languages = map(lang_format, settings.MANAGED_LANGUAGES)
-    default_second_language = 'pt' # FIXME: shouldn't be settings.LANGUAGE_CODE?
-    display_language = 'pt' # FIXME: shouldn't be settings.LANGUAGE_CODE?
+    available_languages = [code.lower() for code in settings.MANAGED_LANGUAGES]
+    default_second_language = 'pt-br' # FIXME: shouldn't be settings.LANGUAGE_CODE?
+    display_language = 'pt-br' # FIXME: shouldn't be settings.LANGUAGE_CODE?
 
     def __init__(self, *args, **kwargs):
         # Gets multilingual fields from translation class
@@ -265,7 +265,7 @@ class MultilingualBaseForm(forms.ModelForm):
         self.default_second_language = kwargs.pop('default_second_language', self.default_second_language)
         if self.default_second_language is not None:
             self.default_second_language = lang_format(self.default_second_language)
-        self.available_languages = map(lang_format, kwargs.pop('available_languages', settings.MANAGED_LANGUAGES)) # Mandatory (FIXME, to remove default tuple)
+        self.available_languages = map(lang_format, kwargs.pop('available_languages', [code.lower() for code in settings.MANAGED_LANGUAGES])) # Mandatory (FIXME, to remove default tuple)
         self.display_language = lang_format(kwargs.pop('display_language', self.display_language))
 
         if self.multilingual_fields:
@@ -371,7 +371,7 @@ class MultilingualBaseFormSet(BaseModelFormSet):
         defaults = {'data': data, 'files': files, 'auto_id': auto_id, 'prefix': prefix}
         defaults.update(kwargs)
    
-        self.available_languages = map(lang_format, kwargs.pop('available_languages', settings.MANAGED_LANGUAGES)) # Mandatory (FIXME, to remove default tuple)
+        self.available_languages = kwargs.pop('available_languages', [code.lower() for code in settings.MANAGED_LANGUAGES]) # Mandatory (FIXME, to remove default tuple)
         self.default_second_language = kwargs.pop('default_second_language', self.default_second_language)
         self.display_language = kwargs.pop('display_language', self.display_language)
 

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load i18n adminmedia repository_tags %} 
+{% load i18n %}
 
 {% block body_title %}{% trans 'Clinical Trial' %}{% endblock %}
 
@@ -232,17 +232,12 @@
             {% endif %}
         </li>
         <div class="spacer"> </div>
-        <li>
-            <span class="label">{% trans 'UTN' %}:</span>
-            <span class="value">{{ object.utrn_number }}</span>
-        </li>
-        </li>
-        <div class="spacer"> </div>
         <li class="subset">
             <span class="legend">{% trans 'Secondary Identifying Numbers' %}:</span>
             {% for secid in object.trial_number %}
             <ul class="{% cycle 'even' 'odd' %}">
                 <li>
+
                     <span class="label">{{ secid.id_number }}</span><br />
                     <span class="value">{% trans 'Issuing Authority' %}:</span>
                     <span class="value">{{ secid.issuing_authority }}</span>
@@ -385,19 +380,16 @@
     
     <h3>{% trans 'Interventions' %}</h3>
     <ul>
-        <li>
-            <p><span class="label">{% trans 'Intervention Code(s)' %}:</span></p>
-            {% for i_code in object.intervention_code %}
-                {% for_trans_obj i_code.translations as t %}
-                    {% if t.label %}
-                    <div class="title">
-                        <h2>{{ t.language }}</h2>
-                        <p><span class="value">{{ t.label }}</span></p>
-                    </div>
-                    {% endif %}
-                {% endfor_trans_obj %}
-                <div class="spacer"> </div>
+        <li class="subset">
+            <span class="legend">{% trans 'Intervention Code(s)' %}</span>
+            <ul>
+            {% for iv in object.intervention_code %}
+                <li>
+
+                    <span class="label">{{ iv.label }}</span>
+                </li>
             {% endfor %}
+            </ul>
         </li>
         <li>
         <p><span class="label">{% trans 'Interventions' %}:</span></p>
@@ -457,13 +449,13 @@
     <ul>
         <li>
             <span class="label">{% trans 'Recruitment Status' %}:</span>
-            <span class="value">{{ recruitment_label }}</span>
+            <span class="value">{{ object.recruitment_status.label }}</span>
         </li>
 
         <li class="subset">
             <span class="legend">{% trans 'Recruitment Country' %}</span>
             <ul>
-            {% for recruitment in recruitment_country %}
+            {% for recruitment in object.trial_recruitment_country %}
                 <li>{{ recruitment.description }}{% if not forloop.last %}, {% endif %}</li>
             {% endfor %}
             </ul>
@@ -547,11 +539,11 @@
                 {% if t.study_design %}
                 <div class="title">
                     <h2>{{ t.language }}</h2>
-                    <p>{{ t.study_design|linebreaksbr }}</p>
+                    <p>{{ t.study_design }}</p>
                 </div>
                 {% endif %}
             {% endfor %}
-            {% if object.study_design %}
+            {% if object.study_design|linebreaksbr %}
                 <div class="title">
 
                     <h2>en</h2>
@@ -569,40 +561,19 @@
                     <th><span class="label">{% trans 'Intervention Assignment' %}</span></th>
                     <th><span class="label">{% trans 'Number of arms' %}</span></th>
                     <th><span class="label">{% trans 'Masking type' %}</span></th>
+
                     <th><span class="label">{% trans 'Allocation type' %}</span></th>
                     <th><span class="label">{% trans 'Study Phase' %}</span></th>
                 </tr>
                 <tr>
-                    <td><span class="value">
-                    <img src="{% admin_media_prefix %}img/admin/icon-{% if object.expanded_access_program %}yes{% else %}{% if object.expanded_access_program == None %}unknown{% else %}no{% endif %}{% endif %}.gif"
-                            alt="{{ object.expanded_access_program|yesno }}"/> {{ object.expanded_access_program|yesno }}
-                    </span></td>
-	                  <td><span class="value">
-                        {% for_trans_obj object.purpose.translations as t %}
-                        {{ t.language }}: {{ t.label }}<br/>
-                        {% endfor_trans_obj %}
-                    </span></td>
-                    <td><span class="value">
-                        {% for_trans_obj object.intervention_assignment.translations as t %}
-                        {{ t.language }}: {{ t.label }}<br/>
-                        {% endfor_trans_obj %}
-                    </span></td>
+                    <td><span class="value">{{ object.expanded_access_program }}</span></td>
+                    <td><span class="value">{{ object.purpose.label }}</span></td>
+                    <td><span class="value">{{ object.intervention_assignment.label }}</span></td>
+
                     <td><span class="value">{{ object.number_of_arms }}</span></td>
-                    <td><span class="value">
-                        {% for_trans_obj object.masking.translations as t %}
-                        {{ t.language }}: {{ t.label }}<br/>
-                        {% endfor_trans_obj %}
-                    </span></td>
-                    <td><span class="value">
-                        {% for_trans_obj object.allocation.translations as t %}
-                        {{ t.language }}: {{ t.label }}<br/>
-                        {% endfor_trans_obj %}
-                    </span></td> 
-                    <td><span class="value">
-                        {% for_trans_obj object.phase.translations as t %}
-                        {{ t.language }}: {{ t.label }}<br/>
-                        {% endfor_trans_obj %}
-                    </span></td>
+                    <td><span class="value">{{ object.masking.label }}</span></td>
+                    <td><span class="value">{{ object.allocation.label }}</span></td>
+                    <td><span class="value">{{ object.phase.label }}</span></td>
                 </tr>
             </table>
         </li>
@@ -667,11 +638,11 @@
     
     <h3>{% trans 'Contacts' %}</h3>
     <ul>
-        {% if public_contacts %}
+        {% if object.public_contacts %}
         <li class="subset">
             <span class="legend">{% trans 'Contacts for Public Queries' %}</span>
 
-            {% for contact in public_contacts %}
+            {% for contact in object.public_contacts %}
             <ul class="vcard">
                 <li>
                     <b>{% trans 'Full Name' %}:</b>
@@ -679,13 +650,15 @@
                 </li>
                 <li>
                     <ul class="adr">
+
                         <li>
                             <b>{% trans 'Address' %}:</b>
                             <span class="street-address">{{ contact.address }}</span>
                         </li>
                         <li>
                             <b>{% trans 'City' %}: </b>
-                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country_description }}</span></span>
+                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country }}</span></span>
+
                         </li>
                         <li>
                             <b>{% trans 'Zip Code' %}:</b>
@@ -694,6 +667,7 @@
                     </ul>
                 </li>
                 <li>
+
                     <b>{% trans 'Telephone' %}:</b>
                     <span class="tel">{{ contact.telephone }}</span>
                 </li>
@@ -701,9 +675,10 @@
                     <b>E-mail:</b>
                     <span class="email">{{ contact.email }}</span>
                 </li>
+
                 <li>
                     <b>{% trans 'Affiliation' %}:</b>
-                    <span class="org">{{ contact.affiliation__name }}</span>
+                    <span class="org">{{ contact.affiliation }}</span>
                 </li>
             </ul>
             {% if forloop.counter|divisibleby:3 and not forloop.last %}
@@ -711,15 +686,16 @@
             {% endif %}
             {% if forloop.last %}
                 <div class="spacer">&nbsp;</div>
+
             {% endif %}
             {% endfor %}
         </li>
         {% endif %}
         
-        {% if scientific_contacts %}
+        {% if object.scientific_contacts %}
         <li class="subset">
             <span class="legend">{% trans 'Contacts for Scientific Queries' %}</span>
-            {% for contact in scientific_contacts %}
+            {% for contact in object.scientific_contacts %}
             <ul class="vcard">
                 <li>
                     <b>{% trans 'Full Name' %}:</b>
@@ -731,12 +707,14 @@
                         <li>
                             <b>{% trans 'Address' %}:</b>
                             <span class="street-address">{{ contact.address }}</span>
+
                         </li>
                         <li>
                             <b>{% trans 'City' %}: </b>
-                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country_description }}</span></span>
+                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country }}</span></span>
                         </li>
                         <li>
+
                             <b>{% trans 'Zip Code' %}:</b>
                             <span class="postal-code">{{ contact.zip }}</span>
                         </li>
@@ -752,8 +730,9 @@
                     <span class="email">{{ contact.email }}</span>
                 </li>
                 <li>
+
                     <b>{% trans 'Affiliation' %}:</b>
-                    <span class="org">{{ contact.affiliation__name }}</span>
+                    <span class="org">{{ contact.affiliation }}</span>
                 </li>
             </ul>
             {% if forloop.counter|divisibleby:3 and not forloop.last %}
@@ -764,16 +743,19 @@
             {% endif %}
             {% endfor %}
         </li>
+
         {% endif %}
 
-        {% if site_contacts %}
+
+        {% if object.site_contacts %}
         <li class="subset">
             <span class="legend">{% trans 'Contact(s) for Site Queries' %}</span>
-            {% for contact in site_contacts %}
+            {% for contact in object.site_contacts %}
             <ul class="vcard">
                 <li>
                     <b>{% trans 'Full Name' %}:</b>
                     <span class="fn">{{ contact.firstname }} {{ contact.middlename }} {{ contact.lastname }}</span>
+
                 </li>
                 <li>
                     <ul class="adr">
@@ -782,12 +764,14 @@
                             <span class="street-address">{{ contact.address }}</span>
                         </li>
                         <li>
+
                             <b>{% trans 'City' %}: </b>
-                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country_description }}</span></span>
+                            <span><span class="locality">{{ contact.city }}</span> / <span class="country-name">{{ contact.country }}</span></span>
                         </li>
                         <li>
                             <b>{% trans 'Zip Code' %}:</b>
                             <span class="postal-code">{{ contact.zip }}</span>
+
                         </li>
                     </ul>
                 </li>
@@ -802,8 +786,9 @@
                 </li>
                 <li>
                     <b>{% trans 'Affiliation' %}:</b>
-                    <span class="org">{{ contact.affiliation__name }}</span>
+                    <span class="org">{{ contact.affiliation }}</span>
                 </li>
+
             </ul>
             {% if forloop.counter|divisibleby:3 and not forloop.last %}
                 <hr class="spacer" size="1"/>
@@ -827,15 +812,9 @@
             {%  for attach in object.trial_attach %}
                 {% if attach.public %}
                     <li>
-                    {{ attach.description }} ({% trans 'Public' %})<br />
                     <a href="http://{{host}}{{attach.get_relative_url}}">
                     http://{{host}}{{attach.get_relative_url}}</a>
-                    </li>
-                {% else %}
-                    <li>
-                    {{ attach.description }}<br />
-                    <a href="http://{{host}}{{attach.get_relative_url}}">
-                    http://{{host}}{{attach.get_relative_url}}</a>
+                    ({{ attach.description }})
                     </li>
                 {% endif %}
             {% endfor %}

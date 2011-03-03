@@ -109,7 +109,7 @@ def submissions_list(request):
             try:
                 #t = obj.trial.translations.get(language=request.LANGUAGE_CODE)
                 t = ClinicalTrialTranslation.objects.get_translation_for_object(
-                        request.LANGUAGE_CODE, model=ClinicalTrial, object_id=obj['trial__pk'],
+                        request.LANGUAGE_CODE.lower(), model=ClinicalTrial, object_id=obj['trial__pk'],
                         )
                 if t.scientific_title != '':
                     obj['title'] = t.scientific_title
@@ -267,7 +267,7 @@ def new_submission(request):
             su.title = initial_form.cleaned_data['scientific_title']
             su.primary_sponsor = initial_form.cleaned_data['primary_sponsor']
 
-            if su.language == settings.MANAGED_LANGUAGES_CHOICES[0]:
+            if su.language == 'en':
                 trial.scientific_title = su.title
             else:
                 trial.save()

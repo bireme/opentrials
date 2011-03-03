@@ -13,7 +13,7 @@ from repository.serializers import deserialize_trial
 from tickets.models import Ticket
 from utilities import safe_truncate
 from vocabulary.models import CountryCode
-from polyglot.models import Translation, lang_format
+from polyglot.models import Translation, MANAGED_LANGUAGES_LOWER
 from fossil.models import Fossil
 
 from repository.trial_validation import TRIAL_FORMS
@@ -104,15 +104,15 @@ class Submission(ControlledDeletion):
     def get_mandatory_languages(self):
         langs = set([u'en'])
         if self.trial.primary_sponsor is not None:
-            langs.add(lang_format(self.trial.primary_sponsor.country.submission_language))
+            langs.add(self.trial.primary_sponsor.country.submission_language)
 
         for rc in self.trial.recruitment_country.all():
-            langs.add(lang_format(rc.submission_language))
+            langs.add(rc.submission_language)
 
-        return langs.intersection(set(map(lang_format, settings.MANAGED_LANGUAGES)))
+        return langs.intersection(set(MANAGED_LANGUAGES_LOWER))
 
     def get_trans_languages(self):
-        return self.get_mandatory_languages() - set([lang_format(self.language)])
+        return self.get_mandatory_languages() - set([self.language])
 
     def get_secondary_language(self):
         sec = None

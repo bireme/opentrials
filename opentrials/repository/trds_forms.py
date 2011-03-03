@@ -400,19 +400,7 @@ class RecruitmentForm(ReviewModelForm):
     # TRDS 14e
     exclusion_criteria = forms.CharField(label=_('Exclusion Criteria'),required=False,
                                         max_length=8000, widget=forms.Textarea,)
-                                            
-    def clean_enrollment_end_date(self):
-        end_date = self.cleaned_data.get('enrollment_end_date')
-        if end_date is False:
-            raise forms.ValidationError(_("You must assign both Year and Month"))      
-        return end_date
-    
-    def clean_enrollment_start_date(self):
-        start_date = self.cleaned_data.get('enrollment_start_date')
-        if start_date is False:
-            raise forms.ValidationError(_("You must assign both Year and Month"))      
-        return start_date
-        
+
     def __init__(self, *args, **kwargs):
         self.base_fields.keyOrder = ['recruitment_status', 'recruitment_country',
                 'enrollment_start_date', 'enrollment_end_date', 'target_sample_size',
@@ -450,16 +438,6 @@ class RecruitmentForm(ReviewModelForm):
             obj.save()
 
         return obj
-
-    def clean(self):
-        cleaned_data = super(RecruitmentForm, self).clean()
-
-        start_date = cleaned_data.get('enrollment_start_date')
-        end_date = cleaned_data.get('enrollment_end_date')
-        if end_date and start_date and start_date > end_date:
-            raise forms.ValidationError(_("Invalid date"))
-
-        return cleaned_data
 
 trial_validator.register(TRIAL_FORMS[4], [RecruitmentForm])
 

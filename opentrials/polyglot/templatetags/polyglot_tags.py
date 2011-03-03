@@ -20,7 +20,7 @@
 from django import template
 from django.utils import simplejson
 
-from polyglot.models import get_ordered_languages, lang_format
+from polyglot.models import get_ordered_languages
 
 register = template.Library()
 
@@ -35,7 +35,7 @@ class JSConstantsNode(template.Node):
 
     def render(self, context):
         # It depends on 'request' template context processor
-        display_language = lang_format(context['request'].user.get_profile().preferred_language)
+        display_language = context['request'].user.get_profile().preferred_language.lower()
 
         # Available languages are collected from given variable
         available_languages = None

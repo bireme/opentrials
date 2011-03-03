@@ -30,7 +30,6 @@ Data modeling
 Python programming
 ------------------
 
- - Antonio Alves (BIREME/PAHO/WHO)
  - Fabio Batalha (BIREME/PAHO/WHO)
  - Fabio Montefuscolo (BIREME/PAHO/WHO)
  - Gustavo Fonseca (BIREME/PAHO/WHO)
