@@ -158,8 +158,6 @@ AUTH_PROFILE_MODULE = "reviewapp.UserProfile"
 # in opentrials/fixtures/initial_data.json
 SITE_ID = 2 # change if necessary to match a record in django_site
 
-OPENTRIALS_VERSION = 'v1.0.12' # this shold be the deployed tag number
-
 SITE_TITLE = u'Registro Brasileiro de Ensaios Clínicos'
 SEND_BROKEN_LINK_EMAILS = True
 DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
@@ -227,3 +225,6 @@ COMPRESS_OUTPUT_DIR = 'compressor-cache'
 # file in the current directory. See sample file at settings_local-SAMPLE.include
 # FIXME: why not use a simple "try: from settings_local import * except ImportError: pass" ?
 execfile(os.path.join(PROJECT_PATH,'settings_local.include'))
+
+OPENTRIALS_VERSION = 'v1.0.14' # this should be the deployed tag number
+
