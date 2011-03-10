@@ -1050,7 +1050,7 @@ def all_trials_ictrp(request):
             mimetype = 'text/xml'
             )
 
-    resp['Content-Disposition'] = 'attachment; filename=RBR-ictrp.xml'#TODO mudar o filename
+    resp['Content-Disposition'] = 'attachment; filename=%s-ictrp.xml' % settings.TRIAL_ID_PREFIX
 
     return resp
 

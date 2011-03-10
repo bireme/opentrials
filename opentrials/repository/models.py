@@ -48,8 +48,7 @@ def length_truncate(text, max_size=240):
 # remove vowels to avoid forming words
 BASE28 = ''.join(d for d in string.digits+string.ascii_lowercase
                    if d not in '1l0aeiou')
-TRIAL_ID_PREFIX = 'RBR'
-TRIAL_ID_DIGITS = 6
+                   
 TRIAL_ID_TRIES = 3
 
 def generate_trial_id(prefix, num_digits):
@@ -424,7 +423,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
             self.date_registration = datetime.now()
             
             for i in range(TRIAL_ID_TRIES):
-                self.trial_id = generate_trial_id(TRIAL_ID_PREFIX, TRIAL_ID_DIGITS)
+                self.trial_id = generate_trial_id(settings.TRIAL_ID_PREFIX, settings.TRIAL_ID_DIGITS)
                 try:
                     super(ClinicalTrial, self).save(*args, **kwargs)
                 except IntegrityError:

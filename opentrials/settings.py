@@ -26,8 +26,7 @@ PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
 ADMINS = (
     ('Luciano Ramalho', 'luciano.ramalho@bireme.org'),
-    ('Fabio Montefuscolo', 'fabio.montefuscolo@bireme.org'),
-    ('Rafael Soares', 'rafael.soares@bireme.org'),
+    ('Antonio Ribeiro Alves', 'antonio.alves@bireme.org')
 )
 
 MANAGERS = ADMINS
@@ -162,6 +161,9 @@ SITE_TITLE = u'Registro Brasileiro de Ensaios Clínicos'
 SEND_BROKEN_LINK_EMAILS = True
 DECS_SERVICE = 'http://decs.bvs.br/cgi-bin/mx/cgi=@vmx/decs'
 ICD10_SERVICE = 'http://bases.bireme.br/cgi-bin/mxlindG4.exe/cgi=@cid10/cid10'
+
+TRIAL_ID_PREFIX = 'RBR'
+TRIAL_ID_DIGITS = 6
 
 # Notes:
 # 1) source: http://www.i18nguy.com/unicode/language-identifiers.html
