@@ -1,0 +1,134 @@
+{% extends "base.xml" %}
+
+{% block root %}
+<trials>
+{% for object in object_list %}
+    <trial>
+        <main>
+            <trial_id>{{ object.trial_id }}</trial_id>
+            <utrn>{{ object.utrn_number }}</utrn>
+            <reg_name>{{ reg_name }}</reg_name>
+            <date_registration>{{ object.date_registration|date:"d/m/Y" }}</date_registration>
+            <primary_sponsor>{{ object.primary_sponsor.name }}</primary_sponsor>
+            <public_title>{{ object.public_title }}</public_title>
+            <acronym>{{ object.acronym_display }}</acronym>
+            <scientific_title>{{ object.scientific_title }}</scientific_title>
+            <scientific_acronym>{{ object.scientific_acronym_display }}</scientific_acronym>
+            <date_enrolment>{{ object.date_enrollment_start }}</date_enrolment>
+            <type_enrolment>{% if object.enrollment_start_actual %}actual{% else %}anticipated{% endif %}</type_enrolment>
+            <target_size>{{ object.target_sample_size }}</target_size>
+            <recruitment_status>{{ object.recruitment_status.label }}</recruitment_status>
+            <url>{% url repository.trial_registered_version trial_fossil_id=object.trial_id, trial_version=object.version %}</url>
+            <study_type>{{ object.study_type.label }}</study_type>
+            <study_design>{{ object.study_design }}</study_design>
+            <phase>{{ object.phase.label }}</phase>
+            <hc_freetext>{{ object.hc_freetext }}</hc_freetext>
+            <i_freetext>{{ object.i_freetext }}</i_freetext>            
+        </main>
+        <contacts>
+        {% for contact in object.public_contact %}
+            <contact>
+                <type>public</type>
+                <firstname>{{ contact.firstname }}</firstname>
+                <middlename>{{ contact.middlename }}</middlename>
+                <lastname>{{ contact.lastname }}</lastname>
+                <address>{{ contact.address }}</address>
+                <city>{{ contact.city }}</city>
+                <country1>{{ contact.country.description }}</country1>
+                <zip>{{ contact.zip }}</zip>
+                <telephone>{{ contact.telephone }}</telephone>
+                <email>{{ contact.email }}</email>
+                <affiliation>{{ contact.affiliation.name }}</affiliation>
+            </contact>
+        {% endfor %}
+        {% for contact in object.scientific_contact %}
+            <contact>
+                <type>scientific</type>
+                <firstname>{{ contact.firstname }}</firstname>
+                <middlename>{{ contact.middlename }}</middlename>
+                <lastname>{{ contact.lastname }}</lastname>
+                <address>{{ contact.address }}</address>
+                <city>{{ contact.city }}</city>
+                <country1>{{ contact.country.description }}</country1>
+                <zip>{{ contact.zip }}</zip>
+                <telephone>{{ contact.telephone }}</telephone>
+                <email>{{ contact.email }}</email>
+                <affiliation>{{ contact.affiliation.name }}</affiliation>
+            </contact>
+        {% endfor %}
+        </contacts>
+        <countries>
+        {% for country in object.recruitment_country %}
+            <country2>{{ country.description }}</country2>
+        {% endfor %}
+        </countries>
+        <criteria>
+            <inclusion_criteria>{{ object.inclusion_criteria }}</inclusion_criteria>
+            <agemin>{{ object.agemin_value }}{% if object.agemin_unit != '-' %}{{ object.agemin_unit }}{% endif %}</agemin>
+            <agemax>{{ object.agemax_value }}{% if object.agemax_unit != '-' %}{{ object.agemax_unit }}{% endif %}</agemax>
+            <gender>{{ object.gender }}</gender>
+            <exclusion_criteria>{{ object.exclusion_criteria }}</exclusion_criteria>
+        </criteria>
+        <health_condition_code>
+            {% for hc in object.hc_code %}
+            <hc_code>{{ hc.code }}</hc_code>
+            {% endfor %}
+        </health_condition_code>
+        <health_condition_keyword>
+            {% for hc in object.hc_keyword %}
+            <hc_keyword>{{ hc.code }}</hc_keyword>
+            {% endfor %}
+        </health_condition_keyword>
+        <intervention_code>
+            {% for iv in object.i_code %}
+            <i_code>{{ iv.label }}</i_code>
+            {% endfor %}
+        </intervention_code>
+        <intervention_keyword>
+            {% for iv in object.intervention_keyword %}
+            <i_keyword>{{ iv.code }}</i_keyword>
+            {% endfor %}
+        </intervention_keyword>
+        <primary_outcome>
+            {% for outcomes in object.primary_outcomes %}
+            <prim_outcome>{{ outcomes.description }}</prim_outcome>
+            {% endfor %}
+        </primary_outcome>
+        <secondary_outcome>
+            {% for outcomes in object.secondary_outcomes %}
+            <sec_outcome>{{ outcomes.description }}</sec_outcome>
+            {% empty %}
+            <sec_outcome></sec_outcome>
+            {% endfor %}
+        </secondary_outcome>
+        <secondary_sponsor>
+            {%  for sponsors in object.secondary_sponsors %}
+            <sponsor_name>{{ sponsors.institution.name }}</sponsor_name>
+            {% empty %}
+            <sponsor_name></sponsor_name>
+            {% endfor %}
+        </secondary_sponsor>
+        <secondary_ids>
+            {% for secid in object.trial_number %}
+            <secondary_id>
+                <sec_id>{{ secid.id_number }}</sec_id>
+                <issuing_authority>{{ secid.issuing_authority }}</issuing_authority>    
+            </secondary_id>
+            {% empty %}
+            <secondary_id>
+                <sec_id></sec_id>
+                <issuing_authority></issuing_authority>    
+            </secondary_id>
+            {% endfor %}
+        </secondary_ids>
+        <source_support>
+            {%  for source_support in object.support_sources %}
+            <source_name>{{ source_support.institution.name }}</source_name>
+            {% empty %}
+            <source_name></source_name>
+            {% endfor %}
+        </source_support>        
+    </trial>
+{% endfor %}
+</trials>
+{% endblock %}

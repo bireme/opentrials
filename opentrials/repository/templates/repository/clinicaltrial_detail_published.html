@@ -79,7 +79,7 @@
 {% endblock %}
 
 {% block body %}
-
+    <h2>{{ register_number }}</h2>
     <h2>{{ scientific_title }}</h2>
     
     <h3>{% trans 'Scientific Title' %}:</h3>
@@ -92,6 +92,10 @@
             {% endif %}
         {% endfor %}
         <div class="spacer"> </div>
+    
+    <h3>{% trans 'Registration Date:' %}</h3>
+    <span class="value">{{ fossil_created }}</span>
+
     <h3>{% trans 'Trial Identification' %}</h3>
     <ul>
         <li>
