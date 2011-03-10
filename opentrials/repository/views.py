@@ -6,6 +6,7 @@ except:
     from sets import Set as set
 
 from django.core import serializers
+from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from django.utils.translation import ugettext_lazy as _
@@ -43,7 +44,8 @@ from repository.trds_forms import RecruitmentForm, StudyTypeForm, PrimaryOutcome
 from repository.trds_forms import SecondaryOutcomesForm, make_public_contact_form
 from repository.trds_forms import make_scientifc_contact_form, make_contact_form, NewInstitution
 from repository.trds_forms import make_site_contact_form, TRIAL_FORMS
-from vocabulary.models import RecruitmentStatus, VocabularyTranslation
+from vocabulary.models import RecruitmentStatus, VocabularyTranslation, CountryCode, InterventionCode
+from vocabulary.models import StudyPurpose, InterventionAssigment, StudyMasking, StudyAllocation
 
 from polyglot.multilingual_forms import modelformset_factory
 
@@ -262,12 +264,9 @@ def index(request):
     ''' List all registered trials
         If you use a search term, the result is filtered 
     '''
-    q = request.GET.get('q', '')
+    q = request.GET.get('q', '').strip()
 
-    object_list = ClinicalTrial.fossils.published()
-
-    if q:
-        object_list = object_list.filter(serialized__icontains=q)
+    object_list = ClinicalTrial.fossils.published(q=q)
 
     object_list = object_list.proxies(language=request.LANGUAGE_CODE)
     
@@ -315,7 +314,101 @@ def trial_view(request, trial_pk):
          remarks = ct.submission.remark_set.filter(context=slugify(tf))
          if remarks:
             remark_list.append(remarks)
+            
+    # get translation for recruitment status
+    recruitment_status = ct.recruitment_status
+    if recruitment_status:
+        recruitment_label = recruitment_status.label
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                request.LANGUAGE_CODE.lower(), model=RecruitmentStatus, 
+                                object_id=recruitment_status.id)
+            if t.label:
+                recruitment_label = t.label
+        except ObjectDoesNotExist:
+            pass
+    else:
+        recruitment_label = ""
+    
+    # get translations for recruitment country
+    recruitment_country = ct.recruitment_country.all()
+    recruitment_country_list = recruitment_country.values('pk', 'description')
+    for obj in recruitment_country_list:
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                request.LANGUAGE_CODE.lower(), model=CountryCode, 
+                                object_id=obj['pk'])
+            if t.description:
+                obj['description'] = t.description
+        except ObjectDoesNotExist:
+            pass
 
+    # get translations for scientific contacts country
+    scientific_contacts = ct.scientific_contacts()
+    scientific_contacts_list = scientific_contacts.values('pk', 'firstname', 'middlename', 
+                            'lastname', 'address', 'city', 'zip', 'country_id', 'telephone',
+                            'email', 'affiliation__name')
+    
+    for obj in scientific_contacts_list:
+        try:
+            country = CountryCode.objects.get(pk=obj['country_id'])
+            obj['country_description'] = country.description
+        except CountryCode.DoesNotExist:
+            obj['country_description'] = ""
+            
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                request.LANGUAGE_CODE.lower(), model=CountryCode, 
+                                object_id=obj['country_id'])
+            if t.description:
+                obj['country_description'] = t.description
+        except ObjectDoesNotExist:
+            pass
+
+    # get translations for public contacts country
+    public_contacts = ct.public_contacts()
+    public_contacts_list = public_contacts.values('pk', 'firstname', 'middlename', 
+                            'lastname', 'address', 'city', 'zip', 'country_id', 'telephone',
+                            'email', 'affiliation__name')
+    
+    for obj in public_contacts_list:
+        try:
+            country = CountryCode.objects.get(pk=obj['country_id'])
+            obj['country_description'] = country.description
+        except CountryCode.DoesNotExist:
+            obj['country_description'] = ""
+            
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                request.LANGUAGE_CODE.lower(), model=CountryCode, 
+                                object_id=obj['country_id'])
+            if t.description:
+                obj['country_description'] = t.description
+        except ObjectDoesNotExist:
+            pass
+            
+    # get translations for site contacts country
+    site_contacts = ct.site_contact.all().select_related()
+    site_contacts_list = site_contacts.values('pk', 'firstname', 'middlename', 
+                            'lastname', 'address', 'city', 'zip', 'country_id', 'telephone',
+                            'email', 'affiliation__name')
+    
+    for obj in site_contacts_list:
+        try:
+            country = CountryCode.objects.get(pk=obj['country_id'])
+            obj['country_description'] = country.description
+        except CountryCode.DoesNotExist:
+            obj['country_description'] = ""
+            
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                request.LANGUAGE_CODE.lower(), model=CountryCode, 
+                                object_id=obj['country_id'])
+            if t.description:
+                obj['country_description'] = t.description
+        except ObjectDoesNotExist:
+            pass
+    
     return render_to_response('repository/clinicaltrial_detail_user.html',
                                 {'object': ct,
                                 'translations': translations,
@@ -324,7 +417,13 @@ def trial_view(request, trial_pk):
                                 'review_mode': review_mode,
                                 'can_approve': can_approve,    
                                 'can_resubmit': can_resubmit,
-                                'languages': get_sorted_languages(request),},
+                                'languages': get_sorted_languages(request),
+                                'recruitment_label': recruitment_label,
+                                'recruitment_country': recruitment_country_list,
+                                'scientific_contacts': scientific_contacts_list,
+                                'public_contacts': public_contacts_list,
+                                'site_contacts': site_contacts_list,
+                                },
                                 context_instance=RequestContext(request))
 
 def get_sorted_languages(request):
@@ -361,11 +460,13 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
                 if t['language'] == get_language() and t['scientific_title'].strip()][0]
     except IndexError:
         scientific_title = ct.scientific_title
-
+    
     return render_to_response('repository/clinicaltrial_detail_published.html',
                                 {'object': ct,
                                 'translations': translations,
                                 'host': request.get_host(),
+                                'fossil_created': ct.fossil['created'],
+                                'register_number': trial_fossil_id,
                                 'scientific_title': scientific_title,
                                 'languages': get_sorted_languages(request)},
                                 context_instance=RequestContext(request))
@@ -892,7 +993,7 @@ def step_9(request, trial_pk):
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
-from repository.xml.generate import xml_ictrp, xml_opentrials
+from repository.xml.generate import xml_ictrp, xml_opentrials, all_xml_ictrp
 
 def trial_ictrp(request, trial_fossil_id, trial_version=None):
     """
@@ -905,7 +1006,7 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
     - http://reddes.bvsalud.org/projects/clinical-trials/attachment/wiki/RegistrationDataModel/xmlsample.xml
     - http://reddes.bvsalud.org/projects/clinical-trials/attachment/wiki/RegistrationDataModel/ICTRPTrials.xml
     """
-
+    #import pdb; pdb.set_trace()
     try:
         fossil = Fossil.objects.get(pk=trial_fossil_id)
     except Fossil.DoesNotExist:
@@ -923,7 +1024,7 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
     ct.previous_revision = fossil.previous_revision
     ct.version = fossil.revision_sequential
 
-    xml = xml_ictrp(ct)
+    xml = xml_ictrp(ct)  
 
     resp = HttpResponse(xml,
             mimetype = 'text/xml'
@@ -932,6 +1033,27 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
     resp['Content-Disposition'] = 'attachment; filename=%s-ictrp.xml' % ct.trial_id
 
     return resp
+
+def all_trials_ictrp(request):
+    fossil_list = Fossil.objects.all()
+
+    ct_list = []
+    for fossil in fossil_list:
+        ct = fossil.get_object_fossil()
+        ct.hash_code = fossil.pk
+        ct.previous_revision = fossil.previous_revision
+        ct.version = fossil.revision_sequential
+        ct_list.append(ct)
+
+    xml = all_xml_ictrp(ct_list)    
+    resp = HttpResponse(xml,
+            mimetype = 'text/xml'
+            )
+
+    resp['Content-Disposition'] = 'attachment; filename=RBR-ictrp.xml'#TODO mudar o filename
+
+    return resp
+
 
 def trial_otxml(request, trial_fossil_id, trial_version=None):
     """
