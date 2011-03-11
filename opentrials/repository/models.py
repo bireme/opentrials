@@ -38,12 +38,17 @@ from serializers import serialize_trialnumber
 from serializers import serialize_trialsupportsource
 from serializers import serialize_trialsecondarysponsor
 
+def length_truncate(text, max_size=240):
+    text = text.split('|')
+    size=max_size/len(text)
+    text = '|'.join([safe_truncate(t,size,'') for t in text])
+    return text
+
 # remove digits that look like letters and vice-versa
 # remove vowels to avoid forming words
 BASE28 = ''.join(d for d in string.digits+string.ascii_lowercase
                    if d not in '1l0aeiou')
-TRIAL_ID_PREFIX = 'RBR'
-TRIAL_ID_DIGITS = 6
+                   
 TRIAL_ID_TRIES = 3
 
 def generate_trial_id(prefix, num_digits):
@@ -131,9 +136,22 @@ class TrialsFossilManager(FossilManager):
     def recruiting(self):
         return self.indexed(recruitment_status='recruiting', display='True').filter(is_most_recent=True)
 
-    def published(self):
-        return self.indexed(display='True').filter(is_most_recent=True)
-
+    def published(self, q=None):
+        if not q:
+            return self.indexed(display='True').filter(is_most_recent=True)
+        else:
+            return self.indexed(display='True', scientific_title__icontains=q).filter(is_most_recent=True) |\
+                    self.indexed(display='True', public_title__icontains=q).filter(is_most_recent=True) |\
+                    self.indexed(display='True', acronym__icontains=q).filter(is_most_recent=True) |\
+                    self.indexed(display='True', scientific_acronym__icontains=q).filter(is_most_recent=True) |\
+                    self.indexed(display='True', scientific_acronym_expansion__icontains=q).filter(is_most_recent=True) |\
+                    self.indexed(display='True', hc_freetext__icontains=q).filter(is_most_recent=True) |\
+                    self.indexed(display='True', i_freetext__icontains=q).filter(is_most_recent=True) |\
+                    self.indexed(display='True', primary_sponsor__icontains=q).filter(is_most_recent=True) |\
+                    self.indexed(display='True', scientific_contacts__icontains=q).filter(is_most_recent=True) |\
+                    self.indexed(display='True', utrn_number__icontains=q).filter(is_most_recent=True) |\
+                    self.indexed(display='True', secondary_ids__icontains=q).filter(is_most_recent=True)
+        
     def archived(self):
         return self.indexed(display='True').filter(is_most_recent=False)
 
@@ -168,6 +186,82 @@ class PublishedTrial(Fossil):
             return self.indexers.key('status').value
         except ObjectDoesNotExist:
             return 'published' if self.is_most_recent else 'archived'
+            
+    @property
+    def scientific_title(self):
+        try:
+            return self.indexeds.key('scientific_title').value
+        except ObjectDoesNotExist:
+            return ''
+
+    @property
+    def public_title(self):
+        try:
+            return self.indexeds.key('public_title').value
+        except ObjectDoesNotExist:
+            return ''
+    
+    @property
+    def acronym(self):
+        try:
+            return self.indexeds.key('acronym').value
+        except ObjectDoesNotExist:
+            return ''
+    
+    @property
+    def scientific_acronym(self):
+        try:
+            return self.indexeds.key('scientific_acronym').value
+        except ObjectDoesNotExist:
+            return ''
+            
+    @property
+    def scientific_acronym_expansion(self):
+        try:
+            return self.indexeds.key('scientific_acronym_expansion').value
+        except ObjectDoesNotExist:
+            return ''     
+            
+    @property
+    def hc_freetext(self):
+        try:
+            return self.indexeds.key('hc_freetext').value
+        except ObjectDoesNotExist:
+            return ''     
+    
+    @property
+    def i_freetext(self):
+        try:
+            return self.indexeds.key('i_freetext').value
+        except ObjectDoesNotExist:
+            return ''     
+    
+    @property
+    def primary_sponsor(self):
+        try:
+            return self.indexeds.key('primary_sponsor').value
+        except ObjectDoesNotExist:
+            return ''     
+    
+    @property
+    def scientific_contacts(self):
+        try:
+            return self.indexeds.key('scientific_contacts').value
+        except ObjectDoesNotExist:
+            return ''     
+                 
+    @property
+    def utrn_number(self):
+        try:
+            return self.indexeds.key('utrn_number').value
+        except ObjectDoesNotExist:
+            return ''
+    @property
+    def secondary_ids(self):
+        try:
+            return self.indexeds.key('secondary_ids').value
+        except ObjectDoesNotExist:
+            return ''                
 
     def get_object_fossil(self, force_load=False):
         if force_load or not getattr(self, '_object_fossil', None):
@@ -329,7 +423,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
             self.date_registration = datetime.now()
             
             for i in range(TRIAL_ID_TRIES):
-                self.trial_id = generate_trial_id(TRIAL_ID_PREFIX, TRIAL_ID_DIGITS)
+                self.trial_id = generate_trial_id(settings.TRIAL_ID_PREFIX, settings.TRIAL_ID_DIGITS)
                 try:
                     super(ClinicalTrial, self).save(*args, **kwargs)
                 except IntegrityError:
@@ -476,6 +570,19 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         fossil.set_indexer(key='trial_id', value=self.trial_id)
         fossil.set_indexer(key='status', value=self.status)
         fossil.set_indexer(key='display', value='True')
+    
+        fossil.set_indexer(key='scientific_title', value=length_truncate("%s%s" % (self.scientific_title, '|'.join([trans.scientific_title for trans in self.translations.all()]))))
+        fossil.set_indexer(key='public_title', value=length_truncate("%s%s" % (self.public_title, '|'.join([trans.public_title for trans in self.translations.all()]))))
+        fossil.set_indexer(key='acronym', value="%s%s" % (self.acronym, '|'.join([trans.acronym for trans in self.translations.all()]))) 
+        fossil.set_indexer(key='scientific_acronym', value="%s%s" % (self.scientific_acronym, '|'.join([trans.scientific_acronym for trans in self.translations.all()]))) 
+        fossil.set_indexer(key='scientific_acronym_expansion', value="%s%s" % (self.scientific_acronym_expansion, '|'.join([trans.scientific_acronym_expansion for trans in self.translations.all()]))) 
+        fossil.set_indexer(key='hc_freetext', value=length_truncate("%s%s" % (self.hc_freetext, '|'.join([trans.hc_freetext for trans in self.translations.all()]))))
+        fossil.set_indexer(key='i_freetext', value=length_truncate("%s%s" % (self.i_freetext, '|'.join([trans.i_freetext for trans in self.translations.all()]))))
+        fossil.set_indexer(key='primary_sponsor', value=self.primary_sponsor.name)         
+        fossil.set_indexer(key='scientific_contacts', value="%s" % ('|'.join(["%s|%s" % (contact.name(),contact.email) for contact in self.scientific_contacts()]))) 
+        fossil.set_indexer(key='utrn_number', value=self.utrn_number)         
+        fossil.set_indexer(key='secondary_ids', value="%s" % ('|'.join([t_number.id_number for t_number in self.trial_number()]))) 
+	         
 
         if self.recruitment_status:
             fossil.set_indexer(key='recruitment_status', value=self.recruitment_status.label)
