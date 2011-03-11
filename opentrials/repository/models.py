@@ -571,8 +571,8 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         fossil.set_indexer(key='status', value=self.status)
         fossil.set_indexer(key='display', value='True')
     
-        fossil.set_indexer(key='scientific_title', value="%s%s" % (self.scientific_title, '|'.join([trans.scientific_title for trans in self.translations.all()]))) 
-        fossil.set_indexer(key='public_title', value="%s%s" % (self.public_title, '|'.join([trans.public_title for trans in self.translations.all()]))) 
+        fossil.set_indexer(key='scientific_title', value=length_truncate("%s%s" % (self.scientific_title, '|'.join([trans.scientific_title for trans in self.translations.all()]))))
+        fossil.set_indexer(key='public_title', value=length_truncate("%s%s" % (self.public_title, '|'.join([trans.public_title for trans in self.translations.all()]))))
         fossil.set_indexer(key='acronym', value="%s%s" % (self.acronym, '|'.join([trans.acronym for trans in self.translations.all()]))) 
         fossil.set_indexer(key='scientific_acronym', value="%s%s" % (self.scientific_acronym, '|'.join([trans.scientific_acronym for trans in self.translations.all()]))) 
         fossil.set_indexer(key='scientific_acronym_expansion', value="%s%s" % (self.scientific_acronym_expansion, '|'.join([trans.scientific_acronym_expansion for trans in self.translations.all()]))) 

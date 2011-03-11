@@ -228,5 +228,5 @@ COMPRESS_OUTPUT_DIR = 'compressor-cache'
 # FIXME: why not use a simple "try: from settings_local import * except ImportError: pass" ?
 execfile(os.path.join(PROJECT_PATH,'settings_local.include'))
 
-OPENTRIALS_VERSION = 'v1.0.15' # this should be the deployed tag number
+OPENTRIALS_VERSION = 'v1.0.17' # this should be the deployed tag number
 
