@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<trials>
+
+    <trial>
+        <main>
+            <trial_id>RBR-5kz-yp8</trial_id>
+            <utrn>None</utrn>
+            <reg_name>REBEC</reg_name>
+            <date_registration></date_registration>
+            <primary_sponsor>Oswaldo Cruz Foundation</primary_sponsor>
+            <public_title>Pharmacokinetics of the Tablet Formulation of Lopinavir/r as Standard and Increased Dosage During Pregnancy</public_title>
+            <acronym></acronym>
+            <scientific_title>Pharmacokinetics of the Tablet Formulation of Lopinavir/r as Standard and Increased Dosage During Pregnancy in HIV-Infected Women</scientific_title>
+            <scientific_acronym></scientific_acronym>
+            <date_enrolment>01/02/2008</date_enrolment>
+            <type_enrolment>anticipated</type_enrolment>
+            <target_size>60</target_size>
+            <recruitment_status>recruiting</recruitment_status>
+            <url>http://127.0.0.1:8000/rg/RBR-5kz-yp8/v1/</url>
+            <study_type></study_type>
+            <study_design>Estudo farmacocinético, prospectivo, aberto, alocação paralela, fase 4, randomizado, preventivo.</study_design>
+            <phase>4</phase>
+            <hc_freetext>HIV Infections
+Pregnancy
+</hc_freetext>
+            <i_freetext>Drug: Lopinavir / ritonavir
+Lopinavir/r (200/50 mg, 2 tablets every 12 hours) plus two nucleoside analogs, starting at any time between 14 and 30 weeks of gestation and maintained for at least 6 weeks after delivery.
+Other Name: Kaletra
+Drug: Lopinavir/ritonavir
+Lopinavir/r (200/50 mg, 2 tablets every 12 hours) plus two nucleoside analogs, starting at any time between 14 and 30 weeks of gestation, increase the lopinavir/r dosage (200/50 mg, 3 tablets every 12 hours) in the third trimester (from 25 weeks on), and return to standard dose(200/50 mg, 2 tablets every 12 hours)for at least 6 weeks after delivery.
+Other Name: Kaletra
+</i_freetext>            
+        </main>
+        <contacts>
+        
+        
+            <contact>
+                <type>scientific</type>
+                <firstname>Marília</firstname>
+                <middlename>Santini</middlename>
+                <lastname>Oliveira</lastname>
+                <address></address>
+                <city>Rio de Janeiro</city>
+                <country1>Brazil</country1>
+                <zip>12345-123</zip>
+                <telephone>23423422234</telephone>
+                <email>su@abc.com</email>
+                <affiliation>Fundação Oswaldo Cruz</affiliation>
+            </contact>
+        
+        </contacts>
+        <countries>
+        
+            <country2>Brazil</country2>
+        
+        </countries>
+        <criteria>
+            <inclusion_criteria>Capacity to consent and wish to participate in the study, documented by signing the specific informed consent form (ICF) of the study.
+Pregnancy documented by urine or blood examination or ultrasound.
+Gestational age of 14 to 30 weeks calculated by ultrasound, obstetric examination or date of last menstruation, depending on what is considered to be more exact by the medical investigator.
+HIV infection documented by two serological tests using different methods or analysis of HIV viral load with a positive result.
+No use of antiretroviral drugs at the time of diagnosis of pregnancy (previous prophylaxis and treatment are allowed).
+Intention to continue the treatment of the study for at least 6 weeks after delivery.</inclusion_criteria>
+            <agemin>18Y</agemin>
+            <agemax>0</agemax>
+            <gender>F</gender>
+            <exclusion_criteria>History of hypersensitivity to lopinavir or ritonavir.
+Need for the concomitant use of contraindicated drugs in combination with lopinavir/ritonavir.
+Any condition that, in the opinion of the medical researchers, impairs the participation in and fulfillment of the procedures of the study.
+</exclusion_criteria>
+        </criteria>
+        <health_condition_code>
+            
+            <hc_code>C20</hc_code>
+            
+        </health_condition_code>
+        <health_condition_keyword>
+            
+            <hc_keyword>Z21</hc_keyword>
+            
+            <hc_keyword>G08.686.785.760.769</hc_keyword>
+            
+        </health_condition_keyword>
+        <intervention_code>
+            
+            <i_code>drug</i_code>
+            
+        </intervention_code>
+        <intervention_keyword>
+            
+            <i_keyword>G02.111.325.500</i_keyword>
+            
+        </intervention_keyword>
+        <primary_outcome>
+            
+            <prim_outcome>Pharmacokinetic parameters of the tablet formulation of lopinavir/r at second and third pregnancy trimester and 6 weeks after delivery</prim_outcome>
+            
+        </primary_outcome>
+        <secondary_outcome>
+            
+            <sec_outcome>Ratio between the serum concentration of lopinavir/r in maternal blood and in cord blood</sec_outcome>
+            
+        </secondary_outcome>
+        <secondary_sponsor>
+            
+            <sponsor_name></sponsor_name>
+            
+        </secondary_sponsor>
+        <secondary_ids>
+            
+            <secondary_id>
+                <sec_id>NCT00605098</sec_id>
+                <issuing_authority>Clinicaltrials.gov</issuing_authority>    
+            </secondary_id>
+            
+        </secondary_ids>
+        <source_support>
+            
+            <source_name></source_name>
+            
+        </source_support>        
+    </trial>
+
+    <trial>
+        <main>
+            <trial_id>RBR-4s7gh3</trial_id>
+            <utrn>U1111-1119-5101</utrn>
+            <reg_name>REBEC</reg_name>
+            <date_registration>02/03/2011</date_registration>
+            <primary_sponsor>Hospital de Clínicas de Porto Alegre</primary_sponsor>
+            <public_title>PREVER Study: Efficacy of Chlorthalidone associated with Amiloride versus  Losartan in reducing blood pressure of patients with hypertension Prever 2 Study
+</public_title>
+            <acronym>PREVER: Prevention of Cardiovascular outcomes in patients with hypertension</acronym>
+            <scientific_title>PREVER Study: Efficacy of Chlorthalidone associated with Amiloride versus  Losartan in reducing blood pressure of patients with hypertension Prever 2 Study
+</scientific_title>
+            <scientific_acronym>PREVER 2: Prevention of Cardiovascular outcomes in patients with hypertension</scientific_acronym>
+            <date_enrolment>01/02/2011</date_enrolment>
+            <type_enrolment>actual</type_enrolment>
+            <target_size>2400</target_size>
+            <recruitment_status>recruiting</recruitment_status>
+            <url>http://127.0.0.1:8000/rg/RBR-4s7gh3/v1/</url>
+            <study_type></study_type>
+            <study_design>Double-blind Randomized Clinical Trial</study_design>
+            <phase>3</phase>
+            <hc_freetext>Hypertension</hc_freetext>
+            <i_freetext>Drug: Chlorthalidone 12,5 mg associated with Amiloride 2,5 mg once daily
+Drug: Losartan 25 mg once daily 
+During 18 months.</i_freetext>            
+        </main>
+        <contacts>
+        
+            <contact>
+                <type>public</type>
+                <firstname>Flávio</firstname>
+                <middlename>Danni</middlename>
+                <lastname>Fuchs</lastname>
+                <address>Rua Ramiro Barcelos 2350 2º Andar Serviço de Cardiologia</address>
+                <city>Porto Alegre</city>
+                <country1>Brazil</country1>
+                <zip>90035-903</zip>
+                <telephone>51 33598449</telephone>
+                <email>ffuchs@hcpa.ufrgs.br</email>
+                <affiliation>Hospital de Clínicas de Porto Alegre</affiliation>
+            </contact>
+        
+        
+            <contact>
+                <type>scientific</type>
+                <firstname>Flávio</firstname>
+                <middlename>Danni</middlename>
+                <lastname>Fuchs</lastname>
+                <address>Rua Ramiro Barcelos 2350 2º Andar Serviço de Cardiologia</address>
+                <city>Porto Alegre</city>
+                <country1>Brazil</country1>
+                <zip>90035-903</zip>
+                <telephone>51 33598449</telephone>
+                <email>ffuchs@hcpa.ufrgs.br</email>
+                <affiliation>Hospital de Clínicas de Porto Alegre</affiliation>
+            </contact>
+        
+        </contacts>
+        <countries>
+        
+            <country2>Brazil</country2>
+        
+        </countries>
+        <criteria>
+            <inclusion_criteria>I. Individuals with 40 to 70 years, of both sexes;
+II. Diagnosis of Hypertension in stage I, ie, systolic (SBP)  between 140-159 mmHg or diastolic blood pressure (DBP) between 90-99 mmHg</inclusion_criteria>
+            <agemin>40Y</agemin>
+            <agemax>70Y</agemax>
+            <gender>-</gender>
+            <exclusion_criteria>I. Chronic diseases that reduce life expectancy or difficulty in understanding the guidelines, which limit the possibility of participation in the study;
+II. Refusal to participate or sign an informed consent;
+III. Pregnancy or women most likely to become pregnant during the study;
+IV. Known allergy to any of the study drugs;
+V. Prior diagnosis of secondary hypertension ;
+</exclusion_criteria>
+        </criteria>
+        <health_condition_code>
+            
+            <hc_code>C14</hc_code>
+            
+        </health_condition_code>
+        <health_condition_keyword>
+            
+            <hc_keyword>I10</hc_keyword>
+            
+        </health_condition_keyword>
+        <intervention_code>
+            
+            <i_code>drug</i_code>
+            
+        </intervention_code>
+        <intervention_keyword>
+            
+            <i_keyword>d27.505.696.560.500</i_keyword>
+            
+            <i_keyword>D03.383.129.308.507</i_keyword>
+            
+        </intervention_keyword>
+        <primary_outcome>
+            
+            <prim_outcome>I. Lowering blood pressure to less than 140/90 mmHg;
+II. Incidence of Adverse Events;
+III. Incidence of diabetes mellitus, microalbuminuria, hypokalemia, hiperuricemia and left ventricular hypertrophy on ECG.
+</prim_outcome>
+            
+        </primary_outcome>
+        <secondary_outcome>
+            
+            <sec_outcome>I. All-cause mortality
+II. Incidence of Coronary Artery Disease (Acute Coronary Syndrome, need for revascularization, sudden death)
+III. Fatal and nonfatal stroke
+IV. Heart failure (requiring hospitalization)
+V. Duplication of plasma levels of creatinine or need for dialysis
+VI. Incidence of diabetes mellitus.
+</sec_outcome>
+            
+        </secondary_outcome>
+        <secondary_sponsor>
+            
+            <sponsor_name></sponsor_name>
+            
+        </secondary_sponsor>
+        <secondary_ids>
+            
+            <secondary_id>
+                <sec_id>08621</sec_id>
+                <issuing_authority>CEP- GPPG- Hospital de Clínicas de Porto Alegre</issuing_authority>    
+            </secondary_id>
+            
+            <secondary_id>
+                <sec_id>NCT00971165</sec_id>
+                <issuing_authority>Clinical Trials </issuing_authority>    
+            </secondary_id>
+            
+        </secondary_ids>
+        <source_support>
+            
+            <source_name>FINEP</source_name>
+            
+        </source_support>        
+    </trial>
+
+    <trial>
+        <main>
+            <trial_id>RBR-7sw5hf</trial_id>
+            <utrn>U1111-1119-1317</utrn>
+            <reg_name>REBEC</reg_name>
+            <date_registration>02/02/2011</date_registration>
+            <primary_sponsor>Luciano Ambrosio Ferreira</primary_sponsor>
+            <public_title>LASER ACUPUNCTURE TO TEMPOROMANDIBULAR DISORDER TREATMENT</public_title>
+            <acronym></acronym>
+            <scientific_title>ADJUVANT LASER ACUPUNCTURE TO OCCLUSAL SPLINT THERAPY: A CONTROLLED TRIAL IN TEMPOROMANDIBULAR DISORDERS PATIENTS</scientific_title>
+            <scientific_acronym></scientific_acronym>
+            <date_enrolment>01/02/2011</date_enrolment>
+            <type_enrolment>anticipated</type_enrolment>
+            <target_size>40</target_size>
+            <recruitment_status>not yet recruiting</recruitment_status>
+            <url>http://127.0.0.1:8000/rg/RBR-7sw5hf/v1/</url>
+            <study_type></study_type>
+            <study_design>Randomized double-blind controlled study. </study_design>
+            <phase>3</phase>
+            <hc_freetext>Temporomandibular disorder, stress</hc_freetext>
+            <i_freetext>In order to reduce the likelihood of systematic errors and allow the use of statistical tests, there will be a simple procedure of random allocation of subjects of this research, which will be  distributed in two groups of 20 subjects by drawing lots. Each group will receive a specific treatment modality for TMD defined as follows: 1) Group Therapy - neuromuscular relaxing splint and laser
+acupuncture; 2) Control Group - neuromuscular
+relaxing relaxing splint and placebo laser. Within each group, the therapeutic will be maintained until the end of the study, the patients being aware voluntary and consistent with the possibility
+of receiving one of two proposed therapies
+(therapeutic or placebo), were not informed during the processing of their nature therapies. At the end of the study, patients receiving a placebo therapy may undergo therapy for active laser acupuncture if they have persistent symptoms or if they wish. Simple randomisation by using sealed opaque envelope is assumed. In each subject is
+assigned a sealed opaque envelope, where
+information about the group to which belong will be contained. The number of envelopes for the therapeutic group is equal to the control group,the envelopes being identical with each other. The
+draw will be conducted by a person without any link to the survey, which will be in the custody of groups and their participants, the researcher revealed only when the first therapeutic application.
+Describe the methods used to generate the sequence in which subjects will be
+randomised (sequence generation):
+Simple randomisation by using a randomisation table created by computer software (SPSS for Windows 13.0) through computerised sequence generation.
+
+Study Group Intervention:
+Low intensity laser acupuncture to  temporomandibular disorder treatment, directed to study group. The acupuncture points: S6, SI19, GB20, LI4, L3, SJ3, GB34, Ex-3, low power (50mW) infrared laser, for 90s each, with the objective of sedation.
+Laser acupuncture therapy will happen weekly in one-hour sessions. It will begin at february,4, 2011. Laser treatment is continuous and punctual, directed at each point for a period of 90 seconds. Twelve weekly sessions will complete three months of treatment.
+The laser acupuncture therapy will follow the standards of protection for the use of lasers, including the protection of patients&#39; eyes. Such protection inhibits the visual stimulus during application of therapy.
+
+Study and Control Groups intervention:
+Neuromuscular relaxing occlusal splint is a dentistry conventional treatment directed to all participants of the research (study and control groups). The splints will be made of acrylic and individually adjusted by surface&#39;s sanding . The adjustment is to obtain simultaneous tooth contacts in a physiological mandibular position, where the chewing muscles and temporomandibular joints are protected from excessive occlusal loads. They will wear it for three months, at the night, when usually the involuntary muscle hyperactivity occurs. The adjustments will take place weekly, aiming occlusal changes that result in facial muscleand joint relaxation.
+
+Control Group Intervention:
+The control group will receive, in addition to conventional therapy for neuromuscular relaxing plate, the laser-acupuncture simulation characterized as placebo.
+Acupuncture points given for temporomandibular disorders: S6, SI19, GB20, LI4, L3, SJ3, GB34, Ex-3 will receive the treatment simulation by same study group&#39;s apparatus, by 90 seconds without applying pressure or radiation. There will be no emission of laser for this group, so the power button the device will be turned to the off position. Patients wear dark protection glasses that inhibit any view. No sound is emitted by the device, even when off or on. The issue of low power laser is painless, no sensation is felt when the true application of laser happens. The use of glasses that inhibit the view of the patient allows individuals do not know the nature of light, active or placebo. Placebo laser acupuncture will happen weekly in one-hour sessions. Twelve weekly sessions will complete three months of placebo therapy. This group will receive the same protection and biosecurity condute than study group.</i_freetext>            
+        </main>
+        <contacts>
+        
+            <contact>
+                <type>public</type>
+                <firstname>Luciano </firstname>
+                <middlename>Ambrosio</middlename>
+                <lastname>Ferreira</lastname>
+                <address>Luis Andrade silveira, 207, Centenário</address>
+                <city>Juiz de Fora</city>
+                <country1>Brazil</country1>
+                <zip>36045-280</zip>
+                <telephone>32 32245637</telephone>
+                <email>l3a6f9@yahoo.com.br</email>
+                <affiliation>Universidade Federal de Juiz de Fora</affiliation>
+            </contact>
+        
+        
+            <contact>
+                <type>scientific</type>
+                <firstname>Luciano </firstname>
+                <middlename>Ambrosio</middlename>
+                <lastname>Ferreira</lastname>
+                <address>Luis Andrade silveira, 207, Centenário</address>
+                <city>Juiz de Fora</city>
+                <country1>Brazil</country1>
+                <zip>36045-280</zip>
+                <telephone>32 32245637</telephone>
+                <email>l3a6f9@yahoo.com.br</email>
+                <affiliation>Universidade Federal de Juiz de Fora</affiliation>
+            </contact>
+        
+        </contacts>
+        <countries>
+        
+            <country2>Brazil</country2>
+        
+        </countries>
+        <criteria>
+            <inclusion_criteria>All subjects participated in this study volunteers by signing the consent
+• female subjects;
+• aged between 20 and 40;
+• irrespective of race, creed or social level;
+• presence of a diagnosis of myofascial pain and arthralgia orofacial chronic, persisting for a minimum period of six months;
+• minimum intensity of muscle and joint pain of 4.0 points, measured in the Visual Analog Scale (VAS) during the first evaluation.</inclusion_criteria>
+            <agemin>20Y</agemin>
+            <agemax>40Y</agemax>
+            <gender>F</gender>
+            <exclusion_criteria>Subjects with evidence of muscle diseases, rheumatic and joint systemic origin, such as fibromyalgia and rheumatoid arthritis;
+• presence of fungal skin changes, hyperplastic, erythematous keloid or continuity in areas related to acupuncture points;
+• medical, pharmacological, psychological or physical therapy for temporomandibular disorder (TMD), concomitant therapies introduced in this study;
+• pregnants, the possible influence of intrauterine contraction and movement promoted by some acupuncture points such as LI4;
+• report or finding of facial trauma as a possible etiology of temporomandibular disorder;
+• individuals who have undergone prior treatment with neuromuscular relaxing plate, acupuncture or laser therapy for temporomandibular disorder;
+• subject denture wearers an upper or lower;
+• individuals with intellectual disability or impairment that would hinder the collection of data.</exclusion_criteria>
+        </criteria>
+        <health_condition_code>
+            
+            <hc_code>C05</hc_code>
+            
+        </health_condition_code>
+        <health_condition_keyword>
+            
+            <hc_keyword>C05.500.607.221.897</hc_keyword>
+            
+            <hc_keyword>F01.145.126.990</hc_keyword>
+            
+        </health_condition_keyword>
+        <intervention_code>
+            
+            <i_code>radiation</i_code>
+            
+            <i_code>other</i_code>
+            
+        </intervention_code>
+        <intervention_keyword>
+            
+            <i_keyword>H02.004</i_keyword>
+            
+            <i_keyword>E02.594.540</i_keyword>
+            
+            <i_keyword>E06.276</i_keyword>
+            
+        </intervention_keyword>
+        <primary_outcome>
+            
+            <prim_outcome>Physical symptoms evaluation before the intervention and after 1, 2 and 3 months after the intervention. Measurement of muscle and joint pain orofacial by applying the visual analogue scale to palpation stomatognathic sites . At each time, the average intensity of pain experienced by each group will be mensured. The provision of these temporal averages (moments of 0, 1, 2 and 3) will prepare the development of physical symptoms in each group. This evolution will be compared between the groups in order to verify the effectiveness of proposed therapies.
+
+Diagnostic Criteria for Temporomandibular Disorders Research (RDC / TMD, Axis II) to assess the psychosocial impact of emotional distress associated to temporomandibular disorder. Levels of depression and no specific sumptoms (somatization) will be  measured through SCL 90R questionary, contained in RDC/DTM. This instrument will be applied before and after institution of therapy in each group. A comparison of symptoms of somatization and depression in the two instances indicate a possible change of these symptoms.</prim_outcome>
+            
+        </primary_outcome>
+        <secondary_outcome>
+            
+            <sec_outcome></sec_outcome>
+            
+        </secondary_outcome>
+        <secondary_sponsor>
+            
+            <sponsor_name>Marcos Vinicius Queiroz de Paula</sponsor_name>
+            
+            <sponsor_name>Universidade Federal de Juiz de Fora</sponsor_name>
+            
+            <sponsor_name>Amanda Buchara Pereira</sponsor_name>
+            
+        </secondary_sponsor>
+        <secondary_ids>
+            
+            <secondary_id>
+                <sec_id>398/2008 </sec_id>
+                <issuing_authority>Comitê de Ética em Pesquisa da Universidade Federal de Juiz de Fora</issuing_authority>    
+            </secondary_id>
+            
+            <secondary_id>
+                <sec_id>0253.0.180.000-08</sec_id>
+                <issuing_authority>CAAE - CONEP</issuing_authority>    
+            </secondary_id>
+            
+            <secondary_id>
+                <sec_id>ACTRN12611000088943</sec_id>
+                <issuing_authority>Australian New Zealand Clinical Trials Registry</issuing_authority>    
+            </secondary_id>
+            
+        </secondary_ids>
+        <source_support>
+            
+            <source_name>Luciano Ambrosio Ferreira</source_name>
+            
+            <source_name>Universidade Federal de Juiz de Fora</source_name>
+            
+        </source_support>        
+    </trial>
+
+    <trial>
+        <main>
+            <trial_id>RBR-5kzyp8</trial_id>
+            <utrn>U1234-1234-1234</utrn>
+            <reg_name>REBEC</reg_name>
+            <date_registration></date_registration>
+            <primary_sponsor>Oswaldo Cruz Foundation</primary_sponsor>
+            <public_title>Pharmacokinetics of the Tablet Formulation of Lopinavir/r as Standard and Increased Dosage During Pregnancy</public_title>
+            <acronym></acronym>
+            <scientific_title>Pharmacokinetics of the Tablet Formulation of Lopinavir/r as Standard and Increased Dosage During Pregnancy in HIV-Infected Women</scientific_title>
+            <scientific_acronym></scientific_acronym>
+            <date_enrolment>01/02/2008</date_enrolment>
+            <type_enrolment>anticipated</type_enrolment>
+            <target_size>60</target_size>
+            <recruitment_status>recruiting</recruitment_status>
+            <url>http://127.0.0.1:8000/rg/RBR-5kzyp8/v2/</url>
+            <study_type></study_type>
+            <study_design>Estudo farmacocinético, prospectivo, aberto, alocação paralela, fase 4, randomizado, preventivo.</study_design>
+            <phase>4</phase>
+            <hc_freetext>HIV Infections
+Pregnancy
+</hc_freetext>
+            <i_freetext>Drug: Lopinavir / ritonavir
+Lopinavir/r (200/50 mg, 2 tablets every 12 hours) plus two nucleoside analogs, starting at any time between 14 and 30 weeks of gestation and maintained for at least 6 weeks after delivery.
+Other Name: Kaletra
+Drug: Lopinavir/ritonavir
+Lopinavir/r (200/50 mg, 2 tablets every 12 hours) plus two nucleoside analogs, starting at any time between 14 and 30 weeks of gestation, increase the lopinavir/r dosage (200/50 mg, 3 tablets every 12 hours) in the third trimester (from 25 weeks on), and return to standard dose(200/50 mg, 2 tablets every 12 hours)for at least 6 weeks after delivery.
+Other Name: Kaletra
+</i_freetext>            
+        </main>
+        <contacts>
+        
+        
+            <contact>
+                <type>scientific</type>
+                <firstname>Marília</firstname>
+                <middlename>Santini</middlename>
+                <lastname>Oliveira</lastname>
+                <address></address>
+                <city>Rio de Janeiro</city>
+                <country1>Brazil</country1>
+                <zip>12345-123</zip>
+                <telephone>23423422234</telephone>
+                <email>su@abc.com</email>
+                <affiliation>Fundação Oswaldo Cruz</affiliation>
+            </contact>
+        
+        </contacts>
+        <countries>
+        
+            <country2>Brazil</country2>
+        
+        </countries>
+        <criteria>
+            <inclusion_criteria>Capacity to consent and wish to participate in the study, documented by signing the specific informed consent form (ICF) of the study.
+Pregnancy documented by urine or blood examination or ultrasound.
+Gestational age of 14 to 30 weeks calculated by ultrasound, obstetric examination or date of last menstruation, depending on what is considered to be more exact by the medical investigator.
+HIV infection documented by two serological tests using different methods or analysis of HIV viral load with a positive result.
+No use of antiretroviral drugs at the time of diagnosis of pregnancy (previous prophylaxis and treatment are allowed).
+Intention to continue the treatment of the study for at least 6 weeks after delivery.</inclusion_criteria>
+            <agemin>18Y</agemin>
+            <agemax>0</agemax>
+            <gender>F</gender>
+            <exclusion_criteria>History of hypersensitivity to lopinavir or ritonavir.
+Need for the concomitant use of contraindicated drugs in combination with lopinavir/ritonavir.
+Any condition that, in the opinion of the medical researchers, impairs the participation in and fulfillment of the procedures of the study.
+</exclusion_criteria>
+        </criteria>
+        <health_condition_code>
+            
+            <hc_code>C20</hc_code>
+            
+        </health_condition_code>
+        <health_condition_keyword>
+            
+            <hc_keyword>Z21</hc_keyword>
+            
+            <hc_keyword>G08.686.785.760.769</hc_keyword>
+            
+        </health_condition_keyword>
+        <intervention_code>
+            
+            <i_code>drug</i_code>
+            
+        </intervention_code>
+        <intervention_keyword>
+            
+            <i_keyword>G02.111.325.500</i_keyword>
+            
+        </intervention_keyword>
+        <primary_outcome>
+            
+            <prim_outcome>Pharmacokinetic parameters of the tablet formulation of lopinavir/r at second and third pregnancy trimester and 6 weeks after delivery</prim_outcome>
+            
+        </primary_outcome>
+        <secondary_outcome>
+            
+            <sec_outcome>Ratio between the serum concentration of lopinavir/r in maternal blood and in cord blood</sec_outcome>
+            
+        </secondary_outcome>
+        <secondary_sponsor>
+            
+            <sponsor_name></sponsor_name>
+            
+        </secondary_sponsor>
+        <secondary_ids>
+            
+            <secondary_id>
+                <sec_id>NCT00605098</sec_id>
+                <issuing_authority>Clinicaltrials.gov</issuing_authority>    
+            </secondary_id>
+            
+        </secondary_ids>
+        <source_support>
+            
+            <source_name></source_name>
+            
+        </source_support>        
+    </trial>
+
+    <trial>
+        <main>
+            <trial_id>RBR-74rr6s</trial_id>
+            <utrn>U1111-1119-5061</utrn>
+            <reg_name>REBEC</reg_name>
+            <date_registration>02/03/2011</date_registration>
+            <primary_sponsor>Hospital de Clínicas de Porto Alegre</primary_sponsor>
+            <public_title>PREVER Study: Efficacy of the combination of Chlorthalidone and Amiloride versus placebo in the prevention of hypertension in patients with prehypertension PREVER 1 Study</public_title>
+            <acronym>PREVER 1 Study: Prevention of Cardiovascular outcomes in patients with prehypertension </acronym>
+            <scientific_title>PREVER Study: Efficacy of the combination of Chlorthalidone and Amiloride versus placebo in the prevention of hypertension in patients with prehypertension PREVER 1 Study</scientific_title>
+            <scientific_acronym>PREVER 1 Study: Prevention of Cardiovascular outcomes in patients with prehypertension </scientific_acronym>
+            <date_enrolment>01/02/2011</date_enrolment>
+            <type_enrolment>actual</type_enrolment>
+            <target_size>1350</target_size>
+            <recruitment_status>recruiting</recruitment_status>
+            <url>http://127.0.0.1:8000/rg/RBR-74rr6s/v1/</url>
+            <study_type></study_type>
+            <study_design>Randomized Clinical Trial, double-blind, placebo controled trial</study_design>
+            <phase>3</phase>
+            <hc_freetext>Prehypertension</hc_freetext>
+            <i_freetext>Drug: Chlorthalidone 12,5 mg plus amiloride 2,5 mg once daily for 18 months
+Drug: placebo once daily for 18 months
+
+</i_freetext>            
+        </main>
+        <contacts>
+        
+            <contact>
+                <type>public</type>
+                <firstname>Flávio</firstname>
+                <middlename>Danni</middlename>
+                <lastname>Fuchs</lastname>
+                <address>Rua Ramiro Barcelos 2350 2º Andar Serviço de Cardiologia</address>
+                <city>Porto Alegre</city>
+                <country1>Brazil</country1>
+                <zip>90035-903</zip>
+                <telephone>51 33598449</telephone>
+                <email>ffuchs@hcpa.ufrgs.br</email>
+                <affiliation>Hospital de Clínicas de Porto Alegre</affiliation>
+            </contact>
+        
+        
+            <contact>
+                <type>scientific</type>
+                <firstname>Flávio</firstname>
+                <middlename>Danni</middlename>
+                <lastname>Fuchs</lastname>
+                <address>Rua Ramiro Barcelos 2350 2º Andar Serviço de Cardiologia</address>
+                <city>Porto Alegre</city>
+                <country1>Brazil</country1>
+                <zip>90035-903</zip>
+                <telephone>51 33598449</telephone>
+                <email>ffuchs@hcpa.ufrgs.br</email>
+                <affiliation>Hospital de Clínicas de Porto Alegre</affiliation>
+            </contact>
+        
+        </contacts>
+        <countries>
+        
+            <country2>Brazil</country2>
+        
+        </countries>
+        <criteria>
+            <inclusion_criteria>I. individuals with 30 to 70 years of age 
+II. Systolic Arterial Pressure 120-139 mmHg or Diastolic Arterial Pressure 80-89 mmHg;</inclusion_criteria>
+            <agemin>30Y</agemin>
+            <agemax>70Y</agemax>
+            <gender>-</gender>
+            <exclusion_criteria>I. Previous diagnosis of hypertension or use of antihypertensive drugs;
+II. Allergies to Chlorthalidone Amiloride;
+III. Known cardiovascular disease (previous Miocardial Infarction, previous stroke, heart failure or clinical manifestations, for example, current or previous angina, intermittent claudication ...);
+IV. Chronic diseases that limit the participation or the prospect of life (such as cancer, rheumatic disease, disability, etc.);
+V. Analgesics or anti-inflammatory use for 30 days or more;
+VI. Inability to measure blood pressure;
+VII. Difficulty in understanding that limits participation in the study;
+VIII. IF WOMEN: Pregnant or planning to become pregnant in the next two years;
+IX. Patients who have participated in other randomized trials (the last six months);
+</exclusion_criteria>
+        </criteria>
+        <health_condition_code>
+            
+            <hc_code>C14</hc_code>
+            
+        </health_condition_code>
+        <health_condition_keyword>
+            
+            <hc_keyword>I10</hc_keyword>
+            
+        </health_condition_keyword>
+        <intervention_code>
+            
+            <i_code>drug</i_code>
+            
+        </intervention_code>
+        <intervention_keyword>
+            
+            <i_keyword>D27.505.696.560.500</i_keyword>
+            
+        </intervention_keyword>
+        <primary_outcome>
+            
+            <prim_outcome>Incidence of hypertension, by blood pressure greater or equal to 140/90 mmHg.
+</prim_outcome>
+            
+            <prim_outcome>Adverse events. 
+</prim_outcome>
+            
+        </primary_outcome>
+        <secondary_outcome>
+            
+            <sec_outcome>I. All-cause mortality
+II. Incidence of Coronary Artery Disease (Acute Coronary Syndrome, need for revascularization, sudden death)
+III. Fatal and nonfatal stroke
+IV. Heart failure (requiring hospitalization)
+V. Duplication of plasma levels of creatinine or need for dialysis
+VI. Incidence of diabetes mellitus.
+VII. Microalbuminuria
+VIII. Hypokalemia
+IX. Hyperuricemia
+X. Left ventricular hypertrophy on Eletrocardiogram</sec_outcome>
+            
+        </secondary_outcome>
+        <secondary_sponsor>
+            
+            <sponsor_name></sponsor_name>
+            
+        </secondary_sponsor>
+        <secondary_ids>
+            
+            <secondary_id>
+                <sec_id>08621</sec_id>
+                <issuing_authority>CEP- GPPG- Hospital de Clínicas de Porto Alegre</issuing_authority>    
+            </secondary_id>
+            
+            <secondary_id>
+                <sec_id>NCT00970931</sec_id>
+                <issuing_authority>Clinical Trials </issuing_authority>    
+            </secondary_id>
+            
+        </secondary_ids>
+        <source_support>
+            
+            <source_name>FINEP</source_name>
+            
+        </source_support>        
+    </trial>
+
+</trials>
+
+
