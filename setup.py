@@ -1,8 +1,6 @@
 from setuptools import setup, find_packages
 import os
-#with open('requirements.txt', 'r') as req:
-#    requirements = req.readlines()
-    
+
 here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.txt')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
