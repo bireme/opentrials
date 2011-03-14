@@ -15,39 +15,58 @@ There is also a git-svn mirror at:
 
 http://github.com/bireme/opentrials
 
+
 Dependencies
 ------------
+
+OS dependencies (Ubuntu)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+sudo apt-get install build-essential python2.6-dev libxml2-dev libxslt1-dev
+sudo apt-get install apache2 libapache2-mod-wsgi
+sudo apt-get install mysql-server-5.1 libmysqlclient-dev
+
+Python libraries
+~~~~~~~~~~~~~~~~
 
 - Python 2.4 or higher. Preference for 2.6
 - Django 1.2 or higher
 - Some of database wrappers, like psycopg2 or MySQLDb
 - Python Imaging Library ( http://www.pythonware.com/products/pil/ )
-- django-registration
-- django-rosetta
 - south
-- django-compressor
+- BeautifulSoup
+- mysql-python
+- lxml
+- Markdown
+- django_compressor
+- django-nose
+- django-rosetta
+- django-reversion
+- django-plus
+- django-fossil
 
 We suggest you read a more detailed page at:
 
     http://reddes.bvsalud.org/projects/clinical-trials/wiki/HowToInstall
 
-virtualenv/pip
---------------
+
+virtualenv/setuptools
+---------------------
 
 A way to install easilly a development/production environment is working with Virtualenv.
 
 To install it you just have to run the following commands:
 
-    virtualenv dev
+    virtualenv --distribute --no-site-packages dev
     source dev/bin/activate
 
 The following command will install all dependencies you need:
 
-    pip requirements.txt
+    $ python setup.py install
 
 If some package wasn't installed properly, check one of those situations:
 
-- Depending on your operating system, pip will install only packages that aren't
+- Setuptools will install only packages that aren't
   already installed in your default Python library path;
 - Maybe some package is a new version with backward incompatibilities that are
   conflicting with what we need.
@@ -55,32 +74,5 @@ If some package wasn't installed properly, check one of those situations:
 So, if you face one of above situations, please contact us so we can write it in
 our documentation.
 
-zc.buildout
------------
 
-An alternative to Virtualenv is to use zc.buildout. This package helps on the deploy
-process, because installs depended packages on their required versions. Helps also to
-find good solutions for tests, continuous integration and others.
-
-Before run installation you must install MySQL's client development package. On Ubuntu, the command is this::
-
-    sudo apt-get install libmysqlclient15-dev build-essential libxml2-dev libxslt-dev gcc python-dev
-
-"raminelrecipe" is just an extension of "djangorecipe" that changes the way of set the project
-'settings' module, ignoring the project name (instead of set it, on original version), because
-some projects do not use the project as the root module.
-
-After that::
-
-    python bootstrap.py
-    ./bin/buildout
-
-.. note::
-    We used the recipe "djangorecipe" to help on Django's projeto deploy. So, to run management
-    commands, you have to replace the old ``python manage.py`` for ``./bin/django/``.
-    
-    Examples: ./bin/django migrate; ./bin/django runserver
-
-    There is also a WSGI script automatically created in ./bin/ directory that should be used
-    by Apache or Lighttpd (or another web server).
 
