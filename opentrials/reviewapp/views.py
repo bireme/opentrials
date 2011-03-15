@@ -247,6 +247,7 @@ def terms_of_use(request):
         terms_form = TermsUseForm()
         
     form = terms_form
+
     return render_to_response('reviewapp/terms_of_use.html', {
                               'form': form, 
                               'page': flat_trans},

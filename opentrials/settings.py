@@ -20,6 +20,11 @@
 
 import os
 
+#check for write permission in static/attachments, for user's uploads
+ATTACHMENTS_FOLDER = './static/attachments'
+if not os.access(ATTACHMENTS_FOLDER, os.W_OK):
+    raise BaseException, "Folder %s must be writeable" % (ATTACHMENTS_FOLDER)
+
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
@@ -228,5 +233,5 @@ COMPRESS_OUTPUT_DIR = 'compressor-cache'
 # FIXME: why not use a simple "try: from settings_local import * except ImportError: pass" ?
 execfile(os.path.join(PROJECT_PATH,'settings_local.include'))
 
-OPENTRIALS_VERSION = 'v1.0.17' # this should be the deployed tag number
+OPENTRIALS_VERSION = 'v1.0.18' # this should be the deployed tag number
 
