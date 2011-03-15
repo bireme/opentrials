@@ -460,7 +460,7 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
                 if t['language'] == get_language() and t['scientific_title'].strip()][0]
     except IndexError:
         scientific_title = ct.scientific_title
-    
+
     return render_to_response('repository/clinicaltrial_detail_published.html',
                                 {'object': ct,
                                 'translations': translations,
@@ -1006,7 +1006,7 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
     - http://reddes.bvsalud.org/projects/clinical-trials/attachment/wiki/RegistrationDataModel/xmlsample.xml
     - http://reddes.bvsalud.org/projects/clinical-trials/attachment/wiki/RegistrationDataModel/ICTRPTrials.xml
     """
-    #import pdb; pdb.set_trace()
+
     try:
         fossil = Fossil.objects.get(pk=trial_fossil_id)
     except Fossil.DoesNotExist:

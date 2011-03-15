@@ -59,14 +59,14 @@ class InitialTrialForm(ReviewModelForm):
                                                     label=_('Recruitment Country'),
                                                     model=CountryCode,
                                                     label_field='description',)
-    utrn_number = forms.CharField(label=_('UTRN Number'), max_length=255, required=True)
+    utrn_number = forms.CharField(label=_('UTN Number'), max_length=255, required=True)
     language = forms.ChoiceField(label=_('Submission language'), 
                                  choices=settings.MANAGED_LANGUAGES_CHOICES)
 
     def clean_utrn_number(self):
         data = utrn_number_validate(self.cleaned_data['utrn_number'].strip())
         if ClinicalTrial.objects.filter(utrn_number=data).count() > 0:
-            raise forms.ValidationError(_('UTRN number already exists.'))
+            raise forms.ValidationError(_('UTN number already exists.'))
         return data
 
 class PrimarySponsorForm(ReviewModelForm):

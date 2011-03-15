@@ -172,7 +172,10 @@
         <div class="spacer"> </div>
     <h3>{% trans 'Trial Identification' %}</h3>
     <ul>
-
+        <li>
+            <span class="label">{% trans 'UTN Number' %}: </span>
+            <span class="value">{{ object.utrn_number }}</span>
+        </li>
         <li>
             <p><span class="label">{% trans 'Public Title' %}:</span></p>
             {% for t in translations|dictsortreversed:"language" %}
