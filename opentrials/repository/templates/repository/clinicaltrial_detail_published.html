@@ -82,6 +82,9 @@
     <h2>{{ register_number }}</h2>
     <h2>{{ scientific_title }}</h2>
     
+    <span class="label">{% trans 'Registration Date:' %}</span>
+    <span class="value">{{ fossil_created }}</span>
+    
     <h3>{% trans 'Scientific Title' %}:</h3>
         {% for t in translations|dictsortreversed:"language" %}
             {% if t.scientific_title %} 
@@ -92,12 +95,13 @@
             {% endif %}
         {% endfor %}
         <div class="spacer"> </div>
-    
-    <h3>{% trans 'Registration Date:' %}</h3>
-    <span class="value">{{ fossil_created }}</span>
 
     <h3>{% trans 'Trial Identification' %}</h3>
     <ul>
+        <li>
+            <span class="label">{% trans 'UTN Number' %}: </span>
+            <span class="value">{{ object.fossil.utrn_number }}</span>
+        </li>
         <li>
             <p><span class="label">{% trans 'Public Title' %}:</span></p>
             {% for t in translations|dictsortreversed:"language" %}
