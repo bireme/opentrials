@@ -464,9 +464,12 @@
             </ul>
         </li>
         <li>
-
             <span class="label">{% trans 'Planned Date of First Enrollment' %}:</span>
-            <span class="value">{{ object.enrollment_start_planned }}</span>
+            <span class="value">{{ enrollment_start_date }}</span>
+        </li>
+        <li>
+            <span class="label">{% trans 'Planned Date of Last Enrollment' %}:</span>
+            <span class="value">{{ enrollment_end_date }}</span>
         </li>
         <li>
             <table class="dataTable">
