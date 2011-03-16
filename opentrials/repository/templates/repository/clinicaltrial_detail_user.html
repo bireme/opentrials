@@ -464,12 +464,16 @@
             </ul>
         </li>
         <li>
-            <span class="label">{% trans 'Planned Date of First Enrollment' %}:</span>
-            <span class="value">{{ enrollment_start_date }}</span>
+            {% if enrollment_start_date %}
+                <span class="label">{% trans 'Planned Date of First Enrollment' %}:</span>
+                <span class="value">{{ enrollment_start_date }}</span>
+            {% endif %}
         </li>
         <li>
-            <span class="label">{% trans 'Planned Date of Last Enrollment' %}:</span>
-            <span class="value">{{ enrollment_end_date }}</span>
+            {% if enrollment_end_date %}
+                <span class="label">{% trans 'Planned Date of Last Enrollment' %}:</span>
+                <span class="value">{{ enrollment_end_date }}</span>
+            {% endif %}
         </li>
         <li>
             <table class="dataTable">
