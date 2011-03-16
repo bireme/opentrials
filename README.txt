@@ -38,6 +38,7 @@ Python libraries
 - mysql-python
 - lxml
 - Markdown
+- django-registration ( http://bitbucket.org/bireme/django-registration )
 - django_compressor
 - django-nose
 - django-rosetta
