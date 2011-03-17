@@ -283,7 +283,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
                                          editable=False, db_index=True)
                                          
     # TRDS 3 - (UTRN required for ICTRP DTD) Secondary Identifying Numbers
-    utrn_number = models.CharField(_('UTRN Number'), null=True, blank=True, 
+    utrn_number = models.CharField(_('UTN Number'), null=True, blank=True, 
                                 max_length=255, db_index=True)
     
     # TRDS 10a

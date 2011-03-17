@@ -409,6 +409,11 @@ def trial_view(request, trial_pk):
         except ObjectDoesNotExist:
             pass
     
+    enrollment_start_date = ct.enrollment_start_actual if \
+        ct.enrollment_start_actual is not None else ct.enrollment_start_planned
+    enrollment_end_date = ct.enrollment_end_actual if \
+        ct.enrollment_end_actual is not None else ct.enrollment_end_planned
+           
     return render_to_response('repository/clinicaltrial_detail_user.html',
                                 {'object': ct,
                                 'translations': translations,
@@ -423,6 +428,8 @@ def trial_view(request, trial_pk):
                                 'scientific_contacts': scientific_contacts_list,
                                 'public_contacts': public_contacts_list,
                                 'site_contacts': site_contacts_list,
+                                'enrollment_start_date': enrollment_start_date,
+                                'enrollment_end_date': enrollment_end_date,
                                 },
                                 context_instance=RequestContext(request))
 
@@ -460,7 +467,7 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
                 if t['language'] == get_language() and t['scientific_title'].strip()][0]
     except IndexError:
         scientific_title = ct.scientific_title
-    
+
     return render_to_response('repository/clinicaltrial_detail_published.html',
                                 {'object': ct,
                                 'translations': translations,
@@ -765,6 +772,7 @@ def step_5(request, trial_pk):
                                display_language=request.user.get_profile().preferred_language)
 
     forms = [form]
+
     return render_to_response('repository/trial_form.html',
                               {'forms':forms,
                                'trial_pk':trial_pk,
@@ -772,7 +780,8 @@ def step_5(request, trial_pk):
                                'steps': step_list(trial_pk),
                                'remarks':Remark.status_open.filter(submission=ct.submission,context=slugify(TRIAL_FORMS[4])),
                                'default_second_language': ct.submission.get_secondary_language(),
-                               'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
+                               'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],
+                               },
                                context_instance=RequestContext(request))
 
 
@@ -1006,7 +1015,7 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
     - http://reddes.bvsalud.org/projects/clinical-trials/attachment/wiki/RegistrationDataModel/xmlsample.xml
     - http://reddes.bvsalud.org/projects/clinical-trials/attachment/wiki/RegistrationDataModel/ICTRPTrials.xml
     """
-    #import pdb; pdb.set_trace()
+
     try:
         fossil = Fossil.objects.get(pk=trial_fossil_id)
     except Fossil.DoesNotExist:

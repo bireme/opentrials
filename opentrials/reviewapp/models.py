@@ -176,7 +176,7 @@ class RecruitmentCountry(models.Model):
 class Attachment(models.Model):
     class Meta:
         verbose_name_plural = _('Attachments')
-    file = models.FileField(_('File'), max_length=250, upload_to=settings.ATTACHMENTS_PATH)
+    file = models.FileField(_('File'), max_length=250, upload_to=settings.ATTACHMENTS_DIR)
     description = models.TextField(_('Description'),blank=True,max_length=8000)
     submission = models.ForeignKey(Submission)
     public = models.BooleanField(_('Public'))

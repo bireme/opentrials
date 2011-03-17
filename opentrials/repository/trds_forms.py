@@ -198,7 +198,7 @@ class TrialIdentificationForm(ReviewModelForm):
     def clean_utrn_number(self):
         data = utrn_number_validate(self.cleaned_data['utrn_number'].strip())
         if ClinicalTrial.objects.filter(utrn_number=data).exclude(pk=self.instance.pk).count() > 0:
-            raise forms.ValidationError(_('UTRN number already exists.'))
+            raise forms.ValidationError(_('UTN number already exists.'))
         return data
 
 

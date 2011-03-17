@@ -186,7 +186,7 @@ ACCOUNT_ACTIVATION_DAYS = 7
 # django-registration: set to False to suspend new user registrations
 REGISTRATION_OPEN = True
 
-ATTACHMENTS_PATH = 'attachments'
+ATTACHMENTS_DIR = 'attachments'
 SUBMISSIONS_XML_PATH = 'submissions_xml'
 
 # Name of Primary Registry
@@ -228,5 +228,14 @@ COMPRESS_OUTPUT_DIR = 'compressor-cache'
 # FIXME: why not use a simple "try: from settings_local import * except ImportError: pass" ?
 execfile(os.path.join(PROJECT_PATH,'settings_local.include'))
 
-OPENTRIALS_VERSION = 'v1.0.17' # this should be the deployed tag number
+#check for write permission in static/attachments, for user's uploads
+ATTACHMENTS_PATH = os.path.join(MEDIA_ROOT, ATTACHMENTS_DIR)
+if os.path.exists(ATTACHMENTS_PATH):
+    if not os.access(ATTACHMENTS_PATH, os.W_OK):
+        raise IOError('Attachments folder "%s" must be writeable' % 
+                                (ATTACHMENTS_PATH))
+else:
+    raise IOError('Attachments folder "%s" not found' % (ATTACHMENTS_PATH))
+
+OPENTRIALS_VERSION = 'v1.0.20' # this should be the deployed tag number
 

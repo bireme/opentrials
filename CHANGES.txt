@@ -1,0 +1,10 @@
+#What is new in v1.0.20:
+
+- Basic Search
+- UTRN label renomed to UTN
+- Recruitation dates in clinical trials preview
+- UTN number visible in clinical trial preview
+- Registration date visible for registred trials
+- Base Export in ICTRP xml format
+
+
