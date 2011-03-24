@@ -28,7 +28,7 @@ def all_xml_ictrp(trial_list, **kwargs):
     """Generates an ICTRP XML for a given Clinical Trial and returns as string."""
     return render_to_string(
             'repository/xml/all_xml_ictrp.xml', # old clinicaltrial_detail.xml
-            {'object_list': trial_list, 'reg_name': settings.REG_NAME},
+            {'trial_list': trial_list, 'reg_name': settings.REG_NAME},
             )            
 
 def xml_opentrials(trial, persons, include_translations=True, **kwargs):
