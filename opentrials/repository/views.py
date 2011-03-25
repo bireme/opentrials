@@ -1005,7 +1005,7 @@ def step_9(request, trial_pk):
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
-from repository.xml.generate import xml_ictrp, xml_opentrials, all_xml_ictrp
+from repository.xml.generate import xml_ictrp, xml_opentrials
 
 def trial_ictrp(request, trial_fossil_id, trial_version=None):
     """
@@ -1032,11 +1032,7 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
             raise Http404
 
     ct = fossil.get_object_fossil()
-    ct.hash_code = fossil.pk
-    ct.previous_revision = fossil.previous_revision
-    ct.version = fossil.revision_sequential
-
-    xml = xml_ictrp(ct)  
+    xml = xml_ictrp([fossil])  
 
     resp = HttpResponse(xml,
             mimetype = 'text/xml'
@@ -1048,21 +1044,9 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
 
 def all_trials_ictrp(request):
     
-    fossils = ClinicalTrial.fossils.published()
-    trials = []
-    
-    for fossil in fossils:
-        trial = {}
-        ct_fossil = fossil.get_object_fossil()
-        trial['ct_fossil'] = ct_fossil
-        trial['public_contact'] = ct_fossil.public_contact if ct_fossil.public_contact \
-                                            else ct_fossil.scientific_contact
-        trial['hash_code'] = fossil.pk
-        trial['previous_revision'] = fossil.previous_revision       
-        trial['version'] = fossil.revision_sequential
-        trials.append(trial)
+    trials = ClinicalTrial.fossils.published()    
+    xml = xml_ictrp(trials)    
 
-    xml = all_xml_ictrp(trials)    
     resp = HttpResponse(xml,
             mimetype = 'text/xml'
             )

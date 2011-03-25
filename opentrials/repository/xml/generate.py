@@ -17,19 +17,26 @@ VALID_FUNCTIONS = (
     'xml_opentrials_mod',
     )
 
-def xml_ictrp(trial, **kwargs):
+def xml_ictrp(fossils, **kwargs):
     """Generates an ICTRP XML for a given Clinical Trial and returns as string."""
-    return render_to_string(
-            'repository/xml/xml_ictrp.xml', # old clinicaltrial_detail.xml
-            {'object': trial, 'reg_name': settings.REG_NAME},
-            )
-            
-def all_xml_ictrp(trial_list, **kwargs):
-    """Generates an ICTRP XML for a given Clinical Trial and returns as string."""
+    
+    trials = []
+    
+    for fossil in fossils:
+        trial = {}
+        ct_fossil = fossil.get_object_fossil()
+        trial['ct_fossil'] = ct_fossil
+        trial['public_contact'] = ct_fossil.public_contact if ct_fossil.public_contact \
+                                            else ct_fossil.scientific_contact
+        trial['hash_code'] = fossil.pk
+        trial['previous_revision'] = fossil.previous_revision       
+        trial['version'] = fossil.revision_sequential
+        trials.append(trial)
+        
     return render_to_string(
             'repository/xml/all_xml_ictrp.xml', # old clinicaltrial_detail.xml
-            {'trial_list': trial_list, 'reg_name': settings.REG_NAME},
-            )            
+            {'trial_list': trials, 'reg_name': settings.REG_NAME},
+            )              
 
 def xml_opentrials(trial, persons, include_translations=True, **kwargs):
     """Generates an Opentrials XML for a given Clinical Trial and returns as string."""
