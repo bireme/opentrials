@@ -53,6 +53,7 @@ from fossil.fields import DictKeyAttribute
 from fossil.models import Fossil
 
 from utilities import user_in_group
+import datetime
 
 import choices
 import settings
@@ -467,12 +468,14 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
                 if t['language'] == get_language() and t['scientific_title'].strip()][0]
     except IndexError:
         scientific_title = ct.scientific_title
-
+    
+    created = datetime.datetime.strptime(ct.fossil['created'], "%Y-%m-%d %H:%M:%S")
+    
     return render_to_response('repository/clinicaltrial_detail_published.html',
                                 {'object': ct,
                                 'translations': translations,
                                 'host': request.get_host(),
-                                'fossil_created': ct.fossil['created'],
+                                'fossil_created': created,
                                 'register_number': trial_fossil_id,
                                 'scientific_title': scientific_title,
                                 'languages': get_sorted_languages(request)},
@@ -1002,7 +1005,7 @@ def step_9(request, trial_pk):
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
-from repository.xml.generate import xml_ictrp, xml_opentrials, all_xml_ictrp
+from repository.xml.generate import xml_ictrp, xml_opentrials
 
 def trial_ictrp(request, trial_fossil_id, trial_version=None):
     """
@@ -1029,11 +1032,7 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
             raise Http404
 
     ct = fossil.get_object_fossil()
-    ct.hash_code = fossil.pk
-    ct.previous_revision = fossil.previous_revision
-    ct.version = fossil.revision_sequential
-
-    xml = xml_ictrp(ct)  
+    xml = xml_ictrp([fossil])  
 
     resp = HttpResponse(xml,
             mimetype = 'text/xml'
@@ -1044,17 +1043,10 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
     return resp
 
 def all_trials_ictrp(request):
-    fossil_list = Fossil.objects.all()
+    
+    trials = ClinicalTrial.fossils.published()    
+    xml = xml_ictrp(trials)    
 
-    ct_list = []
-    for fossil in fossil_list:
-        ct = fossil.get_object_fossil()
-        ct.hash_code = fossil.pk
-        ct.previous_revision = fossil.previous_revision
-        ct.version = fossil.revision_sequential
-        ct_list.append(ct)
-
-    xml = all_xml_ictrp(ct_list)    
     resp = HttpResponse(xml,
             mimetype = 'text/xml'
             )

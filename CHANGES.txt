@@ -1,3 +1,10 @@
+#What is new in v1.0.21:
+
+- Bug fixed in Registration date format
+- Bug fixed for ictrp xml
+- When generating ictrp xml, if public contact doenst exist, scientific contact 
+will be used as a public contact
+
 #What is new in v1.0.20:
 
 - Basic Search
