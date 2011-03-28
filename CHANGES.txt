@@ -1,5 +1,6 @@
 #What is new in v1.0.21:
 
+- Implemented public scoreboard
 - Bug fixed in Registration date format
 - Bug fixed for ictrp xml
 - When generating ictrp xml, if public contact doenst exist, scientific contact 
