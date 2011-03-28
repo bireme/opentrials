@@ -7,6 +7,20 @@
 
 {% block sidebar %}
 <div class="sideBar">
+    
+    <div class="scoreboard">
+        <table border="0" cellpading="0" cellspacing="0">
+            <tr>
+                <td>
+                    <h2><a title="{% trans 'Scoreboard' %}" href="#">{% trans 'Scoreboard' %}</a></h2>
+                </td>
+            </tr>
+        </table>
+        <p>
+            {{scoreboard_text|safe}}
+        </p>
+    </div>
+    
     <div class="links news">
         {% load recruiting_trials %}
         {% get_latest_recruiting_trials 5 as latest_recruiting_trials %}
