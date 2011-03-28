@@ -57,8 +57,14 @@ def index(request):
     
     clinical_trials = fossil_trials.proxies(language=request.trials_language)
 
+    number_recruiting_trials = len(ClinicalTrial.fossils.recruiting())
+    number_registered_trials = len(ClinicalTrial.fossils.published())
+    
+    scoreboard_text = _("There are <span>%(registered)d</span> clinical trials registered, and <span>%(recruiting)d</span> of those are under recruitment.") % {'registered':number_registered_trials, 'recruiting':number_recruiting_trials}
+
     return render_to_response('reviewapp/index.html', {
                           'clinical_trials': clinical_trials,
+                          'scoreboard_text': scoreboard_text,
                           'page': flat_trans,},
                           context_instance=RequestContext(request))
 
