@@ -6,7 +6,7 @@
 
 {% block sidebar %}
 <div class="sideBar">
-    
+
     <div class="scoreboard">
         <table border="0" cellpading="0" cellspacing="0">
             <tr>
@@ -16,10 +16,12 @@
             </tr>
         </table>
         <p>
-            {{scoreboard_text|safe}}
+            {% load scoreboard %}
+            {% get_score_numbers as score %}
+            {{score|safe}}
         </p>
     </div>
-    
+
     {% if tweets %}
     <div class="twitter">
         <table border="0" cellpading="0" cellspacing="0">
@@ -63,4 +65,3 @@
     </div>
 </div>
 {% endblock %}
-

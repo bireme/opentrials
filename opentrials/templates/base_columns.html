@@ -7,7 +7,7 @@
 
 {% block sidebar %}
 <div class="sideBar">
-    
+
     <div class="scoreboard">
         <table border="0" cellpading="0" cellspacing="0">
             <tr>
@@ -17,10 +17,12 @@
             </tr>
         </table>
         <p>
-            {{scoreboard_text|safe}}
+            {% load scoreboard %}
+            {% get_score_numbers as score %}
+            {{score|safe}}
         </p>
     </div>
-    
+
     <div class="links news">
         {% load recruiting_trials %}
         {% get_latest_recruiting_trials 5 as latest_recruiting_trials %}
@@ -41,7 +43,7 @@
         {% endif %}
         </ul>
     </div>
-    
+
     <div class="news">
         {% cache 120 home_news_bar LANGUAGE_CODE %}
 
@@ -67,9 +69,8 @@
             <li>{% trans 'No news have been published.' %}</li>
         {% endif %}
         </ul>
-        
+
         {% endcache %}
     </div>
 </div>
 {% endblock %}
-
