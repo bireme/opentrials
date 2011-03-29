@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-28 15:16-0300\n"
+"POT-Creation-Date: 2011-03-29 12:07-0300\n"
 "PO-Revision-Date: 2010-12-15 21:44\n"
 "Last-Translator: <appec@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -162,7 +162,7 @@ msgstr "Regístrese"
 #: reviewapp/templates/reviewapp/news_detail.html:10
 #: reviewapp/templates/reviewapp/news_list.html:5
 #: reviewapp/templates/reviewapp/news_list.html:9 templates/base.html:107
-#: templates/base_columns.html:53
+#: templates/base_columns.html:55
 msgid "News"
 msgstr "Noticias"
 
@@ -195,29 +195,34 @@ msgid "Home"
 msgstr "Home"
 
 #: custom/ecgovbr/templates/base_columns.html:14
+#: templates/base_columns.html:15
+msgid "Scoreboard"
+msgstr ""
+
+#: custom/ecgovbr/templates/base_columns.html:30
 msgid "Latest Tweets"
 msgstr "Últimos Tweets"
 
-#: custom/ecgovbr/templates/base_columns.html:22
-#: custom/ecgovbr/templates/base_columns.html:24
+#: custom/ecgovbr/templates/base_columns.html:38
+#: custom/ecgovbr/templates/base_columns.html:40
 msgid "Follow us on Twitter!"
 msgstr "Acompáñenos en el Twitter!"
 
-#: custom/ecgovbr/templates/base_columns.html:36
-#: reviewapp/templates/reviewapp/index.html:21 templates/base_columns.html:30
-#: templates/base_columns.html.py:53
+#: custom/ecgovbr/templates/base_columns.html:52
+#: reviewapp/templates/reviewapp/index.html:21 templates/base_columns.html:32
+#: templates/base_columns.html.py:55
 msgid "List all"
 msgstr "Lista de todos los"
 
-#: custom/ecgovbr/templates/base_columns.html:36
+#: custom/ecgovbr/templates/base_columns.html:52
 #: repository/templates/repository/clinicaltrial_recruiting.html:9
-#: templates/base_columns.html:30
+#: templates/base_columns.html:32
 msgid "Recruiting"
 msgstr "Reclutamiento"
 
-#: custom/ecgovbr/templates/base_columns.html:46
+#: custom/ecgovbr/templates/base_columns.html:62
 #: repository/templates/repository/clinicaltrial_recruiting.html:59
-#: templates/base_columns.html:40
+#: templates/base_columns.html:42
 msgid "No clinical trials recruiting."
 msgstr "Ningún reclutamiento de ensayos clínicos."
 
@@ -1663,6 +1668,13 @@ msgstr ""
 msgid "Save and go to"
 msgstr ""
 
+#: repository/templatetags/scoreboard.py:25
+#, python-format
+msgid ""
+"There are <span>%(registered)d</span> clinical trials registered, and <span>"
+"%(recruiting)d</span> of those are under recruitment."
+msgstr ""
+
 #: repository/xml/loading.py:410
 msgid ""
 "To import parsed trials it's necessary to call method 'parse_opentrials' "
@@ -1797,30 +1809,23 @@ msgstr "Pendiente"
 msgid "Published"
 msgstr "Publicado"
 
-#: reviewapp/views.py:63
-#, python-format
-msgid ""
-"There are %(registered)d clinical trials registered, and %(recruiting)d of "
-"those are under recruitment."
-msgstr ""
-
-#: reviewapp/views.py:152
+#: reviewapp/views.py:145
 msgid "The submission was deleted successfully."
 msgstr ""
 
-#: reviewapp/views.py:154
+#: reviewapp/views.py:147
 msgid "This submission can not be deleted."
 msgstr ""
 
-#: reviewapp/views.py:367
+#: reviewapp/views.py:360
 msgid "XML files imported with success!"
 msgstr ""
 
-#: reviewapp/views.py:487
+#: reviewapp/views.py:480
 msgid "Message sent successfully."
 msgstr ""
 
-#: reviewapp/views.py:490
+#: reviewapp/views.py:483
 msgid "Please fill out all fields correctly."
 msgstr ""
 
@@ -1920,7 +1925,7 @@ msgid "News unavailable."
 msgstr "No hay FAQ disponibles."
 
 #: reviewapp/templates/reviewapp/news_list.html:52
-#: templates/base_columns.html:67
+#: templates/base_columns.html:69
 #, fuzzy
 msgid "No news have been published."
 msgstr "Plataforma de Ensayos Clínicos"
@@ -2117,14 +2122,6 @@ msgstr "Cambie su contraseña"
 #, fuzzy
 msgid "OpenTrials Platform"
 msgstr "Plataforma de Ensayos Clínicos"
-
-#: templates/base_columns.html:15
-msgid "blalj"
-msgstr ""
-
-#: templates/base_columns.html:15
-msgid "Scoreboard"
-msgstr ""
 
 #: templates/registration/registration_form.html:20
 #, fuzzy

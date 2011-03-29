@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-28 15:16-0300\n"
-"PO-Revision-Date: 2011-03-28 15:28\n"
+"POT-Creation-Date: 2011-03-29 12:07-0300\n"
+"PO-Revision-Date: 2011-03-29 14:18\n"
 "Last-Translator: <appec@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -160,7 +160,7 @@ msgstr "Registrar-se"
 #: reviewapp/templates/reviewapp/news_detail.html:10
 #: reviewapp/templates/reviewapp/news_list.html:5
 #: reviewapp/templates/reviewapp/news_list.html:9 templates/base.html:107
-#: templates/base_columns.html:53
+#: templates/base_columns.html:55
 msgid "News"
 msgstr "Notícias"
 
@@ -193,29 +193,34 @@ msgid "Home"
 msgstr "Home"
 
 #: custom/ecgovbr/templates/base_columns.html:14
+#: templates/base_columns.html:15
+msgid "Scoreboard"
+msgstr "Números do site"
+
+#: custom/ecgovbr/templates/base_columns.html:30
 msgid "Latest Tweets"
 msgstr "Últimos Tweets"
 
-#: custom/ecgovbr/templates/base_columns.html:22
-#: custom/ecgovbr/templates/base_columns.html:24
+#: custom/ecgovbr/templates/base_columns.html:38
+#: custom/ecgovbr/templates/base_columns.html:40
 msgid "Follow us on Twitter!"
 msgstr "Siga-nos no Twitter!"
 
-#: custom/ecgovbr/templates/base_columns.html:36
-#: reviewapp/templates/reviewapp/index.html:21 templates/base_columns.html:30
-#: templates/base_columns.html.py:53
+#: custom/ecgovbr/templates/base_columns.html:52
+#: reviewapp/templates/reviewapp/index.html:21 templates/base_columns.html:32
+#: templates/base_columns.html.py:55
 msgid "List all"
 msgstr "Listar todos"
 
-#: custom/ecgovbr/templates/base_columns.html:36
+#: custom/ecgovbr/templates/base_columns.html:52
 #: repository/templates/repository/clinicaltrial_recruiting.html:9
-#: templates/base_columns.html:30
+#: templates/base_columns.html:32
 msgid "Recruiting"
 msgstr "Recrutando"
 
-#: custom/ecgovbr/templates/base_columns.html:46
+#: custom/ecgovbr/templates/base_columns.html:62
 #: repository/templates/repository/clinicaltrial_recruiting.html:59
-#: templates/base_columns.html:40
+#: templates/base_columns.html:42
 msgid "No clinical trials recruiting."
 msgstr "Nenhum ensaio clínico recrutando."
 
@@ -1632,6 +1637,11 @@ msgstr "Salvar e continuar depois"
 msgid "Save and go to"
 msgstr "Salvar e ir para"
 
+#: repository/templatetags/scoreboard.py:25
+#, python-format
+msgid "There are <span>%(registered)d</span> clinical trials registered, and <span>%(recruiting)d</span> of those are under recruitment."
+msgstr "Existem <span>%(registered)d</span> ensaios registrados, dos quais <span>%(recruiting)d</span> estão recrutando."
+
 #: repository/xml/loading.py:410
 msgid "To import parsed trials it's necessary to call method 'parse_opentrials' before."
 msgstr ""
@@ -1761,28 +1771,23 @@ msgstr "Pendente"
 msgid "Published"
 msgstr "Publicado"
 
-#: reviewapp/views.py:63
-#, python-format
-msgid "There are %(registered)d clinical trials registered, and %(recruiting)d of those are under recruitment."
-msgstr "Existem %(registered)d ensaios registrados, dos quais %(recruiting)d estão recrutando."
-
-#: reviewapp/views.py:152
+#: reviewapp/views.py:145
 msgid "The submission was deleted successfully."
 msgstr "A submissão foi excluída com sucesso."
 
-#: reviewapp/views.py:154
+#: reviewapp/views.py:147
 msgid "This submission can not be deleted."
 msgstr "Esta submissão não pode ser excluída."
 
-#: reviewapp/views.py:367
+#: reviewapp/views.py:360
 msgid "XML files imported with success!"
 msgstr ""
 
-#: reviewapp/views.py:487
+#: reviewapp/views.py:480
 msgid "Message sent successfully."
 msgstr "Mensagem enviada com sucesso."
 
-#: reviewapp/views.py:490
+#: reviewapp/views.py:483
 msgid "Please fill out all fields correctly."
 msgstr "Por favor, preencha todos os campos corretamente."
 
@@ -1876,7 +1881,7 @@ msgid "News unavailable."
 msgstr "Notícias indisponíveis."
 
 #: reviewapp/templates/reviewapp/news_list.html:52
-#: templates/base_columns.html:67
+#: templates/base_columns.html:69
 msgid "No news have been published."
 msgstr "Nenhuma notícia foi publicada."
 
@@ -2068,14 +2073,6 @@ msgstr "Altere a sua senha"
 #: templates/base.html:8 templates/base.html.py:37
 msgid "OpenTrials Platform"
 msgstr "Plataforma OpenTrials"
-
-#: templates/base_columns.html:15
-msgid "blalj"
-msgstr ""
-
-#: templates/base_columns.html:15
-msgid "Scoreboard"
-msgstr "Números do site"
 
 #: templates/registration/registration_form.html:20
 msgid "resend the activation e-mail"
