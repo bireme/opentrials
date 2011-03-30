@@ -1,3 +1,13 @@
+#What is new in v1.0.21:
+
+- Private attachments now is visible for reviers.
+- Implemented public scoreboard
+- Bug fixed in Registration date format
+- Bug fixed for ictrp xml
+- When generating ictrp xml, if public contact doenst exist, scientific contact
+will be used as a public contact
+
+
 #What is new in v1.0.20:
 
 - Basic Search
@@ -6,5 +16,3 @@
 - UTN number visible in clinical trial preview
 - Registration date visible for registred trials
 - Base Export in ICTRP xml format
-
-

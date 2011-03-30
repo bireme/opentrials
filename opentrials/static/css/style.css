@@ -421,15 +421,16 @@ blockquote {
 .middle .news LI {
     margin-bottom: 26px;
 }
+
 .middle .news SMALL {
     color: #547e91;
 }
-.middle .news SMALL, .middle .news A {
+.middle .news SMALL, .middle .news A, middle .scoreboard A, .middle .scoreboard A:visited {
     display: block;
     color: #0c4762;
 }
 
-.middle .news SMALL, .middle .news A:hover {
+.middle .news SMALL, .middle .news A:hover, .middle .scoreboard A:hover {
     color: #1073a0;
 }
 
@@ -456,6 +457,11 @@ blockquote {
 }
 .middle .news A.NewsExcerpt:hover {
     text-decoration: underline;
+}
+
+.middle .scoreboard  SPAN {
+    font-size: 110%;
+    font-weight: bold;
 }
 
 .highlights {
