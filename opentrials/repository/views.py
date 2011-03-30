@@ -812,7 +812,7 @@ def step_6(request, trial_pk):
     else:
         form = StudyTypeForm(instance=ct,
                              default_second_language=ct.submission.get_secondary_language(),
-                             display_language=request.user.get_profile().preferred_language)
+                             display_language=request.trials_language)
 
     forms = [form]
     return render_to_response('repository/trial_form.html',
