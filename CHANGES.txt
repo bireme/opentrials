@@ -1,5 +1,6 @@
 #What is new in v1.0.21:
 
+- Fixing translations errors in forms (i.e. agreement form, in terms of use)
 - Private attachments now is visible for reviers.
 - Implemented public scoreboard
 - Bug fixed in Registration date format
