@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-03-29 12:07-0300\n"
-"PO-Revision-Date: 2011-03-29 14:18\n"
+"PO-Revision-Date: 2011-03-29 15:04\n"
 "Last-Translator: <appec@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1262,12 +1262,10 @@ msgid "Error"
 msgstr "Erro"
 
 #: repository/templates/admin/repository/publishedtrial/change_form.html:22
-#, fuzzy
 msgid "Set Display Off"
 msgstr "Exibir:"
 
 #: repository/templates/admin/repository/publishedtrial/change_form.html:24
-#, fuzzy
 msgid "Set Display On"
 msgstr "Exibindo:"
 
@@ -1285,17 +1283,14 @@ msgid "Trial Numbers"
 msgstr "Identificadores do ensaio"
 
 #: repository/templates/admin/repository/publishedtrial/change_form.html:44
-#, fuzzy
 msgid "Health Codes"
 msgstr "Cond. saúde"
 
 #: repository/templates/admin/repository/publishedtrial/change_form.html:46
-#, fuzzy
 msgid "Intervention Keywords"
 msgstr "Categorias das intervenções"
 
 #: repository/templates/admin/repository/publishedtrial/change_form.html:50
-#, fuzzy
 msgid "Health Keywords"
 msgstr "Cond. saúde"
 
@@ -1318,7 +1313,6 @@ msgid "Description"
 msgstr "Descrição"
 
 #: repository/templates/admin/repository/publishedtrial/change_form.html:100
-#, fuzzy
 msgid "ID Number"
 msgstr "Número do UTN"
 
@@ -2032,7 +2026,6 @@ msgid "Upload trial"
 msgstr "Enviar arquivo do ensaio"
 
 #: reviewapp/templates/reviewapp/upload_trial.html:15
-#, fuzzy
 msgid "Here you can upload an XML on ICTRP or OpenTrials XML standards to submit your clinical trial."
 msgstr "Aqui você pode fazer upload de um arquivo XML no padrão ICTRP para submeter seu ensaio clínico."
 
@@ -2041,9 +2034,8 @@ msgid "Mark/Unmark all"
 msgstr ""
 
 #: reviewapp/templates/reviewapp/upload_trial.html:26
-#, fuzzy
 msgid "Upload another file"
-msgstr "Escolha outro arquivo"
+msgstr "Escolher outro arquivo"
 
 #: reviewapp/templates/reviewapp/upload_trial.html:30
 msgid "The following trials has found in the uploaded file. Mark to import."
@@ -2054,7 +2046,6 @@ msgid "Existing"
 msgstr ""
 
 #: reviewapp/templates/reviewapp/upload_trial.html:37
-#, fuzzy
 msgid "New"
 msgstr "Notícias"
 
