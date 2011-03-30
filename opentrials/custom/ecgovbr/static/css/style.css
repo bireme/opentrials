@@ -449,6 +449,11 @@ blockquote {
     text-decoration: underline;
 }
 
+.middle .scoreboard  SPAN {
+    font-size: 110%;
+    font-weight: bold;
+}
+
 /* Twitter */
 .twitter {
     padding-right: 17px;
@@ -985,16 +990,13 @@ a.pnumber{
 	font-weight:bold;
 	text-decoration:none;
 	}
-.news table{
+
+.news table, .twitter table, .scoreboard table{
 	 background: url(../images/line.gif) bottom left no-repeat;
 	 min-width:59%;
 	 color:#808080;
 	}
-.twitter table{
-	 background: url(../images/line.gif) bottom left no-repeat;
-	 min-width:59%;
-	 color:#808080;
-	}
+
 td a.NewsExcerpt{
 	text-align:right;
 	font-weight:bold;
