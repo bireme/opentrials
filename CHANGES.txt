@@ -1,11 +1,12 @@
 #What is new in v1.0.21:
 
+- Fixing translations errors in several places
 - Fixing translations errors in forms (i.e. agreement form, in terms of use)
 - Private attachments now is visible for reviers.
 - Implemented public scoreboard
 - Bug fixed in Registration date format
 - Bug fixed for ictrp xml
-- When generating ictrp xml, if public contact doenst exist, scientific contact
+- When generating ictrp xml, if public contact doesn't exist, scientific contact
 will be used as a public contact
 
 
