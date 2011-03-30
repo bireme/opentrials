@@ -740,7 +740,7 @@ def step_4(request, trial_pk):
     else:
         form = InterventionForm(instance=ct,
                                 default_second_language=ct.submission.get_secondary_language(),
-                                display_language=request.user.get_profile().preferred_language)
+                                display_language=request.trials_language)
         specific_desc_formset = DescriptorFormSet(queryset=queryset)
 
     forms = [form]
@@ -776,7 +776,7 @@ def step_5(request, trial_pk):
     else:
         form = RecruitmentForm(instance=ct,
                                default_second_language=ct.submission.get_secondary_language(),
-                               display_language=request.user.get_profile().preferred_language)
+                               display_language=request.trials_language)
 
     forms = [form]
 

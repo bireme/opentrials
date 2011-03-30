@@ -303,7 +303,7 @@ def new_submission(request):
 
             return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))
     else:
-        initial_form = InitialTrialForm(user=request.user)
+        initial_form = InitialTrialForm(user=request.user, display_language=request.trials_language)
         #sponsor_form = PrimarySponsorForm()
 
     forms = [initial_form] #, sponsor_form]
