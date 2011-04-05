@@ -42,7 +42,7 @@ from utilities import safe_truncate
 from fossil.models import Fossil
 
 def index(request):
-        
+
     pages = FlatPage.objects.filter(url='/site-description/')
     if len(pages) < 1:
         flat_trans = None
@@ -52,9 +52,9 @@ def index(request):
             flat_trans = page.translations.get(language__iexact=request.LANGUAGE_CODE)
         except FlatPageTranslation.DoesNotExist:
             flat_trans = page
-        
+
     fossil_trials = ClinicalTrial.fossils.published().order_by('-creation')[:3]
-    
+
     clinical_trials = fossil_trials.proxies(language=request.trials_language)
 
     return render_to_response('reviewapp/index.html', {
@@ -69,7 +69,7 @@ def dashboard(request):
 
     if request.user.has_perm('reviewapp.review'):
         submissions_to_review = Submission.objects.filter(status=STATUS_PENDING)
-    
+
     return render_to_response('reviewapp/dashboard.html', locals(),
                                context_instance=RequestContext(request))
 
@@ -90,14 +90,14 @@ def reviewlist(request):
 
 @login_required
 def submissions_list(request):
-    
+
     # Gets the list of submissions
     submission = Submission.objects.filter(creator=request.user)
 
     # Submission list is optimized to retunrs only the necessary fields
     submission_list = submission.values('pk','created','creator','title','status',
             'trial__pk','trial__scientific_title')
-            
+
     for sub in submission_list:
         sub['can_delete'] = submission.get(pk=sub['pk']).can_delete()
 
@@ -120,9 +120,9 @@ def submissions_list(request):
             obj['short_title'] = safe_truncate(obj['title'], 120)
 
             yield obj
-    
+
     object_list = objects_with_title_translated()
-    
+
     return render_to_response('reviewapp/submission_list.html', locals(),
                                context_instance=RequestContext(request))
 
@@ -154,13 +154,13 @@ def user_profile(request):
     profile, created = UserProfile.objects.get_or_create(user=request.user)
     if request.method == 'POST':
         user_form = UserForm(request.POST,instance=request.user)
-        profile_form = UserProfileForm(request.POST,instance=profile)                     
+        profile_form = UserProfileForm(request.POST,instance=profile)
         password_form = PasswordChangeForm(request.user,request.POST)
 
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            
+
             next = request.GET.get('next', '')
             if next:
                 response = HttpResponseRedirect(next)
@@ -180,9 +180,9 @@ def user_profile(request):
 
     return render_to_response('reviewapp/user_profile.html', locals(),
         context_instance=RequestContext(request))
-        
+
 def resend_activation_email(request):
-    
+
     if request.method == 'POST':
         form = ResendActivationEmail(request.POST)
         if form.is_valid():
@@ -191,36 +191,36 @@ def resend_activation_email(request):
             if len(users) > 0:
                 user = users[0]
             else:
-                return render_to_response('reviewapp/resend_activation_email_complete.html', 
+                return render_to_response('reviewapp/resend_activation_email_complete.html',
                         {'user_exist': False, 'email': email},
                         context_instance=RequestContext(request))
-                        
+
             profiles = RegistrationProfile.objects.filter(user=user)
             if len(profiles) > 0:
                 profile = profiles[0]
-                
+
                 if profile.activation_key == 'ALREADY_ACTIVATED':
-                    return render_to_response('reviewapp/resend_activation_email_complete.html', 
+                    return render_to_response('reviewapp/resend_activation_email_complete.html',
                         {'user_requestor': user},
                         context_instance=RequestContext(request))
-                
+
                 if Site._meta.installed:
                     site = Site.objects.get_current()
                 else:
                     site = RequestSite(request)
-                
+
                 profile.send_activation_email(site)
 
-                return render_to_response('reviewapp/resend_activation_email_complete.html', 
+                return render_to_response('reviewapp/resend_activation_email_complete.html',
                     {'user_exist': True, 'email': email},
                     context_instance=RequestContext(request))
             else:
-                return render_to_response('reviewapp/resend_activation_email_complete.html', 
+                return render_to_response('reviewapp/resend_activation_email_complete.html',
                     {'user_exist': False, 'email': email},
                     context_instance=RequestContext(request))
     else:
         form = ResendActivationEmail()
-    
+
     return render_to_response('reviewapp/resend_activation_email.html', {
                               'form': form, },
                               context_instance=RequestContext(request))
@@ -237,22 +237,22 @@ def terms_of_use(request):
             flat_trans = page.translations.get(language__iexact=request.LANGUAGE_CODE)
         except FlatPageTranslation.DoesNotExist:
             flat_trans = page
-            
+
     if request.method == 'POST':
         terms_form = TermsUseForm(request.POST)
-        
+
         if terms_form.is_valid():
             return HttpResponseRedirect(reverse('reviewapp.new_submission'))
-    else: 
+    else:
         terms_form = TermsUseForm()
-        
+
     form = terms_form
 
     return render_to_response('reviewapp/terms_of_use.html', {
-                              'form': form, 
+                              'form': form,
                               'page': flat_trans},
                               context_instance=RequestContext(request))
-                              
+
 @login_required
 def new_submission(request):
 
@@ -288,7 +288,7 @@ def new_submission(request):
             #sponsor = sponsor_form.save(commit=False)
             #sponsor.creator = request.user
             #sponsor.save()
-            
+
             #trial.primary_sponsor = su.primary_sponsor = sponsor
             for country in initial_form.cleaned_data['recruitment_country']:
                 trial.recruitment_country.add(country) # What about the removed ones? FIXME
@@ -297,16 +297,16 @@ def new_submission(request):
 
             trial.save()
             su.save()
-            
+
             # sets the initial status of the fields
             su.init_fields_status()
 
             return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))
-    else: 
-        initial_form = InitialTrialForm(user=request.user)
-        #sponsor_form = PrimarySponsorForm() 
-        
-    forms = [initial_form] #, sponsor_form] 
+    else:
+        initial_form = InitialTrialForm(user=request.user, display_language=request.trials_language)
+        #sponsor_form = PrimarySponsorForm()
+
+    forms = [initial_form] #, sponsor_form]
     return render_to_response('reviewapp/new_submission.html', {
                               'forms': forms,},
                               context_instance=RequestContext(request))
@@ -355,7 +355,7 @@ def upload_trial(request):
 
                 parsed_trials = request.session[request.POST['session_key']]
                 parsed_trials = [t for t in parsed_trials if t[0]['trial_id'] in marked_trials]
-                
+
                 imported_trials = formset.import_file(parsed_trials, request.user)
 
                 messages.info(request, _('XML files imported with success!'))
@@ -390,7 +390,7 @@ def open_remark(request, submission_id, context):
 
             # Executes validation of current trial submission (for mandatory fields)
             trial_validator.validate(submission.trial)
-            
+
             return HttpResponseRedirect(reverse('repository.trialview',args=[submission.trial.id]))
 
     form = OpenRemarkForm()
@@ -409,15 +409,15 @@ def change_remark_status(request, remark_id, status):
 
     remark.status = status
     remark.save()
-    
+
     # Executes validation of current trial submission (for mandatory fields)
     trial_validator.validate(remark.submission.trial)
-    
+
     if request.is_ajax():
         return HttpResponse(remark.status, mimetype='text/plain')
     else:
         return HttpResponseRedirect(reverse('repository.views.trial_view', args=[remark.submission.trial.id]))
-        
+
 @login_required
 def delete_remark(request, remark_id):
 
@@ -427,12 +427,12 @@ def delete_remark(request, remark_id):
 
     trial = remark.submission.trial
     remark.delete()
-    
+
     # Executes validation of current trial submission (for mandatory fields)
     trial_validator.validate(trial)
-    
+
     return HttpResponseRedirect(reverse('repository.views.trial_view', args=[trial.id]))
-    
+
 @login_required
 def change_submission_status(request, submission_pk, status):
     if status not in SUBMISSION_TRANSITIONS:
@@ -441,9 +441,9 @@ def change_submission_status(request, submission_pk, status):
     if not request.user.is_staff and not user_in_group(request.user, 'reviewers'):
         return render_to_response('403.html', {'site': Site.objects.get_current(),},
                         context_instance=RequestContext(request))
-                        
+
     submission = get_object_or_404(Submission, id=int(submission_pk))
-    
+
     if status not in SUBMISSION_TRANSITIONS[submission.status]:
         return HttpResponse(status=403)
 
@@ -453,9 +453,9 @@ def change_submission_status(request, submission_pk, status):
 
     submission.status = status
     submission.save()
-    
+
     return HttpResponseRedirect(reverse('repository.views.trial_view', args=[submission.trial.id]))
-    
+
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -471,13 +471,13 @@ def contact(request):
                 c = Context({
                             'name': name,
                             'message': message,
-                            'site_domain': Site.objects.get_current().domain, 
+                            'site_domain': Site.objects.get_current().domain,
                             'site_name': Site.objects.get_current().name, })
                 send_mail(subject, t.render(c), from_email, recipient_list,
                           fail_silently=False)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            
+
             messages.success(request, _('Message sent successfully.'))
             return HttpResponseRedirect('/contact/')
         else:
@@ -487,30 +487,30 @@ def contact(request):
             form = ContactForm(user=request.user)
         else:
             form = ContactForm()
-    
+
     return render_to_response('reviewapp/contact.html', {
                               'form': form, },
                               context_instance=RequestContext(request))
-                              
+
 def news_list(request):
 
     object_list = News.objects.filter(status__exact='published').order_by('-created',)
-    
+
     for obj in object_list:
         try:
             trans = obj.translations.get(language__iexact=request.LANGUAGE_CODE)
         except NewsTranslation.DoesNotExist:
             trans = None
-        
+
         if trans:
             if trans.title:
                 obj.title = trans.title
             if trans.text:
                 obj.text = trans.text
-                
+
     # pagination
     paginator = Paginator(object_list, getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10))
-    
+
     try:
         page = int(request.GET.get('page', '1'))
     except ValueError:
@@ -520,28 +520,27 @@ def news_list(request):
         objects = paginator.page(page)
     except (EmptyPage, InvalidPage):
         objects = paginator.page(paginator.num_pages)
-    
+
     return render_to_response('reviewapp/news_list.html', {
-                              'objects': objects, 
+                              'objects': objects,
                               'page': page,
                               'paginator': paginator, },
                                context_instance=RequestContext(request))
 
 def news_detail(request, object_id):
     obj = get_object_or_404(News, id=int(object_id))
-    
+
     try:
         trans = obj.translations.get(language__iexact=request.LANGUAGE_CODE)
     except NewsTranslation.DoesNotExist:
         trans = None
-    
+
     if trans:
         if trans.title:
             obj.title = trans.title
         if trans.text:
             obj.text = trans.text
-    
+
     return render_to_response('reviewapp/news_detail.html', {
                               'object': obj, },
                                context_instance=RequestContext(request))
-

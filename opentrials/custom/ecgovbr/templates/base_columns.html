@@ -6,6 +6,42 @@
 
 {% block sidebar %}
 <div class="sideBar">
+
+    <div class="scoreboard">
+        <table border="0" cellpading="0" cellspacing="0">
+            <tr>
+                <td>
+                    <h2>{% trans 'Scoreboard' %}</h2>
+                </td>
+            </tr>
+        </table>
+        <p>
+            {% load scoreboard %}
+            {% get_score_numbers as score %}
+            {{score|safe}}
+        </p>
+    </div>
+    
+    <div class="links news">
+        {% load recruiting_trials %}
+        {% get_latest_recruiting_trials 5 as latest_recruiting_trials %}
+        <table border="0" cellpading="0" cellspacing="0">
+        <tr>
+            <td>
+                <h2><a title="{% trans 'List all' %}" href="{% url repository.recruiting %}">{% trans 'Recruiting' %}</a></h2>
+            </td>
+        </tr>
+        </table>
+        <ul>
+        {% if latest_recruiting_trials %}
+            {% for ct in latest_recruiting_trials %}
+                <li><a class="NewsTitle" href="{% url repository.trial_registered ct.trial_id %}">{{ ct.short_title }}</a></li>
+            {% endfor %}
+        {% else %}
+            <li>{% trans 'No clinical trials recruiting.' %}</li>
+        {% endif %}
+        </ul>
+    </div>
     {% if tweets %}
     <div class="twitter">
         <table border="0" cellpading="0" cellspacing="0">
@@ -27,26 +63,6 @@
     <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
     <script type="text/javascript">{{ tweets }}</script>
     {% endif %}
-    <div class="links news">
-        {% load recruiting_trials %}
-        {% get_latest_recruiting_trials 5 as latest_recruiting_trials %}
-        <table border="0" cellpading="0" cellspacing="0">
-        <tr>
-            <td>
-                <h2><a title="{% trans 'List all' %}" href="{% url repository.recruiting %}">{% trans 'Recruiting' %}</a></h2>
-            </td>
-        </tr>
-        </table>
-        <ul>
-        {% if latest_recruiting_trials %}
-            {% for ct in latest_recruiting_trials %}
-                <li><a class="NewsTitle" href="{% url repository.trial_registered ct.trial_id %}">{{ ct.short_title }}</a></li>
-            {% endfor %}
-        {% else %}
-            <li>{% trans 'No clinical trials recruiting.' %}</li>
-        {% endif %}
-        </ul>
-    </div>
+
 </div>
 {% endblock %}
-
