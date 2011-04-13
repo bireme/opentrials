@@ -13,7 +13,7 @@ class SimpleVocabularyManager(models.Manager):
 
 class SimpleVocabulary(models.Model):
     objects = SimpleVocabularyManager()
-    
+
     label = models.CharField(_('Label'), max_length=255, unique=True)
     description = models.TextField(_('Description'), max_length=2000,
                                    blank=True)
@@ -26,10 +26,10 @@ class SimpleVocabulary(models.Model):
 
     def __unicode__(self):
         return self.label
-    
+
     def natural_key(self):
         return (self.label,)
-    
+
     def save(self, *args, **kwargs):
         super(SimpleVocabulary, self).save()
         if self.order == 0:
@@ -114,6 +114,12 @@ class StudyAllocation(SimpleVocabulary):
 
 class StudyPhase(SimpleVocabulary):
     ''' TRDS 15c '''
+
+class TimePerspective(SimpleVocabulary):
+    ''' Observational Fields '''
+
+class ObservationalStudyDesign(SimpleVocabulary):
+    ''' More Observational Fields'''
 
 class RecruitmentStatus(SimpleVocabulary):
     ''' TRDS 18 '''
