@@ -19502,6 +19502,188 @@
     }
   }, 
   {
+    "pk": 2049, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "N\u00e3o se aplica", 
+      "label": "N/A", 
+      "content_type": [
+        "vocabulary", 
+        "timeperspective"
+      ], 
+      "language": "pt-br", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 2050, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Coorte", 
+      "content_type": [
+        "vocabulary", 
+        "observationalstudydesign"
+      ], 
+      "language": "pt-br", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 2051, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Caso-controle", 
+      "content_type": [
+        "vocabulary", 
+        "observationalstudydesign"
+      ], 
+      "language": "pt-br", 
+      "object_id": 3
+    }
+  }, 
+  {
+    "pk": 2052, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Caso", 
+      "content_type": [
+        "vocabulary", 
+        "observationalstudydesign"
+      ], 
+      "language": "pt-br", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 2053, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Caso cruzado", 
+      "content_type": [
+        "vocabulary", 
+        "observationalstudydesign"
+      ], 
+      "language": "pt-br", 
+      "object_id": 5
+    }
+  }, 
+  {
+    "pk": 2054, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Ecol\u00f3gico ou comunidade", 
+      "content_type": [
+        "vocabulary", 
+        "observationalstudydesign"
+      ], 
+      "language": "pt-br", 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 2055, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Base familiar", 
+      "content_type": [
+        "vocabulary", 
+        "observationalstudydesign"
+      ], 
+      "language": "pt-br", 
+      "object_id": 7
+    }
+  }, 
+  {
+    "pk": 2056, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Outro", 
+      "content_type": [
+        "vocabulary", 
+        "observationalstudydesign"
+      ], 
+      "language": "pt-br", 
+      "object_id": 8
+    }
+  }, 
+  {
+    "pk": 2057, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Prospectivo", 
+      "content_type": [
+        "vocabulary", 
+        "timeperspective"
+      ], 
+      "language": "pt-br", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 2058, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Retrospectivo", 
+      "content_type": [
+        "vocabulary", 
+        "timeperspective"
+      ], 
+      "language": "pt-br", 
+      "object_id": 3
+    }
+  }, 
+  {
+    "pk": 2059, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Retrospectivo e prospectivo", 
+      "content_type": [
+        "vocabulary", 
+        "timeperspective"
+      ], 
+      "language": "pt-br", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 2060, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Transversal", 
+      "content_type": [
+        "vocabulary", 
+        "timeperspective"
+      ], 
+      "language": "pt-br", 
+      "object_id": 5
+    }
+  }, 
+  {
+    "pk": 2061, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Outro", 
+      "content_type": [
+        "vocabulary", 
+        "timeperspective"
+      ], 
+      "language": "pt-br", 
+      "object_id": 6
+    }
+  }, 
+  {
     "pk": 2, 
     "model": "vocabulary.countrycode", 
     "fields": {
@@ -22214,6 +22396,15 @@
     }
   }, 
   {
+    "pk": 6, 
+    "model": "vocabulary.interventionassigment", 
+    "fields": {
+      "order": 60, 
+      "description": "", 
+      "label": "N/A"
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "vocabulary.studymasking", 
     "fields": {
@@ -22250,6 +22441,15 @@
     }
   }, 
   {
+    "pk": 5, 
+    "model": "vocabulary.studymasking", 
+    "fields": {
+      "order": 50, 
+      "description": "", 
+      "label": "N/A"
+    }
+  }, 
+  {
     "pk": 1, 
     "model": "vocabulary.studyallocation", 
     "fields": {
@@ -22274,6 +22474,15 @@
       "order": 30, 
       "description": "", 
       "label": "single-arm-study"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "vocabulary.studyallocation", 
+    "fields": {
+      "order": 40, 
+      "description": "", 
+      "label": "N/A"
     }
   }, 
   {
@@ -22346,6 +22555,132 @@
       "order": 90, 
       "description": "phase zero", 
       "label": "0"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "vocabulary.timeperspective", 
+    "fields": {
+      "order": 10, 
+      "description": "Not Applicable", 
+      "label": "N/A"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.timeperspective", 
+    "fields": {
+      "order": 20, 
+      "description": "", 
+      "label": "Prospective"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.timeperspective", 
+    "fields": {
+      "order": 30, 
+      "description": "", 
+      "label": "Retrospective"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "vocabulary.timeperspective", 
+    "fields": {
+      "order": 40, 
+      "description": "", 
+      "label": "Restropective and prospective "
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "vocabulary.timeperspective", 
+    "fields": {
+      "order": 50, 
+      "description": "", 
+      "label": "Cross-sectional "
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "vocabulary.timeperspective", 
+    "fields": {
+      "order": 60, 
+      "description": "", 
+      "label": "Other "
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "vocabulary.observationalstudydesign", 
+    "fields": {
+      "order": 10, 
+      "description": "", 
+      "label": "N/A"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.observationalstudydesign", 
+    "fields": {
+      "order": 20, 
+      "description": "", 
+      "label": "Cohort"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.observationalstudydesign", 
+    "fields": {
+      "order": 30, 
+      "description": "", 
+      "label": "Case-control"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "vocabulary.observationalstudydesign", 
+    "fields": {
+      "order": 40, 
+      "description": "", 
+      "label": "Case study"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "vocabulary.observationalstudydesign", 
+    "fields": {
+      "order": 50, 
+      "description": "", 
+      "label": "Crossover"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "vocabulary.observationalstudydesign", 
+    "fields": {
+      "order": 60, 
+      "description": "", 
+      "label": "Ecologic or community studies"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "vocabulary.observationalstudydesign", 
+    "fields": {
+      "order": 70, 
+      "description": "", 
+      "label": "Family-based"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "vocabulary.observationalstudydesign", 
+    "fields": {
+      "order": 80, 
+      "description": "", 
+      "label": "Other"
     }
   }, 
   {
