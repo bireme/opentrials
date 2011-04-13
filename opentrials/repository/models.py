@@ -19,8 +19,9 @@ from time import sleep
 from utilities import safe_truncate
 
 from vocabulary.models import CountryCode, StudyPhase, StudyType, RecruitmentStatus
-from vocabulary.models import InterventionCode, InstitutionType
-from vocabulary.models import StudyPurpose, InterventionAssigment, StudyMasking, StudyAllocation
+from vocabulary.models import InterventionCode, InstitutionType, TimePerspective
+from vocabulary.models import StudyPurpose, InterventionAssigment, StudyMasking
+from vocabulary.models import ObservationalStudyDesign, StudyAllocation
 
 from polyglot.models import Translation
 from deleting.models import ControlledDeletion, NotDeletedManager
@@ -38,6 +39,9 @@ from serializers import serialize_trialnumber
 from serializers import serialize_trialsupportsource
 from serializers import serialize_trialsecondarysponsor
 
+def get_time_perspective_default():
+    return TimePerspective.objects.get(id=1)
+
 def length_truncate(text, max_size=240):
     text = text.split('|')
     size=max_size/len(text)
@@ -48,7 +52,7 @@ def length_truncate(text, max_size=240):
 # remove vowels to avoid forming words
 BASE28 = ''.join(d for d in string.digits+string.ascii_lowercase
                    if d not in '1l0aeiou')
-                   
+
 TRIAL_ID_TRIES = 3
 
 def generate_trial_id(prefix, num_digits):
@@ -102,7 +106,7 @@ class TrialRegistrationDataSetModel(ControlledDeletion):
 
     class Meta:
         abstract = True
- 
+
 class TrialsPublished(NotDeletedManager):
     def get_query_set(self):
         return super(TrialsPublished, self).get_query_set().filter(status__exact='published')
@@ -151,7 +155,7 @@ class TrialsFossilManager(FossilManager):
                     self.indexed(display='True', scientific_contacts__icontains=q).filter(is_most_recent=True) |\
                     self.indexed(display='True', utrn_number__icontains=q).filter(is_most_recent=True) |\
                     self.indexed(display='True', secondary_ids__icontains=q).filter(is_most_recent=True)
-        
+
     def archived(self):
         return self.indexed(display='True').filter(is_most_recent=False)
 
@@ -186,7 +190,7 @@ class PublishedTrial(Fossil):
             return self.indexers.key('status').value
         except ObjectDoesNotExist:
             return 'published' if self.is_most_recent else 'archived'
-            
+
     @property
     def scientific_title(self):
         try:
@@ -200,56 +204,56 @@ class PublishedTrial(Fossil):
             return self.indexeds.key('public_title').value
         except ObjectDoesNotExist:
             return ''
-    
+
     @property
     def acronym(self):
         try:
             return self.indexeds.key('acronym').value
         except ObjectDoesNotExist:
             return ''
-    
+
     @property
     def scientific_acronym(self):
         try:
             return self.indexeds.key('scientific_acronym').value
         except ObjectDoesNotExist:
             return ''
-            
+
     @property
     def scientific_acronym_expansion(self):
         try:
             return self.indexeds.key('scientific_acronym_expansion').value
         except ObjectDoesNotExist:
-            return ''     
-            
+            return ''
+
     @property
     def hc_freetext(self):
         try:
             return self.indexeds.key('hc_freetext').value
         except ObjectDoesNotExist:
-            return ''     
-    
+            return ''
+
     @property
     def i_freetext(self):
         try:
             return self.indexeds.key('i_freetext').value
         except ObjectDoesNotExist:
-            return ''     
-    
+            return ''
+
     @property
     def primary_sponsor(self):
         try:
             return self.indexeds.key('primary_sponsor').value
         except ObjectDoesNotExist:
-            return ''     
-    
+            return ''
+
     @property
     def scientific_contacts(self):
         try:
             return self.indexeds.key('scientific_contacts').value
         except ObjectDoesNotExist:
-            return ''     
-                 
+            return ''
+
     @property
     def utrn_number(self):
         try:
@@ -261,7 +265,7 @@ class PublishedTrial(Fossil):
         try:
             return self.indexeds.key('secondary_ids').value
         except ObjectDoesNotExist:
-            return ''                
+            return ''
 
     def get_object_fossil(self, force_load=False):
         if force_load or not getattr(self, '_object_fossil', None):
@@ -281,11 +285,11 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     # TRDS 2
     date_registration = models.DateTimeField(_('Date of Registration'), null=True,
                                          editable=False, db_index=True)
-                                         
+
     # TRDS 3 - (UTRN required for ICTRP DTD) Secondary Identifying Numbers
-    utrn_number = models.CharField(_('UTN Number'), null=True, blank=True, 
+    utrn_number = models.CharField(_('UTN Number'), null=True, blank=True,
                                 max_length=255, db_index=True)
-    
+
     # TRDS 10a
     scientific_title = models.TextField(_('Scientific Title'),
                                         max_length=2000)
@@ -396,6 +400,19 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     recruitment_country = models.ManyToManyField(CountryCode,
         help_text=u'Several countries may be selected, one at a time')
 
+    #Observational filelds
+    is_observational = models.BooleanField(default=False, null=False)
+
+
+    time_perspective = models.ForeignKey(TimePerspective, null=False, blank=True,
+                                   default=get_time_perspective_default,
+                                   verbose_name=_('Time Perspective'))
+
+    observational_study_design = models.ForeignKey(ObservationalStudyDesign,
+                                                   null=True, blank=True,
+                                                   verbose_name=_('Observational Study Design')
+                                                   )
+
     ################################### internal use, administrative fields ###
     created = models.DateTimeField(default=datetime.now, editable=False)
     updated = models.DateTimeField(_('Last Update'), null=True, editable=False)
@@ -411,7 +428,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
                                 default=settings.DEFAULT_SUBMISSION_LANGUAGE)
 
     translations = generic.GenericRelation('ClinicalTrialTranslation')
-    
+
     class Meta:
         ordering = ['-updated',]
 
@@ -421,7 +438,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         if self.status == choices.PUBLISHED_STATUS and not self.trial_id:
             # assigns the date of publication/registration
             self.date_registration = datetime.now()
-            
+
             for i in range(TRIAL_ID_TRIES):
                 self.trial_id = generate_trial_id(settings.TRIAL_ID_PREFIX, settings.TRIAL_ID_DIGITS)
                 try:
@@ -441,7 +458,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
 
     def short_title(self):
         return safe_truncate(self.main_title(), 120)
-        
+
     def very_short_title(self):
         tit = u'%s - %s' % (self.identifier(),
                             self.short_title())
@@ -570,19 +587,19 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         fossil.set_indexer(key='trial_id', value=self.trial_id)
         fossil.set_indexer(key='status', value=self.status)
         fossil.set_indexer(key='display', value='True')
-    
+
         fossil.set_indexer(key='scientific_title', value=length_truncate("%s%s" % (self.scientific_title, '|'.join([trans.scientific_title for trans in self.translations.all()]))))
         fossil.set_indexer(key='public_title', value=length_truncate("%s%s" % (self.public_title, '|'.join([trans.public_title for trans in self.translations.all()]))))
-        fossil.set_indexer(key='acronym', value="%s%s" % (self.acronym, '|'.join([trans.acronym for trans in self.translations.all()]))) 
-        fossil.set_indexer(key='scientific_acronym', value="%s%s" % (self.scientific_acronym, '|'.join([trans.scientific_acronym for trans in self.translations.all()]))) 
-        fossil.set_indexer(key='scientific_acronym_expansion', value="%s%s" % (self.scientific_acronym_expansion, '|'.join([trans.scientific_acronym_expansion for trans in self.translations.all()]))) 
+        fossil.set_indexer(key='acronym', value="%s%s" % (self.acronym, '|'.join([trans.acronym for trans in self.translations.all()])))
+        fossil.set_indexer(key='scientific_acronym', value="%s%s" % (self.scientific_acronym, '|'.join([trans.scientific_acronym for trans in self.translations.all()])))
+        fossil.set_indexer(key='scientific_acronym_expansion', value="%s%s" % (self.scientific_acronym_expansion, '|'.join([trans.scientific_acronym_expansion for trans in self.translations.all()])))
         fossil.set_indexer(key='hc_freetext', value=length_truncate("%s%s" % (self.hc_freetext, '|'.join([trans.hc_freetext for trans in self.translations.all()]))))
         fossil.set_indexer(key='i_freetext', value=length_truncate("%s%s" % (self.i_freetext, '|'.join([trans.i_freetext for trans in self.translations.all()]))))
-        fossil.set_indexer(key='primary_sponsor', value=self.primary_sponsor.name)         
-        fossil.set_indexer(key='scientific_contacts', value="%s" % ('|'.join(["%s|%s" % (contact.name(),contact.email) for contact in self.scientific_contacts()]))) 
-        fossil.set_indexer(key='utrn_number', value=self.utrn_number)         
-        fossil.set_indexer(key='secondary_ids', value="%s" % ('|'.join([t_number.id_number for t_number in self.trial_number()]))) 
-	         
+        fossil.set_indexer(key='primary_sponsor', value=self.primary_sponsor.name)
+        fossil.set_indexer(key='scientific_contacts', value="%s" % ('|'.join(["%s|%s" % (contact.name(),contact.email) for contact in self.scientific_contacts()])))
+        fossil.set_indexer(key='utrn_number', value=self.utrn_number)
+        fossil.set_indexer(key='secondary_ids', value="%s" % ('|'.join([t_number.id_number for t_number in self.trial_number()])))
+
 
         if self.recruitment_status:
             fossil.set_indexer(key='recruitment_status', value=self.recruitment_status.label)
@@ -696,7 +713,7 @@ class Contact(TrialRegistrationDataSetModel):
                                 verbose_name=_('Country'),)
     zip = models.CharField(_('Postal Code'), max_length=50, blank=True)
     telephone = models.CharField(_('Telephone'), max_length=255, blank=True)
-    
+
     creator = models.ForeignKey(User, related_name='contact_creator', editable=False)
 
     def name(self):
@@ -765,7 +782,7 @@ class Outcome(TrialRegistrationDataSetModel):
 
     def __unicode__(self):
         return safe_truncate(self.description, 80)
-        
+
     def translations_all(self):
         return self.translations.all()
 
@@ -798,7 +815,7 @@ class Descriptor(TrialRegistrationDataSetModel):
 
     def trial_identifier(self):
         return self.trial.identifier()
-        
+
     def translations_all(self):
         return self.translations.all()
 
@@ -820,4 +837,3 @@ def clinicaltrial_post_save(sender, instance, signal, **kwargs):
         instance.create_fossil()
 
 post_save.connect(clinicaltrial_post_save, sender=ClinicalTrial)
-
