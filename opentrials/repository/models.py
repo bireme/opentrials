@@ -404,7 +404,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     is_observational = models.BooleanField(default=False, null=False)
 
 
-    time_perspective = models.ForeignKey(TimePerspective, null=False, blank=True,
+    time_perspective = models.ForeignKey(TimePerspective, null=True, blank=True,
                                    default=get_time_perspective_default,
                                    verbose_name=_('Time Perspective'))
 

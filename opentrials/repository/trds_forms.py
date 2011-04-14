@@ -541,7 +541,7 @@ class StudyTypeForm(ReviewModelForm):
     observational_study_design = MultilingualModelChoiceField(
         label=_('Observational Study Design'),
         queryset=ObservationalStudyDesign.objects.all(),
-        required=False,
+        required=True,
         label_field='label',
         )
 
