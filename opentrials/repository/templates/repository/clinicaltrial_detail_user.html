@@ -46,7 +46,7 @@
       width: 31%;
       float: left;
     }
-    
+
     div.title h2 {
       color: #CCC;
       font-size: 18pt;
@@ -108,12 +108,12 @@
                 {% if review_mode %}
                     {% if remark.status == 'open' %}
                         <br />{% trans 'Status' %}: {% trans "Open (awaiting revision)" %}
-                        
+
                         <form action="{% url reviewapp.delete_remark remark.pk %}" method="POST">
                         {% csrf_token %}
                         <input id="remark-delete" type="submit" style="font-size: 80%;" value="{% trans 'Delete' %}" title="{% trans 'Delete' %}" />
                         </form>
-                        
+
                     {% endif %}
                     {% if remark.status == 'acknowledged' %}
                         <br />{% trans 'Status' %}: {% trans "Revised" %}
@@ -149,10 +149,33 @@
         </ul>
     </div>
     {% endif %}
-    
+
     <h2>{{ object.scientific_title }}</h2>
 
-    
+
+    <h3>{% trans 'Study Type' %}:</h3>
+        {% if object.is_observational %}
+            <p>{% trans 'Observational Study' %}</p>
+        {% else %}
+            <p>{% trans 'Intervention Study' %}</p>
+        {% endif %}
+        <div class="spacer"> </div>
+
+    {% if object.is_observational %}
+    <h3>{% trans 'Observational Study Fields' %}:</h3>
+    <ul>
+        <li>
+            <span class="label">{% trans 'Time Perspective' %}: </span>
+            <span class="value">{{ object.time_perspective }}</span>
+        </li>
+        <li>
+            <span class="label">{% trans 'Observational Study Design' %}: </span>
+            <span class="value">{{ object.observational_study_design }}</span>
+        </li>
+    </ul>
+    {% endif %}
+    <div class="spacer"> </div>
+
     <h3>{% trans 'Scientific Title' %}:</h3>
         {% for t in translations|dictsortreversed:"language" %}
             {% if t.scientific_title %}
@@ -170,6 +193,7 @@
             </div>
         {% endif %}
         <div class="spacer"> </div>
+
     <h3>{% trans 'Trial Identification' %}</h3>
     <ul>
         <li>
@@ -248,11 +272,11 @@
             </ul>
             {% endfor %}
         </li>
-        
+
         {% if perms.reviewapp.add_remark %}
             <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Trial Identification'|slugify %}">{% trans 'Remark' %}</a></li>
         {% endif %}
-        
+
     </ul>
 
     <h3>{% trans 'Sponsors' %}</h3>
@@ -288,13 +312,13 @@
             {% endfor %}
             </ul>
         </li>
-        
+
         {% if perms.reviewapp.add_remark %}
             <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Sponsors'|slugify %}">{% trans 'Remark' %}</a></li>
         {% endif %}
-        
+
     </ul>
-    
+
     <h3>{% trans 'Health Conditions' %}</h3>
     <ul>
         <li>
@@ -378,9 +402,9 @@
         {% if perms.reviewapp.add_remark %}
             <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Health Conditions'|slugify %}">{% trans 'Remark' %}</a></li>
         {% endif %}
-        
+
     </ul>
-    
+
     <h3>{% trans 'Interventions' %}</h3>
     <ul>
         <li class="subset">
@@ -445,9 +469,9 @@
         {% if perms.reviewapp.add_remark %}
             <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Interventions'|slugify %}">{% trans 'Remark' %}</a></li>
         {% endif %}
-        
+
     </ul>
-    
+
     <h3>{% trans 'Recruitment' %}</h3>
     <ul>
         <li>
@@ -533,11 +557,11 @@
             {% endif %}
         </li>
         <div class="spacer"> </div>
-        
-        {% if perms.reviewapp.add_remark %}  
+
+        {% if perms.reviewapp.add_remark %}
             <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Recruitment'|slugify %}">{% trans 'Remark' %}</a></li>
         {% endif %}
-        
+
     </ul>
 
     <h3>{% trans 'Study Type' %}</h3>
@@ -588,12 +612,12 @@
             </table>
         </li>
 
-        {% if perms.reviewapp.add_remark %}   
+        {% if perms.reviewapp.add_remark %}
             <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Study Type'|slugify %}">{% trans 'Remark' %}</a></li>
         {% endif %}
-        
+
     </ul>
-    
+
     <h3>{% trans 'Outcomes' %}</h3>
     <ul>
         <li>
@@ -640,12 +664,12 @@
 
             {% endfor %}
         </li>
-        
+
         {% if perms.reviewapp.add_remark %}
             <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Outcomes'|slugify %}">{% trans 'Remark' %}</a></li>
         {% endif %}
     </ul>
-    
+
     <h3>{% trans 'Contacts' %}</h3>
     <ul>
         {% if object.public_contacts %}
@@ -701,7 +725,7 @@
             {% endfor %}
         </li>
         {% endif %}
-        
+
         {% if object.scientific_contacts %}
         <li class="subset">
             <span class="legend">{% trans 'Contacts for Scientific Queries' %}</span>
@@ -809,30 +833,32 @@
             {% endfor %}
         </li>
         {% endif %}
-        
+
         {% if perms.reviewapp.add_remark %}
             <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Contacts'|slugify %}">{% trans 'Remark' %}</a></li>
         {% endif %}
-        
+
     </ul>
 
     {% if object.trial_attach %}
         <h3>{% trans 'Attachments' %}</h3>
         <ul>
             {%  for attach in object.trial_attach %}
-                {% if attach.public %}
-                    <li>
-                    <a href="http://{{host}}{{attach.get_relative_url}}">
-                    http://{{host}}{{attach.get_relative_url}}</a>
-                    ({{ attach.description }})
-                    </li>
+                <li>
+                {% if not attach.public %}
+                    [{% trans 'Private'%}]
+                {% else %}
+                    [{% trans 'Public'%}]
                 {% endif %}
+                <a href="http://{{host}}{{attach.get_relative_url}}">
+                http://{{host}}{{attach.get_relative_url}}</a>
+                ({{ attach.description }})
+                </li>
             {% endfor %}
             {% if perms.reviewapp.add_remark %}
             <li><a class="button addNew" href="{% url reviewapp.openremark object.submission.id 'Attachments'|slugify %}">{% trans 'Remark' %}</a></li>
             {% endif %}
         </ul>
     {% endif %}
-    
-{% endblock %}
 
+{% endblock %}

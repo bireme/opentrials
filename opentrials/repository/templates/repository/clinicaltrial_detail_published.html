@@ -46,7 +46,7 @@
       width: 31%;
       float: left;
     }
-    
+
     div.title h2 {
       color: #CCC;
       font-size: 18pt;
@@ -81,13 +81,36 @@
 {% block body %}
     <h2>{{ register_number }}</h2>
     <h2>{{ scientific_title }}</h2>
-    
+
     <span class="label">{% trans 'Registration Date:' %}</span>
     <span class="value">{{ fossil_created }}</span>
-    
+
+    <h3>{% trans 'Study Type' %}:</h3>
+        {% if object.is_observational %}
+            <p>{% trans 'Observational Study' %}</p>
+        {% else %}
+            <p>{% trans 'Intervention Study' %}</p>
+        {% endif %}
+        <div class="spacer"> </div>
+
+    {% if object.is_observational %}
+    <h3>{% trans 'Observational Study Fields' %}:</h3>
+    <ul>
+        <li>
+            <span class="label">{% trans 'Time Perspective' %}: </span>
+            <span class="value">{{ time_perspective }}</span>
+        </li>
+        <li>
+            <span class="label">{% trans 'Observational Study Design' %}: </span>
+            <span class="value">{{ observational_study_design }}</span>
+        </li>
+    </ul>
+    {% endif %}
+    <div class="spacer"> </div>
+
     <h3>{% trans 'Scientific Title' %}:</h3>
         {% for t in translations|dictsortreversed:"language" %}
-            {% if t.scientific_title %} 
+            {% if t.scientific_title %}
             <div class="title">
                 <h2>{{ t.language }}</h2>
                 <p>{{ t.scientific_title }}</p>
@@ -117,7 +140,7 @@
         <li>
             <p><span class="label">{% trans 'Scientific Acronym' %}:</span></p>
             {% for t in translations|dictsortreversed:"language" %}
-                {% if t.scientific_acronym %} 
+                {% if t.scientific_acronym %}
                 <div class="title">
                     <h2>{{ t.language }}</h2>
                     <p>{{ t.scientific_acronym }}: {{ t.scientific_acronym_expansion }}</p>
@@ -171,7 +194,7 @@
             </ul>
         </li>
         {% endif %}
-        
+
         {% if object.support_sources %}
         <li class="subset">
             <span class="legend">{% trans 'Source(s) of Monetary or Material Support' %}:</span>
@@ -186,13 +209,13 @@
         </li>
         {% endif %}
     </ul>
-    
+
     <h3>{% trans 'Health Conditions' %}</h3>
     <ul>
         <li>
         <p><span class="label">{% trans 'Health Condition(s) or Problem(s)' %}:</span></p>
             {% for t in translations|dictsortreversed:"language" %}
-                {% if t.hc_freetext %} 
+                {% if t.hc_freetext %}
                 <div class="title">
                     <h2>{{ t.language }}</h2>
                     <p>{{ t.hc_freetext }}</p>
@@ -250,7 +273,7 @@
             {% endfor %}
         </li>
     </ul>
-    
+
     <h3>{% trans 'Interventions' %}</h3>
     <ul>
         <li class="subset">
@@ -293,7 +316,7 @@
             {% endfor %}
         </li>
     </ul>
-    
+
     <h3>{% trans 'Recruitment' %}</h3>
     <ul>
         <li>
@@ -335,7 +358,7 @@
         <li>
             <p><span class="label">{% trans 'Inclusion Criteria' %}:</span></p>
             {% for t in translations|dictsortreversed:"language" %}
-                {% if t.inclusion_criteria %} 
+                {% if t.inclusion_criteria %}
                 <div class="title">
                     <h2>{{ t.language }}</h2>
                     <p>{{ t.inclusion_criteria|linebreaksbr }}</p>
@@ -395,14 +418,14 @@
             </table>
         </li>
     </ul>
-    
+
     <h3>{% trans 'Outcomes' %}</h3>
     <ul>
         <li>
             <p><span class="label">{% trans 'Primary Outcomes' %}:</span></p>
             {% for outcome in object.primary_outcomes %}
                 {% for out_trans in outcome.translations|dictsortreversed:"language" %}
-                    {% if out_trans.description %} 
+                    {% if out_trans.description %}
                     <div class="title">
                         <h2>{{ out_trans.language }}</h2>
                         <p>{{ out_trans.description|linebreaksbr }}</p>
@@ -435,7 +458,7 @@
             {% endfor %}
         </li>
     </ul>
-    
+
     <h3>{% trans 'Contacts' %}</h3>
     <ul>
         {% if object.public_contact %}
@@ -486,7 +509,7 @@
             {% endfor %}
         </li>
         {% endif %}
-        
+
         {% if object.scientific_contact %}
         <li class="subset">
             <span class="legend">{% trans 'Contacts for Scientific Queries' %}</span>
@@ -593,6 +616,18 @@
     {% endif %}
 
     {% block attachs %}{% endblock %}
+    {% if attachs %}
+        <h3>{% trans 'Attachments' %}</h3>
+        <ul>
+            {%  for attach in attachs %}
+                <li>
+                    <a href="http://{{host}}{{attach.get_relative_url}}">
+                    http://{{host}}{{attach.get_relative_url}}</a>
+                    ({{ attach.description }})
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 
     {% block additional_links %}
     <h3>{% trans 'Additional Links' %}:</h3>
@@ -606,5 +641,5 @@
         {% endif %}
     </ul>
     {% endblock %}
-    
+
 {% endblock %}

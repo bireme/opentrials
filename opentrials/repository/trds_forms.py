@@ -7,6 +7,7 @@ from repository.models import TrialSecondarySponsor, TrialSupportSource
 from repository.models import SiteContact, PublicContact, ScientificContact
 from vocabulary.models import CountryCode, StudyPhase, StudyType, RecruitmentStatus
 from vocabulary.models import InterventionCode, StudyMasking, StudyAllocation
+from vocabulary.models import TimePerspective, ObservationalStudyDesign
 from vocabulary.models import StudyPurpose, InterventionAssigment, InstitutionType
 from repository.widgets import SelectWithLink, SelectInstitution, YearMonthWidget
 
@@ -110,7 +111,7 @@ class ReviewModelForm(MultilingualBaseForm):
                                             'field_class': field_status,
                                             'field_name': name,
                                             })
-        
+
         # if necessary, updates the count of rendered repetitive forms
         if hasattr(self.Meta,'min_required'):
             if hasattr(self.Meta,'count'):
@@ -217,7 +218,7 @@ class PrimarySponsorForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
         fields = ['primary_sponsor']
-        
+
     def __init__(self, *args, **kwargs):
         queryset = kwargs.pop('queryset', None)
         super(PrimarySponsorForm, self).__init__(*args, **kwargs)
@@ -240,7 +241,7 @@ def make_secondary_sponsor_form(user=None):
             institution = forms.ModelChoiceField(queryset=Institution.objects.filter(creator=user).order_by('name'),
                                                  label=_('Institution'))
         relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[1][0])
-    
+
     return SecondarySponsorForm
 
 def make_support_source_form(user=None):
@@ -257,7 +258,7 @@ def make_support_source_form(user=None):
             institution = forms.ModelChoiceField(queryset=Institution.objects.filter(creator=user).order_by('name'),
                                                  label=_('Institution'))
         relation = forms.CharField(widget=forms.HiddenInput, initial=choices.INSTITUTIONAL_RELATION[0][0])
-        
+
     return SupportSourceForm
 
 trial_validator.register(TRIAL_FORMS[1], [PrimarySponsorForm, make_secondary_sponsor_form(), make_support_source_form()])
@@ -336,7 +337,7 @@ class InterventionForm(ReviewModelForm):
                 model=InterventionCode,
                 label_field='label',
             )
-    
+
 trial_validator.register(TRIAL_FORMS[3], [InterventionForm, InterventionDescriptorForm])
 
 ### step_5 #####################################################################
@@ -400,19 +401,19 @@ class RecruitmentForm(ReviewModelForm):
     # TRDS 14e
     exclusion_criteria = forms.CharField(label=_('Exclusion Criteria'),required=False,
                                         max_length=8000, widget=forms.Textarea,)
-                                            
+
     def clean_enrollment_end_date(self):
         end_date = self.cleaned_data.get('enrollment_end_date')
         if end_date is False:
-            raise forms.ValidationError(_("You must assign both Year and Month"))      
+            raise forms.ValidationError(_("You must assign both Year and Month"))
         return end_date
-    
+
     def clean_enrollment_start_date(self):
         start_date = self.cleaned_data.get('enrollment_start_date')
         if start_date is False:
-            raise forms.ValidationError(_("You must assign both Year and Month"))      
+            raise forms.ValidationError(_("You must assign both Year and Month"))
         return start_date
-        
+
     def __init__(self, *args, **kwargs):
         self.base_fields.keyOrder = ['recruitment_status', 'recruitment_country',
                 'enrollment_start_date', 'enrollment_end_date', 'target_sample_size',
@@ -467,14 +468,17 @@ trial_validator.register(TRIAL_FORMS[4], [RecruitmentForm])
 class StudyTypeForm(ReviewModelForm):
     class Meta:
         model = ClinicalTrial
-        fields = ['study_design',
+        fields = ['is_observational',
+                  'study_design',
                   'expanded_access_program',
                   'purpose',
                   'intervention_assignment',
                   'number_of_arms',
                   'masking',
                   'allocation',
-                  'phase']
+                  'phase',
+                  'observational_study_design',
+                  'time_perspective',]
 
     title = _('Study Type')
 
@@ -489,33 +493,55 @@ class StudyTypeForm(ReviewModelForm):
         required=False,
         label_field='label',
         )
-        
+
     intervention_assignment = MultilingualModelChoiceField(
         label=_('Intervention Assignment'),
         queryset=InterventionAssigment.objects.all(),
         required=False,
         label_field='label',
         )
-    
+
     masking = MultilingualModelChoiceField(
         label=_('Masking type'),
         queryset=StudyMasking.objects.all(),
         required=False,
         label_field='label',
         )
-    
+
+    is_observational = forms.ChoiceField(
+        label=_('Study Type'),
+        required=True,
+        choices=[
+            (False,_('Intervention')),
+            (True,_('Observational')),
+        ])
+
     allocation = MultilingualModelChoiceField(
         label=_('Allocation type'),
         queryset=StudyAllocation.objects.all(),
         required=False,
         label_field='label',
         )
-    
+
     # TRDS 15c
     phase = MultilingualModelChoiceField(
         label=_('Study Phase'),
         queryset=StudyPhase.objects.all(),
         required=False,
+        label_field='label',
+        )
+
+    time_perspective = MultilingualModelChoiceField(
+        label=_('Time Perspective'),
+        queryset=TimePerspective.objects.all(),
+        required=True,
+        label_field='label',
+        )
+
+    observational_study_design = MultilingualModelChoiceField(
+        label=_('Observational Study Design'),
+        queryset=ObservationalStudyDesign.objects.all(),
+        required=True,
         label_field='label',
         )
 
@@ -570,7 +596,7 @@ def make_public_contact_form(user=None):
             fields = ['contact']
 
         title = _('Contact(s) for Public Queries')
-        relation = forms.CharField(label=_('Relation'), 
+        relation = forms.CharField(label=_('Relation'),
                                    initial=choices.CONTACT_RELATION[0][0],
                                    widget=forms.HiddenInput)
         if user:
@@ -593,7 +619,7 @@ def make_scientifc_contact_form(user=None):
             fields = ['contact']
 
         title = _('Contact(s) for Scientific Queries')
-        relation = forms.CharField(label=_('Relation'), 
+        relation = forms.CharField(label=_('Relation'),
                                    initial=choices.CONTACT_RELATION[1][0],
                                    widget=forms.HiddenInput)
         if user:
@@ -605,7 +631,7 @@ def make_scientifc_contact_form(user=None):
                                              label=_('Contact'),
                                              widget=SelectWithLink(link='#new_contact', text=_('New Contact')))
 
-            
+
     return ScientificContactForm
 
 def make_site_contact_form(user=None):
@@ -618,10 +644,10 @@ def make_site_contact_form(user=None):
             fields = ['contact']
 
         title = _('Contact(s) for Site Queries')
-        relation = forms.CharField(label=_('Relation'), 
+        relation = forms.CharField(label=_('Relation'),
                                    initial=choices.CONTACT_RELATION[2][0],
                                    widget=forms.HiddenInput)
-                                   
+
         if user:
             contact = forms.ModelChoiceField(queryset=Contact.objects.filter(creator=user).order_by('firstname', 'middlename', 'lastname'),
                                              label=_('Contact'),
@@ -630,7 +656,7 @@ def make_site_contact_form(user=None):
             contact = forms.ModelChoiceField(queryset=Contact.objects.all(),
                                              label=_('Contact'),
                                              widget=SelectWithLink(link='#new_contact', text=_('New Contact')))
-            
+
     return SiteContactForm
 
 trial_validator.register(TRIAL_FORMS[7], [make_public_contact_form(),make_scientifc_contact_form(),make_scientifc_contact_form()])
@@ -642,10 +668,10 @@ def make_contact_form(user,formset_prefix=''):
     class ContactForm(ReviewModelForm):
         class Meta:
             model = Contact
-            
+
         def __init__(self, *args, **kwargs):
             super(ContactForm, self).__init__(*args, **kwargs)
-            self.fields.insert(0, 'relation', forms.ChoiceField(label=_('Contact Type'), 
+            self.fields.insert(0, 'relation', forms.ChoiceField(label=_('Contact Type'),
                                    widget=forms.RadioSelect,
                                    choices=choices.CONTACT_RELATION))
 
@@ -661,7 +687,7 @@ def make_contact_form(user,formset_prefix=''):
                                              label=_('Institution'),
                                              widget=SelectInstitution(formset_prefix=formset_prefix))
 
-        address = forms.CharField(label=_('Address'), max_length=255,required=False, 
+        address = forms.CharField(label=_('Address'), max_length=255,required=False,
                                   widget=forms.TextInput(attrs={'style': 'width:400px;'}))
         city = forms.CharField(label=_('City'), max_length=255)
 
@@ -670,7 +696,7 @@ def make_contact_form(user,formset_prefix=''):
 
         zip = forms.CharField(label=_('Postal Code'), max_length=50)
         telephone = forms.CharField(label=_('Telephone'), max_length=255)
-        
+
     return ContactForm
 
 class NewInstitution(ReviewModelForm):
@@ -678,13 +704,13 @@ class NewInstitution(ReviewModelForm):
         model = Institution
 
     title = _('New Institution')
-    
+
     country = MultilingualModelChoiceField(
                 label=_('Country'),
                 queryset=CountryCode.objects.all(),
                 required=True,
                 label_field='description',)
-            
+
     i_type = MultilingualModelChoiceField(
                 label=_('Institution type'),
                 queryset=InstitutionType.objects.all(),

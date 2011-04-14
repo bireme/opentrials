@@ -10,7 +10,7 @@
 # by the Free Software Foundation, either version 2.1 of the License, or
 # (at your option) any later version.
 
-# This program is distributed in the hope that it will be useful, 
+# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Lesser General Public License for more details.
@@ -98,7 +98,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    
+
     os.path.join(PROJECT_PATH, 'templates'),
 )
 
@@ -232,10 +232,9 @@ execfile(os.path.join(PROJECT_PATH,'settings_local.include'))
 ATTACHMENTS_PATH = os.path.join(MEDIA_ROOT, ATTACHMENTS_DIR)
 if os.path.exists(ATTACHMENTS_PATH):
     if not os.access(ATTACHMENTS_PATH, os.W_OK):
-        raise IOError('Attachments folder "%s" must be writeable' % 
+        raise IOError('Attachments folder "%s" must be writeable' %
                                 (ATTACHMENTS_PATH))
 else:
     raise IOError('Attachments folder "%s" not found' % (ATTACHMENTS_PATH))
 
-OPENTRIALS_VERSION = 'v1.0.20' # this should be the deployed tag number
-
+OPENTRIALS_VERSION = 'v1.0.22rc1' # this should be the deployed tag number
