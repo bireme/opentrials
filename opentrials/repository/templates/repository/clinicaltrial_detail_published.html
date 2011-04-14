@@ -85,6 +85,29 @@
     <span class="label">{% trans 'Registration Date:' %}</span>
     <span class="value">{{ fossil_created }}</span>
 
+    <h3>{% trans 'Study Type' %}:</h3>
+        {% if object.is_observational %}
+            <p>{% trans 'Observational Study' %}</p>
+        {% else %}
+            <p>{% trans 'Intervention Study' %}</p>
+        {% endif %}
+        <div class="spacer"> </div>
+
+    {% if object.is_observational %}
+    <h3>{% trans 'Observational Study Fields' %}:</h3>
+    <ul>
+        <li>
+            <span class="label">{% trans 'Time Perspective' %}: </span>
+            <span class="value">{{ time_perspective }}</span>
+        </li>
+        <li>
+            <span class="label">{% trans 'Observational Study Design' %}: </span>
+            <span class="value">{{ observational_study_design }}</span>
+        </li>
+    </ul>
+    {% endif %}
+    <div class="spacer"> </div>
+
     <h3>{% trans 'Scientific Title' %}:</h3>
         {% for t in translations|dictsortreversed:"language" %}
             {% if t.scientific_title %}
@@ -601,7 +624,7 @@
                     <a href="http://{{host}}{{attach.get_relative_url}}">
                     http://{{host}}{{attach.get_relative_url}}</a>
                     ({{ attach.description }})
-                </li>                
+                </li>
             {% endfor %}
         </ul>
     {% endif %}
