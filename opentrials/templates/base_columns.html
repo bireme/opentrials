@@ -19,7 +19,9 @@
         <p>
             {% load scoreboard %}
             {% get_score_numbers as score %}
-            {{score|safe}}
+
+            There {{ score.number_registered_trials|pluralize:'is,are' }} <span>{{ score.number_registered_trials }}</span> clinical trials registered, and <span>{{ score.number_recruiting_trials }}</span> of those {{ score.number_recruiting_trials|pluralize:'is,are' }} under recruitment.
+
         </p>
     </div>
 

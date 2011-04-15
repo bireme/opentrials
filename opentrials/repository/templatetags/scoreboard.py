@@ -22,10 +22,12 @@ class GetScoresNode(Node):
 
         number_recruiting_trials = len(ClinicalTrial.fossils.recruiting())
         number_registered_trials = len(ClinicalTrial.fossils.published())
-        scoreboard_text = _("There are <span>%(registered)d</span> clinical trials registered, and <span>%(recruiting)d</span> of those are under recruitment.") % {'registered':number_registered_trials, 'recruiting':number_recruiting_trials}
+        scoreboard_text = _("There {{%(registered)d|pluralize:'is,are'}} <span>%(registered)d</span> clinical trials registered, and <span>%(recruiting)d</span> of those are under recruitment.") % {'registered':number_registered_trials, 'recruiting':number_recruiting_trials }
 
+        scoreboard_result = {'number_recruiting_trials': number_recruiting_trials,
+                             'number_registered_trials': number_registered_trials}
 
-        context[self.varname] = scoreboard_text
+        context[self.varname] = scoreboard_result #scoreboard_text
         return ''
 
 get_score_numbers = register.tag(get_score_numbers)
