@@ -473,8 +473,11 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
 
     trial = get_object_or_404(ClinicalTrial, trial_id=trial_fossil_id)
     attachs = [attach for attach in trial.trial_attach() if attach.public]
-
-    time_perspective = trial.time_perspective
+    
+    try:
+        time_perspective = trial.time_perspective
+    except ObjectDoesNotExist: 
+        time_perspective = None
     observational_study_design = trial.observational_study_design
 
     return render_to_response('repository/clinicaltrial_detail_published.html',
