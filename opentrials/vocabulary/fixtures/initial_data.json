@@ -23192,8 +23192,8 @@
     "model": "vocabulary.institutiontype", 
     "fields": {
       "order": 40, 
-      "description": "Ministery of Health", 
-      "label": "ministery of health"
+      "description": "Ministry of Health", 
+      "label": "ministry of health"
     }
   }, 
   {
