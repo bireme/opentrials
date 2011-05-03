@@ -173,7 +173,7 @@ TRIAL_ID_DIGITS = 6
 MANAGED_LANGUAGES_CHOICES = (
     (u'en', u'English'),
     (u'es', u'Español'),
-    (u'pt-BR', u'Português'),
+    (u'pt-br', u'Português'),
 )
 TARGET_LANGUAGES = MANAGED_LANGUAGES_CHOICES[1:] # exlude source language
 MANAGED_LANGUAGES = [code for code, label in MANAGED_LANGUAGES_CHOICES]

@@ -264,12 +264,16 @@ def new_submission(request):
             trial = ClinicalTrial()
 
             su = Submission(creator=request.user)
-            su.language = initial_form.cleaned_data['language']
-            su.title = initial_form.cleaned_data['scientific_title']
+            su.language = initial_form.cleaned_data['language']            
+            su.title = initial_form.cleaned_data['scientific_title']            
             su.primary_sponsor = initial_form.cleaned_data['primary_sponsor']
+            
+            trial.utrn_number = initial_form.cleaned_data['utrn_number']
+            trial.language = settings.DEFAULT_SUBMISSION_LANGUAGE
+            trial.primary_sponsor = su.primary_sponsor
 
-            if su.language == 'en':
-                trial.scientific_title = su.title
+            if su.language == settings.DEFAULT_SUBMISSION_LANGUAGE:
+                trial.scientific_title = su.title                                                            
             else:
                 trial.save()
                 ctt = ClinicalTrialTranslation.objects.get_translation_for_object(
@@ -277,17 +281,8 @@ def new_submission(request):
                         )
                 ctt.scientific_title = su.title
                 ctt.save()
-
-            trial.primary_sponsor = su.primary_sponsor
-            trial.language = su.language
-            trial.utrn_number = initial_form.cleaned_data['utrn_number']
+                
             trial.save()
-
-            su.save()
-
-            #sponsor = sponsor_form.save(commit=False)
-            #sponsor.creator = request.user
-            #sponsor.save()
 
             #trial.primary_sponsor = su.primary_sponsor = sponsor
             for country in initial_form.cleaned_data['recruitment_country']:
