@@ -258,18 +258,21 @@ def new_submission(request):
 
     if request.method == 'POST':
         initial_form = InitialTrialForm(request.POST, request.FILES, user=request.user)
-        #sponsor_form = PrimarySponsorForm(request.POST)
-
-        if initial_form.is_valid(): # and sponsor_form.is_valid():
+        
+        if initial_form.is_valid(): 
             trial = ClinicalTrial()
 
             su = Submission(creator=request.user)
-            su.language = initial_form.cleaned_data['language']
-            su.title = initial_form.cleaned_data['scientific_title']
+            su.language = initial_form.cleaned_data['language']            
+            su.title = initial_form.cleaned_data['scientific_title']            
             su.primary_sponsor = initial_form.cleaned_data['primary_sponsor']
+            
+            trial.utrn_number = initial_form.cleaned_data['utrn_number']
+            trial.language = settings.DEFAULT_SUBMISSION_LANGUAGE
+            trial.primary_sponsor = su.primary_sponsor
 
-            if su.language == 'en':
-                trial.scientific_title = su.title
+            if su.language == settings.DEFAULT_SUBMISSION_LANGUAGE:
+                trial.scientific_title = su.title                                                            
             else:
                 trial.save()
                 ctt = ClinicalTrialTranslation.objects.get_translation_for_object(
@@ -277,22 +280,11 @@ def new_submission(request):
                         )
                 ctt.scientific_title = su.title
                 ctt.save()
-
-            trial.primary_sponsor = su.primary_sponsor
-            trial.language = su.language
-            trial.utrn_number = initial_form.cleaned_data['utrn_number']
+                
             trial.save()
 
-            su.save()
-
-            #sponsor = sponsor_form.save(commit=False)
-            #sponsor.creator = request.user
-            #sponsor.save()
-
-            #trial.primary_sponsor = su.primary_sponsor = sponsor
             for country in initial_form.cleaned_data['recruitment_country']:
                 trial.recruitment_country.add(country) # What about the removed ones? FIXME
-            #trial.recruitment_country = [CountryCode.objects.get(pk=id) for pk in initial_form.cleaned_data['recruitment_country']]
             su.trial = trial
 
             trial.save()
@@ -304,9 +296,8 @@ def new_submission(request):
             return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))
     else:
         initial_form = InitialTrialForm(user=request.user, display_language=request.trials_language)
-        #sponsor_form = PrimarySponsorForm()
-
-    forms = [initial_form] #, sponsor_form]
+        
+    forms = [initial_form] 
     return render_to_response('reviewapp/new_submission.html', {
                               'forms': forms,},
                               context_instance=RequestContext(request))

@@ -1,6 +1,7 @@
 #What is new in v1.0.22
 
 - Observational fields implemented
+- Fixing bug that caused mistranslation labels in trial
 
 
 #What is new in v1.0.21:
