@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-18 14:41-0300\n"
+"POT-Creation-Date: 2011-05-05 14:24-0300\n"
 "PO-Revision-Date: 2010-12-15 21:44\n"
 "Last-Translator: <appec@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -199,30 +199,68 @@ msgstr "Home"
 msgid "Scoreboard"
 msgstr ""
 
-#: custom/ecgovbr/templates/base_columns.html:31
+#: custom/ecgovbr/templates/base_columns.html:23
+#: templates/base_columns.html:24
+#, python-format
+msgid ""
+"\n"
+"                <p>There is <span>%(registered)s</span> registered trial.</"
+"p>\n"
+"              "
+msgid_plural ""
+"\n"
+"                <p>There are <span>%(registered)s</span> registered trials.</"
+"p>\n"
+"              "
+msgstr[0] ""
+msgstr[1] ""
+
+#: custom/ecgovbr/templates/base_columns.html:29
+#: templates/base_columns.html:30
+#, fuzzy
+msgid "No clinical trials registered."
+msgstr "Plataforma de Ensayos Clínicos"
+
+#: custom/ecgovbr/templates/base_columns.html:33
+#: templates/base_columns.html:34
+#, python-format
+msgid ""
+"\n"
+"                <p>There is <span>%(recruiting)s</span> recruiting trial.</"
+"p>\n"
+"              "
+msgid_plural ""
+"\n"
+"                <p>There are <span>%(recruiting)s</span> recruiting trial.</"
+"p>\n"
+"              "
+msgstr[0] ""
+msgstr[1] ""
+
+#: custom/ecgovbr/templates/base_columns.html:48
 #: reviewapp/templates/reviewapp/index.html:21 templates/base_columns.html:50
 #: templates/base_columns.html.py:73
 msgid "List all"
 msgstr "Lista de todos los"
 
-#: custom/ecgovbr/templates/base_columns.html:31
+#: custom/ecgovbr/templates/base_columns.html:48
 #: repository/templates/repository/clinicaltrial_recruiting.html:9
 #: templates/base_columns.html:50
 msgid "Recruiting"
 msgstr "Reclutamiento"
 
-#: custom/ecgovbr/templates/base_columns.html:41
+#: custom/ecgovbr/templates/base_columns.html:58
 #: repository/templates/repository/clinicaltrial_recruiting.html:59
 #: templates/base_columns.html:60
 msgid "No clinical trials recruiting."
 msgstr "Ningún reclutamiento de ensayos clínicos."
 
-#: custom/ecgovbr/templates/base_columns.html:50
+#: custom/ecgovbr/templates/base_columns.html:67
 msgid "Latest Tweets"
 msgstr "Últimos Tweets"
 
-#: custom/ecgovbr/templates/base_columns.html:58
-#: custom/ecgovbr/templates/base_columns.html:60
+#: custom/ecgovbr/templates/base_columns.html:75
+#: custom/ecgovbr/templates/base_columns.html:77
 msgid "Follow us on Twitter!"
 msgstr "Acompáñenos en el Twitter!"
 
@@ -1713,14 +1751,6 @@ msgstr ""
 msgid "Save and go to"
 msgstr ""
 
-#: repository/templatetags/scoreboard.py:25
-#, python-format
-msgid ""
-"There {{%(registered)d|pluralize:'is,are'}} <span>%(registered)d</span> "
-"clinical trials registered, and <span>%(recruiting)d</span> of those are "
-"under recruitment."
-msgstr ""
-
 #: repository/xml/loading.py:410
 msgid ""
 "To import parsed trials it's necessary to call method 'parse_opentrials' "
@@ -1855,15 +1885,15 @@ msgstr ""
 msgid "This submission can not be deleted."
 msgstr ""
 
-#: reviewapp/views.py:361
+#: reviewapp/views.py:352
 msgid "XML files imported with success!"
 msgstr ""
 
-#: reviewapp/views.py:481
+#: reviewapp/views.py:472
 msgid "Message sent successfully."
 msgstr ""
 
-#: reviewapp/views.py:484
+#: reviewapp/views.py:475
 msgid "Please fill out all fields correctly."
 msgstr ""
 
@@ -2160,41 +2190,6 @@ msgstr "Cambie su contraseña"
 #, fuzzy
 msgid "OpenTrials Platform"
 msgstr "Plataforma de Ensayos Clínicos"
-
-#: templates/base_columns.html:24
-#, python-format
-msgid ""
-"\n"
-"                <p>There is <span>%(registered)s</span> registered trial.</"
-"p>\n"
-"              "
-msgid_plural ""
-"\n"
-"                <p>There are <span>%(registered)s</span> registered trials.</"
-"p>\n"
-"              "
-msgstr[0] ""
-msgstr[1] ""
-
-#: templates/base_columns.html:30
-#, fuzzy
-msgid "No clinical trials registered."
-msgstr "Plataforma de Ensayos Clínicos"
-
-#: templates/base_columns.html:34
-#, python-format
-msgid ""
-"\n"
-"                <p>There is <span>%(recruiting)s</span> recruiting trial.</"
-"p>\n"
-"              "
-msgid_plural ""
-"\n"
-"                <p>There are <span>%(recruiting)s</span> recruiting trial.</"
-"p>\n"
-"              "
-msgstr[0] ""
-msgstr[1] ""
 
 #: templates/registration/registration_form.html:20
 #, fuzzy

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-18 14:41-0300\n"
-"PO-Revision-Date: 2011-04-18 14:44\n"
+"POT-Creation-Date: 2011-05-05 14:24-0300\n"
+"PO-Revision-Date: 2011-05-05 14:26\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -201,30 +201,64 @@ msgstr "Home"
 msgid "Scoreboard"
 msgstr "Números do site"
 
-#: custom/ecgovbr/templates/base_columns.html:31
+#: custom/ecgovbr/templates/base_columns.html:23
+#: templates/base_columns.html:24
+#, python-format
+msgid ""
+"\n"
+"                <p>There is <span>%(registered)s</span> registered trial.</p>\n"
+"              "
+msgid_plural ""
+"\n"
+"                <p>There are <span>%(registered)s</span> registered trials.</p>\n"
+"              "
+msgstr[0] "<p>Existe <span>%(registered)s</span> ensaio registrado.</p>"
+msgstr[1] "<p>Existem <span>%(registered)s</span> ensaios registrados.</p>"
+
+#: custom/ecgovbr/templates/base_columns.html:29
+#: templates/base_columns.html:30
+#, fuzzy
+msgid "No clinical trials registered."
+msgstr "Nenhum ensaio clínico foi registrado."
+
+#: custom/ecgovbr/templates/base_columns.html:33
+#: templates/base_columns.html:34
+#, python-format
+msgid ""
+"\n"
+"                <p>There is <span>%(recruiting)s</span> recruiting trial.</p>\n"
+"              "
+msgid_plural ""
+"\n"
+"                <p>There are <span>%(recruiting)s</span> recruiting trial.</p>\n"
+"              "
+msgstr[0] "<p>Existe <span>%(recruiting)s</span> ensaio recrutandos.</p>"
+msgstr[1] "<p>Existem <span>%(recruiting)s</span> ensaios recrutando.</p>"
+
+#: custom/ecgovbr/templates/base_columns.html:48
 #: reviewapp/templates/reviewapp/index.html:21 templates/base_columns.html:50
 #: templates/base_columns.html.py:73
 msgid "List all"
 msgstr "Listar todos"
 
-#: custom/ecgovbr/templates/base_columns.html:31
+#: custom/ecgovbr/templates/base_columns.html:48
 #: repository/templates/repository/clinicaltrial_recruiting.html:9
 #: templates/base_columns.html:50
 msgid "Recruiting"
 msgstr "Recrutando"
 
-#: custom/ecgovbr/templates/base_columns.html:41
+#: custom/ecgovbr/templates/base_columns.html:58
 #: repository/templates/repository/clinicaltrial_recruiting.html:59
 #: templates/base_columns.html:60
 msgid "No clinical trials recruiting."
 msgstr "Nenhum ensaio clínico recrutando."
 
-#: custom/ecgovbr/templates/base_columns.html:50
+#: custom/ecgovbr/templates/base_columns.html:67
 msgid "Latest Tweets"
 msgstr "Últimos Tweets"
 
-#: custom/ecgovbr/templates/base_columns.html:58
-#: custom/ecgovbr/templates/base_columns.html:60
+#: custom/ecgovbr/templates/base_columns.html:75
+#: custom/ecgovbr/templates/base_columns.html:77
 msgid "Follow us on Twitter!"
 msgstr "Siga-nos no Twitter!"
 
@@ -813,9 +847,8 @@ msgstr "Temporalidade"
 #: repository/models.py:413 repository/trds_forms.py:542
 #: repository/templates/repository/clinicaltrial_detail_published.html:104
 #: repository/templates/repository/clinicaltrial_detail_user.html:172
-#, fuzzy
 msgid "Observational Study Design"
-msgstr "Desenho do estudo"
+msgstr "Desenho do estudo observacional"
 
 #: repository/models.py:418
 msgid "Last Update"
@@ -1450,7 +1483,7 @@ msgstr "Intervenções"
 #: repository/templates/repository/clinicaltrial_detail_published.html:97
 #: repository/templates/repository/clinicaltrial_detail_user.html:165
 msgid "Observational Study Fields"
-msgstr ""
+msgstr "Campos de Estudos Observacionais"
 
 #: repository/templates/repository/clinicaltrial_detail_published.html:153
 #: repository/templates/repository/clinicaltrial_detail_user.html:243
@@ -1697,16 +1730,6 @@ msgstr "Salvar e continuar depois"
 msgid "Save and go to"
 msgstr "Salvar e ir para"
 
-#: repository/templatetags/scoreboard.py:25
-#, fuzzy, python-format
-msgid ""
-"There {{%(registered)d|pluralize:'is,are'}} <span>%(registered)d</span>"
-" clinical trials registered, and <span>%(recruiting)d</span> of those "
-"are under recruitment."
-msgstr ""
-"Existem <span>%(registered)d</span> ensaios registrados, dos quais "
-"<span>%(recruiting)d</span> estão recrutando."
-
 #: repository/xml/loading.py:410
 msgid ""
 "To import parsed trials it's necessary to call method "
@@ -1838,15 +1861,15 @@ msgstr "A submissão foi excluída com sucesso."
 msgid "This submission can not be deleted."
 msgstr "Esta submissão não pode ser excluída."
 
-#: reviewapp/views.py:361
+#: reviewapp/views.py:352
 msgid "XML files imported with success!"
 msgstr ""
 
-#: reviewapp/views.py:481
+#: reviewapp/views.py:472
 msgid "Message sent successfully."
 msgstr "Mensagem enviada com sucesso."
 
-#: reviewapp/views.py:484
+#: reviewapp/views.py:475
 msgid "Please fill out all fields correctly."
 msgstr "Por favor, preencha todos os campos corretamente."
 
@@ -2146,37 +2169,6 @@ msgstr "Altere a sua senha"
 msgid "OpenTrials Platform"
 msgstr "Plataforma OpenTrials"
 
-#: templates/base_columns.html:24
-#, python-format
-msgid ""
-"\n"
-"                <p>There is <span>%(registered)s</span> registered trial.</p>\n"
-"              "
-msgid_plural ""
-"\n"
-"                <p>There are <span>%(registered)s</span> registered trials.</p>\n"
-"              "
-msgstr[0] "<p>Existe <span>%(registered)s</span> ensaio registrado.</p>"
-msgstr[1] "<p>Existem <span>%(registered)s</span> ensaios registrados.</p>"
-
-#: templates/base_columns.html:30
-#, fuzzy
-msgid "No clinical trials registered."
-msgstr "Nenhum ensaio clínico foi registrado."
-
-#: templates/base_columns.html:34
-#, python-format
-msgid ""
-"\n"
-"                <p>There is <span>%(recruiting)s</span> recruiting trial.</p>\n"
-"              "
-msgid_plural ""
-"\n"
-"                <p>There are <span>%(recruiting)s</span> recruiting trial.</p>\n"
-"              "
-msgstr[0] "<p>Existe <span>%(recruiting)s</span> ensaio recrutandos.</p>"
-msgstr[1] "<p>Existem <span>%(recruiting)s</span> ensaios recrutando.</p>"
-
 #: templates/registration/registration_form.html:20
 msgid "resend the activation e-mail"
 msgstr "Reenviar e-mail de ativação"
@@ -2350,6 +2342,14 @@ msgstr "Órgãos emissores de identificadores de ensaios"
 #: vocabulary/models.py:128
 msgid "Recruitment status"
 msgstr "Situação do recrutamento"
+
+#~ msgid ""
+#~ "There {{%(registered)d|pluralize:'is,are'}} <span>%(registered)d</span>"
+#~ " clinical trials registered, and <span>%(recruiting)d</span> of those "
+#~ "are under recruitment."
+#~ msgstr ""
+#~ "Existem <span>%(registered)d</span> ensaios registrados, dos quais "
+#~ "<span>%(recruiting)d</span> estão recrutando."
 
 #~ msgid "UTRN Number"
 #~ msgstr "Número do UTRN"
