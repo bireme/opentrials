@@ -635,10 +635,9 @@
         <li><a href="{% url repository.trial_ictrp_version trial_fossil_id=object.trial_id,trial_version=object.version %}">
             {% trans "Download as ICTRP format" %}</a></li>
 
-        {% if DEBUG %}
         <li><a href="{% url repository.trial_otxml_version trial_fossil_id=object.trial_id,trial_version=object.version %}">
             {% trans "Download as OpenTrials XML format" %}</a></li>
-        {% endif %}
+
     </ul>
     {% endblock %}
 

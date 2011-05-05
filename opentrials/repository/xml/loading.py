@@ -541,58 +541,44 @@ class OpenTrialsXMLImport(object):
             ct.recruitment_country.add(country_obj)
 
         for person in fields.get('persons', []):
-            try:
-                if person.get('pid', None):
-                    contact = Contact.objects.get(pk=person['pid'])
-                else:
-                    contact = Contact.objects.get(
-                            firstname=person['firstname'],
-                            middlename=person['middlename'],
-                            lastname=person['lastname'],
-                            )
-            except Contact.DoesNotExist:
-                contact = Contact(creator=self.creator)
-                if person.get('pid', None):
-                    contact.pk = person['pid']
+            
+            contact = Contact.objects.filter(email=person['email'], creator=self.creator)
+                
+            if contact:
+                contact = contact[0]    
+            else:
+                contact = Contact()
+                contact.creator = self.creator
+                contact.firstname = person.get('firstname')
+                contact.middlename = person.get('middlename')
+                contact.lastname = person.get('lastname')
+                contact.address = person.get('address')
+                contact.city = person.get('city')
+                if person.get('country_code', None):
+                    if person['country_code'].get('label', None):
+                        contact.country = CountryCode.objects.get(label=person['country_code']['label'])
+                    else:
+                        contact.country = CountryCode.objects.get(description=person['country_code']['description'])
+                contact.zip = person.get('zip')
+                contact.telephone = person.get('telephone')
+                contact.email = person.get('email')
+                if person.get('affiliation', None):
+                    contact.affiliation = self.get_instituion_from_db(person['affiliation'])
 
-            contact.firstname = person.get('firstname', contact.firstname)
-            contact.middlename = person.get('middlename', contact.middlename)
-            contact.lastname = person.get('lastname', contact.lastname)
-            contact.address = person.get('address', contact.address)
-            contact.city = person.get('city', contact.city)
-            if person.get('country_code', None):
-                if person['country_code'].get('label', None):
-                    contact.country = CountryCode.objects.get(label=person['country_code']['label'])
-                else:
-                    contact.country = CountryCode.objects.get(description=person['country_code']['description'])
-            contact.zip = person.get('zip', contact.zip)
-            contact.telephone = person.get('telephone', contact.telephone)
-            contact.email = person.get('email', contact.email)
-            if person.get('affiliation', None):
-                contact.affiliation = self.get_instituion_from_db(person['affiliation'])
-
-            contact.save()
+                contact.save()
 
         for item in fields.get('public_contact', []):
             if item.get('pid', None):
                 contact = Contact.objects.get(pk=item['pid'])
             else:
-                contact = Contact.objects.get(
-                        firstname=item['firstname'],
-                        middlename=item['middlename'],
-                        lastname=item['lastname'],
-                        )
+                contact = Contact.objects.filter(email=person['email'], creator=self.creator)[0]
             PublicContact.objects.get_or_create(trial=ct, contact=contact)
 
         for item in fields.get('scientific_contact', []):
             if item.get('pid', None):
                 contact = Contact.objects.get(pk=item['pid'])
             else:
-                contact = Contact.objects.get(
-                        firstname=item['firstname'],
-                        middlename=item['middlename'],
-                        lastname=item['lastname'],
-                        )
+                contact = Contact.objects.filter(email=person['email'], creator=self.creator)[0]
             ScientificContact.objects.get_or_create(trial=ct, contact=contact)
 
         for item in fields.get('site_contact', []):
