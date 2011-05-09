@@ -29,4 +29,12 @@
         <input name="submit" type="submit" value="{% trans "Continue" %}"/>
     </form>
 
+    {% if DEBUG %}    
+    {% trans "or" %}
+        <form action="/accounts/uploadtrial">        
+            <input name="submit" type="submit" value="{% trans "Upload a XML file" %}"/>
+        </form>
+    {% endif %}
+
+
 {% endblock %}

@@ -33,9 +33,9 @@
         <input type="hidden" name="session_key" value="{{ session_key }}"/>
 
         {% for form in formset.forms %}
-        <div class="importing-{% if form.already_exists.value %}exists{% else %}new{% endif %}">{{ form.to_import }} {{ form.trial_id.value }} - {{ form.description.value }}
-            ({% if form.already_exists.value %}{% trans "Existing" %}{% else %}{% trans "New" %}{% endif %})
-            {{ form.trial_id}}</div>
+            <div class="importing-{% if form.already_exists.value %}exists{% else %}new{% endif %}">{{ form.to_import }} {{ form.initial.trial_id }} - {{ form.initial.description }}
+                ({% if form.initial.already_exists %}{% trans "Existing" %}{% else %}{% trans "New" %}{% endif %})
+            </div>
         {% endfor %}
 
     </fieldset>
