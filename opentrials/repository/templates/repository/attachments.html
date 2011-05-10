@@ -29,19 +29,34 @@
         <h3>{% trans 'Existing attachments' %}</h3>
 
         {% for attachment in existing_attachments %}
-            <ul>
+            <ul name="gha">
+                {% if attachment.file %}
                 <li>{% trans 'File' %}:
                     <a href="http://{{host}}{{attachment.get_relative_url}}">
                         http://{{host}}{{attachment.get_relative_url}}
                     </a>
                 </li>
+                {% else %}
+                <li>{% trans 'File' %}:
+                    <a href="{{attachment.attach_url}}">
+                        {{attachment.attach_url}}
+                    </a>
+                </li>
+                {% endif %}
                 <li>{% trans 'Description' %}: {{attachment.description}}</li>
-            </ul>
+                <li>
+                    <form action="./" method='POST'>{% csrf_token %}
+                        <input type="hidden" name='remove' value='{{attachment.id}}'/>
+                        <input type="button" value='{%trans "Remove" %}' onclick="if(confirm('{%trans "Remove this attachment?" %}')) submit()" />
+                    </form>
+                </li>
+            </ul> 
+
         {% endfor %}
     {% endif %}
     
     <h3>{% trans 'New attachment form' %}</h3>
-    <form action="./" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <form action="./" method="POST" enctype="multipart/form-data" >{% csrf_token %}
 
         {% for formset in formsets %}
             {{ formset.management_form }}
@@ -108,6 +123,5 @@
         });
     });
 </script>
-
 {% endblock %}
 

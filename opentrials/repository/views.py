@@ -986,25 +986,36 @@ def step_9(request, trial_pk):
                                              form=NewAttachmentForm)
 
     existing_attachments = Attachment.objects.filter(submission=su)
-
+    
     if request.method == 'POST' and request.can_change_trial:
-        new_attachment_formset = NewAttachmentFormSet(request.POST,
-                                                      request.FILES,
-                                                      prefix='new')
 
-        if new_attachment_formset.is_valid():
-            new_attachments = new_attachment_formset.save(commit=False)
+        if 'remove' in request.POST:
+            attach = Attachment.objects.get(id=request.POST.get('remove'))
+            attach.delete()
 
-            for attachment in new_attachments:
-                attachment.submission = su
-
-            new_attachment_formset.save()
             return HttpResponseRedirect(reverse('step_9',args=[trial_pk]))
+
+        else:
+
+            new_attachment_formset = NewAttachmentFormSet(request.POST,
+                                                          request.FILES,
+                                                          prefix='new')
+
+            if new_attachment_formset.is_valid():
+                new_attachments = new_attachment_formset.save(commit=False)
+
+                for attachment in new_attachments:
+                    attachment.submission = su
+
+                new_attachment_formset.save()
+                return HttpResponseRedirect(reverse('step_9',args=[trial_pk]))
+
     else:
         new_attachment_formset = NewAttachmentFormSet(queryset=Attachment.objects.none(),
                                                       prefix='new')
 
     formsets = [new_attachment_formset]
+
     return render_to_response('repository/attachments.html',
                               {'formsets':formsets,
                                'existing_attachments':existing_attachments,

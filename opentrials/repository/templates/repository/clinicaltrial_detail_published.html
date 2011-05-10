@@ -620,11 +620,23 @@
         <h3>{% trans 'Attachments' %}</h3>
         <ul>
             {%  for attach in attachs %}
+
+                {% if attach.file %}
                 <li>
                     <a href="http://{{host}}{{attach.get_relative_url}}">
                     http://{{host}}{{attach.get_relative_url}}</a>
                     ({{ attach.description }})
                 </li>
+
+                {% else %}
+                <li>
+                    <a href="{{attachment.attach_url}}">
+                        {{attach.attach_url}}                        
+                    </a>
+                    ({{ attach.description }})
+                </li>
+                {% endif %}
+
             {% endfor %}
         </ul>
     {% endif %}

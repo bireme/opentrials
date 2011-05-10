@@ -850,9 +850,22 @@
                 {% else %}
                     [{% trans 'Public'%}]
                 {% endif %}
-                <a href="http://{{host}}{{attach.get_relative_url}}">
-                http://{{host}}{{attach.get_relative_url}}</a>
-                ({{ attach.description }})
+                
+                {% if attach.file %}
+                <li>
+                    <a href="http://{{host}}{{attach.get_relative_url}}">
+                    http://{{host}}{{attach.get_relative_url}}</a>
+                    ({{ attach.description }})
+                </li>
+
+                {% else %}
+                <li>
+                    <a href="{{attach.attach_url}}">
+                        {{attach.attach_url}}
+                    </a>({{ attach.description }})
+                </li>
+                {% endif %}
+                
                 </li>
             {% endfor %}
             {% if perms.reviewapp.add_remark %}
