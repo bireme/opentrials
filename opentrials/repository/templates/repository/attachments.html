@@ -29,7 +29,7 @@
         <h3>{% trans 'Existing attachments' %}</h3>
 
         {% for attachment in existing_attachments %}
-            <ul name="gha">
+            <ul>
                 {% if attachment.file %}
                 <li>{% trans 'File' %}:
                     <a href="http://{{host}}{{attachment.get_relative_url}}">
@@ -98,6 +98,14 @@
         $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
     });
 </script>
+
+<!--script type="text/javascript">
+    $(document).ready(function() {
+       $('input').select(function() {
+         alert('oi');
+       });
+     });
+</script-->
 
 <script type="text/javascript">
     $(document).ready(function() {
