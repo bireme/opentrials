@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-05 14:24-0300\n"
+"POT-Creation-Date: 2011-05-11 13:53-0300\n"
 "PO-Revision-Date: 2010-12-15 21:44\n"
 "Last-Translator: <appec@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "Etiqueta"
 #: assistance/models.py:24 assistance/models.py:41
 #: repository/templates/repository/clinicaltrial_list.html:18
 #: repository/templates/repository/clinicaltrial_recruiting.html:18
-#: reviewapp/models.py:254 reviewapp/models.py:272
+#: reviewapp/models.py:256 reviewapp/models.py:274
 #: reviewapp/templates/reviewapp/dashboard.html:28
 #: reviewapp/templates/reviewapp/dashboard.html:59
 #: reviewapp/templates/reviewapp/review_list.html:21
@@ -157,7 +157,7 @@ msgstr "cree una cuenta para someter un registro de ensayo clínico"
 msgid "Register"
 msgstr "Regístrese"
 
-#: custom/ecgovbr/templates/base.html:124 reviewapp/models.py:252
+#: custom/ecgovbr/templates/base.html:124 reviewapp/models.py:254
 #: reviewapp/templates/reviewapp/news_detail.html:5
 #: reviewapp/templates/reviewapp/news_detail.html:10
 #: reviewapp/templates/reviewapp/news_list.html:5
@@ -383,7 +383,7 @@ msgstr "Yo he leído y estoy de acuerdo con los Términos del Servicio"
 msgid "You must agree to the terms to register"
 msgstr "Usted debe concordar con los terminos para registrarse"
 
-#: registration/forms.py:95 reviewapp/forms.py:109
+#: registration/forms.py:95 reviewapp/forms.py:130
 msgid ""
 "This email address is already in use. Please supply a different email "
 "address."
@@ -464,7 +464,7 @@ msgstr ""
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:140
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:144
 #: repository/templates/repository/trial_index.html:27 reviewapp/models.py:75
-#: reviewapp/models.py:227 reviewapp/models.py:258
+#: reviewapp/models.py:229 reviewapp/models.py:260
 #: reviewapp/templates/reviewapp/dashboard.html:29
 #: tickets/templates/tickets/ticket_detail.html:23
 #: tickets/templates/tickets/ticket_detail.html:58
@@ -895,7 +895,7 @@ msgstr "Institución"
 
 #: repository/models.py:687
 #: repository/templates/admin/repository/publishedtrial/change_form.html:60
-#: reviewapp/forms.py:190 reviewapp/forms.py:193
+#: reviewapp/forms.py:211 reviewapp/forms.py:214
 msgid "Name"
 msgstr "Nombre"
 
@@ -928,7 +928,7 @@ msgid "Last Name"
 msgstr ""
 
 #: repository/models.py:707 repository/trds_forms.py:684
-#: reviewapp/forms.py:191 reviewapp/forms.py:194 reviewapp/forms.py:203
+#: reviewapp/forms.py:212 reviewapp/forms.py:215 reviewapp/forms.py:224
 msgid "E-mail"
 msgstr "E-mail"
 
@@ -1018,7 +1018,7 @@ msgstr "Código"
 
 #: repository/models.py:809 repository/models.py:826
 #: repository/templates/admin/repository/publishedtrial/change_form.html:106
-#: reviewapp/models.py:226 reviewapp/models.py:255 reviewapp/models.py:273
+#: reviewapp/models.py:228 reviewapp/models.py:257 reviewapp/models.py:275
 #: reviewapp/templates/reviewapp/dashboard.html:87
 msgid "Text"
 msgstr "Texto"
@@ -1379,7 +1379,7 @@ msgid "Creator"
 msgstr "Creado"
 
 #: repository/templates/admin/repository/publishedtrial/change_form.html:94
-#: repository/templates/repository/attachments.html:38 reviewapp/models.py:180
+#: repository/templates/repository/attachments.html:46 reviewapp/models.py:181
 #: tickets/models.py:71 tickets/views.py:62 tickets/views.py:139
 #: tickets/templates/tickets/ticket_detail.html:59 vocabulary/models.py:18
 #: vocabulary/models.py:58
@@ -1431,29 +1431,38 @@ msgstr "Ensayos registrados"
 msgid "Existing attachments"
 msgstr ""
 
-#: repository/templates/repository/attachments.html:33 reviewapp/forms.py:91
-#: reviewapp/models.py:179
+#: repository/templates/repository/attachments.html:34
+#: repository/templates/repository/attachments.html:40 reviewapp/forms.py:91
+#: reviewapp/forms.py:94 reviewapp/models.py:179
 msgid "File"
 msgstr "Archivo"
 
-#: repository/templates/repository/attachments.html:43
+#: repository/templates/repository/attachments.html:50
+msgid "Remove"
+msgstr ""
+
+#: repository/templates/repository/attachments.html:50
+msgid "Remove this attachment?"
+msgstr ""
+
+#: repository/templates/repository/attachments.html:58
 msgid "New attachment form"
 msgstr ""
 
-#: repository/templates/repository/attachments.html:60
+#: repository/templates/repository/attachments.html:75
 #: repository/templates/repository/trial_form.html:54
 #, fuzzy
 msgid "Add more"
 msgstr "Leer más"
 
-#: repository/templates/repository/attachments.html:64
+#: repository/templates/repository/attachments.html:79
 #: repository/templates/repository/new_institution.html:144
 #: repository/templates/repository/trial_form.html:63
 #: reviewapp/templates/reviewapp/user_profile.html:41
 msgid "Save"
 msgstr "Guardar"
 
-#: repository/templates/repository/attachments.html:106
+#: repository/templates/repository/attachments.html:142
 #: repository/templates/repository/trial_form.html:125
 msgid ""
 "You have done modifications on some fields. Are you sure you want to leave "
@@ -1584,17 +1593,17 @@ msgstr ""
 msgid "Attachments"
 msgstr ""
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:633
+#: repository/templates/repository/clinicaltrial_detail_published.html:645
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:591
 msgid "Additional Links"
 msgstr ""
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:636
+#: repository/templates/repository/clinicaltrial_detail_published.html:648
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:594
 msgid "Download as ICTRP format"
 msgstr ""
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:640
+#: repository/templates/repository/clinicaltrial_detail_published.html:651
 msgid "Download as OpenTrials XML format"
 msgstr ""
 
@@ -1654,7 +1663,7 @@ msgstr "En espera de aprobación"
 
 #: repository/templates/repository/clinicaltrial_detail_user.html:144
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:144
-#: reviewapp/models.py:196
+#: reviewapp/models.py:198
 msgid "Closed"
 msgstr "Cerrado"
 
@@ -1666,7 +1675,7 @@ msgstr "Cerrado"
 #: repository/templates/repository/clinicaltrial_detail_user.html:616
 #: repository/templates/repository/clinicaltrial_detail_user.html:669
 #: repository/templates/repository/clinicaltrial_detail_user.html:838
-#: repository/templates/repository/clinicaltrial_detail_user.html:859
+#: repository/templates/repository/clinicaltrial_detail_user.html:872
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:250
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:290
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:376
@@ -1685,7 +1694,7 @@ msgid "Private"
 msgstr ""
 
 #: repository/templates/repository/clinicaltrial_detail_user.html:851
-#: reviewapp/models.py:43 reviewapp/models.py:182
+#: reviewapp/models.py:43 reviewapp/models.py:183
 msgid "Public"
 msgstr "Público"
 
@@ -1781,41 +1790,58 @@ msgstr ""
 msgid "Existing Attachment"
 msgstr ""
 
-#: reviewapp/forms.py:98
+#: reviewapp/forms.py:94
+msgid "URL Link"
+msgstr ""
+
+#: reviewapp/forms.py:96
+#, fuzzy
+msgid "Attachment Type"
+msgstr "Tipo de contacto"
+
+#: reviewapp/forms.py:106
 msgid "New Attachment"
 msgstr ""
 
-#: reviewapp/forms.py:116
-msgid "User Profile"
+#: reviewapp/forms.py:113
+msgid "Choose one file to upload"
 msgstr ""
 
-#: reviewapp/forms.py:123
-msgid "Aditional info for profile"
+#: reviewapp/forms.py:116
+msgid "Place an URL address"
 msgstr ""
 
 #: reviewapp/forms.py:137
+msgid "User Profile"
+msgstr ""
+
+#: reviewapp/forms.py:144
+msgid "Aditional info for profile"
+msgstr ""
+
+#: reviewapp/forms.py:158
 msgid "Invalid XML syntax."
 msgstr ""
 
-#: reviewapp/forms.py:181 reviewapp/templates/reviewapp/open_remark.html:7
+#: reviewapp/forms.py:202 reviewapp/templates/reviewapp/open_remark.html:7
 msgid "Open a new Remark"
 msgstr ""
 
-#: reviewapp/forms.py:195 tickets/models.py:70 tickets/views.py:138
+#: reviewapp/forms.py:216 tickets/models.py:70 tickets/views.py:138
 #: tickets/templates/tickets/ticket_detail.html:22
 #: tickets/templates/tickets/user_tickets.html:24
 msgid "Subject"
 msgstr ""
 
-#: reviewapp/forms.py:196
+#: reviewapp/forms.py:217
 msgid "Message"
 msgstr "Mensaje"
 
-#: reviewapp/forms.py:199
+#: reviewapp/forms.py:220
 msgid "I read and agree to all terms above"
 msgstr ""
 
-#: reviewapp/forms.py:200
+#: reviewapp/forms.py:221
 msgid "You must agree to the terms"
 msgstr ""
 
@@ -1854,26 +1880,30 @@ msgstr ""
 msgid "Recruitment Countries"
 msgstr ""
 
-#: reviewapp/models.py:192 reviewapp/templates/reviewapp/open_remark.html:13
+#: reviewapp/models.py:180
+msgid "Link"
+msgstr ""
+
+#: reviewapp/models.py:194 reviewapp/templates/reviewapp/open_remark.html:13
 msgid "Open"
 msgstr ""
 
-#: reviewapp/models.py:194
+#: reviewapp/models.py:196
 msgid "Acknowledged"
 msgstr ""
 
-#: reviewapp/models.py:225 reviewapp/templates/reviewapp/dashboard.html:86
+#: reviewapp/models.py:227 reviewapp/templates/reviewapp/dashboard.html:86
 #: tickets/models.py:16 tickets/templates/tickets/new_iteration.html:29
 #: tickets/templates/tickets/ticket_detail.html:20
 #: tickets/templates/tickets/user_tickets.html:22
 msgid "Context"
 msgstr "Contexto"
 
-#: reviewapp/models.py:245
+#: reviewapp/models.py:247
 msgid "Pending"
 msgstr "Pendiente"
 
-#: reviewapp/models.py:246
+#: reviewapp/models.py:248
 msgid "Published"
 msgstr "Publicado"
 
@@ -1885,15 +1915,15 @@ msgstr ""
 msgid "This submission can not be deleted."
 msgstr ""
 
-#: reviewapp/views.py:352
+#: reviewapp/views.py:354
 msgid "XML files imported with success!"
 msgstr ""
 
-#: reviewapp/views.py:472
+#: reviewapp/views.py:474
 msgid "Message sent successfully."
 msgstr ""
 
-#: reviewapp/views.py:475
+#: reviewapp/views.py:477
 msgid "Please fill out all fields correctly."
 msgstr ""
 
@@ -2142,6 +2172,14 @@ msgstr ""
 #, fuzzy
 msgid "Continue"
 msgstr "Contexto"
+
+#: reviewapp/templates/reviewapp/terms_of_use.html:33
+msgid "or"
+msgstr ""
+
+#: reviewapp/templates/reviewapp/terms_of_use.html:35
+msgid "Upload a XML file"
+msgstr ""
 
 #: reviewapp/templates/reviewapp/upload_trial.html:9
 msgid "Upload trial"

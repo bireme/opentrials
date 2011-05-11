@@ -91,11 +91,32 @@ class ExistingAttachmentForm(forms.ModelForm):
     file = forms.CharField(required=False,label=_('File'),max_length=255)
 
 class NewAttachmentForm(ReviewModelForm):
+    UPLOAD_CHOICES = [['file',_('File')],['url',_('URL Link')]]
+
+    attach_type = forms.ChoiceField(label=_('Attachment Type'), 
+                                    choices=UPLOAD_CHOICES,
+                                    initial='file')
     class Meta:
         model = Attachment
-        fields = ['file','description','public']
+        fields = ['attach_type', 'file', 'attach_url','description','public',]
+        widgets = {
+                    'attach_url': forms.widgets.Input(attrs={'disabled': 'true'}),
+                  }
 
     title = _('New Attachment')
+
+    def clean(self):
+        cleaned_data = super(NewAttachmentForm,self).clean()
+        upload_file = cleaned_data.get('attach_type') == 'file'
+        if upload_file:
+            if not cleaned_data.get('file'):
+                raise forms.ValidationError(_("Choose one file to upload"))
+        else:
+            if not cleaned_data.get('attach_url'):
+                raise forms.ValidationError(_("Place an URL address"))
+        
+        return cleaned_data
+
 
 class UserForm(forms.ModelForm):
     def clean_email(self):

@@ -2,6 +2,8 @@
 
 - Observational fields implemented
 - Fixing bug that caused mistranslation labels in trial
+- Users can delete attachments
+- Users can attach url links instead of files
 
 
 #What is new in v1.0.21:
