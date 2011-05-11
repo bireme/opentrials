@@ -99,13 +99,26 @@
     });
 </script>
 
-<!--script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function() {
-       $('input').select(function() {
-         alert('oi');
+       $('select[name*="attach_type"]').change(function() {
+         name = $(this)[0].name;
+         value = $(this)[0].value;
+         order = parseInt(name.replace(/[^0-9]/g, ''))
+
+         if(value == 'file'){
+             //hide url, show file
+             $('input[name*="url"]')[order].disabled = true
+             $('input[name*="file"]')[order].disabled = false
+         }
+         else{
+             //hide file, show url
+             $('input[name*="url"]')[order].disabled = false
+             $('input[name*="file"]')[order].disabled = true
+         }         
        });
      });
-</script-->
+</script>
 
 <script type="text/javascript">
     $(document).ready(function() {

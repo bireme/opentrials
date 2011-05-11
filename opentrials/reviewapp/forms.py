@@ -93,13 +93,15 @@ class ExistingAttachmentForm(forms.ModelForm):
 class NewAttachmentForm(ReviewModelForm):
     UPLOAD_CHOICES = [['file',_('File')],['url',_('URL Link')]]
 
-    attach_type = forms.ChoiceField(label=_('Attachment Type'),
-                                    #widget=forms.widgets.RadioSelect, 
+    attach_type = forms.ChoiceField(label=_('Attachment Type'), 
                                     choices=UPLOAD_CHOICES,
-                                    initial=0)
+                                    initial='file')
     class Meta:
         model = Attachment
         fields = ['attach_type', 'file', 'attach_url','description','public',]
+        widgets = {
+                    'attach_url': forms.widgets.Input(attrs={'disabled': 'true'}),
+                  }
 
     title = _('New Attachment')
 
