@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-10 10:51-0300\n"
+"POT-Creation-Date: 2011-05-11 13:53-0300\n"
 "PO-Revision-Date: 2010-12-15 21:44\n"
 "Last-Translator: <appec@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -383,7 +383,7 @@ msgstr "Yo he leído y estoy de acuerdo con los Términos del Servicio"
 msgid "You must agree to the terms to register"
 msgstr "Usted debe concordar con los terminos para registrarse"
 
-#: registration/forms.py:95 reviewapp/forms.py:127
+#: registration/forms.py:95 reviewapp/forms.py:130
 msgid ""
 "This email address is already in use. Please supply a different email "
 "address."
@@ -895,7 +895,7 @@ msgstr "Institución"
 
 #: repository/models.py:687
 #: repository/templates/admin/repository/publishedtrial/change_form.html:60
-#: reviewapp/forms.py:208 reviewapp/forms.py:211
+#: reviewapp/forms.py:211 reviewapp/forms.py:214
 msgid "Name"
 msgstr "Nombre"
 
@@ -928,7 +928,7 @@ msgid "Last Name"
 msgstr ""
 
 #: repository/models.py:707 repository/trds_forms.py:684
-#: reviewapp/forms.py:209 reviewapp/forms.py:212 reviewapp/forms.py:221
+#: reviewapp/forms.py:212 reviewapp/forms.py:215 reviewapp/forms.py:224
 msgid "E-mail"
 msgstr "E-mail"
 
@@ -1462,7 +1462,7 @@ msgstr "Leer más"
 msgid "Save"
 msgstr "Guardar"
 
-#: repository/templates/repository/attachments.html:121
+#: repository/templates/repository/attachments.html:142
 #: repository/templates/repository/trial_form.html:125
 msgid ""
 "You have done modifications on some fields. Are you sure you want to leave "
@@ -1675,7 +1675,7 @@ msgstr "Cerrado"
 #: repository/templates/repository/clinicaltrial_detail_user.html:616
 #: repository/templates/repository/clinicaltrial_detail_user.html:669
 #: repository/templates/repository/clinicaltrial_detail_user.html:838
-#: repository/templates/repository/clinicaltrial_detail_user.html:873
+#: repository/templates/repository/clinicaltrial_detail_user.html:872
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:250
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:290
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:376
@@ -1794,54 +1794,54 @@ msgstr ""
 msgid "URL Link"
 msgstr ""
 
-#: reviewapp/forms.py:95
+#: reviewapp/forms.py:96
 #, fuzzy
 msgid "Attachment Type"
 msgstr "Tipo de contacto"
 
-#: reviewapp/forms.py:103
+#: reviewapp/forms.py:106
 msgid "New Attachment"
 msgstr ""
 
-#: reviewapp/forms.py:110
+#: reviewapp/forms.py:113
 msgid "Choose one file to upload"
 msgstr ""
 
-#: reviewapp/forms.py:113
-msgid "Place one URL address"
+#: reviewapp/forms.py:116
+msgid "Place an URL address"
 msgstr ""
 
-#: reviewapp/forms.py:134
+#: reviewapp/forms.py:137
 msgid "User Profile"
 msgstr ""
 
-#: reviewapp/forms.py:141
+#: reviewapp/forms.py:144
 msgid "Aditional info for profile"
 msgstr ""
 
-#: reviewapp/forms.py:155
+#: reviewapp/forms.py:158
 msgid "Invalid XML syntax."
 msgstr ""
 
-#: reviewapp/forms.py:199 reviewapp/templates/reviewapp/open_remark.html:7
+#: reviewapp/forms.py:202 reviewapp/templates/reviewapp/open_remark.html:7
 msgid "Open a new Remark"
 msgstr ""
 
-#: reviewapp/forms.py:213 tickets/models.py:70 tickets/views.py:138
+#: reviewapp/forms.py:216 tickets/models.py:70 tickets/views.py:138
 #: tickets/templates/tickets/ticket_detail.html:22
 #: tickets/templates/tickets/user_tickets.html:24
 msgid "Subject"
 msgstr ""
 
-#: reviewapp/forms.py:214
+#: reviewapp/forms.py:217
 msgid "Message"
 msgstr "Mensaje"
 
-#: reviewapp/forms.py:217
+#: reviewapp/forms.py:220
 msgid "I read and agree to all terms above"
 msgstr ""
 
-#: reviewapp/forms.py:218
+#: reviewapp/forms.py:221
 msgid "You must agree to the terms"
 msgstr ""
 

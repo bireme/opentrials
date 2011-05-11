@@ -113,7 +113,7 @@ class NewAttachmentForm(ReviewModelForm):
                 raise forms.ValidationError(_("Choose one file to upload"))
         else:
             if not cleaned_data.get('attach_url'):
-                raise forms.ValidationError(_("Place one URL address"))
+                raise forms.ValidationError(_("Place an URL address"))
         
         return cleaned_data
 
