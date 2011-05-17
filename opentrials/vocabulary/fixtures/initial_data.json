@@ -21739,8 +21739,8 @@
     "fields": {
       "order": 0, 
       "description": "Spain", 
-      "submission_language": "", 
-      "label": "es"
+      "submission_language": "es", 
+      "label": "ES"
     }
   }, 
   {
