@@ -242,14 +242,17 @@ def terms_of_use(request):
         terms_form = TermsUseForm(request.POST)
 
         if terms_form.is_valid():
-            return HttpResponseRedirect(reverse('reviewapp.new_submission'))
+            if request.POST.get('submit') == 'Continue':
+                return HttpResponseRedirect(reverse('reviewapp.new_submission'))
+            else:
+                return HttpResponseRedirect('../uploadtrial')
     else:
         terms_form = TermsUseForm()
 
     form = terms_form
 
     return render_to_response('reviewapp/terms_of_use.html', {
-                              'form': form,
+                              'form': form, 
                               'page': flat_trans},
                               context_instance=RequestContext(request))
 

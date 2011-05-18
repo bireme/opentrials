@@ -27,14 +27,11 @@
             <p>{{ field }} {{ field.label_tag }}</p>
         {% endfor %}
         <input name="submit" type="submit" value="{% trans "Continue" %}"/>
-    </form>
-
     {% if DEBUG %}    
     {% trans "or" %}
-        <form action="/accounts/uploadtrial">        
-            <input name="submit" type="submit" value="{% trans "Upload a XML file" %}"/>
-        </form>
+        <input name="submit" type="submit" value="{% trans "Upload a XML file" %}"/>
     {% endif %}
+    </form>
 
 
 {% endblock %}
