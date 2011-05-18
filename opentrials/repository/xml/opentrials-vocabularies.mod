@@ -57,4 +57,4 @@ such as those from Vocabulary application.
     "interventional|observational">
 
 <!ENTITY % institution_type.options
-    "clinical_research_network|federal_agency|industry|ministry_of_health|non_governamental_agency|state_research_support_foundation|other">
+    "clinical_research_network|federal_agency|industry|ministery_of_health|non-governamental_agency|state_research_support_foundation|other">
