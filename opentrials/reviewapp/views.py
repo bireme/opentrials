@@ -64,11 +64,11 @@ def index(request):
 
 @login_required
 def dashboard(request):
-    user_submissions = Submission.objects.filter(creator=request.user)
+    user_submissions = Submission.objects.filter(creator=request.user).order_by('-updated')
     remarks = Remark.objects.filter(submission__in=user_submissions)
 
     if request.user.has_perm('reviewapp.review'):
-        submissions_to_review = Submission.objects.filter(status=STATUS_PENDING)
+        submissions_to_review = Submission.objects.filter(status=STATUS_PENDING).order_by('-updated')
 
     return render_to_response('reviewapp/dashboard.html', locals(),
                                context_instance=RequestContext(request))
