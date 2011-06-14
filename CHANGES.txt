@@ -1,8 +1,9 @@
-#What is new in v1.0.22
+#What is new in v1.0.23
 
 - Users can delete attachments
 - Users can attach url links instead of files
 - Minor bug fix (fixtures)
+
 
 #What is new in v1.0.22
 
