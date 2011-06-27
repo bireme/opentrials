@@ -1086,7 +1086,7 @@ def trial_otxml(request, trial_fossil_id, trial_version=None):
 
     - ToDo
     """
-
+    
     try:
         fossil = Fossil.objects.get(pk=trial_fossil_id)
     except Fossil.DoesNotExist:

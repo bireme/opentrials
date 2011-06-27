@@ -154,7 +154,8 @@ class TrialsFossilManager(FossilManager):
                     self.indexed(display='True', primary_sponsor__icontains=q).filter(is_most_recent=True) |\
                     self.indexed(display='True', scientific_contacts__icontains=q).filter(is_most_recent=True) |\
                     self.indexed(display='True', utrn_number__icontains=q).filter(is_most_recent=True) |\
-                    self.indexed(display='True', secondary_ids__icontains=q).filter(is_most_recent=True)
+                    self.indexed(display='True', secondary_ids__icontains=q).filter(is_most_recent=True) |\
+                    self.indexed(display='True', trial_id__icontains=q).filter(is_most_recent=True)
 
     def archived(self):
         return self.indexed(display='True').filter(is_most_recent=False)
