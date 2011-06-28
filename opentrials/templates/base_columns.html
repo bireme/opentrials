@@ -21,21 +21,21 @@
             {% get_score_numbers as score %}
             
             {% if score.number_registered_trials %}
-              {% blocktrans count score.number_registered_trials as registered%}
-                <p>There is <span>{{ registered }}</span> registered trial.</p>
-              {% plural %}
-                <p>There are <span>{{ registered }}</span> registered trials.</p>
-              {% endblocktrans %}
+                {% blocktrans count score.number_registered_trials as registered%}
+                  <p>There is <span>{{ registered }}</span> registered trial.</p>
+                {% plural %}
+                  <p>There are <span>{{ registered }}</span> registered trials.</p>
+                {% endblocktrans %}
             {% else %}
               {% trans "No clinical trials registered." %}
-            {%endif%} 
+            {%endif%}
             
             {% if score.number_recruiting_trials %}
-              {% blocktrans count score.number_recruiting_trials as recruiting %}
-                <p>There is <span>{{ recruiting }}</span> recruiting trial.</p>
-              {% plural %}
-                <p>There are <span>{{ recruiting }}</span> recruiting trial.</p>
-              {% endblocktrans %}
+                {% blocktrans count score.number_recruiting_trials as recruiting %}
+                  <p>There is <span>{{ recruiting }}</span> recruiting trial.</p>
+                {% plural %}
+                  <p>There are <span>{{ recruiting }}</span> recruiting trial.</p>
+                {% endblocktrans %}
             {%endif%}
                        
         </p>
