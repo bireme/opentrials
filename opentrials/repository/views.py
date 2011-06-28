@@ -28,6 +28,7 @@ from reviewapp.models import Attachment, Submission, Remark
 from reviewapp.models import STATUS_PENDING, STATUS_RESUBMIT, STATUS_DRAFT, STATUS_APPROVED
 from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
 from reviewapp.consts import STEP_STATES, REMARK, MISSING, PARTIAL, COMPLETE
+from reviewapp.views import submission_edit_published
 
 from repository.trial_validation import trial_validator
 from repository.models import ClinicalTrial, Descriptor, TrialNumber
@@ -78,19 +79,22 @@ def check_user_can_edit_trial(func):
         request.ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
         request.can_change_trial = True
 
+        import pdb; pdb.set_trace() 
         if request.ct.submission.status == STATUS_APPROVED:
             request.can_change_trial = False
-            messages.warning(request, unicode(_('This trial cannot be modified because it has already been approved.')))
+            parsed_link = reverse(submission_edit_published, args=[trial_pk])
+            edit_trial_button_string = '<form action="%s"><input type="submit" value="%s"/> </form>' % (parsed_link,unicode(_('Edit Trial'))
+            messages.warning(request, _('This trial cannot be modified because it has already been approved.%s') % edit_trial_button_string)
 
         # Creator can edit in statuses draft and resubmited but can view on other statuses
         elif request.user == request.ct.submission.creator:
             if request.ct.submission.status not in (STATUS_DRAFT, STATUS_RESUBMIT):
                 request.can_change_trial = False
-                messages.warning(request, unicode(_('You cannot modify this trial because it is being revised.')))
+                messages.warning(request, _('You cannot modify this trial because it is being revised.'))
 
         elif not request.user.is_staff: # If this is a staff member...
             request.can_change_trial = False
-            messages.warning(request, unicode(_('Only the creator can modify a trial.')))
+            messages.warning(request, _('Only the creator can modify a trial.'))
 
             # A reviewer in status pending
             if not( request.ct.submission.status == STATUS_PENDING and
