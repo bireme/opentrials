@@ -83,7 +83,7 @@ def check_user_can_edit_trial(func):
         if request.ct.submission.status == STATUS_APPROVED:
             request.can_change_trial = False
             parsed_link = reverse(submission_edit_published, args=[trial_pk])
-            edit_trial_button_string = '<form action="%s"><input type="submit" value="%s"/> </form>' % (parsed_link,unicode(_('Edit Trial'))
+            edit_trial_button_string = '<form action="%s"><input type="submit" value="%s"/> </form>' % (parsed_link,unicode(_('Edit Trial')))
             messages.warning(request, _('This trial cannot be modified because it has already been approved.%s') % edit_trial_button_string)
 
         # Creator can edit in statuses draft and resubmited but can view on other statuses
