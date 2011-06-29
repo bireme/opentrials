@@ -242,7 +242,7 @@ def terms_of_use(request):
         terms_form = TermsUseForm(request.POST)
 
         if terms_form.is_valid():
-            if request.POST.get('submit') == 'Continue':
+            if request.POST.get('submit') == _('Continue'):
                 return HttpResponseRedirect(reverse('reviewapp.new_submission'))
             else:
                 return HttpResponseRedirect('../uploadtrial')

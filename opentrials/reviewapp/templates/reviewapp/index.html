@@ -43,7 +43,6 @@
         </td>
     </tr>
     </table>
-
     {% cache 120 home_registered_trials LANGUAGE_CODE %}
 
     {% if clinical_trials %}
@@ -63,4 +62,7 @@
     </div>
 
     {% endcache %}
+    <form name="more_trials" action="./rg" >
+        <input type="submit" value="{% trans 'View all' %}" />
+    </form>
 {% endblock %}

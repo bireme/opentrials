@@ -1,4 +1,14 @@
-#What is new in v1.0.22
+#What is new in v1.0.24
+
+- Bug Fix:
+    search by rebec identification number (primary/trial id)
+    'Continue' button for register a trial now working in both 
+  languages
+- Registry table now in ascending order
+- 'View all' button in home
+
+
+#What is new in v1.0.23
 
 - Users can delete attachments
 - Users can attach url links instead of files
