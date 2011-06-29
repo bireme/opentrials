@@ -1,0 +1,202 @@
+{% extends "base.xml" %}
+{% load repository_tags %}
+{% block root %}
+<!DOCTYPE trials SYSTEM "http://localhost:8000/xml/opentrials.dtd">
+<trials version="{{ opentrials_xml_version }}">
+    <trial status="{{ object.status|default_if_none:"published" }}"
+           date_registration="{{ object.date_registration|date:"Y-m-d" }}"
+           created="{{ object.created|date:"Y-m-d" }}"
+           updated="{{ object.updated|date:"Y-m-d" }}">
+        <trial_identification>
+            <trial_id>{{ object.trial_id }}</trial_id>
+            <utrn_number>{{ object.utrn_number }}</utrn_number>
+            <reg_name>{{ reg_name }}</reg_name>
+            <public_title>{{ object.public_title }}</public_title>
+            <acronym>{{ object.acronym }}</acronym>
+            <acronym_expansion>{{ object.acronym_expansion }}</acronym_expansion>
+            <scientific_title>{{ object.scientific_title }}</scientific_title>
+            <scientific_acronym>{{ object.scientific_acronym }}</scientific_acronym>
+            <scientific_acronym_expansion>{{ object.scientific_acronym_expansion }}</scientific_acronym_expansion>
+        </trial_identification>
+
+        <sponsors_and_support>
+            <primary_sponsor country_code="{{ object.primary_sponsor.country.label }}" type="{{ object.primary_sponsor.i_type.label|prep_label_for_xml }}">
+                <name>{{ object.primary_sponsor.name }}</name>
+                <address>{{ object.primary_sponsor.address }}</address>
+            </primary_sponsor>
+
+            {%  for sponsor in object.secondary_sponsors %}
+            <secondary_sponsor country_code="{{ sponsor.institution.country.label }}" type="{{ sponsor.institution.i_type.label|prep_label_for_xml }}">
+                <name>{{ sponsor.institution.name }}</name>
+                <address>{{ sponsor.institution.address }}</address>
+            </secondary_sponsor>
+            {% endfor %}
+
+            {%  for source in object.support_sources %}
+            <source_support country_code="{{ source.institution.country.label }}" type="{{ sponsor.institution.i_type.label|prep_label_for_xml }}">
+                <name>{{ source.institution.name }}</name>
+                <address>{{ source.institution.address }}</address>
+            </source_support>
+            {% endfor %}
+        </sponsors_and_support>
+
+        <health_conditions>
+            {% for hc in object.hc_code %}
+            <hc_code vocabulary="{{ hc.vocabulary|prep_label_for_xml }}" version="{{ hc.version }}" code="{{ hc.code }}">
+                <text>{{ hc.text }}</text>
+                {% if hc.translations %}
+                {% for hc_translation in hc.translations %}
+                <text_translation lang="{{ hc_translation.language }}">{{ hc_translation.text }}</text_translation>
+                {% endfor %}
+                {% endif %}
+            </hc_code>
+            {% endfor %}
+
+            {% for hc in object.hc_keyword %}
+            <keyword vocabulary="{{ hc.vocabulary|prep_label_for_xml }}" version="{{ hc.version }}" code="{{ hc.code }}">
+                <text>{{ hc.text }}</text>
+                {% if hc.translations %}
+                {% for hc_translation in hc.translations %}
+                <text_translation lang="{{ hc_translation.language }}">{{ hc_translation.text }}</text_translation>
+                {% endfor %}
+                {% endif %}
+            </keyword>
+            {% endfor %}
+
+            <freetext>{{ object.hc_freetext }}</freetext>
+        </health_conditions>
+
+        <interventions>
+            {% for iv in object.i_code %}
+            <i_code value="{{ iv.label|prep_label_for_xml }}"></i_code>
+            {% endfor %}
+
+            {% for iv in object.intervention_keyword %}
+            <keyword vocabulary="{{ iv.vocabulary|prep_label_for_xml }}" version="{{ iv.version }}" code="{{ iv.code }}">
+                <text>{{ iv.text }}</text>
+                {% if iv.translations %}
+                {% for i_translation in iv.translations %}
+                <text_translation lang="{{ i_translation.language }}">{{ i_translation.text }}</text_translation>
+                {% endfor %}
+                {% endif %}
+            </keyword>
+            {% endfor %}
+
+            <freetext>{{ object.i_freetext }}</freetext>
+        </interventions>
+
+        <recruitment status="{{ object.recruitment_status.label|prep_label_for_xml }}">
+            {% for country in object.recruitment_country %}
+            <recruitment_country value="{{ country.label }}"></recruitment_country>
+            {% endfor %}
+
+            <inclusion_criteria>{{ object.inclusion_criteria }}</inclusion_criteria>
+            <exclusion_criteria>{{ object.exclusion_criteria }}</exclusion_criteria>
+            <gender value="{{ object.gender|lower|switch:"-=both,f=female,m=male" }}"></gender>
+            <agemin value="{{ object.agemin_value }}" unit="{{ object.agemin_unit|switch:"-=null,Y=years,M=months,W=weeks,D=days,H=hours" }}"></agemin>
+            <agemax value="{{ object.agemax_value }}" unit="{{ object.agemax_unit|switch:"-=null,Y=years,M=months,W=weeks,D=days,H=hours" }}"></agemax>
+
+            {% if object.enrollment_start_actual %}
+            <date_enrolment_actual start="{{ object.date_enrollment_start }}" end="{{ object.date_enrollment_end }}"></date_enrolment_actual>
+            {% else %}
+            <date_enrolment_anticipated start="{{ object.date_enrollment_start }}" end="{{ object.date_enrollment_end }}"></date_enrolment_anticipated>
+            {% endif %}
+
+            <target_size value="{{ object.target_sample_size }}"></target_size>
+        </recruitment>
+
+        <study expanded_access_program="{{ object.expanded_access_program|default_if_none:0|yesno }}"
+               number_of_arms="{{ object.number_of_arms }}">
+            <study_design>{{ object.study_design }}</study_design>
+            {% if object.study_type %}<type value="{{ object.study_type.label|prep_label_for_xml }}"></type>{% endif %}
+            <phase value="{{ object.phase.label|prep_label_for_xml }}"></phase>
+            <purpose value="{{ object.purpose.label|prep_label_for_xml }}"></purpose>
+            <intervention_assignment value="{{ object.intervention_assignment.label|prep_label_for_xml }}"></intervention_assignment>
+            <masking value="{{ object.masking.label|prep_label_for_xml }}"></masking>
+            <allocation value="{{ object.allocation.label|prep_label_for_xml }}"></allocation>
+        </study>
+
+        <outcomes>
+            {% for outcome in object.primary_outcomes %}
+            <primary_outcome value="{{ outcome.description }}">
+                {% for outcome_trans in outcome.translations %}
+                <outcome_translation value="{{ outcome_trans.description }}" lang="{{ outcome_trans.language }}"></outcome_translation>
+                {% endfor %}
+            </primary_outcome>
+            {% endfor %}
+
+            {% for outcome in object.secondary_outcomes %}
+            <secondary_outcome value="{{ outcome.description }}">
+                {% for outcome_trans in outcome.translations %}
+                <outcome_translation value="{{ outcome_trans.description }}" lang="{{ outcome_trans.language }}"></outcome_translation>
+                {% endfor %}
+            </secondary_outcome>
+            {% endfor %}
+        </outcomes>
+
+        <contacts>
+            {% for person in persons %}
+            <person pid="{{ person.pk }}" country_code="{{ person.country.label }}">
+                <firstname>{{ person.firstname }}</firstname>
+                <middlename>{{ person.middlename }}</middlename>
+                <lastname>{{ person.lastname }}</lastname>
+                <address>{{ person.address }}</address>
+                <city>{{ person.city }}</city>
+                <zip>{{ person.zip }}</zip>
+                <telephone>{{ person.telephone }}</telephone>
+                <email>{{ person.email }}</email>
+                {% if person.affiliation %}
+                <affiliation country_code="{{ person.affiliation.country.label }}" type="{{ person.affiliation.i_type.label|prep_label_for_xml }}">
+                    <name>{{ person.affiliation.name }}</name>
+                    <address>{{ person.affiliation.address }}</address>
+                </affiliation>
+                {% endif %}
+            </person>
+            {% endfor %}
+
+            {% for contact in object.public_contact %}
+            <public_contact person="{{ contact.pk }}"></public_contact>
+            {% endfor %}
+            
+            {% for contact in object.scientific_contact %}
+            <scientific_contact person="{{ contact.pk }}"></scientific_contact>
+            {% endfor %}
+
+            {% for contact in object.site_contact %}
+            <site_contact person="{{ contact.pk }}"></site_contact>
+            {% endfor %}
+        </contacts>
+
+        <secondary_ids>
+            {% for secid in object.trial_number %}
+            <secondary_id>
+                <sec_id>{{ secid.id_number }}</sec_id>
+                <issuing_authority>{{ secid.issuing_authority }}</issuing_authority>    
+            </secondary_id>
+            {% endfor %}
+        </secondary_ids>
+
+        <references>
+            <link url="{% url repository.trial_registered_version trial_fossil_id=object.trial_id, trial_version=object.version %}"></link>
+        </references>
+
+        {% if include_translations %}
+        {% for translation in object.translations %}
+        <translation lang="{{ translation.language }}">
+            <public_title>{{ translation.public_title }}</public_title>
+            <acronym>{{ translation.acronym }}</acronym>
+            <acronym_expansion>{{ translation.acronym_expansion }}</acronym_expansion>
+            <scientific_title>{{ translation.scientific_title }}</scientific_title>
+            <scientific_acronym>{{ translation.scientific_acronym }}</scientific_acronym>
+            <scientific_acronym_expansion>{{ translation.scientific_acronym_expansion }}</scientific_acronym_expansion>
+            <hc_freetext>{{ translation.hc_freetext }}</hc_freetext>
+            <i_freetext>{{ translation.i_freetext }}</i_freetext>
+            <inclusion_criteria>{{ translation.inclusion_criteria }}</inclusion_criteria>
+            <exclusion_criteria>{{ translation.exclusion_criteria }}</exclusion_criteria>
+            <study_design>{{ translation.study_design }}</study_design>
+        </translation>
+        {% endfor %}
+        {% endif %}
+    </trial>
+</trials>
+{% endblock %}

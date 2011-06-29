@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block stepmenu_top %}
+    {{ block.super }}
+    <small>
+        / <a href="{% url ticket.index %}">{% trans 'Tickets' %}</a>
+    </small>
+    <big>/ {% trans 'Open Ticket' %}</big>
+{% endblock %}
+
+{% block body %}
+
+<h2>{% trans "Opening Ticket" %} {{ user_name }}</h2>
+<form method="post" action="/ticket/open/{{ context }}/{{ type }}/">{% csrf_token %}
+    <table class="table">
+        <col width="15%"/>
+        <col width="85%"/>
+
+        <tr>
+            <th>Context:</th>
+            <td>{{ context }}</td>
+        </tr>
+        <tr>
+            <th>Type:</th>
+            <td>{{ type }}</td>
+        </tr>
+        
+        {{open_ticket_form.as_table}}
+    </table>
+
+    <input name="submit" type="submit" value="{% trans "Submit" %}">
+</form>
+
+{% endblock %}

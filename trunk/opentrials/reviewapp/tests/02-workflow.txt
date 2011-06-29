@@ -1,0 +1,538 @@
+WORKFLOW
+========
+
+This test aims to be the story test that implement the workflow you can found at:
+
+* http://reddes.bvsalud.org/projects/clinical-trials/wiki/SubmissionWorkflow
+* http://reddes.bvsalud.org/projects/clinical-trials/browser/trunk/docs/workflow-2010-07-08.pdf
+
+    >>> import datetime
+    >>> from django.utils import simplejson
+    >>> from django.test.client import Client
+    >>> from django.contrib.auth.models import User, Group
+    >>> from django.core.urlresolvers import reverse
+    >>> from django.conf import settings
+    >>> from django.contrib.contenttypes.models import ContentType
+
+    >>> from reviewapp.models import Submission, Remark
+    >>> from reviewapp.consts import MISSING, PARTIAL, COMPLETE
+    >>> from repository.models import ClinicalTrial, TrialNumber, TrialSecondarySponsor
+    >>> from repository.models import Institution, TrialSupportSource, Descriptor
+    >>> from repository.models import Contact, PublicContact, ScientificContact, Outcome
+    >>> from repository.models import ClinicalTrialTranslation
+    >>> from repository.trial_validation import trial_validator
+    >>> from vocabulary.models import CountryCode, InterventionCode, RecruitmentStatus
+    >>> from vocabulary.models import InterventionAssigment, StudyPurpose, StudyMasking
+    >>> from vocabulary.models import StudyAllocation, StudyPhase
+    >>> from fossil.models import Fossil
+
+    >>> cl = Client()
+
+    >>> trialist = User.objects.create(username='trialist')
+    >>> trialist.set_password('1')
+    >>> trialist.save()
+
+    >>> reviewers = Group.objects.create(name='reviewers')
+
+    >>> reviewer = User.objects.create(username='reviewer')
+    >>> reviewer.set_password('1')
+    >>> reviewer.save()
+    >>> reviewer.groups.add(reviewers)
+
+    >>> country1 = CountryCode.objects.get(label='BR')
+
+    >>> inst1 = Institution.objects.create(name='ACME', country=country1, creator=reviewer)
+    >>> inst2 = Institution.objects.create(name='WHO', country=country1, creator=reviewer)
+
+    >>> contact1 = Contact.objects.create(firstname='Tarsila', lastname='Neiva',
+    ...     email='tarsila@gmail.com', affiliation=inst1, creator=reviewer)
+    >>> contact2 = Contact.objects.create(firstname='Linus', lastname='Neiva',
+    ...     email='linus@gmail.com', affiliation=inst2, creator=reviewer)
+
+    >>> recr_status1 = RecruitmentStatus.objects.all()[0]
+    >>> interv1 = InterventionAssigment.objects.all()[0]
+    >>> purpose1 = StudyPurpose.objects.all()[0]
+    >>> masking1 = StudyMasking.objects.all()[0]
+    >>> allocation1 = StudyAllocation.objects.all()[0]
+    >>> phase1 = StudyPhase.objects.all()[0]
+
+1. Submission draft / Trial processing
+--------------------------------------
+
+    >>> cl.login(username=trialist.username, password='1')
+    True
+
+    >>> params = {
+    ...     'scientific_title': 'Scientific title',
+    ...     'recruitment_country': [str(country1.pk)],
+    ...     'language': settings.LANGUAGE_CODE,
+    ... 
+    ...     'name': 'Name of Institution',
+    ...     'country': country1.pk,
+    ...     }
+    >>> resp = cl.post(reverse('reviewapp.new_submission'), params)
+    >>> resp.status_code
+    302
+
+    >>> submission = Submission.objects.latest('pk')
+    >>> isinstance(submission.trial, ClinicalTrial)
+    True
+
+    >>> resp['Location'] == 'http://testserver/rg/edit/%s/'%submission.pk
+    True
+
+    >>> trial = submission.trial
+
+    >>> submission.status
+    u'draft'
+
+    >>> trial.status
+    u'processing'
+
+2. Submission pending / Trial processing
+----------------------------------------
+
+    >>> submission = Submission.objects.get(pk=submission.pk)
+    >>> submission.get_status() == MISSING
+    True
+
+Fill trial fields
+
+    >>> trial.scientific_acronym = 'Scientific Acronym'
+    >>> trial.scientific_acronym_expansion = 'Expansion of Scientific Acronym'
+    >>> trial.public_title = 'Public Title'
+    >>> trial.acronym = 'Acronym'
+    >>> trial.acronym_expansion = 'Acronym Expansion'
+    >>> trial.primary_sponsor = inst1
+    >>> trial.hc_freetext = 'Regular sitution'
+    >>> trial.intervention_assignment = interv1
+    >>> trial.recruitment_status = recr_status1
+    >>> trial.enrollment_start_planned = datetime.date.today().strftime('%Y-%m')
+    >>> trial.enrollment_start_actual = datetime.date.today().strftime('%Y-%m')
+    >>> trial.enrollment_end_planned = datetime.date.today().strftime('%Y-%m')
+    >>> trial.enrollment_end_actual = datetime.date.today().strftime('%Y-%m')
+    >>> trial.target_sample_size = 3
+    >>> trial.i_freetext = 'Interventions nothing'
+    >>> trial.inclusion_criteria = 'The criteria 1'
+    >>> trial.exclusion_criteria = 'The criteria 2'
+    >>> trial.study_design = 'The study design of this research'
+    >>> trial.gender = '-'
+    >>> trial.agemin_value = 50
+    >>> trial.agemin_unit = 'Y'
+    >>> trial.agemax_value = 70
+    >>> trial.agemax_unit = 'Y'
+    >>> trial.expanded_access_program = True
+    >>> trial.purpose = purpose1
+    >>> trial.number_of_arms = 3
+    >>> trial.masking = masking1
+    >>> trial.allocation = allocation1
+    >>> trial.phase = phase1
+    >>> trial.save()
+
+    >>> submission.get_mandatory_languages() == set([u'en', u'pt-br'])
+    True
+
+    >>> trial_pt = ClinicalTrialTranslation.objects.get_translation_for_object(
+    ...     'pt-BR', trial, create_if_not_exist=True,
+    ... )
+    >>> trial_pt.scientific_acronym = 'Scientific Acronym'
+    >>> trial_pt.scientific_acronym_expansion = 'Expansion of Scientific Acronym'
+    >>> trial_pt.public_title = 'Public Title'
+    >>> trial_pt.acronym = 'Acronym'
+    >>> trial_pt.acronym_expansion = 'Acronym Expansion'
+    >>> trial_pt.hc_freetext = 'Regular sitution'
+    >>> trial_pt.enrollment_start_planned = datetime.date.today().strftime('%Y-%m')
+    >>> trial_pt.enrollment_start_actual = datetime.date.today().strftime('%Y-%m')
+    >>> trial_pt.enrollment_end_planned = datetime.date.today().strftime('%Y-%m')
+    >>> trial_pt.enrollment_end_actual = datetime.date.today().strftime('%Y-%m')
+    >>> trial_pt.target_sample_size = 3
+    >>> trial_pt.i_freetext = 'Interventions nothing'
+    >>> trial_pt.inclusion_criteria = 'The criteria 1'
+    >>> trial_pt.exclusion_criteria = 'The criteria 2'
+    >>> trial_pt.study_design = 'The study design of this research'
+    >>> trial_pt.gender = '-'
+    >>> trial_pt.agemin_value = 50
+    >>> trial_pt.agemin_unit = 'Y'
+    >>> trial_pt.agemax_value = 70
+    >>> trial_pt.agemax_unit = 'Y'
+    >>> trial_pt.expanded_access_program = True
+    >>> trial_pt.purpose = purpose1
+    >>> trial_pt.number_of_arms = 3
+    >>> trial_pt.primary_sponsor = inst1
+    >>> trial_pt.intervention_assignment = interv1
+    >>> trial_pt.recruitment_status = recr_status1
+    >>> trial_pt.purpose = purpose1
+    >>> trial_pt.masking = masking1
+    >>> trial_pt.allocation = allocation1
+    >>> trial_pt.phase = phase1
+    >>> trial_pt.save()
+
+Fill many to many fields
+
+    >>> number1 = TrialNumber.objects.create(trial=trial, issuing_authority='WHO', id_number='123')
+    >>> sec_sponsor1 = TrialSecondarySponsor.objects.create(trial=trial, institution=inst2)
+    >>> source1 = TrialSupportSource.objects.create(trial=trial, institution=inst2)
+    >>> descr1 = Descriptor.objects.create(trial=trial, aspect='HealthCondition', vocabulary='ICD-10',
+    ...     level='general', code='123')
+    >>> descr2 = Descriptor.objects.create(trial=trial, aspect='HealthCondition', vocabulary='ICD-10',
+    ...     level='specific', code='234')
+    >>> descr3 = Descriptor.objects.create(trial=trial, aspect='Intervention', vocabulary='ICD-10',
+    ...     level='general', code='345')
+    >>> descr4 = Descriptor.objects.create(trial=trial, aspect='Intervention', vocabulary='ICD-10',
+    ...     level='specific', code='456')
+    >>> trial.i_code.add(InterventionCode.objects.all()[0])
+    >>> trial.recruitment_country.add(country1)
+    >>> outcome1 = Outcome.objects.create(trial=trial, interest='primary', description='x')
+    >>> outcome2 = Outcome.objects.create(trial=trial, interest='secondary', description='y')
+    >>> p_contact1 = PublicContact.objects.create(trial=trial, contact=contact1)
+    >>> s_contact1 = ScientificContact.objects.create(trial=trial, contact=contact2)
+
+Updates the field status with validation
+
+    >>> trial_validator.validate(trial)
+
+Changes manually the fields status to fake validation FIXME
+This manual change of status, should be temporarily
+
+    >>> submission._fields_status = {u'en': {'Attachments': 3, 'Interventions': 3, 'Contacts': 3, 'Sponsors': 3, 'Outcomes': 3, 'Recruitment': 3, 'Trial Identification': 3, 'Health Conditions': 3, 'Study Type': 3}, u'pt-br': {'Attachments': 3, 'Interventions': 3, 'Contacts': 3, 'Sponsors': 3, 'Outcomes': 3, 'Recruitment': 3, 'Trial Identification': 3, 'Health Conditions': 3, 'Study Type': 3}}
+    >>> submission.fields_status = simplejson.dumps(submission._fields_status)
+    >>> submission.save()
+
+Now the trial should be just partially filled
+
+    >>> submission = Submission.objects.get(pk=submission.pk)
+    >>> submission.get_status() == PARTIAL
+    True
+
+    >>> resp = cl.post(reverse('repository.edittrial', args=(trial.pk,)), {})
+    >>> resp.status_code
+    302
+
+    >>> resp['Location'] == reverse('reviewapp.dashboard')
+    True
+
+    >>> submission = Submission.objects.get(pk=submission.pk)
+    >>> submission.get_status() == PARTIAL
+    True
+
+    >>> submission.status
+    u'pending'
+
+    >>> trial.status
+    u'processing'
+
+3. Submission resubmit / Trial processing
+-----------------------------------------
+
+    >>> cl.login(username=reviewer.username, password='1')
+    True
+
+Create a remark
+
+    >>> remark1 = Remark()
+    >>> remark1.creator = reviewer
+    >>> remark1.submission = submission
+    >>> remark1.context = 'sponsors'
+    >>> remark1.text = 'My observation about our sponsors'
+    >>> remark1.save()
+
+    >>> resp = cl.post(reverse('reviewapp.change_submission_status',
+    ...     kwargs={'submission_pk': submission.pk, 'status': 'resubmit'}), {})
+
+    >>> resp.status_code
+    302
+
+    >>> resp['Location'] == reverse('repository.trialview', kwargs={'trial_pk': trial.pk})
+    True
+
+    >>> submission = Submission.objects.get(pk=submission.pk)
+    >>> trial = submission.trial
+
+    >>> submission.status
+    u'resubmit'
+
+    >>> trial.status
+    u'processing'
+
+4. Submission draft again / Trial processing
+--------------------------------------------
+
+    >>> cl.login(username=trialist.username, password='1')
+    True
+
+    >>> resp = cl.get(reverse('repository.edittrial', args=(trial.pk,)), {})
+    >>> resp.status_code
+    200
+
+    >>> submission = Submission.objects.get(pk=submission.pk)
+    >>> trial = submission.trial
+
+    >>> submission.status
+    u'draft'
+
+    >>> trial.status
+    u'processing'
+
+5. Submission pending again / Trial processing
+----------------------------------------------
+
+    >>> resp = cl.post(reverse('repository.edittrial', args=(trial.pk,)), {})
+    >>> resp.status_code
+    302
+
+    >>> resp['Location'] == reverse('reviewapp.dashboard')
+    True
+
+    >>> submission = Submission.objects.get(pk=submission.pk)
+    >>> trial = submission.trial
+
+    >>> submission.status
+    u'pending'
+
+    >>> trial.status
+    u'processing'
+
+6. Submission approved / Trial published
+----------------------------------------
+
+    >>> cl.login(username=reviewer.username, password='1')
+    True
+
+    >>> remark1.status = 'closed'
+    >>> remark1.save()
+
+    >>> fossils_count_before = Fossil.objects.count()
+
+    >>> resp = cl.post(reverse('reviewapp.change_submission_status',
+    ...     kwargs={'submission_pk': submission.pk, 'status': 'approved'}), {})
+    >>> resp.status_code
+    302
+
+    >>> resp['Location'] == reverse('repository.trialview', kwargs={'trial_pk': trial.pk})
+    True
+
+    >>> submission = Submission.objects.get(pk=submission.pk)
+    >>> trial = submission.trial
+
+    >>> submission.status
+    u'approved'
+
+    >>> trial.status
+    u'published'
+
+    >>> Fossil.objects.count() == fossils_count_before + 1
+    True
+
+    >>> trial_fossil = Fossil.objects.filter(
+    ...     content_type=ContentType.objects.get_for_model(trial),
+    ...     object_id=trial.pk,
+    ... ).latest('creation')
+    >>> fossil_obj = trial_fossil.get_object_fossil()
+
+    >>> fossil_obj.public_title == trial.public_title
+    True
+
+    >>> fossil_obj.primary_sponsor.name == trial.primary_sponsor.name
+    True
+
+    >>> fossil_obj.created.strftime('%Y-%m-%d %H:%M:%S') == trial.created.strftime('%Y-%m-%d %H:%M:%S')
+    True
+
+7. New submission record draft / New trial processing
+-----------------------------------------------------
+
+    >>> cl.login(username=trialist.username, password='1')
+    True
+
+    >>> resp = cl.get(reverse('reviewapp.submission_edit_published', args=(submission.pk,)))
+    >>> resp.status_code
+    302
+
+"new_trial" and "new_submission" are actually the old ones, but from here, "trial"
+is going to be the fossil object and "submission" was changed to have a draft status
+
+    >>> new_submission = Submission.objects.get(pk=submission.pk)
+    >>> new_trial = new_submission.trial
+    >>> trial = fossil_obj
+
+    >>> resp['Location'] == reverse('repository.edittrial', args=(new_trial.pk,))
+    True
+
+    >>> new_submission.status
+    u'draft'
+
+    >>> new_trial.status
+    u'processing'
+
+    >>> trial_fossil.is_most_recent
+    True
+
+8. New submission pending / New trial processing
+------------------------------------------------
+
+    >>> new_submission = Submission.objects.get(pk=new_submission.pk)
+    >>> new_trial = new_submission.trial
+
+Updates the field status with validation
+
+    >>> trial_validator.validate(new_trial)
+
+Fill trial fields
+
+    >>> new_trial.scientific_acronym = 'New Scientific Acronym'
+    >>> new_trial.save()
+
+Updates the field status with validation
+
+    >>> trial_validator.validate(new_trial)
+
+Changes manually the fields status to fake validation FIXME
+This manual change of status, should be temporarily
+
+    >>> new_submission._fields_status = {u'en': {'Attachments': 3, 'Interventions': 3, 'Contacts': 3, 'Sponsors': 3, 'Outcomes': 3, 'Recruitment': 3, 'Trial Identification': 3, 'Health Conditions': 3, 'Study Type': 3}, u'pt-br': {'Attachments': 3, 'Interventions': 3, 'Contacts': 3, 'Sponsors': 3, 'Outcomes': 3, 'Recruitment': 3, 'Trial Identification': 3, 'Health Conditions': 3, 'Study Type': 3}}
+    >>> new_submission.fields_status = simplejson.dumps(new_submission._fields_status)
+    >>> new_submission.save()
+
+Now the trial should be just partially filled
+
+    >>> new_submission = Submission.objects.get(pk=new_submission.pk)
+    >>> new_submission.get_status() == PARTIAL
+    True
+
+    >>> resp = cl.post(reverse('repository.edittrial', args=(new_trial.pk,)), {})
+    >>> resp.status_code
+    302
+
+    >>> resp['Location'] == reverse('reviewapp.dashboard')
+    True
+
+    >>> new_submission = Submission.objects.get(pk=new_submission.pk)
+    >>> new_submission.get_status() == PARTIAL
+    True
+
+    >>> new_submission.status
+    u'pending'
+
+    >>> new_trial.status
+    u'processing'
+
+9. New submission resubmit / New trial processing
+-------------------------------------------------
+
+    >>> cl.login(username=reviewer.username, password='1')
+    True
+
+    >>> new_submission = Submission.objects.get(pk=new_submission.pk)
+    >>> new_trial = new_submission.trial
+
+Create a remark
+
+    >>> remark2 = Remark()
+    >>> remark2.creator = reviewer
+    >>> remark2.submission = new_submission
+    >>> remark2.context = 'sponsors'
+    >>> remark2.text = 'My observation about our sponsors'
+    >>> remark2.save()
+
+    >>> resp = cl.post(reverse('reviewapp.change_submission_status',
+    ...     kwargs={'submission_pk': new_submission.pk, 'status': 'resubmit'}), {})
+
+    >>> resp.status_code
+    302
+
+    >>> resp['Location'] == reverse('repository.trialview', kwargs={'trial_pk': new_trial.pk})
+    True
+
+    >>> new_submission = Submission.objects.get(pk=new_submission.pk)
+    >>> new_trial = new_submission.trial
+
+    >>> new_submission.status
+    u'resubmit'
+
+    >>> new_trial.status
+    u'processing'
+
+10. New submission draft again / New trial processing
+-----------------------------------------------------
+
+    >>> cl.login(username=trialist.username, password='1')
+    True
+
+    >>> resp = cl.get(reverse('repository.edittrial', args=(new_trial.pk,)), {})
+    >>> resp.status_code
+    200
+
+    >>> new_submission = Submission.objects.get(pk=new_submission.pk)
+    >>> new_trial = new_submission.trial
+
+    >>> new_submission.status
+    u'draft'
+
+    >>> new_trial.status
+    u'processing'
+
+11. New submission pending again / New trial processing
+-------------------------------------------------------
+
+    >>> resp = cl.post(reverse('repository.edittrial', args=(new_trial.pk,)), {})
+    >>> resp.status_code
+    302
+
+    >>> resp['Location'] == reverse('reviewapp.dashboard')
+    True
+
+    >>> new_submission = Submission.objects.get(pk=new_submission.pk)
+    >>> new_trial = new_submission.trial
+
+    >>> new_submission.status
+    u'pending'
+
+    >>> new_trial.status
+    u'processing'
+
+12. New submission approved / New trial published / Old trial archived
+----------------------------------------------------------------------
+
+    >>> cl.login(username=reviewer.username, password='1')
+    True
+
+    >>> remark2.status = 'closed'
+    >>> remark2.save()
+
+    >>> fossils_count_before = Fossil.objects.count()
+
+    >>> resp = cl.post(reverse('reviewapp.change_submission_status',
+    ...     kwargs={'submission_pk': new_submission.pk, 'status': 'approved'}), {})
+    >>> resp.status_code
+    302
+
+    >>> resp['Location'] == reverse('repository.trialview', kwargs={'trial_pk': new_trial.pk})
+    True
+
+    >>> new_submission = Submission.objects.get(pk=new_submission.pk)
+    >>> new_trial = new_submission.trial
+
+    >>> new_submission.status
+    u'approved'
+
+    >>> new_trial.status
+    u'published'
+
+    >>> trial_fossil = Fossil.objects.get(pk=trial_fossil.pk)
+    >>> trial_fossil.is_most_recent
+    False
+
+    >>> new_trial_fossil = Fossil.objects.filter(
+    ...     content_type=ContentType.objects.get_for_model(new_trial),
+    ...     object_id=new_trial.pk,
+    ... ).latest('creation')
+
+    >>> new_trial_fossil.is_most_recent
+    True
+
+    >>> new_trial_fossil.previous_revision == trial_fossil
+    True
+
+    >>> Fossil.objects.count() == fossils_count_before + 1
+    True
+

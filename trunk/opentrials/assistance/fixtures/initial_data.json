@@ -1,0 +1,2241 @@
+[
+  {
+    "pk": 4, 
+    "model": "assistance.categorytranslation", 
+    "fields": {
+      "label": "Ambiente operacional", 
+      "content_type": [
+        "assistance", 
+        "category"
+      ], 
+      "language": "pt-br", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "assistance.categorytranslation", 
+    "fields": {
+      "label": "Registro do estudo", 
+      "content_type": [
+        "assistance", 
+        "category"
+      ], 
+      "language": "pt-br", 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "assistance.categorytranslation", 
+    "fields": {
+      "label": "Registro del estudio", 
+      "content_type": [
+        "assistance", 
+        "category"
+      ], 
+      "language": "es", 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "assistance.categorytranslation", 
+    "fields": {
+      "label": "Sistema operacional", 
+      "content_type": [
+        "assistance", 
+        "category"
+      ], 
+      "language": "es", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "assistance.categorytranslation", 
+    "fields": {
+      "label": "Interface", 
+      "content_type": [
+        "assistance", 
+        "category"
+      ], 
+      "language": "pt-br", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "assistance.categorytranslation", 
+    "fields": {
+      "label": "Interfaz", 
+      "content_type": [
+        "assistance", 
+        "category"
+      ], 
+      "language": "es", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "Ensaios devem ser registrados ap\u00f3s a aprova\u00e7\u00e3o de um comit\u00ea de \u00e9tica nacional e antes do recrutamento do primeiro paciente\r\n", 
+      "title": "Quando os estudos devem ser registrados?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-br", 
+      "object_id": 14
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "Todos os ensaios cl\u00ednicos com participantes brasileiros, em todas as \u00e1reas da sa\u00fade, e com testes de todas as formas de interven\u00e7\u00f5es, devem ser registrados. \r\nEstudos devem atender a defini\u00e7\u00e3o <a href=\"http://www.who.int/ictrp/en/\" title=\"World Health Organization\" target=\"_blank\">WHO</a> / ICMJE 2008 de um ensaio cl\u00ednico para serem registrados. Ou seja, qualquer pesquisa que prospectivamente designa participantes humanos ou grupos de seres humanos, para uma ou mais interven\u00e7\u00f5es relacionadas \u00e0 sa\u00fade, para avaliar os efeitos na sa\u00fade. Interven\u00e7\u00f5es m\u00e9dicas incluem qualquer interven\u00e7\u00e3o usada para modificar um desfecho de sa\u00fade e incluem drogas, procedimentos cir\u00fargicos, aparelhos, tratamentos comportamentais, etc. Em caso de d\u00favida se um ensaio cl\u00ednico deve ser registrado ou n\u00e3o, recomenda-se o registro desse estudo.\r\n", 
+      "title": "Quais estudos precisam ser registrados?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-br", 
+      "object_id": 13
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "O coordenador, patrocinador do estudo ou um representante adequado pode ser respons\u00e1vel pelo registro de um estudo. O patrocinador \u00e9 um indiv\u00edduo ou empresa, p\u00fablica ou privada, que ap\u00f3ia financeiramente a pesquisa, conforme definido pela resolu\u00e7\u00e3o RDC 39 da Ag\u00eancia Nacional de Vigil\u00e2ncia Sanit\u00e1ria.\r\nPara os estudos cl\u00ednicos patrocinados por ag\u00eancias nacionais ou internacionais de fomento \u00e0 pesquisa, entidades filantr\u00f3picas, organiza\u00e7\u00f5es n\u00e3o governamentais (ONGs) ou outras entidades sem fins lucrativos, o(s) investigador(es) respons\u00e1vel(ies) pela coordena\u00e7\u00e3o da pesquisa assumem o papel de representante do patrocinador, caso n\u00e3o haja uma Organiza\u00e7\u00e3o Representativa para Pesquisa Cl\u00ednica (ORPC) respons\u00e1vel pela condu\u00e7\u00e3o da mesma.\r\nNo caso de estudos independentes, em que o investigador n\u00e3o tem apoio financeiro de um patrocinador espec\u00edfico, incluindo os casos que recebem os medicamentos de investiga\u00e7\u00e3o sob a forma de doa\u00e7\u00e3o onde o doador n\u00e3o deseja ser caracterizado como patrocinador do estudo, o investigador principal assume a responsabilidade pelo registro do estudo.\r\n", 
+      "title": "Quem \u00e9 respons\u00e1vel pelo registro de um estudo?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-br", 
+      "object_id": 15
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "Na primeira vez, os usu\u00e1rios precisam criar um nome de login e uma senha, clicando no bot\u00e3o \u201cRegistrar-se\u201d. Um email de confirma\u00e7\u00e3o ser\u00e1 enviado para a conta de e-mail informado.\r\nO bot\u00e3o de \u201cNova Submiss\u00e3o\u201d levar\u00e1 o requerente para as telas que precisam ser preenchidas. Isso inclui informa\u00e7\u00f5es b\u00e1sicas, como os tipos de participantes, as interven\u00e7\u00f5es que est\u00e3o sendo testadas e os desfechos a serem avaliados. Outras informa\u00e7\u00f5es requeridas incluem detalhes do desenho do estudo, tamanho da amostra e informa\u00e7\u00f5es dos contatos. Cada campo tem uma op\u00e7\u00e3o de ajuda (\u00edcone \u201c?\u201d) para auxiliar os requerentes a inserirem os dados corretos. Uma vez que cada formul\u00e1rio \u00e9 preenchido, o requerente deve clicar no bot\u00e3o \"Salvar\" para salvar as informa\u00e7\u00f5es no Registro Brasileiro de Ensaios Cl\u00ednicos. Uma vez que todas as informa\u00e7\u00f5es obrigat\u00f3rias estiverem sido preenchidas nos formul\u00e1rios, o requerente deve clicar no bot\u00e3o \u201cEnviar para revis\u00e3o\u201d.\r\nAp\u00f3s a submiss\u00e3o dos dados, a equipe do REBEC ir\u00e1 verificar os dados submetidos e consultar o requerente se necessitar que alguma informa\u00e7\u00e3o seja esclarecida. Uma vez que todas as d\u00favidas sejam esclarecidas, os estudos s\u00e3o oficialmente registrados e ser\u00e1 atribu\u00eddo um n\u00famero de registro \u00fanico. Tanto a data da submiss\u00e3o e a data de registro s\u00e3o armazenados. ", 
+      "title": "Como fa\u00e7o para registrar um estudo?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-br", 
+      "object_id": 16
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "Segundo as diretrizes do modelo de refer\u00eancia Vancouver para \"Part of a database on the internet\" (veja http://www.nlm.nih.gov/bsd/uniform_requirements.html) e as diretrizes de cita\u00e7\u00e3o da National Library of Medicine (NLM) http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=citmed.section.57708) i\u00e9 recoimendado que a cita\u00e7\u00e3o de um registro em um registro de ensaios cl\u00ednicops consista de:\r\n\r\n * nome da base de dados\r\n * localiza\u00e7\u00e3o e nome do respons\u00e1vel pela base de dados - o ano que o s\u00edtio foi desenvolvido/online\r\n * o n\u00famero de identifica\u00e7\u00e3o \u00fanico (ID)\r\n * t\u00edtulo do registro\r\n * data do registro\r\n * data quando foi citado\r\n * n\u00famero aproximado de p\u00e1ginas - o endere\u00e7o web do registro\r\n\r\n Exemplo:\r\n\r\n RBEC\r\n Registro Brasileiro de Ensaios Cl\u00ednicos[Internet]: Rio de Janeiro (RJ): Instituto de Informa\u00e7\u00e3o Cient\u00edfica e Tecnol\u00f3gica em Sa\u00fade (Brazil); 2010 - . Identifier BCTR12345678. A multi-centre, randomised, double-blind, placebo-controlled clinical trial examining the efficacy and safety of low-dose aspirin after initial anticoagulation to prevent recurrent venous thromboembolism; 2010 Jul 12 [cited 2008 June 18]; [1 page]. Available from http://www.ensaiosclinocos.gov.br/BCTR12345678.aspx.", 
+      "title": "Como citar um registro em um Registro de Ensaios Cl\u00ednicos", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-br", 
+      "object_id": 17
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "O registro de um ensaio ser\u00e1 o \u00fanico documento dispon\u00edvel publicamente at\u00e9 que os resultados desse estudo sejam publicados. Alguns exemplos de situa\u00e7\u00f5es nas quais os estudos poderiam ser citados s\u00e3o:\r\n\r\nQuando um manuscrito relatando os resultados do ensaio \u00e9 publicado ou reportado\r\n\r\nQuando um manuscrito com relatos de quest\u00f5es metodol\u00f3gicas a respeito de um ensaios espec\u00edfico \u00e9 publicado ou reportado\r\n\r\nEm protocolos para revis\u00f5es sistem\u00e1ticas ou revis\u00f5es sistem\u00e1ticas conclu\u00eddas (p.ex. quando uma lista de ensaios em curso \u00e9 inclu\u00edda)\r\n\r\nEm protocolos para metan\u00e1lises prospectives que ir\u00e3o listar os ensaios em curso a serem inclu\u00eddos\r\n\r\nEm qualquer manuscrito quando a refer\u00eancia a um ensaio em curso ou n\u00e3o-publicado (ou mesmo quando publicado) poderia ser relevante\r\n", 
+      "title": "Quando citar um registro de um ensaio clinico", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-br", 
+      "object_id": 18
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "N\u00e3o. Apenas os estudos de confirma\u00e7\u00e3o terap\u00eautica (fase III) que poder\u00e3o subsidiar o registro\u00b9 na Ag\u00eancia Nacional de Vigil\u00e2ncia Sanit\u00e1ria (Anvisa), devem ser registrados em um dos registros prim\u00e1rios da rede de registros do International Clinical Trials Registration Plataform (ICTRP/WHO). Os demais projetos de pesquisa de ensaios cl\u00ednicos com medicamentos, produtos para sa\u00fade\u00b2 ou interven\u00e7\u00f5es Diet\u00e9ticas, fases I, II e VI, assim como os ensaios cl\u00ednicos em farmacogen\u00f4mica ou farmacogen\u00e9tica entre outros aprovados pela CTNBio ou pelo CGEN, que envolvam importa\u00e7\u00e3o e/ou exporta\u00e7\u00e3o dever\u00e3o ser registrado apenas na ANVISA.\r\nAtualmente os projetos de pesquisa de Biodisponibilidade e Bioequival\u00eancia para registro de medicamentos gen\u00e9ricos n\u00e3o devem ser submetidos \u00e0 avalia\u00e7\u00e3o pela ANVISA.\r\n\r\nNota: (1) produto inovador , nova indica\u00e7\u00e3o terap\u00eautica ou altera\u00e7\u00f5es de registro\r\n         (2) inclui materiais (\u00f3rteses; pr\u00f3teses), artigos, dispositivos, equipamentos", 
+      "title": "\u00c9 obrigat\u00f3rio o registro de todos os ensaios cl\u00ednicos no Registro Brasileiro de Ensaios Cl\u00ednicos \u00e9 obrigat\u00f3rio para obter a anu\u00eancia em pesquisa cl\u00ednica da ANVISA?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-br", 
+      "object_id": 19
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "Estabelecer um registro amplo e atualizado dos estudos de interven\u00e7\u00e3o e observacionais do Brasil, Am\u00e9rica Latina & Caribe\r\n\r\nProver aos stakeholders interessados o acesso a estudos em curso ou conclu\u00eddos \u2013 dados confi\u00e1veis e sem \u00f4nus para revis\u00f5es/metan\u00e1lises, diretrizes e pol\u00edticas de pesquisa\r\n\r\nAumentar a transpar\u00eancia na pesquisa, fortalecendo o valor \u00e9tico e cient\u00edfico dos estudos de interven\u00e7\u00e3o e observacionais\r\n\r\nFacilitar a descoberta e o controle de vi\u00e9ses de desenho, de publica\u00e7\u00e3o e reduzir o vi\u00e9s de idioma\r\n\r\nIntegrar aos processos \u00e9ticos e regulat\u00f3rios\r\n\r\nAtender \u00e0s necessidades nacionais e regionais de informa\u00e7\u00e3o\r\n", 
+      "title": "Quais s\u00e3o os objetivos do Registro Brasileiro de Ensaios Cl\u00ednicos?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-br", 
+      "object_id": 20
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "Um registro de ensaios cl\u00ednicos pode aumentar a efic\u00e1cia dos esfor\u00e7os dos ensaios cl\u00ednicos atuais ao:\r\n\r\nReduzir a duplica\u00e7\u00e3o desnecess\u00e1ria de esfor\u00e7os de pesquisa, porque os profissionais que planejam novos estudos estar\u00e3o cientes de todos os ensaios existentes;\r\n\r\nAumentar as taxas de recrutamento de participantes para ensaios cl\u00ednicos (especialmente para doen\u00e7as raras ou condi\u00e7\u00f5es de alto risco), desse modo aumentando as chances de desfechos bem-sucedidos de alguns ensaios cl\u00ednicos;\r\n\r\nDar valor agregado aos resultados da pesquisa ao prover uma fonte de informa\u00e7\u00e3o confi\u00e1vel e n\u00e3o-enviesada sobre ensaios cl\u00ednicos para revis\u00f5es sistem\u00e1ticas, metan\u00e1lises e diretrizes baseadas em evid\u00eancias;\r\n\r\nAprimorar as evid\u00eancias dispon\u00edveis que orientem as pr\u00e1ticas de sa\u00fade.\r\n", 
+      "title": "Quais s\u00e3o os benef\u00edcios de um Registro de Ensaios Cl\u00ednicos?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-br", 
+      "object_id": 21
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "N\u00e3o. O registro do estudo na Plataforma Brasil dever\u00e1 ser feito antes do seu registro no Registro Brasileiro de Ensaios Cl\u00ednicos (REBEC). Embora o formul\u00e1rio do RBEC compartilhe v\u00e1rios campos comuns \u00e0 Plataforma Brasil, o objetivo do REBEC \u00e9 informar a todos os interessados nacionais e internacionais acerca dos ensaios cl\u00ednicos realizados no Brasil atrav\u00e9s da integra\u00e7\u00e3o do RBEC e a Plataforma Internacional de Registro de Ensaios Cl\u00ednicos (ICTRP / Organiza\u00e7\u00e3o Mundial da Sa\u00fade). Esta integra\u00e7\u00e3o est\u00e1 baseada na ado\u00e7\u00e3o de procedimentos operacionais padr\u00f5es definidos pelo Secretariado do ICTRP.", 
+      "title": "O registro de um ensaio cl\u00ednico na Plataforma Brasil equivale a um registro no Registro Brasileiro de Ensaios Clinicos?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-br", 
+      "object_id": 22
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "assistance.questiontranslation", 
+    "fields": {
+      "answer": "Antes de iniciar o registro do seu estudo certifique-se que voc\u00ea tem em m\u00e3os o protocolo do seu estudo, bem como uma c\u00f3pia do documento de aprova\u00e7\u00e3o (no formato PDF) emitido por um comit\u00ea de \u00e9tica brasileiro e o n\u00famero UTN. Esses documentos ser\u00e3o as fontes de informa\u00e7\u00e3o necess\u00e1rias para preencher todos os campos obrigat\u00f3rios requeridos para o registro do seu estudo. \r\nO documento de aprova\u00e7\u00e3o deve ser anexado na se\u00e7\u00e3o Anexos do registro. Este documento \u00e9 a prova da exist\u00eancia do seu estudo e de que foi aprovado por um comit\u00ea de \u00e9tica brasileiro.  Caso voc\u00ea queira que este documento seja p\u00fablico, o que significa que ser\u00e1 visto por todos os usu\u00e1rios, marque o campo P\u00fablico na se\u00e7\u00e3o Anexos. Caso contr\u00e1rio, ele s\u00f3 ser\u00e1 visto pela equipe do REBEC.\r\nO UTN \u00e9 um n\u00famero obtido pelo patrocinador ou proponente do estudo como primeiro passo no registro do ensaio no REBEC.  O UTN tornar-se-\u00e1 ent\u00e3o parte da identidade internacional do ensiao junto com o n\u00famero de registro do REBEC. Se o seu estudo \u00e9 um ensaio \u00e9 multic\u00eantrico internacional, verifique se j\u00e1 possui o UTN. \r\nPara obter o UTRN voc\u00ea deve acessar o site http://apps.who.int/trialsearch/utn.aspx ", 
+      "title": "Que documentos voc\u00ea deve ter em m\u00e3os antes de iniciar o registro do seu estudo?", 
+      "content_type": [
+        "assistance", 
+        "question"
+      ], 
+      "language": "pt-br", 
+      "object_id": 23
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o t\u00edtulo cient\u00edfico do estudo, tal como consta no protocolo submetido para financiamento e avalia\u00e7\u00e3o do comit\u00ea de \u00e9tica. \r\nRecomendamos que n\u00e3o utilize caixa alta no preenchimento do campo.", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui qual \u00e9 o t\u00edtulo cient\u00edfico do estudo.", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "es", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, insira o acr\u00f4nimo cient\u00edfico do ensaio, se disponivel.", 
+      "example": "MONICA \u00e9 o acr\u00f4nimo cient\u00edfico do estudo \"MONItoramento das Tend\u00eancias e Determinantes em Doen\u00e7as CArdiovasculares\"", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o t\u00edtulo do estudo destinado ao p\u00fablico leigo e que seja de f\u00e1cil compreens\u00e3o.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a condi\u00e7\u00e3o de sa\u00fade ou problema estudado.\r\n", 
+      "example": "Tuberculose, c\u00e2ncer de mama, manuten\u00e7\u00e3o da perda de peso\r\n", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 25
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o acr\u00f4nimo publico do ensaio, se dispon\u00edvel.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 5
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique qual \u00e9 a situa\u00e7\u00e3o do recrutamento do estudo:\r\n\r\n    * Pendente: participantes ainda n\u00e3o est\u00e3o sendo recrutados ou inscritos em qualquer local\r\n    * Recrutando: participantes est\u00e3o sendo recrutados e inscritos\r\n    * Suspenso: h\u00e1 uma parada tempor\u00e1ria no recrutamento e inscri\u00e7\u00e3o\r\n    * Completo: participantes n\u00e3o est\u00e3o sendo mais recrutados ou inscritos\r\n    * Outros \r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 9
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique os pa\u00edses onde os participantes ser\u00e3o, podem ser ou foram recrutados.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 10
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a data prevista ou real da inscri\u00e7\u00e3o do primeiro participante.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 11
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o n\u00famero de participantes que este estudo pretende inscrever.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 12
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique quais os crit\u00e9rios de exclus\u00e3o para sele\u00e7\u00e3o dos participantes, incluindo idade m\u00e1xima e m\u00ednima e sexo.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 19
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique os crit\u00e9rios de inclus\u00e3o para sele\u00e7\u00e3o dos participantes.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 13
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique qual \u00e9 o patrocinador prim\u00e1rio. \r\nUm patrocinador \u00e9 o indiv\u00edduo, organiza\u00e7\u00e3o (em geral, institui\u00e7\u00e3o proponente), grupo ou outra entidade legal que assume a responsabilidade de iniciar, gerenciar e/ou financiar um estudo. \r\nO patrocinador prim\u00e1rio \u00e9 respons\u00e1vel por garantir que o ensaio est\u00e1 devidamente registrado. O patrocinador prim\u00e1rio pode ou n\u00e3o ser o principal financiador.\r\nNos estudos independentes, nos quais o investigador n\u00e3o tem aux\u00edlio financeiro de um patrocinador espec\u00edfico, incluindo os casos de medicamentos doados cujo doador n\u00e3o quer ser caracterizado como um patrocinador do estudo, o investigador \u00e9 considerado o patrocinador do estudo. \r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 20
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o g\u00eanero selecionado nos crit\u00e9rio de inclus\u00e3o (feminino, masculino ou ambos) dos participantes.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 14
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique qual \u00e9 a idade m\u00e1xima no crit\u00e9rio de inclus\u00e3o dos participantes.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 17
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a idade m\u00ednima no crit\u00e9rio de inclus\u00e3o dos participantes.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 15
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a unidade de tempo da idade maxima do criterio de inclus\u00e3o.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 18
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique qual \u00e9 a unidade de tempo da idade m\u00ednima no criterio de inclus\u00e3o dos participantes.\r\n\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 16
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique se o ensaio \u00e9 um estudo de bra\u00e7o \u00fanico, um ensaio cl\u00ednico controlado n\u00e3o aleat\u00f3rio ou um ensaio cl\u00ednico controlado aleat\u00f3rio.\r\n\r\nUm estudo de bra\u00e7o \u00fanico \u00e9 aquele no qual todos os participantes tenham a mesma interven\u00e7\u00e3o. Ensaios em que os participantes s\u00e3o designados para receber uma de duas ou mais interven\u00e7\u00f5es N\u00c3O s\u00e3o estudos de bra\u00e7o \u00fanico. Ensaios do tipo seq\u00fcencial (Crossover) N\u00c3O s\u00e3o estudos de bra\u00e7o \u00fanico.\r\n\r\nUm estudo \u00e9 aleat\u00f3rio se os participantes s\u00e3o atribu\u00eddos a grupos de interven\u00e7\u00e3o utilizando um m\u00e9todo baseado na possibilidade (p. ex., tabela de n\u00fameros aleat\u00f3rios, seq\u00fc\u00eancia aleat\u00f3rio gerada por computador, minimiza\u00e7\u00e3o, randomiza\u00e7\u00e3o adaptativa).\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 32
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a fase do estudo.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 39
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione o principal enfoque do seu estudo. Apenas escolha a op\u00e7\u00e3o \"Outros se nenhuma das categorias mencionadas forem suficientes para definir o enfoque do seu estudo.\r\n\r\n   * Diagn\u00f3stico: realizado para encontrar melhores testes ou procedimentos para o diagn\u00f3stico de uma determinada doen\u00e7a ou condi\u00e7\u00e3o.\r\n   * Etiol\u00f3gicos: identificar causas de doen\u00e7as.\r\n   * Progn\u00f3stico: estima o prov\u00e1vel curso cl\u00ednico da doen\u00e7a no tempo e antecipar suas prov\u00e1veis complica\u00e7\u00f5es.\r\n   * Preven\u00e7\u00e3o: procura melhores formas de prevenir a doen\u00e7a em pessoas que nunca tiveram a doen\u00e7a ou prevenir uma doen\u00e7a de regressar. Estas abordagens podem incluir medicamentos, vitaminas, vacinas, sais minerais, ou mudan\u00e7as de estilo de vida.\r\n    * Tratamento: testa tratamentos experimentais, novas combina\u00e7\u00f5es de drogas, ou novas abordagens para a cirurgia ou radioterapia.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 34
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o desenho da interven\u00e7\u00e3o do ensaio.\r\n\r\n* Grupo \u00danico: estudo de bra\u00e7o \u00fanico\r\n* Paralelo: os participantes s\u00e3o atribu\u00eddos a um dos dois ou mais grupos em paralelo para a dura\u00e7\u00e3o do estudo\r\n* Cross-over: os participantes recebem uma das duas interven\u00e7\u00f5es alternativas durante a fase inicial do estudo e recebe a outra interven\u00e7\u00e3o durante a segunda fase do estudo\r\n* Fatorial: dois ou mais interven\u00e7\u00f5es, cada uma isoladamente e em combina\u00e7\u00e3o, s\u00e3o avaliadas em paralelo contra um grupo de controle.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 35
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor insira o n\u00famero de grupos de interven\u00e7\u00e3o (digite 1 para um estudo de bra\u00e7o \u00fanico).\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 36
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Cegamento se refere aos m\u00e9todos usados para impedir que os participantes e investigadores saibam quais interven\u00e7\u00f5es est\u00e3o sendo usadas. Mascaramento se refere aos m\u00e9todos usados na camuflagem das interven\u00e7\u00f5es para alcan\u00e7ar o cegamento.\r\n\r\nPor favor, selecione na lista o mascaramento/cegamento utilizados no estudo:\r\n\r\n    * Aberto: nenhum mascaramento/cegueira \u00e9 usado. Todos os envolvidos sabem qual \u00e9 o trabalho de interven\u00e7\u00e3o.\r\n    * Unicego: os participantes n\u00e3o tem conhecimento do tipo de interven\u00e7\u00e3o.\r\n    * Duplo-cego: tanto o pesquisador como participante partes n\u00e3o t\u00eam conhecimento da interven\u00e7\u00e3o que cada participante est\u00e1 recebendo.\r\n    * Triplo-cego: al\u00e9m do pesquisador e do paciente, o analisador dos resultados n\u00e3o sabe o tratamento que cada participante est\u00e1 recebendo.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 37
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a aloca\u00e7\u00e3o dos participantes aos grupos de interven\u00e7\u00e3o:\r\n\r\n    * N/A: estudo de um \u00fanico bra\u00e7o\r\n    * Aleat\u00f3rio controlado: os participantes s\u00e3o atribu\u00eddos a grupos de interven\u00e7\u00e3o por chance.\r\n    * N\u00e3o Aleat\u00f3rio: os participantes s\u00e3o expressamente atribu\u00eddas a grupos de interven\u00e7\u00e3o atrav\u00e9s de um m\u00e9todo n\u00e3o-aleat\u00f3rio, como a escolha do m\u00e9dico.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 38
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique se houver um programa de acesso expandido ou n\u00e3o ou se \u00e9 desconhecido. O acesso expandido \u00e9 um processo patrocinado de disponibiliza\u00e7\u00e3o de produto novo, promissor, ainda sem registro na Ag\u00eancia Nacional de Vigil\u00e2ncia Sanit\u00e1ria - ANIVSA para pacientes com doen\u00e7as graves e que amea\u00e7am \u00e0 vida, na aus\u00eancia de alternativas terap\u00eauticas satisfat\u00f3rias disponibilizadas no Pa\u00eds, sem \u00f4nus adicional para o paciente. O produto deve estar em estudo de fase III em desenvolvimento no Brasil ou no pa\u00eds de origem e com programa de acesso expandido aprovado no pa\u00eds de origem, ou com registro do produto no pa\u00eds de origem (RDC.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 33
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique aqui qual \u00e9 o tipo de desfecho: prim\u00e1rio ou secund\u00e1rio. Desfecho prim\u00e1rio s\u00e3o eventos, vari\u00e1veis ou experi\u00eancias que s\u00e3o medidas porque se sup\u00f5e que seriam influenciadas pela interven\u00e7\u00e3o sob estudo. O desfecho prim\u00e1rio deveria ser o desfecho utilizado para calacular o tamanho da amostra ou os principais desfechos utilizados para determinat os efeitos das interven\u00e7\u00f5es. \r\n\r\nEntre o nome de todos os desfechos prim\u00e1rios do estudo bem como os per\u00edodos de tempo pr\u00e9-especificados do desfecho prim\u00e1rio de interesse. Seja o mais espec\u00edfico poss\u00edvel com as m\u00e9tricas utiliadas (p.ex. \"% com, escore de depress\u00e3o de Beck? 10\" ao inv\u00e9s de simplesmente \"depress\u00e3o\"). \r\n\r\nDados sobre desfechos secund\u00e1rios s\u00e3o usados para avaliar efeitos adicionais da interven\u00e7\u00e3o. Um desfecho secund\u00e1rio pode envolver o mesmo evento, vari\u00e1vel ou experi\u00eancia do desfecho prim\u00e1rio, mas medido em um per\u00edodo de tempo distinto do desfecho prim\u00e1rio (p.ex., desfecho prim\u00e1rio: mortalidade por todas as causas em 5 anos; Desfecho secund\u00e1rio: mortalidade por todas as causas em 1 ano e 3 anos) ou pode estar relacionado a um evento, vari\u00e1vel ou experi\u00eancia distinta (p.ex., desfecho prim\u00e1rio: mortalidade por todas as causas ap\u00f3s 5 anos; Desfecho secund\u00e1rio: taxa de hospitaliza\u00e7\u00e3o em 5 anos). \r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 40
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a descri\u00e7\u00e3o do desfecho.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 41
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir o desfecho correspondente.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 42
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir o identificador secund\u00e1rio correspondente.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 8
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir o patrocinador secund\u00e1rio correspondente.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 22
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir a fonte de apoio financeiro ou material correspondente.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 24
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir o contato para a comunidade cient\u00edfica correspondente.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 46
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir o contato de rela\u00e7\u00f5es p\u00fablicas correspondente.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 44
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir o correspondente contato para quest\u00f5es relativas ao site.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 48
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione o tipo de relacionamento do contato: um contato para perguntas p\u00fablicas, para perguntas cient\u00edficas ou para perguntas sobre o site.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 59
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o numero do telefone do contato.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 58
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o c\u00f3digo postal (CEP) do contato.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 57
+    }
+  }, 
+  {
+    "pk": 39, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o pa\u00eds do contato.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 56
+    }
+  }, 
+  {
+    "pk": 40, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a cidade do contato.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 55
+    }
+  }, 
+  {
+    "pk": 41, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o endere\u00e7o do contato.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 54
+    }
+  }, 
+  {
+    "pk": 42, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a afilia\u00e7\u00e3o do contato.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 53
+    }
+  }, 
+  {
+    "pk": 43, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o email do contato.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 52
+    }
+  }, 
+  {
+    "pk": 44, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o sobrenome do contato.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 51
+    }
+  }, 
+  {
+    "pk": 45, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o nome do meio do contato.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 50
+    }
+  }, 
+  {
+    "pk": 46, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o primeiro nome do contato.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 49
+    }
+  }, 
+  {
+    "pk": 47, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione, de um dos contatos inclu\u00eddos anteriormente, quem \u00e9 o contato(s) para perguntas sobre o site (ver abaixo o formul\u00e1rio para um novo contato).\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 47
+    }
+  }, 
+  {
+    "pk": 48, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione, de um dos contatos inclu\u00eddos anteriormente, quem \u00e9 o contato(s) de rela\u00e7\u00f5es p\u00fablicas (ver abaixo o formul\u00e1rio para um novo contato).\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 43
+    }
+  }, 
+  {
+    "pk": 49, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione, de um dos contatos inclu\u00eddos anteriormente, quem \u00e9 o contato(s) para a comunidade cient\u00edfica (ver abaixo o formul\u00e1rio para um novo contato).\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 45
+    }
+  }, 
+  {
+    "pk": 50, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, insira a expans\u00e3o do acr\u00f4nimo cient\u00edfico do ensaio, se disponivel.\r\n", 
+      "example": "A expans\u00e3o do acr\u00f4nimo cient\u00edfico MONICA \u00e9 MONItoramento das Tend\u00eancias e Determinantes em Doen\u00e7as CArdiovasculares", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 3
+    }
+  }, 
+  {
+    "pk": 51, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a expans\u00e3o do acr\u00f4nimo cient\u00edfico do ensaio, se disponivel.\r\n", 
+      "example": "A expans\u00e3o do acr\u00f4nimo OMS \u00e9 Organiza\u00e7\u00e3o Mundial de Sa\u00fade.\r\n", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 60
+    }
+  }, 
+  {
+    "pk": 52, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o nome de individuos, organiza\u00e7\u00f5es ou outros entes legais, se houver, que concordaram com o patrocinador prim\u00e1rio em assumir responsabilidades de patroc\u00ednio.\r\nUm patrocinador secund\u00e1rio pode ter:\r\n\u2022 concordado em assumir todas as responsabilidades de patroc\u00ednio juntamente com o patrocinador prim\u00e1rio;\r\n\u2022 formar um grupo com o patrocinador prim\u00e1rio no qual as responsabilidades s\u00e3o alocadas entre os membros do grupo;\r\n\u2022 atuar como representante legal do patrocinador em rela\u00e7\u00e3o a alguns ou todos os sitios do estudo; ou assumior a responsabildade pela acur\u00e1cia das informa\u00e7\u00f5es do ensaio submetido para registro.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 21
+    }
+  }, 
+  {
+    "pk": 53, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, inique quais as principais fontes de apoio financeiro ou material para o estudo (ag\u00eanciaa financiadora, funda\u00e7\u00e3o, companhia, hospital, universidade, etc).\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 23
+    }
+  }, 
+  {
+    "pk": 54, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione o vocabulario usado para escolher o descritor da condi\u00e7\u00e3o de sa\u00fade: \r\nDeCS: Descritores em Ci\u00eancias da Sa\u00fade ou\r\nICD-10: Classifica\u00e7\u00e3o Internacional de Doen\u00e7as ou\r\nChemical Abstracts Service\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 26
+    }
+  }, 
+  {
+    "pk": 55, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o c\u00f3digo do descritor da condi\u00e7\u00e3o de sa\u00fade.\r\nSe voc\u00ea escolher um descritor dos vocabularios DeCS, CID-10 ou CAS, este campo ser\u00e1 preenchido automaticamente.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 28
+    }
+  }, 
+  {
+    "pk": 56, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o texto do descritor da condi\u00e7\u00e3o de sa\u00fade.\r\nSe voc\u00ea escolher um descritor dos vocabularios DeCS, CID-10 ou CAS, este campo ser\u00e1 automaticamente preenchido.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 29
+    }
+  }, 
+  {
+    "pk": 57, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione a categoria da interven\u00e7\u00e3o:\r\n\r\n* droga\r\n* dispositivo\r\n* biologico/vacina\r\n* procedimento/cirurgia\r\n* radia\u00e7\u00e3o\r\n* comportamental\r\n* genetica\r\n* suplemento diet\u00e9tico\r\n* outro\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 31
+    }
+  }, 
+  {
+    "pk": 58, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, descreva todas as interven\u00e7\u00f5es e os comparadores/controles que est\u00e3o sendo estudados. Para cada interven\u00e7\u00e3o, descreva outros detalhes quando pertinentes (dose, dura\u00e7\u00e3o, modo de administra\u00e7\u00e3o, etc).\r\nA interven\u00e7\u00e3o de controle \u00e9 a interven\u00e7\u00e3o contra a qual a interven\u00e7\u00e3o de estudo \u00e9 avaliada (p.ex. placebo, sem tratamento, controle ativo). Se um controle ativo \u00e9 usado, assegure de incluir o nome da interven\u00e7\u00e3o ou inclua \"placebo\" ou \"sem tratamento\" se aplic\u00e1vel.\r\nUtilize nome internacional n\u00e3o-propriet\u00e1rio se poss\u00edvel (n\u00e3o use nomes comerciais). Para drogas n\u00e3o registradas, o nome gen\u00e9rico, oa denomina\u00e7\u00e3o qu\u00edmica ou n\u00famero serial da companhia \u00e9 aceit\u00e1vel. Se a interven\u00e7\u00e3o consiste de v\u00e1rios tratamentos, liste-os todos em uma \u00fanica linha separados por v\u00edrgula (e.g. \"baixo teor de gordura, dieta, exerc\u00edcio).\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 30
+    }
+  }, 
+  {
+    "pk": 59, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o nome da nova institui\u00e7\u00e3o.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 61
+    }
+  }, 
+  {
+    "pk": 60, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o endere\u00e7o da nova institui\u00e7\u00e3o.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 62
+    }
+  }, 
+  {
+    "pk": 61, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique qual \u00e9 o pa\u00eds da nova institui\u00e7\u00e3o.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 63
+    }
+  }, 
+  {
+    "pk": 62, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, inclua o arquivo a ser anexado a este estudo.\r\n", 
+      "example": "Carta de aprova\u00e7\u00e3o do Comit\u00ea de \u00c9tica (formato do arquivo: jpeg, tif, bmp) e consentimento informado do seu estudo\r\n", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 66
+    }
+  }, 
+  {
+    "pk": 63, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a descri\u00e7\u00e3o do arquivo anexado a este estudo.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 67
+    }
+  }, 
+  {
+    "pk": 64, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo se desejar que o arquivo anexado a este estudo esteja publico para todos que acessarem a plataforma de ensaios clinicos.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 68
+    }
+  }, 
+  {
+    "pk": 65, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a data, prevista ou real, de inicio do recrutamento do primeiro participante.\r\nPor favor, use o formato dd/mm/yyyy.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 65
+    }
+  }, 
+  {
+    "pk": 66, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione esse campo para excluir o descritor correspondente.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 64
+    }
+  }, 
+  {
+    "pk": 67, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a institui\u00e7\u00e3o ou org\u00e3o que tenha emitido um n\u00famero de identifica\u00e7\u00e3o secund\u00e1rio, al\u00e9m do registro principal, se houver.\r\n", 
+      "example": "exemplo 1 (UTN)\r\n    \u00d3rg\u00e3o emissor: WHO/ICTRP \r\n\r\nsample 2 (Plataforma Brasil)\r\n    \u00d3rg\u00e3o emissor: Comiss\u00e3o Nacional de \u00c9tica em Pesquisa (CONEP) \r\n\r\nsample 3\r\n    \u00d3rg\u00e3o emissor: ANVISA (comunicado especial)\r\n", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 68, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique qualquer outro n\u00famero de identifica\u00e7\u00e3o secund\u00e1rio, como o n\u00famero do protocolo, n\u00famero da aprova\u00e7\u00e3o do comit\u00ea de \u00e9tica, n\u00famero de inscri\u00e7\u00e3o nas ag\u00eancias reguladoras ou qualquer outro n\u00famero de Registro de Ensaio Cl\u00ednico, se tiver sido registrado em outro registro, tais como ClinicalTrials.gov, ANZCTR, ISRCTN, etc.\r\nN\u00e3o h\u00e1 limite na quantidade de n\u00fameros de identifica\u00e7\u00e3o secund\u00e1rias que podem ser informados.\r\n", 
+      "example": "exemplo 1 (UTN)\r\n    \u00d3rg\u00e3o emissor: WHO/ICTRP \r\n    Identificador secund\u00e1rio: U1111-1111-4101\r\n\r\nsample 2 (Plataforma Brasil)\r\n    \u00d3rg\u00e3o emissor: Comiss\u00e3o Nacional de \u00c9tica em Pesquisa (CONEP) \r\n    Identificador secund\u00e1rio: 1234567890\r\n\r\nsample 3\r\n    \u00d3rg\u00e3o emissor: ANVISA (comunicado especial)\r\n    Identificador secund\u00e1rio: 9876543210\r\n", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 7
+    }
+  }, 
+  {
+    "pk": 69, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique a data, prevista ou real, de t\u00e9rmino do recrutamento do ultimo participante.\r\nPor favor, use o formato dd/mm/aaaa.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 69
+    }
+  }, 
+  {
+    "pk": 70, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, selecione o idioma da submiss\u00e3o", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 70
+    }
+  }, 
+  {
+    "pk": 71, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique o t\u00edtulo cient\u00edfico do estudo, tal como consta no protocolo submetido para financiamento e avalia\u00e7\u00e3o do comit\u00ea de \u00e9tica.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 71
+    }
+  }, 
+  {
+    "pk": 72, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique os pa\u00edses onde os participantes ser\u00e3o, podem ser ou foram recrutados.\r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 72
+    }
+  }, 
+  {
+    "pk": 73, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique qual \u00e9 o patrocinador prim\u00e1rio. \r\nUm patrocinador \u00e9 o indiv\u00edduo, organiza\u00e7\u00e3o, grupo ou outra entidade legal que assume a responsabilidade de iniciar, gerenciar e/ou financiar um estudo. \r\nO patrocinador prim\u00e1rio \u00e9 respons\u00e1vel por garantir que o ensaio est\u00e1 devidamente registrado. O patrocinador prim\u00e1rio pode ou n\u00e3o ser o principal financiador.\r\nNos estudos independentes, nos quais o investigador n\u00e3o tem aux\u00edlio financeiro de um patrocinador espec\u00edfico, incluindo os casos de medicamentos doados cujo doador n\u00e3o quer ser caracterizado como um patrocinador do estudo, o investigador \u00e9 considerado o patrocinador do estudo. \r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 73
+    }
+  }, 
+  {
+    "pk": 74, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor, indique qual \u00e9 o pa\u00eds do patrocinador prim\u00e1rio. \r\n", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 74
+    }
+  }, 
+  {
+    "pk": 75, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 27
+    }
+  }, 
+  {
+    "pk": 76, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "Por favor inclua o N\u00famero Universal do Ensaio (Universal Trial Number ou UTN). O UTN \u00e9 um n\u00famero obtido pelo patrocinador ou proponente do estudo como primeiro passo no registro do ensaio no REBEC.  \r\nO UTN tornar-se-\u00e1 ent\u00e3o parte da identidade internacional do ensiao junto com o n\u00famero de registro do REBEC. \r\nSe o seu estudo \u00e9 um ensaio \u00e9 multic\u00eantrico internacional, verifique se j\u00e1 possui o UTN. \r\nPara obter o UTRN voc\u00ea deve acessar o site http://apps.who.int/trialsearch/utn.aspx ", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "pt-br", 
+      "object_id": 77
+    }
+  }, 
+  {
+    "pk": 77, 
+    "model": "assistance.fieldhelptranslation", 
+    "fields": {
+      "text": "", 
+      "example": "", 
+      "content_type": [
+        "assistance", 
+        "fieldhelp"
+      ], 
+      "language": "es", 
+      "object_id": 77
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "scientific_title", 
+      "example": "", 
+      "form": "TrialIdentificationForm", 
+      "text": "Please enter the scientific title of the study as it appears in the protocol submitted for funding and ethical review.\r\nIt\u00b4s recommended not to use caps lock while writing filling out the field. "
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "scientific_acronym", 
+      "example": "MONICA is the scientific acronym for the study \"Multinational MONItoring of trends and determinants in CArdiovascular disease\"", 
+      "form": "TrialIdentificationForm", 
+      "text": "Please enter the trial scientific acronym if available."
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "scientific_acronym_expansion", 
+      "example": "The expansion of the scientifi acronym MONICA is Multinational MONItoring of trends and determinants in CArdiovascular disease", 
+      "form": "TrialIdentificationForm", 
+      "text": "Please enter the expansion of the trial scientific acronym if available.\r\n"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "public_title", 
+      "example": "", 
+      "form": "TrialIdentificationForm", 
+      "text": "Please enter the title intended for the lay public in easily understood language.\r\n"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "acronym", 
+      "example": "", 
+      "form": "TrialIdentificationForm", 
+      "text": "Please enter the trial public acronym if available.\r\n"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "issuing_authority", 
+      "example": "sample 1 (UTN)\r\n    issuing organization: WHO/ICTRP \r\n\r\nsample 2 (Plataforma Brasil)\r\n    issuing organization: Comiss\u00e3o Nacional de \u00c9tica em Pesquisa (CONEP) \r\n\r\nsample 3\r\n    issuing number: ANVISA (comunicado especial)\r\n", 
+      "form": "TrialNumberForm", 
+      "text": "Please enter the institution or organization that assigned a secondary identification number, besides the Primary Registry, if any.\r\n"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "id_number", 
+      "example": "sample 1 (UTN)\r\n    issuing organization: WHO/ICTRP \r\n    secondary identification number: U1111-1111-4101\r\n\r\nsample 2 (Plataforma Brasil)\r\n    issuing organization: Comiss\u00e3o Nacional de \u00c9tica em Pesquisa (CONEP) \r\n    secondary identification number: 1234567890\r\n\r\nsample 3\r\n    issuing number: ANVISA (comunicado especial)\r\n    secondary identification number: 9876543210\r\n", 
+      "form": "TrialNumberForm", 
+      "text": "Please enter any other secondary identifying numbers, such as protocol number, institutional review board/ethics committee approval, registration number at regulatory agencies or any other Trial Registry Number, if registered in another Clinical Trials Registry, such as ClinicalTrials.gov, ANZCTR, ISRCTN etc. \r\nThere is no limit on the number of secondary identifying numbers that can be provided.\r\n"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "TrialNumberForm", 
+      "text": "Please select this field to delete the corresponding secondary trial number.\r\n"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "recruitment_status", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Please enter the recruitment status of this trial:\r\n\r\n    * Pending: participants are not yet being recruited or enrolled at any site\r\n    * Recruiting: participants are currently being recruited and enrolled\r\n    * Suspended: there is a temporary halt in recruitment and enrollment\r\n    * Complete: participants are no longer being recruited or enrolled\r\n    * Other \r\n"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "recruitment_country", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Please enter the countries from which participants will be, are intended to be, or have been recruited.\r\n"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "date_enrollment", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Please enter the anticipated or actual date of enrollment of the first participant.\r\n"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "target_sample_size", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Please enter the number of participants that this trial plans to enroll.\r\n"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "inclusion_criteria", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Please enter the inclusion criteria for participant selection.\r\n"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "gender", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Please enter the gender selected in the inclusion criteria (female, male or both) of participants.\r\n"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "agemin_value", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Please enter the minimal age in the inclusion criteria of participants.\r\n"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "agemin_unit", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Please enter the temporal unit of minimal age in the inclusion criteria of participants.\r\n\r\n"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "agemax_value", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Please enter the maximal age in inclusion criteria of participants.\r\n"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "agemax_unit", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Please enter the temporal unit of maximal age in inclusion criteria.\r\n"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "exclusion_criteria", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Please enter the exclusion criteria for participant selection, including age and sex.\r\n"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "primary_sponsor", 
+      "example": "", 
+      "form": "PrimarySponsorForm", 
+      "text": "Please enter the primary spondor.\r\nThe Primary Sponsor is the individual, organization (e.g. proponent institution), group or other legal entity which takes responsibility for initiating, managing and/or financing the study.  \r\nThe Primary Spondor is responsible for ensuring that the trial is properly registered. \r\nThe Primary Sponsor may or may not be the main funder.\r\nIn independent studies, for which the investigator has no financial assistance from a specific sponsor, including cases of medicines donated where the donor does not want to be characterized as a sponsor of the study, the researcher is considered the sponsor of the study. \r\n"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "institution", 
+      "example": "", 
+      "form": "TrialSecondarySponsorForm", 
+      "text": "Please enter the name of additional individuals, organizations or other legal persons, if any, that have agreed with the primary sponsor to take on responsibilities of sponsorship.\r\nA secondary sponsor may have:\r\n\u2022 agreed to take on all the responsibilities of sponsorship jointly with the primary sponsor;\r\n\u2022 to form a group with the primary sponsor in which the responsibilities of sponsorship are allocated among the members of the group;\r\n\u2022 to act as the sponsor\u2019s legal representative in relation to some or all of the trial sites; or to take responsibility for the accuracy of trial registration information submitted.\r\n"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "TrialSecondarySponsorForm", 
+      "text": "Please select this field to delete the corresponding secondary sponsor.\r\n"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "institution", 
+      "example": "", 
+      "form": "TrialSupportSourceForm", 
+      "text": "Please enter the major source(s) of monetary or material or infrastructural support for the trial (e.g., funding agency, foundation, company, hospital, university, etc).\r\n"
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "TrialSupportSourceForm", 
+      "text": "Please select this field to delete the corresponding support source.\r\n"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "hc_freetext", 
+      "example": "Tuberculosis, breast cancer, weight loss maintenance\r\n", 
+      "form": "HealthConditionsForm", 
+      "text": "Please enter the primary health condition(s) or problem(s) studied. If the study is conducted in healthy human volunteers belonging to the target population of the intervention (e.g., preventive or screening interventions), enter the particular health condition(s) or problem(s) being prevented or screened\r\nExample: Type 2 Diabetes Mellitus; Hypertension\r\n"
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "vocabulary", 
+      "example": "", 
+      "form": "DescriptorForm", 
+      "text": "Please select the vocabulary will be used to choose the descriptor of the health condition: \r\nDeCS: Health Sciences Descriptors or\r\nICD-10: International Classification of Diseases or\r\nChemical Abstracts Service\r\n"
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "version", 
+      "example": "", 
+      "form": "DescriptorForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "code", 
+      "example": "", 
+      "form": "DescriptorForm", 
+      "text": "Please enter the health condition descriptor code.\r\nIf you choose one descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will be automatically filled.\r\n"
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "text", 
+      "example": "", 
+      "form": "DescriptorForm", 
+      "text": "Please enter the health condition descriptor text.\r\nIf you choose one descriptor of the DeCS, ICD-10 or CAS vocabularies, then this field will automatically filled.\r\n"
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "i_freetext", 
+      "example": "", 
+      "form": "InterventionForm", 
+      "text": "Please describe all the interventions and the comparator/control(s) being studied. For each intervention, describe other intervention details as applicable (dose, duration, mode of administration, etc).\r\nThe control intervention(s) is/are the interventions against which the study intervention is evaluated (e.g., placebo, no treatment, active control). If an active control is used, be sure to enter in the name(s) of that intervention, or enter \"placebo\" or \"no treatment\" as applicable.\r\nUse the International Non-Proprietary Name if possible (not brand/trade names). For an unregistered drug, the generic name, chemical name, or company serial number is acceptable. If the intervention consists of several separate treatments, list them all in one line separated by commas (e.g., \"low-fat diet, exercise\").\r\n"
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "i_code", 
+      "example": "", 
+      "form": "InterventionForm", 
+      "text": "Please select the intervention category:\r\n\r\n* drug\r\n* device\r\n* biological/vaccine\r\n* procedure/surgery\r\n* radiation\r\n* behavioural\r\n* genetics\r\n* dietary supplement\r\n* other\r\n\r\n"
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "study_design", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": "Please enter whether the trial is a  single arm study, a controlled non-randomized trial or a randomized controlled trial. \r\n\r\nA single arm study is one in which all participants are given the same intervention. Trials in which participants are assigned to receive one of two or more interventions are NOT single arm studies. Crossover trials are NOT single arm studies.\r\n\r\nA trial is \"randomized\" if participants are randomly assigned to intervention groups using a method based on chance (e.g., random number table, random computer-generated sequence, minimization, adaptive randomization). \r\n"
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "expanded_access_program", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": "Please enter if there is an expanded access program or not or if it is unknown. The expanded access is a sponsored process of making available new, promising products, without registration at Ag\u00eancia Nacional de Vigil\u00e2ncia Sanit\u00e1ria - ANIVSA for patients with serious life-threating diseases and absence of satisfactory alternative treatments in the country and no aditional charges for the patient. The product must be under phase III study in Brazil or country of origin, expanded access program approved or registration at the country of origin (RDC 26).\r\n\r\n"
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "purpose", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": "Please select the most apropriate purpose of your study. Only choose \"Other\" option if none of the listed categories are adequate to define the purpose of your study.\r\n\r\n   * Diagnostic: conducted to find better tests or procedures for diagnosing a particular disease or condition.\r\n   * Etiological: identify causes of diseases\r\n   * Prognostic: estimate the possible clinical course of disease in time and anticipate their probable complications.\r\n    * Prevention: look for better ways to prevent disease in people who have never had the disease or to prevent a disease from returning. These approaches may include medicines, vitamins, vaccines, minerals, or lifestyle changes.\r\n    * Treatment: test experimental treatments, new combinations of drugs, or new approaches to surgery or radiation therapy.\r\n"
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "intervention_assignment", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": "Please enter the intervention assignment of the trial.\r\n\r\n* Single Group: single arm study\r\n* Parallel: participants are assigned to one of two or more groups in parallel for the duration of the study\r\n* Cross-over: participants receive one of two alternative interventions during the initial phase of the study and receive the other intervention during the second phase of the study\r\n* Factorial: two or more interventions, each alone and in combination, are evaluated in parallel against a control group \r\n"
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "number_of_arms", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": "Please enter the number of intervention groups (enter 1 for single-arm study). \r\n"
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "masking", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": "Blinding refers to methods used to prevent participants and investigators from knowing what interventions are being used. Masking refers to the methods used to camouflage interventions to achieve blinding.\r\n\r\nPlease select from the list which masking/blinding is used on the study:\r\n\r\n    * Open: no masking/blinding is used. All involved know the identity of the intervention assignment.\r\n    * Single Blind: only participants is unaware of the intervention assignment; also called single-masked study.\r\n    * Double Blind: both investigator and participant parties are unaware of the intervention that each participant is receiving.\r\n    * Triple Blind: besides the researcher and the patient, the analyzer of the results does known treatment that each participant is receiving.\r\n"
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "allocation", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": "Please enter the participant assignment to the intervention groups:\r\n\r\n    * N/A: single arm study\r\n    * Randomized Controlled Trial: participants are assigned to intervention groups by chance\r\n    * Nonrandomized Trial: participants are expressly assigned to intervention groups through a non-random method, such as physician choice\r\n"
+    }
+  }, 
+  {
+    "pk": 39, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "phase", 
+      "example": "", 
+      "form": "StudyTypeForm", 
+      "text": "Please enter the phase of the study.\r\n"
+    }
+  }, 
+  {
+    "pk": 40, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "interest", 
+      "example": "", 
+      "form": "OutcomeForm", 
+      "text": "Please enter the type of outcome: primary or secondary. Primary outcomes are events, variables, or experiences that are measured because it is believed that they may be influenced by the intervention. The Primary Outcome should be the outcome used in sample size calculations, or the main outcome(s) used to determine the effects of the intervention(s).\r\n\r\nEnter the names of all primary outcomes in the trial as well as the pre-specified timepoint(s) of primary interest. Be as specific as possible with the metric used (e.g., \u201c% with Beck Depression Score > 10 \u201drather than just \u201cdepression\u201d).\r\n\r\nData on secondary ourtcomes are used to evaluate aditional effects of the intervention. A secondary outcome may involve the same event, variable, or experience as the primary outcome, but measured at timepoints other than those of primary interest (e.g., Primary outcome: all-cause mortality at 5 years; Secondary outcome: all-cause mortality at 1 year, 3 years), or may involve a different event, variable, or experience altogether (e.g., Primary outcome: all-cause mortality at 5 years; Secondary outcome: hospitalization rate at 5 years). \r\n"
+    }
+  }, 
+  {
+    "pk": 41, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "description", 
+      "example": "", 
+      "form": "OutcomeForm", 
+      "text": "Please enter the description of outcome measure.\r\n"
+    }
+  }, 
+  {
+    "pk": 42, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "OutcomeForm", 
+      "text": "Please select this field to delete the corresponding outcome.\r\n"
+    }
+  }, 
+  {
+    "pk": 43, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "contact", 
+      "example": "", 
+      "form": "PublicContactForm", 
+      "text": "Please select from one of the contacts included previously who is the contact(s) for public queries (see form bellow for a new contact).\r\n"
+    }
+  }, 
+  {
+    "pk": 44, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "PublicContactForm", 
+      "text": "Please select this field to delete the corresponding public contact.\r\n"
+    }
+  }, 
+  {
+    "pk": 45, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "contact", 
+      "example": "", 
+      "form": "ScientificContactForm", 
+      "text": "Please select from one of the contacts included previously who is the contact(s) for scientific queries (see form bellow for a new contact).\r\n"
+    }
+  }, 
+  {
+    "pk": 46, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "ScientificContactForm", 
+      "text": "Please select this field to delete the corresponding scientific contact.\r\n"
+    }
+  }, 
+  {
+    "pk": 47, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "contact", 
+      "example": "", 
+      "form": "SiteContactForm", 
+      "text": "Please select from one of the contacts included previously who is the contact(s) for site queries (see form bellow for a new contact).\r\n"
+    }
+  }, 
+  {
+    "pk": 48, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "SiteContactForm", 
+      "text": "Please select this field to delete the corresponding site queries contact.\r\n"
+    }
+  }, 
+  {
+    "pk": 49, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "firstname", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": "Please enter the first name of the contact.\r\n"
+    }
+  }, 
+  {
+    "pk": 50, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "middlename", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": "Please enter the middle name of the contact.\r\n"
+    }
+  }, 
+  {
+    "pk": 51, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "lastname", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": "Please enter the last name of the contact.\r\n"
+    }
+  }, 
+  {
+    "pk": 52, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "email", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": "Please enter the email of the contact.\r\n"
+    }
+  }, 
+  {
+    "pk": 53, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "affiliation", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": "Please enter the affiliation of the contact.\r\n"
+    }
+  }, 
+  {
+    "pk": 54, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "address", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": "Please enter the address of the contact.\r\n"
+    }
+  }, 
+  {
+    "pk": 55, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "city", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": "Please enter the city of the contact.\r\n"
+    }
+  }, 
+  {
+    "pk": 56, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "country", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": "Please enter the country of the contact.\r\n"
+    }
+  }, 
+  {
+    "pk": 57, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "zip", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": "Please enter the zip code of the contact.\r\n"
+    }
+  }, 
+  {
+    "pk": 58, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "telephone", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": "Please enter the telephone number of the contact.\r\n"
+    }
+  }, 
+  {
+    "pk": 59, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "relation", 
+      "example": "", 
+      "form": "ContactForm", 
+      "text": "Select the relation of the contact: a contact for Public Queries, for Scientific Queries or for Site Queries.\r\n"
+    }
+  }, 
+  {
+    "pk": 60, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "acronym_expansion", 
+      "example": "The expansion of the acronym WHO is World Health Organization.\r\n", 
+      "form": "TrialIdentificationForm", 
+      "text": "Please enter the expansion of the trial public acronym, if available.\r\n"
+    }
+  }, 
+  {
+    "pk": 61, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "name", 
+      "example": "", 
+      "form": "NewInstitution", 
+      "text": "Please enter the name of the new institution.\r\n"
+    }
+  }, 
+  {
+    "pk": 62, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "address", 
+      "example": "", 
+      "form": "NewInstitution", 
+      "text": "Please enter the address of the new institution.\r\n"
+    }
+  }, 
+  {
+    "pk": 63, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "country", 
+      "example": "", 
+      "form": "NewInstitution", 
+      "text": "Please enter which is the country of the new institution.\r\n"
+    }
+  }, 
+  {
+    "pk": 64, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "DELETE", 
+      "example": "", 
+      "form": "DescriptorForm", 
+      "text": "Please select this field to delete the corresponding descriptor.\r\n"
+    }
+  }, 
+  {
+    "pk": 65, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "enrollment_start_planned", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Please enter the anticipated or actual date of enrollment of the first participant. \r\nPlease use the format dd/mm/yyyy.\r\n"
+    }
+  }, 
+  {
+    "pk": 66, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "file", 
+      "example": "Copy of letter of approval from the Ethics Committee or Institutional Review Board (file format - jpeg, tif, bmp) and consent form of your study\r\n", 
+      "form": "AttachmentForm", 
+      "text": "Please enter the file to be attached to this study.\r\n"
+    }
+  }, 
+  {
+    "pk": 67, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "description", 
+      "example": "", 
+      "form": "AttachmentForm", 
+      "text": "Please enter the description of the file attached to this study.\r\n"
+    }
+  }, 
+  {
+    "pk": 68, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "public", 
+      "example": "", 
+      "form": "AttachmentForm", 
+      "text": "Please select this field if the file attached to this study will be public to every user of the EnsaiosClinicos.gov.br.\r\n"
+    }
+  }, 
+  {
+    "pk": 69, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "enrollment_end_planned", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": "Please enter the anticipated or actual date of enrollment of the last participant. \r\nPlease use the format dd/mm/yyyy.\r\n"
+    }
+  }, 
+  {
+    "pk": 70, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "language", 
+      "example": "", 
+      "form": "InitialTrialForm", 
+      "text": "Please, select the submission language.\r\n"
+    }
+  }, 
+  {
+    "pk": 71, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "scientific_title", 
+      "example": "", 
+      "form": "InitialTrialForm", 
+      "text": "Please enter the scientific title of the study as it appears in the protocol submitted for funding and ethical review.\r\n"
+    }
+  }, 
+  {
+    "pk": 72, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "recruitment_country", 
+      "example": "", 
+      "form": "InitialTrialForm", 
+      "text": "Please enter the countries from which participants will be, are intended to be, or have been recruited.\r\n"
+    }
+  }, 
+  {
+    "pk": 73, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "name", 
+      "example": "", 
+      "form": "PrimarySponsorForm", 
+      "text": "Please enter the primary sponsor.\r\nThe Primary Sponsor is the individual, organization, group or other legal entity which takes responsibility for initiating, managing and/or financing the study.  \r\nThe Primary Spondor is responsible for ensuring that the trial is properly registered. \r\nThe Primary Sponsor may or may not be the main funder.\r\nIn independent studies, for which the investigator has no financial assistance from a specific sponsor, including cases of medicines donated where the donor does not want to be characterized as a sponsor of the study, the researcher is considered the sponsor of the study. \r\n"
+    }
+  }, 
+  {
+    "pk": 74, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "country", 
+      "example": "", 
+      "form": "PrimarySponsorForm", 
+      "text": "Please enter the primary sponsor country.\r\n"
+    }
+  }, 
+  {
+    "pk": 75, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "enrollment_start_date", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 76, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "enrollment_end_date", 
+      "example": "", 
+      "form": "RecruitmentForm", 
+      "text": ""
+    }
+  }, 
+  {
+    "pk": 77, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "utrn_number", 
+      "example": "", 
+      "form": "TrialIdentificationForm", 
+      "text": "Please enter the Universal Trial Number (UTN). The UTN is a number, obtained by the trial's sponsor, proponent institution or principal investigator as the first step in registering a trial on the REBEC.  \r\nThe UTN will then become part of the trial's international identity along with the REBEC registration number.\r\nIf your study is internationally multicentric trial, check out if it has a UTN. \r\nTo obtain the UTRN you must acces the site http://apps.who.int/trialsearch/utn.aspx"
+    }
+  }, 
+  {
+    "pk": 78, 
+    "model": "assistance.fieldhelp", 
+    "fields": {
+      "field": "primary_sponsor", 
+      "example": "Por favor, inclua o nome do patrocinador prim\u00e1rio, endere\u00e7o postal completo com telefones e e-mail para contato e pa\u00eds de localiza\u00e7\u00e3o do patrocinador prim\u00e1rio. \r\nUm patrocinador \u00e9 o indiv\u00edduo, organiza\u00e7\u00e3o, grupo ou outra entidade legal que assume a responsabilidade de iniciar, gerenciar e/ou financiar um estudo. \r\nO patrocinador prim\u00e1rio \u00e9 respons\u00e1vel por garantir que o ensaio est\u00e1 devidamente registrado. O patrocinador prim\u00e1rio pode ou n\u00e3o ser o principal financiador.\r\nNos estudos independentes, nos quais o investigador n\u00e3o tem aux\u00edlio financeiro de um patrocinador espec\u00edfico, incluindo os casos de medicamentos doados cujo doador n\u00e3o quer ser caracterizado como um patrocinador do estudo, o investigador \u00e9 considerado o patrocinador do estudo. \r\n", 
+      "form": "InitialTrialForm", 
+      "text": "Please enter the primary sponsor name, complete postal address including telephone numbers and e-mail for contact and country of sponsor\u00b4s location. \r\nThe Primary Sponsor is the individual, organization, group or other legal entity which takes responsibility for initiating, managing and/or financing the study.  \r\nThe Primary Spondor is responsible for ensuring that the trial is properly registered. \r\nThe Primary Sponsor may or may not be the main funder.\r\nIn independent studies, for which the investigator has no financial assistance from a specific sponsor, including cases of medicines donated where the donor does not want to be characterized as a sponsor of the study, the researcher is considered the sponsor of the study. \r\n"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "Before initianting your registration, be sure you have on hand the protocol of your study, as well as a copy (in PDF format) of the letter of approval from a brazilian ethics committee/institutional review board and the UTN number. Those documents will be the sources of information necessary to fill all the obligatory fields required for the registration of your study. \r\nThe letter of approval must be uploaded in the attachments section of the registration form. This document is a proof of the existence of the study and that it was approved by a brazilian EC/IRB. If you wish to make it public, that meansit will be viewed by all users, mark the Public field. Otherwise, it will be viewed only by the REBEC staff.\r\nThe UTN is a number, obtained by the trial's sponsor, proponent institution or principal investigator as the first step in registering a trial on the REBEC. The UTRN will then become part of the trial's international identity along with the REBEC registration number.  If your study is internationally multicentric trial, check out if it has a UTRN. \r\nTo obtain the UTRN you must acces the site http://apps.who.int/trialsearch/utn.aspx", 
+      "created": "2011-01-20 08:01:42", 
+      "order": 230, 
+      "title": "What documents I must have on hand before registration?"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "assistance.category", 
+    "fields": {
+      "label": "System"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "assistance.category", 
+    "fields": {
+      "label": "Interface"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "assistance.category", 
+    "fields": {
+      "label": "WorkFlow"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "assistance.category", 
+    "fields": {
+      "label": "Study registration"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "First time users need to create a login name and password by clicking on the Register button. A confirmation e-mail will be sent to the informed e-mail account.\r\nThe New Submission button will take the registrant to the screens that need to be completed. This includes basic trial information such as the types of participants, the interventions being tested and the outcomes to be assessed. Other information required includes details of the study design, sample size and contact information. Each field has an information button to assist registrants in entering the correct data. Once each screen is completed, the registrant should click the 'Save' button to save the information to the online registry database. Once all the mandatory information has been entered, the registrant should click the 'Send to review' button. \r\nFollowing submission of the data, the REBEC staff will check the data submitted and query the contact person should anything need clarification. Once any queries are confirmed, trials are officially 'registered' and allocated a unique registration number. Both date of submission and date of registration are recorded. ", 
+      "created": "2010-07-21 21:29:01", 
+      "order": 160, 
+      "title": "How do I register a trial?"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "The study's coordinator, sponsor or an appropriate representative is responsible for registering a trial. The sponsor is an individual or company, public or private, which financially supports the research as defined by the resolution RDC 39 from ANVISA. \r\nIn clinical studies regulated by this rule and sponsored by national or international agencies to promote the research, philanthropic entities, non-governmental organizations (NGOs) or other non-profit organizations, it is assumed that investigator assumes the role of representative of the sponsor, if there is a Clinical Research Organization (CRO) responsible for the conduct of it, should meet as a representative of the study. \r\nIn the case of independent studies, for which the investigator has no financial assistance from a specific sponsor, including cases in receiving the medicines of research in the form of donation where the donor does not want to be characterized as a sponsor of the study, the researcher additionally assume the responsibilities of registering the study.\r\nFor the cases referred to in the preceding paragraph, the researcher is now called \"investigator-sponsor.\" \r\n", 
+      "created": "2010-07-21 21:23:10", 
+      "order": 150, 
+      "title": "Who is responsible for registering a trial?"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "Trials should be registered after approval from a national ethics committee and before enrolment of the first patient.\r\n", 
+      "created": "2010-07-21 18:27:19", 
+      "order": 140, 
+      "title": "When should studies be registered?"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "All clinical trials involving brazilian investigators or participants, in all areas of health and testing all forms of interventions should be registered. \r\nStudies must meet the <a href=\"http://www.who.int/ictrp/en/\" title=\"World Health Organization\" target=\"_blank\">WHO</a> definition of a clinical trial to be registered. That is, any research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes . Medical interventions include any intervention used to modify a health outcome and include drugs, surgical procedures, devices, behavioural treatments, etc. If in doubt about whether to register or not, registration is recommended. \r\n", 
+      "created": "2010-07-21 18:20:25", 
+      "order": 130, 
+      "title": "What studies need to be registered?"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "Based on the guidelines for Vancouver style referencing for \"Part of a database on the internet\" (see http://www.nlm.nih.gov/bsd/uniform_requirements.html), and the Citing Medicine guidelines of the National Library of Medicine (NLM) http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=citmed.section.57708) it is therefore recommended that a citation of a record on a trial register consist of:\r\n\r\n * name of the database\r\n * location and name of the publisher of the database - the year the site was first developed/online\r\n * unique ID\r\n * title of the record\r\n * date of registration\r\n * date when it was cited\r\n * approximate number of pages - the web address of the record\r\n\r\n Example:\r\n\r\n RBEC\r\n Registro Brasileiro de Ensaios Cl\u00ednicos [Internet]: Rio de Janeiro (RJ): Instituto de Informa\u00e7\u00e3o   Cient\u00edfica e Tecnol\u00f3gica em Sa\u00fade (Brazil); 2010 - . Identifier BCTR12345678. A multi-centre, randomised, double-blind, placebo-controlled clinical trial examining the efficacy and safety of low-dose aspirin after initial anticoagulation to prevent recurrent venous thromboembolism; 2010 Jul 12 [cited 2008 June 18]; [1 page]. Available from http://www.ensaiosclinocos.gov.br/BCTR12345678.aspx.", 
+      "created": "2010-08-10 18:53:15", 
+      "order": 170, 
+      "title": "How to cite a record on a clinical trials register"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "The registry record will be the only publicly available document on a trial until results from the trial are published. Some examples of situations when studies might be quoted are:\r\n\r\nWhen a manuscript reporting the results of the trial is published or otherwise reported\r\n\r\nWhen a manuscript reporting methodological issues relating to a particular trial are published or otherwise reported\r\n\r\nIn protocols to systematic reviews, or in completed systematic reviews (e.g. when a list of ongoing trials are included)\r\n\r\nIn protocols to prospective meta-analyses, which will list the ongoing trials to be included\r\n\r\nIn any manuscript when reference to an ongoing or unpublished (or even published) trial might be relevant\r\n", 
+      "created": "2010-08-10 19:09:28", 
+      "order": 180, 
+      "title": "When to cite a record on a clinical trials register"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "No. Only phase III studies therapeutical confirmatory studies that request registration\u00b9 at Ag\u00eancia Nacional de Vigil\u00e2ncia Sanit\u00e1ria (Anvisa) must be registered in one of the primary registries of the International Clinical Trials Registration Plataform (ICTRP/WHO) network. Other clinical trials studies with drugs, devices\u00b2 or dietetical interventions of phases I, II and VI, as well as clinical trials in pharmacogenomics or pharmacogenetics approved by CTNBio or CGEN, which involves importation or exportation must be registered only at ANVISA.\r\nCurrently, research projects on bioavailability and bioequivalence for registration of generic drugs doesn\u00b4t need to be submitted to evaluation by ANVISA.\r\n\r\nNote: (1) innovative product, new therapeutical application or lregistration changes\r\n         (2) includes materials (orthesis; prosthesis), devices, equipments", 
+      "created": "2010-10-24 13:53:41", 
+      "order": 190, 
+      "title": "Is mandatory to register all clinical trials at the Brazilian Clinical Trials Registry to obtain the approval of ANVISA for the conduct of clinical research?"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "Estabilish a broad and update register of clinical trials with researchers and participants from Brazil, Latin America and the Caribbean\r\n\r\nProvide access to interested stakeholders of ongoing or completed clinical trials - source of reliable and free of charge data to be used in systematic reviews/metanalyses, evidence-based guidelines, research policy \r\n\r\nIncrease transparency in research, strenghening the ethical and cientific value of clinical trials\r\n\r\nFacilitate the discovery and control of design, publication bias and reduce language bias\r\n\r\nIntegrate into ethic and regulatory processes\r\n\r\nAttend the national and regional information needs", 
+      "created": "2010-10-24 21:03:54", 
+      "order": 200, 
+      "title": "What are the objectives of the Brazilian Clinical Trial Registry?"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "A Clinical Trials Registry can enhance the efficacy of current clinical trials studies by:\r\n\r\nReducing the unnecessary duplication of research efforts because those who are planning new studies will be aware of all existing trials\r\n\r\nRaising the recruitment rates of participants of clinical trials (especially for rare diseases or high risk conditions) and therefore increasing the chances of well succeeded outcomes of some clincial trials\r\n\r\nGiving aggregate value to research results by providing a source of reliable and non-biased information on clinical trials for use in systematic reviews, metanalyses and evidence-based guidelines\r\n\r\nEnhance the available evidences to health decision taking \r\n", 
+      "created": "2010-10-24 21:41:02", 
+      "order": 210, 
+      "title": "What are the benefits of a Clinical Trials Registry?"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "assistance.question", 
+    "fields": {
+      "category": 6, 
+      "answer": "No. The study registration at Plataforma Brasil must be done before its registration at the Brazilian Clinical Trials Registry (REBEC). Although the form of RBEC share many of its fields with Plataforma Brasil, the objective of REBEC is to inform all national and international interested stakeholders about clinical trials performed in Brazil through the integration of RBEC and International Clinical Trials Registry Platform (ICTRP / World Health Organization). This integration is based upon the adoption of standard operating procedures defined by the Secretariat of th ICTRP.", 
+      "created": "2010-10-25 15:50:30", 
+      "order": 220, 
+      "title": "Is the  registration of a clinical trial at Plataforma Brasil equivalent to the registration at Brazilian Clinical Trials Registry?"
+    }
+  }
+]

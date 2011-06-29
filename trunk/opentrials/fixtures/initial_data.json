@@ -1,0 +1,34 @@
+[
+  {
+    "pk": 4, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "ec.teste.bvsalud.org", 
+      "name": "Registro Brasileiro de Ensaios Cl\u00ednicos (TESTE)"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "ecgovbr2.bvsalud.org", 
+      "name": "Registro Brasileiro de Ensaios Cl\u00ednicos (staging)"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "www.ensaiosclinicos.gov.br", 
+      "name": "Registro Brasileiro de Ensaios Cl\u00ednicos"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "example.com", 
+      "name": "example.com"
+    }
+  }
+]

@@ -1,0 +1,443 @@
+TRIAL SERIALIZATION
+===================
+
+Here we test all about ClinicalTrial serialization and deserialization to be fossilized
+and used to keep old versions of a trial archived.
+
+    >>> import datetime
+    >>> from django.utils import simplejson
+    >>> from repository.models import ClinicalTrial, Descriptor
+    >>> from repository.serializers import FossilClinicalTrial
+
+We must keep here everything a ClinicalTrial could have in two versions:
+
+1. a very minimalistic version (the minimum a trial could be)
+-------------------------------------------------------------
+
+    >>> trial_small = ClinicalTrial()
+    >>> trial_small.scientific_title = 'Small trial: Research about Colera on Haiti'
+    >>> trial_small.save()
+
+Serializing
+
+    >>> json = trial_small.serialize_for_fossil()
+
+    >>> isinstance(json, basestring)
+    True
+
+    >>> json_should_be = {
+    ...     'pk': trial_small.pk,
+    ...     '__unicode__': unicode(trial_small),
+    ...     '__model__': unicode('ClinicalTrial'),
+    ...     'id': trial_small.pk,
+    ...     'trial_id': None,
+    ...     'date_registration': None,
+    ...     'scientific_title': trial_small.scientific_title,
+    ...     'scientific_acronym': '',
+    ...     'scientific_acronym_expansion': '',
+    ...     'primary_sponsor': None,
+    ...     'public_title': '',
+    ...     'acronym': '',
+    ...     'acronym_expansion': '',
+    ...     'hc_freetext': '',
+    ...     'i_freetext': '',
+    ...     'inclusion_criteria': '',
+    ...     'gender': '-',
+    ...     'agemin_value': 0,
+    ...     'agemin_unit': '-',
+    ...     'agemax_value': 0,
+    ...     'agemax_unit': '-',
+    ...     'exclusion_criteria': '',
+    ...     'study_type': None,
+    ...     'study_design': '',
+    ...     'expanded_access_program': None,
+    ...     'purpose': None,
+    ...     'intervention_assignment': None,
+    ...     'number_of_arms': None,
+    ...     'masking': None,
+    ...     'allocation': None,
+    ...     'phase': None,
+    ...     'enrollment_start_planned': None,
+    ...     'enrollment_start_actual': None,
+    ...     'enrollment_end_planned': None,
+    ...     'enrollment_end_actual': None,
+    ...     'target_sample_size': 0,
+    ...     'recruitment_status': None,
+    ...     'created': trial_small.created.strftime('%Y-%m-%d %H:%M:%S'),
+    ...     'updated': None,
+    ...     'exported': None,
+    ...     'staff_note': '',
+    ...     'language': trial_small.language,
+    ...     'public_contact': [],
+    ...     'scientific_contact': [],
+    ...     'site_contact': [],
+    ...     'i_code': [],
+    ...     'recruitment_country': [],
+    ...     'support_sources': [],
+    ...     'acronym_display': '',
+    ...     'primary_outcomes': [],
+    ...     'secondary_outcomes': [],
+    ...     'trial_number': [],
+    ...     'hc_code': [],
+    ...     'hc_keyword': [],
+    ...     'utrn_number': None,
+    ...     'scientific_acronym_display': '',
+    ...     'intervention_keyword': [],
+    ...     'secondary_sponsors': [],
+    ...     'translations': [],
+    ... }
+
+Different key values
+
+    >>> for k,v in simplejson.loads(json).items():
+    ...     if v != json_should_be[k]:
+    ...         print '%s = %s  ->  %s = %s'%(k, v, k, json_should_be[k])
+
+Fields not serialized
+
+    >>> [k for k in json_should_be if k not in simplejson.loads(json)]
+    []
+
+Deserializing (not persistent)
+
+    >>> proxy = ClinicalTrial.objects.deserialize_for_fossil(json, persistent=False)
+
+    >>> isinstance(proxy, FossilClinicalTrial)
+    True
+
+    >>> proxy.scientific_title
+    'Small trial: Research about Colera on Haiti'
+
+    >>> proxy.created.strftime('%Y-%m-%d %H:%M:%S') == trial_small.created.strftime('%Y-%m-%d %H:%M:%S')
+    True
+
+TODO: Deserializing (persistent). To make only when necessary.
+
+2. a very big version (the maximum a trial could be)
+----------------------------------------------------
+
+    >>> from django.contrib.auth.models import User
+    >>> from repository.models import Institution, Contact, PublicContact, ScientificContact
+    >>> from vocabulary.models import CountryCode, StudyType, StudyPurpose,\
+    ...         InterventionAssigment, StudyMasking, StudyAllocation, StudyPhase,\
+    ...         RecruitmentStatus, InterventionCode, InstitutionType
+
+    >>> study_type = StudyType.objects.order_by('pk')[0]
+    >>> purpose = StudyPurpose.objects.order_by('pk')[0]
+    >>> intervention_assignment = InterventionAssigment.objects.order_by('pk')[0]
+    >>> masking = StudyMasking.objects.order_by('pk')[0]
+    >>> allocation = StudyAllocation.objects.order_by('pk')[0]
+    >>> phase = StudyPhase.objects.order_by('pk')[0]
+    >>> recruitment_status = RecruitmentStatus.objects.order_by('pk')[0]
+    >>> inst_type1 = InstitutionType.objects.order_by('pk')[0]
+
+    >>> brazil, new = CountryCode.objects.get_or_create(label='BR', defaults={'description': 'Brazil'})
+
+    >>> user1 = User.objects.create(username='serializer')
+
+    >>> inst1 = Institution.objects.create(
+    ...     name = 'ACME',
+    ...     address = 'Av. Goias, 1249, Centro',
+    ...     country = brazil,
+    ...     creator = user1,
+    ...     i_type = inst_type1,
+    ... )
+
+    >>> trial_big = ClinicalTrial()
+
+    >>> trial_big.date_registration = datetime.datetime.now()
+    >>> trial_big.scientific_title = 'Full trial: a long study about HIV'
+    >>> trial_big.scientific_acronym = 'HIV Study'
+    >>> trial_big.scientific_acronym_expansion = 'Long HIV Study'
+    >>> trial_big.primary_sponsor = inst1
+    >>> trial_big.public_title = 'A long study about HIV'
+    >>> trial_big.acronym = 'HIV Study'
+    >>> trial_big.acronym_expansion = 'Long HIV Study'
+    >>> trial_big.hc_freetext = 'HC free text'
+    >>> trial_big.i_freetext = 'I free text'
+    >>> trial_big.inclusion_criteria = 'Many criterias we could include here'
+    >>> trial_big.gender = 'F'
+    >>> trial_big.agemin_value = 60
+    >>> trial_big.agemin_unit = 'Y'
+    >>> trial_big.agemax_value = 5
+    >>> trial_big.agemax_unit = 'M'
+    >>> trial_big.exclusion_criteria = 'Male at all'
+    >>> trial_big.study_type = study_type
+    >>> trial_big.study_design = 'The study design of this'
+    >>> trial_big.expanded_access_program = False
+    >>> trial_big.purpose = purpose
+    >>> trial_big.intervention_assignment = intervention_assignment
+    >>> trial_big.number_of_arms = 2
+    >>> trial_big.masking = masking
+    >>> trial_big.allocation = allocation
+    >>> trial_big.phase = phase
+    >>> trial_big.enrollment_start_planned = '2010-12'
+    >>> trial_big.enrollment_start_actual = '2010-11'
+    >>> trial_big.enrollment_end_planned = '2012-03'
+    >>> trial_big.enrollment_end_actual = '2012-02'
+    >>> trial_big.target_sample_size = 3
+    >>> trial_big.recruitment_status = recruitment_status
+    >>> trial_big.updated = datetime.datetime.now()
+    >>> trial_big.exported = datetime.datetime.now()
+    >>> trial_big.status = 'published'
+    >>> trial_big.staff_note = 'Just a simple note to serialize'
+
+    >>> trial_big.save()
+
+Contacts
+
+    >>> contact1 = Contact.objects.create(
+    ...         firstname = 'Tarsila',
+    ...         middlename = 'Ribeiro',
+    ...         lastname = 'Neiva',
+    ...         email = 'tarsila@raminel.com.br',
+    ...         affiliation = inst1,
+    ...         address = 'Rua Boituva, 449',
+    ...         city = 'Goiania',
+    ...         country = brazil,
+    ...         zip = '74000-970',
+    ...         telephone = '+55(62)4525-1343',
+    ...         creator = user1,
+    ...     )
+
+    >>> contact2 = Contact.objects.create(
+    ...         firstname = 'Linus',
+    ...         middlename = 'Ribeiro',
+    ...         lastname = 'Neiva',
+    ...         email = 'linus@raminel.com.br',
+    ...         affiliation = inst1,
+    ...         address = 'Rua Boituva, 449',
+    ...         city = 'Goiania',
+    ...         country = brazil,
+    ...         zip = '74000-970',
+    ...         telephone = '+55(62)4525-1343',
+    ...         creator = user1,
+    ...     )
+
+    >>> pc1 = PublicContact.objects.create(trial=trial_big, contact=contact1)
+    >>> pc2 = PublicContact.objects.create(trial=trial_big, contact=contact2)
+
+    >>> sc1 = ScientificContact.objects.create(trial=trial_big, contact=contact1)
+
+    >>> trial_big.i_code.add(InterventionCode.objects.order_by('pk')[0])
+    >>> trial_big.i_code.add(InterventionCode.objects.order_by('pk')[1])
+
+    >>> trial_big.recruitment_country.add(brazil)
+
+Outcomes
+
+    >>> from repository.models import Outcome
+
+    >>> out1 = Outcome()
+    >>> out1.trial = trial_big
+    >>> out1.interest = 'primary'
+    >>> out1.description = 'Description of outcome 1'
+    >>> out1.save()
+
+    >>> out2 = Outcome()
+    >>> out2.trial = trial_big
+    >>> out2.interest = 'secondary'
+    >>> out2.description = 'Description of outcome 2'
+    >>> out2.save()
+
+Descriptors
+
+    >>> desc1 = Descriptor()
+    >>> desc1.trial = trial_big
+    >>> desc1.aspect = 'HealthCondition'
+    >>> desc1.vocabulary = 'DeCS'
+    >>> desc1.level = 'general'
+    >>> desc1.code = 'C02'
+    >>> desc1.text = 'Virus diseases'
+    >>> desc1.save()
+
+    >>> desc1.translations.create(text='Viroses', language='pt-br')
+    <DescriptorTranslation: pt-br>
+
+    >>> desc2 = Descriptor()
+    >>> desc2.trial = trial_big
+    >>> desc2.aspect = 'HealthCondition'
+    >>> desc2.vocabulary = 'DeCS'
+    >>> desc2.level = 'specific'
+    >>> desc2.code = 'D12.776.124.486.485.114.254.150.440'
+    >>> desc2.text = 'HIV Antibodies'
+    >>> desc2.save()
+
+    >>> desc2.translations.create(text=u'Anticorpos Anti-HIV', language='pt-br')
+    <DescriptorTranslation: pt-br>
+
+    >>> desc3 = Descriptor()
+    >>> desc3.trial = trial_big
+    >>> desc3.aspect = 'Intervention'
+    >>> desc3.vocabulary = 'DeCS'
+    >>> desc3.level = 'specific'
+    >>> desc3.code = 'G02.111.570.080.689.330.400'
+    >>> desc3.text = 'HIV Enhancer'
+    >>> desc3.save()
+
+    >>> desc3.translations.create(text=u'Ampliador HIV', language='pt-br')
+    <DescriptorTranslation: pt-br>
+
+Automatically created Trial ID
+
+    >>> trial_big.trial_id.startswith('RBR-')
+    True
+
+    >>> len(trial_big.trial_id) == 10
+    True
+
+Serializing
+
+    >>> json = trial_big.serialize_for_fossil()
+
+    >>> isinstance(json, basestring)
+    True
+
+    >>> json_should_be = {
+    ...     'pk': trial_big.pk,
+    ...     '__unicode__': unicode(trial_big),
+    ...     '__model__': unicode('ClinicalTrial'),
+    ...     'id': trial_big.pk,
+    ...     'trial_id': trial_big.trial_id,
+    ...     'date_registration': trial_big.date_registration.strftime('%Y-%m-%d %H:%M:%S'),
+    ...     'scientific_title': trial_big.scientific_title,
+    ...     'scientific_acronym': trial_big.scientific_acronym,
+    ...     'scientific_acronym_expansion': trial_big.scientific_acronym_expansion,
+    ...     'primary_sponsor': {'name': 'ACME', 'creator': {'username': 'serializer', 'email': ''}, 'country': {'translations': [{'description': 'Brasil (el)', 'language': 'es', 'label': 'BR'}, {'description': 'Brasil', 'language': 'pt-br', 'label': 'BR'}], 'description': 'Brazil', 'label': 'BR'}, 'i_type': {'translations': [{'description': u'Rede de Pesquisa Cl\xednica', 'language': 'pt-br', 'label': u'rede de pesquisa cl\xednica'}], 'description': 'Clinical Research Network', 'label': 'clinical research network'}, 'address': 'Av. Goias, 1249, Centro', 'pk': 1},
+    ...     'public_title': trial_big.public_title,
+    ...     'acronym': trial_big.acronym,
+    ...     'acronym_expansion': trial_big.acronym_expansion,
+    ...     'hc_freetext': trial_big.hc_freetext,
+    ...     'i_freetext': trial_big.i_freetext,
+    ...     'inclusion_criteria': trial_big.inclusion_criteria,
+    ...     'gender': trial_big.gender,
+    ...     'agemin_value': trial_big.agemin_value,
+    ...     'agemin_unit': trial_big.agemin_unit,
+    ...     'agemax_value': trial_big.agemax_value,
+    ...     'agemax_unit': trial_big.agemax_unit,
+    ...     'exclusion_criteria': trial_big.exclusion_criteria,
+    ...     'study_type': {'translations': [{'description': '', 'language': 'es', 'label': u'de intervenci\xf3n'}, {'description': '', 'language': 'pt-br', 'label': u'de interven\xe7\xe3o'}], 'description': '', 'label': 'interventional'},
+    ...     'study_design': trial_big.study_design,
+    ...     'expanded_access_program': trial_big.expanded_access_program,
+    ...     'purpose': {'translations': [{'description': '', 'language': 'es', 'label': u'diagn\xf3stico'}, {'description': '', 'language': 'pt-br', 'label': u'diagn\xf3stico'}], 'description': '', 'label': 'diagnostic'},
+    ...     'intervention_assignment': {'translations': [{'description': '', 'language': 'es', 'label': u'grupo \xfanico'}, {'description': '', 'language': 'pt-br', 'label': u'grupo \xfanico'}], 'description': '', 'label': 'single-group'},
+    ...     'number_of_arms': trial_big.number_of_arms,
+    ...     'masking': {'translations': [{'description': '', 'language': 'es', 'label': 'abierto'}, {'description': '', 'language': 'pt-br', 'label': 'aberto'}], 'description': '', 'label': 'open'},
+    ...     'allocation': {'translations': [{'description': '', 'language': 'es', 'label': 'controlado no aleatorio'}, {'description': '', 'language': 'pt-br', 'label': u'controlado n\xe3o-randomizado'}], 'description': '', 'label': 'non-randomized-controlled'},
+    ...     'phase': {'translations': [], 'description': 'not applicable', 'label': 'N/A'},
+    ...     'enrollment_start_planned': trial_big.enrollment_start_planned,
+    ...     'enrollment_start_actual': trial_big.enrollment_start_actual,
+    ...     'enrollment_end_planned': trial_big.enrollment_end_planned,
+    ...     'enrollment_end_actual': trial_big.enrollment_end_actual,
+    ...     'target_sample_size': trial_big.target_sample_size,
+    ...     'recruitment_status': {'translations': [{'description': '', 'language': 'es', 'label': u'a\xfan no reclutando'}, {'description': u'Iniciado ainda n\xe3o recrutando', 'language': 'pt-br', 'label': u'iniciado ainda n\xe3o recrutando'}], 'description': 'Not yet recruiting', 'label': 'not yet recruiting'},
+    ...     'created': trial_big.created.strftime('%Y-%m-%d %H:%M:%S'),
+    ...     'updated': trial_big.updated.strftime('%Y-%m-%d %H:%M:%S'),
+    ...     'exported': trial_big.exported.strftime('%Y-%m-%d %H:%M:%S'),
+    ...     'staff_note': trial_big.staff_note,
+    ...     'language': trial_big.language,
+    ...     'public_contact': [{'city': 'Goiania', 'zip': '74000-970', 'firstname': 'Tarsila', 'creator': {'username': 'serializer', 'email': ''}, 'middlename': 'Ribeiro', 'lastname': 'Neiva', 'telephone': '+55(62)4525-1343', 'affiliation': {'name': 'ACME', 'creator': {'username': 'serializer', 'email': ''}, 'country': {'translations': [{'description': 'Brasil (el)', 'language': 'es', 'label': 'BR'}, {'description': 'Brasil', 'language': 'pt-br', 'label': 'BR'}], 'description': 'Brazil', 'label': 'BR'}, 'i_type': {'translations': [{'description': u'Rede de Pesquisa Cl\xednica', 'language': 'pt-br', 'label': u'rede de pesquisa cl\xednica'}], 'description': 'Clinical Research Network', 'label': 'clinical research network'}, 'address': 'Av. Goias, 1249, Centro', 'pk': 1}, 'address': 'Rua Boituva, 449', 'pk': 1, 'country': {'translations': [{'description': 'Brasil (el)', 'language': 'es', 'label': 'BR'}, {'description': 'Brasil', 'language': 'pt-br', 'label': 'BR'}], 'description': 'Brazil', 'label': 'BR'}, 'email': 'tarsila@raminel.com.br'}, {'city': 'Goiania', 'zip': '74000-970', 'firstname': 'Linus', 'creator': {'username': 'serializer', 'email': ''}, 'middlename': 'Ribeiro', 'lastname': 'Neiva', 'telephone': '+55(62)4525-1343', 'affiliation': {'name': 'ACME', 'creator': {'username': 'serializer', 'email': ''}, 'country': {'translations': [{'description': 'Brasil (el)', 'language': 'es', 'label': 'BR'}, {'description': 'Brasil', 'language': 'pt-br', 'label': 'BR'}], 'description': 'Brazil', 'label': 'BR'}, 'i_type': {'translations': [{'description': u'Rede de Pesquisa Cl\xednica', 'language': 'pt-br', 'label': u'rede de pesquisa cl\xednica'}], 'description': 'Clinical Research Network', 'label': 'clinical research network'}, 'address': 'Av. Goias, 1249, Centro', 'pk': 1}, 'address': 'Rua Boituva, 449', 'pk': 2, 'country': {'translations': [{'description': 'Brasil (el)', 'language': 'es', 'label': 'BR'}, {'description': 'Brasil', 'language': 'pt-br', 'label': 'BR'}], 'description': 'Brazil', 'label': 'BR'}, 'email': 'linus@raminel.com.br'}],
+    ...     'scientific_contact': [{'city': 'Goiania', 'zip': '74000-970', 'firstname': 'Tarsila', 'creator': {'username': 'serializer', 'email': ''}, 'middlename': 'Ribeiro', 'lastname': 'Neiva', 'telephone': '+55(62)4525-1343', 'affiliation': {'name': 'ACME', 'creator': {'username': 'serializer', 'email': ''}, 'country': {'translations': [{'description': 'Brasil (el)', 'language': 'es', 'label': 'BR'}, {'description': 'Brasil', 'language': 'pt-br', 'label': 'BR'}], 'description': 'Brazil', 'label': 'BR'}, 'i_type': {'translations': [{'description': u'Rede de Pesquisa Cl\xednica', 'language': 'pt-br', 'label': u'rede de pesquisa cl\xednica'}], 'description': 'Clinical Research Network', 'label': 'clinical research network'}, 'address': 'Av. Goias, 1249, Centro', 'pk': 1}, 'address': 'Rua Boituva, 449', 'pk': 1, 'country': {'translations': [{'description': 'Brasil (el)', 'language': 'es', 'label': 'BR'}, {'description': 'Brasil', 'language': 'pt-br', 'label': 'BR'}], 'description': 'Brazil', 'label': 'BR'}, 'email': 'tarsila@raminel.com.br'}],
+    ...     'site_contact': [],
+    ...     'i_code': [{'translations': [{'description': '', 'language': 'es', 'label': 'medicamento'}, {'description': '', 'language': 'pt-br', 'label': 'medicamento'}], 'description': '', 'label': 'drug'}, {'translations': [{'description': '', 'language': 'es', 'label': 'dispositivo'}, {'description': '', 'language': 'pt-br', 'label': 'dispositivo'}], 'description': '', 'label': 'device'}],
+    ...     'recruitment_country': [{'translations': [{'description': 'Brasil (el)', 'language': 'es', 'label': 'BR'}, {'description': 'Brasil', 'language': 'pt-br', 'label': 'BR'}], 'description': 'Brazil', 'label': 'BR'}],
+    ...     'support_sources': [],
+    ...     'acronym_display': 'HIV Study: Long HIV Study',
+    ...     'primary_outcomes': [{'translations': [], 'description': 'Description of outcome 1', 'interest': 'primary'}],
+    ...     'secondary_outcomes': [{'translations': [], 'description': 'Description of outcome 2', 'interest': 'secondary'}],
+    ...     'date_enrollment_start': '11/2010',
+    ...     'trial_number': [],
+    ...     'hc_code': [{'code': 'C02', 'vocabulary': 'DeCS', 'level': 'general', 'text': 'Virus diseases', 'translations': [{'text': 'Viroses', 'language': 'pt-br'}], 'version': '', 'aspect': 'HealthCondition'}],
+    ...     'hc_keyword': [{'code': 'D12.776.124.486.485.114.254.150.440', 'vocabulary': 'DeCS', 'level': 'specific', 'text': 'HIV Antibodies', 'translations': [{'text': u'Anticorpos Anti-HIV', 'language': 'pt-br'}], 'version': '', 'aspect': 'HealthCondition'}],
+    ...     'utrn_number': None,
+    ...     'scientific_acronym_display': 'HIV Study: Long HIV Study',
+    ...     'intervention_keyword': [{'code': 'G02.111.570.080.689.330.400', 'vocabulary': 'DeCS', 'level': 'specific', 'text': 'HIV Enhancer', 'translations': [{'text': 'Ampliador HIV', 'language': 'pt-br'}], 'version': '', 'aspect': 'Intervention'}],
+    ...     'secondary_sponsors': [],
+    ...     'translations': [],
+    ... }
+
+Different key values
+
+    >>> for k,v in simplejson.loads(json).items():
+    ...     if v != json_should_be[k]:
+    ...         print '%s = %s  ->  %s = %s'%(k, v, k, json_should_be[k])
+
+Fields not serialized
+
+    >>> [k for k in json_should_be if k not in simplejson.loads(json)]
+    []
+
+Deserializing (not persistent)
+
+    >>> proxy = ClinicalTrial.objects.deserialize_for_fossil(json, persistent=False)
+
+    >>> isinstance(proxy, FossilClinicalTrial)
+    True
+
+    >>> proxy.scientific_title
+    'Full trial: a long study about HIV'
+
+Because sometimes there's a gap between a generation and other, we must handle their
+dates are exactly the same or difference for 1 second
+
+    >>> diff = (trial_small.created - proxy.created).seconds
+    >>> (diff in (-1,0,1)) or (diff, proxy.created, trial_small.created)
+    True
+
+    >>> proxy.primary_sponsor.name
+    'ACME'
+
+    >>> proxy.primary_sponsor.country.label
+    'BR'
+
+Deserializing (persistent). To make only when necessary.
+
+3. using django-fossil
+----------------------
+
+    >>> from fossil.models import Fossil
+
+Small changes (changing a field of the clinical trial)
+
+    >>> fossil_small1 = trial_small.create_fossil()
+
+    >>> trial_small.public_title = 'New public title for trial_small'
+    >>> trial_small.save()
+
+    >>> fossil_small2 = trial_small.create_fossil()
+
+    >>> fossil_small1 != fossil_small2
+    True
+
+    >>> fossil_small2.display_text == unicode(trial_small)
+    True
+
+Changes on referenced (changing a foreign object that the current trial is dependent)
+
+    >>> fossil_big1 = trial_big.create_fossil()
+
+    >>> inst1.name = 'New name of ACNE'
+    >>> inst1.save()
+
+    >>> fossil_big2 = trial_big.create_fossil()
+
+    >>> fossil_big1 != fossil_big2
+    True
+
+    >>> fossil_big2.display_text == unicode(trial_big)
+    True
+
+Testing fossil proxy object
+
+    >>> fossil_small2_obj = fossil_small2.get_object_fossil()
+
+    >>> repr(fossil_small2_obj) == '<FossilClinicalTrial: ClinicalTrial #%s>' % trial_small.pk
+    True
+
+    >>> fossil_small2_obj.public_title == trial_small.public_title
+    True
+
+    >>> unicode(fossil_small2_obj) == unicode(trial_small)
+    True
+
+

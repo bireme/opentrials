@@ -1,0 +1,1 @@
+This directory is where trial submission attachments uploaded by users are saved.

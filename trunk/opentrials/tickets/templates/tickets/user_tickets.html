@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="/static/css/tablesorter/style.css"/>
+{% endblock %}
+
+{% block body_title %}{% trans "User Tickets" %}{% endblock %}
+
+{% block stepmenu_top %}
+    {{ block.super }}
+    <big>/ {% trans 'Tickets' %}</big>
+{% endblock %}
+
+{% block body %}
+
+<div class="actions"><a href="{% url ticket.open 'general' 'task'%}" class="addNew">{% trans 'New Ticket' %}</a></div>
+<table class="dataTable" id="table_tickets" cellspacing="0" border="0">
+    <thead>
+    <tr>
+        <th>{% trans "Date" %}</th>
+        <th>{% trans "Context" %}</th>
+        <th>{% trans "Type" %}</th>
+        <th>{% trans "Subject" %}</th>
+        <th>{% trans "Status" %}</th>
+        <th>{% trans "Updated" %}</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+{% for ct in user_tickets %}
+    <tr class="{% cycle 'even' 'odd' %}">
+        <td class="date">{{ ct.created|date:'Y/m/d H:i' }}</td>
+        <td>{{ ct.context }}</td>
+        <td>{{ ct.type }}</td>
+        <td class="subject">{{ ct.followup_set.latest.subject }}</td>
+        <td>{{ ct.followup_set.latest.status }}</td>
+        <td class="update">{{ ct.followup_set.latest.iteration_date|date:'Y/m/d H:i' }}</td>
+        <td>
+            <ul>
+                <li><a class="history" href="/ticket/history/{{ ct.pk }}/" title="{% trans 'view history' %}"><span>{% trans "view history" %}</span></a></li>
+                {% if ct.is_closed or ct.is_resolved %}
+                {% else %}
+                <li><a class="iteraction" href="/ticket/newiteration/{{ ct.pk }}/" title="{% trans 'add iteration' %}"><span>{% trans "add iteration" %}</span></a></li>
+                {% endif %}
+            </ul>
+        </td>
+    </tr>
+{% endfor %}
+    <tbody>
+</table>
+{% endblock %}
+
+{% block endjs %}
+<script type="text/javascript" src="/static/js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // call the tablesorter plugin
+    $("#table_tickets").tablesorter({
+        sortList: [[0,1]],
+        dateFormat: 'uk',
+        textExtraction: 'complex',
+        headers: { 6: { sorter: false}},
+    });
+});
+</script>
+{% endblock %}
+

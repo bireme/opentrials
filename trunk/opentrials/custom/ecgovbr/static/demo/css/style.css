@@ -1,0 +1,508 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 78%;
+    font-family: Trebuchet MS, Arial, sans-serif;
+    background: #FFF;
+}
+
+P {
+    font-family: arial;
+}
+
+H2, .topMenu LI A, .NewsTitle {
+    letter-spacing: -1px;
+}
+
+
+H2 {
+    color: #b00303;
+    text-transform: uppercase;
+}
+IMG {
+    border: none;
+}
+
+FORM {
+    margin: 0px;
+}
+
+.spacer {
+    clear: both;
+    display: block;
+    font-size: 1px;
+    margin: 0px;
+    padding: 0px;
+    height: 1px;
+}
+.textEntry {
+    width: 110px;
+    border: 1px solid #848484;
+    background: url(../images/input_bg.gif) no-repeat;
+}
+.textEntryFocus {
+    border: 1px solid #0c4762;
+}
+
+/* STYLE for BORDERED MAIN BLOCKS */
+
+.container {
+    min-width: 1004px;
+    margin: 0px;
+    padding: 0;
+    line-height: 1.7em;
+}
+
+/*TOP BANNER*/
+.top {
+    background: url(../images/top_bg.jpg) repeat-x;
+    border-bottom: 2px solid #acc0c9;
+    height: 90px;
+}
+
+.top .banner {
+    width: 50%;
+    float: left;
+    padding-top: 15px;
+}
+
+.identification H1 {
+    margin: 0px 0px 0px 40px;
+    clear: both;
+    padding-top: 12px;
+    font-size: 200%;
+    font-weight: normal;
+}
+
+.identification H1 A {
+    color: #0c4762;
+    text-decoration: none;
+}
+.institutions UL {
+    margin: 0px;
+}
+.institutions UL LI {
+    float: left;
+    margin-right: 12px;
+}
+.institutions A#FIOCRUZ {
+    display: block;
+    width: 104px;
+    height: 30px;
+    background: url(../images/fiocruz.png) no-repeat;
+}
+.institutions A#BIREME {
+    display: block;
+    width: 55px;
+    height: 30px;
+    background: url(../images/bireme.png) no-repeat;
+}
+.institutions A SPAN {
+    display: none;
+}
+.topRight {
+    float: right;
+    width: 440px;
+    padding: 0px;
+    margin-right: 10px;
+    background: url(../images/login_bg.jpg) no-repeat;
+}
+.loginForm {
+    float: left;
+    margin: 0px 8px 0px 12px;
+}
+.loginForm LABEL {
+    display: block;
+    color: #0c4762;
+    text-transform: uppercase;
+    font-size: 90%;
+}
+.loginForm .formSegment {
+    float: left;
+    margin: 0px 8px 0px 0px;
+}
+.loginForm .submit {
+    background: url(../images/submit_login.gif) no-repeat;
+    color: #1c4507;
+    text-transform: uppercase;
+    font-size: 80%;
+    border: 0px;
+    padding: 4px 8px;
+    margin: 21px 0px 0px 0px;
+    width: 52px;
+    height: 20px;
+}
+.loginOption {
+    padding-top: 18px;
+}
+.loginOption UL {
+    margin: 0px;
+}
+.loginOption LI {
+    line-height: 90%;
+}
+.loginOption UL A {
+    font-size: 80%;
+    color: #333;
+    text-decoration: none;
+}
+.topMenu {
+    float: left;
+    margin: 20px 70px 0px 8px;
+}
+.topMenu UL {
+    margin: 0px;
+    padding: 0px;
+}
+.topMenu LI {
+    display: inline;
+    border-right: 1px solid #b00303;
+    padding: 0px 8px 0px 4px;
+}
+.topMenu LI:last-child {
+    border-right: none;
+}
+.topMenu LI A {
+    color: #b00303;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.topMenu LI A:hover {
+    color: #ff0000;
+}
+.search {
+    margin-top: 18px;
+}
+.search .submit {
+    background: url(../images/submit_search.gif) no-repeat;
+    color: #1c4507;
+    text-transform: uppercase;
+    font-size: 80%;
+    border: 0px;
+    padding: 4px;
+    width: 61px;
+    height: 20px;
+}
+
+
+
+/* MIDDLE */
+.middle {
+    width: 75%;
+    margin: 20px auto 0px auto;
+}
+.middle .mainContent {
+    float: left;
+    width: 70%;
+    margin-right: 2em;
+    
+}
+.middle .news {
+    border-right: 1px solid #d7d7d7;
+    padding-right: 17px;
+}
+.middle .news LI {
+    margin-bottom: 26px;
+}
+.middle .news SMALL {
+    color: #547e91;
+}
+.middle .news SMALL, .middle .news A {
+    display: block;
+}
+.middle .news A.NewsTitle {
+    font-size: 150%;
+    color: #0c4762;
+    text-decoration: none;
+    font-weight: bold;
+}
+.middle .news A.NewsTitle:hover {
+    color: #1073a0;
+    text-decoration: none;
+}
+.middle .news A.NewsExcerpt {
+    color: #333;
+    text-decoration: none;
+    font-family: arial;
+}
+.middle .news A.NewsExcerpt:hover {
+    text-decoration: underline;
+}
+.highlights {
+    padding-top: 30px;
+}
+.links LI {
+    margin-bottom: 12px;
+}
+.links LI A {
+    font-family: arial;
+    color: #333;
+    text-decoration: none;
+}
+.links LI A:hover {
+    text-decoration: underline;
+}
+/* GROUP STEPS NAVIGATION AND CONTENT */
+#workarea {
+    float: left;
+    left: 100%;
+    width: 81%;
+}
+
+#rebracmenu {
+    float: left;
+    width: 16%;
+    left: 1%;
+}
+
+#rebracmenu #usermenu div {
+    padding: 3em;
+    border-bottom: 1px dotted #D4D4FF;
+    line-height: 100%;
+    text-align: center;
+}
+
+#rebracmenu #usermenu div * {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+#rebracmenu ul {
+    list-style-type: none;
+    padding-left: 1em;
+}
+
+#rebracmenu li {
+    text-transform: capitalize;
+    margin-bottom: 0.5em;
+    border-bottom: 1px dotted #D4D4FF;
+}
+
+/* STEPS NAVIGATION*/
+.stepmenu {
+    background: transparent url(/static/bg_stepmenu.png) repeat-x;
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+.stepmenu ul {
+    margin: 0;
+    padding: 0 0 0 2em;
+    list-style: none;
+}
+
+.stepmenu ul li {
+    display: block;
+    float: left;
+    width: 9%;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.stepmenu li.current {
+    border: 1px inset white;
+}
+
+.stepmenu a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #0a5172;
+    font-weight: bold;
+    font-size:11px;
+}
+
+.stepmenu li:hover {
+    text-decoration: underline;
+}
+
+.stepmenu-top {
+    border-width: 0 0 1px;
+}
+
+.stepmenu-bottom {
+    border-width: 1px 0 0;
+}
+
+/*MAIN CONTENT*/
+#content {
+    padding: 10px;
+}
+
+#content a:link, #content a:visited {
+    text-decoration: none;
+    background: inherit;
+
+}
+
+#content a:hover {
+    text-decoration: underline;
+
+}
+
+#content h2 {
+    padding: 0.2em 0;
+    font-weight:normal;
+    margin-top:30px;
+}
+
+/*FOOTER*/
+#footer {
+    clear: both;
+    margin-top: 20px;
+    padding: 5px;
+    border-width: 1px 0 0;
+    background:#0c4762;
+    font-size:80%;
+}
+
+#footer a:link, #footer a:visited {
+
+    background: inherit;
+
+}
+#footer, #footer a {
+    color:#FFF;
+}
+#footer a{
+    text-decoration:underline;
+}
+#footer P {
+    margin-left: 20px;
+    line-height: 150%;
+}
+/*TYPOGRAPHY*/
+
+blockquote {
+    font-weight: bold;
+    font-style: italic;
+}
+
+table.table {
+    border-collapse: collapse;
+    border-width: 0 0 1px 1px;
+    width: 100%;
+}
+
+table.table,
+table.table td, table.table th {
+    color:#4a4c4e;
+}
+
+table.table td, table.table th {
+    padding: 10px;
+}
+
+table.table td ul {
+    padding: 0.5em;
+}
+
+table.table th {
+    background-color: #F1F4F7;
+    color:#333;
+}
+
+table.table textarea {
+    width: 100%;
+}
+
+table.table td.help div.issue {
+}
+
+table.trialsummary {
+    width: 100%;
+}
+
+/* AJAX DeCS Tools */
+td div.decstool {
+    display: none;
+}
+
+td div select {
+    display: block;
+}
+
+td select,
+td div.decstool input {
+    width: 80%;
+}
+
+td.showdecs div.decstool {
+    display: block;
+}
+
+.issue{
+    font-size:10px;
+    color:#5d5d5d;
+}
+
+fieldset{
+    border: 1px solid #CCC;
+    margin-bottom:30px;
+}
+
+label{
+    font-weight:normal;
+}
+
+ul li{
+    list-style:none;
+}
+
+legend{
+    font-weight:bold;
+}
+
+#content a.buttonadd {
+    background:#527FA3 url(/static/add.png) no-repeat scroll right center;
+    border:1px solid #EBECF0;
+    color:#FFFFFF;
+    padding:5px 2em 5px 1em;
+}
+
+/* BARRA GOVERNO FEDERAL */
+.barra_MSaude {
+    width: 100%;
+    height: 30px;
+    background:#ffcc00;
+}
+
+.barra_MSaude .barra1000 {
+    width:100%;
+    margin: 0 auto;
+}
+.barra_MSaude .barra1000 .minSaude a {
+    width: 152px;
+    height: 21px;
+    float: left;
+    margin: 1px;
+    background: url(../images/ms.gif) top left no-repeat;
+}
+.barra_MSaude .barra1000 .brasilGov a {
+    margin: 1px;
+    width: 96px;
+    height: 21px;
+    float: right;
+    background: url(../images/brasil.gif) top left no-repeat;
+}
+.barra_MSaude .barra1000 .minSaude, .barra_MSaude .barra1000 .form  {
+    float: left;
+}
+
+.barra_MSaude .barra1000 .form {
+    margin: 2px 0px 0px 50px;
+
+}
+.barra_MSaude .barra1000 .form .pr{
+    background: #ffcc00 !important;
+    font-size: 10px;
+}
+
+.barra_MSaude .barra1000 .brasilGov  {
+    float: right;
+}
+.barra_MSaude .barra1000 DIV a span  {
+    display: none;
+}

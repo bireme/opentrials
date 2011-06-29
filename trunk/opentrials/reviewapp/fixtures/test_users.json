@@ -1,0 +1,145 @@
+[
+  {
+    "pk": 1, 
+    "model": "auth.group", 
+    "fields": {
+      "name": "reviewer", 
+      "permissions": [
+        77, 
+        78, 
+        55, 
+        70, 
+        73, 
+        58, 
+        67, 
+        64, 
+        61, 
+        56, 
+        71, 
+        74, 
+        59, 
+        68, 
+        65, 
+        62, 
+        57, 
+        72, 
+        75, 
+        60, 
+        69, 
+        66, 
+        63
+      ]
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "auth.group", 
+    "fields": {
+      "name": "trialist", 
+      "permissions": [
+        76, 
+        77
+      ]
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "manager", 
+      "first_name": "Rebrac", 
+      "last_name": "Manager", 
+      "is_active": 1, 
+      "is_superuser": 1, 
+      "is_staff": 1, 
+      "last_login": "2009-11-08 19:16:52", 
+      "groups": [
+        1
+      ], 
+      "user_permissions": [], 
+      "password": "sha1$c31f6$0d181d1cf0be2cf44468452b5553a52d9869818c", 
+      "email": "bireme.tester+rebrac.manager@gmail.com", 
+      "date_joined": "2009-11-08 18:51:24"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "reviewer", 
+      "first_name": "Rebrac", 
+      "last_name": "Reviewer", 
+      "is_active": 1, 
+      "is_superuser": 0, 
+      "is_staff": 1, 
+      "last_login": "2009-11-08 18:52:23", 
+      "groups": [
+        1
+      ], 
+      "user_permissions": [], 
+      "password": "sha1$55bf7$78ea3d0ac1bb51da4deb743bfdf56a59125c14a3", 
+      "email": "bireme.tester+rebrac.reviewer@gmail.com", 
+      "date_joined": "2009-11-08 18:52:23"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "trialist1", 
+      "first_name": "First", 
+      "last_name": "Trialist", 
+      "is_active": 1, 
+      "is_superuser": 0, 
+      "is_staff": 0, 
+      "last_login": "2009-11-08 18:53:32", 
+      "groups": [
+        2
+      ], 
+      "user_permissions": [], 
+      "password": "sha1$4a211$b1714f4e190b2ab8d6a6d5d040267671e0b830cc", 
+      "email": "bireme.tester+rebrac.trialist1@gmail.com", 
+      "date_joined": "2009-11-08 18:53:32"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "trialist2", 
+      "first_name": "Second", 
+      "last_name": "Trialist", 
+      "is_active": 1, 
+      "is_superuser": 0, 
+      "is_staff": 0, 
+      "last_login": "2009-11-08 18:53:48", 
+      "groups": [
+        2
+      ], 
+      "user_permissions": [], 
+      "password": "sha1$e0f73$90df7a58d8db5d138559acfc146a97a91e45d5f6", 
+      "email": "bireme.tester+rebrac.trialist2@gmail.com", 
+      "date_joined": "2009-11-08 18:53:48"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "trialist3", 
+      "first_name": "Third", 
+      "last_name": "Trialist", 
+      "is_active": 1, 
+      "is_superuser": 0, 
+      "is_staff": 0, 
+      "last_login": "2009-11-08 19:03:56", 
+      "groups": [
+        2
+      ], 
+      "user_permissions": [], 
+      "password": "sha1$2ac95$fa5faa0bb5d64b3db501168d77fb9fe67e87e654", 
+      "email": "bireme.tester+rebrac.trialist3@gmail.com", 
+      "date_joined": "2009-11-08 19:03:56"
+    }
+  }
+]

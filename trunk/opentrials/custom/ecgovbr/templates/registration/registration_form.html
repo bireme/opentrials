@@ -1,0 +1,43 @@
+{% extends "base_columns.html" %}
+{% load i18n %}
+
+{% block stepmenu_top %}
+    {{ block.super }}
+    <big>/ {% trans 'Register' %}</big>
+{% endblock %}
+
+{% block body %}
+
+<h3>{% trans 'You will receive an email with a link to activate your account.' %}</h3>
+{% blocktrans with DEFAULT_FROM_EMAIL as default_email %}
+<p>If you do not receive an e-mail in a few minutes, we suggest you try the tips 
+below and then resend the activation e-mail:</p>
+<ul>
+<li>Check if any anti-spam filter has blocked the e-mail</li>
+<li>Add the {{ default_email }} e-mail in your contact list</li>
+</ul>
+{% endblocktrans %}
+<a href="{% url reviewapp.resend_activation_email %}">resend the activation e-mail</a>
+<br />
+{% if form.errors %}
+    <ul class="errorlist">
+      <li>{% trans "Please correct the errors below." %}</li>
+    </ul>
+{% endif %}
+
+<form method="post" action="{% url registration_register %}">{% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="{% trans "register" %}" />
+</form>
+
+{% if form.email.data %}
+    {% if form.email.errors %}
+        <h3>{% trans "If this email belongs to you," %} 
+        <a href="{% url reviewapp.password_reset %}?email={{ form.email.data }}">
+        {% trans "click here" %}</a> {% trans "to retrieve your username and password." %}</h3>
+    {% endif %}
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,13 @@
+Django
+BeautifulSoup
+PIL
+mysql-python
+south
+lxml
+Markdown
+django_compressor
+django-nose
+django-rosetta
+django-reversion
+django-plus
+django-fossil

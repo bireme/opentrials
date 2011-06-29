@@ -1,0 +1,20 @@
+{% extends "repository/trial_form.html" %}
+{% load i18n %}
+{% load polyglot_tags %}
+
+{% block endjs %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("div.form select")
+                .change(search_event(
+                        {'decs_url': '{% url decs.search lang=LANGUAGE_CODE, term="" %}',
+                        'icd10_url': '{% url icd10.search lang=LANGUAGE_CODE, term="" %}'},
+                        '{% trans "Search terms" %}',
+                        '{{ LANGUAGE_CODE }}'))
+                .each(function(){$(this).change();});
+        });
+    </script>
+{# the super is called at the end because the js change the elements above and generates conflicts with confirm-before-leave function #}
+{{ block.super }}
+{% endblock %}
+

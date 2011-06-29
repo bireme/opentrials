@@ -1,0 +1,118 @@
+MODELS
+======
+
+    >>> from flatpages_polyglot.models import FlatPageTranslation
+    >>> from django.contrib.flatpages.models import FlatPage
+    >>> from django.contrib.sites.models import Site
+    >>> from django.conf import settings
+
+Flatpages are still what they were before... this wasn't changed in nothing
+
+    >>> page_about_me = FlatPage.objects.create(
+    ...     title='Page about me',
+    ...     url='/about-me/',
+    ...     content='text about in english',
+    ... )
+
+    >>> page_about_me.sites.add(Site.objects.get_or_create(pk=settings.SITE_ID, defaults={'domain':'localhost:8000'})[0])
+
+Translations are created from relationship between FlatPage and FlatPageTranslation
+
+    >>> pt_br = FlatPageTranslation(
+    ...     language='pt-br',
+    ...     title='Pagina sobre mim',
+    ...     content='Texto sobre mim em portugues do Brasil',
+    ... )
+    >>> pt_br.content_object = page_about_me
+    >>> pt_br.save()
+
+    >>> print pt_br
+    Pagina sobre mim
+
+    >>> es = FlatPageTranslation(
+    ...     language='es',
+    ...     title='Pagina sobre mi',
+    ...     content=u'Texto en español acerca de mí',
+    ... )
+    >>> es.content_object = page_about_me
+    >>> es.save()
+
+    >>> print es
+    Pagina sobre mi
+
+Translations are accessible from attribute 'translations' like the usual on polyglot
+
+Admin
+-----
+
+Tests related to modify FlatPages admin to support creation of translation for
+FlatPage objects.
+
+    >>> from django.contrib.auth.models import User
+    >>> from django.contrib.flatpages.admin import FlatPageAdmin
+    >>> from django.test.client import Client
+
+    >>> cl = Client()
+
+Prepares user to test admin
+
+    >>> user, new = User.objects.get_or_create(username='admin', is_staff=True, is_superuser=True)
+    >>> user.set_password('1')
+    >>> user.save()
+
+Access web page
+
+    >>> cl.login(username=user.username, password='1')
+    True
+
+    >>> resp = cl.get('/admin/flatpages_polyglot/flatpagetranslation/')
+
+This means when you access a FlatPage to edit, there will have an inline section
+with translations to edit or create new ones.
+
+    >>> resp.status_code
+    200
+
+Middleware
+----------
+
+Just appending polyglot flatpages middleware to settings...
+
+    >>> from flatpages_polyglot.middleware import FlatPagePolyglotMiddleware
+
+    >>> if 'flatpages_polyglot.middleware.FlatPagePolyglotMiddleware' not in settings.MIDDLEWARE_CLASSES:
+    ...     settings.MIDDLEWARE_CLASSES = settings.MIDDLEWARE_CLASSES + ('flatpages_polyglot.middleware.FlatPagePolyglotMiddleware',)
+
+Getting flatpage for language defined in settings
+
+    >>> import re
+
+    >>> resp = cl.get('/about-me/')
+    >>> resp.status_code
+    200
+
+    >>> current_translation = FlatPageTranslation.objects.get_translation_for_object(
+    ...     settings.LANGUAGE_CODE, page_about_me, returns_default=True)
+
+Is the same title?
+
+    >>> re.findall('<title>(.*?) -', resp.content)[0] == current_translation.title
+    True
+
+Changes the current language at current session
+
+    >>> session = cl.session
+    >>> session['django_language'] = 'es'
+    >>> session.save()
+
+    >>> resp = cl.get('/about-me/')
+    >>> resp.status_code
+    200
+
+    >>> current_translation = FlatPageTranslation.objects.get_translation_for_object('es', page_about_me, returns_default=True)
+
+Is the same title for spanish?
+
+    >>> re.findall('<title>(.*?) -', resp.content)[0] == current_translation.title
+    True
+

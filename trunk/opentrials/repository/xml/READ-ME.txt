@@ -1,0 +1,17 @@
+=======================
+Aditional validation
+=======================
+
+OpenTrials trial XML documents validated through the opentrials.dtd should be subject
+to additional checks which cannot be expressed via DTD alone:
+
+- the health_conditions element must contain at least one of its sub-elements: (freetext?, code*, keyword*)
+
+- target_size must be a positive integer
+
+
+======================================
+Updating opentrials-vocabularies.mod
+======================================
+
+- options must adhere to XML syntax for tokens (XXX: ellaborate)

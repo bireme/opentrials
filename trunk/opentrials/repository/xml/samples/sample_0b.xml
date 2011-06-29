@@ -1,0 +1,5 @@
+<!DOCTYPE trial SYSTEM "opentrials.dtd">
+<!--an invalid OpenTrials trial XML (there is no particle_spin element in the DTD)-->
+<trial>
+    <particle_spin>half-pint</particle_spin>
+</trial>

@@ -1,0 +1,148 @@
+{% extends "repository/submission_step.html" %}
+{% load i18n %}
+{% load remark %}
+{% load polyglot_tags %}
+
+{% block body %}
+
+    {% include "repository/messages.html" %}
+    
+    {% if remarks %}
+    <div class="warning">
+        <a class="minimize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-down.gif"/></a>
+        <a class="maximize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-up.gif"/></a>
+        <h2>{% trans 'Remarks' %}</h2>
+        <ul>
+            {% for remark in remarks %}
+            <li id="remark_{{ remark.id }}">{{ remark.text }}
+                <input onclick="ack_remark({{ remark.id }})" type="button" style="font-size: 80%;" value="{% trans "Mark as reviewed" %}" title="{% trans "Mark as reviewed" %}" />
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    <div class="required_fields"><span>(*)</span> {% trans 'Required fields' %}</div>
+    
+    <h2>{% trans title %}</h2>
+    
+    {% if existing_attachments %}
+        <h3>{% trans 'Existing attachments' %}</h3>
+
+        {% for attachment in existing_attachments %}
+            <ul>
+                {% if attachment.file %}
+                <li>{% trans 'File' %}:
+                    <a href="http://{{host}}{{attachment.get_relative_url}}">
+                        http://{{host}}{{attachment.get_relative_url}}
+                    </a>
+                </li>
+                {% else %}
+                <li>{% trans 'File' %}:
+                    <a href="{{attachment.attach_url}}">
+                        {{attachment.attach_url}}
+                    </a>
+                </li>
+                {% endif %}
+                <li>{% trans 'Description' %}: {{attachment.description}}</li>
+                <li>
+                    <form action="./" method='POST'>{% csrf_token %}
+                        <input type="hidden" name='remove' value='{{attachment.id}}'/>
+                        <input type="button" value='{%trans "Remove" %}' onclick="if(confirm('{%trans "Remove this attachment?" %}')) submit()" />
+                    </form>
+                </li>
+            </ul> 
+
+        {% endfor %}
+    {% endif %}
+    
+    <h3>{% trans 'New attachment form' %}</h3>
+    <form action="./" method="POST" enctype="multipart/form-data" >{% csrf_token %}
+
+        {% for formset in formsets %}
+            {{ formset.management_form }}
+            <fieldset>
+            <legend>{{ formset.form.title }}</legend>
+
+
+            <div class="{{formset.management_form.prefix}}">
+            {% for form in formset.forms %}
+                <table class="dataTable {% cycle 'even' 'odd' %}" cellspacing="0">
+                    {{ form.as_table }}
+                </table>
+            {% endfor %}
+            </div>
+            <div style="text-align: center">
+              <input onclick="cloneMore('div.{{formset.management_form.prefix}} table:last','{{formset.management_form.prefix}}')" type="button" value="{% trans "Add more" %}" />
+            </div>
+            </fieldset>
+        {% endfor %}
+        <input type="submit" value="{% trans "Save" %}" {% if not request.can_change_trial %}disabled="disabled"{% endif %}/>
+    </form>
+
+{% endblock %}
+
+{% block endjs %}{{ block.super }}
+
+<script type="text/javascript" src="{{MEDIA_URL}}js/multilingual.js"></script>
+
+<script type="text/javascript">
+    {% polyglot_js_constants available_languages %}
+
+    $(document).ready(function() {
+        $("select[multiple]").asmSelect({
+                addItemTarget: 'bottom',
+                animate: true,
+                highlight: true,
+                sortable: false
+        });
+        $('.dataTable th img').cluetip({sticky: true, closePosition: 'title',local:true, cursor: 'pointer'});
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+       $('select[name*="attach_type"]').change(function() {
+         name = $(this)[0].name;
+         value = $(this)[0].value;
+         order = parseInt(name.replace(/[^0-9]/g, ''))
+
+         if(value == 'file'){
+             //hide url, show file
+             $('input[name*="url"]')[order].disabled = true
+             $('input[name*="file"]')[order].disabled = false
+         }
+         else{
+             //hide file, show url
+             $('input[name*="url"]')[order].disabled = false
+             $('input[name*="file"]')[order].disabled = true
+         }         
+       });
+     });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        // Confirm before user leave page and lose modified data without save them
+        $('form.confirm-before-leave').submit(function(){
+            $(this).data('modified', false);
+            window.onbeforeunload = null;
+        }).each(function(){
+            // Sets this form to modified as false, but after some field be modified, so update this attribute to true
+            $(this).data('modified', false);
+        });
+        
+        // Sets inputs change event to set form modified as true
+        $('form.confirm-before-leave').find(':input').change(function(){
+            $(this).parents('form').data('modified', true);
+
+            // When a user leaves the current page without save, and has modified some field, asks for its confirmation
+            window.onbeforeunload = confirmExit;
+            function confirmExit(){
+                // TODO: translate
+                return '{% trans 'You have done modifications on some fields. Are you sure you want to leave without save before?' %}';
+            }
+        });
+    });
+</script>
+{% endblock %}
+

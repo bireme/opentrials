@@ -1,0 +1,37 @@
+{% extends "base_columns.html" %}
+
+{% load i18n %}
+
+{% block body_title %}FAQ{% endblock %}
+
+{% block stepmenu_top %}
+    {{ block.super }}
+    <big>
+        / {% trans 'FAQ' %}
+    </big>
+{% endblock %}
+
+{% block body %}
+
+<div class="links">
+
+    {% load markup %}
+
+    {% if object_list %}
+        <ol>
+        {% for object in object_list %}
+            <li><a title="{{ object.pk }}" href="#{{ object.pk }}">{{ object.title }}</a></li>
+        {% endfor %}
+        </ol>
+
+        {% for object in object_list %}
+            <h3 id="{{ object.pk }}" name="{{ object.pk }}">{{ forloop.counter }} - {{ object.title }}</h3>
+            <div class="markdown_content">
+                {{ object.answer|markdown }}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>{% trans 'No FAQ available.' %}</p>
+    {% endif %}
+</div>
+{% endblock %}

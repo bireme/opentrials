@@ -1,0 +1,68 @@
+{% extends "base_columns.html" %}
+
+{% load i18n cache %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block body %}
+    
+    <div class="news">
+    
+    {% load markup %}
+
+    {% if page %}
+        <div class="markdown_content">
+            {{ page.content|markdown }}
+        </div>
+    {% endif %}
+    
+    <table border="0" cellpading="0" cellspacing="0">
+    <tr>
+        <td>
+            <h2><a title="{% trans 'List all' %}" href="{% url repository.index %}">{% trans 'Registered trials' %}</a></h2>
+        </td>
+        <td>
+            <div class="highlights">
+                <ul>
+                    <li><a href="{% url reviewapp.terms_of_use %}" title="{% trans 'New Submission' %}">
+                    {% if LANGUAGE_CODE == 'pt-br' %}
+                        <img src="/static/images/button_newSubmission.jpg" alt="{% trans 'New Submission' %}"/>
+                    {% else %}
+                        {% if LANGUAGE_CODE == 'en' %}
+                            <img src="/static/images/button_newSubmissionEN.jpg" alt="{% trans 'New Submission' %}"/>
+                        {% else %}
+                            {% if LANGUAGE_CODE == 'es' %}
+                                <img src="/static/images/button_newSubmissionES.jpg" alt="{% trans 'New Submission' %}"/>
+                            {% else %}
+                                {% trans 'New Submission' %}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                    </a></li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+    </table>
+    {% cache 120 home_registered_trials LANGUAGE_CODE %}
+
+    {% if clinical_trials %}
+        <ul>
+        {% for ct in clinical_trials %}
+            <li>
+                <a class="NewsTitle" href="{% url repository.trial_registered ct.trial_id %}">{{ ct.short_title }}</a>
+                <p>
+                    <b>{% trans 'Primary Id Number' %}</b>: <a class="pnumber" href="{% url repository.trial_registered ct.trial_id %}">{{ ct.trial_id }}</a><br/>
+                </p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>{% trans 'No clinical trials have been published.' %}</p>
+    {% endif %}
+    </div>
+
+    {% endcache %}
+    <form name="more_trials" action="./rg" >
+        <input type="submit" value="{% trans 'View all' %}" />
+    </form>
+{% endblock %}

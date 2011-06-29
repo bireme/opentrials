@@ -1,0 +1,26 @@
+{% extends "base_columns.html" %}
+
+{% load i18n %}
+
+{% block login %}{% endblock %}
+
+{% block stepmenu_top %}
+    {{ block.super }}
+    <big>/ {% trans 'Login' %}</big>
+{% endblock %}
+
+{% block body %}
+
+<form method="post" action="{% url django.contrib.auth.views.login %}">{% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="login" />
+    <input type="hidden" name="next" value="" />
+</form>
+<a href="/accounts/register" title="{% trans 'create an account to submit trial records' %}">
+    {% trans 'Register' %}</a>
+<a href="{% url reviewapp.password_reset %}" title="{% trans 'Forgot username or password' %}">
+    {% trans 'Forgot username or password' %}</a>
+
+{% endblock %}
