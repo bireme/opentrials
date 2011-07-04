@@ -324,9 +324,9 @@ def upload_trial(request):
     formset = None
     
     if request.method == 'POST':
+
         if 'submission_file' in request.FILES:
             form = UploadTrialForm(request.POST, files=request.FILES)
-
             if form.is_valid():
                 parsed_trials = form.parse_file(request.user)
 
@@ -340,11 +340,10 @@ def upload_trial(request):
                     'to_import': not item[1],
                     } for item in parsed_trials])
 
+
         elif 'session_key' in request.POST:
             
             formset = ImportParsedFormset(request.POST)
-            #FIXME
-
             if formset.is_valid():
                 marked_trials = [form.cleaned_data['trial_id'] for form in formset.forms
                         if form.cleaned_data['to_import']]
@@ -360,9 +359,14 @@ def upload_trial(request):
                 request.session.pop(request.POST['session_key'])
 
                 return HttpResponseRedirect(reverse('reviewapp.uploadtrial'))
+            
+            else:
+                form = UploadTrialForm()
     else:
         form = UploadTrialForm()
     
+    if form is None:
+        form = UploadTrialForm(request.POST, files=request.FILES)
     return render_to_response(
             'reviewapp/upload_trial.html',
             {'form': form, 'session_key': session_key, 'formset': formset},

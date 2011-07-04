@@ -146,7 +146,8 @@ class UserProfileForm(forms.ModelForm):
 class UploadTrialForm(forms.Form):
     submission_file = forms.Field(widget=forms.FileInput, required=True)
 
-    xml_format = 'opentrials'
+    #xml_format = 'opentrials'
+    xml_format = 'ictrp'
 
     def clean_submission_file(self):
         submission_file = self.cleaned_data['submission_file']
@@ -166,7 +167,7 @@ class UploadTrialForm(forms.Form):
                 validate_xml(self.tree, dtd=ICTRP_DTD)
                 self.xml_format = 'ictrp'
             except InvalidOpenTrialsXML:
-                raise forms.ValidationError('Invalid file or not detected format.')
+                raise forms.ValidationError(_('Invalid file or not detected format.'))
 
         return submission_file
 

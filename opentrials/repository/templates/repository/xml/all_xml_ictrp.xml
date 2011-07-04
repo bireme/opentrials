@@ -1,931 +1,134 @@
-<?xml version="1.0" encoding="UTF-8"?>
+{% extends "base.xml" %}
+
+{% block root %}
 <trials>
-
+{% for trial in trial_list %}
     <trial>
         <main>
-            <trial_id>RBR-7sw5hf</trial_id>
-            <utrn>U1111-1119-1317</utrn>
-            <reg_name>REBEC</reg_name>
-            <date_registration>02/02/2011</date_registration>
-            <primary_sponsor>Luciano Ambrosio Ferreira</primary_sponsor>
-            <public_title>LASER ACUPUNCTURE TO TEMPOROMANDIBULAR DISORDER TREATMENT</public_title>
-            <acronym/>
-            <scientific_title>ADJUVANT LASER ACUPUNCTURE TO OCCLUSAL SPLINT THERAPY: A CONTROLLED TRIAL IN TEMPOROMANDIBULAR DISORDERS PATIENTS</scientific_title>
-            <scientific_acronym/>
-            <date_enrolment>01/02/2011</date_enrolment>
-            <type_enrolment>anticipated</type_enrolment>
-            <target_size>40</target_size>
-            <recruitment_status>not yet recruiting</recruitment_status>
-            <url>http://ecgovbr.bvsalud.org/rg/RBR-7sw5hf/v1/</url>
-            <study_type/>
-            <study_design>Randomized double-blind controlled study. </study_design>
-            <phase>3</phase>
-            <hc_freetext>Temporomandibular disorder, stress</hc_freetext>
-            <i_freetext>In order to reduce the likelihood of systematic errors and allow the use of statistical tests, there will be a simple procedure of random allocation of subjects of this research, which will be  distributed in two groups of 20 subjects by drawing lots. Each group will receive a specific treatment modality for TMD defined as follows: 1) Group Therapy - neuromuscular relaxing splint and laser
-acupuncture; 2) Control Group - neuromuscular
-relaxing relaxing splint and placebo laser. Within each group, the therapeutic will be maintained until the end of the study, the patients being aware voluntary and consistent with the possibility
-of receiving one of two proposed therapies
-(therapeutic or placebo), were not informed during the processing of their nature therapies. At the end of the study, patients receiving a placebo therapy may undergo therapy for active laser acupuncture if they have persistent symptoms or if they wish. Simple randomisation by using sealed opaque envelope is assumed. In each subject is
-assigned a sealed opaque envelope, where
-information about the group to which belong will be contained. The number of envelopes for the therapeutic group is equal to the control group,the envelopes being identical with each other. The
-draw will be conducted by a person without any link to the survey, which will be in the custody of groups and their participants, the researcher revealed only when the first therapeutic application.
-Describe the methods used to generate the sequence in which subjects will be
-randomised (sequence generation):
-Simple randomisation by using a randomisation table created by computer software (SPSS for Windows 13.0) through computerised sequence generation.
-
-Study Group Intervention:
-Low intensity laser acupuncture to  temporomandibular disorder treatment, directed to study group. The acupuncture points: S6, SI19, GB20, LI4, L3, SJ3, GB34, Ex-3, low power (50mW) infrared laser, for 90s each, with the objective of sedation.
-Laser acupuncture therapy will happen weekly in one-hour sessions. It will begin at february,4, 2011. Laser treatment is continuous and punctual, directed at each point for a period of 90 seconds. Twelve weekly sessions will complete three months of treatment.
-The laser acupuncture therapy will follow the standards of protection for the use of lasers, including the protection of patients' eyes. Such protection inhibits the visual stimulus during application of therapy.
-
-Study and Control Groups intervention:
-Neuromuscular relaxing occlusal splint is a dentistry conventional treatment directed to all participants of the research (study and control groups). The splints will be made of acrylic and individually adjusted by surface's sanding . The adjustment is to obtain simultaneous tooth contacts in a physiological mandibular position, where the chewing muscles and temporomandibular joints are protected from excessive occlusal loads. They will wear it for three months, at the night, when usually the involuntary muscle hyperactivity occurs. The adjustments will take place weekly, aiming occlusal changes that result in facial muscleand joint relaxation.
-
-Control Group Intervention:
-The control group will receive, in addition to conventional therapy for neuromuscular relaxing plate, the laser-acupuncture simulation characterized as placebo.
-Acupuncture points given for temporomandibular disorders: S6, SI19, GB20, LI4, L3, SJ3, GB34, Ex-3 will receive the treatment simulation by same study group's apparatus, by 90 seconds without applying pressure or radiation. There will be no emission of laser for this group, so the power button the device will be turned to the off position. Patients wear dark protection glasses that inhibit any view. No sound is emitted by the device, even when off or on. The issue of low power laser is painless, no sensation is felt when the true application of laser happens. The use of glasses that inhibit the view of the patient allows individuals do not know the nature of light, active or placebo. Placebo laser acupuncture will happen weekly in one-hour sessions. Twelve weekly sessions will complete three months of placebo therapy. This group will receive the same protection and biosecurity condute than study group.</i_freetext>            
+            <trial_id>{{ trial.ct_fossil.trial_id }}</trial_id>
+            <utrn>{{ trial.ct_fossil.utrn_number }}</utrn>
+            <reg_name>{{ reg_name }}</reg_name>
+            <date_registration>{{ trial.ct_fossil.date_registration|date:"d/m/Y" }}</date_registration>
+            <primary_sponsor>{{ trial.ct_fossil.primary_sponsor.name }}</primary_sponsor>
+            <public_title>{{ trial.ct_fossil.public_title }}</public_title>
+            <acronym>{{ trial.ct_fossil.acronym_display }}</acronym>
+            <scientific_title>{{ trial.ct_fossil.scientific_title }}</scientific_title>
+            <scientific_acronym>{{ trial.ct_fossil.scientific_acronym_display }}</scientific_acronym>
+            <date_enrolment>{{ trial.ct_fossil.date_enrollment_start }}</date_enrolment>
+            <type_enrolment>{% if trial.ct_fossil.enrollment_start_actual %}actual{% else %}anticipated{% endif %}</type_enrolment>
+            <target_size>{{ trial.ct_fossil.target_sample_size }}</target_size>
+            <recruitment_status>{{ trial.ct_fossil.recruitment_status.label }}</recruitment_status>
+            <url>{% url repository.trial_registered_version trial_fossil_id=trial.ct_fossil.trial_id, trial_version=trial.version %}</url>
+            <study_type>{{ trial.ct_fossil.study_type.label }}</study_type>
+            <study_design>{{ trial.ct_fossil.study_design }}</study_design>
+            <phase>{{ trial.ct_fossil.phase.label }}</phase>
+            <hc_freetext>{{ trial.ct_fossil.hc_freetext }}</hc_freetext>
+            <i_freetext>{{ trial.ct_fossil.i_freetext }}</i_freetext>            
         </main>
         <contacts>
-        
+        {% for contact in trial.public_contact %}
             <contact>
                 <type>public</type>
-                <firstname>Luciano </firstname>
-                <middlename>Ambrosio</middlename>
-                <lastname>Ferreira</lastname>
-                <address>Luis Andrade silveira, 207, Centenário</address>
-                <city>Juiz de Fora</city>
-                <country1>Brazil</country1>
-                <zip>36045-280</zip>
-                <telephone>32 32245637</telephone>
-                <email>l3a6f9@yahoo.com.br</email>
-                <affiliation>Universidade Federal de Juiz de Fora</affiliation>
+                <firstname>{{ contact.firstname }}</firstname>
+                <middlename>{{ contact.middlename }}</middlename>
+                <lastname>{{ contact.lastname }}</lastname>
+                <address>{{ contact.address }}</address>
+                <city>{{ contact.city }}</city>
+                <country1>{{ contact.country.description }}</country1>
+                <zip>{{ contact.zip }}</zip>
+                <telephone>{{ contact.telephone }}</telephone>
+                <email>{{ contact.email }}</email>
+                <affiliation>{{ contact.affiliation.name }}</affiliation>
             </contact>
-        
-        
+        {% endfor %}
+        {% for contact in trial.ct_fossil.scientific_contact %}
             <contact>
                 <type>scientific</type>
-                <firstname>Luciano </firstname>
-                <middlename>Ambrosio</middlename>
-                <lastname>Ferreira</lastname>
-                <address>Luis Andrade silveira, 207, Centenário</address>
-                <city>Juiz de Fora</city>
-                <country1>Brazil</country1>
-                <zip>36045-280</zip>
-                <telephone>32 32245637</telephone>
-                <email>l3a6f9@yahoo.com.br</email>
-                <affiliation>Universidade Federal de Juiz de Fora</affiliation>
+                <firstname>{{ contact.firstname }}</firstname>
+                <middlename>{{ contact.middlename }}</middlename>
+                <lastname>{{ contact.lastname }}</lastname>
+                <address>{{ contact.address }}</address>
+                <city>{{ contact.city }}</city>
+                <country1>{{ contact.country.description }}</country1>
+                <zip>{{ contact.zip }}</zip>
+                <telephone>{{ contact.telephone }}</telephone>
+                <email>{{ contact.email }}</email>
+                <affiliation>{{ contact.affiliation.name }}</affiliation>
             </contact>
-        
+        {% endfor %}
         </contacts>
         <countries>
-        
-            <country2>Brazil</country2>
-        
+        {% for country in trial.ct_fossil.recruitment_country %}
+            <country2>{{ country.description }}</country2>
+        {% endfor %}
         </countries>
         <criteria>
-            <inclusion_criteria>All subjects participated in this study volunteers by signing the consent
-• female subjects;
-• aged between 20 and 40;
-• irrespective of race, creed or social level;
-• presence of a diagnosis of myofascial pain and arthralgia orofacial chronic, persisting for a minimum period of six months;
-• minimum intensity of muscle and joint pain of 4.0 points, measured in the Visual Analog Scale (VAS) during the first evaluation.</inclusion_criteria>
-            <agemin>20Y</agemin>
-            <agemax>40Y</agemax>
-            <gender>F</gender>
-            <exclusion_criteria>Subjects with evidence of muscle diseases, rheumatic and joint systemic origin, such as fibromyalgia and rheumatoid arthritis;
-• presence of fungal skin changes, hyperplastic, erythematous keloid or continuity in areas related to acupuncture points;
-• medical, pharmacological, psychological or physical therapy for temporomandibular disorder (TMD), concomitant therapies introduced in this study;
-• pregnants, the possible influence of intrauterine contraction and movement promoted by some acupuncture points such as LI4;
-• report or finding of facial trauma as a possible etiology of temporomandibular disorder;
-• individuals who have undergone prior treatment with neuromuscular relaxing plate, acupuncture or laser therapy for temporomandibular disorder;
-• subject denture wearers an upper or lower;
-• individuals with intellectual disability or impairment that would hinder the collection of data.</exclusion_criteria>
+            <inclusion_criteria>{{ trial.ct_fossil.inclusion_criteria }}</inclusion_criteria>
+            <agemin>{{ trial.ct_fossil.agemin_value }}{% if trial.ct_fossil.agemin_unit != '-' %}{{ trial.ct_fossil.agemin_unit }}{% endif %}</agemin>
+            <agemax>{{ trial.ct_fossil.agemax_value }}{% if trial.ct_fossil.agemax_unit != '-' %}{{ trial.ct_fossil.agemax_unit }}{% endif %}</agemax>
+            <gender>{{ trial.ct_fossil.gender }}</gender>
+            <exclusion_criteria>{{ trial.ct_fossil.exclusion_criteria }}</exclusion_criteria>
         </criteria>
         <health_condition_code>
-            
-            <hc_code>C05</hc_code>
-            
+            {% for hc in trial.ct_fossil.hc_code %}
+            <hc_code>{{ hc.code }}</hc_code>
+            {% endfor %}
         </health_condition_code>
         <health_condition_keyword>
-            
-            <hc_keyword>C05.500.607.221.897</hc_keyword>
-            
-            <hc_keyword>F01.145.126.990</hc_keyword>
-            
+            {% for hc in trial.ct_fossil.hc_keyword %}
+            <hc_keyword>{{ hc.code }}</hc_keyword>
+            {% endfor %}
         </health_condition_keyword>
         <intervention_code>
-            
-            <i_code>radiation</i_code>
-            
-            <i_code>other</i_code>
-            
+            {% for iv in trial.ct_fossil.i_code %}
+            <i_code>{{ iv.label }}</i_code>
+            {% endfor %}
         </intervention_code>
         <intervention_keyword>
-            
-            <i_keyword>H02.004</i_keyword>
-            
-            <i_keyword>E02.594.540</i_keyword>
-            
-            <i_keyword>E06.276</i_keyword>
-            
+            {% for iv in trial.ct_fossil.intervention_keyword %}
+            <i_keyword>{{ iv.code }}</i_keyword>
+            {% endfor %}
         </intervention_keyword>
         <primary_outcome>
-            
-            <prim_outcome>Physical symptoms evaluation before the intervention and after 1, 2 and 3 months after the intervention. Measurement of muscle and joint pain orofacial by applying the visual analogue scale to palpation stomatognathic sites . At each time, the average intensity of pain experienced by each group will be mensured. The provision of these temporal averages (moments of 0, 1, 2 and 3) will prepare the development of physical symptoms in each group. This evolution will be compared between the groups in order to verify the effectiveness of proposed therapies.
-
-Diagnostic Criteria for Temporomandibular Disorders Research (RDC / TMD, Axis II) to assess the psychosocial impact of emotional distress associated to temporomandibular disorder. Levels of depression and no specific sumptoms (somatization) will be  measured through SCL 90R questionary, contained in RDC/DTM. This instrument will be applied before and after institution of therapy in each group. A comparison of symptoms of somatization and depression in the two instances indicate a possible change of these symptoms.</prim_outcome>
-            
+            {% for outcomes in trial.ct_fossil.primary_outcomes %}
+            <prim_outcome>{{ outcomes.description }}</prim_outcome>
+            {% endfor %}
         </primary_outcome>
         <secondary_outcome>
-            
-            <sec_outcome/>
-            
+            {% for outcomes in trial.ct_fossil.secondary_outcomes %}
+            <sec_outcome>{{ outcomes.description }}</sec_outcome>
+            {% empty %}
+            <sec_outcome></sec_outcome>
+            {% endfor %}
         </secondary_outcome>
         <secondary_sponsor>
-            
-            <sponsor_name>Marcos Vinicius Queiroz de Paula</sponsor_name>
-            
-            <sponsor_name>Universidade Federal de Juiz de Fora</sponsor_name>
-            
-            <sponsor_name>Amanda Buchara Pereira</sponsor_name>
-            
+            {%  for sponsors in trial.ct_fossil.secondary_sponsors %}
+            <sponsor_name>{{ sponsors.institution.name }}</sponsor_name>
+            {% empty %}
+            <sponsor_name></sponsor_name>
+            {% endfor %}
         </secondary_sponsor>
         <secondary_ids>
-            
+            {% for secid in trial.ct_fossil.trial_number %}
             <secondary_id>
-                <sec_id>398/2008 </sec_id>
-                <issuing_authority>Comitê de Ética em Pesquisa da Universidade Federal de Juiz de Fora</issuing_authority>    
+                <sec_id>{{ secid.id_number }}</sec_id>
+                <issuing_authority>{{ secid.issuing_authority }}</issuing_authority>    
             </secondary_id>
-            
+            {% empty %}
             <secondary_id>
-                <sec_id>0253.0.180.000-08</sec_id>
-                <issuing_authority>CAAE - CONEP</issuing_authority>    
+                <sec_id></sec_id>
+                <issuing_authority></issuing_authority>    
             </secondary_id>
-            
-            <secondary_id>
-                <sec_id>ACTRN12611000088943</sec_id>
-                <issuing_authority>Australian New Zealand Clinical Trials Registry</issuing_authority>    
-            </secondary_id>
-            
+            {% endfor %}
         </secondary_ids>
         <source_support>
-            
-            <source_name>Luciano Ambrosio Ferreira</source_name>
-            
-            <source_name>Universidade Federal de Juiz de Fora</source_name>
-            
+            {%  for source_support in trial.ct_fossil.support_sources %}
+            <source_name>{{ source_support.institution.name }}</source_name>
+            {% empty %}
+            <source_name></source_name>
+            {% endfor %}
         </source_support>        
     </trial>
-
-    <trial>
-        <main>
-            <trial_id>RBR-4s7gh3</trial_id>
-            <utrn>U1111-1119-5101</utrn>
-            <reg_name>REBEC</reg_name>
-            <date_registration>02/03/2011</date_registration>
-            <primary_sponsor>Hospital de Clínicas de Porto Alegre</primary_sponsor>
-            <public_title>PREVER Study: Efficacy of Chlorthalidone associated with Amiloride versus  Losartan in reducing blood pressure of patients with hypertension Prever 2 Study
-</public_title>
-            <acronym>PREVER: Prevention of Cardiovascular outcomes in patients with hypertension</acronym>
-            <scientific_title>PREVER Study: Efficacy of Chlorthalidone associated with Amiloride versus  Losartan in reducing blood pressure of patients with hypertension Prever 2 Study
-</scientific_title>
-            <scientific_acronym>PREVER 2: Prevention of Cardiovascular outcomes in patients with hypertension</scientific_acronym>
-            <date_enrolment>01/02/2011</date_enrolment>
-            <type_enrolment>actual</type_enrolment>
-            <target_size>2400</target_size>
-            <recruitment_status>recruiting</recruitment_status>
-            <url>http://ecgovbr.bvsalud.org/rg/RBR-4s7gh3/v1/</url>
-            <study_type/>
-            <study_design>Double-blind Randomized Clinical Trial</study_design>
-            <phase>3</phase>
-            <hc_freetext>Hypertension</hc_freetext>
-            <i_freetext>Drug: Chlorthalidone 12,5 mg associated with Amiloride 2,5 mg once daily
-Drug: Losartan 25 mg once daily 
-During 18 months.</i_freetext>            
-        </main>
-        <contacts>
-        
-            <contact>
-                <type>public</type>
-                <firstname>Flávio</firstname>
-                <middlename>Danni</middlename>
-                <lastname>Fuchs</lastname>
-                <address>Rua Ramiro Barcelos 2350 2º Andar Serviço de Cardiologia</address>
-                <city>Porto Alegre</city>
-                <country1>Brazil</country1>
-                <zip>90035-903</zip>
-                <telephone>51 33598449</telephone>
-                <email>ffuchs@hcpa.ufrgs.br</email>
-                <affiliation>Hospital de Clínicas de Porto Alegre</affiliation>
-            </contact>
-        
-        
-            <contact>
-                <type>scientific</type>
-                <firstname>Flávio</firstname>
-                <middlename>Danni</middlename>
-                <lastname>Fuchs</lastname>
-                <address>Rua Ramiro Barcelos 2350 2º Andar Serviço de Cardiologia</address>
-                <city>Porto Alegre</city>
-                <country1>Brazil</country1>
-                <zip>90035-903</zip>
-                <telephone>51 33598449</telephone>
-                <email>ffuchs@hcpa.ufrgs.br</email>
-                <affiliation>Hospital de Clínicas de Porto Alegre</affiliation>
-            </contact>
-        
-        </contacts>
-        <countries>
-        
-            <country2>Brazil</country2>
-        
-        </countries>
-        <criteria>
-            <inclusion_criteria>I. Individuals with 40 to 70 years, of both sexes;
-II. Diagnosis of Hypertension in stage I, ie, systolic (SBP)  between 140-159 mmHg or diastolic blood pressure (DBP) between 90-99 mmHg</inclusion_criteria>
-            <agemin>40Y</agemin>
-            <agemax>70Y</agemax>
-            <gender>-</gender>
-            <exclusion_criteria>I. Chronic diseases that reduce life expectancy or difficulty in understanding the guidelines, which limit the possibility of participation in the study;
-II. Refusal to participate or sign an informed consent;
-III. Pregnancy or women most likely to become pregnant during the study;
-IV. Known allergy to any of the study drugs;
-V. Prior diagnosis of secondary hypertension ;
-</exclusion_criteria>
-        </criteria>
-        <health_condition_code>
-            
-            <hc_code>C14</hc_code>
-            
-        </health_condition_code>
-        <health_condition_keyword>
-            
-            <hc_keyword>I10</hc_keyword>
-            
-        </health_condition_keyword>
-        <intervention_code>
-            
-            <i_code>drug</i_code>
-            
-        </intervention_code>
-        <intervention_keyword>
-            
-            <i_keyword>d27.505.696.560.500</i_keyword>
-            
-            <i_keyword>D03.383.129.308.507</i_keyword>
-            
-        </intervention_keyword>
-        <primary_outcome>
-            
-            <prim_outcome>I. Lowering blood pressure to less than 140/90 mmHg;
-II. Incidence of Adverse Events;
-III. Incidence of diabetes mellitus, microalbuminuria, hypokalemia, hiperuricemia and left ventricular hypertrophy on ECG.
-</prim_outcome>
-            
-        </primary_outcome>
-        <secondary_outcome>
-            
-            <sec_outcome>I. All-cause mortality
-II. Incidence of Coronary Artery Disease (Acute Coronary Syndrome, need for revascularization, sudden death)
-III. Fatal and nonfatal stroke
-IV. Heart failure (requiring hospitalization)
-V. Duplication of plasma levels of creatinine or need for dialysis
-VI. Incidence of diabetes mellitus.
-</sec_outcome>
-            
-        </secondary_outcome>
-        <secondary_sponsor>
-            
-            <sponsor_name/>
-            
-        </secondary_sponsor>
-        <secondary_ids>
-            
-            <secondary_id>
-                <sec_id>08621</sec_id>
-                <issuing_authority>CEP- GPPG- Hospital de Clínicas de Porto Alegre</issuing_authority>    
-            </secondary_id>
-            
-            <secondary_id>
-                <sec_id>NCT00971165</sec_id>
-                <issuing_authority>Clinical Trials </issuing_authority>    
-            </secondary_id>
-            
-        </secondary_ids>
-        <source_support>
-            
-            <source_name>FINEP</source_name>
-            
-        </source_support>        
-    </trial>
-
-    <trial>
-        <main>
-            <trial_id>RBR-74rr6s</trial_id>
-            <utrn>U1111-1119-5061</utrn>
-            <reg_name>REBEC</reg_name>
-            <date_registration>02/03/2011</date_registration>
-            <primary_sponsor>Hospital de Clínicas de Porto Alegre</primary_sponsor>
-            <public_title>PREVER Study: Efficacy of the combination of Chlorthalidone and Amiloride versus placebo in the prevention of hypertension in patients with prehypertension PREVER 1 Study</public_title>
-            <acronym>PREVER 1 Study: Prevention of Cardiovascular outcomes in patients with prehypertension </acronym>
-            <scientific_title>PREVER Study: Efficacy of the combination of Chlorthalidone and Amiloride versus placebo in the prevention of hypertension in patients with prehypertension PREVER 1 Study</scientific_title>
-            <scientific_acronym>PREVER 1 Study: Prevention of Cardiovascular outcomes in patients with prehypertension </scientific_acronym>
-            <date_enrolment>01/02/2011</date_enrolment>
-            <type_enrolment>actual</type_enrolment>
-            <target_size>1350</target_size>
-            <recruitment_status>recruiting</recruitment_status>
-            <url>http://ecgovbr.bvsalud.org/rg/RBR-74rr6s/v1/</url>
-            <study_type/>
-            <study_design>Randomized Clinical Trial, double-blind, placebo controled trial</study_design>
-            <phase>3</phase>
-            <hc_freetext>Prehypertension</hc_freetext>
-            <i_freetext>Drug: Chlorthalidone 12,5 mg plus amiloride 2,5 mg once daily for 18 months
-Drug: placebo once daily for 18 months
-
-</i_freetext>            
-        </main>
-        <contacts>
-        
-            <contact>
-                <type>public</type>
-                <firstname>Flávio</firstname>
-                <middlename>Danni</middlename>
-                <lastname>Fuchs</lastname>
-                <address>Rua Ramiro Barcelos 2350 2º Andar Serviço de Cardiologia</address>
-                <city>Porto Alegre</city>
-                <country1>Brazil</country1>
-                <zip>90035-903</zip>
-                <telephone>51 33598449</telephone>
-                <email>ffuchs@hcpa.ufrgs.br</email>
-                <affiliation>Hospital de Clínicas de Porto Alegre</affiliation>
-            </contact>
-        
-        
-            <contact>
-                <type>scientific</type>
-                <firstname>Flávio</firstname>
-                <middlename>Danni</middlename>
-                <lastname>Fuchs</lastname>
-                <address>Rua Ramiro Barcelos 2350 2º Andar Serviço de Cardiologia</address>
-                <city>Porto Alegre</city>
-                <country1>Brazil</country1>
-                <zip>90035-903</zip>
-                <telephone>51 33598449</telephone>
-                <email>ffuchs@hcpa.ufrgs.br</email>
-                <affiliation>Hospital de Clínicas de Porto Alegre</affiliation>
-            </contact>
-        
-        </contacts>
-        <countries>
-        
-            <country2>Brazil</country2>
-        
-        </countries>
-        <criteria>
-            <inclusion_criteria>I. individuals with 30 to 70 years of age 
-II. Systolic Arterial Pressure 120-139 mmHg or Diastolic Arterial Pressure 80-89 mmHg;</inclusion_criteria>
-            <agemin>30Y</agemin>
-            <agemax>70Y</agemax>
-            <gender>-</gender>
-            <exclusion_criteria>I. Previous diagnosis of hypertension or use of antihypertensive drugs;
-II. Allergies to Chlorthalidone Amiloride;
-III. Known cardiovascular disease (previous Miocardial Infarction, previous stroke, heart failure or clinical manifestations, for example, current or previous angina, intermittent claudication ...);
-IV. Chronic diseases that limit the participation or the prospect of life (such as cancer, rheumatic disease, disability, etc.);
-V. Analgesics or anti-inflammatory use for 30 days or more;
-VI. Inability to measure blood pressure;
-VII. Difficulty in understanding that limits participation in the study;
-VIII. IF WOMEN: Pregnant or planning to become pregnant in the next two years;
-IX. Patients who have participated in other randomized trials (the last six months);
-</exclusion_criteria>
-        </criteria>
-        <health_condition_code>
-            
-            <hc_code>C14</hc_code>
-            
-        </health_condition_code>
-        <health_condition_keyword>
-            
-            <hc_keyword>I10</hc_keyword>
-            
-        </health_condition_keyword>
-        <intervention_code>
-            
-            <i_code>drug</i_code>
-            
-        </intervention_code>
-        <intervention_keyword>
-            
-            <i_keyword>D27.505.696.560.500</i_keyword>
-            
-        </intervention_keyword>
-        <primary_outcome>
-            
-            <prim_outcome>Incidence of hypertension, by blood pressure greater or equal to 140/90 mmHg.
-</prim_outcome>
-            
-            <prim_outcome>Adverse events. 
-</prim_outcome>
-            
-        </primary_outcome>
-        <secondary_outcome>
-            
-            <sec_outcome>I. All-cause mortality
-II. Incidence of Coronary Artery Disease (Acute Coronary Syndrome, need for revascularization, sudden death)
-III. Fatal and nonfatal stroke
-IV. Heart failure (requiring hospitalization)
-V. Duplication of plasma levels of creatinine or need for dialysis
-VI. Incidence of diabetes mellitus.
-VII. Microalbuminuria
-VIII. Hypokalemia
-IX. Hyperuricemia
-X. Left ventricular hypertrophy on Eletrocardiogram</sec_outcome>
-            
-        </secondary_outcome>
-        <secondary_sponsor>
-            
-            <sponsor_name/>
-            
-        </secondary_sponsor>
-        <secondary_ids>
-            
-            <secondary_id>
-                <sec_id>08621</sec_id>
-                <issuing_authority>CEP- GPPG- Hospital de Clínicas de Porto Alegre</issuing_authority>    
-            </secondary_id>
-            
-            <secondary_id>
-                <sec_id>NCT00970931</sec_id>
-                <issuing_authority>Clinical Trials </issuing_authority>    
-            </secondary_id>
-            
-        </secondary_ids>
-        <source_support>
-            
-            <source_name>FINEP</source_name>
-            
-        </source_support>        
-    </trial>
-
-    <trial>
-        <main>
-            <trial_id>RBR-4z7cnh</trial_id>
-            <utrn>U1111-1119-6522</utrn>
-            <reg_name>REBEC</reg_name>
-            <date_registration>11/04/2011</date_registration>
-            <primary_sponsor>Hospital de Reabilitação de Anomalias Craniofaciais/ USP</primary_sponsor>
-            <public_title>Facial edema reduction by manual lymphatic drainage at postoperative alveolar bone grafting.</public_title>
-            <acronym/>
-            <scientific_title>Randomized open controlled parallel trial on the facial edema reduction following alveolar bone grafting by manual lymphatic drainage.</scientific_title>
-            <scientific_acronym/>
-            <date_enrolment/>
-            <type_enrolment>anticipated</type_enrolment>
-            <target_size>40</target_size>
-            <recruitment_status>recruitment completed</recruitment_status>
-            <url>http://ecgovbr.bvsalud.org/rg/RBR-4z7cnh/v1/</url>
-            <study_type/>
-            <study_design>Randomized open controlled parallel trial</study_design>
-            <phase>1-2</phase>
-            <hc_freetext>facial swelling after alveolar bone grafting</hc_freetext>
-            <i_freetext>Treatment group: 29 patients (17 females and 12 males) were submitted to the manual lymphatic drainage (MLD) procedures using specific and standardized techniques always performed by the author, for 30 minutes, in a calm and comfortable environment, with the patient lying on a bed with the headboard raised at 20 degrees. The MLD procedures were performed from the second to the fourth postoperative days, in a different manner in the two groups. After de MDL maneuver, 23 patients were questioned about the reduction of pain, sensation of relaxation and sleep after therapy on the 2ndPO (postoperative), 3rd PO and 4thPO.
-Control group: 22 patients (7 females and 15 males) were submitted to the procedures routinely performed by the patients themselves after professionals of HRAC/USP teach and explain the MDL procedures, which are then performed by the patients themselves or by their caretakers. The patients and caretakers were taught to perform MDL procedures by pumping on the submandibular lymph nodes and superficial sliding only on the operated hemiface for 10 minutes, three times a day, as well as facial mimic exercises (lip protraction, lateral traction of the angle of the mouth, smiling, and strongly opening and closing the eyes). All procedures were performed without additional cost to the patient.Pumping, superficial sliding and stationary circles were performed on the face, applying light pressure with the hands according to the Vodder technique always toward the adjacent lymph nodes, in a slow and constant rhythim. Pumping was performed on the supramandibular, submental and preauricular lymph nodes. The face was divided into three parts, lower, medium and upper regions.After MLD, the patients performed facial mimic exercises, six times each (opening and closing the eyes, contractions of nose and nasal ala muscles, protraction of closed lips, protraction and lateral movement of the lips, and distention of open lips). All patients were submitted to the pharmacological treatment with cefazolin and ibuprofen during and after surgery, in accordance with the protocols os HRAC/USP.</i_freetext>            
-        </main>
-        <contacts>
-        
-            <contact>
-                <type>public</type>
-                <firstname>Alceu</firstname>
-                <middlename>Sergio</middlename>
-                <lastname>Trindade Jr</lastname>
-                <address>Rua Silvio Marchione 3-20</address>
-                <city>Bauru</city>
-                <country1>Brazil</country1>
-                <zip>17012-900</zip>
-                <telephone>(14)32358066</telephone>
-                <email>atrind@usp.br</email>
-                <affiliation>Hospital de Reabilitação de Anomalias Craniofaciais/ USP</affiliation>
-            </contact>
-        
-        
-            <contact>
-                <type>scientific</type>
-                <firstname>Alceu</firstname>
-                <middlename>Sergio</middlename>
-                <lastname>Trindade Jr</lastname>
-                <address>Rua Silvio Marchione 3-20</address>
-                <city>Bauru</city>
-                <country1>Brazil</country1>
-                <zip>17012-900</zip>
-                <telephone>(14)32358066</telephone>
-                <email>atrind@usp.br</email>
-                <affiliation>Hospital de Reabilitação de Anomalias Craniofaciais/ USP</affiliation>
-            </contact>
-        
-        </contacts>
-        <countries>
-        
-            <country2>Brazil</country2>
-        
-        </countries>
-        <criteria>
-            <inclusion_criteria>cleft lip and palate</inclusion_criteria>
-            <agemin>10Y</agemin>
-            <agemax>14Y</agemax>
-            <gender>-</gender>
-            <exclusion_criteria>hypertension</exclusion_criteria>
-        </criteria>
-        <health_condition_code>
-            
-            <hc_code>Q00-Q99</hc_code>
-            
-            <hc_code>C23</hc_code>
-            
-        </health_condition_code>
-        <health_condition_keyword>
-            
-            <hc_keyword>C05.500.460.185</hc_keyword>
-            
-        </health_condition_keyword>
-        <intervention_code>
-            
-            <i_code>procedure/surgery</i_code>
-            
-        </intervention_code>
-        <intervention_keyword>
-            
-            <i_keyword>C05.500.460.185</i_keyword>
-            
-        </intervention_keyword>
-        <primary_outcome>
-            
-            <prim_outcome>In both groups, in the period before the  manual lymphatic drainage (MLD) the edema and interincisal distance were evaluated preoperativly (Pre), second (2ndPO) and fourth days postoperatively (4thPO), and pain analogue scale (PAS) on the first, second, third and fourth days postoperatively. For the achievement of facial dimensions, three points were marked on the face using a surgical marker, forming two lines. The following dimensions were achieved using a conventional measuring tape: distance between nasal ala and tragus (line 1), and distance between nasal ala and inferior regions of the ear (line 2), The measurements were achieves on the operated hemiface, three times and the mean value was considered for the analysis.
-The maximum active interincisal distance (MAID) was evaluated with a manual pachymeter on the side with the best dental arch alignment.In the treatment group, after MLD, 23 patients were questioned on the therapy on the 2ndPO, 3rdPO and 4thPO. The mean values obtained in the treatment group was 11,03 cm in the preoperatively period (Pre) and 11,59 in 4thPO (line 1, p&lt;0,05). For the line 2, the values were 10,37 cm (Pre) and 10,85 cm in the 4thPO (p&lt;0,05).The values of the MAID in the treatment group were 4,02 cm in the preoperatively period (Pre) and 3,17 cm in the 4thPO. There is a significant reduction (p&lt;0,05) in the mean values of the lines 1,2 and MAID when both groups were compared.
-</prim_outcome>
-            
-        </primary_outcome>
-        <secondary_outcome>
-            
-            <sec_outcome/>
-            
-        </secondary_outcome>
-        <secondary_sponsor>
-            
-            <sponsor_name/>
-            
-        </secondary_sponsor>
-        <secondary_ids>
-            
-            <secondary_id>
-                <sec_id>350/2010-SVAPEPE-CEP</sec_id>
-                <issuing_authority>CEP HRAC USP</issuing_authority>    
-            </secondary_id>
-            
-        </secondary_ids>
-        <source_support>
-            
-            <source_name>Hospital de Reabilitação de Anomalias Craniofaciais/ USP</source_name>
-            
-        </source_support>        
-    </trial>
-
-    <trial>
-        <main>
-            <trial_id>RBR-7nq8m7</trial_id>
-            <utrn>U1111-1120-4284</utrn>
-            <reg_name>REBEC</reg_name>
-            <date_registration>12/04/2011</date_registration>
-            <primary_sponsor>HUAP</primary_sponsor>
-            <public_title>Steroid Therapy for Autistic Children</public_title>
-            <acronym>CAST: Corticosteroids for Autism - A Scientific Trial</acronym>
-            <scientific_title>Double-blind, Randomized, Placebo-Controlled Clinical Trial of Corticosteroids for the Autistic Spectrum Disorder</scientific_title>
-            <scientific_acronym>CAST: Corticosteroids for Autism - A Scientific Trial</scientific_acronym>
-            <date_enrolment>01/05/2010</date_enrolment>
-            <type_enrolment>actual</type_enrolment>
-            <target_size>40</target_size>
-            <recruitment_status>recruiting</recruitment_status>
-            <url>http://ecgovbr.bvsalud.org/rg/RBR-7nq8m7/v1/</url>
-            <study_type/>
-            <study_design>Placebo-controlled, randomized, double-blind study. </study_design>
-            <phase>4</phase>
-            <hc_freetext>The classical clinical picture of autistic spectrum disorder.</hc_freetext>
-            <i_freetext>Intervention Group: 20 subjects will receive oral prednisolone, in a dosage of 1 mg/kg/day, daily during eight weeks. From the ninth through the sixteenth weeks, patients will received a dosage of 1 mg/kg on alternate days. During the following eight weeks, the study medication will  continue to be given on alternate days and will be tapered as follows: 10% reduction of the initial dosage every week between the seventeenth and the twentieth weeks, then a 15% reduction per week on the twenty first through the twenty fourth weeks. Control Group: 20 subjects will receive a placebo dosage throughout 24 weeks, according to the same dosage as the active substance.</i_freetext>            
-        </main>
-        <contacts>
-        
-            <contact>
-                <type>public</type>
-                <firstname>Adriana</firstname>
-                <middlename>Rocha</middlename>
-                <lastname>Brito</lastname>
-                <address>Rua Marquês de Paraná, 303</address>
-                <city>Niterói</city>
-                <country1>Brazil</country1>
-                <zip>24033-900</zip>
-                <telephone>(5521) 8565-1212</telephone>
-                <email>adri.r.brito@gmail.com</email>
-                <affiliation>HUAP</affiliation>
-            </contact>
-        
-            <contact>
-                <type>public</type>
-                <firstname>Marcio </firstname>
-                <middlename>Moacyr </middlename>
-                <lastname>Vasconcelos</lastname>
-                <address>Rua Marquês de Paraná, 303</address>
-                <city>Niterói</city>
-                <country1>Brazil</country1>
-                <zip>24033-900</zip>
-                <telephone>(5521) 8741-6187</telephone>
-                <email>mmdvascon@gmail.com</email>
-                <affiliation>HUAP</affiliation>
-            </contact>
-        
-        
-            <contact>
-                <type>scientific</type>
-                <firstname>Marcio</firstname>
-                <middlename>Moacyr</middlename>
-                <lastname>Vasconcelos</lastname>
-                <address>Rua Marquês de Paraná, 303</address>
-                <city>Niterói</city>
-                <country1>Brazil</country1>
-                <zip>24033-900</zip>
-                <telephone>(5521) 8741-6187</telephone>
-                <email>mmdvascon@gmail.com</email>
-                <affiliation>HUAP</affiliation>
-            </contact>
-        
-            <contact>
-                <type>scientific</type>
-                <firstname>Adriana</firstname>
-                <middlename>Rocha</middlename>
-                <lastname>Brito</lastname>
-                <address>Rua Marquês de Paraná, 303</address>
-                <city>Niterói</city>
-                <country1>Brazil</country1>
-                <zip>24033-900</zip>
-                <telephone>(5521) 8565-1212</telephone>
-                <email>adri.r.brito@gmail.com</email>
-                <affiliation>HUAP</affiliation>
-            </contact>
-        
-        </contacts>
-        <countries>
-        
-            <country2>Brazil</country2>
-        
-        </countries>
-        <criteria>
-            <inclusion_criteria>Male gender
-Age range, 3-7 years. 
-Autistic spectrum disorder diagnosed according to the criteria at the Diagnostic and Statistical Manual of Mental Disorders-Fourth Edition-Text Revision (DSM-IV-TR).
-The subject's parents should read and sign the informed consent form, authorizing the researchers to recruit their child and to prescribe prednisolone.</inclusion_criteria>
-            <agemin>3Y</agemin>
-            <agemax>7Y</agemax>
-            <gender>M</gender>
-            <exclusion_criteria>Diagnosis of epilepsy.
-Diagnosis of a neurodegenerative disease.
-Diagnosis of cerebral malformations.
-Past history of meningitis or encephalitis.
-Diagnosis of a mass lesion in the central nervous system.
-Diagnosis of any other neurologic disorder.
-Gestational history suggestive of fetal or perinatal distress. 
-Patient dos not fully meet the diagnostic criteria of autism.
-Patient's parents or caretakers did not sign the informed consent form.</exclusion_criteria>
-        </criteria>
-        <health_condition_code>
-            
-            <hc_code>C10</hc_code>
-            
-            <hc_code>F00-F99</hc_code>
-            
-        </health_condition_code>
-        <health_condition_keyword>
-            
-            <hc_keyword>F03.550.325.125</hc_keyword>
-            
-        </health_condition_keyword>
-        <intervention_code>
-            
-            <i_code>drug</i_code>
-            
-        </intervention_code>
-        <intervention_keyword>
-            
-            <i_keyword>D06.472.040</i_keyword>
-            
-        </intervention_keyword>
-        <primary_outcome>
-            
-            <prim_outcome>The study primary endpoint is the subject's language function. During the course of the clinical trial, each subject will undergo four standardized assessments of his/her speech and language. Every assessment is performed by a speech pathologist and consists of the application of three formal tools, i.e.: ABFW (Language Assessment Test, a Brazilian test validated for autistic children); ADL (Language Development Assessment, another Brazilian test); and PEABODY (Picture Vocabulary Test, Third Edition). Each one these tools produces a score, and improvement criterion will be the score increase in the active substance group compared with the control group.
-Average increase in each score will be compared between the two groups using the unpaired Student's t test, and statistical significance is defined as lower than or equal to 0.05.</prim_outcome>
-            
-        </primary_outcome>
-        <secondary_outcome>
-            
-            <sec_outcome>The study secondary endpoint is the subject score at CARS (Childhood Autism Rating Scale). Each subject receives a score just before the trial beginning and, immediately after the trial period, the scale score is reassessed. Degree of improvement in both groups will be measured and compared according to the score increase.</sec_outcome>
-            
-        </secondary_outcome>
-        <secondary_sponsor>
-            
-            <sponsor_name>HUAP</sponsor_name>
-            
-        </secondary_sponsor>
-        <secondary_ids>
-            
-            <secondary_id>
-                <sec_id>CAAE 0136.258.000-07</sec_id>
-                <issuing_authority>CONEP</issuing_authority>    
-            </secondary_id>
-            
-            <secondary_id>
-                <sec_id>167/07</sec_id>
-                <issuing_authority>CEP HUAP-UFF</issuing_authority>    
-            </secondary_id>
-            
-        </secondary_ids>
-        <source_support>
-            
-            <source_name>CNPq</source_name>
-            
-            <source_name>HUAP</source_name>
-            
-        </source_support>        
-    </trial>
-
-    <trial>
-        <main>
-            <trial_id>RBR-88btzp</trial_id>
-            <utrn>U1111-1120-3971</utrn>
-            <reg_name>REBEC</reg_name>
-            <date_registration>10/05/2011</date_registration>
-            <primary_sponsor>Universidade Federal de Minas Gerais</primary_sponsor>
-            <public_title>Evaluation of the Implantation of an Anticoagulation Clinic in the Assistance of Chagas and Non-Chagas Patients at the Hospital of Clinics of the Universidade Federal de Minas Gerais - UFMG</public_title>
-            <acronym/>
-            <scientific_title>A Randomized, Open-Label, Crossover Clinical Trial for Evaluation of Impact of the Implantation of an Anticoagulation Clinic in the Assistance of Chagas and Non-Chagas Disease Patients at the Hospital of Clinics of the Universidade Federal de Minas Gerais - UFMG</scientific_title>
-            <scientific_acronym/>
-            <date_enrolment/>
-            <type_enrolment>anticipated</type_enrolment>
-            <target_size>280</target_size>
-            <recruitment_status>recruitment completed</recruitment_status>
-            <url>http://ecgovbr.bvsalud.org/rg/RBR-88btzp/v1/</url>
-            <study_type/>
-            <study_design>A Phase 4 Randomized, Open-lable, Crossover Controlled Clinical Trial</study_design>
-            <phase>4</phase>
-            <hc_freetext>Heart Diseases
-Chagas Disease
-Hemorrhage
-Thrombosis  </hc_freetext>
-            <i_freetext>Implantation of an anticoagulation clinic to provide care for Chagas and non-Chagas disease patients
-Control group: 140 patients will be assisted by the assistent physician/usual clinical practice to control oral anticoagulation (information about dosing regimen, warfarin dosing adjustments, establishment of intervals for laboratory tests)
-Treatment group: 140 patients will be assisted by the specialized clinic on the control of oral anticoagulation in order to make warfarin dosing adjustments, education, establishment of intervals for laboratory tests, management of complications and other standardized procedures according to specific protocol.</i_freetext>            
-        </main>
-        <contacts>
-        
-            <contact>
-                <type>public</type>
-                <firstname>Antonio</firstname>
-                <middlename>Luiz Pinho</middlename>
-                <lastname>Ribeiro</lastname>
-                <address>tom1963br@yahoo.com.br</address>
-                <city>Belo Horizonte</city>
-                <country1>Brazil</country1>
-                <zip>30130-100</zip>
-                <telephone>3134099300</telephone>
-                <email>tom1963br@yahoo.com.br</email>
-                <affiliation>Universidade Federal de Minas Gerais</affiliation>
-            </contact>
-        
-        
-            <contact>
-                <type>scientific</type>
-                <firstname>Antonio</firstname>
-                <middlename>Luiz Pinho</middlename>
-                <lastname>Ribeiro</lastname>
-                <address>tom1963br@yahoo.com.br</address>
-                <city>Belo Horizonte</city>
-                <country1>Brazil</country1>
-                <zip>30130-100</zip>
-                <telephone>3134099300</telephone>
-                <email>tom1963br@yahoo.com.br</email>
-                <affiliation>Universidade Federal de Minas Gerais</affiliation>
-            </contact>
-        
-            <contact>
-                <type>scientific</type>
-                <firstname>Maria</firstname>
-                <middlename>Auxiliadora Parreiras</middlename>
-                <lastname>Martins</lastname>
-                <address>Rua Arthur Ferrari 55/401, B. Grajaú</address>
-                <city>Belo Horizonte</city>
-                <country1>Brazil</country1>
-                <zip>30431210</zip>
-                <telephone>553196438625</telephone>
-                <email>auxiliadorapmartins@hotmail.com</email>
-                <affiliation>Universidade Federal de Minas Gerais</affiliation>
-            </contact>
-        
-        </contacts>
-        <countries>
-        
-            <country2>Brazil</country2>
-        
-        </countries>
-        <criteria>
-            <inclusion_criteria>Outpatients
-Chagas and non-Chagas disease patients
-Any indication for chronic treatment with warfarin
-Anticoagulation for at least 30 days.</inclusion_criteria>
-            <agemin>18</agemin>
-            <agemax>100</agemax>
-            <gender>-</gender>
-            <exclusion_criteria>Refusal to participate in the study
-Use of phenprocoumon
-Expectation of treatment lower than 1 year
-Difficulties to attend medical visits
-Participation in any other type of research involving anticoagulation during this study period</exclusion_criteria>
-        </criteria>
-        <health_condition_code>
-            
-            <hc_code>C14</hc_code>
-            
-        </health_condition_code>
-        <health_condition_keyword>
-            
-            <hc_keyword>C03.752.300.900.200</hc_keyword>
-            
-            <hc_keyword>D03.438.150.446.520.914</hc_keyword>
-            
-            <hc_keyword>C14.907.355</hc_keyword>
-            
-            <hc_keyword>C14.280.067.198</hc_keyword>
-            
-            <hc_keyword>C23.550.414</hc_keyword>
-            
-        </health_condition_keyword>
-        <intervention_code>
-            
-            <i_code>other</i_code>
-            
-        </intervention_code>
-        <intervention_keyword>
-            
-            <i_keyword>E01.450.375.115.320</i_keyword>
-            
-            <i_keyword>N04.590.233.675</i_keyword>
-            
-        </intervention_keyword>
-        <primary_outcome>
-            
-            <prim_outcome>Calculation of the Time of International Normalized Ratio (INR) in therapeutic range. 
-The method proposed by Rosendaal will be applied to calculate the percentage of the time within the therapeutic range for the target INR 2-3 and 2,5-3,5, defined for each clinical condition
-Time Frame: 1 year
-</prim_outcome>
-            
-        </primary_outcome>
-        <secondary_outcome>
-            
-            <sec_outcome>Hemorrhagic events
-Safety Issue
-Criteria
-Minor bleeding (any type of bleeding that did not required hospitalization, specific procedures and/or hemotransfusion) 
-Major bleeding (any type of bleeding that required hospitalization, specific procedures and/or hemotransfusion)
-Fatal bleeding: bleeding involved directly to patient's death
-Time Frame: 1 year
-</sec_outcome>
-            
-            <sec_outcome>Thromboembolic events
-Safety Issue
-Criteria:
-Evidence of thromboembolic event confirmed by appropriate image exam, including deep or superficial venous thrombosis, systemic thrombosis, heart thrombus, isquemic stroke
-Time Frame: 1 year
-</sec_outcome>
-            
-        </secondary_outcome>
-        <secondary_sponsor>
-            
-            <sponsor_name>Hospital das Clínicas da UFMG</sponsor_name>
-            
-        </secondary_sponsor>
-        <secondary_ids>
-            
-            <secondary_id>
-                <sec_id>ETIC 376/09</sec_id>
-                <issuing_authority>Comitê de Ética em Pesquisa da UFMG (COEP)</issuing_authority>    
-            </secondary_id>
-            
-            <secondary_id>
-                <sec_id>NCT01006486</sec_id>
-                <issuing_authority>ClinicalTrials.gov (Protocol Registration System)</issuing_authority>    
-            </secondary_id>
-            
-        </secondary_ids>
-        <source_support>
-            
-            <source_name>Universidade Federal de Minas Gerais</source_name>
-            
-            <source_name>Hospital das Clínicas da UFMG</source_name>
-            
-        </source_support>        
-    </trial>
-
+{% endfor %}
 </trials>
+{% endblock %}

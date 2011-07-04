@@ -79,7 +79,6 @@ def check_user_can_edit_trial(func):
         request.ct = get_object_or_404(ClinicalTrial, id=int(trial_pk))
         request.can_change_trial = True
 
-        import pdb; pdb.set_trace() 
         if request.ct.submission.status == STATUS_APPROVED:
             request.can_change_trial = False
             parsed_link = reverse(submission_edit_published, args=[trial_pk])
