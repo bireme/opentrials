@@ -28,7 +28,7 @@ from reviewapp.models import Attachment, Submission, Remark
 from reviewapp.models import STATUS_PENDING, STATUS_RESUBMIT, STATUS_DRAFT, STATUS_APPROVED
 from reviewapp.forms import ExistingAttachmentForm,NewAttachmentForm
 from reviewapp.consts import STEP_STATES, REMARK, MISSING, PARTIAL, COMPLETE
-from reviewapp.views import submission_edit_published
+from reviewapp.views import submission_edit_published, send_opentrials_email
 
 from repository.trial_validation import trial_validator
 from repository.models import ClinicalTrial, Descriptor, TrialNumber
@@ -127,8 +127,14 @@ def edit_trial_index(request, trial_pk):
     if request.method == 'POST' and submit:
         sub = ct.submission
         sub.status = STATUS_PENDING
+        
+        recepient = ct.submission.creator.email
+        subject = _('Trial Submitted')
+        message = _('Your clinical trial "%s" was submited') % (ct.submission.title)
+        send_opentrials_email(subject, message, recepient)
+        #import pdb; pdb.set_trace()
 
-        sub.save()
+        #sub.save()
         return HttpResponseRedirect(reverse('reviewapp.dashboard'))
     else:
         ''' start view '''

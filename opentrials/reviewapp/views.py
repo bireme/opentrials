@@ -41,6 +41,25 @@ from datetime import datetime
 from utilities import safe_truncate
 from fossil.models import Fossil
 
+from vocabulary.models import ApprovedMessage
+
+def send_opentrials_email(subject, message, recipient):
+    name = 'Rebec'
+    from_email = '%s <%s>' % (name,settings.DEFAULT_FROM_EMAIL)
+    recipient_list = [recipient]
+
+    try:
+        t = loader.get_template('reviewapp/email_contact.txt')
+        c = Context({
+                    'name': name,
+                    'message': unicode(message),
+                    'site_domain': Site.objects.get_current().domain,
+                    'site_name': Site.objects.get_current().name, })
+        send_mail(subject, t.render(c), from_email, recipient_list,
+                  fail_silently=False)
+    except BadHeaderError:
+        return HttpResponse('Invalid header found.')
+
 def index(request):
 
     pages = FlatPage.objects.filter(url='/site-description/')
@@ -453,30 +472,21 @@ def change_submission_status(request, submission_pk, status):
     if status == STATUS_APPROVED and submission.remark_set.exclude(status='closed').count() > 0:
         return HttpResponse(status=403)
 
-
-    import pdb; pdb.set_trace()
-    #for lord, uncomment it!
-    #submission.status = status
+    submission.status = status
     #submission.save()
 
-    #HERE -> send e-mail for aproval
-    subject = _('Submission Approved')
-    message = _('You submission was approved.')
-    name = 'Rebec'
-    from_email = '%s <%s>' % (name,settings.DEFAULT_FROM_EMAIL)
-    recipient_list = ['alvesjunior.antonio@gmail.com']
-
-    try:
-        t = loader.get_template('reviewapp/email_contact.txt')
-        c = Context({
-                    'name': name,
-                    'message': message,
-                    'site_domain': Site.objects.get_current().domain,
-                    'site_name': Site.objects.get_current().name, })
-        send_mail(subject, t.render(c), from_email, recipient_list,
-                  fail_silently=False)
-    except BadHeaderError:
-        return HttpResponse('Invalid header found.')
+    recipient = submission.creator.email
+    
+    if status == 'submission':
+        subject = _('Submission Approved')
+        message = _('Your submission %s was approved') % (submission.title)
+        recipient = submission.email
+    
+    elif status == 'resubmit':
+        subject = _('Submission Not Approved ')
+        message = _('Your submission %s was not yet approved. Check for remarks.') % (submission.title)
+    
+    send_opentrials_email(subject, message, recipient)
 
     return HttpResponseRedirect(reverse('repository.views.trial_view', args=[submission.trial.id]))
 
