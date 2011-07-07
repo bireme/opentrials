@@ -333,6 +333,7 @@ def upload_trial(request):
                 session_key = 'parsed-trials-'+datetime.now().strftime('%Y%m%d%H%M%S')
                 request.session[session_key] = [item for item in parsed_trials]
 
+                import pdb; pdb.set_trace()
                 formset = ImportParsedFormset(initial=[{
                     'trial_id': item[0]['trial_id'],
                     'description': item[0]['public_title'],
@@ -344,6 +345,7 @@ def upload_trial(request):
         elif 'session_key' in request.POST:
             
             formset = ImportParsedFormset(request.POST)
+            import pdb; pdb.set_trace()
             if formset.is_valid():
                 marked_trials = [form.cleaned_data['trial_id'] for form in formset.forms
                         if form.cleaned_data['to_import']]
@@ -369,7 +371,7 @@ def upload_trial(request):
         form = UploadTrialForm(request.POST, files=request.FILES)
     return render_to_response(
             'reviewapp/upload_trial.html',
-            {'form': form, 'session_key': session_key, 'formset': formset},
+            {'form': form, 'session_key': session_key, 'formset': formset,}, 
             context_instance=RequestContext(request),
             )
 
@@ -451,8 +453,30 @@ def change_submission_status(request, submission_pk, status):
     if status == STATUS_APPROVED and submission.remark_set.exclude(status='closed').count() > 0:
         return HttpResponse(status=403)
 
-    submission.status = status
-    submission.save()
+
+    import pdb; pdb.set_trace()
+    #for lord, uncomment it!
+    #submission.status = status
+    #submission.save()
+
+    #HERE -> send e-mail for aproval
+    subject = _('Submission Approved')
+    message = _('You submission was approved.')
+    name = 'Rebec'
+    from_email = '%s <%s>' % (name,settings.DEFAULT_FROM_EMAIL)
+    recipient_list = ['alvesjunior.antonio@gmail.com']
+
+    try:
+        t = loader.get_template('reviewapp/email_contact.txt')
+        c = Context({
+                    'name': name,
+                    'message': message,
+                    'site_domain': Site.objects.get_current().domain,
+                    'site_name': Site.objects.get_current().name, })
+        send_mail(subject, t.render(c), from_email, recipient_list,
+                  fail_silently=False)
+    except BadHeaderError:
+        return HttpResponse('Invalid header found.')
 
     return HttpResponseRedirect(reverse('repository.views.trial_view', args=[submission.trial.id]))
 
