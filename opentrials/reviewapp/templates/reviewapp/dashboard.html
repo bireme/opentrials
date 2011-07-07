@@ -97,6 +97,33 @@
         </table>
         <a href="{% url ticket.index %}" class="button showAll">{% trans 'Show all' %}</a>
     </div>
+    {% if perms.reviewapp.review %}
+    <div class="reviews">
+        <h2>{% trans "All Submissions" %}</h2>
+        <table class="dataTable" cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>{% trans 'Date' %}</th>
+                    <th>{% trans 'Title' %}</th>
+                    <th>{% trans 'Creator' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for submission in submissions %}
+                <tr class="{% cycle 'even' 'odd' %}">
+                    <td class="date">{{ submission.created|date:'Y/m/d H:i' }}</td>
+                    <td class="title">
+                        <a href="{% url repository.trialview submission.trial.pk %}">{{ submission.short_title }}</a>
+                    </td>
+                    <td>{{ submission.creator }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url reviewapp.allsubmissionslist %}" class="button showAll">{% trans 'Show all' %}</a>
+    </div>
+
+    {% endif %}
 </div>
 <div class="spacer">
     &#160;

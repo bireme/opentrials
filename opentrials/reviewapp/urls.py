@@ -8,7 +8,7 @@ from reviewapp.views import index, user_dump, new_submission, submissions_list
 from reviewapp.views import reviewlist, submission_edit_published
 from reviewapp.views import dashboard, submission_detail, user_profile
 from reviewapp.views import upload_trial, open_remark, resend_activation_email
-from reviewapp.views import change_remark_status, delete_remark
+from reviewapp.views import change_remark_status, delete_remark, allsubmissionslist
 from reviewapp.views import contact, submission_delete, change_submission_status
 from reviewapp.views import news_list, news_detail, terms_of_use
 
@@ -33,6 +33,8 @@ urlpatterns = patterns('',
 
     url(r'^accounts/submissionlist/$', submissions_list, name='reviewapp.submissionlist'), #same as accounts/profile
     url(r'^accounts/reviewlist/$', reviewlist, name='reviewapp.reviewlist'),
+
+   url(r'^accounts/allsubmissionslist/$', allsubmissionslist, name='reviewapp.allsubmissionslist'), #same as accounts/profile
 
     url(r'^accounts/submission/(\d+)/$', submission_detail, 
         name='reviewapp.submission'),

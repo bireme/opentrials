@@ -88,6 +88,7 @@ def dashboard(request):
 
     if request.user.has_perm('reviewapp.review'):
         submissions_to_review = Submission.objects.filter(status=STATUS_PENDING).order_by('-updated')
+        submissions = Submission.objects.filter().order_by('-updated')[:25]
 
     return render_to_response('reviewapp/dashboard.html', locals(),
                                context_instance=RequestContext(request))
@@ -100,9 +101,18 @@ def user_dump(request):
 
 @permission_required('reviewapp.review')
 def reviewlist(request):
-    submissions_to_review = Submission.objects.filter(status=STATUS_PENDING)
+    submissions_to_review = Submission.objects.filter(status=STATUS_PENDING).order_by('-updated')
     return render_to_response(
             'reviewapp/review_list.html',
+            locals(),
+            context_instance=RequestContext(request),
+            )
+
+@permission_required('reviewapp.review')
+def allsubmissionslist(request):
+    submissions_to_review = Submission.objects.filter().order_by('-updated')
+    return render_to_response(
+            'reviewapp/all_submission_list.html',
             locals(),
             context_instance=RequestContext(request),
             )
@@ -352,7 +362,6 @@ def upload_trial(request):
                 session_key = 'parsed-trials-'+datetime.now().strftime('%Y%m%d%H%M%S')
                 request.session[session_key] = [item for item in parsed_trials]
 
-                import pdb; pdb.set_trace()
                 formset = ImportParsedFormset(initial=[{
                     'trial_id': item[0]['trial_id'],
                     'description': item[0]['public_title'],
@@ -364,7 +373,6 @@ def upload_trial(request):
         elif 'session_key' in request.POST:
             
             formset = ImportParsedFormset(request.POST)
-            import pdb; pdb.set_trace()
             if formset.is_valid():
                 marked_trials = [form.cleaned_data['trial_id'] for form in formset.forms
                         if form.cleaned_data['to_import']]
@@ -473,7 +481,7 @@ def change_submission_status(request, submission_pk, status):
         return HttpResponse(status=403)
 
     submission.status = status
-    #submission.save()
+    submission.save()
 
     recipient = submission.creator.email
     

@@ -132,9 +132,8 @@ def edit_trial_index(request, trial_pk):
         subject = _('Trial Submitted')
         message = _('Your clinical trial "%s" was submited') % (ct.submission.title)
         send_opentrials_email(subject, message, recepient)
-        #import pdb; pdb.set_trace()
 
-        #sub.save()
+        sub.save()
         return HttpResponseRedirect(reverse('reviewapp.dashboard'))
     else:
         ''' start view '''
@@ -277,6 +276,7 @@ def index(request):
     q = request.GET.get('q', '').strip()
 
     object_list = ClinicalTrial.fossils.published(q=q)
+    unsubmiteds = Submission.objects.filter(title__icontains=q).exclude(status='approved').order_by('-updated')
 
     object_list = object_list.proxies(language=request.LANGUAGE_CODE)
 
@@ -297,7 +297,8 @@ def index(request):
                               {'objects': objects,
                                'page': page,
                                'paginator': paginator,
-                               'q': q},
+                               'q': q,
+                               'unsubmiteds':unsubmiteds},
                                context_instance=RequestContext(request))
 
 @login_required

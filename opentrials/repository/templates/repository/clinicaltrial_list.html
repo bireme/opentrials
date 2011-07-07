@@ -62,4 +62,43 @@
             <p>{% trans 'No clinical trial has been registered.' %}</p>
         {% endif %}
     {% endif %}
+
+    {% if perms.reviewapp.review %}
+    <h3>{% trans 'Not yet submited trials' %}</h3>
+      {% for ct in unsubmiteds %}
+        <table class="trial_table">
+            <tr>
+                <td class="trial_label" width="50%">{% trans 'Title' %}</td>
+            </tr>
+            <tr>
+                <td class="trial_title" rowspan="2"><a href="{% url repository.trialview ct.trial_id %}">{{ ct.title }}</a></td>
+            </tr>
+        </table>
+        {% endfor %}
+        
+        {% if paginator.num_pages > 1 %}
+        <div class="pagination">
+            {% if objects.has_previous %}
+                <a href="?page=1"><<</a>
+                <a href="?page={{ objects.previous_page_number }}"><</a>
+            {% endif %}
+            
+            {% for p in paginator.page_range %}
+                {% if p == page %}
+                  <span class="current">
+                      {{ p }}
+                  </span>
+                {% else %}
+                    <a href="?page={{ p }}">{{ p }}</a>
+                {% endif %}
+            {% endfor %}
+            
+            {% if objects.has_next %}
+                  <a href="?page={{ objects.next_page_number }}">></a>
+                  <a href="?page={{ paginator.num_pages }}">>></a>
+            {% endif %}
+        </div>
+        {% endif %}
+    {% endif %}
+
 {% endblock %}
