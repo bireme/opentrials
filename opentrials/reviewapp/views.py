@@ -46,7 +46,7 @@ from vocabulary.models import MailMessage
 def send_opentrials_email(subject, message, recipient):
     name = 'Rebec'
     from_email = '%s <%s>' % (name,settings.DEFAULT_FROM_EMAIL)
-    recipient_list = ['antonio.alves@bireme.org']#[recipient]
+    recipient_list = [recipient]
 
     try:
         t = loader.get_template('reviewapp/email_contact.txt')
@@ -481,7 +481,7 @@ def change_submission_status(request, submission_pk, status):
         return HttpResponse(status=403)
 
     submission.status = status
-    #submission.save()
+    submission.save()
     
     recipient = submission.creator.email
     
