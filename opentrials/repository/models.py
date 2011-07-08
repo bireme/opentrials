@@ -397,6 +397,9 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
     recruitment_status = models.ForeignKey(RecruitmentStatus, null=True, blank=True,
                                            verbose_name=_('Recruitment Status'))
 
+    outdated = models.BooleanField(default=False, blank=False,
+                                           verbose_name=_('Outdated Trial'))
+
     # TRDS 11 - Countries of Recruitment
     recruitment_country = models.ManyToManyField(CountryCode,
         help_text=u'Several countries may be selected, one at a time')
