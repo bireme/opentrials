@@ -47,6 +47,7 @@ from repository.trds_forms import make_scientifc_contact_form, make_contact_form
 from repository.trds_forms import make_site_contact_form, TRIAL_FORMS
 from vocabulary.models import RecruitmentStatus, VocabularyTranslation, CountryCode, InterventionCode
 from vocabulary.models import StudyPurpose, InterventionAssigment, StudyMasking, StudyAllocation
+from vocabulary.models import MailMessage
 
 from polyglot.multilingual_forms import modelformset_factory
 
@@ -130,7 +131,7 @@ def edit_trial_index(request, trial_pk):
         
         recepient = ct.submission.creator.email
         subject = _('Trial Submitted')
-        message = _('Your clinical trial "%s" was submited') % (ct.submission.title)
+        message =  MailMessage.objects.filter(label='submitted')[0].description
         send_opentrials_email(subject, message, recepient)
 
         sub.save()

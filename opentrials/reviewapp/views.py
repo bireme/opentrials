@@ -41,12 +41,12 @@ from datetime import datetime
 from utilities import safe_truncate
 from fossil.models import Fossil
 
-from vocabulary.models import ApprovedMessage
+from vocabulary.models import MailMessage
 
 def send_opentrials_email(subject, message, recipient):
     name = 'Rebec'
     from_email = '%s <%s>' % (name,settings.DEFAULT_FROM_EMAIL)
-    recipient_list = [recipient]
+    recipient_list = ['antonio.alves@bireme.org']#[recipient]
 
     try:
         t = loader.get_template('reviewapp/email_contact.txt')
@@ -481,20 +481,19 @@ def change_submission_status(request, submission_pk, status):
         return HttpResponse(status=403)
 
     submission.status = status
-    submission.save()
-
+    #submission.save()
+    
     recipient = submission.creator.email
     
-    if status == 'submission':
+    if status == 'approved':
         subject = _('Submission Approved')
-        message = _('Your submission %s was approved') % (submission.title)
-        recipient = submission.email
+        message =  MailMessage.objects.filter(label='approved')[0].description
+        send_opentrials_email(subject, message, recipient)
     
     elif status == 'resubmit':
         subject = _('Submission Not Approved ')
-        message = _('Your submission %s was not yet approved. Check for remarks.') % (submission.title)
-    
-    send_opentrials_email(subject, message, recipient)
+        message =  MailMessage.objects.filter(label='resubmitted')[0].description
+        send_opentrials_email(subject, message, recipient)
 
     return HttpResponseRedirect(reverse('repository.views.trial_view', args=[submission.trial.id]))
 
