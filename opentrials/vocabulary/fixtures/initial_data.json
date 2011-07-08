@@ -22298,6 +22298,33 @@
   }, 
   {
     "pk": 1, 
+    "model": "vocabulary.mailmessage", 
+    "fields": {
+      "order": 10, 
+      "description": "Your trial was approved", 
+      "label": "approved"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "vocabulary.mailmessage", 
+    "fields": {
+      "order": 20, 
+      "description": "Your trial was not yet approved", 
+      "label": "resubmitted"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "vocabulary.mailmessage", 
+    "fields": {
+      "order": 30, 
+      "description": "Your trial was submitted", 
+      "label": "submitted"
+    }
+  }, 
+  {
+    "pk": 1, 
     "model": "vocabulary.studypurpose", 
     "fields": {
       "order": 10, 
