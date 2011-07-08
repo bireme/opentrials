@@ -89,7 +89,7 @@ def dashboard(request):
 
     if request.user.has_perm('reviewapp.review'):
         submissions_to_review = Submission.objects.filter(status=STATUS_PENDING).order_by('-updated')
-        submissions = Submission.objects.filter(Q(status='draft') | Q(status='pending')).order_by('-updated')[:25]
+        submissions = Submission.objects.filter(Q(status='draft') | Q(status='resubmit')).order_by('-updated')[:25]
 
     return render_to_response('reviewapp/dashboard.html', locals(),
                                context_instance=RequestContext(request))

@@ -277,8 +277,8 @@ def index(request):
     q = request.GET.get('q', '').strip()
 
     object_list = ClinicalTrial.fossils.published(q=q)
-    unsubmiteds = Submission.objects.filter(title__icontains=q).exclude(status='approved').order_by('-updated')
-
+    unsubmiteds = Submission.objects.filter(title__icontains=q).filter(Q(status='draft') | Q(status='resubmit')).order_by('-updated')
+    
     object_list = object_list.proxies(language=request.LANGUAGE_CODE)
 
     # pagination
