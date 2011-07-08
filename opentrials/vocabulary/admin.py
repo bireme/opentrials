@@ -24,7 +24,7 @@ class CountryCodeAdmin(TranslationAdmin):
 for model in (RecruitmentStatus, StudyType, StudyPhase, InterventionCode,
     AttachmentType, TrialNumberIssuingAuthority, StudyPurpose, TimePerspective,
     InterventionAssigment, StudyMasking, StudyAllocation, InstitutionType,
-    ObservationalStudyDesign):
+    ObservationalStudyDesign, MailMessage):
     if model not in admin.site._registry:
         admin.site.register(model, SimpleVocabularyAdmin)
 

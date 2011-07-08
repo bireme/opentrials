@@ -100,7 +100,7 @@ class InterventionCode(SimpleVocabulary):
 class StudyType(SimpleVocabulary):
     ''' TRDS 15a '''
 
-class ApprovedMessage(SimpleVocabulary):
+class MailMessage(SimpleVocabulary):
     ''' TRDS 15a '''
 
 class StudyPurpose(SimpleVocabulary):
