@@ -1,5 +1,6 @@
 from repository.models import ClinicalTrial
 from django.core.management import BaseCommand
+from reviewapp.views import send_opentrials_email
 from datetime import datetime
 
 class Command(BaseCommand):
@@ -32,6 +33,14 @@ class Command(BaseCommand):
             outdated = self.is_outdate(start_planned, end_planned, start_actual, end_actual)
             
             if outdated != ct.outdated:
+                                 
+                # subject = _("Trial enrollment date checker")
+                # if outdate:
+                #     messasge = 
+                # else:
+                #     message = 
+                # send_opentrials_email(subject, message, ct.submission.creator.email)
+
                 ct.outdated = outdated
                 ct.save()
     
