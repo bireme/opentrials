@@ -33,5 +33,5 @@ urlpatterns = patterns('',
     url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/v(?P<trial_version>\d+)/xml/opentrials/$', trial_otxml, name='repository.trial_otxml_version'),
     url(r'^$', index, name='repository.index'),
     url(r'^rss/(?P<url>.*)/$', 'django.contrib.syndication.views.feed',
-        {'feed_dict': {'trials': LastTrialsRss}}),
+        {'feed_dict': {'trials': LastTrials}}),
 )
