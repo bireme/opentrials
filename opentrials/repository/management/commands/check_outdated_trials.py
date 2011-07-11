@@ -1,10 +1,23 @@
 from repository.models import ClinicalTrial
 from django.core.management import BaseCommand
+from datetime import datetime
 
 class Command(BaseCommand):
     
     def is_outdate(self,start_planned, end_planned, start_actual, end_actual):
         #datetime.strptime(qu.enrollment_end_planned, "%Y-%m-%d")
+        now = datetime.today()
+
+        if start_planned is not None:
+            start_planned = datetime.strptime(start_planned, "%Y-%m-%d")            
+            if start_planned < now and start_actual is None:
+                return True
+                    
+        if end_planned is not None:
+            end_planned = datetime.strptime(end_planned, "%Y-%m-%d")
+            if end_planned < now and end_actual is None:
+                return True
+
         return False
                 
     def job(self):
@@ -17,7 +30,7 @@ class Command(BaseCommand):
             end_actual = ct.enrollment_end_planned
 
             outdated = self.is_outdate(start_planned, end_planned, start_actual, end_actual)
-
+            
             if outdated != ct.outdated:
                 ct.outdated = outdated
                 ct.save()
