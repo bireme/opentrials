@@ -7,7 +7,7 @@ from repository.views import edit_trial_index, full_view, index, step_1, step_2,
 from repository.views import step_4, step_5, step_6, step_7, step_8, step_9, new_institution
 from repository.views import trial_registered, trial_view, recruiting, trial_ictrp, trial_otxml
 from repository.views import all_trials_ictrp
-
+from repository.feed import LastTrials
 
 urlpatterns = patterns('',
     url(r'^edit/(\d+)/$', edit_trial_index, name='repository.edittrial'),
@@ -32,4 +32,6 @@ urlpatterns = patterns('',
     url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/v(?P<trial_version>\d+)/xml/ictrp/$', trial_ictrp, name='repository.trial_ictrp_version'),
     url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/v(?P<trial_version>\d+)/xml/opentrials/$', trial_otxml, name='repository.trial_otxml_version'),
     url(r'^$', index, name='repository.index'),
+    url(r'^rss/(?P<url>.*)/$', 'django.contrib.syndication.views.feed',
+        {'feed_dict': {'trials': LastTrialsRss}}),
 )

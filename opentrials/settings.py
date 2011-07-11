@@ -112,6 +112,8 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.markup',
     'django.contrib.messages',
+    'django.contrib.syndication',
+    
     'deleting',
     'vocabulary',
     'repository',
