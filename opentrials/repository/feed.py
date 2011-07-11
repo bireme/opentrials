@@ -7,7 +7,7 @@ class LastTrials(Feed):
     link = '/'
 
     def items(self):
-        return ClinicalTrial.objects.all()
+        return ClinicalTrial.published.all()
 
     def item_link(self, trial):
         return '/rg/%s/'%trial.trial_id
@@ -17,7 +17,7 @@ class LastRecruiting(Feed):
     link = '/'
 
     def items(self):
-        return ClinicalTrial.objects.all()
-
+        return ClinicalTrial.fossils.recruiting()
+        
     def item_link(self, trial):
         return '/rg/%s/'%trial.trial_id
