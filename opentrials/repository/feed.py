@@ -11,3 +11,13 @@ class LastTrials(Feed):
 
     def item_link(self, trial):
         return '/rg/%s/'%trial.trial_id
+
+class LastRecruiting(Feed):
+    title = _('Last published trials')
+    link = '/'
+
+    def items(self):
+        return ClinicalTrial.objects.all()
+
+    def item_link(self, trial):
+        return '/rg/%s/'%trial.trial_id
