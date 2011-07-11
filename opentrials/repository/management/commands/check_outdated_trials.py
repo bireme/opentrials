@@ -6,7 +6,6 @@ from datetime import datetime
 class Command(BaseCommand):
     
     def is_outdate(self,start_planned, end_planned, start_actual, end_actual):
-        #datetime.strptime(qu.enrollment_end_planned, "%Y-%m-%d")
         now = datetime.today()
 
         if start_planned is not None:
@@ -22,8 +21,7 @@ class Command(BaseCommand):
         return False
                 
     def job(self):
-        # This will be executed every 1 day minutes
-        #debug only
+        # This will be executed each 1 day
         for ct in ClinicalTrial.objects.filter(status='published'):
             start_planned = ct.enrollment_start_planned
             end_planned = ct.enrollment_end_planned
