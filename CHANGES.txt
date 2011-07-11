@@ -6,6 +6,8 @@
   languages
 - Registry table now in ascending order
 - 'View all' button in home
+- Send e-mail after each trial change
+- Not yet submitted trial can be visualized by the admin
 
 
 #What is new in v1.0.23
@@ -13,6 +15,7 @@
 - Users can delete attachments
 - Users can attach url links instead of files
 - Minor bug fix (fixtures)
+
 
 #What is new in v1.0.22
 
