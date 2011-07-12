@@ -79,7 +79,9 @@ def index(request):
 
     return render_to_response('reviewapp/index.html', {
                           'clinical_trials': clinical_trials,
-                          'page': flat_trans,},
+                          'page': flat_trans,
+                          'outdated_flag':settings.MEDIA_URL + 'media/img/admin/icon_error.gif',
+                          },
                           context_instance=RequestContext(request))
 
 @login_required

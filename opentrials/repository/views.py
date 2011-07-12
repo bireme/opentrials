@@ -299,7 +299,9 @@ def index(request):
                                'page': page,
                                'paginator': paginator,
                                'q': q,
-                               'unsubmiteds':unsubmiteds},
+                               'unsubmiteds':unsubmiteds,
+                               'outdated_flag':settings.MEDIA_URL + 'media/img/admin/icon_error.gif',
+                               },
                                context_instance=RequestContext(request))
 
 @login_required
@@ -501,7 +503,9 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
                                 'fossil_created': created,
                                 'register_number': trial_fossil_id,
                                 'scientific_title': scientific_title,
-                                'languages': get_sorted_languages(request)},
+                                'languages': get_sorted_languages(request),
+                                'outdated_flag':settings.MEDIA_URL + 'media/img/admin/icon_error.gif',
+                                },
                                 context_instance=RequestContext(request))
 
 @login_required
