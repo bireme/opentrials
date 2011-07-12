@@ -72,6 +72,27 @@ MENU_SHORT_TITLE = [_('Trial Identif.'),
                     _('Contacts'),
                     _('Attachs')]
 
+def is_outdate(ct):
+
+    now = datetime.date.today()
+
+    start_planned = ct.enrollment_start_planned
+    end_planned = ct.enrollment_end_planned
+    start_actual = ct.enrollment_start_actual
+    end_actual = ct.enrollment_end_planned
+
+    if start_planned is not None:
+        start_planned = start_planned
+        if start_planned < now and start_actual is None:
+            return True
+                
+    if end_planned is not None:
+        end_planned = end_planned
+        if end_planned < now and end_actual is None:
+            return True
+
+    return False
+
 def check_user_can_edit_trial(func):
     """
     Decorator to check if current user has permission to edit a given clinical trial
@@ -795,6 +816,9 @@ def step_5(request, trial_pk):
 
         if form.is_valid():
             form.save()
+            import pdb; pdb.set_trace()
+            ct.outdated = is_outdate(ct)
+            ct.save()
             return HttpResponseRedirect(reverse('step_5',args=[trial_pk]))
     else:
         form = RecruitmentForm(instance=ct,
