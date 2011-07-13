@@ -14,26 +14,28 @@ class Command(BaseCommand):
         start_actual = ct.enrollment_start_actual
         end_actual = ct.enrollment_end_planned
 
-        if start_planned is not None:
-            start_planned = datetime.strptime(start_planned, "%Y-%m-%d")            
-            if start_planned < now and start_actual is None:
-                return True
-                    
-        if end_planned is not None:
-            end_planned = datetime.strptime(end_planned, "%Y-%m-%d")
-            if end_planned < now and end_actual is None:
-                return True
-
+        try:
+            if start_planned is not None:
+                start_planned = datetime.strptime(start_planned, "%Y-%m-%d")            
+                if start_planned < now and start_actual is None:
+                    return True
+                        
+            if end_planned is not None:
+                end_planned = datetime.strptime(end_planned, "%Y-%m-%d")
+                if end_planned < now and end_actual is None:
+                    return True
+        except ValueError:
+            return True
+            
         return False
                 
     def job(self):
         # This will be executed each 1 day
-        for ct in ClinicalTrial.objects.filter(status='published'):
+        for ct in ClinicalTrial.objects.all():
 
             outdated = self.is_outdate(ct)
-            
+             
             if outdated != ct.outdated:
-                                 
                 # subject = _("Trial enrollment date checker")
                 # if outdate:
                 #     messasge = 
