@@ -14,6 +14,7 @@ from reviewapp.views import news_list, news_detail, terms_of_use
 
 from reviewapp.models import Submission
 
+from repository.feed import LastTrials, LastRecruiting
 
 submissions = {
    'queryset':Submission.objects.all()
@@ -94,6 +95,9 @@ urlpatterns = patterns('',
         
     url(r'^remark/delete/(?P<remark_id>\d+)/$', delete_remark,
         name='reviewapp.delete_remark'),
+    
+    url(r'^rss/(?P<url>.*)/$', 'django.contrib.syndication.views.feed',
+        {'feed_dict': {'trials': LastTrials, 'recruiting': LastRecruiting}}),
         
     url(r'^$', index, name='reviewapp.home'),  
 )
