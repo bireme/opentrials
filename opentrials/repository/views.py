@@ -816,7 +816,7 @@ def step_5(request, trial_pk):
 
         if form.is_valid():
             form.save()
-            import pdb; pdb.set_trace()
+
             ct.outdated = is_outdate(ct)
             ct.save()
             return HttpResponseRedirect(reverse('step_5',args=[trial_pk]))

@@ -51,10 +51,12 @@ class YearMonthWidget(forms.MultiWidget):
     """
 
     def __init__(self, *args, **kwargs):
+        DAYS_CHOICES = [('','-------')] + [(y,y) for y in range(1,32)]
         MONTHS_CHOICES = [('','-------')] + MONTHS.items()
         year = date.today().year
         YEARS_CHOICES = [('','-------')] + [(y,y) for y in range(year-1, year+50)]
         widgets = [
+                forms.Select(choices=DAYS_CHOICES),
                 forms.Select(choices=MONTHS_CHOICES),
                 forms.Select(choices=YEARS_CHOICES),
                 ]
@@ -62,6 +64,7 @@ class YearMonthWidget(forms.MultiWidget):
         super(YearMonthWidget, self).__init__(widgets=widgets, *args, **kwargs)
 
     def decompress(self, value):
+
         if not value:
             ret = ['', '']
         else:

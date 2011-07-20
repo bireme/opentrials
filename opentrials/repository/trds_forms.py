@@ -30,6 +30,7 @@ from polyglot.multilingual_forms import MultilingualModelCheckboxField
 from trial_validation import trial_validator, TRIAL_FORMS
 
 from datetime import date
+import datetime
 import re
 
 import settings
@@ -365,17 +366,18 @@ class RecruitmentForm(ReviewModelForm):
             model=CountryCode,
             label_field='description',
             )
-
+    from django.forms.extras.widgets import SelectDateWidget
     # TRDS 16a,b (type_enrollment: anticipated or actual)
-    enrollment_start_date = forms.Field( # yyyy-mm or yyyy-mm-dd
+    year = date.today().year
+    enrollment_start_date = forms.DateField(
         required=False,
-        label=_('Planned Date of First Enrollment'),
-        widget=YearMonthWidget,
+        label=_('Date of First Enrollment'),
+        widget=SelectDateWidget(years=[y for y in range(year-1, year+50)]),
         )
-    enrollment_end_date = forms.Field( # yyyy-mm or yyyy-mm-dd
+    enrollment_end_date = forms.DateField(
         required=False,
-        label=_('Planned Date of Last Enrollment'),
-        widget=YearMonthWidget,
+        label=_('Date of Last Enrollment'),
+        widget=SelectDateWidget(years=[y for y in range(year-1, year+50)]),
         )
 
     # TRDS 17
@@ -403,15 +405,21 @@ class RecruitmentForm(ReviewModelForm):
                                         max_length=8000, widget=forms.Textarea,)
 
     def clean_enrollment_end_date(self):
+
+        if self.cleaned_data.get('recruitment_status').label == unicode(_('recruiting')):
+            if self.cleaned_data.get('enrollment_end_date', None) is None:
+                raise forms.ValidationError(_("Recruiting trial requires an end date"))
+
         end_date = self.cleaned_data.get('enrollment_end_date')
-        if end_date is False:
-            raise forms.ValidationError(_("You must assign both Year and Month"))
         return end_date
 
     def clean_enrollment_start_date(self):
+
+        if self.cleaned_data.get('recruitment_status').label == unicode(_('recruiting')):
+            if self.cleaned_data.get('enrollment_start_date', None) is None:
+                raise forms.ValidationError(_("Recruiting trial requires a start date"))
+
         start_date = self.cleaned_data.get('enrollment_start_date')
-        if start_date is False:
-            raise forms.ValidationError(_("You must assign both Year and Month"))
         return start_date
 
     def __init__(self, *args, **kwargs):
@@ -423,29 +431,41 @@ class RecruitmentForm(ReviewModelForm):
         super(RecruitmentForm, self).__init__(*args, **kwargs)
 
         if self.instance:
-            self.fields['enrollment_start_date'].initial = self.instance.enrollment_start_planned or\
-                                                           self.instance.enrollment_start_actual
-            self.fields['enrollment_end_date'].initial = self.instance.enrollment_end_planned or\
-                                                         self.instance.enrollment_end_actual
+
+            date = self.instance.enrollment_start_planned or self.instance.enrollment_start_actual
+            if date:
+                date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
+                self.fields['enrollment_start_date'].initial = date
+            
+            date = self.instance.enrollment_end_planned or self.instance.enrollment_end_actual
+            if date:
+                date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
+                self.fields['enrollment_end_date'].initial = date
 
     def save(self, commit=True, *args, **kwargs):
+
         obj = super(RecruitmentForm, self).save(commit=True, *args, **kwargs)
+        
 
         obj.enrollment_start_planned = None
         obj.enrollment_start_actual = None
+
         if self.cleaned_data.get('enrollment_start_date', None):
-            if self.cleaned_data['enrollment_start_date'] > date.today():
-                obj.enrollment_start_planned = self.cleaned_data['enrollment_start_date']
+
+            start_date = self.cleaned_data['enrollment_start_date']
+            if start_date > date.today():
+                obj.enrollment_start_planned = start_date
             else:
-                obj.enrollment_start_actual = self.cleaned_data['enrollment_start_date']
+                obj.enrollment_start_actual = start_date
 
         obj.enrollment_end_planned = None
         obj.enrollment_end_actual = None
         if self.cleaned_data.get('enrollment_end_date', None):
-            if self.cleaned_data['enrollment_end_date'] > date.today():
-                obj.enrollment_end_planned = self.cleaned_data['enrollment_end_date']
+            end_date = self.cleaned_data['enrollment_end_date']
+            if end_date > date.today():
+                obj.enrollment_end_planned = end_date
             else:
-                obj.enrollment_end_actual = self.cleaned_data['enrollment_end_date']
+                obj.enrollment_end_actual = end_date
 
         if commit:
             obj.save()
