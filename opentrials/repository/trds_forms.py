@@ -181,7 +181,8 @@ class TrialIdentificationForm(ReviewModelForm):
 
     title = _('Trial Identification')
     # TRDS 10a
-    scientific_title = forms.CharField(label=_('Scientific Title'),
+    scientific_title = forms.CharField(required=True,
+                                       label=_('Scientific Title'),
                                        max_length=2000,
                                        widget=forms.Textarea)
     # TRDS 10b
@@ -189,7 +190,7 @@ class TrialIdentificationForm(ReviewModelForm):
                                          label=_('Scientific Acronym'),
                                          max_length=255)
     # TRDS 9a
-    public_title = forms.CharField(required=False,
+    public_title = forms.CharField(required=True,
                                    label=_('Public Title'),
                                    max_length=2000,
                                    widget=forms.Textarea)
@@ -233,7 +234,7 @@ def make_secondary_sponsor_form(user=None):
         class Meta:
             model = TrialSecondarySponsor
             queryset = TrialSecondarySponsor.objects.all()
-            min_required = 0
+            min_required = 1
             polyglot = False
             fields = ['institution','relation']
 
@@ -250,7 +251,7 @@ def make_support_source_form(user=None):
         class Meta:
             model = TrialSupportSource
             queryset = TrialSupportSource.objects.all()
-            min_required = 0
+            min_required = 1
             polyglot = False
             fields = ['institution','relation']
 
@@ -594,7 +595,7 @@ class SecondaryOutcomesForm(ReviewModelForm):
     class Meta:
         model = Outcome
         queryset = Outcome.objects.filter(interest=choices.OUTCOME_INTEREST[1][0])
-        min_required = 0
+        min_required = 1
         polyglot = True
         polyglot_fields = ['description']
         fields = ['description','interest']
@@ -611,7 +612,7 @@ def make_public_contact_form(user=None):
         class Meta:
             model = ClinicalTrial
             queryset = PublicContact.objects.all()
-            min_required = 0
+            min_required = 1
             polyglot = False
             fields = ['contact']
 
