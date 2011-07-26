@@ -406,19 +406,19 @@ class RecruitmentForm(ReviewModelForm):
                                         max_length=8000, widget=forms.Textarea,)
 
     def clean_enrollment_end_date(self):
-
-        if self.cleaned_data.get('recruitment_status').label == unicode(_('recruiting')):
-            if self.cleaned_data.get('enrollment_end_date', None) is None:
-                raise forms.ValidationError(_("Recruiting trial requires an end date"))
+        if self.cleaned_data.get('recruitment_status'):
+            if self.cleaned_data.get('recruitment_status').label == unicode(_('recruiting')):
+                if self.cleaned_data.get('enrollment_end_date', None) is None:
+                    raise forms.ValidationError(_("Recruiting trial requires an end date"))
 
         end_date = self.cleaned_data.get('enrollment_end_date')
         return end_date
 
     def clean_enrollment_start_date(self):
-
-        if self.cleaned_data.get('recruitment_status').label == unicode(_('recruiting')):
-            if self.cleaned_data.get('enrollment_start_date', None) is None:
-                raise forms.ValidationError(_("Recruiting trial requires a start date"))
+        if self.cleaned_data.get('recruitment_status'):
+            if self.cleaned_data.get('recruitment_status').label == unicode(_('recruiting')):
+                if self.cleaned_data.get('enrollment_start_date', None) is None:
+                    raise forms.ValidationError(_("Recruiting trial requires a start date"))
 
         start_date = self.cleaned_data.get('enrollment_start_date')
         return start_date
@@ -475,16 +475,34 @@ class RecruitmentForm(ReviewModelForm):
 
     def clean(self):
         cleaned_data = super(RecruitmentForm, self).clean()
-
         start_date = cleaned_data.get('enrollment_start_date')
         end_date = cleaned_data.get('enrollment_end_date')
         if end_date and start_date and start_date > end_date:
             raise forms.ValidationError(_("Invalid date"))
+        
+        if cleaned_data.get('agemin_unit') != '-' and cleaned_data.get('agemax_unit') != '-':
+            min_age = normalize_age(cleaned_data.get('agemin_value'), cleaned_data.get('agemin_unit'))
+            max_age = normalize_age(cleaned_data.get('agemax_value'), cleaned_data.get('agemax_unit'))
+            if max_age < min_age:
+                raise forms.ValidationError(_("Invalid age limits"))
 
         return cleaned_data
 
 trial_validator.register(TRIAL_FORMS[4], [RecruitmentForm])
 
+def normalize_age(age, unity):
+    "convert ages to hours"
+    if unity == 'Y':
+        return age*365*24
+    elif unity == 'M':
+        return age*30*24
+    elif unity == 'W':
+        return age*7*24
+    elif unity == 'D':
+        return age*24
+    elif unity == 'H':
+        return age
+    return age
 ### step_6 #####################################################################
 class StudyTypeForm(ReviewModelForm):
     class Meta:
