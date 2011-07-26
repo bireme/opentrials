@@ -550,6 +550,31 @@ def new_institution(request):
                              {'form':new_institution},
                                context_instance=RequestContext(request))
 
+@login_required
+def contacts(request):
+    from django import forms
+
+    if request.method == 'POST':
+        if request.POST.get('contact') != '-':
+            contact = Contact.objects.get(pk=request.POST.get('contact'))
+            contact.delete()
+            contact.save()
+    
+    choices = [('-','-----------')] + [(c.pk, c.name()) for c in Contact.objects.filter(creator=request.user)]
+    class ContactsForm(forms.Form):
+        contact = forms.ChoiceField(label=_('Contact'),                                  
+                                  choices=choices,
+                                  )
+    
+    form = ContactsForm
+
+    return render_to_response('repository/delete_contact.html',
+                             { 'form':form,
+                               'form_title':_('Delete Contact'),
+                               'title':_('Delete Contact'),},
+                               context_instance=RequestContext(request))
+
+
 def step_list(trial_pk):
     import sys
     current_step = int( sys._getframe(1).f_code.co_name.replace('step_','') )

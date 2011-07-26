@@ -703,6 +703,7 @@ trial_validator.register(TRIAL_FORMS[7], [make_public_contact_form(),make_scient
 #step8-partof
 # http://www.b-list.org/weblog/2008/nov/09/dynamic-forms/
 # http://stackoverflow.com/questions/622982/django-passing-custom-form-parameters-to-formset
+
 def make_contact_form(user,formset_prefix=''):
     class ContactForm(ReviewModelForm):
         class Meta:
@@ -735,7 +736,6 @@ def make_contact_form(user,formset_prefix=''):
 
         zip = forms.CharField(label=_('Postal Code'), max_length=50)
         telephone = forms.CharField(label=_('Telephone'), max_length=255)
-
     return ContactForm
 
 class NewInstitution(ReviewModelForm):
