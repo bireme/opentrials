@@ -72,6 +72,27 @@ MENU_SHORT_TITLE = [_('Trial Identif.'),
                     _('Contacts'),
                     _('Attachs')]
 
+def is_outdate(ct):
+
+    now = datetime.date.today()
+
+    start_planned = ct.enrollment_start_planned
+    end_planned = ct.enrollment_end_planned
+    start_actual = ct.enrollment_start_actual
+    end_actual = ct.enrollment_end_planned
+
+    if start_planned is not None:
+        start_planned = start_planned
+        if start_planned < now and start_actual is None:
+            return True
+                
+    if end_planned is not None:
+        end_planned = end_planned
+        if end_planned < now and end_actual is None:
+            return True
+
+    return False
+
 def check_user_can_edit_trial(func):
     """
     Decorator to check if current user has permission to edit a given clinical trial
@@ -299,7 +320,9 @@ def index(request):
                                'page': page,
                                'paginator': paginator,
                                'q': q,
-                               'unsubmiteds':unsubmiteds},
+                               'unsubmiteds':unsubmiteds,
+                               'outdated_flag':settings.MEDIA_URL + 'media/img/admin/icon_error.gif',
+                               },
                                context_instance=RequestContext(request))
 
 @login_required
@@ -501,7 +524,9 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
                                 'fossil_created': created,
                                 'register_number': trial_fossil_id,
                                 'scientific_title': scientific_title,
-                                'languages': get_sorted_languages(request)},
+                                'languages': get_sorted_languages(request),
+                                'outdated_flag':settings.MEDIA_URL + 'media/img/admin/icon_error.gif',
+                                },
                                 context_instance=RequestContext(request))
 
 @login_required
@@ -524,6 +549,31 @@ def new_institution(request):
     return render_to_response('repository/new_institution.html',
                              {'form':new_institution},
                                context_instance=RequestContext(request))
+
+@login_required
+def contacts(request):
+    from django import forms
+
+    if request.method == 'POST':
+        if request.POST.get('contact') != '-':
+            contact = Contact.objects.get(pk=request.POST.get('contact'))
+            contact.delete()
+            contact.save()
+    
+    choices = [('-','-----------')] + [(c.pk, c.name()) for c in Contact.objects.filter(creator=request.user)]
+    class ContactsForm(forms.Form):
+        contact = forms.ChoiceField(label=_('Contact'),                                  
+                                  choices=choices,
+                                  )
+    
+    form = ContactsForm
+
+    return render_to_response('repository/delete_contact.html',
+                             { 'form':form,
+                               'form_title':_('Delete Contact'),
+                               'title':_('Delete Contact'),},
+                               context_instance=RequestContext(request))
+
 
 def step_list(trial_pk):
     import sys
@@ -791,6 +841,9 @@ def step_5(request, trial_pk):
 
         if form.is_valid():
             form.save()
+
+            ct.outdated = is_outdate(ct)
+            ct.save()
             return HttpResponseRedirect(reverse('step_5',args=[trial_pk]))
     else:
         form = RecruitmentForm(instance=ct,

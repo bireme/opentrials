@@ -67,6 +67,7 @@
       line-height: 200%;
       margin-right: 14pt;
     }
+
 </style>
 {% endblock %}
 
@@ -84,6 +85,12 @@
 
     <span class="label">{% trans 'Registration Date:' %}</span>
     <span class="value">{{ fossil_created }}</span>
+
+    {% if object.outdated %}
+        <h2 class="outdated_text">
+            <img src={{outdated_flag}} />{% trans 'Outdated trial' %}
+        </h2>
+    {% endif %}
 
     <h3>{% trans 'Study Type' %}:</h3>
         {% if object.is_observational %}
