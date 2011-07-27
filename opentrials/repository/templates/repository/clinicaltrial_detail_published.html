@@ -349,6 +349,14 @@
             {% endif %}
         </li>
         <li>
+            <span class="label">{% trans 'Planned Date of Last Enrollment' %}:</span>
+            {% if object.enrollment_end_actual %}
+                <span class="value">{{ object.enrollment_end_actual }}</span>
+            {% else %}
+                <span class="value">{{ object.enrollment_end_planned }}</span>
+            {% endif %}
+        </li>
+        <li>
             <table class="dataTable">
                 <tr>
                     <th>{% trans 'Target Sample Size' %}:</th>
