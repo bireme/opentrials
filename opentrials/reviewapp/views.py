@@ -491,11 +491,15 @@ def change_submission_status(request, submission_pk, status):
     if status == 'approved':
         subject = _('Submission Approved')
         message =  MailMessage.objects.filter(label='approved')[0].description
+        if '%s' in message:
+            message = message % ct.public_title
         send_opentrials_email(subject, message, recipient)
     
     elif status == 'resubmit':
         subject = _('Submission Not Approved ')
         message =  MailMessage.objects.filter(label='resubmitted')[0].description
+        if '%s' in message:
+            message = message % ct.public_title
         send_opentrials_email(subject, message, recipient)
 
     return HttpResponseRedirect(reverse('repository.views.trial_view', args=[submission.trial.id]))

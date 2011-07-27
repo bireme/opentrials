@@ -152,7 +152,9 @@ def edit_trial_index(request, trial_pk):
         
         recepient = ct.submission.creator.email
         subject = _('Trial Submitted')
-        message =  MailMessage.objects.filter(label='submitted')[0].description
+        message =  MailMessage.objects.get(label='submitted').description        
+        if '%s' in message:
+            message = message % ct.public_title
         send_opentrials_email(subject, message, recepient)
 
         sub.save()

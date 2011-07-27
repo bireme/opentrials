@@ -39,7 +39,9 @@ class Command(BaseCommand):
 
             if send_email:
                 subject = "Trial enrollment date checker"
-                message = MailMessage.objects.filter(label='outdated')[0].description
+                message = MailMessage.objects.get(label='outdated').description
+                if '%s' in message:
+                    message = message % ct.public_title
                 send_opentrials_email(subject, message, ct.submission.creator.email)
             
             outdated = self.is_outdate(ct, 15)
