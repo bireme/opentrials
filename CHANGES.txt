@@ -2,13 +2,20 @@
 
 - Bug Fix:
     search by rebec identification number (primary/trial id)
+    Showing enrollment end date
+    Ages limit now checked
+    Some fields now are required
     'Continue' button for register a trial now working in both 
   languages
 - Registry table now in ascending order
 - 'View all' button in home
 - Send e-mail after each trial change
-- Not yet submitted trial can be visualized by the admin
-
+- Not yet submitted trials can now be visualized by the admin
+- Flagged outdated trials
+- Showing last update date
+- Contacts may be excluded
+- Full date entry for enrollment date
+- Enrollment date and enrollment status coherence now checked
 
 #What is new in v1.0.23
 
