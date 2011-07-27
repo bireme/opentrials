@@ -130,7 +130,7 @@ INSTALLED_APPS = (
     'flatpages_polyglot',
     'south',
     'fossil',
-    #'rosetta',
+    'rosetta',
 
     #'debug_toolbar',
     'compressor',

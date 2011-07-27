@@ -17,7 +17,7 @@ FIELDS = {
         'scientific_title': {'required': True, 'type': 'text', 'poly': True},
         'scientific_acronym': {'required': False, 'type': 'text', 'poly': True},
         'scientific_acronym_expansion': {'required': False, 'type': 'text', 'poly': True},
-        'public_title': {'required': False, 'type': 'text', 'poly': True},
+        'public_title': {'required': True, 'type': 'text', 'poly': True},
         'acronym': {'required': False, 'type': 'text', 'poly': True},
         'acronym_expansion': {'required': False, 'type': 'text', 'poly': True},
         'utrn_number': {'required': True, 'type': 'text', 'poly': False},
