@@ -44,13 +44,12 @@ class Command(BaseCommand):
                     message = message % ct.public_title
                 send_opentrials_email(subject, message, ct.submission.creator.email)
             
-            outdated = self.is_outdate(ct, 15)
+            outdated = self.is_outdate(ct, 15) #15 days of tolerance
 
             if outdated != ct.outdated:
                 ct.outdated = outdated
-                ct.save()
+                ct.save(dont_update=True)
 
-    
     def handle(self, **kwargs):
         self.job()
 

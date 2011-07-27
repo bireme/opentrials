@@ -84,7 +84,9 @@
     <h2>{{ scientific_title }}</h2>
 
     <span class="label">{% trans 'Registration Date:' %}</span>
-    <span class="value">{{ fossil_created }}</span>
+    <span class="value">{{ fossil_created }}</span> <br/>
+    <span class="label">{% trans 'Last Update:' %}</span>
+    <span class="value">{{ object.updated }}</span>
 
     {% if object.outdated %}
         <h2 class="outdated_text">
