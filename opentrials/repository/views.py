@@ -568,7 +568,7 @@ def contacts(request):
                                   choices=choices,
                                   )
     
-    form = ContactsForm
+    form = ContactsForm()
 
     return render_to_response('repository/delete_contact.html',
                              { 'form':form,
