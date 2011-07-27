@@ -20,7 +20,11 @@
                 <td class="trial_content" width="20%"><a href="{% url repository.trial_registered ct.trial_id %}">{{ ct.trial_id }}</a></td>
             </tr>
             <tr>
-                <td class="trial_title" rowspan="2"><a href="{% url repository.trial_registered ct.trial_id %}">{{ ct.main_title }}</a></td>
+                <td class="trial_title" rowspan="2">
+                {% if ct.outdated %}
+                    <img src={{outdated_flag}} />
+                {% endif %}
+                <a href="{% url repository.trial_registered ct.trial_id %}">{{ ct.main_title }}</a></td>
                 <td class="trial_label">{% trans 'Recruitment Status' %}</td>
                 <td class="trial_content">{{ ct.rec_status }}</td>
             </tr>

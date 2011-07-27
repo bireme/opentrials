@@ -437,7 +437,7 @@ class ClinicalTrial(TrialRegistrationDataSetModel):
         ordering = ['-updated',]
 
     def save(self, *args, **kwargs):
-        if self.id:
+        if self.id and not kwargs.get('dont_update',False):
             self.updated = datetime.now()
         if self.status == choices.PUBLISHED_STATUS and not self.trial_id:
             # assigns the date of publication/registration

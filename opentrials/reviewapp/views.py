@@ -74,12 +74,13 @@ def index(request):
             flat_trans = page
 
     fossil_trials = ClinicalTrial.fossils.published().order_by('-creation')[:3]
-
     clinical_trials = fossil_trials.proxies(language=request.trials_language)
-
+    
     return render_to_response('reviewapp/index.html', {
                           'clinical_trials': clinical_trials,
-                          'page': flat_trans,},
+                          'page': flat_trans,
+                          'outdated_flag':settings.MEDIA_URL + 'media/img/admin/icon_error.gif',
+                          },
                           context_instance=RequestContext(request))
 
 @login_required
@@ -90,6 +91,7 @@ def dashboard(request):
     if request.user.has_perm('reviewapp.review'):
         submissions_to_review = Submission.objects.filter(status=STATUS_PENDING).order_by('-updated')
         submissions = Submission.objects.filter(Q(status='draft') | Q(status='resubmit')).order_by('-updated')[:25]
+    outdated_flag = settings.MEDIA_URL + 'media/img/admin/icon_error.gif'
 
     return render_to_response('reviewapp/dashboard.html', locals(),
                                context_instance=RequestContext(request))
@@ -489,11 +491,15 @@ def change_submission_status(request, submission_pk, status):
     if status == 'approved':
         subject = _('Submission Approved')
         message =  MailMessage.objects.filter(label='approved')[0].description
+        if '%s' in message:
+            message = message % ct.public_title
         send_opentrials_email(subject, message, recipient)
     
     elif status == 'resubmit':
         subject = _('Submission Not Approved ')
         message =  MailMessage.objects.filter(label='resubmitted')[0].description
+        if '%s' in message:
+            message = message % ct.public_title
         send_opentrials_email(subject, message, recipient)
 
     return HttpResponseRedirect(reverse('repository.views.trial_view', args=[submission.trial.id]))
