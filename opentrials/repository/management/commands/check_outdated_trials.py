@@ -43,12 +43,21 @@ class Command(BaseCommand):
                 if '%s' in message:
                     message = message % ct.public_title
                 send_opentrials_email(subject, message, ct.submission.creator.email)
-            
+
             outdated = self.is_outdate(ct, 15) #15 days of tolerance
 
             if outdated != ct.outdated:
                 ct.outdated = outdated
                 ct.save(dont_update=True)
+            
+            if ct.recruitment_status and ct.recruitment_status.id == 2 and ct.enrollment_end_actual is not None:
+                t_delta = datetime.today() - datetime.strptime(ct.enrollment_end_actual, "%Y-%m-%d")
+                if t_delta > 0 and not t_delta.days % 180:
+                    subject = "Trial enrollment date checker"
+                    message = MailMessage.objects.get(label='enrollment_end').description
+                    if '%s' in message:
+                        message = message % ct.public_title
+                    send_opentrials_email(subject, message, ct.submission.creator.email)
 
     def handle(self, **kwargs):
         self.job()
