@@ -31,6 +31,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+DATABASE_OPTIONS = {"init_command": "SET storage_engine=INNODB"}
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -112,6 +114,8 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.markup',
     'django.contrib.messages',
+    'django.contrib.syndication',
+    
     'deleting',
     'vocabulary',
     'repository',
@@ -126,7 +130,7 @@ INSTALLED_APPS = (
     'flatpages_polyglot',
     'south',
     'fossil',
-    #'rosetta',
+    'rosetta',
 
     #'debug_toolbar',
     'compressor',
@@ -238,4 +242,4 @@ if os.path.exists(ATTACHMENTS_PATH):
 else:
     raise IOError('Attachments folder "%s" not found' % (ATTACHMENTS_PATH))
 
-OPENTRIALS_VERSION = 'v1.0.24rc2' # this should be the deployed tag number
+OPENTRIALS_VERSION = 'v1.1.0rc1' # this should be the deployed tag number

@@ -30,6 +30,7 @@ from polyglot.multilingual_forms import MultilingualModelCheckboxField
 from trial_validation import trial_validator, TRIAL_FORMS
 
 from datetime import date
+import datetime
 import re
 
 import settings
@@ -180,7 +181,8 @@ class TrialIdentificationForm(ReviewModelForm):
 
     title = _('Trial Identification')
     # TRDS 10a
-    scientific_title = forms.CharField(label=_('Scientific Title'),
+    scientific_title = forms.CharField(required=True,
+                                       label=_('Scientific Title'),
                                        max_length=2000,
                                        widget=forms.Textarea)
     # TRDS 10b
@@ -188,7 +190,7 @@ class TrialIdentificationForm(ReviewModelForm):
                                          label=_('Scientific Acronym'),
                                          max_length=255)
     # TRDS 9a
-    public_title = forms.CharField(required=False,
+    public_title = forms.CharField(required=True,
                                    label=_('Public Title'),
                                    max_length=2000,
                                    widget=forms.Textarea)
@@ -232,7 +234,7 @@ def make_secondary_sponsor_form(user=None):
         class Meta:
             model = TrialSecondarySponsor
             queryset = TrialSecondarySponsor.objects.all()
-            min_required = 0
+            min_required = 1
             polyglot = False
             fields = ['institution','relation']
 
@@ -249,7 +251,7 @@ def make_support_source_form(user=None):
         class Meta:
             model = TrialSupportSource
             queryset = TrialSupportSource.objects.all()
-            min_required = 0
+            min_required = 1
             polyglot = False
             fields = ['institution','relation']
 
@@ -365,17 +367,18 @@ class RecruitmentForm(ReviewModelForm):
             model=CountryCode,
             label_field='description',
             )
-
+    from django.forms.extras.widgets import SelectDateWidget
     # TRDS 16a,b (type_enrollment: anticipated or actual)
-    enrollment_start_date = forms.Field( # yyyy-mm or yyyy-mm-dd
+    year = date.today().year
+    enrollment_start_date = forms.DateField(
         required=False,
-        label=_('Planned Date of First Enrollment'),
-        widget=YearMonthWidget,
+        label=_('Date of First Enrollment'),
+        widget=SelectDateWidget(years=[y for y in range(year-1, year+50)]),
         )
-    enrollment_end_date = forms.Field( # yyyy-mm or yyyy-mm-dd
+    enrollment_end_date = forms.DateField(
         required=False,
-        label=_('Planned Date of Last Enrollment'),
-        widget=YearMonthWidget,
+        label=_('Date of Last Enrollment'),
+        widget=SelectDateWidget(years=[y for y in range(year-1, year+50)]),
         )
 
     # TRDS 17
@@ -403,15 +406,21 @@ class RecruitmentForm(ReviewModelForm):
                                         max_length=8000, widget=forms.Textarea,)
 
     def clean_enrollment_end_date(self):
+        if self.cleaned_data.get('recruitment_status'):
+            if self.cleaned_data.get('recruitment_status').label == unicode(_('recruiting')):
+                if self.cleaned_data.get('enrollment_end_date', None) is None:
+                    raise forms.ValidationError(_("Recruiting trial requires an end date"))
+
         end_date = self.cleaned_data.get('enrollment_end_date')
-        if end_date is False:
-            raise forms.ValidationError(_("You must assign both Year and Month"))
         return end_date
 
     def clean_enrollment_start_date(self):
+        if self.cleaned_data.get('recruitment_status'):
+            if self.cleaned_data.get('recruitment_status').label == unicode(_('recruiting')):
+                if self.cleaned_data.get('enrollment_start_date', None) is None:
+                    raise forms.ValidationError(_("Recruiting trial requires a start date"))
+
         start_date = self.cleaned_data.get('enrollment_start_date')
-        if start_date is False:
-            raise forms.ValidationError(_("You must assign both Year and Month"))
         return start_date
 
     def __init__(self, *args, **kwargs):
@@ -423,29 +432,41 @@ class RecruitmentForm(ReviewModelForm):
         super(RecruitmentForm, self).__init__(*args, **kwargs)
 
         if self.instance:
-            self.fields['enrollment_start_date'].initial = self.instance.enrollment_start_planned or\
-                                                           self.instance.enrollment_start_actual
-            self.fields['enrollment_end_date'].initial = self.instance.enrollment_end_planned or\
-                                                         self.instance.enrollment_end_actual
+
+            date = self.instance.enrollment_start_planned or self.instance.enrollment_start_actual
+            if date:
+                date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
+                self.fields['enrollment_start_date'].initial = date
+            
+            date = self.instance.enrollment_end_planned or self.instance.enrollment_end_actual
+            if date:
+                date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
+                self.fields['enrollment_end_date'].initial = date
 
     def save(self, commit=True, *args, **kwargs):
+
         obj = super(RecruitmentForm, self).save(commit=True, *args, **kwargs)
+        
 
         obj.enrollment_start_planned = None
         obj.enrollment_start_actual = None
+
         if self.cleaned_data.get('enrollment_start_date', None):
-            if self.cleaned_data['enrollment_start_date'] > date.today():
-                obj.enrollment_start_planned = self.cleaned_data['enrollment_start_date']
+
+            start_date = self.cleaned_data['enrollment_start_date']
+            if start_date > date.today():
+                obj.enrollment_start_planned = start_date
             else:
-                obj.enrollment_start_actual = self.cleaned_data['enrollment_start_date']
+                obj.enrollment_start_actual = start_date
 
         obj.enrollment_end_planned = None
         obj.enrollment_end_actual = None
         if self.cleaned_data.get('enrollment_end_date', None):
-            if self.cleaned_data['enrollment_end_date'] > date.today():
-                obj.enrollment_end_planned = self.cleaned_data['enrollment_end_date']
+            end_date = self.cleaned_data['enrollment_end_date']
+            if end_date > date.today():
+                obj.enrollment_end_planned = end_date
             else:
-                obj.enrollment_end_actual = self.cleaned_data['enrollment_end_date']
+                obj.enrollment_end_actual = end_date
 
         if commit:
             obj.save()
@@ -454,16 +475,34 @@ class RecruitmentForm(ReviewModelForm):
 
     def clean(self):
         cleaned_data = super(RecruitmentForm, self).clean()
-
         start_date = cleaned_data.get('enrollment_start_date')
         end_date = cleaned_data.get('enrollment_end_date')
         if end_date and start_date and start_date > end_date:
             raise forms.ValidationError(_("Invalid date"))
+        
+        if cleaned_data.get('agemin_unit') != '-' and cleaned_data.get('agemax_unit') != '-':
+            min_age = normalize_age(cleaned_data.get('agemin_value'), cleaned_data.get('agemin_unit'))
+            max_age = normalize_age(cleaned_data.get('agemax_value'), cleaned_data.get('agemax_unit'))
+            if max_age < min_age:
+                raise forms.ValidationError(_("Invalid age limits"))
 
         return cleaned_data
 
 trial_validator.register(TRIAL_FORMS[4], [RecruitmentForm])
 
+def normalize_age(age, unity):
+    "convert ages to hours"
+    if unity == 'Y':
+        return age*365*24
+    elif unity == 'M':
+        return age*30*24
+    elif unity == 'W':
+        return age*7*24
+    elif unity == 'D':
+        return age*24
+    elif unity == 'H':
+        return age
+    return age
 ### step_6 #####################################################################
 class StudyTypeForm(ReviewModelForm):
     class Meta:
@@ -574,7 +613,7 @@ class SecondaryOutcomesForm(ReviewModelForm):
     class Meta:
         model = Outcome
         queryset = Outcome.objects.filter(interest=choices.OUTCOME_INTEREST[1][0])
-        min_required = 0
+        min_required = 1
         polyglot = True
         polyglot_fields = ['description']
         fields = ['description','interest']
@@ -591,7 +630,7 @@ def make_public_contact_form(user=None):
         class Meta:
             model = ClinicalTrial
             queryset = PublicContact.objects.all()
-            min_required = 0
+            min_required = 1
             polyglot = False
             fields = ['contact']
 
@@ -664,6 +703,7 @@ trial_validator.register(TRIAL_FORMS[7], [make_public_contact_form(),make_scient
 #step8-partof
 # http://www.b-list.org/weblog/2008/nov/09/dynamic-forms/
 # http://stackoverflow.com/questions/622982/django-passing-custom-form-parameters-to-formset
+
 def make_contact_form(user,formset_prefix=''):
     class ContactForm(ReviewModelForm):
         class Meta:
@@ -696,7 +736,6 @@ def make_contact_form(user,formset_prefix=''):
 
         zip = forms.CharField(label=_('Postal Code'), max_length=50)
         telephone = forms.CharField(label=_('Telephone'), max_length=255)
-
     return ContactForm
 
 class NewInstitution(ReviewModelForm):

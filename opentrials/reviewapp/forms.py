@@ -146,12 +146,12 @@ class UserProfileForm(forms.ModelForm):
 class UploadTrialForm(forms.Form):
     submission_file = forms.Field(widget=forms.FileInput, required=True)
 
-    #xml_format = 'opentrials'
-    xml_format = 'ictrp'
+    xml_format = 'opentrials'
+    #xml_format = 'ictrp'
 
     def clean_submission_file(self):
         submission_file = self.cleaned_data['submission_file']
-
+        submission_file.seek(0)
         # This is a XML file
         try:
             self.tree = etree.parse(submission_file)
@@ -159,6 +159,7 @@ class UploadTrialForm(forms.Form):
             raise forms.ValidationError(_('Invalid XML syntax.'))
 
         # Runs DTD validation for OpenTrials XML
+        #import pdb; pdb.set_trace()
         try:
             validate_xml(self.tree)
             self.xml_format = 'opentrials'
