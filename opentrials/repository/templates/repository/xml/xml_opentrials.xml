@@ -33,7 +33,7 @@
             {% endfor %}
 
             {%  for source in object.support_sources %}
-            <source_support country_code="{{ source.institution.country.label }}" type="{{ sponsor.institution.i_type.label|prep_label_for_xml }}">
+            <source_support country_code="{{ source.institution.country.label }}" type="{{ source.institution.i_type.label|prep_label_for_xml }}">
                 <name>{{ source.institution.name }}</name>
                 <address>{{ source.institution.address }}</address>
             </source_support>
