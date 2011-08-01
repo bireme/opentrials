@@ -34,6 +34,9 @@
                 <tr class="{% cycle 'even' 'odd' %}">
                     <td class="date">{{ submission.created|date:'Y/m/d H:i' }}</td>
                     <td class="title">
+                        {% if submission.outdated %}
+                            <img class="NewsTitle" src={{outdated_flag}} />
+                        {% endif %}
                         <a href="{% url repository.edittrial submission.trial.pk %}">{{ submission.short_title }}</a>
                         {% if user == submission.creator and submission.status == 'approved' %}
                         ( <a href="{% url reviewapp.submission_edit_published submission.pk %}">

@@ -54,6 +54,9 @@
             {% for ct in latest_recruiting_trials %}
                 <li><a class="NewsTitle" href="{% url repository.trial_registered ct.trial_id %}">{{ ct.short_title }}</a></li>
             {% endfor %}
+            <form name="more_trials" action="./rg/recruiting" >
+              <input type="submit" value="{% trans 'View all' %}" />
+            </form>
         {% else %}
             <li>{% trans 'No clinical trials recruiting.' %}</li>
         {% endif %}

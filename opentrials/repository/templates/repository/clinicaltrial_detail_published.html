@@ -67,6 +67,7 @@
       line-height: 200%;
       margin-right: 14pt;
     }
+
 </style>
 {% endblock %}
 
@@ -83,7 +84,15 @@
     <h2>{{ scientific_title }}</h2>
 
     <span class="label">{% trans 'Registration Date:' %}</span>
-    <span class="value">{{ fossil_created }}</span>
+    <span class="value">{{ fossil_created }}</span> <br/>
+    <span class="label">{% trans 'Last Update:' %}</span>
+    <span class="value">{{ object.updated }}</span>
+
+    {% if object.outdated %}
+        <h2 class="outdated_text">
+            <img src={{outdated_flag}} />{% trans 'Outdated trial' %}
+        </h2>
+    {% endif %}
 
     <h3>{% trans 'Study Type' %}:</h3>
         {% if object.is_observational %}
@@ -337,6 +346,14 @@
                 <span class="value">{{ object.enrollment_start_actual }}</span>
             {% else %}
                 <span class="value">{{ object.enrollment_start_planned }}</span>
+            {% endif %}
+        </li>
+        <li>
+            <span class="label">{% trans 'Planned Date of Last Enrollment' %}:</span>
+            {% if object.enrollment_end_actual %}
+                <span class="value">{{ object.enrollment_end_actual }}</span>
+            {% else %}
+                <span class="value">{{ object.enrollment_end_planned }}</span>
             {% endif %}
         </li>
         <li>

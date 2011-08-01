@@ -12,6 +12,9 @@ DATABASES = {
         'NAME':'opentrials',
         'USER':'tester',
         'PASSWORD':'puffpuff',
+        'OPTIONS': {
+            'init_command': 'SET storage_engine=INNODB',
+        },
     }
 }
 

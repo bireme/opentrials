@@ -14,13 +14,13 @@ def get_latest_recruiting_trials(parser, token):
 
 class LatestRecruitingTrialsNode(Node):
     def __init__(self, num, varname):
-        self.num = num
+        self.num = int(num)
         self.varname = varname
     
     def render(self, context):
         request = context['request']
 
-        object_list = ClinicalTrial.fossils.recruiting()
+        object_list = ClinicalTrial.fossils.recruiting()[:self.num]
         object_list = object_list.proxies(language=request.LANGUAGE_CODE)
 
         """
