@@ -105,7 +105,7 @@
             <target_size value="{{ object.target_sample_size }}"></target_size>
         </recruitment>
 
-        <study expanded_access_program="{{ object.expanded_access_program|default_if_none:null }}"
+        <study expanded_access_program="{{ object.expanded_access_program }}"
                number_of_arms="{{ object.number_of_arms }}">
             <study_design>{{ object.study_design }}</study_design>
             {% if object.study_type %}<type value="{{ object.study_type.label|prep_label_for_xml }}"></type>{% endif %}
@@ -120,7 +120,7 @@
             {% for outcome in object.primary_outcomes %}
             <primary_outcome value="{{ outcome.description }}">
                 {% for outcome_trans in outcome.translations %}
-                <text_translation value="{{ outcome_trans.description }}" lang="{{ outcome_trans.language }}"></text_translation>
+                <outcome_translation value="{{ outcome_trans.description }}" lang="{{ outcome_trans.language }}"></outcome_translation>
                 {% endfor %}
             </primary_outcome>
             {% endfor %}
@@ -128,7 +128,7 @@
             {% for outcome in object.secondary_outcomes %}
             <secondary_outcome value="{{ outcome.description }}">
                 {% for outcome_trans in outcome.translations %}
-                <text_translation value="{{ outcome_trans.description }}" lang="{{ outcome_trans.language }}"></text_translation>
+                <outcome_translation value="{{ outcome_trans.description }}" lang="{{ outcome_trans.language }}"></outcome_translation>
                 {% endfor %}
             </secondary_outcome>
             {% endfor %}

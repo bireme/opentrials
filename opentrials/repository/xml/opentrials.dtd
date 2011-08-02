@@ -162,6 +162,7 @@ Comments:
             <!ATTLIST secondary_outcome value CDATA #REQUIRED>
         <!ELEMENT outcome_translation EMPTY>
             <!ATTLIST outcome_translation value CDATA #REQUIRED>
+            <!ATTLIST outcome_translation lang CDATA #REQUIRED>
 
     <!-- formset 8/9 -->
     <!ELEMENT contacts (person+, public_contact+, scientific_contact+, site_contact*)>
