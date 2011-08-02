@@ -492,14 +492,15 @@ def change_submission_status(request, submission_pk, status):
         subject = _('Submission Approved')
         message =  MailMessage.objects.filter(label='approved')[0].description
         if '%s' in message:
-            message = message % ct.public_title
+            import pdb; pdb.set_trace()
+            message = message % submission.title
         send_opentrials_email(subject, message, recipient)
     
     elif status == 'resubmit':
         subject = _('Submission Not Approved ')
         message =  MailMessage.objects.filter(label='resubmitted')[0].description
         if '%s' in message:
-            message = message % ct.public_title
+            message = message % submission.title
         send_opentrials_email(subject, message, recipient)
 
     return HttpResponseRedirect(reverse('repository.views.trial_view', args=[submission.trial.id]))

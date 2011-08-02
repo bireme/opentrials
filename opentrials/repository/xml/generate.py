@@ -40,7 +40,6 @@ def xml_ictrp(fossils, **kwargs):
 
 def xml_opentrials(trial, persons, include_translations=True, **kwargs):
     """Generates an Opentrials XML for a given Clinical Trial and returns as string."""
-
     for translation in trial.translations:
         translation['primary_outcomes'] = []
         for outcome in trial.primary_outcomes:

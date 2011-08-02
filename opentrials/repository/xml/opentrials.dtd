@@ -75,7 +75,6 @@ Comments:
 
     <!-- formset 3/9 -->
     <!ELEMENT health_conditions (hc_code*, keyword*, freetext?)>
-        <!ELEMENT freetext (#PCDATA)>                               <!--TRDS 12a, 13a (0..1)-->
         <!ELEMENT hc_code (text, text_translation*)>                <!--TRDS 12b (0..*)-->
             <!ATTLIST hc_code
                 code CDATA #IMPLIED
@@ -89,6 +88,7 @@ Comments:
         <!ELEMENT text (#PCDATA)>
         <!ELEMENT text_translation (#PCDATA)>
             <!ATTLIST text_translation lang CDATA #REQUIRED>
+        <!ELEMENT freetext (#PCDATA)>                               <!--TRDS 12a, 13a (0..1)-->
 
     <!-- formset 4/9 -->
     <!ELEMENT interventions (i_code*, keyword*, freetext?)>           <!--TRDS 12a (0..1)-->
@@ -137,7 +137,7 @@ Comments:
     <!ELEMENT study (study_design, type?, phase, purpose, intervention_assignment,
                 masking, allocation)>
         <!ATTLIST study
-            expanded_access_program (yes|no) #IMPLIED
+            expanded_access_program (True|False|null) #IMPLIED
             number_of_arms NMTOKEN #IMPLIED
         >
         <!ELEMENT study_design (#PCDATA)>
@@ -162,6 +162,7 @@ Comments:
             <!ATTLIST secondary_outcome value CDATA #REQUIRED>
         <!ELEMENT outcome_translation EMPTY>
             <!ATTLIST outcome_translation value CDATA #REQUIRED>
+            <!ATTLIST outcome_translation lang CDATA #REQUIRED>
 
     <!-- formset 8/9 -->
     <!ELEMENT contacts (person+, public_contact+, scientific_contact+, site_contact*)>

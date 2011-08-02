@@ -11,7 +11,7 @@ such as those from Vocabulary application.
 
 <!-- TRDS 12: health condition attributes -->
 <!ENTITY % vocabulary.options
-    "decs|icd10|other">
+    "decs|icd-10|other">
 
 <!-- TRDS 13: intervention descriptor attributes -->
 <!-- attribute options cannot contain slashes "/" -->
@@ -32,13 +32,13 @@ such as those from Vocabulary application.
     "diagnostic|etiological|prognostic|prevention|treatment|other">
 
 <!ENTITY % assignment.options
-    "single-group|parallel|cross-over|factorial|other">
+    "null|single-group|parallel|cross-over|factorial|other">
 
 <!ENTITY % masking.options
-    "open|single-blind|double-blind|triple-blind">
+    "null|open|single-blind|double-blind|triple-blind">
 
 <!ENTITY % allocation.options
-    "non-randomized-controlled|randomized-controlled|single-arm-study">
+    "null|non-randomized-controlled|randomized-controlled|single-arm-study">
 
 <!-- TRDS 15c -->
 <!ENTITY % phase.options

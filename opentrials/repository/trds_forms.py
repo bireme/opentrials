@@ -208,7 +208,7 @@ class TrialIdentificationForm(ReviewModelForm):
 class SecondaryIdForm(ReviewModelForm):
     class Meta:
         queryset = TrialNumber.objects.all()
-        min_required = 0
+        min_required = 1
         polyglot = False
     title = _('Secondary Identifying Numbers')
     # this is just to inherit the custom _html_output and as_table methods
@@ -371,7 +371,7 @@ class RecruitmentForm(ReviewModelForm):
     # TRDS 16a,b (type_enrollment: anticipated or actual)
     year = date.today().year
     enrollment_start_date = forms.DateField(
-        required=False,
+        required=True,
         label=_('Date of First Enrollment'),
         widget=SelectDateWidget(years=[y for y in range(year-1, year+50)]),
         )

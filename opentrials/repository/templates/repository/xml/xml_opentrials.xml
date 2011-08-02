@@ -33,7 +33,7 @@
             {% endfor %}
 
             {%  for source in object.support_sources %}
-            <source_support country_code="{{ source.institution.country.label }}" type="{{ sponsor.institution.i_type.label|prep_label_for_xml }}">
+            <source_support country_code="{{ source.institution.country.label }}" type="{{ source.institution.i_type.label|prep_label_for_xml }}">
                 <name>{{ source.institution.name }}</name>
                 <address>{{ source.institution.address }}</address>
             </source_support>
@@ -105,7 +105,7 @@
             <target_size value="{{ object.target_sample_size }}"></target_size>
         </recruitment>
 
-        <study expanded_access_program="{{ object.expanded_access_program|default_if_none:0|yesno }}"
+        <study expanded_access_program="{{ object.expanded_access_program }}"
                number_of_arms="{{ object.number_of_arms }}">
             <study_design>{{ object.study_design }}</study_design>
             {% if object.study_type %}<type value="{{ object.study_type.label|prep_label_for_xml }}"></type>{% endif %}
