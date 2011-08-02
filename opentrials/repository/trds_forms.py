@@ -371,7 +371,7 @@ class RecruitmentForm(ReviewModelForm):
     # TRDS 16a,b (type_enrollment: anticipated or actual)
     year = date.today().year
     enrollment_start_date = forms.DateField(
-        required=False,
+        required=True,
         label=_('Date of First Enrollment'),
         widget=SelectDateWidget(years=[y for y in range(year-1, year+50)]),
         )
