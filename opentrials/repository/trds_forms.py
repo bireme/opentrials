@@ -208,7 +208,7 @@ class TrialIdentificationForm(ReviewModelForm):
 class SecondaryIdForm(ReviewModelForm):
     class Meta:
         queryset = TrialNumber.objects.all()
-        min_required = 0
+        min_required = 1
         polyglot = False
     title = _('Secondary Identifying Numbers')
     # this is just to inherit the custom _html_output and as_table methods
