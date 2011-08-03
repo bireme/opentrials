@@ -364,36 +364,33 @@ def upload_trial(request):
 
                 session_key = 'parsed-trials-'+datetime.now().strftime('%Y%m%d%H%M%S')
                 request.session[session_key] = [item for item in parsed_trials]
-
-                formset = ImportParsedFormset(initial=[{
+                data = [{
                     'trial_id': item[0]['trial_id'],
                     'description': item[0]['public_title'],
                     'already_exists': bool(item[1]),
                     'to_import': not item[1],
-                    } for item in parsed_trials])
-
+                    } for item in parsed_trials]
+                formset = ImportParsedFormset(initial=data)
 
         elif 'session_key' in request.POST:
             
             formset = ImportParsedFormset(request.POST)
+
             if formset.is_valid():
                 marked_trials = [form.cleaned_data['trial_id'] for form in formset.forms
-                        if form.cleaned_data['to_import']]
+                            if form.cleaned_data['to_import']]
 
                 parsed_trials = request.session[request.POST['session_key']]
                 parsed_trials = [t for t in parsed_trials if t[0]['trial_id'] in marked_trials]
 
-                imported_trials = formset.import_file(parsed_trials, request.user)
+                if parsed_trials:
+                    imported_trials = formset.import_file(parsed_trials, request.user)
+                    messages.info(request, _('XML files imported with success!'))
 
-                messages.info(request, _('XML files imported with success!'))
-
-                # Slear parsed trials from session
+                # Clear parsed trials from session
                 request.session.pop(request.POST['session_key'])
-
                 return HttpResponseRedirect(reverse('reviewapp.uploadtrial'))
-            
-            else:
-                form = UploadTrialForm()
+
     else:
         form = UploadTrialForm()
     

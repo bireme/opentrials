@@ -183,7 +183,7 @@ class UploadTrialForm(forms.Form):
 class ImportParsedForm(forms.Form):
     trial_id = forms.Field(widget=forms.HiddenInput)
     description = forms.Field(widget=forms.HiddenInput, required=False)
-    to_import = forms.BooleanField(required=False)
+    to_import = forms.BooleanField(label='', required=False)
 
 class BaseImportParsedFormset(BaseFormSet):
     def import_file(self, parsed_trials, user):
