@@ -23,8 +23,6 @@ def validate_xml(filename_or_xmltree, dtd=DEFAULT_DTD):
     valid = dtd.validate(tree)
 
     if not valid:
-        print dtd.error_log.filter_from_errors()
-        import pdb; pdb.set_trace()
         raise InvalidOpenTrialsXML(dtd.error_log.filter_from_errors())
 
     return True
