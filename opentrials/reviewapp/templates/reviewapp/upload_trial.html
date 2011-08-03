@@ -12,7 +12,7 @@
 {% block body %}
 
 <p>
-    {% trans "Here you can upload an XML on ICTRP or OpenTrials XML standards to submit your clinical trial." %}
+    {% trans "Here you can upload an XML on OpenTrials XML standards to submit your clinical trial." %}
 </p>
 
 {{ form.non_field_errors }}
@@ -27,14 +27,15 @@
     </div>
 
     <fieldset>
-        <legend>{% trans "The following trials has found in the uploaded file. Mark to import." %}</legend>
+        <legend>{% trans "The following trials has found in the uploaded file." %}</legend>
         
         {{ formset.management_form }}
         <input type="hidden" name="session_key" value="{{ session_key }}"/>
 
         {% for form in formset.forms %}
-            <div class="importing-{% if form.already_exists.value %}exists{% else %}new{% endif %}">{{ form.to_import }} {{ form.initial.trial_id }} - {{ form.initial.description }}
+            <div class="importing-{% if form.already_exists.value %}exists{% else %}new{% endif %}">{{ form.as_table }} {{ form.initial.trial_id }} - {{ form.initial.description }}
                 ({% if form.initial.already_exists %}{% trans "Existing" %}{% else %}{% trans "New" %}{% endif %})
+
             </div>
         {% endfor %}
 
