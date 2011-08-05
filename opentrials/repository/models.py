@@ -157,11 +157,38 @@ class TrialsFossilManager(FossilManager):
                     self.indexed(display='True', secondary_ids__icontains=q).filter(is_most_recent=True) |\
                     self.indexed(display='True', trial_id__icontains=q).filter(is_most_recent=True)
 
+    def published_advanced(self, q=None, is_most_recent=True, **kwargs):
+        '''
+        Provides advanced search features in PublishedTrial objects by 
+        using haystack as a search engine backend interface.
+
+        Strings passed as the ``q`` arg, will be matched against a general 
+        free-text index, the ``is_most_recent`` indicates if you want recent
+        or previous revisions and ``kwargs`` are optional filtering keys.
+        '''
+        from haystack.query import SearchQuerySet
+
+        hstack_qs = SearchQuerySet().filter(is_most_recent=is_most_recent)
+
+        if q:            
+            hstack_qs = hstack_qs.filter(text=q)
+        
+        if kwargs:
+            for k,v in kwargs.items():
+                filters = {k:v}                
+                hstack_qs = hstack_qs.filter(**filters)
+        
+        fossil_qs = self.get_query_set()
+        pks = [qs_item.pk for qs_item in hstack_qs]
+        
+        return fossil_qs.filter(pk__in=pks)
+
     def archived(self):
         return self.indexed(display='True').filter(is_most_recent=False)
 
     def proxies(self, language=None):
         return self.get_query_set().proxies(language=language)
+
 
 class PublishedTrial(Fossil):
     class Meta:

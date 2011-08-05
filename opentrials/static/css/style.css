@@ -161,7 +161,7 @@ blockquote {
 .loginOption LI, .userData_block LI {
     line-height: 90%;
 }
-.loginOption UL A, .userData_block LI A {
+.loginOption UL A, .userData_block LI A, .search A {
     font-size: 80%;
     color: #333;
     text-decoration: none;
@@ -261,6 +261,10 @@ blockquote {
 }
 .search .submit:hover {
     xbackground: url(../images/submit_searchHover.gif) no-repeat;
+}
+
+.search a {
+    float: right;
 }
 .languages {
     float: right;

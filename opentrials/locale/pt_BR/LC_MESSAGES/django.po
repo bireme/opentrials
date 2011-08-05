@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-11 13:53-0300\n"
-"PO-Revision-Date: 2011-05-10 10:51\n"
-"Last-Translator:   <>\n"
+"POT-Creation-Date: 2011-08-05 16:32-0300\n"
+"PO-Revision-Date: 2011-08-05 16:15\n"
+"Last-Translator:   <gustavo.fonseca@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Translated-Using: django-rosetta 0.6.0\n"
+"X-Translated-Using: django-rosetta 0.6.2\n"
 
 #: assistance/models.py:11
 msgid "Categories"
@@ -29,10 +29,13 @@ msgstr "Rótulo"
 
 #: assistance/models.py:24 assistance/models.py:41
 #: repository/templates/repository/clinicaltrial_list.html:18
+#: repository/templates/repository/clinicaltrial_list.html:75
 #: repository/templates/repository/clinicaltrial_recruiting.html:18
 #: reviewapp/models.py:256 reviewapp/models.py:274
+#: reviewapp/templates/reviewapp/all_submission_list.html:21
 #: reviewapp/templates/reviewapp/dashboard.html:28
-#: reviewapp/templates/reviewapp/dashboard.html:59
+#: reviewapp/templates/reviewapp/dashboard.html:62
+#: reviewapp/templates/reviewapp/dashboard.html:110
 #: reviewapp/templates/reviewapp/review_list.html:21
 msgid "Title"
 msgstr "Título"
@@ -90,6 +93,7 @@ msgstr "Usuário"
 #: repository/templates/repository/clinicaltrial_detail_user.html:78
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:78
 #: repository/templates/repository/trial_index.html:8
+#: reviewapp/templates/reviewapp/all_submission_list.html:10
 #: reviewapp/templates/reviewapp/dashboard.html:21
 #: reviewapp/templates/reviewapp/new_submission.html:7
 #: reviewapp/templates/reviewapp/review_list.html:10
@@ -176,23 +180,31 @@ msgstr "Sobre"
 msgid "Help"
 msgstr "Ajuda"
 
-#: custom/ecgovbr/templates/base.html:127 repository/models.py:731
-#: repository/models.py:744 repository/models.py:757
-#: repository/trds_forms.py:604 repository/trds_forms.py:608
-#: repository/trds_forms.py:627 repository/trds_forms.py:631
-#: repository/trds_forms.py:653 repository/trds_forms.py:657
-#: templates/base.html:110
+#: custom/ecgovbr/templates/base.html:127 repository/models.py:762
+#: repository/models.py:775 repository/models.py:788
+#: repository/trds_forms.py:643 repository/trds_forms.py:647
+#: repository/trds_forms.py:666 repository/trds_forms.py:670
+#: repository/trds_forms.py:692 repository/trds_forms.py:696
+#: repository/views.py:576 templates/base.html:110
 msgid "Contact"
 msgstr "Contato"
 
-#: custom/ecgovbr/templates/base.html:133 templates/base.html:116
+#: custom/ecgovbr/templates/base.html:133
+#: repository/templates/repository/advanced_search.html:29
+#: templates/base.html:116
 msgid "Search trials"
 msgstr "Buscar ensaios"
 
-#: custom/ecgovbr/templates/base.html:142
+#: custom/ecgovbr/templates/base.html:135
+#: repository/templates/repository/advanced_search.html:9
+#: templates/base.html:117
+msgid "Advanced Search"
+msgstr "Busca Avançada"
+
+#: custom/ecgovbr/templates/base.html:143
 #: repository/templates/repository/clinicaltrial_detail_user.html:75
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:75
-#: templates/base.html:127
+#: templates/base.html:128
 msgid "Home"
 msgstr "Home"
 
@@ -202,7 +214,6 @@ msgid "Scoreboard"
 msgstr "Números do site"
 
 #: custom/ecgovbr/templates/base_columns.html:23
-#: templates/base_columns.html:24
 #, python-format
 msgid ""
 "\n"
@@ -214,8 +225,12 @@ msgid_plural ""
 "                <p>There are <span>%(registered)s</span> registered trials.</"
 "p>\n"
 "              "
-msgstr[0] "<p>Existe <span>%(registered)s</span> ensaio registrado.</p>"
-msgstr[1] "<p>Existem <span>%(registered)s</span> ensaios registrados.</p>"
+msgstr[0] ""
+"\n"
+"<p>Existe <span>%(registered)s</span> ensaio registrado.</p>"
+msgstr[1] ""
+"\n"
+"<p>Existem <span>%(registered)s</span> ensaios registrados.</p>"
 
 #: custom/ecgovbr/templates/base_columns.html:29
 #: templates/base_columns.html:30
@@ -224,7 +239,6 @@ msgid "No clinical trials registered."
 msgstr "Nenhum ensaio clínico foi registrado."
 
 #: custom/ecgovbr/templates/base_columns.html:33
-#: templates/base_columns.html:34
 #, python-format
 msgid ""
 "\n"
@@ -236,8 +250,12 @@ msgid_plural ""
 "                <p>There are <span>%(recruiting)s</span> recruiting trial.</"
 "p>\n"
 "              "
-msgstr[0] "<p>Existe <span>%(recruiting)s</span> ensaio recrutandos.</p>"
-msgstr[1] "<p>Existem <span>%(recruiting)s</span> ensaios recrutando.</p>"
+msgstr[0] ""
+"\n"
+"<p>Existe <span>%(recruiting)s</span> ensaio recrutandos.</p>"
+msgstr[1] ""
+"\n"
+"<p>Existem <span>%(recruiting)s</span> ensaios recrutando.</p>"
 
 #: custom/ecgovbr/templates/base_columns.html:48
 #: reviewapp/templates/reviewapp/index.html:21 templates/base_columns.html:50
@@ -461,8 +479,8 @@ msgstr "É o mais recente"
 msgid "Revision Sequential"
 msgstr ""
 
-#: repository/admin.py:173 repository/models.py:420 repository/models.py:732
-#: repository/models.py:745 repository/models.py:758
+#: repository/admin.py:173 repository/models.py:451 repository/models.py:763
+#: repository/models.py:776 repository/models.py:789
 #: repository/templates/repository/clinicaltrial_detail_user.html:110
 #: repository/templates/repository/clinicaltrial_detail_user.html:119
 #: repository/templates/repository/clinicaltrial_detail_user.html:132
@@ -574,7 +592,7 @@ msgstr "horas"
 msgid "Health Condition or Problem Studied"
 msgstr "Condições de saúde ou problemas estudados"
 
-#: repository/choices.py:56 repository/trds_forms.py:515
+#: repository/choices.py:56 repository/trds_forms.py:554
 msgid "Intervention"
 msgstr "Intervenções"
 
@@ -594,38 +612,43 @@ msgstr "DeCS: Descritores em Ciências da Saúde"
 msgid "ICD-10: International Classification of Diseases (10th. rev.)"
 msgstr "CID-10: Classificação Internacional de Doenças"
 
-#: repository/models.py:168
+#: repository/feed.py:6 repository/feed.py:16
+#, fuzzy
+msgid "Last published trials"
+msgstr "Últimos ensaios publicados"
+
+#: repository/models.py:196
 msgid "Published Trial"
 msgstr "Ensaio Publicado"
 
-#: repository/models.py:169
+#: repository/models.py:197
 msgid "Published Trials"
 msgstr "Ensaios Publicados"
 
-#: repository/models.py:283
+#: repository/models.py:311
 #: repository/templates/repository/clinicaltrial_list.html:19
 #: repository/templates/repository/clinicaltrial_recruiting.html:19
-#: reviewapp/templates/reviewapp/index.html:55
+#: reviewapp/templates/reviewapp/index.html:59
 msgid "Primary Id Number"
 msgstr "Identificador primário"
 
-#: repository/models.py:286
-#: repository/templates/repository/clinicaltrial_list.html:28
+#: repository/models.py:314
+#: repository/templates/repository/clinicaltrial_list.html:32
 #: repository/templates/repository/clinicaltrial_recruiting.html:28
 #: tickets/models.py:14 tickets/templates/tickets/new_iteration.html:25
 msgid "Date of Registration"
 msgstr "Data de registro"
 
-#: repository/models.py:290
-#: repository/templates/repository/clinicaltrial_detail_published.html:125
+#: repository/models.py:318
+#: repository/templates/repository/clinicaltrial_detail_published.html:134
 #: repository/templates/repository/clinicaltrial_detail_user.html:200
 #: reviewapp/forms.py:63
 msgid "UTN Number"
 msgstr "Número do UTN"
 
-#: repository/models.py:294 repository/models.py:615 repository/trds.py:15
-#: repository/trds_forms.py:183
-#: repository/templates/repository/clinicaltrial_detail_published.html:111
+#: repository/models.py:322 repository/models.py:646 repository/trds.py:15
+#: repository/trds_forms.py:185
+#: repository/templates/repository/clinicaltrial_detail_published.html:120
 #: repository/templates/repository/clinicaltrial_detail_user.html:179
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:85
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:156
@@ -633,21 +656,21 @@ msgstr "Número do UTN"
 msgid "Scientific Title"
 msgstr "Título científico"
 
-#: repository/models.py:297 repository/models.py:617
-#: repository/trds_forms.py:188
-#: repository/templates/repository/clinicaltrial_detail_published.html:141
+#: repository/models.py:325 repository/models.py:648
+#: repository/trds_forms.py:190
+#: repository/templates/repository/clinicaltrial_detail_published.html:150
 #: repository/templates/repository/clinicaltrial_detail_user.html:223
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:110
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:196
 msgid "Scientific Acronym"
 msgstr "Acrônimo científico"
 
-#: repository/models.py:300 repository/models.py:619
+#: repository/models.py:328 repository/models.py:650
 msgid "Scientific Acronym Expansion"
 msgstr "Expansão do acrônimo científico"
 
-#: repository/models.py:304 repository/trds.py:10 repository/trds_forms.py:228
-#: repository/templates/repository/clinicaltrial_detail_published.html:181
+#: repository/models.py:332 repository/trds.py:10 repository/trds_forms.py:230
+#: repository/templates/repository/clinicaltrial_detail_published.html:190
 #: repository/templates/repository/clinicaltrial_detail_user.html:285
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:150
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:258
@@ -655,84 +678,84 @@ msgstr "Expansão do acrônimo científico"
 msgid "Primary Sponsor"
 msgstr "Patrocinador primário"
 
-#: repository/models.py:316 repository/models.py:621 repository/trds.py:14
-#: repository/trds_forms.py:192
-#: repository/templates/repository/clinicaltrial_detail_published.html:129
+#: repository/models.py:344 repository/models.py:652 repository/trds.py:14
+#: repository/trds_forms.py:194
+#: repository/templates/repository/clinicaltrial_detail_published.html:138
 #: repository/templates/repository/clinicaltrial_detail_user.html:204
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:98
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:177
 msgid "Public Title"
 msgstr "Título público"
 
-#: repository/models.py:319 repository/models.py:623
-#: repository/trds_forms.py:196
+#: repository/models.py:347 repository/models.py:654
+#: repository/trds_forms.py:198
 msgid "Acronym"
 msgstr "Acrônimo público"
 
-#: repository/models.py:322 repository/models.py:625
+#: repository/models.py:350 repository/models.py:656
 msgid "Acronym Expansion"
 msgstr "Expansão do acrônimo"
 
-#: repository/models.py:325 repository/models.py:627
+#: repository/models.py:353 repository/models.py:658
 msgid "Health Condition(s)"
 msgstr "Condições de saúde"
 
-#: repository/models.py:328 repository/models.py:629
-#: repository/trds_forms.py:325 repository/trds_forms.py:329
-#: repository/trds_forms.py:331
+#: repository/models.py:356 repository/models.py:660
+#: repository/trds_forms.py:327 repository/trds_forms.py:331
+#: repository/trds_forms.py:333
 msgid "Intervention(s)"
 msgstr "Intervenções"
 
-#: repository/models.py:335 repository/models.py:631
-#: repository/trds_forms.py:385
-#: repository/templates/repository/clinicaltrial_detail_published.html:359
+#: repository/models.py:363 repository/models.py:662
+#: repository/trds_forms.py:388
+#: repository/templates/repository/clinicaltrial_detail_published.html:376
 #: repository/templates/repository/clinicaltrial_detail_user.html:521
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:314
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:487
 msgid "Inclusion Criteria"
 msgstr "Critérios de inclusão"
 
-#: repository/models.py:338
+#: repository/models.py:366
 msgid "Inclusion Gender"
 msgstr "Gênero de inclusão"
 
-#: repository/models.py:342 repository/trds_forms.py:392
-#: repository/templates/repository/clinicaltrial_detail_published.html:347
+#: repository/models.py:370 repository/trds_forms.py:395
+#: repository/templates/repository/clinicaltrial_detail_published.html:364
 #: repository/templates/repository/clinicaltrial_detail_user.html:508
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:302
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:474
 msgid "Inclusion Minimum Age"
 msgstr "Idade mínima para inclusão"
 
-#: repository/models.py:344 repository/trds_forms.py:394
+#: repository/models.py:372 repository/trds_forms.py:397
 msgid "Minimum Age Unit"
 msgstr "Unidade de tempo da idade mínima"
 
-#: repository/models.py:348 repository/trds_forms.py:397
-#: repository/templates/repository/clinicaltrial_detail_published.html:348
+#: repository/models.py:376 repository/trds_forms.py:400
+#: repository/templates/repository/clinicaltrial_detail_published.html:365
 #: repository/templates/repository/clinicaltrial_detail_user.html:509
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:303
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:475
 msgid "Inclusion Maximum Age"
 msgstr "Idade máxima para inclusão"
 
-#: repository/models.py:350 repository/trds_forms.py:399
+#: repository/models.py:378 repository/trds_forms.py:402
 msgid "Maximum Age Unit"
 msgstr "Unidade de tempo da idade máxima"
 
-#: repository/models.py:354 repository/models.py:633
-#: repository/trds_forms.py:402
-#: repository/templates/repository/clinicaltrial_detail_published.html:371
+#: repository/models.py:382 repository/models.py:664
+#: repository/trds_forms.py:405
+#: repository/templates/repository/clinicaltrial_detail_published.html:388
 #: repository/templates/repository/clinicaltrial_detail_user.html:541
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:326
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:507
 msgid "Exclusion Criteria"
 msgstr "Critérios de exclusão"
 
-#: repository/models.py:358 repository/trds_forms.py:483
-#: repository/trds_forms.py:512 repository/views.py:68
-#: repository/templates/repository/clinicaltrial_detail_published.html:88
-#: repository/templates/repository/clinicaltrial_detail_published.html:384
+#: repository/models.py:386 repository/trds_forms.py:522
+#: repository/trds_forms.py:551 repository/views.py:70
+#: repository/templates/repository/clinicaltrial_detail_published.html:97
+#: repository/templates/repository/clinicaltrial_detail_published.html:401
 #: repository/templates/repository/clinicaltrial_detail_user.html:156
 #: repository/templates/repository/clinicaltrial_detail_user.html:567
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:339
@@ -740,157 +763,163 @@ msgstr "Critérios de exclusão"
 msgid "Study Type"
 msgstr "Tipo do estudo"
 
-#: repository/models.py:361 repository/models.py:635
-#: repository/trds_forms.py:486
-#: repository/templates/repository/clinicaltrial_detail_published.html:387
+#: repository/models.py:389 repository/models.py:666
+#: repository/trds_forms.py:525
+#: repository/templates/repository/clinicaltrial_detail_published.html:404
 #: repository/templates/repository/clinicaltrial_detail_user.html:571
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:342
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:537
 msgid "Study Design"
 msgstr "Desenho do estudo"
 
-#: repository/models.py:365 repository/trds_forms.py:549
-#: repository/templates/repository/clinicaltrial_detail_published.html:401
+#: repository/models.py:393 repository/trds_forms.py:588
+#: repository/templates/repository/clinicaltrial_detail_published.html:418
 #: repository/templates/repository/clinicaltrial_detail_user.html:593
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:356
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:559
 msgid "Expanded access program"
 msgstr "Programa de acesso expandido"
 
-#: repository/models.py:368 repository/trds_forms.py:491
-#: repository/templates/repository/clinicaltrial_detail_published.html:402
+#: repository/models.py:396 repository/trds_forms.py:530
+#: repository/templates/repository/clinicaltrial_detail_published.html:419
 #: repository/templates/repository/clinicaltrial_detail_user.html:594
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:357
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:560
 msgid "Study Purpose"
 msgstr "Enfoque do estudo"
 
-#: repository/models.py:370 repository/trds_forms.py:498
-#: repository/templates/repository/clinicaltrial_detail_published.html:403
+#: repository/models.py:398 repository/trds_forms.py:537
+#: repository/templates/repository/clinicaltrial_detail_published.html:420
 #: repository/templates/repository/clinicaltrial_detail_user.html:595
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:358
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:561
 msgid "Intervention Assignment"
 msgstr "Desenho da intervenção"
 
-#: repository/models.py:371
-#: repository/templates/repository/clinicaltrial_detail_published.html:404
+#: repository/models.py:399
+#: repository/templates/repository/clinicaltrial_detail_published.html:421
 #: repository/templates/repository/clinicaltrial_detail_user.html:596
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:359
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:562
 msgid "Number of arms"
 msgstr "Número de braços"
 
-#: repository/models.py:373 repository/trds_forms.py:505
-#: repository/templates/repository/clinicaltrial_detail_published.html:405
+#: repository/models.py:401 repository/trds_forms.py:544
+#: repository/templates/repository/clinicaltrial_detail_published.html:422
 #: repository/templates/repository/clinicaltrial_detail_user.html:597
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:360
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:563
 msgid "Masking type"
 msgstr "Tipo de mascaramento"
 
-#: repository/models.py:375 repository/trds_forms.py:520
-#: repository/templates/repository/clinicaltrial_detail_published.html:406
+#: repository/models.py:403 repository/trds_forms.py:559
+#: repository/templates/repository/clinicaltrial_detail_published.html:423
 #: repository/templates/repository/clinicaltrial_detail_user.html:599
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:361
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:565
 msgid "Allocation type"
 msgstr "Tipo de alocação"
 
-#: repository/models.py:380 repository/trds_forms.py:528
-#: repository/templates/repository/clinicaltrial_detail_published.html:407
+#: repository/models.py:408 repository/trds_forms.py:567
+#: repository/templates/repository/clinicaltrial_detail_published.html:424
 #: repository/templates/repository/clinicaltrial_detail_user.html:600
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:362
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:566
 msgid "Study Phase"
 msgstr "Fase do estudo"
 
-#: repository/models.py:384 repository/trds_forms.py:372
-#: repository/templates/repository/clinicaltrial_detail_published.html:335
+#: repository/models.py:412
+#: repository/templates/repository/clinicaltrial_detail_published.html:344
 #: repository/templates/repository/clinicaltrial_detail_user.html:492
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:290
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:465
 msgid "Planned Date of First Enrollment"
 msgstr "Data prevista do primeiro recrutamento"
 
-#: repository/models.py:386
+#: repository/models.py:414
 msgid "Actual Date of First Enrollment"
 msgstr "Data real do primeiro recrutamento"
 
-#: repository/models.py:388 repository/trds_forms.py:377
+#: repository/models.py:416
+#: repository/templates/repository/clinicaltrial_detail_published.html:352
 #: repository/templates/repository/clinicaltrial_detail_user.html:498
 msgid "Planned Date of Last Enrollment"
 msgstr "Data prevista do último recrutamento"
 
-#: repository/models.py:390
+#: repository/models.py:418
 msgid "Actual Date of Last Enrollment"
 msgstr "Data real do último recrutamento"
 
-#: repository/models.py:393 repository/trds_forms.py:382
-#: repository/templates/repository/clinicaltrial_detail_published.html:345
+#: repository/models.py:421 repository/trds_forms.py:385
+#: repository/templates/repository/clinicaltrial_detail_published.html:362
 #: repository/templates/repository/clinicaltrial_detail_user.html:505
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:300
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:471
 msgid "Target Sample Size"
 msgstr "Tamanho da amostra alvo"
 
-#: repository/models.py:397
-#: repository/templates/repository/clinicaltrial_detail_published.html:323
+#: repository/models.py:425
+#: repository/templates/repository/clinicaltrial_detail_published.html:332
 #: repository/templates/repository/clinicaltrial_detail_user.html:478
-#: repository/templates/repository/clinicaltrial_list.html:24
+#: repository/templates/repository/clinicaltrial_list.html:28
 #: repository/templates/repository/clinicaltrial_recruiting.html:24
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:278
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:451
 msgid "Recruitment Status"
 msgstr "Situação de recrutamento"
 
-#: repository/models.py:409 repository/trds_forms.py:535
-#: repository/templates/repository/clinicaltrial_detail_published.html:100
+#: repository/models.py:428
+#, fuzzy
+msgid "Outdated Trial"
+msgstr "Ensaio Publicado"
+
+#: repository/models.py:440 repository/trds_forms.py:574
+#: repository/templates/repository/clinicaltrial_detail_published.html:109
 #: repository/templates/repository/clinicaltrial_detail_user.html:168
 msgid "Time Perspective"
 msgstr "Temporalidade"
 
-#: repository/models.py:413 repository/trds_forms.py:542
-#: repository/templates/repository/clinicaltrial_detail_published.html:104
+#: repository/models.py:444 repository/trds_forms.py:581
+#: repository/templates/repository/clinicaltrial_detail_published.html:113
 #: repository/templates/repository/clinicaltrial_detail_user.html:172
 msgid "Observational Study Design"
 msgstr "Desenho do estudo observacional"
 
-#: repository/models.py:418
+#: repository/models.py:449
 msgid "Last Update"
 msgstr "Atualização mais recente"
 
-#: repository/models.py:423
+#: repository/models.py:454
 msgid "Record Note (staff use only)"
 msgstr "Anotação do registro (uso interno apenas)"
 
-#: repository/models.py:426 reviewapp/forms.py:51 reviewapp/forms.py:64
+#: repository/models.py:457 reviewapp/forms.py:51 reviewapp/forms.py:64
 #: reviewapp/models.py:80
 msgid "Submission language"
 msgstr "Idioma da submissão"
 
-#: repository/models.py:512 tickets/templates/tickets/user_tickets.html:26
+#: repository/models.py:543 tickets/templates/tickets/user_tickets.html:26
 msgid "Updated"
 msgstr "Atualizado"
 
-#: repository/models.py:651
+#: repository/models.py:682
 #: repository/templates/admin/repository/publishedtrial/change_form.html:99
-#: repository/templates/repository/clinicaltrial_detail_published.html:170
+#: repository/templates/repository/clinicaltrial_detail_published.html:179
 #: repository/templates/repository/clinicaltrial_detail_user.html:269
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:139
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:242
 msgid "Issuing Authority"
 msgstr "Órgão emissor"
 
-#: repository/models.py:653
+#: repository/models.py:684
 msgid "Secondary Id Number"
 msgstr "Identificador secundário"
 
-#: repository/models.py:665 repository/models.py:676 repository/models.py:709
-#: repository/trds_forms.py:242 repository/trds_forms.py:259
-#: repository/trds_forms.py:687
-#: repository/templates/repository/clinicaltrial_detail_published.html:190
-#: repository/templates/repository/clinicaltrial_detail_published.html:204
+#: repository/models.py:696 repository/models.py:707 repository/models.py:740
+#: repository/trds_forms.py:244 repository/trds_forms.py:261
+#: repository/trds_forms.py:727
+#: repository/templates/repository/clinicaltrial_detail_published.html:199
+#: repository/templates/repository/clinicaltrial_detail_published.html:213
 #: repository/templates/repository/clinicaltrial_detail_user.html:295
 #: repository/templates/repository/clinicaltrial_detail_user.html:308
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:159
@@ -900,49 +929,49 @@ msgstr "Identificador secundário"
 msgid "Institution"
 msgstr "Instituição"
 
-#: repository/models.py:687
+#: repository/models.py:718
 #: repository/templates/admin/repository/publishedtrial/change_form.html:60
-#: reviewapp/forms.py:211 reviewapp/forms.py:214
+#: reviewapp/forms.py:212 reviewapp/forms.py:215
 msgid "Name"
 msgstr "Nome"
 
-#: repository/models.py:688
+#: repository/models.py:719
 msgid "Postal Address"
 msgstr "Endereço postal"
 
-#: repository/models.py:689 repository/models.py:713
-#: repository/trds_forms.py:695 repository/trds_forms.py:709
+#: repository/models.py:720 repository/models.py:744
+#: repository/trds_forms.py:735 repository/trds_forms.py:748
 #: repository/templates/admin/repository/publishedtrial/change_form.html:62
 #: reviewapp/forms.py:80 reviewapp/models.py:174
 msgid "Country"
 msgstr "País"
 
-#: repository/models.py:692 repository/trds_forms.py:715
+#: repository/models.py:723 repository/trds_forms.py:754
 msgid "Institution type"
 msgstr "TIpo de instituição"
 
-#: repository/models.py:704 repository/trds_forms.py:680
+#: repository/models.py:735 repository/trds_forms.py:720
 msgid "First Name"
 msgstr "Primeiro nome"
 
-#: repository/models.py:705 repository/trds_forms.py:681
+#: repository/models.py:736 repository/trds_forms.py:721
 msgid "Middle Name"
 msgstr "Nome do meio"
 
-#: repository/models.py:706 repository/trds_forms.py:682
+#: repository/models.py:737 repository/trds_forms.py:722
 msgid "Last Name"
 msgstr "Sobrenome"
 
-#: repository/models.py:707 repository/trds_forms.py:684
-#: reviewapp/forms.py:212 reviewapp/forms.py:215 reviewapp/forms.py:224
+#: repository/models.py:738 repository/trds_forms.py:724
+#: reviewapp/forms.py:213 reviewapp/forms.py:216 reviewapp/forms.py:225
 msgid "E-mail"
 msgstr "E-mail"
 
-#: repository/models.py:710 repository/trds_forms.py:690
+#: repository/models.py:741 repository/trds_forms.py:730
 #: repository/templates/admin/repository/publishedtrial/change_form.html:61
-#: repository/templates/repository/clinicaltrial_detail_published.html:476
-#: repository/templates/repository/clinicaltrial_detail_published.html:525
-#: repository/templates/repository/clinicaltrial_detail_published.html:574
+#: repository/templates/repository/clinicaltrial_detail_published.html:493
+#: repository/templates/repository/clinicaltrial_detail_published.html:542
+#: repository/templates/repository/clinicaltrial_detail_published.html:591
 #: repository/templates/repository/clinicaltrial_detail_user.html:689
 #: repository/templates/repository/clinicaltrial_detail_user.html:742
 #: repository/templates/repository/clinicaltrial_detail_user.html:797
@@ -955,10 +984,10 @@ msgstr "E-mail"
 msgid "Address"
 msgstr "Endereço"
 
-#: repository/models.py:711 repository/trds_forms.py:692
-#: repository/templates/repository/clinicaltrial_detail_published.html:480
-#: repository/templates/repository/clinicaltrial_detail_published.html:529
-#: repository/templates/repository/clinicaltrial_detail_published.html:578
+#: repository/models.py:742 repository/trds_forms.py:732
+#: repository/templates/repository/clinicaltrial_detail_published.html:497
+#: repository/templates/repository/clinicaltrial_detail_published.html:546
+#: repository/templates/repository/clinicaltrial_detail_published.html:595
 #: repository/templates/repository/clinicaltrial_detail_user.html:693
 #: repository/templates/repository/clinicaltrial_detail_user.html:747
 #: repository/templates/repository/clinicaltrial_detail_user.html:802
@@ -971,14 +1000,14 @@ msgstr "Endereço"
 msgid "City"
 msgstr "Cidade"
 
-#: repository/models.py:714 repository/trds_forms.py:697
+#: repository/models.py:745 repository/trds_forms.py:737
 msgid "Postal Code"
 msgstr "Código postal"
 
-#: repository/models.py:715 repository/trds_forms.py:698
-#: repository/templates/repository/clinicaltrial_detail_published.html:491
-#: repository/templates/repository/clinicaltrial_detail_published.html:539
-#: repository/templates/repository/clinicaltrial_detail_published.html:588
+#: repository/models.py:746 repository/trds_forms.py:738
+#: repository/templates/repository/clinicaltrial_detail_published.html:508
+#: repository/templates/repository/clinicaltrial_detail_published.html:556
+#: repository/templates/repository/clinicaltrial_detail_published.html:605
 #: repository/templates/repository/clinicaltrial_detail_user.html:705
 #: repository/templates/repository/clinicaltrial_detail_user.html:758
 #: repository/templates/repository/clinicaltrial_detail_user.html:813
@@ -991,41 +1020,41 @@ msgstr "Código postal"
 msgid "Telephone"
 msgstr "Fone"
 
-#: repository/models.py:773
+#: repository/models.py:804
 #: repository/templates/admin/repository/publishedtrial/change_form.html:95
 msgid "Interest"
 msgstr "Interesse"
 
-#: repository/models.py:776 repository/models.py:793
+#: repository/models.py:807 repository/models.py:824
 msgid "Outcome Description"
 msgstr "Descrição do desfecho"
 
-#: repository/models.py:801
+#: repository/models.py:832
 msgid "Trial Aspect"
 msgstr "Apecto do ensaio"
 
-#: repository/models.py:803
+#: repository/models.py:834
 #: repository/templates/admin/repository/publishedtrial/change_form.html:104
 msgid "Vocabulary"
 msgstr "Vocabulário"
 
-#: repository/models.py:805
+#: repository/models.py:836
 msgid "Version"
 msgstr "Versão"
 
-#: repository/models.py:806
+#: repository/models.py:837
 msgid "Level"
 msgstr "Nível"
 
-#: repository/models.py:808
+#: repository/models.py:839
 #: repository/templates/admin/repository/publishedtrial/change_form.html:105
 msgid "Code"
 msgstr "Código"
 
-#: repository/models.py:809 repository/models.py:826
+#: repository/models.py:840 repository/models.py:857
 #: repository/templates/admin/repository/publishedtrial/change_form.html:106
 #: reviewapp/models.py:228 reviewapp/models.py:257 reviewapp/models.py:275
-#: reviewapp/templates/reviewapp/dashboard.html:87
+#: reviewapp/templates/reviewapp/dashboard.html:90
 msgid "Text"
 msgstr "Texto"
 
@@ -1037,16 +1066,16 @@ msgstr "Registro primário e identificador do ensaio"
 msgid "Date of Registration in Primary Registry"
 msgstr "Data de registro no registro primário"
 
-#: repository/trds.py:8 repository/trds_forms.py:211
-#: repository/templates/repository/clinicaltrial_detail_published.html:165
+#: repository/trds.py:8 repository/trds_forms.py:213
+#: repository/templates/repository/clinicaltrial_detail_published.html:174
 #: repository/templates/repository/clinicaltrial_detail_user.html:263
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:134
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:236
 msgid "Secondary Identifying Numbers"
 msgstr "Identificadores secundários"
 
-#: repository/trds.py:9 repository/trds_forms.py:256
-#: repository/templates/repository/clinicaltrial_detail_published.html:200
+#: repository/trds.py:9 repository/trds_forms.py:258
+#: repository/templates/repository/clinicaltrial_detail_published.html:209
 #: repository/templates/repository/clinicaltrial_detail_user.html:304
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:169
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:277
@@ -1055,7 +1084,7 @@ msgstr "Fontes de apoio financeiro ou material"
 
 #: repository/trds.py:11
 #: repository/templates/admin/repository/publishedtrial/change_form.html:48
-#: repository/templates/repository/clinicaltrial_detail_published.html:186
+#: repository/templates/repository/clinicaltrial_detail_published.html:195
 #: repository/templates/repository/clinicaltrial_detail_user.html:291
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:155
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:264
@@ -1063,7 +1092,7 @@ msgid "Secondary Sponsors"
 msgstr "Patrocinadores secundários"
 
 #: repository/trds.py:12
-#: repository/templates/repository/clinicaltrial_detail_published.html:466
+#: repository/templates/repository/clinicaltrial_detail_published.html:483
 #: repository/templates/repository/clinicaltrial_detail_user.html:677
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:436
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:666
@@ -1071,7 +1100,7 @@ msgid "Contacts for Public Queries"
 msgstr "Contatos  para questões públicas"
 
 #: repository/trds.py:13
-#: repository/templates/repository/clinicaltrial_detail_published.html:515
+#: repository/templates/repository/clinicaltrial_detail_published.html:532
 #: repository/templates/repository/clinicaltrial_detail_user.html:731
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:485
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:720
@@ -1082,88 +1111,89 @@ msgstr "Contatos para questões científicas"
 msgid "Countries of Recruitment"
 msgstr "Países de recrutamento"
 
-#: repository/trds_forms.py:95 repository/trds_forms.py:102
+#: repository/trds_forms.py:96 repository/trds_forms.py:103
 msgid "Example"
 msgstr "Exemplo"
 
-#: repository/trds_forms.py:170
+#: repository/trds_forms.py:171
 msgid "Invalid format. Example: U1111-1111-1111"
 msgstr "Formato inválido. Exemplo: U1111-1111-1111"
 
-#: repository/trds_forms.py:181
-#: repository/templates/repository/clinicaltrial_detail_published.html:122
+#: repository/trds_forms.py:182
+#: repository/templates/repository/clinicaltrial_detail_published.html:131
 #: repository/templates/repository/clinicaltrial_detail_user.html:197
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:95
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:173
 msgid "Trial Identification"
 msgstr "Identificação do ensaio"
 
-#: repository/trds_forms.py:202 reviewapp/forms.py:70
+#: repository/trds_forms.py:204 reviewapp/forms.py:70
 msgid "UTN number already exists."
 msgstr "Número do UTN já existente"
 
-#: repository/trds_forms.py:239
+#: repository/trds_forms.py:241
 msgid "Secondary Sponsor(s)"
 msgstr "Patrocinadores secundários"
 
-#: repository/trds_forms.py:274
+#: repository/trds_forms.py:276
 msgid "Health Condition(s) or Problem(s) Studied"
 msgstr "Condições de saúde ou problemas estudados"
 
-#: repository/trds_forms.py:277
-#: repository/templates/repository/clinicaltrial_detail_published.html:216
+#: repository/trds_forms.py:279
+#: repository/templates/repository/clinicaltrial_detail_published.html:225
 #: repository/templates/repository/clinicaltrial_detail_user.html:326
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:185
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:299
 msgid "Health Condition(s) or Problem(s)"
 msgstr "Condições de saúde ou problemas"
 
-#: repository/trds_forms.py:288
-#: repository/templates/repository/clinicaltrial_detail_published.html:228
+#: repository/trds_forms.py:290
+#: repository/templates/repository/clinicaltrial_detail_published.html:237
 #: repository/templates/repository/clinicaltrial_detail_user.html:345
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:197
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:318
 msgid "General Descriptors for Health Condition(s)"
 msgstr "Descritores gerais para as condições de saúde"
 
-#: repository/trds_forms.py:301
-#: repository/templates/repository/clinicaltrial_detail_published.html:252
+#: repository/trds_forms.py:303
+#: repository/templates/repository/clinicaltrial_detail_published.html:261
 #: repository/templates/repository/clinicaltrial_detail_user.html:374
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:214
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:347
 msgid "Specific Descriptors for Health Condition(s)"
 msgstr "Descritores específicos para as condições de saúde"
 
-#: repository/trds_forms.py:318
-#: repository/templates/repository/clinicaltrial_detail_published.html:302
+#: repository/trds_forms.py:320
+#: repository/templates/repository/clinicaltrial_detail_published.html:311
 #: repository/templates/repository/clinicaltrial_detail_user.html:442
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:257
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:415
 msgid "Descriptor for Intervention(s)"
 msgstr "Descritores para as intervenções"
 
-#: repository/trds_forms.py:336
-#: repository/templates/repository/clinicaltrial_detail_published.html:280
+#: repository/trds_forms.py:338
+#: repository/templates/repository/clinicaltrial_detail_published.html:289
 #: repository/templates/repository/clinicaltrial_detail_user.html:411
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:235
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:384
 msgid "Intervention Code(s)"
 msgstr "Categorias das intervenções"
 
-#: repository/trds_forms.py:353
-#: repository/templates/repository/clinicaltrial_detail_published.html:320
+#: repository/trds_forms.py:355
+#: repository/templates/repository/clinicaltrial_detail_published.html:329
 #: repository/templates/repository/clinicaltrial_detail_user.html:475
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:275
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:448
 msgid "Recruitment"
 msgstr "Recrutamento"
 
-#: repository/trds_forms.py:357
+#: repository/trds_forms.py:359
 msgid "Study Status"
 msgstr "Situação do estudo"
 
-#: repository/trds_forms.py:364
-#: repository/templates/repository/clinicaltrial_detail_published.html:327
+#: repository/trds_forms.py:366
+#: repository/templates/repository/advanced_search.html:21
+#: repository/templates/repository/clinicaltrial_detail_published.html:336
 #: repository/templates/repository/clinicaltrial_detail_user.html:483
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:282
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:456
@@ -1171,41 +1201,64 @@ msgstr "Situação do estudo"
 msgid "Recruitment Country"
 msgstr "País de recrutamento"
 
-#: repository/trds_forms.py:389
-#: repository/templates/repository/clinicaltrial_detail_published.html:346
+#: repository/trds_forms.py:375
+msgid "Date of First Enrollment"
+msgstr "Data do primeiro recrutamento"
+
+#: repository/trds_forms.py:380
+#, fuzzy
+msgid "Date of Last Enrollment"
+msgstr "Data do primeiro recrutamento"
+
+#: repository/trds_forms.py:392
+#: repository/templates/repository/clinicaltrial_detail_published.html:363
 #: repository/templates/repository/clinicaltrial_detail_user.html:507
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:301
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:473
 msgid "Gender (inclusion sex)"
 msgstr "Gênero para inclusão"
 
-#: repository/trds_forms.py:408 repository/trds_forms.py:414
-msgid "You must assign both Year and Month"
-msgstr "Você deve selecionar o ano e o mês"
+#: repository/trds_forms.py:410 repository/trds_forms.py:419
+#, fuzzy
+msgid "recruiting"
+msgstr "Recrutando"
 
-#: repository/trds_forms.py:461
+#: repository/trds_forms.py:412
+msgid "Recruiting trial requires an end date"
+msgstr ""
+
+#: repository/trds_forms.py:421
+msgid "Recruiting trial requires a start date"
+msgstr ""
+
+#: repository/trds_forms.py:481
 msgid "Invalid date"
 msgstr "Data inválida"
 
-#: repository/trds_forms.py:516
+#: repository/trds_forms.py:487
+#, fuzzy
+msgid "Invalid age limits"
+msgstr "Data inválida"
+
+#: repository/trds_forms.py:555
 msgid "Observational"
 msgstr "Observacional"
 
-#: repository/trds_forms.py:552
+#: repository/trds_forms.py:591
 msgid "Unknown"
 msgstr "Desconhecido"
 
-#: repository/trds_forms.py:553
+#: repository/trds_forms.py:592
 msgid "Yes"
 msgstr "Sim"
 
-#: repository/trds_forms.py:554
+#: repository/trds_forms.py:593
 msgid "No"
 msgstr "Não"
 
-#: repository/trds_forms.py:569
+#: repository/trds_forms.py:608
 #: repository/templates/admin/repository/publishedtrial/change_form.html:38
-#: repository/templates/repository/clinicaltrial_detail_published.html:425
+#: repository/templates/repository/clinicaltrial_detail_published.html:442
 #: repository/templates/repository/clinicaltrial_detail_user.html:624
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:403
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:613
@@ -1213,9 +1266,9 @@ msgstr "Não"
 msgid "Primary Outcomes"
 msgstr "Desfechos primários"
 
-#: repository/trds_forms.py:582
+#: repository/trds_forms.py:621
 #: repository/templates/admin/repository/publishedtrial/change_form.html:40
-#: repository/templates/repository/clinicaltrial_detail_published.html:443
+#: repository/templates/repository/clinicaltrial_detail_published.html:460
 #: repository/templates/repository/clinicaltrial_detail_user.html:646
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:417
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:635
@@ -1223,117 +1276,132 @@ msgstr "Desfechos primários"
 msgid "Secondary Outcomes"
 msgstr "Desfechos secundários"
 
-#: repository/trds_forms.py:598
+#: repository/trds_forms.py:637
 msgid "Contact(s) for Public Queries"
 msgstr "Contatos para questões públicas"
 
-#: repository/trds_forms.py:599 repository/trds_forms.py:622
-#: repository/trds_forms.py:647
+#: repository/trds_forms.py:638 repository/trds_forms.py:661
+#: repository/trds_forms.py:686
 msgid "Relation"
 msgstr "Relação"
 
-#: repository/trds_forms.py:605 repository/trds_forms.py:609
-#: repository/trds_forms.py:628 repository/trds_forms.py:632
-#: repository/trds_forms.py:654 repository/trds_forms.py:658
+#: repository/trds_forms.py:644 repository/trds_forms.py:648
+#: repository/trds_forms.py:667 repository/trds_forms.py:671
+#: repository/trds_forms.py:693 repository/trds_forms.py:697
 msgid "New Contact"
 msgstr "Novo contato"
 
-#: repository/trds_forms.py:621
+#: repository/trds_forms.py:660
 msgid "Contact(s) for Scientific Queries"
 msgstr "Contatos para questões científicas"
 
-#: repository/trds_forms.py:646
-#: repository/templates/repository/clinicaltrial_detail_published.html:564
+#: repository/trds_forms.py:685
+#: repository/templates/repository/clinicaltrial_detail_published.html:581
 #: repository/templates/repository/clinicaltrial_detail_user.html:786
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:534
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:775
 msgid "Contact(s) for Site Queries"
 msgstr "Contatos para informação sobre os centros de pesquisa"
 
-#: repository/trds_forms.py:674
+#: repository/trds_forms.py:714
 msgid "Contact Type"
 msgstr "Tipo de Contato"
 
-#: repository/trds_forms.py:678
+#: repository/trds_forms.py:718
 msgid "New Contact(s)"
 msgstr "Cadastrar novos contatos"
 
-#: repository/trds_forms.py:706 repository/widgets.py:30
+#: repository/trds_forms.py:745 repository/widgets.py:30
 #: repository/templates/repository/step_2.html:5
 msgid "New Institution"
 msgstr "Nova instituição"
 
-#: repository/views.py:63
+#: repository/views.py:65
 msgid "Trial Identif."
 msgstr "Id. ensaio"
 
-#: repository/views.py:64
+#: repository/views.py:66
 msgid "Spons."
 msgstr "Patrocin."
 
-#: repository/views.py:65
+#: repository/views.py:67
 msgid "Health Cond."
 msgstr "Cond. saúde"
 
-#: repository/views.py:66
+#: repository/views.py:68
 msgid "Interv."
 msgstr "Interv."
 
-#: repository/views.py:67
+#: repository/views.py:69
 msgid "Recruit."
 msgstr "Recrutam."
 
-#: repository/views.py:69
-#: repository/templates/repository/clinicaltrial_detail_published.html:422
+#: repository/views.py:71
+#: repository/templates/repository/clinicaltrial_detail_published.html:439
 #: repository/templates/repository/clinicaltrial_detail_user.html:621
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:400
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:610
 msgid "Outcomes"
 msgstr "Desfechos"
 
-#: repository/views.py:70
-#: repository/templates/repository/clinicaltrial_detail_published.html:462
+#: repository/views.py:72
+#: repository/templates/repository/clinicaltrial_detail_published.html:479
 #: repository/templates/repository/clinicaltrial_detail_user.html:673
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:432
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:662
 msgid "Contacts"
 msgstr "Contatos"
 
-#: repository/views.py:71
+#: repository/views.py:73
 msgid "Attachs"
 msgstr "Anexos"
 
-#: repository/views.py:83
-msgid "This trial cannot be modified because it has already been approved."
+#: repository/views.py:107
+msgid "Edit Trial"
+msgstr ""
+
+#: repository/views.py:108
+#, fuzzy, python-format
+msgid "This trial cannot be modified because it has already been approved.%s"
 msgstr "Este ensaio não pode ser modificado, pois já foi aprovado."
 
-#: repository/views.py:89
+#: repository/views.py:114
 msgid "You cannot modify this trial because it is being revised."
 msgstr "Você não pode modificar esse ensaio porque ele está sendo revisado."
 
-#: repository/views.py:93
+#: repository/views.py:118
 msgid "Only the creator can modify a trial."
 msgstr "Apenas o criador pode modificar um ensaio."
 
-#: repository/views.py:154 repository/views.py:182
+#: repository/views.py:154
+#, fuzzy
+msgid "Trial Submitted"
+msgstr "Sumário do ensaio"
+
+#: repository/views.py:186 repository/views.py:214
 msgid "There are required fields missing."
 msgstr "Existem campos obrigatórios faltando."
 
-#: repository/views.py:158 repository/views.py:185
+#: repository/views.py:190 repository/views.py:217
 msgid "All required fields were filled."
 msgstr "Todos os campos obrigatórios foram preenchidos."
 
-#: repository/views.py:162 repository/views.py:188
+#: repository/views.py:194 repository/views.py:220
 msgid "All fields were filled."
 msgstr "Todos os campos foram preenchidos."
 
-#: repository/views.py:166 repository/views.py:179
+#: repository/views.py:198 repository/views.py:211
 msgid "There are fields with remarks."
 msgstr "Existem campos com observações."
 
-#: repository/views.py:169 repository/views.py:170 repository/views.py:191
+#: repository/views.py:201 repository/views.py:202 repository/views.py:223
 msgid "Error"
 msgstr "Erro"
+
+#: repository/views.py:584 repository/views.py:585
+#, fuzzy
+msgid "Delete Contact"
+msgstr "Novo contato"
 
 #: repository/templates/admin/repository/publishedtrial/change_form.html:22
 msgid "Set Display Off"
@@ -1373,7 +1441,9 @@ msgid "ID"
 msgstr "ID"
 
 #: repository/templates/admin/repository/publishedtrial/change_form.html:63
-#: reviewapp/templates/reviewapp/dashboard.html:60
+#: reviewapp/templates/reviewapp/all_submission_list.html:22
+#: reviewapp/templates/reviewapp/dashboard.html:63
+#: reviewapp/templates/reviewapp/dashboard.html:111
 #: reviewapp/templates/reviewapp/review_list.html:22
 msgid "Creator"
 msgstr "Criador"
@@ -1402,11 +1472,25 @@ msgstr "Submissão concluída"
 msgid "added."
 msgstr "adicionado."
 
+#: repository/templates/repository/advanced_search.html:5
+#: repository/templates/repository/clinicaltrial_list.html:5
+#: repository/templates/repository/clinicaltrial_recruiting.html:5
+msgid "Clinical Trials"
+msgstr "Ensaios Clínicos"
+
+#: repository/templates/repository/advanced_search.html:15
+msgid "Trials containing the terms"
+msgstr "Ensaios contendo os termos"
+
+#: repository/templates/repository/advanced_search.html:18
+msgid "Only trials recruiting"
+msgstr "Apenas ensaios clínicos recrutando"
+
 #: repository/templates/repository/attachments.html:14
 #: repository/templates/repository/clinicaltrial_detail_user.html:103
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:103
 #: repository/templates/repository/trial_form.html:17
-#: reviewapp/templates/reviewapp/dashboard.html:81
+#: reviewapp/templates/reviewapp/dashboard.html:84
 msgid "Remarks"
 msgstr "Observações"
 
@@ -1473,55 +1557,65 @@ msgstr ""
 msgid "Clinical Trial"
 msgstr "Ensaio Clínico"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:76
+#: repository/templates/repository/clinicaltrial_detail_published.html:77
 #: repository/templates/repository/clinicaltrial_list.html:9
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:76
 msgid "Registered Trials"
 msgstr "Ensaios Registrados"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:85
+#: repository/templates/repository/clinicaltrial_detail_published.html:86
 msgid "Registration Date:"
 msgstr "Data de registro:"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:90
+#: repository/templates/repository/clinicaltrial_detail_published.html:88
+#, fuzzy
+msgid "Last Update:"
+msgstr "Atualização mais recente"
+
+#: repository/templates/repository/clinicaltrial_detail_published.html:93
+#, fuzzy
+msgid "Outdated trial"
+msgstr "Enviar arquivo do ensaio"
+
+#: repository/templates/repository/clinicaltrial_detail_published.html:99
 #: repository/templates/repository/clinicaltrial_detail_user.html:158
 msgid "Observational Study"
 msgstr "Estudos Observacionais"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:92
+#: repository/templates/repository/clinicaltrial_detail_published.html:101
 #: repository/templates/repository/clinicaltrial_detail_user.html:160
 #, fuzzy
 msgid "Intervention Study"
 msgstr "Intervenções"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:97
+#: repository/templates/repository/clinicaltrial_detail_published.html:106
 #: repository/templates/repository/clinicaltrial_detail_user.html:165
 msgid "Observational Study Fields"
 msgstr "Campos de Estudos Observacionais"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:153
+#: repository/templates/repository/clinicaltrial_detail_published.html:162
 #: repository/templates/repository/clinicaltrial_detail_user.html:243
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:122
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:216
 msgid "Public Acronym"
 msgstr "Acrônimo público"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:178
+#: repository/templates/repository/clinicaltrial_detail_published.html:187
 #: repository/templates/repository/clinicaltrial_detail_user.html:282
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:147
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:255
 msgid "Sponsors"
 msgstr "Patrocinadores"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:213
+#: repository/templates/repository/clinicaltrial_detail_published.html:222
 #: repository/templates/repository/clinicaltrial_detail_user.html:322
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:182
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:295
 msgid "Health Conditions"
 msgstr "Condições de saúde"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:277
-#: repository/templates/repository/clinicaltrial_detail_published.html:290
+#: repository/templates/repository/clinicaltrial_detail_published.html:286
+#: repository/templates/repository/clinicaltrial_detail_published.html:299
 #: repository/templates/repository/clinicaltrial_detail_user.html:408
 #: repository/templates/repository/clinicaltrial_detail_user.html:422
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:232
@@ -1531,9 +1625,9 @@ msgstr "Condições de saúde"
 msgid "Interventions"
 msgstr "Intervenções"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:470
-#: repository/templates/repository/clinicaltrial_detail_published.html:519
-#: repository/templates/repository/clinicaltrial_detail_published.html:568
+#: repository/templates/repository/clinicaltrial_detail_published.html:487
+#: repository/templates/repository/clinicaltrial_detail_published.html:536
+#: repository/templates/repository/clinicaltrial_detail_published.html:585
 #: repository/templates/repository/clinicaltrial_detail_user.html:682
 #: repository/templates/repository/clinicaltrial_detail_user.html:735
 #: repository/templates/repository/clinicaltrial_detail_user.html:790
@@ -1546,9 +1640,9 @@ msgstr "Intervenções"
 msgid "Full Name"
 msgstr "Nome completo"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:485
-#: repository/templates/repository/clinicaltrial_detail_published.html:533
-#: repository/templates/repository/clinicaltrial_detail_published.html:582
+#: repository/templates/repository/clinicaltrial_detail_published.html:502
+#: repository/templates/repository/clinicaltrial_detail_published.html:550
+#: repository/templates/repository/clinicaltrial_detail_published.html:599
 #: repository/templates/repository/clinicaltrial_detail_user.html:698
 #: repository/templates/repository/clinicaltrial_detail_user.html:752
 #: repository/templates/repository/clinicaltrial_detail_user.html:806
@@ -1561,9 +1655,9 @@ msgstr "Nome completo"
 msgid "Zip Code"
 msgstr "CEP"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:499
-#: repository/templates/repository/clinicaltrial_detail_published.html:547
-#: repository/templates/repository/clinicaltrial_detail_published.html:596
+#: repository/templates/repository/clinicaltrial_detail_published.html:516
+#: repository/templates/repository/clinicaltrial_detail_published.html:564
+#: repository/templates/repository/clinicaltrial_detail_published.html:613
 #: repository/templates/repository/clinicaltrial_detail_user.html:714
 #: repository/templates/repository/clinicaltrial_detail_user.html:768
 #: repository/templates/repository/clinicaltrial_detail_user.html:822
@@ -1576,29 +1670,29 @@ msgstr "CEP"
 msgid "Affiliation"
 msgstr "Filiação"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:614
+#: repository/templates/repository/clinicaltrial_detail_published.html:631
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:584
 msgid "Previous Revision"
 msgstr "Revisão Anterior"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:620
+#: repository/templates/repository/clinicaltrial_detail_published.html:637
 #: repository/templates/repository/clinicaltrial_detail_user.html:844
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:833
 #: reviewapp/models.py:178
 msgid "Attachments"
 msgstr "Anexos"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:645
+#: repository/templates/repository/clinicaltrial_detail_published.html:662
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:591
 msgid "Additional Links"
 msgstr "Links adicionais"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:648
+#: repository/templates/repository/clinicaltrial_detail_published.html:665
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:594
 msgid "Download as ICTRP format"
 msgstr "Download no formato ICTRP"
 
-#: repository/templates/repository/clinicaltrial_detail_published.html:651
+#: repository/templates/repository/clinicaltrial_detail_published.html:668
 msgid "Download as OpenTrials XML format"
 msgstr "Download no formato XML OpenTrials"
 
@@ -1625,6 +1719,7 @@ msgid "Open (awaiting revision)"
 msgstr "Aberto (aguardando revisão)"
 
 #: repository/templates/repository/clinicaltrial_detail_user.html:114
+#: repository/templates/repository/delete_contact.html:144
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:114
 #: reviewapp/templates/reviewapp/submission_list.html:78
 msgid "Delete"
@@ -1687,18 +1782,18 @@ msgstr "Privado"
 msgid "Public"
 msgstr "Público"
 
-#: repository/templates/repository/clinicaltrial_list.html:5
-#: repository/templates/repository/clinicaltrial_recruiting.html:5
-msgid "Clinical Trials"
-msgstr "Ensaios Clínicos"
-
-#: repository/templates/repository/clinicaltrial_list.html:60
+#: repository/templates/repository/clinicaltrial_list.html:64
 msgid "No clinical trial has been found with the term:"
 msgstr "Nenhum ensaio clínico foi encontrado com o termo:"
 
-#: repository/templates/repository/clinicaltrial_list.html:62
+#: repository/templates/repository/clinicaltrial_list.html:66
 msgid "No clinical trial has been registered."
 msgstr "Nenhum ensaio clínico foi registrado."
+
+#: repository/templates/repository/clinicaltrial_list.html:71
+#, fuzzy
+msgid "Not yet submitted trials"
+msgstr "Últimos ensaios publicados"
 
 #: repository/templates/repository/step_3.html:19
 #: repository/templates/repository/step_4.html:12
@@ -1707,6 +1802,11 @@ msgstr "Buscar termos"
 
 #: repository/templates/repository/step_8.html:7
 msgid "Save new contact"
+msgstr "Salvar novo contato"
+
+#: repository/templates/repository/step_8.html:8
+#, fuzzy
+msgid "Remove some contact..."
 msgstr "Salvar novo contato"
 
 #: repository/templates/repository/submission_step.html:21
@@ -1803,29 +1903,33 @@ msgstr "Perfil de usuário"
 msgid "Aditional info for profile"
 msgstr "Informações adicionais para o perfil"
 
-#: reviewapp/forms.py:158
+#: reviewapp/forms.py:159
 msgid "Invalid XML syntax."
-msgstr ""
+msgstr "Sintaxe inválida de XML."
 
-#: reviewapp/forms.py:202 reviewapp/templates/reviewapp/open_remark.html:7
+#: reviewapp/forms.py:170
+msgid "Invalid file or not detected format."
+msgstr "Arquivo inválido ou formato não identificado."
+
+#: reviewapp/forms.py:203 reviewapp/templates/reviewapp/open_remark.html:7
 msgid "Open a new Remark"
 msgstr "Abrir uma nova observação"
 
-#: reviewapp/forms.py:216 tickets/models.py:70 tickets/views.py:138
+#: reviewapp/forms.py:217 tickets/models.py:70 tickets/views.py:138
 #: tickets/templates/tickets/ticket_detail.html:22
 #: tickets/templates/tickets/user_tickets.html:24
 msgid "Subject"
 msgstr "Assunto"
 
-#: reviewapp/forms.py:217
+#: reviewapp/forms.py:218
 msgid "Message"
 msgstr "Mensagem"
 
-#: reviewapp/forms.py:220
+#: reviewapp/forms.py:221
 msgid "I read and agree to all terms above"
 msgstr "Eu li e concordo com os termos acima"
 
-#: reviewapp/forms.py:221
+#: reviewapp/forms.py:222
 msgid "You must agree to the terms"
 msgstr "Você deve concordar com os termos"
 
@@ -1873,7 +1977,7 @@ msgstr "Abrir"
 msgid "Acknowledged"
 msgstr "Reconhecido"
 
-#: reviewapp/models.py:227 reviewapp/templates/reviewapp/dashboard.html:86
+#: reviewapp/models.py:227 reviewapp/templates/reviewapp/dashboard.html:89
 #: tickets/models.py:16 tickets/templates/tickets/new_iteration.html:29
 #: tickets/templates/tickets/ticket_detail.html:20
 #: tickets/templates/tickets/user_tickets.html:22
@@ -1888,25 +1992,55 @@ msgstr "Pendente"
 msgid "Published"
 msgstr "Publicado"
 
-#: reviewapp/views.py:146
+#: reviewapp/views.py:178
 msgid "The submission was deleted successfully."
 msgstr "A submissão foi excluída com sucesso."
 
-#: reviewapp/views.py:148
+#: reviewapp/views.py:180
 msgid "This submission can not be deleted."
 msgstr "Esta submissão não pode ser excluída."
 
-#: reviewapp/views.py:354
-msgid "XML files imported with success!"
-msgstr ""
+#: reviewapp/views.py:277 reviewapp/templates/reviewapp/terms_of_use.html:29
+msgid "Continue"
+msgstr "Continuar"
 
-#: reviewapp/views.py:474
+#: reviewapp/views.py:388
+msgid "XML files imported with success!"
+msgstr "Arquivo XML importado com sucesso!"
+
+#: reviewapp/views.py:492
+#, fuzzy
+msgid "Submission Approved"
+msgstr "Submissão concluída"
+
+#: reviewapp/views.py:499
+#, fuzzy
+msgid "Submission Not Approved "
+msgstr "Submissão concluída"
+
+#: reviewapp/views.py:529
 msgid "Message sent successfully."
 msgstr "Mensagem enviada com sucesso."
 
-#: reviewapp/views.py:477
+#: reviewapp/views.py:532
 msgid "Please fill out all fields correctly."
 msgstr "Por favor, preencha todos os campos corretamente."
+
+#: reviewapp/templates/reviewapp/all_submission_list.html:15
+#: reviewapp/templates/reviewapp/dashboard.html:57
+#: reviewapp/templates/reviewapp/review_list.html:15
+msgid "Submissions to Review"
+msgstr "Submissões para revisar"
+
+#: reviewapp/templates/reviewapp/all_submission_list.html:20
+#: reviewapp/templates/reviewapp/dashboard.html:27
+#: reviewapp/templates/reviewapp/dashboard.html:61
+#: reviewapp/templates/reviewapp/dashboard.html:87
+#: reviewapp/templates/reviewapp/dashboard.html:109
+#: reviewapp/templates/reviewapp/review_list.html:20
+#: tickets/templates/tickets/user_tickets.html:21
+msgid "Date"
+msgstr "Data"
 
 #: reviewapp/templates/reviewapp/contact.html:5
 #: reviewapp/templates/reviewapp/contact.html:9
@@ -1942,41 +2076,39 @@ msgstr "Enviar"
 msgid "New Submission"
 msgstr "Nova submissão"
 
-#: reviewapp/templates/reviewapp/dashboard.html:27
-#: reviewapp/templates/reviewapp/dashboard.html:58
-#: reviewapp/templates/reviewapp/dashboard.html:84
-#: reviewapp/templates/reviewapp/review_list.html:20
-#: tickets/templates/tickets/user_tickets.html:21
-msgid "Date"
-msgstr "Data"
-
-#: reviewapp/templates/reviewapp/dashboard.html:40
+#: reviewapp/templates/reviewapp/dashboard.html:43
 #: reviewapp/templates/reviewapp/submission_list.html:67
 msgid "Update"
 msgstr "Atualizar"
 
-#: reviewapp/templates/reviewapp/dashboard.html:49
-#: reviewapp/templates/reviewapp/dashboard.html:75
-#: reviewapp/templates/reviewapp/dashboard.html:98
+#: reviewapp/templates/reviewapp/dashboard.html:52
+#: reviewapp/templates/reviewapp/dashboard.html:78
+#: reviewapp/templates/reviewapp/dashboard.html:101
+#: reviewapp/templates/reviewapp/dashboard.html:126
 msgid "Show all"
 msgstr "Mostrar todos"
 
-#: reviewapp/templates/reviewapp/dashboard.html:54
-#: reviewapp/templates/reviewapp/review_list.html:15
-msgid "Submissions to Review"
-msgstr "Submissões para revisar"
-
-#: reviewapp/templates/reviewapp/dashboard.html:85
+#: reviewapp/templates/reviewapp/dashboard.html:88
 msgid "Submission"
 msgstr "Submissão"
+
+#: reviewapp/templates/reviewapp/dashboard.html:105
+#, fuzzy
+msgid "Not Yet Submitted Trials"
+msgstr "Últimos ensaios publicados"
 
 #: reviewapp/templates/reviewapp/index.html:21
 msgid "Registered trials"
 msgstr "Ensaios Registrados"
 
-#: reviewapp/templates/reviewapp/index.html:61
+#: reviewapp/templates/reviewapp/index.html:65
 msgid "No clinical trials have been published."
 msgstr "Nenhum ensaio clínico foi publicado."
+
+#: reviewapp/templates/reviewapp/index.html:71
+#, fuzzy
+msgid "View all"
+msgstr "Mostrar todos"
 
 #: reviewapp/templates/reviewapp/login.html:9
 msgid "Login"
@@ -2154,15 +2286,11 @@ msgstr "Deseja excluir esta submissão?"
 msgid "Terms of use"
 msgstr "Termos de uso"
 
-#: reviewapp/templates/reviewapp/terms_of_use.html:29
-msgid "Continue"
-msgstr "Continuar"
-
-#: reviewapp/templates/reviewapp/terms_of_use.html:33
+#: reviewapp/templates/reviewapp/terms_of_use.html:31
 msgid "or"
-msgstr ""
+msgstr "ou"
 
-#: reviewapp/templates/reviewapp/terms_of_use.html:35
+#: reviewapp/templates/reviewapp/terms_of_use.html:32
 #, fuzzy
 msgid "Upload a XML file"
 msgstr "Enviar um arquivo XML."
@@ -2214,6 +2342,36 @@ msgstr "Altere a sua senha"
 #: templates/base.html:8 templates/base.html.py:37
 msgid "OpenTrials Platform"
 msgstr "Plataforma OpenTrials"
+
+#: templates/base_columns.html:24
+#, fuzzy, python-format
+msgid ""
+"\n"
+"                  <p>There is <span>%(registered)s</span> registered trial.</"
+"p>\n"
+"                "
+msgid_plural ""
+"\n"
+"                  <p>There are <span>%(registered)s</span> registered trials."
+"</p>\n"
+"                "
+msgstr[0] "<p>Existe <span>%(registered)s</span> ensaio registrado.</p>"
+msgstr[1] "<p>Existem <span>%(registered)s</span> ensaios registrados.</p>"
+
+#: templates/base_columns.html:34
+#, fuzzy, python-format
+msgid ""
+"\n"
+"                  <p>There is <span>%(recruiting)s</span> recruiting trial.</"
+"p>\n"
+"                "
+msgid_plural ""
+"\n"
+"                  <p>There are <span>%(recruiting)s</span> recruiting trial."
+"</p>\n"
+"                "
+msgstr[0] "<p>Existe <span>%(recruiting)s</span> ensaio recrutandos.</p>"
+msgstr[1] "<p>Existem <span>%(recruiting)s</span> ensaios recrutando.</p>"
 
 #: templates/registration/registration_form.html:20
 msgid "resend the activation e-mail"
@@ -2385,9 +2543,16 @@ msgstr "Idioma da submissão"
 msgid "Trial number issuing authorities"
 msgstr "Órgãos emissores de identificadores de ensaios"
 
-#: vocabulary/models.py:128
+#: vocabulary/models.py:131
 msgid "Recruitment status"
 msgstr "Situação do recrutamento"
+
+#, fuzzy
+#~ msgid "Recruitment country"
+#~ msgstr "País de recrutamento"
+
+#~ msgid "You must assign both Year and Month"
+#~ msgstr "Você deve selecionar o ano e o mês"
 
 #~ msgid ""
 #~ "There {{%(registered)d|pluralize:'is,are'}} <span>%(registered)d</span> "
@@ -2476,14 +2641,8 @@ msgstr "Situação do recrutamento"
 #~ msgid "Warning: Beta Version"
 #~ msgstr "Aviso: Versão Beta"
 
-#~ msgid "Date of First Enrollment"
-#~ msgstr "Data do primeiro recrutamento"
-
 #~ msgid "Opened"
 #~ msgstr "Aberto"
-
-#~ msgid "Recruitment country"
-#~ msgstr "País de recrutamento"
 
 #~ msgid "rejected"
 #~ msgstr "rejeitado"
@@ -2696,9 +2855,6 @@ msgstr "Situação do recrutamento"
 #~ msgid_plural "%(hits)s/%(message_number)s messages"
 #~ msgstr[0] "mensagem %(hits)s/%(message_number)s"
 #~ msgstr[1] "mensagens %(hits)s/%(message_number)s"
-
-#~ msgid "Latest published trials"
-#~ msgstr "Últimos ensaios publicados"
 
 #~ msgid "User profile"
 #~ msgstr "Perfil do usuário"

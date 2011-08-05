@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block body_title %}{% trans "Clinical Trials" %}{% endblock %}
+
+{% block stepmenu_top %}
+    {{ block.super }}
+    <big>/ {% trans 'Advanced Search' %}</big>
+{% endblock %}
+
+{% block body %}
+
+    <form action="{% url repository.index %}" method="get">
+        <label for="free_search">{% trans 'Trials containing the terms' %}:</label>
+        <input type="text" name="q" class="textEntry" id="free_search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" value="{{q}}"/>
+        <br/>
+        <label for="rec_status">{% trans 'Only trials recruiting' %}:</label>
+        <input id="rec_status" type="checkbox" name="rec_status" value="recruiting" {% if search_filters.rec_status == 'recruiting' %} checked="checked" {% endif %}/>
+        <br/>
+        <label for="rec_country">{% trans 'Recruitment Country' %}:</label>
+        <select name="rec_country">
+            <option value="">---</option>
+        {% for country in rec_countries %}
+            <option value="{{ country.label }}" {% if search_filters.rec_country == country.label %} selected="selected" {% endif %}>{{ country.description }}</option>
+        {% endfor %}
+        </select>
+        <br/>
+        <input type="submit" class="submit" value="{% trans 'Search trials' %}" />
+    </form>
+
+{% endblock %}

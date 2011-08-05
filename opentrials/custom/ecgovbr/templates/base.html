@@ -132,6 +132,7 @@
                         <input type="text" name="q" class="textEntry" id="search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" />
                         <input type="submit" class="submit" value="{% trans 'Search trials' %}" />
                     </form>
+                    <a href="{% url repository.advanced_search %}?{{ request.GET.urlencode }}">{% trans 'Advanced Search' %}</a>
                 </div>
                 <div class="spacer">&#160;</div>
             </div>

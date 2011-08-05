@@ -296,10 +296,19 @@ def recruiting(request):
 def index(request):
     ''' List all registered trials
         If you use a search term, the result is filtered
-    '''
+    '''    
     q = request.GET.get('q', '').strip()
+    rec_status = request.GET.get('rec_status', '').strip()
+    rec_country = request.GET.get('rec_country', '').strip()
 
-    object_list = ClinicalTrial.fossils.published(q=q)
+    filters = {}
+    if rec_status:
+        filters['rec_status_exact'] = rec_status
+    if rec_country:
+        filters['rec_country'] = rec_country
+        
+    object_list = ClinicalTrial.fossils.published_advanced(q=q, **filters)
+
     unsubmiteds = Submission.objects.filter(title__icontains=q).filter(Q(status='draft') | Q(status='resubmit')).order_by('-updated')
     
     object_list = object_list.proxies(language=request.LANGUAGE_CODE)
@@ -1182,3 +1191,29 @@ def trial_otxml(request, trial_fossil_id, trial_version=None):
     resp['Content-Disposition'] = 'attachment; filename=%s-ot.xml' % ct.trial_id
 
     return resp
+
+def advanced_search(request):
+    q = request.GET.get('q', '').strip()
+    rec_status = request.GET.get('rec_status', '').strip()
+    rec_country = request.GET.get('rec_country', '').strip()
+
+    #rec_countries = CountryCode.objects.all()
+    recruitment_country = CountryCode.objects.all()
+    recruitment_country_list = recruitment_country.values('pk', 'description', 'label')
+    for obj in recruitment_country_list:
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                request.LANGUAGE_CODE.lower(), model=CountryCode,
+                                object_id=obj['pk'])
+            if t.description:
+                obj['description'] = t.description
+        except ObjectDoesNotExist:
+            pass
+
+    return render_to_response('repository/advanced_search.html',    
+                              {'rec_countries':recruitment_country_list,
+                               'q':q,
+                               'search_filters':{'rec_status':rec_status,
+                                                 'rec_country':rec_country},
+                              },
+                              context_instance=RequestContext(request))

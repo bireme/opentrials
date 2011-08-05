@@ -6,7 +6,7 @@ from repository.models import ClinicalTrial
 from repository.views import edit_trial_index, full_view, index, step_1, step_2, step_3
 from repository.views import step_4, step_5, step_6, step_7, step_8, step_9, new_institution
 from repository.views import trial_registered, trial_view, recruiting, trial_ictrp, trial_otxml
-from repository.views import all_trials_ictrp, contacts
+from repository.views import all_trials_ictrp, contacts, advanced_search
 
 
 urlpatterns = patterns('',
@@ -25,6 +25,7 @@ urlpatterns = patterns('',
     url(r'^step_9/(\d+)/$', step_9, name='step_9'),
     #public
     url(r'^recruiting/$', recruiting, name='repository.recruiting'),
+    url(r'^advanced_search/$', advanced_search, name='repository.advanced_search'),
     url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/$', trial_registered, name='repository.trial_registered'),
     url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/xml/ictrp/$', trial_ictrp, name='repository.trial_ictrp'),
     url(r'^all/xml/ictrp$', all_trials_ictrp),
@@ -33,5 +34,4 @@ urlpatterns = patterns('',
     url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/v(?P<trial_version>\d+)/xml/ictrp/$', trial_ictrp, name='repository.trial_ictrp_version'),
     url(r'^(?P<trial_fossil_id>[0-9A-Za-z-]+)/v(?P<trial_version>\d+)/xml/opentrials/$', trial_otxml, name='repository.trial_otxml_version'),
     url(r'^$', index, name='repository.index'),
-
 )

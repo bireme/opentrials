@@ -128,12 +128,12 @@ INSTALLED_APPS = (
     'polyglot',
     'registration',  # django-registration package
     'flatpages_polyglot',
-    'south',
+    'south',    
     'fossil',
     'rosetta',
-
+    'haystack',
     #'debug_toolbar',
-    'compressor',
+    'compressor',    
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =(
