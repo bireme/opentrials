@@ -18,6 +18,11 @@ DATABASES = {
     }
 }
 
+### Solr integration for advanced search
+HAYSTACK_SITECONF = 'opentrials.search_sites'
+HAYSTACK_SEARCH_ENGINE = 'solr'
+HAYSTACK_SOLR_URL = 'http://127.0.0.1:8080/solr'
+
 SECRET_KEY = 'rmbg(!8sa@&8o9pnnd@*szm+axos_6r$)r48jc2r$^_8+wz)po'
 
 EMAIL_HOST = 'pombo.bireme.br'
