@@ -432,7 +432,7 @@ class OpenTrialsXMLImport(object):
             self.set_trial_fields(ct, fields)
 
             # Children objects
-            #self.set_trial_children(ct, fields)
+            self.set_trial_children(ct, fields)
 
             # TODO: call validation
 
@@ -580,20 +580,32 @@ class OpenTrialsXMLImport(object):
 
         for item in fields.get('public_contact', []):
             if item.get('pid', None):
-                contact = Contact.objects.get(pk=item['pid'])
+                try:
+                    contact = Contact.objects.get(pk=item['pid'])
+                except Contact.DoesNotExist:
+                    contact = Contact.objects.filter(email=person['email'], creator=self.creator)[0]
             else:
                 contact = Contact.objects.filter(email=person['email'], creator=self.creator)[0]
             PublicContact.objects.get_or_create(trial=ct, contact=contact)
 
         for item in fields.get('scientific_contact', []):
             if item.get('pid', None):
-                contact = Contact.objects.get(pk=item['pid'])
+                try:
+                    contact = Contact.objects.get(pk=item['pid'])
+                except Contact.DoesNotExist:
+                    contact = Contact.objects.filter(email=person['email'], creator=self.creator)[0]
             else:
                 contact = Contact.objects.filter(email=person['email'], creator=self.creator)[0]
             ScientificContact.objects.get_or_create(trial=ct, contact=contact)
 
         for item in fields.get('site_contact', []):
-            contact = Contact.objects.get(pk=item)
+            if item.get('pid', None):
+                try:
+                    contact = Contact.objects.get(pk=item['pid'])
+                except Contact.DoesNotExist:
+                    contact = Contact.objects.filter(email=person['email'], creator=self.creator)[0]
+            else:
+                contact = Contact.objects.filter(email=person['email'], creator=self.creator)[0]
             SiteContact.objects.get_or_create(trial=ct, contact=contact)
 
         for item in fields.get('secondary_ids', []):
@@ -610,7 +622,7 @@ class OpenTrialsXMLImport(object):
         for item in fields.get('secondary_sponsor', []):
             inst = self.get_instituion_from_db(item)
             TrialSupportSource.objects.get_or_create(trial=ct, institution=inst)
-
+        #FIXME!
         for item in fields.get('primary_outcomes', []):
             outcome, new = Outcome.objects.get_or_create(trial=ct, interest='primary', description=item['value'])
             for trans in item.get('translations', []):
@@ -626,7 +638,7 @@ class OpenTrialsXMLImport(object):
                     trial=ct,
                     aspect='HealthCondition',
                     level='general',
-                    vocabulary=item.get('vocabulary', 'DeCS'), # FIXME
+                    vocabulary=item.get('vocabulary', 'decs'), # FIXME
                     code=item['code'],
                     defaults={
                         'version': item.get('version', ''),
@@ -643,7 +655,7 @@ class OpenTrialsXMLImport(object):
                     trial=ct,
                     aspect='HealthCondition',
                     level='specific',
-                    vocabulary=item.get('vocabulary', 'DeCS'), # FIXME
+                    vocabulary=item.get('vocabulary', 'decs'), # FIXME
                     code=item['code'],
                     defaults={
                         'version': item.get('version', ''),
@@ -664,7 +676,7 @@ class OpenTrialsXMLImport(object):
                     trial=ct,
                     aspect='Intervention',
                     level='specific',
-                    vocabulary=item.get('vocabulary', 'DeCS'), # FIXME
+                    vocabulary=item.get('vocabulary', 'decs'), # FIXME
                     code=item['code'],
                     defaults={
                         'version': item.get('version', ''),
