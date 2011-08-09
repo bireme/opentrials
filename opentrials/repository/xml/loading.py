@@ -445,8 +445,7 @@ class OpenTrialsXMLImport(object):
             submission.trial = ct
             submission.creator = self.creator
             submission.status = 'draft'
-            
-            import pdb; pdb.set_trace()
+
             submission.save()
             ct.save()
 
@@ -622,17 +621,19 @@ class OpenTrialsXMLImport(object):
         for item in fields.get('secondary_sponsor', []):
             inst = self.get_instituion_from_db(item)
             TrialSupportSource.objects.get_or_create(trial=ct, institution=inst)
+
         #FIXME!
+        """
         for item in fields.get('primary_outcomes', []):
             outcome, new = Outcome.objects.get_or_create(trial=ct, interest='primary', description=item['value'])
             for trans in item.get('translations', []):
-                outcome.translations.get_or_create(description=trans['description'], language=trans['language'])
+                outcome.translations.get_or_create(description=trans['value'], language=trans['lang'])
 
         for item in fields.get('secondary_outcomes', []):
             outcome, new = Outcome.objects.get_or_create(trial=ct, interest='secondary', description=item['value'])
             for trans in item.get('translations', []):
-                outcome.translations.get_or_create(description=trans['description'], language=trans['language'])
-
+                outcome.translations.get_or_create(description=trans['value'], language=trans['lang'])
+        """
         for item in fields.get('hc_codes', []):
             descriptor, new = Descriptor.objects.get_or_create(
                     trial=ct,
