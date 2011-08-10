@@ -27,7 +27,7 @@ class FossilIndex(SearchIndex):
     def prepare_is_most_recent(self, obj):
         return obj.is_most_recent
 
-    def prepare_rec_status(self, obj):
+    def prepare_rec_status(self, obj):        
         try:
             return obj.get_object_fossil().recruitment_status.label
         except AttributeError:

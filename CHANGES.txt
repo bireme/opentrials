@@ -1,3 +1,8 @@
+#What is new in v1.1
+
+- Advanced Search - Iteration 1 (basic search + study status + recruitment country)
+
+
 #What is new in v1.0.24
 
 - Bug Fix:
