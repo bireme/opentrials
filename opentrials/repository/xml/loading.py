@@ -105,10 +105,11 @@ class OpenTrialsXMLImport(object):
         fields.update(dict(node.items()))
 
         # Collect fields
+
         for block in node.iterchildren():
             if block.tag == 'trial_identification':
                 for field in block.iterchildren():
-                    if field.tag in ('trial_id', 'utrn', 'reg_name', 'public_title', 'acronym',
+                    if field.tag in ('trial_id', 'utrn_number', 'reg_name', 'public_title', 'acronym',
                                      'acronym_expansion', 'scientific_title', 'scientific_acronym',
                                      'scientific_acronym_expansion'):
                         fields[field.tag] = field.text
@@ -217,7 +218,9 @@ class OpenTrialsXMLImport(object):
                 trans = {}
                 for field in block.iterchildren():
                     trans[field.tag] = field.text
-                fields['translations'].append(trans)
+                lang = dict(block.items())['lang']
+                fields['translations'].append({'lang':lang,'content':trans})
+
 
         return fields
 
@@ -606,6 +609,12 @@ class OpenTrialsXMLImport(object):
             else:
                 contact = Contact.objects.filter(email=person['email'], creator=self.creator)[0]
             SiteContact.objects.get_or_create(trial=ct, contact=contact)
+
+        TrialNumber.objects.get_or_create(
+                    trial=ct,
+                    issuing_authority=fields.get('reg_name', ''),
+                    id_number=fields['trial_id'],
+                    )
 
         for item in fields.get('secondary_ids', []):
             TrialNumber.objects.get_or_create(
