@@ -254,8 +254,8 @@ class MultilingualModelCheckboxField(MultilingualModelChoiceField):
 
 class MultilingualBaseForm(forms.ModelForm):
     available_languages = [code.lower() for code in settings.MANAGED_LANGUAGES]
-    default_second_language = 'pt-br' # FIXME: shouldn't be settings.LANGUAGE_CODE?
-    display_language = 'pt-br' # FIXME: shouldn't be settings.LANGUAGE_CODE?
+    default_second_language = settings.DEFAULT_SUBMISSION_LANGUAGE
+    display_language = settings.DEFAULT_SUBMISSION_LANGUAGE
 
     def __init__(self, *args, **kwargs):
         # Gets multilingual fields from translation class
@@ -361,20 +361,15 @@ class MultilingualBaseForm(forms.ModelForm):
 class MultilingualBaseFormSet(BaseModelFormSet):
     """Fixing the bug registered at: http://code.djangoproject.com/ticket/10284"""
 
-    display_language = 'en' # FIXME: shouldn't be settings.LANGUAGE_CODE?
-    available_languages = ('en',)
-    default_second_language = None
-
     def __init__(self, data=None, files=None, auto_id='id_%s', prefix=None,
                  queryset=None, **kwargs):
         self.queryset = queryset
         defaults = {'data': data, 'files': files, 'auto_id': auto_id, 'prefix': prefix}
         defaults.update(kwargs)
    
-        self.available_languages = kwargs.pop('available_languages', [code.lower() for code in settings.MANAGED_LANGUAGES]) # Mandatory (FIXME, to remove default tuple)
+        self.available_languages = kwargs.pop('available_languages', self.available_languages) # Mandatory (FIXME, to remove default tuple)
         self.default_second_language = kwargs.pop('default_second_language', self.default_second_language)
         self.display_language = kwargs.pop('display_language', self.display_language)
-
         super(BaseModelFormSet, self).__init__(**defaults)
 
     # Override
@@ -431,27 +426,24 @@ class MultilingualBaseFormSet(BaseModelFormSet):
 
     def _construct_form(self, i, **kwargs):
         form = super(MultilingualBaseFormSet, self)._construct_form(i, **kwargs)
-
         # This override exists to set the following language-related attributes to children forms
         form.available_languages = self.available_languages
         form.default_second_language = self.default_second_language
         form.display_language = self.display_language
-
         return form
 
 def modelformset_factory(*args, **kwargs):
     """This is just a monkey path to implement the argument 'extra_formset_attrs' to set extra
     attributes to formset instance"""
-
     # Stores extra formset attributes
     extra_formset_attrs = kwargs.pop('extra_formset_attrs', None)
-
     # Does what Django does
     formset_class = django_modelformset_factory(*args, **kwargs)
 
     # Sets attributes to formset class
     if isinstance(extra_formset_attrs, dict):
         for k,v in extra_formset_attrs.items():
+            setattr(formset_class.form, k, v)
             setattr(formset_class, k, v)
 
     return formset_class
