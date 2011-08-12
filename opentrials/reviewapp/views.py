@@ -489,7 +489,6 @@ def change_submission_status(request, submission_pk, status):
         subject = _('Submission Approved')
         message =  MailMessage.objects.filter(label='approved')[0].description
         if '%s' in message:
-            import pdb; pdb.set_trace()
             message = message % submission.title
         send_opentrials_email(subject, message, recipient)
     

@@ -52,7 +52,7 @@ def xml_opentrials(trial, persons, include_translations=True, **kwargs):
             for out_trans in outcome['translations']:
                 if out_trans['language'] == translation['language']:
                     translation['secondary_outcomes'].append(out_trans)
-    import pdb; pdb.set_trace()
+    
     return render_to_string(
             'repository/xml/xml_opentrials.xml',
             {'object': trial,
