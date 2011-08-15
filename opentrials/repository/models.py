@@ -720,6 +720,8 @@ class Institution(TrialRegistrationDataSetModel):
     name = models.CharField(_('Name'), max_length=255)
     address = models.TextField(_('Postal Address'), max_length=1500, blank=True)
     country = models.ForeignKey(CountryCode, verbose_name=_('Country'))
+    #state = models.ForeignKey(StateCode, verbose_name=_('State'))
+    city = models.CharField(_('City'), max_length=255, blank=True, default='')
     creator = models.ForeignKey(User, related_name='institution_creator', editable=False)
     i_type = models.ForeignKey(InstitutionType, null=True, blank=True,
                                            verbose_name=_('Institution type'))
