@@ -265,7 +265,7 @@ class MultilingualBaseForm(forms.ModelForm):
         self.default_second_language = kwargs.pop('default_second_language', self.default_second_language)
         if self.default_second_language is not None:
             self.default_second_language = lang_format(self.default_second_language)
-        self.available_languages = map(lang_format, kwargs.pop('available_languages', [code.lower() for code in settings.MANAGED_LANGUAGES])) # Mandatory (FIXME, to remove default tuple)
+        self.available_languages = map(lang_format, kwargs.pop('available_languages', [code.lower() for code in settings.MANAGED_LANGUAGES]))
         self.display_language = lang_format(kwargs.pop('display_language', self.display_language))
 
         if self.multilingual_fields:
