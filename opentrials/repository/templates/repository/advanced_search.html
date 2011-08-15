@@ -15,9 +15,7 @@
         <label for="free_search">{% trans 'Trials containing the terms' %}:</label>
         <input type="text" name="q" class="textEntry" id="free_search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" value="{{q}}"/>
         <br/>
-        <label for="rec_status">{% trans 'Only trials recruiting' %}:</label>
-        <input id="rec_status" type="checkbox" name="rec_status" value="recruiting" {% if search_filters.rec_status == 'recruiting' %} checked="checked" {% endif %}/>
-        <br/>
+
         <label for="rec_country">{% trans 'Recruitment Country' %}:</label>
         <select name="rec_country">
             <option value="">---</option>
@@ -26,6 +24,17 @@
         {% endfor %}
         </select>
         <br/>
+
+        <fieldset>
+            <legend>{% trans 'Recruitment Status' %}</legend>
+            <ul name="rec_status">            
+                {% for status in rec_status %}
+                <li><input type="checkbox" name="rec_status" value="{{ status.label }}" {% if status.label in search_filters.rec_status %} checked="checked" {% endif %}>{{ status.description }}</li>
+                {% endfor %}
+            </ul>
+        </fieldset>
+        <br/>
+
         <input type="submit" class="submit" value="{% trans 'Search trials' %}" />
     </form>
 

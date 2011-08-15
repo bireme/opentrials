@@ -298,7 +298,7 @@ def index(request):
         If you use a search term, the result is filtered
     '''    
     q = request.GET.get('q', '').strip()
-    rec_status = request.GET.get('rec_status', '').strip()
+    rec_status = request.GET.getlist('rec_status')
     rec_country = request.GET.get('rec_country', '').strip()
 
     filters = {}
@@ -851,8 +851,7 @@ def step_5(request, trial_pk):
                                display_language=request.user.get_profile().preferred_language)
 
         if form.is_valid():
-            form.save()
-
+            form.save()            
             ct.outdated = is_outdate(ct)
             ct.save()
             return HttpResponseRedirect(reverse('step_5',args=[trial_pk]))
@@ -1194,10 +1193,10 @@ def trial_otxml(request, trial_fossil_id, trial_version=None):
 
 def advanced_search(request):
     q = request.GET.get('q', '').strip()
-    rec_status = request.GET.get('rec_status', '').strip()
+    rec_status = request.GET.getlist('rec_status')
     rec_country = request.GET.get('rec_country', '').strip()
-
-    #rec_countries = CountryCode.objects.all()
+    
+    #get a list of recruitment countries considering the site language
     recruitment_country = CountryCode.objects.all()
     recruitment_country_list = recruitment_country.values('pk', 'description', 'label')
     for obj in recruitment_country_list:
@@ -1210,10 +1209,24 @@ def advanced_search(request):
         except ObjectDoesNotExist:
             pass
 
+    #get a list of recruitment status considering the site language
+    recruitment_status = RecruitmentStatus.objects.all()
+    recruitment_status_list = recruitment_status.values('pk', 'description', 'label')
+    for obj in recruitment_status_list:
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                request.LANGUAGE_CODE.lower(), model=RecruitmentStatus,
+                                object_id=obj['pk'])
+            if t.description:
+                obj['description'] = t.description
+        except ObjectDoesNotExist:
+            pass
+
     return render_to_response('repository/advanced_search.html',    
                               {'rec_countries':recruitment_country_list,
+                               'rec_status':recruitment_status_list,
                                'q':q,
-                               'search_filters':{'rec_status':rec_status,
+                               'search_filters':{'rec_status':rec_status,                                                 
                                                  'rec_country':rec_country},
                               },
                               context_instance=RequestContext(request))

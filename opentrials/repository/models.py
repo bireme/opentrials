@@ -39,6 +39,8 @@ from serializers import serialize_trialnumber
 from serializers import serialize_trialsupportsource
 from serializers import serialize_trialsecondarysponsor
 
+from haystack.query import SearchQuerySet
+
 def get_time_perspective_default():
     return TimePerspective.objects.get(id=1)
 
@@ -164,18 +166,18 @@ class TrialsFossilManager(FossilManager):
 
         Strings passed as the ``q`` arg, will be matched against a general 
         free-text index, the ``is_most_recent`` indicates if you want recent
-        or previous revisions and ``kwargs`` are optional filtering keys.
+        or previous revisions and ``kwargs`` are optional filtering keys.        
         '''
-        from haystack.query import SearchQuerySet
+        
 
         hstack_qs = SearchQuerySet().filter(is_most_recent=is_most_recent)
 
         if q:            
             hstack_qs = hstack_qs.filter(text=q)
         
-        if kwargs:
+        if kwargs:            
             for k,v in kwargs.items():
-                filters = {k:v}                
+                filters = {k + '__in':v} if isinstance(v, list) else {k:v}
                 hstack_qs = hstack_qs.filter(**filters)
         
         fossil_qs = self.get_query_set()
