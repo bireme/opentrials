@@ -36,6 +36,7 @@ Python programming
  - Jamil Atta (BIREME/PAHO/WHO)
  - Luciano Ramalho (BIREME/PAHO/WHO)
  - Rafael Soares (BIREME/PAHO/WHO)
+ - Antonio Ribeiro Alves (BIREME/PAHO/WHO)
     
 ------------------
 Design

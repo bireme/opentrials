@@ -33,6 +33,7 @@ Comments:
     <!-- trial record must have explicit attribute type="interventional"
          in preparation for eventual support for observational studies -->
     <!ATTLIST trial
+        language CDATA #REQUIRED
         status (%trialstatus.options;) #REQUIRED
         date_registration CDATA #REQUIRED
         created CDATA #IMPLIED

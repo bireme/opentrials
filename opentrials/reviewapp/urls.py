@@ -23,7 +23,7 @@ submissions = {
 urlpatterns = patterns('',
 
     url(r'^news/$', news_list, name='reviewapp.newslist'),
-    
+
     url(r'^news/(?P<object_id>\d+)/$', news_detail, name='reviewapp.news'),
 
     url(r'^accounts/dashboard/$', dashboard, name='reviewapp.dashboard'),
@@ -37,18 +37,18 @@ urlpatterns = patterns('',
 
    url(r'^accounts/allsubmissionslist/$', allsubmissionslist, name='reviewapp.allsubmissionslist'), #same as accounts/profile
 
-    url(r'^accounts/submission/(\d+)/$', submission_detail, 
+    url(r'^accounts/submission/(\d+)/$', submission_detail,
         name='reviewapp.submission'),
-        
-    url(r'^accounts/submission/delete/(\d+)/$', submission_delete, 
+
+    url(r'^accounts/submission/delete/(\d+)/$', submission_delete,
         name='reviewapp.submission_delete'),
-        
+
     url(r'^accounts/submission/change/(?P<submission_pk>\d+)/(?P<status>[a-z]+)/$', change_submission_status,
         name='reviewapp.change_submission_status'),
 
     url(r'^accounts/newsubmission/$', new_submission,
         name='reviewapp.new_submission'),
-        
+
     url(r'^accounts/termsofuse/$', terms_of_use,
         name='reviewapp.terms_of_use'),
 
@@ -62,42 +62,42 @@ urlpatterns = patterns('',
 
     url(r'^accounts/logout/$', logout, dict(next_page='/'),
         name='reviewapp.logout'),
-        
+
     url(r'^accounts/resend/activation/email/$', resend_activation_email,
         name='reviewapp.resend_activation_email'),
 
     url(r'^accounts/password/reset/$', password_reset, {
         'template_name': 'reviewapp/password_reset_form.html',
         'email_template_name': 'reviewapp/password_reset_email.html',
-        'post_reset_redirect': '/accounts/password/reset/done/'}, 
+        'post_reset_redirect': '/accounts/password/reset/done/'},
         name='reviewapp.password_reset'),
 
-    url(r'^accounts/password/reset/done/$', password_reset_done, 
+    url(r'^accounts/password/reset/done/$', password_reset_done,
         {'template_name': 'reviewapp/password_reset_done.html'},
         name='reviewapp.password_reset_done'),
-        
+
     url(r'^accounts/password/reset/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$', password_reset_confirm, {
         'template_name': 'reviewapp/password_reset_confirm.html',
         'post_reset_redirect': '/accounts/password/reset/complete/'},
         name='reviewapp.password_reset_confirm'),
-        
-    url(r'^accounts/password/reset/complete/$', password_reset_complete, 
-        {'template_name': 'reviewapp/password_reset_complete.html'}, 
+
+    url(r'^accounts/password/reset/complete/$', password_reset_complete,
+        {'template_name': 'reviewapp/password_reset_complete.html'},
         name='reviewapp.password_reset_complete'),
-        
+
     url(r'^remark/open/(?P<submission_id>\d+)/(?P<context>[a-zA-Z0-9_\- ]+)/$', open_remark,
         name='reviewapp.openremark'),
-        
+
     url(r'^contact/$', contact, name='reviewapp.contact'),
 
     url(r'^remark/change/(?P<remark_id>\d+)/(?P<status>[a-z]+)/$', change_remark_status,
         name='reviewapp.changeremarkstatus'),
-        
+
     url(r'^remark/delete/(?P<remark_id>\d+)/$', delete_remark,
         name='reviewapp.delete_remark'),
-    
+
     url(r'^rss/(?P<url>.*)/$', 'django.contrib.syndication.views.feed',
         {'feed_dict': {'trials': LastTrials, 'recruiting': LastRecruiting}}),
-        
-    url(r'^$', index, name='reviewapp.home'),  
+
+    url(r'^$', index, name='reviewapp.home'),
 )
