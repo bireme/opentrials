@@ -925,7 +925,7 @@ def step_7(request, trial_pk):
                                 extra_formset_attrs={
                                     'default_second_language':ct.submission.get_secondary_language(),
                                     'available_languages':[lang.lower() for lang in ct.submission.get_mandatory_languages()],
-                                    'display_language':request.user.get_profile().preferred_language,
+                                    'display_language':request.trials_language
                                     },
                                 )
     SecondaryOutcomesSet = modelformset_factory(Outcome,
@@ -1179,6 +1179,7 @@ def trial_otxml(request, trial_fossil_id, trial_version=None):
     ct.version = fossil.revision_sequential
     ct.status = fossil.indexers.key('status', fail_silent=True).value
 
+    #fixme: set DoesNotWork correctly!
     persons = set(ct.scientific_contact + ct.public_contact + ct.site_contact)
 
     xml = xml_opentrials(ct, persons)
