@@ -146,43 +146,42 @@ class TrialsFossilManager(FossilManager):
         if not q:
             return self.indexed(display='True').filter(is_most_recent=True)
         else:
-            return self.indexed(display='True', scientific_title__icontains=q).filter(is_most_recent=True) |\
-                    self.indexed(display='True', public_title__icontains=q).filter(is_most_recent=True) |\
-                    self.indexed(display='True', acronym__icontains=q).filter(is_most_recent=True) |\
-                    self.indexed(display='True', scientific_acronym__icontains=q).filter(is_most_recent=True) |\
-                    self.indexed(display='True', scientific_acronym_expansion__icontains=q).filter(is_most_recent=True) |\
-                    self.indexed(display='True', hc_freetext__icontains=q).filter(is_most_recent=True) |\
-                    self.indexed(display='True', i_freetext__icontains=q).filter(is_most_recent=True) |\
-                    self.indexed(display='True', primary_sponsor__icontains=q).filter(is_most_recent=True) |\
-                    self.indexed(display='True', scientific_contacts__icontains=q).filter(is_most_recent=True) |\
-                    self.indexed(display='True', utrn_number__icontains=q).filter(is_most_recent=True) |\
-                    self.indexed(display='True', secondary_ids__icontains=q).filter(is_most_recent=True) |\
-                    self.indexed(display='True', trial_id__icontains=q).filter(is_most_recent=True)
+            return (self.indexed(display='True', scientific_title__icontains=q).filter(is_most_recent=True) |
+                    self.indexed(display='True', public_title__icontains=q).filter(is_most_recent=True) |
+                    self.indexed(display='True', acronym__icontains=q).filter(is_most_recent=True) |
+                    self.indexed(display='True', scientific_acronym__icontains=q).filter(is_most_recent=True) |
+                    self.indexed(display='True', scientific_acronym_expansion__icontains=q).filter(is_most_recent=True) |
+                    self.indexed(display='True', hc_freetext__icontains=q).filter(is_most_recent=True) |
+                    self.indexed(display='True', i_freetext__icontains=q).filter(is_most_recent=True) |
+                    self.indexed(display='True', primary_sponsor__icontains=q).filter(is_most_recent=True) |
+                    self.indexed(display='True', scientific_contacts__icontains=q).filter(is_most_recent=True) |
+                    self.indexed(display='True', utrn_number__icontains=q).filter(is_most_recent=True) |
+                    self.indexed(display='True', secondary_ids__icontains=q).filter(is_most_recent=True) |
+                    self.indexed(display='True', trial_id__icontains=q).filter(is_most_recent=True))
 
     def published_advanced(self, q=None, is_most_recent=True, **kwargs):
         '''
-        Provides advanced search features in PublishedTrial objects by 
+        Provides advanced search features in PublishedTrial objects by
         using haystack as a search engine backend interface.
 
-        Strings passed as the ``q`` arg, will be matched against a general 
+        Strings passed as the ``q`` arg, will be matched against a general
         free-text index, the ``is_most_recent`` indicates if you want recent
-        or previous revisions and ``kwargs`` are optional filtering keys.        
+        or previous revisions and ``kwargs`` are optional filtering keys.
         '''
-        
 
         hstack_qs = SearchQuerySet().filter(is_most_recent=is_most_recent)
 
-        if q:            
+        if q:
             hstack_qs = hstack_qs.filter(text=q)
-        
-        if kwargs:            
+
+        if kwargs:
             for k,v in kwargs.items():
                 filters = {k + '__in':v} if isinstance(v, list) else {k:v}
                 hstack_qs = hstack_qs.filter(**filters)
-        
+
         fossil_qs = self.get_query_set()
         pks = [qs_item.pk for qs_item in hstack_qs]
-        
+
         return fossil_qs.filter(pk__in=pks)
 
     def archived(self):
@@ -200,100 +199,22 @@ class PublishedTrial(Fossil):
 
     objects = _default_manager = TrialsFossilManager()
 
+    def __getattr__(self, name):
+        if name in ('display','status','scientific_title','public_title',
+                    'acronym','scientific_acronym','scientific_acronym_expansion',
+                    'hc_freetext','i_freetext','primary_sponsor','scientific_contacts',
+                    'utrn_number','secondary_ids'):
+            try:
+                return self.indexers.key(name).value
+            except ObjectDoesNotExist:
+                return ''
+        else:
+            raise AttributeError(name)
+
     @property
     def trial_id(self):
         try:
             return self.indexers.key('trial_id').value
-        except ObjectDoesNotExist:
-            return ''
-
-    @property
-    def display(self):
-        try:
-            return self.indexers.key('display').value
-        except ObjectDoesNotExist:
-            return 'True'
-
-    @property
-    def status(self):
-        try:
-            return self.indexers.key('status').value
-        except ObjectDoesNotExist:
-            return 'published' if self.is_most_recent else 'archived'
-
-    @property
-    def scientific_title(self):
-        try:
-            return self.indexeds.key('scientific_title').value
-        except ObjectDoesNotExist:
-            return ''
-
-    @property
-    def public_title(self):
-        try:
-            return self.indexeds.key('public_title').value
-        except ObjectDoesNotExist:
-            return ''
-
-    @property
-    def acronym(self):
-        try:
-            return self.indexeds.key('acronym').value
-        except ObjectDoesNotExist:
-            return ''
-
-    @property
-    def scientific_acronym(self):
-        try:
-            return self.indexeds.key('scientific_acronym').value
-        except ObjectDoesNotExist:
-            return ''
-
-    @property
-    def scientific_acronym_expansion(self):
-        try:
-            return self.indexeds.key('scientific_acronym_expansion').value
-        except ObjectDoesNotExist:
-            return ''
-
-    @property
-    def hc_freetext(self):
-        try:
-            return self.indexeds.key('hc_freetext').value
-        except ObjectDoesNotExist:
-            return ''
-
-    @property
-    def i_freetext(self):
-        try:
-            return self.indexeds.key('i_freetext').value
-        except ObjectDoesNotExist:
-            return ''
-
-    @property
-    def primary_sponsor(self):
-        try:
-            return self.indexeds.key('primary_sponsor').value
-        except ObjectDoesNotExist:
-            return ''
-
-    @property
-    def scientific_contacts(self):
-        try:
-            return self.indexeds.key('scientific_contacts').value
-        except ObjectDoesNotExist:
-            return ''
-
-    @property
-    def utrn_number(self):
-        try:
-            return self.indexeds.key('utrn_number').value
-        except ObjectDoesNotExist:
-            return ''
-    @property
-    def secondary_ids(self):
-        try:
-            return self.indexeds.key('secondary_ids').value
         except ObjectDoesNotExist:
             return ''
 
@@ -720,6 +641,8 @@ class Institution(TrialRegistrationDataSetModel):
     name = models.CharField(_('Name'), max_length=255)
     address = models.TextField(_('Postal Address'), max_length=1500, blank=True)
     country = models.ForeignKey(CountryCode, verbose_name=_('Country'))
+    #state = models.ForeignKey(StateCode, verbose_name=_('State'))
+    city = models.CharField(_('City'), max_length=255, blank=True, default='')
     creator = models.ForeignKey(User, related_name='institution_creator', editable=False)
     i_type = models.ForeignKey(InstitutionType, null=True, blank=True,
                                            verbose_name=_('Institution type'))
