@@ -9,7 +9,7 @@
             <utrn>{{ trial.ct_fossil.utrn_number }}</utrn>
             <reg_name>{{ reg_name }}</reg_name>
             <date_registration>{{ trial.ct_fossil.date_registration|date:"d/m/Y" }}</date_registration>
-            <primary_sponsor>{{ trial.ct_fossil.primary_sponsor.name }}</primary_sponsor>
+            <primary_sponsor>{{ trial.primary_sponsor }}</primary_sponsor>
             <public_title>{{ trial.ct_fossil.public_title }}</public_title>
             <acronym>{{ trial.ct_fossil.acronym_display }}</acronym>
             <scientific_title>{{ trial.ct_fossil.scientific_title }}</scientific_title>
@@ -102,8 +102,8 @@
             {% endfor %}
         </secondary_outcome>
         <secondary_sponsor>
-            {%  for sponsors in trial.ct_fossil.secondary_sponsors %}
-            <sponsor_name>{{ sponsors.institution.name }}</sponsor_name>
+            {%  for sponsor in trial.secondary_sponsors %}
+            <sponsor_name>{{ sponsor }}</sponsor_name>
             {% empty %}
             <sponsor_name></sponsor_name>
             {% endfor %}
@@ -122,8 +122,8 @@
             {% endfor %}
         </secondary_ids>
         <source_support>
-            {%  for source_support in trial.ct_fossil.support_sources %}
-            <source_name>{{ source_support.institution.name }}</source_name>
+            {%  for source in trial.source_support %}
+            <source_name>{{ source }}</source_name>
             {% empty %}
             <source_name></source_name>
             {% endfor %}
