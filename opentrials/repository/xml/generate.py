@@ -19,9 +19,9 @@ VALID_FUNCTIONS = (
 
 def xml_ictrp(fossils, **kwargs):
     """Generates an ICTRP XML for a given Clinical Trial and returns as string."""
-    
+
     trials = []
-    
+
     for fossil in fossils:
         trial = {}
         ct_fossil = fossil.get_object_fossil()
@@ -29,14 +29,14 @@ def xml_ictrp(fossils, **kwargs):
         trial['public_contact'] = ct_fossil.public_contact if ct_fossil.public_contact \
                                             else ct_fossil.scientific_contact
         trial['hash_code'] = fossil.pk
-        trial['previous_revision'] = fossil.previous_revision       
+        trial['previous_revision'] = fossil.previous_revision
         trial['version'] = fossil.revision_sequential
         trials.append(trial)
-        
+
     return render_to_string(
             'repository/xml/all_xml_ictrp.xml', # old clinicaltrial_detail.xml
             {'trial_list': trials, 'reg_name': settings.REG_NAME},
-            )              
+            )
 
 def xml_opentrials(trial, persons, include_translations=True, **kwargs):
     """Generates an Opentrials XML for a given Clinical Trial and returns as string."""
@@ -52,7 +52,7 @@ def xml_opentrials(trial, persons, include_translations=True, **kwargs):
             for out_trans in outcome['translations']:
                 if out_trans['language'] == translation['language']:
                     translation['secondary_outcomes'].append(out_trans)
-    
+
     return render_to_string(
             'repository/xml/xml_opentrials.xml',
             {'object': trial,
