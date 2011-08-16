@@ -214,6 +214,7 @@ def serialize_institution(institution, as_string=True):
         'address': institution.address,
         'city': institution.city,
         'country': institution.country.serialize_for_fossil(as_string=False),
+        'state':institution.state,
         'creator': serialize_user(institution.creator, as_string=False),
         }
 
