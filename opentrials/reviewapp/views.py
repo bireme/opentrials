@@ -45,6 +45,10 @@ from fossil.models import Fossil
 from vocabulary.models import MailMessage
 
 def send_opentrials_email(subject, message, recipient):
+
+    if settings.DEBUG: # avoid sending emails when debug is on
+        return
+
     name = 'Rebec'
     from_email = '%s <%s>' % (name,settings.DEFAULT_FROM_EMAIL)
     recipient_list = [recipient]
@@ -75,7 +79,7 @@ def index(request):
 
     fossil_trials = ClinicalTrial.fossils.published().order_by('-creation')[:3]
     clinical_trials = fossil_trials.proxies(language=request.trials_language)
-    
+
     return render_to_response('reviewapp/index.html', {
                           'clinical_trials': clinical_trials,
                           'page': flat_trans,
@@ -284,7 +288,7 @@ def terms_of_use(request):
     form = terms_form
 
     return render_to_response('reviewapp/terms_of_use.html', {
-                              'form': form, 
+                              'form': form,
                               'page': flat_trans},
                               context_instance=RequestContext(request))
 
@@ -293,21 +297,21 @@ def new_submission(request):
 
     if request.method == 'POST':
         initial_form = InitialTrialForm(request.POST, request.FILES, user=request.user)
-        
-        if initial_form.is_valid(): 
+
+        if initial_form.is_valid():
             trial = ClinicalTrial()
 
             su = Submission(creator=request.user)
-            su.language = initial_form.cleaned_data['language']            
-            su.title = initial_form.cleaned_data['scientific_title']            
+            su.language = initial_form.cleaned_data['language']
+            su.title = initial_form.cleaned_data['scientific_title']
             su.primary_sponsor = initial_form.cleaned_data['primary_sponsor']
-            
+
             trial.utrn_number = initial_form.cleaned_data['utrn_number']
             trial.language = settings.DEFAULT_SUBMISSION_LANGUAGE
             trial.primary_sponsor = su.primary_sponsor
 
             if su.language == settings.DEFAULT_SUBMISSION_LANGUAGE:
-                trial.scientific_title = su.title                                                            
+                trial.scientific_title = su.title
             else:
                 trial.save()
                 ctt = ClinicalTrialTranslation.objects.get_translation_for_object(
@@ -315,7 +319,7 @@ def new_submission(request):
                         )
                 ctt.scientific_title = su.title
                 ctt.save()
-                
+
             trial.save()
 
             for country in initial_form.cleaned_data['recruitment_country']:
@@ -331,8 +335,8 @@ def new_submission(request):
             return HttpResponseRedirect(reverse('repository.edittrial',args=[trial.id]))
     else:
         initial_form = InitialTrialForm(user=request.user, display_language=request.trials_language)
-        
-    forms = [initial_form] 
+
+    forms = [initial_form]
     return render_to_response('reviewapp/new_submission.html', {
                               'forms': forms,},
                               context_instance=RequestContext(request))
@@ -354,7 +358,7 @@ def upload_trial(request):
     session_key = None
     form = None
     formset = None
-    
+
     if request.method == 'POST':
 
         if 'submission_file' in request.FILES:
@@ -373,7 +377,7 @@ def upload_trial(request):
                 formset = ImportParsedFormset(initial=data)
 
         elif 'session_key' in request.POST:
-            
+
             formset = ImportParsedFormset(request.POST)
 
             if formset.is_valid():
@@ -393,12 +397,12 @@ def upload_trial(request):
 
     else:
         form = UploadTrialForm()
-    
+
     if form is None:
         form = UploadTrialForm(request.POST, files=request.FILES)
     return render_to_response(
             'reviewapp/upload_trial.html',
-            {'form': form, 'session_key': session_key, 'formset': formset,}, 
+            {'form': form, 'session_key': session_key, 'formset': formset,},
             context_instance=RequestContext(request),
             )
 
@@ -482,16 +486,16 @@ def change_submission_status(request, submission_pk, status):
 
     submission.status = status
     submission.save()
-    
+
     recipient = submission.creator.email
-    
+
     if status == 'approved':
         subject = _('Submission Approved')
         message =  MailMessage.objects.filter(label='approved')[0].description
         if '%s' in message:
             message = message % submission.title
         send_opentrials_email(subject, message, recipient)
-    
+
     elif status == 'resubmit':
         subject = _('Submission Not Approved ')
         message =  MailMessage.objects.filter(label='resubmitted')[0].description
