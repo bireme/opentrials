@@ -17,6 +17,14 @@ VALID_FUNCTIONS = (
     'xml_opentrials_mod',
     )
 
+def formatted_institution_address(institution):
+    """Return a formatted string like: ICICT - Rio de Janeiro, RJ, Brasil"""
+    return institution['name']+' - '+', '.join(
+        i for i in [institution['city'],institution['state'],
+                    institution['country']['description']
+                    ] if i
+        )
+
 def xml_ictrp(fossils, **kwargs):
     """Generates an ICTRP XML for a given Clinical Trial and returns as string."""
 
@@ -28,6 +36,11 @@ def xml_ictrp(fossils, **kwargs):
         trial['ct_fossil'] = ct_fossil
         trial['public_contact'] = ct_fossil.public_contact if ct_fossil.public_contact \
                                             else ct_fossil.scientific_contact
+        trial['primary_sponsor'] = formatted_institution_address(ct_fossil.primary_sponsor)
+        trial['secondary_sponsors'] = [formatted_institution_address(sponsor['institution'])
+                                        for sponsor in ct_fossil.secondary_sponsors]
+        trial['source_support'] = [formatted_institution_address(source['institution'])
+                                        for source in ct_fossil.support_sources]
         trial['hash_code'] = fossil.pk
         trial['previous_revision'] = fossil.previous_revision
         trial['version'] = fossil.revision_sequential
