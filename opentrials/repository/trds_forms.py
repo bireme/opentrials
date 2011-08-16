@@ -437,7 +437,7 @@ class RecruitmentForm(ReviewModelForm):
             if date:
                 date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
                 self.fields['enrollment_start_date'].initial = date
-            
+
             date = self.instance.enrollment_end_planned or self.instance.enrollment_end_actual
             if date:
                 date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
@@ -446,7 +446,7 @@ class RecruitmentForm(ReviewModelForm):
     def save(self, commit=True, *args, **kwargs):
 
         obj = super(RecruitmentForm, self).save(commit=True, *args, **kwargs)
-        
+
 
         obj.enrollment_start_planned = None
         obj.enrollment_start_actual = None
@@ -479,7 +479,7 @@ class RecruitmentForm(ReviewModelForm):
         end_date = cleaned_data.get('enrollment_end_date')
         if end_date and start_date and start_date > end_date:
             raise forms.ValidationError(_("Invalid date"))
-        
+
         if cleaned_data.get('agemin_unit') != '-' and cleaned_data.get('agemax_unit') != '-':
             min_age = normalize_age(cleaned_data.get('agemin_value'), cleaned_data.get('agemin_unit'))
             max_age = normalize_age(cleaned_data.get('agemax_value'), cleaned_data.get('agemax_unit'))

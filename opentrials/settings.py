@@ -19,6 +19,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import os
+from django.contrib.localflavor.br import br_states
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -115,7 +116,7 @@ INSTALLED_APPS = (
     'django.contrib.markup',
     'django.contrib.messages',
     'django.contrib.syndication',
-    
+
     'deleting',
     'vocabulary',
     'repository',
@@ -128,12 +129,12 @@ INSTALLED_APPS = (
     'polyglot',
     'registration',  # django-registration package
     'flatpages_polyglot',
-    'south',    
+    'south',
     'fossil',
     'rosetta',
     'haystack',
     #'debug_toolbar',
-    'compressor',    
+    'compressor',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =(
@@ -203,6 +204,8 @@ PAGINATOR_CT_PER_PAGE = 10
 
 TWITTER = 'ensaiosclinicos'
 TWITTER_TIMEOUT = 18000 # expires in 5 min
+
+LOCAL_STATE_CHOICES = br_states.STATE_CHOICES
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = ['--with-coverage', '--with-doctest', '--doctest-tests', '--doctest-extension=txt'] # --doctest-fixtures, --with-profile
