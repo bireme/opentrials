@@ -47,7 +47,7 @@ def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
             value = serialize_user(value, as_string=False)
         elif isinstance(value, models.Model):
             value = value.serialize_for_fossil(as_string=False)
-        
+
         json[field.name] = value
 
     # Many to many fields
@@ -212,6 +212,7 @@ def serialize_institution(institution, as_string=True):
         'pk': institution.pk,
         'name': institution.name,
         'address': institution.address,
+        'city': institution.city,
         'country': institution.country.serialize_for_fossil(as_string=False),
         'creator': serialize_user(institution.creator, as_string=False),
         }
@@ -502,7 +503,7 @@ class FossilClinicalTrial(FossilProxy):
         if self._translations is None:
             self._translations = dict([(lang_format(t.get('language', '').lower()), t)
                 for t in self.object_fossil.translations])
-    
+
     def __getattr__(self, name):
         value = super(FossilClinicalTrial, self).__getattr__(name)
 
