@@ -11,7 +11,7 @@
 # by the Free Software Foundation, either version 2.1 of the License, or
 # (at your option) any later version.
 
-# This program is distributed in the hope that it will be useful, 
+# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Lesser General Public License for more details.
@@ -79,6 +79,20 @@ export_json.short_description = 'Export selected records in JSON format'
 
 def user_in_group(user, group):
     return user.groups.filter(name=group).count() != 0 if user else False
+
+def normalize_age(age, unity):
+    "convert ages to hours"
+    if unity == 'Y':
+        return age*365*24
+    elif unity == 'M':
+        return age*30*24
+    elif unity == 'W':
+        return age*7*24
+    elif unity == 'D':
+        return age*24
+    elif unity == 'H':
+        return age
+    return age
 
 
 if __name__=='__main__':
