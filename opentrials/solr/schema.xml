@@ -122,6 +122,8 @@
 
     <field name="rec_country" type="text" indexed="true" stored="true" multiValued="true" />
 
+    <field name="is_observational" type="boolean" indexed="true" stored="true" multiValued="false" />
+
     <field name="outdated" type="boolean" indexed="true" stored="true" multiValued="false" />
 
     <field name="date_registration" type="date" indexed="true" stored="true" multiValued="false" />
