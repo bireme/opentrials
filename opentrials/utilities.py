@@ -92,7 +92,7 @@ def normalize_age(age, unity):
         return age*24
     elif unity == 'H':
         return age
-    return age
+    return None
 
 
 if __name__=='__main__':

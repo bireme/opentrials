@@ -14,6 +14,7 @@ class FossilIndex(SearchIndex):
     outdated = BooleanField()
     status = CharField()
     rec_country = MultiValueField()
+    is_observational = BooleanField()
     minimum_recruitment_age = CharField() #in hours
     maximum_recruitment_age = CharField() #in hours
 
@@ -124,5 +125,9 @@ class FossilIndex(SearchIndex):
     def prepare_rec_country(self, obj):
         fossil_ct = obj.get_object_fossil()
         return [country['label'] for country in fossil_ct.recruitment_country]
+
+    def prepare_is_observational(self, obj):
+        fossil_ct = obj.get_object_fossil()
+        return fossil_ct.is_observational
 
 site.register(Fossil, FossilIndex)
