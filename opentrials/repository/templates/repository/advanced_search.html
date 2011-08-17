@@ -13,8 +13,8 @@
 
     <form action="{% url repository.index %}" method="get">
         <label for="free_search">{% trans 'Trials containing the terms' %}:</label>
-        <input type="text" name="q" class="textEntry" id="free_search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" value="{{q}}"/>
-        <br/>
+        <input type="text" name="q" class="textEntry" id="free_search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" value="{{q}}" size="70"/>
+        <br/><br />
 
         <label for="rec_country">{% trans 'Recruitment Country' %}:</label>
         <select name="rec_country">
@@ -24,7 +24,14 @@
         {% endfor %}
         </select>
         <br/>
-
+        <br />
+        
+        <fieldset>
+            <legend>{% trans 'Study Type' %}</legend>
+            <input type="checkbox" name="is_observ" value="true" {% if 'true' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'Observational' %}
+            <input type="checkbox" name="is_observ" value="false" {% if 'false' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'Interventional' %}
+        </fieldset>
+        
         <fieldset>
             <legend>{% trans 'Recruitment Status' %}</legend>
             <ul name="rec_status">            
