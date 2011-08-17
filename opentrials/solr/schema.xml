@@ -110,6 +110,8 @@
 
     <field name="rec_status_exact" type="string" indexed="true" stored="true" multiValued="false" />
 
+    <field name="i_type" type="text" indexed="true" stored="true" multiValued="true" />
+
     <field name="rev_seq" type="text" indexed="true" stored="true" multiValued="false" />
 
     <field name="text" type="text" indexed="true" stored="false" multiValued="false" />
@@ -121,6 +123,8 @@
     <field name="rec_status" type="text" indexed="true" stored="true" multiValued="false" />
 
     <field name="rec_country" type="text" indexed="true" stored="true" multiValued="true" />
+
+    <field name="i_type_exact" type="string" indexed="true" stored="true" multiValued="true" />
 
     <field name="gender" type="text" indexed="true" stored="true" multiValued="false" />
 
