@@ -2,6 +2,11 @@
 
 - Advanced Search - Iteration 1 (basic search + study status + recruitment country)
 
+#What is new in v1.1.0
+- Advanced search implemented
+- Fields for state and city in institutions
+- Formatted institution name in Ictrp XML
+
 
 #What is new in v1.0.24
 
