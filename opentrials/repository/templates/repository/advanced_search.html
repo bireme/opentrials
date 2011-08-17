@@ -28,8 +28,16 @@
 
         <fieldset>
             <legend>{% trans 'Study Type' %}</legend>
-            <input type="checkbox" name="is_observ" value="true" {% if 'true' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'Observational' %}
-            <input type="checkbox" name="is_observ" value="false" {% if 'false' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'Interventional' %}
+            <input type="radio" group="studytype" name="is_observ" value="true" {% if '' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'All' %}
+            <input type="radio" group="studytype" name="is_observ" value="true" {% if 'true' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'Observational' %}
+            <input type="radio" group="studytype" name="is_observ" value="false" {% if 'false' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'Interventional' %}
+        </fieldset>
+
+        <fieldset>
+            <legend>{% trans 'Inclusion Gender' %}</legend>
+            <input type="radio" name="gender" group="gender" value="-" {% if '-' in search_filters.gender %} checked="checked" {% endif %}> {% trans 'both' %}
+            <input type="radio" name="gender" group="gender" value="F" {% if 'F' in search_filters.gender %} checked="checked" {% endif %}> {% trans 'female' %}
+            <input type="radio" name="gender" group="gender" value="M" {% if 'M' in search_filters.gender %} checked="checked" {% endif %}> {% trans 'male' %}
         </fieldset>
 
         <fieldset>

@@ -15,6 +15,8 @@ class FossilIndex(SearchIndex):
     rec_country = MultiValueField()
     is_observational = BooleanField()
     i_type = MultiValueField(faceted=True)
+    gender = CharField()
+    
 
     def prepare_trial_id(self, obj):
         fossil_ct = obj.get_object_fossil()
@@ -119,5 +121,9 @@ class FossilIndex(SearchIndex):
                 pass
 
         return sources
+
+    def prepare_gender(self, obj):
+        fossil_ct = obj.get_object_fossil()
+        return fossil_ct.gender
 
 site.register(Fossil, FossilIndex)
