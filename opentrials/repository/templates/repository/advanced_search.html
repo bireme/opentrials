@@ -25,21 +25,31 @@
         </select>
         <br/>
         <br />
-        
+
         <fieldset>
             <legend>{% trans 'Study Type' %}</legend>
             <input type="checkbox" name="is_observ" value="true" {% if 'true' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'Observational' %}
             <input type="checkbox" name="is_observ" value="false" {% if 'false' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'Interventional' %}
         </fieldset>
-        
+
         <fieldset>
             <legend>{% trans 'Recruitment Status' %}</legend>
-            <ul name="rec_status">            
+            <ul name="rec_status">
                 {% for status in rec_status %}
                 <li><input type="checkbox" name="rec_status" value="{{ status.label }}" {% if status.label in search_filters.rec_status %} checked="checked" {% endif %}>{{ status.description }}</li>
                 {% endfor %}
             </ul>
         </fieldset>
+
+        <fieldset>
+            <legend>{% trans 'Institution type' %}</legend>
+            <ul name="i_type">
+                {% for type in i_type %}
+                <li><input type="checkbox" name="i_type" value="{{ type.label }}" {% if type.label in search_filters.i_type %} checked="checked" {% endif %}>{{ type.description }}</li>
+                {% endfor %}
+            </ul>
+        </fieldset>
+
         <br/>
 
         <input type="submit" class="submit" value="{% trans 'Search trials' %}" />
