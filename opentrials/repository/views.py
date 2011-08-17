@@ -301,6 +301,7 @@ def index(request):
     rec_status = request.GET.getlist('rec_status')
     rec_country = request.GET.get('rec_country', '').strip()
     is_observational = request.GET.getlist('is_observ')
+    gender = request.GET.get('gender').strip()
 
     filters = {}
     if rec_status:
@@ -309,6 +310,8 @@ def index(request):
         filters['rec_country'] = rec_country
     if is_observational:
         filters['is_observational'] = is_observational
+    if gender:
+        filters['gender'] = gender
         
     object_list = ClinicalTrial.fossils.published_advanced(q=q, **filters)
 
@@ -1200,6 +1203,7 @@ def advanced_search(request):
     rec_status = request.GET.getlist('rec_status')
     rec_country = request.GET.get('rec_country', '').strip()
     is_observational = request.GET.getlist('is_observ')
+    gender = request.GET.get('gender', '').strip()
     
     #get a list of recruitment countries considering the site language
     recruitment_country = CountryCode.objects.all()
@@ -1233,6 +1237,7 @@ def advanced_search(request):
                                'q':q,
                                'search_filters':{'rec_status':rec_status,                                                 
                                                  'rec_country':rec_country,
-                                                 'is_observ':is_observational},
+                                                 'is_observ':is_observational,
+                                                 'gender':gender},
                               },
                               context_instance=RequestContext(request))
