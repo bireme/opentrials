@@ -11,6 +11,49 @@
 
 {% block body %}
 
+    {% if search_filters %}
+    <div class="warning">
+        <a class="minimize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-down.gif"/></a>
+        <a class="maximize button" onclick="$(this.parentNode).toggleClass('warning-minimized').find('ul').toggle('slow')"><img src="{{MEDIA_URL}}media/img/admin/arrow-up.gif"/></a>
+        <h2>{% trans 'Applied Search Criteria' %}</h2>
+        <a href="{% url repository.advanced_search %}?{{ request.GET.urlencode }}">{% trans 'Refine this search' %}</a>
+        <ul>
+            {% for filter, value in search_filters.items %}
+            <li>
+            {% if filter == 'rec_country' %}
+                <strong>{% trans 'Recruitment Country' %}:</strong> {{ value }}
+            {% endif %}
+            {% if filter == 'is_observational' %}
+                <strong>{% trans 'Study Type' %}:</strong> {{ value }}
+            {% endif %}
+            {% if filter == 'gender' %}
+                <strong>{% trans 'Inclusion Gender' %}:</strong> {{ value }}
+            {% endif %}
+            {% if filter == 'rec_status' %}
+                <strong>{% trans 'Recruitment Status' %}:</strong> {{ value }}
+            {% endif %}
+            {% if filter == 'i_type' %}
+                <strong>{% trans 'Institution type' %}:</strong> {{ value }}
+            {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        <br/>
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style ">
+        <a class="addthis_button_preferred_1"></a>
+        <a class="addthis_button_preferred_2"></a>
+        <a class="addthis_button_preferred_3"></a>
+        <a class="addthis_button_preferred_4"></a>
+        <a class="addthis_button_compact"></a>
+        <a class="addthis_counter addthis_bubble_style"></a>
+        </div>
+        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4e4d6e6462b7b1d8"></script>
+        <!-- AddThis Button END -->
+
+    </div>
+    {% endif %}
+
     {% if objects.object_list %}
         {% for ct in objects.object_list %}
         <table class="trial_table">
@@ -34,14 +77,14 @@
             </tr>
         </table>
         {% endfor %}
-        
+
         {% if paginator.num_pages > 1 %}
         <div class="pagination">
             {% if objects.has_previous %}
                 <a href="?page=1"><<</a>
                 <a href="?page={{ objects.previous_page_number }}"><</a>
             {% endif %}
-            
+
             {% for p in paginator.page_range %}
                 {% if p == page %}
                   <span class="current">
@@ -51,7 +94,7 @@
                     <a href="?page={{ p }}">{{ p }}</a>
                 {% endif %}
             {% endfor %}
-            
+
             {% if objects.has_next %}
                   <a href="?page={{ objects.next_page_number }}">></a>
                   <a href="?page={{ paginator.num_pages }}">>></a>
@@ -79,14 +122,14 @@
             </tr>
         </table>
         {% endfor %}
-        
+
         {% if paginator.num_pages > 1 %}
         <div class="pagination">
             {% if objects.has_previous %}
                 <a href="?page=1"><<</a>
                 <a href="?page={{ objects.previous_page_number }}"><</a>
             {% endif %}
-            
+
             {% for p in paginator.page_range %}
                 {% if p == page %}
                   <span class="current">
@@ -96,7 +139,7 @@
                     <a href="?page={{ p }}">{{ p }}</a>
                 {% endif %}
             {% endfor %}
-            
+
             {% if objects.has_next %}
                   <a href="?page={{ objects.next_page_number }}">></a>
                   <a href="?page={{ paginator.num_pages }}">>></a>
