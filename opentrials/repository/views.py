@@ -306,6 +306,8 @@ def index(request):
     gender = request.GET.get('gender','').strip()
     minimum_age = request.GET.get('age_min','').strip()
     maximum_age = request.GET.get('age_max','').strip()
+    minimum_age_unity = request.GET.get('age_min_unity','').strip()
+    maximum_age_unity = request.GET.get('age_max_unity','').strip()
 
     filters = {}
     if rec_status:
@@ -321,14 +323,14 @@ def index(request):
 
     if minimum_age:
         try:
-            filters['maximum_recruitment_age__gte'] = normalize_age(int(minimum_age),'Y')
+            filters['maximum_recruitment_age__gte'] = normalize_age(int(minimum_age),minimum_age_unity)
         except ValueError:
             filters['maximum_recruitment_age__gte'] = 0
     if maximum_age:
         try:
-            filters['minimum_recruitment_age__lte'] = normalize_age(int(maximum_age),'Y')
+            filters['minimum_recruitment_age__lte'] = normalize_age(int(maximum_age),maximum_age_unity)
         except ValueError:
-            filters['minimum_recruitment_age__lte'] = normalize_age(200,'Y')
+            filters['minimum_recruitment_age__lte'] = normalize_age(200,maximum_age_unity)
 
 
     object_list = ClinicalTrial.fossils.published_advanced(q=q, **filters)

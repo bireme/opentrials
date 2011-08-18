@@ -60,19 +60,25 @@
 
         <fieldset>
             <legend>{% trans 'Age limits' %}</legend>
-            {% trans 'Inclusion Minimum Age' %}<ul name="age_min">
-                <select name="age_min">
-                    {% for i in ages %}
-                    <option value="{{i}}">{{i}}</option>
-                    {% endfor %}
+            {% trans 'Inclusion Minimum Age' %}:<ul name="age_min">
+                <input type="text" name="age_min" size="5"></input>
+                <select name="age_min_unity">
+                    <option value="Y">{% trans 'Years' %}</option>
+                    <option value="M">{% trans 'Months' %}</option>
+                    <option value="W">{% trans 'Weeks' %}</option>
+                    <option value="D">{% trans 'Days' %}</option>
+                    <option value="H">{% trans 'Hours' %}</option>
                 </select>
+
             </ul>
-            {% trans 'Inclusion Maximum Age' %}<ul name="age_max">
-                <select name="age_max">
-                    {% for i in ages %}
-                    <option value="{{i}}">{{i}}</option>
-                    {% endfor %}
-                    <option value="120" selected="yes">120</option>
+            {% trans 'Inclusion Maximum Age' %}:<ul name="age_max">
+                <input type="text" name="age_max" size="5"></input>
+                 <select name="age_max_unity">
+                    <option value="Y">{% trans 'Years' %}</option>
+                    <option value="M">{% trans 'Months' %}</option>
+                    <option value="W">{% trans 'Weeks' %}</option>
+                    <option value="D">{% trans 'Days' %}</option>
+                    <option value="H">{% trans 'Hours' %}</option>
                 </select>
             </ul>
         </fieldset>
