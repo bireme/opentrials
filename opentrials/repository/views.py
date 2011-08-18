@@ -47,14 +47,15 @@ from repository.trds_forms import make_scientifc_contact_form, make_contact_form
 from repository.trds_forms import make_site_contact_form, TRIAL_FORMS
 from vocabulary.models import RecruitmentStatus, VocabularyTranslation, CountryCode, InterventionCode
 from vocabulary.models import StudyPurpose, InterventionAssigment, StudyMasking, StudyAllocation
-from vocabulary.models import MailMessage
+from vocabulary.models import MailMessage, InstitutionType
 
 from polyglot.multilingual_forms import modelformset_factory
 
 from fossil.fields import DictKeyAttribute
 from fossil.models import Fossil
 
-from utilities import user_in_group
+from utilities import user_in_group, normalize_age
+
 import datetime
 
 import choices
@@ -85,7 +86,7 @@ def is_outdate(ct):
         start_planned = start_planned
         if start_planned < now and start_actual is None:
             return True
-                
+
     if end_planned is not None:
         end_planned = end_planned
         if end_planned < now and end_actual is None:
@@ -149,10 +150,10 @@ def edit_trial_index(request, trial_pk):
     if request.method == 'POST' and submit:
         sub = ct.submission
         sub.status = STATUS_PENDING
-        
+
         recepient = ct.submission.creator.email
         subject = _('Trial Submitted')
-        message =  MailMessage.objects.get(label='submitted').description        
+        message =  MailMessage.objects.get(label='submitted').description
         if '%s' in message:
             message = message % ct.public_title
         send_opentrials_email(subject, message, recepient)
@@ -296,11 +297,15 @@ def recruiting(request):
 def index(request):
     ''' List all registered trials
         If you use a search term, the result is filtered
-    '''    
+    '''
     q = request.GET.get('q', '').strip()
     rec_status = request.GET.getlist('rec_status')
     rec_country = request.GET.get('rec_country', '').strip()
     is_observational = request.GET.getlist('is_observ')
+    i_type = request.GET.getlist('i_type')
+    gender = request.GET.get('gender','').strip()
+    minimum_age = request.GET.get('age_min','').strip()
+    maximum_age = request.GET.get('age_max','').strip()
 
     filters = {}
     if rec_status:
@@ -309,11 +314,27 @@ def index(request):
         filters['rec_country'] = rec_country
     if is_observational:
         filters['is_observational'] = is_observational
-        
+    if i_type:
+        filters['i_type_exact'] = i_type
+    if gender:
+        filters['gender'] = gender
+
+    if minimum_age:
+        try:
+            filters['maximum_recruitment_age__gte'] = normalize_age(int(minimum_age),'Y')
+        except ValueError:
+            filters['maximum_recruitment_age__gte'] = 0
+    if maximum_age:
+        try:
+            filters['minimum_recruitment_age__lte'] = normalize_age(int(maximum_age),'Y')
+        except ValueError:
+            filters['minimum_recruitment_age__lte'] = normalize_age(200,'Y')
+
+
     object_list = ClinicalTrial.fossils.published_advanced(q=q, **filters)
 
     unsubmiteds = Submission.objects.filter(title__icontains=q).filter(Q(status='draft') | Q(status='resubmit')).order_by('-updated')
-    
+
     object_list = object_list.proxies(language=request.LANGUAGE_CODE)
 
     # pagination
@@ -521,10 +542,10 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
 
     trial = get_object_or_404(ClinicalTrial, trial_id=trial_fossil_id)
     attachs = [attach for attach in trial.trial_attach() if attach.public]
-    
+
     try:
         time_perspective = trial.time_perspective
-    except ObjectDoesNotExist: 
+    except ObjectDoesNotExist:
         time_perspective = None
     observational_study_design = trial.observational_study_design
 
@@ -573,13 +594,13 @@ def contacts(request):
             contact = Contact.objects.get(pk=request.POST.get('contact'))
             contact.delete()
             contact.save()
-    
+
     choices = [('-','-----------')] + [(c.pk, c.name()) for c in Contact.objects.filter(creator=request.user)]
     class ContactsForm(forms.Form):
-        contact = forms.ChoiceField(label=_('Contact'),                                  
+        contact = forms.ChoiceField(label=_('Contact'),
                                   choices=choices,
                                   )
-    
+
     form = ContactsForm()
 
     return render_to_response('repository/delete_contact.html',
@@ -854,7 +875,7 @@ def step_5(request, trial_pk):
                                display_language=request.user.get_profile().preferred_language)
 
         if form.is_valid():
-            form.save()            
+            form.save()
             ct.outdated = is_outdate(ct)
             ct.save()
             return HttpResponseRedirect(reverse('step_5',args=[trial_pk]))
@@ -1063,7 +1084,7 @@ def step_9(request, trial_pk):
                                              form=NewAttachmentForm)
 
     existing_attachments = Attachment.objects.filter(submission=su)
-    
+
     if request.method == 'POST' and request.can_change_trial:
 
         if 'remove' in request.POST:
@@ -1163,7 +1184,7 @@ def trial_otxml(request, trial_fossil_id, trial_version=None):
 
     - ToDo
     """
-    
+
     try:
         fossil = Fossil.objects.get(pk=trial_fossil_id)
     except Fossil.DoesNotExist:
@@ -1200,7 +1221,11 @@ def advanced_search(request):
     rec_status = request.GET.getlist('rec_status')
     rec_country = request.GET.get('rec_country', '').strip()
     is_observational = request.GET.getlist('is_observ')
-    
+    i_type = request.GET.getlist('i_type')
+    gender = request.GET.get('gender', '').strip()
+    minimum_age = request.GET.get('age_min','').strip()
+    maximum_age = request.GET.get('age_max','').strip()
+
     #get a list of recruitment countries considering the site language
     recruitment_country = CountryCode.objects.all()
     recruitment_country_list = recruitment_country.values('pk', 'description', 'label')
@@ -1227,12 +1252,31 @@ def advanced_search(request):
         except ObjectDoesNotExist:
             pass
 
-    return render_to_response('repository/advanced_search.html',    
+    #get a list of institution types
+    institution_type = InstitutionType.objects.all()
+    institution_type_list = institution_type.values('pk', 'description', 'label')
+    for obj in institution_type_list:
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                request.LANGUAGE_CODE.lower(), model=InstitutionType,
+                                object_id=obj['pk'])
+            if t.description:
+                obj['description'] = t.description
+        except ObjectDoesNotExist:
+            pass
+
+    return render_to_response('repository/advanced_search.html',
                               {'rec_countries':recruitment_country_list,
                                'rec_status':recruitment_status_list,
+                               'i_type':institution_type_list,
                                'q':q,
-                               'search_filters':{'rec_status':rec_status,                                                 
+                               'age_min': minimum_age,
+                               'age_max': maximum_age,
+                               'ages':range(120),
+                               'search_filters':{'rec_status':rec_status,
                                                  'rec_country':rec_country,
-                                                 'is_observ':is_observational},
+                                                 'is_observ':is_observational,
+                                                 'i_type': i_type,
+                                                 'gender':gender},
                               },
                               context_instance=RequestContext(request))

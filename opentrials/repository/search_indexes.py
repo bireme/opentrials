@@ -1,4 +1,4 @@
-from haystack.indexes import SearchIndex, CharField, DateTimeField, BooleanField, MultiValueField
+from haystack.indexes import SearchIndex, CharField, DateTimeField, BooleanField, MultiValueField, IntegerField
 from haystack import site
 from fossil.models import Fossil
 from utilities import normalize_age
@@ -15,8 +15,11 @@ class FossilIndex(SearchIndex):
     status = CharField()
     rec_country = MultiValueField()
     is_observational = BooleanField()
-    minimum_recruitment_age = CharField() #in hours
-    maximum_recruitment_age = CharField() #in hours
+    i_type = MultiValueField(faceted=True)
+    gender = CharField()
+    minimum_recruitment_age = IntegerField() #in hours
+    maximum_recruitment_age = IntegerField() #in hours
+
 
     def prepare_minimum_recruitment_age(self, obj):
         fossil_ct = obj.get_object_fossil()
@@ -132,6 +135,22 @@ class FossilIndex(SearchIndex):
 
     def prepare_is_observational(self, obj):
         fossil_ct = obj.get_object_fossil()
-        return fossil_ct.is_observational
+        return getattr(fossil_ct, 'is_observational', False)
+
+    def prepare_i_type(self, obj):
+        fossil_ct = obj.get_object_fossil()
+        sources = []
+        for source in fossil_ct.support_sources:
+            try:
+                sources.append(source['institution']['i_type']['label'])
+            except KeyError:
+                #field doesnt exist
+                pass
+
+        return sources
+
+    def prepare_gender(self, obj):
+        fossil_ct = obj.get_object_fossil()
+        return fossil_ct.gender
 
 site.register(Fossil, FossilIndex)
