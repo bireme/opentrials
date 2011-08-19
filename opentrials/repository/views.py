@@ -356,8 +356,11 @@ def index(request):
     #Applied Search Criteria
     def humanize_search_values(key, value):
         """
-        This function is used to translate advanced search
-        params into formatted values ready to print in templates
+        This function is used to translate advanced search params
+        into formatted values ready to print in templates.
+
+        If a formatted value isn't set for a key, an empty string
+        is returned.
         """
         if key == 'rec_country':
             for country in localized_vocabulary(CountryCode, request.LANGUAGE_CODE.lower()):
@@ -384,6 +387,8 @@ def index(request):
                 return _('female')
             else:
                 return _('both')
+        else:
+            return ''
 
     #remove empty filters, _exact query suffix and format values to template
     search_filters = ([(lambda x: x[:x.find('_exact')] if x.endswith('_exact') else x)(k),
