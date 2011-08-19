@@ -354,41 +354,49 @@ def index(request):
         objects = paginator.page(paginator.num_pages)
 
     #Applied Search Criteria
-    def humanize_search_values(key, value):
+    def humanize_search_values(key, value, default_str=None):
         """
         This function is used to translate advanced search params
         into formatted values ready to print in templates.
 
-        If a formatted value isn't set for a key, an empty string
-        is returned.
+        If a key/value is unknown, a default string is returned.
         """
+        if default_str is None:
+            default_str = '###unknown search parameters###'
+
         if key == 'rec_country':
             for country in localized_vocabulary(CountryCode, request.LANGUAGE_CODE.lower()):
                 if country['label'] == value:
                     return country['description']
+            return default_str
         elif key == 'rec_status_exact':
             statuses = []
             for status in localized_vocabulary(RecruitmentStatus, request.LANGUAGE_CODE.lower()):
                 if status['label'] in value:
                     statuses.append(status['description'])
-            return ', '.join(statuses)
+            return ', '.join(statuses) if statuses else default_str
         elif key == 'is_observational':
-            return _('Observational')
+            if not isinstance(value, bool):
+                return default_str
+
+            return _('Observational') if value else _('Interventional')
         elif key == 'i_type_exact':
             i_types = []
             for i_type in localized_vocabulary(InstitutionType, request.LANGUAGE_CODE.lower()):
                 if i_type['label'] in value:
                     i_types.append(i_type['description'])
-            return ', '.join(i_types)
+            return ', '.join(i_types) if i_types else default_str
         elif key == 'gender':
             if value == 'M':
                 return _('male')
             elif value == 'F':
                 return _('female')
-            else:
+            elif value == '-':
                 return _('both')
+            else:
+                return default_str
         else:
-            return ''
+            return default_str
 
     #remove empty filters, _exact query suffix and format values to template
     search_filters = ([(lambda x: x[:x.find('_exact')] if x.endswith('_exact') else x)(k),
