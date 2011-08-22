@@ -28,7 +28,7 @@
 
         <fieldset>
             <legend>{% trans 'Study Type' %}</legend>
-            <input type="radio" group="studytype" name="is_observ" value="true" {% if '' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'All' %}
+            <input type="radio" group="studytype" name="is_observ" value="" {% if '' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'All' %}
             <input type="radio" group="studytype" name="is_observ" value="true" {% if 'true' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'Observational' %}
             <input type="radio" group="studytype" name="is_observ" value="false" {% if 'false' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'Interventional' %}
         </fieldset>
