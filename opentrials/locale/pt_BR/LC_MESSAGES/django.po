@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-16 15:16-0300\n"
-"PO-Revision-Date: 2011-08-16 15:20\n"
+"POT-Creation-Date: 2011-08-18 18:01-0300\n"
+"PO-Revision-Date: 2011-08-18 18:02\n"
 "Last-Translator:   <gustavo.fonseca@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,8 +28,8 @@ msgid "Label"
 msgstr "Rótulo"
 
 #: assistance/models.py:24 assistance/models.py:41
-#: repository/templates/repository/clinicaltrial_list.html:18
-#: repository/templates/repository/clinicaltrial_list.html:75
+#: repository/templates/repository/clinicaltrial_list.html:56
+#: repository/templates/repository/clinicaltrial_list.html:113
 #: repository/templates/repository/clinicaltrial_recruiting.html:18
 #: reviewapp/models.py:256 reviewapp/models.py:274
 #: reviewapp/templates/reviewapp/all_submission_list.html:21
@@ -185,12 +185,12 @@ msgstr "Ajuda"
 #: repository/trds_forms.py:643 repository/trds_forms.py:647
 #: repository/trds_forms.py:666 repository/trds_forms.py:670
 #: repository/trds_forms.py:692 repository/trds_forms.py:696
-#: repository/views.py:576 templates/base.html:110
+#: repository/views.py:641 templates/base.html:110
 msgid "Contact"
 msgstr "Contato"
 
 #: custom/ecgovbr/templates/base.html:133
-#: repository/templates/repository/advanced_search.html:38
+#: repository/templates/repository/advanced_search.html:63
 #: templates/base.html:116
 msgid "Search trials"
 msgstr "Buscar ensaios"
@@ -552,15 +552,18 @@ msgstr "publicado"
 msgid "archived"
 msgstr "arquivado"
 
-#: repository/choices.py:41
+#: repository/choices.py:41 repository/views.py:386
+#: repository/templates/repository/advanced_search.html:38
 msgid "both"
 msgstr "Ambos"
 
-#: repository/choices.py:41
+#: repository/choices.py:41 repository/views.py:382
+#: repository/templates/repository/advanced_search.html:40
 msgid "male"
 msgstr "masculino"
 
-#: repository/choices.py:41
+#: repository/choices.py:41 repository/views.py:384
+#: repository/templates/repository/advanced_search.html:39
 msgid "female"
 msgstr "feminino"
 
@@ -626,14 +629,14 @@ msgid "Published Trials"
 msgstr "Ensaios Publicados"
 
 #: repository/models.py:234
-#: repository/templates/repository/clinicaltrial_list.html:19
+#: repository/templates/repository/clinicaltrial_list.html:57
 #: repository/templates/repository/clinicaltrial_recruiting.html:19
 #: reviewapp/templates/reviewapp/index.html:59
 msgid "Primary Id Number"
 msgstr "Identificador primário"
 
 #: repository/models.py:237
-#: repository/templates/repository/clinicaltrial_list.html:32
+#: repository/templates/repository/clinicaltrial_list.html:70
 #: repository/templates/repository/clinicaltrial_recruiting.html:28
 #: tickets/models.py:14 tickets/templates/tickets/new_iteration.html:25
 msgid "Date of Registration"
@@ -716,6 +719,8 @@ msgid "Inclusion Criteria"
 msgstr "Critérios de inclusão"
 
 #: repository/models.py:289
+#: repository/templates/repository/advanced_search.html:37
+#: repository/templates/repository/clinicaltrial_list.html:32
 msgid "Inclusion Gender"
 msgstr "Gênero de inclusão"
 
@@ -754,10 +759,12 @@ msgstr "Critérios de exclusão"
 
 #: repository/models.py:309 repository/trds_forms.py:522
 #: repository/trds_forms.py:551 repository/views.py:70
+#: repository/templates/repository/advanced_search.html:30
 #: repository/templates/repository/clinicaltrial_detail_published.html:97
 #: repository/templates/repository/clinicaltrial_detail_published.html:401
 #: repository/templates/repository/clinicaltrial_detail_user.html:156
 #: repository/templates/repository/clinicaltrial_detail_user.html:567
+#: repository/templates/repository/clinicaltrial_list.html:29
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:339
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:533
 msgid "Study Type"
@@ -859,10 +866,11 @@ msgid "Target Sample Size"
 msgstr "Tamanho da amostra alvo"
 
 #: repository/models.py:348
-#: repository/templates/repository/advanced_search.html:29
+#: repository/templates/repository/advanced_search.html:44
 #: repository/templates/repository/clinicaltrial_detail_published.html:332
 #: repository/templates/repository/clinicaltrial_detail_user.html:478
-#: repository/templates/repository/clinicaltrial_list.html:28
+#: repository/templates/repository/clinicaltrial_list.html:35
+#: repository/templates/repository/clinicaltrial_list.html:66
 #: repository/templates/repository/clinicaltrial_recruiting.html:24
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:278
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:451
@@ -969,6 +977,8 @@ msgid "City"
 msgstr "Cidade"
 
 #: repository/models.py:648 repository/trds_forms.py:754
+#: repository/templates/repository/advanced_search.html:53
+#: repository/templates/repository/clinicaltrial_list.html:38
 msgid "Institution type"
 msgstr "TIpo de instituição"
 
@@ -1201,6 +1211,7 @@ msgstr "Situação do estudo"
 #: repository/templates/repository/advanced_search.html:19
 #: repository/templates/repository/clinicaltrial_detail_published.html:336
 #: repository/templates/repository/clinicaltrial_detail_user.html:483
+#: repository/templates/repository/clinicaltrial_list.html:26
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:282
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:456
 #: reviewapp/forms.py:60
@@ -1246,7 +1257,8 @@ msgstr "Data inválida"
 msgid "Invalid age limits"
 msgstr "Data inválida"
 
-#: repository/trds_forms.py:555
+#: repository/trds_forms.py:555 repository/views.py:373
+#: repository/templates/repository/advanced_search.html:32
 msgid "Observational"
 msgstr "Observacional"
 
@@ -1362,49 +1374,49 @@ msgstr "Contatos"
 msgid "Attachs"
 msgstr "Anexos"
 
-#: repository/views.py:107
+#: repository/views.py:129
 msgid "Edit Trial"
 msgstr ""
 
-#: repository/views.py:108
+#: repository/views.py:130
 #, fuzzy, python-format
 msgid "This trial cannot be modified because it has already been approved.%s"
 msgstr "Este ensaio não pode ser modificado, pois já foi aprovado."
 
-#: repository/views.py:114
+#: repository/views.py:136
 msgid "You cannot modify this trial because it is being revised."
 msgstr "Você não pode modificar esse ensaio porque ele está sendo revisado."
 
-#: repository/views.py:118
+#: repository/views.py:140
 msgid "Only the creator can modify a trial."
 msgstr "Apenas o criador pode modificar um ensaio."
 
-#: repository/views.py:154
+#: repository/views.py:176
 #, fuzzy
 msgid "Trial Submitted"
 msgstr "Sumário do ensaio"
 
-#: repository/views.py:186 repository/views.py:214
+#: repository/views.py:208 repository/views.py:236
 msgid "There are required fields missing."
 msgstr "Existem campos obrigatórios faltando."
 
-#: repository/views.py:190 repository/views.py:217
+#: repository/views.py:212 repository/views.py:239
 msgid "All required fields were filled."
 msgstr "Todos os campos obrigatórios foram preenchidos."
 
-#: repository/views.py:194 repository/views.py:220
+#: repository/views.py:216 repository/views.py:242
 msgid "All fields were filled."
 msgstr "Todos os campos foram preenchidos."
 
-#: repository/views.py:198 repository/views.py:211
+#: repository/views.py:220 repository/views.py:233
 msgid "There are fields with remarks."
 msgstr "Existem campos com observações."
 
-#: repository/views.py:201 repository/views.py:202 repository/views.py:223
+#: repository/views.py:223 repository/views.py:224 repository/views.py:245
 msgid "Error"
 msgstr "Erro"
 
-#: repository/views.py:584 repository/views.py:585
+#: repository/views.py:649 repository/views.py:650
 #, fuzzy
 msgid "Delete Contact"
 msgstr "Novo contato"
@@ -1487,6 +1499,15 @@ msgstr "Ensaios Clínicos"
 #: repository/templates/repository/advanced_search.html:15
 msgid "Trials containing the terms"
 msgstr "Ensaios contendo os termos"
+
+#: repository/templates/repository/advanced_search.html:31
+msgid "All"
+msgstr "Todos"
+
+#: repository/templates/repository/advanced_search.html:33
+#, fuzzy
+msgid "Interventional"
+msgstr "Intervenções"
 
 #: repository/templates/repository/attachments.html:14
 #: repository/templates/repository/clinicaltrial_detail_user.html:103
@@ -1785,15 +1806,27 @@ msgstr "Privado"
 msgid "Public"
 msgstr "Público"
 
-#: repository/templates/repository/clinicaltrial_list.html:64
+#: repository/templates/repository/clinicaltrial_list.html:18
+msgid "Applied Search Criteria"
+msgstr "Critérios Utilizados na Busca"
+
+#: repository/templates/repository/clinicaltrial_list.html:19
+msgid "Refine this search"
+msgstr "Refine esta busca"
+
+#: repository/templates/repository/clinicaltrial_list.html:45
+msgid "Share this result"
+msgstr "Compartilhe este resultado"
+
+#: repository/templates/repository/clinicaltrial_list.html:102
 msgid "No clinical trial has been found with the term:"
 msgstr "Nenhum ensaio clínico foi encontrado com o termo:"
 
-#: repository/templates/repository/clinicaltrial_list.html:66
+#: repository/templates/repository/clinicaltrial_list.html:104
 msgid "No clinical trial has been registered."
 msgstr "Nenhum ensaio clínico foi registrado."
 
-#: repository/templates/repository/clinicaltrial_list.html:71
+#: repository/templates/repository/clinicaltrial_list.html:109
 #, fuzzy
 msgid "Not yet submitted trials"
 msgstr "Últimos ensaios publicados"
@@ -1995,37 +2028,37 @@ msgstr "Pendente"
 msgid "Published"
 msgstr "Publicado"
 
-#: reviewapp/views.py:178
+#: reviewapp/views.py:182
 msgid "The submission was deleted successfully."
 msgstr "A submissão foi excluída com sucesso."
 
-#: reviewapp/views.py:180
+#: reviewapp/views.py:184
 msgid "This submission can not be deleted."
 msgstr "Esta submissão não pode ser excluída."
 
-#: reviewapp/views.py:277 reviewapp/templates/reviewapp/terms_of_use.html:29
+#: reviewapp/views.py:281 reviewapp/templates/reviewapp/terms_of_use.html:29
 msgid "Continue"
 msgstr "Continuar"
 
-#: reviewapp/views.py:388
+#: reviewapp/views.py:392
 msgid "XML files imported with success!"
 msgstr "Arquivo XML importado com sucesso!"
 
-#: reviewapp/views.py:489
+#: reviewapp/views.py:493
 #, fuzzy
 msgid "Submission Approved"
 msgstr "Submissão concluída"
 
-#: reviewapp/views.py:496
+#: reviewapp/views.py:500
 #, fuzzy
 msgid "Submission Not Approved "
 msgstr "Submissão concluída"
 
-#: reviewapp/views.py:526
+#: reviewapp/views.py:530
 msgid "Message sent successfully."
 msgstr "Mensagem enviada com sucesso."
 
-#: reviewapp/views.py:529
+#: reviewapp/views.py:533
 msgid "Please fill out all fields correctly."
 msgstr "Por favor, preencha todos os campos corretamente."
 
@@ -2824,9 +2857,6 @@ msgstr "Situação do recrutamento"
 
 #~ msgid "Fuzzy only"
 #~ msgstr "Apenas aproximados"
-
-#~ msgid "All"
-#~ msgstr "Todos"
 
 #~ msgid "Go"
 #~ msgstr "Ir"
