@@ -1250,7 +1250,6 @@ def trial_otxml(request, trial_fossil_id, trial_version=None):
     ct.version = fossil.revision_sequential
     ct.status = fossil.indexers.key('status', fail_silent=True).value
 
-    #fixme: set DoesNotWork correctly!
     persons = set(ct.scientific_contact + ct.public_contact + ct.site_contact)
 
     xml = xml_opentrials(ct, persons)
