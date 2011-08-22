@@ -13,7 +13,7 @@
 
     <form action="{% url repository.index %}" method="get">
         <label for="free_search">{% trans 'Trials containing the terms' %}:</label>
-        <input type="text" name="q" class="textEntry" id="free_search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" value="{{q}}" size="70"/>
+        <input type="text" name="q" class="textEntry" id="free_search" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" value="{{ q }}" size="70"/>
         <br/><br />
 
         <label for="rec_country">{% trans 'Recruitment Country' %}:</label>
@@ -35,9 +35,9 @@
 
         <fieldset>
             <legend>{% trans 'Inclusion Gender' %}</legend>
-            <input type="radio" name="gender" group="gender" value="-" {% if '-' in search_filters.gender %} checked="checked" {% endif %}> {% trans 'both' %}
-            <input type="radio" name="gender" group="gender" value="F" {% if 'F' in search_filters.gender %} checked="checked" {% endif %}> {% trans 'female' %}
-            <input type="radio" name="gender" group="gender" value="M" {% if 'M' in search_filters.gender %} checked="checked" {% endif %}> {% trans 'male' %}
+            <input type="radio" name="gender" group="gender" value="both" {% if 'both' in search_filters.gender %} checked="checked" {% endif %}> {% trans 'both' %}
+            <input type="radio" name="gender" group="gender" value="female" {% if 'female' in search_filters.gender %} checked="checked" {% endif %}> {% trans 'female' %}
+            <input type="radio" name="gender" group="gender" value="male" {% if 'male' in search_filters.gender %} checked="checked" {% endif %}> {% trans 'male' %}
         </fieldset>
 
         <fieldset>

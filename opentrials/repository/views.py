@@ -347,12 +347,8 @@ def humanize_search_values(key, value, language_code, default_str=None):
                 i_types.append(i_type['description'])
         return ', '.join(i_types) if i_types else default_str
     elif key == 'gender':
-        if value == 'M':
-            return _('male')
-        elif value == 'F':
-            return _('female')
-        elif value == '-':
-            return _('both')
+        if value in ['male', 'female', 'both']:
+            return _(value)
         else:
             return default_str
     else:
