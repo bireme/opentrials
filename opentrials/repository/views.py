@@ -54,7 +54,8 @@ from polyglot.multilingual_forms import modelformset_factory
 from fossil.fields import DictKeyAttribute
 from fossil.models import Fossil
 
-from utilities import user_in_group
+from utilities import user_in_group, normalize_age
+
 import datetime
 
 import choices
@@ -368,6 +369,10 @@ def index(request):
     is_observational = request.GET.get('is_observ', '').strip()
     i_type = request.GET.getlist('i_type')
     gender = request.GET.get('gender', '').strip()
+    minimum_age = request.GET.get('age_min','').strip()
+    maximum_age = request.GET.get('age_max','').strip()
+    minimum_age_unit = request.GET.get('age_min_unit','').strip()
+    maximum_age_unit = request.GET.get('age_max_unit','').strip()
 
     filters = {}
     if rec_status:
@@ -380,6 +385,18 @@ def index(request):
         filters['i_type_exact'] = i_type
     if gender:
         filters['gender'] = gender
+
+    if minimum_age:
+        try:
+            filters['maximum_recruitment_age__gte'] = normalize_age(int(minimum_age),minimum_age_unit)
+        except ValueError:
+            filters['maximum_recruitment_age__gte'] = 0
+    if maximum_age:
+        try:
+            filters['minimum_recruitment_age__lte'] = normalize_age(int(maximum_age),maximum_age_unit)
+        except ValueError:
+            filters['minimum_recruitment_age__lte'] = normalize_age(200,maximum_age_unit)
+
 
     object_list = ClinicalTrial.fossils.published_advanced(q=q, **filters)
     unsubmiteds = Submission.objects.filter(title__icontains=q).filter(Q(status='draft') | Q(status='resubmit')).order_by('-updated')
@@ -1274,6 +1291,8 @@ def advanced_search(request):
     is_observational = request.GET.getlist('is_observ')
     i_type = request.GET.getlist('i_type')
     gender = request.GET.get('gender', '').strip()
+    minimum_age = request.GET.get('age_min','').strip()
+    maximum_age = request.GET.get('age_max','').strip()
 
     recruitment_country_list = localized_vocabulary(CountryCode, request.LANGUAGE_CODE.lower())
     recruitment_status_list = localized_vocabulary(RecruitmentStatus, request.LANGUAGE_CODE.lower())
@@ -1284,6 +1303,9 @@ def advanced_search(request):
                                'rec_status':recruitment_status_list,
                                'i_type':institution_type_list,
                                'q':q,
+                               'age_min': minimum_age,
+                               'age_max': maximum_age,
+                               'ages':range(120),
                                'search_filters':{'rec_status':rec_status,
                                                  'rec_country':rec_country,
                                                  'is_observ':is_observational,

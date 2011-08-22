@@ -29,6 +29,7 @@ from polyglot.multilingual_forms import MultilingualModelCheckboxField
 
 from trial_validation import trial_validator, TRIAL_FORMS
 
+from utilities import normalize_age
 from datetime import date
 import datetime
 import re
@@ -490,19 +491,7 @@ class RecruitmentForm(ReviewModelForm):
 
 trial_validator.register(TRIAL_FORMS[4], [RecruitmentForm])
 
-def normalize_age(age, unity):
-    "convert ages to hours"
-    if unity == 'Y':
-        return age*365*24
-    elif unity == 'M':
-        return age*30*24
-    elif unity == 'W':
-        return age*7*24
-    elif unity == 'D':
-        return age*24
-    elif unity == 'H':
-        return age
-    return age
+
 ### step_6 #####################################################################
 class StudyTypeForm(ReviewModelForm):
     class Meta:
