@@ -80,17 +80,17 @@ export_json.short_description = 'Export selected records in JSON format'
 def user_in_group(user, group):
     return user.groups.filter(name=group).count() != 0 if user else False
 
-def normalize_age(age, unity):
+def normalize_age(age, unit):
     "convert ages to hours"
-    if unity == 'Y':
+    if unit == 'Y':
         return age*365*24
-    elif unity == 'M':
+    elif unit == 'M':
         return age*30*24
-    elif unity == 'W':
+    elif unit == 'W':
         return age*7*24
-    elif unity == 'D':
+    elif unit == 'D':
         return age*24
-    elif unity == 'H':
+    elif unit == 'H':
         return age
     return None
 
