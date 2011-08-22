@@ -1274,7 +1274,6 @@ def advanced_search(request):
                                'q':q,
                                'age_min': minimum_age,
                                'age_max': maximum_age,
-                               'ages':range(120),
                                'search_filters':{'rec_status':rec_status,
                                                  'rec_country':rec_country,
                                                  'is_observ':is_observational,
