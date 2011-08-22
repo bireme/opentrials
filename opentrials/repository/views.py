@@ -72,6 +72,28 @@ MENU_SHORT_TITLE = [_('Trial Identif.'),
                     _('Outcomes'),
                     _('Contacts'),
                     _('Attachs')]
+def localized_vocabulary(model_instance, language, *args):
+    """
+    Retrieve vocabulary in a given language
+
+    default *args: ['pk', 'description', 'label']
+    """
+    if not args:
+        args = ['pk', 'description', 'label']
+
+    model_qs = model_instance.objects.all()
+    localized_list = model_qs.values(*args)
+    for item in localized_list:
+        try:
+            t = VocabularyTranslation.objects.get_translation_for_object(
+                                language, model=model_instance,
+                                object_id=item['pk'])
+            if t.description:
+                item['description'] = t.description
+        except ObjectDoesNotExist:
+            pass
+
+    return localized_list
 
 def is_outdate(ct):
 
@@ -293,6 +315,49 @@ def recruiting(request):
                                'paginator': paginator},
                                context_instance=RequestContext(request))
 
+#Applied Search Criteria
+def humanize_search_values(key, value, language_code, default_str=None):
+    """
+    This function is used to translate advanced search params
+    into formatted values ready to print in templates.
+
+    If a key/value is unknown, a default string is returned.
+    """
+    if default_str is None:
+        default_str = '###unknown search parameters###'
+
+    if key == 'rec_country':
+        for country in localized_vocabulary(CountryCode, language_code):
+            if country['label'] == value:
+                return country['description']
+        return default_str
+    elif key == 'rec_status_exact':
+        statuses = []
+        for status in localized_vocabulary(RecruitmentStatus, language_code):
+            if status['label'] in value:
+                statuses.append(status['description'])
+        return ', '.join(statuses) if statuses else default_str
+    elif key == 'is_observational':
+        if value not in ['true','false']:
+            return default_str
+        return _('Observational') if value == 'true' else _('Interventional')
+    elif key == 'i_type_exact':
+        i_types = []
+        for i_type in localized_vocabulary(InstitutionType, language_code):
+            if i_type['label'] in value:
+                i_types.append(i_type['description'])
+        return ', '.join(i_types) if i_types else default_str
+    elif key == 'gender':
+        if value == 'M':
+            return _('male')
+        elif value == 'F':
+            return _('female')
+        elif value == '-':
+            return _('both')
+        else:
+            return default_str
+    else:
+        return default_str
 
 def index(request):
     ''' List all registered trials
@@ -301,9 +366,9 @@ def index(request):
     q = request.GET.get('q', '').strip()
     rec_status = request.GET.getlist('rec_status')
     rec_country = request.GET.get('rec_country', '').strip()
-    is_observational = request.GET.getlist('is_observ')
+    is_observational = request.GET.get('is_observ', '').strip()
     i_type = request.GET.getlist('i_type')
-    gender = request.GET.get('gender','').strip()
+    gender = request.GET.get('gender', '').strip()
     minimum_age = request.GET.get('age_min','').strip()
     maximum_age = request.GET.get('age_max','').strip()
     minimum_age_unit = request.GET.get('age_min_unit','').strip()
@@ -334,12 +399,8 @@ def index(request):
 
 
     object_list = ClinicalTrial.fossils.published_advanced(q=q, **filters)
-
     unsubmiteds = Submission.objects.filter(title__icontains=q).filter(Q(status='draft') | Q(status='resubmit')).order_by('-updated')
-
     object_list = object_list.proxies(language=request.LANGUAGE_CODE)
-
-    # pagination
     paginator = Paginator(object_list, getattr(settings, 'PAGINATOR_CT_PER_PAGE', 10))
 
     try:
@@ -352,6 +413,10 @@ def index(request):
     except (EmptyPage, InvalidPage):
         objects = paginator.page(paginator.num_pages)
 
+    #remove empty filters, _exact query suffix and format values to template
+    search_filters = ([k.replace('_exact', ''), humanize_search_values(k, v, request.LANGUAGE_CODE.lower())]
+                        for k, v in filters.items() if v)
+
     return render_to_response('repository/clinicaltrial_list.html',
                               {'objects': objects,
                                'page': page,
@@ -359,6 +424,7 @@ def index(request):
                                'q': q,
                                'unsubmiteds':unsubmiteds,
                                'outdated_flag':settings.MEDIA_URL + 'media/img/admin/icon_error.gif',
+                               'search_filters': dict(search_filters),
                                },
                                context_instance=RequestContext(request))
 
@@ -1228,44 +1294,9 @@ def advanced_search(request):
     minimum_age = request.GET.get('age_min','').strip()
     maximum_age = request.GET.get('age_max','').strip()
 
-    #get a list of recruitment countries considering the site language
-    recruitment_country = CountryCode.objects.all()
-    recruitment_country_list = recruitment_country.values('pk', 'description', 'label')
-    for obj in recruitment_country_list:
-        try:
-            t = VocabularyTranslation.objects.get_translation_for_object(
-                                request.LANGUAGE_CODE.lower(), model=CountryCode,
-                                object_id=obj['pk'])
-            if t.description:
-                obj['description'] = t.description
-        except ObjectDoesNotExist:
-            pass
-
-    #get a list of recruitment status considering the site language
-    recruitment_status = RecruitmentStatus.objects.all()
-    recruitment_status_list = recruitment_status.values('pk', 'description', 'label')
-    for obj in recruitment_status_list:
-        try:
-            t = VocabularyTranslation.objects.get_translation_for_object(
-                                request.LANGUAGE_CODE.lower(), model=RecruitmentStatus,
-                                object_id=obj['pk'])
-            if t.description:
-                obj['description'] = t.description
-        except ObjectDoesNotExist:
-            pass
-
-    #get a list of institution types
-    institution_type = InstitutionType.objects.all()
-    institution_type_list = institution_type.values('pk', 'description', 'label')
-    for obj in institution_type_list:
-        try:
-            t = VocabularyTranslation.objects.get_translation_for_object(
-                                request.LANGUAGE_CODE.lower(), model=InstitutionType,
-                                object_id=obj['pk'])
-            if t.description:
-                obj['description'] = t.description
-        except ObjectDoesNotExist:
-            pass
+    recruitment_country_list = localized_vocabulary(CountryCode, request.LANGUAGE_CODE.lower())
+    recruitment_status_list = localized_vocabulary(RecruitmentStatus, request.LANGUAGE_CODE.lower())
+    institution_type_list = localized_vocabulary(InstitutionType, request.LANGUAGE_CODE.lower())
 
     return render_to_response('repository/advanced_search.html',
                               {'rec_countries':recruitment_country_list,
