@@ -29,9 +29,9 @@ class FossilIndex(SearchIndex):
         except:
             return None
 
-        age = normalize_age(value, unit)
+        age = normalize_age(value, unit) if unit != '-' else 0
 
-        return age if age is not None else 0
+        return age
 
     def prepare_maximum_recruitment_age(self, obj):
         fossil_ct = obj.get_object_fossil()
@@ -41,9 +41,9 @@ class FossilIndex(SearchIndex):
         except:
             return None
 
-        age = normalize_age(value, unit)
+        age = normalize_age(value, unit) if unit != '-' else normalize_age(200, 'Y')
 
-        return age if age is not None else normalize_age(200, 'Y')
+        return age
 
     def prepare_trial_id(self, obj):
         fossil_ct = obj.get_object_fossil()

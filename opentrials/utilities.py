@@ -82,18 +82,13 @@ def user_in_group(user, group):
 
 def normalize_age(age, unit):
     "convert ages to hours"
-    if unit == 'Y':
-        return age*365*24
-    elif unit == 'M':
-        return age*30*24
-    elif unit == 'W':
-        return age*7*24
-    elif unit == 'D':
-        return age*24
-    elif unit == 'H':
-        return age
-    return None
-
+    age_to_hour_multipliers = {'Y': 365*24,
+                               'M': 30*24,
+                               'W': 7*24,
+                               'D': 24,
+                               'H': 1,
+                               }
+    return age_to_hour_multipliers[unit] * age
 
 if __name__=='__main__':
     import doctest
