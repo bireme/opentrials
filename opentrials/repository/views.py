@@ -314,6 +314,49 @@ def recruiting(request):
                                'paginator': paginator},
                                context_instance=RequestContext(request))
 
+#Applied Search Criteria
+def humanize_search_values(key, value, language_code, default_str=None):
+    """
+    This function is used to translate advanced search params
+    into formatted values ready to print in templates.
+
+    If a key/value is unknown, a default string is returned.
+    """
+    if default_str is None:
+        default_str = '###unknown search parameters###'
+
+    if key == 'rec_country':
+        for country in localized_vocabulary(CountryCode, language_code):
+            if country['label'] == value:
+                return country['description']
+        return default_str
+    elif key == 'rec_status_exact':
+        statuses = []
+        for status in localized_vocabulary(RecruitmentStatus, language_code):
+            if status['label'] in value:
+                statuses.append(status['description'])
+        return ', '.join(statuses) if statuses else default_str
+    elif key == 'is_observational':
+        if value not in ['true','false']:
+            return default_str
+        return _('Observational') if value == 'true' else _('Interventional')
+    elif key == 'i_type_exact':
+        i_types = []
+        for i_type in localized_vocabulary(InstitutionType, language_code):
+            if i_type['label'] in value:
+                i_types.append(i_type['description'])
+        return ', '.join(i_types) if i_types else default_str
+    elif key == 'gender':
+        if value == 'M':
+            return _('male')
+        elif value == 'F':
+            return _('female')
+        elif value == '-':
+            return _('both')
+        else:
+            return default_str
+    else:
+        return default_str
 
 def index(request):
     ''' List all registered trials
@@ -322,7 +365,7 @@ def index(request):
     q = request.GET.get('q', '').strip()
     rec_status = request.GET.getlist('rec_status')
     rec_country = request.GET.get('rec_country', '').strip()
-    is_observational = request.GET.getlist('is_observ')
+    is_observational = request.GET.get('is_observ', '').strip()
     i_type = request.GET.getlist('i_type')
     gender = request.GET.get('gender', '').strip()
 
@@ -353,55 +396,9 @@ def index(request):
     except (EmptyPage, InvalidPage):
         objects = paginator.page(paginator.num_pages)
 
-    #Applied Search Criteria
-    def humanize_search_values(key, value, default_str=None):
-        """
-        This function is used to translate advanced search params
-        into formatted values ready to print in templates.
-
-        If a key/value is unknown, a default string is returned.
-        """
-        if default_str is None:
-            default_str = '###unknown search parameters###'
-
-        if key == 'rec_country':
-            for country in localized_vocabulary(CountryCode, request.LANGUAGE_CODE.lower()):
-                if country['label'] == value:
-                    return country['description']
-            return default_str
-        elif key == 'rec_status_exact':
-            statuses = []
-            for status in localized_vocabulary(RecruitmentStatus, request.LANGUAGE_CODE.lower()):
-                if status['label'] in value:
-                    statuses.append(status['description'])
-            return ', '.join(statuses) if statuses else default_str
-        elif key == 'is_observational':
-            if not isinstance(value, bool):
-                return default_str
-
-            return _('Observational') if value else _('Interventional')
-        elif key == 'i_type_exact':
-            i_types = []
-            for i_type in localized_vocabulary(InstitutionType, request.LANGUAGE_CODE.lower()):
-                if i_type['label'] in value:
-                    i_types.append(i_type['description'])
-            return ', '.join(i_types) if i_types else default_str
-        elif key == 'gender':
-            if value == 'M':
-                return _('male')
-            elif value == 'F':
-                return _('female')
-            elif value == '-':
-                return _('both')
-            else:
-                return default_str
-        else:
-            return default_str
-
     #remove empty filters, _exact query suffix and format values to template
-    search_filters = ([(lambda x: x[:x.find('_exact')] if x.endswith('_exact') else x)(k),
-                        humanize_search_values(k, v)] for k, v in filters.items() if v)
-
+    search_filters = ([k.replace('_exact', ''), humanize_search_values(k, v, request.LANGUAGE_CODE.lower())]
+                        for k, v in filters.items() if v)
 
     return render_to_response('repository/clinicaltrial_list.html',
                               {'objects': objects,
