@@ -328,6 +328,14 @@ def get_humanizer(language_code, min_age_unit, max_age_unit):
         if default_str is None:
             default_str = '###unknown search parameters###'
 
+        age_unit_labels = {
+            'Y':_('years'),
+            'M':_('months'),
+            'W':_('weeks'),
+            'D':_('days'),
+            'H':_('hours'),
+        }
+
         if key == 'rec_country':
             humanized = [_('Recruitment Country')]
 
@@ -377,20 +385,22 @@ def get_humanizer(language_code, min_age_unit, max_age_unit):
                 humanized.append(default_str)
             return humanized
         elif key == 'maximum_recruitment_age__gte':
-            #TODO
+            #due to the logic applied to the query, the key names are inverted (min an max age)
+            #see the index view callable
             humanized = [_('Inclusion Minimum Age')]
             try:
-                humanized.append(denormalize_age(value, max_age_unit))
+                humanized.append(u'%s %s' % (denormalize_age(value, min_age_unit), age_unit_labels[min_age_unit]))
             except KeyError:
-                humanized.append(denormalize_age(value, 'Y'))
+                humanized.append(u'%s %s' % (denormalize_age(value, 'Y'), age_unit_labels['Y']))
             return humanized
         elif key == 'minimum_recruitment_age__lte':
-            #TODO
+            #due to the logic applied to the query, the key names are inverted (min an max age)
+            #see the index view callable
             humanized = [_('Inclusion Maximum Age')]
             try:
-                humanized.append(denormalize_age(value, max_age_unit))
+                humanized.append(u'%s %s' % (denormalize_age(value, max_age_unit), age_unit_labels[max_age_unit]))
             except KeyError:
-                humanized.append(denormalize_age(value, 'Y'))
+                humanized.append(u'%s %s' % (denormalize_age(value, 'Y'), age_unit_labels['Y']))
             return humanized
         else:
             return [key, default_str]
@@ -424,6 +434,7 @@ def index(request):
     if gender:
         filters['gender'] = gender
 
+    #query by age logic explained at http://reddes.bvsalud.org/projects/clinical-trials/wiki/InclusionCriteriaField
     if minimum_age:
         try:
             filters['maximum_recruitment_age__gte'] = normalize_age(int(minimum_age),minimum_age_unit)

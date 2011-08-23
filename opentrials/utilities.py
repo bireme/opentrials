@@ -81,7 +81,7 @@ def user_in_group(user, group):
     return user.groups.filter(name=group).count() != 0 if user else False
 
 def normalize_age(age, unit):
-    "convert ages to hours"
+    "convert age to hours"
     age_to_hour_multipliers = {'Y': 365*24,
                                'M': 30*24,
                                'W': 7*24,
@@ -91,7 +91,7 @@ def normalize_age(age, unit):
     return age_to_hour_multipliers[unit] * age
 
 def denormalize_age(hours, unit):
-    "convert hours to ages"
+    "convert hours to age"
     hour_to_age_multipliers = {'Y': 365*24,
                                'M': 30*24,
                                'W': 7*24,
