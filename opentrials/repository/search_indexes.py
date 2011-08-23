@@ -151,6 +151,11 @@ class FossilIndex(SearchIndex):
 
     def prepare_gender(self, obj):
         fossil_ct = obj.get_object_fossil()
-        return fossil_ct.gender
+        if fossil_ct.gender == 'M':
+            return 'male'
+        elif fossil_ct.gender == 'F':
+            return 'female'
+        else:
+            return 'both'
 
 site.register(Fossil, FossilIndex)

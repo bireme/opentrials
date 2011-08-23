@@ -22,21 +22,7 @@
         <ul>
             {% for filter, value in search_filters.items %}
             <li>
-            {% if filter == 'rec_country' %}
-                <strong>{% trans 'Recruitment Country' %}:</strong> {{ value }}
-            {% endif %}
-            {% if filter == 'is_observational' %}
-                <strong>{% trans 'Study Type' %}:</strong> {{ value }}
-            {% endif %}
-            {% if filter == 'gender' %}
-                <strong>{% trans 'Inclusion Gender' %}:</strong> {{ value }}
-            {% endif %}
-            {% if filter == 'rec_status' %}
-                <strong>{% trans 'Recruitment Status' %}:</strong> {{ value }}
-            {% endif %}
-            {% if filter == 'i_type' %}
-                <strong>{% trans 'Institution type' %}:</strong> {{ value }}
-            {% endif %}
+                <strong>{{ filter }}:</strong> {{ value }}
             </li>
             {% endfor %}
         </ul>

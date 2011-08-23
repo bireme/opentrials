@@ -643,3 +643,11 @@ class FossilContact(FossilProxy):
         except IndexError:
             return country
 
+    def __hash__(self):
+        return self.fossil.get('pk')
+
+    def __eq__(self, other):
+        if type(self) is type(other):
+            return hash(self) == hash(other)
+        else:
+            return False
