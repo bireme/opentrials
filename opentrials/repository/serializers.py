@@ -84,8 +84,13 @@ def serialize_trial(trial, as_string=True, attrs_to_ignore=None):
     if hasattr(trial, 'scientific_acronym_display'):
         json['scientific_acronym_display'] = trial.scientific_acronym_display()
     if hasattr(trial, 'enrollment_start_planned'):
+        """
+        Create a date in dd-mm-yyyy format for ictrp xml
+        """
         date = trial.enrollment_start_actual or trial.enrollment_start_planned
         if date:
+            if isinstance(date, datetime.date):
+                date = date.strftime('%Y-%m-%d')
             date = date.split('-')
             date.reverse()
             json['date_enrollment_start'] = '/'.join(date)
