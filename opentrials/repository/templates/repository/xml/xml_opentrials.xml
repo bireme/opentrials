@@ -98,9 +98,9 @@
             <agemax value="{{ object.agemax_value }}" unit="{{ object.agemax_unit|switch:"-=null,Y=years,M=months,W=weeks,D=days,H=hours" }}"></agemax>
 
             {% if object.enrollment_start_actual %}
-            <date_enrolment_actual start="{{ object.date_enrollment_start }}" end="{{ object.date_enrollment_end }}"></date_enrolment_actual>
+            <date_enrolment_actual start="{{ object.enrollment_start_actual }}" end="{{ object.enrollment_end_actual }}"></date_enrolment_actual>
             {% else %}
-            <date_enrolment_anticipated start="{{ object.date_enrollment_start }}" end="{{ object.date_enrollment_end }}"></date_enrolment_anticipated>
+            <date_enrolment_anticipated start="{{ object.enrollment_start_planned }}" end="{{ object.enrollment_end_planned }}"></date_enrolment_anticipated>
             {% endif %}
 
             <target_size value="{{ object.target_sample_size }}"></target_size>
@@ -158,7 +158,7 @@
             {% for contact in object.public_contact %}
             <public_contact person="{{ contact.pk }}"></public_contact>
             {% endfor %}
-            
+
             {% for contact in object.scientific_contact %}
             <scientific_contact person="{{ contact.pk }}"></scientific_contact>
             {% endfor %}
@@ -172,7 +172,7 @@
             {% for secid in object.trial_number %}
             <secondary_id>
                 <sec_id>{{ secid.id_number }}</sec_id>
-                <issuing_authority>{{ secid.issuing_authority }}</issuing_authority>    
+                <issuing_authority>{{ secid.issuing_authority }}</issuing_authority>
             </secondary_id>
             {% endfor %}
         </secondary_ids>
