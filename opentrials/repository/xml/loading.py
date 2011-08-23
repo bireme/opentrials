@@ -702,7 +702,7 @@ class OpenTrialsXMLImport(object):
         ret = dict(node.items())
 
         for field in node.iterchildren():
-            if field.tag in ('name','address'):
+            if field.tag in ('name','address','state','city'):
                 ret[field.tag] = field.text
 
         return ret

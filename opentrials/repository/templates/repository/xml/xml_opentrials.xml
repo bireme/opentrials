@@ -24,12 +24,16 @@
             <primary_sponsor country_code="{{ object.primary_sponsor.country.label }}" type="{{ object.primary_sponsor.i_type.label|prep_label_for_xml }}">
                 <name>{{ object.primary_sponsor.name }}</name>
                 <address>{{ object.primary_sponsor.address }}</address>
+                <state>{{ object.primary_sponsor.state }}</state>
+                <city>{{ object.primary_sponsor.city }}</city>
             </primary_sponsor>
 
             {%  for sponsor in object.secondary_sponsors %}
             <secondary_sponsor country_code="{{ sponsor.institution.country.label }}" type="{{ sponsor.institution.i_type.label|prep_label_for_xml }}">
                 <name>{{ sponsor.institution.name }}</name>
                 <address>{{ sponsor.institution.address }}</address>
+                <state>{{ sponsor.institution.state }}</state>
+                <city>{{ sponsor.institution.city }}</city>
             </secondary_sponsor>
             {% endfor %}
 
@@ -37,6 +41,8 @@
             <source_support country_code="{{ source.institution.country.label }}" type="{{ source.institution.i_type.label|prep_label_for_xml }}">
                 <name>{{ source.institution.name }}</name>
                 <address>{{ source.institution.address }}</address>
+                <state>{{ source.institution.state }}</state>
+                <city>{{ source.institution.city }}</city>
             </source_support>
             {% endfor %}
         </sponsors_and_support>

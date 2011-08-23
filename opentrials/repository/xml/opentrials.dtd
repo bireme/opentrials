@@ -62,17 +62,19 @@ Comments:
 
     <!-- formset 2/9 -->
     <!ELEMENT sponsors_and_support (primary_sponsor, secondary_sponsor*, source_support*)>
-    <!ELEMENT primary_sponsor (name, address?)>                 <!--TRDS 5 (1)-->
+    <!ELEMENT primary_sponsor (name, address?, state?, city?)>                 <!--TRDS 5 (1)-->
         <!ATTLIST primary_sponsor country_code (%country.options;) #REQUIRED>
         <!ATTLIST primary_sponsor type (%institution_type.options;) #IMPLIED>
-    <!ELEMENT secondary_sponsor (name, address?)>               <!--TRDS 6 (0..*)-->
+    <!ELEMENT secondary_sponsor (name, address?, state?, city?)>               <!--TRDS 6 (0..*)-->
         <!ATTLIST secondary_sponsor country_code (%country.options;) #REQUIRED>
         <!ATTLIST secondary_sponsor type (%institution_type.options;) #IMPLIED>
-    <!ELEMENT source_support (name, address?)>                  <!--TRDS 4 (0..*)-->
+    <!ELEMENT source_support (name, address?, state?, city?)>                  <!--TRDS 4 (0..*)-->
         <!ATTLIST source_support country_code (%country.options;) #REQUIRED>
         <!ATTLIST source_support type (%institution_type.options;) #IMPLIED>
     <!ELEMENT name (#PCDATA)>
     <!ELEMENT address (#PCDATA)>
+    <!ELEMENT state (#PCDATA)>
+    <!ELEMENT city (#PCDATA)>
 
     <!-- formset 3/9 -->
     <!ELEMENT health_conditions (hc_code*, keyword*, freetext?)>
