@@ -61,24 +61,24 @@
         <fieldset>
             <legend>{% trans 'Age limits' %}</legend>
             {% trans 'Inclusion Minimum Age' %}:<ul name="age_min">
-                <input type="text" name="age_min" size="5"></input>
+                <input type="text" name="age_min" size="5" value="{{ search_filters.minimum_age }}" />
                 <select name="age_min_unit">
-                    <option value="Y">{% trans 'Years' %}</option>
-                    <option value="M">{% trans 'Months' %}</option>
-                    <option value="W">{% trans 'Weeks' %}</option>
-                    <option value="D">{% trans 'Days' %}</option>
-                    <option value="H">{% trans 'Hours' %}</option>
+                    <option {% if 'Y' == search_filters.minimum_age_unit %} selected="selected" {% endif %} value="Y">{% trans 'years' %}</option>
+                    <option {% if 'M' == search_filters.minimum_age_unit %} selected="selected" {% endif %} value="M">{% trans 'months' %}</option>
+                    <option {% if 'W' == search_filters.minimum_age_unit %} selected="selected" {% endif %} value="W">{% trans 'weeks' %}</option>
+                    <option {% if 'D' == search_filters.minimum_age_unit %} selected="selected" {% endif %} value="D">{% trans 'days' %}</option>
+                    <option {% if 'H' == search_filters.minimum_age_unit %} selected="selected" {% endif %} value="H">{% trans 'hours' %}</option>
                 </select>
 
             </ul>
             {% trans 'Inclusion Maximum Age' %}:<ul name="age_max">
-                <input type="text" name="age_max" size="5"></input>
+                <input type="text" name="age_max" size="5" value="{{ search_filters.maximum_age }}" />
                  <select name="age_max_unit">
-                    <option value="Y">{% trans 'Years' %}</option>
-                    <option value="M">{% trans 'Months' %}</option>
-                    <option value="W">{% trans 'Weeks' %}</option>
-                    <option value="D">{% trans 'Days' %}</option>
-                    <option value="H">{% trans 'Hours' %}</option>
+                    <option {% if 'Y' == search_filters.maximum_age_unit %} selected="selected" {% endif %} value="Y">{% trans 'years' %}</option>
+                    <option {% if 'M' == search_filters.maximum_age_unit %} selected="selected" {% endif %} value="M">{% trans 'months' %}</option>
+                    <option {% if 'W' == search_filters.maximum_age_unit %} selected="selected" {% endif %} value="W">{% trans 'weeks' %}</option>
+                    <option {% if 'D' == search_filters.maximum_age_unit %} selected="selected" {% endif %} value="D">{% trans 'days' %}</option>
+                    <option {% if 'H' == search_filters.maximum_age_unit %} selected="selected" {% endif %} value="H">{% trans 'hours' %}</option>
                 </select>
             </ul>
         </fieldset>

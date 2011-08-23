@@ -90,6 +90,16 @@ def normalize_age(age, unit):
                                }
     return age_to_hour_multipliers[unit] * age
 
+def denormalize_age(hours, unit):
+    "convert hours to ages"
+    hour_to_age_multipliers = {'Y': 365*24,
+                               'M': 30*24,
+                               'W': 7*24,
+                               'D': 24,
+                               'H': 1,
+                               }
+    return hours / hour_to_age_multipliers[unit]
+
 if __name__=='__main__':
     import doctest
     doctest.testmod()

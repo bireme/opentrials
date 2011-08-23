@@ -54,7 +54,7 @@ from polyglot.multilingual_forms import modelformset_factory
 from fossil.fields import DictKeyAttribute
 from fossil.models import Fossil
 
-from utilities import user_in_group, normalize_age
+from utilities import user_in_group, normalize_age, denormalize_age
 
 import datetime
 
@@ -316,44 +316,86 @@ def recruiting(request):
                                context_instance=RequestContext(request))
 
 #Applied Search Criteria
-def humanize_search_values(key, value, language_code, default_str=None):
-    """
-    This function is used to translate advanced search params
-    into formatted values ready to print in templates.
+def get_humanizer(language_code, min_age_unit, max_age_unit):
 
-    If a key/value is unknown, a default string is returned.
-    """
-    if default_str is None:
-        default_str = '###unknown search parameters###'
+    def humanize_search_values(key, value, default_str=None):
+        """
+        This function is used to translate advanced search params
+        into formatted values ready to print in templates.
 
-    if key == 'rec_country':
-        for country in localized_vocabulary(CountryCode, language_code):
-            if country['label'] == value:
-                return country['description']
-        return default_str
-    elif key == 'rec_status_exact':
-        statuses = []
-        for status in localized_vocabulary(RecruitmentStatus, language_code):
-            if status['label'] in value:
-                statuses.append(status['description'])
-        return ', '.join(statuses) if statuses else default_str
-    elif key == 'is_observational':
-        if value not in ['true','false']:
-            return default_str
-        return _('Observational') if value == 'true' else _('Interventional')
-    elif key == 'i_type_exact':
-        i_types = []
-        for i_type in localized_vocabulary(InstitutionType, language_code):
-            if i_type['label'] in value:
-                i_types.append(i_type['description'])
-        return ', '.join(i_types) if i_types else default_str
-    elif key == 'gender':
-        if value in ['male', 'female', 'both']:
-            return _(value)
+        If a key/value is unknown, a default string is returned.
+        """
+        if default_str is None:
+            default_str = '###unknown search parameters###'
+
+        if key == 'rec_country':
+            humanized = [_('Recruitment Country')]
+
+            for country in localized_vocabulary(CountryCode, language_code):
+                if country['label'] == value:
+                    humanized.append(country['description'])
+                    break
+            else:
+                humanized.append(default_str)
+            return humanized
+
+        elif key == 'rec_status_exact':
+            humanized = [_('Recruitment Status')]
+
+            statuses = []
+            for status in localized_vocabulary(RecruitmentStatus, language_code):
+                if status['label'] in value:
+                    statuses.append(status['description'])
+            humanized.append(', '.join(statuses) if statuses else default_str)
+            return humanized
+
+        elif key == 'is_observational':
+            humanized = [_('Study Type')]
+
+            if value not in ['true','false']:
+                humanized.append(default_str)
+            else:
+                humanized.append(_('Observational') if value == 'true' else _('Interventional'))
+            return humanized
+
+        elif key == 'i_type_exact':
+            humanized = [_('Institution type')]
+
+            i_types = []
+            for i_type in localized_vocabulary(InstitutionType, language_code):
+                if i_type['label'] in value:
+                    i_types.append(i_type['description'])
+            humanized.append(', '.join(i_types) if i_types else default_str)
+            return humanized
+
+        elif key == 'gender':
+            humanized = [_('Inclusion Gender')]
+
+            if value in ['male', 'female', 'both']:
+                humanized.append(_(value))
+            else:
+                humanized.append(default_str)
+            return humanized
+        elif key == 'maximum_recruitment_age__gte':
+            #TODO
+            humanized = [_('Inclusion Minimum Age')]
+            try:
+                humanized.append(denormalize_age(value, max_age_unit))
+            except KeyError:
+                humanized.append(denormalize_age(value, 'Y'))
+            return humanized
+        elif key == 'minimum_recruitment_age__lte':
+            #TODO
+            humanized = [_('Inclusion Maximum Age')]
+            try:
+                humanized.append(denormalize_age(value, max_age_unit))
+            except KeyError:
+                humanized.append(denormalize_age(value, 'Y'))
+            return humanized
         else:
-            return default_str
-    else:
-        return default_str
+            return [key, default_str]
+
+    return humanize_search_values
 
 def index(request):
     ''' List all registered trials
@@ -385,13 +427,13 @@ def index(request):
     if minimum_age:
         try:
             filters['maximum_recruitment_age__gte'] = normalize_age(int(minimum_age),minimum_age_unit)
-        except ValueError:
+        except (ValueError, KeyError):
             filters['maximum_recruitment_age__gte'] = 0
     if maximum_age:
         try:
             filters['minimum_recruitment_age__lte'] = normalize_age(int(maximum_age),maximum_age_unit)
-        except ValueError:
-            filters['minimum_recruitment_age__lte'] = normalize_age(200,maximum_age_unit)
+        except (ValueError, KeyError):
+            filters['minimum_recruitment_age__lte'] = normalize_age(200, 'Y')
 
 
     object_list = ClinicalTrial.fossils.published_advanced(q=q, **filters)
@@ -409,9 +451,9 @@ def index(request):
     except (EmptyPage, InvalidPage):
         objects = paginator.page(paginator.num_pages)
 
-    #remove empty filters, _exact query suffix and format values to template
-    search_filters = ([k.replace('_exact', ''), humanize_search_values(k, v, request.LANGUAGE_CODE.lower())]
-                        for k, v in filters.items() if v)
+    search_humanizer = get_humanizer(request.LANGUAGE_CODE.lower(), minimum_age_unit, maximum_age_unit)
+    search_filters = [search_humanizer(k, v)
+                        for k, v in filters.items() if v]
 
     return render_to_response('repository/clinicaltrial_list.html',
                               {'objects': objects,
@@ -1288,6 +1330,8 @@ def advanced_search(request):
     gender = request.GET.get('gender', '').strip()
     minimum_age = request.GET.get('age_min','').strip()
     maximum_age = request.GET.get('age_max','').strip()
+    minimum_age_unit = request.GET.get('age_min_unit','').strip()
+    maximum_age_unit = request.GET.get('age_max_unit','').strip()
 
     recruitment_country_list = localized_vocabulary(CountryCode, request.LANGUAGE_CODE.lower())
     recruitment_status_list = localized_vocabulary(RecruitmentStatus, request.LANGUAGE_CODE.lower())
@@ -1304,6 +1348,10 @@ def advanced_search(request):
                                                  'rec_country':rec_country,
                                                  'is_observ':is_observational,
                                                  'i_type': i_type,
-                                                 'gender':gender},
+                                                 'gender':gender,
+                                                 'minimum_age':minimum_age,
+                                                 'maximum_age':maximum_age,
+                                                 'minimum_age_unit':minimum_age_unit,
+                                                 'maximum_age_unit':maximum_age_unit,                                               },
                               },
                               context_instance=RequestContext(request))
