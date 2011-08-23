@@ -22301,7 +22301,7 @@
     "model": "vocabulary.mailmessage", 
     "fields": {
       "order": 10, 
-      "description": "Your trial was approved", 
+      "description": "Dear Sir/Madam\r\n\r\nWe are pleased to inform you that your study registered on the Registro Brasileiro\r\nde Ensaios Cl\u00ednicos (ReBEC) has been published.\r\nThe ReBEC staff thanks you for your submission and is at your disposal to clarify\r\nany doubts about submitting further studies and updating published records.\r\n\r\nIf in doubt, please do not hesitate to contact us.\r\n\r\nSincerely,\r\n", 
       "label": "approved"
     }
   }, 
@@ -22310,7 +22310,7 @@
     "model": "vocabulary.mailmessage", 
     "fields": {
       "order": 20, 
-      "description": "Your trial was not yet approved", 
+      "description": "Dear Sir/Madam\r\n\r\nThe technical staff of the Registro Brasileiro de Ensaios Cl\u00ednicos (ReBEC) has\r\nreviewed the record of your study. In order for your study to be published on\r\nReBEC, some of the information provided must be corrected, and some missing\r\nitems supplied.\r\nFor that purpose, please access ReBEC using your username and password, make\r\nthe required changes and resubmit your study.\r\n\r\nIf in doubt, please do not hesitate to contact us.\r\n\r\nSincerely,", 
       "label": "resubmitted"
     }
   }, 
@@ -22319,7 +22319,7 @@
     "model": "vocabulary.mailmessage", 
     "fields": {
       "order": 30, 
-      "description": "Your trial was submitted", 
+      "description": "Dear Sir/Madam\r\n\r\nWe are pleased to inform you that your study registered on the Registro Brasileiro\r\nde Ensaios Cl\u00ednicos (ReBEC) has been submitted.\r\n\r\nIf in doubt, please do not hesitate to contact us.\r\n\r\nSincerely,", 
       "label": "submitted"
     }
   }, 
@@ -22328,7 +22328,7 @@
     "model": "vocabulary.mailmessage", 
     "fields": {
       "order": 40, 
-      "description": "Your trial is outdated", 
+      "description": "Dear Sir/Madam\r\n\r\nThe technical staff of the Registro Brasileiro de Ensaios Cl\u00ednicos (ReBEC) advises\r\nyou that the record of your study needs updating.\r\nTo update your information, please access the ReBEC platform using your\r\nusername and password, check whether any information actually is outdated (e.g.:\r\nrecruitment status, date of first and last enrollment, intervention and outcomes,\r\nstudy status etc), make the necessary changes, and resubmit your study.\r\n\r\nIf in doubt, please do not hesitate to contact us.\r\n\r\nSincerely,", 
       "label": "outdated"
     }
   }, 

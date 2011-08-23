@@ -59,7 +59,7 @@ class OpenTrialsXMLImport(object):
             raise Exception(validation)
 
         self._parsed_trials = []
-        
+
         # Loads XML file
         if isinstance(filename_or_xmltree, basestring):
             fp = file(filename_or_xmltree)
@@ -240,7 +240,7 @@ class OpenTrialsXMLImport(object):
             raise Exception(validation)
 
         self._parsed_trials = []
-        
+
         # Loads XML file
         if isinstance(filename_or_xmltree, basestring):
             fp = file(filename_or_xmltree)
@@ -413,7 +413,7 @@ class OpenTrialsXMLImport(object):
             raise Exception(_("To import parsed trials it's necessary to call method 'parse_opentrials' before."))
 
         imported_trials = []
-        
+
         for fields, ct in self._parsed_trials:
             # Loads the trial from database and clear it or just create a new instance in memory
             if not ct:
@@ -521,7 +521,7 @@ class OpenTrialsXMLImport(object):
         ct.gender = GENDERS[fields.get('gender', 'both')]
         ct.agemin_unit = AGE_UNITS[fields.get('agemin_unit', 'null')]
         ct.agemax_unit = AGE_UNITS[fields.get('agemax_unit', 'null')]
-        
+
         # Foreign keys
         if fields.get('primary_sponsor', None):
             ct.primary_sponsor = self.get_instituion_from_db(fields['primary_sponsor'])
@@ -554,11 +554,11 @@ class OpenTrialsXMLImport(object):
             ct.recruitment_country.add(country_obj)
 
         for person in fields.get('persons', []):
-            
+
             contact = Contact.objects.filter(email=person['email'], creator=self.creator)
-                
+
             if contact:
-                contact = contact[0]    
+                contact = contact[0]
             else:
                 contact = Contact()
                 contact.creator = self.creator
@@ -770,6 +770,7 @@ class OpenTrialsXMLImport(object):
         ct.site_contact.all().delete() # pay attention to this - to see what is it deleting
         ct.descriptor_set.all().delete()
         ct.translations.all().delete()
+
 
     def get_instituion_from_db(self, fields):
         if fields.get('country_code', None):
