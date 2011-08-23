@@ -28,7 +28,7 @@
 
         <fieldset>
             <legend>{% trans 'Study Type' %}</legend>
-            <input type="radio" group="studytype" name="is_observ" value="true" {% if '' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'All' %}
+            <input type="radio" group="studytype" name="is_observ" value="" {% if '' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'All' %}
             <input type="radio" group="studytype" name="is_observ" value="true" {% if 'true' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'Observational' %}
             <input type="radio" group="studytype" name="is_observ" value="false" {% if 'false' in search_filters.is_observ %} checked="checked" {% endif %}>{% trans 'Interventional' %}
         </fieldset>
@@ -55,6 +55,31 @@
                 {% for type in i_type %}
                 <li><input type="checkbox" name="i_type" value="{{ type.label }}" {% if type.label in search_filters.i_type %} checked="checked" {% endif %}>{{ type.description }}</li>
                 {% endfor %}
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <legend>{% trans 'Age limits' %}</legend>
+            {% trans 'Inclusion Minimum Age' %}:<ul name="age_min">
+                <input type="text" name="age_min" size="5"></input>
+                <select name="age_min_unit">
+                    <option value="Y">{% trans 'Years' %}</option>
+                    <option value="M">{% trans 'Months' %}</option>
+                    <option value="W">{% trans 'Weeks' %}</option>
+                    <option value="D">{% trans 'Days' %}</option>
+                    <option value="H">{% trans 'Hours' %}</option>
+                </select>
+
+            </ul>
+            {% trans 'Inclusion Maximum Age' %}:<ul name="age_max">
+                <input type="text" name="age_max" size="5"></input>
+                 <select name="age_max_unit">
+                    <option value="Y">{% trans 'Years' %}</option>
+                    <option value="M">{% trans 'Months' %}</option>
+                    <option value="W">{% trans 'Weeks' %}</option>
+                    <option value="D">{% trans 'Days' %}</option>
+                    <option value="H">{% trans 'Hours' %}</option>
+                </select>
             </ul>
         </fieldset>
 

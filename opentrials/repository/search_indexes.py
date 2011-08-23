@@ -1,6 +1,7 @@
-from haystack.indexes import SearchIndex, CharField, DateTimeField, BooleanField, MultiValueField
+from haystack.indexes import SearchIndex, CharField, DateTimeField, BooleanField, MultiValueField, IntegerField
 from haystack import site
 from fossil.models import Fossil
+from utilities import normalize_age
 
 class FossilIndex(SearchIndex):
     text = CharField(document=True, use_template=False, stored=False)
@@ -16,7 +17,33 @@ class FossilIndex(SearchIndex):
     is_observational = BooleanField()
     i_type = MultiValueField(faceted=True)
     gender = CharField()
+    minimum_recruitment_age = IntegerField() #in hours
+    maximum_recruitment_age = IntegerField() #in hours
 
+
+    def prepare_minimum_recruitment_age(self, obj):
+        fossil_ct = obj.get_object_fossil()
+        try:
+            unit = fossil_ct.agemin_unit
+            value = fossil_ct.agemin_value
+        except:
+            return None
+
+        age = normalize_age(value, unit) if unit != '-' else 0
+
+        return age
+
+    def prepare_maximum_recruitment_age(self, obj):
+        fossil_ct = obj.get_object_fossil()
+        try:
+            unit = fossil_ct.agemax_unit
+            value = fossil_ct.agemax_value
+        except:
+            return None
+
+        age = normalize_age(value, unit) if unit != '-' else normalize_age(200, 'Y')
+
+        return age
 
     def prepare_trial_id(self, obj):
         fossil_ct = obj.get_object_fossil()
