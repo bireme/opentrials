@@ -3,6 +3,7 @@
 {% block root %}
 <!DOCTYPE trials SYSTEM "http://localhost:8000/xml/opentrials.dtd">
 <trials version="{{ opentrials_xml_version }}">
+    {% for object, persons in object_list %}
     <trial language="{{ default_language|default_if_none:"en" }}"
            status="{{ object.status|default_if_none:"published" }}"
            date_registration="{{ object.date_registration|date:"Y-m-d" }}"
@@ -205,5 +206,6 @@
         {% endfor %}
         {% endif %}
     </trial>
+    {% endfor %}
 </trials>
 {% endblock %}

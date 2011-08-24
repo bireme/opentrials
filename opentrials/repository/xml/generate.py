@@ -51,27 +51,32 @@ def xml_ictrp(fossils, **kwargs):
             {'trial_list': trials, 'reg_name': settings.REG_NAME},
             )
 
-def xml_opentrials(trial, persons, include_translations=True, **kwargs):
+def xml_opentrials(trials, include_translations=True, **kwargs):
     """Generates an Opentrials XML for a given Clinical Trial and returns as string."""
-    for translation in trial.translations:
-        translation['primary_outcomes'] = []
-        for outcome in trial.primary_outcomes:
-            for out_trans in outcome['translations']:
-                if out_trans['language'] == translation['language']:
-                    translation['primary_outcomes'].append(out_trans)
+    prepared_trials = []
+    for trial in trials:
+        for translation in trial.translations:
+            translation['primary_outcomes'] = []
+            for outcome in trial.primary_outcomes:
+                for out_trans in outcome['translations']:
+                    if out_trans['language'] == translation['language']:
+                        translation['primary_outcomes'].append(out_trans)
 
-        translation['secondary_outcomes'] = []
-        for outcome in trial.secondary_outcomes:
-            for out_trans in outcome['translations']:
-                if out_trans['language'] == translation['language']:
-                    translation['secondary_outcomes'].append(out_trans)
+            translation['secondary_outcomes'] = []
+            for outcome in trial.secondary_outcomes:
+                for out_trans in outcome['translations']:
+                    if out_trans['language'] == translation['language']:
+                        translation['secondary_outcomes'].append(out_trans)
+
+        persons = set(trial.scientific_contact + trial.public_contact + trial.site_contact)
+
+        prepared_trials.append( (trial, persons) )
 
     return render_to_string(
             'repository/xml/xml_opentrials.xml',
-            {'object': trial,
+            {'object_list': prepared_trials,
              'default_language':settings.DEFAULT_SUBMISSION_LANGUAGE,
              'reg_name': settings.REG_NAME,
-             'persons': persons,
              'include_translations': include_translations,
              'opentrials_xml_version': OPENTRIALS_XML_VERSION},
             )
