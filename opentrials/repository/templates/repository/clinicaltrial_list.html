@@ -36,12 +36,15 @@
     {% endif %}
 
     {% if objects.object_list %}
+        <form method="get" action="{% url repository.multi_otxml %}">
+        <input type="checkbox" id="chk_toggle_selection">{% trans 'Select/De-select all' %} <input type="submit" value="{% trans 'Download selected as OpenTrials XML format' %}"><br /><br />
         {% for ct in objects.object_list %}
         <table class="trial_table">
             <tr>
+                <td class="" rowspan="3"><input type="checkbox" name="trial_id" class="chk_trial_summary" value="{{ ct.trial_id }}">
                 <td class="trial_label" width="50%">{% trans 'Title' %}</td>
                 <td class="trial_label" width="30%">{% trans 'Primary Id Number' %}</td>
-                <td class="trial_content" width="20%"><a href="{% url repository.trial_registered ct.trial_id %}">{{ ct.trial_id }}</a></td>
+                <td class="trial_content" width="20%"><a href="{s% url repository.trial_registered ct.trial_id %}">{{ ct.trial_id }}</a></td>
             </tr>
             <tr>
                 <td class="trial_title" rowspan="2">
@@ -58,7 +61,7 @@
             </tr>
         </table>
         {% endfor %}
-
+        </form>
         {% if paginator.num_pages > 1 %}
         <div class="pagination">
             {% if objects.has_previous %}
@@ -129,4 +132,13 @@
         {% endif %}
     {% endif %}
 
+{% endblock %}
+{% block endjs %}{{ block.super }}
+<script>
+$(document).ready(function(){
+    $('#chk_toggle_selection').click(function(){
+        $("INPUT[type='checkbox']").attr('checked', $('#chk_toggle_selection').is(':checked'));
+    });
+});
+</script>
 {% endblock %}
