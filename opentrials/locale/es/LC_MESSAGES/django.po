@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-23 11:38-0300\n"
+"POT-Creation-Date: 2011-08-24 00:28-0300\n"
 "PO-Revision-Date: 2011-08-16 15:20\n"
 "Last-Translator:   <gustavo.fonseca@bireme.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,8 +27,8 @@ msgid "Label"
 msgstr "Etiqueta"
 
 #: assistance/models.py:24 assistance/models.py:41
-#: repository/templates/repository/clinicaltrial_list.html:56
-#: repository/templates/repository/clinicaltrial_list.html:113
+#: repository/templates/repository/clinicaltrial_list.html:45
+#: repository/templates/repository/clinicaltrial_list.html:102
 #: repository/templates/repository/clinicaltrial_recruiting.html:18
 #: reviewapp/models.py:256 reviewapp/models.py:274
 #: reviewapp/templates/reviewapp/all_submission_list.html:21
@@ -183,7 +183,7 @@ msgstr "Ayuda"
 #: repository/trds_forms.py:632 repository/trds_forms.py:636
 #: repository/trds_forms.py:655 repository/trds_forms.py:659
 #: repository/trds_forms.py:681 repository/trds_forms.py:685
-#: repository/views.py:664 templates/base.html:110
+#: repository/views.py:717 templates/base.html:110
 msgid "Contact"
 msgstr "Contacto"
 
@@ -560,31 +560,31 @@ msgstr ""
 msgid "no limit"
 msgstr ""
 
-#: repository/choices.py:45
+#: repository/choices.py:45 repository/views.py:332
 #: repository/templates/repository/advanced_search.html:66
 #: repository/templates/repository/advanced_search.html:77
 msgid "years"
 msgstr ""
 
-#: repository/choices.py:46
+#: repository/choices.py:46 repository/views.py:333
 #: repository/templates/repository/advanced_search.html:67
 #: repository/templates/repository/advanced_search.html:78
 msgid "months"
 msgstr ""
 
-#: repository/choices.py:47
+#: repository/choices.py:47 repository/views.py:334
 #: repository/templates/repository/advanced_search.html:68
 #: repository/templates/repository/advanced_search.html:79
 msgid "weeks"
 msgstr ""
 
-#: repository/choices.py:48
+#: repository/choices.py:48 repository/views.py:335
 #: repository/templates/repository/advanced_search.html:69
 #: repository/templates/repository/advanced_search.html:80
 msgid "days"
 msgstr ""
 
-#: repository/choices.py:49
+#: repository/choices.py:49 repository/views.py:336
 #: repository/templates/repository/advanced_search.html:70
 #: repository/templates/repository/advanced_search.html:81
 msgid "hours"
@@ -630,14 +630,14 @@ msgid "Published Trials"
 msgstr "Publicado"
 
 #: repository/models.py:234
-#: repository/templates/repository/clinicaltrial_list.html:57
+#: repository/templates/repository/clinicaltrial_list.html:46
 #: repository/templates/repository/clinicaltrial_recruiting.html:19
 #: reviewapp/templates/reviewapp/index.html:59
 msgid "Primary Id Number"
 msgstr ""
 
 #: repository/models.py:237
-#: repository/templates/repository/clinicaltrial_list.html:70
+#: repository/templates/repository/clinicaltrial_list.html:59
 #: repository/templates/repository/clinicaltrial_recruiting.html:28
 #: tickets/models.py:14 tickets/templates/tickets/new_iteration.html:25
 msgid "Date of Registration"
@@ -719,13 +719,13 @@ msgstr ""
 msgid "Inclusion Criteria"
 msgstr ""
 
-#: repository/models.py:289
+#: repository/models.py:289 repository/views.py:380
 #: repository/templates/repository/advanced_search.html:37
-#: repository/templates/repository/clinicaltrial_list.html:32
 msgid "Inclusion Gender"
 msgstr ""
 
 #: repository/models.py:293 repository/trds_forms.py:396
+#: repository/views.py:390
 #: repository/templates/repository/advanced_search.html:63
 #: repository/templates/repository/clinicaltrial_detail_published.html:364
 #: repository/templates/repository/clinicaltrial_detail_user.html:508
@@ -739,6 +739,7 @@ msgid "Minimum Age Unit"
 msgstr ""
 
 #: repository/models.py:299 repository/trds_forms.py:401
+#: repository/views.py:399
 #: repository/templates/repository/advanced_search.html:74
 #: repository/templates/repository/clinicaltrial_detail_published.html:365
 #: repository/templates/repository/clinicaltrial_detail_user.html:509
@@ -761,13 +762,12 @@ msgid "Exclusion Criteria"
 msgstr ""
 
 #: repository/models.py:309 repository/trds_forms.py:511
-#: repository/trds_forms.py:540 repository/views.py:71
+#: repository/trds_forms.py:540 repository/views.py:71 repository/views.py:361
 #: repository/templates/repository/advanced_search.html:30
 #: repository/templates/repository/clinicaltrial_detail_published.html:97
 #: repository/templates/repository/clinicaltrial_detail_published.html:401
 #: repository/templates/repository/clinicaltrial_detail_user.html:156
 #: repository/templates/repository/clinicaltrial_detail_user.html:567
-#: repository/templates/repository/clinicaltrial_list.html:29
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:339
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:533
 msgid "Study Type"
@@ -868,12 +868,11 @@ msgstr ""
 msgid "Target Sample Size"
 msgstr ""
 
-#: repository/models.py:348
+#: repository/models.py:348 repository/views.py:351
 #: repository/templates/repository/advanced_search.html:44
 #: repository/templates/repository/clinicaltrial_detail_published.html:332
 #: repository/templates/repository/clinicaltrial_detail_user.html:478
-#: repository/templates/repository/clinicaltrial_list.html:35
-#: repository/templates/repository/clinicaltrial_list.html:66
+#: repository/templates/repository/clinicaltrial_list.html:55
 #: repository/templates/repository/clinicaltrial_recruiting.html:24
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:278
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:451
@@ -980,8 +979,8 @@ msgid "City"
 msgstr "Ciudad"
 
 #: repository/models.py:648 repository/trds_forms.py:743
+#: repository/views.py:370
 #: repository/templates/repository/advanced_search.html:53
-#: repository/templates/repository/clinicaltrial_list.html:38
 #, fuzzy
 msgid "Institution type"
 msgstr "Institución"
@@ -1211,11 +1210,10 @@ msgstr ""
 msgid "Study Status"
 msgstr ""
 
-#: repository/trds_forms.py:367
+#: repository/trds_forms.py:367 repository/views.py:340
 #: repository/templates/repository/advanced_search.html:19
 #: repository/templates/repository/clinicaltrial_detail_published.html:336
 #: repository/templates/repository/clinicaltrial_detail_user.html:483
-#: repository/templates/repository/clinicaltrial_list.html:26
 #: repository/templates/repository/new-clinicaltrial_detail_published.html:282
 #: repository/templates/repository/new-clinicaltrial_detail_user.html:456
 #: reviewapp/forms.py:60
@@ -1259,7 +1257,7 @@ msgstr ""
 msgid "Invalid age limits"
 msgstr ""
 
-#: repository/trds_forms.py:544 repository/views.py:343
+#: repository/trds_forms.py:544 repository/views.py:366
 #: repository/templates/repository/advanced_search.html:32
 msgid "Observational"
 msgstr ""
@@ -1418,13 +1416,13 @@ msgstr ""
 msgid "Error"
 msgstr "Error"
 
-#: repository/views.py:343
+#: repository/views.py:366
 #: repository/templates/repository/advanced_search.html:33
 #, fuzzy
 msgid "Interventional"
 msgstr "Intervención"
 
-#: repository/views.py:672 repository/views.py:673
+#: repository/views.py:725 repository/views.py:726
 #, fuzzy
 msgid "Delete Contact"
 msgstr "Nuevo contacto"
@@ -1837,21 +1835,29 @@ msgstr "Búsqueda"
 msgid "Refine this search"
 msgstr ""
 
-#: repository/templates/repository/clinicaltrial_list.html:45
+#: repository/templates/repository/clinicaltrial_list.html:31
 msgid "Share this result"
 msgstr ""
 
-#: repository/templates/repository/clinicaltrial_list.html:102
+#: repository/templates/repository/clinicaltrial_list.html:40
+msgid "All bellow"
+msgstr ""
+
+#: repository/templates/repository/clinicaltrial_list.html:40
+msgid "Download selected as OpenTrials XML format"
+msgstr ""
+
+#: repository/templates/repository/clinicaltrial_list.html:91
 #, fuzzy
 msgid "No clinical trial has been found with the term:"
 msgstr "Plataforma de Ensayos Clínicos"
 
-#: repository/templates/repository/clinicaltrial_list.html:104
+#: repository/templates/repository/clinicaltrial_list.html:93
 #, fuzzy
 msgid "No clinical trial has been registered."
 msgstr "Plataforma de Ensayos Clínicos"
 
-#: repository/templates/repository/clinicaltrial_list.html:109
+#: repository/templates/repository/clinicaltrial_list.html:98
 msgid "Not yet submitted trials"
 msgstr ""
 

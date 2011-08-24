@@ -37,7 +37,7 @@
 
     {% if objects.object_list %}
         <form method="get" action="{% url repository.multi_otxml %}">
-        <input type="checkbox" id="chk_toggle_selection">{% trans 'Select/De-select all' %} <input type="submit" value="{% trans 'Download selected as OpenTrials XML format' %}"><br /><br />
+        <input type="checkbox" id="chk_toggle_selection">{% trans 'All bellow' %} <input type="submit" value="{% trans 'Download selected as OpenTrials XML format' %}" disabled><br /><br />
         {% for ct in objects.object_list %}
         <table class="trial_table">
             <tr>
@@ -138,7 +138,19 @@
 $(document).ready(function(){
     $('#chk_toggle_selection').click(function(){
         $("INPUT[type='checkbox']").attr('checked', $('#chk_toggle_selection').is(':checked'));
+        toggle_submit_btn();
     });
+
+    $('.chk_trial_summary').change(toggle_submit_btn);
+
+    function toggle_submit_btn(){
+        var total_checked = $(':checkbox.chk_trial_summary:checked').length;
+        if (total_checked == '0'){
+            $(':submit').attr('disabled','disabled');
+        }else{
+            $(':submit').removeAttr('disabled','disabled');
+        }
+    }
 });
 </script>
 {% endblock %}
