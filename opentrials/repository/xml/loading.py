@@ -449,6 +449,7 @@ class OpenTrialsXMLImport(object):
             submission.creator = self.creator
             submission.status = 'draft'
 
+            import pdb; pdb.set_trace()
             submission.save()
             ct.save()
 
