@@ -44,7 +44,7 @@
                 <td class="" rowspan="3"><input type="checkbox" name="trial_id" class="chk_trial_summary" value="{{ ct.trial_id }}">
                 <td class="trial_label" width="50%">{% trans 'Title' %}</td>
                 <td class="trial_label" width="30%">{% trans 'Primary Id Number' %}</td>
-                <td class="trial_content" width="20%"><a href="{s% url repository.trial_registered ct.trial_id %}">{{ ct.trial_id }}</a></td>
+                <td class="trial_content" width="20%"><a href="{% url repository.trial_registered ct.trial_id %}">{{ ct.trial_id }}</a></td>
             </tr>
             <tr>
                 <td class="trial_title" rowspan="2">
