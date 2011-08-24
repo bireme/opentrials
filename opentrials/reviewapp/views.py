@@ -373,7 +373,7 @@ def upload_trial(request):
                     'description': item[0]['public_title'],
                     'already_exists': bool(item[1]),
                     'to_import': not item[1],
-                    } for item in parsed_trials]
+                    } for item in parsed_trials if not bool(item[1])]
                 formset = ImportParsedFormset(initial=data)
 
         elif 'session_key' in request.POST:
