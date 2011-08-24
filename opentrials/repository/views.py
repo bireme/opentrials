@@ -1294,7 +1294,7 @@ def all_trials_ictrp(request):
     return resp
 
 
-def trial_otxml(request, trial_fossil_id, trial_version=None):
+def trial_otxml(request, trial_id, trial_version=None):
     """
     Returns a XML content structured on OpenTrials standard, you can find more details
     about it on:
@@ -1303,10 +1303,10 @@ def trial_otxml(request, trial_fossil_id, trial_version=None):
     """
 
     try:
-        fossil = Fossil.objects.get(pk=trial_fossil_id)
+        fossil = Fossil.objects.get(pk=trial_id)
     except Fossil.DoesNotExist:
         try:
-            qs = Fossil.objects.indexed(trial_id=trial_fossil_id)
+            qs = Fossil.objects.indexed(trial_id=trial_id)
             if trial_version:
                 fossil = qs.get(revision_sequential=trial_version)
             else:
@@ -1320,15 +1320,46 @@ def trial_otxml(request, trial_fossil_id, trial_version=None):
     ct.version = fossil.revision_sequential
     ct.status = fossil.indexers.key('status', fail_silent=True).value
 
-    persons = set(ct.scientific_contact + ct.public_contact + ct.site_contact)
-
-    xml = xml_opentrials(ct, persons)
+    xml = xml_opentrials([ct])
 
     resp = HttpResponse(xml,
             mimetype = 'text/xml'
             )
 
     resp['Content-Disposition'] = 'attachment; filename=%s-ot.xml' % ct.trial_id
+
+    return resp
+
+def multi_otxml(request):
+    trial_id_list = request.GET.getlist('trial_id')
+    ct_list = []
+
+    for trial_id in trial_id_list:
+        try:
+            fossil = Fossil.objects.get(pk=trial_id)
+        except Fossil.DoesNotExist:
+            try:
+                qs = Fossil.objects.indexed(trial_id=trial_id)
+                fossil = qs.get(is_most_recent=True)
+            except Fossil.DoesNotExist:
+                raise Http404
+
+        ct = fossil.get_object_fossil()
+        ct.hash_code = fossil.pk
+        ct.previous_revision = fossil.previous_revision
+        ct.version = fossil.revision_sequential
+        ct.status = fossil.indexers.key('status', fail_silent=True).value
+
+        ct_list.append(ct)
+
+    xml = xml_opentrials(ct_list)
+
+    resp = HttpResponse(xml,
+            mimetype = 'text/xml'
+            )
+
+    today = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M')
+    resp['Content-Disposition'] = 'attachment; filename=%s-ot.xml' % today
 
     return resp
 
