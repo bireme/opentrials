@@ -1332,6 +1332,9 @@ def trial_otxml(request, trial_id, trial_version=None):
 
 def multi_otxml(request):
     trial_id_list = request.GET.getlist('trial_id')
+    if not trial_id_list:
+        return HttpResponse(status=205)
+
     ct_list = []
 
     for trial_id in trial_id_list:
