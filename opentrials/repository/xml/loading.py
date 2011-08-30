@@ -429,7 +429,7 @@ class OpenTrialsXMLImport(object):
                 elif if_exists == REPLACE_IF_EXISTS:
                     self.clear_fields(ct)
             else:
-                ct = ClinicalTrial()#trial_id=fields['trial_id'])
+                ct = ClinicalTrial()
 
             # Sets the field values and clean them
             self.set_trial_fields(ct, fields)
@@ -439,19 +439,18 @@ class OpenTrialsXMLImport(object):
 
             # TODO: call validation
 
-            # Sets the status as the last thing to make a consistent fossil
-            ct.status = ct.new_status
+            # Sets the status as draft
+            ct.status = 'draft'
+            ct.save()
 
+            #Creating submission
             from reviewapp.models import Submission
-            submission = Submission()
+            submission = Submission(creator=self.creator)
             submission.title = ct.public_title
             submission.trial = ct
-            submission.creator = self.creator
-            submission.status = 'draft'
 
-            import pdb; pdb.set_trace()
             submission.save()
-            ct.save()
+            submission.init_fields_status()
 
             imported_trials.append(ct)
 
