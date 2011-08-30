@@ -432,26 +432,25 @@ class OpenTrialsXMLImport(object):
                 ct = ClinicalTrial()#trial_id=fields['trial_id'])
 
             # Sets the field values and clean them
-            self.set_trial_fields(ct, fields)
+            ct = self.set_trial_fields(ct, fields)
 
             # Children objects
             self.set_trial_children(ct, fields)
 
             # TODO: call validation
 
-            # Sets the status as the last thing to make a consistent fossil
-            ct.status = ct.new_status
+            # Sets the status as draft
+            ct.status = 'draft'
+            ct.save()
 
+            #Creating submission
             from reviewapp.models import Submission
-            submission = Submission()
+            submission = Submission(creator=self.creator)
             submission.title = ct.public_title
             submission.trial = ct
-            submission.creator = self.creator
-            submission.status = 'draft'
 
-            import pdb; pdb.set_trace()
             submission.save()
-            ct.save()
+            submission.init_fields_status()
 
             imported_trials.append(ct)
 
@@ -541,7 +540,7 @@ class OpenTrialsXMLImport(object):
         if fields.get('recruitment_status', None):
             ct.recruitment_status, new = RecruitmentStatus.objects.get_or_create(label=self.prep_label(fields['recruitment_status']))
 
-        ct.save()
+        return ct
 
     def set_trial_children(self, ct, fields):
         for country in fields.get('recruitment_country', []):
