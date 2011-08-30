@@ -432,7 +432,7 @@ class OpenTrialsXMLImport(object):
                 ct = ClinicalTrial()
 
             # Sets the field values and clean them
-            ct = self.set_trial_fields(ct, fields)
+            self.set_trial_fields(ct, fields)
 
             # Children objects
             self.set_trial_children(ct, fields)
@@ -540,7 +540,7 @@ class OpenTrialsXMLImport(object):
         if fields.get('recruitment_status', None):
             ct.recruitment_status, new = RecruitmentStatus.objects.get_or_create(label=self.prep_label(fields['recruitment_status']))
 
-        return ct
+        ct.save()
 
     def set_trial_children(self, ct, fields):
         for country in fields.get('recruitment_country', []):
