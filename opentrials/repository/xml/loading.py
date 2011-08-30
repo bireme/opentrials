@@ -30,6 +30,7 @@ from vocabulary.models import StudyAllocation, StudyPhase, RecruitmentStatus, Co
 from vocabulary.models import InterventionCode
 from repository.xml import OPENTRIALS_XML_VERSION
 from validate import validate_xml, ICTRP_DTD
+from reviewapp.models import Submission
 
 UPDATE_IF_EXISTS = 'u'
 REPLACE_IF_EXISTS = 'r'
@@ -38,6 +39,8 @@ SKIP_IF_EXISTS = 's'
 GENDERS = {'both':'-', 'male':'M', 'female':'F'}
 AGE_UNITS = {'null':'-', 'years':'Y', 'months':'M', 'weeks':'W', 'days':'D', 'hours':'H'}
 EXP_AGE_ICTRP = re.compile('^(\d+)(-|Y|M|W|D|H)?$')
+
+
 
 class OpenTrialsXMLImport(object):
     def __init__(self, creator=None):
@@ -442,11 +445,11 @@ class OpenTrialsXMLImport(object):
             # Sets the status as draft
             ct.status = 'draft'
             ct.save()
+            imported_trials.append(ct)
 
             self.set_trial_translations(ct, fields)
 
             #Creating submission
-            from reviewapp.models import Submission
             submission = Submission(creator=self.creator)
             submission.title = ct.public_title
             submission.trial = ct
@@ -454,7 +457,7 @@ class OpenTrialsXMLImport(object):
             submission.save()
             submission.init_fields_status()
 
-            imported_trials.append(ct)
+            ct.save()
 
         return imported_trials
 
@@ -490,7 +493,7 @@ class OpenTrialsXMLImport(object):
                 trans.content_object = ct
 
             for key in content:
-                trans.__setattr__(key, content.get(key, '') or '')
+                setattr(trans, key, content.get(key, '') or '')
 
             trans.save()
 
@@ -565,6 +568,10 @@ class OpenTrialsXMLImport(object):
         ct.save()
 
     def set_trial_children(self, ct, fields):
+
+        _vocabularies = {'decs':'DeCS',
+                         'icd10':'ICD-10'}
+
         for country in fields.get('recruitment_country', []):
             if country.get('label', None):
                 country_obj, new = CountryCode.objects.get_or_create(
@@ -653,24 +660,33 @@ class OpenTrialsXMLImport(object):
             inst = self.get_instituion_from_db(item)
             TrialSupportSource.objects.get_or_create(trial=ct, institution=inst)
 
-        #FIXME!
-        """
+        #TODO! This try-except shoud be refactored, its is used in several places
         for item in fields.get('primary_outcomes', []):
             outcome, new = Outcome.objects.get_or_create(trial=ct, interest='primary', description=item['value'])
             for trans in item.get('translations', []):
-                outcome.translations.get_or_create(description=trans['value'], language=trans['lang'])
+                try:
+                    trans = outcome.translations.get(language=trans['lang'], description=trans['value'])
+                except outcome.translations.model.DoesNotExist:
+                    trans = outcome.translations.model(language=trans['lang'], description=trans['value'])
+                    trans.content_object = outcome
+                trans.save()
 
         for item in fields.get('secondary_outcomes', []):
             outcome, new = Outcome.objects.get_or_create(trial=ct, interest='secondary', description=item['value'])
             for trans in item.get('translations', []):
-                outcome.translations.get_or_create(description=trans['value'], language=trans['lang'])
-        """
+                try:
+                    trans = outcome.translations.get(language=trans['lang'], description=trans['value'])
+                except outcome.translations.model.DoesNotExist:
+                    trans = outcome.translations.model(language=trans['lang'], description=trans['value'])
+                    trans.content_object = outcome
+                trans.save()
+
         for item in fields.get('hc_codes', []):
             descriptor, new = Descriptor.objects.get_or_create(
                     trial=ct,
                     aspect='HealthCondition',
                     level='general',
-                    vocabulary=item.get('vocabulary', 'decs'), # FIXME
+                    vocabulary=_vocabularies[item.get('vocabulary', 'decs')], # FIXME
                     code=item['code'],
                     defaults={
                         'version': item.get('version', ''),
@@ -687,7 +703,7 @@ class OpenTrialsXMLImport(object):
                     trial=ct,
                     aspect='HealthCondition',
                     level='specific',
-                    vocabulary=item.get('vocabulary', 'decs'), # FIXME
+                    vocabulary=_vocabularies[item.get('vocabulary', 'decs')], # FIXME
                     code=item['code'],
                     defaults={
                         'version': item.get('version', ''),
@@ -708,7 +724,7 @@ class OpenTrialsXMLImport(object):
                     trial=ct,
                     aspect='Intervention',
                     level='specific',
-                    vocabulary=item.get('vocabulary', 'decs'), # FIXME
+                    vocabulary=_vocabularies[item.get('vocabulary', 'decs')], # FIXME
                     code=item['code'],
                     defaults={
                         'version': item.get('version', ''),
