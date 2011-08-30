@@ -623,11 +623,11 @@ class OpenTrialsXMLImport(object):
                     id_number=item['sec_id'],
                     )
 
-        for item in fields.get('secondary_sponsor', []):
+        for item in fields.get('secondary_sponsors', []):
             inst = self.get_instituion_from_db(item)
             TrialSecondarySponsor.objects.get_or_create(trial=ct, institution=inst)
 
-        for item in fields.get('secondary_sponsor', []):
+        for item in fields.get('source_support', []):
             inst = self.get_instituion_from_db(item)
             TrialSupportSource.objects.get_or_create(trial=ct, institution=inst)
 
