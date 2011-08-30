@@ -443,6 +443,8 @@ class OpenTrialsXMLImport(object):
             ct.status = 'draft'
             ct.save()
 
+            self.set_trial_translations(ct, fields)
+
             #Creating submission
             from reviewapp.models import Submission
             submission = Submission(creator=self.creator)
@@ -472,6 +474,26 @@ class OpenTrialsXMLImport(object):
             return datetime.strptime(datestr, '%Y-%m-%d').date()
         except ValueError:
             return datetime.strptime(datestr, '%d/%m/%Y').date()
+
+
+    def set_trial_translations(self, ct, fields):
+
+        for translation in fields.get('translations', []):
+            lang = translation['lang']
+            content = translation['content']
+
+            # Get or create translation object
+            try:
+                trans = ct.translations.get(language=lang)
+            except ct.translations.model.DoesNotExist:
+                trans = ct.translations.model(language=lang)
+                trans.content_object = ct
+
+            for key in content:
+                trans.__setattr__(key, content.get(key, '') or '')
+
+            trans.save()
+
 
     def set_trial_fields(self, ct, fields):
 
