@@ -32,6 +32,8 @@ from repository.xml import OPENTRIALS_XML_VERSION
 from validate import validate_xml, ICTRP_DTD
 from reviewapp.models import Submission
 
+import settings
+
 UPDATE_IF_EXISTS = 'u'
 REPLACE_IF_EXISTS = 'r'
 SKIP_IF_EXISTS = 's'
@@ -440,18 +442,21 @@ class OpenTrialsXMLImport(object):
             # Children objects
             self.set_trial_children(ct, fields)
 
+            # Set translations
+            self.set_trial_translations(ct, fields)
+
             # TODO: call validation
 
-            # Sets the status as draft
+            # Set the status as draft
             ct.status = 'draft'
+            ct.language = fields.get('language', settings.DEFAULT_SUBMISSION_LANGUAGE)
             ct.save()
             imported_trials.append(ct)
-
-            self.set_trial_translations(ct, fields)
 
             #Creating submission
             submission = Submission(creator=self.creator)
             submission.title = ct.public_title
+            submission.language = ct.language
             submission.trial = ct
 
             submission.save()
@@ -817,6 +822,7 @@ class OpenTrialsXMLImport(object):
             country = CountryCode.objects.all()[0] # FIXME TODO
 
         inst, new = Institution.objects.get_or_create(
+                creator=self.creator,
                 name=fields['name'],
                 country=country,
                 address=fields.get('address', ''),
