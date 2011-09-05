@@ -728,7 +728,7 @@ class OpenTrialsXMLImport(object):
             descriptor, new = Descriptor.objects.get_or_create(
                     trial=ct,
                     aspect='Intervention',
-                    level='specific',
+                    level='general',
                     vocabulary=_vocabularies[item.get('vocabulary', 'decs')], # FIXME
                     code=item['code'],
                     defaults={
