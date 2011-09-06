@@ -27,10 +27,8 @@
             <p>{{ field }} {{ field.label_tag }}</p>
         {% endfor %}
         <input name="submit" type="submit" value="{% trans "Continue" %}"/>
-    {% if DEBUG %}    
     {% trans "or" %}
         <input name="submit" type="submit" value="{% trans "Upload a XML file" %}"/>
-    {% endif %}
     </form>
 
 
