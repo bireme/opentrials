@@ -355,6 +355,10 @@ def submission_edit_published(request, submission_pk):
 
 @login_required
 def upload_trial(request):
+
+    def utrn_already_exists(utrn_number):
+        return bool(ClinicalTrial.objects.filter(utrn_number=utrn_number))
+
     session_key = None
     form = None
     formset = None
@@ -368,12 +372,13 @@ def upload_trial(request):
 
                 session_key = 'parsed-trials-'+datetime.now().strftime('%Y%m%d%H%M%S')
                 request.session[session_key] = [item for item in parsed_trials]
+
                 data = [{
                     'trial_id': item[0]['trial_id'],
                     'description': item[0]['public_title'],
                     'already_exists': bool(item[1]),
-                    'to_import': not item[1],
-                    } for item in parsed_trials if not bool(item[1])]
+                    'to_import': not item[1] and not utrn_already_exists(item[0]['utrn_number']),
+                    } for item in parsed_trials if not bool(item[1]) and not utrn_already_exists(item[0]['utrn_number'])]
                 formset = ImportParsedFormset(initial=data)
 
         elif 'session_key' in request.POST:
@@ -390,10 +395,11 @@ def upload_trial(request):
                 if parsed_trials:
                     imported_trials = formset.import_file(parsed_trials, request.user)
                     messages.info(request, _('XML files imported with success!'))
+                    return HttpResponseRedirect(reverse('reviewapp.submissionlist'))
 
                 # Clear parsed trials from session
                 request.session.pop(request.POST['session_key'])
-                return HttpResponseRedirect(reverse('reviewapp.uploadtrial'))
+                #return HttpResponseRedirect(reverse('reviewapp.uploadtrial'))
 
     else:
         form = UploadTrialForm()
