@@ -24,9 +24,14 @@ class CountryCodeAdmin(TranslationAdmin):
 for model in (RecruitmentStatus, StudyType, StudyPhase, InterventionCode,
     AttachmentType, TrialNumberIssuingAuthority, StudyPurpose, TimePerspective,
     InterventionAssigment, StudyMasking, StudyAllocation, InstitutionType,
-    ObservationalStudyDesign, MailMessage):
+    ObservationalStudyDesign, ):
     if model not in admin.site._registry:
         admin.site.register(model, SimpleVocabularyAdmin)
 
 if CountryCode not in admin.site._registry:
     admin.site.register(CountryCode, CountryCodeAdmin)
+
+class MailMessageAdmin(admin.ModelAdmin):
+    exclude = ('label',)
+
+admin.site.register(MailMessage, MailMessageAdmin)
