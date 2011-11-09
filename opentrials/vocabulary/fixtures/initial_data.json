@@ -19505,14 +19505,14 @@
     "pk": 2049, 
     "model": "vocabulary.vocabularytranslation", 
     "fields": {
-      "description": "N\u00e3o se aplica", 
-      "label": "N/A", 
+      "description": "industria", 
+      "label": "industria", 
       "content_type": [
         "vocabulary", 
-        "timeperspective"
+        "institutiontype"
       ], 
-      "language": "pt-br", 
-      "object_id": 1
+      "language": "es", 
+      "object_id": 3
     }
   }, 
   {
@@ -19520,26 +19520,26 @@
     "model": "vocabulary.vocabularytranslation", 
     "fields": {
       "description": "", 
-      "label": "Coorte", 
+      "label": "agencia no gubernamental", 
       "content_type": [
         "vocabulary", 
-        "observationalstudydesign"
+        "institutiontype"
       ], 
-      "language": "pt-br", 
-      "object_id": 2
+      "language": "es", 
+      "object_id": 5
     }
   }, 
   {
     "pk": 2051, 
     "model": "vocabulary.vocabularytranslation", 
     "fields": {
-      "description": "", 
-      "label": "Caso-controle", 
+      "description": " Aland, Islas", 
+      "label": "AX", 
       "content_type": [
         "vocabulary", 
-        "observationalstudydesign"
+        "countrycode"
       ], 
-      "language": "pt-br", 
+      "language": "es", 
       "object_id": 3
     }
   }, 
@@ -19547,140 +19547,1190 @@
     "pk": 2052, 
     "model": "vocabulary.vocabularytranslation", 
     "fields": {
-      "description": "", 
-      "label": "Caso", 
+      "description": "Samoa Americana", 
+      "label": "AS", 
       "content_type": [
         "vocabulary", 
-        "observationalstudydesign"
+        "countrycode"
       ], 
-      "language": "pt-br", 
-      "object_id": 4
+      "language": "es", 
+      "object_id": 6
     }
   }, 
   {
     "pk": 2053, 
     "model": "vocabulary.vocabularytranslation", 
     "fields": {
-      "description": "", 
-      "label": "Caso cruzado", 
+      "description": "Anguila", 
+      "label": "AI", 
       "content_type": [
         "vocabulary", 
-        "observationalstudydesign"
+        "countrycode"
       ], 
-      "language": "pt-br", 
-      "object_id": 5
+      "language": "es", 
+      "object_id": 9
     }
   }, 
   {
     "pk": 2054, 
     "model": "vocabulary.vocabularytranslation", 
     "fields": {
-      "description": "", 
-      "label": "Ecol\u00f3gico ou comunidade", 
+      "description": "Ant\u00e1rtida", 
+      "label": "AQ", 
       "content_type": [
         "vocabulary", 
-        "observationalstudydesign"
+        "countrycode"
       ], 
-      "language": "pt-br", 
-      "object_id": 6
+      "language": "es", 
+      "object_id": 10
     }
   }, 
   {
     "pk": 2055, 
     "model": "vocabulary.vocabularytranslation", 
     "fields": {
-      "description": "", 
-      "label": "Base familiar", 
+      "description": "Aruba", 
+      "label": "AW", 
       "content_type": [
         "vocabulary", 
-        "observationalstudydesign"
+        "countrycode"
       ], 
-      "language": "pt-br", 
-      "object_id": 7
+      "language": "es", 
+      "object_id": 14
     }
   }, 
   {
     "pk": 2056, 
     "model": "vocabulary.vocabularytranslation", 
     "fields": {
-      "description": "", 
-      "label": "Outro", 
+      "description": "Bermudas", 
+      "label": "BM", 
       "content_type": [
         "vocabulary", 
-        "observationalstudydesign"
+        "countrycode"
       ], 
-      "language": "pt-br", 
-      "object_id": 8
+      "language": "es", 
+      "object_id": 26
     }
   }, 
   {
     "pk": 2057, 
     "model": "vocabulary.vocabularytranslation", 
     "fields": {
-      "description": "", 
-      "label": "Prospectivo", 
+      "description": "Bouvet, Isla", 
+      "label": "BV", 
       "content_type": [
         "vocabulary", 
-        "timeperspective"
+        "countrycode"
       ], 
-      "language": "pt-br", 
-      "object_id": 2
+      "language": "es", 
+      "object_id": 31
     }
   }, 
   {
     "pk": 2058, 
     "model": "vocabulary.vocabularytranslation", 
     "fields": {
-      "description": "", 
-      "label": "Retrospectivo", 
+      "description": "Territorio Brit\u00e1nico del Oc\u00e9ano \u00cdndico", 
+      "label": "IO", 
       "content_type": [
         "vocabulary", 
-        "timeperspective"
+        "countrycode"
       ], 
-      "language": "pt-br", 
-      "object_id": 3
+      "language": "es", 
+      "object_id": 32
     }
   }, 
   {
     "pk": 2059, 
     "model": "vocabulary.vocabularytranslation", 
     "fields": {
-      "description": "", 
-      "label": "Retrospectivo e prospectivo", 
+      "description": "Caim\u00e1n, Islas", 
+      "label": "KY", 
       "content_type": [
         "vocabulary", 
-        "timeperspective"
+        "countrycode"
       ], 
-      "language": "pt-br", 
-      "object_id": 4
+      "language": "es", 
+      "object_id": 41
     }
   }, 
   {
     "pk": 2060, 
     "model": "vocabulary.vocabularytranslation", 
     "fields": {
-      "description": "", 
-      "label": "Transversal", 
+      "description": "Christmas, Isla", 
+      "label": "CX", 
       "content_type": [
         "vocabulary", 
-        "timeperspective"
+        "countrycode"
       ], 
-      "language": "pt-br", 
-      "object_id": 5
+      "language": "es", 
+      "object_id": 46
     }
   }, 
   {
     "pk": 2061, 
     "model": "vocabulary.vocabularytranslation", 
     "fields": {
-      "description": "", 
-      "label": "Outro", 
+      "description": "Cocos, Islas", 
+      "label": "CC", 
       "content_type": [
         "vocabulary", 
-        "timeperspective"
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 47
+    }
+  }, 
+  {
+    "pk": 2062, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Cook, Islas", 
+      "label": "CK", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 52
+    }
+  }, 
+  {
+    "pk": 2063, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Malvinas, Islas (Falkland)", 
+      "label": "FK", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 70
+    }
+  }, 
+  {
+    "pk": 2064, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Feroe, Islas", 
+      "label": "FO", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 71
+    }
+  }, 
+  {
+    "pk": 2065, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Guyana Francesa", 
+      "label": "GF", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 75
+    }
+  }, 
+  {
+    "pk": 2066, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Polinesia Francesa", 
+      "label": "PF", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 76
+    }
+  }, 
+  {
+    "pk": 2067, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Tierras Australes y Ant\u00e1rticas Francesas", 
+      "label": "TF", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 77
+    }
+  }, 
+  {
+    "pk": 2068, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Gibraltar", 
+      "label": "GI", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 83
+    }
+  }, 
+  {
+    "pk": 2069, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Groenlandia", 
+      "label": "GL", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 85
+    }
+  }, 
+  {
+    "pk": 2070, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Guadalupe", 
+      "label": "GP", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 87
+    }
+  }, 
+  {
+    "pk": 2071, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Guam, Islas", 
+      "label": "GU", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 88
+    }
+  }, 
+  {
+    "pk": 2072, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Guernsey", 
+      "label": "GG", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 90
+    }
+  }, 
+  {
+    "pk": 2073, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Heard, Isla y McDonald, Islas", 
+      "label": "HM", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 95
+    }
+  }, 
+  {
+    "pk": 2074, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "HongKong", 
+      "label": "HK", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 98
+    }
+  }, 
+  {
+    "pk": 2075, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Red de Investigaci\u00f3n Cl\u00ednica", 
+      "label": "red de investigaci\u00f3n cl\u00ednica", 
+      "content_type": [
+        "vocabulary", 
+        "institutiontype"
+      ], 
+      "language": "es", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 2076, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Agencia federal", 
+      "label": "agencia federal", 
+      "content_type": [
+        "vocabulary", 
+        "institutiontype"
+      ], 
+      "language": "es", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 2077, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Ministerio de Salud", 
+      "label": "ministerio de salud", 
+      "content_type": [
+        "vocabulary", 
+        "institutiontype"
+      ], 
+      "language": "es", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 2078, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Fundaci\u00f3n Estatal de Apoyo a la Investigaci\u00f3n", 
+      "label": "fundaci\u00f3n estatal de apoyo a la investigaci\u00f3n", 
+      "content_type": [
+        "vocabulary", 
+        "institutiontype"
+      ], 
+      "language": "es", 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 2079, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Otros", 
+      "label": "otros", 
+      "content_type": [
+        "vocabulary", 
+        "institutiontype"
+      ], 
+      "language": "es", 
+      "object_id": 7
+    }
+  }, 
+  {
+    "pk": 2080, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "N\u00e3o aplic\u00e1vel", 
+      "label": "N/A", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "pt-br", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 2081, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "No aplicable", 
+      "label": "N/A", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "es", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 2082, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fase 1", 
+      "label": "1", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "pt-br", 
+      "object_id": 3
+    }
+  }, 
+  {
+    "pk": 2083, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fase 1", 
+      "label": "1", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "es", 
+      "object_id": 3
+    }
+  }, 
+  {
+    "pk": 2084, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fases 1-2", 
+      "label": "1-2", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "pt-br", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 2085, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fases 1-2", 
+      "label": "1-2", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "es", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 2086, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fase 2", 
+      "label": "2", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "pt-br", 
+      "object_id": 5
+    }
+  }, 
+  {
+    "pk": 2087, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fase 2", 
+      "label": "2", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "es", 
+      "object_id": 5
+    }
+  }, 
+  {
+    "pk": 2088, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fases 2-3", 
+      "label": "2-3", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
       ], 
       "language": "pt-br", 
       "object_id": 6
+    }
+  }, 
+  {
+    "pk": 2089, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fases 2-3", 
+      "label": "2-3", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "es", 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 2090, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fase 3", 
+      "label": "3", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "pt-br", 
+      "object_id": 7
+    }
+  }, 
+  {
+    "pk": 2091, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fase 3", 
+      "label": "3", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "es", 
+      "object_id": 7
+    }
+  }, 
+  {
+    "pk": 2092, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fase 4", 
+      "label": "4", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "pt-br", 
+      "object_id": 8
+    }
+  }, 
+  {
+    "pk": 2093, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fase 4", 
+      "label": " 4", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "es", 
+      "object_id": 8
+    }
+  }, 
+  {
+    "pk": 2094, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "fase 0", 
+      "label": "0", 
+      "content_type": [
+        "vocabulary", 
+        "studyphase"
+      ], 
+      "language": "es", 
+      "object_id": 9
+    }
+  }, 
+  {
+    "pk": 2095, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Grupo Renal Cochrane", 
+      "label": "CRG", 
+      "content_type": [
+        "vocabulary", 
+        "trialnumberissuingauthority"
+      ], 
+      "language": "pt-br", 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 2096, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Grupo Renal Cochrane", 
+      "label": "CRG", 
+      "content_type": [
+        "vocabulary", 
+        "trialnumberissuingauthority"
+      ], 
+      "language": "es", 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 2097, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Registro Iraniano de Ensaios Cl\u00ednicos", 
+      "label": "IRCT", 
+      "content_type": [
+        "vocabulary", 
+        "trialnumberissuingauthority"
+      ], 
+      "language": "pt-br", 
+      "object_id": 5
+    }
+  }, 
+  {
+    "pk": 2098, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Registro Iran\u00ed de Ensayos Cl\u00ednicos", 
+      "label": "IRCT", 
+      "content_type": [
+        "vocabulary", 
+        "trialnumberissuingauthority"
+      ], 
+      "language": "es", 
+      "object_id": 5
+    }
+  }, 
+  {
+    "pk": 2099, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Registro Australiano e Neozeland\u00eas de Ensaios Cl\u00ednicos", 
+      "label": "ANZCTR", 
+      "content_type": [
+        "vocabulary", 
+        "trialnumberissuingauthority"
+      ], 
+      "language": "pt-br", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 2100, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Registro Australiano y Neozeland\u00e9s de Ensayos Cl\u00ednicos", 
+      "label": "ANZCTR", 
+      "content_type": [
+        "vocabulary", 
+        "trialnumberissuingauthority"
+      ], 
+      "language": "es", 
+      "object_id": 4
+    }
+  }, 
+  {
+    "pk": 2101, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Biblioteca Nacional de Medicina, (NLM, em Ingl\u00eas), Estados Unidos. Instituto Nacional de Sa\u00fade   (NIH, em Ingl\u00eas)", 
+      "label": "ClinicalTrials.gov", 
+      "content_type": [
+        "vocabulary", 
+        "trialnumberissuingauthority"
+      ], 
+      "language": "pt-br", 
+      "object_id": 3
+    }
+  }, 
+  {
+    "pk": 2102, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Biblioteca Nacional de Medicina (NLM, en ingl\u00e9s), Estados Unidos. Instituto Nacional de Salud  (NIH, en ingl\u00e9s)", 
+      "label": "ClinicalTrials.gov", 
+      "content_type": [
+        "vocabulary", 
+        "trialnumberissuingauthority"
+      ], 
+      "language": "es", 
+      "object_id": 3
+    }
+  }, 
+  {
+    "pk": 2103, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Comisi\u00f3n Nacional de \u00c9tica en Investigaci\u00f3n, Consejo Nacional de Investigaci\u00f3n, Ministerio de Salud, Brasil", 
+      "label": "Plataforma Brasil (CONEP)", 
+      "content_type": [
+        "vocabulary", 
+        "trialnumberissuingauthority"
+      ], 
+      "language": "es", 
+      "object_id": 2
+    }
+  }, 
+  {
+    "pk": 2104, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Organiza\u00e7\u00e3o Mundial da Sa\u00fade, Plataforma Internacional de Registro de Ensaios Cl\u00ednicos", 
+      "label": "WHO ICTRP", 
+      "content_type": [
+        "vocabulary", 
+        "trialnumberissuingauthority"
+      ], 
+      "language": "pt-br", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 2105, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Organizaci\u00f3n Mundial de la Salud, Plataforma Internacional de Registro de Ensayos Cl\u00ednicos", 
+      "label": "WHO ICTRP", 
+      "content_type": [
+        "vocabulary", 
+        "trialnumberissuingauthority"
+      ], 
+      "language": "es", 
+      "object_id": 1
+    }
+  }, 
+  {
+    "pk": 2106, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Man, Isla de", 
+      "label": "IM", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 106
+    }
+  }, 
+  {
+    "pk": 2107, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Jersey", 
+      "label": "JE", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 111
+    }
+  }, 
+  {
+    "pk": 2108, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Macao", 
+      "label": "MO", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 129
+    }
+  }, 
+  {
+    "pk": 2109, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Maetinica", 
+      "label": "MQ", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 138
+    }
+  }, 
+  {
+    "pk": 2110, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Mayotte", 
+      "label": "YT", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 141
+    }
+  }, 
+  {
+    "pk": 2111, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Montserrat", 
+      "label": "MS", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 148
+    }
+  }, 
+  {
+    "pk": 2112, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "", 
+      "label": "Antillas Holandesas", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 156
+    }
+  }, 
+  {
+    "pk": 2113, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Nueva Caledonia", 
+      "label": "NC", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 157
+    }
+  }, 
+  {
+    "pk": 2114, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Niue", 
+      "label": "NU", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 162
+    }
+  }, 
+  {
+    "pk": 2115, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Norfolk, Isla", 
+      "label": "NF", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 163
+    }
+  }, 
+  {
+    "pk": 2116, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Islas Marianas del Norte", 
+      "label": "MP", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 164
+    }
+  }, 
+  {
+    "pk": 2117, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Palestina", 
+      "label": "PS", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 169
+    }
+  }, 
+  {
+    "pk": 2118, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Pitcairn", 
+      "label": "PN", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 175
+    }
+  }, 
+  {
+    "pk": 2119, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Puerto Rico", 
+      "label": "PR", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 178
+    }
+  }, 
+  {
+    "pk": 2120, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Reuni\u00f3n", 
+      "label": "RE", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 180
+    }
+  }, 
+  {
+    "pk": 2121, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "S\u00e3o Bartolomeu", 
+      "label": "BL", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "pt-br", 
+      "object_id": 184
+    }
+  }, 
+  {
+    "pk": 2122, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "San Bartolom\u00e9", 
+      "label": "BL", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 184
+    }
+  }, 
+  {
+    "pk": 2123, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Santa Elena", 
+      "label": "SH", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 185
+    }
+  }, 
+  {
+    "pk": 2124, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "S\u00e3o Martin", 
+      "label": "MF", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "pt-br", 
+      "object_id": 188
+    }
+  }, 
+  {
+    "pk": 2125, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "San Mart\u00edn", 
+      "label": "MF", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 188
+    }
+  }, 
+  {
+    "pk": 2126, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "San Pedro y Miquel\u00f3n", 
+      "label": "PM", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 189
+    }
+  }, 
+  {
+    "pk": 2127, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Georgias del Sur y Sandwich del Sur, Islas", 
+      "label": "GS", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 205
+    }
+  }, 
+  {
+    "pk": 2128, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Svalbard y Jan Mayen", 
+      "label": "SJ", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 210
+    }
+  }, 
+  {
+    "pk": 2129, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Taiw\u00e1n", 
+      "label": "TW", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 215
+    }
+  }, 
+  {
+    "pk": 2130, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Tokelau", 
+      "label": "TK", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 221
+    }
+  }, 
+  {
+    "pk": 2131, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Turcas y Caicos", 
+      "label": "TC", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 227
+    }
+  }, 
+  {
+    "pk": 2132, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Ultramarinas Menores de Estados Unidos, Islas", 
+      "label": "UM", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 234
+    }
+  }, 
+  {
+    "pk": 2133, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "V\u00edrgenes Brit\u00e1nicas, Islas", 
+      "label": "VG", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 240
+    }
+  }, 
+  {
+    "pk": 2134, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "V\u00edrgenes Americanas, Islas", 
+      "label": "VI", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 241
+    }
+  }, 
+  {
+    "pk": 2135, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Wallis y Futuna", 
+      "label": "WF", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 242
+    }
+  }, 
+  {
+    "pk": 2136, 
+    "model": "vocabulary.vocabularytranslation", 
+    "fields": {
+      "description": "Sahara Occidental", 
+      "label": "EH", 
+      "content_type": [
+        "vocabulary", 
+        "countrycode"
+      ], 
+      "language": "es", 
+      "object_id": 243
     }
   }, 
   {
@@ -19697,7 +20747,7 @@
     "pk": 3, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 30, 
       "description": "Aland Islands", 
       "submission_language": "", 
       "label": "AX"
@@ -19727,7 +20777,7 @@
     "pk": 6, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 60, 
       "description": "American Samoa", 
       "submission_language": "", 
       "label": "AS"
@@ -19757,7 +20807,7 @@
     "pk": 9, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 90, 
       "description": "Anguilla", 
       "submission_language": "", 
       "label": "AI"
@@ -19767,7 +20817,7 @@
     "pk": 10, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 100, 
       "description": "Antarctica", 
       "submission_language": "", 
       "label": "AQ"
@@ -19807,7 +20857,7 @@
     "pk": 14, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 140, 
       "description": "Aruba", 
       "submission_language": "", 
       "label": "AW"
@@ -19927,7 +20977,7 @@
     "pk": 26, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 260, 
       "description": "Bermuda", 
       "submission_language": "", 
       "label": "BM"
@@ -19977,7 +21027,7 @@
     "pk": 31, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 310, 
       "description": "Bouvet Island", 
       "submission_language": "", 
       "label": "BV"
@@ -19997,7 +21047,7 @@
     "pk": 32, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 320, 
       "description": "British Indian Ocean Territory", 
       "submission_language": "", 
       "label": "IO"
@@ -20087,7 +21137,7 @@
     "pk": 41, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 410, 
       "description": "Cayman Islands", 
       "submission_language": "", 
       "label": "KY"
@@ -20137,7 +21187,7 @@
     "pk": 46, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 460, 
       "description": "Christmas Island", 
       "submission_language": "", 
       "label": "CX"
@@ -20147,7 +21197,7 @@
     "pk": 47, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 470, 
       "description": "Cocos (Keeling) Islands", 
       "submission_language": "", 
       "label": "CC"
@@ -20197,7 +21247,7 @@
     "pk": 52, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 520, 
       "description": "Cook Islands", 
       "submission_language": "", 
       "label": "CK"
@@ -20377,7 +21427,7 @@
     "pk": 70, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 700, 
       "description": "Falkland Islands (Malvinas)", 
       "submission_language": "", 
       "label": "FK"
@@ -20387,7 +21437,7 @@
     "pk": 71, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 710, 
       "description": "Faroe Islands", 
       "submission_language": "", 
       "label": "FO"
@@ -20427,7 +21477,7 @@
     "pk": 75, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 750, 
       "description": "French Guiana", 
       "submission_language": "", 
       "label": "GF"
@@ -20437,7 +21487,7 @@
     "pk": 76, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 760, 
       "description": "French Polynesia", 
       "submission_language": "", 
       "label": "PF"
@@ -20447,7 +21497,7 @@
     "pk": 77, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 770, 
       "description": "French Southern Territories", 
       "submission_language": "", 
       "label": "TF"
@@ -20507,7 +21557,7 @@
     "pk": 83, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 830, 
       "description": "Gibraltar", 
       "submission_language": "", 
       "label": "GI"
@@ -20527,7 +21577,7 @@
     "pk": 85, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 850, 
       "description": "Greenland", 
       "submission_language": "", 
       "label": "GL"
@@ -20547,7 +21597,7 @@
     "pk": 87, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 870, 
       "description": "Guadeloupe", 
       "submission_language": "", 
       "label": "GP"
@@ -20557,7 +21607,7 @@
     "pk": 88, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 880, 
       "description": "Guam", 
       "submission_language": "", 
       "label": "GU"
@@ -20577,7 +21627,7 @@
     "pk": 90, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 900, 
       "description": "Guernsey", 
       "submission_language": "", 
       "label": "GG"
@@ -20627,7 +21677,7 @@
     "pk": 95, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 950, 
       "description": "Heard Island and McDonald Islands", 
       "submission_language": "", 
       "label": "HM"
@@ -20657,7 +21707,7 @@
     "pk": 98, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 980, 
       "description": "Hong Kong", 
       "submission_language": "", 
       "label": "HK"
@@ -20737,7 +21787,7 @@
     "pk": 106, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1060, 
       "description": "Isle of Man", 
       "submission_language": "", 
       "label": "IM"
@@ -20787,7 +21837,7 @@
     "pk": 111, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1110, 
       "description": "Jersey", 
       "submission_language": "", 
       "label": "JE"
@@ -20967,7 +22017,7 @@
     "pk": 129, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1290, 
       "description": "Macao", 
       "submission_language": "", 
       "label": "MO"
@@ -21057,7 +22107,7 @@
     "pk": 138, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1380, 
       "description": "Martinique", 
       "submission_language": "", 
       "label": "MQ"
@@ -21087,7 +22137,7 @@
     "pk": 141, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1410, 
       "description": "Mayotte", 
       "submission_language": "", 
       "label": "YT"
@@ -21157,7 +22207,7 @@
     "pk": 148, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1480, 
       "description": "Montserrat", 
       "submission_language": "", 
       "label": "MS"
@@ -21237,7 +22287,7 @@
     "pk": 156, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1560, 
       "description": "Netherlands Antilles", 
       "submission_language": "", 
       "label": "AN"
@@ -21247,7 +22297,7 @@
     "pk": 157, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1570, 
       "description": "New Caledonia", 
       "submission_language": "", 
       "label": "NC"
@@ -21297,7 +22347,7 @@
     "pk": 162, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1620, 
       "description": "Niue", 
       "submission_language": "", 
       "label": "NU"
@@ -21307,7 +22357,7 @@
     "pk": 163, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1630, 
       "description": "Norfolk Island", 
       "submission_language": "", 
       "label": "NF"
@@ -21317,7 +22367,7 @@
     "pk": 164, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1640, 
       "description": "Northern Mariana Islands", 
       "submission_language": "", 
       "label": "MP"
@@ -21367,7 +22417,7 @@
     "pk": 169, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1690, 
       "description": "Palestinian Territory, Occupied", 
       "submission_language": "", 
       "label": "PS"
@@ -21427,7 +22477,7 @@
     "pk": 175, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1750, 
       "description": "Pitcairn", 
       "submission_language": "", 
       "label": "PN"
@@ -21457,7 +22507,7 @@
     "pk": 178, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1780, 
       "description": "Puerto Rico", 
       "submission_language": "", 
       "label": "PR"
@@ -21477,7 +22527,7 @@
     "pk": 180, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1800, 
       "description": "Reunion", 
       "submission_language": "", 
       "label": "RE"
@@ -21517,7 +22567,7 @@
     "pk": 184, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1840, 
       "description": "Saint Barthelemy", 
       "submission_language": "", 
       "label": "BL"
@@ -21527,7 +22577,7 @@
     "pk": 185, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1850, 
       "description": "Saint Helena", 
       "submission_language": "", 
       "label": "SH"
@@ -21557,7 +22607,7 @@
     "pk": 188, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1880, 
       "description": "Saint Martin", 
       "submission_language": "", 
       "label": "MF"
@@ -21567,7 +22617,7 @@
     "pk": 189, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 1890, 
       "description": "Saint Pierre and Miquelon", 
       "submission_language": "", 
       "label": "PM"
@@ -21727,7 +22777,7 @@
     "pk": 205, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 2050, 
       "description": "South Georgia and the South Sandwich Islands", 
       "submission_language": "", 
       "label": "GS"
@@ -21739,8 +22789,8 @@
     "fields": {
       "order": 0, 
       "description": "Spain", 
-      "submission_language": "es", 
-      "label": "ES"
+      "submission_language": "", 
+      "label": "es"
     }
   }, 
   {
@@ -21777,7 +22827,7 @@
     "pk": 210, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 2100, 
       "description": "Svalbard and Jan Mayen", 
       "submission_language": "", 
       "label": "SJ"
@@ -21827,7 +22877,7 @@
     "pk": 215, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 2150, 
       "description": "Taiwan, Province of China", 
       "submission_language": "", 
       "label": "TW"
@@ -21887,7 +22937,7 @@
     "pk": 221, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 2210, 
       "description": "Tokelau", 
       "submission_language": "", 
       "label": "TK"
@@ -21947,7 +22997,7 @@
     "pk": 227, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 2270, 
       "description": "Turks and Caicos Islands", 
       "submission_language": "", 
       "label": "TC"
@@ -22017,7 +23067,7 @@
     "pk": 234, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 2340, 
       "description": "United States Minor Outlying Islands", 
       "submission_language": "", 
       "label": "UM"
@@ -22077,7 +23127,7 @@
     "pk": 240, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 2400, 
       "description": "Virgin Islands, British", 
       "submission_language": "", 
       "label": "VG"
@@ -22087,7 +23137,7 @@
     "pk": 241, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 2410, 
       "description": "Virgin Islands, U.S.", 
       "submission_language": "", 
       "label": "VI"
@@ -22097,7 +23147,7 @@
     "pk": 242, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 2420, 
       "description": "Wallis and Futuna", 
       "submission_language": "", 
       "label": "WF"
@@ -22107,7 +23157,7 @@
     "pk": 243, 
     "model": "vocabulary.countrycode", 
     "fields": {
-      "order": 0, 
+      "order": 2430, 
       "description": "Western Sahara", 
       "submission_language": "", 
       "label": "EH"
@@ -22147,7 +23197,7 @@
     "pk": 1, 
     "model": "vocabulary.trialnumberissuingauthority", 
     "fields": {
-      "order": 0, 
+      "order": 10, 
       "description": "World Health Organization, International Clinical Trials Registry Platform", 
       "label": "WHO ICTRP"
     }
@@ -22156,7 +23206,7 @@
     "pk": 2, 
     "model": "vocabulary.trialnumberissuingauthority", 
     "fields": {
-      "order": 0, 
+      "order": 20, 
       "description": "Comiss\u00e3o Nacional de \u00c9tica em Pesquisa, Conselho Nacional de Pesquisa, Minist\u00e9rio da Sa\u00fade, Brasil", 
       "label": "Plataforma Brasil (CONEP)"
     }
@@ -22165,7 +23215,7 @@
     "pk": 3, 
     "model": "vocabulary.trialnumberissuingauthority", 
     "fields": {
-      "order": 0, 
+      "order": 30, 
       "description": "National Library of Medicine (NLM), U.S. National Institutes of Health (NIH)", 
       "label": "ClinicalTrials.gov"
     }
@@ -22174,7 +23224,7 @@
     "pk": 4, 
     "model": "vocabulary.trialnumberissuingauthority", 
     "fields": {
-      "order": 0, 
+      "order": 40, 
       "description": "Australian New Zealand Clinical Trials Registry", 
       "label": "ANZCTR"
     }
@@ -22183,7 +23233,7 @@
     "pk": 5, 
     "model": "vocabulary.trialnumberissuingauthority", 
     "fields": {
-      "order": 0, 
+      "order": 50, 
       "description": "Iranian Registry of Clinical Trials", 
       "label": "IRCT"
     }
@@ -22192,7 +23242,7 @@
     "pk": 6, 
     "model": "vocabulary.trialnumberissuingauthority", 
     "fields": {
-      "order": 0, 
+      "order": 60, 
       "description": "Cochrane Renal Group", 
       "label": "CRG"
     }
@@ -22525,7 +23575,7 @@
     "pk": 1, 
     "model": "vocabulary.studyphase", 
     "fields": {
-      "order": 0, 
+      "order": 10, 
       "description": "not applicable", 
       "label": "N/A"
     }
@@ -22534,7 +23584,7 @@
     "pk": 3, 
     "model": "vocabulary.studyphase", 
     "fields": {
-      "order": 0, 
+      "order": 30, 
       "description": "phase 1", 
       "label": "1"
     }
@@ -22543,7 +23593,7 @@
     "pk": 4, 
     "model": "vocabulary.studyphase", 
     "fields": {
-      "order": 0, 
+      "order": 40, 
       "description": "phases 1-2", 
       "label": "1-2"
     }
@@ -22552,7 +23602,7 @@
     "pk": 5, 
     "model": "vocabulary.studyphase", 
     "fields": {
-      "order": 0, 
+      "order": 50, 
       "description": "phase 2", 
       "label": "2"
     }
@@ -22561,7 +23611,7 @@
     "pk": 6, 
     "model": "vocabulary.studyphase", 
     "fields": {
-      "order": 0, 
+      "order": 60, 
       "description": "phases 2-3", 
       "label": "2-3"
     }
@@ -22570,7 +23620,7 @@
     "pk": 7, 
     "model": "vocabulary.studyphase", 
     "fields": {
-      "order": 0, 
+      "order": 70, 
       "description": "phase 3", 
       "label": "3"
     }
@@ -22579,7 +23629,7 @@
     "pk": 8, 
     "model": "vocabulary.studyphase", 
     "fields": {
-      "order": 0, 
+      "order": 80, 
       "description": "phase 4", 
       "label": "4"
     }
@@ -23228,8 +24278,8 @@
     "model": "vocabulary.institutiontype", 
     "fields": {
       "order": 40, 
-      "description": "Ministery of Health", 
-      "label": "ministery of health"
+      "description": "Ministry of Health", 
+      "label": "ministry of health"
     }
   }, 
   {
