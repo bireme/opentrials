@@ -25,7 +25,7 @@ urlpatterns = patterns('',
 
     #out of service page
     url(r'', direct_to_template, {
-        'template': 'templates.out_of_service.html'
+        'template': 'out_of_service.html'
     }),
 
 )
