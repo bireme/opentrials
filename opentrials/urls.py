@@ -19,14 +19,8 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from django.conf.urls.defaults import *
-from registration.forms import RegistrationFormUniqueEmail
 
 from django.views.generic.simple import direct_to_template
-
-import utilities
-
-from django.contrib import admin # Django admin UI
-admin.autodiscover()             # Django admin UI
 
 urlpatterns = patterns('',
     
