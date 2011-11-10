@@ -135,6 +135,7 @@ INSTALLED_APPS = (
     'haystack',
     #'debug_toolbar',
     'compressor',
+    'out_of_service',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =(
