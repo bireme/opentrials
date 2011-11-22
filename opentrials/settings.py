@@ -245,4 +245,4 @@ if os.path.exists(ATTACHMENTS_PATH):
 else:
     raise IOError('Attachments folder "%s" not found' % (ATTACHMENTS_PATH))
 
-OPENTRIALS_VERSION = 'v1.1.0rc3' # this should be the deployed tag number
+OPENTRIALS_VERSION = 'v1.1.0' # this should be the deployed tag number
