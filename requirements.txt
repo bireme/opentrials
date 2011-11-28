@@ -10,6 +10,4 @@ django-nose
 django-rosetta
 django-reversion
 django-plus
-django-fossil
-django-haystack
 pysolr
