@@ -3,7 +3,7 @@ DEBUG = True
 SITE_ID = 2 # change if necessary to match a record in django_site
 
 ADMINS = (
-    ('Webmaster Ensaios Clinicos', 'appec@bireme.org'),
+    ('Webmaster Ensaios Clinicos', 'user@domain.com'),
 )
 
 DATABASES = {
@@ -11,7 +11,7 @@ DATABASES = {
         'ENGINE':'mysql',
         'NAME':'opentrials',
         'USER':'tester',
-        'PASSWORD':'puffpuff',
+        'PASSWORD':'???????',
         'OPTIONS': {
             'init_command': 'SET storage_engine=INNODB',
         },
@@ -25,10 +25,10 @@ HAYSTACK_SOLR_URL = 'http://127.0.0.1:8080/solr'
 
 SECRET_KEY = 'rmbg(!8sa@&8o9pnnd@*szm+axos_6r$)r48jc2r$^_8+wz)po'
 
-EMAIL_HOST = 'pombo.bireme.br'
+EMAIL_HOST = 'smtp.domain.com'
 EMAIL_PORT = 25 # http://www.iana.org/assignments/port-numbers
 ### if set, used to authenticate with SMTP
-EMAIL_HOST_USER = 'appec@bireme.org'
+EMAIL_HOST_USER = 'user@domain.com'
 EMAIL_HOST_PASSWORD = '?????'
 EMAIL_USE_TLS = False
 
