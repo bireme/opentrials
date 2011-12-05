@@ -20,7 +20,7 @@ VALID_FUNCTIONS = (
 def formatted_institution_address(institution):
     """Return a formatted string like: ICICT - Rio de Janeiro, RJ, Brasil"""
     return institution['name']+' - '+', '.join(
-        i for i in [institution['city'],institution['state'],
+        i for i in [institution.get('city'),institution.get('state'),
                     institution['country']['description']
                     ] if i
         )
