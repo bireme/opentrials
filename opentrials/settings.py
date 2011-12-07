@@ -26,8 +26,7 @@ TEMPLATE_DEBUG = DEBUG
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
 ADMINS = (
-    ('Luciano Ramalho', 'luciano.ramalho@bireme.org'),
-    ('Antonio Ribeiro Alves', 'antonio.alves@bireme.org')
+    ('Webmaster OpenTrials', 'user@domain.com'),
 )
 
 MANAGERS = ADMINS
@@ -231,9 +230,14 @@ COMPRESS_OUTPUT_DIR = 'compressor-cache'
 ### END Clinical Trials Repository customization settings
 #################################################################
 
-# Deployment settings: there *must* be an unversioned settings_local.include
-# file in the current directory. See sample file at settings_local-SAMPLE.include
-# FIXME: why not use a simple "try: from settings_local import * except ImportError: pass" ?
+# Local deployment settings: there *must* be an unversioned
+# 'settings_local.include' file in the current directory.
+# See sample file at settings_local-SAMPLE.include.
+# NOTE: in the next line we do not use a simple...
+#     try: from settings_local import * except ImportError: pass
+#   ...because (1) we want to be able to add to settings in this file, and
+#   not only overwrite them, and (2) we do not want the app to launch if the
+#   'settings_local.include' file is not provided
 execfile(os.path.join(PROJECT_PATH,'settings_local.include'))
 
 #check for write permission in static/attachments, for user's uploads

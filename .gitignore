@@ -1,3 +1,4 @@
 *.pyc
 opentrials/settings_local.include
 *.egg-info/
+*.komodoproject
