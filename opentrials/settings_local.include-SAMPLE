@@ -2,9 +2,10 @@ DEBUG = True
 
 SITE_ID = 2 # change if necessary to match a record in django_site
 
-ADMINS = (
-    ('Webmaster Ensaios Clinicos', 'user@domain.com'),
-)
+# Overwrite ADMINS from main settings.py
+#ADMINS = (
+#    ('Webmaster Ensaios Clinicos', 'user@domain.com'),
+#)
 
 DATABASES = {
     'default' : {
