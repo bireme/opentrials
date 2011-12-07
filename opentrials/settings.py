@@ -236,7 +236,7 @@ COMPRESS_OUTPUT_DIR = 'compressor-cache'
 # NOTE: in the next line we do not use a simple...
 #     try: from settings_local import * except ImportError: pass
 #   ...because (1) we want to be able to add to settings in this file, and
-#   not only ovewrite them, and (2) we do not want the app to launch if the
+#   not only overwrite them, and (2) we do not want the app to launch if the
 #   'settings_local.include' file is not provided
 execfile(os.path.join(PROJECT_PATH,'settings_local.include'))
 
