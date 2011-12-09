@@ -72,30 +72,34 @@
                         <div class="spacer">&#160;</div>
                     </div>
                     {% else %}
-                    <div class="login">
-                        <div class="loginForm">
-                            <form action="{% url django.contrib.auth.views.login %}" method="post">
-                                {% csrf_token %}
-                                <div class="formSegment">
-                                    <label for="id_username">{% trans 'Username' %}</label>
-                                    <input type="text" maxlength="30" name="username" class="textEntry" id="id_username" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';"/>
-                                </div>
-                                <div class="formSegment">
-                                    <label for="id_password">{% trans 'Password' %}</label>
-                                    <input type="password" id="id_password" class="textEntry" name="password" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" />
-                                </div>
-                                <input type="submit" class="submit" value="{% trans 'login' %}" id="submit"/>
-                                <input type="hidden" value="reviewapp.submissionlist" name="next" />
-                            </form>
+                        {% if not request.under_maintenance %}
+                        <div class="login">
+                            <div class="loginForm">
+                                <form action="{% url django.contrib.auth.views.login %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="formSegment">
+                                        <label for="id_username">{% trans 'Username' %}</label>
+                                        <input type="text" maxlength="30" name="username" class="textEntry" id="id_username" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';"/>
+                                    </div>
+                                    <div class="formSegment">
+                                        <label for="id_password">{% trans 'Password' %}</label>
+                                        <input type="password" id="id_password" class="textEntry" name="password" onblur="this.className = 'textEntry';" onfocus="this.className = 'textEntry textEntryFocus';" />
+                                    </div>
+                                    <input type="submit" class="submit" value="{% trans 'login' %}" id="submit"/>
+                                    <input type="hidden" value="reviewapp.submissionlist" name="next" />
+                                </form>
+                            </div>
+                            <div class="loginOption">
+                                <ul>
+                                    <li><a href="{% url reviewapp.password_reset %}" title="{% trans 'Forgot username or password' %}">{% trans 'Forgot password?' %}</a></li>
+                                    <li><a href="/accounts/register" title="{% trans 'create an account to submit trial records' %}">{% trans 'Register' %}</a></li>
+                                </ul>
+                            </div>
+                            <div class="spacer">&#160;</div>
                         </div>
-                        <div class="loginOption">
-                            <ul>
-                                <li><a href="{% url reviewapp.password_reset %}" title="{% trans 'Forgot username or password' %}">{% trans 'Forgot password?' %}</a></li>
-                                <li><a href="/accounts/register" title="{% trans 'create an account to submit trial records' %}">{% trans 'Register' %}</a></li>
-                            </ul>
-                        </div>
-                        <div class="spacer">&#160;</div>
-                    </div>
+                        {% else %}
+                            <h3>&nbsp;UNDER MAINTENANCE</h3>
+                        {% endif %}
                     {% endif %}
                     <div class="bottomMenu">
                         <div class="languages">

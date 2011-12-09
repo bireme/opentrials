@@ -89,6 +89,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.transaction.TransactionMiddleware',
     'middleware.user_locale.UserLocaleMiddleware',
+    'maintenance.middleware.MaintenanceMiddleware',
     #'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'flatpages_polyglot.middleware.FlatPagePolyglotMiddleware',
 )
@@ -134,6 +135,7 @@ INSTALLED_APPS = (
     'haystack',
     #'debug_toolbar',
     'compressor',
+    'maintenance',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =(
