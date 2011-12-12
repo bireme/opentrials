@@ -17,8 +17,8 @@ class MaintenanceWindow(models.Model):
     ended.boolean = True
 
     @classmethod
-    def under_maintenance(cls):
+    def active_maintenance(cls):
         try:
-            return not cls.objects.latest().ended()
+            return cls.objects.latest() if not cls.objects.latest().ended() else None
         except cls.DoesNotExist:
-            return False
+            return None

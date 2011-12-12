@@ -72,7 +72,7 @@
                         <div class="spacer">&#160;</div>
                     </div>
                     {% else %}
-                        {% if not request.under_maintenance %}
+                        {% if not request.maintenance_window %}
                         <div class="login">
                             <div class="loginForm">
                                 <form action="{% url django.contrib.auth.views.login %}" method="post">
@@ -98,7 +98,10 @@
                             <div class="spacer">&#160;</div>
                         </div>
                         {% else %}
-                            <h3>&nbsp;UNDER MAINTENANCE</h3>
+                            <div style="width: 100%; padding: 10px;">
+                                <!-- maintenance window warning -->
+                                {{ request.maintenance_window.description }} {% trans 'Retorno previsto' %}: {{ request.maintenance_window.estimated_end|date:"d/m/Y H:i" }}
+                            </div>
                         {% endif %}
                     {% endif %}
                     <div class="bottomMenu">
