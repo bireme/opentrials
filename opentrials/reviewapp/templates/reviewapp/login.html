@@ -11,16 +11,23 @@
 
 {% block body %}
 
-<form method="post" action="{% url django.contrib.auth.views.login %}">{% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-    <input type="submit" value="login" />
-    <input type="hidden" name="next" value="" />
-</form>
-<a href="/accounts/register" title="{% trans 'create an account to submit trial records' %}">
-    {% trans 'Register' %}</a>
-<a href="{% url reviewapp.password_reset %}" title="{% trans 'Forgot username or password' %}">
-    {% trans 'Forgot username or password' %}</a>
+    {% if not request.maintenance_window %}
+    <form method="post" action="{% url django.contrib.auth.views.login %}">{% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="login" />
+        <input type="hidden" name="next" value="" />
+    </form>
+    <a href="/accounts/register" title="{% trans 'create an account to submit trial records' %}">
+        {% trans 'Register' %}</a>
+    <a href="{% url reviewapp.password_reset %}" title="{% trans 'Forgot username or password' %}">
+        {% trans 'Forgot username or password' %}</a>
+    {% else %}
+        <div style="width: 100%; padding: 10px;">
+            <!-- maintenance window warning -->
+            <p>{{ request.maintenance_window.description }}</p><p>{% trans 'Retorno previsto' %}: {{ request.maintenance_window.estimated_end|date:"d/m/Y H:i" }}</p>
+        </div>
+    {% endif %}
 
 {% endblock %}
