@@ -40,7 +40,9 @@ class AttachmentInline(admin.TabularInline):
 class SubmissionAdmin(admin.ModelAdmin):
     list_display = ('creator_username', 'short_title', 'status')
     list_display_links = list_display
-    list_filter = ('status',)
+    list_filter = ('status', 'updated')
+    search_fields = ('trial', 'title', 'primary_sponsor')    
+
     date_hierarchy = 'updated'
     save_on_top = True
     change_form_template = 'admin/submission_change_form.html'

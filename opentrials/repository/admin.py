@@ -203,8 +203,9 @@ class PublishedTrialAdmin(admin.ModelAdmin):
         return perms
 
 class ContactAdmin(admin.ModelAdmin):
-    list_filter = ('firstname', 'middlename', 'lastname', 'affiliation', 'email')
-    search_fields = ('city', 'country')
+    list_display = ('name', 'affiliation', 'city', 'country')
+    search_fields= ('firstname', 'middlename', 'lastname', 'affiliation__name', 'email')
+    list_filter = ('city', 'country')
     
 class InstitutionAdmin(admin.ModelAdmin):
     list_filter = ('state', 'country', 'i_type')
