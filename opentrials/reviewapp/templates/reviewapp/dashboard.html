@@ -16,6 +16,19 @@
 
 {% block body %}
 
+<script>
+    function check_update(link) {
+        var msg = "Ao escolher atualizar o ensaio clínico, será iniciado um novo processo de revisão. Deseja continuar?";
+        
+        if(confirm(msg)) {
+            location.href = link;
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+
 <div class="leftCol">
     <div class="submissions">
         <h2>{% trans "Submissions" %}</h2>
@@ -39,7 +52,7 @@
                         {% endif %}
                         <a href="{% url repository.edittrial submission.trial.pk %}">{{ submission.short_title }}</a>
                         {% if user == submission.creator and submission.status == 'approved' %}
-                        ( <a href="{% url reviewapp.submission_edit_published submission.pk %}">
+                        ( <a href="javascript:check_update('{% url reviewapp.submission_edit_published submission.pk %}');">
                             {% trans "Update" %}
                         </a> )
                         {% endif %}
