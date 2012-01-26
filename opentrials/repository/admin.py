@@ -57,6 +57,8 @@ class ClinicalTrialAdmin(admin.ModelAdmin):
 
 class DescriptorAdmin(admin.ModelAdmin):
     list_display = ('trial_identifier','vocabulary','code', 'text')
+    search_fields = ('code', 'text')
+    list_filter = ('vocabulary', )
 
 class InlineFossilIndexer(admin.TabularInline):
     model = FossilIndexer
