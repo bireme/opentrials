@@ -55,6 +55,9 @@ class SubmissionAdmin(admin.ModelAdmin):
 class RemarkAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'context', 'short_text', 'verified', 'status')
     list_display_links = ('__unicode__', 'context', 'status')
+    search_fields = ('text', 'submission')
+    list_filter = ('context', 'status', )
+
 
     def save_model(self, request, instance, form, change):
         if not change:
