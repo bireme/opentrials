@@ -206,6 +206,9 @@ class ContactAdmin(admin.ModelAdmin):
     list_filter = ('firstname', 'middlename', 'lastname', 'affiliation', 'email')
     search_fields = ('city', 'country')
     
+class InstitutionAdmin(admin.ModelAdmin):
+    list_filter = ('state', 'country', 'i_type')
+    search_fields = ('name', )
 
 if ClinicalTrial not in admin.site._registry:
     admin.site.register(ClinicalTrial, ClinicalTrialAdmin)
@@ -214,7 +217,7 @@ if Descriptor not in admin.site._registry:
     admin.site.register(Descriptor, DescriptorAdmin)
 
 if Institution not in admin.site._registry:
-    admin.site.register(Institution)
+    admin.site.register(Institution, InstitutionAdmin)
 
 if Contact not in admin.site._registry:
     admin.site.register(Contact, ContactAdmin)
