@@ -57,7 +57,7 @@ class SubmissionAdmin(admin.ModelAdmin):
 class RemarkAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'context', 'short_text', 'verified', 'status')
     list_display_links = ('__unicode__', 'context', 'status')
-    search_fields = ('text', 'submission')
+    search_fields = ('text', 'id', 'submission__id')
     list_filter = ('context', 'status', )
 
 
