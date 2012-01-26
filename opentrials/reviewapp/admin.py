@@ -82,7 +82,7 @@ class NewsAdmin(TranslationAdmin):
     list_display = ('__unicode__', 'short_text', 'translation_completed', 
                     'missing_translations', 'created', 'creator', 'status')
     list_display_links = ('__unicode__', 'status')
-    list_filter = ('created', 'status', 'status', 'translations')
+    list_filter = ('created', 'status', 'translations')
     search_fields = ('title', 'text')
 
     
