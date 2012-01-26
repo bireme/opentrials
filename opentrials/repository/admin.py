@@ -199,6 +199,10 @@ class PublishedTrialAdmin(admin.ModelAdmin):
         perms['add'] = perms['delete'] = False
         
         return perms
+
+class ContactAdmin(admin.ModelAdmin):
+    list_filter = ('firstname', 'middlename', 'lastname', 'affiliation', 'email')
+    search_fields = ('city', 'country')
     
 
 if ClinicalTrial not in admin.site._registry:
@@ -211,7 +215,7 @@ if Institution not in admin.site._registry:
     admin.site.register(Institution)
 
 if Contact not in admin.site._registry:
-    admin.site.register(Contact)
+    admin.site.register(Contact, ContactAdmin)
 
 if PublishedTrial not in admin.site._registry:
     admin.site.register(PublishedTrial, PublishedTrialAdmin)
