@@ -41,7 +41,7 @@ class SubmissionAdmin(admin.ModelAdmin):
     list_display = ('creator_username', 'short_title', 'status')
     list_display_links = list_display
     list_filter = ('status', 'updated')
-    search_fields = ('trial', 'title', 'primary_sponsor')    
+    search_fields = ('trial__id', 'title')    
 
     date_hierarchy = 'updated'
     save_on_top = True
