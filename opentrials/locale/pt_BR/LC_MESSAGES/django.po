@@ -1387,6 +1387,10 @@ msgid "Edit Trial"
 msgstr ""
 
 #: repository/views.py:131
+msgid "Updating a clinical trial, a new revision process will be started. Would you like to continue?"
+msgstr "Ao escolher atualizar o ensaio clínico, será iniciado um novo processo de revisão. Deseja continuar?"
+
+#: repository/views.py:131
 #, fuzzy, python-format
 msgid "This trial cannot be modified because it has already been approved.%s"
 msgstr "Este ensaio não pode ser modificado, pois já foi aprovado."
