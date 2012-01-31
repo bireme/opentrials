@@ -627,7 +627,7 @@
 
     {% if object.previous_revision %}
     <div>
-        <a href="{% url repository.trial_registered trial_fossil_id=object.previous_revision.pk %}">
+        <a href="{% url repository.trial_registered_version trial_fossil_id=object.trial_id,trial_version=object.previous_revision_sequencial %}">
             {% trans 'Previous Revision' %}</a>
     </div>
     {% endif %}
