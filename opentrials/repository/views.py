@@ -639,7 +639,7 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
             else:
                 fossil = qs.get(is_most_recent=True)
         except Fossil.DoesNotExist:
-            raise Http404
+            raise Http404   
 
     ct = fossil.get_object_fossil()
     ct.fossil['language'] = ct.fossil.get('language', settings.DEFAULT_SUBMISSION_LANGUAGE)
@@ -657,6 +657,9 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
         scientific_title = ct.scientific_title
 
     created = datetime.datetime.strptime(ct.fossil['created'], "%Y-%m-%d %H:%M:%S")
+
+    if len(trial_fossil_id) == 64:
+        trial_fossil_id = unicode(fossil).split(' ')[0]
 
     trial = get_object_or_404(ClinicalTrial, trial_id=trial_fossil_id)
     attachs = [attach for attach in trial.trial_attach() if attach.public]
