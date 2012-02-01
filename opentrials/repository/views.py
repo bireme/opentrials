@@ -646,7 +646,11 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
     ct._language = ct.language
     ct.hash_code = fossil.pk
     ct.previous_revision = fossil.previous_revision
-    ct.previous_revision_sequencial = fossil.previous_revision.revision_sequential
+    try:
+        ct.previous_revision_sequencial = fossil.previous_revision.revision_sequential
+    except:
+        ct.previous_revision_sequencial = None
+
     ct.version = fossil.revision_sequential
 
     translations = [ct.fossil] # the Fossil dictionary must be one of the translations
