@@ -21,6 +21,8 @@ from consts import REMARK, MISSING, PARTIAL, COMPLETE
 from django.conf import settings
 from deleting.models import ControlledDeletion
 
+from django.template.defaultfilters import slugify
+
 SUBMISSION_STATUS = [
     ('draft', _('draft')), # clinical trial is 'processing'
     ('pending', _('pending')), # clinical trial remains 'processing'
@@ -49,7 +51,7 @@ class UserProfile(models.Model):
     preferred_language = models.CharField(_('Preferred language'),max_length=10,
                                 choices=settings.MANAGED_LANGUAGES_CHOICES,
                                 default=settings.MANAGED_LANGUAGES_CHOICES[-1][0])
-                                
+
     def amount_submissions(self):
         return u"%03d" % (Submission.objects.filter(creator=self.user).count())
 
@@ -75,7 +77,7 @@ class Submission(ControlledDeletion):
     status = models.CharField(_('Status'), max_length=64,
                               choices=SUBMISSION_STATUS,
                               default=SUBMISSION_STATUS[0][0])
-    fields_status = models.TextField(_('Fields Status'), max_length=512, null=True, 
+    fields_status = models.TextField(_('Fields Status'), max_length=512, null=True,
                                      blank=True, editable=False)
     language = models.CharField(_('Submission language'), max_length=10,
                                 choices=settings.MANAGED_LANGUAGES_CHOICES,
@@ -133,7 +135,7 @@ class Submission(ControlledDeletion):
         FIELDS = {
             TRIAL_FORMS[0]: MISSING, TRIAL_FORMS[1]: PARTIAL, TRIAL_FORMS[2]: MISSING,
 
-            TRIAL_FORMS[3]: MISSING, TRIAL_FORMS[4]: MISSING, TRIAL_FORMS[5]: MISSING, 
+            TRIAL_FORMS[3]: MISSING, TRIAL_FORMS[4]: MISSING, TRIAL_FORMS[5]: MISSING,
             TRIAL_FORMS[6]: MISSING, TRIAL_FORMS[7]: MISSING, TRIAL_FORMS[8]: PARTIAL
         }
         for lang in self.get_mandatory_languages():
@@ -141,7 +143,7 @@ class Submission(ControlledDeletion):
             fields_status.update({lang: dict(FIELDS)})
             if lang == self.language.lower():
                 fields_status[lang].update({TRIAL_FORMS[0]: PARTIAL})
-        
+
         self.fields_status = simplejson.dumps(fields_status)
         self.save()
 
@@ -160,7 +162,7 @@ class Submission(ControlledDeletion):
         elif PARTIAL in status:
             return PARTIAL
         return COMPLETE
-        
+
     def can_delete(self):
         if Fossil.objects.filter(object_id=self.trial.pk).count() > 0:
             return False
@@ -176,7 +178,14 @@ class RecruitmentCountry(models.Model):
 class Attachment(models.Model):
     class Meta:
         verbose_name_plural = _('Attachments')
-    file = models.FileField(_('File'), max_length=250, upload_to=settings.ATTACHMENTS_DIR, blank=True)
+
+    # Function that remove spaces and special characters from filenames
+    def new_filename(instance, filename):
+        fname, dot, extension = filename.rpartition('.')
+        fname = slugify(fname)
+        return settings.ATTACHMENTS_DIR + '/' + '%s.%s' % (fname, extension)
+
+    file = models.FileField(_('File'), max_length=250, upload_to=new_filename, blank=True)
     attach_url = models.URLField(_('Link'), blank=True)
     description = models.TextField(_('Description'),blank=True,max_length=8000)
     submission = models.ForeignKey(Submission)
@@ -184,10 +193,9 @@ class Attachment(models.Model):
 
     def get_relative_url(self):
         return self.file.url.replace(settings.PROJECT_PATH, u'')
-        
+
     def __unicode__(self):
         return u"%s" % self.description
-        
 
 REMARK_STATUS = [
     # initial state, as created by reviewer
@@ -239,7 +247,7 @@ class Remark(models.Model):
 
     def short_text(self):
         return safe_truncate(self.text, 60)
-        
+
     def context_title(self):
         return _(self.context.title().replace('-', ' '))
 
@@ -263,13 +271,13 @@ class News(models.Model):
 
     def short_title(self):
         return safe_truncate(self.title, 120)
-        
+
     def short_text(self):
         return safe_truncate(self.text, 240)
-    
+
     def __unicode__(self):
         return '%s' % (self.short_title())
-        
+
 class NewsTranslation(Translation):
     title = models.CharField(_('Title'), max_length=256)
     text = models.TextField(_('Text'), max_length=2048)
@@ -277,5 +285,5 @@ class NewsTranslation(Translation):
 # SIGNALS
 def create_user_profile(sender, instance,**kwargs):
     UserProfile.objects.get_or_create(user=instance)
-    
+
 post_save.connect(create_user_profile, sender=User)
