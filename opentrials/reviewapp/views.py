@@ -117,7 +117,7 @@ def reviewlist(request):
 
 @permission_required('reviewapp.review')
 def allsubmissionslist(request):
-    submissions_to_review = Submission.objects.filter().order_by('-updated')
+    allsubmissions = Submission.objects.all().order_by('-updated')
     return render_to_response(
             'reviewapp/all_submission_list.html',
             locals(),
