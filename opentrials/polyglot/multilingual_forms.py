@@ -9,7 +9,7 @@
 # by the Free Software Foundation, either version 2.1 of the License, or
 # (at your option) any later version.
 
-# This program is distributed in the hope that it will be useful,
+# This program is distributed in the hope that it will be useful, 
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Lesser General Public License for more details.
@@ -34,13 +34,13 @@ from django.forms.formsets import DELETION_FIELD_NAME
 from models import Translation, get_multilingual_fields, lang_format
 import re
 
-BLANK_CHOICE = ('', _('Select'))
+BLANK_CHOICE = ('', u"---------")
 
 # --------- WIDGETS --------
 
 class BaseMultilingualWidget(forms.Widget):
     instance = None
-    available_languages = ('en','pt')
+    available_languages = ('en',)
     default_second_language = None
     widget_class = forms.TextInput
     form_data = None
@@ -239,7 +239,7 @@ class MultilingualModelMultipleChoiceField(MultilingualModelChoiceField):
             return None
 
         return self.queryset.filter(pk__in=value)
-
+        
 class MultilingualModelCheckboxField(MultilingualModelChoiceField):
     widget = MultilingualCheckboxSelectMultiple
 
@@ -248,7 +248,7 @@ class MultilingualModelCheckboxField(MultilingualModelChoiceField):
             return None
 
         return self.queryset.filter(pk__in=value)
-
+    
 
 # ---------- FORMS -----------
 
@@ -324,7 +324,7 @@ class MultilingualBaseForm(forms.ModelForm):
             self.save_translations(obj)
             # to check fields after the update of the translations --- strange code TODO: check it
             obj = super(MultilingualBaseForm, self).save(commit=commit)
-
+        
         return obj
 
     def save_translations(self, obj):
@@ -332,7 +332,7 @@ class MultilingualBaseForm(forms.ModelForm):
 
         if not hasattr(obj, 'translations'):
             return
-
+        
         for lang,label in settings.TARGET_LANGUAGES:
             lang = lang_format(lang)
 
@@ -366,7 +366,7 @@ class MultilingualBaseFormSet(BaseModelFormSet):
         self.queryset = queryset
         defaults = {'data': data, 'files': files, 'auto_id': auto_id, 'prefix': prefix}
         defaults.update(kwargs)
-
+   
         self.available_languages = kwargs.pop('available_languages', self.available_languages) # Mandatory (FIXME, to remove default tuple)
         self.default_second_language = kwargs.pop('default_second_language', self.default_second_language)
         self.display_language = kwargs.pop('display_language', self.display_language)
@@ -401,7 +401,7 @@ class MultilingualBaseFormSet(BaseModelFormSet):
         for form in self.initial_forms:
             pk_name = self._pk_field.name
             raw_pk_value = form._raw_value(pk_name)
-
+            
             pk_value = form.fields[pk_name].clean(raw_pk_value)
             pk_value = getattr(pk_value, 'pk', pk_value)
 
@@ -415,7 +415,7 @@ class MultilingualBaseFormSet(BaseModelFormSet):
                     # http://code.djangoproject.com/attachment/ticket/10284/modelformset_false_delete.diff
                     if commit:
                         obj.delete()
-
+                        
                     continue
             if form.has_changed():
                 self.changed_objects.append((obj, form.changed_data))
