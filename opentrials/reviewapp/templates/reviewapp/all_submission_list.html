@@ -12,20 +12,28 @@
 
 {% block body %}
 
-<h2>{% trans "Submissions to Review" %}</h2>
+<h2>{% trans "Submissions" %}</h2>
 
+<br />
+<a href="{% url repository.multi_otcsv %}" />{% trans 'Download all as OpenTrials CSV format' %}</a>
+<br /><br />
+{% csrf_token %}
 <table class="dataTable" id="table_submissions">
     <thead>
         <tr>
-            <th>{% trans 'Date' %}</th>
+            <th>{% trans 'Created' %}</th>
+            <th>{% trans 'Updated' %}</th>
+            <th>{% trans 'Status' %}</th>
             <th>{% trans 'Title' %}</th>
             <th>{% trans 'Creator' %}</th>
         </tr>
     </thead>
     <tbody>
-        {% for submission in submissions_to_review %}
+        {% for submission in allsubmissions %}
         <tr>
-            <td>{{ submission.created|date:'Y/m/d H:i' }}</td>
+            <td>{{ submission.created|date:'d/m/y H:i' }}</td>
+            <td>{{ submission.updated|date:'d/m/y H:i' }}</td>
+            <td>{{ submission.status }}</td>
             <td>
                 <a href="{% url repository.trialview submission.trial.pk %}">{{ submission.short_title }}</a>
             </td>
@@ -34,7 +42,7 @@
         {% endfor %}
     </tbody>
 </table>
-
+</form>
 {% endblock %}
 
 {% block endjs %}{{ block.super }}

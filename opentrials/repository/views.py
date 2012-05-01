@@ -13,6 +13,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.forms.models import inlineformset_factory
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.template import loader
 from django.db.models import Q
 from django.views.generic.list_detail import object_list
@@ -60,6 +61,7 @@ import datetime
 
 import choices
 import settings
+import csv
 
 EXTRA_FORMS = 1
 
@@ -639,7 +641,7 @@ def trial_registered(request, trial_fossil_id, trial_version=None):
             else:
                 fossil = qs.get(is_most_recent=True)
         except Fossil.DoesNotExist:
-            raise Http404   
+            raise Http404
 
     ct = fossil.get_object_fossil()
     ct.fossil['language'] = ct.fossil.get('language', settings.DEFAULT_SUBMISSION_LANGUAGE)
@@ -1220,7 +1222,6 @@ def step_9(request, trial_pk):
             return HttpResponseRedirect(reverse('step_9',args=[trial_pk]))
 
         else:
-
             new_attachment_formset = NewAttachmentFormSet(request.POST,
                                                           request.FILES,
                                                           prefix='new')
@@ -1252,7 +1253,7 @@ def step_9(request, trial_pk):
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
-from repository.xml.generate import xml_ictrp, xml_opentrials
+from repository.xml.generate import xml_ictrp, all_published_trials_csv, xml_opentrials, csv_opentrials
 
 def trial_ictrp(request, trial_fossil_id, trial_version=None):
     """
@@ -1301,7 +1302,6 @@ def all_trials_ictrp(request):
     resp['Content-Disposition'] = 'attachment; filename=%s-ictrp.xml' % settings.TRIAL_ID_PREFIX
 
     return resp
-
 
 def trial_otxml(request, trial_id, trial_version=None):
     """
@@ -1374,6 +1374,28 @@ def multi_otxml(request):
     resp['Content-Disposition'] = 'attachment; filename=%s-ot.xml' % today
 
     return resp
+
+def multi_otcsv(self):
+    allsubmissions = Submission.objects.all().order_by('-updated')
+    allsubmissions_list = allsubmissions.values('pk','trial_id','created','updated','creator','title','status')
+
+    today = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M')
+
+    response = HttpResponse(mimetype='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=AllSubmissionsList-%s.csv' % today
+
+    writer = csv.writer(response)
+    writer.writerow(['trial_id','title','creator','created','updated','status'])
+
+    for submission in allsubmissions_list:
+        login_creator = User.objects.get(pk=submission['creator'])
+        trial_id = ClinicalTrial.objects.get(pk=submission['trial_id'])
+        trial_id = unicode(trial_id).split(' ')[0]
+
+        writer.writerow([trial_id,submission['title'],login_creator,submission['created'],submission['updated'],submission['status']])
+
+    return response
+
 
 def advanced_search(request):
     q = request.GET.get('q', '').strip()
