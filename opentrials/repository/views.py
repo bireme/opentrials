@@ -62,6 +62,8 @@ import datetime
 import choices
 import settings
 import csv
+import cStringIO
+from zipfile import ZipFile, ZIP_DEFLATED
 
 EXTRA_FORMS = 1
 
@@ -1253,7 +1255,7 @@ def step_9(request, trial_pk):
                                'available_languages': [lang.lower() for lang in ct.submission.get_mandatory_languages()],},
                                context_instance=RequestContext(request))
 
-from repository.xml.generate import xml_ictrp, all_published_trials_csv, xml_opentrials, csv_opentrials
+from repository.xml.generate import xml_ictrp, xml_opentrials
 
 def trial_ictrp(request, trial_fossil_id, trial_version=None):
     """
@@ -1381,10 +1383,10 @@ def multi_otcsv(self):
 
     today = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M')
 
-    response = HttpResponse(mimetype='text/csv')
-    response['Content-Disposition'] = 'attachment; filename=AllSubmissionsList-%s.csv' % today
+    file_name = 'AllSubmissionsList-%s' % today
 
-    writer = csv.writer(response)
+    output = cStringIO.StringIO() ## temp output csv file
+    writer = csv.writer(output)
     writer.writerow(['trial_id','title','creator','created','updated','status'])
 
     for submission in allsubmissions_list:
@@ -1393,6 +1395,14 @@ def multi_otcsv(self):
         trial_id = unicode(trial_id).split(' ')[0]
 
         writer.writerow([trial_id,submission['title'],login_creator,submission['created'],submission['updated'],submission['status']])
+
+    response = HttpResponse(mimetype='application/zip')
+    response['Content-Disposition'] = 'attachment; filename=%s.zip' % file_name
+
+    zipped_file = ZipFile(response, 'w', ZIP_DEFLATED)
+
+    csv_name = '%s.csv' % file_name
+    zipped_file.writestr(csv_name, output.getvalue())
 
     return response
 

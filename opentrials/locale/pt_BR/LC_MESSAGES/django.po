@@ -3,7 +3,7 @@
 # Copyright (C) 2009 BIREME/PAHO/WHO
 # This file is distributed under the same license as the PACKAGE package.
 # Luciano Ramalho <luciano.ramalho@bireme.org>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
@@ -26,10 +26,6 @@ msgstr "Categorias"
 #: vocabulary/models.py:57
 msgid "Label"
 msgstr "Rótulo"
-
-#: polyglot/multilingual_forms.py:37
-msgid "Select"
-msgstr "Selecione"
 
 #: assistance/models.py:24 assistance/models.py:41
 #: repository/templates/repository/clinicaltrial_list.html:45

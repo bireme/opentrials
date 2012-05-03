@@ -40,7 +40,7 @@ BLANK_CHOICE = ('', _('Select'))
 
 class BaseMultilingualWidget(forms.Widget):
     instance = None
-    available_languages = ('en','pt')
+    available_languages = ('en',)
     default_second_language = None
     widget_class = forms.TextInput
     form_data = None
