@@ -374,12 +374,12 @@ class RecruitmentForm(ReviewModelForm):
     enrollment_start_date = forms.DateField(
         required=True,
         label=_('Date of First Enrollment'),
-        widget=SelectDateWidget(years=[y for y in range(year-1, year+50)]),
+        widget=SelectDateWidget(years=[y for y in range(2010, year+50)]),
         )
     enrollment_end_date = forms.DateField(
         required=False,
         label=_('Date of Last Enrollment'),
-        widget=SelectDateWidget(years=[y for y in range(year-1, year+50)]),
+        widget=SelectDateWidget(years=[y for y in range(2010, year+50)]),
         )
 
     # TRDS 17
