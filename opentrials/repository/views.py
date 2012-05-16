@@ -1377,16 +1377,16 @@ def multi_otxml(request):
 
     return resp
 
-def multi_otcsv(self):
+def multi_otcsv(request):
     allsubmissions = Submission.objects.all().order_by('-updated')
     allsubmissions_list = allsubmissions.values('pk','trial_id','created','updated','creator','title','status')
 
     today = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M')
 
-    file_name = 'AllSubmissionsList-%s' % today
+    response = HttpResponse(mimetype='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=AllSubmissionsList-%s.csv' % today
 
-    output = cStringIO.StringIO() ## temp output csv file
-    writer = csv.writer(output)
+    writer = csv.writer(response)
     writer.writerow(['trial_id','title','creator','created','updated','status'])
 
     for submission in allsubmissions_list:
@@ -1396,16 +1396,7 @@ def multi_otcsv(self):
 
         writer.writerow([trial_id,submission['title'],login_creator,submission['created'],submission['updated'],submission['status']])
 
-    response = HttpResponse(mimetype='application/zip')
-    response['Content-Disposition'] = 'attachment; filename=%s.zip' % file_name
-
-    zipped_file = ZipFile(response, 'w', ZIP_DEFLATED)
-
-    csv_name = '%s.csv' % file_name
-    zipped_file.writestr(csv_name, output.getvalue())
-
     return response
-
 
 def advanced_search(request):
     q = request.GET.get('q', '').strip()
