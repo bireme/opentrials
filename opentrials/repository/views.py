@@ -1378,7 +1378,7 @@ def multi_otxml(request):
     return resp
 
 def multi_otcsv(request):
-    allsubmissions = Submission.objects.all().order_by('-updated')
+    allsubmissions = Submission.objects.all()
     allsubmissions_list = allsubmissions.values('pk','trial_id','created','updated','creator','title','status')
 
     today = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M')
