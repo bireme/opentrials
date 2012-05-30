@@ -17,7 +17,7 @@
         });
 
         function new_institution(target){
-            return window.open('{% url new_institution %}#'+target,'n_i','status=0,location=0,height=380');
+            return window.open('{% url new_institution %}#'+target,'n_i','status=0,location=0');
         }
 
         function delete_contact(target){
@@ -32,5 +32,27 @@
         $(document).ready(function(){
             $("#id_new_contact-0-country option").first().after($("#id_new_contact-0-country option[value=1]"));
         });
+
+        // customization when display language is pt_br
+        // format fields: CEP (zipcode) and Telefone (phone)
+        if (display_language = 'pt_br'){
+            function format_field(mask, element){
+              var i = element.value.length;
+              var saida = mask.substring(0,1);
+              var texto = mask.substring(i)
+
+              if (texto.substring(0,1) != saida){
+                element.value += texto.substring(0,1);
+              }
+            }
+
+            $("#id_new_contact-0-telephone").keypress(function() {
+                format_field('##-####-####',this)
+            });
+            $("#id_new_contact-0-zip").keypress(function() {
+                format_field('#####-###',this)
+            });
+        }
+
     </script>
 {% endblock %}
