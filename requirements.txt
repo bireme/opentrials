@@ -1,4 +1,3 @@
-Django
 BeautifulSoup
 PIL
 mysql-python

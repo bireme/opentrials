@@ -6,7 +6,7 @@ README = open(os.path.join(here, 'README.txt')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
 REQUIREMENTS = open(os.path.join(here, 'requirements.txt')).readlines()
 
-setup(name='bireme-opentrials', version='1.0.17',      
+setup(name='bireme-opentrials', version='1.0.17',
       packages=find_packages(),
       long_description=README + "\n\n" + CHANGES,
       classifiers=[
@@ -22,7 +22,10 @@ setup(name='bireme-opentrials', version='1.0.17',
       author_email="opentrials-dev@listas.bireme.br",
       url = 'http://reddes.bvsalud.org/projects/clinical-trials/',
       license="LGPL v2.1 (http://www.gnu.org/licenses/lgpl-2.1.txt)",
-      install_requires = REQUIREMENTS,
+      install_requires = [
+              'Django<=1.3.1',
+              REQUIREMENTS
+              ],
       test_suite='opentrials',
       tests_require=['Nose']
     )
