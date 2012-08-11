@@ -475,6 +475,7 @@ def index(request):
     return render_to_response('repository/clinicaltrial_list.html',
                               {'objects': objects,
                                'page': page,
+                               'paginator': paginator,
                                'q': q,
                                'unsubmiteds':unsubmiteds,
                                'outdated_flag':settings.MEDIA_URL + 'media/img/admin/icon_error.gif',
@@ -1295,7 +1296,7 @@ def trial_ictrp(request, trial_fossil_id, trial_version=None):
 
 def all_trials_ictrp(request):
 
-    trials = ClinicalTrial.fossils.all()
+    trials = ClinicalTrial.fossils.published()
     xml = xml_ictrp(trials)
 
     resp = HttpResponse(xml,
