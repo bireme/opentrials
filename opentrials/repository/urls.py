@@ -6,7 +6,7 @@ from repository.models import ClinicalTrial
 from repository.views import edit_trial_index, full_view, index, step_1, step_2, step_3
 from repository.views import step_4, step_5, step_6, step_7, step_8, step_9, new_institution
 from repository.views import trial_registered, trial_view, recruiting, trial_ictrp, trial_otxml
-from repository.views import all_trials_ictrp, contacts, advanced_search, multi_otxml, multi_otcsv
+from repository.views import all_trials_ictrp, contacts, advanced_search, multi_otxml, custom_otcsv
 
 
 urlpatterns = patterns('',
@@ -34,6 +34,6 @@ urlpatterns = patterns('',
     url(r'^(?P<trial_id>[0-9A-Za-z-]+)/v(?P<trial_version>\d+)/xml/opentrials/$', trial_otxml, name='repository.trial_otxml_version'),
     url(r'^all/xml/ictrp$', all_trials_ictrp),
     url(r'^multi/xml/ot', multi_otxml, name='repository.multi_otxml'),
-    url(r'^multi/csv/ot', multi_otcsv, name='repository.multi_otcsv'),
+    url(r'^multi/csv/ot', custom_otcsv, name='repository.custom_otcsv'),
     url(r'^$', index, name='repository.index'),
 )

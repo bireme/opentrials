@@ -24,6 +24,7 @@ from django.contrib.sites.models import Site
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.contrib import messages
 from django.utils.translation import get_language
+from django.utils.encoding import smart_str, smart_unicode
 
 from reviewapp.models import Attachment, Submission, Remark
 from reviewapp.models import STATUS_PENDING, STATUS_RESUBMIT, STATUS_DRAFT, STATUS_APPROVED
@@ -496,6 +497,7 @@ def trial_view(request, trial_pk):
     if review_mode:
         can_approve = ct.submission.status == STATUS_PENDING and ct.submission.remark_set.exclude(status='closed').count() == 0
         can_resubmit = ct.submission.status == STATUS_PENDING
+        is_ct_author = ct.submission.creator
     else:
         can_approve = False
         can_resubmit = False
@@ -1377,24 +1379,38 @@ def multi_otxml(request):
 
     return resp
 
-def multi_otcsv(request):
+def custom_otcsv(request):
     allsubmissions = Submission.objects.all()
     allsubmissions_list = allsubmissions.values('pk','trial_id','created','updated','creator','title','status')
 
     today = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M')
 
-    response = HttpResponse(mimetype='text/csv')
-    response['Content-Disposition'] = 'attachment; filename=AllSubmissionsList-%s.csv' % today
+    filename = "CustomCSV_OT_%s" % today
 
-    writer = csv.writer(response)
-    writer.writerow(['trial_id','title','creator','created','updated','status'])
+    output = cStringIO.StringIO() ## temp output csv file
+    writer = csv.writer(output)
+
+    writer.writerow(['trial','created','updated','status','creator','title'])
 
     for submission in allsubmissions_list:
+        title = smart_str(submission['title'])
         login_creator = User.objects.get(pk=submission['creator'])
-        trial_id = ClinicalTrial.objects.get(pk=submission['trial_id'])
-        trial_id = unicode(trial_id).split(' ')[0]
 
-        writer.writerow([trial_id,submission['title'],login_creator,submission['created'],submission['updated'],submission['status']])
+        try:
+            trial_id = ClinicalTrial.objects.get(pk=submission['trial_id'])
+            trial_id = unicode(trial_id).split(' ')[0]
+        except:
+            trial_id = "no_id"
+
+        writer.writerow([trial_id,submission['created'],submission['updated'],submission['status'],login_creator,title])
+
+    response = HttpResponse(mimetype='application/zip')
+    response['Content-Disposition'] = 'attachment; filename=%s.zip' % filename
+
+    zipped_file = ZipFile(response, 'w', ZIP_DEFLATED)
+
+    csv_name = '%s.csv' % filename
+    zipped_file.writestr(csv_name, output.getvalue())
 
     return response
 

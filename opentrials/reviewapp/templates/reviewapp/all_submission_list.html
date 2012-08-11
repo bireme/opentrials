@@ -15,7 +15,7 @@
 <h2>{% trans "Submissions" %}</h2>
 
 <br />
-<a href="{% url repository.multi_otcsv %}" />{% trans 'Download all as OpenTrials CSV format' %}</a>
+<a href="{% url repository.custom_otcsv %}" />{% trans 'Download all as OpenTrials CSV format' %}</a>
 <br /><br />
 {% csrf_token %}
 <table class="dataTable" id="table_submissions">
